@@ -1,0 +1,34 @@
+---
+- name: "module_cs_firewall"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_firewall: 
+      domain: "{{ cs_firewall_domain | default('omit', True) }}"
+      protocol: "{{ cs_firewall_protocol | default('omit', True) }}"
+      api_http_method: "{{ cs_firewall_api_http_method | default('omit', True) }}"
+      end_port: "{{ cs_firewall_end_port | default('omit', True) }}"
+      icmp_type: "{{ cs_firewall_icmp_type | default('omit', True) }}"
+      poll_async: "{{ cs_firewall_poll_async | default('omit', True) }}"
+      network: "{{ cs_firewall_network | default('omit', True) }}"
+      zone: "{{ cs_firewall_zone | default('omit', True) }}"
+      state: "{{ cs_firewall_state | default('omit', True) }}"
+      api_key: "{{ cs_firewall_api_key | default('omit', True) }}"
+      type: "{{ cs_firewall_type | default('omit', True) }}"
+      icmp_code: "{{ cs_firewall_icmp_code | default('omit', True) }}"
+      start_port: "{{ cs_firewall_start_port | default('omit', True) }}"
+      tags: "{{ cs_firewall_tags | default('omit', True) }}"
+      api_secret: "{{ cs_firewall_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_firewall_api_timeout | default('omit', True) }}"
+      ip_address: "{{ cs_firewall_ip_address | default('omit', True) }}"
+      api_url: "{{ cs_firewall_api_url | default('omit', True) }}"
+      account: "{{ cs_firewall_account | default('omit', True) }}"
+      cidrs: "{{ cs_firewall_cidrs | default('omit', True) }}"
+      api_region: "{{ cs_firewall_api_region | default('omit', True) }}"
+      project: "{{ cs_firewall_project | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_firewall"
+      cs_firewall: "{{ cs_firewall }}"

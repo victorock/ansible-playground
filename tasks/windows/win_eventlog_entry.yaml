@@ -1,0 +1,12 @@
+---
+- name: "module_win_eventlog_entry"
+  win_eventlog_entry: "{{ win_eventlog_entry }}"
+  vars:
+    win_eventlog_entry: 
+      category: "{{ win_eventlog_entry_category | default(omit, True) }}"
+      log: "{{ win_eventlog_entry_log | default(omit, True) }}"
+      event_id: "{{ win_eventlog_entry_event_id | default(omit, True) }}"
+      entry_type: "{{ win_eventlog_entry_entry_type | default(omit, True) }}"
+      source: "{{ win_eventlog_entry_source | default(omit, True) }}"
+      raw_data: "{{ win_eventlog_entry_raw_data | default(omit, True) }}"
+      message: "{{ win_eventlog_entry_message | default(omit, True) }}"

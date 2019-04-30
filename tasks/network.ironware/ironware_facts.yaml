@@ -1,0 +1,8 @@
+---
+- name: "module_ironware_facts"
+  ironware_facts: "{{ ironware_facts }}"
+  vars:
+    ironware_facts: 
+      authorize: "{{ ironware_facts_authorize | default(omit, True) }}"
+      gather_subset: "{{ ironware_facts_gather_subset | default(omit, True) }}"
+      provider: "{{ ironware_facts_provider | default(omit, True) }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_apk"
+  apk: "{{ apk }}"
+  vars:
+    apk: 
+      available: "{{ apk_available | default(omit, True) }}"
+      upgrade: "{{ apk_upgrade | default(omit, True) }}"
+      name: "{{ apk_name | default(omit, True) }}"
+      repository: "{{ apk_repository | default(omit, True) }}"
+      state: "{{ apk_state | default(omit, True) }}"
+      update_cache: "{{ apk_update_cache | default(omit, True) }}"

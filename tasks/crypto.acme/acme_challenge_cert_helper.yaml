@@ -1,0 +1,9 @@
+---
+- name: "module_acme_challenge_cert_helper"
+  acme_challenge_cert_helper: "{{ acme_challenge_cert_helper }}"
+  vars:
+    acme_challenge_cert_helper: 
+      challenge_data: "{{ acme_challenge_cert_helper_challenge_data | default(omit, True) }}"
+      private_key_src: "{{ acme_challenge_cert_helper_private_key_src | default(omit, True) }}"
+      challenge: "{{ acme_challenge_cert_helper_challenge | default(omit, True) }}"
+      private_key_content: "{{ acme_challenge_cert_helper_private_key_content | default(omit, True) }}"

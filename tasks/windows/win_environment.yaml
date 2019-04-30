@@ -1,0 +1,9 @@
+---
+- name: "module_win_environment"
+  win_environment: "{{ win_environment }}"
+  vars:
+    win_environment: 
+      state: "{{ win_environment_state | default(omit, True) }}"
+      name: "{{ win_environment_name | default(omit, True) }}"
+      value: "{{ win_environment_value | default(omit, True) }}"
+      level: "{{ win_environment_level | default(omit, True) }}"

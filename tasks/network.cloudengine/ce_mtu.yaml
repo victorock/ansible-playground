@@ -1,0 +1,10 @@
+---
+- name: "module_ce_mtu"
+  ce_mtu: "{{ ce_mtu }}"
+  vars:
+    ce_mtu: 
+      interface: "{{ ce_mtu_interface | default(omit, True) }}"
+      state: "{{ ce_mtu_state | default(omit, True) }}"
+      jumbo_max: "{{ ce_mtu_jumbo_max | default(omit, True) }}"
+      jumbo_min: "{{ ce_mtu_jumbo_min | default(omit, True) }}"
+      mtu: "{{ ce_mtu_mtu | default(omit, True) }}"

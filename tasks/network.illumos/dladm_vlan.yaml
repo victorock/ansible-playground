@@ -1,0 +1,10 @@
+---
+- name: "module_dladm_vlan"
+  dladm_vlan: "{{ dladm_vlan }}"
+  vars:
+    dladm_vlan: 
+      temporary: "{{ dladm_vlan_temporary | default(omit, True) }}"
+      state: "{{ dladm_vlan_state | default(omit, True) }}"
+      link: "{{ dladm_vlan_link | default(omit, True) }}"
+      name: "{{ dladm_vlan_name | default(omit, True) }}"
+      vlan_id: "{{ dladm_vlan_vlan_id | default(omit, True) }}"

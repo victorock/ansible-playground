@@ -1,0 +1,9 @@
+---
+- name: "module_win_stat"
+  win_stat: "{{ win_stat }}"
+  vars:
+    win_stat: 
+      path: "{{ win_stat_path | default(omit, True) }}"
+      get_md5: "{{ win_stat_get_md5 | default(omit, True) }}"
+      get_checksum: "{{ win_stat_get_checksum | default(omit, True) }}"
+      checksum_algorithm: "{{ win_stat_checksum_algorithm | default(omit, True) }}"

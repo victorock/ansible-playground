@@ -1,0 +1,16 @@
+---
+- name: "module_pacemaker_cluster"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pacemaker_cluster: 
+      node: "{{ pacemaker_cluster_node | default('omit', True) }}"
+      state: "{{ pacemaker_cluster_state | default('omit', True) }}"
+      force: "{{ pacemaker_cluster_force | default('omit', True) }}"
+      timeout: "{{ pacemaker_cluster_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pacemaker_cluster"
+      pacemaker_cluster: "{{ pacemaker_cluster }}"

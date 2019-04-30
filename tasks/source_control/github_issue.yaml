@@ -1,0 +1,9 @@
+---
+- name: "module_github_issue"
+  github_issue: "{{ github_issue }}"
+  vars:
+    github_issue: 
+      repo: "{{ github_issue_repo | default(omit, True) }}"
+      organization: "{{ github_issue_organization | default(omit, True) }}"
+      issue: "{{ github_issue_issue | default(omit, True) }}"
+      action: "{{ github_issue_action | default(omit, True) }}"

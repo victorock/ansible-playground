@@ -1,0 +1,32 @@
+---
+- name: "module_tower_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    tower_group: 
+      credential: "{{ tower_group_credential | default('omit', True) }}"
+      source_vars: "{{ tower_group_source_vars | default('omit', True) }}"
+      source_script: "{{ tower_group_source_script | default('omit', True) }}"
+      description: "{{ tower_group_description | default('omit', True) }}"
+      overwrite_vars: "{{ tower_group_overwrite_vars | default('omit', True) }}"
+      source_regions: "{{ tower_group_source_regions | default('omit', True) }}"
+      tower_host: "{{ tower_group_tower_host | default('omit', True) }}"
+      instance_filters: "{{ tower_group_instance_filters | default('omit', True) }}"
+      tower_username: "{{ tower_group_tower_username | default('omit', True) }}"
+      source: "{{ tower_group_source | default('omit', True) }}"
+      state: "{{ tower_group_state | default('omit', True) }}"
+      group_by: "{{ tower_group_group_by | default('omit', True) }}"
+      update_on_launch: "{{ tower_group_update_on_launch | default('omit', True) }}"
+      inventory: "{{ tower_group_inventory | default('omit', True) }}"
+      tower_password: "{{ tower_group_tower_password | default('omit', True) }}"
+      tower_config_file: "{{ tower_group_tower_config_file | default('omit', True) }}"
+      variables: "{{ tower_group_variables | default('omit', True) }}"
+      tower_verify_ssl: "{{ tower_group_tower_verify_ssl | default('omit', True) }}"
+      overwrite: "{{ tower_group_overwrite | default('omit', True) }}"
+      name: "{{ tower_group_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_tower_group"
+      tower_group: "{{ tower_group }}"

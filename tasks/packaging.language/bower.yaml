@@ -1,0 +1,12 @@
+---
+- name: "module_bower"
+  bower: "{{ bower }}"
+  vars:
+    bower: 
+      name: "{{ bower_name | default(omit, True) }}"
+      state: "{{ bower_state | default(omit, True) }}"
+      production: "{{ bower_production | default(omit, True) }}"
+      version: "{{ bower_version | default(omit, True) }}"
+      relative_execpath: "{{ bower_relative_execpath | default(omit, True) }}"
+      path: "{{ bower_path | default(omit, True) }}"
+      offline: "{{ bower_offline | default(omit, True) }}"

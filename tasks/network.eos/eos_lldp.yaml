@@ -1,0 +1,9 @@
+---
+- name: "module_eos_lldp"
+  eos_lldp: "{{ eos_lldp }}"
+  vars:
+    eos_lldp: 
+      authorize: "{{ eos_lldp_authorize | default(omit, True) }}"
+      state: "{{ eos_lldp_state | default(omit, True) }}"
+      auth_pass: "{{ eos_lldp_auth_pass | default(omit, True) }}"
+      provider: "{{ eos_lldp_provider | default(omit, True) }}"

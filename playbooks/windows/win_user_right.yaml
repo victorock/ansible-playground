@@ -1,0 +1,15 @@
+---
+- name: "module_win_user_right"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_user_right: 
+      action: "{{ win_user_right_action | default('omit', True) }}"
+      name: "{{ win_user_right_name | default('omit', True) }}"
+      users: "{{ win_user_right_users | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_user_right"
+      win_user_right: "{{ win_user_right }}"

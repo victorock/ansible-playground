@@ -1,0 +1,40 @@
+---
+- name: "module_avi_serverautoscalepolicy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_serverautoscalepolicy: 
+      intelligent_autoscale: "{{ avi_serverautoscalepolicy_intelligent_autoscale | default('omit', True) }}"
+      intelligent_scaleout_margin: "{{ avi_serverautoscalepolicy_intelligent_scaleout_margin | default('omit', True) }}"
+      scalein_cooldown: "{{ avi_serverautoscalepolicy_scalein_cooldown | default('omit', True) }}"
+      scaleout_cooldown: "{{ avi_serverautoscalepolicy_scaleout_cooldown | default('omit', True) }}"
+      intelligent_scalein_margin: "{{ avi_serverautoscalepolicy_intelligent_scalein_margin | default('omit', True) }}"
+      uuid: "{{ avi_serverautoscalepolicy_uuid | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_serverautoscalepolicy_avi_api_patch_op | default('omit', True) }}"
+      state: "{{ avi_serverautoscalepolicy_state | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_serverautoscalepolicy_avi_api_update_method | default('omit', True) }}"
+      max_scaleout_adjustment_step: "{{ avi_serverautoscalepolicy_max_scaleout_adjustment_step | default('omit', True) }}"
+      api_version: "{{ avi_serverautoscalepolicy_api_version | default('omit', True) }}"
+      username: "{{ avi_serverautoscalepolicy_username | default('omit', True) }}"
+      use_predicted_load: "{{ avi_serverautoscalepolicy_use_predicted_load | default('omit', True) }}"
+      description: "{{ avi_serverautoscalepolicy_description | default('omit', True) }}"
+      scaleout_alertconfig_refs: "{{ avi_serverautoscalepolicy_scaleout_alertconfig_refs | default('omit', True) }}"
+      min_size: "{{ avi_serverautoscalepolicy_min_size | default('omit', True) }}"
+      controller: "{{ avi_serverautoscalepolicy_controller | default('omit', True) }}"
+      api_context: "{{ avi_serverautoscalepolicy_api_context | default('omit', True) }}"
+      password: "{{ avi_serverautoscalepolicy_password | default('omit', True) }}"
+      tenant: "{{ avi_serverautoscalepolicy_tenant | default('omit', True) }}"
+      name: "{{ avi_serverautoscalepolicy_name | default('omit', True) }}"
+      url: "{{ avi_serverautoscalepolicy_url | default('omit', True) }}"
+      avi_credentials: "{{ avi_serverautoscalepolicy_avi_credentials | default('omit', True) }}"
+      tenant_ref: "{{ avi_serverautoscalepolicy_tenant_ref | default('omit', True) }}"
+      max_scalein_adjustment_step: "{{ avi_serverautoscalepolicy_max_scalein_adjustment_step | default('omit', True) }}"
+      scalein_alertconfig_refs: "{{ avi_serverautoscalepolicy_scalein_alertconfig_refs | default('omit', True) }}"
+      max_size: "{{ avi_serverautoscalepolicy_max_size | default('omit', True) }}"
+      tenant_uuid: "{{ avi_serverautoscalepolicy_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_serverautoscalepolicy"
+      avi_serverautoscalepolicy: "{{ avi_serverautoscalepolicy }}"

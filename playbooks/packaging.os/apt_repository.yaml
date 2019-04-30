@@ -1,0 +1,19 @@
+---
+- name: "module_apt_repository"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    apt_repository: 
+      filename: "{{ apt_repository_filename | default('omit', True) }}"
+      repo: "{{ apt_repository_repo | default('omit', True) }}"
+      state: "{{ apt_repository_state | default('omit', True) }}"
+      update_cache: "{{ apt_repository_update_cache | default('omit', True) }}"
+      mode: "{{ apt_repository_mode | default('omit', True) }}"
+      codename: "{{ apt_repository_codename | default('omit', True) }}"
+      validate_certs: "{{ apt_repository_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_apt_repository"
+      apt_repository: "{{ apt_repository }}"

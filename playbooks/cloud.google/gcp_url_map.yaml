@@ -1,0 +1,16 @@
+---
+- name: "module_gcp_url_map"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_url_map: 
+      default_service: "{{ gcp_url_map_default_service | default('omit', True) }}"
+      host_rules: "{{ gcp_url_map_host_rules | default('omit', True) }}"
+      url_map_name: "{{ gcp_url_map_url_map_name | default('omit', True) }}"
+      path_matchers: "{{ gcp_url_map_path_matchers | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_url_map"
+      gcp_url_map: "{{ gcp_url_map }}"

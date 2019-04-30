@@ -1,0 +1,29 @@
+---
+- name: "module_nxos_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_interface: 
+      neighbors: "{{ nxos_interface_neighbors | default('omit', True) }}"
+      delay: "{{ nxos_interface_delay | default('omit', True) }}"
+      description: "{{ nxos_interface_description | default('omit', True) }}"
+      ip_forward: "{{ nxos_interface_ip_forward | default('omit', True) }}"
+      duplex: "{{ nxos_interface_duplex | default('omit', True) }}"
+      interface_type: "{{ nxos_interface_interface_type | default('omit', True) }}"
+      fabric_forwarding_anycast_gateway: "{{ nxos_interface_fabric_forwarding_anycast_gateway | default('omit', True) }}"
+      mtu: "{{ nxos_interface_mtu | default('omit', True) }}"
+      rx_rate: "{{ nxos_interface_rx_rate | default('omit', True) }}"
+      state: "{{ nxos_interface_state | default('omit', True) }}"
+      admin_state: "{{ nxos_interface_admin_state | default('omit', True) }}"
+      mode: "{{ nxos_interface_mode | default('omit', True) }}"
+      provider: "{{ nxos_interface_provider | default('omit', True) }}"
+      aggregate: "{{ nxos_interface_aggregate | default('omit', True) }}"
+      speed: "{{ nxos_interface_speed | default('omit', True) }}"
+      tx_rate: "{{ nxos_interface_tx_rate | default('omit', True) }}"
+      name: "{{ nxos_interface_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_interface"
+      nxos_interface: "{{ nxos_interface }}"

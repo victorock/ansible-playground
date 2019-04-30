@@ -1,0 +1,11 @@
+---
+- name: "module_crypttab"
+  crypttab: "{{ crypttab }}"
+  vars:
+    crypttab: 
+      name: "{{ crypttab_name | default(omit, True) }}"
+      backing_device: "{{ crypttab_backing_device | default(omit, True) }}"
+      state: "{{ crypttab_state | default(omit, True) }}"
+      path: "{{ crypttab_path | default(omit, True) }}"
+      password: "{{ crypttab_password | default(omit, True) }}"
+      opts: "{{ crypttab_opts | default(omit, True) }}"

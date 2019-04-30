@@ -1,0 +1,36 @@
+---
+- name: "module_cs_volume"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_volume: 
+      domain: "{{ cs_volume_domain | default('omit', True) }}"
+      force: "{{ cs_volume_force | default('omit', True) }}"
+      disk_offering: "{{ cs_volume_disk_offering | default('omit', True) }}"
+      api_http_method: "{{ cs_volume_api_http_method | default('omit', True) }}"
+      shrink_ok: "{{ cs_volume_shrink_ok | default('omit', True) }}"
+      display_volume: "{{ cs_volume_display_volume | default('omit', True) }}"
+      size: "{{ cs_volume_size | default('omit', True) }}"
+      poll_async: "{{ cs_volume_poll_async | default('omit', True) }}"
+      api_url: "{{ cs_volume_api_url | default('omit', True) }}"
+      zone: "{{ cs_volume_zone | default('omit', True) }}"
+      state: "{{ cs_volume_state | default('omit', True) }}"
+      max_iops: "{{ cs_volume_max_iops | default('omit', True) }}"
+      api_key: "{{ cs_volume_api_key | default('omit', True) }}"
+      tags: "{{ cs_volume_tags | default('omit', True) }}"
+      api_secret: "{{ cs_volume_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_volume_api_timeout | default('omit', True) }}"
+      account: "{{ cs_volume_account | default('omit', True) }}"
+      vm: "{{ cs_volume_vm | default('omit', True) }}"
+      min_iops: "{{ cs_volume_min_iops | default('omit', True) }}"
+      custom_id: "{{ cs_volume_custom_id | default('omit', True) }}"
+      name: "{{ cs_volume_name | default('omit', True) }}"
+      api_region: "{{ cs_volume_api_region | default('omit', True) }}"
+      project: "{{ cs_volume_project | default('omit', True) }}"
+      snapshot: "{{ cs_volume_snapshot | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_volume"
+      cs_volume: "{{ cs_volume }}"

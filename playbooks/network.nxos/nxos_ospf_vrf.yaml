@@ -1,0 +1,27 @@
+---
+- name: "module_nxos_ospf_vrf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_ospf_vrf: 
+      router_id: "{{ nxos_ospf_vrf_router_id | default('omit', True) }}"
+      timer_throttle_lsa_max: "{{ nxos_ospf_vrf_timer_throttle_lsa_max | default('omit', True) }}"
+      timer_throttle_spf_max: "{{ nxos_ospf_vrf_timer_throttle_spf_max | default('omit', True) }}"
+      passive_interface: "{{ nxos_ospf_vrf_passive_interface | default('omit', True) }}"
+      timer_throttle_lsa_hold: "{{ nxos_ospf_vrf_timer_throttle_lsa_hold | default('omit', True) }}"
+      default_metric: "{{ nxos_ospf_vrf_default_metric | default('omit', True) }}"
+      provider: "{{ nxos_ospf_vrf_provider | default('omit', True) }}"
+      log_adjacency: "{{ nxos_ospf_vrf_log_adjacency | default('omit', True) }}"
+      timer_throttle_lsa_start: "{{ nxos_ospf_vrf_timer_throttle_lsa_start | default('omit', True) }}"
+      state: "{{ nxos_ospf_vrf_state | default('omit', True) }}"
+      vrf: "{{ nxos_ospf_vrf_vrf | default('omit', True) }}"
+      auto_cost: "{{ nxos_ospf_vrf_auto_cost | default('omit', True) }}"
+      timer_throttle_spf_start: "{{ nxos_ospf_vrf_timer_throttle_spf_start | default('omit', True) }}"
+      ospf: "{{ nxos_ospf_vrf_ospf | default('omit', True) }}"
+      timer_throttle_spf_hold: "{{ nxos_ospf_vrf_timer_throttle_spf_hold | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_ospf_vrf"
+      nxos_ospf_vrf: "{{ nxos_ospf_vrf }}"

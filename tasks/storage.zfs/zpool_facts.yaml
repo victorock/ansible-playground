@@ -1,0 +1,8 @@
+---
+- name: "module_zpool_facts"
+  zpool_facts: "{{ zpool_facts }}"
+  vars:
+    zpool_facts: 
+      parsable: "{{ zpool_facts_parsable | default(omit, True) }}"
+      name: "{{ zpool_facts_name | default(omit, True) }}"
+      properties: "{{ zpool_facts_properties | default(omit, True) }}"

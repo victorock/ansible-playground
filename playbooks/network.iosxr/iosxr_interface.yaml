@@ -1,0 +1,25 @@
+---
+- name: "module_iosxr_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iosxr_interface: 
+      delay: "{{ iosxr_interface_delay | default('omit', True) }}"
+      description: "{{ iosxr_interface_description | default('omit', True) }}"
+      duplex: "{{ iosxr_interface_duplex | default('omit', True) }}"
+      enabled: "{{ iosxr_interface_enabled | default('omit', True) }}"
+      mtu: "{{ iosxr_interface_mtu | default('omit', True) }}"
+      rx_rate: "{{ iosxr_interface_rx_rate | default('omit', True) }}"
+      aggregate: "{{ iosxr_interface_aggregate | default('omit', True) }}"
+      state: "{{ iosxr_interface_state | default('omit', True) }}"
+      provider: "{{ iosxr_interface_provider | default('omit', True) }}"
+      active: "{{ iosxr_interface_active | default('omit', True) }}"
+      speed: "{{ iosxr_interface_speed | default('omit', True) }}"
+      tx_rate: "{{ iosxr_interface_tx_rate | default('omit', True) }}"
+      name: "{{ iosxr_interface_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_iosxr_interface"
+      iosxr_interface: "{{ iosxr_interface }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_nso_config"
+  nso_config: "{{ nso_config }}"
+  vars:
+    nso_config: 
+      url: "{{ nso_config_url | default(omit, True) }}"
+      username: "{{ nso_config_username | default(omit, True) }}"
+      password: "{{ nso_config_password | default(omit, True) }}"
+      data: "{{ nso_config_data | default(omit, True) }}"
+      timeout: "{{ nso_config_timeout | default(omit, True) }}"

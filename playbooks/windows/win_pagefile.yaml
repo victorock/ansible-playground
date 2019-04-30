@@ -1,0 +1,21 @@
+---
+- name: "module_win_pagefile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_pagefile: 
+      test_path: "{{ win_pagefile_test_path | default('omit', True) }}"
+      initial_size: "{{ win_pagefile_initial_size | default('omit', True) }}"
+      drive: "{{ win_pagefile_drive | default('omit', True) }}"
+      state: "{{ win_pagefile_state | default('omit', True) }}"
+      system_managed: "{{ win_pagefile_system_managed | default('omit', True) }}"
+      remove_all: "{{ win_pagefile_remove_all | default('omit', True) }}"
+      override: "{{ win_pagefile_override | default('omit', True) }}"
+      maximum_size: "{{ win_pagefile_maximum_size | default('omit', True) }}"
+      automatic: "{{ win_pagefile_automatic | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_pagefile"
+      win_pagefile: "{{ win_pagefile }}"

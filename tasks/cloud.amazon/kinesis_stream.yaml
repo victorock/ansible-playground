@@ -1,0 +1,22 @@
+---
+- name: "module_kinesis_stream"
+  kinesis_stream: "{{ kinesis_stream }}"
+  vars:
+    kinesis_stream: 
+      profile: "{{ kinesis_stream_profile | default(omit, True) }}"
+      aws_secret_key: "{{ kinesis_stream_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ kinesis_stream_aws_access_key | default(omit, True) }}"
+      name: "{{ kinesis_stream_name | default(omit, True) }}"
+      security_token: "{{ kinesis_stream_security_token | default(omit, True) }}"
+      tags: "{{ kinesis_stream_tags | default(omit, True) }}"
+      encryption_type: "{{ kinesis_stream_encryption_type | default(omit, True) }}"
+      region: "{{ kinesis_stream_region | default(omit, True) }}"
+      encryption_state: "{{ kinesis_stream_encryption_state | default(omit, True) }}"
+      shards: "{{ kinesis_stream_shards | default(omit, True) }}"
+      retention_period: "{{ kinesis_stream_retention_period | default(omit, True) }}"
+      wait_timeout: "{{ kinesis_stream_wait_timeout | default(omit, True) }}"
+      state: "{{ kinesis_stream_state | default(omit, True) }}"
+      ec2_url: "{{ kinesis_stream_ec2_url | default(omit, True) }}"
+      key_id: "{{ kinesis_stream_key_id | default(omit, True) }}"
+      validate_certs: "{{ kinesis_stream_validate_certs | default(omit, True) }}"
+      wait: "{{ kinesis_stream_wait | default(omit, True) }}"

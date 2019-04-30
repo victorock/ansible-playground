@@ -1,0 +1,12 @@
+---
+- name: "module_vmware_drs_rule_facts"
+  vmware_drs_rule_facts: "{{ vmware_drs_rule_facts }}"
+  vars:
+    vmware_drs_rule_facts: 
+      username: "{{ vmware_drs_rule_facts_username | default(omit, True) }}"
+      datacenter: "{{ vmware_drs_rule_facts_datacenter | default(omit, True) }}"
+      hostname: "{{ vmware_drs_rule_facts_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_drs_rule_facts_cluster_name | default(omit, True) }}"
+      password: "{{ vmware_drs_rule_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_drs_rule_facts_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_drs_rule_facts_port | default(omit, True) }}"

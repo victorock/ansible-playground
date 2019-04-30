@@ -1,0 +1,14 @@
+---
+- name: "module_nxos_reboot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_reboot: 
+      confirm: "{{ nxos_reboot_confirm | default('omit', True) }}"
+      provider: "{{ nxos_reboot_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_reboot"
+      nxos_reboot: "{{ nxos_reboot }}"

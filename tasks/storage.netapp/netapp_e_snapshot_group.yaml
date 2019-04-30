@@ -1,0 +1,18 @@
+---
+- name: "module_netapp_e_snapshot_group"
+  netapp_e_snapshot_group: "{{ netapp_e_snapshot_group }}"
+  vars:
+    netapp_e_snapshot_group: 
+      repo_pct: "{{ netapp_e_snapshot_group_repo_pct | default(omit, True) }}"
+      name: "{{ netapp_e_snapshot_group_name | default(omit, True) }}"
+      rollback_priority: "{{ netapp_e_snapshot_group_rollback_priority | default(omit, True) }}"
+      delete_limit: "{{ netapp_e_snapshot_group_delete_limit | default(omit, True) }}"
+      api_password: "{{ netapp_e_snapshot_group_api_password | default(omit, True) }}"
+      state: "{{ netapp_e_snapshot_group_state | default(omit, True) }}"
+      storage_pool_name: "{{ netapp_e_snapshot_group_storage_pool_name | default(omit, True) }}"
+      api_username: "{{ netapp_e_snapshot_group_api_username | default(omit, True) }}"
+      api_url: "{{ netapp_e_snapshot_group_api_url | default(omit, True) }}"
+      base_volume_name: "{{ netapp_e_snapshot_group_base_volume_name | default(omit, True) }}"
+      full_policy: "{{ netapp_e_snapshot_group_full_policy | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_snapshot_group_validate_certs | default(omit, True) }}"
+      warning_threshold: "{{ netapp_e_snapshot_group_warning_threshold | default(omit, True) }}"

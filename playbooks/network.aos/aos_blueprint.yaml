@@ -1,0 +1,19 @@
+---
+- name: "module_aos_blueprint"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aos_blueprint: 
+      name: "{{ aos_blueprint_name | default('omit', True) }}"
+      state: "{{ aos_blueprint_state | default('omit', True) }}"
+      session: "{{ aos_blueprint_session | default('omit', True) }}"
+      reference_arch: "{{ aos_blueprint_reference_arch | default('omit', True) }}"
+      timeout: "{{ aos_blueprint_timeout | default('omit', True) }}"
+      id: "{{ aos_blueprint_id | default('omit', True) }}"
+      template: "{{ aos_blueprint_template | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aos_blueprint"
+      aos_blueprint: "{{ aos_blueprint }}"

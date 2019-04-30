@@ -1,0 +1,14 @@
+---
+- name: "module_vyos_user"
+  vyos_user: "{{ vyos_user }}"
+  vars:
+    vyos_user: 
+      update_password: "{{ vyos_user_update_password | default(omit, True) }}"
+      configured_password: "{{ vyos_user_configured_password | default(omit, True) }}"
+      name: "{{ vyos_user_name | default(omit, True) }}"
+      level: "{{ vyos_user_level | default(omit, True) }}"
+      purge: "{{ vyos_user_purge | default(omit, True) }}"
+      state: "{{ vyos_user_state | default(omit, True) }}"
+      full_name: "{{ vyos_user_full_name | default(omit, True) }}"
+      provider: "{{ vyos_user_provider | default(omit, True) }}"
+      aggregate: "{{ vyos_user_aggregate | default(omit, True) }}"

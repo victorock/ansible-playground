@@ -1,0 +1,19 @@
+---
+- name: "module_aws_kms"
+  aws_kms: "{{ aws_kms }}"
+  vars:
+    aws_kms: 
+      profile: "{{ aws_kms_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_kms_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_kms_aws_access_key | default(omit, True) }}"
+      role_arn: "{{ aws_kms_role_arn | default(omit, True) }}"
+      security_token: "{{ aws_kms_security_token | default(omit, True) }}"
+      region: "{{ aws_kms_region | default(omit, True) }}"
+      grant_types: "{{ aws_kms_grant_types | default(omit, True) }}"
+      role_name: "{{ aws_kms_role_name | default(omit, True) }}"
+      mode: "{{ aws_kms_mode | default(omit, True) }}"
+      ec2_url: "{{ aws_kms_ec2_url | default(omit, True) }}"
+      key_arn: "{{ aws_kms_key_arn | default(omit, True) }}"
+      clean_invalid_entries: "{{ aws_kms_clean_invalid_entries | default(omit, True) }}"
+      validate_certs: "{{ aws_kms_validate_certs | default(omit, True) }}"
+      key_alias: "{{ aws_kms_key_alias | default(omit, True) }}"

@@ -1,0 +1,16 @@
+---
+- name: "module_tempfile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    tempfile: 
+      path: "{{ tempfile_path | default('omit', True) }}"
+      state: "{{ tempfile_state | default('omit', True) }}"
+      prefix: "{{ tempfile_prefix | default('omit', True) }}"
+      suffix: "{{ tempfile_suffix | default('omit', True) }}"
+  tasks:
+    - name: "plugin_tempfile"
+      tempfile: "{{ tempfile }}"

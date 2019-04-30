@@ -1,0 +1,22 @@
+---
+- name: "module_avi_networkprofile"
+  avi_networkprofile: "{{ avi_networkprofile }}"
+  vars:
+    avi_networkprofile: 
+      profile: "{{ avi_networkprofile_profile | default(omit, True) }}"
+      username: "{{ avi_networkprofile_username | default(omit, True) }}"
+      uuid: "{{ avi_networkprofile_uuid | default(omit, True) }}"
+      description: "{{ avi_networkprofile_description | default(omit, True) }}"
+      state: "{{ avi_networkprofile_state | default(omit, True) }}"
+      url: "{{ avi_networkprofile_url | default(omit, True) }}"
+      controller: "{{ avi_networkprofile_controller | default(omit, True) }}"
+      tenant_ref: "{{ avi_networkprofile_tenant_ref | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_networkprofile_avi_api_patch_op | default(omit, True) }}"
+      api_version: "{{ avi_networkprofile_api_version | default(omit, True) }}"
+      avi_credentials: "{{ avi_networkprofile_avi_credentials | default(omit, True) }}"
+      tenant: "{{ avi_networkprofile_tenant | default(omit, True) }}"
+      api_context: "{{ avi_networkprofile_api_context | default(omit, True) }}"
+      password: "{{ avi_networkprofile_password | default(omit, True) }}"
+      tenant_uuid: "{{ avi_networkprofile_tenant_uuid | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_networkprofile_avi_api_update_method | default(omit, True) }}"
+      name: "{{ avi_networkprofile_name | default(omit, True) }}"

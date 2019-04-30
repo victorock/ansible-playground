@@ -1,0 +1,28 @@
+---
+- name: "module_avi_clusterclouddetails"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_clusterclouddetails: 
+      username: "{{ avi_clusterclouddetails_username | default('omit', True) }}"
+      uuid: "{{ avi_clusterclouddetails_uuid | default('omit', True) }}"
+      state: "{{ avi_clusterclouddetails_state | default('omit', True) }}"
+      url: "{{ avi_clusterclouddetails_url | default('omit', True) }}"
+      tenant_ref: "{{ avi_clusterclouddetails_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_clusterclouddetails_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_clusterclouddetails_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_clusterclouddetails_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_clusterclouddetails_tenant | default('omit', True) }}"
+      azure_info: "{{ avi_clusterclouddetails_azure_info | default('omit', True) }}"
+      api_context: "{{ avi_clusterclouddetails_api_context | default('omit', True) }}"
+      password: "{{ avi_clusterclouddetails_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_clusterclouddetails_tenant_uuid | default('omit', True) }}"
+      controller: "{{ avi_clusterclouddetails_controller | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_clusterclouddetails_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_clusterclouddetails_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_clusterclouddetails"
+      avi_clusterclouddetails: "{{ avi_clusterclouddetails }}"

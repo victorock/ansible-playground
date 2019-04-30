@@ -1,0 +1,9 @@
+---
+- name: "module_macports"
+  macports: "{{ macports }}"
+  vars:
+    macports: 
+      update_ports: "{{ macports_update_ports | default(omit, True) }}"
+      variant: "{{ macports_variant | default(omit, True) }}"
+      state: "{{ macports_state | default(omit, True) }}"
+      name: "{{ macports_name | default(omit, True) }}"

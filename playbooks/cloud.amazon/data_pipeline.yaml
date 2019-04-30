@@ -1,0 +1,27 @@
+---
+- name: "module_data_pipeline"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    data_pipeline: 
+      profile: "{{ data_pipeline_profile | default('omit', True) }}"
+      aws_secret_key: "{{ data_pipeline_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ data_pipeline_aws_access_key | default('omit', True) }}"
+      description: "{{ data_pipeline_description | default('omit', True) }}"
+      security_token: "{{ data_pipeline_security_token | default('omit', True) }}"
+      tags: "{{ data_pipeline_tags | default('omit', True) }}"
+      region: "{{ data_pipeline_region | default('omit', True) }}"
+      state: "{{ data_pipeline_state | default('omit', True) }}"
+      objects: "{{ data_pipeline_objects | default('omit', True) }}"
+      values: "{{ data_pipeline_values | default('omit', True) }}"
+      timeout: "{{ data_pipeline_timeout | default('omit', True) }}"
+      ec2_url: "{{ data_pipeline_ec2_url | default('omit', True) }}"
+      parameters: "{{ data_pipeline_parameters | default('omit', True) }}"
+      validate_certs: "{{ data_pipeline_validate_certs | default('omit', True) }}"
+      name: "{{ data_pipeline_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_data_pipeline"
+      data_pipeline: "{{ data_pipeline }}"

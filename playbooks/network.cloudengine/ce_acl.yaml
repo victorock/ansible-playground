@@ -1,0 +1,27 @@
+---
+- name: "module_ce_acl"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_acl: 
+      acl_step: "{{ ce_acl_acl_step | default('omit', True) }}"
+      src_mask: "{{ ce_acl_src_mask | default('omit', True) }}"
+      acl_name: "{{ ce_acl_acl_name | default('omit', True) }}"
+      log_flag: "{{ ce_acl_log_flag | default('omit', True) }}"
+      source_ip: "{{ ce_acl_source_ip | default('omit', True) }}"
+      state: "{{ ce_acl_state | default('omit', True) }}"
+      time_range: "{{ ce_acl_time_range | default('omit', True) }}"
+      rule_action: "{{ ce_acl_rule_action | default('omit', True) }}"
+      rule_name: "{{ ce_acl_rule_name | default('omit', True) }}"
+      frag_type: "{{ ce_acl_frag_type | default('omit', True) }}"
+      vrf_name: "{{ ce_acl_vrf_name | default('omit', True) }}"
+      acl_description: "{{ ce_acl_acl_description | default('omit', True) }}"
+      rule_id: "{{ ce_acl_rule_id | default('omit', True) }}"
+      acl_num: "{{ ce_acl_acl_num | default('omit', True) }}"
+      rule_description: "{{ ce_acl_rule_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_acl"
+      ce_acl: "{{ ce_acl }}"

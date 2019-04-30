@@ -1,0 +1,18 @@
+---
+- name: "module_urpmi"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    urpmi: 
+      force: "{{ urpmi_force | default('omit', True) }}"
+      name: "{{ urpmi_name | default('omit', True) }}"
+      state: "{{ urpmi_state | default('omit', True) }}"
+      no-recommends: "{{ urpmi_no-recommends | default('omit', True) }}"
+      update_cache: "{{ urpmi_update_cache | default('omit', True) }}"
+      root: "{{ urpmi_root | default('omit', True) }}"
+  tasks:
+    - name: "plugin_urpmi"
+      urpmi: "{{ urpmi }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_ce_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_config: 
+      src: "{{ ce_config_src | default('omit', True) }}"
+      backup: "{{ ce_config_backup | default('omit', True) }}"
+      after: "{{ ce_config_after | default('omit', True) }}"
+      lines: "{{ ce_config_lines | default('omit', True) }}"
+      replace: "{{ ce_config_replace | default('omit', True) }}"
+      parents: "{{ ce_config_parents | default('omit', True) }}"
+      defaults: "{{ ce_config_defaults | default('omit', True) }}"
+      save: "{{ ce_config_save | default('omit', True) }}"
+      config: "{{ ce_config_config | default('omit', True) }}"
+      match: "{{ ce_config_match | default('omit', True) }}"
+      before: "{{ ce_config_before | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_config"
+      ce_config: "{{ ce_config }}"

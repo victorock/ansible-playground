@@ -1,0 +1,16 @@
+---
+- name: "module_ce_static_route"
+  ce_static_route: "{{ ce_static_route }}"
+  vars:
+    ce_static_route: 
+      description: "{{ ce_static_route_description | default(omit, True) }}"
+      state: "{{ ce_static_route_state | default(omit, True) }}"
+      pref: "{{ ce_static_route_pref | default(omit, True) }}"
+      mask: "{{ ce_static_route_mask | default(omit, True) }}"
+      destvrf: "{{ ce_static_route_destvrf | default(omit, True) }}"
+      nhp_interface: "{{ ce_static_route_nhp_interface | default(omit, True) }}"
+      prefix: "{{ ce_static_route_prefix | default(omit, True) }}"
+      next_hop: "{{ ce_static_route_next_hop | default(omit, True) }}"
+      vrf: "{{ ce_static_route_vrf | default(omit, True) }}"
+      tag: "{{ ce_static_route_tag | default(omit, True) }}"
+      aftype: "{{ ce_static_route_aftype | default(omit, True) }}"

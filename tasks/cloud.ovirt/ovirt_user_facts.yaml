@@ -1,0 +1,9 @@
+---
+- name: "module_ovirt_user_facts"
+  ovirt_user_facts: "{{ ovirt_user_facts }}"
+  vars:
+    ovirt_user_facts: 
+      pattern: "{{ ovirt_user_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_user_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_user_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_user_facts_auth | default(omit, True) }}"

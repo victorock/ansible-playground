@@ -1,0 +1,20 @@
+---
+- name: "module_vmware_datastore_cluster"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_datastore_cluster: 
+      username: "{{ vmware_datastore_cluster_username | default('omit', True) }}"
+      datacenter_name: "{{ vmware_datastore_cluster_datacenter_name | default('omit', True) }}"
+      datastore_cluster_name: "{{ vmware_datastore_cluster_datastore_cluster_name | default('omit', True) }}"
+      hostname: "{{ vmware_datastore_cluster_hostname | default('omit', True) }}"
+      state: "{{ vmware_datastore_cluster_state | default('omit', True) }}"
+      password: "{{ vmware_datastore_cluster_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_datastore_cluster_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_datastore_cluster_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_datastore_cluster"
+      vmware_datastore_cluster: "{{ vmware_datastore_cluster }}"

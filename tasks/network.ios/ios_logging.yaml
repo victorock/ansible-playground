@@ -1,0 +1,15 @@
+---
+- name: "module_ios_logging"
+  ios_logging: "{{ ios_logging }}"
+  vars:
+    ios_logging: 
+      authorize: "{{ ios_logging_authorize | default(omit, True) }}"
+      name: "{{ ios_logging_name | default(omit, True) }}"
+      facility: "{{ ios_logging_facility | default(omit, True) }}"
+      dest: "{{ ios_logging_dest | default(omit, True) }}"
+      auth_pass: "{{ ios_logging_auth_pass | default(omit, True) }}"
+      state: "{{ ios_logging_state | default(omit, True) }}"
+      provider: "{{ ios_logging_provider | default(omit, True) }}"
+      aggregate: "{{ ios_logging_aggregate | default(omit, True) }}"
+      level: "{{ ios_logging_level | default(omit, True) }}"
+      size: "{{ ios_logging_size | default(omit, True) }}"

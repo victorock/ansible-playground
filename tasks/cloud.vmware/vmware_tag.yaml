@@ -1,0 +1,14 @@
+---
+- name: "module_vmware_tag"
+  vmware_tag: "{{ vmware_tag }}"
+  vars:
+    vmware_tag: 
+      username: "{{ vmware_tag_username | default(omit, True) }}"
+      category_id: "{{ vmware_tag_category_id | default(omit, True) }}"
+      protocol: "{{ vmware_tag_protocol | default(omit, True) }}"
+      hostname: "{{ vmware_tag_hostname | default(omit, True) }}"
+      tag_name: "{{ vmware_tag_tag_name | default(omit, True) }}"
+      state: "{{ vmware_tag_state | default(omit, True) }}"
+      tag_description: "{{ vmware_tag_tag_description | default(omit, True) }}"
+      password: "{{ vmware_tag_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_tag_validate_certs | default(omit, True) }}"

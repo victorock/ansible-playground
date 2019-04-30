@@ -1,0 +1,11 @@
+---
+- name: "module_ovirt_tags_facts"
+  ovirt_tags_facts: "{{ ovirt_tags_facts }}"
+  vars:
+    ovirt_tags_facts: 
+      name: "{{ ovirt_tags_facts_name | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_tags_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_tags_facts_nested_attributes | default(omit, True) }}"
+      vm: "{{ ovirt_tags_facts_vm | default(omit, True) }}"
+      host: "{{ ovirt_tags_facts_host | default(omit, True) }}"
+      auth: "{{ ovirt_tags_facts_auth | default(omit, True) }}"

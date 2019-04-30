@@ -1,0 +1,13 @@
+---
+- name: "module_sensu_silence"
+  sensu_silence: "{{ sensu_silence }}"
+  vars:
+    sensu_silence: 
+      expire_on_resolve: "{{ sensu_silence_expire_on_resolve | default(omit, True) }}"
+      url: "{{ sensu_silence_url | default(omit, True) }}"
+      creator: "{{ sensu_silence_creator | default(omit, True) }}"
+      state: "{{ sensu_silence_state | default(omit, True) }}"
+      reason: "{{ sensu_silence_reason | default(omit, True) }}"
+      expire: "{{ sensu_silence_expire | default(omit, True) }}"
+      check: "{{ sensu_silence_check | default(omit, True) }}"
+      subscription: "{{ sensu_silence_subscription | default(omit, True) }}"

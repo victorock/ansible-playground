@@ -1,0 +1,32 @@
+---
+- name: "module_azure"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure: 
+      endpoints: "{{ azure_endpoints | default('omit', True) }}"
+      role_size: "{{ azure_role_size | default('omit', True) }}"
+      name: "{{ azure_name | default('omit', True) }}"
+      location: "{{ azure_location | default('omit', True) }}"
+      virtual_network_name: "{{ azure_virtual_network_name | default('omit', True) }}"
+      image: "{{ azure_image | default('omit', True) }}"
+      hostname: "{{ azure_hostname | default('omit', True) }}"
+      state: "{{ azure_state | default('omit', True) }}"
+      wait: "{{ azure_wait | default('omit', True) }}"
+      wait_timeout_redirects: "{{ azure_wait_timeout_redirects | default('omit', True) }}"
+      management_cert_path: "{{ azure_management_cert_path | default('omit', True) }}"
+      ssh_cert_path: "{{ azure_ssh_cert_path | default('omit', True) }}"
+      wait_timeout: "{{ azure_wait_timeout | default('omit', True) }}"
+      user: "{{ azure_user | default('omit', True) }}"
+      auto_updates: "{{ azure_auto_updates | default('omit', True) }}"
+      storage_account: "{{ azure_storage_account | default('omit', True) }}"
+      subscription_id: "{{ azure_subscription_id | default('omit', True) }}"
+      password: "{{ azure_password | default('omit', True) }}"
+      os_type: "{{ azure_os_type | default('omit', True) }}"
+      enable_winrm: "{{ azure_enable_winrm | default('omit', True) }}"
+  tasks:
+    - name: "plugin_azure"
+      azure: "{{ azure }}"

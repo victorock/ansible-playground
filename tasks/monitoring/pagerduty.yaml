@@ -1,0 +1,16 @@
+---
+- name: "module_pagerduty"
+  pagerduty: "{{ pagerduty }}"
+  vars:
+    pagerduty: 
+      name: "{{ pagerduty_name | default(omit, True) }}"
+      service: "{{ pagerduty_service | default(omit, True) }}"
+      state: "{{ pagerduty_state | default(omit, True) }}"
+      minutes: "{{ pagerduty_minutes | default(omit, True) }}"
+      window_id: "{{ pagerduty_window_id | default(omit, True) }}"
+      hours: "{{ pagerduty_hours | default(omit, True) }}"
+      token: "{{ pagerduty_token | default(omit, True) }}"
+      user: "{{ pagerduty_user | default(omit, True) }}"
+      requester_id: "{{ pagerduty_requester_id | default(omit, True) }}"
+      validate_certs: "{{ pagerduty_validate_certs | default(omit, True) }}"
+      desc: "{{ pagerduty_desc | default(omit, True) }}"

@@ -1,0 +1,31 @@
+---
+- name: "module_bigip_pool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_pool: 
+      description: "{{ bigip_pool_description | default('omit', True) }}"
+      lb_method: "{{ bigip_pool_lb_method | default('omit', True) }}"
+      reselect_tries: "{{ bigip_pool_reselect_tries | default('omit', True) }}"
+      name: "{{ bigip_pool_name | default('omit', True) }}"
+      priority_group_activation: "{{ bigip_pool_priority_group_activation | default('omit', True) }}"
+      partition: "{{ bigip_pool_partition | default('omit', True) }}"
+      slow_ramp_time: "{{ bigip_pool_slow_ramp_time | default('omit', True) }}"
+      metadata: "{{ bigip_pool_metadata | default('omit', True) }}"
+      service_down_action: "{{ bigip_pool_service_down_action | default('omit', True) }}"
+      server: "{{ bigip_pool_server | default('omit', True) }}"
+      monitor_type: "{{ bigip_pool_monitor_type | default('omit', True) }}"
+      state: "{{ bigip_pool_state | default('omit', True) }}"
+      user: "{{ bigip_pool_user | default('omit', True) }}"
+      server_port: "{{ bigip_pool_server_port | default('omit', True) }}"
+      provider: "{{ bigip_pool_provider | default('omit', True) }}"
+      password: "{{ bigip_pool_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_pool_validate_certs | default('omit', True) }}"
+      monitors: "{{ bigip_pool_monitors | default('omit', True) }}"
+      quorum: "{{ bigip_pool_quorum | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_pool"
+      bigip_pool: "{{ bigip_pool }}"

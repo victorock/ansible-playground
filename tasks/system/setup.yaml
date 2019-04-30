@@ -1,0 +1,9 @@
+---
+- name: "module_setup"
+  setup: "{{ setup }}"
+  vars:
+    setup: 
+      filter: "{{ setup_filter | default(omit, True) }}"
+      gather_subset: "{{ setup_gather_subset | default(omit, True) }}"
+      fact_path: "{{ setup_fact_path | default(omit, True) }}"
+      gather_timeout: "{{ setup_gather_timeout | default(omit, True) }}"

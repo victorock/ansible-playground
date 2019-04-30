@@ -1,0 +1,21 @@
+---
+- name: "module_nso_action"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nso_action: 
+      username: "{{ nso_action_username | default('omit', True) }}"
+      url: "{{ nso_action_url | default('omit', True) }}"
+      output_invalid: "{{ nso_action_output_invalid | default('omit', True) }}"
+      output_required: "{{ nso_action_output_required | default('omit', True) }}"
+      timeout: "{{ nso_action_timeout | default('omit', True) }}"
+      path: "{{ nso_action_path | default('omit', True) }}"
+      input: "{{ nso_action_input | default('omit', True) }}"
+      password: "{{ nso_action_password | default('omit', True) }}"
+      validate_strict: "{{ nso_action_validate_strict | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nso_action"
+      nso_action: "{{ nso_action }}"

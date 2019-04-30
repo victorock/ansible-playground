@@ -1,0 +1,16 @@
+---
+- name: "module_datadog_event"
+  datadog_event: "{{ datadog_event }}"
+  vars:
+    datadog_event: 
+      date_happened: "{{ datadog_event_date_happened | default(omit, True) }}"
+      alert_type: "{{ datadog_event_alert_type | default(omit, True) }}"
+      tags: "{{ datadog_event_tags | default(omit, True) }}"
+      text: "{{ datadog_event_text | default(omit, True) }}"
+      title: "{{ datadog_event_title | default(omit, True) }}"
+      app_key: "{{ datadog_event_app_key | default(omit, True) }}"
+      priority: "{{ datadog_event_priority | default(omit, True) }}"
+      host: "{{ datadog_event_host | default(omit, True) }}"
+      aggregation_key: "{{ datadog_event_aggregation_key | default(omit, True) }}"
+      api_key: "{{ datadog_event_api_key | default(omit, True) }}"
+      validate_certs: "{{ datadog_event_validate_certs | default(omit, True) }}"

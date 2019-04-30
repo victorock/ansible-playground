@@ -1,0 +1,8 @@
+---
+- name: "module_monit"
+  monit: "{{ monit }}"
+  vars:
+    monit: 
+      state: "{{ monit_state | default(omit, True) }}"
+      name: "{{ monit_name | default(omit, True) }}"
+      timeout: "{{ monit_timeout | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_vultr_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vultr_network: 
+      api_retries: "{{ vultr_network_api_retries | default('omit', True) }}"
+      name: "{{ vultr_network_name | default('omit', True) }}"
+      region: "{{ vultr_network_region | default('omit', True) }}"
+      api_timeout: "{{ vultr_network_api_timeout | default('omit', True) }}"
+      api_endpoint: "{{ vultr_network_api_endpoint | default('omit', True) }}"
+      state: "{{ vultr_network_state | default('omit', True) }}"
+      api_account: "{{ vultr_network_api_account | default('omit', True) }}"
+      cidr: "{{ vultr_network_cidr | default('omit', True) }}"
+      api_key: "{{ vultr_network_api_key | default('omit', True) }}"
+      validate_certs: "{{ vultr_network_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vultr_network"
+      vultr_network: "{{ vultr_network }}"

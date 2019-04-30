@@ -1,0 +1,13 @@
+---
+- name: "module_imc_rest"
+  imc_rest: "{{ imc_rest }}"
+  vars:
+    imc_rest: 
+      username: "{{ imc_rest_username | default(omit, True) }}"
+      protocol: "{{ imc_rest_protocol | default(omit, True) }}"
+      hostname: "{{ imc_rest_hostname | default(omit, True) }}"
+      content: "{{ imc_rest_content | default(omit, True) }}"
+      timeout: "{{ imc_rest_timeout | default(omit, True) }}"
+      path: "{{ imc_rest_path | default(omit, True) }}"
+      password: "{{ imc_rest_password | default(omit, True) }}"
+      validate_certs: "{{ imc_rest_validate_certs | default(omit, True) }}"

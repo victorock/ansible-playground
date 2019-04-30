@@ -1,0 +1,9 @@
+---
+- name: "module_win_route"
+  win_route: "{{ win_route }}"
+  vars:
+    win_route: 
+      metric: "{{ win_route_metric | default(omit, True) }}"
+      destination: "{{ win_route_destination | default(omit, True) }}"
+      gateway: "{{ win_route_gateway | default(omit, True) }}"
+      state: "{{ win_route_state | default(omit, True) }}"

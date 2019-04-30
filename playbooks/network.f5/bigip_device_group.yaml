@@ -1,0 +1,27 @@
+---
+- name: "module_bigip_device_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_device_group: 
+      description: "{{ bigip_device_group_description | default('omit', True) }}"
+      auto_sync: "{{ bigip_device_group_auto_sync | default('omit', True) }}"
+      type: "{{ bigip_device_group_type | default('omit', True) }}"
+      max_incremental_sync_size: "{{ bigip_device_group_max_incremental_sync_size | default('omit', True) }}"
+      server: "{{ bigip_device_group_server | default('omit', True) }}"
+      name: "{{ bigip_device_group_name | default('omit', True) }}"
+      save_on_auto_sync: "{{ bigip_device_group_save_on_auto_sync | default('omit', True) }}"
+      state: "{{ bigip_device_group_state | default('omit', True) }}"
+      server_port: "{{ bigip_device_group_server_port | default('omit', True) }}"
+      user: "{{ bigip_device_group_user | default('omit', True) }}"
+      full_sync: "{{ bigip_device_group_full_sync | default('omit', True) }}"
+      provider: "{{ bigip_device_group_provider | default('omit', True) }}"
+      password: "{{ bigip_device_group_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_device_group_validate_certs | default('omit', True) }}"
+      network_failover: "{{ bigip_device_group_network_failover | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_device_group"
+      bigip_device_group: "{{ bigip_device_group }}"

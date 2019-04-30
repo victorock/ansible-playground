@@ -1,0 +1,6 @@
+---
+- name: "module_net_lldp"
+  net_lldp: "{{ net_lldp }}"
+  vars:
+    net_lldp: 
+      state: "{{ net_lldp_state | default(omit, True) }}"

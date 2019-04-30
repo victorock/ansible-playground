@@ -1,0 +1,23 @@
+---
+- name: "module_na_ontap_lun"
+  na_ontap_lun: "{{ na_ontap_lun }}"
+  vars:
+    na_ontap_lun: 
+      username: "{{ na_ontap_lun_username | default(omit, True) }}"
+      vserver: "{{ na_ontap_lun_vserver | default(omit, True) }}"
+      http_port: "{{ na_ontap_lun_http_port | default(omit, True) }}"
+      name: "{{ na_ontap_lun_name | default(omit, True) }}"
+      flexvol_name: "{{ na_ontap_lun_flexvol_name | default(omit, True) }}"
+      state: "{{ na_ontap_lun_state | default(omit, True) }}"
+      hostname: "{{ na_ontap_lun_hostname | default(omit, True) }}"
+      size_unit: "{{ na_ontap_lun_size_unit | default(omit, True) }}"
+      force_remove: "{{ na_ontap_lun_force_remove | default(omit, True) }}"
+      ostype: "{{ na_ontap_lun_ostype | default(omit, True) }}"
+      space_reserve: "{{ na_ontap_lun_space_reserve | default(omit, True) }}"
+      size: "{{ na_ontap_lun_size | default(omit, True) }}"
+      https: "{{ na_ontap_lun_https | default(omit, True) }}"
+      force_resize: "{{ na_ontap_lun_force_resize | default(omit, True) }}"
+      password: "{{ na_ontap_lun_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_lun_validate_certs | default(omit, True) }}"
+      force_remove_fenced: "{{ na_ontap_lun_force_remove_fenced | default(omit, True) }}"
+      space_allocation: "{{ na_ontap_lun_space_allocation | default(omit, True) }}"

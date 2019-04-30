@@ -1,0 +1,13 @@
+---
+- name: "module_bcf_switch"
+  bcf_switch: "{{ bcf_switch }}"
+  vars:
+    bcf_switch: 
+      name: "{{ bcf_switch_name | default(omit, True) }}"
+      access_token: "{{ bcf_switch_access_token | default(omit, True) }}"
+      state: "{{ bcf_switch_state | default(omit, True) }}"
+      mac: "{{ bcf_switch_mac | default(omit, True) }}"
+      controller: "{{ bcf_switch_controller | default(omit, True) }}"
+      leaf_group: "{{ bcf_switch_leaf_group | default(omit, True) }}"
+      validate_certs: "{{ bcf_switch_validate_certs | default(omit, True) }}"
+      fabric_role: "{{ bcf_switch_fabric_role | default(omit, True) }}"

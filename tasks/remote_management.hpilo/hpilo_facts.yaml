@@ -1,0 +1,9 @@
+---
+- name: "module_hpilo_facts"
+  hpilo_facts: "{{ hpilo_facts }}"
+  vars:
+    hpilo_facts: 
+      host: "{{ hpilo_facts_host | default(omit, True) }}"
+      password: "{{ hpilo_facts_password | default(omit, True) }}"
+      ssl_version: "{{ hpilo_facts_ssl_version | default(omit, True) }}"
+      login: "{{ hpilo_facts_login | default(omit, True) }}"

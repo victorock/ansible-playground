@@ -1,0 +1,16 @@
+---
+- name: "module_udm_dns_zone"
+  udm_dns_zone: "{{ udm_dns_zone }}"
+  vars:
+    udm_dns_zone: 
+      retry: "{{ udm_dns_zone_retry | default(omit, True) }}"
+      zone: "{{ udm_dns_zone_zone | default(omit, True) }}"
+      interfaces: "{{ udm_dns_zone_interfaces | default(omit, True) }}"
+      refresh: "{{ udm_dns_zone_refresh | default(omit, True) }}"
+      contact: "{{ udm_dns_zone_contact | default(omit, True) }}"
+      state: "{{ udm_dns_zone_state | default(omit, True) }}"
+      expire: "{{ udm_dns_zone_expire | default(omit, True) }}"
+      ttl: "{{ udm_dns_zone_ttl | default(omit, True) }}"
+      nameserver: "{{ udm_dns_zone_nameserver | default(omit, True) }}"
+      type: "{{ udm_dns_zone_type | default(omit, True) }}"
+      mx: "{{ udm_dns_zone_mx | default(omit, True) }}"

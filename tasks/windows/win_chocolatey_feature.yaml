@@ -1,0 +1,7 @@
+---
+- name: "module_win_chocolatey_feature"
+  win_chocolatey_feature: "{{ win_chocolatey_feature }}"
+  vars:
+    win_chocolatey_feature: 
+      state: "{{ win_chocolatey_feature_state | default(omit, True) }}"
+      name: "{{ win_chocolatey_feature_name | default(omit, True) }}"

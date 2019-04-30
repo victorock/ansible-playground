@@ -1,0 +1,9 @@
+---
+- name: "module_eos_facts"
+  eos_facts: "{{ eos_facts }}"
+  vars:
+    eos_facts: 
+      authorize: "{{ eos_facts_authorize | default(omit, True) }}"
+      auth_pass: "{{ eos_facts_auth_pass | default(omit, True) }}"
+      provider: "{{ eos_facts_provider | default(omit, True) }}"
+      gather_subset: "{{ eos_facts_gather_subset | default(omit, True) }}"

@@ -1,0 +1,41 @@
+---
+- name: "module_linode"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    linode: 
+      alert_diskio_enabled: "{{ linode_alert_diskio_enabled | default('omit', True) }}"
+      payment_term: "{{ linode_payment_term | default('omit', True) }}"
+      alert_bwquota_enabled: "{{ linode_alert_bwquota_enabled | default('omit', True) }}"
+      private_ip: "{{ linode_private_ip | default('omit', True) }}"
+      watchdog: "{{ linode_watchdog | default('omit', True) }}"
+      ssh_pub_key: "{{ linode_ssh_pub_key | default('omit', True) }}"
+      backupweeklyday: "{{ linode_backupweeklyday | default('omit', True) }}"
+      displaygroup: "{{ linode_displaygroup | default('omit', True) }}"
+      alert_bwout_enabled: "{{ linode_alert_bwout_enabled | default('omit', True) }}"
+      state: "{{ linode_state | default('omit', True) }}"
+      swap: "{{ linode_swap | default('omit', True) }}"
+      api_key: "{{ linode_api_key | default('omit', True) }}"
+      additional_disks: "{{ linode_additional_disks | default('omit', True) }}"
+      alert_bwin_enabled: "{{ linode_alert_bwin_enabled | default('omit', True) }}"
+      kernel_id: "{{ linode_kernel_id | default('omit', True) }}"
+      alert_bwin_threshold: "{{ linode_alert_bwin_threshold | default('omit', True) }}"
+      alert_cpu_enabled: "{{ linode_alert_cpu_enabled | default('omit', True) }}"
+      linode_id: "{{ linode_linode_id | default('omit', True) }}"
+      alert_diskio_threshold: "{{ linode_alert_diskio_threshold | default('omit', True) }}"
+      wait_timeout: "{{ linode_wait_timeout | default('omit', True) }}"
+      plan: "{{ linode_plan | default('omit', True) }}"
+      password: "{{ linode_password | default('omit', True) }}"
+      wait: "{{ linode_wait | default('omit', True) }}"
+      datacenter: "{{ linode_datacenter | default('omit', True) }}"
+      name: "{{ linode_name | default('omit', True) }}"
+      alert_cpu_threshold: "{{ linode_alert_cpu_threshold | default('omit', True) }}"
+      distribution: "{{ linode_distribution | default('omit', True) }}"
+      alert_bwquota_threshold: "{{ linode_alert_bwquota_threshold | default('omit', True) }}"
+      alert_bwout_threshold: "{{ linode_alert_bwout_threshold | default('omit', True) }}"
+  tasks:
+    - name: "plugin_linode"
+      linode: "{{ linode }}"

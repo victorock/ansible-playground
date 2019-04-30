@@ -1,0 +1,14 @@
+---
+- name: "module_ios_linkagg"
+  ios_linkagg: "{{ ios_linkagg }}"
+  vars:
+    ios_linkagg: 
+      authorize: "{{ ios_linkagg_authorize | default(omit, True) }}"
+      group: "{{ ios_linkagg_group | default(omit, True) }}"
+      auth_pass: "{{ ios_linkagg_auth_pass | default(omit, True) }}"
+      purge: "{{ ios_linkagg_purge | default(omit, True) }}"
+      state: "{{ ios_linkagg_state | default(omit, True) }}"
+      mode: "{{ ios_linkagg_mode | default(omit, True) }}"
+      members: "{{ ios_linkagg_members | default(omit, True) }}"
+      provider: "{{ ios_linkagg_provider | default(omit, True) }}"
+      aggregate: "{{ ios_linkagg_aggregate | default(omit, True) }}"

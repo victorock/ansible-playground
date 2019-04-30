@@ -1,0 +1,12 @@
+---
+- name: "module_jenkins_script"
+  jenkins_script: "{{ jenkins_script }}"
+  vars:
+    jenkins_script: 
+      script: "{{ jenkins_script_script | default(omit, True) }}"
+      url: "{{ jenkins_script_url | default(omit, True) }}"
+      args: "{{ jenkins_script_args | default(omit, True) }}"
+      user: "{{ jenkins_script_user | default(omit, True) }}"
+      timeout: "{{ jenkins_script_timeout | default(omit, True) }}"
+      password: "{{ jenkins_script_password | default(omit, True) }}"
+      validate_certs: "{{ jenkins_script_validate_certs | default(omit, True) }}"

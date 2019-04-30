@@ -1,0 +1,26 @@
+---
+- name: "module_aws_config_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aws_config_rule: 
+      profile: "{{ aws_config_rule_profile | default('omit', True) }}"
+      aws_secret_key: "{{ aws_config_rule_aws_secret_key | default('omit', True) }}"
+      execution_frequency: "{{ aws_config_rule_execution_frequency | default('omit', True) }}"
+      description: "{{ aws_config_rule_description | default('omit', True) }}"
+      security_token: "{{ aws_config_rule_security_token | default('omit', True) }}"
+      input_parameters: "{{ aws_config_rule_input_parameters | default('omit', True) }}"
+      region: "{{ aws_config_rule_region | default('omit', True) }}"
+      aws_access_key: "{{ aws_config_rule_aws_access_key | default('omit', True) }}"
+      source: "{{ aws_config_rule_source | default('omit', True) }}"
+      state: "{{ aws_config_rule_state | default('omit', True) }}"
+      ec2_url: "{{ aws_config_rule_ec2_url | default('omit', True) }}"
+      scope: "{{ aws_config_rule_scope | default('omit', True) }}"
+      validate_certs: "{{ aws_config_rule_validate_certs | default('omit', True) }}"
+      name: "{{ aws_config_rule_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aws_config_rule"
+      aws_config_rule: "{{ aws_config_rule }}"

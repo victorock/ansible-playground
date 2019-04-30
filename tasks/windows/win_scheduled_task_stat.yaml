@@ -1,0 +1,7 @@
+---
+- name: "module_win_scheduled_task_stat"
+  win_scheduled_task_stat: "{{ win_scheduled_task_stat }}"
+  vars:
+    win_scheduled_task_stat: 
+      path: "{{ win_scheduled_task_stat_path | default(omit, True) }}"
+      name: "{{ win_scheduled_task_stat_name | default(omit, True) }}"

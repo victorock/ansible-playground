@@ -1,0 +1,17 @@
+---
+- name: "module_purefa_ds"
+  purefa_ds: "{{ purefa_ds }}"
+  vars:
+    purefa_ds: 
+      bind_user: "{{ purefa_ds_bind_user | default(omit, True) }}"
+      group_base: "{{ purefa_ds_group_base | default(omit, True) }}"
+      enable: "{{ purefa_ds_enable | default(omit, True) }}"
+      api_token: "{{ purefa_ds_api_token | default(omit, True) }}"
+      ro_group: "{{ purefa_ds_ro_group | default(omit, True) }}"
+      aa_group: "{{ purefa_ds_aa_group | default(omit, True) }}"
+      uri: "{{ purefa_ds_uri | default(omit, True) }}"
+      state: "{{ purefa_ds_state | default(omit, True) }}"
+      bind_password: "{{ purefa_ds_bind_password | default(omit, True) }}"
+      base_dn: "{{ purefa_ds_base_dn | default(omit, True) }}"
+      sa_group: "{{ purefa_ds_sa_group | default(omit, True) }}"
+      fa_url: "{{ purefa_ds_fa_url | default(omit, True) }}"

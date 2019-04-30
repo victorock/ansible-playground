@@ -1,0 +1,16 @@
+---
+- name: "module_onyx_ospf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_ospf: 
+      router_id: "{{ onyx_ospf_router_id | default('omit', True) }}"
+      interfaces: "{{ onyx_ospf_interfaces | default('omit', True) }}"
+      ospf: "{{ onyx_ospf_ospf | default('omit', True) }}"
+      state: "{{ onyx_ospf_state | default('omit', True) }}"
+  tasks:
+    - name: "plugin_onyx_ospf"
+      onyx_ospf: "{{ onyx_ospf }}"

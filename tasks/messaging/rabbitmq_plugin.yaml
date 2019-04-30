@@ -1,0 +1,9 @@
+---
+- name: "module_rabbitmq_plugin"
+  rabbitmq_plugin: "{{ rabbitmq_plugin }}"
+  vars:
+    rabbitmq_plugin: 
+      state: "{{ rabbitmq_plugin_state | default(omit, True) }}"
+      names: "{{ rabbitmq_plugin_names | default(omit, True) }}"
+      prefix: "{{ rabbitmq_plugin_prefix | default(omit, True) }}"
+      new_only: "{{ rabbitmq_plugin_new_only | default(omit, True) }}"

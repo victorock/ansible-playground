@@ -1,0 +1,19 @@
+---
+- name: "module_ce_netstream_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_netstream_template: 
+      record_name: "{{ ce_netstream_template_record_name | default('omit', True) }}"
+      description: "{{ ce_netstream_template_description | default('omit', True) }}"
+      collect_counter: "{{ ce_netstream_template_collect_counter | default('omit', True) }}"
+      state: "{{ ce_netstream_template_state | default('omit', True) }}"
+      collect_interface: "{{ ce_netstream_template_collect_interface | default('omit', True) }}"
+      type: "{{ ce_netstream_template_type | default('omit', True) }}"
+      match: "{{ ce_netstream_template_match | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_netstream_template"
+      ce_netstream_template: "{{ ce_netstream_template }}"

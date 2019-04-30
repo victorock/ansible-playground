@@ -1,0 +1,46 @@
+---
+- name: "module_win_scheduled_task"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_scheduled_task: 
+      run_only_if_network_available: "{{ win_scheduled_task_run_only_if_network_available | default('omit', True) }}"
+      update_password: "{{ win_scheduled_task_update_password | default('omit', True) }}"
+      execution_time_limit: "{{ win_scheduled_task_execution_time_limit | default('omit', True) }}"
+      actions: "{{ win_scheduled_task_actions | default('omit', True) }}"
+      wake_to_run: "{{ win_scheduled_task_wake_to_run | default('omit', True) }}"
+      run_only_if_idle: "{{ win_scheduled_task_run_only_if_idle | default('omit', True) }}"
+      group: "{{ win_scheduled_task_group | default('omit', True) }}"
+      author: "{{ win_scheduled_task_author | default('omit', True) }}"
+      restart_count: "{{ win_scheduled_task_restart_count | default('omit', True) }}"
+      compatibility: "{{ win_scheduled_task_compatibility | default('omit', True) }}"
+      priority: "{{ win_scheduled_task_priority | default('omit', True) }}"
+      source: "{{ win_scheduled_task_source | default('omit', True) }}"
+      state: "{{ win_scheduled_task_state | default('omit', True) }}"
+      version: "{{ win_scheduled_task_version | default('omit', True) }}"
+      allow_demand_start: "{{ win_scheduled_task_allow_demand_start | default('omit', True) }}"
+      logon_type: "{{ win_scheduled_task_logon_type | default('omit', True) }}"
+      hidden: "{{ win_scheduled_task_hidden | default('omit', True) }}"
+      multiple_instances: "{{ win_scheduled_task_multiple_instances | default('omit', True) }}"
+      username: "{{ win_scheduled_task_username | default('omit', True) }}"
+      stop_if_going_on_batteries: "{{ win_scheduled_task_stop_if_going_on_batteries | default('omit', True) }}"
+      disallow_start_if_on_batteries: "{{ win_scheduled_task_disallow_start_if_on_batteries | default('omit', True) }}"
+      description: "{{ win_scheduled_task_description | default('omit', True) }}"
+      delete_expired_task_after: "{{ win_scheduled_task_delete_expired_task_after | default('omit', True) }}"
+      restart_interval: "{{ win_scheduled_task_restart_interval | default('omit', True) }}"
+      start_when_available: "{{ win_scheduled_task_start_when_available | default('omit', True) }}"
+      date: "{{ win_scheduled_task_date | default('omit', True) }}"
+      path: "{{ win_scheduled_task_path | default('omit', True) }}"
+      password: "{{ win_scheduled_task_password | default('omit', True) }}"
+      run_level: "{{ win_scheduled_task_run_level | default('omit', True) }}"
+      display_name: "{{ win_scheduled_task_display_name | default('omit', True) }}"
+      name: "{{ win_scheduled_task_name | default('omit', True) }}"
+      triggers: "{{ win_scheduled_task_triggers | default('omit', True) }}"
+      enabled: "{{ win_scheduled_task_enabled | default('omit', True) }}"
+      allow_hard_terminate: "{{ win_scheduled_task_allow_hard_terminate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_scheduled_task"
+      win_scheduled_task: "{{ win_scheduled_task }}"

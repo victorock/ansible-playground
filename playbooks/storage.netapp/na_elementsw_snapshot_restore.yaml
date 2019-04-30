@@ -1,0 +1,19 @@
+---
+- name: "module_na_elementsw_snapshot_restore"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_elementsw_snapshot_restore: 
+      username: "{{ na_elementsw_snapshot_restore_username | default('omit', True) }}"
+      src_snapshot_id: "{{ na_elementsw_snapshot_restore_src_snapshot_id | default('omit', True) }}"
+      account_id: "{{ na_elementsw_snapshot_restore_account_id | default('omit', True) }}"
+      hostname: "{{ na_elementsw_snapshot_restore_hostname | default('omit', True) }}"
+      dest_volume_name: "{{ na_elementsw_snapshot_restore_dest_volume_name | default('omit', True) }}"
+      password: "{{ na_elementsw_snapshot_restore_password | default('omit', True) }}"
+      src_volume_id: "{{ na_elementsw_snapshot_restore_src_volume_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_elementsw_snapshot_restore"
+      na_elementsw_snapshot_restore: "{{ na_elementsw_snapshot_restore }}"

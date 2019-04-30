@@ -1,0 +1,21 @@
+---
+- name: "module_iam_role_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iam_role_facts: 
+      aws_secret_key: "{{ iam_role_facts_aws_secret_key | default('omit', True) }}"
+      profile: "{{ iam_role_facts_profile | default('omit', True) }}"
+      aws_access_key: "{{ iam_role_facts_aws_access_key | default('omit', True) }}"
+      name: "{{ iam_role_facts_name | default('omit', True) }}"
+      security_token: "{{ iam_role_facts_security_token | default('omit', True) }}"
+      region: "{{ iam_role_facts_region | default('omit', True) }}"
+      ec2_url: "{{ iam_role_facts_ec2_url | default('omit', True) }}"
+      path_prefix: "{{ iam_role_facts_path_prefix | default('omit', True) }}"
+      validate_certs: "{{ iam_role_facts_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_iam_role_facts"
+      iam_role_facts: "{{ iam_role_facts }}"

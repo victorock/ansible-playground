@@ -1,0 +1,28 @@
+---
+- name: "module_avi_seproperties"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_seproperties: 
+      username: "{{ avi_seproperties_username | default('omit', True) }}"
+      se_agent_properties: "{{ avi_seproperties_se_agent_properties | default('omit', True) }}"
+      api_version: "{{ avi_seproperties_api_version | default('omit', True) }}"
+      uuid: "{{ avi_seproperties_uuid | default('omit', True) }}"
+      state: "{{ avi_seproperties_state | default('omit', True) }}"
+      url: "{{ avi_seproperties_url | default('omit', True) }}"
+      se_runtime_properties: "{{ avi_seproperties_se_runtime_properties | default('omit', True) }}"
+      avi_credentials: "{{ avi_seproperties_avi_credentials | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_seproperties_avi_api_patch_op | default('omit', True) }}"
+      controller: "{{ avi_seproperties_controller | default('omit', True) }}"
+      se_bootup_properties: "{{ avi_seproperties_se_bootup_properties | default('omit', True) }}"
+      tenant: "{{ avi_seproperties_tenant | default('omit', True) }}"
+      api_context: "{{ avi_seproperties_api_context | default('omit', True) }}"
+      password: "{{ avi_seproperties_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_seproperties_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_seproperties_avi_api_update_method | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_seproperties"
+      avi_seproperties: "{{ avi_seproperties }}"

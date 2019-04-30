@@ -1,0 +1,13 @@
+---
+- name: "module_netapp_e_amg_sync"
+  netapp_e_amg_sync: "{{ netapp_e_amg_sync }}"
+  vars:
+    netapp_e_amg_sync: 
+      ssid: "{{ netapp_e_amg_sync_ssid | default(omit, True) }}"
+      api_password: "{{ netapp_e_amg_sync_api_password | default(omit, True) }}"
+      name: "{{ netapp_e_amg_sync_name | default(omit, True) }}"
+      state: "{{ netapp_e_amg_sync_state | default(omit, True) }}"
+      api_username: "{{ netapp_e_amg_sync_api_username | default(omit, True) }}"
+      delete_recovery_point: "{{ netapp_e_amg_sync_delete_recovery_point | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_amg_sync_validate_certs | default(omit, True) }}"
+      api_url: "{{ netapp_e_amg_sync_api_url | default(omit, True) }}"

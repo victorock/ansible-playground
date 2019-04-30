@@ -1,0 +1,16 @@
+---
+- name: "module_pamd"
+  pamd: "{{ pamd }}"
+  vars:
+    pamd: 
+      control: "{{ pamd_control | default(omit, True) }}"
+      new_module_path: "{{ pamd_new_module_path | default(omit, True) }}"
+      module_arguments: "{{ pamd_module_arguments | default(omit, True) }}"
+      type: "{{ pamd_type | default(omit, True) }}"
+      module_path: "{{ pamd_module_path | default(omit, True) }}"
+      new_type: "{{ pamd_new_type | default(omit, True) }}"
+      state: "{{ pamd_state | default(omit, True) }}"
+      new_control: "{{ pamd_new_control | default(omit, True) }}"
+      path: "{{ pamd_path | default(omit, True) }}"
+      backup: "{{ pamd_backup | default(omit, True) }}"
+      name: "{{ pamd_name | default(omit, True) }}"

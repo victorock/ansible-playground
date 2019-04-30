@@ -1,0 +1,19 @@
+---
+- name: "module_panos_query_rules"
+  panos_query_rules: "{{ panos_query_rules }}"
+  vars:
+    panos_query_rules: 
+      username: "{{ panos_query_rules_username | default(omit, True) }}"
+      destination_ip: "{{ panos_query_rules_destination_ip | default(omit, True) }}"
+      api_key: "{{ panos_query_rules_api_key | default(omit, True) }}"
+      devicegroup: "{{ panos_query_rules_devicegroup | default(omit, True) }}"
+      source_zone: "{{ panos_query_rules_source_zone | default(omit, True) }}"
+      source_ip: "{{ panos_query_rules_source_ip | default(omit, True) }}"
+      application: "{{ panos_query_rules_application | default(omit, True) }}"
+      tag_name: "{{ panos_query_rules_tag_name | default(omit, True) }}"
+      destination_zone: "{{ panos_query_rules_destination_zone | default(omit, True) }}"
+      source_port: "{{ panos_query_rules_source_port | default(omit, True) }}"
+      protocol: "{{ panos_query_rules_protocol | default(omit, True) }}"
+      destination_port: "{{ panos_query_rules_destination_port | default(omit, True) }}"
+      password: "{{ panos_query_rules_password | default(omit, True) }}"
+      ip_address: "{{ panos_query_rules_ip_address | default(omit, True) }}"

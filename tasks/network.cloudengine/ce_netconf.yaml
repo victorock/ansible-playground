@@ -1,0 +1,7 @@
+---
+- name: "module_ce_netconf"
+  ce_netconf: "{{ ce_netconf }}"
+  vars:
+    ce_netconf: 
+      rpc: "{{ ce_netconf_rpc | default(omit, True) }}"
+      cfg_xml: "{{ ce_netconf_cfg_xml | default(omit, True) }}"

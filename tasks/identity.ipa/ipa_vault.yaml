@@ -1,0 +1,21 @@
+---
+- name: "module_ipa_vault"
+  ipa_vault: "{{ ipa_vault }}"
+  vars:
+    ipa_vault: 
+      username: "{{ ipa_vault_username | default(omit, True) }}"
+      ipa_port: "{{ ipa_vault_ipa_port | default(omit, True) }}"
+      cn: "{{ ipa_vault_cn | default(omit, True) }}"
+      service: "{{ ipa_vault_service | default(omit, True) }}"
+      ipavaultsalt: "{{ ipa_vault_ipavaultsalt | default(omit, True) }}"
+      ipa_prot: "{{ ipa_vault_ipa_prot | default(omit, True) }}"
+      replace: "{{ ipa_vault_replace | default(omit, True) }}"
+      ipavaulttype: "{{ ipa_vault_ipavaulttype | default(omit, True) }}"
+      state: "{{ ipa_vault_state | default(omit, True) }}"
+      ipa_host: "{{ ipa_vault_ipa_host | default(omit, True) }}"
+      ipavaultpublickey: "{{ ipa_vault_ipavaultpublickey | default(omit, True) }}"
+      ipa_user: "{{ ipa_vault_ipa_user | default(omit, True) }}"
+      ipa_pass: "{{ ipa_vault_ipa_pass | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_vault_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_vault_validate_certs | default(omit, True) }}"
+      description: "{{ ipa_vault_description | default(omit, True) }}"

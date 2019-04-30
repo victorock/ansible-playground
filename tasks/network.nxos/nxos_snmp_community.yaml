@@ -1,0 +1,11 @@
+---
+- name: "module_nxos_snmp_community"
+  nxos_snmp_community: "{{ nxos_snmp_community }}"
+  vars:
+    nxos_snmp_community: 
+      group: "{{ nxos_snmp_community_group | default(omit, True) }}"
+      community: "{{ nxos_snmp_community_community | default(omit, True) }}"
+      acl: "{{ nxos_snmp_community_acl | default(omit, True) }}"
+      access: "{{ nxos_snmp_community_access | default(omit, True) }}"
+      state: "{{ nxos_snmp_community_state | default(omit, True) }}"
+      provider: "{{ nxos_snmp_community_provider | default(omit, True) }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_s3_website"
+  s3_website: "{{ s3_website }}"
+  vars:
+    s3_website: 
+      redirect_all_requests: "{{ s3_website_redirect_all_requests | default(omit, True) }}"
+      profile: "{{ s3_website_profile | default(omit, True) }}"
+      aws_access_key: "{{ s3_website_aws_access_key | default(omit, True) }}"
+      suffix: "{{ s3_website_suffix | default(omit, True) }}"
+      security_token: "{{ s3_website_security_token | default(omit, True) }}"
+      region: "{{ s3_website_region | default(omit, True) }}"
+      aws_secret_key: "{{ s3_website_aws_secret_key | default(omit, True) }}"
+      error_key: "{{ s3_website_error_key | default(omit, True) }}"
+      state: "{{ s3_website_state | default(omit, True) }}"
+      ec2_url: "{{ s3_website_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ s3_website_validate_certs | default(omit, True) }}"
+      name: "{{ s3_website_name | default(omit, True) }}"

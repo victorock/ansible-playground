@@ -1,0 +1,16 @@
+---
+- name: "module_eos_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    eos_facts: 
+      authorize: "{{ eos_facts_authorize | default('omit', True) }}"
+      auth_pass: "{{ eos_facts_auth_pass | default('omit', True) }}"
+      provider: "{{ eos_facts_provider | default('omit', True) }}"
+      gather_subset: "{{ eos_facts_gather_subset | default('omit', True) }}"
+  tasks:
+    - name: "plugin_eos_facts"
+      eos_facts: "{{ eos_facts }}"

@@ -1,0 +1,6 @@
+---
+- name: "module_win_hostname"
+  win_hostname: "{{ win_hostname }}"
+  vars:
+    win_hostname: 
+      name: "{{ win_hostname_name | default(omit, True) }}"

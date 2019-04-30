@@ -1,0 +1,9 @@
+---
+- name: "module_openwrt_init"
+  openwrt_init: "{{ openwrt_init }}"
+  vars:
+    openwrt_init: 
+      pattern: "{{ openwrt_init_pattern | default(omit, True) }}"
+      state: "{{ openwrt_init_state | default(omit, True) }}"
+      enabled: "{{ openwrt_init_enabled | default(omit, True) }}"
+      name: "{{ openwrt_init_name | default(omit, True) }}"

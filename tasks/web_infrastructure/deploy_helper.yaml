@@ -1,0 +1,14 @@
+---
+- name: "module_deploy_helper"
+  deploy_helper: "{{ deploy_helper }}"
+  vars:
+    deploy_helper: 
+      unfinished_filename: "{{ deploy_helper_unfinished_filename | default(omit, True) }}"
+      keep_releases: "{{ deploy_helper_keep_releases | default(omit, True) }}"
+      current_path: "{{ deploy_helper_current_path | default(omit, True) }}"
+      state: "{{ deploy_helper_state | default(omit, True) }}"
+      shared_path: "{{ deploy_helper_shared_path | default(omit, True) }}"
+      releases_path: "{{ deploy_helper_releases_path | default(omit, True) }}"
+      clean: "{{ deploy_helper_clean | default(omit, True) }}"
+      release: "{{ deploy_helper_release | default(omit, True) }}"
+      path: "{{ deploy_helper_path | default(omit, True) }}"

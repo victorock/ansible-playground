@@ -1,0 +1,35 @@
+---
+- name: "module_yum"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    yum: 
+      update_cache: "{{ yum_update_cache | default('omit', True) }}"
+      conf_file: "{{ yum_conf_file | default('omit', True) }}"
+      exclude: "{{ yum_exclude | default('omit', True) }}"
+      allow_downgrade: "{{ yum_allow_downgrade | default('omit', True) }}"
+      disable_gpg_check: "{{ yum_disable_gpg_check | default('omit', True) }}"
+      disable_excludes: "{{ yum_disable_excludes | default('omit', True) }}"
+      use_backend: "{{ yum_use_backend | default('omit', True) }}"
+      validate_certs: "{{ yum_validate_certs | default('omit', True) }}"
+      state: "{{ yum_state | default('omit', True) }}"
+      disablerepo: "{{ yum_disablerepo | default('omit', True) }}"
+      releasever: "{{ yum_releasever | default('omit', True) }}"
+      skip_broken: "{{ yum_skip_broken | default('omit', True) }}"
+      autoremove: "{{ yum_autoremove | default('omit', True) }}"
+      installroot: "{{ yum_installroot | default('omit', True) }}"
+      name: "{{ yum_name | default('omit', True) }}"
+      download_only: "{{ yum_download_only | default('omit', True) }}"
+      bugfix: "{{ yum_bugfix | default('omit', True) }}"
+      list: "{{ yum_list | default('omit', True) }}"
+      update_only: "{{ yum_update_only | default('omit', True) }}"
+      disable_plugin: "{{ yum_disable_plugin | default('omit', True) }}"
+      enablerepo: "{{ yum_enablerepo | default('omit', True) }}"
+      security: "{{ yum_security | default('omit', True) }}"
+      enable_plugin: "{{ yum_enable_plugin | default('omit', True) }}"
+  tasks:
+    - name: "plugin_yum"
+      yum: "{{ yum }}"

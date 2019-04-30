@@ -1,0 +1,16 @@
+---
+- name: "module_digital_ocean_tag_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    digital_ocean_tag_facts: 
+      oauth_token: "{{ digital_ocean_tag_facts_oauth_token | default('omit', True) }}"
+      tag_name: "{{ digital_ocean_tag_facts_tag_name | default('omit', True) }}"
+      validate_certs: "{{ digital_ocean_tag_facts_validate_certs | default('omit', True) }}"
+      timeout: "{{ digital_ocean_tag_facts_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_digital_ocean_tag_facts"
+      digital_ocean_tag_facts: "{{ digital_ocean_tag_facts }}"

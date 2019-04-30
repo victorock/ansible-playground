@@ -1,0 +1,16 @@
+---
+- name: "module_ce_vxlan_arp"
+  ce_vxlan_arp: "{{ ce_vxlan_arp }}"
+  vars:
+    ce_vxlan_arp: 
+      evn_bgp: "{{ ce_vxlan_arp_evn_bgp | default(omit, True) }}"
+      vbdif_name: "{{ ce_vxlan_arp_vbdif_name | default(omit, True) }}"
+      bridge_domain_id: "{{ ce_vxlan_arp_bridge_domain_id | default(omit, True) }}"
+      state: "{{ ce_vxlan_arp_state | default(omit, True) }}"
+      evn_server: "{{ ce_vxlan_arp_evn_server | default(omit, True) }}"
+      evn_peer_ip: "{{ ce_vxlan_arp_evn_peer_ip | default(omit, True) }}"
+      evn_source_ip: "{{ ce_vxlan_arp_evn_source_ip | default(omit, True) }}"
+      arp_collect_host: "{{ ce_vxlan_arp_arp_collect_host | default(omit, True) }}"
+      arp_suppress: "{{ ce_vxlan_arp_arp_suppress | default(omit, True) }}"
+      evn_reflect_client: "{{ ce_vxlan_arp_evn_reflect_client | default(omit, True) }}"
+      host_collect_protocol: "{{ ce_vxlan_arp_host_collect_protocol | default(omit, True) }}"

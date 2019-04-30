@@ -1,0 +1,8 @@
+---
+- name: "module_digital_ocean_sshkey_facts"
+  digital_ocean_sshkey_facts: "{{ digital_ocean_sshkey_facts }}"
+  vars:
+    digital_ocean_sshkey_facts: 
+      validate_certs: "{{ digital_ocean_sshkey_facts_validate_certs | default(omit, True) }}"
+      oauth_token: "{{ digital_ocean_sshkey_facts_oauth_token | default(omit, True) }}"
+      timeout: "{{ digital_ocean_sshkey_facts_timeout | default(omit, True) }}"

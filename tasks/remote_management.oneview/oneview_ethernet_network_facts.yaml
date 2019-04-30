@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_ethernet_network_facts"
+  oneview_ethernet_network_facts: "{{ oneview_ethernet_network_facts }}"
+  vars:
+    oneview_ethernet_network_facts: 
+      config: "{{ oneview_ethernet_network_facts_config | default(omit, True) }}"
+      params: "{{ oneview_ethernet_network_facts_params | default(omit, True) }}"
+      name: "{{ oneview_ethernet_network_facts_name | default(omit, True) }}"
+      options: "{{ oneview_ethernet_network_facts_options | default(omit, True) }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_nxos_vpc_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_vpc_interface: 
+      peer_link: "{{ nxos_vpc_interface_peer_link | default('omit', True) }}"
+      state: "{{ nxos_vpc_interface_state | default('omit', True) }}"
+      portchannel: "{{ nxos_vpc_interface_portchannel | default('omit', True) }}"
+      vpc: "{{ nxos_vpc_interface_vpc | default('omit', True) }}"
+      provider: "{{ nxos_vpc_interface_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_vpc_interface"
+      nxos_vpc_interface: "{{ nxos_vpc_interface }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_ftd_file_download"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ftd_file_download: 
+      path_params: "{{ ftd_file_download_path_params | default('omit', True) }}"
+      operation: "{{ ftd_file_download_operation | default('omit', True) }}"
+      destination: "{{ ftd_file_download_destination | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ftd_file_download"
+      ftd_file_download: "{{ ftd_file_download }}"

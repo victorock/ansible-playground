@@ -1,0 +1,9 @@
+---
+- name: "module_nxos_vrf_interface"
+  nxos_vrf_interface: "{{ nxos_vrf_interface }}"
+  vars:
+    nxos_vrf_interface: 
+      interface: "{{ nxos_vrf_interface_interface | default(omit, True) }}"
+      state: "{{ nxos_vrf_interface_state | default(omit, True) }}"
+      vrf: "{{ nxos_vrf_interface_vrf | default(omit, True) }}"
+      provider: "{{ nxos_vrf_interface_provider | default(omit, True) }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_aos_blueprint_virtnet"
+  aos_blueprint_virtnet: "{{ aos_blueprint_virtnet }}"
+  vars:
+    aos_blueprint_virtnet: 
+      blueprint: "{{ aos_blueprint_virtnet_blueprint | default(omit, True) }}"
+      content: "{{ aos_blueprint_virtnet_content | default(omit, True) }}"
+      state: "{{ aos_blueprint_virtnet_state | default(omit, True) }}"
+      session: "{{ aos_blueprint_virtnet_session | default(omit, True) }}"
+      name: "{{ aos_blueprint_virtnet_name | default(omit, True) }}"

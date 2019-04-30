@@ -1,0 +1,17 @@
+---
+- name: "module_aws_direct_connect_gateway"
+  aws_direct_connect_gateway: "{{ aws_direct_connect_gateway }}"
+  vars:
+    aws_direct_connect_gateway: 
+      profile: "{{ aws_direct_connect_gateway_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_direct_connect_gateway_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_direct_connect_gateway_aws_access_key | default(omit, True) }}"
+      amazon_asn: "{{ aws_direct_connect_gateway_amazon_asn | default(omit, True) }}"
+      security_token: "{{ aws_direct_connect_gateway_security_token | default(omit, True) }}"
+      virtual_gateway_id: "{{ aws_direct_connect_gateway_virtual_gateway_id | default(omit, True) }}"
+      region: "{{ aws_direct_connect_gateway_region | default(omit, True) }}"
+      validate_certs: "{{ aws_direct_connect_gateway_validate_certs | default(omit, True) }}"
+      state: "{{ aws_direct_connect_gateway_state | default(omit, True) }}"
+      ec2_url: "{{ aws_direct_connect_gateway_ec2_url | default(omit, True) }}"
+      direct_connect_gateway_id: "{{ aws_direct_connect_gateway_direct_connect_gateway_id | default(omit, True) }}"
+      name: "{{ aws_direct_connect_gateway_name | default(omit, True) }}"

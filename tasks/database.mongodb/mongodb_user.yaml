@@ -1,0 +1,19 @@
+---
+- name: "module_mongodb_user"
+  mongodb_user: "{{ mongodb_user }}"
+  vars:
+    mongodb_user: 
+      login_port: "{{ mongodb_user_login_port | default(omit, True) }}"
+      update_password: "{{ mongodb_user_update_password | default(omit, True) }}"
+      name: "{{ mongodb_user_name | default(omit, True) }}"
+      roles: "{{ mongodb_user_roles | default(omit, True) }}"
+      database: "{{ mongodb_user_database | default(omit, True) }}"
+      login_user: "{{ mongodb_user_login_user | default(omit, True) }}"
+      login_host: "{{ mongodb_user_login_host | default(omit, True) }}"
+      login_database: "{{ mongodb_user_login_database | default(omit, True) }}"
+      ssl_cert_reqs: "{{ mongodb_user_ssl_cert_reqs | default(omit, True) }}"
+      ssl: "{{ mongodb_user_ssl | default(omit, True) }}"
+      state: "{{ mongodb_user_state | default(omit, True) }}"
+      login_password: "{{ mongodb_user_login_password | default(omit, True) }}"
+      password: "{{ mongodb_user_password | default(omit, True) }}"
+      replica_set: "{{ mongodb_user_replica_set | default(omit, True) }}"

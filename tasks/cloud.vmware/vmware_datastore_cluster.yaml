@@ -1,0 +1,13 @@
+---
+- name: "module_vmware_datastore_cluster"
+  vmware_datastore_cluster: "{{ vmware_datastore_cluster }}"
+  vars:
+    vmware_datastore_cluster: 
+      username: "{{ vmware_datastore_cluster_username | default(omit, True) }}"
+      datacenter_name: "{{ vmware_datastore_cluster_datacenter_name | default(omit, True) }}"
+      datastore_cluster_name: "{{ vmware_datastore_cluster_datastore_cluster_name | default(omit, True) }}"
+      hostname: "{{ vmware_datastore_cluster_hostname | default(omit, True) }}"
+      state: "{{ vmware_datastore_cluster_state | default(omit, True) }}"
+      password: "{{ vmware_datastore_cluster_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_datastore_cluster_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_datastore_cluster_port | default(omit, True) }}"

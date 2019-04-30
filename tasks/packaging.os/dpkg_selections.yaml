@@ -1,0 +1,7 @@
+---
+- name: "module_dpkg_selections"
+  dpkg_selections: "{{ dpkg_selections }}"
+  vars:
+    dpkg_selections: 
+      selection: "{{ dpkg_selections_selection | default(omit, True) }}"
+      name: "{{ dpkg_selections_name | default(omit, True) }}"

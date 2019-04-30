@@ -1,0 +1,20 @@
+---
+- name: "module_logicmonitor_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    logicmonitor_facts: 
+      displayname: "{{ logicmonitor_facts_displayname | default('omit', True) }}"
+      target: "{{ logicmonitor_facts_target | default('omit', True) }}"
+      company: "{{ logicmonitor_facts_company | default('omit', True) }}"
+      hostname: "{{ logicmonitor_facts_hostname | default('omit', True) }}"
+      user: "{{ logicmonitor_facts_user | default('omit', True) }}"
+      fullpath: "{{ logicmonitor_facts_fullpath | default('omit', True) }}"
+      password: "{{ logicmonitor_facts_password | default('omit', True) }}"
+      collector: "{{ logicmonitor_facts_collector | default('omit', True) }}"
+  tasks:
+    - name: "plugin_logicmonitor_facts"
+      logicmonitor_facts: "{{ logicmonitor_facts }}"

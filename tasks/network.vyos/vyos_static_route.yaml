@@ -1,0 +1,12 @@
+---
+- name: "module_vyos_static_route"
+  vyos_static_route: "{{ vyos_static_route }}"
+  vars:
+    vyos_static_route: 
+      mask: "{{ vyos_static_route_mask | default(omit, True) }}"
+      state: "{{ vyos_static_route_state | default(omit, True) }}"
+      admin_distance: "{{ vyos_static_route_admin_distance | default(omit, True) }}"
+      prefix: "{{ vyos_static_route_prefix | default(omit, True) }}"
+      next_hop: "{{ vyos_static_route_next_hop | default(omit, True) }}"
+      provider: "{{ vyos_static_route_provider | default(omit, True) }}"
+      aggregate: "{{ vyos_static_route_aggregate | default(omit, True) }}"

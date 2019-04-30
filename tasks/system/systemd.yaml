@@ -1,0 +1,14 @@
+---
+- name: "module_systemd"
+  systemd: "{{ systemd }}"
+  vars:
+    systemd: 
+      no_block: "{{ systemd_no_block | default(omit, True) }}"
+      force: "{{ systemd_force | default(omit, True) }}"
+      name: "{{ systemd_name | default(omit, True) }}"
+      enabled: "{{ systemd_enabled | default(omit, True) }}"
+      daemon_reload: "{{ systemd_daemon_reload | default(omit, True) }}"
+      state: "{{ systemd_state | default(omit, True) }}"
+      user: "{{ systemd_user | default(omit, True) }}"
+      scope: "{{ systemd_scope | default(omit, True) }}"
+      masked: "{{ systemd_masked | default(omit, True) }}"

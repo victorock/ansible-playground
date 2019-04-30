@@ -1,0 +1,17 @@
+---
+- name: "module_cnos_rollback"
+  cnos_rollback: "{{ cnos_rollback }}"
+  vars:
+    cnos_rollback: 
+      username: "{{ cnos_rollback_username | default(omit, True) }}"
+      serverpassword: "{{ cnos_rollback_serverpassword | default(omit, True) }}"
+      outputfile: "{{ cnos_rollback_outputfile | default(omit, True) }}"
+      protocol: "{{ cnos_rollback_protocol | default(omit, True) }}"
+      configType: "{{ cnos_rollback_configType | default(omit, True) }}"
+      host: "{{ cnos_rollback_host | default(omit, True) }}"
+      deviceType: "{{ cnos_rollback_deviceType | default(omit, True) }}"
+      serverusername: "{{ cnos_rollback_serverusername | default(omit, True) }}"
+      password: "{{ cnos_rollback_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_rollback_enablePassword | default(omit, True) }}"
+      rcserverip: "{{ cnos_rollback_rcserverip | default(omit, True) }}"
+      rcpath: "{{ cnos_rollback_rcpath | default(omit, True) }}"

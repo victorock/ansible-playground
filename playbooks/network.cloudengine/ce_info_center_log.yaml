@@ -1,0 +1,20 @@
+---
+- name: "module_ce_info_center_log"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_info_center_log: 
+      log_level: "{{ ce_info_center_log_log_level | default('omit', True) }}"
+      log_enable: "{{ ce_info_center_log_log_enable | default('omit', True) }}"
+      log_buff_size: "{{ ce_info_center_log_log_buff_size | default('omit', True) }}"
+      channel_id: "{{ ce_info_center_log_channel_id | default('omit', True) }}"
+      state: "{{ ce_info_center_log_state | default('omit', True) }}"
+      log_buff_enable: "{{ ce_info_center_log_log_buff_enable | default('omit', True) }}"
+      log_time_stamp: "{{ ce_info_center_log_log_time_stamp | default('omit', True) }}"
+      module_name: "{{ ce_info_center_log_module_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_info_center_log"
+      ce_info_center_log: "{{ ce_info_center_log }}"

@@ -1,0 +1,9 @@
+---
+- name: "module_ios_lldp"
+  ios_lldp: "{{ ios_lldp }}"
+  vars:
+    ios_lldp: 
+      authorize: "{{ ios_lldp_authorize | default(omit, True) }}"
+      state: "{{ ios_lldp_state | default(omit, True) }}"
+      auth_pass: "{{ ios_lldp_auth_pass | default(omit, True) }}"
+      provider: "{{ ios_lldp_provider | default(omit, True) }}"

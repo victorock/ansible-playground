@@ -1,0 +1,36 @@
+---
+- name: "module_aci_interface_policy_ospf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_interface_policy_ospf: 
+      cost: "{{ aci_interface_policy_ospf_cost | default('omit', True) }}"
+      controls: "{{ aci_interface_policy_ospf_controls | default('omit', True) }}"
+      hello_interval: "{{ aci_interface_policy_ospf_hello_interval | default('omit', True) }}"
+      use_ssl: "{{ aci_interface_policy_ospf_use_ssl | default('omit', True) }}"
+      port: "{{ aci_interface_policy_ospf_port | default('omit', True) }}"
+      retransmit_interval: "{{ aci_interface_policy_ospf_retransmit_interval | default('omit', True) }}"
+      use_proxy: "{{ aci_interface_policy_ospf_use_proxy | default('omit', True) }}"
+      prefix_suppression: "{{ aci_interface_policy_ospf_prefix_suppression | default('omit', True) }}"
+      priority: "{{ aci_interface_policy_ospf_priority | default('omit', True) }}"
+      state: "{{ aci_interface_policy_ospf_state | default('omit', True) }}"
+      transmit_delay: "{{ aci_interface_policy_ospf_transmit_delay | default('omit', True) }}"
+      username: "{{ aci_interface_policy_ospf_username | default('omit', True) }}"
+      private_key: "{{ aci_interface_policy_ospf_private_key | default('omit', True) }}"
+      description: "{{ aci_interface_policy_ospf_description | default('omit', True) }}"
+      certificate_name: "{{ aci_interface_policy_ospf_certificate_name | default('omit', True) }}"
+      host: "{{ aci_interface_policy_ospf_host | default('omit', True) }}"
+      password: "{{ aci_interface_policy_ospf_password | default('omit', True) }}"
+      tenant: "{{ aci_interface_policy_ospf_tenant | default('omit', True) }}"
+      ospf: "{{ aci_interface_policy_ospf_ospf | default('omit', True) }}"
+      output_level: "{{ aci_interface_policy_ospf_output_level | default('omit', True) }}"
+      dead_interval: "{{ aci_interface_policy_ospf_dead_interval | default('omit', True) }}"
+      timeout: "{{ aci_interface_policy_ospf_timeout | default('omit', True) }}"
+      validate_certs: "{{ aci_interface_policy_ospf_validate_certs | default('omit', True) }}"
+      network_type: "{{ aci_interface_policy_ospf_network_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_interface_policy_ospf"
+      aci_interface_policy_ospf: "{{ aci_interface_policy_ospf }}"

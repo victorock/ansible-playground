@@ -1,0 +1,28 @@
+---
+- name: "module_mail"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mail: 
+      body: "{{ mail_body | default('omit', True) }}"
+      username: "{{ mail_username | default('omit', True) }}"
+      from: "{{ mail_from | default('omit', True) }}"
+      secure: "{{ mail_secure | default('omit', True) }}"
+      to: "{{ mail_to | default('omit', True) }}"
+      cc: "{{ mail_cc | default('omit', True) }}"
+      charset: "{{ mail_charset | default('omit', True) }}"
+      bcc: "{{ mail_bcc | default('omit', True) }}"
+      headers: "{{ mail_headers | default('omit', True) }}"
+      host: "{{ mail_host | default('omit', True) }}"
+      timeout: "{{ mail_timeout | default('omit', True) }}"
+      subtype: "{{ mail_subtype | default('omit', True) }}"
+      attach: "{{ mail_attach | default('omit', True) }}"
+      password: "{{ mail_password | default('omit', True) }}"
+      port: "{{ mail_port | default('omit', True) }}"
+      subject: "{{ mail_subject | default('omit', True) }}"
+  tasks:
+    - name: "plugin_mail"
+      mail: "{{ mail }}"

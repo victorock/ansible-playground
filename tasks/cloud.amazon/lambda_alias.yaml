@@ -1,0 +1,17 @@
+---
+- name: "module_lambda_alias"
+  lambda_alias: "{{ lambda_alias }}"
+  vars:
+    lambda_alias: 
+      profile: "{{ lambda_alias_profile | default(omit, True) }}"
+      aws_secret_key: "{{ lambda_alias_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ lambda_alias_aws_access_key | default(omit, True) }}"
+      description: "{{ lambda_alias_description | default(omit, True) }}"
+      security_token: "{{ lambda_alias_security_token | default(omit, True) }}"
+      region: "{{ lambda_alias_region | default(omit, True) }}"
+      state: "{{ lambda_alias_state | default(omit, True) }}"
+      version: "{{ lambda_alias_version | default(omit, True) }}"
+      ec2_url: "{{ lambda_alias_ec2_url | default(omit, True) }}"
+      function_name: "{{ lambda_alias_function_name | default(omit, True) }}"
+      validate_certs: "{{ lambda_alias_validate_certs | default(omit, True) }}"
+      name: "{{ lambda_alias_name | default(omit, True) }}"

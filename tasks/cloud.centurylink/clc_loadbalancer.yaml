@@ -1,0 +1,15 @@
+---
+- name: "module_clc_loadbalancer"
+  clc_loadbalancer: "{{ clc_loadbalancer }}"
+  vars:
+    clc_loadbalancer: 
+      status: "{{ clc_loadbalancer_status | default(omit, True) }}"
+      name: "{{ clc_loadbalancer_name | default(omit, True) }}"
+      method: "{{ clc_loadbalancer_method | default(omit, True) }}"
+      alias: "{{ clc_loadbalancer_alias | default(omit, True) }}"
+      state: "{{ clc_loadbalancer_state | default(omit, True) }}"
+      location: "{{ clc_loadbalancer_location | default(omit, True) }}"
+      nodes: "{{ clc_loadbalancer_nodes | default(omit, True) }}"
+      port: "{{ clc_loadbalancer_port | default(omit, True) }}"
+      persistence: "{{ clc_loadbalancer_persistence | default(omit, True) }}"
+      description: "{{ clc_loadbalancer_description | default(omit, True) }}"

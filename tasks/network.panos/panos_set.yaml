@@ -1,0 +1,11 @@
+---
+- name: "module_panos_set"
+  panos_set: "{{ panos_set }}"
+  vars:
+    panos_set: 
+      username: "{{ panos_set_username | default(omit, True) }}"
+      xpath: "{{ panos_set_xpath | default(omit, True) }}"
+      element: "{{ panos_set_element | default(omit, True) }}"
+      command: "{{ panos_set_command | default(omit, True) }}"
+      password: "{{ panos_set_password | default(omit, True) }}"
+      ip_address: "{{ panos_set_ip_address | default(omit, True) }}"

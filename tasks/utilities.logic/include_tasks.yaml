@@ -1,0 +1,8 @@
+---
+- name: "module_include_tasks"
+  include_tasks: "{{ include_tasks }}"
+  vars:
+    include_tasks: 
+      free-form: "{{ include_tasks_free-form | default(omit, True) }}"
+      apply: "{{ include_tasks_apply | default(omit, True) }}"
+      file: "{{ include_tasks_file | default(omit, True) }}"

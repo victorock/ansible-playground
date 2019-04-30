@@ -1,0 +1,19 @@
+---
+- name: "module_ce_ntp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_ntp: 
+      is_preferred: "{{ ce_ntp_is_preferred | default('omit', True) }}"
+      vpn_name: "{{ ce_ntp_vpn_name | default('omit', True) }}"
+      source_int: "{{ ce_ntp_source_int | default('omit', True) }}"
+      state: "{{ ce_ntp_state | default('omit', True) }}"
+      peer: "{{ ce_ntp_peer | default('omit', True) }}"
+      key_id: "{{ ce_ntp_key_id | default('omit', True) }}"
+      server: "{{ ce_ntp_server | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_ntp"
+      ce_ntp: "{{ ce_ntp }}"

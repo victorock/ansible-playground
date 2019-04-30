@@ -1,0 +1,10 @@
+---
+- name: "module_voss_command"
+  voss_command: "{{ voss_command }}"
+  vars:
+    voss_command: 
+      retries: "{{ voss_command_retries | default(omit, True) }}"
+      commands: "{{ voss_command_commands | default(omit, True) }}"
+      wait_for: "{{ voss_command_wait_for | default(omit, True) }}"
+      match: "{{ voss_command_match | default(omit, True) }}"
+      interval: "{{ voss_command_interval | default(omit, True) }}"

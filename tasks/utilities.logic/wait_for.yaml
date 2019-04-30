@@ -1,0 +1,17 @@
+---
+- name: "module_wait_for"
+  wait_for: "{{ wait_for }}"
+  vars:
+    wait_for: 
+      active_connection_states: "{{ wait_for_active_connection_states | default(omit, True) }}"
+      state: "{{ wait_for_state | default(omit, True) }}"
+      connect_timeout: "{{ wait_for_connect_timeout | default(omit, True) }}"
+      delay: "{{ wait_for_delay | default(omit, True) }}"
+      search_regex: "{{ wait_for_search_regex | default(omit, True) }}"
+      host: "{{ wait_for_host | default(omit, True) }}"
+      sleep: "{{ wait_for_sleep | default(omit, True) }}"
+      timeout: "{{ wait_for_timeout | default(omit, True) }}"
+      exclude_hosts: "{{ wait_for_exclude_hosts | default(omit, True) }}"
+      msg: "{{ wait_for_msg | default(omit, True) }}"
+      path: "{{ wait_for_path | default(omit, True) }}"
+      port: "{{ wait_for_port | default(omit, True) }}"

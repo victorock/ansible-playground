@@ -1,0 +1,36 @@
+---
+- name: "module_cloudformation"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cloudformation: 
+      template_body: "{{ cloudformation_template_body | default('omit', True) }}"
+      template_format: "{{ cloudformation_template_format | default('omit', True) }}"
+      stack_name: "{{ cloudformation_stack_name | default('omit', True) }}"
+      termination_protection: "{{ cloudformation_termination_protection | default('omit', True) }}"
+      ec2_url: "{{ cloudformation_ec2_url | default('omit', True) }}"
+      aws_secret_key: "{{ cloudformation_aws_secret_key | default('omit', True) }}"
+      role_arn: "{{ cloudformation_role_arn | default('omit', True) }}"
+      stack_policy: "{{ cloudformation_stack_policy | default('omit', True) }}"
+      template_parameters: "{{ cloudformation_template_parameters | default('omit', True) }}"
+      events_limit: "{{ cloudformation_events_limit | default('omit', True) }}"
+      state: "{{ cloudformation_state | default('omit', True) }}"
+      template: "{{ cloudformation_template | default('omit', True) }}"
+      create_timeout: "{{ cloudformation_create_timeout | default('omit', True) }}"
+      create_changeset: "{{ cloudformation_create_changeset | default('omit', True) }}"
+      profile: "{{ cloudformation_profile | default('omit', True) }}"
+      disable_rollback: "{{ cloudformation_disable_rollback | default('omit', True) }}"
+      notification_arns: "{{ cloudformation_notification_arns | default('omit', True) }}"
+      tags: "{{ cloudformation_tags | default('omit', True) }}"
+      template_url: "{{ cloudformation_template_url | default('omit', True) }}"
+      aws_access_key: "{{ cloudformation_aws_access_key | default('omit', True) }}"
+      security_token: "{{ cloudformation_security_token | default('omit', True) }}"
+      changeset_name: "{{ cloudformation_changeset_name | default('omit', True) }}"
+      region: "{{ cloudformation_region | default('omit', True) }}"
+      validate_certs: "{{ cloudformation_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cloudformation"
+      cloudformation: "{{ cloudformation }}"

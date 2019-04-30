@@ -1,0 +1,20 @@
+---
+- name: "module_hg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hg: 
+      repo: "{{ hg_repo | default('omit', True) }}"
+      executable: "{{ hg_executable | default('omit', True) }}"
+      force: "{{ hg_force | default('omit', True) }}"
+      dest: "{{ hg_dest | default('omit', True) }}"
+      clone: "{{ hg_clone | default('omit', True) }}"
+      update: "{{ hg_update | default('omit', True) }}"
+      purge: "{{ hg_purge | default('omit', True) }}"
+      revision: "{{ hg_revision | default('omit', True) }}"
+  tasks:
+    - name: "plugin_hg"
+      hg: "{{ hg }}"

@@ -1,0 +1,16 @@
+---
+- name: "module_postgresql_lang"
+  postgresql_lang: "{{ postgresql_lang }}"
+  vars:
+    postgresql_lang: 
+      lang: "{{ postgresql_lang_lang | default(omit, True) }}"
+      cascade: "{{ postgresql_lang_cascade | default(omit, True) }}"
+      login_user: "{{ postgresql_lang_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_lang_login_host | default(omit, True) }}"
+      db: "{{ postgresql_lang_db | default(omit, True) }}"
+      force_trust: "{{ postgresql_lang_force_trust | default(omit, True) }}"
+      state: "{{ postgresql_lang_state | default(omit, True) }}"
+      login_password: "{{ postgresql_lang_login_password | default(omit, True) }}"
+      trust: "{{ postgresql_lang_trust | default(omit, True) }}"
+      fail_on_drop: "{{ postgresql_lang_fail_on_drop | default(omit, True) }}"
+      port: "{{ postgresql_lang_port | default(omit, True) }}"

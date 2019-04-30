@@ -1,0 +1,17 @@
+---
+- name: "module_bigip_gtm_datacenter"
+  bigip_gtm_datacenter: "{{ bigip_gtm_datacenter }}"
+  vars:
+    bigip_gtm_datacenter: 
+      description: "{{ bigip_gtm_datacenter_description | default(omit, True) }}"
+      partition: "{{ bigip_gtm_datacenter_partition | default(omit, True) }}"
+      location: "{{ bigip_gtm_datacenter_location | default(omit, True) }}"
+      server: "{{ bigip_gtm_datacenter_server | default(omit, True) }}"
+      state: "{{ bigip_gtm_datacenter_state | default(omit, True) }}"
+      contact: "{{ bigip_gtm_datacenter_contact | default(omit, True) }}"
+      user: "{{ bigip_gtm_datacenter_user | default(omit, True) }}"
+      server_port: "{{ bigip_gtm_datacenter_server_port | default(omit, True) }}"
+      provider: "{{ bigip_gtm_datacenter_provider | default(omit, True) }}"
+      password: "{{ bigip_gtm_datacenter_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_gtm_datacenter_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_gtm_datacenter_name | default(omit, True) }}"

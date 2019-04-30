@@ -1,0 +1,16 @@
+---
+- name: "module_hall"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hall: 
+      msg: "{{ hall_msg | default('omit', True) }}"
+      room_token: "{{ hall_room_token | default('omit', True) }}"
+      picture: "{{ hall_picture | default('omit', True) }}"
+      title: "{{ hall_title | default('omit', True) }}"
+  tasks:
+    - name: "plugin_hall"
+      hall: "{{ hall }}"

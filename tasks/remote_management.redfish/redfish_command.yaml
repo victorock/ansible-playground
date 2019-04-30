@@ -1,0 +1,15 @@
+---
+- name: "module_redfish_command"
+  redfish_command: "{{ redfish_command }}"
+  vars:
+    redfish_command: 
+      category: "{{ redfish_command_category | default(omit, True) }}"
+      username: "{{ redfish_command_username | default(omit, True) }}"
+      userpswd: "{{ redfish_command_userpswd | default(omit, True) }}"
+      baseuri: "{{ redfish_command_baseuri | default(omit, True) }}"
+      userid: "{{ redfish_command_userid | default(omit, True) }}"
+      command: "{{ redfish_command_command | default(omit, True) }}"
+      user: "{{ redfish_command_user | default(omit, True) }}"
+      password: "{{ redfish_command_password | default(omit, True) }}"
+      bootdevice: "{{ redfish_command_bootdevice | default(omit, True) }}"
+      userrole: "{{ redfish_command_userrole | default(omit, True) }}"

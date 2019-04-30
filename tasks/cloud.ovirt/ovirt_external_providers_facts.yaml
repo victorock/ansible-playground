@@ -1,0 +1,10 @@
+---
+- name: "module_ovirt_external_providers_facts"
+  ovirt_external_providers_facts: "{{ ovirt_external_providers_facts }}"
+  vars:
+    ovirt_external_providers_facts: 
+      nested_attributes: "{{ ovirt_external_providers_facts_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_external_providers_facts_fetch_nested | default(omit, True) }}"
+      type: "{{ ovirt_external_providers_facts_type | default(omit, True) }}"
+      name: "{{ ovirt_external_providers_facts_name | default(omit, True) }}"
+      auth: "{{ ovirt_external_providers_facts_auth | default(omit, True) }}"

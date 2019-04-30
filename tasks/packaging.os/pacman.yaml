@@ -1,0 +1,11 @@
+---
+- name: "module_pacman"
+  pacman: "{{ pacman }}"
+  vars:
+    pacman: 
+      upgrade: "{{ pacman_upgrade | default(omit, True) }}"
+      force: "{{ pacman_force | default(omit, True) }}"
+      name: "{{ pacman_name | default(omit, True) }}"
+      recurse: "{{ pacman_recurse | default(omit, True) }}"
+      state: "{{ pacman_state | default(omit, True) }}"
+      update_cache: "{{ pacman_update_cache | default(omit, True) }}"

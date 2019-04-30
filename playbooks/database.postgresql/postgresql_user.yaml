@@ -1,0 +1,30 @@
+---
+- name: "module_postgresql_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_user: 
+      ssl_rootcert: "{{ postgresql_user_ssl_rootcert | default('omit', True) }}"
+      ssl_mode: "{{ postgresql_user_ssl_mode | default('omit', True) }}"
+      name: "{{ postgresql_user_name | default('omit', True) }}"
+      no_password_changes: "{{ postgresql_user_no_password_changes | default('omit', True) }}"
+      login_user: "{{ postgresql_user_login_user | default('omit', True) }}"
+      login_host: "{{ postgresql_user_login_host | default('omit', True) }}"
+      expires: "{{ postgresql_user_expires | default('omit', True) }}"
+      db: "{{ postgresql_user_db | default('omit', True) }}"
+      role_attr_flags: "{{ postgresql_user_role_attr_flags | default('omit', True) }}"
+      conn_limit: "{{ postgresql_user_conn_limit | default('omit', True) }}"
+      login_unix_socket: "{{ postgresql_user_login_unix_socket | default('omit', True) }}"
+      state: "{{ postgresql_user_state | default('omit', True) }}"
+      encrypted: "{{ postgresql_user_encrypted | default('omit', True) }}"
+      login_password: "{{ postgresql_user_login_password | default('omit', True) }}"
+      password: "{{ postgresql_user_password | default('omit', True) }}"
+      port: "{{ postgresql_user_port | default('omit', True) }}"
+      fail_on_user: "{{ postgresql_user_fail_on_user | default('omit', True) }}"
+      priv: "{{ postgresql_user_priv | default('omit', True) }}"
+  tasks:
+    - name: "plugin_postgresql_user"
+      postgresql_user: "{{ postgresql_user }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_aws_config_delivery_channel"
+  aws_config_delivery_channel: "{{ aws_config_delivery_channel }}"
+  vars:
+    aws_config_delivery_channel: 
+      profile: "{{ aws_config_delivery_channel_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_config_delivery_channel_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_config_delivery_channel_aws_access_key | default(omit, True) }}"
+      name: "{{ aws_config_delivery_channel_name | default(omit, True) }}"
+      security_token: "{{ aws_config_delivery_channel_security_token | default(omit, True) }}"
+      s3_bucket: "{{ aws_config_delivery_channel_s3_bucket | default(omit, True) }}"
+      state: "{{ aws_config_delivery_channel_state | default(omit, True) }}"
+      s3_prefix: "{{ aws_config_delivery_channel_s3_prefix | default(omit, True) }}"
+      ec2_url: "{{ aws_config_delivery_channel_ec2_url | default(omit, True) }}"
+      delivery_frequency: "{{ aws_config_delivery_channel_delivery_frequency | default(omit, True) }}"
+      sns_topic_arn: "{{ aws_config_delivery_channel_sns_topic_arn | default(omit, True) }}"
+      validate_certs: "{{ aws_config_delivery_channel_validate_certs | default(omit, True) }}"
+      region: "{{ aws_config_delivery_channel_region | default(omit, True) }}"

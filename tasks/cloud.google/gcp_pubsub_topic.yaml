@@ -1,0 +1,12 @@
+---
+- name: "module_gcp_pubsub_topic"
+  gcp_pubsub_topic: "{{ gcp_pubsub_topic }}"
+  vars:
+    gcp_pubsub_topic: 
+      scopes: "{{ gcp_pubsub_topic_scopes | default(omit, True) }}"
+      name: "{{ gcp_pubsub_topic_name | default(omit, True) }}"
+      service_account_email: "{{ gcp_pubsub_topic_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_pubsub_topic_project | default(omit, True) }}"
+      state: "{{ gcp_pubsub_topic_state | default(omit, True) }}"
+      auth_kind: "{{ gcp_pubsub_topic_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_pubsub_topic_service_account_file | default(omit, True) }}"

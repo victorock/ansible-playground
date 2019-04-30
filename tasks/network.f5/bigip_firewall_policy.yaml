@@ -1,0 +1,16 @@
+---
+- name: "module_bigip_firewall_policy"
+  bigip_firewall_policy: "{{ bigip_firewall_policy }}"
+  vars:
+    bigip_firewall_policy: 
+      description: "{{ bigip_firewall_policy_description | default(omit, True) }}"
+      rules: "{{ bigip_firewall_policy_rules | default(omit, True) }}"
+      partition: "{{ bigip_firewall_policy_partition | default(omit, True) }}"
+      server: "{{ bigip_firewall_policy_server | default(omit, True) }}"
+      state: "{{ bigip_firewall_policy_state | default(omit, True) }}"
+      user: "{{ bigip_firewall_policy_user | default(omit, True) }}"
+      server_port: "{{ bigip_firewall_policy_server_port | default(omit, True) }}"
+      provider: "{{ bigip_firewall_policy_provider | default(omit, True) }}"
+      password: "{{ bigip_firewall_policy_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_firewall_policy_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_firewall_policy_name | default(omit, True) }}"

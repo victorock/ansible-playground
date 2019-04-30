@@ -1,0 +1,12 @@
+---
+- name: "module_panos_import"
+  panos_import: "{{ panos_import }}"
+  vars:
+    panos_import: 
+      category: "{{ panos_import_category | default(omit, True) }}"
+      username: "{{ panos_import_username | default(omit, True) }}"
+      url: "{{ panos_import_url | default(omit, True) }}"
+      validate_certs: "{{ panos_import_validate_certs | default(omit, True) }}"
+      file: "{{ panos_import_file | default(omit, True) }}"
+      password: "{{ panos_import_password | default(omit, True) }}"
+      ip_address: "{{ panos_import_ip_address | default(omit, True) }}"

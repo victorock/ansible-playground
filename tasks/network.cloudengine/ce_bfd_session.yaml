@@ -1,0 +1,14 @@
+---
+- name: "module_ce_bfd_session"
+  ce_bfd_session: "{{ ce_bfd_session }}"
+  vars:
+    ce_bfd_session: 
+      src_addr: "{{ ce_bfd_session_src_addr | default(omit, True) }}"
+      use_default_ip: "{{ ce_bfd_session_use_default_ip | default(omit, True) }}"
+      state: "{{ ce_bfd_session_state | default(omit, True) }}"
+      dest_addr: "{{ ce_bfd_session_dest_addr | default(omit, True) }}"
+      vrf_name: "{{ ce_bfd_session_vrf_name | default(omit, True) }}"
+      create_type: "{{ ce_bfd_session_create_type | default(omit, True) }}"
+      session_name: "{{ ce_bfd_session_session_name | default(omit, True) }}"
+      out_if_name: "{{ ce_bfd_session_out_if_name | default(omit, True) }}"
+      addr_type: "{{ ce_bfd_session_addr_type | default(omit, True) }}"

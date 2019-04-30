@@ -1,0 +1,19 @@
+---
+- name: "module_lxd_container"
+  lxd_container: "{{ lxd_container }}"
+  vars:
+    lxd_container: 
+      name: "{{ lxd_container_name | default(omit, True) }}"
+      source: "{{ lxd_container_source | default(omit, True) }}"
+      url: "{{ lxd_container_url | default(omit, True) }}"
+      trust_password: "{{ lxd_container_trust_password | default(omit, True) }}"
+      cert_file: "{{ lxd_container_cert_file | default(omit, True) }}"
+      ephemeral: "{{ lxd_container_ephemeral | default(omit, True) }}"
+      devices: "{{ lxd_container_devices | default(omit, True) }}"
+      wait_for_ipv4_addresses: "{{ lxd_container_wait_for_ipv4_addresses | default(omit, True) }}"
+      state: "{{ lxd_container_state | default(omit, True) }}"
+      architecture: "{{ lxd_container_architecture | default(omit, True) }}"
+      timeout: "{{ lxd_container_timeout | default(omit, True) }}"
+      key_file: "{{ lxd_container_key_file | default(omit, True) }}"
+      config: "{{ lxd_container_config | default(omit, True) }}"
+      force_stop: "{{ lxd_container_force_stop | default(omit, True) }}"

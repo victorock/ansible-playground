@@ -1,0 +1,13 @@
+---
+- name: "module_katello"
+  katello: "{{ katello }}"
+  vars:
+    katello: 
+      username: "{{ katello_username | default(omit, True) }}"
+      entity: "{{ katello_entity | default(omit, True) }}"
+      server_url: "{{ katello_server_url | default(omit, True) }}"
+      task_timeout: "{{ katello_task_timeout | default(omit, True) }}"
+      verify_ssl: "{{ katello_verify_ssl | default(omit, True) }}"
+      params: "{{ katello_params | default(omit, True) }}"
+      action: "{{ katello_action | default(omit, True) }}"
+      password: "{{ katello_password | default(omit, True) }}"

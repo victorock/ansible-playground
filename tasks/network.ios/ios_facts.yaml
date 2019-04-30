@@ -1,0 +1,9 @@
+---
+- name: "module_ios_facts"
+  ios_facts: "{{ ios_facts }}"
+  vars:
+    ios_facts: 
+      authorize: "{{ ios_facts_authorize | default(omit, True) }}"
+      auth_pass: "{{ ios_facts_auth_pass | default(omit, True) }}"
+      provider: "{{ ios_facts_provider | default(omit, True) }}"
+      gather_subset: "{{ ios_facts_gather_subset | default(omit, True) }}"

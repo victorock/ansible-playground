@@ -1,0 +1,12 @@
+---
+- name: "module_nxos_evpn_vni"
+  nxos_evpn_vni: "{{ nxos_evpn_vni }}"
+  vars:
+    nxos_evpn_vni: 
+      route_target_both: "{{ nxos_evpn_vni_route_target_both | default(omit, True) }}"
+      vni: "{{ nxos_evpn_vni_vni | default(omit, True) }}"
+      state: "{{ nxos_evpn_vni_state | default(omit, True) }}"
+      route_distinguisher: "{{ nxos_evpn_vni_route_distinguisher | default(omit, True) }}"
+      route_target_import: "{{ nxos_evpn_vni_route_target_import | default(omit, True) }}"
+      provider: "{{ nxos_evpn_vni_provider | default(omit, True) }}"
+      route_target_export: "{{ nxos_evpn_vni_route_target_export | default(omit, True) }}"

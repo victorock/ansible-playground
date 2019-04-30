@@ -1,0 +1,28 @@
+---
+- name: "module_gitlab_hooks"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gitlab_hooks: 
+      hook_url: "{{ gitlab_hooks_hook_url | default('omit', True) }}"
+      job_events: "{{ gitlab_hooks_job_events | default('omit', True) }}"
+      tag_push_events: "{{ gitlab_hooks_tag_push_events | default('omit', True) }}"
+      access_token: "{{ gitlab_hooks_access_token | default('omit', True) }}"
+      enable_ssl_verification: "{{ gitlab_hooks_enable_ssl_verification | default('omit', True) }}"
+      token: "{{ gitlab_hooks_token | default('omit', True) }}"
+      note_events: "{{ gitlab_hooks_note_events | default('omit', True) }}"
+      project: "{{ gitlab_hooks_project | default('omit', True) }}"
+      issues_events: "{{ gitlab_hooks_issues_events | default('omit', True) }}"
+      state: "{{ gitlab_hooks_state | default('omit', True) }}"
+      push_events: "{{ gitlab_hooks_push_events | default('omit', True) }}"
+      wiki_page_events: "{{ gitlab_hooks_wiki_page_events | default('omit', True) }}"
+      merge_requests_events: "{{ gitlab_hooks_merge_requests_events | default('omit', True) }}"
+      pipeline_events: "{{ gitlab_hooks_pipeline_events | default('omit', True) }}"
+      private_token: "{{ gitlab_hooks_private_token | default('omit', True) }}"
+      api_url: "{{ gitlab_hooks_api_url | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gitlab_hooks"
+      gitlab_hooks: "{{ gitlab_hooks }}"

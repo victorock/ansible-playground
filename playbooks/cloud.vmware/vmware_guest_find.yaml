@@ -1,0 +1,20 @@
+---
+- name: "module_vmware_guest_find"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_guest_find: 
+      username: "{{ vmware_guest_find_username | default('omit', True) }}"
+      datacenter: "{{ vmware_guest_find_datacenter | default('omit', True) }}"
+      name: "{{ vmware_guest_find_name | default('omit', True) }}"
+      hostname: "{{ vmware_guest_find_hostname | default('omit', True) }}"
+      password: "{{ vmware_guest_find_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_guest_find_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_guest_find_port | default('omit', True) }}"
+      uuid: "{{ vmware_guest_find_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_guest_find"
+      vmware_guest_find: "{{ vmware_guest_find }}"

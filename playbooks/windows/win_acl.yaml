@@ -1,0 +1,19 @@
+---
+- name: "module_win_acl"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_acl: 
+      rights: "{{ win_acl_rights | default('omit', True) }}"
+      inherit: "{{ win_acl_inherit | default('omit', True) }}"
+      propagation: "{{ win_acl_propagation | default('omit', True) }}"
+      state: "{{ win_acl_state | default('omit', True) }}"
+      user: "{{ win_acl_user | default('omit', True) }}"
+      path: "{{ win_acl_path | default('omit', True) }}"
+      type: "{{ win_acl_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_acl"
+      win_acl: "{{ win_acl }}"

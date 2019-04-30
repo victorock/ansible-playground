@@ -1,0 +1,21 @@
+---
+- name: "module_cnos_conditional_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_conditional_command: 
+      username: "{{ cnos_conditional_command_username | default('omit', True) }}"
+      outputfile: "{{ cnos_conditional_command_outputfile | default('omit', True) }}"
+      clicommand: "{{ cnos_conditional_command_clicommand | default('omit', True) }}"
+      host: "{{ cnos_conditional_command_host | default('omit', True) }}"
+      flag: "{{ cnos_conditional_command_flag | default('omit', True) }}"
+      deviceType: "{{ cnos_conditional_command_deviceType | default('omit', True) }}"
+      password: "{{ cnos_conditional_command_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_conditional_command_enablePassword | default('omit', True) }}"
+      condition: "{{ cnos_conditional_command_condition | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_conditional_command"
+      cnos_conditional_command: "{{ cnos_conditional_command }}"

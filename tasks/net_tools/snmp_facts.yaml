@@ -1,0 +1,14 @@
+---
+- name: "module_snmp_facts"
+  snmp_facts: "{{ snmp_facts }}"
+  vars:
+    snmp_facts: 
+      username: "{{ snmp_facts_username | default(omit, True) }}"
+      privacy: "{{ snmp_facts_privacy | default(omit, True) }}"
+      level: "{{ snmp_facts_level | default(omit, True) }}"
+      community: "{{ snmp_facts_community | default(omit, True) }}"
+      authkey: "{{ snmp_facts_authkey | default(omit, True) }}"
+      host: "{{ snmp_facts_host | default(omit, True) }}"
+      version: "{{ snmp_facts_version | default(omit, True) }}"
+      integrity: "{{ snmp_facts_integrity | default(omit, True) }}"
+      privkey: "{{ snmp_facts_privkey | default(omit, True) }}"

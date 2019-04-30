@@ -1,0 +1,23 @@
+---
+- name: "module_win_package"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_package: 
+      username: "{{ win_package_username | default('omit', True) }}"
+      creates_path: "{{ win_package_creates_path | default('omit', True) }}"
+      product_id: "{{ win_package_product_id | default('omit', True) }}"
+      creates_service: "{{ win_package_creates_service | default('omit', True) }}"
+      expected_return_code: "{{ win_package_expected_return_code | default('omit', True) }}"
+      state: "{{ win_package_state | default('omit', True) }}"
+      arguments: "{{ win_package_arguments | default('omit', True) }}"
+      creates_version: "{{ win_package_creates_version | default('omit', True) }}"
+      path: "{{ win_package_path | default('omit', True) }}"
+      password: "{{ win_package_password | default('omit', True) }}"
+      validate_certs: "{{ win_package_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_package"
+      win_package: "{{ win_package }}"

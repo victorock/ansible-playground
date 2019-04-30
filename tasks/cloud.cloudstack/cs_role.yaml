@@ -1,0 +1,16 @@
+---
+- name: "module_cs_role"
+  cs_role: "{{ cs_role }}"
+  vars:
+    cs_role: 
+      description: "{{ cs_role_description | default(omit, True) }}"
+      api_http_method: "{{ cs_role_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_role_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_role_api_timeout | default(omit, True) }}"
+      api_region: "{{ cs_role_api_region | default(omit, True) }}"
+      state: "{{ cs_role_state | default(omit, True) }}"
+      api_url: "{{ cs_role_api_url | default(omit, True) }}"
+      api_key: "{{ cs_role_api_key | default(omit, True) }}"
+      id: "{{ cs_role_id | default(omit, True) }}"
+      role_type: "{{ cs_role_role_type | default(omit, True) }}"
+      name: "{{ cs_role_name | default(omit, True) }}"

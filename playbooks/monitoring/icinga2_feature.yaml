@@ -1,0 +1,14 @@
+---
+- name: "module_icinga2_feature"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    icinga2_feature: 
+      state: "{{ icinga2_feature_state | default('omit', True) }}"
+      name: "{{ icinga2_feature_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_icinga2_feature"
+      icinga2_feature: "{{ icinga2_feature }}"

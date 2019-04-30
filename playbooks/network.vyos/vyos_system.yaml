@@ -1,0 +1,18 @@
+---
+- name: "module_vyos_system"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vyos_system: 
+      domain_search: "{{ vyos_system_domain_search | default('omit', True) }}"
+      domain_name: "{{ vyos_system_domain_name | default('omit', True) }}"
+      state: "{{ vyos_system_state | default('omit', True) }}"
+      host_name: "{{ vyos_system_host_name | default('omit', True) }}"
+      provider: "{{ vyos_system_provider | default('omit', True) }}"
+      name_servers: "{{ vyos_system_name_servers | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vyos_system"
+      vyos_system: "{{ vyos_system }}"

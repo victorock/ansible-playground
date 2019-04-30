@@ -1,0 +1,15 @@
+---
+- name: "module_open_iscsi"
+  open_iscsi: "{{ open_iscsi }}"
+  vars:
+    open_iscsi: 
+      auto_node_startup: "{{ open_iscsi_auto_node_startup | default(omit, True) }}"
+      target: "{{ open_iscsi_target | default(omit, True) }}"
+      show_nodes: "{{ open_iscsi_show_nodes | default(omit, True) }}"
+      node_auth: "{{ open_iscsi_node_auth | default(omit, True) }}"
+      node_pass: "{{ open_iscsi_node_pass | default(omit, True) }}"
+      discover: "{{ open_iscsi_discover | default(omit, True) }}"
+      portal: "{{ open_iscsi_portal | default(omit, True) }}"
+      login: "{{ open_iscsi_login | default(omit, True) }}"
+      node_user: "{{ open_iscsi_node_user | default(omit, True) }}"
+      port: "{{ open_iscsi_port | default(omit, True) }}"

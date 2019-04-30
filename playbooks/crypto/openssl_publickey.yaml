@@ -1,0 +1,27 @@
+---
+- name: "module_openssl_publickey"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    openssl_publickey: 
+      privatekey_passphrase: "{{ openssl_publickey_privatekey_passphrase | default('omit', True) }}"
+      force: "{{ openssl_publickey_force | default('omit', True) }}"
+      format: "{{ openssl_publickey_format | default('omit', True) }}"
+      unsafe_writes: "{{ openssl_publickey_unsafe_writes | default('omit', True) }}"
+      selevel: "{{ openssl_publickey_selevel | default('omit', True) }}"
+      seuser: "{{ openssl_publickey_seuser | default('omit', True) }}"
+      state: "{{ openssl_publickey_state | default('omit', True) }}"
+      privatekey_path: "{{ openssl_publickey_privatekey_path | default('omit', True) }}"
+      serole: "{{ openssl_publickey_serole | default('omit', True) }}"
+      mode: "{{ openssl_publickey_mode | default('omit', True) }}"
+      attributes: "{{ openssl_publickey_attributes | default('omit', True) }}"
+      owner: "{{ openssl_publickey_owner | default('omit', True) }}"
+      path: "{{ openssl_publickey_path | default('omit', True) }}"
+      group: "{{ openssl_publickey_group | default('omit', True) }}"
+      setype: "{{ openssl_publickey_setype | default('omit', True) }}"
+  tasks:
+    - name: "plugin_openssl_publickey"
+      openssl_publickey: "{{ openssl_publickey }}"

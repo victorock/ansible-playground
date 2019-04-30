@@ -1,0 +1,21 @@
+---
+- name: "module_ce_bfd_global"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_bfd_global: 
+      tos_exp_dynamic: "{{ ce_bfd_global_tos_exp_dynamic | default('omit', True) }}"
+      default_ip: "{{ ce_bfd_global_default_ip | default('omit', True) }}"
+      delay_up_time: "{{ ce_bfd_global_delay_up_time | default('omit', True) }}"
+      bfd_enable: "{{ ce_bfd_global_bfd_enable | default('omit', True) }}"
+      damp_init_wait_time: "{{ ce_bfd_global_damp_init_wait_time | default('omit', True) }}"
+      state: "{{ ce_bfd_global_state | default('omit', True) }}"
+      damp_max_wait_time: "{{ ce_bfd_global_damp_max_wait_time | default('omit', True) }}"
+      damp_second_wait_time: "{{ ce_bfd_global_damp_second_wait_time | default('omit', True) }}"
+      tos_exp_static: "{{ ce_bfd_global_tos_exp_static | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_bfd_global"
+      ce_bfd_global: "{{ ce_bfd_global }}"

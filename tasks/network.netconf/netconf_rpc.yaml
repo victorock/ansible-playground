@@ -1,0 +1,9 @@
+---
+- name: "module_netconf_rpc"
+  netconf_rpc: "{{ netconf_rpc }}"
+  vars:
+    netconf_rpc: 
+      content: "{{ netconf_rpc_content | default(omit, True) }}"
+      rpc: "{{ netconf_rpc_rpc | default(omit, True) }}"
+      xmlns: "{{ netconf_rpc_xmlns | default(omit, True) }}"
+      display: "{{ netconf_rpc_display | default(omit, True) }}"

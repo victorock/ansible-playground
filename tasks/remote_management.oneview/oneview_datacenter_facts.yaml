@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_datacenter_facts"
+  oneview_datacenter_facts: "{{ oneview_datacenter_facts }}"
+  vars:
+    oneview_datacenter_facts: 
+      config: "{{ oneview_datacenter_facts_config | default(omit, True) }}"
+      params: "{{ oneview_datacenter_facts_params | default(omit, True) }}"
+      name: "{{ oneview_datacenter_facts_name | default(omit, True) }}"
+      options: "{{ oneview_datacenter_facts_options | default(omit, True) }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_nxos_file_copy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_file_copy: 
+      local_file: "{{ nxos_file_copy_local_file | default('omit', True) }}"
+      local_file_directory: "{{ nxos_file_copy_local_file_directory | default('omit', True) }}"
+      remote_scp_server: "{{ nxos_file_copy_remote_scp_server | default('omit', True) }}"
+      connect_ssh_port: "{{ nxos_file_copy_connect_ssh_port | default('omit', True) }}"
+      remote_scp_server_user: "{{ nxos_file_copy_remote_scp_server_user | default('omit', True) }}"
+      remote_scp_server_password: "{{ nxos_file_copy_remote_scp_server_password | default('omit', True) }}"
+      file_pull: "{{ nxos_file_copy_file_pull | default('omit', True) }}"
+      provider: "{{ nxos_file_copy_provider | default('omit', True) }}"
+      remote_file: "{{ nxos_file_copy_remote_file | default('omit', True) }}"
+      file_system: "{{ nxos_file_copy_file_system | default('omit', True) }}"
+      file_pull_timeout: "{{ nxos_file_copy_file_pull_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_file_copy"
+      nxos_file_copy: "{{ nxos_file_copy }}"

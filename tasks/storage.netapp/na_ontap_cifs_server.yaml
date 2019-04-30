@@ -1,0 +1,21 @@
+---
+- name: "module_na_ontap_cifs_server"
+  na_ontap_cifs_server: "{{ na_ontap_cifs_server }}"
+  vars:
+    na_ontap_cifs_server: 
+      username: "{{ na_ontap_cifs_server_username | default(omit, True) }}"
+      domain: "{{ na_ontap_cifs_server_domain | default(omit, True) }}"
+      http_port: "{{ na_ontap_cifs_server_http_port | default(omit, True) }}"
+      force: "{{ na_ontap_cifs_server_force | default(omit, True) }}"
+      workgroup: "{{ na_ontap_cifs_server_workgroup | default(omit, True) }}"
+      cifs_server_name: "{{ na_ontap_cifs_server_cifs_server_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_cifs_server_hostname | default(omit, True) }}"
+      admin_user_name: "{{ na_ontap_cifs_server_admin_user_name | default(omit, True) }}"
+      vserver: "{{ na_ontap_cifs_server_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_cifs_server_state | default(omit, True) }}"
+      admin_password: "{{ na_ontap_cifs_server_admin_password | default(omit, True) }}"
+      https: "{{ na_ontap_cifs_server_https | default(omit, True) }}"
+      ou: "{{ na_ontap_cifs_server_ou | default(omit, True) }}"
+      password: "{{ na_ontap_cifs_server_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_cifs_server_validate_certs | default(omit, True) }}"
+      service_state: "{{ na_ontap_cifs_server_service_state | default(omit, True) }}"

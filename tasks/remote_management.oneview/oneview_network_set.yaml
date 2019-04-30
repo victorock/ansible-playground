@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_network_set"
+  oneview_network_set: "{{ oneview_network_set }}"
+  vars:
+    oneview_network_set: 
+      data: "{{ oneview_network_set_data | default(omit, True) }}"
+      state: "{{ oneview_network_set_state | default(omit, True) }}"
+      validate_etag: "{{ oneview_network_set_validate_etag | default(omit, True) }}"
+      config: "{{ oneview_network_set_config | default(omit, True) }}"

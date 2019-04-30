@@ -1,0 +1,11 @@
+---
+- name: "module_vmware_vsan_cluster"
+  vmware_vsan_cluster: "{{ vmware_vsan_cluster }}"
+  vars:
+    vmware_vsan_cluster: 
+      username: "{{ vmware_vsan_cluster_username | default(omit, True) }}"
+      hostname: "{{ vmware_vsan_cluster_hostname | default(omit, True) }}"
+      cluster_uuid: "{{ vmware_vsan_cluster_cluster_uuid | default(omit, True) }}"
+      password: "{{ vmware_vsan_cluster_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vsan_cluster_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vsan_cluster_port | default(omit, True) }}"

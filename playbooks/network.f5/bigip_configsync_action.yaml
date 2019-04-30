@@ -1,0 +1,22 @@
+---
+- name: "module_bigip_configsync_action"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_configsync_action: 
+      sync_most_recent_to_device: "{{ bigip_configsync_action_sync_most_recent_to_device | default('omit', True) }}"
+      device_group: "{{ bigip_configsync_action_device_group | default('omit', True) }}"
+      server: "{{ bigip_configsync_action_server | default('omit', True) }}"
+      sync_device_to_group: "{{ bigip_configsync_action_sync_device_to_group | default('omit', True) }}"
+      user: "{{ bigip_configsync_action_user | default('omit', True) }}"
+      server_port: "{{ bigip_configsync_action_server_port | default('omit', True) }}"
+      provider: "{{ bigip_configsync_action_provider | default('omit', True) }}"
+      overwrite_config: "{{ bigip_configsync_action_overwrite_config | default('omit', True) }}"
+      password: "{{ bigip_configsync_action_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_configsync_action_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_configsync_action"
+      bigip_configsync_action: "{{ bigip_configsync_action }}"

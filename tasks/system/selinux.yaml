@@ -1,0 +1,8 @@
+---
+- name: "module_selinux"
+  selinux: "{{ selinux }}"
+  vars:
+    selinux: 
+      policy: "{{ selinux_policy | default(omit, True) }}"
+      state: "{{ selinux_state | default(omit, True) }}"
+      conf: "{{ selinux_conf | default(omit, True) }}"

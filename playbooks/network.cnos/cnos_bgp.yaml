@@ -1,0 +1,27 @@
+---
+- name: "module_cnos_bgp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_bgp: 
+      username: "{{ cnos_bgp_username | default('omit', True) }}"
+      outputfile: "{{ cnos_bgp_outputfile | default('omit', True) }}"
+      bgpArg8: "{{ cnos_bgp_bgpArg8 | default('omit', True) }}"
+      asNum: "{{ cnos_bgp_asNum | default('omit', True) }}"
+      bgpArg4: "{{ cnos_bgp_bgpArg4 | default('omit', True) }}"
+      bgpArg5: "{{ cnos_bgp_bgpArg5 | default('omit', True) }}"
+      bgpArg6: "{{ cnos_bgp_bgpArg6 | default('omit', True) }}"
+      bgpArg7: "{{ cnos_bgp_bgpArg7 | default('omit', True) }}"
+      bgpArg1: "{{ cnos_bgp_bgpArg1 | default('omit', True) }}"
+      bgpArg2: "{{ cnos_bgp_bgpArg2 | default('omit', True) }}"
+      bgpArg3: "{{ cnos_bgp_bgpArg3 | default('omit', True) }}"
+      host: "{{ cnos_bgp_host | default('omit', True) }}"
+      deviceType: "{{ cnos_bgp_deviceType | default('omit', True) }}"
+      password: "{{ cnos_bgp_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_bgp_enablePassword | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_bgp"
+      cnos_bgp: "{{ cnos_bgp }}"

@@ -1,0 +1,21 @@
+---
+- name: "module_ibm_sa_host"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ibm_sa_host: 
+      username: "{{ ibm_sa_host_username | default('omit', True) }}"
+      domain: "{{ ibm_sa_host_domain | default('omit', True) }}"
+      password: "{{ ibm_sa_host_password | default('omit', True) }}"
+      iscsi_chap_name: "{{ ibm_sa_host_iscsi_chap_name | default('omit', True) }}"
+      state: "{{ ibm_sa_host_state | default('omit', True) }}"
+      cluster: "{{ ibm_sa_host_cluster | default('omit', True) }}"
+      host: "{{ ibm_sa_host_host | default('omit', True) }}"
+      iscsi_chap_secret: "{{ ibm_sa_host_iscsi_chap_secret | default('omit', True) }}"
+      endpoints: "{{ ibm_sa_host_endpoints | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ibm_sa_host"
+      ibm_sa_host: "{{ ibm_sa_host }}"

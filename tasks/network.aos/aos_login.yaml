@@ -1,0 +1,9 @@
+---
+- name: "module_aos_login"
+  aos_login: "{{ aos_login }}"
+  vars:
+    aos_login: 
+      passwd: "{{ aos_login_passwd | default(omit, True) }}"
+      user: "{{ aos_login_user | default(omit, True) }}"
+      port: "{{ aos_login_port | default(omit, True) }}"
+      server: "{{ aos_login_server | default(omit, True) }}"

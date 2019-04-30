@@ -1,0 +1,18 @@
+---
+- name: "module_nso_show"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nso_show: 
+      username: "{{ nso_show_username | default('omit', True) }}"
+      url: "{{ nso_show_url | default('omit', True) }}"
+      operational: "{{ nso_show_operational | default('omit', True) }}"
+      timeout: "{{ nso_show_timeout | default('omit', True) }}"
+      path: "{{ nso_show_path | default('omit', True) }}"
+      password: "{{ nso_show_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nso_show"
+      nso_show: "{{ nso_show }}"

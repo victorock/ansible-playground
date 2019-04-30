@@ -1,0 +1,6 @@
+---
+- name: "module_python_requirements_facts"
+  python_requirements_facts: "{{ python_requirements_facts }}"
+  vars:
+    python_requirements_facts: 
+      dependencies: "{{ python_requirements_facts_dependencies | default(omit, True) }}"

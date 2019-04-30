@@ -1,0 +1,14 @@
+---
+- name: "module_nxos_ip_interface"
+  nxos_ip_interface: "{{ nxos_ip_interface }}"
+  vars:
+    nxos_ip_interface: 
+      addr: "{{ nxos_ip_interface_addr | default(omit, True) }}"
+      dot1q: "{{ nxos_ip_interface_dot1q | default(omit, True) }}"
+      mask: "{{ nxos_ip_interface_mask | default(omit, True) }}"
+      tag: "{{ nxos_ip_interface_tag | default(omit, True) }}"
+      state: "{{ nxos_ip_interface_state | default(omit, True) }}"
+      version: "{{ nxos_ip_interface_version | default(omit, True) }}"
+      provider: "{{ nxos_ip_interface_provider | default(omit, True) }}"
+      interface: "{{ nxos_ip_interface_interface | default(omit, True) }}"
+      allow_secondary: "{{ nxos_ip_interface_allow_secondary | default(omit, True) }}"

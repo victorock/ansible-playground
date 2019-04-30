@@ -1,0 +1,30 @@
+---
+- name: "module_cs_securitygroup_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_securitygroup_rule: 
+      icmp_code: "{{ cs_securitygroup_rule_icmp_code | default('omit', True) }}"
+      api_timeout: "{{ cs_securitygroup_rule_api_timeout | default('omit', True) }}"
+      start_port: "{{ cs_securitygroup_rule_start_port | default('omit', True) }}"
+      api_url: "{{ cs_securitygroup_rule_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_securitygroup_rule_api_http_method | default('omit', True) }}"
+      user_security_group: "{{ cs_securitygroup_rule_user_security_group | default('omit', True) }}"
+      end_port: "{{ cs_securitygroup_rule_end_port | default('omit', True) }}"
+      api_region: "{{ cs_securitygroup_rule_api_region | default('omit', True) }}"
+      project: "{{ cs_securitygroup_rule_project | default('omit', True) }}"
+      api_key: "{{ cs_securitygroup_rule_api_key | default('omit', True) }}"
+      state: "{{ cs_securitygroup_rule_state | default('omit', True) }}"
+      poll_async: "{{ cs_securitygroup_rule_poll_async | default('omit', True) }}"
+      api_secret: "{{ cs_securitygroup_rule_api_secret | default('omit', True) }}"
+      security_group: "{{ cs_securitygroup_rule_security_group | default('omit', True) }}"
+      protocol: "{{ cs_securitygroup_rule_protocol | default('omit', True) }}"
+      cidr: "{{ cs_securitygroup_rule_cidr | default('omit', True) }}"
+      icmp_type: "{{ cs_securitygroup_rule_icmp_type | default('omit', True) }}"
+      type: "{{ cs_securitygroup_rule_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_securitygroup_rule"
+      cs_securitygroup_rule: "{{ cs_securitygroup_rule }}"

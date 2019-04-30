@@ -1,0 +1,17 @@
+---
+- name: "module_dladm_linkprop"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dladm_linkprop: 
+      temporary: "{{ dladm_linkprop_temporary | default('omit', True) }}"
+      state: "{{ dladm_linkprop_state | default('omit', True) }}"
+      property: "{{ dladm_linkprop_property | default('omit', True) }}"
+      link: "{{ dladm_linkprop_link | default('omit', True) }}"
+      value: "{{ dladm_linkprop_value | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dladm_linkprop"
+      dladm_linkprop: "{{ dladm_linkprop }}"

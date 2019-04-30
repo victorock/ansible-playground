@@ -1,0 +1,32 @@
+---
+- name: "module_rax_clb_nodes"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rax_clb_nodes: 
+      username: "{{ rax_clb_nodes_username | default('omit', True) }}"
+      weight: "{{ rax_clb_nodes_weight | default('omit', True) }}"
+      load_balancer_id: "{{ rax_clb_nodes_load_balancer_id | default('omit', True) }}"
+      identity_type: "{{ rax_clb_nodes_identity_type | default('omit', True) }}"
+      tenant_id: "{{ rax_clb_nodes_tenant_id | default('omit', True) }}"
+      region: "{{ rax_clb_nodes_region | default('omit', True) }}"
+      address: "{{ rax_clb_nodes_address | default('omit', True) }}"
+      auth_endpoint: "{{ rax_clb_nodes_auth_endpoint | default('omit', True) }}"
+      state: "{{ rax_clb_nodes_state | default('omit', True) }}"
+      wait_timeout: "{{ rax_clb_nodes_wait_timeout | default('omit', True) }}"
+      verify_ssl: "{{ rax_clb_nodes_verify_ssl | default('omit', True) }}"
+      node_id: "{{ rax_clb_nodes_node_id | default('omit', True) }}"
+      env: "{{ rax_clb_nodes_env | default('omit', True) }}"
+      tenant_name: "{{ rax_clb_nodes_tenant_name | default('omit', True) }}"
+      credentials: "{{ rax_clb_nodes_credentials | default('omit', True) }}"
+      api_key: "{{ rax_clb_nodes_api_key | default('omit', True) }}"
+      type: "{{ rax_clb_nodes_type | default('omit', True) }}"
+      port: "{{ rax_clb_nodes_port | default('omit', True) }}"
+      condition: "{{ rax_clb_nodes_condition | default('omit', True) }}"
+      wait: "{{ rax_clb_nodes_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rax_clb_nodes"
+      rax_clb_nodes: "{{ rax_clb_nodes }}"

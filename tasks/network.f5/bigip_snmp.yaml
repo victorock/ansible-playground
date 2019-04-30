@@ -1,0 +1,17 @@
+---
+- name: "module_bigip_snmp"
+  bigip_snmp: "{{ bigip_snmp }}"
+  vars:
+    bigip_snmp: 
+      agent_status_traps: "{{ bigip_snmp_agent_status_traps | default(omit, True) }}"
+      allowed_addresses: "{{ bigip_snmp_allowed_addresses | default(omit, True) }}"
+      agent_authentication_traps: "{{ bigip_snmp_agent_authentication_traps | default(omit, True) }}"
+      device_warning_traps: "{{ bigip_snmp_device_warning_traps | default(omit, True) }}"
+      server: "{{ bigip_snmp_server | default(omit, True) }}"
+      contact: "{{ bigip_snmp_contact | default(omit, True) }}"
+      user: "{{ bigip_snmp_user | default(omit, True) }}"
+      server_port: "{{ bigip_snmp_server_port | default(omit, True) }}"
+      provider: "{{ bigip_snmp_provider | default(omit, True) }}"
+      password: "{{ bigip_snmp_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_snmp_validate_certs | default(omit, True) }}"
+      location: "{{ bigip_snmp_location | default(omit, True) }}"

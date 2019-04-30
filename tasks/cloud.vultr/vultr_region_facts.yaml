@@ -1,0 +1,11 @@
+---
+- name: "module_vultr_region_facts"
+  vultr_region_facts: "{{ vultr_region_facts }}"
+  vars:
+    vultr_region_facts: 
+      api_retries: "{{ vultr_region_facts_api_retries | default(omit, True) }}"
+      api_timeout: "{{ vultr_region_facts_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_region_facts_api_endpoint | default(omit, True) }}"
+      api_account: "{{ vultr_region_facts_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_region_facts_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_region_facts_validate_certs | default(omit, True) }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_ovirt_storage_template_facts"
+  ovirt_storage_template_facts: "{{ ovirt_storage_template_facts }}"
+  vars:
+    ovirt_storage_template_facts: 
+      unregistered: "{{ ovirt_storage_template_facts_unregistered | default(omit, True) }}"
+      storage_domain: "{{ ovirt_storage_template_facts_storage_domain | default(omit, True) }}"
+      max: "{{ ovirt_storage_template_facts_max | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_storage_template_facts_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_storage_template_facts_fetch_nested | default(omit, True) }}"
+      auth: "{{ ovirt_storage_template_facts_auth | default(omit, True) }}"

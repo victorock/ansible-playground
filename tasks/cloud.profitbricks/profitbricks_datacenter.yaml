@@ -1,0 +1,13 @@
+---
+- name: "module_profitbricks_datacenter"
+  profitbricks_datacenter: "{{ profitbricks_datacenter }}"
+  vars:
+    profitbricks_datacenter: 
+      name: "{{ profitbricks_datacenter_name | default(omit, True) }}"
+      subscription_user: "{{ profitbricks_datacenter_subscription_user | default(omit, True) }}"
+      description: "{{ profitbricks_datacenter_description | default(omit, True) }}"
+      subscription_password: "{{ profitbricks_datacenter_subscription_password | default(omit, True) }}"
+      state: "{{ profitbricks_datacenter_state | default(omit, True) }}"
+      wait_timeout: "{{ profitbricks_datacenter_wait_timeout | default(omit, True) }}"
+      location: "{{ profitbricks_datacenter_location | default(omit, True) }}"
+      wait: "{{ profitbricks_datacenter_wait | default(omit, True) }}"

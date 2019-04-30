@@ -1,0 +1,11 @@
+---
+- name: "module_onyx_linkagg"
+  onyx_linkagg: "{{ onyx_linkagg }}"
+  vars:
+    onyx_linkagg: 
+      name: "{{ onyx_linkagg_name | default(omit, True) }}"
+      purge: "{{ onyx_linkagg_purge | default(omit, True) }}"
+      state: "{{ onyx_linkagg_state | default(omit, True) }}"
+      mode: "{{ onyx_linkagg_mode | default(omit, True) }}"
+      members: "{{ onyx_linkagg_members | default(omit, True) }}"
+      aggregate: "{{ onyx_linkagg_aggregate | default(omit, True) }}"

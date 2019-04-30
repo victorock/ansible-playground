@@ -1,0 +1,20 @@
+---
+- name: "module_fmgr_provisioning"
+  fmgr_provisioning: "{{ fmgr_provisioning }}"
+  vars:
+    fmgr_provisioning: 
+      username: "{{ fmgr_provisioning_username | default(omit, True) }}"
+      group: "{{ fmgr_provisioning_group | default(omit, True) }}"
+      description: "{{ fmgr_provisioning_description | default(omit, True) }}"
+      adom: "{{ fmgr_provisioning_adom | default(omit, True) }}"
+      patch_release: "{{ fmgr_provisioning_patch_release | default(omit, True) }}"
+      minor_release: "{{ fmgr_provisioning_minor_release | default(omit, True) }}"
+      platform: "{{ fmgr_provisioning_platform | default(omit, True) }}"
+      host: "{{ fmgr_provisioning_host | default(omit, True) }}"
+      os_version: "{{ fmgr_provisioning_os_version | default(omit, True) }}"
+      policy_package: "{{ fmgr_provisioning_policy_package | default(omit, True) }}"
+      serial: "{{ fmgr_provisioning_serial | default(omit, True) }}"
+      password: "{{ fmgr_provisioning_password | default(omit, True) }}"
+      os_type: "{{ fmgr_provisioning_os_type | default(omit, True) }}"
+      vdom: "{{ fmgr_provisioning_vdom | default(omit, True) }}"
+      name: "{{ fmgr_provisioning_name | default(omit, True) }}"

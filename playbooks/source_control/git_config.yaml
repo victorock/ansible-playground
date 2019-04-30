@@ -1,0 +1,17 @@
+---
+- name: "module_git_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    git_config: 
+      repo: "{{ git_config_repo | default('omit', True) }}"
+      scope: "{{ git_config_scope | default('omit', True) }}"
+      list_all: "{{ git_config_list_all | default('omit', True) }}"
+      name: "{{ git_config_name | default('omit', True) }}"
+      value: "{{ git_config_value | default('omit', True) }}"
+  tasks:
+    - name: "plugin_git_config"
+      git_config: "{{ git_config }}"

@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_facts: 
+      include: "{{ bigip_facts_include | default('omit', True) }}"
+      server: "{{ bigip_facts_server | default('omit', True) }}"
+      filter: "{{ bigip_facts_filter | default('omit', True) }}"
+      session: "{{ bigip_facts_session | default('omit', True) }}"
+      user: "{{ bigip_facts_user | default('omit', True) }}"
+      server_port: "{{ bigip_facts_server_port | default('omit', True) }}"
+      provider: "{{ bigip_facts_provider | default('omit', True) }}"
+      password: "{{ bigip_facts_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_facts_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_facts"
+      bigip_facts: "{{ bigip_facts }}"

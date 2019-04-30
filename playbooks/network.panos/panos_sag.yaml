@@ -1,0 +1,23 @@
+---
+- name: "module_panos_sag"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    panos_sag: 
+      username: "{{ panos_sag_username | default('omit', True) }}"
+      api_key: "{{ panos_sag_api_key | default('omit', True) }}"
+      devicegroup: "{{ panos_sag_devicegroup | default('omit', True) }}"
+      description: "{{ panos_sag_description | default('omit', True) }}"
+      tags: "{{ panos_sag_tags | default('omit', True) }}"
+      static_match_filter: "{{ panos_sag_static_match_filter | default('omit', True) }}"
+      sag_name: "{{ panos_sag_sag_name | default('omit', True) }}"
+      commit: "{{ panos_sag_commit | default('omit', True) }}"
+      operation: "{{ panos_sag_operation | default('omit', True) }}"
+      password: "{{ panos_sag_password | default('omit', True) }}"
+      ip_address: "{{ panos_sag_ip_address | default('omit', True) }}"
+  tasks:
+    - name: "plugin_panos_sag"
+      panos_sag: "{{ panos_sag }}"

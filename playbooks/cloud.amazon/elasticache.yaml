@@ -1,0 +1,33 @@
+---
+- name: "module_elasticache"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    elasticache: 
+      engine: "{{ elasticache_engine | default('omit', True) }}"
+      profile: "{{ elasticache_profile | default('omit', True) }}"
+      aws_access_key: "{{ elasticache_aws_access_key | default('omit', True) }}"
+      cache_parameter_group: "{{ elasticache_cache_parameter_group | default('omit', True) }}"
+      name: "{{ elasticache_name | default('omit', True) }}"
+      cache_engine_version: "{{ elasticache_cache_engine_version | default('omit', True) }}"
+      state: "{{ elasticache_state | default('omit', True) }}"
+      region: "{{ elasticache_region | default('omit', True) }}"
+      aws_secret_key: "{{ elasticache_aws_secret_key | default('omit', True) }}"
+      cache_port: "{{ elasticache_cache_port | default('omit', True) }}"
+      hard_modify: "{{ elasticache_hard_modify | default('omit', True) }}"
+      node_type: "{{ elasticache_node_type | default('omit', True) }}"
+      cache_security_groups: "{{ elasticache_cache_security_groups | default('omit', True) }}"
+      zone: "{{ elasticache_zone | default('omit', True) }}"
+      ec2_url: "{{ elasticache_ec2_url | default('omit', True) }}"
+      cache_subnet_group: "{{ elasticache_cache_subnet_group | default('omit', True) }}"
+      security_token: "{{ elasticache_security_token | default('omit', True) }}"
+      security_group_ids: "{{ elasticache_security_group_ids | default('omit', True) }}"
+      validate_certs: "{{ elasticache_validate_certs | default('omit', True) }}"
+      num_nodes: "{{ elasticache_num_nodes | default('omit', True) }}"
+      wait: "{{ elasticache_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_elasticache"
+      elasticache: "{{ elasticache }}"

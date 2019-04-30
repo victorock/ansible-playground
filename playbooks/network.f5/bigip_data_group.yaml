@@ -1,0 +1,28 @@
+---
+- name: "module_bigip_data_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_data_group: 
+      name: "{{ bigip_data_group_name | default('omit', True) }}"
+      delete_data_group_file: "{{ bigip_data_group_delete_data_group_file | default('omit', True) }}"
+      type: "{{ bigip_data_group_type | default('omit', True) }}"
+      partition: "{{ bigip_data_group_partition | default('omit', True) }}"
+      state: "{{ bigip_data_group_state | default('omit', True) }}"
+      server: "{{ bigip_data_group_server | default('omit', True) }}"
+      records: "{{ bigip_data_group_records | default('omit', True) }}"
+      records_src: "{{ bigip_data_group_records_src | default('omit', True) }}"
+      internal: "{{ bigip_data_group_internal | default('omit', True) }}"
+      separator: "{{ bigip_data_group_separator | default('omit', True) }}"
+      user: "{{ bigip_data_group_user | default('omit', True) }}"
+      server_port: "{{ bigip_data_group_server_port | default('omit', True) }}"
+      provider: "{{ bigip_data_group_provider | default('omit', True) }}"
+      external_file_name: "{{ bigip_data_group_external_file_name | default('omit', True) }}"
+      password: "{{ bigip_data_group_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_data_group_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_data_group"
+      bigip_data_group: "{{ bigip_data_group }}"

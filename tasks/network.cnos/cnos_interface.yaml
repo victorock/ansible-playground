@@ -1,0 +1,20 @@
+---
+- name: "module_cnos_interface"
+  cnos_interface: "{{ cnos_interface }}"
+  vars:
+    cnos_interface: 
+      username: "{{ cnos_interface_username | default(omit, True) }}"
+      password: "{{ cnos_interface_password | default(omit, True) }}"
+      interfaceOption: "{{ cnos_interface_interfaceOption | default(omit, True) }}"
+      host: "{{ cnos_interface_host | default(omit, True) }}"
+      outputfile: "{{ cnos_interface_outputfile | default(omit, True) }}"
+      deviceType: "{{ cnos_interface_deviceType | default(omit, True) }}"
+      interfaceRange: "{{ cnos_interface_interfaceRange | default(omit, True) }}"
+      interfaceArg4: "{{ cnos_interface_interfaceArg4 | default(omit, True) }}"
+      interfaceArg5: "{{ cnos_interface_interfaceArg5 | default(omit, True) }}"
+      interfaceArg6: "{{ cnos_interface_interfaceArg6 | default(omit, True) }}"
+      interfaceArg7: "{{ cnos_interface_interfaceArg7 | default(omit, True) }}"
+      enablePassword: "{{ cnos_interface_enablePassword | default(omit, True) }}"
+      interfaceArg1: "{{ cnos_interface_interfaceArg1 | default(omit, True) }}"
+      interfaceArg2: "{{ cnos_interface_interfaceArg2 | default(omit, True) }}"
+      interfaceArg3: "{{ cnos_interface_interfaceArg3 | default(omit, True) }}"

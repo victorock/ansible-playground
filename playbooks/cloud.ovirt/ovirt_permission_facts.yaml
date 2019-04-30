@@ -1,0 +1,19 @@
+---
+- name: "module_ovirt_permission_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_permission_facts: 
+      authz_name: "{{ ovirt_permission_facts_authz_name | default('omit', True) }}"
+      namespace: "{{ ovirt_permission_facts_namespace | default('omit', True) }}"
+      auth: "{{ ovirt_permission_facts_auth | default('omit', True) }}"
+      group_name: "{{ ovirt_permission_facts_group_name | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_permission_facts_fetch_nested | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_permission_facts_nested_attributes | default('omit', True) }}"
+      user_name: "{{ ovirt_permission_facts_user_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_permission_facts"
+      ovirt_permission_facts: "{{ ovirt_permission_facts }}"

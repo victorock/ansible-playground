@@ -1,0 +1,15 @@
+---
+- name: "module_bigip_appsvcs_extension"
+  bigip_appsvcs_extension: "{{ bigip_appsvcs_extension }}"
+  vars:
+    bigip_appsvcs_extension: 
+      force: "{{ bigip_appsvcs_extension_force | default(omit, True) }}"
+      tenants: "{{ bigip_appsvcs_extension_tenants | default(omit, True) }}"
+      server: "{{ bigip_appsvcs_extension_server | default(omit, True) }}"
+      content: "{{ bigip_appsvcs_extension_content | default(omit, True) }}"
+      state: "{{ bigip_appsvcs_extension_state | default(omit, True) }}"
+      user: "{{ bigip_appsvcs_extension_user | default(omit, True) }}"
+      server_port: "{{ bigip_appsvcs_extension_server_port | default(omit, True) }}"
+      provider: "{{ bigip_appsvcs_extension_provider | default(omit, True) }}"
+      password: "{{ bigip_appsvcs_extension_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_appsvcs_extension_validate_certs | default(omit, True) }}"

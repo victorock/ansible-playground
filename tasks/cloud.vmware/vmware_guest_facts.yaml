@@ -1,0 +1,15 @@
+---
+- name: "module_vmware_guest_facts"
+  vmware_guest_facts: "{{ vmware_guest_facts }}"
+  vars:
+    vmware_guest_facts: 
+      username: "{{ vmware_guest_facts_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_facts_datacenter | default(omit, True) }}"
+      uuid: "{{ vmware_guest_facts_uuid | default(omit, True) }}"
+      hostname: "{{ vmware_guest_facts_hostname | default(omit, True) }}"
+      name_match: "{{ vmware_guest_facts_name_match | default(omit, True) }}"
+      folder: "{{ vmware_guest_facts_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_facts_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_facts_port | default(omit, True) }}"
+      name: "{{ vmware_guest_facts_name | default(omit, True) }}"

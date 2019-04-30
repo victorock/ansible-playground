@@ -1,0 +1,25 @@
+---
+- name: "module_influxdb_query"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    influxdb_query: 
+      username: "{{ influxdb_query_username | default('omit', True) }}"
+      retries: "{{ influxdb_query_retries | default('omit', True) }}"
+      use_udp: "{{ influxdb_query_use_udp | default('omit', True) }}"
+      proxies: "{{ influxdb_query_proxies | default('omit', True) }}"
+      database_name: "{{ influxdb_query_database_name | default('omit', True) }}"
+      hostname: "{{ influxdb_query_hostname | default('omit', True) }}"
+      udp_port: "{{ influxdb_query_udp_port | default('omit', True) }}"
+      ssl: "{{ influxdb_query_ssl | default('omit', True) }}"
+      timeout: "{{ influxdb_query_timeout | default('omit', True) }}"
+      query: "{{ influxdb_query_query | default('omit', True) }}"
+      password: "{{ influxdb_query_password | default('omit', True) }}"
+      validate_certs: "{{ influxdb_query_validate_certs | default('omit', True) }}"
+      port: "{{ influxdb_query_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_influxdb_query"
+      influxdb_query: "{{ influxdb_query }}"

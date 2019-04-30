@@ -1,0 +1,8 @@
+---
+- name: "module_oneview_san_manager_facts"
+  oneview_san_manager_facts: "{{ oneview_san_manager_facts }}"
+  vars:
+    oneview_san_manager_facts: 
+      params: "{{ oneview_san_manager_facts_params | default(omit, True) }}"
+      provider_display_name: "{{ oneview_san_manager_facts_provider_display_name | default(omit, True) }}"
+      config: "{{ oneview_san_manager_facts_config | default(omit, True) }}"

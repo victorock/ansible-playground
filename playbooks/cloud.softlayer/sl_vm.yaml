@@ -1,0 +1,34 @@
+---
+- name: "module_sl_vm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sl_vm: 
+      domain: "{{ sl_vm_domain | default('omit', True) }}"
+      cpus: "{{ sl_vm_cpus | default('omit', True) }}"
+      dedicated: "{{ sl_vm_dedicated | default('omit', True) }}"
+      private_vlan: "{{ sl_vm_private_vlan | default('omit', True) }}"
+      hourly: "{{ sl_vm_hourly | default('omit', True) }}"
+      ssh_keys: "{{ sl_vm_ssh_keys | default('omit', True) }}"
+      hostname: "{{ sl_vm_hostname | default('omit', True) }}"
+      os_code: "{{ sl_vm_os_code | default('omit', True) }}"
+      wait_time: "{{ sl_vm_wait_time | default('omit', True) }}"
+      state: "{{ sl_vm_state | default('omit', True) }}"
+      post_uri: "{{ sl_vm_post_uri | default('omit', True) }}"
+      memory: "{{ sl_vm_memory | default('omit', True) }}"
+      tags: "{{ sl_vm_tags | default('omit', True) }}"
+      image_id: "{{ sl_vm_image_id | default('omit', True) }}"
+      nic_speed: "{{ sl_vm_nic_speed | default('omit', True) }}"
+      private: "{{ sl_vm_private | default('omit', True) }}"
+      public_vlan: "{{ sl_vm_public_vlan | default('omit', True) }}"
+      wait: "{{ sl_vm_wait | default('omit', True) }}"
+      datacenter: "{{ sl_vm_datacenter | default('omit', True) }}"
+      disks: "{{ sl_vm_disks | default('omit', True) }}"
+      instance_id: "{{ sl_vm_instance_id | default('omit', True) }}"
+      local_disk: "{{ sl_vm_local_disk | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sl_vm"
+      sl_vm: "{{ sl_vm }}"

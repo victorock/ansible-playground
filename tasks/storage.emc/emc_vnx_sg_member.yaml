@@ -1,0 +1,11 @@
+---
+- name: "module_emc_vnx_sg_member"
+  emc_vnx_sg_member: "{{ emc_vnx_sg_member }}"
+  vars:
+    emc_vnx_sg_member: 
+      sp_password: "{{ emc_vnx_sg_member_sp_password | default(omit, True) }}"
+      name: "{{ emc_vnx_sg_member_name | default(omit, True) }}"
+      sp_user: "{{ emc_vnx_sg_member_sp_user | default(omit, True) }}"
+      sp_address: "{{ emc_vnx_sg_member_sp_address | default(omit, True) }}"
+      state: "{{ emc_vnx_sg_member_state | default(omit, True) }}"
+      lunid: "{{ emc_vnx_sg_member_lunid | default(omit, True) }}"

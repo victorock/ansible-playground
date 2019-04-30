@@ -1,0 +1,30 @@
+---
+- name: "module_aci_config_snapshot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_config_snapshot: 
+      username: "{{ aci_config_snapshot_username | default('omit', True) }}"
+      include_secure: "{{ aci_config_snapshot_include_secure | default('omit', True) }}"
+      description: "{{ aci_config_snapshot_description | default('omit', True) }}"
+      format: "{{ aci_config_snapshot_format | default('omit', True) }}"
+      certificate_name: "{{ aci_config_snapshot_certificate_name | default('omit', True) }}"
+      private_key: "{{ aci_config_snapshot_private_key | default('omit', True) }}"
+      max_count: "{{ aci_config_snapshot_max_count | default('omit', True) }}"
+      output_level: "{{ aci_config_snapshot_output_level | default('omit', True) }}"
+      host: "{{ aci_config_snapshot_host | default('omit', True) }}"
+      state: "{{ aci_config_snapshot_state | default('omit', True) }}"
+      snapshot: "{{ aci_config_snapshot_snapshot | default('omit', True) }}"
+      export_policy: "{{ aci_config_snapshot_export_policy | default('omit', True) }}"
+      timeout: "{{ aci_config_snapshot_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_config_snapshot_use_ssl | default('omit', True) }}"
+      password: "{{ aci_config_snapshot_password | default('omit', True) }}"
+      validate_certs: "{{ aci_config_snapshot_validate_certs | default('omit', True) }}"
+      port: "{{ aci_config_snapshot_port | default('omit', True) }}"
+      use_proxy: "{{ aci_config_snapshot_use_proxy | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_config_snapshot"
+      aci_config_snapshot: "{{ aci_config_snapshot }}"

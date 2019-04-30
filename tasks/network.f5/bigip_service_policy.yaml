@@ -1,0 +1,17 @@
+---
+- name: "module_bigip_service_policy"
+  bigip_service_policy: "{{ bigip_service_policy }}"
+  vars:
+    bigip_service_policy: 
+      port_misuse_policy: "{{ bigip_service_policy_port_misuse_policy | default(omit, True) }}"
+      timer_policy: "{{ bigip_service_policy_timer_policy | default(omit, True) }}"
+      partition: "{{ bigip_service_policy_partition | default(omit, True) }}"
+      server: "{{ bigip_service_policy_server | default(omit, True) }}"
+      name: "{{ bigip_service_policy_name | default(omit, True) }}"
+      state: "{{ bigip_service_policy_state | default(omit, True) }}"
+      user: "{{ bigip_service_policy_user | default(omit, True) }}"
+      server_port: "{{ bigip_service_policy_server_port | default(omit, True) }}"
+      provider: "{{ bigip_service_policy_provider | default(omit, True) }}"
+      password: "{{ bigip_service_policy_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_service_policy_validate_certs | default(omit, True) }}"
+      description: "{{ bigip_service_policy_description | default(omit, True) }}"

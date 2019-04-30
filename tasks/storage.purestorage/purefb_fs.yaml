@@ -1,0 +1,17 @@
+---
+- name: "module_purefb_fs"
+  purefb_fs: "{{ purefb_fs }}"
+  vars:
+    purefb_fs: 
+      nfs_rules: "{{ purefb_fs_nfs_rules | default(omit, True) }}"
+      fastremove: "{{ purefb_fs_fastremove | default(omit, True) }}"
+      name: "{{ purefb_fs_name | default(omit, True) }}"
+      http: "{{ purefb_fs_http | default(omit, True) }}"
+      nfs: "{{ purefb_fs_nfs | default(omit, True) }}"
+      state: "{{ purefb_fs_state | default(omit, True) }}"
+      snapshot: "{{ purefb_fs_snapshot | default(omit, True) }}"
+      api_token: "{{ purefb_fs_api_token | default(omit, True) }}"
+      fb_url: "{{ purefb_fs_fb_url | default(omit, True) }}"
+      eradicate: "{{ purefb_fs_eradicate | default(omit, True) }}"
+      smb: "{{ purefb_fs_smb | default(omit, True) }}"
+      size: "{{ purefb_fs_size | default(omit, True) }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_influxdb_database"
+  influxdb_database: "{{ influxdb_database }}"
+  vars:
+    influxdb_database: 
+      username: "{{ influxdb_database_username | default(omit, True) }}"
+      retries: "{{ influxdb_database_retries | default(omit, True) }}"
+      use_udp: "{{ influxdb_database_use_udp | default(omit, True) }}"
+      proxies: "{{ influxdb_database_proxies | default(omit, True) }}"
+      database_name: "{{ influxdb_database_database_name | default(omit, True) }}"
+      hostname: "{{ influxdb_database_hostname | default(omit, True) }}"
+      udp_port: "{{ influxdb_database_udp_port | default(omit, True) }}"
+      ssl: "{{ influxdb_database_ssl | default(omit, True) }}"
+      state: "{{ influxdb_database_state | default(omit, True) }}"
+      timeout: "{{ influxdb_database_timeout | default(omit, True) }}"
+      password: "{{ influxdb_database_password | default(omit, True) }}"
+      validate_certs: "{{ influxdb_database_validate_certs | default(omit, True) }}"
+      port: "{{ influxdb_database_port | default(omit, True) }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_bigip_firewall_address_list"
+  bigip_firewall_address_list: "{{ bigip_firewall_address_list }}"
+  vars:
+    bigip_firewall_address_list: 
+      geo_locations: "{{ bigip_firewall_address_list_geo_locations | default(omit, True) }}"
+      partition: "{{ bigip_firewall_address_list_partition | default(omit, True) }}"
+      addresses: "{{ bigip_firewall_address_list_addresses | default(omit, True) }}"
+      address_ranges: "{{ bigip_firewall_address_list_address_ranges | default(omit, True) }}"
+      address_lists: "{{ bigip_firewall_address_list_address_lists | default(omit, True) }}"
+      fqdns: "{{ bigip_firewall_address_list_fqdns | default(omit, True) }}"
+      server: "{{ bigip_firewall_address_list_server | default(omit, True) }}"
+      name: "{{ bigip_firewall_address_list_name | default(omit, True) }}"
+      state: "{{ bigip_firewall_address_list_state | default(omit, True) }}"
+      user: "{{ bigip_firewall_address_list_user | default(omit, True) }}"
+      server_port: "{{ bigip_firewall_address_list_server_port | default(omit, True) }}"
+      provider: "{{ bigip_firewall_address_list_provider | default(omit, True) }}"
+      password: "{{ bigip_firewall_address_list_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_firewall_address_list_validate_certs | default(omit, True) }}"
+      description: "{{ bigip_firewall_address_list_description | default(omit, True) }}"

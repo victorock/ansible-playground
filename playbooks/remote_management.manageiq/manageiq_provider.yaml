@@ -1,0 +1,29 @@
+---
+- name: "module_manageiq_provider"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    manageiq_provider: 
+      ssh_keypair: "{{ manageiq_provider_ssh_keypair | default('omit', True) }}"
+      name: "{{ manageiq_provider_name | default('omit', True) }}"
+      zone: "{{ manageiq_provider_zone | default('omit', True) }}"
+      host_default_vnc_port_end: "{{ manageiq_provider_host_default_vnc_port_end | default('omit', True) }}"
+      project: "{{ manageiq_provider_project | default('omit', True) }}"
+      alerts: "{{ manageiq_provider_alerts | default('omit', True) }}"
+      provider: "{{ manageiq_provider_provider | default('omit', True) }}"
+      host_default_vnc_port_start: "{{ manageiq_provider_host_default_vnc_port_start | default('omit', True) }}"
+      tenant_mapping_enabled: "{{ manageiq_provider_tenant_mapping_enabled | default('omit', True) }}"
+      metrics: "{{ manageiq_provider_metrics | default('omit', True) }}"
+      state: "{{ manageiq_provider_state | default('omit', True) }}"
+      azure_tenant_id: "{{ manageiq_provider_azure_tenant_id | default('omit', True) }}"
+      provider_region: "{{ manageiq_provider_provider_region | default('omit', True) }}"
+      type: "{{ manageiq_provider_type | default('omit', True) }}"
+      manageiq_connection: "{{ manageiq_provider_manageiq_connection | default('omit', True) }}"
+      api_version: "{{ manageiq_provider_api_version | default('omit', True) }}"
+      subscription: "{{ manageiq_provider_subscription | default('omit', True) }}"
+  tasks:
+    - name: "plugin_manageiq_provider"
+      manageiq_provider: "{{ manageiq_provider }}"

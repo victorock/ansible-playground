@@ -1,0 +1,21 @@
+---
+- name: "module_swupd"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    swupd: 
+      contenturl: "{{ swupd_contenturl | default('omit', True) }}"
+      name: "{{ swupd_name | default('omit', True) }}"
+      format: "{{ swupd_format | default('omit', True) }}"
+      url: "{{ swupd_url | default('omit', True) }}"
+      verify: "{{ swupd_verify | default('omit', True) }}"
+      update: "{{ swupd_update | default('omit', True) }}"
+      manifest: "{{ swupd_manifest | default('omit', True) }}"
+      state: "{{ swupd_state | default('omit', True) }}"
+      versionurl: "{{ swupd_versionurl | default('omit', True) }}"
+  tasks:
+    - name: "plugin_swupd"
+      swupd: "{{ swupd }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_win_regedit"
+  win_regedit: "{{ win_regedit }}"
+  vars:
+    win_regedit: 
+      name: "{{ win_regedit_name | default(omit, True) }}"
+      data: "{{ win_regedit_data | default(omit, True) }}"
+      hive: "{{ win_regedit_hive | default(omit, True) }}"
+      state: "{{ win_regedit_state | default(omit, True) }}"
+      delete_key: "{{ win_regedit_delete_key | default(omit, True) }}"
+      path: "{{ win_regedit_path | default(omit, True) }}"
+      type: "{{ win_regedit_type | default(omit, True) }}"

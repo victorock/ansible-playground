@@ -1,0 +1,21 @@
+---
+- name: "module_junos_static_route"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_static_route: 
+      provider: "{{ junos_static_route_provider | default('omit', True) }}"
+      qualified_next_hop: "{{ junos_static_route_qualified_next_hop | default('omit', True) }}"
+      active: "{{ junos_static_route_active | default('omit', True) }}"
+      state: "{{ junos_static_route_state | default('omit', True) }}"
+      next_hop: "{{ junos_static_route_next_hop | default('omit', True) }}"
+      preference: "{{ junos_static_route_preference | default('omit', True) }}"
+      qualified_preference: "{{ junos_static_route_qualified_preference | default('omit', True) }}"
+      address: "{{ junos_static_route_address | default('omit', True) }}"
+      aggregate: "{{ junos_static_route_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_static_route"
+      junos_static_route: "{{ junos_static_route }}"

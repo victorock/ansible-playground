@@ -1,0 +1,18 @@
+---
+- name: "module_vr_firewall_rule"
+  vr_firewall_rule: "{{ vr_firewall_rule }}"
+  vars:
+    vr_firewall_rule: 
+      api_timeout: "{{ vr_firewall_rule_api_timeout | default(omit, True) }}"
+      start_port: "{{ vr_firewall_rule_start_port | default(omit, True) }}"
+      end_port: "{{ vr_firewall_rule_end_port | default(omit, True) }}"
+      protocol: "{{ vr_firewall_rule_protocol | default(omit, True) }}"
+      group: "{{ vr_firewall_rule_group | default(omit, True) }}"
+      api_endpoint: "{{ vr_firewall_rule_api_endpoint | default(omit, True) }}"
+      state: "{{ vr_firewall_rule_state | default(omit, True) }}"
+      api_account: "{{ vr_firewall_rule_api_account | default(omit, True) }}"
+      ip_version: "{{ vr_firewall_rule_ip_version | default(omit, True) }}"
+      api_retries: "{{ vr_firewall_rule_api_retries | default(omit, True) }}"
+      cidr: "{{ vr_firewall_rule_cidr | default(omit, True) }}"
+      api_key: "{{ vr_firewall_rule_api_key | default(omit, True) }}"
+      validate_certs: "{{ vr_firewall_rule_validate_certs | default(omit, True) }}"

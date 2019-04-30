@@ -1,0 +1,16 @@
+---
+- name: "module_nios_host_record"
+  nios_host_record: "{{ nios_host_record }}"
+  vars:
+    nios_host_record: 
+      comment: "{{ nios_host_record_comment | default(omit, True) }}"
+      name: "{{ nios_host_record_name | default(omit, True) }}"
+      extattrs: "{{ nios_host_record_extattrs | default(omit, True) }}"
+      provider: "{{ nios_host_record_provider | default(omit, True) }}"
+      ipv6addrs: "{{ nios_host_record_ipv6addrs | default(omit, True) }}"
+      configure_for_dns: "{{ nios_host_record_configure_for_dns | default(omit, True) }}"
+      state: "{{ nios_host_record_state | default(omit, True) }}"
+      ipv4addrs: "{{ nios_host_record_ipv4addrs | default(omit, True) }}"
+      ttl: "{{ nios_host_record_ttl | default(omit, True) }}"
+      view: "{{ nios_host_record_view | default(omit, True) }}"
+      aliases: "{{ nios_host_record_aliases | default(omit, True) }}"

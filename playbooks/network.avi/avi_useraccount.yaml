@@ -1,0 +1,21 @@
+---
+- name: "module_avi_useraccount"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_useraccount: 
+      username: "{{ avi_useraccount_username | default('omit', True) }}"
+      avi_credentials: "{{ avi_useraccount_avi_credentials | default('omit', True) }}"
+      tenant_uuid: "{{ avi_useraccount_tenant_uuid | default('omit', True) }}"
+      controller: "{{ avi_useraccount_controller | default('omit', True) }}"
+      tenant: "{{ avi_useraccount_tenant | default('omit', True) }}"
+      api_context: "{{ avi_useraccount_api_context | default('omit', True) }}"
+      password: "{{ avi_useraccount_password | default('omit', True) }}"
+      old_password: "{{ avi_useraccount_old_password | default('omit', True) }}"
+      api_version: "{{ avi_useraccount_api_version | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_useraccount"
+      avi_useraccount: "{{ avi_useraccount }}"

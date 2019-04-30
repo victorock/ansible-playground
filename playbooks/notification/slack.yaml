@@ -1,0 +1,24 @@
+---
+- name: "module_slack"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    slack: 
+      username: "{{ slack_username | default('omit', True) }}"
+      domain: "{{ slack_domain | default('omit', True) }}"
+      attachments: "{{ slack_attachments | default('omit', True) }}"
+      color: "{{ slack_color | default('omit', True) }}"
+      icon_url: "{{ slack_icon_url | default('omit', True) }}"
+      parse: "{{ slack_parse | default('omit', True) }}"
+      token: "{{ slack_token | default('omit', True) }}"
+      icon_emoji: "{{ slack_icon_emoji | default('omit', True) }}"
+      link_names: "{{ slack_link_names | default('omit', True) }}"
+      msg: "{{ slack_msg | default('omit', True) }}"
+      validate_certs: "{{ slack_validate_certs | default('omit', True) }}"
+      channel: "{{ slack_channel | default('omit', True) }}"
+  tasks:
+    - name: "plugin_slack"
+      slack: "{{ slack }}"

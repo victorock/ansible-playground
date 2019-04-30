@@ -1,0 +1,19 @@
+---
+- name: "module_bigip_command"
+  bigip_command: "{{ bigip_command }}"
+  vars:
+    bigip_command: 
+      retries: "{{ bigip_command_retries | default(omit, True) }}"
+      commands: "{{ bigip_command_commands | default(omit, True) }}"
+      wait_for: "{{ bigip_command_wait_for | default(omit, True) }}"
+      interval: "{{ bigip_command_interval | default(omit, True) }}"
+      server: "{{ bigip_command_server | default(omit, True) }}"
+      warn: "{{ bigip_command_warn | default(omit, True) }}"
+      chdir: "{{ bigip_command_chdir | default(omit, True) }}"
+      user: "{{ bigip_command_user | default(omit, True) }}"
+      server_port: "{{ bigip_command_server_port | default(omit, True) }}"
+      provider: "{{ bigip_command_provider | default(omit, True) }}"
+      password: "{{ bigip_command_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_command_validate_certs | default(omit, True) }}"
+      transport: "{{ bigip_command_transport | default(omit, True) }}"
+      match: "{{ bigip_command_match | default(omit, True) }}"

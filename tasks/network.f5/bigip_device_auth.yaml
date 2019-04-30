@@ -1,0 +1,20 @@
+---
+- name: "module_bigip_device_auth"
+  bigip_device_auth: "{{ bigip_device_auth }}"
+  vars:
+    bigip_device_auth: 
+      protocol_name: "{{ bigip_device_auth_protocol_name | default(omit, True) }}"
+      use_for_auth: "{{ bigip_device_auth_use_for_auth | default(omit, True) }}"
+      type: "{{ bigip_device_auth_type | default(omit, True) }}"
+      service_name: "{{ bigip_device_auth_service_name | default(omit, True) }}"
+      secret: "{{ bigip_device_auth_secret | default(omit, True) }}"
+      server: "{{ bigip_device_auth_server | default(omit, True) }}"
+      servers: "{{ bigip_device_auth_servers | default(omit, True) }}"
+      state: "{{ bigip_device_auth_state | default(omit, True) }}"
+      update_secret: "{{ bigip_device_auth_update_secret | default(omit, True) }}"
+      user: "{{ bigip_device_auth_user | default(omit, True) }}"
+      server_port: "{{ bigip_device_auth_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_auth_provider | default(omit, True) }}"
+      password: "{{ bigip_device_auth_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_auth_validate_certs | default(omit, True) }}"
+      authentication: "{{ bigip_device_auth_authentication | default(omit, True) }}"

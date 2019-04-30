@@ -1,0 +1,35 @@
+---
+- name: "module_azure_rm_postgresqlserver"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_postgresqlserver: 
+      resource_group: "{{ azure_rm_postgresqlserver_resource_group | default('omit', True) }}"
+      cloud_environment: "{{ azure_rm_postgresqlserver_cloud_environment | default('omit', True) }}"
+      storage_mb: "{{ azure_rm_postgresqlserver_storage_mb | default('omit', True) }}"
+      cert_validation_mode: "{{ azure_rm_postgresqlserver_cert_validation_mode | default('omit', True) }}"
+      enforce_ssl: "{{ azure_rm_postgresqlserver_enforce_ssl | default('omit', True) }}"
+      sku: "{{ azure_rm_postgresqlserver_sku | default('omit', True) }}"
+      ad_user: "{{ azure_rm_postgresqlserver_ad_user | default('omit', True) }}"
+      secret: "{{ azure_rm_postgresqlserver_secret | default('omit', True) }}"
+      create_mode: "{{ azure_rm_postgresqlserver_create_mode | default('omit', True) }}"
+      state: "{{ azure_rm_postgresqlserver_state | default('omit', True) }}"
+      version: "{{ azure_rm_postgresqlserver_version | default('omit', True) }}"
+      location: "{{ azure_rm_postgresqlserver_location | default('omit', True) }}"
+      subscription_id: "{{ azure_rm_postgresqlserver_subscription_id | default('omit', True) }}"
+      admin_password: "{{ azure_rm_postgresqlserver_admin_password | default('omit', True) }}"
+      profile: "{{ azure_rm_postgresqlserver_profile | default('omit', True) }}"
+      client_id: "{{ azure_rm_postgresqlserver_client_id | default('omit', True) }}"
+      auth_source: "{{ azure_rm_postgresqlserver_auth_source | default('omit', True) }}"
+      adfs_authority_url: "{{ azure_rm_postgresqlserver_adfs_authority_url | default('omit', True) }}"
+      password: "{{ azure_rm_postgresqlserver_password | default('omit', True) }}"
+      tenant: "{{ azure_rm_postgresqlserver_tenant | default('omit', True) }}"
+      name: "{{ azure_rm_postgresqlserver_name | default('omit', True) }}"
+      admin_username: "{{ azure_rm_postgresqlserver_admin_username | default('omit', True) }}"
+      api_profile: "{{ azure_rm_postgresqlserver_api_profile | default('omit', True) }}"
+  tasks:
+    - name: "plugin_azure_rm_postgresqlserver"
+      azure_rm_postgresqlserver: "{{ azure_rm_postgresqlserver }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_cloudscale_floating_ip"
+  cloudscale_floating_ip: "{{ cloudscale_floating_ip }}"
+  vars:
+    cloudscale_floating_ip: 
+      reverse_ptr: "{{ cloudscale_floating_ip_reverse_ptr | default(omit, True) }}"
+      ip: "{{ cloudscale_floating_ip_ip | default(omit, True) }}"
+      api_timeout: "{{ cloudscale_floating_ip_api_timeout | default(omit, True) }}"
+      server: "{{ cloudscale_floating_ip_server | default(omit, True) }}"
+      state: "{{ cloudscale_floating_ip_state | default(omit, True) }}"
+      prefix_length: "{{ cloudscale_floating_ip_prefix_length | default(omit, True) }}"
+      api_token: "{{ cloudscale_floating_ip_api_token | default(omit, True) }}"
+      ip_version: "{{ cloudscale_floating_ip_ip_version | default(omit, True) }}"

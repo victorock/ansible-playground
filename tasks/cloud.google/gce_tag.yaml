@@ -1,0 +1,13 @@
+---
+- name: "module_gce_tag"
+  gce_tag: "{{ gce_tag }}"
+  vars:
+    gce_tag: 
+      zone: "{{ gce_tag_zone | default(omit, True) }}"
+      tags: "{{ gce_tag_tags | default(omit, True) }}"
+      service_account_email: "{{ gce_tag_service_account_email | default(omit, True) }}"
+      pem_file: "{{ gce_tag_pem_file | default(omit, True) }}"
+      instance_name: "{{ gce_tag_instance_name | default(omit, True) }}"
+      state: "{{ gce_tag_state | default(omit, True) }}"
+      instance_pattern: "{{ gce_tag_instance_pattern | default(omit, True) }}"
+      project_id: "{{ gce_tag_project_id | default(omit, True) }}"

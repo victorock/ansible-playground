@@ -1,0 +1,10 @@
+---
+- name: "module_runit"
+  runit: "{{ runit }}"
+  vars:
+    runit: 
+      state: "{{ runit_state | default(omit, True) }}"
+      enabled: "{{ runit_enabled | default(omit, True) }}"
+      name: "{{ runit_name | default(omit, True) }}"
+      service_src: "{{ runit_service_src | default(omit, True) }}"
+      service_dir: "{{ runit_service_dir | default(omit, True) }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_win_domain_controller"
+  win_domain_controller: "{{ win_domain_controller }}"
+  vars:
+    win_domain_controller: 
+      read_only: "{{ win_domain_controller_read_only | default(omit, True) }}"
+      database_path: "{{ win_domain_controller_database_path | default(omit, True) }}"
+      site_name: "{{ win_domain_controller_site_name | default(omit, True) }}"
+      domain_admin_user: "{{ win_domain_controller_domain_admin_user | default(omit, True) }}"
+      dns_domain_name: "{{ win_domain_controller_dns_domain_name | default(omit, True) }}"
+      safe_mode_password: "{{ win_domain_controller_safe_mode_password | default(omit, True) }}"
+      domain_admin_password: "{{ win_domain_controller_domain_admin_password | default(omit, True) }}"
+      state: "{{ win_domain_controller_state | default(omit, True) }}"
+      local_admin_password: "{{ win_domain_controller_local_admin_password | default(omit, True) }}"
+      sysvol_path: "{{ win_domain_controller_sysvol_path | default(omit, True) }}"

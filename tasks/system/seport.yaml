@@ -1,0 +1,10 @@
+---
+- name: "module_seport"
+  seport: "{{ seport }}"
+  vars:
+    seport: 
+      reload: "{{ seport_reload | default(omit, True) }}"
+      setype: "{{ seport_setype | default(omit, True) }}"
+      state: "{{ seport_state | default(omit, True) }}"
+      ports: "{{ seport_ports | default(omit, True) }}"
+      proto: "{{ seport_proto | default(omit, True) }}"

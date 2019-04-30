@@ -1,0 +1,9 @@
+---
+- name: "module_telegram"
+  telegram: "{{ telegram }}"
+  vars:
+    telegram: 
+      msg: "{{ telegram_msg | default(omit, True) }}"
+      msg_format: "{{ telegram_msg_format | default(omit, True) }}"
+      token: "{{ telegram_token | default(omit, True) }}"
+      chat_id: "{{ telegram_chat_id | default(omit, True) }}"

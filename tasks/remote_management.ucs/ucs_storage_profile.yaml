@@ -1,0 +1,17 @@
+---
+- name: "module_ucs_storage_profile"
+  ucs_storage_profile: "{{ ucs_storage_profile }}"
+  vars:
+    ucs_storage_profile: 
+      username: "{{ ucs_storage_profile_username | default(omit, True) }}"
+      use_proxy: "{{ ucs_storage_profile_use_proxy | default(omit, True) }}"
+      description: "{{ ucs_storage_profile_description | default(omit, True) }}"
+      hostname: "{{ ucs_storage_profile_hostname | default(omit, True) }}"
+      org_dn: "{{ ucs_storage_profile_org_dn | default(omit, True) }}"
+      state: "{{ ucs_storage_profile_state | default(omit, True) }}"
+      proxy: "{{ ucs_storage_profile_proxy | default(omit, True) }}"
+      use_ssl: "{{ ucs_storage_profile_use_ssl | default(omit, True) }}"
+      local_luns: "{{ ucs_storage_profile_local_luns | default(omit, True) }}"
+      password: "{{ ucs_storage_profile_password | default(omit, True) }}"
+      port: "{{ ucs_storage_profile_port | default(omit, True) }}"
+      name: "{{ ucs_storage_profile_name | default(omit, True) }}"

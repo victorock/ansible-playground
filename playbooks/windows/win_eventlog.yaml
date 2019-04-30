@@ -1,0 +1,21 @@
+---
+- name: "module_win_eventlog"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_eventlog: 
+      name: "{{ win_eventlog_name | default('omit', True) }}"
+      parameter_file: "{{ win_eventlog_parameter_file | default('omit', True) }}"
+      overflow_action: "{{ win_eventlog_overflow_action | default('omit', True) }}"
+      retention_days: "{{ win_eventlog_retention_days | default('omit', True) }}"
+      sources: "{{ win_eventlog_sources | default('omit', True) }}"
+      state: "{{ win_eventlog_state | default('omit', True) }}"
+      message_file: "{{ win_eventlog_message_file | default('omit', True) }}"
+      maximum_size: "{{ win_eventlog_maximum_size | default('omit', True) }}"
+      category_file: "{{ win_eventlog_category_file | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_eventlog"
+      win_eventlog: "{{ win_eventlog }}"

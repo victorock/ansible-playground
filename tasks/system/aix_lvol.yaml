@@ -1,0 +1,14 @@
+---
+- name: "module_aix_lvol"
+  aix_lvol: "{{ aix_lvol }}"
+  vars:
+    aix_lvol: 
+      pvs: "{{ aix_lvol_pvs | default(omit, True) }}"
+      lv_type: "{{ aix_lvol_lv_type | default(omit, True) }}"
+      vg: "{{ aix_lvol_vg | default(omit, True) }}"
+      copies: "{{ aix_lvol_copies | default(omit, True) }}"
+      lv: "{{ aix_lvol_lv | default(omit, True) }}"
+      state: "{{ aix_lvol_state | default(omit, True) }}"
+      policy: "{{ aix_lvol_policy | default(omit, True) }}"
+      opts: "{{ aix_lvol_opts | default(omit, True) }}"
+      size: "{{ aix_lvol_size | default(omit, True) }}"

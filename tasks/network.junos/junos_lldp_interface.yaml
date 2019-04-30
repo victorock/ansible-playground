@@ -1,0 +1,9 @@
+---
+- name: "module_junos_lldp_interface"
+  junos_lldp_interface: "{{ junos_lldp_interface }}"
+  vars:
+    junos_lldp_interface: 
+      active: "{{ junos_lldp_interface_active | default(omit, True) }}"
+      state: "{{ junos_lldp_interface_state | default(omit, True) }}"
+      name: "{{ junos_lldp_interface_name | default(omit, True) }}"
+      provider: "{{ junos_lldp_interface_provider | default(omit, True) }}"

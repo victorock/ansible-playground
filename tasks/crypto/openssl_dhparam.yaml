@@ -1,0 +1,18 @@
+---
+- name: "module_openssl_dhparam"
+  openssl_dhparam: "{{ openssl_dhparam }}"
+  vars:
+    openssl_dhparam: 
+      force: "{{ openssl_dhparam_force | default(omit, True) }}"
+      unsafe_writes: "{{ openssl_dhparam_unsafe_writes | default(omit, True) }}"
+      selevel: "{{ openssl_dhparam_selevel | default(omit, True) }}"
+      seuser: "{{ openssl_dhparam_seuser | default(omit, True) }}"
+      state: "{{ openssl_dhparam_state | default(omit, True) }}"
+      serole: "{{ openssl_dhparam_serole | default(omit, True) }}"
+      mode: "{{ openssl_dhparam_mode | default(omit, True) }}"
+      setype: "{{ openssl_dhparam_setype | default(omit, True) }}"
+      path: "{{ openssl_dhparam_path | default(omit, True) }}"
+      owner: "{{ openssl_dhparam_owner | default(omit, True) }}"
+      group: "{{ openssl_dhparam_group | default(omit, True) }}"
+      attributes: "{{ openssl_dhparam_attributes | default(omit, True) }}"
+      size: "{{ openssl_dhparam_size | default(omit, True) }}"

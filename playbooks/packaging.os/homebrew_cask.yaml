@@ -1,0 +1,21 @@
+---
+- name: "module_homebrew_cask"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    homebrew_cask: 
+      install_options: "{{ homebrew_cask_install_options | default('omit', True) }}"
+      upgrade: "{{ homebrew_cask_upgrade | default('omit', True) }}"
+      name: "{{ homebrew_cask_name | default('omit', True) }}"
+      update_homebrew: "{{ homebrew_cask_update_homebrew | default('omit', True) }}"
+      upgrade_all: "{{ homebrew_cask_upgrade_all | default('omit', True) }}"
+      accept_external_apps: "{{ homebrew_cask_accept_external_apps | default('omit', True) }}"
+      greedy: "{{ homebrew_cask_greedy | default('omit', True) }}"
+      state: "{{ homebrew_cask_state | default('omit', True) }}"
+      path: "{{ homebrew_cask_path | default('omit', True) }}"
+  tasks:
+    - name: "plugin_homebrew_cask"
+      homebrew_cask: "{{ homebrew_cask }}"

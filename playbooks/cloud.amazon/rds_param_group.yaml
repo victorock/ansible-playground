@@ -1,0 +1,27 @@
+---
+- name: "module_rds_param_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rds_param_group: 
+      engine: "{{ rds_param_group_engine | default('omit', True) }}"
+      profile: "{{ rds_param_group_profile | default('omit', True) }}"
+      aws_access_key: "{{ rds_param_group_aws_access_key | default('omit', True) }}"
+      description: "{{ rds_param_group_description | default('omit', True) }}"
+      security_token: "{{ rds_param_group_security_token | default('omit', True) }}"
+      tags: "{{ rds_param_group_tags | default('omit', True) }}"
+      purge_tags: "{{ rds_param_group_purge_tags | default('omit', True) }}"
+      region: "{{ rds_param_group_region | default('omit', True) }}"
+      aws_secret_key: "{{ rds_param_group_aws_secret_key | default('omit', True) }}"
+      immediate: "{{ rds_param_group_immediate | default('omit', True) }}"
+      state: "{{ rds_param_group_state | default('omit', True) }}"
+      params: "{{ rds_param_group_params | default('omit', True) }}"
+      ec2_url: "{{ rds_param_group_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ rds_param_group_validate_certs | default('omit', True) }}"
+      name: "{{ rds_param_group_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rds_param_group"
+      rds_param_group: "{{ rds_param_group }}"

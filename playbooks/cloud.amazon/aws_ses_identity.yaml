@@ -1,0 +1,25 @@
+---
+- name: "module_aws_ses_identity"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aws_ses_identity: 
+      profile: "{{ aws_ses_identity_profile | default('omit', True) }}"
+      bounce_notifications: "{{ aws_ses_identity_bounce_notifications | default('omit', True) }}"
+      aws_access_key: "{{ aws_ses_identity_aws_access_key | default('omit', True) }}"
+      security_token: "{{ aws_ses_identity_security_token | default('omit', True) }}"
+      feedback_forwarding: "{{ aws_ses_identity_feedback_forwarding | default('omit', True) }}"
+      aws_secret_key: "{{ aws_ses_identity_aws_secret_key | default('omit', True) }}"
+      state: "{{ aws_ses_identity_state | default('omit', True) }}"
+      delivery_notifications: "{{ aws_ses_identity_delivery_notifications | default('omit', True) }}"
+      ec2_url: "{{ aws_ses_identity_ec2_url | default('omit', True) }}"
+      region: "{{ aws_ses_identity_region | default('omit', True) }}"
+      validate_certs: "{{ aws_ses_identity_validate_certs | default('omit', True) }}"
+      complaint_notifications: "{{ aws_ses_identity_complaint_notifications | default('omit', True) }}"
+      identity: "{{ aws_ses_identity_identity | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aws_ses_identity"
+      aws_ses_identity: "{{ aws_ses_identity }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_manageiq_tags"
+  manageiq_tags: "{{ manageiq_tags }}"
+  vars:
+    manageiq_tags: 
+      manageiq_connection: "{{ manageiq_tags_manageiq_connection | default(omit, True) }}"
+      state: "{{ manageiq_tags_state | default(omit, True) }}"
+      resource_name: "{{ manageiq_tags_resource_name | default(omit, True) }}"
+      resource_type: "{{ manageiq_tags_resource_type | default(omit, True) }}"
+      tags: "{{ manageiq_tags_tags | default(omit, True) }}"

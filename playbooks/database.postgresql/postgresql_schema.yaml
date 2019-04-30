@@ -1,0 +1,21 @@
+---
+- name: "module_postgresql_schema"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_schema: 
+      name: "{{ postgresql_schema_name | default('omit', True) }}"
+      database: "{{ postgresql_schema_database | default('omit', True) }}"
+      login_user: "{{ postgresql_schema_login_user | default('omit', True) }}"
+      login_host: "{{ postgresql_schema_login_host | default('omit', True) }}"
+      login_unix_socket: "{{ postgresql_schema_login_unix_socket | default('omit', True) }}"
+      state: "{{ postgresql_schema_state | default('omit', True) }}"
+      login_password: "{{ postgresql_schema_login_password | default('omit', True) }}"
+      owner: "{{ postgresql_schema_owner | default('omit', True) }}"
+      port: "{{ postgresql_schema_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_postgresql_schema"
+      postgresql_schema: "{{ postgresql_schema }}"

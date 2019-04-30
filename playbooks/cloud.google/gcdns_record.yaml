@@ -1,0 +1,24 @@
+---
+- name: "module_gcdns_record"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcdns_record: 
+      zone_id: "{{ gcdns_record_zone_id | default('omit', True) }}"
+      zone: "{{ gcdns_record_zone | default('omit', True) }}"
+      record_data: "{{ gcdns_record_record_data | default('omit', True) }}"
+      service_account_email: "{{ gcdns_record_service_account_email | default('omit', True) }}"
+      credentials_file: "{{ gcdns_record_credentials_file | default('omit', True) }}"
+      pem_file: "{{ gcdns_record_pem_file | default('omit', True) }}"
+      record: "{{ gcdns_record_record | default('omit', True) }}"
+      state: "{{ gcdns_record_state | default('omit', True) }}"
+      ttl: "{{ gcdns_record_ttl | default('omit', True) }}"
+      project_id: "{{ gcdns_record_project_id | default('omit', True) }}"
+      type: "{{ gcdns_record_type | default('omit', True) }}"
+      overwrite: "{{ gcdns_record_overwrite | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcdns_record"
+      gcdns_record: "{{ gcdns_record }}"

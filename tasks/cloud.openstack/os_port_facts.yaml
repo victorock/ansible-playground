@@ -1,0 +1,20 @@
+---
+- name: "module_os_port_facts"
+  os_port_facts: "{{ os_port_facts }}"
+  vars:
+    os_port_facts: 
+      auth_type: "{{ os_port_facts_auth_type | default(omit, True) }}"
+      region_name: "{{ os_port_facts_region_name | default(omit, True) }}"
+      availability_zone: "{{ os_port_facts_availability_zone | default(omit, True) }}"
+      verify: "{{ os_port_facts_verify | default(omit, True) }}"
+      filters: "{{ os_port_facts_filters | default(omit, True) }}"
+      api_timeout: "{{ os_port_facts_api_timeout | default(omit, True) }}"
+      timeout: "{{ os_port_facts_timeout | default(omit, True) }}"
+      auth: "{{ os_port_facts_auth | default(omit, True) }}"
+      cacert: "{{ os_port_facts_cacert | default(omit, True) }}"
+      cert: "{{ os_port_facts_cert | default(omit, True) }}"
+      key: "{{ os_port_facts_key | default(omit, True) }}"
+      interface: "{{ os_port_facts_interface | default(omit, True) }}"
+      port: "{{ os_port_facts_port | default(omit, True) }}"
+      cloud: "{{ os_port_facts_cloud | default(omit, True) }}"
+      wait: "{{ os_port_facts_wait | default(omit, True) }}"

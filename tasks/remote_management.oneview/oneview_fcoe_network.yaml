@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_fcoe_network"
+  oneview_fcoe_network: "{{ oneview_fcoe_network }}"
+  vars:
+    oneview_fcoe_network: 
+      data: "{{ oneview_fcoe_network_data | default(omit, True) }}"
+      state: "{{ oneview_fcoe_network_state | default(omit, True) }}"
+      validate_etag: "{{ oneview_fcoe_network_validate_etag | default(omit, True) }}"
+      config: "{{ oneview_fcoe_network_config | default(omit, True) }}"

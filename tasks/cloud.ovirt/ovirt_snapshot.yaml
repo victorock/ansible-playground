@@ -1,0 +1,16 @@
+---
+- name: "module_ovirt_snapshot"
+  ovirt_snapshot: "{{ ovirt_snapshot }}"
+  vars:
+    ovirt_snapshot: 
+      vm_name: "{{ ovirt_snapshot_vm_name | default(omit, True) }}"
+      description: "{{ ovirt_snapshot_description | default(omit, True) }}"
+      use_memory: "{{ ovirt_snapshot_use_memory | default(omit, True) }}"
+      poll_interval: "{{ ovirt_snapshot_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_snapshot_state | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_snapshot_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_snapshot_fetch_nested | default(omit, True) }}"
+      auth: "{{ ovirt_snapshot_auth | default(omit, True) }}"
+      timeout: "{{ ovirt_snapshot_timeout | default(omit, True) }}"
+      snapshot_id: "{{ ovirt_snapshot_snapshot_id | default(omit, True) }}"
+      wait: "{{ ovirt_snapshot_wait | default(omit, True) }}"

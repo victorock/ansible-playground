@@ -1,0 +1,19 @@
+---
+- name: "module_gcp_forwarding_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_forwarding_rule: 
+      protocol: "{{ gcp_forwarding_rule_protocol | default('omit', True) }}"
+      target: "{{ gcp_forwarding_rule_target | default('omit', True) }}"
+      region: "{{ gcp_forwarding_rule_region | default('omit', True) }}"
+      forwarding_rule_name: "{{ gcp_forwarding_rule_forwarding_rule_name | default('omit', True) }}"
+      port_range: "{{ gcp_forwarding_rule_port_range | default('omit', True) }}"
+      state: "{{ gcp_forwarding_rule_state | default('omit', True) }}"
+      address: "{{ gcp_forwarding_rule_address | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_forwarding_rule"
+      gcp_forwarding_rule: "{{ gcp_forwarding_rule }}"

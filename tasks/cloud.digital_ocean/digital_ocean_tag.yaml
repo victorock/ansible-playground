@@ -1,0 +1,12 @@
+---
+- name: "module_digital_ocean_tag"
+  digital_ocean_tag: "{{ digital_ocean_tag }}"
+  vars:
+    digital_ocean_tag: 
+      name: "{{ digital_ocean_tag_name | default(omit, True) }}"
+      resource_id: "{{ digital_ocean_tag_resource_id | default(omit, True) }}"
+      state: "{{ digital_ocean_tag_state | default(omit, True) }}"
+      oauth_token: "{{ digital_ocean_tag_oauth_token | default(omit, True) }}"
+      timeout: "{{ digital_ocean_tag_timeout | default(omit, True) }}"
+      validate_certs: "{{ digital_ocean_tag_validate_certs | default(omit, True) }}"
+      resource_type: "{{ digital_ocean_tag_resource_type | default(omit, True) }}"

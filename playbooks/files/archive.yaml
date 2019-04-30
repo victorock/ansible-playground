@@ -1,0 +1,26 @@
+---
+- name: "module_archive"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    archive: 
+      exclude_path: "{{ archive_exclude_path | default('omit', True) }}"
+      format: "{{ archive_format | default('omit', True) }}"
+      dest: "{{ archive_dest | default('omit', True) }}"
+      selevel: "{{ archive_selevel | default('omit', True) }}"
+      seuser: "{{ archive_seuser | default('omit', True) }}"
+      serole: "{{ archive_serole | default('omit', True) }}"
+      remove: "{{ archive_remove | default('omit', True) }}"
+      group: "{{ archive_group | default('omit', True) }}"
+      unsafe_writes: "{{ archive_unsafe_writes | default('omit', True) }}"
+      setype: "{{ archive_setype | default('omit', True) }}"
+      mode: "{{ archive_mode | default('omit', True) }}"
+      attributes: "{{ archive_attributes | default('omit', True) }}"
+      owner: "{{ archive_owner | default('omit', True) }}"
+      path: "{{ archive_path | default('omit', True) }}"
+  tasks:
+    - name: "plugin_archive"
+      archive: "{{ archive }}"

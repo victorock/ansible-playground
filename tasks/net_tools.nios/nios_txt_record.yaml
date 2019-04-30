@@ -1,0 +1,13 @@
+---
+- name: "module_nios_txt_record"
+  nios_txt_record: "{{ nios_txt_record }}"
+  vars:
+    nios_txt_record: 
+      comment: "{{ nios_txt_record_comment | default(omit, True) }}"
+      name: "{{ nios_txt_record_name | default(omit, True) }}"
+      text: "{{ nios_txt_record_text | default(omit, True) }}"
+      ttl: "{{ nios_txt_record_ttl | default(omit, True) }}"
+      provider: "{{ nios_txt_record_provider | default(omit, True) }}"
+      state: "{{ nios_txt_record_state | default(omit, True) }}"
+      extattrs: "{{ nios_txt_record_extattrs | default(omit, True) }}"
+      view: "{{ nios_txt_record_view | default(omit, True) }}"

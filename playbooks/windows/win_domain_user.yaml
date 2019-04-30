@@ -1,0 +1,39 @@
+---
+- name: "module_win_domain_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_domain_user: 
+      update_password: "{{ win_domain_user_update_password | default('omit', True) }}"
+      surname: "{{ win_domain_user_surname | default('omit', True) }}"
+      groups_action: "{{ win_domain_user_groups_action | default('omit', True) }}"
+      password_expired: "{{ win_domain_user_password_expired | default('omit', True) }}"
+      street: "{{ win_domain_user_street | default('omit', True) }}"
+      postal_code: "{{ win_domain_user_postal_code | default('omit', True) }}"
+      password_never_expires: "{{ win_domain_user_password_never_expires | default('omit', True) }}"
+      city: "{{ win_domain_user_city | default('omit', True) }}"
+      state: "{{ win_domain_user_state | default('omit', True) }}"
+      domain_password: "{{ win_domain_user_domain_password | default('omit', True) }}"
+      domain_server: "{{ win_domain_user_domain_server | default('omit', True) }}"
+      email: "{{ win_domain_user_email | default('omit', True) }}"
+      state_province: "{{ win_domain_user_state_province | default('omit', True) }}"
+      description: "{{ win_domain_user_description | default('omit', True) }}"
+      firstname: "{{ win_domain_user_firstname | default('omit', True) }}"
+      company: "{{ win_domain_user_company | default('omit', True) }}"
+      groups: "{{ win_domain_user_groups | default('omit', True) }}"
+      path: "{{ win_domain_user_path | default('omit', True) }}"
+      password: "{{ win_domain_user_password | default('omit', True) }}"
+      account_locked: "{{ win_domain_user_account_locked | default('omit', True) }}"
+      upn: "{{ win_domain_user_upn | default('omit', True) }}"
+      name: "{{ win_domain_user_name | default('omit', True) }}"
+      domain_username: "{{ win_domain_user_domain_username | default('omit', True) }}"
+      country: "{{ win_domain_user_country | default('omit', True) }}"
+      enabled: "{{ win_domain_user_enabled | default('omit', True) }}"
+      attributes: "{{ win_domain_user_attributes | default('omit', True) }}"
+      user_cannot_change_password: "{{ win_domain_user_user_cannot_change_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_domain_user"
+      win_domain_user: "{{ win_domain_user }}"

@@ -1,0 +1,46 @@
+---
+- name: "Get plugin facts"
+  plugin_facts:
+  register: plugin_facts
+
+# due the amount of namespaces, 'loop' is veeeeery slow
+# TODO: find a more efficient way to loop over
+- name: "Create playbooks folder structure"
+  vars:
+    namespaces: "{{ plugin_facts.plugin | json_query('*.namespace') | unique | list }}"
+  file:
+    path: "{{ role_path }}/playbooks/{{ item }}"
+    state: "directory"
+  loop: "{{ namespaces }}"
+
+# due the amount of namespaces, 'loop' is veeeeery slow
+# TODO: find a more efficient way to loop over
+- name: "Create tasks folder structure"
+  vars:
+    namespaces: "{{ plugin_facts.plugin | json_query('*.namespace') | unique | list }}"
+  file:
+    path: "{{ role_path }}/tasks/{{ item }}"
+    state: "directory"
+  loop: "{{ namespaces }}"
+
+# due the amount of namespaces, 'loop' is veeeeery slow
+# TODO: find a more efficient way to loop over
+- name: "Generate playbook content"
+  template:
+    src: "playbook.j2"
+    dest: "{{ role_path }}/playbooks/{{ plugin.value.namespace }}/{{ plugin.key }}.yaml"
+  loop: "{{ plugin_facts.plugin | dict2items }}"
+  loop_control:
+    loop_var: plugin
+    label: "{{ plugin.key }}"
+
+# due the amount of namespaces, 'loop' is veeeeery slow
+# TODO: find a more efficient way to loop over
+- name: "Generate tasks content"
+  template:
+    src: "task.j2"
+    dest: "{{ role_path }}/tasks/{{ plugin.value.namespace }}/{{ plugin.key }}.yaml"
+  loop: "{{ plugin_facts.plugin | dict2items }}"
+  loop_control:
+    loop_var: plugin
+    label: "{{ plugin.key }}"

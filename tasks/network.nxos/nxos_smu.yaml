@@ -1,0 +1,8 @@
+---
+- name: "module_nxos_smu"
+  nxos_smu: "{{ nxos_smu }}"
+  vars:
+    nxos_smu: 
+      pkg: "{{ nxos_smu_pkg | default(omit, True) }}"
+      file_system: "{{ nxos_smu_file_system | default(omit, True) }}"
+      provider: "{{ nxos_smu_provider | default(omit, True) }}"

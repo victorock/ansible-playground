@@ -1,0 +1,10 @@
+---
+- name: "module_clc_blueprint_package"
+  clc_blueprint_package: "{{ clc_blueprint_package }}"
+  vars:
+    clc_blueprint_package: 
+      server_ids: "{{ clc_blueprint_package_server_ids | default(omit, True) }}"
+      package_id: "{{ clc_blueprint_package_package_id | default(omit, True) }}"
+      wait: "{{ clc_blueprint_package_wait | default(omit, True) }}"
+      state: "{{ clc_blueprint_package_state | default(omit, True) }}"
+      package_params: "{{ clc_blueprint_package_package_params | default(omit, True) }}"

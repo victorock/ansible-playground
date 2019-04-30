@@ -1,0 +1,27 @@
+---
+- name: "module_bigip_security_address_list"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_security_address_list: 
+      geo_locations: "{{ bigip_security_address_list_geo_locations | default('omit', True) }}"
+      partition: "{{ bigip_security_address_list_partition | default('omit', True) }}"
+      addresses: "{{ bigip_security_address_list_addresses | default('omit', True) }}"
+      address_ranges: "{{ bigip_security_address_list_address_ranges | default('omit', True) }}"
+      address_lists: "{{ bigip_security_address_list_address_lists | default('omit', True) }}"
+      fqdns: "{{ bigip_security_address_list_fqdns | default('omit', True) }}"
+      server: "{{ bigip_security_address_list_server | default('omit', True) }}"
+      name: "{{ bigip_security_address_list_name | default('omit', True) }}"
+      state: "{{ bigip_security_address_list_state | default('omit', True) }}"
+      user: "{{ bigip_security_address_list_user | default('omit', True) }}"
+      server_port: "{{ bigip_security_address_list_server_port | default('omit', True) }}"
+      provider: "{{ bigip_security_address_list_provider | default('omit', True) }}"
+      password: "{{ bigip_security_address_list_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_security_address_list_validate_certs | default('omit', True) }}"
+      description: "{{ bigip_security_address_list_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_security_address_list"
+      bigip_security_address_list: "{{ bigip_security_address_list }}"

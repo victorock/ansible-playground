@@ -1,0 +1,8 @@
+---
+- name: "module_set_stats"
+  set_stats: "{{ set_stats }}"
+  vars:
+    set_stats: 
+      aggregate: "{{ set_stats_aggregate | default(omit, True) }}"
+      data: "{{ set_stats_data | default(omit, True) }}"
+      per_host: "{{ set_stats_per_host | default(omit, True) }}"

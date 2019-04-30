@@ -1,0 +1,9 @@
+---
+- name: "module_win_region"
+  win_region: "{{ win_region }}"
+  vars:
+    win_region: 
+      unicode_language: "{{ win_region_unicode_language | default(omit, True) }}"
+      copy_settings: "{{ win_region_copy_settings | default(omit, True) }}"
+      location: "{{ win_region_location | default(omit, True) }}"
+      format: "{{ win_region_format | default(omit, True) }}"

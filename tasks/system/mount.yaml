@@ -1,0 +1,15 @@
+---
+- name: "module_mount"
+  mount: "{{ mount }}"
+  vars:
+    mount: 
+      src: "{{ mount_src | default(omit, True) }}"
+      dump: "{{ mount_dump | default(omit, True) }}"
+      boot: "{{ mount_boot | default(omit, True) }}"
+      fstab: "{{ mount_fstab | default(omit, True) }}"
+      passno: "{{ mount_passno | default(omit, True) }}"
+      fstype: "{{ mount_fstype | default(omit, True) }}"
+      state: "{{ mount_state | default(omit, True) }}"
+      path: "{{ mount_path | default(omit, True) }}"
+      backup: "{{ mount_backup | default(omit, True) }}"
+      opts: "{{ mount_opts | default(omit, True) }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_awall"
+  awall: "{{ awall }}"
+  vars:
+    awall: 
+      state: "{{ awall_state | default(omit, True) }}"
+      activate: "{{ awall_activate | default(omit, True) }}"
+      name: "{{ awall_name | default(omit, True) }}"

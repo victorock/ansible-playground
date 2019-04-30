@@ -1,0 +1,9 @@
+---
+- name: "module_ce_acl_interface"
+  ce_acl_interface: "{{ ce_acl_interface }}"
+  vars:
+    ce_acl_interface: 
+      interface: "{{ ce_acl_interface_interface | default(omit, True) }}"
+      direction: "{{ ce_acl_interface_direction | default(omit, True) }}"
+      state: "{{ ce_acl_interface_state | default(omit, True) }}"
+      acl_name: "{{ ce_acl_interface_acl_name | default(omit, True) }}"

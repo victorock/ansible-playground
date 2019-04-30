@@ -1,0 +1,22 @@
+---
+- name: "module_tower_project"
+  tower_project: "{{ tower_project }}"
+  vars:
+    tower_project: 
+      scm_branch: "{{ tower_project_scm_branch | default(omit, True) }}"
+      description: "{{ tower_project_description | default(omit, True) }}"
+      tower_host: "{{ tower_project_tower_host | default(omit, True) }}"
+      scm_credential: "{{ tower_project_scm_credential | default(omit, True) }}"
+      scm_clean: "{{ tower_project_scm_clean | default(omit, True) }}"
+      scm_type: "{{ tower_project_scm_type | default(omit, True) }}"
+      scm_delete_on_update: "{{ tower_project_scm_delete_on_update | default(omit, True) }}"
+      tower_username: "{{ tower_project_tower_username | default(omit, True) }}"
+      state: "{{ tower_project_state | default(omit, True) }}"
+      local_path: "{{ tower_project_local_path | default(omit, True) }}"
+      scm_url: "{{ tower_project_scm_url | default(omit, True) }}"
+      tower_password: "{{ tower_project_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_project_tower_config_file | default(omit, True) }}"
+      organization: "{{ tower_project_organization | default(omit, True) }}"
+      scm_update_on_launch: "{{ tower_project_scm_update_on_launch | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_project_tower_verify_ssl | default(omit, True) }}"
+      name: "{{ tower_project_name | default(omit, True) }}"

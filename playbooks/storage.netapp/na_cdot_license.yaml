@@ -1,0 +1,19 @@
+---
+- name: "module_na_cdot_license"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_cdot_license: 
+      username: "{{ na_cdot_license_username | default('omit', True) }}"
+      remove_unused: "{{ na_cdot_license_remove_unused | default('omit', True) }}"
+      hostname: "{{ na_cdot_license_hostname | default('omit', True) }}"
+      remove_expired: "{{ na_cdot_license_remove_expired | default('omit', True) }}"
+      licenses: "{{ na_cdot_license_licenses | default('omit', True) }}"
+      serial_number: "{{ na_cdot_license_serial_number | default('omit', True) }}"
+      password: "{{ na_cdot_license_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_cdot_license"
+      na_cdot_license: "{{ na_cdot_license }}"

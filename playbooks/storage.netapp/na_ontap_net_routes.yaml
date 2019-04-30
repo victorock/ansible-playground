@@ -1,0 +1,26 @@
+---
+- name: "module_na_ontap_net_routes"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_net_routes: 
+      username: "{{ na_ontap_net_routes_username | default('omit', True) }}"
+      http_port: "{{ na_ontap_net_routes_http_port | default('omit', True) }}"
+      new_destination: "{{ na_ontap_net_routes_new_destination | default('omit', True) }}"
+      metric: "{{ na_ontap_net_routes_metric | default('omit', True) }}"
+      hostname: "{{ na_ontap_net_routes_hostname | default('omit', True) }}"
+      vserver: "{{ na_ontap_net_routes_vserver | default('omit', True) }}"
+      state: "{{ na_ontap_net_routes_state | default('omit', True) }}"
+      https: "{{ na_ontap_net_routes_https | default('omit', True) }}"
+      destination: "{{ na_ontap_net_routes_destination | default('omit', True) }}"
+      new_gateway: "{{ na_ontap_net_routes_new_gateway | default('omit', True) }}"
+      password: "{{ na_ontap_net_routes_password | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_net_routes_validate_certs | default('omit', True) }}"
+      gateway: "{{ na_ontap_net_routes_gateway | default('omit', True) }}"
+      new_metric: "{{ na_ontap_net_routes_new_metric | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_net_routes"
+      na_ontap_net_routes: "{{ na_ontap_net_routes }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_gcp_compute_https_health_check"
+  gcp_compute_https_health_check: "{{ gcp_compute_https_health_check }}"
+  vars:
+    gcp_compute_https_health_check: 
+      scopes: "{{ gcp_compute_https_health_check_scopes | default(omit, True) }}"
+      check_interval_sec: "{{ gcp_compute_https_health_check_check_interval_sec | default(omit, True) }}"
+      description: "{{ gcp_compute_https_health_check_description | default(omit, True) }}"
+      name: "{{ gcp_compute_https_health_check_name | default(omit, True) }}"
+      timeout_sec: "{{ gcp_compute_https_health_check_timeout_sec | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_https_health_check_service_account_email | default(omit, True) }}"
+      healthy_threshold: "{{ gcp_compute_https_health_check_healthy_threshold | default(omit, True) }}"
+      state: "{{ gcp_compute_https_health_check_state | default(omit, True) }}"
+      unhealthy_threshold: "{{ gcp_compute_https_health_check_unhealthy_threshold | default(omit, True) }}"
+      project: "{{ gcp_compute_https_health_check_project | default(omit, True) }}"
+      host: "{{ gcp_compute_https_health_check_host | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_https_health_check_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_https_health_check_service_account_file | default(omit, True) }}"
+      port: "{{ gcp_compute_https_health_check_port | default(omit, True) }}"
+      request_path: "{{ gcp_compute_https_health_check_request_path | default(omit, True) }}"

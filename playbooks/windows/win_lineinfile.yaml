@@ -1,0 +1,24 @@
+---
+- name: "module_win_lineinfile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_lineinfile: 
+      insertbefore: "{{ win_lineinfile_insertbefore | default('omit', True) }}"
+      encoding: "{{ win_lineinfile_encoding | default('omit', True) }}"
+      create: "{{ win_lineinfile_create | default('omit', True) }}"
+      newline: "{{ win_lineinfile_newline | default('omit', True) }}"
+      backrefs: "{{ win_lineinfile_backrefs | default('omit', True) }}"
+      state: "{{ win_lineinfile_state | default('omit', True) }}"
+      path: "{{ win_lineinfile_path | default('omit', True) }}"
+      insertafter: "{{ win_lineinfile_insertafter | default('omit', True) }}"
+      regexp: "{{ win_lineinfile_regexp | default('omit', True) }}"
+      line: "{{ win_lineinfile_line | default('omit', True) }}"
+      backup: "{{ win_lineinfile_backup | default('omit', True) }}"
+      validate: "{{ win_lineinfile_validate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_lineinfile"
+      win_lineinfile: "{{ win_lineinfile }}"

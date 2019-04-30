@@ -1,0 +1,18 @@
+---
+- name: "module_junos_lldp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_lldp: 
+      interval: "{{ junos_lldp_interval | default('omit', True) }}"
+      state: "{{ junos_lldp_state | default('omit', True) }}"
+      provider: "{{ junos_lldp_provider | default('omit', True) }}"
+      active: "{{ junos_lldp_active | default('omit', True) }}"
+      hold_multiplier: "{{ junos_lldp_hold_multiplier | default('omit', True) }}"
+      transmit_delay: "{{ junos_lldp_transmit_delay | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_lldp"
+      junos_lldp: "{{ junos_lldp }}"

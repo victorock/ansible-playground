@@ -1,0 +1,14 @@
+---
+- name: "module_include_vars"
+  include_vars: "{{ include_vars }}"
+  vars:
+    include_vars: 
+      ignore_files: "{{ include_vars_ignore_files | default(omit, True) }}"
+      ignore_unknown_extensions: "{{ include_vars_ignore_unknown_extensions | default(omit, True) }}"
+      free-form: "{{ include_vars_free-form | default(omit, True) }}"
+      files_matching: "{{ include_vars_files_matching | default(omit, True) }}"
+      depth: "{{ include_vars_depth | default(omit, True) }}"
+      extensions: "{{ include_vars_extensions | default(omit, True) }}"
+      file: "{{ include_vars_file | default(omit, True) }}"
+      dir: "{{ include_vars_dir | default(omit, True) }}"
+      name: "{{ include_vars_name | default(omit, True) }}"

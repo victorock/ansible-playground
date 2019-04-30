@@ -1,0 +1,9 @@
+---
+- name: "module_iosxr_netconf"
+  iosxr_netconf: "{{ iosxr_netconf }}"
+  vars:
+    iosxr_netconf: 
+      state: "{{ iosxr_netconf_state | default(omit, True) }}"
+      netconf_vrf: "{{ iosxr_netconf_netconf_vrf | default(omit, True) }}"
+      netconf_port: "{{ iosxr_netconf_netconf_port | default(omit, True) }}"
+      provider: "{{ iosxr_netconf_provider | default(omit, True) }}"

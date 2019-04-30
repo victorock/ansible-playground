@@ -1,0 +1,18 @@
+---
+- name: "module_aruba_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aruba_command: 
+      retries: "{{ aruba_command_retries | default('omit', True) }}"
+      commands: "{{ aruba_command_commands | default('omit', True) }}"
+      interval: "{{ aruba_command_interval | default('omit', True) }}"
+      provider: "{{ aruba_command_provider | default('omit', True) }}"
+      wait_for: "{{ aruba_command_wait_for | default('omit', True) }}"
+      match: "{{ aruba_command_match | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aruba_command"
+      aruba_command: "{{ aruba_command }}"

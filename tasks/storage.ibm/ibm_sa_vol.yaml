@@ -1,0 +1,12 @@
+---
+- name: "module_ibm_sa_vol"
+  ibm_sa_vol: "{{ ibm_sa_vol }}"
+  vars:
+    ibm_sa_vol: 
+      username: "{{ ibm_sa_vol_username | default(omit, True) }}"
+      password: "{{ ibm_sa_vol_password | default(omit, True) }}"
+      vol: "{{ ibm_sa_vol_vol | default(omit, True) }}"
+      state: "{{ ibm_sa_vol_state | default(omit, True) }}"
+      endpoints: "{{ ibm_sa_vol_endpoints | default(omit, True) }}"
+      pool: "{{ ibm_sa_vol_pool | default(omit, True) }}"
+      size: "{{ ibm_sa_vol_size | default(omit, True) }}"

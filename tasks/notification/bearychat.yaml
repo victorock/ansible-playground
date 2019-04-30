@@ -1,0 +1,10 @@
+---
+- name: "module_bearychat"
+  bearychat: "{{ bearychat }}"
+  vars:
+    bearychat: 
+      url: "{{ bearychat_url | default(omit, True) }}"
+      text: "{{ bearychat_text | default(omit, True) }}"
+      markdown: "{{ bearychat_markdown | default(omit, True) }}"
+      attachments: "{{ bearychat_attachments | default(omit, True) }}"
+      channel: "{{ bearychat_channel | default(omit, True) }}"

@@ -1,0 +1,28 @@
+---
+- name: "module_avi_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_role: 
+      username: "{{ avi_role_username | default('omit', True) }}"
+      uuid: "{{ avi_role_uuid | default('omit', True) }}"
+      state: "{{ avi_role_state | default('omit', True) }}"
+      url: "{{ avi_role_url | default('omit', True) }}"
+      privileges: "{{ avi_role_privileges | default('omit', True) }}"
+      tenant_ref: "{{ avi_role_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_role_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_role_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_role_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_role_tenant | default('omit', True) }}"
+      api_context: "{{ avi_role_api_context | default('omit', True) }}"
+      password: "{{ avi_role_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_role_tenant_uuid | default('omit', True) }}"
+      controller: "{{ avi_role_controller | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_role_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_role_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_role"
+      avi_role: "{{ avi_role }}"

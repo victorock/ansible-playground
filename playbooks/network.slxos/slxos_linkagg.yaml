@@ -1,0 +1,18 @@
+---
+- name: "module_slxos_linkagg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    slxos_linkagg: 
+      group: "{{ slxos_linkagg_group | default('omit', True) }}"
+      purge: "{{ slxos_linkagg_purge | default('omit', True) }}"
+      state: "{{ slxos_linkagg_state | default('omit', True) }}"
+      mode: "{{ slxos_linkagg_mode | default('omit', True) }}"
+      members: "{{ slxos_linkagg_members | default('omit', True) }}"
+      aggregate: "{{ slxos_linkagg_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_slxos_linkagg"
+      slxos_linkagg: "{{ slxos_linkagg }}"

@@ -1,0 +1,33 @@
+---
+- name: "module_vmware_deploy_ovf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_deploy_ovf: 
+      resource_pool: "{{ vmware_deploy_ovf_resource_pool | default('omit', True) }}"
+      username: "{{ vmware_deploy_ovf_username | default('omit', True) }}"
+      name: "{{ vmware_deploy_ovf_name | default('omit', True) }}"
+      power_on: "{{ vmware_deploy_ovf_power_on | default('omit', True) }}"
+      hostname: "{{ vmware_deploy_ovf_hostname | default('omit', True) }}"
+      networks: "{{ vmware_deploy_ovf_networks | default('omit', True) }}"
+      wait: "{{ vmware_deploy_ovf_wait | default('omit', True) }}"
+      properties: "{{ vmware_deploy_ovf_properties | default('omit', True) }}"
+      allow_duplicates: "{{ vmware_deploy_ovf_allow_duplicates | default('omit', True) }}"
+      cluster: "{{ vmware_deploy_ovf_cluster | default('omit', True) }}"
+      fail_on_spec_warnings: "{{ vmware_deploy_ovf_fail_on_spec_warnings | default('omit', True) }}"
+      folder: "{{ vmware_deploy_ovf_folder | default('omit', True) }}"
+      disk_provisioning: "{{ vmware_deploy_ovf_disk_provisioning | default('omit', True) }}"
+      datacenter: "{{ vmware_deploy_ovf_datacenter | default('omit', True) }}"
+      ovf: "{{ vmware_deploy_ovf_ovf | default('omit', True) }}"
+      deployment_option: "{{ vmware_deploy_ovf_deployment_option | default('omit', True) }}"
+      password: "{{ vmware_deploy_ovf_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_deploy_ovf_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_deploy_ovf_port | default('omit', True) }}"
+      datastore: "{{ vmware_deploy_ovf_datastore | default('omit', True) }}"
+      wait_for_ip_address: "{{ vmware_deploy_ovf_wait_for_ip_address | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_deploy_ovf"
+      vmware_deploy_ovf: "{{ vmware_deploy_ovf }}"

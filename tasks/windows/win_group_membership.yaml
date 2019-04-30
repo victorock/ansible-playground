@@ -1,0 +1,8 @@
+---
+- name: "module_win_group_membership"
+  win_group_membership: "{{ win_group_membership }}"
+  vars:
+    win_group_membership: 
+      state: "{{ win_group_membership_state | default(omit, True) }}"
+      name: "{{ win_group_membership_name | default(omit, True) }}"
+      members: "{{ win_group_membership_members | default(omit, True) }}"

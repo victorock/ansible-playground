@@ -1,0 +1,10 @@
+---
+- name: "module_win_robocopy"
+  win_robocopy: "{{ win_robocopy }}"
+  vars:
+    win_robocopy: 
+      dest: "{{ win_robocopy_dest | default(omit, True) }}"
+      src: "{{ win_robocopy_src | default(omit, True) }}"
+      recurse: "{{ win_robocopy_recurse | default(omit, True) }}"
+      purge: "{{ win_robocopy_purge | default(omit, True) }}"
+      flags: "{{ win_robocopy_flags | default(omit, True) }}"

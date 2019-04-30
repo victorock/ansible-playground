@@ -1,0 +1,10 @@
+---
+- name: "module_manageiq_policies"
+  manageiq_policies: "{{ manageiq_policies }}"
+  vars:
+    manageiq_policies: 
+      manageiq_connection: "{{ manageiq_policies_manageiq_connection | default(omit, True) }}"
+      state: "{{ manageiq_policies_state | default(omit, True) }}"
+      resource_name: "{{ manageiq_policies_resource_name | default(omit, True) }}"
+      policy_profiles: "{{ manageiq_policies_policy_profiles | default(omit, True) }}"
+      resource_type: "{{ manageiq_policies_resource_type | default(omit, True) }}"

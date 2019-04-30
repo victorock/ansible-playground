@@ -1,0 +1,25 @@
+---
+- name: "module_gem"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gem: 
+      include_dependencies: "{{ gem_include_dependencies | default('omit', True) }}"
+      install_dir: "{{ gem_install_dir | default('omit', True) }}"
+      gem_source: "{{ gem_gem_source | default('omit', True) }}"
+      repository: "{{ gem_repository | default('omit', True) }}"
+      build_flags: "{{ gem_build_flags | default('omit', True) }}"
+      include_doc: "{{ gem_include_doc | default('omit', True) }}"
+      user_install: "{{ gem_user_install | default('omit', True) }}"
+      pre_release: "{{ gem_pre_release | default('omit', True) }}"
+      env_shebang: "{{ gem_env_shebang | default('omit', True) }}"
+      executable: "{{ gem_executable | default('omit', True) }}"
+      state: "{{ gem_state | default('omit', True) }}"
+      version: "{{ gem_version | default('omit', True) }}"
+      name: "{{ gem_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gem"
+      gem: "{{ gem }}"

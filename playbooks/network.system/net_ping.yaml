@@ -1,0 +1,17 @@
+---
+- name: "module_net_ping"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    net_ping: 
+      count: "{{ net_ping_count | default('omit', True) }}"
+      dest: "{{ net_ping_dest | default('omit', True) }}"
+      state: "{{ net_ping_state | default('omit', True) }}"
+      vrf: "{{ net_ping_vrf | default('omit', True) }}"
+      source: "{{ net_ping_source | default('omit', True) }}"
+  tasks:
+    - name: "plugin_net_ping"
+      net_ping: "{{ net_ping }}"

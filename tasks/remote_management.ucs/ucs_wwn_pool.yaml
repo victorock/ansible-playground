@@ -1,0 +1,20 @@
+---
+- name: "module_ucs_wwn_pool"
+  ucs_wwn_pool: "{{ ucs_wwn_pool }}"
+  vars:
+    ucs_wwn_pool: 
+      username: "{{ ucs_wwn_pool_username | default(omit, True) }}"
+      use_proxy: "{{ ucs_wwn_pool_use_proxy | default(omit, True) }}"
+      description: "{{ ucs_wwn_pool_description | default(omit, True) }}"
+      last_addr: "{{ ucs_wwn_pool_last_addr | default(omit, True) }}"
+      hostname: "{{ ucs_wwn_pool_hostname | default(omit, True) }}"
+      org_dn: "{{ ucs_wwn_pool_org_dn | default(omit, True) }}"
+      first_addr: "{{ ucs_wwn_pool_first_addr | default(omit, True) }}"
+      order: "{{ ucs_wwn_pool_order | default(omit, True) }}"
+      state: "{{ ucs_wwn_pool_state | default(omit, True) }}"
+      purpose: "{{ ucs_wwn_pool_purpose | default(omit, True) }}"
+      use_ssl: "{{ ucs_wwn_pool_use_ssl | default(omit, True) }}"
+      password: "{{ ucs_wwn_pool_password | default(omit, True) }}"
+      proxy: "{{ ucs_wwn_pool_proxy | default(omit, True) }}"
+      port: "{{ ucs_wwn_pool_port | default(omit, True) }}"
+      name: "{{ ucs_wwn_pool_name | default(omit, True) }}"

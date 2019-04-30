@@ -1,0 +1,17 @@
+---
+- name: "module_win_robocopy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_robocopy: 
+      dest: "{{ win_robocopy_dest | default('omit', True) }}"
+      src: "{{ win_robocopy_src | default('omit', True) }}"
+      recurse: "{{ win_robocopy_recurse | default('omit', True) }}"
+      purge: "{{ win_robocopy_purge | default('omit', True) }}"
+      flags: "{{ win_robocopy_flags | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_robocopy"
+      win_robocopy: "{{ win_robocopy }}"

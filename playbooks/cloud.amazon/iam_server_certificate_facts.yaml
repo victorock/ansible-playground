@@ -1,0 +1,20 @@
+---
+- name: "module_iam_server_certificate_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iam_server_certificate_facts: 
+      aws_secret_key: "{{ iam_server_certificate_facts_aws_secret_key | default('omit', True) }}"
+      profile: "{{ iam_server_certificate_facts_profile | default('omit', True) }}"
+      aws_access_key: "{{ iam_server_certificate_facts_aws_access_key | default('omit', True) }}"
+      name: "{{ iam_server_certificate_facts_name | default('omit', True) }}"
+      security_token: "{{ iam_server_certificate_facts_security_token | default('omit', True) }}"
+      region: "{{ iam_server_certificate_facts_region | default('omit', True) }}"
+      ec2_url: "{{ iam_server_certificate_facts_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ iam_server_certificate_facts_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_iam_server_certificate_facts"
+      iam_server_certificate_facts: "{{ iam_server_certificate_facts }}"

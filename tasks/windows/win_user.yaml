@@ -1,0 +1,18 @@
+---
+- name: "module_win_user"
+  win_user: "{{ win_user }}"
+  vars:
+    win_user: 
+      update_password: "{{ win_user_update_password | default(omit, True) }}"
+      password_never_expires: "{{ win_user_password_never_expires | default(omit, True) }}"
+      description: "{{ win_user_description | default(omit, True) }}"
+      groups_action: "{{ win_user_groups_action | default(omit, True) }}"
+      password_expired: "{{ win_user_password_expired | default(omit, True) }}"
+      state: "{{ win_user_state | default(omit, True) }}"
+      groups: "{{ win_user_groups | default(omit, True) }}"
+      account_disabled: "{{ win_user_account_disabled | default(omit, True) }}"
+      fullname: "{{ win_user_fullname | default(omit, True) }}"
+      password: "{{ win_user_password | default(omit, True) }}"
+      account_locked: "{{ win_user_account_locked | default(omit, True) }}"
+      user_cannot_change_password: "{{ win_user_user_cannot_change_password | default(omit, True) }}"
+      name: "{{ win_user_name | default(omit, True) }}"

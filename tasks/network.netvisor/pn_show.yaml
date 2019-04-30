@@ -1,0 +1,11 @@
+---
+- name: "module_pn_show"
+  pn_show: "{{ pn_show }}"
+  vars:
+    pn_show: 
+      pn_clipassword: "{{ pn_show_pn_clipassword | default(omit, True) }}"
+      pn_command: "{{ pn_show_pn_command | default(omit, True) }}"
+      pn_cliusername: "{{ pn_show_pn_cliusername | default(omit, True) }}"
+      pn_parameters: "{{ pn_show_pn_parameters | default(omit, True) }}"
+      pn_options: "{{ pn_show_pn_options | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_show_pn_cliswitch | default(omit, True) }}"

@@ -1,0 +1,26 @@
+---
+- name: "module_bigiq_application_fasthttp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigiq_application_fasthttp: 
+      service_environment: "{{ bigiq_application_fasthttp_service_environment | default('omit', True) }}"
+      description: "{{ bigiq_application_fasthttp_description | default('omit', True) }}"
+      name: "{{ bigiq_application_fasthttp_name | default('omit', True) }}"
+      add_analytics: "{{ bigiq_application_fasthttp_add_analytics | default('omit', True) }}"
+      server: "{{ bigiq_application_fasthttp_server | default('omit', True) }}"
+      servers: "{{ bigiq_application_fasthttp_servers | default('omit', True) }}"
+      state: "{{ bigiq_application_fasthttp_state | default('omit', True) }}"
+      user: "{{ bigiq_application_fasthttp_user | default('omit', True) }}"
+      server_port: "{{ bigiq_application_fasthttp_server_port | default('omit', True) }}"
+      provider: "{{ bigiq_application_fasthttp_provider | default('omit', True) }}"
+      inbound_virtual: "{{ bigiq_application_fasthttp_inbound_virtual | default('omit', True) }}"
+      password: "{{ bigiq_application_fasthttp_password | default('omit', True) }}"
+      validate_certs: "{{ bigiq_application_fasthttp_validate_certs | default('omit', True) }}"
+      wait: "{{ bigiq_application_fasthttp_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigiq_application_fasthttp"
+      bigiq_application_fasthttp: "{{ bigiq_application_fasthttp }}"

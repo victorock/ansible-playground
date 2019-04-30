@@ -1,0 +1,19 @@
+---
+- name: "module_junos_interface"
+  junos_interface: "{{ junos_interface }}"
+  vars:
+    junos_interface: 
+      neighbors: "{{ junos_interface_neighbors | default(omit, True) }}"
+      delay: "{{ junos_interface_delay | default(omit, True) }}"
+      description: "{{ junos_interface_description | default(omit, True) }}"
+      duplex: "{{ junos_interface_duplex | default(omit, True) }}"
+      enabled: "{{ junos_interface_enabled | default(omit, True) }}"
+      mtu: "{{ junos_interface_mtu | default(omit, True) }}"
+      rx_rate: "{{ junos_interface_rx_rate | default(omit, True) }}"
+      active: "{{ junos_interface_active | default(omit, True) }}"
+      state: "{{ junos_interface_state | default(omit, True) }}"
+      provider: "{{ junos_interface_provider | default(omit, True) }}"
+      aggregate: "{{ junos_interface_aggregate | default(omit, True) }}"
+      speed: "{{ junos_interface_speed | default(omit, True) }}"
+      tx_rate: "{{ junos_interface_tx_rate | default(omit, True) }}"
+      name: "{{ junos_interface_name | default(omit, True) }}"

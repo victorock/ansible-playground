@@ -1,0 +1,24 @@
+---
+- name: "module_na_elementsw_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_elementsw_vlan: 
+      username: "{{ na_elementsw_vlan_username | default('omit', True) }}"
+      name: "{{ na_elementsw_vlan_name | default('omit', True) }}"
+      address_blocks: "{{ na_elementsw_vlan_address_blocks | default('omit', True) }}"
+      hostname: "{{ na_elementsw_vlan_hostname | default('omit', True) }}"
+      namespace: "{{ na_elementsw_vlan_namespace | default('omit', True) }}"
+      state: "{{ na_elementsw_vlan_state | default('omit', True) }}"
+      netmask: "{{ na_elementsw_vlan_netmask | default('omit', True) }}"
+      svip: "{{ na_elementsw_vlan_svip | default('omit', True) }}"
+      attributes: "{{ na_elementsw_vlan_attributes | default('omit', True) }}"
+      vlan_tag: "{{ na_elementsw_vlan_vlan_tag | default('omit', True) }}"
+      password: "{{ na_elementsw_vlan_password | default('omit', True) }}"
+      gateway: "{{ na_elementsw_vlan_gateway | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_elementsw_vlan"
+      na_elementsw_vlan: "{{ na_elementsw_vlan }}"

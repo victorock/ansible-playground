@@ -1,0 +1,19 @@
+---
+- name: "module_na_elementsw_ldap"
+  na_elementsw_ldap: "{{ na_elementsw_ldap }}"
+  vars:
+    na_elementsw_ldap: 
+      username: "{{ na_elementsw_ldap_username | default(omit, True) }}"
+      authType: "{{ na_elementsw_ldap_authType | default(omit, True) }}"
+      searchBindDN: "{{ na_elementsw_ldap_searchBindDN | default(omit, True) }}"
+      groupSearchBaseDn: "{{ na_elementsw_ldap_groupSearchBaseDn | default(omit, True) }}"
+      hostname: "{{ na_elementsw_ldap_hostname | default(omit, True) }}"
+      state: "{{ na_elementsw_ldap_state | default(omit, True) }}"
+      userDNTemplate: "{{ na_elementsw_ldap_userDNTemplate | default(omit, True) }}"
+      searchBindPassword: "{{ na_elementsw_ldap_searchBindPassword | default(omit, True) }}"
+      userSearchFilter: "{{ na_elementsw_ldap_userSearchFilter | default(omit, True) }}"
+      groupSearchCustomFilter: "{{ na_elementsw_ldap_groupSearchCustomFilter | default(omit, True) }}"
+      userSearchBaseDN: "{{ na_elementsw_ldap_userSearchBaseDN | default(omit, True) }}"
+      serverURIs: "{{ na_elementsw_ldap_serverURIs | default(omit, True) }}"
+      password: "{{ na_elementsw_ldap_password | default(omit, True) }}"
+      groupSearchType: "{{ na_elementsw_ldap_groupSearchType | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_ec2_eip_facts"
+  ec2_eip_facts: "{{ ec2_eip_facts }}"
+  vars:
+    ec2_eip_facts: 
+      aws_secret_key: "{{ ec2_eip_facts_aws_secret_key | default(omit, True) }}"
+      profile: "{{ ec2_eip_facts_profile | default(omit, True) }}"
+      aws_access_key: "{{ ec2_eip_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ ec2_eip_facts_security_token | default(omit, True) }}"
+      region: "{{ ec2_eip_facts_region | default(omit, True) }}"
+      filters: "{{ ec2_eip_facts_filters | default(omit, True) }}"
+      ec2_url: "{{ ec2_eip_facts_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ ec2_eip_facts_validate_certs | default(omit, True) }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_bigip_timer_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_timer_policy: 
+      description: "{{ bigip_timer_policy_description | default('omit', True) }}"
+      rules: "{{ bigip_timer_policy_rules | default('omit', True) }}"
+      partition: "{{ bigip_timer_policy_partition | default('omit', True) }}"
+      server: "{{ bigip_timer_policy_server | default('omit', True) }}"
+      state: "{{ bigip_timer_policy_state | default('omit', True) }}"
+      user: "{{ bigip_timer_policy_user | default('omit', True) }}"
+      server_port: "{{ bigip_timer_policy_server_port | default('omit', True) }}"
+      provider: "{{ bigip_timer_policy_provider | default('omit', True) }}"
+      password: "{{ bigip_timer_policy_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_timer_policy_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_timer_policy_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_timer_policy"
+      bigip_timer_policy: "{{ bigip_timer_policy }}"

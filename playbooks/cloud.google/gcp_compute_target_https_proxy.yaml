@@ -1,0 +1,23 @@
+---
+- name: "module_gcp_compute_target_https_proxy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_compute_target_https_proxy: 
+      scopes: "{{ gcp_compute_target_https_proxy_scopes | default('omit', True) }}"
+      description: "{{ gcp_compute_target_https_proxy_description | default('omit', True) }}"
+      ssl_certificates: "{{ gcp_compute_target_https_proxy_ssl_certificates | default('omit', True) }}"
+      quic_override: "{{ gcp_compute_target_https_proxy_quic_override | default('omit', True) }}"
+      project: "{{ gcp_compute_target_https_proxy_project | default('omit', True) }}"
+      state: "{{ gcp_compute_target_https_proxy_state | default('omit', True) }}"
+      service_account_email: "{{ gcp_compute_target_https_proxy_service_account_email | default('omit', True) }}"
+      service_account_file: "{{ gcp_compute_target_https_proxy_service_account_file | default('omit', True) }}"
+      url_map: "{{ gcp_compute_target_https_proxy_url_map | default('omit', True) }}"
+      auth_kind: "{{ gcp_compute_target_https_proxy_auth_kind | default('omit', True) }}"
+      name: "{{ gcp_compute_target_https_proxy_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_compute_target_https_proxy"
+      gcp_compute_target_https_proxy: "{{ gcp_compute_target_https_proxy }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_aws_config_aggregation_authorization"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aws_config_aggregation_authorization: 
+      aws_secret_key: "{{ aws_config_aggregation_authorization_aws_secret_key | default('omit', True) }}"
+      profile: "{{ aws_config_aggregation_authorization_profile | default('omit', True) }}"
+      aws_access_key: "{{ aws_config_aggregation_authorization_aws_access_key | default('omit', True) }}"
+      security_token: "{{ aws_config_aggregation_authorization_security_token | default('omit', True) }}"
+      region: "{{ aws_config_aggregation_authorization_region | default('omit', True) }}"
+      authorized_account_id: "{{ aws_config_aggregation_authorization_authorized_account_id | default('omit', True) }}"
+      state: "{{ aws_config_aggregation_authorization_state | default('omit', True) }}"
+      ec2_url: "{{ aws_config_aggregation_authorization_ec2_url | default('omit', True) }}"
+      authorized_aws_region: "{{ aws_config_aggregation_authorization_authorized_aws_region | default('omit', True) }}"
+      validate_certs: "{{ aws_config_aggregation_authorization_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aws_config_aggregation_authorization"
+      aws_config_aggregation_authorization: "{{ aws_config_aggregation_authorization }}"

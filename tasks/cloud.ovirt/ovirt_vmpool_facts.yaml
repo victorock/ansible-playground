@@ -1,0 +1,9 @@
+---
+- name: "module_ovirt_vmpool_facts"
+  ovirt_vmpool_facts: "{{ ovirt_vmpool_facts }}"
+  vars:
+    ovirt_vmpool_facts: 
+      pattern: "{{ ovirt_vmpool_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_vmpool_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_vmpool_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_vmpool_facts_auth | default(omit, True) }}"

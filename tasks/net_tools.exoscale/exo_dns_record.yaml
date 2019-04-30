@@ -1,0 +1,18 @@
+---
+- name: "module_exo_dns_record"
+  exo_dns_record: "{{ exo_dns_record }}"
+  vars:
+    exo_dns_record: 
+      domain: "{{ exo_dns_record_domain | default(omit, True) }}"
+      multiple: "{{ exo_dns_record_multiple | default(omit, True) }}"
+      name: "{{ exo_dns_record_name | default(omit, True) }}"
+      prio: "{{ exo_dns_record_prio | default(omit, True) }}"
+      api_secret: "{{ exo_dns_record_api_secret | default(omit, True) }}"
+      api_timeout: "{{ exo_dns_record_api_timeout | default(omit, True) }}"
+      api_region: "{{ exo_dns_record_api_region | default(omit, True) }}"
+      content: "{{ exo_dns_record_content | default(omit, True) }}"
+      record_type: "{{ exo_dns_record_record_type | default(omit, True) }}"
+      state: "{{ exo_dns_record_state | default(omit, True) }}"
+      ttl: "{{ exo_dns_record_ttl | default(omit, True) }}"
+      api_key: "{{ exo_dns_record_api_key | default(omit, True) }}"
+      validate_certs: "{{ exo_dns_record_validate_certs | default(omit, True) }}"

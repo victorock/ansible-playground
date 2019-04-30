@@ -1,0 +1,20 @@
+---
+- name: "module_rax_dns"
+  rax_dns: "{{ rax_dns }}"
+  vars:
+    rax_dns: 
+      comment: "{{ rax_dns_comment | default(omit, True) }}"
+      username: "{{ rax_dns_username | default(omit, True) }}"
+      name: "{{ rax_dns_name | default(omit, True) }}"
+      identity_type: "{{ rax_dns_identity_type | default(omit, True) }}"
+      tenant_name: "{{ rax_dns_tenant_name | default(omit, True) }}"
+      region: "{{ rax_dns_region | default(omit, True) }}"
+      state: "{{ rax_dns_state | default(omit, True) }}"
+      verify_ssl: "{{ rax_dns_verify_ssl | default(omit, True) }}"
+      tenant_id: "{{ rax_dns_tenant_id | default(omit, True) }}"
+      env: "{{ rax_dns_env | default(omit, True) }}"
+      ttl: "{{ rax_dns_ttl | default(omit, True) }}"
+      credentials: "{{ rax_dns_credentials | default(omit, True) }}"
+      api_key: "{{ rax_dns_api_key | default(omit, True) }}"
+      email: "{{ rax_dns_email | default(omit, True) }}"
+      auth_endpoint: "{{ rax_dns_auth_endpoint | default(omit, True) }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_win_group"
+  win_group: "{{ win_group }}"
+  vars:
+    win_group: 
+      state: "{{ win_group_state | default(omit, True) }}"
+      name: "{{ win_group_name | default(omit, True) }}"
+      description: "{{ win_group_description | default(omit, True) }}"

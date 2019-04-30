@@ -1,0 +1,16 @@
+---
+- name: "module_ipa_subca"
+  ipa_subca: "{{ ipa_subca }}"
+  vars:
+    ipa_subca: 
+      ipa_port: "{{ ipa_subca_ipa_port | default(omit, True) }}"
+      subca_name: "{{ ipa_subca_subca_name | default(omit, True) }}"
+      ipa_prot: "{{ ipa_subca_ipa_prot | default(omit, True) }}"
+      subca_subject: "{{ ipa_subca_subca_subject | default(omit, True) }}"
+      ipa_pass: "{{ ipa_subca_ipa_pass | default(omit, True) }}"
+      state: "{{ ipa_subca_state | default(omit, True) }}"
+      ipa_host: "{{ ipa_subca_ipa_host | default(omit, True) }}"
+      ipa_user: "{{ ipa_subca_ipa_user | default(omit, True) }}"
+      subca_desc: "{{ ipa_subca_subca_desc | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_subca_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_subca_validate_certs | default(omit, True) }}"

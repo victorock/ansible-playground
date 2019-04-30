@@ -1,0 +1,43 @@
+---
+- name: "module_grafana_datasource"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    grafana_datasource: 
+      tsdb_version: "{{ grafana_datasource_tsdb_version | default('omit', True) }}"
+      trends: "{{ grafana_datasource_trends | default('omit', True) }}"
+      tls_client_key: "{{ grafana_datasource_tls_client_key | default('omit', True) }}"
+      access: "{{ grafana_datasource_access | default('omit', True) }}"
+      basic_auth_user: "{{ grafana_datasource_basic_auth_user | default('omit', True) }}"
+      tls_skip_verify: "{{ grafana_datasource_tls_skip_verify | default('omit', True) }}"
+      with_credentials: "{{ grafana_datasource_with_credentials | default('omit', True) }}"
+      tls_ca_cert: "{{ grafana_datasource_tls_ca_cert | default('omit', True) }}"
+      state: "{{ grafana_datasource_state | default('omit', True) }}"
+      tls_client_cert: "{{ grafana_datasource_tls_client_cert | default('omit', True) }}"
+      sslmode: "{{ grafana_datasource_sslmode | default('omit', True) }}"
+      time_interval: "{{ grafana_datasource_time_interval | default('omit', True) }}"
+      grafana_user: "{{ grafana_datasource_grafana_user | default('omit', True) }}"
+      is_default: "{{ grafana_datasource_is_default | default('omit', True) }}"
+      grafana_password: "{{ grafana_datasource_grafana_password | default('omit', True) }}"
+      user: "{{ grafana_datasource_user | default('omit', True) }}"
+      password: "{{ grafana_datasource_password | default('omit', True) }}"
+      max_concurrent_shard_requests: "{{ grafana_datasource_max_concurrent_shard_requests | default('omit', True) }}"
+      basic_auth_password: "{{ grafana_datasource_basic_auth_password | default('omit', True) }}"
+      time_field: "{{ grafana_datasource_time_field | default('omit', True) }}"
+      name: "{{ grafana_datasource_name | default('omit', True) }}"
+      database: "{{ grafana_datasource_database | default('omit', True) }}"
+      url: "{{ grafana_datasource_url | default('omit', True) }}"
+      interval: "{{ grafana_datasource_interval | default('omit', True) }}"
+      org_id: "{{ grafana_datasource_org_id | default('omit', True) }}"
+      tsdb_resolution: "{{ grafana_datasource_tsdb_resolution | default('omit', True) }}"
+      grafana_url: "{{ grafana_datasource_grafana_url | default('omit', True) }}"
+      grafana_api_key: "{{ grafana_datasource_grafana_api_key | default('omit', True) }}"
+      es_version: "{{ grafana_datasource_es_version | default('omit', True) }}"
+      validate_certs: "{{ grafana_datasource_validate_certs | default('omit', True) }}"
+      ds_type: "{{ grafana_datasource_ds_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_grafana_datasource"
+      grafana_datasource: "{{ grafana_datasource }}"

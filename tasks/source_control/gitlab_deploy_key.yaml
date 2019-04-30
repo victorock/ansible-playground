@@ -1,0 +1,13 @@
+---
+- name: "module_gitlab_deploy_key"
+  gitlab_deploy_key: "{{ gitlab_deploy_key }}"
+  vars:
+    gitlab_deploy_key: 
+      api_url: "{{ gitlab_deploy_key_api_url | default(omit, True) }}"
+      title: "{{ gitlab_deploy_key_title | default(omit, True) }}"
+      access_token: "{{ gitlab_deploy_key_access_token | default(omit, True) }}"
+      project: "{{ gitlab_deploy_key_project | default(omit, True) }}"
+      state: "{{ gitlab_deploy_key_state | default(omit, True) }}"
+      key: "{{ gitlab_deploy_key_key | default(omit, True) }}"
+      can_push: "{{ gitlab_deploy_key_can_push | default(omit, True) }}"
+      private_token: "{{ gitlab_deploy_key_private_token | default(omit, True) }}"

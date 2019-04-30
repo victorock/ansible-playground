@@ -1,0 +1,34 @@
+---
+- name: "module_avi_vsdatascriptset"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_vsdatascriptset: 
+      pool_refs: "{{ avi_vsdatascriptset_pool_refs | default('omit', True) }}"
+      pool_group_refs: "{{ avi_vsdatascriptset_pool_group_refs | default('omit', True) }}"
+      string_group_refs: "{{ avi_vsdatascriptset_string_group_refs | default('omit', True) }}"
+      uuid: "{{ avi_vsdatascriptset_uuid | default('omit', True) }}"
+      ipgroup_refs: "{{ avi_vsdatascriptset_ipgroup_refs | default('omit', True) }}"
+      created_by: "{{ avi_vsdatascriptset_created_by | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_vsdatascriptset_avi_api_patch_op | default('omit', True) }}"
+      state: "{{ avi_vsdatascriptset_state | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_vsdatascriptset_avi_api_update_method | default('omit', True) }}"
+      api_version: "{{ avi_vsdatascriptset_api_version | default('omit', True) }}"
+      username: "{{ avi_vsdatascriptset_username | default('omit', True) }}"
+      description: "{{ avi_vsdatascriptset_description | default('omit', True) }}"
+      controller: "{{ avi_vsdatascriptset_controller | default('omit', True) }}"
+      api_context: "{{ avi_vsdatascriptset_api_context | default('omit', True) }}"
+      password: "{{ avi_vsdatascriptset_password | default('omit', True) }}"
+      tenant: "{{ avi_vsdatascriptset_tenant | default('omit', True) }}"
+      datascript: "{{ avi_vsdatascriptset_datascript | default('omit', True) }}"
+      name: "{{ avi_vsdatascriptset_name | default('omit', True) }}"
+      url: "{{ avi_vsdatascriptset_url | default('omit', True) }}"
+      avi_credentials: "{{ avi_vsdatascriptset_avi_credentials | default('omit', True) }}"
+      tenant_ref: "{{ avi_vsdatascriptset_tenant_ref | default('omit', True) }}"
+      tenant_uuid: "{{ avi_vsdatascriptset_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_vsdatascriptset"
+      avi_vsdatascriptset: "{{ avi_vsdatascriptset }}"

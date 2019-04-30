@@ -1,0 +1,16 @@
+---
+- name: "module_aws_elasticbeanstalk_app"
+  aws_elasticbeanstalk_app: "{{ aws_elasticbeanstalk_app }}"
+  vars:
+    aws_elasticbeanstalk_app: 
+      profile: "{{ aws_elasticbeanstalk_app_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_elasticbeanstalk_app_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_elasticbeanstalk_app_aws_access_key | default(omit, True) }}"
+      app_name: "{{ aws_elasticbeanstalk_app_app_name | default(omit, True) }}"
+      security_token: "{{ aws_elasticbeanstalk_app_security_token | default(omit, True) }}"
+      region: "{{ aws_elasticbeanstalk_app_region | default(omit, True) }}"
+      state: "{{ aws_elasticbeanstalk_app_state | default(omit, True) }}"
+      ec2_url: "{{ aws_elasticbeanstalk_app_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ aws_elasticbeanstalk_app_validate_certs | default(omit, True) }}"
+      terminate_by_force: "{{ aws_elasticbeanstalk_app_terminate_by_force | default(omit, True) }}"
+      description: "{{ aws_elasticbeanstalk_app_description | default(omit, True) }}"

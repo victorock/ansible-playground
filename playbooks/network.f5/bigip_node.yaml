@@ -1,0 +1,35 @@
+---
+- name: "module_bigip_node"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_node: 
+      connection_limit: "{{ bigip_node_connection_limit | default('omit', True) }}"
+      fqdn_up_interval: "{{ bigip_node_fqdn_up_interval | default('omit', True) }}"
+      monitors: "{{ bigip_node_monitors | default('omit', True) }}"
+      ratio: "{{ bigip_node_ratio | default('omit', True) }}"
+      fqdn_address_type: "{{ bigip_node_fqdn_address_type | default('omit', True) }}"
+      state: "{{ bigip_node_state | default('omit', True) }}"
+      server_port: "{{ bigip_node_server_port | default('omit', True) }}"
+      provider: "{{ bigip_node_provider | default('omit', True) }}"
+      dynamic_ratio: "{{ bigip_node_dynamic_ratio | default('omit', True) }}"
+      description: "{{ bigip_node_description | default('omit', True) }}"
+      fqdn_auto_populate: "{{ bigip_node_fqdn_auto_populate | default('omit', True) }}"
+      user: "{{ bigip_node_user | default('omit', True) }}"
+      address: "{{ bigip_node_address | default('omit', True) }}"
+      password: "{{ bigip_node_password | default('omit', True) }}"
+      quorum: "{{ bigip_node_quorum | default('omit', True) }}"
+      name: "{{ bigip_node_name | default('omit', True) }}"
+      fqdn_down_interval: "{{ bigip_node_fqdn_down_interval | default('omit', True) }}"
+      partition: "{{ bigip_node_partition | default('omit', True) }}"
+      rate_limit: "{{ bigip_node_rate_limit | default('omit', True) }}"
+      fqdn: "{{ bigip_node_fqdn | default('omit', True) }}"
+      server: "{{ bigip_node_server | default('omit', True) }}"
+      validate_certs: "{{ bigip_node_validate_certs | default('omit', True) }}"
+      monitor_type: "{{ bigip_node_monitor_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_node"
+      bigip_node: "{{ bigip_node }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_gcp_compute_ssl_certificate"
+  gcp_compute_ssl_certificate: "{{ gcp_compute_ssl_certificate }}"
+  vars:
+    gcp_compute_ssl_certificate: 
+      scopes: "{{ gcp_compute_ssl_certificate_scopes | default(omit, True) }}"
+      private_key: "{{ gcp_compute_ssl_certificate_private_key | default(omit, True) }}"
+      name: "{{ gcp_compute_ssl_certificate_name | default(omit, True) }}"
+      certificate: "{{ gcp_compute_ssl_certificate_certificate | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_ssl_certificate_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_compute_ssl_certificate_project | default(omit, True) }}"
+      state: "{{ gcp_compute_ssl_certificate_state | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_ssl_certificate_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_ssl_certificate_auth_kind | default(omit, True) }}"
+      description: "{{ gcp_compute_ssl_certificate_description | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_github_hooks"
+  github_hooks: "{{ github_hooks }}"
+  vars:
+    github_hooks: 
+      oauthkey: "{{ github_hooks_oauthkey | default(omit, True) }}"
+      hookurl: "{{ github_hooks_hookurl | default(omit, True) }}"
+      repo: "{{ github_hooks_repo | default(omit, True) }}"
+      user: "{{ github_hooks_user | default(omit, True) }}"
+      content_type: "{{ github_hooks_content_type | default(omit, True) }}"
+      action: "{{ github_hooks_action | default(omit, True) }}"
+      validate_certs: "{{ github_hooks_validate_certs | default(omit, True) }}"

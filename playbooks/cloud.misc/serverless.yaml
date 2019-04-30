@@ -1,0 +1,21 @@
+---
+- name: "module_serverless"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    serverless: 
+      functions: "{{ serverless_functions | default('omit', True) }}"
+      force: "{{ serverless_force | default('omit', True) }}"
+      verbose: "{{ serverless_verbose | default('omit', True) }}"
+      deploy: "{{ serverless_deploy | default('omit', True) }}"
+      region: "{{ serverless_region | default('omit', True) }}"
+      state: "{{ serverless_state | default('omit', True) }}"
+      serverless_bin_path: "{{ serverless_serverless_bin_path | default('omit', True) }}"
+      service_path: "{{ serverless_service_path | default('omit', True) }}"
+      stage: "{{ serverless_stage | default('omit', True) }}"
+  tasks:
+    - name: "plugin_serverless"
+      serverless: "{{ serverless }}"

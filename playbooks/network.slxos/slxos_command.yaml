@@ -1,0 +1,17 @@
+---
+- name: "module_slxos_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    slxos_command: 
+      retries: "{{ slxos_command_retries | default('omit', True) }}"
+      commands: "{{ slxos_command_commands | default('omit', True) }}"
+      wait_for: "{{ slxos_command_wait_for | default('omit', True) }}"
+      match: "{{ slxos_command_match | default('omit', True) }}"
+      interval: "{{ slxos_command_interval | default('omit', True) }}"
+  tasks:
+    - name: "plugin_slxos_command"
+      slxos_command: "{{ slxos_command }}"

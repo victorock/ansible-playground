@@ -1,0 +1,9 @@
+---
+- name: "module_online_user_facts"
+  online_user_facts: "{{ online_user_facts }}"
+  vars:
+    online_user_facts: 
+      api_timeout: "{{ online_user_facts_api_timeout | default(omit, True) }}"
+      validate_certs: "{{ online_user_facts_validate_certs | default(omit, True) }}"
+      api_url: "{{ online_user_facts_api_url | default(omit, True) }}"
+      api_token: "{{ online_user_facts_api_token | default(omit, True) }}"

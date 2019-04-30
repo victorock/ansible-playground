@@ -1,0 +1,35 @@
+---
+- name: "module_cs_disk_offering"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_disk_offering: 
+      domain: "{{ cs_disk_offering_domain | default('omit', True) }}"
+      api_http_method: "{{ cs_disk_offering_api_http_method | default('omit', True) }}"
+      customized: "{{ cs_disk_offering_customized | default('omit', True) }}"
+      storage_type: "{{ cs_disk_offering_storage_type | default('omit', True) }}"
+      iops_read_rate: "{{ cs_disk_offering_iops_read_rate | default('omit', True) }}"
+      bytes_read_rate: "{{ cs_disk_offering_bytes_read_rate | default('omit', True) }}"
+      iops_write_rate: "{{ cs_disk_offering_iops_write_rate | default('omit', True) }}"
+      state: "{{ cs_disk_offering_state | default('omit', True) }}"
+      provisioning_type: "{{ cs_disk_offering_provisioning_type | default('omit', True) }}"
+      api_key: "{{ cs_disk_offering_api_key | default('omit', True) }}"
+      hypervisor_snapshot_reserve: "{{ cs_disk_offering_hypervisor_snapshot_reserve | default('omit', True) }}"
+      api_secret: "{{ cs_disk_offering_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_disk_offering_api_timeout | default('omit', True) }}"
+      storage_tags: "{{ cs_disk_offering_storage_tags | default('omit', True) }}"
+      api_url: "{{ cs_disk_offering_api_url | default('omit', True) }}"
+      display_text: "{{ cs_disk_offering_display_text | default('omit', True) }}"
+      disk_size: "{{ cs_disk_offering_disk_size | default('omit', True) }}"
+      name: "{{ cs_disk_offering_name | default('omit', True) }}"
+      iops_min: "{{ cs_disk_offering_iops_min | default('omit', True) }}"
+      iops_max: "{{ cs_disk_offering_iops_max | default('omit', True) }}"
+      api_region: "{{ cs_disk_offering_api_region | default('omit', True) }}"
+      display_offering: "{{ cs_disk_offering_display_offering | default('omit', True) }}"
+      bytes_write_rate: "{{ cs_disk_offering_bytes_write_rate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_disk_offering"
+      cs_disk_offering: "{{ cs_disk_offering }}"

@@ -1,0 +1,9 @@
+---
+- name: "module_make"
+  make: "{{ make }}"
+  vars:
+    make: 
+      chdir: "{{ make_chdir | default(omit, True) }}"
+      params: "{{ make_params | default(omit, True) }}"
+      target: "{{ make_target | default(omit, True) }}"
+      file: "{{ make_file | default(omit, True) }}"

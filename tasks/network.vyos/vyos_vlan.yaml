@@ -1,0 +1,15 @@
+---
+- name: "module_vyos_vlan"
+  vyos_vlan: "{{ vyos_vlan }}"
+  vars:
+    vyos_vlan: 
+      delay: "{{ vyos_vlan_delay | default(omit, True) }}"
+      name: "{{ vyos_vlan_name | default(omit, True) }}"
+      interfaces: "{{ vyos_vlan_interfaces | default(omit, True) }}"
+      provider: "{{ vyos_vlan_provider | default(omit, True) }}"
+      purge: "{{ vyos_vlan_purge | default(omit, True) }}"
+      associated_interfaces: "{{ vyos_vlan_associated_interfaces | default(omit, True) }}"
+      state: "{{ vyos_vlan_state | default(omit, True) }}"
+      address: "{{ vyos_vlan_address | default(omit, True) }}"
+      aggregate: "{{ vyos_vlan_aggregate | default(omit, True) }}"
+      vlan_id: "{{ vyos_vlan_vlan_id | default(omit, True) }}"

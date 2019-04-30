@@ -1,0 +1,14 @@
+---
+- name: "module_ce_reboot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_reboot: 
+      save_config: "{{ ce_reboot_save_config | default('omit', True) }}"
+      confirm: "{{ ce_reboot_confirm | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_reboot"
+      ce_reboot: "{{ ce_reboot }}"

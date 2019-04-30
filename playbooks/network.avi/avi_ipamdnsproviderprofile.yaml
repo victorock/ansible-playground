@@ -1,0 +1,37 @@
+---
+- name: "module_avi_ipamdnsproviderprofile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_ipamdnsproviderprofile: 
+      proxy_configuration: "{{ avi_ipamdnsproviderprofile_proxy_configuration | default('omit', True) }}"
+      infoblox_profile: "{{ avi_ipamdnsproviderprofile_infoblox_profile | default('omit', True) }}"
+      internal_profile: "{{ avi_ipamdnsproviderprofile_internal_profile | default('omit', True) }}"
+      custom_profile: "{{ avi_ipamdnsproviderprofile_custom_profile | default('omit', True) }}"
+      aws_profile: "{{ avi_ipamdnsproviderprofile_aws_profile | default('omit', True) }}"
+      uuid: "{{ avi_ipamdnsproviderprofile_uuid | default('omit', True) }}"
+      gcp_profile: "{{ avi_ipamdnsproviderprofile_gcp_profile | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_ipamdnsproviderprofile_avi_api_patch_op | default('omit', True) }}"
+      avi_credentials: "{{ avi_ipamdnsproviderprofile_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_ipamdnsproviderprofile_tenant | default('omit', True) }}"
+      type: "{{ avi_ipamdnsproviderprofile_type | default('omit', True) }}"
+      api_version: "{{ avi_ipamdnsproviderprofile_api_version | default('omit', True) }}"
+      username: "{{ avi_ipamdnsproviderprofile_username | default('omit', True) }}"
+      state: "{{ avi_ipamdnsproviderprofile_state | default('omit', True) }}"
+      azure_profile: "{{ avi_ipamdnsproviderprofile_azure_profile | default('omit', True) }}"
+      controller: "{{ avi_ipamdnsproviderprofile_controller | default('omit', True) }}"
+      api_context: "{{ avi_ipamdnsproviderprofile_api_context | default('omit', True) }}"
+      password: "{{ avi_ipamdnsproviderprofile_password | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_ipamdnsproviderprofile_avi_api_update_method | default('omit', True) }}"
+      allocate_ip_in_vrf: "{{ avi_ipamdnsproviderprofile_allocate_ip_in_vrf | default('omit', True) }}"
+      openstack_profile: "{{ avi_ipamdnsproviderprofile_openstack_profile | default('omit', True) }}"
+      name: "{{ avi_ipamdnsproviderprofile_name | default('omit', True) }}"
+      url: "{{ avi_ipamdnsproviderprofile_url | default('omit', True) }}"
+      tenant_ref: "{{ avi_ipamdnsproviderprofile_tenant_ref | default('omit', True) }}"
+      tenant_uuid: "{{ avi_ipamdnsproviderprofile_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_ipamdnsproviderprofile"
+      avi_ipamdnsproviderprofile: "{{ avi_ipamdnsproviderprofile }}"

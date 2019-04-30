@@ -1,0 +1,8 @@
+---
+- name: "module_rpm_key"
+  rpm_key: "{{ rpm_key }}"
+  vars:
+    rpm_key: 
+      state: "{{ rpm_key_state | default(omit, True) }}"
+      validate_certs: "{{ rpm_key_validate_certs | default(omit, True) }}"
+      key: "{{ rpm_key_key | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_vsphere_copy"
+  vsphere_copy: "{{ vsphere_copy }}"
+  vars:
+    vsphere_copy: 
+      src: "{{ vsphere_copy_src | default(omit, True) }}"
+      datacenter: "{{ vsphere_copy_datacenter | default(omit, True) }}"
+      host: "{{ vsphere_copy_host | default(omit, True) }}"
+      path: "{{ vsphere_copy_path | default(omit, True) }}"
+      login: "{{ vsphere_copy_login | default(omit, True) }}"
+      password: "{{ vsphere_copy_password | default(omit, True) }}"
+      validate_certs: "{{ vsphere_copy_validate_certs | default(omit, True) }}"
+      datastore: "{{ vsphere_copy_datastore | default(omit, True) }}"

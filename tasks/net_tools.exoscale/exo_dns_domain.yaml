@@ -1,0 +1,12 @@
+---
+- name: "module_exo_dns_domain"
+  exo_dns_domain: "{{ exo_dns_domain }}"
+  vars:
+    exo_dns_domain: 
+      name: "{{ exo_dns_domain_name | default(omit, True) }}"
+      api_secret: "{{ exo_dns_domain_api_secret | default(omit, True) }}"
+      api_timeout: "{{ exo_dns_domain_api_timeout | default(omit, True) }}"
+      api_region: "{{ exo_dns_domain_api_region | default(omit, True) }}"
+      state: "{{ exo_dns_domain_state | default(omit, True) }}"
+      api_key: "{{ exo_dns_domain_api_key | default(omit, True) }}"
+      validate_certs: "{{ exo_dns_domain_validate_certs | default(omit, True) }}"

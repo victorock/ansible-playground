@@ -1,0 +1,23 @@
+---
+- name: "module_gcp_storage_bucket_access_control"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_storage_bucket_access_control: 
+      project_team: "{{ gcp_storage_bucket_access_control_project_team | default('omit', True) }}"
+      entity_id: "{{ gcp_storage_bucket_access_control_entity_id | default('omit', True) }}"
+      scopes: "{{ gcp_storage_bucket_access_control_scopes | default('omit', True) }}"
+      service_account_email: "{{ gcp_storage_bucket_access_control_service_account_email | default('omit', True) }}"
+      bucket: "{{ gcp_storage_bucket_access_control_bucket | default('omit', True) }}"
+      entity: "{{ gcp_storage_bucket_access_control_entity | default('omit', True) }}"
+      project: "{{ gcp_storage_bucket_access_control_project | default('omit', True) }}"
+      state: "{{ gcp_storage_bucket_access_control_state | default('omit', True) }}"
+      role: "{{ gcp_storage_bucket_access_control_role | default('omit', True) }}"
+      service_account_file: "{{ gcp_storage_bucket_access_control_service_account_file | default('omit', True) }}"
+      auth_kind: "{{ gcp_storage_bucket_access_control_auth_kind | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_storage_bucket_access_control"
+      gcp_storage_bucket_access_control: "{{ gcp_storage_bucket_access_control }}"

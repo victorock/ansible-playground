@@ -1,0 +1,17 @@
+---
+- name: "module_nos_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nos_command: 
+      retries: "{{ nos_command_retries | default('omit', True) }}"
+      commands: "{{ nos_command_commands | default('omit', True) }}"
+      wait_for: "{{ nos_command_wait_for | default('omit', True) }}"
+      match: "{{ nos_command_match | default('omit', True) }}"
+      interval: "{{ nos_command_interval | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nos_command"
+      nos_command: "{{ nos_command }}"

@@ -1,0 +1,32 @@
+---
+- name: "module_cs_storage_pool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_storage_pool: 
+      api_key: "{{ cs_storage_pool_api_key | default('omit', True) }}"
+      managed: "{{ cs_storage_pool_managed | default('omit', True) }}"
+      api_url: "{{ cs_storage_pool_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_storage_pool_api_http_method | default('omit', True) }}"
+      cluster: "{{ cs_storage_pool_cluster | default('omit', True) }}"
+      api_secret: "{{ cs_storage_pool_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_storage_pool_api_timeout | default('omit', True) }}"
+      storage_tags: "{{ cs_storage_pool_storage_tags | default('omit', True) }}"
+      api_region: "{{ cs_storage_pool_api_region | default('omit', True) }}"
+      capacity_iops: "{{ cs_storage_pool_capacity_iops | default('omit', True) }}"
+      state: "{{ cs_storage_pool_state | default('omit', True) }}"
+      capacity_bytes: "{{ cs_storage_pool_capacity_bytes | default('omit', True) }}"
+      provider: "{{ cs_storage_pool_provider | default('omit', True) }}"
+      hypervisor: "{{ cs_storage_pool_hypervisor | default('omit', True) }}"
+      scope: "{{ cs_storage_pool_scope | default('omit', True) }}"
+      pod: "{{ cs_storage_pool_pod | default('omit', True) }}"
+      zone: "{{ cs_storage_pool_zone | default('omit', True) }}"
+      allocation_state: "{{ cs_storage_pool_allocation_state | default('omit', True) }}"
+      storage_url: "{{ cs_storage_pool_storage_url | default('omit', True) }}"
+      name: "{{ cs_storage_pool_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_storage_pool"
+      cs_storage_pool: "{{ cs_storage_pool }}"

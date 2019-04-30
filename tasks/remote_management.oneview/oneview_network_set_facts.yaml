@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_network_set_facts"
+  oneview_network_set_facts: "{{ oneview_network_set_facts }}"
+  vars:
+    oneview_network_set_facts: 
+      config: "{{ oneview_network_set_facts_config | default(omit, True) }}"
+      params: "{{ oneview_network_set_facts_params | default(omit, True) }}"
+      name: "{{ oneview_network_set_facts_name | default(omit, True) }}"
+      options: "{{ oneview_network_set_facts_options | default(omit, True) }}"

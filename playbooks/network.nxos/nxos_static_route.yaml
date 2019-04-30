@@ -1,0 +1,21 @@
+---
+- name: "module_nxos_static_route"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_static_route: 
+      pref: "{{ nxos_static_route_pref | default('omit', True) }}"
+      tag: "{{ nxos_static_route_tag | default('omit', True) }}"
+      state: "{{ nxos_static_route_state | default('omit', True) }}"
+      route_name: "{{ nxos_static_route_route_name | default('omit', True) }}"
+      prefix: "{{ nxos_static_route_prefix | default('omit', True) }}"
+      next_hop: "{{ nxos_static_route_next_hop | default('omit', True) }}"
+      vrf: "{{ nxos_static_route_vrf | default('omit', True) }}"
+      provider: "{{ nxos_static_route_provider | default('omit', True) }}"
+      aggregate: "{{ nxos_static_route_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_static_route"
+      nxos_static_route: "{{ nxos_static_route }}"

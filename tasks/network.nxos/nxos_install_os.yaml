@@ -1,0 +1,9 @@
+---
+- name: "module_nxos_install_os"
+  nxos_install_os: "{{ nxos_install_os }}"
+  vars:
+    nxos_install_os: 
+      issu: "{{ nxos_install_os_issu | default(omit, True) }}"
+      system_image_file: "{{ nxos_install_os_system_image_file | default(omit, True) }}"
+      kickstart_image_file: "{{ nxos_install_os_kickstart_image_file | default(omit, True) }}"
+      provider: "{{ nxos_install_os_provider | default(omit, True) }}"

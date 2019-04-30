@@ -1,0 +1,14 @@
+---
+- name: "module_webfaction_app"
+  webfaction_app: "{{ webfaction_app }}"
+  vars:
+    webfaction_app: 
+      name: "{{ webfaction_app_name | default(omit, True) }}"
+      port_open: "{{ webfaction_app_port_open | default(omit, True) }}"
+      machine: "{{ webfaction_app_machine | default(omit, True) }}"
+      state: "{{ webfaction_app_state | default(omit, True) }}"
+      autostart: "{{ webfaction_app_autostart | default(omit, True) }}"
+      login_password: "{{ webfaction_app_login_password | default(omit, True) }}"
+      type: "{{ webfaction_app_type | default(omit, True) }}"
+      login_name: "{{ webfaction_app_login_name | default(omit, True) }}"
+      extra_info: "{{ webfaction_app_extra_info | default(omit, True) }}"

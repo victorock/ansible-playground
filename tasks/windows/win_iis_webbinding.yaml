@@ -1,0 +1,14 @@
+---
+- name: "module_win_iis_webbinding"
+  win_iis_webbinding: "{{ win_iis_webbinding }}"
+  vars:
+    win_iis_webbinding: 
+      protocol: "{{ win_iis_webbinding_protocol | default(omit, True) }}"
+      certificate_store_name: "{{ win_iis_webbinding_certificate_store_name | default(omit, True) }}"
+      certificate_hash: "{{ win_iis_webbinding_certificate_hash | default(omit, True) }}"
+      ip: "{{ win_iis_webbinding_ip | default(omit, True) }}"
+      host_header: "{{ win_iis_webbinding_host_header | default(omit, True) }}"
+      state: "{{ win_iis_webbinding_state | default(omit, True) }}"
+      ssl_flags: "{{ win_iis_webbinding_ssl_flags | default(omit, True) }}"
+      port: "{{ win_iis_webbinding_port | default(omit, True) }}"
+      name: "{{ win_iis_webbinding_name | default(omit, True) }}"

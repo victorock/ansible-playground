@@ -1,0 +1,21 @@
+---
+- name: "module_redfish_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    redfish_config: 
+      category: "{{ redfish_config_category | default('omit', True) }}"
+      baseuri: "{{ redfish_config_baseuri | default('omit', True) }}"
+      bios_attr_name: "{{ redfish_config_bios_attr_name | default('omit', True) }}"
+      bios_attr_value: "{{ redfish_config_bios_attr_value | default('omit', True) }}"
+      mgr_attr_name: "{{ redfish_config_mgr_attr_name | default('omit', True) }}"
+      command: "{{ redfish_config_command | default('omit', True) }}"
+      user: "{{ redfish_config_user | default('omit', True) }}"
+      mgr_attr_value: "{{ redfish_config_mgr_attr_value | default('omit', True) }}"
+      password: "{{ redfish_config_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_redfish_config"
+      redfish_config: "{{ redfish_config }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_vmware_vmkernel_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_vmkernel_facts: 
+      username: "{{ vmware_vmkernel_facts_username | default('omit', True) }}"
+      hostname: "{{ vmware_vmkernel_facts_hostname | default('omit', True) }}"
+      cluster_name: "{{ vmware_vmkernel_facts_cluster_name | default('omit', True) }}"
+      esxi_hostname: "{{ vmware_vmkernel_facts_esxi_hostname | default('omit', True) }}"
+      password: "{{ vmware_vmkernel_facts_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_vmkernel_facts_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_vmkernel_facts_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_vmkernel_facts"
+      vmware_vmkernel_facts: "{{ vmware_vmkernel_facts }}"

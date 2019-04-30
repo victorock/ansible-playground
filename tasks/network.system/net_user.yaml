@@ -1,0 +1,15 @@
+---
+- name: "module_net_user"
+  net_user: "{{ net_user }}"
+  vars:
+    net_user: 
+      update_password: "{{ net_user_update_password | default(omit, True) }}"
+      configured_password: "{{ net_user_configured_password | default(omit, True) }}"
+      aggregate: "{{ net_user_aggregate | default(omit, True) }}"
+      name: "{{ net_user_name | default(omit, True) }}"
+      purge: "{{ net_user_purge | default(omit, True) }}"
+      nopassword: "{{ net_user_nopassword | default(omit, True) }}"
+      state: "{{ net_user_state | default(omit, True) }}"
+      role: "{{ net_user_role | default(omit, True) }}"
+      privilege: "{{ net_user_privilege | default(omit, True) }}"
+      sshkey: "{{ net_user_sshkey | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_clc_firewall_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    clc_firewall_policy: 
+      destination_account_alias: "{{ clc_firewall_policy_destination_account_alias | default('omit', True) }}"
+      destination: "{{ clc_firewall_policy_destination | default('omit', True) }}"
+      enabled: "{{ clc_firewall_policy_enabled | default('omit', True) }}"
+      source: "{{ clc_firewall_policy_source | default('omit', True) }}"
+      state: "{{ clc_firewall_policy_state | default('omit', True) }}"
+      location: "{{ clc_firewall_policy_location | default('omit', True) }}"
+      source_account_alias: "{{ clc_firewall_policy_source_account_alias | default('omit', True) }}"
+      wait: "{{ clc_firewall_policy_wait | default('omit', True) }}"
+      ports: "{{ clc_firewall_policy_ports | default('omit', True) }}"
+      firewall_policy_id: "{{ clc_firewall_policy_firewall_policy_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_clc_firewall_policy"
+      clc_firewall_policy: "{{ clc_firewall_policy }}"

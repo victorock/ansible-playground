@@ -1,0 +1,38 @@
+---
+- name: "module_pn_trunk"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_trunk: 
+      pn_name: "{{ pn_trunk_pn_name | default('omit', True) }}"
+      pn_lacp_fallback_timeout: "{{ pn_trunk_pn_lacp_fallback_timeout | default('omit', True) }}"
+      pn_lacp_timeout: "{{ pn_trunk_pn_lacp_timeout | default('omit', True) }}"
+      pn_host: "{{ pn_trunk_pn_host | default('omit', True) }}"
+      pn_port_macaddr: "{{ pn_trunk_pn_port_macaddr | default('omit', True) }}"
+      pn_lacp_fallback: "{{ pn_trunk_pn_lacp_fallback | default('omit', True) }}"
+      pn_routing: "{{ pn_trunk_pn_routing | default('omit', True) }}"
+      pn_mirror_receive: "{{ pn_trunk_pn_mirror_receive | default('omit', True) }}"
+      pn_egress_rate_limit: "{{ pn_trunk_pn_egress_rate_limit | default('omit', True) }}"
+      state: "{{ pn_trunk_state | default('omit', True) }}"
+      pn_broadcast_level: "{{ pn_trunk_pn_broadcast_level | default('omit', True) }}"
+      pn_cliswitch: "{{ pn_trunk_pn_cliswitch | default('omit', True) }}"
+      pn_unknown_mcast_level: "{{ pn_trunk_pn_unknown_mcast_level | default('omit', True) }}"
+      pn_unknown_ucast_level: "{{ pn_trunk_pn_unknown_ucast_level | default('omit', True) }}"
+      pn_loopback: "{{ pn_trunk_pn_loopback | default('omit', True) }}"
+      pn_speed: "{{ pn_trunk_pn_speed | default('omit', True) }}"
+      pn_edge_switch: "{{ pn_trunk_pn_edge_switch | default('omit', True) }}"
+      pn_jumbo: "{{ pn_trunk_pn_jumbo | default('omit', True) }}"
+      pn_clipassword: "{{ pn_trunk_pn_clipassword | default('omit', True) }}"
+      pn_ports: "{{ pn_trunk_pn_ports | default('omit', True) }}"
+      pn_cliusername: "{{ pn_trunk_pn_cliusername | default('omit', True) }}"
+      pn_lacp_mode: "{{ pn_trunk_pn_lacp_mode | default('omit', True) }}"
+      pn_loopvlans: "{{ pn_trunk_pn_loopvlans | default('omit', True) }}"
+      pn_lacp_priority: "{{ pn_trunk_pn_lacp_priority | default('omit', True) }}"
+      pn_pause: "{{ pn_trunk_pn_pause | default('omit', True) }}"
+      pn_description: "{{ pn_trunk_pn_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pn_trunk"
+      pn_trunk: "{{ pn_trunk }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_virt"
+  virt: "{{ virt }}"
+  vars:
+    virt: 
+      xml: "{{ virt_xml | default(omit, True) }}"
+      name: "{{ virt_name | default(omit, True) }}"
+      uri: "{{ virt_uri | default(omit, True) }}"
+      state: "{{ virt_state | default(omit, True) }}"
+      command: "{{ virt_command | default(omit, True) }}"
+      autostart: "{{ virt_autostart | default(omit, True) }}"

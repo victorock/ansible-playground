@@ -1,0 +1,19 @@
+---
+- name: "module_slxos_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    slxos_vlan: 
+      purge: "{{ slxos_vlan_purge | default('omit', True) }}"
+      name: "{{ slxos_vlan_name | default('omit', True) }}"
+      interfaces: "{{ slxos_vlan_interfaces | default('omit', True) }}"
+      delay: "{{ slxos_vlan_delay | default('omit', True) }}"
+      state: "{{ slxos_vlan_state | default('omit', True) }}"
+      aggregate: "{{ slxos_vlan_aggregate | default('omit', True) }}"
+      vlan_id: "{{ slxos_vlan_vlan_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_slxos_vlan"
+      slxos_vlan: "{{ slxos_vlan }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_jenkins_job_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    jenkins_job_facts: 
+      name: "{{ jenkins_job_facts_name | default('omit', True) }}"
+      url: "{{ jenkins_job_facts_url | default('omit', True) }}"
+      glob: "{{ jenkins_job_facts_glob | default('omit', True) }}"
+      color: "{{ jenkins_job_facts_color | default('omit', True) }}"
+      token: "{{ jenkins_job_facts_token | default('omit', True) }}"
+      user: "{{ jenkins_job_facts_user | default('omit', True) }}"
+      password: "{{ jenkins_job_facts_password | default('omit', True) }}"
+      validate_certs: "{{ jenkins_job_facts_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_jenkins_job_facts"
+      jenkins_job_facts: "{{ jenkins_job_facts }}"

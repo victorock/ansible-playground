@@ -1,0 +1,35 @@
+---
+- name: "module_lxc_container"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    lxc_container: 
+      zfs_root: "{{ lxc_container_zfs_root | default('omit', True) }}"
+      clone_name: "{{ lxc_container_clone_name | default('omit', True) }}"
+      container_config: "{{ lxc_container_container_config | default('omit', True) }}"
+      fs_type: "{{ lxc_container_fs_type | default('omit', True) }}"
+      archive: "{{ lxc_container_archive | default('omit', True) }}"
+      container_log: "{{ lxc_container_container_log | default('omit', True) }}"
+      state: "{{ lxc_container_state | default('omit', True) }}"
+      template: "{{ lxc_container_template | default('omit', True) }}"
+      config: "{{ lxc_container_config | default('omit', True) }}"
+      archive_path: "{{ lxc_container_archive_path | default('omit', True) }}"
+      container_log_level: "{{ lxc_container_container_log_level | default('omit', True) }}"
+      template_options: "{{ lxc_container_template_options | default('omit', True) }}"
+      container_command: "{{ lxc_container_container_command | default('omit', True) }}"
+      lxc_path: "{{ lxc_container_lxc_path | default('omit', True) }}"
+      archive_compression: "{{ lxc_container_archive_compression | default('omit', True) }}"
+      thinpool: "{{ lxc_container_thinpool | default('omit', True) }}"
+      clone_snapshot: "{{ lxc_container_clone_snapshot | default('omit', True) }}"
+      name: "{{ lxc_container_name | default('omit', True) }}"
+      lv_name: "{{ lxc_container_lv_name | default('omit', True) }}"
+      fs_size: "{{ lxc_container_fs_size | default('omit', True) }}"
+      backing_store: "{{ lxc_container_backing_store | default('omit', True) }}"
+      vg_name: "{{ lxc_container_vg_name | default('omit', True) }}"
+      directory: "{{ lxc_container_directory | default('omit', True) }}"
+  tasks:
+    - name: "plugin_lxc_container"
+      lxc_container: "{{ lxc_container }}"

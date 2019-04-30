@@ -1,0 +1,33 @@
+---
+- name: "module_panos_object"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    panos_object: 
+      username: "{{ panos_object_username | default('omit', True) }}"
+      servicegroup: "{{ panos_object_servicegroup | default('omit', True) }}"
+      password: "{{ panos_object_password | default('omit', True) }}"
+      static_value: "{{ panos_object_static_value | default('omit', True) }}"
+      description: "{{ panos_object_description | default('omit', True) }}"
+      color: "{{ panos_object_color | default('omit', True) }}"
+      dynamic_value: "{{ panos_object_dynamic_value | default('omit', True) }}"
+      protocol: "{{ panos_object_protocol | default('omit', True) }}"
+      addressgroup: "{{ panos_object_addressgroup | default('omit', True) }}"
+      addressobject: "{{ panos_object_addressobject | default('omit', True) }}"
+      source_port: "{{ panos_object_source_port | default('omit', True) }}"
+      tag_name: "{{ panos_object_tag_name | default('omit', True) }}"
+      address_type: "{{ panos_object_address_type | default('omit', True) }}"
+      serviceobject: "{{ panos_object_serviceobject | default('omit', True) }}"
+      address: "{{ panos_object_address | default('omit', True) }}"
+      services: "{{ panos_object_services | default('omit', True) }}"
+      devicegroup: "{{ panos_object_devicegroup | default('omit', True) }}"
+      destination_port: "{{ panos_object_destination_port | default('omit', True) }}"
+      api_key: "{{ panos_object_api_key | default('omit', True) }}"
+      ip_address: "{{ panos_object_ip_address | default('omit', True) }}"
+      operation: "{{ panos_object_operation | default('omit', True) }}"
+  tasks:
+    - name: "plugin_panos_object"
+      panos_object: "{{ panos_object }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_net_banner"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    net_banner: 
+      text: "{{ net_banner_text | default('omit', True) }}"
+      state: "{{ net_banner_state | default('omit', True) }}"
+      banner: "{{ net_banner_banner | default('omit', True) }}"
+  tasks:
+    - name: "plugin_net_banner"
+      net_banner: "{{ net_banner }}"

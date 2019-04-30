@@ -1,0 +1,21 @@
+---
+- name: "module_sensu_client"
+  sensu_client: "{{ sensu_client }}"
+  vars:
+    sensu_client: 
+      deregister: "{{ sensu_client_deregister | default(omit, True) }}"
+      name: "{{ sensu_client_name | default(omit, True) }}"
+      subscriptions: "{{ sensu_client_subscriptions | default(omit, True) }}"
+      registration: "{{ sensu_client_registration | default(omit, True) }}"
+      chef: "{{ sensu_client_chef | default(omit, True) }}"
+      redact: "{{ sensu_client_redact | default(omit, True) }}"
+      state: "{{ sensu_client_state | default(omit, True) }}"
+      puppet: "{{ sensu_client_puppet | default(omit, True) }}"
+      ec2: "{{ sensu_client_ec2 | default(omit, True) }}"
+      safe_mode: "{{ sensu_client_safe_mode | default(omit, True) }}"
+      address: "{{ sensu_client_address | default(omit, True) }}"
+      keepalive: "{{ sensu_client_keepalive | default(omit, True) }}"
+      keepalives: "{{ sensu_client_keepalives | default(omit, True) }}"
+      deregistration: "{{ sensu_client_deregistration | default(omit, True) }}"
+      servicenow: "{{ sensu_client_servicenow | default(omit, True) }}"
+      socket: "{{ sensu_client_socket | default(omit, True) }}"

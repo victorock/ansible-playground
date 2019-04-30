@@ -1,0 +1,22 @@
+---
+- name: "module_junos_vrf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_vrf: 
+      target: "{{ junos_vrf_target | default('omit', True) }}"
+      interfaces: "{{ junos_vrf_interfaces | default('omit', True) }}"
+      description: "{{ junos_vrf_description | default('omit', True) }}"
+      rd: "{{ junos_vrf_rd | default('omit', True) }}"
+      aggregate: "{{ junos_vrf_aggregate | default('omit', True) }}"
+      state: "{{ junos_vrf_state | default('omit', True) }}"
+      provider: "{{ junos_vrf_provider | default('omit', True) }}"
+      table_label: "{{ junos_vrf_table_label | default('omit', True) }}"
+      active: "{{ junos_vrf_active | default('omit', True) }}"
+      name: "{{ junos_vrf_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_vrf"
+      junos_vrf: "{{ junos_vrf }}"

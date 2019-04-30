@@ -1,0 +1,16 @@
+---
+- name: "module_sf_volume_access_group_manager"
+  sf_volume_access_group_manager: "{{ sf_volume_access_group_manager }}"
+  vars:
+    sf_volume_access_group_manager: 
+      username: "{{ sf_volume_access_group_manager_username | default(omit, True) }}"
+      password: "{{ sf_volume_access_group_manager_password | default(omit, True) }}"
+      name: "{{ sf_volume_access_group_manager_name | default(omit, True) }}"
+      hostname: "{{ sf_volume_access_group_manager_hostname | default(omit, True) }}"
+      virtual_network_id: "{{ sf_volume_access_group_manager_virtual_network_id | default(omit, True) }}"
+      state: "{{ sf_volume_access_group_manager_state | default(omit, True) }}"
+      volumes: "{{ sf_volume_access_group_manager_volumes | default(omit, True) }}"
+      initiators: "{{ sf_volume_access_group_manager_initiators | default(omit, True) }}"
+      attributes: "{{ sf_volume_access_group_manager_attributes | default(omit, True) }}"
+      virtual_network_tags: "{{ sf_volume_access_group_manager_virtual_network_tags | default(omit, True) }}"
+      volume_access_group_id: "{{ sf_volume_access_group_manager_volume_access_group_id | default(omit, True) }}"

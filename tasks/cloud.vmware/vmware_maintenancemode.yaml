@@ -1,0 +1,15 @@
+---
+- name: "module_vmware_maintenancemode"
+  vmware_maintenancemode: "{{ vmware_maintenancemode }}"
+  vars:
+    vmware_maintenancemode: 
+      username: "{{ vmware_maintenancemode_username | default(omit, True) }}"
+      timeout: "{{ vmware_maintenancemode_timeout | default(omit, True) }}"
+      vsan: "{{ vmware_maintenancemode_vsan | default(omit, True) }}"
+      hostname: "{{ vmware_maintenancemode_hostname | default(omit, True) }}"
+      evacuate: "{{ vmware_maintenancemode_evacuate | default(omit, True) }}"
+      state: "{{ vmware_maintenancemode_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_maintenancemode_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_maintenancemode_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_maintenancemode_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_maintenancemode_port | default(omit, True) }}"

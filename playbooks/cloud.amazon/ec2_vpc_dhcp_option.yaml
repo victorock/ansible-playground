@@ -1,0 +1,30 @@
+---
+- name: "module_ec2_vpc_dhcp_option"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ec2_vpc_dhcp_option: 
+      profile: "{{ ec2_vpc_dhcp_option_profile | default('omit', True) }}"
+      aws_secret_key: "{{ ec2_vpc_dhcp_option_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ ec2_vpc_dhcp_option_aws_access_key | default('omit', True) }}"
+      dns_servers: "{{ ec2_vpc_dhcp_option_dns_servers | default('omit', True) }}"
+      security_token: "{{ ec2_vpc_dhcp_option_security_token | default('omit', True) }}"
+      tags: "{{ ec2_vpc_dhcp_option_tags | default('omit', True) }}"
+      ntp_servers: "{{ ec2_vpc_dhcp_option_ntp_servers | default('omit', True) }}"
+      region: "{{ ec2_vpc_dhcp_option_region | default('omit', True) }}"
+      domain_name: "{{ ec2_vpc_dhcp_option_domain_name | default('omit', True) }}"
+      delete_old: "{{ ec2_vpc_dhcp_option_delete_old | default('omit', True) }}"
+      state: "{{ ec2_vpc_dhcp_option_state | default('omit', True) }}"
+      netbios_node_type: "{{ ec2_vpc_dhcp_option_netbios_node_type | default('omit', True) }}"
+      ec2_url: "{{ ec2_vpc_dhcp_option_ec2_url | default('omit', True) }}"
+      vpc_id: "{{ ec2_vpc_dhcp_option_vpc_id | default('omit', True) }}"
+      inherit_existing: "{{ ec2_vpc_dhcp_option_inherit_existing | default('omit', True) }}"
+      validate_certs: "{{ ec2_vpc_dhcp_option_validate_certs | default('omit', True) }}"
+      dhcp_options_id: "{{ ec2_vpc_dhcp_option_dhcp_options_id | default('omit', True) }}"
+      netbios_name_servers: "{{ ec2_vpc_dhcp_option_netbios_name_servers | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ec2_vpc_dhcp_option"
+      ec2_vpc_dhcp_option: "{{ ec2_vpc_dhcp_option }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_nxos_snmp_contact"
+  nxos_snmp_contact: "{{ nxos_snmp_contact }}"
+  vars:
+    nxos_snmp_contact: 
+      state: "{{ nxos_snmp_contact_state | default(omit, True) }}"
+      contact: "{{ nxos_snmp_contact_contact | default(omit, True) }}"
+      provider: "{{ nxos_snmp_contact_provider | default(omit, True) }}"

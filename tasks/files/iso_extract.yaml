@@ -1,0 +1,10 @@
+---
+- name: "module_iso_extract"
+  iso_extract: "{{ iso_extract }}"
+  vars:
+    iso_extract: 
+      dest: "{{ iso_extract_dest | default(omit, True) }}"
+      files: "{{ iso_extract_files | default(omit, True) }}"
+      image: "{{ iso_extract_image | default(omit, True) }}"
+      force: "{{ iso_extract_force | default(omit, True) }}"
+      executable: "{{ iso_extract_executable | default(omit, True) }}"

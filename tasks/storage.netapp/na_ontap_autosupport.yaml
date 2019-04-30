@@ -1,0 +1,18 @@
+---
+- name: "module_na_ontap_autosupport"
+  na_ontap_autosupport: "{{ na_ontap_autosupport }}"
+  vars:
+    na_ontap_autosupport: 
+      username: "{{ na_ontap_autosupport_username | default(omit, True) }}"
+      mail_hosts: "{{ na_ontap_autosupport_mail_hosts | default(omit, True) }}"
+      support: "{{ na_ontap_autosupport_support | default(omit, True) }}"
+      hostname: "{{ na_ontap_autosupport_hostname | default(omit, True) }}"
+      node_name: "{{ na_ontap_autosupport_node_name | default(omit, True) }}"
+      post_url: "{{ na_ontap_autosupport_post_url | default(omit, True) }}"
+      noteto: "{{ na_ontap_autosupport_noteto | default(omit, True) }}"
+      state: "{{ na_ontap_autosupport_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_autosupport_http_port | default(omit, True) }}"
+      https: "{{ na_ontap_autosupport_https | default(omit, True) }}"
+      password: "{{ na_ontap_autosupport_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_autosupport_validate_certs | default(omit, True) }}"
+      transport: "{{ na_ontap_autosupport_transport | default(omit, True) }}"

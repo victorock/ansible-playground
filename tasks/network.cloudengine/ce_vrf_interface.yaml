@@ -1,0 +1,8 @@
+---
+- name: "module_ce_vrf_interface"
+  ce_vrf_interface: "{{ ce_vrf_interface }}"
+  vars:
+    ce_vrf_interface: 
+      state: "{{ ce_vrf_interface_state | default(omit, True) }}"
+      vrf: "{{ ce_vrf_interface_vrf | default(omit, True) }}"
+      vpn_interface: "{{ ce_vrf_interface_vpn_interface | default(omit, True) }}"

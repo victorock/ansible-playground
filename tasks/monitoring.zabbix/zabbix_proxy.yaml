@@ -1,0 +1,23 @@
+---
+- name: "module_zabbix_proxy"
+  zabbix_proxy: "{{ zabbix_proxy }}"
+  vars:
+    zabbix_proxy: 
+      status: "{{ zabbix_proxy_status | default(omit, True) }}"
+      http_login_password: "{{ zabbix_proxy_http_login_password | default(omit, True) }}"
+      tls_psk: "{{ zabbix_proxy_tls_psk | default(omit, True) }}"
+      description: "{{ zabbix_proxy_description | default(omit, True) }}"
+      login_user: "{{ zabbix_proxy_login_user | default(omit, True) }}"
+      http_login_user: "{{ zabbix_proxy_http_login_user | default(omit, True) }}"
+      tls_accept: "{{ zabbix_proxy_tls_accept | default(omit, True) }}"
+      server_url: "{{ zabbix_proxy_server_url | default(omit, True) }}"
+      proxy_name: "{{ zabbix_proxy_proxy_name | default(omit, True) }}"
+      state: "{{ zabbix_proxy_state | default(omit, True) }}"
+      timeout: "{{ zabbix_proxy_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_proxy_login_password | default(omit, True) }}"
+      interface: "{{ zabbix_proxy_interface | default(omit, True) }}"
+      tls_subject: "{{ zabbix_proxy_tls_subject | default(omit, True) }}"
+      validate_certs: "{{ zabbix_proxy_validate_certs | default(omit, True) }}"
+      tls_psk_identity: "{{ zabbix_proxy_tls_psk_identity | default(omit, True) }}"
+      tls_issuer: "{{ zabbix_proxy_tls_issuer | default(omit, True) }}"
+      tls_connect: "{{ zabbix_proxy_tls_connect | default(omit, True) }}"

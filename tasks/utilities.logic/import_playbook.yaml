@@ -1,0 +1,6 @@
+---
+- name: "module_import_playbook"
+  import_playbook: "{{ import_playbook }}"
+  vars:
+    import_playbook: 
+      free-form: "{{ import_playbook_free-form | default(omit, True) }}"

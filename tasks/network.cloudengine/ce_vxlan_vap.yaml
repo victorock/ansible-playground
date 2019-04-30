@@ -1,0 +1,12 @@
+---
+- name: "module_ce_vxlan_vap"
+  ce_vxlan_vap: "{{ ce_vxlan_vap }}"
+  vars:
+    ce_vxlan_vap: 
+      pe_vid: "{{ ce_vxlan_vap_pe_vid | default(omit, True) }}"
+      l2_sub_interface: "{{ ce_vxlan_vap_l2_sub_interface | default(omit, True) }}"
+      bind_vlan_id: "{{ ce_vxlan_vap_bind_vlan_id | default(omit, True) }}"
+      bridge_domain_id: "{{ ce_vxlan_vap_bridge_domain_id | default(omit, True) }}"
+      state: "{{ ce_vxlan_vap_state | default(omit, True) }}"
+      ce_vid: "{{ ce_vxlan_vap_ce_vid | default(omit, True) }}"
+      encapsulation: "{{ ce_vxlan_vap_encapsulation | default(omit, True) }}"

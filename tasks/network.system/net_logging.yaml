@@ -1,0 +1,12 @@
+---
+- name: "module_net_logging"
+  net_logging: "{{ net_logging }}"
+  vars:
+    net_logging: 
+      name: "{{ net_logging_name | default(omit, True) }}"
+      level: "{{ net_logging_level | default(omit, True) }}"
+      dest: "{{ net_logging_dest | default(omit, True) }}"
+      facility: "{{ net_logging_facility | default(omit, True) }}"
+      purge: "{{ net_logging_purge | default(omit, True) }}"
+      state: "{{ net_logging_state | default(omit, True) }}"
+      aggregate: "{{ net_logging_aggregate | default(omit, True) }}"

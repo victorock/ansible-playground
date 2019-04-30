@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_gtm_global"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_gtm_global: 
+      server: "{{ bigip_gtm_global_server | default('omit', True) }}"
+      synchronize_zone_files: "{{ bigip_gtm_global_synchronize_zone_files | default('omit', True) }}"
+      synchronization: "{{ bigip_gtm_global_synchronization | default('omit', True) }}"
+      user: "{{ bigip_gtm_global_user | default('omit', True) }}"
+      server_port: "{{ bigip_gtm_global_server_port | default('omit', True) }}"
+      provider: "{{ bigip_gtm_global_provider | default('omit', True) }}"
+      synchronization_group_name: "{{ bigip_gtm_global_synchronization_group_name | default('omit', True) }}"
+      password: "{{ bigip_gtm_global_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_gtm_global_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_gtm_global"
+      bigip_gtm_global: "{{ bigip_gtm_global }}"

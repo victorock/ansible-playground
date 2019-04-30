@@ -1,0 +1,28 @@
+---
+- name: "module_ecs_task"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ecs_task: 
+      profile: "{{ ecs_task_profile | default('omit', True) }}"
+      aws_secret_key: "{{ ecs_task_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ ecs_task_aws_access_key | default('omit', True) }}"
+      container_instances: "{{ ecs_task_container_instances | default('omit', True) }}"
+      network_configuration: "{{ ecs_task_network_configuration | default('omit', True) }}"
+      security_token: "{{ ecs_task_security_token | default('omit', True) }}"
+      overrides: "{{ ecs_task_overrides | default('omit', True) }}"
+      count: "{{ ecs_task_count | default('omit', True) }}"
+      started_by: "{{ ecs_task_started_by | default('omit', True) }}"
+      cluster: "{{ ecs_task_cluster | default('omit', True) }}"
+      task_definition: "{{ ecs_task_task_definition | default('omit', True) }}"
+      task: "{{ ecs_task_task | default('omit', True) }}"
+      ec2_url: "{{ ecs_task_ec2_url | default('omit', True) }}"
+      operation: "{{ ecs_task_operation | default('omit', True) }}"
+      validate_certs: "{{ ecs_task_validate_certs | default('omit', True) }}"
+      region: "{{ ecs_task_region | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ecs_task"
+      ecs_task: "{{ ecs_task }}"

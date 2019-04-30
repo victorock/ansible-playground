@@ -1,0 +1,14 @@
+---
+- name: "module_profitbricks_nic"
+  profitbricks_nic: "{{ profitbricks_nic }}"
+  vars:
+    profitbricks_nic: 
+      datacenter: "{{ profitbricks_nic_datacenter | default(omit, True) }}"
+      lan: "{{ profitbricks_nic_lan | default(omit, True) }}"
+      name: "{{ profitbricks_nic_name | default(omit, True) }}"
+      subscription_user: "{{ profitbricks_nic_subscription_user | default(omit, True) }}"
+      server: "{{ profitbricks_nic_server | default(omit, True) }}"
+      subscription_password: "{{ profitbricks_nic_subscription_password | default(omit, True) }}"
+      state: "{{ profitbricks_nic_state | default(omit, True) }}"
+      wait_timeout: "{{ profitbricks_nic_wait_timeout | default(omit, True) }}"
+      wait: "{{ profitbricks_nic_wait | default(omit, True) }}"

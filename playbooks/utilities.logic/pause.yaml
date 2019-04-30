@@ -1,0 +1,16 @@
+---
+- name: "module_pause"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pause: 
+      seconds: "{{ pause_seconds | default('omit', True) }}"
+      prompt: "{{ pause_prompt | default('omit', True) }}"
+      minutes: "{{ pause_minutes | default('omit', True) }}"
+      echo: "{{ pause_echo | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pause"
+      pause: "{{ pause }}"

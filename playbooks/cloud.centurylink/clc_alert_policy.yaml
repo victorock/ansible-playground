@@ -1,0 +1,20 @@
+---
+- name: "module_clc_alert_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    clc_alert_policy: 
+      name: "{{ clc_alert_policy_name | default('omit', True) }}"
+      metric: "{{ clc_alert_policy_metric | default('omit', True) }}"
+      alert_recipients: "{{ clc_alert_policy_alert_recipients | default('omit', True) }}"
+      alias: "{{ clc_alert_policy_alias | default('omit', True) }}"
+      state: "{{ clc_alert_policy_state | default('omit', True) }}"
+      threshold: "{{ clc_alert_policy_threshold | default('omit', True) }}"
+      id: "{{ clc_alert_policy_id | default('omit', True) }}"
+      duration: "{{ clc_alert_policy_duration | default('omit', True) }}"
+  tasks:
+    - name: "plugin_clc_alert_policy"
+      clc_alert_policy: "{{ clc_alert_policy }}"

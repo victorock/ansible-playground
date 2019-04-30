@@ -1,0 +1,16 @@
+---
+- name: "module_jboss"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    jboss: 
+      src: "{{ jboss_src | default('omit', True) }}"
+      deploy_path: "{{ jboss_deploy_path | default('omit', True) }}"
+      state: "{{ jboss_state | default('omit', True) }}"
+      deployment: "{{ jboss_deployment | default('omit', True) }}"
+  tasks:
+    - name: "plugin_jboss"
+      jboss: "{{ jboss }}"

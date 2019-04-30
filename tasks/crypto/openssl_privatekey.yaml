@@ -1,0 +1,21 @@
+---
+- name: "module_openssl_privatekey"
+  openssl_privatekey: "{{ openssl_privatekey }}"
+  vars:
+    openssl_privatekey: 
+      force: "{{ openssl_privatekey_force | default(omit, True) }}"
+      unsafe_writes: "{{ openssl_privatekey_unsafe_writes | default(omit, True) }}"
+      selevel: "{{ openssl_privatekey_selevel | default(omit, True) }}"
+      seuser: "{{ openssl_privatekey_seuser | default(omit, True) }}"
+      state: "{{ openssl_privatekey_state | default(omit, True) }}"
+      group: "{{ openssl_privatekey_group | default(omit, True) }}"
+      serole: "{{ openssl_privatekey_serole | default(omit, True) }}"
+      cipher: "{{ openssl_privatekey_cipher | default(omit, True) }}"
+      mode: "{{ openssl_privatekey_mode | default(omit, True) }}"
+      passphrase: "{{ openssl_privatekey_passphrase | default(omit, True) }}"
+      path: "{{ openssl_privatekey_path | default(omit, True) }}"
+      owner: "{{ openssl_privatekey_owner | default(omit, True) }}"
+      attributes: "{{ openssl_privatekey_attributes | default(omit, True) }}"
+      size: "{{ openssl_privatekey_size | default(omit, True) }}"
+      type: "{{ openssl_privatekey_type | default(omit, True) }}"
+      setype: "{{ openssl_privatekey_setype | default(omit, True) }}"

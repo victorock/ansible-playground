@@ -1,0 +1,16 @@
+---
+- name: "module_nxos_logging"
+  nxos_logging: "{{ nxos_logging }}"
+  vars:
+    nxos_logging: 
+      facility_level: "{{ nxos_logging_facility_level | default(omit, True) }}"
+      name: "{{ nxos_logging_name | default(omit, True) }}"
+      facility: "{{ nxos_logging_facility | default(omit, True) }}"
+      dest: "{{ nxos_logging_dest | default(omit, True) }}"
+      dest_level: "{{ nxos_logging_dest_level | default(omit, True) }}"
+      aggregate: "{{ nxos_logging_aggregate | default(omit, True) }}"
+      state: "{{ nxos_logging_state | default(omit, True) }}"
+      provider: "{{ nxos_logging_provider | default(omit, True) }}"
+      interface: "{{ nxos_logging_interface | default(omit, True) }}"
+      use_vrf: "{{ nxos_logging_use_vrf | default(omit, True) }}"
+      remote_server: "{{ nxos_logging_remote_server | default(omit, True) }}"

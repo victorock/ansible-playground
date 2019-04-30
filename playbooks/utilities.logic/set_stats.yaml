@@ -1,0 +1,15 @@
+---
+- name: "module_set_stats"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    set_stats: 
+      aggregate: "{{ set_stats_aggregate | default('omit', True) }}"
+      data: "{{ set_stats_data | default('omit', True) }}"
+      per_host: "{{ set_stats_per_host | default('omit', True) }}"
+  tasks:
+    - name: "plugin_set_stats"
+      set_stats: "{{ set_stats }}"

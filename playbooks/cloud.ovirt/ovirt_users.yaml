@@ -1,0 +1,22 @@
+---
+- name: "module_ovirt_users"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_users: 
+      name: "{{ ovirt_users_name | default('omit', True) }}"
+      authz_name: "{{ ovirt_users_authz_name | default('omit', True) }}"
+      namespace: "{{ ovirt_users_namespace | default('omit', True) }}"
+      state: "{{ ovirt_users_state | default('omit', True) }}"
+      auth: "{{ ovirt_users_auth | default('omit', True) }}"
+      poll_interval: "{{ ovirt_users_poll_interval | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_users_fetch_nested | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_users_nested_attributes | default('omit', True) }}"
+      timeout: "{{ ovirt_users_timeout | default('omit', True) }}"
+      wait: "{{ ovirt_users_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_users"
+      ovirt_users: "{{ ovirt_users }}"

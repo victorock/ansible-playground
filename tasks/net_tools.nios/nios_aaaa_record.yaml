@@ -1,0 +1,13 @@
+---
+- name: "module_nios_aaaa_record"
+  nios_aaaa_record: "{{ nios_aaaa_record }}"
+  vars:
+    nios_aaaa_record: 
+      comment: "{{ nios_aaaa_record_comment | default(omit, True) }}"
+      name: "{{ nios_aaaa_record_name | default(omit, True) }}"
+      extattrs: "{{ nios_aaaa_record_extattrs | default(omit, True) }}"
+      provider: "{{ nios_aaaa_record_provider | default(omit, True) }}"
+      state: "{{ nios_aaaa_record_state | default(omit, True) }}"
+      ttl: "{{ nios_aaaa_record_ttl | default(omit, True) }}"
+      ipv6addr: "{{ nios_aaaa_record_ipv6addr | default(omit, True) }}"
+      view: "{{ nios_aaaa_record_view | default(omit, True) }}"

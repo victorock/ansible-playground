@@ -1,0 +1,21 @@
+---
+- name: "module_cs_nic"
+  cs_nic: "{{ cs_nic }}"
+  vars:
+    cs_nic: 
+      vm_guest_ip: "{{ cs_nic_vm_guest_ip | default(omit, True) }}"
+      domain: "{{ cs_nic_domain | default(omit, True) }}"
+      api_key: "{{ cs_nic_api_key | default(omit, True) }}"
+      poll_async: "{{ cs_nic_poll_async | default(omit, True) }}"
+      api_url: "{{ cs_nic_api_url | default(omit, True) }}"
+      api_http_method: "{{ cs_nic_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_nic_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_nic_api_timeout | default(omit, True) }}"
+      vm: "{{ cs_nic_vm | default(omit, True) }}"
+      api_region: "{{ cs_nic_api_region | default(omit, True) }}"
+      project: "{{ cs_nic_project | default(omit, True) }}"
+      state: "{{ cs_nic_state | default(omit, True) }}"
+      vpc: "{{ cs_nic_vpc | default(omit, True) }}"
+      account: "{{ cs_nic_account | default(omit, True) }}"
+      zone: "{{ cs_nic_zone | default(omit, True) }}"
+      network: "{{ cs_nic_network | default(omit, True) }}"

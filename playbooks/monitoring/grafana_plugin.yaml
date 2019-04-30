@@ -1,0 +1,18 @@
+---
+- name: "module_grafana_plugin"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    grafana_plugin: 
+      grafana_repo: "{{ grafana_plugin_grafana_repo | default('omit', True) }}"
+      name: "{{ grafana_plugin_name | default('omit', True) }}"
+      grafana_plugin_url: "{{ grafana_plugin_grafana_plugin_url | default('omit', True) }}"
+      state: "{{ grafana_plugin_state | default('omit', True) }}"
+      grafana_plugins_dir: "{{ grafana_plugin_grafana_plugins_dir | default('omit', True) }}"
+      version: "{{ grafana_plugin_version | default('omit', True) }}"
+  tasks:
+    - name: "plugin_grafana_plugin"
+      grafana_plugin: "{{ grafana_plugin }}"

@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_sys_db"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_sys_db: 
+      server_port: "{{ bigip_sys_db_server_port | default('omit', True) }}"
+      value: "{{ bigip_sys_db_value | default('omit', True) }}"
+      server: "{{ bigip_sys_db_server | default('omit', True) }}"
+      state: "{{ bigip_sys_db_state | default('omit', True) }}"
+      user: "{{ bigip_sys_db_user | default('omit', True) }}"
+      key: "{{ bigip_sys_db_key | default('omit', True) }}"
+      provider: "{{ bigip_sys_db_provider | default('omit', True) }}"
+      password: "{{ bigip_sys_db_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_sys_db_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_sys_db"
+      bigip_sys_db: "{{ bigip_sys_db }}"

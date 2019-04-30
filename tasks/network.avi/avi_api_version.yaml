@@ -1,0 +1,13 @@
+---
+- name: "module_avi_api_version"
+  avi_api_version: "{{ avi_api_version }}"
+  vars:
+    avi_api_version: 
+      username: "{{ avi_api_version_username | default(omit, True) }}"
+      avi_credentials: "{{ avi_api_version_avi_credentials | default(omit, True) }}"
+      controller: "{{ avi_api_version_controller | default(omit, True) }}"
+      tenant: "{{ avi_api_version_tenant | default(omit, True) }}"
+      api_context: "{{ avi_api_version_api_context | default(omit, True) }}"
+      password: "{{ avi_api_version_password | default(omit, True) }}"
+      tenant_uuid: "{{ avi_api_version_tenant_uuid | default(omit, True) }}"
+      api_version: "{{ avi_api_version_api_version | default(omit, True) }}"

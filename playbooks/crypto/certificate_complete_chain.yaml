@@ -1,0 +1,15 @@
+---
+- name: "module_certificate_complete_chain"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    certificate_complete_chain: 
+      root_certificates: "{{ certificate_complete_chain_root_certificates | default('omit', True) }}"
+      intermediate_certificates: "{{ certificate_complete_chain_intermediate_certificates | default('omit', True) }}"
+      input_chain: "{{ certificate_complete_chain_input_chain | default('omit', True) }}"
+  tasks:
+    - name: "plugin_certificate_complete_chain"
+      certificate_complete_chain: "{{ certificate_complete_chain }}"

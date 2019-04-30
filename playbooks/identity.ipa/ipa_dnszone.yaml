@@ -1,0 +1,21 @@
+---
+- name: "module_ipa_dnszone"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ipa_dnszone: 
+      ipa_port: "{{ ipa_dnszone_ipa_port | default('omit', True) }}"
+      ipa_prot: "{{ ipa_dnszone_ipa_prot | default('omit', True) }}"
+      state: "{{ ipa_dnszone_state | default('omit', True) }}"
+      ipa_host: "{{ ipa_dnszone_ipa_host | default('omit', True) }}"
+      ipa_user: "{{ ipa_dnszone_ipa_user | default('omit', True) }}"
+      ipa_pass: "{{ ipa_dnszone_ipa_pass | default('omit', True) }}"
+      zone_name: "{{ ipa_dnszone_zone_name | default('omit', True) }}"
+      ipa_timeout: "{{ ipa_dnszone_ipa_timeout | default('omit', True) }}"
+      validate_certs: "{{ ipa_dnszone_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ipa_dnszone"
+      ipa_dnszone: "{{ ipa_dnszone }}"

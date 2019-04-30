@@ -1,0 +1,8 @@
+---
+- name: "module_nxos_feature"
+  nxos_feature: "{{ nxos_feature }}"
+  vars:
+    nxos_feature: 
+      state: "{{ nxos_feature_state | default(omit, True) }}"
+      feature: "{{ nxos_feature_feature | default(omit, True) }}"
+      provider: "{{ nxos_feature_provider | default(omit, True) }}"

@@ -1,0 +1,7 @@
+---
+- name: "module_win_dns_client"
+  win_dns_client: "{{ win_dns_client }}"
+  vars:
+    win_dns_client: 
+      adapter_names: "{{ win_dns_client_adapter_names | default(omit, True) }}"
+      ipv4_addresses: "{{ win_dns_client_ipv4_addresses | default(omit, True) }}"

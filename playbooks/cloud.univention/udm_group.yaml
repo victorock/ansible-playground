@@ -1,0 +1,18 @@
+---
+- name: "module_udm_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    udm_group: 
+      description: "{{ udm_group_description | default('omit', True) }}"
+      subpath: "{{ udm_group_subpath | default('omit', True) }}"
+      state: "{{ udm_group_state | default('omit', True) }}"
+      position: "{{ udm_group_position | default('omit', True) }}"
+      ou: "{{ udm_group_ou | default('omit', True) }}"
+      name: "{{ udm_group_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_udm_group"
+      udm_group: "{{ udm_group }}"

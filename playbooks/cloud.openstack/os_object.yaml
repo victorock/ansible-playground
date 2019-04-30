@@ -1,0 +1,30 @@
+---
+- name: "module_os_object"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_object: 
+      auth_type: "{{ os_object_auth_type | default('omit', True) }}"
+      timeout: "{{ os_object_timeout | default('omit', True) }}"
+      container: "{{ os_object_container | default('omit', True) }}"
+      region_name: "{{ os_object_region_name | default('omit', True) }}"
+      name: "{{ os_object_name | default('omit', True) }}"
+      availability_zone: "{{ os_object_availability_zone | default('omit', True) }}"
+      verify: "{{ os_object_verify | default('omit', True) }}"
+      api_timeout: "{{ os_object_api_timeout | default('omit', True) }}"
+      state: "{{ os_object_state | default('omit', True) }}"
+      auth: "{{ os_object_auth | default('omit', True) }}"
+      filename: "{{ os_object_filename | default('omit', True) }}"
+      cacert: "{{ os_object_cacert | default('omit', True) }}"
+      cert: "{{ os_object_cert | default('omit', True) }}"
+      container_access: "{{ os_object_container_access | default('omit', True) }}"
+      key: "{{ os_object_key | default('omit', True) }}"
+      interface: "{{ os_object_interface | default('omit', True) }}"
+      cloud: "{{ os_object_cloud | default('omit', True) }}"
+      wait: "{{ os_object_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_object"
+      os_object: "{{ os_object }}"

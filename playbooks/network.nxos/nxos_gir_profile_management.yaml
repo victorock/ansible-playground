@@ -1,0 +1,16 @@
+---
+- name: "module_nxos_gir_profile_management"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_gir_profile_management: 
+      mode: "{{ nxos_gir_profile_management_mode | default('omit', True) }}"
+      commands: "{{ nxos_gir_profile_management_commands | default('omit', True) }}"
+      state: "{{ nxos_gir_profile_management_state | default('omit', True) }}"
+      provider: "{{ nxos_gir_profile_management_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_gir_profile_management"
+      nxos_gir_profile_management: "{{ nxos_gir_profile_management }}"

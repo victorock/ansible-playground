@@ -1,0 +1,20 @@
+---
+- name: "module_riak"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    riak: 
+      target_node: "{{ riak_target_node | default('omit', True) }}"
+      validate_certs: "{{ riak_validate_certs | default('omit', True) }}"
+      wait_for_service: "{{ riak_wait_for_service | default('omit', True) }}"
+      http_conn: "{{ riak_http_conn | default('omit', True) }}"
+      wait_for_ring: "{{ riak_wait_for_ring | default('omit', True) }}"
+      wait_for_handoffs: "{{ riak_wait_for_handoffs | default('omit', True) }}"
+      command: "{{ riak_command | default('omit', True) }}"
+      config_dir: "{{ riak_config_dir | default('omit', True) }}"
+  tasks:
+    - name: "plugin_riak"
+      riak: "{{ riak }}"

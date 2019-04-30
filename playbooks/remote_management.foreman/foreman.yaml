@@ -1,0 +1,17 @@
+---
+- name: "module_foreman"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    foreman: 
+      username: "{{ foreman_username | default('omit', True) }}"
+      password: "{{ foreman_password | default('omit', True) }}"
+      params: "{{ foreman_params | default('omit', True) }}"
+      server_url: "{{ foreman_server_url | default('omit', True) }}"
+      entity: "{{ foreman_entity | default('omit', True) }}"
+  tasks:
+    - name: "plugin_foreman"
+      foreman: "{{ foreman }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_sysctl"
+  sysctl: "{{ sysctl }}"
+  vars:
+    sysctl: 
+      name: "{{ sysctl_name | default(omit, True) }}"
+      ignoreerrors: "{{ sysctl_ignoreerrors | default(omit, True) }}"
+      value: "{{ sysctl_value | default(omit, True) }}"
+      reload: "{{ sysctl_reload | default(omit, True) }}"
+      state: "{{ sysctl_state | default(omit, True) }}"
+      sysctl_set: "{{ sysctl_sysctl_set | default(omit, True) }}"
+      sysctl_file: "{{ sysctl_sysctl_file | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_onyx_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_facts: 
+      gather_subset: "{{ onyx_facts_gather_subset | default('omit', True) }}"
+  tasks:
+    - name: "plugin_onyx_facts"
+      onyx_facts: "{{ onyx_facts }}"

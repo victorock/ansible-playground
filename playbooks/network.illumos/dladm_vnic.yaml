@@ -1,0 +1,18 @@
+---
+- name: "module_dladm_vnic"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dladm_vnic: 
+      temporary: "{{ dladm_vnic_temporary | default('omit', True) }}"
+      name: "{{ dladm_vnic_name | default('omit', True) }}"
+      vlan: "{{ dladm_vnic_vlan | default('omit', True) }}"
+      state: "{{ dladm_vnic_state | default('omit', True) }}"
+      mac: "{{ dladm_vnic_mac | default('omit', True) }}"
+      link: "{{ dladm_vnic_link | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dladm_vnic"
+      dladm_vnic: "{{ dladm_vnic }}"

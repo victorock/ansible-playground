@@ -1,0 +1,16 @@
+---
+- name: "module_oneview_ethernet_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    oneview_ethernet_network: 
+      data: "{{ oneview_ethernet_network_data | default('omit', True) }}"
+      state: "{{ oneview_ethernet_network_state | default('omit', True) }}"
+      validate_etag: "{{ oneview_ethernet_network_validate_etag | default('omit', True) }}"
+      config: "{{ oneview_ethernet_network_config | default('omit', True) }}"
+  tasks:
+    - name: "plugin_oneview_ethernet_network"
+      oneview_ethernet_network: "{{ oneview_ethernet_network }}"

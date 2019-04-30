@@ -1,0 +1,22 @@
+---
+- name: "module_na_ontap_dns"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_dns: 
+      username: "{{ na_ontap_dns_username | default('omit', True) }}"
+      http_port: "{{ na_ontap_dns_http_port | default('omit', True) }}"
+      nameservers: "{{ na_ontap_dns_nameservers | default('omit', True) }}"
+      hostname: "{{ na_ontap_dns_hostname | default('omit', True) }}"
+      vserver: "{{ na_ontap_dns_vserver | default('omit', True) }}"
+      state: "{{ na_ontap_dns_state | default('omit', True) }}"
+      https: "{{ na_ontap_dns_https | default('omit', True) }}"
+      domains: "{{ na_ontap_dns_domains | default('omit', True) }}"
+      password: "{{ na_ontap_dns_password | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_dns_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_dns"
+      na_ontap_dns: "{{ na_ontap_dns }}"

@@ -1,0 +1,16 @@
+---
+- name: "module_ce_aaa_server"
+  ce_aaa_server: "{{ ce_aaa_server }}"
+  vars:
+    ce_aaa_server: 
+      local_user_group: "{{ ce_aaa_server_local_user_group | default(omit, True) }}"
+      author_scheme_name: "{{ ce_aaa_server_author_scheme_name | default(omit, True) }}"
+      first_author_mode: "{{ ce_aaa_server_first_author_mode | default(omit, True) }}"
+      authen_scheme_name: "{{ ce_aaa_server_authen_scheme_name | default(omit, True) }}"
+      acct_scheme_name: "{{ ce_aaa_server_acct_scheme_name | default(omit, True) }}"
+      radius_server_group: "{{ ce_aaa_server_radius_server_group | default(omit, True) }}"
+      domain_name: "{{ ce_aaa_server_domain_name | default(omit, True) }}"
+      first_authen_mode: "{{ ce_aaa_server_first_authen_mode | default(omit, True) }}"
+      state: "{{ ce_aaa_server_state | default(omit, True) }}"
+      hwtacas_template: "{{ ce_aaa_server_hwtacas_template | default(omit, True) }}"
+      accounting_mode: "{{ ce_aaa_server_accounting_mode | default(omit, True) }}"

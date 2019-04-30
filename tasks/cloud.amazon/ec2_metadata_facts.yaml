@@ -1,0 +1,3 @@
+---
+- name: "module_ec2_metadata_facts"
+  ec2_metadata_facts:

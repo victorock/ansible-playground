@@ -1,0 +1,13 @@
+---
+- name: "module_nxos_switchport"
+  nxos_switchport: "{{ nxos_switchport }}"
+  vars:
+    nxos_switchport: 
+      native_vlan: "{{ nxos_switchport_native_vlan | default(omit, True) }}"
+      access_vlan: "{{ nxos_switchport_access_vlan | default(omit, True) }}"
+      state: "{{ nxos_switchport_state | default(omit, True) }}"
+      trunk_vlans: "{{ nxos_switchport_trunk_vlans | default(omit, True) }}"
+      trunk_allowed_vlans: "{{ nxos_switchport_trunk_allowed_vlans | default(omit, True) }}"
+      mode: "{{ nxos_switchport_mode | default(omit, True) }}"
+      provider: "{{ nxos_switchport_provider | default(omit, True) }}"
+      interface: "{{ nxos_switchport_interface | default(omit, True) }}"

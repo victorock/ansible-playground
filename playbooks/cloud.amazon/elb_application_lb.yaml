@@ -1,0 +1,37 @@
+---
+- name: "module_elb_application_lb"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    elb_application_lb: 
+      purge_rules: "{{ elb_application_lb_purge_rules | default('omit', True) }}"
+      purge_tags: "{{ elb_application_lb_purge_tags | default('omit', True) }}"
+      deletion_protection: "{{ elb_application_lb_deletion_protection | default('omit', True) }}"
+      ec2_url: "{{ elb_application_lb_ec2_url | default('omit', True) }}"
+      access_logs_s3_prefix: "{{ elb_application_lb_access_logs_s3_prefix | default('omit', True) }}"
+      security_groups: "{{ elb_application_lb_security_groups | default('omit', True) }}"
+      aws_secret_key: "{{ elb_application_lb_aws_secret_key | default('omit', True) }}"
+      access_logs_s3_bucket: "{{ elb_application_lb_access_logs_s3_bucket | default('omit', True) }}"
+      access_logs_enabled: "{{ elb_application_lb_access_logs_enabled | default('omit', True) }}"
+      state: "{{ elb_application_lb_state | default('omit', True) }}"
+      purge_listeners: "{{ elb_application_lb_purge_listeners | default('omit', True) }}"
+      scheme: "{{ elb_application_lb_scheme | default('omit', True) }}"
+      profile: "{{ elb_application_lb_profile | default('omit', True) }}"
+      subnets: "{{ elb_application_lb_subnets | default('omit', True) }}"
+      tags: "{{ elb_application_lb_tags | default('omit', True) }}"
+      idle_timeout: "{{ elb_application_lb_idle_timeout | default('omit', True) }}"
+      wait_timeout: "{{ elb_application_lb_wait_timeout | default('omit', True) }}"
+      wait: "{{ elb_application_lb_wait | default('omit', True) }}"
+      aws_access_key: "{{ elb_application_lb_aws_access_key | default('omit', True) }}"
+      name: "{{ elb_application_lb_name | default('omit', True) }}"
+      security_token: "{{ elb_application_lb_security_token | default('omit', True) }}"
+      region: "{{ elb_application_lb_region | default('omit', True) }}"
+      listeners: "{{ elb_application_lb_listeners | default('omit', True) }}"
+      http2: "{{ elb_application_lb_http2 | default('omit', True) }}"
+      validate_certs: "{{ elb_application_lb_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_elb_application_lb"
+      elb_application_lb: "{{ elb_application_lb }}"

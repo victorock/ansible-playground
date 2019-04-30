@@ -1,0 +1,18 @@
+---
+- name: "module_manageiq_alert_profiles"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    manageiq_alert_profiles: 
+      name: "{{ manageiq_alert_profiles_name | default('omit', True) }}"
+      notes: "{{ manageiq_alert_profiles_notes | default('omit', True) }}"
+      alerts: "{{ manageiq_alert_profiles_alerts | default('omit', True) }}"
+      state: "{{ manageiq_alert_profiles_state | default('omit', True) }}"
+      manageiq_connection: "{{ manageiq_alert_profiles_manageiq_connection | default('omit', True) }}"
+      resource_type: "{{ manageiq_alert_profiles_resource_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_manageiq_alert_profiles"
+      manageiq_alert_profiles: "{{ manageiq_alert_profiles }}"

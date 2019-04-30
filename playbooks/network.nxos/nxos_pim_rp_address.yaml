@@ -1,0 +1,19 @@
+---
+- name: "module_nxos_pim_rp_address"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_pim_rp_address: 
+      bidir: "{{ nxos_pim_rp_address_bidir | default('omit', True) }}"
+      route_map: "{{ nxos_pim_rp_address_route_map | default('omit', True) }}"
+      rp_address: "{{ nxos_pim_rp_address_rp_address | default('omit', True) }}"
+      group_list: "{{ nxos_pim_rp_address_group_list | default('omit', True) }}"
+      state: "{{ nxos_pim_rp_address_state | default('omit', True) }}"
+      provider: "{{ nxos_pim_rp_address_provider | default('omit', True) }}"
+      prefix_list: "{{ nxos_pim_rp_address_prefix_list | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_pim_rp_address"
+      nxos_pim_rp_address: "{{ nxos_pim_rp_address }}"

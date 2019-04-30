@@ -1,0 +1,36 @@
+---
+- name: "module_sensu_check"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sensu_check: 
+      metric: "{{ sensu_check_metric | default('omit', True) }}"
+      subdue_begin: "{{ sensu_check_subdue_begin | default('omit', True) }}"
+      occurrences: "{{ sensu_check_occurrences | default('omit', True) }}"
+      low_flap_threshold: "{{ sensu_check_low_flap_threshold | default('omit', True) }}"
+      ttl: "{{ sensu_check_ttl | default('omit', True) }}"
+      publish: "{{ sensu_check_publish | default('omit', True) }}"
+      custom: "{{ sensu_check_custom | default('omit', True) }}"
+      source: "{{ sensu_check_source | default('omit', True) }}"
+      state: "{{ sensu_check_state | default('omit', True) }}"
+      subdue_end: "{{ sensu_check_subdue_end | default('omit', True) }}"
+      handle: "{{ sensu_check_handle | default('omit', True) }}"
+      standalone: "{{ sensu_check_standalone | default('omit', True) }}"
+      dependencies: "{{ sensu_check_dependencies | default('omit', True) }}"
+      subscribers: "{{ sensu_check_subscribers | default('omit', True) }}"
+      aggregate: "{{ sensu_check_aggregate | default('omit', True) }}"
+      path: "{{ sensu_check_path | default('omit', True) }}"
+      name: "{{ sensu_check_name | default('omit', True) }}"
+      handlers: "{{ sensu_check_handlers | default('omit', True) }}"
+      interval: "{{ sensu_check_interval | default('omit', True) }}"
+      refresh: "{{ sensu_check_refresh | default('omit', True) }}"
+      command: "{{ sensu_check_command | default('omit', True) }}"
+      high_flap_threshold: "{{ sensu_check_high_flap_threshold | default('omit', True) }}"
+      timeout: "{{ sensu_check_timeout | default('omit', True) }}"
+      backup: "{{ sensu_check_backup | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sensu_check"
+      sensu_check: "{{ sensu_check }}"

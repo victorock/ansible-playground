@@ -1,0 +1,37 @@
+---
+- name: "module_cs_cluster"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_cluster: 
+      username: "{{ cs_cluster_username | default('omit', True) }}"
+      ovm3_cluster: "{{ cs_cluster_ovm3_cluster | default('omit', True) }}"
+      ovm3_pool: "{{ cs_cluster_ovm3_pool | default('omit', True) }}"
+      api_http_method: "{{ cs_cluster_api_http_method | default('omit', True) }}"
+      pod: "{{ cs_cluster_pod | default('omit', True) }}"
+      public_vswitch_type: "{{ cs_cluster_public_vswitch_type | default('omit', True) }}"
+      api_url: "{{ cs_cluster_api_url | default('omit', True) }}"
+      zone: "{{ cs_cluster_zone | default('omit', True) }}"
+      public_vswitch_name: "{{ cs_cluster_public_vswitch_name | default('omit', True) }}"
+      ovm3_vip: "{{ cs_cluster_ovm3_vip | default('omit', True) }}"
+      vms_ip_address: "{{ cs_cluster_vms_ip_address | default('omit', True) }}"
+      state: "{{ cs_cluster_state | default('omit', True) }}"
+      api_key: "{{ cs_cluster_api_key | default('omit', True) }}"
+      guest_vswitch_type: "{{ cs_cluster_guest_vswitch_type | default('omit', True) }}"
+      guest_vswitch_name: "{{ cs_cluster_guest_vswitch_name | default('omit', True) }}"
+      api_secret: "{{ cs_cluster_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_cluster_api_timeout | default('omit', True) }}"
+      password: "{{ cs_cluster_password | default('omit', True) }}"
+      vms_username: "{{ cs_cluster_vms_username | default('omit', True) }}"
+      name: "{{ cs_cluster_name | default('omit', True) }}"
+      url: "{{ cs_cluster_url | default('omit', True) }}"
+      hypervisor: "{{ cs_cluster_hypervisor | default('omit', True) }}"
+      api_region: "{{ cs_cluster_api_region | default('omit', True) }}"
+      cluster_type: "{{ cs_cluster_cluster_type | default('omit', True) }}"
+      vms_password: "{{ cs_cluster_vms_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_cluster"
+      cs_cluster: "{{ cs_cluster }}"

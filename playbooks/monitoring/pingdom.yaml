@@ -1,0 +1,17 @@
+---
+- name: "module_pingdom"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pingdom: 
+      checkid: "{{ pingdom_checkid | default('omit', True) }}"
+      passwd: "{{ pingdom_passwd | default('omit', True) }}"
+      state: "{{ pingdom_state | default('omit', True) }}"
+      uid: "{{ pingdom_uid | default('omit', True) }}"
+      key: "{{ pingdom_key | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pingdom"
+      pingdom: "{{ pingdom }}"

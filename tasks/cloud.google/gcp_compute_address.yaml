@@ -1,0 +1,17 @@
+---
+- name: "module_gcp_compute_address"
+  gcp_compute_address: "{{ gcp_compute_address }}"
+  vars:
+    gcp_compute_address: 
+      scopes: "{{ gcp_compute_address_scopes | default(omit, True) }}"
+      name: "{{ gcp_compute_address_name | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_address_service_account_email | default(omit, True) }}"
+      region: "{{ gcp_compute_address_region | default(omit, True) }}"
+      project: "{{ gcp_compute_address_project | default(omit, True) }}"
+      state: "{{ gcp_compute_address_state | default(omit, True) }}"
+      address: "{{ gcp_compute_address_address | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_address_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_address_service_account_file | default(omit, True) }}"
+      address_type: "{{ gcp_compute_address_address_type | default(omit, True) }}"
+      subnetwork: "{{ gcp_compute_address_subnetwork | default(omit, True) }}"
+      description: "{{ gcp_compute_address_description | default(omit, True) }}"

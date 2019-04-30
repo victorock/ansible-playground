@@ -1,0 +1,11 @@
+---
+- name: "module_eos_banner"
+  eos_banner: "{{ eos_banner }}"
+  vars:
+    eos_banner: 
+      authorize: "{{ eos_banner_authorize | default(omit, True) }}"
+      text: "{{ eos_banner_text | default(omit, True) }}"
+      auth_pass: "{{ eos_banner_auth_pass | default(omit, True) }}"
+      state: "{{ eos_banner_state | default(omit, True) }}"
+      provider: "{{ eos_banner_provider | default(omit, True) }}"
+      banner: "{{ eos_banner_banner | default(omit, True) }}"

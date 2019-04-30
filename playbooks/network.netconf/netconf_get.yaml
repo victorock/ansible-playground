@@ -1,0 +1,16 @@
+---
+- name: "module_netconf_get"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netconf_get: 
+      filter: "{{ netconf_get_filter | default('omit', True) }}"
+      source: "{{ netconf_get_source | default('omit', True) }}"
+      display: "{{ netconf_get_display | default('omit', True) }}"
+      lock: "{{ netconf_get_lock | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netconf_get"
+      netconf_get: "{{ netconf_get }}"

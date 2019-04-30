@@ -1,0 +1,17 @@
+---
+- name: "module_gcp_compute_url_map"
+  gcp_compute_url_map: "{{ gcp_compute_url_map }}"
+  vars:
+    gcp_compute_url_map: 
+      scopes: "{{ gcp_compute_url_map_scopes | default(omit, True) }}"
+      tests: "{{ gcp_compute_url_map_tests | default(omit, True) }}"
+      description: "{{ gcp_compute_url_map_description | default(omit, True) }}"
+      project: "{{ gcp_compute_url_map_project | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_url_map_service_account_email | default(omit, True) }}"
+      path_matchers: "{{ gcp_compute_url_map_path_matchers | default(omit, True) }}"
+      default_service: "{{ gcp_compute_url_map_default_service | default(omit, True) }}"
+      state: "{{ gcp_compute_url_map_state | default(omit, True) }}"
+      host_rules: "{{ gcp_compute_url_map_host_rules | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_url_map_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_url_map_auth_kind | default(omit, True) }}"
+      name: "{{ gcp_compute_url_map_name | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_bigip_hostname"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_hostname: 
+      hostname: "{{ bigip_hostname_hostname | default('omit', True) }}"
+      server: "{{ bigip_hostname_server | default('omit', True) }}"
+      user: "{{ bigip_hostname_user | default('omit', True) }}"
+      server_port: "{{ bigip_hostname_server_port | default('omit', True) }}"
+      provider: "{{ bigip_hostname_provider | default('omit', True) }}"
+      password: "{{ bigip_hostname_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_hostname_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_hostname"
+      bigip_hostname: "{{ bigip_hostname }}"

@@ -1,0 +1,21 @@
+---
+- name: "module_ovirt_host_pm"
+  ovirt_host_pm: "{{ ovirt_host_pm }}"
+  vars:
+    ovirt_host_pm: 
+      username: "{{ ovirt_host_pm_username | default(omit, True) }}"
+      encrypt_options: "{{ ovirt_host_pm_encrypt_options | default(omit, True) }}"
+      name: "{{ ovirt_host_pm_name | default(omit, True) }}"
+      poll_interval: "{{ ovirt_host_pm_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_host_pm_state | default(omit, True) }}"
+      auth: "{{ ovirt_host_pm_auth | default(omit, True) }}"
+      port: "{{ ovirt_host_pm_port | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_host_pm_fetch_nested | default(omit, True) }}"
+      options: "{{ ovirt_host_pm_options | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_host_pm_nested_attributes | default(omit, True) }}"
+      timeout: "{{ ovirt_host_pm_timeout | default(omit, True) }}"
+      address: "{{ ovirt_host_pm_address | default(omit, True) }}"
+      password: "{{ ovirt_host_pm_password | default(omit, True) }}"
+      type: "{{ ovirt_host_pm_type | default(omit, True) }}"
+      order: "{{ ovirt_host_pm_order | default(omit, True) }}"
+      wait: "{{ ovirt_host_pm_wait | default(omit, True) }}"

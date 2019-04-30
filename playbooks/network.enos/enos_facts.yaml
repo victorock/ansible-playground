@@ -1,0 +1,16 @@
+---
+- name: "module_enos_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    enos_facts: 
+      authorize: "{{ enos_facts_authorize | default('omit', True) }}"
+      auth_pass: "{{ enos_facts_auth_pass | default('omit', True) }}"
+      provider: "{{ enos_facts_provider | default('omit', True) }}"
+      gather_subset: "{{ enos_facts_gather_subset | default('omit', True) }}"
+  tasks:
+    - name: "plugin_enos_facts"
+      enos_facts: "{{ enos_facts }}"

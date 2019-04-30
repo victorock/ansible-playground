@@ -1,0 +1,44 @@
+---
+- name: "module_ce_bgp_neighbor"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_bgp_neighbor: 
+      prepend_global_as: "{{ ce_bgp_neighbor_prepend_global_as | default('omit', True) }}"
+      ebgp_max_hop: "{{ ce_bgp_neighbor_ebgp_max_hop | default('omit', True) }}"
+      is_ignore: "{{ ce_bgp_neighbor_is_ignore | default('omit', True) }}"
+      prepend_fake_as: "{{ ce_bgp_neighbor_prepend_fake_as | default('omit', True) }}"
+      fake_as: "{{ ce_bgp_neighbor_fake_as | default('omit', True) }}"
+      is_single_hop: "{{ ce_bgp_neighbor_is_single_hop | default('omit', True) }}"
+      conventional: "{{ ce_bgp_neighbor_conventional | default('omit', True) }}"
+      remote_as: "{{ ce_bgp_neighbor_remote_as | default('omit', True) }}"
+      valid_ttl_hops: "{{ ce_bgp_neighbor_valid_ttl_hops | default('omit', True) }}"
+      tx_interval: "{{ ce_bgp_neighbor_tx_interval | default('omit', True) }}"
+      pswd_cipher_text: "{{ ce_bgp_neighbor_pswd_cipher_text | default('omit', True) }}"
+      local_if_name: "{{ ce_bgp_neighbor_local_if_name | default('omit', True) }}"
+      rx_interval: "{{ ce_bgp_neighbor_rx_interval | default('omit', True) }}"
+      state: "{{ ce_bgp_neighbor_state | default('omit', True) }}"
+      vrf_name: "{{ ce_bgp_neighbor_vrf_name | default('omit', True) }}"
+      dual_as: "{{ ce_bgp_neighbor_dual_as | default('omit', True) }}"
+      connect_mode: "{{ ce_bgp_neighbor_connect_mode | default('omit', True) }}"
+      description: "{{ ce_bgp_neighbor_description | default('omit', True) }}"
+      is_log_change: "{{ ce_bgp_neighbor_is_log_change | default('omit', True) }}"
+      keep_alive_time: "{{ ce_bgp_neighbor_keep_alive_time | default('omit', True) }}"
+      key_chain_name: "{{ ce_bgp_neighbor_key_chain_name | default('omit', True) }}"
+      conn_retry_time: "{{ ce_bgp_neighbor_conn_retry_time | default('omit', True) }}"
+      min_hold_time: "{{ ce_bgp_neighbor_min_hold_time | default('omit', True) }}"
+      multiplier: "{{ ce_bgp_neighbor_multiplier | default('omit', True) }}"
+      hold_time: "{{ ce_bgp_neighbor_hold_time | default('omit', True) }}"
+      is_bfd_block: "{{ ce_bgp_neighbor_is_bfd_block | default('omit', True) }}"
+      tcp_MSS: "{{ ce_bgp_neighbor_tcp_MSS | default('omit', True) }}"
+      is_bfd_enable: "{{ ce_bgp_neighbor_is_bfd_enable | default('omit', True) }}"
+      route_refresh: "{{ ce_bgp_neighbor_route_refresh | default('omit', True) }}"
+      peer_addr: "{{ ce_bgp_neighbor_peer_addr | default('omit', True) }}"
+      pswd_type: "{{ ce_bgp_neighbor_pswd_type | default('omit', True) }}"
+      mpls_local_ifnet_disable: "{{ ce_bgp_neighbor_mpls_local_ifnet_disable | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_bgp_neighbor"
+      ce_bgp_neighbor: "{{ ce_bgp_neighbor }}"

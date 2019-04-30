@@ -1,0 +1,29 @@
+---
+- name: "module_bigip_gtm_pool_member"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_gtm_pool_member: 
+      password: "{{ bigip_gtm_pool_member_password | default('omit', True) }}"
+      virtual_server: "{{ bigip_gtm_pool_member_virtual_server | default('omit', True) }}"
+      ratio: "{{ bigip_gtm_pool_member_ratio | default('omit', True) }}"
+      description: "{{ bigip_gtm_pool_member_description | default('omit', True) }}"
+      limits: "{{ bigip_gtm_pool_member_limits | default('omit', True) }}"
+      type: "{{ bigip_gtm_pool_member_type | default('omit', True) }}"
+      server_name: "{{ bigip_gtm_pool_member_server_name | default('omit', True) }}"
+      partition: "{{ bigip_gtm_pool_member_partition | default('omit', True) }}"
+      member_order: "{{ bigip_gtm_pool_member_member_order | default('omit', True) }}"
+      state: "{{ bigip_gtm_pool_member_state | default('omit', True) }}"
+      user: "{{ bigip_gtm_pool_member_user | default('omit', True) }}"
+      server_port: "{{ bigip_gtm_pool_member_server_port | default('omit', True) }}"
+      provider: "{{ bigip_gtm_pool_member_provider | default('omit', True) }}"
+      server: "{{ bigip_gtm_pool_member_server | default('omit', True) }}"
+      validate_certs: "{{ bigip_gtm_pool_member_validate_certs | default('omit', True) }}"
+      pool: "{{ bigip_gtm_pool_member_pool | default('omit', True) }}"
+      monitor: "{{ bigip_gtm_pool_member_monitor | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_gtm_pool_member"
+      bigip_gtm_pool_member: "{{ bigip_gtm_pool_member }}"

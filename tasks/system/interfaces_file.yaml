@@ -1,0 +1,20 @@
+---
+- name: "module_interfaces_file"
+  interfaces_file: "{{ interfaces_file }}"
+  vars:
+    interfaces_file: 
+      iface: "{{ interfaces_file_iface | default(omit, True) }}"
+      group: "{{ interfaces_file_group | default(omit, True) }}"
+      option: "{{ interfaces_file_option | default(omit, True) }}"
+      dest: "{{ interfaces_file_dest | default(omit, True) }}"
+      selevel: "{{ interfaces_file_selevel | default(omit, True) }}"
+      seuser: "{{ interfaces_file_seuser | default(omit, True) }}"
+      state: "{{ interfaces_file_state | default(omit, True) }}"
+      value: "{{ interfaces_file_value | default(omit, True) }}"
+      unsafe_writes: "{{ interfaces_file_unsafe_writes | default(omit, True) }}"
+      serole: "{{ interfaces_file_serole | default(omit, True) }}"
+      mode: "{{ interfaces_file_mode | default(omit, True) }}"
+      owner: "{{ interfaces_file_owner | default(omit, True) }}"
+      attributes: "{{ interfaces_file_attributes | default(omit, True) }}"
+      backup: "{{ interfaces_file_backup | default(omit, True) }}"
+      setype: "{{ interfaces_file_setype | default(omit, True) }}"

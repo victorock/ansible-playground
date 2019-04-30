@@ -1,0 +1,8 @@
+---
+- name: "module_pear"
+  pear: "{{ pear }}"
+  vars:
+    pear: 
+      state: "{{ pear_state | default(omit, True) }}"
+      executable: "{{ pear_executable | default(omit, True) }}"
+      name: "{{ pear_name | default(omit, True) }}"

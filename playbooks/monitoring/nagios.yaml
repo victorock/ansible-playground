@@ -1,0 +1,21 @@
+---
+- name: "module_nagios"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nagios: 
+      comment: "{{ nagios_comment | default('omit', True) }}"
+      servicegroup: "{{ nagios_servicegroup | default('omit', True) }}"
+      author: "{{ nagios_author | default('omit', True) }}"
+      services: "{{ nagios_services | default('omit', True) }}"
+      host: "{{ nagios_host | default('omit', True) }}"
+      command: "{{ nagios_command | default('omit', True) }}"
+      action: "{{ nagios_action | default('omit', True) }}"
+      minutes: "{{ nagios_minutes | default('omit', True) }}"
+      cmdfile: "{{ nagios_cmdfile | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nagios"
+      nagios: "{{ nagios }}"

@@ -1,0 +1,24 @@
+---
+- name: "module_na_elementsw_volume_pair"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_elementsw_volume_pair: 
+      username: "{{ na_elementsw_volume_pair_username | default('omit', True) }}"
+      src_account: "{{ na_elementsw_volume_pair_src_account | default('omit', True) }}"
+      dest_username: "{{ na_elementsw_volume_pair_dest_username | default('omit', True) }}"
+      hostname: "{{ na_elementsw_volume_pair_hostname | default('omit', True) }}"
+      dest_volume: "{{ na_elementsw_volume_pair_dest_volume | default('omit', True) }}"
+      state: "{{ na_elementsw_volume_pair_state | default('omit', True) }}"
+      dest_mvip: "{{ na_elementsw_volume_pair_dest_mvip | default('omit', True) }}"
+      mode: "{{ na_elementsw_volume_pair_mode | default('omit', True) }}"
+      dest_password: "{{ na_elementsw_volume_pair_dest_password | default('omit', True) }}"
+      password: "{{ na_elementsw_volume_pair_password | default('omit', True) }}"
+      dest_account: "{{ na_elementsw_volume_pair_dest_account | default('omit', True) }}"
+      src_volume: "{{ na_elementsw_volume_pair_src_volume | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_elementsw_volume_pair"
+      na_elementsw_volume_pair: "{{ na_elementsw_volume_pair }}"

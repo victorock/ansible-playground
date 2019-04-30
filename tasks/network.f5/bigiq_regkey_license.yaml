@@ -1,0 +1,16 @@
+---
+- name: "module_bigiq_regkey_license"
+  bigiq_regkey_license: "{{ bigiq_regkey_license }}"
+  vars:
+    bigiq_regkey_license: 
+      accept_eula: "{{ bigiq_regkey_license_accept_eula | default(omit, True) }}"
+      description: "{{ bigiq_regkey_license_description | default(omit, True) }}"
+      server: "{{ bigiq_regkey_license_server | default(omit, True) }}"
+      state: "{{ bigiq_regkey_license_state | default(omit, True) }}"
+      regkey_pool: "{{ bigiq_regkey_license_regkey_pool | default(omit, True) }}"
+      user: "{{ bigiq_regkey_license_user | default(omit, True) }}"
+      server_port: "{{ bigiq_regkey_license_server_port | default(omit, True) }}"
+      provider: "{{ bigiq_regkey_license_provider | default(omit, True) }}"
+      license_key: "{{ bigiq_regkey_license_license_key | default(omit, True) }}"
+      password: "{{ bigiq_regkey_license_password | default(omit, True) }}"
+      validate_certs: "{{ bigiq_regkey_license_validate_certs | default(omit, True) }}"

@@ -1,0 +1,16 @@
+---
+- name: "module_bigip_cli_script"
+  bigip_cli_script: "{{ bigip_cli_script }}"
+  vars:
+    bigip_cli_script: 
+      description: "{{ bigip_cli_script_description | default(omit, True) }}"
+      partition: "{{ bigip_cli_script_partition | default(omit, True) }}"
+      server: "{{ bigip_cli_script_server | default(omit, True) }}"
+      content: "{{ bigip_cli_script_content | default(omit, True) }}"
+      state: "{{ bigip_cli_script_state | default(omit, True) }}"
+      user: "{{ bigip_cli_script_user | default(omit, True) }}"
+      server_port: "{{ bigip_cli_script_server_port | default(omit, True) }}"
+      provider: "{{ bigip_cli_script_provider | default(omit, True) }}"
+      password: "{{ bigip_cli_script_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_cli_script_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_cli_script_name | default(omit, True) }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_aix_inittab"
+  aix_inittab: "{{ aix_inittab }}"
+  vars:
+    aix_inittab: 
+      name: "{{ aix_inittab_name | default(omit, True) }}"
+      insertafter: "{{ aix_inittab_insertafter | default(omit, True) }}"
+      state: "{{ aix_inittab_state | default(omit, True) }}"
+      command: "{{ aix_inittab_command | default(omit, True) }}"
+      runlevel: "{{ aix_inittab_runlevel | default(omit, True) }}"
+      action: "{{ aix_inittab_action | default(omit, True) }}"

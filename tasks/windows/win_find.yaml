@@ -1,0 +1,17 @@
+---
+- name: "module_win_find"
+  win_find: "{{ win_find }}"
+  vars:
+    win_find: 
+      paths: "{{ win_find_paths | default(omit, True) }}"
+      file_type: "{{ win_find_file_type | default(omit, True) }}"
+      checksum_algorithm: "{{ win_find_checksum_algorithm | default(omit, True) }}"
+      age: "{{ win_find_age | default(omit, True) }}"
+      recurse: "{{ win_find_recurse | default(omit, True) }}"
+      age_stamp: "{{ win_find_age_stamp | default(omit, True) }}"
+      patterns: "{{ win_find_patterns | default(omit, True) }}"
+      get_checksum: "{{ win_find_get_checksum | default(omit, True) }}"
+      use_regex: "{{ win_find_use_regex | default(omit, True) }}"
+      follow: "{{ win_find_follow | default(omit, True) }}"
+      hidden: "{{ win_find_hidden | default(omit, True) }}"
+      size: "{{ win_find_size | default(omit, True) }}"

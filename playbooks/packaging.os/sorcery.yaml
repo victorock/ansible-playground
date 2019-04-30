@@ -1,0 +1,18 @@
+---
+- name: "module_sorcery"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sorcery: 
+      name: "{{ sorcery_name | default('omit', True) }}"
+      depends: "{{ sorcery_depends | default('omit', True) }}"
+      update: "{{ sorcery_update | default('omit', True) }}"
+      state: "{{ sorcery_state | default('omit', True) }}"
+      update_cache: "{{ sorcery_update_cache | default('omit', True) }}"
+      cache_valid_time: "{{ sorcery_cache_valid_time | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sorcery"
+      sorcery: "{{ sorcery }}"

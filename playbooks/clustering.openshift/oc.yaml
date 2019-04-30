@@ -1,0 +1,21 @@
+---
+- name: "module_oc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    oc: 
+      kind: "{{ oc_kind | default('omit', True) }}"
+      name: "{{ oc_name | default('omit', True) }}"
+      namespace: "{{ oc_namespace | default('omit', True) }}"
+      state: "{{ oc_state | default('omit', True) }}"
+      host: "{{ oc_host | default('omit', True) }}"
+      token: "{{ oc_token | default('omit', True) }}"
+      inline: "{{ oc_inline | default('omit', True) }}"
+      validate_certs: "{{ oc_validate_certs | default('omit', True) }}"
+      port: "{{ oc_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_oc"
+      oc: "{{ oc }}"

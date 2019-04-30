@@ -1,0 +1,19 @@
+---
+- name: "module_bigiq_regkey_license_assignment"
+  bigiq_regkey_license_assignment: "{{ bigiq_regkey_license_assignment }}"
+  vars:
+    bigiq_regkey_license_assignment: 
+      device_username: "{{ bigiq_regkey_license_assignment_device_username | default(omit, True) }}"
+      managed: "{{ bigiq_regkey_license_assignment_managed | default(omit, True) }}"
+      server_port: "{{ bigiq_regkey_license_assignment_server_port | default(omit, True) }}"
+      server: "{{ bigiq_regkey_license_assignment_server | default(omit, True) }}"
+      state: "{{ bigiq_regkey_license_assignment_state | default(omit, True) }}"
+      device_port: "{{ bigiq_regkey_license_assignment_device_port | default(omit, True) }}"
+      user: "{{ bigiq_regkey_license_assignment_user | default(omit, True) }}"
+      key: "{{ bigiq_regkey_license_assignment_key | default(omit, True) }}"
+      provider: "{{ bigiq_regkey_license_assignment_provider | default(omit, True) }}"
+      device: "{{ bigiq_regkey_license_assignment_device | default(omit, True) }}"
+      password: "{{ bigiq_regkey_license_assignment_password | default(omit, True) }}"
+      validate_certs: "{{ bigiq_regkey_license_assignment_validate_certs | default(omit, True) }}"
+      device_password: "{{ bigiq_regkey_license_assignment_device_password | default(omit, True) }}"
+      pool: "{{ bigiq_regkey_license_assignment_pool | default(omit, True) }}"

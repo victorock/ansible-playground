@@ -1,0 +1,32 @@
+---
+- name: "module_ce_vrrp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_vrrp: 
+      gratuitous_arp_interval: "{{ ce_vrrp_gratuitous_arp_interval | default('omit', True) }}"
+      advertise_interval: "{{ ce_vrrp_advertise_interval | default('omit', True) }}"
+      auth_key: "{{ ce_vrrp_auth_key | default('omit', True) }}"
+      vrid: "{{ ce_vrrp_vrid | default('omit', True) }}"
+      vrrp_type: "{{ ce_vrrp_vrrp_type | default('omit', True) }}"
+      auth_mode: "{{ ce_vrrp_auth_mode | default('omit', True) }}"
+      priority: "{{ ce_vrrp_priority | default('omit', True) }}"
+      recover_delay: "{{ ce_vrrp_recover_delay | default('omit', True) }}"
+      state: "{{ ce_vrrp_state | default('omit', True) }}"
+      version: "{{ ce_vrrp_version | default('omit', True) }}"
+      virtual_ip: "{{ ce_vrrp_virtual_ip | default('omit', True) }}"
+      admin_interface: "{{ ce_vrrp_admin_interface | default('omit', True) }}"
+      admin_ignore_if_down: "{{ ce_vrrp_admin_ignore_if_down | default('omit', True) }}"
+      interface: "{{ ce_vrrp_interface | default('omit', True) }}"
+      fast_resume: "{{ ce_vrrp_fast_resume | default('omit', True) }}"
+      admin_flowdown: "{{ ce_vrrp_admin_flowdown | default('omit', True) }}"
+      holding_multiplier: "{{ ce_vrrp_holding_multiplier | default('omit', True) }}"
+      preempt_timer_delay: "{{ ce_vrrp_preempt_timer_delay | default('omit', True) }}"
+      admin_vrid: "{{ ce_vrrp_admin_vrid | default('omit', True) }}"
+      is_plain: "{{ ce_vrrp_is_plain | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_vrrp"
+      ce_vrrp: "{{ ce_vrrp }}"

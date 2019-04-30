@@ -1,0 +1,22 @@
+---
+- name: "module_gcp_sql_database"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_sql_database: 
+      scopes: "{{ gcp_sql_database_scopes | default('omit', True) }}"
+      name: "{{ gcp_sql_database_name | default('omit', True) }}"
+      service_account_email: "{{ gcp_sql_database_service_account_email | default('omit', True) }}"
+      charset: "{{ gcp_sql_database_charset | default('omit', True) }}"
+      project: "{{ gcp_sql_database_project | default('omit', True) }}"
+      instance: "{{ gcp_sql_database_instance | default('omit', True) }}"
+      state: "{{ gcp_sql_database_state | default('omit', True) }}"
+      collation: "{{ gcp_sql_database_collation | default('omit', True) }}"
+      auth_kind: "{{ gcp_sql_database_auth_kind | default('omit', True) }}"
+      service_account_file: "{{ gcp_sql_database_service_account_file | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_sql_database"
+      gcp_sql_database: "{{ gcp_sql_database }}"

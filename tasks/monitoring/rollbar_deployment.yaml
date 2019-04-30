@@ -1,0 +1,13 @@
+---
+- name: "module_rollbar_deployment"
+  rollbar_deployment: "{{ rollbar_deployment }}"
+  vars:
+    rollbar_deployment: 
+      comment: "{{ rollbar_deployment_comment | default(omit, True) }}"
+      rollbar_user: "{{ rollbar_deployment_rollbar_user | default(omit, True) }}"
+      url: "{{ rollbar_deployment_url | default(omit, True) }}"
+      environment: "{{ rollbar_deployment_environment | default(omit, True) }}"
+      token: "{{ rollbar_deployment_token | default(omit, True) }}"
+      user: "{{ rollbar_deployment_user | default(omit, True) }}"
+      validate_certs: "{{ rollbar_deployment_validate_certs | default(omit, True) }}"
+      revision: "{{ rollbar_deployment_revision | default(omit, True) }}"

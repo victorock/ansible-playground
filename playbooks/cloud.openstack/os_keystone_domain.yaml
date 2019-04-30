@@ -1,0 +1,29 @@
+---
+- name: "module_os_keystone_domain"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_keystone_domain: 
+      auth_type: "{{ os_keystone_domain_auth_type | default('omit', True) }}"
+      timeout: "{{ os_keystone_domain_timeout | default('omit', True) }}"
+      description: "{{ os_keystone_domain_description | default('omit', True) }}"
+      region_name: "{{ os_keystone_domain_region_name | default('omit', True) }}"
+      availability_zone: "{{ os_keystone_domain_availability_zone | default('omit', True) }}"
+      verify: "{{ os_keystone_domain_verify | default('omit', True) }}"
+      api_timeout: "{{ os_keystone_domain_api_timeout | default('omit', True) }}"
+      enabled: "{{ os_keystone_domain_enabled | default('omit', True) }}"
+      state: "{{ os_keystone_domain_state | default('omit', True) }}"
+      auth: "{{ os_keystone_domain_auth | default('omit', True) }}"
+      cacert: "{{ os_keystone_domain_cacert | default('omit', True) }}"
+      cert: "{{ os_keystone_domain_cert | default('omit', True) }}"
+      key: "{{ os_keystone_domain_key | default('omit', True) }}"
+      interface: "{{ os_keystone_domain_interface | default('omit', True) }}"
+      wait: "{{ os_keystone_domain_wait | default('omit', True) }}"
+      cloud: "{{ os_keystone_domain_cloud | default('omit', True) }}"
+      name: "{{ os_keystone_domain_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_keystone_domain"
+      os_keystone_domain: "{{ os_keystone_domain }}"

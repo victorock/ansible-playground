@@ -1,0 +1,18 @@
+---
+- name: "module_at"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    at: 
+      count: "{{ at_count | default('omit', True) }}"
+      state: "{{ at_state | default('omit', True) }}"
+      command: "{{ at_command | default('omit', True) }}"
+      units: "{{ at_units | default('omit', True) }}"
+      unique: "{{ at_unique | default('omit', True) }}"
+      script_file: "{{ at_script_file | default('omit', True) }}"
+  tasks:
+    - name: "plugin_at"
+      at: "{{ at }}"

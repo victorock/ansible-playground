@@ -1,0 +1,22 @@
+---
+- name: "module_avi_customipamdnsprofile"
+  avi_customipamdnsprofile: "{{ avi_customipamdnsprofile }}"
+  vars:
+    avi_customipamdnsprofile: 
+      username: "{{ avi_customipamdnsprofile_username | default(omit, True) }}"
+      script_params: "{{ avi_customipamdnsprofile_script_params | default(omit, True) }}"
+      uuid: "{{ avi_customipamdnsprofile_uuid | default(omit, True) }}"
+      state: "{{ avi_customipamdnsprofile_state | default(omit, True) }}"
+      url: "{{ avi_customipamdnsprofile_url | default(omit, True) }}"
+      tenant_ref: "{{ avi_customipamdnsprofile_tenant_ref | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_customipamdnsprofile_avi_api_patch_op | default(omit, True) }}"
+      api_version: "{{ avi_customipamdnsprofile_api_version | default(omit, True) }}"
+      script_uri: "{{ avi_customipamdnsprofile_script_uri | default(omit, True) }}"
+      avi_credentials: "{{ avi_customipamdnsprofile_avi_credentials | default(omit, True) }}"
+      tenant: "{{ avi_customipamdnsprofile_tenant | default(omit, True) }}"
+      api_context: "{{ avi_customipamdnsprofile_api_context | default(omit, True) }}"
+      password: "{{ avi_customipamdnsprofile_password | default(omit, True) }}"
+      tenant_uuid: "{{ avi_customipamdnsprofile_tenant_uuid | default(omit, True) }}"
+      controller: "{{ avi_customipamdnsprofile_controller | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_customipamdnsprofile_avi_api_update_method | default(omit, True) }}"
+      name: "{{ avi_customipamdnsprofile_name | default(omit, True) }}"

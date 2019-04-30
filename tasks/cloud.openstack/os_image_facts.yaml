@@ -1,0 +1,19 @@
+---
+- name: "module_os_image_facts"
+  os_image_facts: "{{ os_image_facts }}"
+  vars:
+    os_image_facts: 
+      auth_type: "{{ os_image_facts_auth_type | default(omit, True) }}"
+      region_name: "{{ os_image_facts_region_name | default(omit, True) }}"
+      availability_zone: "{{ os_image_facts_availability_zone | default(omit, True) }}"
+      verify: "{{ os_image_facts_verify | default(omit, True) }}"
+      image: "{{ os_image_facts_image | default(omit, True) }}"
+      api_timeout: "{{ os_image_facts_api_timeout | default(omit, True) }}"
+      timeout: "{{ os_image_facts_timeout | default(omit, True) }}"
+      auth: "{{ os_image_facts_auth | default(omit, True) }}"
+      cacert: "{{ os_image_facts_cacert | default(omit, True) }}"
+      cert: "{{ os_image_facts_cert | default(omit, True) }}"
+      key: "{{ os_image_facts_key | default(omit, True) }}"
+      interface: "{{ os_image_facts_interface | default(omit, True) }}"
+      cloud: "{{ os_image_facts_cloud | default(omit, True) }}"
+      wait: "{{ os_image_facts_wait | default(omit, True) }}"

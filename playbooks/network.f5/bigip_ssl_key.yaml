@@ -1,0 +1,23 @@
+---
+- name: "module_bigip_ssl_key"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_ssl_key: 
+      name: "{{ bigip_ssl_key_name | default('omit', True) }}"
+      partition: "{{ bigip_ssl_key_partition | default('omit', True) }}"
+      server: "{{ bigip_ssl_key_server | default('omit', True) }}"
+      content: "{{ bigip_ssl_key_content | default('omit', True) }}"
+      state: "{{ bigip_ssl_key_state | default('omit', True) }}"
+      server_port: "{{ bigip_ssl_key_server_port | default('omit', True) }}"
+      user: "{{ bigip_ssl_key_user | default('omit', True) }}"
+      passphrase: "{{ bigip_ssl_key_passphrase | default('omit', True) }}"
+      provider: "{{ bigip_ssl_key_provider | default('omit', True) }}"
+      password: "{{ bigip_ssl_key_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_ssl_key_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_ssl_key"
+      bigip_ssl_key: "{{ bigip_ssl_key }}"

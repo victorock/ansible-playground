@@ -1,0 +1,20 @@
+---
+- name: "module_ipmi_boot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ipmi_boot: 
+      bootdev: "{{ ipmi_boot_bootdev | default('omit', True) }}"
+      name: "{{ ipmi_boot_name | default('omit', True) }}"
+      persistent: "{{ ipmi_boot_persistent | default('omit', True) }}"
+      uefiboot: "{{ ipmi_boot_uefiboot | default('omit', True) }}"
+      state: "{{ ipmi_boot_state | default('omit', True) }}"
+      user: "{{ ipmi_boot_user | default('omit', True) }}"
+      password: "{{ ipmi_boot_password | default('omit', True) }}"
+      port: "{{ ipmi_boot_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ipmi_boot"
+      ipmi_boot: "{{ ipmi_boot }}"

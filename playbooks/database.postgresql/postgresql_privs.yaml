@@ -1,0 +1,31 @@
+---
+- name: "module_postgresql_privs"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_privs: 
+      unix_socket: "{{ postgresql_privs_unix_socket | default('omit', True) }}"
+      objs: "{{ postgresql_privs_objs | default('omit', True) }}"
+      ssl_rootcert: "{{ postgresql_privs_ssl_rootcert | default('omit', True) }}"
+      ssl_mode: "{{ postgresql_privs_ssl_mode | default('omit', True) }}"
+      roles: "{{ postgresql_privs_roles | default('omit', True) }}"
+      privs: "{{ postgresql_privs_privs | default('omit', True) }}"
+      login_user: "{{ postgresql_privs_login_user | default('omit', True) }}"
+      login_host: "{{ postgresql_privs_login_host | default('omit', True) }}"
+      database: "{{ postgresql_privs_database | default('omit', True) }}"
+      state: "{{ postgresql_privs_state | default('omit', True) }}"
+      login_unix_socket: "{{ postgresql_privs_login_unix_socket | default('omit', True) }}"
+      host: "{{ postgresql_privs_host | default('omit', True) }}"
+      login_password: "{{ postgresql_privs_login_password | default('omit', True) }}"
+      login: "{{ postgresql_privs_login | default('omit', True) }}"
+      password: "{{ postgresql_privs_password | default('omit', True) }}"
+      type: "{{ postgresql_privs_type | default('omit', True) }}"
+      port: "{{ postgresql_privs_port | default('omit', True) }}"
+      grant_option: "{{ postgresql_privs_grant_option | default('omit', True) }}"
+      schema: "{{ postgresql_privs_schema | default('omit', True) }}"
+  tasks:
+    - name: "plugin_postgresql_privs"
+      postgresql_privs: "{{ postgresql_privs }}"

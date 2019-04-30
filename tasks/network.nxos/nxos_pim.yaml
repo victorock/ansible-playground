@@ -1,0 +1,7 @@
+---
+- name: "module_nxos_pim"
+  nxos_pim: "{{ nxos_pim }}"
+  vars:
+    nxos_pim: 
+      ssm_range: "{{ nxos_pim_ssm_range | default(omit, True) }}"
+      provider: "{{ nxos_pim_provider | default(omit, True) }}"

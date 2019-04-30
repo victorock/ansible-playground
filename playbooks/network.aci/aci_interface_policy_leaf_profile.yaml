@@ -1,0 +1,26 @@
+---
+- name: "module_aci_interface_policy_leaf_profile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_interface_policy_leaf_profile: 
+      username: "{{ aci_interface_policy_leaf_profile_username | default('omit', True) }}"
+      private_key: "{{ aci_interface_policy_leaf_profile_private_key | default('omit', True) }}"
+      description: "{{ aci_interface_policy_leaf_profile_description | default('omit', True) }}"
+      certificate_name: "{{ aci_interface_policy_leaf_profile_certificate_name | default('omit', True) }}"
+      state: "{{ aci_interface_policy_leaf_profile_state | default('omit', True) }}"
+      output_level: "{{ aci_interface_policy_leaf_profile_output_level | default('omit', True) }}"
+      host: "{{ aci_interface_policy_leaf_profile_host | default('omit', True) }}"
+      leaf_interface_profile: "{{ aci_interface_policy_leaf_profile_leaf_interface_profile | default('omit', True) }}"
+      timeout: "{{ aci_interface_policy_leaf_profile_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_interface_policy_leaf_profile_use_ssl | default('omit', True) }}"
+      password: "{{ aci_interface_policy_leaf_profile_password | default('omit', True) }}"
+      validate_certs: "{{ aci_interface_policy_leaf_profile_validate_certs | default('omit', True) }}"
+      port: "{{ aci_interface_policy_leaf_profile_port | default('omit', True) }}"
+      use_proxy: "{{ aci_interface_policy_leaf_profile_use_proxy | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_interface_policy_leaf_profile"
+      aci_interface_policy_leaf_profile: "{{ aci_interface_policy_leaf_profile }}"

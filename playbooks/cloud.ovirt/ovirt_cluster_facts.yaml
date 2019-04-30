@@ -1,0 +1,16 @@
+---
+- name: "module_ovirt_cluster_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_cluster_facts: 
+      pattern: "{{ ovirt_cluster_facts_pattern | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_cluster_facts_fetch_nested | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_cluster_facts_nested_attributes | default('omit', True) }}"
+      auth: "{{ ovirt_cluster_facts_auth | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_cluster_facts"
+      ovirt_cluster_facts: "{{ ovirt_cluster_facts }}"

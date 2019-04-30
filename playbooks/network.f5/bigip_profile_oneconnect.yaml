@@ -1,0 +1,30 @@
+---
+- name: "module_bigip_profile_oneconnect"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_profile_oneconnect: 
+      idle_timeout_override: "{{ bigip_profile_oneconnect_idle_timeout_override | default('omit', True) }}"
+      source_mask: "{{ bigip_profile_oneconnect_source_mask | default('omit', True) }}"
+      description: "{{ bigip_profile_oneconnect_description | default('omit', True) }}"
+      parent: "{{ bigip_profile_oneconnect_parent | default('omit', True) }}"
+      maximum_reuse: "{{ bigip_profile_oneconnect_maximum_reuse | default('omit', True) }}"
+      partition: "{{ bigip_profile_oneconnect_partition | default('omit', True) }}"
+      maximum_age: "{{ bigip_profile_oneconnect_maximum_age | default('omit', True) }}"
+      limit_type: "{{ bigip_profile_oneconnect_limit_type | default('omit', True) }}"
+      server: "{{ bigip_profile_oneconnect_server | default('omit', True) }}"
+      state: "{{ bigip_profile_oneconnect_state | default('omit', True) }}"
+      user: "{{ bigip_profile_oneconnect_user | default('omit', True) }}"
+      server_port: "{{ bigip_profile_oneconnect_server_port | default('omit', True) }}"
+      provider: "{{ bigip_profile_oneconnect_provider | default('omit', True) }}"
+      share_pools: "{{ bigip_profile_oneconnect_share_pools | default('omit', True) }}"
+      password: "{{ bigip_profile_oneconnect_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_profile_oneconnect_validate_certs | default('omit', True) }}"
+      maximum_size: "{{ bigip_profile_oneconnect_maximum_size | default('omit', True) }}"
+      name: "{{ bigip_profile_oneconnect_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_profile_oneconnect"
+      bigip_profile_oneconnect: "{{ bigip_profile_oneconnect }}"

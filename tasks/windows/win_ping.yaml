@@ -1,0 +1,6 @@
+---
+- name: "module_win_ping"
+  win_ping: "{{ win_ping }}"
+  vars:
+    win_ping: 
+      data: "{{ win_ping_data | default(omit, True) }}"

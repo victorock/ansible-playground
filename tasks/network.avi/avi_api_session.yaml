@@ -1,0 +1,18 @@
+---
+- name: "module_avi_api_session"
+  avi_api_session: "{{ avi_api_session }}"
+  vars:
+    avi_api_session: 
+      username: "{{ avi_api_session_username | default(omit, True) }}"
+      avi_credentials: "{{ avi_api_session_avi_credentials | default(omit, True) }}"
+      controller: "{{ avi_api_session_controller | default(omit, True) }}"
+      http_method: "{{ avi_api_session_http_method | default(omit, True) }}"
+      params: "{{ avi_api_session_params | default(omit, True) }}"
+      api_version: "{{ avi_api_session_api_version | default(omit, True) }}"
+      timeout: "{{ avi_api_session_timeout | default(omit, True) }}"
+      api_context: "{{ avi_api_session_api_context | default(omit, True) }}"
+      path: "{{ avi_api_session_path | default(omit, True) }}"
+      password: "{{ avi_api_session_password | default(omit, True) }}"
+      data: "{{ avi_api_session_data | default(omit, True) }}"
+      tenant_uuid: "{{ avi_api_session_tenant_uuid | default(omit, True) }}"
+      tenant: "{{ avi_api_session_tenant | default(omit, True) }}"

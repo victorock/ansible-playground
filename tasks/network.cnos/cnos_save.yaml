@@ -1,0 +1,11 @@
+---
+- name: "module_cnos_save"
+  cnos_save: "{{ cnos_save }}"
+  vars:
+    cnos_save: 
+      username: "{{ cnos_save_username | default(omit, True) }}"
+      outputfile: "{{ cnos_save_outputfile | default(omit, True) }}"
+      host: "{{ cnos_save_host | default(omit, True) }}"
+      deviceType: "{{ cnos_save_deviceType | default(omit, True) }}"
+      password: "{{ cnos_save_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_save_enablePassword | default(omit, True) }}"

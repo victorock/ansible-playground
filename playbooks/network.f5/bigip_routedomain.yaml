@@ -1,0 +1,31 @@
+---
+- name: "module_bigip_routedomain"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_routedomain: 
+      flow_eviction_policy: "{{ bigip_routedomain_flow_eviction_policy | default('omit', True) }}"
+      password: "{{ bigip_routedomain_password | default('omit', True) }}"
+      service_policy: "{{ bigip_routedomain_service_policy | default('omit', True) }}"
+      description: "{{ bigip_routedomain_description | default('omit', True) }}"
+      parent: "{{ bigip_routedomain_parent | default('omit', True) }}"
+      user: "{{ bigip_routedomain_user | default('omit', True) }}"
+      partition: "{{ bigip_routedomain_partition | default('omit', True) }}"
+      connection_limit: "{{ bigip_routedomain_connection_limit | default('omit', True) }}"
+      server: "{{ bigip_routedomain_server | default('omit', True) }}"
+      strict: "{{ bigip_routedomain_strict | default('omit', True) }}"
+      state: "{{ bigip_routedomain_state | default('omit', True) }}"
+      bwc_policy: "{{ bigip_routedomain_bwc_policy | default('omit', True) }}"
+      routing_protocol: "{{ bigip_routedomain_routing_protocol | default('omit', True) }}"
+      server_port: "{{ bigip_routedomain_server_port | default('omit', True) }}"
+      provider: "{{ bigip_routedomain_provider | default('omit', True) }}"
+      vlans: "{{ bigip_routedomain_vlans | default('omit', True) }}"
+      validate_certs: "{{ bigip_routedomain_validate_certs | default('omit', True) }}"
+      id: "{{ bigip_routedomain_id | default('omit', True) }}"
+      name: "{{ bigip_routedomain_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_routedomain"
+      bigip_routedomain: "{{ bigip_routedomain }}"

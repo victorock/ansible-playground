@@ -1,0 +1,18 @@
+---
+- name: "module_vultr_dns_domain_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vultr_dns_domain_facts: 
+      api_retries: "{{ vultr_dns_domain_facts_api_retries | default('omit', True) }}"
+      api_timeout: "{{ vultr_dns_domain_facts_api_timeout | default('omit', True) }}"
+      api_endpoint: "{{ vultr_dns_domain_facts_api_endpoint | default('omit', True) }}"
+      api_account: "{{ vultr_dns_domain_facts_api_account | default('omit', True) }}"
+      api_key: "{{ vultr_dns_domain_facts_api_key | default('omit', True) }}"
+      validate_certs: "{{ vultr_dns_domain_facts_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vultr_dns_domain_facts"
+      vultr_dns_domain_facts: "{{ vultr_dns_domain_facts }}"

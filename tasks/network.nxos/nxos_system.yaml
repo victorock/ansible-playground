@@ -1,0 +1,13 @@
+---
+- name: "module_nxos_system"
+  nxos_system: "{{ nxos_system }}"
+  vars:
+    nxos_system: 
+      domain_search: "{{ nxos_system_domain_search | default(omit, True) }}"
+      hostname: "{{ nxos_system_hostname | default(omit, True) }}"
+      system_mtu: "{{ nxos_system_system_mtu | default(omit, True) }}"
+      domain_name: "{{ nxos_system_domain_name | default(omit, True) }}"
+      name_servers: "{{ nxos_system_name_servers | default(omit, True) }}"
+      state: "{{ nxos_system_state | default(omit, True) }}"
+      provider: "{{ nxos_system_provider | default(omit, True) }}"
+      domain_lookup: "{{ nxos_system_domain_lookup | default(omit, True) }}"

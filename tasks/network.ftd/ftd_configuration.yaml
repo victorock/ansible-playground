@@ -1,0 +1,11 @@
+---
+- name: "module_ftd_configuration"
+  ftd_configuration: "{{ ftd_configuration }}"
+  vars:
+    ftd_configuration: 
+      query_params: "{{ ftd_configuration_query_params | default(omit, True) }}"
+      path_params: "{{ ftd_configuration_path_params | default(omit, True) }}"
+      register_as: "{{ ftd_configuration_register_as | default(omit, True) }}"
+      filters: "{{ ftd_configuration_filters | default(omit, True) }}"
+      operation: "{{ ftd_configuration_operation | default(omit, True) }}"
+      data: "{{ ftd_configuration_data | default(omit, True) }}"

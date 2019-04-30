@@ -1,0 +1,21 @@
+---
+- name: "module_systemd"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    systemd: 
+      no_block: "{{ systemd_no_block | default('omit', True) }}"
+      force: "{{ systemd_force | default('omit', True) }}"
+      name: "{{ systemd_name | default('omit', True) }}"
+      enabled: "{{ systemd_enabled | default('omit', True) }}"
+      daemon_reload: "{{ systemd_daemon_reload | default('omit', True) }}"
+      state: "{{ systemd_state | default('omit', True) }}"
+      user: "{{ systemd_user | default('omit', True) }}"
+      scope: "{{ systemd_scope | default('omit', True) }}"
+      masked: "{{ systemd_masked | default('omit', True) }}"
+  tasks:
+    - name: "plugin_systemd"
+      systemd: "{{ systemd }}"

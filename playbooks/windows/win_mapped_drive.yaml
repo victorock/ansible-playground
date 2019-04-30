@@ -1,0 +1,17 @@
+---
+- name: "module_win_mapped_drive"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_mapped_drive: 
+      username: "{{ win_mapped_drive_username | default('omit', True) }}"
+      path: "{{ win_mapped_drive_path | default('omit', True) }}"
+      state: "{{ win_mapped_drive_state | default('omit', True) }}"
+      password: "{{ win_mapped_drive_password | default('omit', True) }}"
+      letter: "{{ win_mapped_drive_letter | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_mapped_drive"
+      win_mapped_drive: "{{ win_mapped_drive }}"

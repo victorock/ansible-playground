@@ -1,0 +1,16 @@
+---
+- name: "module_github_release"
+  github_release: "{{ github_release }}"
+  vars:
+    github_release: 
+      body: "{{ github_release_body | default(omit, True) }}"
+      name: "{{ github_release_name | default(omit, True) }}"
+      repo: "{{ github_release_repo | default(omit, True) }}"
+      token: "{{ github_release_token | default(omit, True) }}"
+      tag: "{{ github_release_tag | default(omit, True) }}"
+      prerelease: "{{ github_release_prerelease | default(omit, True) }}"
+      user: "{{ github_release_user | default(omit, True) }}"
+      action: "{{ github_release_action | default(omit, True) }}"
+      draft: "{{ github_release_draft | default(omit, True) }}"
+      password: "{{ github_release_password | default(omit, True) }}"
+      target: "{{ github_release_target | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_ucs_vlans"
+  ucs_vlans: "{{ ucs_vlans }}"
+  vars:
+    ucs_vlans: 
+      username: "{{ ucs_vlans_username | default(omit, True) }}"
+      use_proxy: "{{ ucs_vlans_use_proxy | default(omit, True) }}"
+      sharing: "{{ ucs_vlans_sharing | default(omit, True) }}"
+      name: "{{ ucs_vlans_name | default(omit, True) }}"
+      multicast_policy: "{{ ucs_vlans_multicast_policy | default(omit, True) }}"
+      fabric: "{{ ucs_vlans_fabric | default(omit, True) }}"
+      hostname: "{{ ucs_vlans_hostname | default(omit, True) }}"
+      id: "{{ ucs_vlans_id | default(omit, True) }}"
+      state: "{{ ucs_vlans_state | default(omit, True) }}"
+      proxy: "{{ ucs_vlans_proxy | default(omit, True) }}"
+      use_ssl: "{{ ucs_vlans_use_ssl | default(omit, True) }}"
+      password: "{{ ucs_vlans_password | default(omit, True) }}"
+      port: "{{ ucs_vlans_port | default(omit, True) }}"
+      native: "{{ ucs_vlans_native | default(omit, True) }}"

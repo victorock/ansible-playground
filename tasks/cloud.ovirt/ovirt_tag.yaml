@@ -1,0 +1,17 @@
+---
+- name: "module_ovirt_tag"
+  ovirt_tag: "{{ ovirt_tag }}"
+  vars:
+    ovirt_tag: 
+      description: "{{ ovirt_tag_description | default(omit, True) }}"
+      parent: "{{ ovirt_tag_parent | default(omit, True) }}"
+      poll_interval: "{{ ovirt_tag_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_tag_state | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_tag_nested_attributes | default(omit, True) }}"
+      name: "{{ ovirt_tag_name | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_tag_fetch_nested | default(omit, True) }}"
+      hosts: "{{ ovirt_tag_hosts | default(omit, True) }}"
+      auth: "{{ ovirt_tag_auth | default(omit, True) }}"
+      timeout: "{{ ovirt_tag_timeout | default(omit, True) }}"
+      vms: "{{ ovirt_tag_vms | default(omit, True) }}"
+      wait: "{{ ovirt_tag_wait | default(omit, True) }}"

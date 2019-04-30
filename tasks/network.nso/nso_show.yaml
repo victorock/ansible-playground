@@ -1,0 +1,11 @@
+---
+- name: "module_nso_show"
+  nso_show: "{{ nso_show }}"
+  vars:
+    nso_show: 
+      username: "{{ nso_show_username | default(omit, True) }}"
+      url: "{{ nso_show_url | default(omit, True) }}"
+      operational: "{{ nso_show_operational | default(omit, True) }}"
+      timeout: "{{ nso_show_timeout | default(omit, True) }}"
+      path: "{{ nso_show_path | default(omit, True) }}"
+      password: "{{ nso_show_password | default(omit, True) }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_vyos_command"
+  vyos_command: "{{ vyos_command }}"
+  vars:
+    vyos_command: 
+      retries: "{{ vyos_command_retries | default(omit, True) }}"
+      commands: "{{ vyos_command_commands | default(omit, True) }}"
+      interval: "{{ vyos_command_interval | default(omit, True) }}"
+      provider: "{{ vyos_command_provider | default(omit, True) }}"
+      wait_for: "{{ vyos_command_wait_for | default(omit, True) }}"
+      match: "{{ vyos_command_match | default(omit, True) }}"

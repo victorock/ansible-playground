@@ -1,0 +1,18 @@
+---
+- name: "module_openbsd_pkg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    openbsd_pkg: 
+      ports_dir: "{{ openbsd_pkg_ports_dir | default('omit', True) }}"
+      state: "{{ openbsd_pkg_state | default('omit', True) }}"
+      build: "{{ openbsd_pkg_build | default('omit', True) }}"
+      clean: "{{ openbsd_pkg_clean | default('omit', True) }}"
+      quick: "{{ openbsd_pkg_quick | default('omit', True) }}"
+      name: "{{ openbsd_pkg_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_openbsd_pkg"
+      openbsd_pkg: "{{ openbsd_pkg }}"

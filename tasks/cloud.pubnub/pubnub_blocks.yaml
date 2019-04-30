@@ -1,0 +1,17 @@
+---
+- name: "module_pubnub_blocks"
+  pubnub_blocks: "{{ pubnub_blocks }}"
+  vars:
+    pubnub_blocks: 
+      account: "{{ pubnub_blocks_account | default(omit, True) }}"
+      description: "{{ pubnub_blocks_description | default(omit, True) }}"
+      application: "{{ pubnub_blocks_application | default(omit, True) }}"
+      changes: "{{ pubnub_blocks_changes | default(omit, True) }}"
+      cache: "{{ pubnub_blocks_cache | default(omit, True) }}"
+      keyset: "{{ pubnub_blocks_keyset | default(omit, True) }}"
+      state: "{{ pubnub_blocks_state | default(omit, True) }}"
+      password: "{{ pubnub_blocks_password | default(omit, True) }}"
+      validate_certs: "{{ pubnub_blocks_validate_certs | default(omit, True) }}"
+      email: "{{ pubnub_blocks_email | default(omit, True) }}"
+      event_handlers: "{{ pubnub_blocks_event_handlers | default(omit, True) }}"
+      name: "{{ pubnub_blocks_name | default(omit, True) }}"

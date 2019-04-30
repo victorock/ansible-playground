@@ -1,0 +1,17 @@
+---
+- name: "module_na_ontap_license"
+  na_ontap_license: "{{ na_ontap_license }}"
+  vars:
+    na_ontap_license: 
+      username: "{{ na_ontap_license_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_license_http_port | default(omit, True) }}"
+      remove_unused: "{{ na_ontap_license_remove_unused | default(omit, True) }}"
+      hostname: "{{ na_ontap_license_hostname | default(omit, True) }}"
+      license_names: "{{ na_ontap_license_license_names | default(omit, True) }}"
+      state: "{{ na_ontap_license_state | default(omit, True) }}"
+      https: "{{ na_ontap_license_https | default(omit, True) }}"
+      remove_expired: "{{ na_ontap_license_remove_expired | default(omit, True) }}"
+      serial_number: "{{ na_ontap_license_serial_number | default(omit, True) }}"
+      password: "{{ na_ontap_license_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_license_validate_certs | default(omit, True) }}"
+      license_codes: "{{ na_ontap_license_license_codes | default(omit, True) }}"

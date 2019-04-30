@@ -1,0 +1,40 @@
+---
+- name: "module_docker_image"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    docker_image: 
+      force: "{{ docker_image_force | default('omit', True) }}"
+      docker_host: "{{ docker_image_docker_host | default('omit', True) }}"
+      tag: "{{ docker_image_tag | default('omit', True) }}"
+      path: "{{ docker_image_path | default('omit', True) }}"
+      nocache: "{{ docker_image_nocache | default('omit', True) }}"
+      load_path: "{{ docker_image_load_path | default('omit', True) }}"
+      use_tls: "{{ docker_image_use_tls | default('omit', True) }}"
+      state: "{{ docker_image_state | default('omit', True) }}"
+      key_path: "{{ docker_image_key_path | default('omit', True) }}"
+      rm: "{{ docker_image_rm | default('omit', True) }}"
+      dockerfile: "{{ docker_image_dockerfile | default('omit', True) }}"
+      api_version: "{{ docker_image_api_version | default('omit', True) }}"
+      archive_path: "{{ docker_image_archive_path | default('omit', True) }}"
+      cacert_path: "{{ docker_image_cacert_path | default('omit', True) }}"
+      buildargs: "{{ docker_image_buildargs | default('omit', True) }}"
+      repository: "{{ docker_image_repository | default('omit', True) }}"
+      tls_hostname: "{{ docker_image_tls_hostname | default('omit', True) }}"
+      push: "{{ docker_image_push | default('omit', True) }}"
+      cert_path: "{{ docker_image_cert_path | default('omit', True) }}"
+      tls: "{{ docker_image_tls | default('omit', True) }}"
+      pull: "{{ docker_image_pull | default('omit', True) }}"
+      name: "{{ docker_image_name | default('omit', True) }}"
+      container_limits: "{{ docker_image_container_limits | default('omit', True) }}"
+      http_timeout: "{{ docker_image_http_timeout | default('omit', True) }}"
+      ssl_version: "{{ docker_image_ssl_version | default('omit', True) }}"
+      tls_verify: "{{ docker_image_tls_verify | default('omit', True) }}"
+      timeout: "{{ docker_image_timeout | default('omit', True) }}"
+      debug: "{{ docker_image_debug | default('omit', True) }}"
+  tasks:
+    - name: "plugin_docker_image"
+      docker_image: "{{ docker_image }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_net_system"
+  net_system: "{{ net_system }}"
+  vars:
+    net_system: 
+      lookup_source: "{{ net_system_lookup_source | default(omit, True) }}"
+      domain_search: "{{ net_system_domain_search | default(omit, True) }}"
+      hostname: "{{ net_system_hostname | default(omit, True) }}"
+      domain_name: "{{ net_system_domain_name | default(omit, True) }}"
+      state: "{{ net_system_state | default(omit, True) }}"
+      name_servers: "{{ net_system_name_servers | default(omit, True) }}"

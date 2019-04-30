@@ -1,0 +1,35 @@
+---
+- name: "module_avi_applicationprofile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_applicationprofile: 
+      preserve_client_port: "{{ avi_applicationprofile_preserve_client_port | default('omit', True) }}"
+      dos_rl_profile: "{{ avi_applicationprofile_dos_rl_profile | default('omit', True) }}"
+      preserve_client_ip: "{{ avi_applicationprofile_preserve_client_ip | default('omit', True) }}"
+      tcp_app_profile: "{{ avi_applicationprofile_tcp_app_profile | default('omit', True) }}"
+      uuid: "{{ avi_applicationprofile_uuid | default('omit', True) }}"
+      dns_service_profile: "{{ avi_applicationprofile_dns_service_profile | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_applicationprofile_avi_api_patch_op | default('omit', True) }}"
+      state: "{{ avi_applicationprofile_state | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_applicationprofile_avi_api_update_method | default('omit', True) }}"
+      type: "{{ avi_applicationprofile_type | default('omit', True) }}"
+      api_version: "{{ avi_applicationprofile_api_version | default('omit', True) }}"
+      username: "{{ avi_applicationprofile_username | default('omit', True) }}"
+      description: "{{ avi_applicationprofile_description | default('omit', True) }}"
+      http_profile: "{{ avi_applicationprofile_http_profile | default('omit', True) }}"
+      controller: "{{ avi_applicationprofile_controller | default('omit', True) }}"
+      api_context: "{{ avi_applicationprofile_api_context | default('omit', True) }}"
+      password: "{{ avi_applicationprofile_password | default('omit', True) }}"
+      tenant: "{{ avi_applicationprofile_tenant | default('omit', True) }}"
+      name: "{{ avi_applicationprofile_name | default('omit', True) }}"
+      url: "{{ avi_applicationprofile_url | default('omit', True) }}"
+      avi_credentials: "{{ avi_applicationprofile_avi_credentials | default('omit', True) }}"
+      tenant_ref: "{{ avi_applicationprofile_tenant_ref | default('omit', True) }}"
+      tenant_uuid: "{{ avi_applicationprofile_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_applicationprofile"
+      avi_applicationprofile: "{{ avi_applicationprofile }}"

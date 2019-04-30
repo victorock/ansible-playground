@@ -1,0 +1,20 @@
+---
+- name: "module_aws_ssm_parameter_store"
+  aws_ssm_parameter_store: "{{ aws_ssm_parameter_store }}"
+  vars:
+    aws_ssm_parameter_store: 
+      profile: "{{ aws_ssm_parameter_store_profile | default(omit, True) }}"
+      decryption: "{{ aws_ssm_parameter_store_decryption | default(omit, True) }}"
+      aws_access_key: "{{ aws_ssm_parameter_store_aws_access_key | default(omit, True) }}"
+      description: "{{ aws_ssm_parameter_store_description | default(omit, True) }}"
+      security_token: "{{ aws_ssm_parameter_store_security_token | default(omit, True) }}"
+      region: "{{ aws_ssm_parameter_store_region | default(omit, True) }}"
+      aws_secret_key: "{{ aws_ssm_parameter_store_aws_secret_key | default(omit, True) }}"
+      string_type: "{{ aws_ssm_parameter_store_string_type | default(omit, True) }}"
+      value: "{{ aws_ssm_parameter_store_value | default(omit, True) }}"
+      state: "{{ aws_ssm_parameter_store_state | default(omit, True) }}"
+      ec2_url: "{{ aws_ssm_parameter_store_ec2_url | default(omit, True) }}"
+      key_id: "{{ aws_ssm_parameter_store_key_id | default(omit, True) }}"
+      overwrite_value: "{{ aws_ssm_parameter_store_overwrite_value | default(omit, True) }}"
+      validate_certs: "{{ aws_ssm_parameter_store_validate_certs | default(omit, True) }}"
+      name: "{{ aws_ssm_parameter_store_name | default(omit, True) }}"

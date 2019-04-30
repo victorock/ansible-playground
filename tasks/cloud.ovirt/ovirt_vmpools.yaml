@@ -1,0 +1,21 @@
+---
+- name: "module_ovirt_vmpools"
+  ovirt_vmpools: "{{ ovirt_vmpools }}"
+  vars:
+    ovirt_vmpools: 
+      comment: "{{ ovirt_vmpools_comment | default(omit, True) }}"
+      name: "{{ ovirt_vmpools_name | default(omit, True) }}"
+      description: "{{ ovirt_vmpools_description | default(omit, True) }}"
+      poll_interval: "{{ ovirt_vmpools_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_vmpools_state | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_vmpools_nested_attributes | default(omit, True) }}"
+      vm_per_user: "{{ ovirt_vmpools_vm_per_user | default(omit, True) }}"
+      cluster: "{{ ovirt_vmpools_cluster | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_vmpools_fetch_nested | default(omit, True) }}"
+      prestarted: "{{ ovirt_vmpools_prestarted | default(omit, True) }}"
+      auth: "{{ ovirt_vmpools_auth | default(omit, True) }}"
+      timeout: "{{ ovirt_vmpools_timeout | default(omit, True) }}"
+      template: "{{ ovirt_vmpools_template | default(omit, True) }}"
+      vm_count: "{{ ovirt_vmpools_vm_count | default(omit, True) }}"
+      type: "{{ ovirt_vmpools_type | default(omit, True) }}"
+      wait: "{{ ovirt_vmpools_wait | default(omit, True) }}"

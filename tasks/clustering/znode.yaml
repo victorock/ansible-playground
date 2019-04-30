@@ -1,0 +1,12 @@
+---
+- name: "module_znode"
+  znode: "{{ znode }}"
+  vars:
+    znode: 
+      name: "{{ znode_name | default(omit, True) }}"
+      recursive: "{{ znode_recursive | default(omit, True) }}"
+      value: "{{ znode_value | default(omit, True) }}"
+      state: "{{ znode_state | default(omit, True) }}"
+      hosts: "{{ znode_hosts | default(omit, True) }}"
+      timeout: "{{ znode_timeout | default(omit, True) }}"
+      op: "{{ znode_op | default(omit, True) }}"

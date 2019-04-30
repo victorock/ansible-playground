@@ -1,0 +1,17 @@
+---
+- name: "module_onyx_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_vlan: 
+      aggregate: "{{ onyx_vlan_aggregate | default('omit', True) }}"
+      purge: "{{ onyx_vlan_purge | default('omit', True) }}"
+      state: "{{ onyx_vlan_state | default('omit', True) }}"
+      name: "{{ onyx_vlan_name | default('omit', True) }}"
+      vlan_id: "{{ onyx_vlan_vlan_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_onyx_vlan"
+      onyx_vlan: "{{ onyx_vlan }}"

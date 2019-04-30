@@ -1,0 +1,17 @@
+---
+- name: "module_seport"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    seport: 
+      reload: "{{ seport_reload | default('omit', True) }}"
+      setype: "{{ seport_setype | default('omit', True) }}"
+      state: "{{ seport_state | default('omit', True) }}"
+      ports: "{{ seport_ports | default('omit', True) }}"
+      proto: "{{ seport_proto | default('omit', True) }}"
+  tasks:
+    - name: "plugin_seport"
+      seport: "{{ seport }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_cnos_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_vlan: 
+      username: "{{ cnos_vlan_username | default('omit', True) }}"
+      outputfile: "{{ cnos_vlan_outputfile | default('omit', True) }}"
+      vlanArg5: "{{ cnos_vlan_vlanArg5 | default('omit', True) }}"
+      host: "{{ cnos_vlan_host | default('omit', True) }}"
+      vlanArg4: "{{ cnos_vlan_vlanArg4 | default('omit', True) }}"
+      vlanArg3: "{{ cnos_vlan_vlanArg3 | default('omit', True) }}"
+      vlanArg2: "{{ cnos_vlan_vlanArg2 | default('omit', True) }}"
+      vlanArg1: "{{ cnos_vlan_vlanArg1 | default('omit', True) }}"
+      deviceType: "{{ cnos_vlan_deviceType | default('omit', True) }}"
+      password: "{{ cnos_vlan_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_vlan_enablePassword | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_vlan"
+      cnos_vlan: "{{ cnos_vlan }}"

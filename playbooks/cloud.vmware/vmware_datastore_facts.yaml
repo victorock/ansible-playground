@@ -1,0 +1,20 @@
+---
+- name: "module_vmware_datastore_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_datastore_facts: 
+      username: "{{ vmware_datastore_facts_username | default('omit', True) }}"
+      datacenter: "{{ vmware_datastore_facts_datacenter | default('omit', True) }}"
+      name: "{{ vmware_datastore_facts_name | default('omit', True) }}"
+      hostname: "{{ vmware_datastore_facts_hostname | default('omit', True) }}"
+      cluster: "{{ vmware_datastore_facts_cluster | default('omit', True) }}"
+      password: "{{ vmware_datastore_facts_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_datastore_facts_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_datastore_facts_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_datastore_facts"
+      vmware_datastore_facts: "{{ vmware_datastore_facts }}"

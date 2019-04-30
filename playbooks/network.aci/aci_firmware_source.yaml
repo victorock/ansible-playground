@@ -1,0 +1,30 @@
+---
+- name: "module_aci_firmware_source"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_firmware_source: 
+      username: "{{ aci_firmware_source_username | default('omit', True) }}"
+      url_password: "{{ aci_firmware_source_url_password | default('omit', True) }}"
+      private_key: "{{ aci_firmware_source_private_key | default('omit', True) }}"
+      use_proxy: "{{ aci_firmware_source_use_proxy | default('omit', True) }}"
+      url: "{{ aci_firmware_source_url | default('omit', True) }}"
+      certificate_name: "{{ aci_firmware_source_certificate_name | default('omit', True) }}"
+      use_ssl: "{{ aci_firmware_source_use_ssl | default('omit', True) }}"
+      url_protocol: "{{ aci_firmware_source_url_protocol | default('omit', True) }}"
+      output_level: "{{ aci_firmware_source_output_level | default('omit', True) }}"
+      source: "{{ aci_firmware_source_source | default('omit', True) }}"
+      state: "{{ aci_firmware_source_state | default('omit', True) }}"
+      timeout: "{{ aci_firmware_source_timeout | default('omit', True) }}"
+      polling_interval: "{{ aci_firmware_source_polling_interval | default('omit', True) }}"
+      host: "{{ aci_firmware_source_host | default('omit', True) }}"
+      url_username: "{{ aci_firmware_source_url_username | default('omit', True) }}"
+      password: "{{ aci_firmware_source_password | default('omit', True) }}"
+      validate_certs: "{{ aci_firmware_source_validate_certs | default('omit', True) }}"
+      port: "{{ aci_firmware_source_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_firmware_source"
+      aci_firmware_source: "{{ aci_firmware_source }}"

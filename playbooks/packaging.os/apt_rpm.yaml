@@ -1,0 +1,15 @@
+---
+- name: "module_apt_rpm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    apt_rpm: 
+      state: "{{ apt_rpm_state | default('omit', True) }}"
+      update_cache: "{{ apt_rpm_update_cache | default('omit', True) }}"
+      pkg: "{{ apt_rpm_pkg | default('omit', True) }}"
+  tasks:
+    - name: "plugin_apt_rpm"
+      apt_rpm: "{{ apt_rpm }}"

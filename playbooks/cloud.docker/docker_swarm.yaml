@@ -1,0 +1,46 @@
+---
+- name: "module_docker_swarm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    docker_swarm: 
+      rotate_worker_token: "{{ docker_swarm_rotate_worker_token | default('omit', True) }}"
+      force: "{{ docker_swarm_force | default('omit', True) }}"
+      snapshot_interval: "{{ docker_swarm_snapshot_interval | default('omit', True) }}"
+      labels: "{{ docker_swarm_labels | default('omit', True) }}"
+      docker_host: "{{ docker_swarm_docker_host | default('omit', True) }}"
+      tls_verify: "{{ docker_swarm_tls_verify | default('omit', True) }}"
+      dispatcher_heartbeat_period: "{{ docker_swarm_dispatcher_heartbeat_period | default('omit', True) }}"
+      keep_old_snapshots: "{{ docker_swarm_keep_old_snapshots | default('omit', True) }}"
+      task_history_retention_limit: "{{ docker_swarm_task_history_retention_limit | default('omit', True) }}"
+      listen_addr: "{{ docker_swarm_listen_addr | default('omit', True) }}"
+      ca_force_rotate: "{{ docker_swarm_ca_force_rotate | default('omit', True) }}"
+      state: "{{ docker_swarm_state | default('omit', True) }}"
+      key_path: "{{ docker_swarm_key_path | default('omit', True) }}"
+      api_version: "{{ docker_swarm_api_version | default('omit', True) }}"
+      cacert_path: "{{ docker_swarm_cacert_path | default('omit', True) }}"
+      autolock_managers: "{{ docker_swarm_autolock_managers | default('omit', True) }}"
+      election_tick: "{{ docker_swarm_election_tick | default('omit', True) }}"
+      tls_hostname: "{{ docker_swarm_tls_hostname | default('omit', True) }}"
+      rotate_manager_token: "{{ docker_swarm_rotate_manager_token | default('omit', True) }}"
+      cert_path: "{{ docker_swarm_cert_path | default('omit', True) }}"
+      signing_ca_cert: "{{ docker_swarm_signing_ca_cert | default('omit', True) }}"
+      name: "{{ docker_swarm_name | default('omit', True) }}"
+      tls: "{{ docker_swarm_tls | default('omit', True) }}"
+      node_cert_expiry: "{{ docker_swarm_node_cert_expiry | default('omit', True) }}"
+      log_entries_for_slow_followers: "{{ docker_swarm_log_entries_for_slow_followers | default('omit', True) }}"
+      join_token: "{{ docker_swarm_join_token | default('omit', True) }}"
+      advertise_addr: "{{ docker_swarm_advertise_addr | default('omit', True) }}"
+      heartbeat_tick: "{{ docker_swarm_heartbeat_tick | default('omit', True) }}"
+      ssl_version: "{{ docker_swarm_ssl_version | default('omit', True) }}"
+      node_id: "{{ docker_swarm_node_id | default('omit', True) }}"
+      timeout: "{{ docker_swarm_timeout | default('omit', True) }}"
+      debug: "{{ docker_swarm_debug | default('omit', True) }}"
+      signing_ca_key: "{{ docker_swarm_signing_ca_key | default('omit', True) }}"
+      remote_addrs: "{{ docker_swarm_remote_addrs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_docker_swarm"
+      docker_swarm: "{{ docker_swarm }}"

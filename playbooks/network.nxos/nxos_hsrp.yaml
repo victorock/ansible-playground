@@ -1,0 +1,22 @@
+---
+- name: "module_nxos_hsrp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_hsrp: 
+      auth_type: "{{ nxos_hsrp_auth_type | default('omit', True) }}"
+      group: "{{ nxos_hsrp_group | default('omit', True) }}"
+      auth_string: "{{ nxos_hsrp_auth_string | default('omit', True) }}"
+      vip: "{{ nxos_hsrp_vip | default('omit', True) }}"
+      preempt: "{{ nxos_hsrp_preempt | default('omit', True) }}"
+      priority: "{{ nxos_hsrp_priority | default('omit', True) }}"
+      state: "{{ nxos_hsrp_state | default('omit', True) }}"
+      version: "{{ nxos_hsrp_version | default('omit', True) }}"
+      provider: "{{ nxos_hsrp_provider | default('omit', True) }}"
+      interface: "{{ nxos_hsrp_interface | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_hsrp"
+      nxos_hsrp: "{{ nxos_hsrp }}"

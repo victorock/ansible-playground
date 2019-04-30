@@ -1,0 +1,32 @@
+---
+- name: "module_meraki_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    meraki_vlan: 
+      org_name: "{{ meraki_vlan_org_name | default('omit', True) }}"
+      subnet: "{{ meraki_vlan_subnet | default('omit', True) }}"
+      use_proxy: "{{ meraki_vlan_use_proxy | default('omit', True) }}"
+      auth_key: "{{ meraki_vlan_auth_key | default('omit', True) }}"
+      dns_nameservers: "{{ meraki_vlan_dns_nameservers | default('omit', True) }}"
+      appliance_ip: "{{ meraki_vlan_appliance_ip | default('omit', True) }}"
+      org_id: "{{ meraki_vlan_org_id | default('omit', True) }}"
+      state: "{{ meraki_vlan_state | default('omit', True) }}"
+      fixed_ip_assignments: "{{ meraki_vlan_fixed_ip_assignments | default('omit', True) }}"
+      output_level: "{{ meraki_vlan_output_level | default('omit', True) }}"
+      host: "{{ meraki_vlan_host | default('omit', True) }}"
+      vlan_id: "{{ meraki_vlan_vlan_id | default('omit', True) }}"
+      net_name: "{{ meraki_vlan_net_name | default('omit', True) }}"
+      timeout: "{{ meraki_vlan_timeout | default('omit', True) }}"
+      reserved_ip_range: "{{ meraki_vlan_reserved_ip_range | default('omit', True) }}"
+      vpn_nat_subnet: "{{ meraki_vlan_vpn_nat_subnet | default('omit', True) }}"
+      validate_certs: "{{ meraki_vlan_validate_certs | default('omit', True) }}"
+      net_id: "{{ meraki_vlan_net_id | default('omit', True) }}"
+      use_https: "{{ meraki_vlan_use_https | default('omit', True) }}"
+      name: "{{ meraki_vlan_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_meraki_vlan"
+      meraki_vlan: "{{ meraki_vlan }}"

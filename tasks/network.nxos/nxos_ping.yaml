@@ -1,0 +1,11 @@
+---
+- name: "module_nxos_ping"
+  nxos_ping: "{{ nxos_ping }}"
+  vars:
+    nxos_ping: 
+      count: "{{ nxos_ping_count | default(omit, True) }}"
+      dest: "{{ nxos_ping_dest | default(omit, True) }}"
+      source: "{{ nxos_ping_source | default(omit, True) }}"
+      state: "{{ nxos_ping_state | default(omit, True) }}"
+      vrf: "{{ nxos_ping_vrf | default(omit, True) }}"
+      provider: "{{ nxos_ping_provider | default(omit, True) }}"

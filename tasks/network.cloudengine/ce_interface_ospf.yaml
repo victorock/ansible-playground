@@ -1,0 +1,17 @@
+---
+- name: "module_ce_interface_ospf"
+  ce_interface_ospf: "{{ ce_interface_ospf }}"
+  vars:
+    ce_interface_ospf: 
+      auth_text_md5: "{{ ce_interface_ospf_auth_text_md5 | default(omit, True) }}"
+      process_id: "{{ ce_interface_ospf_process_id | default(omit, True) }}"
+      cost: "{{ ce_interface_ospf_cost | default(omit, True) }}"
+      area: "{{ ce_interface_ospf_area | default(omit, True) }}"
+      silent_interface: "{{ ce_interface_ospf_silent_interface | default(omit, True) }}"
+      auth_mode: "{{ ce_interface_ospf_auth_mode | default(omit, True) }}"
+      auth_key_id: "{{ ce_interface_ospf_auth_key_id | default(omit, True) }}"
+      auth_text_simple: "{{ ce_interface_ospf_auth_text_simple | default(omit, True) }}"
+      state: "{{ ce_interface_ospf_state | default(omit, True) }}"
+      dead_interval: "{{ ce_interface_ospf_dead_interval | default(omit, True) }}"
+      hello_interval: "{{ ce_interface_ospf_hello_interval | default(omit, True) }}"
+      interface: "{{ ce_interface_ospf_interface | default(omit, True) }}"

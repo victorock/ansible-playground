@@ -1,0 +1,27 @@
+---
+- name: "module_aci_interface_policy_port_security"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_interface_policy_port_security: 
+      username: "{{ aci_interface_policy_port_security_username | default('omit', True) }}"
+      private_key: "{{ aci_interface_policy_port_security_private_key | default('omit', True) }}"
+      max_end_points: "{{ aci_interface_policy_port_security_max_end_points | default('omit', True) }}"
+      description: "{{ aci_interface_policy_port_security_description | default('omit', True) }}"
+      certificate_name: "{{ aci_interface_policy_port_security_certificate_name | default('omit', True) }}"
+      state: "{{ aci_interface_policy_port_security_state | default('omit', True) }}"
+      output_level: "{{ aci_interface_policy_port_security_output_level | default('omit', True) }}"
+      host: "{{ aci_interface_policy_port_security_host | default('omit', True) }}"
+      port_security: "{{ aci_interface_policy_port_security_port_security | default('omit', True) }}"
+      timeout: "{{ aci_interface_policy_port_security_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_interface_policy_port_security_use_ssl | default('omit', True) }}"
+      password: "{{ aci_interface_policy_port_security_password | default('omit', True) }}"
+      validate_certs: "{{ aci_interface_policy_port_security_validate_certs | default('omit', True) }}"
+      port: "{{ aci_interface_policy_port_security_port | default('omit', True) }}"
+      use_proxy: "{{ aci_interface_policy_port_security_use_proxy | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_interface_policy_port_security"
+      aci_interface_policy_port_security: "{{ aci_interface_policy_port_security }}"

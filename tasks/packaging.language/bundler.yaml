@@ -1,0 +1,17 @@
+---
+- name: "module_bundler"
+  bundler: "{{ bundler }}"
+  vars:
+    bundler: 
+      executable: "{{ bundler_executable | default(omit, True) }}"
+      chdir: "{{ bundler_chdir | default(omit, True) }}"
+      gemfile: "{{ bundler_gemfile | default(omit, True) }}"
+      clean: "{{ bundler_clean | default(omit, True) }}"
+      user_install: "{{ bundler_user_install | default(omit, True) }}"
+      extra_args: "{{ bundler_extra_args | default(omit, True) }}"
+      state: "{{ bundler_state | default(omit, True) }}"
+      deployment_mode: "{{ bundler_deployment_mode | default(omit, True) }}"
+      binstub_directory: "{{ bundler_binstub_directory | default(omit, True) }}"
+      exclude_groups: "{{ bundler_exclude_groups | default(omit, True) }}"
+      local: "{{ bundler_local | default(omit, True) }}"
+      gem_path: "{{ bundler_gem_path | default(omit, True) }}"

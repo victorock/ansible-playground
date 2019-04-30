@@ -1,0 +1,21 @@
+---
+- name: "module_iam_cert"
+  iam_cert: "{{ iam_cert }}"
+  vars:
+    iam_cert: 
+      profile: "{{ iam_cert_profile | default(omit, True) }}"
+      aws_secret_key: "{{ iam_cert_aws_secret_key | default(omit, True) }}"
+      dup_ok: "{{ iam_cert_dup_ok | default(omit, True) }}"
+      new_path: "{{ iam_cert_new_path | default(omit, True) }}"
+      name: "{{ iam_cert_name | default(omit, True) }}"
+      security_token: "{{ iam_cert_security_token | default(omit, True) }}"
+      new_name: "{{ iam_cert_new_name | default(omit, True) }}"
+      region: "{{ iam_cert_region | default(omit, True) }}"
+      cert: "{{ iam_cert_cert | default(omit, True) }}"
+      aws_access_key: "{{ iam_cert_aws_access_key | default(omit, True) }}"
+      state: "{{ iam_cert_state | default(omit, True) }}"
+      key: "{{ iam_cert_key | default(omit, True) }}"
+      ec2_url: "{{ iam_cert_ec2_url | default(omit, True) }}"
+      path: "{{ iam_cert_path | default(omit, True) }}"
+      validate_certs: "{{ iam_cert_validate_certs | default(omit, True) }}"
+      cert_chain: "{{ iam_cert_cert_chain | default(omit, True) }}"

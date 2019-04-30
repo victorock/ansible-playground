@@ -1,0 +1,19 @@
+---
+- name: "module_win_audit_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_audit_rule: 
+      rights: "{{ win_audit_rule_rights | default('omit', True) }}"
+      audit_flags: "{{ win_audit_rule_audit_flags | default('omit', True) }}"
+      propagation_flags: "{{ win_audit_rule_propagation_flags | default('omit', True) }}"
+      state: "{{ win_audit_rule_state | default('omit', True) }}"
+      user: "{{ win_audit_rule_user | default('omit', True) }}"
+      path: "{{ win_audit_rule_path | default('omit', True) }}"
+      inheritance_flags: "{{ win_audit_rule_inheritance_flags | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_audit_rule"
+      win_audit_rule: "{{ win_audit_rule }}"

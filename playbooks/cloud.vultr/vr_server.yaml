@@ -1,0 +1,35 @@
+---
+- name: "module_vr_server"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vr_server: 
+      api_retries: "{{ vr_server_api_retries | default('omit', True) }}"
+      user_data: "{{ vr_server_user_data | default('omit', True) }}"
+      tag: "{{ vr_server_tag | default('omit', True) }}"
+      force: "{{ vr_server_force | default('omit', True) }}"
+      private_network_enabled: "{{ vr_server_private_network_enabled | default('omit', True) }}"
+      ssh_keys: "{{ vr_server_ssh_keys | default('omit', True) }}"
+      hostname: "{{ vr_server_hostname | default('omit', True) }}"
+      state: "{{ vr_server_state | default('omit', True) }}"
+      notify_activate: "{{ vr_server_notify_activate | default('omit', True) }}"
+      api_endpoint: "{{ vr_server_api_endpoint | default('omit', True) }}"
+      firewall_group: "{{ vr_server_firewall_group | default('omit', True) }}"
+      api_key: "{{ vr_server_api_key | default('omit', True) }}"
+      reserved_ip_v4: "{{ vr_server_reserved_ip_v4 | default('omit', True) }}"
+      api_timeout: "{{ vr_server_api_timeout | default('omit', True) }}"
+      plan: "{{ vr_server_plan | default('omit', True) }}"
+      api_account: "{{ vr_server_api_account | default('omit', True) }}"
+      ipv6_enabled: "{{ vr_server_ipv6_enabled | default('omit', True) }}"
+      name: "{{ vr_server_name | default('omit', True) }}"
+      os: "{{ vr_server_os | default('omit', True) }}"
+      region: "{{ vr_server_region | default('omit', True) }}"
+      auto_backup_enabled: "{{ vr_server_auto_backup_enabled | default('omit', True) }}"
+      startup_script: "{{ vr_server_startup_script | default('omit', True) }}"
+      validate_certs: "{{ vr_server_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vr_server"
+      vr_server: "{{ vr_server }}"

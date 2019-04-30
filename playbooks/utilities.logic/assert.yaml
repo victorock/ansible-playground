@@ -1,0 +1,15 @@
+---
+- name: "module_assert"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    assert: 
+      fail_msg: "{{ assert_fail_msg | default('omit', True) }}"
+      success_msg: "{{ assert_success_msg | default('omit', True) }}"
+      that: "{{ assert_that | default('omit', True) }}"
+  tasks:
+    - name: "plugin_assert"
+      assert: "{{ assert }}"

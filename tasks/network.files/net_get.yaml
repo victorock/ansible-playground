@@ -1,0 +1,8 @@
+---
+- name: "module_net_get"
+  net_get: "{{ net_get }}"
+  vars:
+    net_get: 
+      dest: "{{ net_get_dest | default(omit, True) }}"
+      src: "{{ net_get_src | default(omit, True) }}"
+      protocol: "{{ net_get_protocol | default(omit, True) }}"

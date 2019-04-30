@@ -1,0 +1,27 @@
+---
+- name: "module_gce_pd"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gce_pd: 
+      size_gb: "{{ gce_pd_size_gb | default('omit', True) }}"
+      project_id: "{{ gce_pd_project_id | default('omit', True) }}"
+      name: "{{ gce_pd_name | default('omit', True) }}"
+      zone: "{{ gce_pd_zone | default('omit', True) }}"
+      service_account_email: "{{ gce_pd_service_account_email | default('omit', True) }}"
+      image: "{{ gce_pd_image | default('omit', True) }}"
+      pem_file: "{{ gce_pd_pem_file | default('omit', True) }}"
+      instance_name: "{{ gce_pd_instance_name | default('omit', True) }}"
+      state: "{{ gce_pd_state | default('omit', True) }}"
+      snapshot: "{{ gce_pd_snapshot | default('omit', True) }}"
+      detach_only: "{{ gce_pd_detach_only | default('omit', True) }}"
+      credentials_file: "{{ gce_pd_credentials_file | default('omit', True) }}"
+      disk_type: "{{ gce_pd_disk_type | default('omit', True) }}"
+      delete_on_termination: "{{ gce_pd_delete_on_termination | default('omit', True) }}"
+      mode: "{{ gce_pd_mode | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gce_pd"
+      gce_pd: "{{ gce_pd }}"

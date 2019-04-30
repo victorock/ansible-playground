@@ -1,0 +1,11 @@
+---
+- name: "module_ce_dldp"
+  ce_dldp: "{{ ce_dldp }}"
+  vars:
+    ce_dldp: 
+      reset: "{{ ce_dldp_reset | default(omit, True) }}"
+      enable: "{{ ce_dldp_enable | default(omit, True) }}"
+      auth_pwd: "{{ ce_dldp_auth_pwd | default(omit, True) }}"
+      time_internal: "{{ ce_dldp_time_internal | default(omit, True) }}"
+      auth_mode: "{{ ce_dldp_auth_mode | default(omit, True) }}"
+      work_mode: "{{ ce_dldp_work_mode | default(omit, True) }}"

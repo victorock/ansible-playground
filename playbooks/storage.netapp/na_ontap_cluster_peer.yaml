@@ -1,0 +1,27 @@
+---
+- name: "module_na_ontap_cluster_peer"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_cluster_peer: 
+      username: "{{ na_ontap_cluster_peer_username | default('omit', True) }}"
+      dest_username: "{{ na_ontap_cluster_peer_dest_username | default('omit', True) }}"
+      http_port: "{{ na_ontap_cluster_peer_http_port | default('omit', True) }}"
+      https: "{{ na_ontap_cluster_peer_https | default('omit', True) }}"
+      dest_intercluster_lif: "{{ na_ontap_cluster_peer_dest_intercluster_lif | default('omit', True) }}"
+      hostname: "{{ na_ontap_cluster_peer_hostname | default('omit', True) }}"
+      dest_hostname: "{{ na_ontap_cluster_peer_dest_hostname | default('omit', True) }}"
+      source_cluster_name: "{{ na_ontap_cluster_peer_source_cluster_name | default('omit', True) }}"
+      state: "{{ na_ontap_cluster_peer_state | default('omit', True) }}"
+      passphrase: "{{ na_ontap_cluster_peer_passphrase | default('omit', True) }}"
+      dest_password: "{{ na_ontap_cluster_peer_dest_password | default('omit', True) }}"
+      dest_cluster_name: "{{ na_ontap_cluster_peer_dest_cluster_name | default('omit', True) }}"
+      password: "{{ na_ontap_cluster_peer_password | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_cluster_peer_validate_certs | default('omit', True) }}"
+      source_intercluster_lif: "{{ na_ontap_cluster_peer_source_intercluster_lif | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_cluster_peer"
+      na_ontap_cluster_peer: "{{ na_ontap_cluster_peer }}"

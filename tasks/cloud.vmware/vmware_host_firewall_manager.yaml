@@ -1,0 +1,13 @@
+---
+- name: "module_vmware_host_firewall_manager"
+  vmware_host_firewall_manager: "{{ vmware_host_firewall_manager }}"
+  vars:
+    vmware_host_firewall_manager: 
+      username: "{{ vmware_host_firewall_manager_username | default(omit, True) }}"
+      rules: "{{ vmware_host_firewall_manager_rules | default(omit, True) }}"
+      hostname: "{{ vmware_host_firewall_manager_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_firewall_manager_cluster_name | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_firewall_manager_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_firewall_manager_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_firewall_manager_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_firewall_manager_port | default(omit, True) }}"

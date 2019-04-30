@@ -1,0 +1,23 @@
+---
+- name: "module_proxysql_replication_hostgroups"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    proxysql_replication_hostgroups: 
+      comment: "{{ proxysql_replication_hostgroups_comment | default('omit', True) }}"
+      login_port: "{{ proxysql_replication_hostgroups_login_port | default('omit', True) }}"
+      reader_hostgroup: "{{ proxysql_replication_hostgroups_reader_hostgroup | default('omit', True) }}"
+      config_file: "{{ proxysql_replication_hostgroups_config_file | default('omit', True) }}"
+      login_user: "{{ proxysql_replication_hostgroups_login_user | default('omit', True) }}"
+      login_host: "{{ proxysql_replication_hostgroups_login_host | default('omit', True) }}"
+      save_to_disk: "{{ proxysql_replication_hostgroups_save_to_disk | default('omit', True) }}"
+      writer_hostgroup: "{{ proxysql_replication_hostgroups_writer_hostgroup | default('omit', True) }}"
+      state: "{{ proxysql_replication_hostgroups_state | default('omit', True) }}"
+      load_to_runtime: "{{ proxysql_replication_hostgroups_load_to_runtime | default('omit', True) }}"
+      login_password: "{{ proxysql_replication_hostgroups_login_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_proxysql_replication_hostgroups"
+      proxysql_replication_hostgroups: "{{ proxysql_replication_hostgroups }}"

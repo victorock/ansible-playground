@@ -1,0 +1,19 @@
+---
+- name: "module_virt_pool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    virt_pool: 
+      xml: "{{ virt_pool_xml | default('omit', True) }}"
+      name: "{{ virt_pool_name | default('omit', True) }}"
+      uri: "{{ virt_pool_uri | default('omit', True) }}"
+      state: "{{ virt_pool_state | default('omit', True) }}"
+      command: "{{ virt_pool_command | default('omit', True) }}"
+      mode: "{{ virt_pool_mode | default('omit', True) }}"
+      autostart: "{{ virt_pool_autostart | default('omit', True) }}"
+  tasks:
+    - name: "plugin_virt_pool"
+      virt_pool: "{{ virt_pool }}"

@@ -1,0 +1,29 @@
+---
+- name: "module_docker_volume"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    docker_volume: 
+      tls: "{{ docker_volume_tls | default('omit', True) }}"
+      cacert_path: "{{ docker_volume_cacert_path | default('omit', True) }}"
+      force: "{{ docker_volume_force | default('omit', True) }}"
+      name: "{{ docker_volume_name | default('omit', True) }}"
+      ssl_version: "{{ docker_volume_ssl_version | default('omit', True) }}"
+      labels: "{{ docker_volume_labels | default('omit', True) }}"
+      driver: "{{ docker_volume_driver | default('omit', True) }}"
+      state: "{{ docker_volume_state | default('omit', True) }}"
+      tls_hostname: "{{ docker_volume_tls_hostname | default('omit', True) }}"
+      docker_host: "{{ docker_volume_docker_host | default('omit', True) }}"
+      driver_options: "{{ docker_volume_driver_options | default('omit', True) }}"
+      tls_verify: "{{ docker_volume_tls_verify | default('omit', True) }}"
+      key_path: "{{ docker_volume_key_path | default('omit', True) }}"
+      timeout: "{{ docker_volume_timeout | default('omit', True) }}"
+      debug: "{{ docker_volume_debug | default('omit', True) }}"
+      cert_path: "{{ docker_volume_cert_path | default('omit', True) }}"
+      api_version: "{{ docker_volume_api_version | default('omit', True) }}"
+  tasks:
+    - name: "plugin_docker_volume"
+      docker_volume: "{{ docker_volume }}"

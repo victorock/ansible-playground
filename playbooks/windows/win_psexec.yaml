@@ -1,0 +1,28 @@
+---
+- name: "module_win_psexec"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_psexec: 
+      username: "{{ win_psexec_username | default('omit', True) }}"
+      limited: "{{ win_psexec_limited | default('omit', True) }}"
+      executable: "{{ win_psexec_executable | default('omit', True) }}"
+      chdir: "{{ win_psexec_chdir | default('omit', True) }}"
+      interactive: "{{ win_psexec_interactive | default('omit', True) }}"
+      nobanner: "{{ win_psexec_nobanner | default('omit', True) }}"
+      noprofile: "{{ win_psexec_noprofile | default('omit', True) }}"
+      system: "{{ win_psexec_system | default('omit', True) }}"
+      elevated: "{{ win_psexec_elevated | default('omit', True) }}"
+      priority: "{{ win_psexec_priority | default('omit', True) }}"
+      session: "{{ win_psexec_session | default('omit', True) }}"
+      command: "{{ win_psexec_command | default('omit', True) }}"
+      timeout: "{{ win_psexec_timeout | default('omit', True) }}"
+      password: "{{ win_psexec_password | default('omit', True) }}"
+      hostnames: "{{ win_psexec_hostnames | default('omit', True) }}"
+      wait: "{{ win_psexec_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_psexec"
+      win_psexec: "{{ win_psexec }}"

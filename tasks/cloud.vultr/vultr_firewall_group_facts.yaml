@@ -1,0 +1,11 @@
+---
+- name: "module_vultr_firewall_group_facts"
+  vultr_firewall_group_facts: "{{ vultr_firewall_group_facts }}"
+  vars:
+    vultr_firewall_group_facts: 
+      api_retries: "{{ vultr_firewall_group_facts_api_retries | default(omit, True) }}"
+      api_timeout: "{{ vultr_firewall_group_facts_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_firewall_group_facts_api_endpoint | default(omit, True) }}"
+      api_account: "{{ vultr_firewall_group_facts_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_firewall_group_facts_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_firewall_group_facts_validate_certs | default(omit, True) }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_win_iis_virtualdirectory"
+  win_iis_virtualdirectory: "{{ win_iis_virtualdirectory }}"
+  vars:
+    win_iis_virtualdirectory: 
+      application: "{{ win_iis_virtualdirectory_application | default(omit, True) }}"
+      state: "{{ win_iis_virtualdirectory_state | default(omit, True) }}"
+      name: "{{ win_iis_virtualdirectory_name | default(omit, True) }}"
+      physical_path: "{{ win_iis_virtualdirectory_physical_path | default(omit, True) }}"
+      site: "{{ win_iis_virtualdirectory_site | default(omit, True) }}"

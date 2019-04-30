@@ -1,0 +1,3 @@
+---
+- name: "module_win_whoami"
+  win_whoami:

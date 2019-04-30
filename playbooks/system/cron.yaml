@@ -1,0 +1,29 @@
+---
+- name: "module_cron"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cron: 
+      name: "{{ cron_name | default('omit', True) }}"
+      hour: "{{ cron_hour | default('omit', True) }}"
+      state: "{{ cron_state | default('omit', True) }}"
+      cron_file: "{{ cron_cron_file | default('omit', True) }}"
+      reboot: "{{ cron_reboot | default('omit', True) }}"
+      month: "{{ cron_month | default('omit', True) }}"
+      disabled: "{{ cron_disabled | default('omit', True) }}"
+      job: "{{ cron_job | default('omit', True) }}"
+      special_time: "{{ cron_special_time | default('omit', True) }}"
+      user: "{{ cron_user | default('omit', True) }}"
+      env: "{{ cron_env | default('omit', True) }}"
+      insertafter: "{{ cron_insertafter | default('omit', True) }}"
+      insertbefore: "{{ cron_insertbefore | default('omit', True) }}"
+      backup: "{{ cron_backup | default('omit', True) }}"
+      day: "{{ cron_day | default('omit', True) }}"
+      minute: "{{ cron_minute | default('omit', True) }}"
+      weekday: "{{ cron_weekday | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cron"
+      cron: "{{ cron }}"

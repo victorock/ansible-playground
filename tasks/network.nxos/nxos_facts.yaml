@@ -1,0 +1,7 @@
+---
+- name: "module_nxos_facts"
+  nxos_facts: "{{ nxos_facts }}"
+  vars:
+    nxos_facts: 
+      gather_subset: "{{ nxos_facts_gather_subset | default(omit, True) }}"
+      provider: "{{ nxos_facts_provider | default(omit, True) }}"

@@ -1,0 +1,31 @@
+---
+- name: "module_aws_glue_job"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aws_glue_job: 
+      profile: "{{ aws_glue_job_profile | default('omit', True) }}"
+      aws_secret_key: "{{ aws_glue_job_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ aws_glue_job_aws_access_key | default('omit', True) }}"
+      description: "{{ aws_glue_job_description | default('omit', True) }}"
+      security_token: "{{ aws_glue_job_security_token | default('omit', True) }}"
+      allocated_capacity: "{{ aws_glue_job_allocated_capacity | default('omit', True) }}"
+      validate_certs: "{{ aws_glue_job_validate_certs | default('omit', True) }}"
+      region: "{{ aws_glue_job_region | default('omit', True) }}"
+      max_concurrent_runs: "{{ aws_glue_job_max_concurrent_runs | default('omit', True) }}"
+      state: "{{ aws_glue_job_state | default('omit', True) }}"
+      name: "{{ aws_glue_job_name | default('omit', True) }}"
+      connections: "{{ aws_glue_job_connections | default('omit', True) }}"
+      max_retries: "{{ aws_glue_job_max_retries | default('omit', True) }}"
+      default_arguments: "{{ aws_glue_job_default_arguments | default('omit', True) }}"
+      role: "{{ aws_glue_job_role | default('omit', True) }}"
+      timeout: "{{ aws_glue_job_timeout | default('omit', True) }}"
+      ec2_url: "{{ aws_glue_job_ec2_url | default('omit', True) }}"
+      command_script_location: "{{ aws_glue_job_command_script_location | default('omit', True) }}"
+      command_name: "{{ aws_glue_job_command_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aws_glue_job"
+      aws_glue_job: "{{ aws_glue_job }}"

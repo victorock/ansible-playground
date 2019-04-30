@@ -1,0 +1,21 @@
+---
+- name: "module_gce_net"
+  gce_net: "{{ gce_net }}"
+  vars:
+    gce_net: 
+      src_tags: "{{ gce_net_src_tags | default(omit, True) }}"
+      subnet_region: "{{ gce_net_subnet_region | default(omit, True) }}"
+      name: "{{ gce_net_name | default(omit, True) }}"
+      src_range: "{{ gce_net_src_range | default(omit, True) }}"
+      credentials_file: "{{ gce_net_credentials_file | default(omit, True) }}"
+      fwname: "{{ gce_net_fwname | default(omit, True) }}"
+      pem_file: "{{ gce_net_pem_file | default(omit, True) }}"
+      service_account_email: "{{ gce_net_service_account_email | default(omit, True) }}"
+      state: "{{ gce_net_state | default(omit, True) }}"
+      subnet_name: "{{ gce_net_subnet_name | default(omit, True) }}"
+      mode: "{{ gce_net_mode | default(omit, True) }}"
+      allowed: "{{ gce_net_allowed | default(omit, True) }}"
+      ipv4_range: "{{ gce_net_ipv4_range | default(omit, True) }}"
+      project_id: "{{ gce_net_project_id | default(omit, True) }}"
+      target_tags: "{{ gce_net_target_tags | default(omit, True) }}"
+      subnet_desc: "{{ gce_net_subnet_desc | default(omit, True) }}"

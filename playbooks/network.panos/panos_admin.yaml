@@ -1,0 +1,19 @@
+---
+- name: "module_panos_admin"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    panos_admin: 
+      username: "{{ panos_admin_username | default('omit', True) }}"
+      admin_username: "{{ panos_admin_admin_username | default('omit', True) }}"
+      role: "{{ panos_admin_role | default('omit', True) }}"
+      admin_password: "{{ panos_admin_admin_password | default('omit', True) }}"
+      commit: "{{ panos_admin_commit | default('omit', True) }}"
+      password: "{{ panos_admin_password | default('omit', True) }}"
+      ip_address: "{{ panos_admin_ip_address | default('omit', True) }}"
+  tasks:
+    - name: "plugin_panos_admin"
+      panos_admin: "{{ panos_admin }}"

@@ -1,0 +1,21 @@
+---
+- name: "module_netapp_e_ldap"
+  netapp_e_ldap: "{{ netapp_e_ldap }}"
+  vars:
+    netapp_e_ldap: 
+      username: "{{ netapp_e_ldap_username | default(omit, True) }}"
+      user_attribute: "{{ netapp_e_ldap_user_attribute | default(omit, True) }}"
+      identifier: "{{ netapp_e_ldap_identifier | default(omit, True) }}"
+      ssid: "{{ netapp_e_ldap_ssid | default(omit, True) }}"
+      search_base: "{{ netapp_e_ldap_search_base | default(omit, True) }}"
+      log_path: "{{ netapp_e_ldap_log_path | default(omit, True) }}"
+      api_password: "{{ netapp_e_ldap_api_password | default(omit, True) }}"
+      server: "{{ netapp_e_ldap_server | default(omit, True) }}"
+      api_url: "{{ netapp_e_ldap_api_url | default(omit, True) }}"
+      state: "{{ netapp_e_ldap_state | default(omit, True) }}"
+      role_mappings: "{{ netapp_e_ldap_role_mappings | default(omit, True) }}"
+      api_username: "{{ netapp_e_ldap_api_username | default(omit, True) }}"
+      attributes: "{{ netapp_e_ldap_attributes | default(omit, True) }}"
+      password: "{{ netapp_e_ldap_password | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_ldap_validate_certs | default(omit, True) }}"
+      name: "{{ netapp_e_ldap_name | default(omit, True) }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_eos_logging"
+  eos_logging: "{{ eos_logging }}"
+  vars:
+    eos_logging: 
+      authorize: "{{ eos_logging_authorize | default(omit, True) }}"
+      name: "{{ eos_logging_name | default(omit, True) }}"
+      facility: "{{ eos_logging_facility | default(omit, True) }}"
+      dest: "{{ eos_logging_dest | default(omit, True) }}"
+      auth_pass: "{{ eos_logging_auth_pass | default(omit, True) }}"
+      state: "{{ eos_logging_state | default(omit, True) }}"
+      provider: "{{ eos_logging_provider | default(omit, True) }}"
+      aggregate: "{{ eos_logging_aggregate | default(omit, True) }}"
+      level: "{{ eos_logging_level | default(omit, True) }}"
+      size: "{{ eos_logging_size | default(omit, True) }}"

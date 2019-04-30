@@ -1,0 +1,19 @@
+---
+- name: "module_na_elementsw_backup"
+  na_elementsw_backup: "{{ na_elementsw_backup }}"
+  vars:
+    na_elementsw_backup: 
+      username: "{{ na_elementsw_backup_username | default(omit, True) }}"
+      dest_username: "{{ na_elementsw_backup_dest_username | default(omit, True) }}"
+      hostname: "{{ na_elementsw_backup_hostname | default(omit, True) }}"
+      src_username: "{{ na_elementsw_backup_src_username | default(omit, True) }}"
+      format: "{{ na_elementsw_backup_format | default(omit, True) }}"
+      script_parameters: "{{ na_elementsw_backup_script_parameters | default(omit, True) }}"
+      script: "{{ na_elementsw_backup_script | default(omit, True) }}"
+      dest_hostname: "{{ na_elementsw_backup_dest_hostname | default(omit, True) }}"
+      src_hostname: "{{ na_elementsw_backup_src_hostname | default(omit, True) }}"
+      src_password: "{{ na_elementsw_backup_src_password | default(omit, True) }}"
+      dest_volume_id: "{{ na_elementsw_backup_dest_volume_id | default(omit, True) }}"
+      dest_password: "{{ na_elementsw_backup_dest_password | default(omit, True) }}"
+      password: "{{ na_elementsw_backup_password | default(omit, True) }}"
+      src_volume_id: "{{ na_elementsw_backup_src_volume_id | default(omit, True) }}"

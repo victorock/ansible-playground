@@ -1,0 +1,13 @@
+---
+- name: "module_sysvinit"
+  sysvinit: "{{ sysvinit }}"
+  vars:
+    sysvinit: 
+      name: "{{ sysvinit_name | default(omit, True) }}"
+      runlevels: "{{ sysvinit_runlevels | default(omit, True) }}"
+      pattern: "{{ sysvinit_pattern | default(omit, True) }}"
+      enabled: "{{ sysvinit_enabled | default(omit, True) }}"
+      state: "{{ sysvinit_state | default(omit, True) }}"
+      daemonize: "{{ sysvinit_daemonize | default(omit, True) }}"
+      sleep: "{{ sysvinit_sleep | default(omit, True) }}"
+      arguments: "{{ sysvinit_arguments | default(omit, True) }}"

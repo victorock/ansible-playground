@@ -1,0 +1,17 @@
+---
+- name: "module_docker_image_facts"
+  docker_image_facts: "{{ docker_image_facts }}"
+  vars:
+    docker_image_facts: 
+      tls: "{{ docker_image_facts_tls | default(omit, True) }}"
+      cacert_path: "{{ docker_image_facts_cacert_path | default(omit, True) }}"
+      name: "{{ docker_image_facts_name | default(omit, True) }}"
+      ssl_version: "{{ docker_image_facts_ssl_version | default(omit, True) }}"
+      tls_hostname: "{{ docker_image_facts_tls_hostname | default(omit, True) }}"
+      docker_host: "{{ docker_image_facts_docker_host | default(omit, True) }}"
+      tls_verify: "{{ docker_image_facts_tls_verify | default(omit, True) }}"
+      key_path: "{{ docker_image_facts_key_path | default(omit, True) }}"
+      timeout: "{{ docker_image_facts_timeout | default(omit, True) }}"
+      debug: "{{ docker_image_facts_debug | default(omit, True) }}"
+      cert_path: "{{ docker_image_facts_cert_path | default(omit, True) }}"
+      api_version: "{{ docker_image_facts_api_version | default(omit, True) }}"

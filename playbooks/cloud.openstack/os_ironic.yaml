@@ -1,0 +1,35 @@
+---
+- name: "module_os_ironic"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_ironic: 
+      auth_type: "{{ os_ironic_auth_type | default('omit', True) }}"
+      availability_zone: "{{ os_ironic_availability_zone | default('omit', True) }}"
+      interface: "{{ os_ironic_interface | default('omit', True) }}"
+      cloud: "{{ os_ironic_cloud | default('omit', True) }}"
+      region_name: "{{ os_ironic_region_name | default('omit', True) }}"
+      uuid: "{{ os_ironic_uuid | default('omit', True) }}"
+      nics: "{{ os_ironic_nics | default('omit', True) }}"
+      ironic_url: "{{ os_ironic_ironic_url | default('omit', True) }}"
+      state: "{{ os_ironic_state | default('omit', True) }}"
+      skip_update_of_driver_password: "{{ os_ironic_skip_update_of_driver_password | default('omit', True) }}"
+      chassis_uuid: "{{ os_ironic_chassis_uuid | default('omit', True) }}"
+      api_timeout: "{{ os_ironic_api_timeout | default('omit', True) }}"
+      driver: "{{ os_ironic_driver | default('omit', True) }}"
+      auth: "{{ os_ironic_auth | default('omit', True) }}"
+      key: "{{ os_ironic_key | default('omit', True) }}"
+      cacert: "{{ os_ironic_cacert | default('omit', True) }}"
+      properties: "{{ os_ironic_properties | default('omit', True) }}"
+      wait: "{{ os_ironic_wait | default('omit', True) }}"
+      name: "{{ os_ironic_name | default('omit', True) }}"
+      driver_info: "{{ os_ironic_driver_info | default('omit', True) }}"
+      cert: "{{ os_ironic_cert | default('omit', True) }}"
+      timeout: "{{ os_ironic_timeout | default('omit', True) }}"
+      verify: "{{ os_ironic_verify | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_ironic"
+      os_ironic: "{{ os_ironic }}"

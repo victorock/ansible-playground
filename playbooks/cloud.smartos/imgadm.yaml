@@ -1,0 +1,18 @@
+---
+- name: "module_imgadm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    imgadm: 
+      force: "{{ imgadm_force | default('omit', True) }}"
+      uuid: "{{ imgadm_uuid | default('omit', True) }}"
+      source: "{{ imgadm_source | default('omit', True) }}"
+      state: "{{ imgadm_state | default('omit', True) }}"
+      type: "{{ imgadm_type | default('omit', True) }}"
+      pool: "{{ imgadm_pool | default('omit', True) }}"
+  tasks:
+    - name: "plugin_imgadm"
+      imgadm: "{{ imgadm }}"

@@ -1,0 +1,33 @@
+---
+- name: "module_ipa_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ipa_user: 
+      telephonenumber: "{{ ipa_user_telephonenumber | default('omit', True) }}"
+      sshpubkey: "{{ ipa_user_sshpubkey | default('omit', True) }}"
+      ipa_port: "{{ ipa_user_ipa_port | default('omit', True) }}"
+      password: "{{ ipa_user_password | default('omit', True) }}"
+      displayname: "{{ ipa_user_displayname | default('omit', True) }}"
+      uid: "{{ ipa_user_uid | default('omit', True) }}"
+      krbpasswordexpiration: "{{ ipa_user_krbpasswordexpiration | default('omit', True) }}"
+      title: "{{ ipa_user_title | default('omit', True) }}"
+      loginshell: "{{ ipa_user_loginshell | default('omit', True) }}"
+      ipa_prot: "{{ ipa_user_ipa_prot | default('omit', True) }}"
+      gidnumber: "{{ ipa_user_gidnumber | default('omit', True) }}"
+      state: "{{ ipa_user_state | default('omit', True) }}"
+      ipa_host: "{{ ipa_user_ipa_host | default('omit', True) }}"
+      ipa_user: "{{ ipa_user_ipa_user | default('omit', True) }}"
+      uidnumber: "{{ ipa_user_uidnumber | default('omit', True) }}"
+      ipa_pass: "{{ ipa_user_ipa_pass | default('omit', True) }}"
+      mail: "{{ ipa_user_mail | default('omit', True) }}"
+      ipa_timeout: "{{ ipa_user_ipa_timeout | default('omit', True) }}"
+      validate_certs: "{{ ipa_user_validate_certs | default('omit', True) }}"
+      givenname: "{{ ipa_user_givenname | default('omit', True) }}"
+      sn: "{{ ipa_user_sn | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ipa_user"
+      ipa_user: "{{ ipa_user }}"

@@ -1,0 +1,24 @@
+---
+- name: "module_cs_sshkeypair"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_sshkeypair: 
+      public_key: "{{ cs_sshkeypair_public_key | default('omit', True) }}"
+      domain: "{{ cs_sshkeypair_domain | default('omit', True) }}"
+      name: "{{ cs_sshkeypair_name | default('omit', True) }}"
+      api_http_method: "{{ cs_sshkeypair_api_http_method | default('omit', True) }}"
+      api_secret: "{{ cs_sshkeypair_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_sshkeypair_api_timeout | default('omit', True) }}"
+      account: "{{ cs_sshkeypair_account | default('omit', True) }}"
+      api_region: "{{ cs_sshkeypair_api_region | default('omit', True) }}"
+      project: "{{ cs_sshkeypair_project | default('omit', True) }}"
+      state: "{{ cs_sshkeypair_state | default('omit', True) }}"
+      api_key: "{{ cs_sshkeypair_api_key | default('omit', True) }}"
+      api_url: "{{ cs_sshkeypair_api_url | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_sshkeypair"
+      cs_sshkeypair: "{{ cs_sshkeypair }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_clc_publicip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    clc_publicip: 
+      server_ids: "{{ clc_publicip_server_ids | default('omit', True) }}"
+      state: "{{ clc_publicip_state | default('omit', True) }}"
+      protocol: "{{ clc_publicip_protocol | default('omit', True) }}"
+      ports: "{{ clc_publicip_ports | default('omit', True) }}"
+      wait: "{{ clc_publicip_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_clc_publicip"
+      clc_publicip: "{{ clc_publicip }}"

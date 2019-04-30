@@ -1,0 +1,20 @@
+---
+- name: "module_rax_mon_notification_plan"
+  rax_mon_notification_plan: "{{ rax_mon_notification_plan }}"
+  vars:
+    rax_mon_notification_plan: 
+      username: "{{ rax_mon_notification_plan_username | default(omit, True) }}"
+      warning_state: "{{ rax_mon_notification_plan_warning_state | default(omit, True) }}"
+      identity_type: "{{ rax_mon_notification_plan_identity_type | default(omit, True) }}"
+      tenant_name: "{{ rax_mon_notification_plan_tenant_name | default(omit, True) }}"
+      region: "{{ rax_mon_notification_plan_region | default(omit, True) }}"
+      critical_state: "{{ rax_mon_notification_plan_critical_state | default(omit, True) }}"
+      state: "{{ rax_mon_notification_plan_state | default(omit, True) }}"
+      label: "{{ rax_mon_notification_plan_label | default(omit, True) }}"
+      ok_state: "{{ rax_mon_notification_plan_ok_state | default(omit, True) }}"
+      verify_ssl: "{{ rax_mon_notification_plan_verify_ssl | default(omit, True) }}"
+      env: "{{ rax_mon_notification_plan_env | default(omit, True) }}"
+      tenant_id: "{{ rax_mon_notification_plan_tenant_id | default(omit, True) }}"
+      credentials: "{{ rax_mon_notification_plan_credentials | default(omit, True) }}"
+      api_key: "{{ rax_mon_notification_plan_api_key | default(omit, True) }}"
+      auth_endpoint: "{{ rax_mon_notification_plan_auth_endpoint | default(omit, True) }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_pamd"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pamd: 
+      control: "{{ pamd_control | default('omit', True) }}"
+      new_module_path: "{{ pamd_new_module_path | default('omit', True) }}"
+      module_arguments: "{{ pamd_module_arguments | default('omit', True) }}"
+      type: "{{ pamd_type | default('omit', True) }}"
+      module_path: "{{ pamd_module_path | default('omit', True) }}"
+      new_type: "{{ pamd_new_type | default('omit', True) }}"
+      state: "{{ pamd_state | default('omit', True) }}"
+      new_control: "{{ pamd_new_control | default('omit', True) }}"
+      path: "{{ pamd_path | default('omit', True) }}"
+      backup: "{{ pamd_backup | default('omit', True) }}"
+      name: "{{ pamd_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pamd"
+      pamd: "{{ pamd }}"

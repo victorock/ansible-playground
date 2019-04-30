@@ -1,0 +1,11 @@
+---
+- name: "module_easy_install"
+  easy_install: "{{ easy_install }}"
+  vars:
+    easy_install: 
+      virtualenv: "{{ easy_install_virtualenv | default(omit, True) }}"
+      virtualenv_command: "{{ easy_install_virtualenv_command | default(omit, True) }}"
+      name: "{{ easy_install_name | default(omit, True) }}"
+      executable: "{{ easy_install_executable | default(omit, True) }}"
+      virtualenv_site_packages: "{{ easy_install_virtualenv_site_packages | default(omit, True) }}"
+      state: "{{ easy_install_state | default(omit, True) }}"

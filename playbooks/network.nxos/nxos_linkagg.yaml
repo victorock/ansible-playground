@@ -1,0 +1,21 @@
+---
+- name: "module_nxos_linkagg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_linkagg: 
+      force: "{{ nxos_linkagg_force | default('omit', True) }}"
+      provider: "{{ nxos_linkagg_provider | default('omit', True) }}"
+      purge: "{{ nxos_linkagg_purge | default('omit', True) }}"
+      state: "{{ nxos_linkagg_state | default('omit', True) }}"
+      mode: "{{ nxos_linkagg_mode | default('omit', True) }}"
+      members: "{{ nxos_linkagg_members | default('omit', True) }}"
+      min_links: "{{ nxos_linkagg_min_links | default('omit', True) }}"
+      aggregate: "{{ nxos_linkagg_aggregate | default('omit', True) }}"
+      group: "{{ nxos_linkagg_group | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_linkagg"
+      nxos_linkagg: "{{ nxos_linkagg }}"

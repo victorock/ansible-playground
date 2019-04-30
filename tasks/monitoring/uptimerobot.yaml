@@ -1,0 +1,8 @@
+---
+- name: "module_uptimerobot"
+  uptimerobot: "{{ uptimerobot }}"
+  vars:
+    uptimerobot: 
+      monitorid: "{{ uptimerobot_monitorid | default(omit, True) }}"
+      state: "{{ uptimerobot_state | default(omit, True) }}"
+      apikey: "{{ uptimerobot_apikey | default(omit, True) }}"

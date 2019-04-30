@@ -1,0 +1,30 @@
+---
+- name: "module_replace"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    replace: 
+      seuser: "{{ replace_seuser | default('omit', True) }}"
+      group: "{{ replace_group | default('omit', True) }}"
+      encoding: "{{ replace_encoding | default('omit', True) }}"
+      unsafe_writes: "{{ replace_unsafe_writes | default('omit', True) }}"
+      selevel: "{{ replace_selevel | default('omit', True) }}"
+      after: "{{ replace_after | default('omit', True) }}"
+      serole: "{{ replace_serole | default('omit', True) }}"
+      replace: "{{ replace_replace | default('omit', True) }}"
+      setype: "{{ replace_setype | default('omit', True) }}"
+      mode: "{{ replace_mode | default('omit', True) }}"
+      regexp: "{{ replace_regexp | default('omit', True) }}"
+      owner: "{{ replace_owner | default('omit', True) }}"
+      path: "{{ replace_path | default('omit', True) }}"
+      validate: "{{ replace_validate | default('omit', True) }}"
+      attributes: "{{ replace_attributes | default('omit', True) }}"
+      backup: "{{ replace_backup | default('omit', True) }}"
+      others: "{{ replace_others | default('omit', True) }}"
+      before: "{{ replace_before | default('omit', True) }}"
+  tasks:
+    - name: "plugin_replace"
+      replace: "{{ replace }}"

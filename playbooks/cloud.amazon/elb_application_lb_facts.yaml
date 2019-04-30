@@ -1,0 +1,21 @@
+---
+- name: "module_elb_application_lb_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    elb_application_lb_facts: 
+      aws_secret_key: "{{ elb_application_lb_facts_aws_secret_key | default('omit', True) }}"
+      profile: "{{ elb_application_lb_facts_profile | default('omit', True) }}"
+      aws_access_key: "{{ elb_application_lb_facts_aws_access_key | default('omit', True) }}"
+      security_token: "{{ elb_application_lb_facts_security_token | default('omit', True) }}"
+      region: "{{ elb_application_lb_facts_region | default('omit', True) }}"
+      names: "{{ elb_application_lb_facts_names | default('omit', True) }}"
+      ec2_url: "{{ elb_application_lb_facts_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ elb_application_lb_facts_validate_certs | default('omit', True) }}"
+      load_balancer_arns: "{{ elb_application_lb_facts_load_balancer_arns | default('omit', True) }}"
+  tasks:
+    - name: "plugin_elb_application_lb_facts"
+      elb_application_lb_facts: "{{ elb_application_lb_facts }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_dladm_linkprop"
+  dladm_linkprop: "{{ dladm_linkprop }}"
+  vars:
+    dladm_linkprop: 
+      temporary: "{{ dladm_linkprop_temporary | default(omit, True) }}"
+      state: "{{ dladm_linkprop_state | default(omit, True) }}"
+      property: "{{ dladm_linkprop_property | default(omit, True) }}"
+      link: "{{ dladm_linkprop_link | default(omit, True) }}"
+      value: "{{ dladm_linkprop_value | default(omit, True) }}"

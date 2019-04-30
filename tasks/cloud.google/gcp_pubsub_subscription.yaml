@@ -1,0 +1,15 @@
+---
+- name: "module_gcp_pubsub_subscription"
+  gcp_pubsub_subscription: "{{ gcp_pubsub_subscription }}"
+  vars:
+    gcp_pubsub_subscription: 
+      ack_deadline_seconds: "{{ gcp_pubsub_subscription_ack_deadline_seconds | default(omit, True) }}"
+      scopes: "{{ gcp_pubsub_subscription_scopes | default(omit, True) }}"
+      name: "{{ gcp_pubsub_subscription_name | default(omit, True) }}"
+      service_account_email: "{{ gcp_pubsub_subscription_service_account_email | default(omit, True) }}"
+      push_config: "{{ gcp_pubsub_subscription_push_config | default(omit, True) }}"
+      topic: "{{ gcp_pubsub_subscription_topic | default(omit, True) }}"
+      project: "{{ gcp_pubsub_subscription_project | default(omit, True) }}"
+      state: "{{ gcp_pubsub_subscription_state | default(omit, True) }}"
+      auth_kind: "{{ gcp_pubsub_subscription_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_pubsub_subscription_service_account_file | default(omit, True) }}"

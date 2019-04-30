@@ -1,0 +1,15 @@
+---
+- name: "module_nxos_rollback"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_rollback: 
+      checkpoint_file: "{{ nxos_rollback_checkpoint_file | default('omit', True) }}"
+      rollback_to: "{{ nxos_rollback_rollback_to | default('omit', True) }}"
+      provider: "{{ nxos_rollback_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_rollback"
+      nxos_rollback: "{{ nxos_rollback }}"

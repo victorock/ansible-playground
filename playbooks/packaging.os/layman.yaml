@@ -1,0 +1,16 @@
+---
+- name: "module_layman"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    layman: 
+      list_url: "{{ layman_list_url | default('omit', True) }}"
+      validate_certs: "{{ layman_validate_certs | default('omit', True) }}"
+      name: "{{ layman_name | default('omit', True) }}"
+      state: "{{ layman_state | default('omit', True) }}"
+  tasks:
+    - name: "plugin_layman"
+      layman: "{{ layman }}"

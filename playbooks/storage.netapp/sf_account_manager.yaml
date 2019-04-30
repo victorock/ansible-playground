@@ -1,0 +1,23 @@
+---
+- name: "module_sf_account_manager"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sf_account_manager: 
+      status: "{{ sf_account_manager_status | default('omit', True) }}"
+      username: "{{ sf_account_manager_username | default('omit', True) }}"
+      target_secret: "{{ sf_account_manager_target_secret | default('omit', True) }}"
+      account_id: "{{ sf_account_manager_account_id | default('omit', True) }}"
+      new_name: "{{ sf_account_manager_new_name | default('omit', True) }}"
+      hostname: "{{ sf_account_manager_hostname | default('omit', True) }}"
+      initiator_secret: "{{ sf_account_manager_initiator_secret | default('omit', True) }}"
+      state: "{{ sf_account_manager_state | default('omit', True) }}"
+      attributes: "{{ sf_account_manager_attributes | default('omit', True) }}"
+      password: "{{ sf_account_manager_password | default('omit', True) }}"
+      name: "{{ sf_account_manager_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sf_account_manager"
+      sf_account_manager: "{{ sf_account_manager }}"

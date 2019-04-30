@@ -1,0 +1,22 @@
+---
+- name: "module_ce_mlag_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_mlag_config: 
+      eth_trunk_id: "{{ ce_mlag_config_eth_trunk_id | default('omit', True) }}"
+      pseudo_priority: "{{ ce_mlag_config_pseudo_priority | default('omit', True) }}"
+      nickname: "{{ ce_mlag_config_nickname | default('omit', True) }}"
+      priority_id: "{{ ce_mlag_config_priority_id | default('omit', True) }}"
+      vpn_instance_name: "{{ ce_mlag_config_vpn_instance_name | default('omit', True) }}"
+      peer_link_id: "{{ ce_mlag_config_peer_link_id | default('omit', True) }}"
+      state: "{{ ce_mlag_config_state | default('omit', True) }}"
+      dfs_group_id: "{{ ce_mlag_config_dfs_group_id | default('omit', True) }}"
+      ip_address: "{{ ce_mlag_config_ip_address | default('omit', True) }}"
+      pseudo_nickname: "{{ ce_mlag_config_pseudo_nickname | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_mlag_config"
+      ce_mlag_config: "{{ ce_mlag_config }}"

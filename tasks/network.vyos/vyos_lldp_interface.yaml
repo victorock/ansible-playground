@@ -1,0 +1,9 @@
+---
+- name: "module_vyos_lldp_interface"
+  vyos_lldp_interface: "{{ vyos_lldp_interface }}"
+  vars:
+    vyos_lldp_interface: 
+      aggregate: "{{ vyos_lldp_interface_aggregate | default(omit, True) }}"
+      state: "{{ vyos_lldp_interface_state | default(omit, True) }}"
+      name: "{{ vyos_lldp_interface_name | default(omit, True) }}"
+      provider: "{{ vyos_lldp_interface_provider | default(omit, True) }}"

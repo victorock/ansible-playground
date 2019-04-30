@@ -1,0 +1,14 @@
+---
+- name: "module_pkgng"
+  pkgng: "{{ pkgng }}"
+  vars:
+    pkgng: 
+      chroot: "{{ pkgng_chroot | default(omit, True) }}"
+      name: "{{ pkgng_name | default(omit, True) }}"
+      cached: "{{ pkgng_cached | default(omit, True) }}"
+      pkgsite: "{{ pkgng_pkgsite | default(omit, True) }}"
+      state: "{{ pkgng_state | default(omit, True) }}"
+      rootdir: "{{ pkgng_rootdir | default(omit, True) }}"
+      autoremove: "{{ pkgng_autoremove | default(omit, True) }}"
+      jail: "{{ pkgng_jail | default(omit, True) }}"
+      annotation: "{{ pkgng_annotation | default(omit, True) }}"

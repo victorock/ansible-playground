@@ -1,0 +1,25 @@
+---
+- name: "module_vmware_portgroup"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_portgroup: 
+      username: "{{ vmware_portgroup_username | default('omit', True) }}"
+      portgroup_name: "{{ vmware_portgroup_portgroup_name | default('omit', True) }}"
+      teaming_policy: "{{ vmware_portgroup_teaming_policy | default('omit', True) }}"
+      hostname: "{{ vmware_portgroup_hostname | default('omit', True) }}"
+      port: "{{ vmware_portgroup_port | default('omit', True) }}"
+      cluster_name: "{{ vmware_portgroup_cluster_name | default('omit', True) }}"
+      network_policy: "{{ vmware_portgroup_network_policy | default('omit', True) }}"
+      state: "{{ vmware_portgroup_state | default('omit', True) }}"
+      hosts: "{{ vmware_portgroup_hosts | default('omit', True) }}"
+      password: "{{ vmware_portgroup_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_portgroup_validate_certs | default('omit', True) }}"
+      switch_name: "{{ vmware_portgroup_switch_name | default('omit', True) }}"
+      vlan_id: "{{ vmware_portgroup_vlan_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_portgroup"
+      vmware_portgroup: "{{ vmware_portgroup }}"

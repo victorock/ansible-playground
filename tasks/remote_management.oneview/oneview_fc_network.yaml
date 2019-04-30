@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_fc_network"
+  oneview_fc_network: "{{ oneview_fc_network }}"
+  vars:
+    oneview_fc_network: 
+      data: "{{ oneview_fc_network_data | default(omit, True) }}"
+      state: "{{ oneview_fc_network_state | default(omit, True) }}"
+      validate_etag: "{{ oneview_fc_network_validate_etag | default(omit, True) }}"
+      config: "{{ oneview_fc_network_config | default(omit, True) }}"

@@ -1,0 +1,26 @@
+---
+- name: "module_bigip_remote_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_remote_role: 
+      attribute_string: "{{ bigip_remote_role_attribute_string | default('omit', True) }}"
+      line_order: "{{ bigip_remote_role_line_order | default('omit', True) }}"
+      name: "{{ bigip_remote_role_name | default('omit', True) }}"
+      terminal_access: "{{ bigip_remote_role_terminal_access | default('omit', True) }}"
+      partition_access: "{{ bigip_remote_role_partition_access | default('omit', True) }}"
+      server: "{{ bigip_remote_role_server | default('omit', True) }}"
+      state: "{{ bigip_remote_role_state | default('omit', True) }}"
+      server_port: "{{ bigip_remote_role_server_port | default('omit', True) }}"
+      user: "{{ bigip_remote_role_user | default('omit', True) }}"
+      remote_access: "{{ bigip_remote_role_remote_access | default('omit', True) }}"
+      provider: "{{ bigip_remote_role_provider | default('omit', True) }}"
+      password: "{{ bigip_remote_role_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_remote_role_validate_certs | default('omit', True) }}"
+      assigned_role: "{{ bigip_remote_role_assigned_role | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_remote_role"
+      bigip_remote_role: "{{ bigip_remote_role }}"

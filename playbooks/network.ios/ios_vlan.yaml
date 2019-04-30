@@ -1,0 +1,23 @@
+---
+- name: "module_ios_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_vlan: 
+      authorize: "{{ ios_vlan_authorize | default('omit', True) }}"
+      purge: "{{ ios_vlan_purge | default('omit', True) }}"
+      name: "{{ ios_vlan_name | default('omit', True) }}"
+      interfaces: "{{ ios_vlan_interfaces | default('omit', True) }}"
+      auth_pass: "{{ ios_vlan_auth_pass | default('omit', True) }}"
+      delay: "{{ ios_vlan_delay | default('omit', True) }}"
+      aggregate: "{{ ios_vlan_aggregate | default('omit', True) }}"
+      state: "{{ ios_vlan_state | default('omit', True) }}"
+      provider: "{{ ios_vlan_provider | default('omit', True) }}"
+      associated_interfaces: "{{ ios_vlan_associated_interfaces | default('omit', True) }}"
+      vlan_id: "{{ ios_vlan_vlan_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ios_vlan"
+      ios_vlan: "{{ ios_vlan }}"

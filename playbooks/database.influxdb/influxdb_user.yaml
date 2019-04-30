@@ -1,0 +1,27 @@
+---
+- name: "module_influxdb_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    influxdb_user: 
+      username: "{{ influxdb_user_username | default('omit', True) }}"
+      retries: "{{ influxdb_user_retries | default('omit', True) }}"
+      use_udp: "{{ influxdb_user_use_udp | default('omit', True) }}"
+      proxies: "{{ influxdb_user_proxies | default('omit', True) }}"
+      admin: "{{ influxdb_user_admin | default('omit', True) }}"
+      user_name: "{{ influxdb_user_user_name | default('omit', True) }}"
+      user_password: "{{ influxdb_user_user_password | default('omit', True) }}"
+      hostname: "{{ influxdb_user_hostname | default('omit', True) }}"
+      udp_port: "{{ influxdb_user_udp_port | default('omit', True) }}"
+      ssl: "{{ influxdb_user_ssl | default('omit', True) }}"
+      state: "{{ influxdb_user_state | default('omit', True) }}"
+      timeout: "{{ influxdb_user_timeout | default('omit', True) }}"
+      password: "{{ influxdb_user_password | default('omit', True) }}"
+      validate_certs: "{{ influxdb_user_validate_certs | default('omit', True) }}"
+      port: "{{ influxdb_user_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_influxdb_user"
+      influxdb_user: "{{ influxdb_user }}"

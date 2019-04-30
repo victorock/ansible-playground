@@ -1,0 +1,16 @@
+---
+- name: "module_atomic_image"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    atomic_image: 
+      started: "{{ atomic_image_started | default('omit', True) }}"
+      state: "{{ atomic_image_state | default('omit', True) }}"
+      name: "{{ atomic_image_name | default('omit', True) }}"
+      backend: "{{ atomic_image_backend | default('omit', True) }}"
+  tasks:
+    - name: "plugin_atomic_image"
+      atomic_image: "{{ atomic_image }}"

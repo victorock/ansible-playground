@@ -1,0 +1,9 @@
+---
+- name: "module_ovirt_clusters_facts"
+  ovirt_clusters_facts: "{{ ovirt_clusters_facts }}"
+  vars:
+    ovirt_clusters_facts: 
+      pattern: "{{ ovirt_clusters_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_clusters_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_clusters_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_clusters_facts_auth | default(omit, True) }}"

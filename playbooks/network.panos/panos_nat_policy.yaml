@@ -1,0 +1,30 @@
+---
+- name: "module_panos_nat_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    panos_nat_policy: 
+      username: "{{ panos_nat_policy_username | default('omit', True) }}"
+      dnat_address: "{{ panos_nat_policy_dnat_address | default('omit', True) }}"
+      snat_bidirectional: "{{ panos_nat_policy_snat_bidirectional | default('omit', True) }}"
+      to_zone: "{{ panos_nat_policy_to_zone | default('omit', True) }}"
+      service: "{{ panos_nat_policy_service | default('omit', True) }}"
+      snat_type: "{{ panos_nat_policy_snat_type | default('omit', True) }}"
+      source: "{{ panos_nat_policy_source | default('omit', True) }}"
+      from_zone: "{{ panos_nat_policy_from_zone | default('omit', True) }}"
+      destination: "{{ panos_nat_policy_destination | default('omit', True) }}"
+      dnat_port: "{{ panos_nat_policy_dnat_port | default('omit', True) }}"
+      snat_interface_address: "{{ panos_nat_policy_snat_interface_address | default('omit', True) }}"
+      rule_name: "{{ panos_nat_policy_rule_name | default('omit', True) }}"
+      override: "{{ panos_nat_policy_override | default('omit', True) }}"
+      commit: "{{ panos_nat_policy_commit | default('omit', True) }}"
+      password: "{{ panos_nat_policy_password | default('omit', True) }}"
+      ip_address: "{{ panos_nat_policy_ip_address | default('omit', True) }}"
+      snat_address: "{{ panos_nat_policy_snat_address | default('omit', True) }}"
+      snat_interface: "{{ panos_nat_policy_snat_interface | default('omit', True) }}"
+  tasks:
+    - name: "plugin_panos_nat_policy"
+      panos_nat_policy: "{{ panos_nat_policy }}"

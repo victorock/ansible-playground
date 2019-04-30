@@ -1,0 +1,17 @@
+---
+- name: "module_dellos10_config"
+  dellos10_config: "{{ dellos10_config }}"
+  vars:
+    dellos10_config: 
+      src: "{{ dellos10_config_src | default(omit, True) }}"
+      config: "{{ dellos10_config_config | default(omit, True) }}"
+      after: "{{ dellos10_config_after | default(omit, True) }}"
+      lines: "{{ dellos10_config_lines | default(omit, True) }}"
+      update: "{{ dellos10_config_update | default(omit, True) }}"
+      replace: "{{ dellos10_config_replace | default(omit, True) }}"
+      parents: "{{ dellos10_config_parents | default(omit, True) }}"
+      provider: "{{ dellos10_config_provider | default(omit, True) }}"
+      save: "{{ dellos10_config_save | default(omit, True) }}"
+      backup: "{{ dellos10_config_backup | default(omit, True) }}"
+      match: "{{ dellos10_config_match | default(omit, True) }}"
+      before: "{{ dellos10_config_before | default(omit, True) }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_panos_commit"
+  panos_commit: "{{ panos_commit }}"
+  vars:
+    panos_commit: 
+      username: "{{ panos_commit_username | default(omit, True) }}"
+      interval: "{{ panos_commit_interval | default(omit, True) }}"
+      sync: "{{ panos_commit_sync | default(omit, True) }}"
+      timeout: "{{ panos_commit_timeout | default(omit, True) }}"
+      password: "{{ panos_commit_password | default(omit, True) }}"
+      ip_address: "{{ panos_commit_ip_address | default(omit, True) }}"

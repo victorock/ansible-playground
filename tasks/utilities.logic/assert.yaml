@@ -1,0 +1,8 @@
+---
+- name: "module_assert"
+  assert: "{{ assert }}"
+  vars:
+    assert: 
+      fail_msg: "{{ assert_fail_msg | default(omit, True) }}"
+      success_msg: "{{ assert_success_msg | default(omit, True) }}"
+      that: "{{ assert_that | default(omit, True) }}"

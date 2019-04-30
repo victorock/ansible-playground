@@ -1,0 +1,23 @@
+---
+- name: "module_bigip_smtp"
+  bigip_smtp: "{{ bigip_smtp }}"
+  vars:
+    bigip_smtp: 
+      smtp_server_port: "{{ bigip_smtp_smtp_server_port | default(omit, True) }}"
+      smtp_server_username: "{{ bigip_smtp_smtp_server_username | default(omit, True) }}"
+      update_password: "{{ bigip_smtp_update_password | default(omit, True) }}"
+      from_address: "{{ bigip_smtp_from_address | default(omit, True) }}"
+      name: "{{ bigip_smtp_name | default(omit, True) }}"
+      encryption: "{{ bigip_smtp_encryption | default(omit, True) }}"
+      partition: "{{ bigip_smtp_partition | default(omit, True) }}"
+      smtp_server: "{{ bigip_smtp_smtp_server | default(omit, True) }}"
+      server: "{{ bigip_smtp_server | default(omit, True) }}"
+      state: "{{ bigip_smtp_state | default(omit, True) }}"
+      user: "{{ bigip_smtp_user | default(omit, True) }}"
+      server_port: "{{ bigip_smtp_server_port | default(omit, True) }}"
+      local_host_name: "{{ bigip_smtp_local_host_name | default(omit, True) }}"
+      password: "{{ bigip_smtp_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_smtp_validate_certs | default(omit, True) }}"
+      provider: "{{ bigip_smtp_provider | default(omit, True) }}"
+      smtp_server_password: "{{ bigip_smtp_smtp_server_password | default(omit, True) }}"
+      authentication: "{{ bigip_smtp_authentication | default(omit, True) }}"

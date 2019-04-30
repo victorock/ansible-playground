@@ -1,0 +1,16 @@
+---
+- name: "module_bigip_iapp_template"
+  bigip_iapp_template: "{{ bigip_iapp_template }}"
+  vars:
+    bigip_iapp_template: 
+      force: "{{ bigip_iapp_template_force | default(omit, True) }}"
+      name: "{{ bigip_iapp_template_name | default(omit, True) }}"
+      partition: "{{ bigip_iapp_template_partition | default(omit, True) }}"
+      server: "{{ bigip_iapp_template_server | default(omit, True) }}"
+      content: "{{ bigip_iapp_template_content | default(omit, True) }}"
+      state: "{{ bigip_iapp_template_state | default(omit, True) }}"
+      user: "{{ bigip_iapp_template_user | default(omit, True) }}"
+      server_port: "{{ bigip_iapp_template_server_port | default(omit, True) }}"
+      provider: "{{ bigip_iapp_template_provider | default(omit, True) }}"
+      password: "{{ bigip_iapp_template_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_iapp_template_validate_certs | default(omit, True) }}"

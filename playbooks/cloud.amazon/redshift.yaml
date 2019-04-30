@@ -1,0 +1,45 @@
+---
+- name: "module_redshift"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    redshift: 
+      cluster_parameter_group_name: "{{ redshift_cluster_parameter_group_name | default('omit', True) }}"
+      username: "{{ redshift_username | default('omit', True) }}"
+      availability_zone: "{{ redshift_availability_zone | default('omit', True) }}"
+      encrypted: "{{ redshift_encrypted | default('omit', True) }}"
+      node_type: "{{ redshift_node_type | default('omit', True) }}"
+      publicly_accessible: "{{ redshift_publicly_accessible | default('omit', True) }}"
+      ec2_url: "{{ redshift_ec2_url | default('omit', True) }}"
+      port: "{{ redshift_port | default('omit', True) }}"
+      aws_secret_key: "{{ redshift_aws_secret_key | default('omit', True) }}"
+      allow_version_upgrade: "{{ redshift_allow_version_upgrade | default('omit', True) }}"
+      cluster_type: "{{ redshift_cluster_type | default('omit', True) }}"
+      final_cluster_snapshot_identifier: "{{ redshift_final_cluster_snapshot_identifier | default('omit', True) }}"
+      vpc_security_group_ids: "{{ redshift_vpc_security_group_ids | default('omit', True) }}"
+      profile: "{{ redshift_profile | default('omit', True) }}"
+      new_cluster_identifier: "{{ redshift_new_cluster_identifier | default('omit', True) }}"
+      number_of_nodes: "{{ redshift_number_of_nodes | default('omit', True) }}"
+      cluster_version: "{{ redshift_cluster_version | default('omit', True) }}"
+      db_name: "{{ redshift_db_name | default('omit', True) }}"
+      password: "{{ redshift_password | default('omit', True) }}"
+      cluster_subnet_group_name: "{{ redshift_cluster_subnet_group_name | default('omit', True) }}"
+      wait: "{{ redshift_wait | default('omit', True) }}"
+      aws_access_key: "{{ redshift_aws_access_key | default('omit', True) }}"
+      security_token: "{{ redshift_security_token | default('omit', True) }}"
+      cluster_security_groups: "{{ redshift_cluster_security_groups | default('omit', True) }}"
+      region: "{{ redshift_region | default('omit', True) }}"
+      elastic_ip: "{{ redshift_elastic_ip | default('omit', True) }}"
+      wait_timeout: "{{ redshift_wait_timeout | default('omit', True) }}"
+      command: "{{ redshift_command | default('omit', True) }}"
+      automated_snapshot_retention_period: "{{ redshift_automated_snapshot_retention_period | default('omit', True) }}"
+      identifier: "{{ redshift_identifier | default('omit', True) }}"
+      validate_certs: "{{ redshift_validate_certs | default('omit', True) }}"
+      skip_final_cluster_snapshot: "{{ redshift_skip_final_cluster_snapshot | default('omit', True) }}"
+      preferred_maintenance_window: "{{ redshift_preferred_maintenance_window | default('omit', True) }}"
+  tasks:
+    - name: "plugin_redshift"
+      redshift: "{{ redshift }}"

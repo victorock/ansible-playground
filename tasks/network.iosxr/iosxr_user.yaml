@@ -1,0 +1,16 @@
+---
+- name: "module_iosxr_user"
+  iosxr_user: "{{ iosxr_user }}"
+  vars:
+    iosxr_user: 
+      public_key: "{{ iosxr_user_public_key | default(omit, True) }}"
+      update_password: "{{ iosxr_user_update_password | default(omit, True) }}"
+      configured_password: "{{ iosxr_user_configured_password | default(omit, True) }}"
+      group: "{{ iosxr_user_group | default(omit, True) }}"
+      name: "{{ iosxr_user_name | default(omit, True) }}"
+      purge: "{{ iosxr_user_purge | default(omit, True) }}"
+      state: "{{ iosxr_user_state | default(omit, True) }}"
+      public_key_contents: "{{ iosxr_user_public_key_contents | default(omit, True) }}"
+      groups: "{{ iosxr_user_groups | default(omit, True) }}"
+      provider: "{{ iosxr_user_provider | default(omit, True) }}"
+      aggregate: "{{ iosxr_user_aggregate | default(omit, True) }}"

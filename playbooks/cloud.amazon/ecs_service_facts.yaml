@@ -1,0 +1,23 @@
+---
+- name: "module_ecs_service_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ecs_service_facts: 
+      profile: "{{ ecs_service_facts_profile | default('omit', True) }}"
+      aws_secret_key: "{{ ecs_service_facts_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ ecs_service_facts_aws_access_key | default('omit', True) }}"
+      security_token: "{{ ecs_service_facts_security_token | default('omit', True) }}"
+      service: "{{ ecs_service_facts_service | default('omit', True) }}"
+      region: "{{ ecs_service_facts_region | default('omit', True) }}"
+      cluster: "{{ ecs_service_facts_cluster | default('omit', True) }}"
+      details: "{{ ecs_service_facts_details | default('omit', True) }}"
+      ec2_url: "{{ ecs_service_facts_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ ecs_service_facts_validate_certs | default('omit', True) }}"
+      events: "{{ ecs_service_facts_events | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ecs_service_facts"
+      ecs_service_facts: "{{ ecs_service_facts }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_net_linkagg"
+  net_linkagg: "{{ net_linkagg }}"
+  vars:
+    net_linkagg: 
+      name: "{{ net_linkagg_name | default(omit, True) }}"
+      purge: "{{ net_linkagg_purge | default(omit, True) }}"
+      state: "{{ net_linkagg_state | default(omit, True) }}"
+      mode: "{{ net_linkagg_mode | default(omit, True) }}"
+      members: "{{ net_linkagg_members | default(omit, True) }}"
+      min_links: "{{ net_linkagg_min_links | default(omit, True) }}"
+      aggregate: "{{ net_linkagg_aggregate | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_purefa_snap"
+  purefa_snap: "{{ purefa_snap }}"
+  vars:
+    purefa_snap: 
+      target: "{{ purefa_snap_target | default(omit, True) }}"
+      fa_url: "{{ purefa_snap_fa_url | default(omit, True) }}"
+      name: "{{ purefa_snap_name | default(omit, True) }}"
+      state: "{{ purefa_snap_state | default(omit, True) }}"
+      api_token: "{{ purefa_snap_api_token | default(omit, True) }}"
+      eradicate: "{{ purefa_snap_eradicate | default(omit, True) }}"
+      overwrite: "{{ purefa_snap_overwrite | default(omit, True) }}"
+      suffix: "{{ purefa_snap_suffix | default(omit, True) }}"

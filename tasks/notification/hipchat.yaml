@@ -1,0 +1,14 @@
+---
+- name: "module_hipchat"
+  hipchat: "{{ hipchat }}"
+  vars:
+    hipchat: 
+      from: "{{ hipchat_from | default(omit, True) }}"
+      room: "{{ hipchat_room | default(omit, True) }}"
+      color: "{{ hipchat_color | default(omit, True) }}"
+      msg_format: "{{ hipchat_msg_format | default(omit, True) }}"
+      token: "{{ hipchat_token | default(omit, True) }}"
+      api: "{{ hipchat_api | default(omit, True) }}"
+      notify: "{{ hipchat_notify | default(omit, True) }}"
+      msg: "{{ hipchat_msg | default(omit, True) }}"
+      validate_certs: "{{ hipchat_validate_certs | default(omit, True) }}"

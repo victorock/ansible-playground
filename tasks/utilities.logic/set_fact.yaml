@@ -1,0 +1,7 @@
+---
+- name: "module_set_fact"
+  set_fact: "{{ set_fact }}"
+  vars:
+    set_fact: 
+      key_value: "{{ set_fact_key_value | default(omit, True) }}"
+      cacheable: "{{ set_fact_cacheable | default(omit, True) }}"

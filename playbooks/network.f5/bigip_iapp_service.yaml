@@ -1,0 +1,29 @@
+---
+- name: "module_bigip_iapp_service"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_iapp_service: 
+      force: "{{ bigip_iapp_service_force | default('omit', True) }}"
+      description: "{{ bigip_iapp_service_description | default('omit', True) }}"
+      parameters: "{{ bigip_iapp_service_parameters | default('omit', True) }}"
+      strict_updates: "{{ bigip_iapp_service_strict_updates | default('omit', True) }}"
+      partition: "{{ bigip_iapp_service_partition | default('omit', True) }}"
+      metadata: "{{ bigip_iapp_service_metadata | default('omit', True) }}"
+      device_group: "{{ bigip_iapp_service_device_group | default('omit', True) }}"
+      server: "{{ bigip_iapp_service_server | default('omit', True) }}"
+      state: "{{ bigip_iapp_service_state | default('omit', True) }}"
+      user: "{{ bigip_iapp_service_user | default('omit', True) }}"
+      server_port: "{{ bigip_iapp_service_server_port | default('omit', True) }}"
+      provider: "{{ bigip_iapp_service_provider | default('omit', True) }}"
+      template: "{{ bigip_iapp_service_template | default('omit', True) }}"
+      traffic_group: "{{ bigip_iapp_service_traffic_group | default('omit', True) }}"
+      password: "{{ bigip_iapp_service_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_iapp_service_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_iapp_service_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_iapp_service"
+      bigip_iapp_service: "{{ bigip_iapp_service }}"

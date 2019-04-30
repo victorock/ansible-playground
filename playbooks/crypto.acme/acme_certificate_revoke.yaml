@@ -1,0 +1,23 @@
+---
+- name: "module_acme_certificate_revoke"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    acme_certificate_revoke: 
+      private_key_content: "{{ acme_certificate_revoke_private_key_content | default('omit', True) }}"
+      private_key_src: "{{ acme_certificate_revoke_private_key_src | default('omit', True) }}"
+      certificate: "{{ acme_certificate_revoke_certificate | default('omit', True) }}"
+      revoke_reason: "{{ acme_certificate_revoke_revoke_reason | default('omit', True) }}"
+      account_key_content: "{{ acme_certificate_revoke_account_key_content | default('omit', True) }}"
+      account_uri: "{{ acme_certificate_revoke_account_uri | default('omit', True) }}"
+      acme_directory: "{{ acme_certificate_revoke_acme_directory | default('omit', True) }}"
+      select_crypto_backend: "{{ acme_certificate_revoke_select_crypto_backend | default('omit', True) }}"
+      acme_version: "{{ acme_certificate_revoke_acme_version | default('omit', True) }}"
+      validate_certs: "{{ acme_certificate_revoke_validate_certs | default('omit', True) }}"
+      account_key_src: "{{ acme_certificate_revoke_account_key_src | default('omit', True) }}"
+  tasks:
+    - name: "plugin_acme_certificate_revoke"
+      acme_certificate_revoke: "{{ acme_certificate_revoke }}"

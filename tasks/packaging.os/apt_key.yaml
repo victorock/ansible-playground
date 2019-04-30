@@ -1,0 +1,13 @@
+---
+- name: "module_apt_key"
+  apt_key: "{{ apt_key }}"
+  vars:
+    apt_key: 
+      keyserver: "{{ apt_key_keyserver | default(omit, True) }}"
+      url: "{{ apt_key_url | default(omit, True) }}"
+      data: "{{ apt_key_data | default(omit, True) }}"
+      keyring: "{{ apt_key_keyring | default(omit, True) }}"
+      state: "{{ apt_key_state | default(omit, True) }}"
+      file: "{{ apt_key_file | default(omit, True) }}"
+      validate_certs: "{{ apt_key_validate_certs | default(omit, True) }}"
+      id: "{{ apt_key_id | default(omit, True) }}"

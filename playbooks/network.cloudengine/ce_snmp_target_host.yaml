@@ -1,0 +1,25 @@
+---
+- name: "module_ce_snmp_target_host"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_snmp_target_host: 
+      security_name_v3: "{{ ce_snmp_target_host_security_name_v3 | default('omit', True) }}"
+      interface_name: "{{ ce_snmp_target_host_interface_name | default('omit', True) }}"
+      security_model: "{{ ce_snmp_target_host_security_model | default('omit', True) }}"
+      vpn_name: "{{ ce_snmp_target_host_vpn_name | default('omit', True) }}"
+      security_level: "{{ ce_snmp_target_host_security_level | default('omit', True) }}"
+      security_name: "{{ ce_snmp_target_host_security_name | default('omit', True) }}"
+      notify_type: "{{ ce_snmp_target_host_notify_type | default('omit', True) }}"
+      connect_port: "{{ ce_snmp_target_host_connect_port | default('omit', True) }}"
+      version: "{{ ce_snmp_target_host_version | default('omit', True) }}"
+      host_name: "{{ ce_snmp_target_host_host_name | default('omit', True) }}"
+      address: "{{ ce_snmp_target_host_address | default('omit', True) }}"
+      recv_port: "{{ ce_snmp_target_host_recv_port | default('omit', True) }}"
+      is_public_net: "{{ ce_snmp_target_host_is_public_net | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_snmp_target_host"
+      ce_snmp_target_host: "{{ ce_snmp_target_host }}"

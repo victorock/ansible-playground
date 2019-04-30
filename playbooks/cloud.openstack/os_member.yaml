@@ -1,0 +1,31 @@
+---
+- name: "module_os_member"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_member: 
+      auth_type: "{{ os_member_auth_type | default('omit', True) }}"
+      timeout: "{{ os_member_timeout | default('omit', True) }}"
+      region_name: "{{ os_member_region_name | default('omit', True) }}"
+      availability_zone: "{{ os_member_availability_zone | default('omit', True) }}"
+      subnet_id: "{{ os_member_subnet_id | default('omit', True) }}"
+      verify: "{{ os_member_verify | default('omit', True) }}"
+      api_timeout: "{{ os_member_api_timeout | default('omit', True) }}"
+      state: "{{ os_member_state | default('omit', True) }}"
+      auth: "{{ os_member_auth | default('omit', True) }}"
+      name: "{{ os_member_name | default('omit', True) }}"
+      cacert: "{{ os_member_cacert | default('omit', True) }}"
+      cert: "{{ os_member_cert | default('omit', True) }}"
+      cloud: "{{ os_member_cloud | default('omit', True) }}"
+      key: "{{ os_member_key | default('omit', True) }}"
+      address: "{{ os_member_address | default('omit', True) }}"
+      interface: "{{ os_member_interface | default('omit', True) }}"
+      protocol_port: "{{ os_member_protocol_port | default('omit', True) }}"
+      pool: "{{ os_member_pool | default('omit', True) }}"
+      wait: "{{ os_member_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_member"
+      os_member: "{{ os_member }}"

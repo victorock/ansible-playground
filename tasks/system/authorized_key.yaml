@@ -1,0 +1,15 @@
+---
+- name: "module_authorized_key"
+  authorized_key: "{{ authorized_key }}"
+  vars:
+    authorized_key: 
+      comment: "{{ authorized_key_comment | default(omit, True) }}"
+      exclusive: "{{ authorized_key_exclusive | default(omit, True) }}"
+      key_options: "{{ authorized_key_key_options | default(omit, True) }}"
+      state: "{{ authorized_key_state | default(omit, True) }}"
+      user: "{{ authorized_key_user | default(omit, True) }}"
+      key: "{{ authorized_key_key | default(omit, True) }}"
+      path: "{{ authorized_key_path | default(omit, True) }}"
+      follow: "{{ authorized_key_follow | default(omit, True) }}"
+      validate_certs: "{{ authorized_key_validate_certs | default(omit, True) }}"
+      manage_dir: "{{ authorized_key_manage_dir | default(omit, True) }}"

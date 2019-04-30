@@ -1,0 +1,15 @@
+---
+- name: "module_bigpanda"
+  bigpanda: "{{ bigpanda }}"
+  vars:
+    bigpanda: 
+      description: "{{ bigpanda_description | default(omit, True) }}"
+      url: "{{ bigpanda_url | default(omit, True) }}"
+      component: "{{ bigpanda_component | default(omit, True) }}"
+      token: "{{ bigpanda_token | default(omit, True) }}"
+      state: "{{ bigpanda_state | default(omit, True) }}"
+      version: "{{ bigpanda_version | default(omit, True) }}"
+      hosts: "{{ bigpanda_hosts | default(omit, True) }}"
+      env: "{{ bigpanda_env | default(omit, True) }}"
+      owner: "{{ bigpanda_owner | default(omit, True) }}"
+      validate_certs: "{{ bigpanda_validate_certs | default(omit, True) }}"

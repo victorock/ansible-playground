@@ -1,0 +1,19 @@
+---
+- name: "module_bigip_user"
+  bigip_user: "{{ bigip_user }}"
+  vars:
+    bigip_user: 
+      update_password: "{{ bigip_user_update_password | default(omit, True) }}"
+      shell: "{{ bigip_user_shell | default(omit, True) }}"
+      server_port: "{{ bigip_user_server_port | default(omit, True) }}"
+      password_credential: "{{ bigip_user_password_credential | default(omit, True) }}"
+      partition_access: "{{ bigip_user_partition_access | default(omit, True) }}"
+      state: "{{ bigip_user_state | default(omit, True) }}"
+      server: "{{ bigip_user_server | default(omit, True) }}"
+      partition: "{{ bigip_user_partition | default(omit, True) }}"
+      password: "{{ bigip_user_password | default(omit, True) }}"
+      user: "{{ bigip_user_user | default(omit, True) }}"
+      full_name: "{{ bigip_user_full_name | default(omit, True) }}"
+      provider: "{{ bigip_user_provider | default(omit, True) }}"
+      username_credential: "{{ bigip_user_username_credential | default(omit, True) }}"
+      validate_certs: "{{ bigip_user_validate_certs | default(omit, True) }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_pushbullet"
+  pushbullet: "{{ pushbullet }}"
+  vars:
+    pushbullet: 
+      body: "{{ pushbullet_body | default(omit, True) }}"
+      title: "{{ pushbullet_title | default(omit, True) }}"
+      push_type: "{{ pushbullet_push_type | default(omit, True) }}"
+      device: "{{ pushbullet_device | default(omit, True) }}"
+      api_key: "{{ pushbullet_api_key | default(omit, True) }}"
+      channel: "{{ pushbullet_channel | default(omit, True) }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_win_acl_inheritance"
+  win_acl_inheritance: "{{ win_acl_inheritance }}"
+  vars:
+    win_acl_inheritance: 
+      path: "{{ win_acl_inheritance_path | default(omit, True) }}"
+      state: "{{ win_acl_inheritance_state | default(omit, True) }}"
+      reorganize: "{{ win_acl_inheritance_reorganize | default(omit, True) }}"

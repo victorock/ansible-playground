@@ -1,0 +1,21 @@
+---
+- name: "module_cyberark_authentication"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cyberark_authentication: 
+      username: "{{ cyberark_authentication_username | default('omit', True) }}"
+      use_radius_authentication: "{{ cyberark_authentication_use_radius_authentication | default('omit', True) }}"
+      new_password: "{{ cyberark_authentication_new_password | default('omit', True) }}"
+      cyberark_session: "{{ cyberark_authentication_cyberark_session | default('omit', True) }}"
+      state: "{{ cyberark_authentication_state | default('omit', True) }}"
+      password: "{{ cyberark_authentication_password | default('omit', True) }}"
+      validate_certs: "{{ cyberark_authentication_validate_certs | default('omit', True) }}"
+      use_shared_logon_authentication: "{{ cyberark_authentication_use_shared_logon_authentication | default('omit', True) }}"
+      api_base_url: "{{ cyberark_authentication_api_base_url | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cyberark_authentication"
+      cyberark_authentication: "{{ cyberark_authentication }}"

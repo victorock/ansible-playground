@@ -1,0 +1,23 @@
+---
+- name: "module_nxos_nxapi"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_nxapi: 
+      http_port: "{{ nxos_nxapi_http_port | default('omit', True) }}"
+      tlsv1_2: "{{ nxos_nxapi_tlsv1_2 | default('omit', True) }}"
+      https_port: "{{ nxos_nxapi_https_port | default('omit', True) }}"
+      tlsv1_0: "{{ nxos_nxapi_tlsv1_0 | default('omit', True) }}"
+      tlsv1_1: "{{ nxos_nxapi_tlsv1_1 | default('omit', True) }}"
+      state: "{{ nxos_nxapi_state | default('omit', True) }}"
+      ssl_strong_ciphers: "{{ nxos_nxapi_ssl_strong_ciphers | default('omit', True) }}"
+      sandbox: "{{ nxos_nxapi_sandbox | default('omit', True) }}"
+      https: "{{ nxos_nxapi_https | default('omit', True) }}"
+      provider: "{{ nxos_nxapi_provider | default('omit', True) }}"
+      http: "{{ nxos_nxapi_http | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_nxapi"
+      nxos_nxapi: "{{ nxos_nxapi }}"

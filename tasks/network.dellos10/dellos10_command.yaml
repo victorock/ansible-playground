@@ -1,0 +1,11 @@
+---
+- name: "module_dellos10_command"
+  dellos10_command: "{{ dellos10_command }}"
+  vars:
+    dellos10_command: 
+      retries: "{{ dellos10_command_retries | default(omit, True) }}"
+      commands: "{{ dellos10_command_commands | default(omit, True) }}"
+      interval: "{{ dellos10_command_interval | default(omit, True) }}"
+      provider: "{{ dellos10_command_provider | default(omit, True) }}"
+      wait_for: "{{ dellos10_command_wait_for | default(omit, True) }}"
+      match: "{{ dellos10_command_match | default(omit, True) }}"

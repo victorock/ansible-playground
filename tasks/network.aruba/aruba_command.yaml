@@ -1,0 +1,11 @@
+---
+- name: "module_aruba_command"
+  aruba_command: "{{ aruba_command }}"
+  vars:
+    aruba_command: 
+      retries: "{{ aruba_command_retries | default(omit, True) }}"
+      commands: "{{ aruba_command_commands | default(omit, True) }}"
+      interval: "{{ aruba_command_interval | default(omit, True) }}"
+      provider: "{{ aruba_command_provider | default(omit, True) }}"
+      wait_for: "{{ aruba_command_wait_for | default(omit, True) }}"
+      match: "{{ aruba_command_match | default(omit, True) }}"

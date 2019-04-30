@@ -1,0 +1,16 @@
+---
+- name: "module_ucs_timezone"
+  ucs_timezone: "{{ ucs_timezone }}"
+  vars:
+    ucs_timezone: 
+      username: "{{ ucs_timezone_username | default(omit, True) }}"
+      description: "{{ ucs_timezone_description | default(omit, True) }}"
+      hostname: "{{ ucs_timezone_hostname | default(omit, True) }}"
+      state: "{{ ucs_timezone_state | default(omit, True) }}"
+      admin_state: "{{ ucs_timezone_admin_state | default(omit, True) }}"
+      proxy: "{{ ucs_timezone_proxy | default(omit, True) }}"
+      use_ssl: "{{ ucs_timezone_use_ssl | default(omit, True) }}"
+      timezone: "{{ ucs_timezone_timezone | default(omit, True) }}"
+      password: "{{ ucs_timezone_password | default(omit, True) }}"
+      port: "{{ ucs_timezone_port | default(omit, True) }}"
+      use_proxy: "{{ ucs_timezone_use_proxy | default(omit, True) }}"

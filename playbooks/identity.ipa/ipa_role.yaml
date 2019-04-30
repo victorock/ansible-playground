@@ -1,0 +1,28 @@
+---
+- name: "module_ipa_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ipa_role: 
+      ipa_port: "{{ ipa_role_ipa_port | default('omit', True) }}"
+      group: "{{ ipa_role_group | default('omit', True) }}"
+      description: "{{ ipa_role_description | default('omit', True) }}"
+      service: "{{ ipa_role_service | default('omit', True) }}"
+      user: "{{ ipa_role_user | default('omit', True) }}"
+      ipa_prot: "{{ ipa_role_ipa_prot | default('omit', True) }}"
+      state: "{{ ipa_role_state | default('omit', True) }}"
+      hostgroup: "{{ ipa_role_hostgroup | default('omit', True) }}"
+      privilege: "{{ ipa_role_privilege | default('omit', True) }}"
+      host: "{{ ipa_role_host | default('omit', True) }}"
+      ipa_host: "{{ ipa_role_ipa_host | default('omit', True) }}"
+      ipa_user: "{{ ipa_role_ipa_user | default('omit', True) }}"
+      ipa_pass: "{{ ipa_role_ipa_pass | default('omit', True) }}"
+      ipa_timeout: "{{ ipa_role_ipa_timeout | default('omit', True) }}"
+      validate_certs: "{{ ipa_role_validate_certs | default('omit', True) }}"
+      cn: "{{ ipa_role_cn | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ipa_role"
+      ipa_role: "{{ ipa_role }}"

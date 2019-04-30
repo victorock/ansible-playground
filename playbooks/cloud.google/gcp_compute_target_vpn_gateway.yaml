@@ -1,0 +1,22 @@
+---
+- name: "module_gcp_compute_target_vpn_gateway"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_compute_target_vpn_gateway: 
+      scopes: "{{ gcp_compute_target_vpn_gateway_scopes | default('omit', True) }}"
+      description: "{{ gcp_compute_target_vpn_gateway_description | default('omit', True) }}"
+      service_account_email: "{{ gcp_compute_target_vpn_gateway_service_account_email | default('omit', True) }}"
+      region: "{{ gcp_compute_target_vpn_gateway_region | default('omit', True) }}"
+      name: "{{ gcp_compute_target_vpn_gateway_name | default('omit', True) }}"
+      project: "{{ gcp_compute_target_vpn_gateway_project | default('omit', True) }}"
+      state: "{{ gcp_compute_target_vpn_gateway_state | default('omit', True) }}"
+      service_account_file: "{{ gcp_compute_target_vpn_gateway_service_account_file | default('omit', True) }}"
+      auth_kind: "{{ gcp_compute_target_vpn_gateway_auth_kind | default('omit', True) }}"
+      network: "{{ gcp_compute_target_vpn_gateway_network | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_compute_target_vpn_gateway"
+      gcp_compute_target_vpn_gateway: "{{ gcp_compute_target_vpn_gateway }}"

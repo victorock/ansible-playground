@@ -1,0 +1,26 @@
+---
+- name: "module_sns_topic"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sns_topic: 
+      profile: "{{ sns_topic_profile | default('omit', True) }}"
+      aws_secret_key: "{{ sns_topic_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ sns_topic_aws_access_key | default('omit', True) }}"
+      display_name: "{{ sns_topic_display_name | default('omit', True) }}"
+      name: "{{ sns_topic_name | default('omit', True) }}"
+      security_token: "{{ sns_topic_security_token | default('omit', True) }}"
+      subscriptions: "{{ sns_topic_subscriptions | default('omit', True) }}"
+      delivery_policy: "{{ sns_topic_delivery_policy | default('omit', True) }}"
+      state: "{{ sns_topic_state | default('omit', True) }}"
+      ec2_url: "{{ sns_topic_ec2_url | default('omit', True) }}"
+      policy: "{{ sns_topic_policy | default('omit', True) }}"
+      purge_subscriptions: "{{ sns_topic_purge_subscriptions | default('omit', True) }}"
+      validate_certs: "{{ sns_topic_validate_certs | default('omit', True) }}"
+      region: "{{ sns_topic_region | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sns_topic"
+      sns_topic: "{{ sns_topic }}"

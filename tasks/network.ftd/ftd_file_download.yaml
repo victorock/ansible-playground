@@ -1,0 +1,8 @@
+---
+- name: "module_ftd_file_download"
+  ftd_file_download: "{{ ftd_file_download }}"
+  vars:
+    ftd_file_download: 
+      path_params: "{{ ftd_file_download_path_params | default(omit, True) }}"
+      operation: "{{ ftd_file_download_operation | default(omit, True) }}"
+      destination: "{{ ftd_file_download_destination | default(omit, True) }}"

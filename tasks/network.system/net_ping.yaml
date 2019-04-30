@@ -1,0 +1,10 @@
+---
+- name: "module_net_ping"
+  net_ping: "{{ net_ping }}"
+  vars:
+    net_ping: 
+      count: "{{ net_ping_count | default(omit, True) }}"
+      dest: "{{ net_ping_dest | default(omit, True) }}"
+      state: "{{ net_ping_state | default(omit, True) }}"
+      vrf: "{{ net_ping_vrf | default(omit, True) }}"
+      source: "{{ net_ping_source | default(omit, True) }}"

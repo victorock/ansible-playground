@@ -1,0 +1,16 @@
+---
+- name: "module_rax_identity"
+  rax_identity: "{{ rax_identity }}"
+  vars:
+    rax_identity: 
+      username: "{{ rax_identity_username | default(omit, True) }}"
+      identity_type: "{{ rax_identity_identity_type | default(omit, True) }}"
+      tenant_name: "{{ rax_identity_tenant_name | default(omit, True) }}"
+      region: "{{ rax_identity_region | default(omit, True) }}"
+      state: "{{ rax_identity_state | default(omit, True) }}"
+      verify_ssl: "{{ rax_identity_verify_ssl | default(omit, True) }}"
+      env: "{{ rax_identity_env | default(omit, True) }}"
+      tenant_id: "{{ rax_identity_tenant_id | default(omit, True) }}"
+      credentials: "{{ rax_identity_credentials | default(omit, True) }}"
+      api_key: "{{ rax_identity_api_key | default(omit, True) }}"
+      auth_endpoint: "{{ rax_identity_auth_endpoint | default(omit, True) }}"

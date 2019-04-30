@@ -1,0 +1,16 @@
+---
+- name: "module_nios_zone"
+  nios_zone: "{{ nios_zone }}"
+  vars:
+    nios_zone: 
+      comment: "{{ nios_zone_comment | default(omit, True) }}"
+      grid_primary: "{{ nios_zone_grid_primary | default(omit, True) }}"
+      zone_format: "{{ nios_zone_zone_format | default(omit, True) }}"
+      restart_if_needed: "{{ nios_zone_restart_if_needed | default(omit, True) }}"
+      grid_secondaries: "{{ nios_zone_grid_secondaries | default(omit, True) }}"
+      fqdn: "{{ nios_zone_fqdn | default(omit, True) }}"
+      ns_group: "{{ nios_zone_ns_group | default(omit, True) }}"
+      state: "{{ nios_zone_state | default(omit, True) }}"
+      extattrs: "{{ nios_zone_extattrs | default(omit, True) }}"
+      provider: "{{ nios_zone_provider | default(omit, True) }}"
+      view: "{{ nios_zone_view | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_eos_interface"
+  eos_interface: "{{ eos_interface }}"
+  vars:
+    eos_interface: 
+      neighbors: "{{ eos_interface_neighbors | default(omit, True) }}"
+      authorize: "{{ eos_interface_authorize | default(omit, True) }}"
+      description: "{{ eos_interface_description | default(omit, True) }}"
+      auth_pass: "{{ eos_interface_auth_pass | default(omit, True) }}"
+      enabled: "{{ eos_interface_enabled | default(omit, True) }}"
+      mtu: "{{ eos_interface_mtu | default(omit, True) }}"
+      rx_rate: "{{ eos_interface_rx_rate | default(omit, True) }}"
+      state: "{{ eos_interface_state | default(omit, True) }}"
+      delay: "{{ eos_interface_delay | default(omit, True) }}"
+      provider: "{{ eos_interface_provider | default(omit, True) }}"
+      aggregate: "{{ eos_interface_aggregate | default(omit, True) }}"
+      speed: "{{ eos_interface_speed | default(omit, True) }}"
+      tx_rate: "{{ eos_interface_tx_rate | default(omit, True) }}"
+      name: "{{ eos_interface_name | default(omit, True) }}"

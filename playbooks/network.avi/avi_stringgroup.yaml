@@ -1,0 +1,30 @@
+---
+- name: "module_avi_stringgroup"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_stringgroup: 
+      username: "{{ avi_stringgroup_username | default('omit', True) }}"
+      uuid: "{{ avi_stringgroup_uuid | default('omit', True) }}"
+      description: "{{ avi_stringgroup_description | default('omit', True) }}"
+      state: "{{ avi_stringgroup_state | default('omit', True) }}"
+      url: "{{ avi_stringgroup_url | default('omit', True) }}"
+      controller: "{{ avi_stringgroup_controller | default('omit', True) }}"
+      tenant_ref: "{{ avi_stringgroup_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_stringgroup_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_stringgroup_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_stringgroup_avi_credentials | default('omit', True) }}"
+      kv: "{{ avi_stringgroup_kv | default('omit', True) }}"
+      api_context: "{{ avi_stringgroup_api_context | default('omit', True) }}"
+      tenant: "{{ avi_stringgroup_tenant | default('omit', True) }}"
+      password: "{{ avi_stringgroup_password | default('omit', True) }}"
+      type: "{{ avi_stringgroup_type | default('omit', True) }}"
+      tenant_uuid: "{{ avi_stringgroup_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_stringgroup_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_stringgroup_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_stringgroup"
+      avi_stringgroup: "{{ avi_stringgroup }}"

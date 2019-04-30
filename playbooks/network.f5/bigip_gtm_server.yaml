@@ -1,0 +1,27 @@
+---
+- name: "module_bigip_gtm_server"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_gtm_server: 
+      link_discovery: "{{ bigip_gtm_server_link_discovery | default('omit', True) }}"
+      name: "{{ bigip_gtm_server_name | default('omit', True) }}"
+      server_type: "{{ bigip_gtm_server_server_type | default('omit', True) }}"
+      partition: "{{ bigip_gtm_server_partition | default('omit', True) }}"
+      state: "{{ bigip_gtm_server_state | default('omit', True) }}"
+      virtual_server_discovery: "{{ bigip_gtm_server_virtual_server_discovery | default('omit', True) }}"
+      server: "{{ bigip_gtm_server_server | default('omit', True) }}"
+      devices: "{{ bigip_gtm_server_devices | default('omit', True) }}"
+      datacenter: "{{ bigip_gtm_server_datacenter | default('omit', True) }}"
+      user: "{{ bigip_gtm_server_user | default('omit', True) }}"
+      server_port: "{{ bigip_gtm_server_server_port | default('omit', True) }}"
+      provider: "{{ bigip_gtm_server_provider | default('omit', True) }}"
+      iquery_options: "{{ bigip_gtm_server_iquery_options | default('omit', True) }}"
+      password: "{{ bigip_gtm_server_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_gtm_server_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_gtm_server"
+      bigip_gtm_server: "{{ bigip_gtm_server }}"

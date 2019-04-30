@@ -1,0 +1,36 @@
+---
+- name: "module_na_ontap_nfs"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_nfs: 
+      nfsv4: "{{ na_ontap_nfs_nfsv4 | default('omit', True) }}"
+      tcp: "{{ na_ontap_nfs_tcp | default('omit', True) }}"
+      nfsv3: "{{ na_ontap_nfs_nfsv3 | default('omit', True) }}"
+      nfsv41_write_delegation: "{{ na_ontap_nfs_nfsv41_write_delegation | default('omit', True) }}"
+      http_port: "{{ na_ontap_nfs_http_port | default('omit', True) }}"
+      hostname: "{{ na_ontap_nfs_hostname | default('omit', True) }}"
+      vserver: "{{ na_ontap_nfs_vserver | default('omit', True) }}"
+      vstorage_state: "{{ na_ontap_nfs_vstorage_state | default('omit', True) }}"
+      state: "{{ na_ontap_nfs_state | default('omit', True) }}"
+      https: "{{ na_ontap_nfs_https | default('omit', True) }}"
+      username: "{{ na_ontap_nfs_username | default('omit', True) }}"
+      udp: "{{ na_ontap_nfs_udp | default('omit', True) }}"
+      nfsv41: "{{ na_ontap_nfs_nfsv41 | default('omit', True) }}"
+      nfsv40_write_delegation: "{{ na_ontap_nfs_nfsv40_write_delegation | default('omit', True) }}"
+      nfsv3_fsid_change: "{{ na_ontap_nfs_nfsv3_fsid_change | default('omit', True) }}"
+      password: "{{ na_ontap_nfs_password | default('omit', True) }}"
+      nfsv41_acl: "{{ na_ontap_nfs_nfsv41_acl | default('omit', True) }}"
+      nfsv41_read_delegation: "{{ na_ontap_nfs_nfsv41_read_delegation | default('omit', True) }}"
+      nfsv40_acl: "{{ na_ontap_nfs_nfsv40_acl | default('omit', True) }}"
+      showmount: "{{ na_ontap_nfs_showmount | default('omit', True) }}"
+      nfsv4_id_domain: "{{ na_ontap_nfs_nfsv4_id_domain | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_nfs_validate_certs | default('omit', True) }}"
+      nfsv40_read_delegation: "{{ na_ontap_nfs_nfsv40_read_delegation | default('omit', True) }}"
+      service_state: "{{ na_ontap_nfs_service_state | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_nfs"
+      na_ontap_nfs: "{{ na_ontap_nfs }}"

@@ -1,0 +1,11 @@
+---
+- name: "module_na_elementsw_check_connections"
+  na_elementsw_check_connections: "{{ na_elementsw_check_connections }}"
+  vars:
+    na_elementsw_check_connections: 
+      username: "{{ na_elementsw_check_connections_username | default(omit, True) }}"
+      skip: "{{ na_elementsw_check_connections_skip | default(omit, True) }}"
+      hostname: "{{ na_elementsw_check_connections_hostname | default(omit, True) }}"
+      svip: "{{ na_elementsw_check_connections_svip | default(omit, True) }}"
+      mvip: "{{ na_elementsw_check_connections_mvip | default(omit, True) }}"
+      password: "{{ na_elementsw_check_connections_password | default(omit, True) }}"

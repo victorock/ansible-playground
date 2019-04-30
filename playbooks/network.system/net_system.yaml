@@ -1,0 +1,18 @@
+---
+- name: "module_net_system"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    net_system: 
+      lookup_source: "{{ net_system_lookup_source | default('omit', True) }}"
+      domain_search: "{{ net_system_domain_search | default('omit', True) }}"
+      hostname: "{{ net_system_hostname | default('omit', True) }}"
+      domain_name: "{{ net_system_domain_name | default('omit', True) }}"
+      state: "{{ net_system_state | default('omit', True) }}"
+      name_servers: "{{ net_system_name_servers | default('omit', True) }}"
+  tasks:
+    - name: "plugin_net_system"
+      net_system: "{{ net_system }}"

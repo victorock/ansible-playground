@@ -1,0 +1,28 @@
+---
+- name: "module_cs_instance_nic_secondaryip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_instance_nic_secondaryip: 
+      vm_guest_ip: "{{ cs_instance_nic_secondaryip_vm_guest_ip | default('omit', True) }}"
+      domain: "{{ cs_instance_nic_secondaryip_domain | default('omit', True) }}"
+      api_key: "{{ cs_instance_nic_secondaryip_api_key | default('omit', True) }}"
+      poll_async: "{{ cs_instance_nic_secondaryip_poll_async | default('omit', True) }}"
+      api_url: "{{ cs_instance_nic_secondaryip_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_instance_nic_secondaryip_api_http_method | default('omit', True) }}"
+      api_secret: "{{ cs_instance_nic_secondaryip_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_instance_nic_secondaryip_api_timeout | default('omit', True) }}"
+      vm: "{{ cs_instance_nic_secondaryip_vm | default('omit', True) }}"
+      api_region: "{{ cs_instance_nic_secondaryip_api_region | default('omit', True) }}"
+      project: "{{ cs_instance_nic_secondaryip_project | default('omit', True) }}"
+      state: "{{ cs_instance_nic_secondaryip_state | default('omit', True) }}"
+      vpc: "{{ cs_instance_nic_secondaryip_vpc | default('omit', True) }}"
+      account: "{{ cs_instance_nic_secondaryip_account | default('omit', True) }}"
+      zone: "{{ cs_instance_nic_secondaryip_zone | default('omit', True) }}"
+      network: "{{ cs_instance_nic_secondaryip_network | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_instance_nic_secondaryip"
+      cs_instance_nic_secondaryip: "{{ cs_instance_nic_secondaryip }}"

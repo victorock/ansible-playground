@@ -1,0 +1,50 @@
+---
+- name: "module_meraki_ssid"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    meraki_ssid: 
+      org_id: "{{ meraki_ssid_org_id | default('omit', True) }}"
+      number: "{{ meraki_ssid_number | default('omit', True) }}"
+      concentrator_network_id: "{{ meraki_ssid_concentrator_network_id | default('omit', True) }}"
+      splash_page: "{{ meraki_ssid_splash_page | default('omit', True) }}"
+      use_https: "{{ meraki_ssid_use_https | default('omit', True) }}"
+      ap_tags_vlan_ids: "{{ meraki_ssid_ap_tags_vlan_ids | default('omit', True) }}"
+      use_proxy: "{{ meraki_ssid_use_proxy | default('omit', True) }}"
+      min_bitrate: "{{ meraki_ssid_min_bitrate | default('omit', True) }}"
+      use_vlan_tagging: "{{ meraki_ssid_use_vlan_tagging | default('omit', True) }}"
+      radius_accounting_enabled: "{{ meraki_ssid_radius_accounting_enabled | default('omit', True) }}"
+      state: "{{ meraki_ssid_state | default('omit', True) }}"
+      wpa_encryption_mode: "{{ meraki_ssid_wpa_encryption_mode | default('omit', True) }}"
+      vlan_id: "{{ meraki_ssid_vlan_id | default('omit', True) }}"
+      radius_accounting_servers: "{{ meraki_ssid_radius_accounting_servers | default('omit', True) }}"
+      radius_servers: "{{ meraki_ssid_radius_servers | default('omit', True) }}"
+      org_name: "{{ meraki_ssid_org_name | default('omit', True) }}"
+      psk: "{{ meraki_ssid_psk | default('omit', True) }}"
+      encryption_mode: "{{ meraki_ssid_encryption_mode | default('omit', True) }}"
+      radius_load_balancing_policy: "{{ meraki_ssid_radius_load_balancing_policy | default('omit', True) }}"
+      auth_mode: "{{ meraki_ssid_auth_mode | default('omit', True) }}"
+      per_client_bandwidth_limit_up: "{{ meraki_ssid_per_client_bandwidth_limit_up | default('omit', True) }}"
+      host: "{{ meraki_ssid_host | default('omit', True) }}"
+      radius_coa_enabled: "{{ meraki_ssid_radius_coa_enabled | default('omit', True) }}"
+      default_vlan_id: "{{ meraki_ssid_default_vlan_id | default('omit', True) }}"
+      band_selection: "{{ meraki_ssid_band_selection | default('omit', True) }}"
+      name: "{{ meraki_ssid_name | default('omit', True) }}"
+      auth_key: "{{ meraki_ssid_auth_key | default('omit', True) }}"
+      ip_assignment_mode: "{{ meraki_ssid_ip_assignment_mode | default('omit', True) }}"
+      enabled: "{{ meraki_ssid_enabled | default('omit', True) }}"
+      walled_garden_ranges: "{{ meraki_ssid_walled_garden_ranges | default('omit', True) }}"
+      output_level: "{{ meraki_ssid_output_level | default('omit', True) }}"
+      walled_garden_enabled: "{{ meraki_ssid_walled_garden_enabled | default('omit', True) }}"
+      net_name: "{{ meraki_ssid_net_name | default('omit', True) }}"
+      timeout: "{{ meraki_ssid_timeout | default('omit', True) }}"
+      per_client_bandwidth_limit_down: "{{ meraki_ssid_per_client_bandwidth_limit_down | default('omit', True) }}"
+      validate_certs: "{{ meraki_ssid_validate_certs | default('omit', True) }}"
+      net_id: "{{ meraki_ssid_net_id | default('omit', True) }}"
+      radius_failover_policy: "{{ meraki_ssid_radius_failover_policy | default('omit', True) }}"
+  tasks:
+    - name: "plugin_meraki_ssid"
+      meraki_ssid: "{{ meraki_ssid }}"

@@ -1,0 +1,14 @@
+---
+- name: "module_add_host"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    add_host: 
+      name: "{{ add_host_name | default('omit', True) }}"
+      groups: "{{ add_host_groups | default('omit', True) }}"
+  tasks:
+    - name: "plugin_add_host"
+      add_host: "{{ add_host }}"

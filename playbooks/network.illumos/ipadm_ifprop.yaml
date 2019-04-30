@@ -1,0 +1,18 @@
+---
+- name: "module_ipadm_ifprop"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ipadm_ifprop: 
+      temporary: "{{ ipadm_ifprop_temporary | default('omit', True) }}"
+      value: "{{ ipadm_ifprop_value | default('omit', True) }}"
+      state: "{{ ipadm_ifprop_state | default('omit', True) }}"
+      interface: "{{ ipadm_ifprop_interface | default('omit', True) }}"
+      protocol: "{{ ipadm_ifprop_protocol | default('omit', True) }}"
+      property: "{{ ipadm_ifprop_property | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ipadm_ifprop"
+      ipadm_ifprop: "{{ ipadm_ifprop }}"

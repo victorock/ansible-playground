@@ -1,0 +1,31 @@
+---
+- name: "module_proxysql_mysql_users"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    proxysql_mysql_users: 
+      username: "{{ proxysql_mysql_users_username | default('omit', True) }}"
+      default_hostgroup: "{{ proxysql_mysql_users_default_hostgroup | default('omit', True) }}"
+      password: "{{ proxysql_mysql_users_password | default('omit', True) }}"
+      frontend: "{{ proxysql_mysql_users_frontend | default('omit', True) }}"
+      default_schema: "{{ proxysql_mysql_users_default_schema | default('omit', True) }}"
+      transaction_persistent: "{{ proxysql_mysql_users_transaction_persistent | default('omit', True) }}"
+      login_port: "{{ proxysql_mysql_users_login_port | default('omit', True) }}"
+      login_user: "{{ proxysql_mysql_users_login_user | default('omit', True) }}"
+      login_host: "{{ proxysql_mysql_users_login_host | default('omit', True) }}"
+      save_to_disk: "{{ proxysql_mysql_users_save_to_disk | default('omit', True) }}"
+      backend: "{{ proxysql_mysql_users_backend | default('omit', True) }}"
+      state: "{{ proxysql_mysql_users_state | default('omit', True) }}"
+      fast_forward: "{{ proxysql_mysql_users_fast_forward | default('omit', True) }}"
+      load_to_runtime: "{{ proxysql_mysql_users_load_to_runtime | default('omit', True) }}"
+      login_password: "{{ proxysql_mysql_users_login_password | default('omit', True) }}"
+      active: "{{ proxysql_mysql_users_active | default('omit', True) }}"
+      config_file: "{{ proxysql_mysql_users_config_file | default('omit', True) }}"
+      use_ssl: "{{ proxysql_mysql_users_use_ssl | default('omit', True) }}"
+      max_connections: "{{ proxysql_mysql_users_max_connections | default('omit', True) }}"
+  tasks:
+    - name: "plugin_proxysql_mysql_users"
+      proxysql_mysql_users: "{{ proxysql_mysql_users }}"

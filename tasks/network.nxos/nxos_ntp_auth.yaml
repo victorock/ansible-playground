@@ -1,0 +1,12 @@
+---
+- name: "module_nxos_ntp_auth"
+  nxos_ntp_auth: "{{ nxos_ntp_auth }}"
+  vars:
+    nxos_ntp_auth: 
+      auth_type: "{{ nxos_ntp_auth_auth_type | default(omit, True) }}"
+      state: "{{ nxos_ntp_auth_state | default(omit, True) }}"
+      authentication: "{{ nxos_ntp_auth_authentication | default(omit, True) }}"
+      md5string: "{{ nxos_ntp_auth_md5string | default(omit, True) }}"
+      trusted_key: "{{ nxos_ntp_auth_trusted_key | default(omit, True) }}"
+      provider: "{{ nxos_ntp_auth_provider | default(omit, True) }}"
+      key_id: "{{ nxos_ntp_auth_key_id | default(omit, True) }}"

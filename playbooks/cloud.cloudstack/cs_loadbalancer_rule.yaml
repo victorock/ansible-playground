@@ -1,0 +1,32 @@
+---
+- name: "module_cs_loadbalancer_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_loadbalancer_rule: 
+      domain: "{{ cs_loadbalancer_rule_domain | default('omit', True) }}"
+      protocol: "{{ cs_loadbalancer_rule_protocol | default('omit', True) }}"
+      description: "{{ cs_loadbalancer_rule_description | default('omit', True) }}"
+      api_http_method: "{{ cs_loadbalancer_rule_api_http_method | default('omit', True) }}"
+      api_secret: "{{ cs_loadbalancer_rule_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_loadbalancer_rule_api_timeout | default('omit', True) }}"
+      public_port: "{{ cs_loadbalancer_rule_public_port | default('omit', True) }}"
+      account: "{{ cs_loadbalancer_rule_account | default('omit', True) }}"
+      api_region: "{{ cs_loadbalancer_rule_api_region | default('omit', True) }}"
+      project: "{{ cs_loadbalancer_rule_project | default('omit', True) }}"
+      private_port: "{{ cs_loadbalancer_rule_private_port | default('omit', True) }}"
+      state: "{{ cs_loadbalancer_rule_state | default('omit', True) }}"
+      zone: "{{ cs_loadbalancer_rule_zone | default('omit', True) }}"
+      open_firewall: "{{ cs_loadbalancer_rule_open_firewall | default('omit', True) }}"
+      algorithm: "{{ cs_loadbalancer_rule_algorithm | default('omit', True) }}"
+      cidr: "{{ cs_loadbalancer_rule_cidr | default('omit', True) }}"
+      api_key: "{{ cs_loadbalancer_rule_api_key | default('omit', True) }}"
+      ip_address: "{{ cs_loadbalancer_rule_ip_address | default('omit', True) }}"
+      name: "{{ cs_loadbalancer_rule_name | default('omit', True) }}"
+      api_url: "{{ cs_loadbalancer_rule_api_url | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_loadbalancer_rule"
+      cs_loadbalancer_rule: "{{ cs_loadbalancer_rule }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_ironware_config"
+  ironware_config: "{{ ironware_config }}"
+  vars:
+    ironware_config: 
+      authorize: "{{ ironware_config_authorize | default(omit, True) }}"
+      src: "{{ ironware_config_src | default(omit, True) }}"
+      config: "{{ ironware_config_config | default(omit, True) }}"
+      after: "{{ ironware_config_after | default(omit, True) }}"
+      lines: "{{ ironware_config_lines | default(omit, True) }}"
+      update: "{{ ironware_config_update | default(omit, True) }}"
+      replace: "{{ ironware_config_replace | default(omit, True) }}"
+      parents: "{{ ironware_config_parents | default(omit, True) }}"
+      provider: "{{ ironware_config_provider | default(omit, True) }}"
+      commit: "{{ ironware_config_commit | default(omit, True) }}"
+      save_when: "{{ ironware_config_save_when | default(omit, True) }}"
+      backup: "{{ ironware_config_backup | default(omit, True) }}"
+      match: "{{ ironware_config_match | default(omit, True) }}"
+      before: "{{ ironware_config_before | default(omit, True) }}"

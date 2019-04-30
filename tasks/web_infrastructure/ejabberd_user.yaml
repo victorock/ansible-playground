@@ -1,0 +1,10 @@
+---
+- name: "module_ejabberd_user"
+  ejabberd_user: "{{ ejabberd_user }}"
+  vars:
+    ejabberd_user: 
+      username: "{{ ejabberd_user_username | default(omit, True) }}"
+      host: "{{ ejabberd_user_host | default(omit, True) }}"
+      password: "{{ ejabberd_user_password | default(omit, True) }}"
+      logging: "{{ ejabberd_user_logging | default(omit, True) }}"
+      state: "{{ ejabberd_user_state | default(omit, True) }}"

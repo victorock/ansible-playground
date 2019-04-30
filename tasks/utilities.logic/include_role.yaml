@@ -1,0 +1,13 @@
+---
+- name: "module_include_role"
+  include_role: "{{ include_role }}"
+  vars:
+    include_role: 
+      name: "{{ include_role_name | default(omit, True) }}"
+      private: "{{ include_role_private | default(omit, True) }}"
+      allow_duplicates: "{{ include_role_allow_duplicates | default(omit, True) }}"
+      tasks_from: "{{ include_role_tasks_from | default(omit, True) }}"
+      vars_from: "{{ include_role_vars_from | default(omit, True) }}"
+      apply: "{{ include_role_apply | default(omit, True) }}"
+      defaults_from: "{{ include_role_defaults_from | default(omit, True) }}"
+      public: "{{ include_role_public | default(omit, True) }}"

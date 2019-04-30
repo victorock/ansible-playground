@@ -1,0 +1,17 @@
+---
+- name: "module_bigip_management_route"
+  bigip_management_route: "{{ bigip_management_route }}"
+  vars:
+    bigip_management_route: 
+      network: "{{ bigip_management_route_network | default(omit, True) }}"
+      partition: "{{ bigip_management_route_partition | default(omit, True) }}"
+      server: "{{ bigip_management_route_server | default(omit, True) }}"
+      name: "{{ bigip_management_route_name | default(omit, True) }}"
+      state: "{{ bigip_management_route_state | default(omit, True) }}"
+      user: "{{ bigip_management_route_user | default(omit, True) }}"
+      server_port: "{{ bigip_management_route_server_port | default(omit, True) }}"
+      provider: "{{ bigip_management_route_provider | default(omit, True) }}"
+      password: "{{ bigip_management_route_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_management_route_validate_certs | default(omit, True) }}"
+      gateway: "{{ bigip_management_route_gateway | default(omit, True) }}"
+      description: "{{ bigip_management_route_description | default(omit, True) }}"

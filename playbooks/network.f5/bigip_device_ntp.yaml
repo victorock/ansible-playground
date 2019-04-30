@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_device_ntp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_device_ntp: 
+      ntp_servers: "{{ bigip_device_ntp_ntp_servers | default('omit', True) }}"
+      server: "{{ bigip_device_ntp_server | default('omit', True) }}"
+      state: "{{ bigip_device_ntp_state | default('omit', True) }}"
+      user: "{{ bigip_device_ntp_user | default('omit', True) }}"
+      server_port: "{{ bigip_device_ntp_server_port | default('omit', True) }}"
+      provider: "{{ bigip_device_ntp_provider | default('omit', True) }}"
+      timezone: "{{ bigip_device_ntp_timezone | default('omit', True) }}"
+      password: "{{ bigip_device_ntp_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_device_ntp_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_device_ntp"
+      bigip_device_ntp: "{{ bigip_device_ntp }}"

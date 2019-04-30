@@ -1,0 +1,19 @@
+---
+- name: "module_django_manage"
+  django_manage: "{{ django_manage }}"
+  vars:
+    django_manage: 
+      virtualenv: "{{ django_manage_virtualenv | default(omit, True) }}"
+      app_path: "{{ django_manage_app_path | default(omit, True) }}"
+      settings: "{{ django_manage_settings | default(omit, True) }}"
+      skip: "{{ django_manage_skip | default(omit, True) }}"
+      clear: "{{ django_manage_clear | default(omit, True) }}"
+      database: "{{ django_manage_database | default(omit, True) }}"
+      apps: "{{ django_manage_apps | default(omit, True) }}"
+      cache_table: "{{ django_manage_cache_table | default(omit, True) }}"
+      merge: "{{ django_manage_merge | default(omit, True) }}"
+      link: "{{ django_manage_link | default(omit, True) }}"
+      pythonpath: "{{ django_manage_pythonpath | default(omit, True) }}"
+      command: "{{ django_manage_command | default(omit, True) }}"
+      fixtures: "{{ django_manage_fixtures | default(omit, True) }}"
+      failfast: "{{ django_manage_failfast | default(omit, True) }}"

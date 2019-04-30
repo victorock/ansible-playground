@@ -1,0 +1,39 @@
+---
+- name: "module_avi_sslprofile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_sslprofile: 
+      prefer_client_cipher_ordering: "{{ avi_sslprofile_prefer_client_cipher_ordering | default('omit', True) }}"
+      accepted_versions: "{{ avi_sslprofile_accepted_versions | default('omit', True) }}"
+      ssl_session_timeout: "{{ avi_sslprofile_ssl_session_timeout | default('omit', True) }}"
+      uuid: "{{ avi_sslprofile_uuid | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_sslprofile_avi_api_patch_op | default('omit', True) }}"
+      enable_ssl_session_reuse: "{{ avi_sslprofile_enable_ssl_session_reuse | default('omit', True) }}"
+      avi_credentials: "{{ avi_sslprofile_avi_credentials | default('omit', True) }}"
+      send_close_notify: "{{ avi_sslprofile_send_close_notify | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_sslprofile_avi_api_update_method | default('omit', True) }}"
+      dhparam: "{{ avi_sslprofile_dhparam | default('omit', True) }}"
+      type: "{{ avi_sslprofile_type | default('omit', True) }}"
+      api_version: "{{ avi_sslprofile_api_version | default('omit', True) }}"
+      username: "{{ avi_sslprofile_username | default('omit', True) }}"
+      accepted_ciphers: "{{ avi_sslprofile_accepted_ciphers | default('omit', True) }}"
+      description: "{{ avi_sslprofile_description | default('omit', True) }}"
+      tags: "{{ avi_sslprofile_tags | default('omit', True) }}"
+      controller: "{{ avi_sslprofile_controller | default('omit', True) }}"
+      cipher_enums: "{{ avi_sslprofile_cipher_enums | default('omit', True) }}"
+      api_context: "{{ avi_sslprofile_api_context | default('omit', True) }}"
+      password: "{{ avi_sslprofile_password | default('omit', True) }}"
+      tenant: "{{ avi_sslprofile_tenant | default('omit', True) }}"
+      name: "{{ avi_sslprofile_name | default('omit', True) }}"
+      url: "{{ avi_sslprofile_url | default('omit', True) }}"
+      ssl_rating: "{{ avi_sslprofile_ssl_rating | default('omit', True) }}"
+      tenant_ref: "{{ avi_sslprofile_tenant_ref | default('omit', True) }}"
+      state: "{{ avi_sslprofile_state | default('omit', True) }}"
+      tenant_uuid: "{{ avi_sslprofile_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_sslprofile"
+      avi_sslprofile: "{{ avi_sslprofile }}"

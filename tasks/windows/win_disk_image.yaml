@@ -1,0 +1,7 @@
+---
+- name: "module_win_disk_image"
+  win_disk_image: "{{ win_disk_image }}"
+  vars:
+    win_disk_image: 
+      state: "{{ win_disk_image_state | default(omit, True) }}"
+      image_path: "{{ win_disk_image_image_path | default(omit, True) }}"

@@ -1,0 +1,43 @@
+---
+- name: "module_cs_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_network: 
+      domain: "{{ cs_network_domain | default('omit', True) }}"
+      end_ipv6: "{{ cs_network_end_ipv6 | default('omit', True) }}"
+      api_http_method: "{{ cs_network_api_http_method | default('omit', True) }}"
+      network_domain: "{{ cs_network_network_domain | default('omit', True) }}"
+      gateway: "{{ cs_network_gateway | default('omit', True) }}"
+      poll_async: "{{ cs_network_poll_async | default('omit', True) }}"
+      api_url: "{{ cs_network_api_url | default('omit', True) }}"
+      zone: "{{ cs_network_zone | default('omit', True) }}"
+      start_ipv6: "{{ cs_network_start_ipv6 | default('omit', True) }}"
+      cidr_ipv6: "{{ cs_network_cidr_ipv6 | default('omit', True) }}"
+      state: "{{ cs_network_state | default('omit', True) }}"
+      end_ip: "{{ cs_network_end_ip | default('omit', True) }}"
+      api_key: "{{ cs_network_api_key | default('omit', True) }}"
+      vlan: "{{ cs_network_vlan | default('omit', True) }}"
+      api_secret: "{{ cs_network_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_network_api_timeout | default('omit', True) }}"
+      clean_up: "{{ cs_network_clean_up | default('omit', True) }}"
+      netmask: "{{ cs_network_netmask | default('omit', True) }}"
+      network_offering: "{{ cs_network_network_offering | default('omit', True) }}"
+      vpc: "{{ cs_network_vpc | default('omit', True) }}"
+      start_ip: "{{ cs_network_start_ip | default('omit', True) }}"
+      gateway_ipv6: "{{ cs_network_gateway_ipv6 | default('omit', True) }}"
+      display_text: "{{ cs_network_display_text | default('omit', True) }}"
+      isolated_pvlan: "{{ cs_network_isolated_pvlan | default('omit', True) }}"
+      account: "{{ cs_network_account | default('omit', True) }}"
+      acl_type: "{{ cs_network_acl_type | default('omit', True) }}"
+      name: "{{ cs_network_name | default('omit', True) }}"
+      api_region: "{{ cs_network_api_region | default('omit', True) }}"
+      acl: "{{ cs_network_acl | default('omit', True) }}"
+      project: "{{ cs_network_project | default('omit', True) }}"
+      subdomain_access: "{{ cs_network_subdomain_access | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_network"
+      cs_network: "{{ cs_network }}"

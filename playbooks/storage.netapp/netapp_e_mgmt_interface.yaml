@@ -1,0 +1,33 @@
+---
+- name: "module_netapp_e_mgmt_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netapp_e_mgmt_interface: 
+      dns_config_method: "{{ netapp_e_mgmt_interface_dns_config_method | default('omit', True) }}"
+      ssid: "{{ netapp_e_mgmt_interface_ssid | default('omit', True) }}"
+      ntp_address_backup: "{{ netapp_e_mgmt_interface_ntp_address_backup | default('omit', True) }}"
+      log_path: "{{ netapp_e_mgmt_interface_log_path | default('omit', True) }}"
+      ntp_config_method: "{{ netapp_e_mgmt_interface_ntp_config_method | default('omit', True) }}"
+      config_method: "{{ netapp_e_mgmt_interface_config_method | default('omit', True) }}"
+      api_password: "{{ netapp_e_mgmt_interface_api_password | default('omit', True) }}"
+      state: "{{ netapp_e_mgmt_interface_state | default('omit', True) }}"
+      dns_address_backup: "{{ netapp_e_mgmt_interface_dns_address_backup | default('omit', True) }}"
+      ntp_address: "{{ netapp_e_mgmt_interface_ntp_address | default('omit', True) }}"
+      subnet_mask: "{{ netapp_e_mgmt_interface_subnet_mask | default('omit', True) }}"
+      controller: "{{ netapp_e_mgmt_interface_controller | default('omit', True) }}"
+      ssh: "{{ netapp_e_mgmt_interface_ssh | default('omit', True) }}"
+      api_username: "{{ netapp_e_mgmt_interface_api_username | default('omit', True) }}"
+      api_url: "{{ netapp_e_mgmt_interface_api_url | default('omit', True) }}"
+      address: "{{ netapp_e_mgmt_interface_address | default('omit', True) }}"
+      dns_address: "{{ netapp_e_mgmt_interface_dns_address | default('omit', True) }}"
+      validate_certs: "{{ netapp_e_mgmt_interface_validate_certs | default('omit', True) }}"
+      gateway: "{{ netapp_e_mgmt_interface_gateway | default('omit', True) }}"
+      channel: "{{ netapp_e_mgmt_interface_channel | default('omit', True) }}"
+      name: "{{ netapp_e_mgmt_interface_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netapp_e_mgmt_interface"
+      netapp_e_mgmt_interface: "{{ netapp_e_mgmt_interface }}"

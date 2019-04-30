@@ -1,0 +1,17 @@
+---
+- name: "module_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    group: 
+      state: "{{ group_state | default('omit', True) }}"
+      gid: "{{ group_gid | default('omit', True) }}"
+      local: "{{ group_local | default('omit', True) }}"
+      name: "{{ group_name | default('omit', True) }}"
+      system: "{{ group_system | default('omit', True) }}"
+  tasks:
+    - name: "plugin_group"
+      group: "{{ group }}"

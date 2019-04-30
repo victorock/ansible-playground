@@ -1,0 +1,21 @@
+---
+- name: "module_iosxr_system"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iosxr_system: 
+      lookup_source: "{{ iosxr_system_lookup_source | default('omit', True) }}"
+      domain_search: "{{ iosxr_system_domain_search | default('omit', True) }}"
+      hostname: "{{ iosxr_system_hostname | default('omit', True) }}"
+      domain_name: "{{ iosxr_system_domain_name | default('omit', True) }}"
+      state: "{{ iosxr_system_state | default('omit', True) }}"
+      vrf: "{{ iosxr_system_vrf | default('omit', True) }}"
+      provider: "{{ iosxr_system_provider | default('omit', True) }}"
+      name_servers: "{{ iosxr_system_name_servers | default('omit', True) }}"
+      lookup_enabled: "{{ iosxr_system_lookup_enabled | default('omit', True) }}"
+  tasks:
+    - name: "plugin_iosxr_system"
+      iosxr_system: "{{ iosxr_system }}"

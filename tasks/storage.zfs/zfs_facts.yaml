@@ -1,0 +1,11 @@
+---
+- name: "module_zfs_facts"
+  zfs_facts: "{{ zfs_facts }}"
+  vars:
+    zfs_facts: 
+      name: "{{ zfs_facts_name | default(omit, True) }}"
+      recurse: "{{ zfs_facts_recurse | default(omit, True) }}"
+      parsable: "{{ zfs_facts_parsable | default(omit, True) }}"
+      depth: "{{ zfs_facts_depth | default(omit, True) }}"
+      type: "{{ zfs_facts_type | default(omit, True) }}"
+      properties: "{{ zfs_facts_properties | default(omit, True) }}"

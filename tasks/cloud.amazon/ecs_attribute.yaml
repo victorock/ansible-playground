@@ -1,0 +1,16 @@
+---
+- name: "module_ecs_attribute"
+  ecs_attribute: "{{ ecs_attribute }}"
+  vars:
+    ecs_attribute: 
+      profile: "{{ ecs_attribute_profile | default(omit, True) }}"
+      aws_secret_key: "{{ ecs_attribute_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ ecs_attribute_aws_access_key | default(omit, True) }}"
+      security_token: "{{ ecs_attribute_security_token | default(omit, True) }}"
+      region: "{{ ecs_attribute_region | default(omit, True) }}"
+      cluster: "{{ ecs_attribute_cluster | default(omit, True) }}"
+      state: "{{ ecs_attribute_state | default(omit, True) }}"
+      ec2_instance_id: "{{ ecs_attribute_ec2_instance_id | default(omit, True) }}"
+      ec2_url: "{{ ecs_attribute_ec2_url | default(omit, True) }}"
+      attributes: "{{ ecs_attribute_attributes | default(omit, True) }}"
+      validate_certs: "{{ ecs_attribute_validate_certs | default(omit, True) }}"

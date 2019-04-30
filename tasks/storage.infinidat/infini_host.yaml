@@ -1,0 +1,12 @@
+---
+- name: "module_infini_host"
+  infini_host: "{{ infini_host }}"
+  vars:
+    infini_host: 
+      name: "{{ infini_host_name | default(omit, True) }}"
+      system: "{{ infini_host_system | default(omit, True) }}"
+      volume: "{{ infini_host_volume | default(omit, True) }}"
+      state: "{{ infini_host_state | default(omit, True) }}"
+      user: "{{ infini_host_user | default(omit, True) }}"
+      password: "{{ infini_host_password | default(omit, True) }}"
+      wwns: "{{ infini_host_wwns | default(omit, True) }}"

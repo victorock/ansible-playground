@@ -1,0 +1,16 @@
+---
+- name: "module_vmware_vswitch"
+  vmware_vswitch: "{{ vmware_vswitch }}"
+  vars:
+    vmware_vswitch: 
+      username: "{{ vmware_vswitch_username | default(omit, True) }}"
+      number_of_ports: "{{ vmware_vswitch_number_of_ports | default(omit, True) }}"
+      nics: "{{ vmware_vswitch_nics | default(omit, True) }}"
+      hostname: "{{ vmware_vswitch_hostname | default(omit, True) }}"
+      state: "{{ vmware_vswitch_state | default(omit, True) }}"
+      mtu: "{{ vmware_vswitch_mtu | default(omit, True) }}"
+      switch: "{{ vmware_vswitch_switch | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_vswitch_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_vswitch_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vswitch_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vswitch_port | default(omit, True) }}"

@@ -1,0 +1,6 @@
+---
+- name: "module_atomic_host"
+  atomic_host: "{{ atomic_host }}"
+  vars:
+    atomic_host: 
+      revision: "{{ atomic_host_revision | default(omit, True) }}"

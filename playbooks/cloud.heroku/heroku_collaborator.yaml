@@ -1,0 +1,17 @@
+---
+- name: "module_heroku_collaborator"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    heroku_collaborator: 
+      suppress_invitation: "{{ heroku_collaborator_suppress_invitation | default('omit', True) }}"
+      api_key: "{{ heroku_collaborator_api_key | default('omit', True) }}"
+      apps: "{{ heroku_collaborator_apps | default('omit', True) }}"
+      user: "{{ heroku_collaborator_user | default('omit', True) }}"
+      state: "{{ heroku_collaborator_state | default('omit', True) }}"
+  tasks:
+    - name: "plugin_heroku_collaborator"
+      heroku_collaborator: "{{ heroku_collaborator }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_cloudwatchevent_rule"
+  cloudwatchevent_rule: "{{ cloudwatchevent_rule }}"
+  vars:
+    cloudwatchevent_rule: 
+      profile: "{{ cloudwatchevent_rule_profile | default(omit, True) }}"
+      aws_secret_key: "{{ cloudwatchevent_rule_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ cloudwatchevent_rule_aws_access_key | default(omit, True) }}"
+      role_arn: "{{ cloudwatchevent_rule_role_arn | default(omit, True) }}"
+      description: "{{ cloudwatchevent_rule_description | default(omit, True) }}"
+      security_token: "{{ cloudwatchevent_rule_security_token | default(omit, True) }}"
+      region: "{{ cloudwatchevent_rule_region | default(omit, True) }}"
+      event_pattern: "{{ cloudwatchevent_rule_event_pattern | default(omit, True) }}"
+      schedule_expression: "{{ cloudwatchevent_rule_schedule_expression | default(omit, True) }}"
+      state: "{{ cloudwatchevent_rule_state | default(omit, True) }}"
+      ec2_url: "{{ cloudwatchevent_rule_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ cloudwatchevent_rule_validate_certs | default(omit, True) }}"
+      targets: "{{ cloudwatchevent_rule_targets | default(omit, True) }}"
+      name: "{{ cloudwatchevent_rule_name | default(omit, True) }}"

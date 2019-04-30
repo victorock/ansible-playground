@@ -1,0 +1,24 @@
+---
+- name: "module_consul_kv"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    consul_kv: 
+      state: "{{ consul_kv_state | default('omit', True) }}"
+      cas: "{{ consul_kv_cas | default('omit', True) }}"
+      recurse: "{{ consul_kv_recurse | default('omit', True) }}"
+      token: "{{ consul_kv_token | default('omit', True) }}"
+      value: "{{ consul_kv_value | default('omit', True) }}"
+      host: "{{ consul_kv_host | default('omit', True) }}"
+      session: "{{ consul_kv_session | default('omit', True) }}"
+      flags: "{{ consul_kv_flags | default('omit', True) }}"
+      key: "{{ consul_kv_key | default('omit', True) }}"
+      scheme: "{{ consul_kv_scheme | default('omit', True) }}"
+      validate_certs: "{{ consul_kv_validate_certs | default('omit', True) }}"
+      port: "{{ consul_kv_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_consul_kv"
+      consul_kv: "{{ consul_kv }}"

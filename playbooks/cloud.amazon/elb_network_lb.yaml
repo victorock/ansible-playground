@@ -1,0 +1,32 @@
+---
+- name: "module_elb_network_lb"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    elb_network_lb: 
+      profile: "{{ elb_network_lb_profile | default('omit', True) }}"
+      subnets: "{{ elb_network_lb_subnets | default('omit', True) }}"
+      aws_access_key: "{{ elb_network_lb_aws_access_key | default('omit', True) }}"
+      subnet_mappings: "{{ elb_network_lb_subnet_mappings | default('omit', True) }}"
+      name: "{{ elb_network_lb_name | default('omit', True) }}"
+      security_token: "{{ elb_network_lb_security_token | default('omit', True) }}"
+      tags: "{{ elb_network_lb_tags | default('omit', True) }}"
+      purge_tags: "{{ elb_network_lb_purge_tags | default('omit', True) }}"
+      region: "{{ elb_network_lb_region | default('omit', True) }}"
+      aws_secret_key: "{{ elb_network_lb_aws_secret_key | default('omit', True) }}"
+      state: "{{ elb_network_lb_state | default('omit', True) }}"
+      listeners: "{{ elb_network_lb_listeners | default('omit', True) }}"
+      deletion_protection: "{{ elb_network_lb_deletion_protection | default('omit', True) }}"
+      purge_listeners: "{{ elb_network_lb_purge_listeners | default('omit', True) }}"
+      ec2_url: "{{ elb_network_lb_ec2_url | default('omit', True) }}"
+      cross_zone_load_balancing: "{{ elb_network_lb_cross_zone_load_balancing | default('omit', True) }}"
+      scheme: "{{ elb_network_lb_scheme | default('omit', True) }}"
+      validate_certs: "{{ elb_network_lb_validate_certs | default('omit', True) }}"
+      wait_timeout: "{{ elb_network_lb_wait_timeout | default('omit', True) }}"
+      wait: "{{ elb_network_lb_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_elb_network_lb"
+      elb_network_lb: "{{ elb_network_lb }}"

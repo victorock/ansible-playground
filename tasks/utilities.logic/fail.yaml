@@ -1,0 +1,6 @@
+---
+- name: "module_fail"
+  fail: "{{ fail }}"
+  vars:
+    fail: 
+      msg: "{{ fail_msg | default(omit, True) }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_bigip_snat_pool"
+  bigip_snat_pool: "{{ bigip_snat_pool }}"
+  vars:
+    bigip_snat_pool: 
+      name: "{{ bigip_snat_pool_name | default(omit, True) }}"
+      partition: "{{ bigip_snat_pool_partition | default(omit, True) }}"
+      server: "{{ bigip_snat_pool_server | default(omit, True) }}"
+      server_port: "{{ bigip_snat_pool_server_port | default(omit, True) }}"
+      state: "{{ bigip_snat_pool_state | default(omit, True) }}"
+      user: "{{ bigip_snat_pool_user | default(omit, True) }}"
+      members: "{{ bigip_snat_pool_members | default(omit, True) }}"
+      provider: "{{ bigip_snat_pool_provider | default(omit, True) }}"
+      password: "{{ bigip_snat_pool_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_snat_pool_validate_certs | default(omit, True) }}"

@@ -1,0 +1,28 @@
+---
+- name: "module_ovirt_vmpool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_vmpool: 
+      comment: "{{ ovirt_vmpool_comment | default('omit', True) }}"
+      name: "{{ ovirt_vmpool_name | default('omit', True) }}"
+      description: "{{ ovirt_vmpool_description | default('omit', True) }}"
+      poll_interval: "{{ ovirt_vmpool_poll_interval | default('omit', True) }}"
+      state: "{{ ovirt_vmpool_state | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_vmpool_nested_attributes | default('omit', True) }}"
+      vm_per_user: "{{ ovirt_vmpool_vm_per_user | default('omit', True) }}"
+      cluster: "{{ ovirt_vmpool_cluster | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_vmpool_fetch_nested | default('omit', True) }}"
+      prestarted: "{{ ovirt_vmpool_prestarted | default('omit', True) }}"
+      auth: "{{ ovirt_vmpool_auth | default('omit', True) }}"
+      timeout: "{{ ovirt_vmpool_timeout | default('omit', True) }}"
+      template: "{{ ovirt_vmpool_template | default('omit', True) }}"
+      vm_count: "{{ ovirt_vmpool_vm_count | default('omit', True) }}"
+      type: "{{ ovirt_vmpool_type | default('omit', True) }}"
+      wait: "{{ ovirt_vmpool_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_vmpool"
+      ovirt_vmpool: "{{ ovirt_vmpool }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_aci_vlan_pool"
+  aci_vlan_pool: "{{ aci_vlan_pool }}"
+  vars:
+    aci_vlan_pool: 
+      username: "{{ aci_vlan_pool_username | default(omit, True) }}"
+      private_key: "{{ aci_vlan_pool_private_key | default(omit, True) }}"
+      pool_allocation_mode: "{{ aci_vlan_pool_pool_allocation_mode | default(omit, True) }}"
+      description: "{{ aci_vlan_pool_description | default(omit, True) }}"
+      certificate_name: "{{ aci_vlan_pool_certificate_name | default(omit, True) }}"
+      state: "{{ aci_vlan_pool_state | default(omit, True) }}"
+      output_level: "{{ aci_vlan_pool_output_level | default(omit, True) }}"
+      host: "{{ aci_vlan_pool_host | default(omit, True) }}"
+      timeout: "{{ aci_vlan_pool_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_vlan_pool_use_ssl | default(omit, True) }}"
+      password: "{{ aci_vlan_pool_password | default(omit, True) }}"
+      validate_certs: "{{ aci_vlan_pool_validate_certs | default(omit, True) }}"
+      port: "{{ aci_vlan_pool_port | default(omit, True) }}"
+      pool: "{{ aci_vlan_pool_pool | default(omit, True) }}"
+      use_proxy: "{{ aci_vlan_pool_use_proxy | default(omit, True) }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_seboolean"
+  seboolean: "{{ seboolean }}"
+  vars:
+    seboolean: 
+      state: "{{ seboolean_state | default(omit, True) }}"
+      name: "{{ seboolean_name | default(omit, True) }}"
+      persistent: "{{ seboolean_persistent | default(omit, True) }}"

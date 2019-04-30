@@ -1,0 +1,43 @@
+---
+- name: "module_elb_target_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    elb_target_group: 
+      protocol: "{{ elb_target_group_protocol | default('omit', True) }}"
+      purge_tags: "{{ elb_target_group_purge_tags | default('omit', True) }}"
+      health_check_port: "{{ elb_target_group_health_check_port | default('omit', True) }}"
+      ec2_url: "{{ elb_target_group_ec2_url | default('omit', True) }}"
+      modify_targets: "{{ elb_target_group_modify_targets | default('omit', True) }}"
+      targets: "{{ elb_target_group_targets | default('omit', True) }}"
+      health_check_path: "{{ elb_target_group_health_check_path | default('omit', True) }}"
+      health_check_protocol: "{{ elb_target_group_health_check_protocol | default('omit', True) }}"
+      aws_secret_key: "{{ elb_target_group_aws_secret_key | default('omit', True) }}"
+      port: "{{ elb_target_group_port | default('omit', True) }}"
+      state: "{{ elb_target_group_state | default('omit', True) }}"
+      stickiness_enabled: "{{ elb_target_group_stickiness_enabled | default('omit', True) }}"
+      deregistration_delay_timeout: "{{ elb_target_group_deregistration_delay_timeout | default('omit', True) }}"
+      profile: "{{ elb_target_group_profile | default('omit', True) }}"
+      tags: "{{ elb_target_group_tags | default('omit', True) }}"
+      successful_response_codes: "{{ elb_target_group_successful_response_codes | default('omit', True) }}"
+      wait_timeout: "{{ elb_target_group_wait_timeout | default('omit', True) }}"
+      stickiness_type: "{{ elb_target_group_stickiness_type | default('omit', True) }}"
+      healthy_threshold_count: "{{ elb_target_group_healthy_threshold_count | default('omit', True) }}"
+      wait: "{{ elb_target_group_wait | default('omit', True) }}"
+      unhealthy_threshold_count: "{{ elb_target_group_unhealthy_threshold_count | default('omit', True) }}"
+      aws_access_key: "{{ elb_target_group_aws_access_key | default('omit', True) }}"
+      health_check_interval: "{{ elb_target_group_health_check_interval | default('omit', True) }}"
+      name: "{{ elb_target_group_name | default('omit', True) }}"
+      security_token: "{{ elb_target_group_security_token | default('omit', True) }}"
+      region: "{{ elb_target_group_region | default('omit', True) }}"
+      target_type: "{{ elb_target_group_target_type | default('omit', True) }}"
+      stickiness_lb_cookie_duration: "{{ elb_target_group_stickiness_lb_cookie_duration | default('omit', True) }}"
+      vpc_id: "{{ elb_target_group_vpc_id | default('omit', True) }}"
+      validate_certs: "{{ elb_target_group_validate_certs | default('omit', True) }}"
+      health_check_timeout: "{{ elb_target_group_health_check_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_elb_target_group"
+      elb_target_group: "{{ elb_target_group }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_na_ontap_ucadapter"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_ucadapter: 
+      username: "{{ na_ontap_ucadapter_username | default('omit', True) }}"
+      http_port: "{{ na_ontap_ucadapter_http_port | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_ucadapter_validate_certs | default('omit', True) }}"
+      hostname: "{{ na_ontap_ucadapter_hostname | default('omit', True) }}"
+      node_name: "{{ na_ontap_ucadapter_node_name | default('omit', True) }}"
+      state: "{{ na_ontap_ucadapter_state | default('omit', True) }}"
+      adapter_name: "{{ na_ontap_ucadapter_adapter_name | default('omit', True) }}"
+      https: "{{ na_ontap_ucadapter_https | default('omit', True) }}"
+      password: "{{ na_ontap_ucadapter_password | default('omit', True) }}"
+      type: "{{ na_ontap_ucadapter_type | default('omit', True) }}"
+      mode: "{{ na_ontap_ucadapter_mode | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_ucadapter"
+      na_ontap_ucadapter: "{{ na_ontap_ucadapter }}"

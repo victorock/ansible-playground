@@ -1,0 +1,29 @@
+---
+- name: "module_vmware_resource_pool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_resource_pool: 
+      resource_pool: "{{ vmware_resource_pool_resource_pool | default('omit', True) }}"
+      username: "{{ vmware_resource_pool_username | default('omit', True) }}"
+      cpu_reservation: "{{ vmware_resource_pool_cpu_reservation | default('omit', True) }}"
+      mem_reservation: "{{ vmware_resource_pool_mem_reservation | default('omit', True) }}"
+      datacenter: "{{ vmware_resource_pool_datacenter | default('omit', True) }}"
+      hostname: "{{ vmware_resource_pool_hostname | default('omit', True) }}"
+      state: "{{ vmware_resource_pool_state | default('omit', True) }}"
+      cluster: "{{ vmware_resource_pool_cluster | default('omit', True) }}"
+      cpu_expandable_reservations: "{{ vmware_resource_pool_cpu_expandable_reservations | default('omit', True) }}"
+      mem_expandable_reservations: "{{ vmware_resource_pool_mem_expandable_reservations | default('omit', True) }}"
+      cpu_limit: "{{ vmware_resource_pool_cpu_limit | default('omit', True) }}"
+      mem_shares: "{{ vmware_resource_pool_mem_shares | default('omit', True) }}"
+      mem_limit: "{{ vmware_resource_pool_mem_limit | default('omit', True) }}"
+      password: "{{ vmware_resource_pool_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_resource_pool_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_resource_pool_port | default('omit', True) }}"
+      cpu_shares: "{{ vmware_resource_pool_cpu_shares | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_resource_pool"
+      vmware_resource_pool: "{{ vmware_resource_pool }}"

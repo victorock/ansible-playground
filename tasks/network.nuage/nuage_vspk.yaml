@@ -1,0 +1,15 @@
+---
+- name: "module_nuage_vspk"
+  nuage_vspk: "{{ nuage_vspk }}"
+  vars:
+    nuage_vspk: 
+      parent_type: "{{ nuage_vspk_parent_type | default(omit, True) }}"
+      auth: "{{ nuage_vspk_auth | default(omit, True) }}"
+      children: "{{ nuage_vspk_children | default(omit, True) }}"
+      match_filter: "{{ nuage_vspk_match_filter | default(omit, True) }}"
+      parent_id: "{{ nuage_vspk_parent_id | default(omit, True) }}"
+      state: "{{ nuage_vspk_state | default(omit, True) }}"
+      command: "{{ nuage_vspk_command | default(omit, True) }}"
+      id: "{{ nuage_vspk_id | default(omit, True) }}"
+      type: "{{ nuage_vspk_type | default(omit, True) }}"
+      properties: "{{ nuage_vspk_properties | default(omit, True) }}"

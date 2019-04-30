@@ -1,0 +1,17 @@
+---
+- name: "module_na_cdot_lun"
+  na_cdot_lun: "{{ na_cdot_lun }}"
+  vars:
+    na_cdot_lun: 
+      username: "{{ na_cdot_lun_username | default(omit, True) }}"
+      vserver: "{{ na_cdot_lun_vserver | default(omit, True) }}"
+      name: "{{ na_cdot_lun_name | default(omit, True) }}"
+      flexvol_name: "{{ na_cdot_lun_flexvol_name | default(omit, True) }}"
+      hostname: "{{ na_cdot_lun_hostname | default(omit, True) }}"
+      size_unit: "{{ na_cdot_lun_size_unit | default(omit, True) }}"
+      force_remove: "{{ na_cdot_lun_force_remove | default(omit, True) }}"
+      state: "{{ na_cdot_lun_state | default(omit, True) }}"
+      force_resize: "{{ na_cdot_lun_force_resize | default(omit, True) }}"
+      password: "{{ na_cdot_lun_password | default(omit, True) }}"
+      force_remove_fenced: "{{ na_cdot_lun_force_remove_fenced | default(omit, True) }}"
+      size: "{{ na_cdot_lun_size | default(omit, True) }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_firewalld"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    firewalld: 
+      service: "{{ firewalld_service | default('omit', True) }}"
+      zone: "{{ firewalld_zone | default('omit', True) }}"
+      masquerade: "{{ firewalld_masquerade | default('omit', True) }}"
+      immediate: "{{ firewalld_immediate | default('omit', True) }}"
+      source: "{{ firewalld_source | default('omit', True) }}"
+      state: "{{ firewalld_state | default('omit', True) }}"
+      permanent: "{{ firewalld_permanent | default('omit', True) }}"
+      timeout: "{{ firewalld_timeout | default('omit', True) }}"
+      interface: "{{ firewalld_interface | default('omit', True) }}"
+      port: "{{ firewalld_port | default('omit', True) }}"
+      rich_rule: "{{ firewalld_rich_rule | default('omit', True) }}"
+  tasks:
+    - name: "plugin_firewalld"
+      firewalld: "{{ firewalld }}"

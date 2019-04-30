@@ -1,0 +1,15 @@
+---
+- name: "module_na_ontap_export_policy"
+  na_ontap_export_policy: "{{ na_ontap_export_policy }}"
+  vars:
+    na_ontap_export_policy: 
+      username: "{{ na_ontap_export_policy_username | default(omit, True) }}"
+      from_name: "{{ na_ontap_export_policy_from_name | default(omit, True) }}"
+      name: "{{ na_ontap_export_policy_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_export_policy_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_export_policy_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_export_policy_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_export_policy_http_port | default(omit, True) }}"
+      https: "{{ na_ontap_export_policy_https | default(omit, True) }}"
+      password: "{{ na_ontap_export_policy_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_export_policy_validate_certs | default(omit, True) }}"

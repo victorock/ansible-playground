@@ -1,0 +1,12 @@
+---
+- name: "module_postgresql_ext"
+  postgresql_ext: "{{ postgresql_ext }}"
+  vars:
+    postgresql_ext: 
+      name: "{{ postgresql_ext_name | default(omit, True) }}"
+      login_user: "{{ postgresql_ext_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_ext_login_host | default(omit, True) }}"
+      db: "{{ postgresql_ext_db | default(omit, True) }}"
+      state: "{{ postgresql_ext_state | default(omit, True) }}"
+      login_password: "{{ postgresql_ext_login_password | default(omit, True) }}"
+      port: "{{ postgresql_ext_port | default(omit, True) }}"

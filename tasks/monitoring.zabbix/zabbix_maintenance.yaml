@@ -1,0 +1,19 @@
+---
+- name: "module_zabbix_maintenance"
+  zabbix_maintenance: "{{ zabbix_maintenance }}"
+  vars:
+    zabbix_maintenance: 
+      http_login_password: "{{ zabbix_maintenance_http_login_password | default(omit, True) }}"
+      timeout: "{{ zabbix_maintenance_timeout | default(omit, True) }}"
+      name: "{{ zabbix_maintenance_name | default(omit, True) }}"
+      minutes: "{{ zabbix_maintenance_minutes | default(omit, True) }}"
+      login_user: "{{ zabbix_maintenance_login_user | default(omit, True) }}"
+      http_login_user: "{{ zabbix_maintenance_http_login_user | default(omit, True) }}"
+      host_names: "{{ zabbix_maintenance_host_names | default(omit, True) }}"
+      server_url: "{{ zabbix_maintenance_server_url | default(omit, True) }}"
+      state: "{{ zabbix_maintenance_state | default(omit, True) }}"
+      host_groups: "{{ zabbix_maintenance_host_groups | default(omit, True) }}"
+      login_password: "{{ zabbix_maintenance_login_password | default(omit, True) }}"
+      collect_data: "{{ zabbix_maintenance_collect_data | default(omit, True) }}"
+      validate_certs: "{{ zabbix_maintenance_validate_certs | default(omit, True) }}"
+      desc: "{{ zabbix_maintenance_desc | default(omit, True) }}"

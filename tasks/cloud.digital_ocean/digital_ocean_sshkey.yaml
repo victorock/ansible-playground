@@ -1,0 +1,10 @@
+---
+- name: "module_digital_ocean_sshkey"
+  digital_ocean_sshkey: "{{ digital_ocean_sshkey }}"
+  vars:
+    digital_ocean_sshkey: 
+      state: "{{ digital_ocean_sshkey_state | default(omit, True) }}"
+      oauth_token: "{{ digital_ocean_sshkey_oauth_token | default(omit, True) }}"
+      ssh_pub_key: "{{ digital_ocean_sshkey_ssh_pub_key | default(omit, True) }}"
+      name: "{{ digital_ocean_sshkey_name | default(omit, True) }}"
+      fingerprint: "{{ digital_ocean_sshkey_fingerprint | default(omit, True) }}"

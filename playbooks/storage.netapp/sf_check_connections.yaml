@@ -1,0 +1,18 @@
+---
+- name: "module_sf_check_connections"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sf_check_connections: 
+      username: "{{ sf_check_connections_username | default('omit', True) }}"
+      skip: "{{ sf_check_connections_skip | default('omit', True) }}"
+      hostname: "{{ sf_check_connections_hostname | default('omit', True) }}"
+      svip: "{{ sf_check_connections_svip | default('omit', True) }}"
+      mvip: "{{ sf_check_connections_mvip | default('omit', True) }}"
+      password: "{{ sf_check_connections_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sf_check_connections"
+      sf_check_connections: "{{ sf_check_connections }}"

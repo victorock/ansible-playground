@@ -1,0 +1,15 @@
+---
+- name: "module_solaris_zone"
+  solaris_zone: "{{ solaris_zone }}"
+  vars:
+    solaris_zone: 
+      install_options: "{{ solaris_zone_install_options | default(omit, True) }}"
+      name: "{{ solaris_zone_name | default(omit, True) }}"
+      timeout: "{{ solaris_zone_timeout | default(omit, True) }}"
+      create_options: "{{ solaris_zone_create_options | default(omit, True) }}"
+      state: "{{ solaris_zone_state | default(omit, True) }}"
+      root_password: "{{ solaris_zone_root_password | default(omit, True) }}"
+      sparse: "{{ solaris_zone_sparse | default(omit, True) }}"
+      path: "{{ solaris_zone_path | default(omit, True) }}"
+      config: "{{ solaris_zone_config | default(omit, True) }}"
+      attach_options: "{{ solaris_zone_attach_options | default(omit, True) }}"

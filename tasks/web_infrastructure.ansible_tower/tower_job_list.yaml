@@ -1,0 +1,14 @@
+---
+- name: "module_tower_job_list"
+  tower_job_list: "{{ tower_job_list }}"
+  vars:
+    tower_job_list: 
+      status: "{{ tower_job_list_status | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_job_list_tower_verify_ssl | default(omit, True) }}"
+      page: "{{ tower_job_list_page | default(omit, True) }}"
+      tower_config_file: "{{ tower_job_list_tower_config_file | default(omit, True) }}"
+      all_pages: "{{ tower_job_list_all_pages | default(omit, True) }}"
+      tower_password: "{{ tower_job_list_tower_password | default(omit, True) }}"
+      tower_username: "{{ tower_job_list_tower_username | default(omit, True) }}"
+      query: "{{ tower_job_list_query | default(omit, True) }}"
+      tower_host: "{{ tower_job_list_tower_host | default(omit, True) }}"

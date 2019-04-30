@@ -1,0 +1,24 @@
+---
+- name: "module_dimensiondata_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dimensiondata_network: 
+      service_plan: "{{ dimensiondata_network_service_plan | default('omit', True) }}"
+      mcp_user: "{{ dimensiondata_network_mcp_user | default('omit', True) }}"
+      description: "{{ dimensiondata_network_description | default('omit', True) }}"
+      mcp_password: "{{ dimensiondata_network_mcp_password | default('omit', True) }}"
+      region: "{{ dimensiondata_network_region | default('omit', True) }}"
+      wait_time: "{{ dimensiondata_network_wait_time | default('omit', True) }}"
+      state: "{{ dimensiondata_network_state | default('omit', True) }}"
+      location: "{{ dimensiondata_network_location | default('omit', True) }}"
+      wait_poll_interval: "{{ dimensiondata_network_wait_poll_interval | default('omit', True) }}"
+      wait: "{{ dimensiondata_network_wait | default('omit', True) }}"
+      validate_certs: "{{ dimensiondata_network_validate_certs | default('omit', True) }}"
+      name: "{{ dimensiondata_network_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dimensiondata_network"
+      dimensiondata_network: "{{ dimensiondata_network }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_wakeonlan"
+  wakeonlan: "{{ wakeonlan }}"
+  vars:
+    wakeonlan: 
+      broadcast: "{{ wakeonlan_broadcast | default(omit, True) }}"
+      mac: "{{ wakeonlan_mac | default(omit, True) }}"
+      port: "{{ wakeonlan_port | default(omit, True) }}"

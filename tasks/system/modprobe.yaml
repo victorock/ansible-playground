@@ -1,0 +1,8 @@
+---
+- name: "module_modprobe"
+  modprobe: "{{ modprobe }}"
+  vars:
+    modprobe: 
+      state: "{{ modprobe_state | default(omit, True) }}"
+      params: "{{ modprobe_params | default(omit, True) }}"
+      name: "{{ modprobe_name | default(omit, True) }}"

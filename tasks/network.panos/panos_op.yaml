@@ -1,0 +1,10 @@
+---
+- name: "module_panos_op"
+  panos_op: "{{ panos_op }}"
+  vars:
+    panos_op: 
+      username: "{{ panos_op_username | default(omit, True) }}"
+      api_key: "{{ panos_op_api_key | default(omit, True) }}"
+      password: "{{ panos_op_password | default(omit, True) }}"
+      cmd: "{{ panos_op_cmd | default(omit, True) }}"
+      ip_address: "{{ panos_op_ip_address | default(omit, True) }}"

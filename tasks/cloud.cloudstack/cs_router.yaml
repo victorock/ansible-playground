@@ -1,0 +1,19 @@
+---
+- name: "module_cs_router"
+  cs_router: "{{ cs_router }}"
+  vars:
+    cs_router: 
+      domain: "{{ cs_router_domain | default(omit, True) }}"
+      api_key: "{{ cs_router_api_key | default(omit, True) }}"
+      poll_async: "{{ cs_router_poll_async | default(omit, True) }}"
+      api_url: "{{ cs_router_api_url | default(omit, True) }}"
+      api_http_method: "{{ cs_router_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_router_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_router_api_timeout | default(omit, True) }}"
+      account: "{{ cs_router_account | default(omit, True) }}"
+      api_region: "{{ cs_router_api_region | default(omit, True) }}"
+      project: "{{ cs_router_project | default(omit, True) }}"
+      state: "{{ cs_router_state | default(omit, True) }}"
+      service_offering: "{{ cs_router_service_offering | default(omit, True) }}"
+      zone: "{{ cs_router_zone | default(omit, True) }}"
+      name: "{{ cs_router_name | default(omit, True) }}"

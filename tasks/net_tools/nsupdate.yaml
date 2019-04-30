@@ -1,0 +1,16 @@
+---
+- name: "module_nsupdate"
+  nsupdate: "{{ nsupdate }}"
+  vars:
+    nsupdate: 
+      key_algorithm: "{{ nsupdate_key_algorithm | default(omit, True) }}"
+      zone: "{{ nsupdate_zone | default(omit, True) }}"
+      key_name: "{{ nsupdate_key_name | default(omit, True) }}"
+      value: "{{ nsupdate_value | default(omit, True) }}"
+      server: "{{ nsupdate_server | default(omit, True) }}"
+      record: "{{ nsupdate_record | default(omit, True) }}"
+      state: "{{ nsupdate_state | default(omit, True) }}"
+      ttl: "{{ nsupdate_ttl | default(omit, True) }}"
+      type: "{{ nsupdate_type | default(omit, True) }}"
+      port: "{{ nsupdate_port | default(omit, True) }}"
+      key_secret: "{{ nsupdate_key_secret | default(omit, True) }}"

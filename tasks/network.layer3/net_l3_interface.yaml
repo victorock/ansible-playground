@@ -1,0 +1,11 @@
+---
+- name: "module_net_l3_interface"
+  net_l3_interface: "{{ net_l3_interface }}"
+  vars:
+    net_l3_interface: 
+      name: "{{ net_l3_interface_name | default(omit, True) }}"
+      purge: "{{ net_l3_interface_purge | default(omit, True) }}"
+      state: "{{ net_l3_interface_state | default(omit, True) }}"
+      ipv4: "{{ net_l3_interface_ipv4 | default(omit, True) }}"
+      ipv6: "{{ net_l3_interface_ipv6 | default(omit, True) }}"
+      aggregate: "{{ net_l3_interface_aggregate | default(omit, True) }}"

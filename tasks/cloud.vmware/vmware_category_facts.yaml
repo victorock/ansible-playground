@@ -1,0 +1,10 @@
+---
+- name: "module_vmware_category_facts"
+  vmware_category_facts: "{{ vmware_category_facts }}"
+  vars:
+    vmware_category_facts: 
+      username: "{{ vmware_category_facts_username | default(omit, True) }}"
+      protocol: "{{ vmware_category_facts_protocol | default(omit, True) }}"
+      password: "{{ vmware_category_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_category_facts_validate_certs | default(omit, True) }}"
+      hostname: "{{ vmware_category_facts_hostname | default(omit, True) }}"

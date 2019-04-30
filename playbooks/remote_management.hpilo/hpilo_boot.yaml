@@ -1,0 +1,20 @@
+---
+- name: "module_hpilo_boot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hpilo_boot: 
+      force: "{{ hpilo_boot_force | default('omit', True) }}"
+      media: "{{ hpilo_boot_media | default('omit', True) }}"
+      image: "{{ hpilo_boot_image | default('omit', True) }}"
+      ssl_version: "{{ hpilo_boot_ssl_version | default('omit', True) }}"
+      host: "{{ hpilo_boot_host | default('omit', True) }}"
+      state: "{{ hpilo_boot_state | default('omit', True) }}"
+      login: "{{ hpilo_boot_login | default('omit', True) }}"
+      password: "{{ hpilo_boot_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_hpilo_boot"
+      hpilo_boot: "{{ hpilo_boot }}"

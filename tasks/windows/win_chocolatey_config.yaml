@@ -1,0 +1,8 @@
+---
+- name: "module_win_chocolatey_config"
+  win_chocolatey_config: "{{ win_chocolatey_config }}"
+  vars:
+    win_chocolatey_config: 
+      state: "{{ win_chocolatey_config_state | default(omit, True) }}"
+      name: "{{ win_chocolatey_config_name | default(omit, True) }}"
+      value: "{{ win_chocolatey_config_value | default(omit, True) }}"

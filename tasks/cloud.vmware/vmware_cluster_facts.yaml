@@ -1,0 +1,12 @@
+---
+- name: "module_vmware_cluster_facts"
+  vmware_cluster_facts: "{{ vmware_cluster_facts }}"
+  vars:
+    vmware_cluster_facts: 
+      username: "{{ vmware_cluster_facts_username | default(omit, True) }}"
+      datacenter: "{{ vmware_cluster_facts_datacenter | default(omit, True) }}"
+      hostname: "{{ vmware_cluster_facts_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_cluster_facts_cluster_name | default(omit, True) }}"
+      password: "{{ vmware_cluster_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_cluster_facts_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_cluster_facts_port | default(omit, True) }}"

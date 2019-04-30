@@ -1,0 +1,11 @@
+---
+- name: "module_nclu"
+  nclu: "{{ nclu }}"
+  vars:
+    nclu: 
+      commands: "{{ nclu_commands | default(omit, True) }}"
+      description: "{{ nclu_description | default(omit, True) }}"
+      abort: "{{ nclu_abort | default(omit, True) }}"
+      atomic: "{{ nclu_atomic | default(omit, True) }}"
+      template: "{{ nclu_template | default(omit, True) }}"
+      commit: "{{ nclu_commit | default(omit, True) }}"

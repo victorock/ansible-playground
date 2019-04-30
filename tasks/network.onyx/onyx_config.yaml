@@ -1,0 +1,16 @@
+---
+- name: "module_onyx_config"
+  onyx_config: "{{ onyx_config }}"
+  vars:
+    onyx_config: 
+      src: "{{ onyx_config_src | default(omit, True) }}"
+      backup: "{{ onyx_config_backup | default(omit, True) }}"
+      after: "{{ onyx_config_after | default(omit, True) }}"
+      lines: "{{ onyx_config_lines | default(omit, True) }}"
+      replace: "{{ onyx_config_replace | default(omit, True) }}"
+      parents: "{{ onyx_config_parents | default(omit, True) }}"
+      provider: "{{ onyx_config_provider | default(omit, True) }}"
+      save: "{{ onyx_config_save | default(omit, True) }}"
+      config: "{{ onyx_config_config | default(omit, True) }}"
+      match: "{{ onyx_config_match | default(omit, True) }}"
+      before: "{{ onyx_config_before | default(omit, True) }}"

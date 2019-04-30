@@ -1,0 +1,19 @@
+---
+- name: "module_cs_loadbalancer_rule_member"
+  cs_loadbalancer_rule_member: "{{ cs_loadbalancer_rule_member }}"
+  vars:
+    cs_loadbalancer_rule_member: 
+      domain: "{{ cs_loadbalancer_rule_member_domain | default(omit, True) }}"
+      api_key: "{{ cs_loadbalancer_rule_member_api_key | default(omit, True) }}"
+      api_url: "{{ cs_loadbalancer_rule_member_api_url | default(omit, True) }}"
+      api_http_method: "{{ cs_loadbalancer_rule_member_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_loadbalancer_rule_member_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_loadbalancer_rule_member_api_timeout | default(omit, True) }}"
+      account: "{{ cs_loadbalancer_rule_member_account | default(omit, True) }}"
+      api_region: "{{ cs_loadbalancer_rule_member_api_region | default(omit, True) }}"
+      project: "{{ cs_loadbalancer_rule_member_project | default(omit, True) }}"
+      state: "{{ cs_loadbalancer_rule_member_state | default(omit, True) }}"
+      zone: "{{ cs_loadbalancer_rule_member_zone | default(omit, True) }}"
+      ip_address: "{{ cs_loadbalancer_rule_member_ip_address | default(omit, True) }}"
+      vms: "{{ cs_loadbalancer_rule_member_vms | default(omit, True) }}"
+      name: "{{ cs_loadbalancer_rule_member_name | default(omit, True) }}"

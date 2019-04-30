@@ -1,0 +1,9 @@
+---
+- name: "module_onyx_lldp_interface"
+  onyx_lldp_interface: "{{ onyx_lldp_interface }}"
+  vars:
+    onyx_lldp_interface: 
+      aggregate: "{{ onyx_lldp_interface_aggregate | default(omit, True) }}"
+      purge: "{{ onyx_lldp_interface_purge | default(omit, True) }}"
+      state: "{{ onyx_lldp_interface_state | default(omit, True) }}"
+      name: "{{ onyx_lldp_interface_name | default(omit, True) }}"

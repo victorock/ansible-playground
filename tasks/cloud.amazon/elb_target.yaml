@@ -1,0 +1,21 @@
+---
+- name: "module_elb_target"
+  elb_target: "{{ elb_target }}"
+  vars:
+    elb_target: 
+      profile: "{{ elb_target_profile | default(omit, True) }}"
+      aws_secret_key: "{{ elb_target_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ elb_target_aws_access_key | default(omit, True) }}"
+      security_token: "{{ elb_target_security_token | default(omit, True) }}"
+      target_status_timeout: "{{ elb_target_target_status_timeout | default(omit, True) }}"
+      region: "{{ elb_target_region | default(omit, True) }}"
+      target_id: "{{ elb_target_target_id | default(omit, True) }}"
+      target_group_name: "{{ elb_target_target_group_name | default(omit, True) }}"
+      state: "{{ elb_target_state | default(omit, True) }}"
+      target_group_arn: "{{ elb_target_target_group_arn | default(omit, True) }}"
+      target_port: "{{ elb_target_target_port | default(omit, True) }}"
+      ec2_url: "{{ elb_target_ec2_url | default(omit, True) }}"
+      target_status: "{{ elb_target_target_status | default(omit, True) }}"
+      target_az: "{{ elb_target_target_az | default(omit, True) }}"
+      validate_certs: "{{ elb_target_validate_certs | default(omit, True) }}"
+      deregister_unused: "{{ elb_target_deregister_unused | default(omit, True) }}"

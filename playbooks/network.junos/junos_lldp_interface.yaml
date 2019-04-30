@@ -1,0 +1,16 @@
+---
+- name: "module_junos_lldp_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_lldp_interface: 
+      active: "{{ junos_lldp_interface_active | default('omit', True) }}"
+      state: "{{ junos_lldp_interface_state | default('omit', True) }}"
+      name: "{{ junos_lldp_interface_name | default('omit', True) }}"
+      provider: "{{ junos_lldp_interface_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_lldp_interface"
+      junos_lldp_interface: "{{ junos_lldp_interface }}"

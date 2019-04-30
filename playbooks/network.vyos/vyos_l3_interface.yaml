@@ -1,0 +1,18 @@
+---
+- name: "module_vyos_l3_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vyos_l3_interface: 
+      name: "{{ vyos_l3_interface_name | default('omit', True) }}"
+      ipv6: "{{ vyos_l3_interface_ipv6 | default('omit', True) }}"
+      state: "{{ vyos_l3_interface_state | default('omit', True) }}"
+      ipv4: "{{ vyos_l3_interface_ipv4 | default('omit', True) }}"
+      provider: "{{ vyos_l3_interface_provider | default('omit', True) }}"
+      aggregate: "{{ vyos_l3_interface_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vyos_l3_interface"
+      vyos_l3_interface: "{{ vyos_l3_interface }}"

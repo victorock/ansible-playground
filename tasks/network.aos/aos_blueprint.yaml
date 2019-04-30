@@ -1,0 +1,12 @@
+---
+- name: "module_aos_blueprint"
+  aos_blueprint: "{{ aos_blueprint }}"
+  vars:
+    aos_blueprint: 
+      name: "{{ aos_blueprint_name | default(omit, True) }}"
+      state: "{{ aos_blueprint_state | default(omit, True) }}"
+      session: "{{ aos_blueprint_session | default(omit, True) }}"
+      reference_arch: "{{ aos_blueprint_reference_arch | default(omit, True) }}"
+      timeout: "{{ aos_blueprint_timeout | default(omit, True) }}"
+      id: "{{ aos_blueprint_id | default(omit, True) }}"
+      template: "{{ aos_blueprint_template | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_netscaler_nitro_request"
+  netscaler_nitro_request: "{{ netscaler_nitro_request }}"
+  vars:
+    netscaler_nitro_request: 
+      filter: "{{ netscaler_nitro_request_filter | default(omit, True) }}"
+      resource: "{{ netscaler_nitro_request_resource | default(omit, True) }}"
+      name: "{{ netscaler_nitro_request_name | default(omit, True) }}"
+      expected_nitro_errorcode: "{{ netscaler_nitro_request_expected_nitro_errorcode | default(omit, True) }}"
+      instance_id: "{{ netscaler_nitro_request_instance_id | default(omit, True) }}"
+      args: "{{ netscaler_nitro_request_args | default(omit, True) }}"
+      instance_name: "{{ netscaler_nitro_request_instance_name | default(omit, True) }}"
+      nitro_protocol: "{{ netscaler_nitro_request_nitro_protocol | default(omit, True) }}"
+      nsip: "{{ netscaler_nitro_request_nsip | default(omit, True) }}"
+      nitro_user: "{{ netscaler_nitro_request_nitro_user | default(omit, True) }}"
+      attributes: "{{ netscaler_nitro_request_attributes | default(omit, True) }}"
+      action: "{{ netscaler_nitro_request_action | default(omit, True) }}"
+      instance_ip: "{{ netscaler_nitro_request_instance_ip | default(omit, True) }}"
+      nitro_pass: "{{ netscaler_nitro_request_nitro_pass | default(omit, True) }}"
+      validate_certs: "{{ netscaler_nitro_request_validate_certs | default(omit, True) }}"
+      operation: "{{ netscaler_nitro_request_operation | default(omit, True) }}"
+      nitro_auth_token: "{{ netscaler_nitro_request_nitro_auth_token | default(omit, True) }}"

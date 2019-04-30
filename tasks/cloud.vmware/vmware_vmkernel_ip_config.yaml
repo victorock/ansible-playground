@@ -1,0 +1,13 @@
+---
+- name: "module_vmware_vmkernel_ip_config"
+  vmware_vmkernel_ip_config: "{{ vmware_vmkernel_ip_config }}"
+  vars:
+    vmware_vmkernel_ip_config: 
+      username: "{{ vmware_vmkernel_ip_config_username | default(omit, True) }}"
+      vmk_name: "{{ vmware_vmkernel_ip_config_vmk_name | default(omit, True) }}"
+      ip_address: "{{ vmware_vmkernel_ip_config_ip_address | default(omit, True) }}"
+      hostname: "{{ vmware_vmkernel_ip_config_hostname | default(omit, True) }}"
+      subnet_mask: "{{ vmware_vmkernel_ip_config_subnet_mask | default(omit, True) }}"
+      password: "{{ vmware_vmkernel_ip_config_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vmkernel_ip_config_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vmkernel_ip_config_port | default(omit, True) }}"

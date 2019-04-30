@@ -1,0 +1,5 @@
+---
+- name: "module_ohai"
+  ohai: "{{ ohai }}"
+  vars:
+    ohai: 

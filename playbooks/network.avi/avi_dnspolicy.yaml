@@ -1,0 +1,30 @@
+---
+- name: "module_avi_dnspolicy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_dnspolicy: 
+      username: "{{ avi_dnspolicy_username | default('omit', True) }}"
+      uuid: "{{ avi_dnspolicy_uuid | default('omit', True) }}"
+      description: "{{ avi_dnspolicy_description | default('omit', True) }}"
+      state: "{{ avi_dnspolicy_state | default('omit', True) }}"
+      url: "{{ avi_dnspolicy_url | default('omit', True) }}"
+      controller: "{{ avi_dnspolicy_controller | default('omit', True) }}"
+      tenant_ref: "{{ avi_dnspolicy_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_dnspolicy_avi_api_patch_op | default('omit', True) }}"
+      rule: "{{ avi_dnspolicy_rule | default('omit', True) }}"
+      api_version: "{{ avi_dnspolicy_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_dnspolicy_avi_credentials | default('omit', True) }}"
+      created_by: "{{ avi_dnspolicy_created_by | default('omit', True) }}"
+      api_context: "{{ avi_dnspolicy_api_context | default('omit', True) }}"
+      tenant: "{{ avi_dnspolicy_tenant | default('omit', True) }}"
+      password: "{{ avi_dnspolicy_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_dnspolicy_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_dnspolicy_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_dnspolicy_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_dnspolicy"
+      avi_dnspolicy: "{{ avi_dnspolicy }}"

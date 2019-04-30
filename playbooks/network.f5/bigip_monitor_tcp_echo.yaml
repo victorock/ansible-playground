@@ -1,0 +1,27 @@
+---
+- name: "module_bigip_monitor_tcp_echo"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_monitor_tcp_echo: 
+      interval: "{{ bigip_monitor_tcp_echo_interval | default('omit', True) }}"
+      description: "{{ bigip_monitor_tcp_echo_description | default('omit', True) }}"
+      parent: "{{ bigip_monitor_tcp_echo_parent | default('omit', True) }}"
+      server_port: "{{ bigip_monitor_tcp_echo_server_port | default('omit', True) }}"
+      ip: "{{ bigip_monitor_tcp_echo_ip | default('omit', True) }}"
+      partition: "{{ bigip_monitor_tcp_echo_partition | default('omit', True) }}"
+      server: "{{ bigip_monitor_tcp_echo_server | default('omit', True) }}"
+      state: "{{ bigip_monitor_tcp_echo_state | default('omit', True) }}"
+      time_until_up: "{{ bigip_monitor_tcp_echo_time_until_up | default('omit', True) }}"
+      user: "{{ bigip_monitor_tcp_echo_user | default('omit', True) }}"
+      timeout: "{{ bigip_monitor_tcp_echo_timeout | default('omit', True) }}"
+      provider: "{{ bigip_monitor_tcp_echo_provider | default('omit', True) }}"
+      password: "{{ bigip_monitor_tcp_echo_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_monitor_tcp_echo_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_monitor_tcp_echo_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_monitor_tcp_echo"
+      bigip_monitor_tcp_echo: "{{ bigip_monitor_tcp_echo }}"

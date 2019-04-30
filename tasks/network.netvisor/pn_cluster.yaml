@@ -1,0 +1,13 @@
+---
+- name: "module_pn_cluster"
+  pn_cluster: "{{ pn_cluster }}"
+  vars:
+    pn_cluster: 
+      pn_name: "{{ pn_cluster_pn_name | default(omit, True) }}"
+      pn_clipassword: "{{ pn_cluster_pn_clipassword | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_cluster_pn_cliswitch | default(omit, True) }}"
+      pn_validate: "{{ pn_cluster_pn_validate | default(omit, True) }}"
+      state: "{{ pn_cluster_state | default(omit, True) }}"
+      pn_cliusername: "{{ pn_cluster_pn_cliusername | default(omit, True) }}"
+      pn_cluster_node1: "{{ pn_cluster_pn_cluster_node1 | default(omit, True) }}"
+      pn_cluster_node2: "{{ pn_cluster_pn_cluster_node2 | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_catapult"
+  catapult: "{{ catapult }}"
+  vars:
+    catapult: 
+      src: "{{ catapult_src | default(omit, True) }}"
+      user_id: "{{ catapult_user_id | default(omit, True) }}"
+      dest: "{{ catapult_dest | default(omit, True) }}"
+      media: "{{ catapult_media | default(omit, True) }}"
+      api_secret: "{{ catapult_api_secret | default(omit, True) }}"
+      api_token: "{{ catapult_api_token | default(omit, True) }}"
+      msg: "{{ catapult_msg | default(omit, True) }}"

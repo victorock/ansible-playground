@@ -1,0 +1,15 @@
+---
+- name: "module_eos_linkagg"
+  eos_linkagg: "{{ eos_linkagg }}"
+  vars:
+    eos_linkagg: 
+      authorize: "{{ eos_linkagg_authorize | default(omit, True) }}"
+      auth_pass: "{{ eos_linkagg_auth_pass | default(omit, True) }}"
+      group: "{{ eos_linkagg_group | default(omit, True) }}"
+      min_links: "{{ eos_linkagg_min_links | default(omit, True) }}"
+      purge: "{{ eos_linkagg_purge | default(omit, True) }}"
+      state: "{{ eos_linkagg_state | default(omit, True) }}"
+      mode: "{{ eos_linkagg_mode | default(omit, True) }}"
+      members: "{{ eos_linkagg_members | default(omit, True) }}"
+      provider: "{{ eos_linkagg_provider | default(omit, True) }}"
+      aggregate: "{{ eos_linkagg_aggregate | default(omit, True) }}"

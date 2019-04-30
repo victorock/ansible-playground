@@ -1,0 +1,12 @@
+---
+- name: "module_pn_vrouterlbif"
+  pn_vrouterlbif: "{{ pn_vrouterlbif }}"
+  vars:
+    pn_vrouterlbif: 
+      pn_vrouter_name: "{{ pn_vrouterlbif_pn_vrouter_name | default(omit, True) }}"
+      pn_clipassword: "{{ pn_vrouterlbif_pn_clipassword | default(omit, True) }}"
+      pn_index: "{{ pn_vrouterlbif_pn_index | default(omit, True) }}"
+      pn_interface_ip: "{{ pn_vrouterlbif_pn_interface_ip | default(omit, True) }}"
+      state: "{{ pn_vrouterlbif_state | default(omit, True) }}"
+      pn_cliusername: "{{ pn_vrouterlbif_pn_cliusername | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_vrouterlbif_pn_cliswitch | default(omit, True) }}"

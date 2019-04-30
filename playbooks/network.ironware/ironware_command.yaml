@@ -1,0 +1,19 @@
+---
+- name: "module_ironware_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ironware_command: 
+      authorize: "{{ ironware_command_authorize | default('omit', True) }}"
+      retries: "{{ ironware_command_retries | default('omit', True) }}"
+      commands: "{{ ironware_command_commands | default('omit', True) }}"
+      interval: "{{ ironware_command_interval | default('omit', True) }}"
+      provider: "{{ ironware_command_provider | default('omit', True) }}"
+      wait_for: "{{ ironware_command_wait_for | default('omit', True) }}"
+      match: "{{ ironware_command_match | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ironware_command"
+      ironware_command: "{{ ironware_command }}"

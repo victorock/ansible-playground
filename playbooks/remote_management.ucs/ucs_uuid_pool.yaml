@@ -1,0 +1,27 @@
+---
+- name: "module_ucs_uuid_pool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ucs_uuid_pool: 
+      username: "{{ ucs_uuid_pool_username | default('omit', True) }}"
+      use_proxy: "{{ ucs_uuid_pool_use_proxy | default('omit', True) }}"
+      description: "{{ ucs_uuid_pool_description | default('omit', True) }}"
+      last_uuid: "{{ ucs_uuid_pool_last_uuid | default('omit', True) }}"
+      hostname: "{{ ucs_uuid_pool_hostname | default('omit', True) }}"
+      org_dn: "{{ ucs_uuid_pool_org_dn | default('omit', True) }}"
+      order: "{{ ucs_uuid_pool_order | default('omit', True) }}"
+      prefix: "{{ ucs_uuid_pool_prefix | default('omit', True) }}"
+      state: "{{ ucs_uuid_pool_state | default('omit', True) }}"
+      proxy: "{{ ucs_uuid_pool_proxy | default('omit', True) }}"
+      use_ssl: "{{ ucs_uuid_pool_use_ssl | default('omit', True) }}"
+      first_uuid: "{{ ucs_uuid_pool_first_uuid | default('omit', True) }}"
+      password: "{{ ucs_uuid_pool_password | default('omit', True) }}"
+      port: "{{ ucs_uuid_pool_port | default('omit', True) }}"
+      name: "{{ ucs_uuid_pool_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ucs_uuid_pool"
+      ucs_uuid_pool: "{{ ucs_uuid_pool }}"

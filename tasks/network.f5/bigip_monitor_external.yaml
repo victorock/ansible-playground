@@ -1,0 +1,23 @@
+---
+- name: "module_bigip_monitor_external"
+  bigip_monitor_external: "{{ bigip_monitor_external }}"
+  vars:
+    bigip_monitor_external: 
+      user: "{{ bigip_monitor_external_user | default(omit, True) }}"
+      partition: "{{ bigip_monitor_external_partition | default(omit, True) }}"
+      description: "{{ bigip_monitor_external_description | default(omit, True) }}"
+      parent: "{{ bigip_monitor_external_parent | default(omit, True) }}"
+      ip: "{{ bigip_monitor_external_ip | default(omit, True) }}"
+      variables: "{{ bigip_monitor_external_variables | default(omit, True) }}"
+      interval: "{{ bigip_monitor_external_interval | default(omit, True) }}"
+      timeout: "{{ bigip_monitor_external_timeout | default(omit, True) }}"
+      server: "{{ bigip_monitor_external_server | default(omit, True) }}"
+      state: "{{ bigip_monitor_external_state | default(omit, True) }}"
+      external_program: "{{ bigip_monitor_external_external_program | default(omit, True) }}"
+      arguments: "{{ bigip_monitor_external_arguments | default(omit, True) }}"
+      server_port: "{{ bigip_monitor_external_server_port | default(omit, True) }}"
+      provider: "{{ bigip_monitor_external_provider | default(omit, True) }}"
+      password: "{{ bigip_monitor_external_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_monitor_external_validate_certs | default(omit, True) }}"
+      port: "{{ bigip_monitor_external_port | default(omit, True) }}"
+      name: "{{ bigip_monitor_external_name | default(omit, True) }}"

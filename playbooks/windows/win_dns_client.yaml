@@ -1,0 +1,14 @@
+---
+- name: "module_win_dns_client"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_dns_client: 
+      adapter_names: "{{ win_dns_client_adapter_names | default('omit', True) }}"
+      ipv4_addresses: "{{ win_dns_client_ipv4_addresses | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_dns_client"
+      win_dns_client: "{{ win_dns_client }}"

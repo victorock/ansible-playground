@@ -1,0 +1,18 @@
+---
+- name: "module_dladm_iptun"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dladm_iptun: 
+      temporary: "{{ dladm_iptun_temporary | default('omit', True) }}"
+      name: "{{ dladm_iptun_name | default('omit', True) }}"
+      remote_address: "{{ dladm_iptun_remote_address | default('omit', True) }}"
+      state: "{{ dladm_iptun_state | default('omit', True) }}"
+      local_address: "{{ dladm_iptun_local_address | default('omit', True) }}"
+      type: "{{ dladm_iptun_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dladm_iptun"
+      dladm_iptun: "{{ dladm_iptun }}"

@@ -1,0 +1,31 @@
+---
+- name: "module_aci_epg_to_contract"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_epg_to_contract: 
+      username: "{{ aci_epg_to_contract_username | default('omit', True) }}"
+      priority: "{{ aci_epg_to_contract_priority | default('omit', True) }}"
+      private_key: "{{ aci_epg_to_contract_private_key | default('omit', True) }}"
+      password: "{{ aci_epg_to_contract_password | default('omit', True) }}"
+      use_proxy: "{{ aci_epg_to_contract_use_proxy | default('omit', True) }}"
+      certificate_name: "{{ aci_epg_to_contract_certificate_name | default('omit', True) }}"
+      state: "{{ aci_epg_to_contract_state | default('omit', True) }}"
+      contract: "{{ aci_epg_to_contract_contract | default('omit', True) }}"
+      output_level: "{{ aci_epg_to_contract_output_level | default('omit', True) }}"
+      ap: "{{ aci_epg_to_contract_ap | default('omit', True) }}"
+      host: "{{ aci_epg_to_contract_host | default('omit', True) }}"
+      timeout: "{{ aci_epg_to_contract_timeout | default('omit', True) }}"
+      epg: "{{ aci_epg_to_contract_epg | default('omit', True) }}"
+      contract_type: "{{ aci_epg_to_contract_contract_type | default('omit', True) }}"
+      use_ssl: "{{ aci_epg_to_contract_use_ssl | default('omit', True) }}"
+      provider_match: "{{ aci_epg_to_contract_provider_match | default('omit', True) }}"
+      validate_certs: "{{ aci_epg_to_contract_validate_certs | default('omit', True) }}"
+      port: "{{ aci_epg_to_contract_port | default('omit', True) }}"
+      tenant: "{{ aci_epg_to_contract_tenant | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_epg_to_contract"
+      aci_epg_to_contract: "{{ aci_epg_to_contract }}"

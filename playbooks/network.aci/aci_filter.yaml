@@ -1,0 +1,27 @@
+---
+- name: "module_aci_filter"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_filter: 
+      username: "{{ aci_filter_username | default('omit', True) }}"
+      filter: "{{ aci_filter_filter | default('omit', True) }}"
+      private_key: "{{ aci_filter_private_key | default('omit', True) }}"
+      description: "{{ aci_filter_description | default('omit', True) }}"
+      certificate_name: "{{ aci_filter_certificate_name | default('omit', True) }}"
+      state: "{{ aci_filter_state | default('omit', True) }}"
+      output_level: "{{ aci_filter_output_level | default('omit', True) }}"
+      host: "{{ aci_filter_host | default('omit', True) }}"
+      timeout: "{{ aci_filter_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_filter_use_ssl | default('omit', True) }}"
+      password: "{{ aci_filter_password | default('omit', True) }}"
+      validate_certs: "{{ aci_filter_validate_certs | default('omit', True) }}"
+      port: "{{ aci_filter_port | default('omit', True) }}"
+      tenant: "{{ aci_filter_tenant | default('omit', True) }}"
+      use_proxy: "{{ aci_filter_use_proxy | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_filter"
+      aci_filter: "{{ aci_filter }}"

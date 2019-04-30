@@ -1,0 +1,15 @@
+---
+- name: "module_junos_netconf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_netconf: 
+      state: "{{ junos_netconf_state | default('omit', True) }}"
+      netconf_port: "{{ junos_netconf_netconf_port | default('omit', True) }}"
+      provider: "{{ junos_netconf_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_netconf"
+      junos_netconf: "{{ junos_netconf }}"

@@ -1,0 +1,9 @@
+---
+- name: "module_hall"
+  hall: "{{ hall }}"
+  vars:
+    hall: 
+      msg: "{{ hall_msg | default(omit, True) }}"
+      room_token: "{{ hall_room_token | default(omit, True) }}"
+      picture: "{{ hall_picture | default(omit, True) }}"
+      title: "{{ hall_title | default(omit, True) }}"

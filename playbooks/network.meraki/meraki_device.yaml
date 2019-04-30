@@ -1,0 +1,35 @@
+---
+- name: "module_meraki_device"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    meraki_device: 
+      lldp_cdp_timespan: "{{ meraki_device_lldp_cdp_timespan | default('omit', True) }}"
+      lng: "{{ meraki_device_lng | default('omit', True) }}"
+      serial: "{{ meraki_device_serial | default('omit', True) }}"
+      use_https: "{{ meraki_device_use_https | default('omit', True) }}"
+      use_proxy: "{{ meraki_device_use_proxy | default('omit', True) }}"
+      hostname: "{{ meraki_device_hostname | default('omit', True) }}"
+      state: "{{ meraki_device_state | default('omit', True) }}"
+      serial_lldp_cdp: "{{ meraki_device_serial_lldp_cdp | default('omit', True) }}"
+      org_name: "{{ meraki_device_org_name | default('omit', True) }}"
+      tags: "{{ meraki_device_tags | default('omit', True) }}"
+      move_map_marker: "{{ meraki_device_move_map_marker | default('omit', True) }}"
+      serial_uplink: "{{ meraki_device_serial_uplink | default('omit', True) }}"
+      host: "{{ meraki_device_host | default('omit', True) }}"
+      address: "{{ meraki_device_address | default('omit', True) }}"
+      lat: "{{ meraki_device_lat | default('omit', True) }}"
+      auth_key: "{{ meraki_device_auth_key | default('omit', True) }}"
+      org_id: "{{ meraki_device_org_id | default('omit', True) }}"
+      output_level: "{{ meraki_device_output_level | default('omit', True) }}"
+      net_name: "{{ meraki_device_net_name | default('omit', True) }}"
+      timeout: "{{ meraki_device_timeout | default('omit', True) }}"
+      model: "{{ meraki_device_model | default('omit', True) }}"
+      validate_certs: "{{ meraki_device_validate_certs | default('omit', True) }}"
+      net_id: "{{ meraki_device_net_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_meraki_device"
+      meraki_device: "{{ meraki_device }}"

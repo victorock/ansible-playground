@@ -1,0 +1,39 @@
+---
+- name: "module_os_image"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_image: 
+      auth_type: "{{ os_image_auth_type | default('omit', True) }}"
+      kernel: "{{ os_image_kernel | default('omit', True) }}"
+      availability_zone: "{{ os_image_availability_zone | default('omit', True) }}"
+      container_format: "{{ os_image_container_format | default('omit', True) }}"
+      min_ram: "{{ os_image_min_ram | default('omit', True) }}"
+      min_disk: "{{ os_image_min_disk | default('omit', True) }}"
+      owner: "{{ os_image_owner | default('omit', True) }}"
+      id: "{{ os_image_id | default('omit', True) }}"
+      cloud: "{{ os_image_cloud | default('omit', True) }}"
+      verify: "{{ os_image_verify | default('omit', True) }}"
+      disk_format: "{{ os_image_disk_format | default('omit', True) }}"
+      filename: "{{ os_image_filename | default('omit', True) }}"
+      state: "{{ os_image_state | default('omit', True) }}"
+      ramdisk: "{{ os_image_ramdisk | default('omit', True) }}"
+      region_name: "{{ os_image_region_name | default('omit', True) }}"
+      api_timeout: "{{ os_image_api_timeout | default('omit', True) }}"
+      auth: "{{ os_image_auth | default('omit', True) }}"
+      key: "{{ os_image_key | default('omit', True) }}"
+      cacert: "{{ os_image_cacert | default('omit', True) }}"
+      is_public: "{{ os_image_is_public | default('omit', True) }}"
+      properties: "{{ os_image_properties | default('omit', True) }}"
+      wait: "{{ os_image_wait | default('omit', True) }}"
+      name: "{{ os_image_name | default('omit', True) }}"
+      checksum: "{{ os_image_checksum | default('omit', True) }}"
+      cert: "{{ os_image_cert | default('omit', True) }}"
+      timeout: "{{ os_image_timeout | default('omit', True) }}"
+      interface: "{{ os_image_interface | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_image"
+      os_image: "{{ os_image }}"

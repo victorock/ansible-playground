@@ -1,0 +1,14 @@
+---
+- name: "module_vmware_host_ntp"
+  vmware_host_ntp: "{{ vmware_host_ntp }}"
+  vars:
+    vmware_host_ntp: 
+      username: "{{ vmware_host_ntp_username | default(omit, True) }}"
+      ntp_servers: "{{ vmware_host_ntp_ntp_servers | default(omit, True) }}"
+      hostname: "{{ vmware_host_ntp_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_ntp_cluster_name | default(omit, True) }}"
+      state: "{{ vmware_host_ntp_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_ntp_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_ntp_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_ntp_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_ntp_port | default(omit, True) }}"

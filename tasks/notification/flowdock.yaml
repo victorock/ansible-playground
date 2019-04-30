@@ -1,0 +1,18 @@
+---
+- name: "module_flowdock"
+  flowdock: "{{ flowdock }}"
+  vars:
+    flowdock: 
+      from_name: "{{ flowdock_from_name | default(omit, True) }}"
+      from_address: "{{ flowdock_from_address | default(omit, True) }}"
+      tags: "{{ flowdock_tags | default(omit, True) }}"
+      validate_certs: "{{ flowdock_validate_certs | default(omit, True) }}"
+      external_user_name: "{{ flowdock_external_user_name | default(omit, True) }}"
+      project: "{{ flowdock_project | default(omit, True) }}"
+      source: "{{ flowdock_source | default(omit, True) }}"
+      token: "{{ flowdock_token | default(omit, True) }}"
+      link: "{{ flowdock_link | default(omit, True) }}"
+      msg: "{{ flowdock_msg | default(omit, True) }}"
+      reply_to: "{{ flowdock_reply_to | default(omit, True) }}"
+      type: "{{ flowdock_type | default(omit, True) }}"
+      subject: "{{ flowdock_subject | default(omit, True) }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_aruba_config"
+  aruba_config: "{{ aruba_config }}"
+  vars:
+    aruba_config: 
+      intended_config: "{{ aruba_config_intended_config | default(omit, True) }}"
+      src: "{{ aruba_config_src | default(omit, True) }}"
+      save_when: "{{ aruba_config_save_when | default(omit, True) }}"
+      encrypt: "{{ aruba_config_encrypt | default(omit, True) }}"
+      after: "{{ aruba_config_after | default(omit, True) }}"
+      lines: "{{ aruba_config_lines | default(omit, True) }}"
+      diff_against: "{{ aruba_config_diff_against | default(omit, True) }}"
+      replace: "{{ aruba_config_replace | default(omit, True) }}"
+      running_config: "{{ aruba_config_running_config | default(omit, True) }}"
+      provider: "{{ aruba_config_provider | default(omit, True) }}"
+      parents: "{{ aruba_config_parents | default(omit, True) }}"
+      before: "{{ aruba_config_before | default(omit, True) }}"
+      backup: "{{ aruba_config_backup | default(omit, True) }}"
+      match: "{{ aruba_config_match | default(omit, True) }}"
+      diff_ignore_lines: "{{ aruba_config_diff_ignore_lines | default(omit, True) }}"

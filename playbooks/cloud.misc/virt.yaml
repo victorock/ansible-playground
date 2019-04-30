@@ -1,0 +1,18 @@
+---
+- name: "module_virt"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    virt: 
+      xml: "{{ virt_xml | default('omit', True) }}"
+      name: "{{ virt_name | default('omit', True) }}"
+      uri: "{{ virt_uri | default('omit', True) }}"
+      state: "{{ virt_state | default('omit', True) }}"
+      command: "{{ virt_command | default('omit', True) }}"
+      autostart: "{{ virt_autostart | default('omit', True) }}"
+  tasks:
+    - name: "plugin_virt"
+      virt: "{{ virt }}"

@@ -1,0 +1,14 @@
+---
+- name: "module_ipa_config"
+  ipa_config: "{{ ipa_config }}"
+  vars:
+    ipa_config: 
+      ipadefaultloginshell: "{{ ipa_config_ipadefaultloginshell | default(omit, True) }}"
+      ipa_port: "{{ ipa_config_ipa_port | default(omit, True) }}"
+      ipa_prot: "{{ ipa_config_ipa_prot | default(omit, True) }}"
+      ipadefaultemaildomain: "{{ ipa_config_ipadefaultemaildomain | default(omit, True) }}"
+      ipa_host: "{{ ipa_config_ipa_host | default(omit, True) }}"
+      ipa_user: "{{ ipa_config_ipa_user | default(omit, True) }}"
+      ipa_pass: "{{ ipa_config_ipa_pass | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_config_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_config_validate_certs | default(omit, True) }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_onyx_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_command: 
+      retries: "{{ onyx_command_retries | default('omit', True) }}"
+      commands: "{{ onyx_command_commands | default('omit', True) }}"
+      interval: "{{ onyx_command_interval | default('omit', True) }}"
+      provider: "{{ onyx_command_provider | default('omit', True) }}"
+      wait_for: "{{ onyx_command_wait_for | default('omit', True) }}"
+      match: "{{ onyx_command_match | default('omit', True) }}"
+  tasks:
+    - name: "plugin_onyx_command"
+      onyx_command: "{{ onyx_command }}"

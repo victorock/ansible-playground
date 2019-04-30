@@ -1,0 +1,21 @@
+---
+- name: "module_avi_snmptrapprofile"
+  avi_snmptrapprofile: "{{ avi_snmptrapprofile }}"
+  vars:
+    avi_snmptrapprofile: 
+      username: "{{ avi_snmptrapprofile_username | default(omit, True) }}"
+      uuid: "{{ avi_snmptrapprofile_uuid | default(omit, True) }}"
+      state: "{{ avi_snmptrapprofile_state | default(omit, True) }}"
+      trap_servers: "{{ avi_snmptrapprofile_trap_servers | default(omit, True) }}"
+      tenant_ref: "{{ avi_snmptrapprofile_tenant_ref | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_snmptrapprofile_avi_api_patch_op | default(omit, True) }}"
+      api_version: "{{ avi_snmptrapprofile_api_version | default(omit, True) }}"
+      url: "{{ avi_snmptrapprofile_url | default(omit, True) }}"
+      avi_credentials: "{{ avi_snmptrapprofile_avi_credentials | default(omit, True) }}"
+      tenant: "{{ avi_snmptrapprofile_tenant | default(omit, True) }}"
+      api_context: "{{ avi_snmptrapprofile_api_context | default(omit, True) }}"
+      password: "{{ avi_snmptrapprofile_password | default(omit, True) }}"
+      tenant_uuid: "{{ avi_snmptrapprofile_tenant_uuid | default(omit, True) }}"
+      controller: "{{ avi_snmptrapprofile_controller | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_snmptrapprofile_avi_api_update_method | default(omit, True) }}"
+      name: "{{ avi_snmptrapprofile_name | default(omit, True) }}"

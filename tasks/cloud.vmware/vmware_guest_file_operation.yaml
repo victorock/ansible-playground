@@ -1,0 +1,20 @@
+---
+- name: "module_vmware_guest_file_operation"
+  vmware_guest_file_operation: "{{ vmware_guest_file_operation }}"
+  vars:
+    vmware_guest_file_operation: 
+      username: "{{ vmware_guest_file_operation_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_file_operation_datacenter | default(omit, True) }}"
+      vm_password: "{{ vmware_guest_file_operation_vm_password | default(omit, True) }}"
+      password: "{{ vmware_guest_file_operation_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_file_operation_validate_certs | default(omit, True) }}"
+      hostname: "{{ vmware_guest_file_operation_hostname | default(omit, True) }}"
+      vm_username: "{{ vmware_guest_file_operation_vm_username | default(omit, True) }}"
+      fetch: "{{ vmware_guest_file_operation_fetch | default(omit, True) }}"
+      cluster: "{{ vmware_guest_file_operation_cluster | default(omit, True) }}"
+      vm_id_type: "{{ vmware_guest_file_operation_vm_id_type | default(omit, True) }}"
+      directory: "{{ vmware_guest_file_operation_directory | default(omit, True) }}"
+      folder: "{{ vmware_guest_file_operation_folder | default(omit, True) }}"
+      copy: "{{ vmware_guest_file_operation_copy | default(omit, True) }}"
+      vm_id: "{{ vmware_guest_file_operation_vm_id | default(omit, True) }}"
+      port: "{{ vmware_guest_file_operation_port | default(omit, True) }}"

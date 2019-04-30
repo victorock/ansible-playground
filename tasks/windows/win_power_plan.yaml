@@ -1,0 +1,6 @@
+---
+- name: "module_win_power_plan"
+  win_power_plan: "{{ win_power_plan }}"
+  vars:
+    win_power_plan: 
+      name: "{{ win_power_plan_name | default(omit, True) }}"

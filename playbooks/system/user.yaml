@@ -1,0 +1,42 @@
+---
+- name: "module_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    user: 
+      comment: "{{ user_comment | default('omit', True) }}"
+      ssh_key_bits: "{{ user_ssh_key_bits | default('omit', True) }}"
+      update_password: "{{ user_update_password | default('omit', True) }}"
+      non_unique: "{{ user_non_unique | default('omit', True) }}"
+      force: "{{ user_force | default('omit', True) }}"
+      skeleton: "{{ user_skeleton | default('omit', True) }}"
+      create_home: "{{ user_create_home | default('omit', True) }}"
+      password_lock: "{{ user_password_lock | default('omit', True) }}"
+      ssh_key_passphrase: "{{ user_ssh_key_passphrase | default('omit', True) }}"
+      uid: "{{ user_uid | default('omit', True) }}"
+      home: "{{ user_home | default('omit', True) }}"
+      append: "{{ user_append | default('omit', True) }}"
+      ssh_key_type: "{{ user_ssh_key_type | default('omit', True) }}"
+      ssh_key_comment: "{{ user_ssh_key_comment | default('omit', True) }}"
+      group: "{{ user_group | default('omit', True) }}"
+      system: "{{ user_system | default('omit', True) }}"
+      state: "{{ user_state | default('omit', True) }}"
+      hidden: "{{ user_hidden | default('omit', True) }}"
+      local: "{{ user_local | default('omit', True) }}"
+      shell: "{{ user_shell | default('omit', True) }}"
+      expires: "{{ user_expires | default('omit', True) }}"
+      ssh_key_file: "{{ user_ssh_key_file | default('omit', True) }}"
+      groups: "{{ user_groups | default('omit', True) }}"
+      move_home: "{{ user_move_home | default('omit', True) }}"
+      password: "{{ user_password | default('omit', True) }}"
+      name: "{{ user_name | default('omit', True) }}"
+      seuser: "{{ user_seuser | default('omit', True) }}"
+      remove: "{{ user_remove | default('omit', True) }}"
+      login_class: "{{ user_login_class | default('omit', True) }}"
+      generate_ssh_key: "{{ user_generate_ssh_key | default('omit', True) }}"
+  tasks:
+    - name: "plugin_user"
+      user: "{{ user }}"

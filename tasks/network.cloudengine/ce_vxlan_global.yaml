@@ -1,0 +1,14 @@
+---
+- name: "module_ce_vxlan_global"
+  ce_vxlan_global: "{{ ce_vxlan_global }}"
+  vars:
+    ce_vxlan_global: 
+      tunnel_mode_vxlan: "{{ ce_vxlan_global_tunnel_mode_vxlan | default(omit, True) }}"
+      nvo3_eth_trunk_hash: "{{ ce_vxlan_global_nvo3_eth_trunk_hash | default(omit, True) }}"
+      nvo3_prevent_loops: "{{ ce_vxlan_global_nvo3_prevent_loops | default(omit, True) }}"
+      nvo3_acl_extend: "{{ ce_vxlan_global_nvo3_acl_extend | default(omit, True) }}"
+      bridge_domain_id: "{{ ce_vxlan_global_bridge_domain_id | default(omit, True) }}"
+      nvo3_gw_enhanced: "{{ ce_vxlan_global_nvo3_gw_enhanced | default(omit, True) }}"
+      state: "{{ ce_vxlan_global_state | default(omit, True) }}"
+      nvo3_ecmp_hash: "{{ ce_vxlan_global_nvo3_ecmp_hash | default(omit, True) }}"
+      nvo3_service_extend: "{{ ce_vxlan_global_nvo3_service_extend | default(omit, True) }}"

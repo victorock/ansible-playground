@@ -1,0 +1,34 @@
+---
+- name: "module_aci_intf_policy_port_channel"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_intf_policy_port_channel: 
+      min_links: "{{ aci_intf_policy_port_channel_min_links | default('omit', True) }}"
+      use_ssl: "{{ aci_intf_policy_port_channel_use_ssl | default('omit', True) }}"
+      fast_select: "{{ aci_intf_policy_port_channel_fast_select | default('omit', True) }}"
+      port: "{{ aci_intf_policy_port_channel_port | default('omit', True) }}"
+      port_channel: "{{ aci_intf_policy_port_channel_port_channel | default('omit', True) }}"
+      use_proxy: "{{ aci_intf_policy_port_channel_use_proxy | default('omit', True) }}"
+      load_defer: "{{ aci_intf_policy_port_channel_load_defer | default('omit', True) }}"
+      state: "{{ aci_intf_policy_port_channel_state | default('omit', True) }}"
+      username: "{{ aci_intf_policy_port_channel_username | default('omit', True) }}"
+      private_key: "{{ aci_intf_policy_port_channel_private_key | default('omit', True) }}"
+      description: "{{ aci_intf_policy_port_channel_description | default('omit', True) }}"
+      certificate_name: "{{ aci_intf_policy_port_channel_certificate_name | default('omit', True) }}"
+      host: "{{ aci_intf_policy_port_channel_host | default('omit', True) }}"
+      password: "{{ aci_intf_policy_port_channel_password | default('omit', True) }}"
+      graceful_convergence: "{{ aci_intf_policy_port_channel_graceful_convergence | default('omit', True) }}"
+      symmetric_hash: "{{ aci_intf_policy_port_channel_symmetric_hash | default('omit', True) }}"
+      suspend_individual: "{{ aci_intf_policy_port_channel_suspend_individual | default('omit', True) }}"
+      output_level: "{{ aci_intf_policy_port_channel_output_level | default('omit', True) }}"
+      mode: "{{ aci_intf_policy_port_channel_mode | default('omit', True) }}"
+      timeout: "{{ aci_intf_policy_port_channel_timeout | default('omit', True) }}"
+      validate_certs: "{{ aci_intf_policy_port_channel_validate_certs | default('omit', True) }}"
+      max_links: "{{ aci_intf_policy_port_channel_max_links | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_intf_policy_port_channel"
+      aci_intf_policy_port_channel: "{{ aci_intf_policy_port_channel }}"

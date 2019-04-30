@@ -1,0 +1,33 @@
+---
+- name: "module_ec2_vol"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ec2_vol: 
+      profile: "{{ ec2_vol_profile | default('omit', True) }}"
+      aws_secret_key: "{{ ec2_vol_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ ec2_vol_aws_access_key | default('omit', True) }}"
+      name: "{{ ec2_vol_name | default('omit', True) }}"
+      security_token: "{{ ec2_vol_security_token | default('omit', True) }}"
+      tags: "{{ ec2_vol_tags | default('omit', True) }}"
+      delete_on_termination: "{{ ec2_vol_delete_on_termination | default('omit', True) }}"
+      encrypted: "{{ ec2_vol_encrypted | default('omit', True) }}"
+      region: "{{ ec2_vol_region | default('omit', True) }}"
+      kms_key_id: "{{ ec2_vol_kms_key_id | default('omit', True) }}"
+      volume_type: "{{ ec2_vol_volume_type | default('omit', True) }}"
+      device_name: "{{ ec2_vol_device_name | default('omit', True) }}"
+      volume_size: "{{ ec2_vol_volume_size | default('omit', True) }}"
+      state: "{{ ec2_vol_state | default('omit', True) }}"
+      iops: "{{ ec2_vol_iops | default('omit', True) }}"
+      instance: "{{ ec2_vol_instance | default('omit', True) }}"
+      ec2_url: "{{ ec2_vol_ec2_url | default('omit', True) }}"
+      snapshot: "{{ ec2_vol_snapshot | default('omit', True) }}"
+      zone: "{{ ec2_vol_zone | default('omit', True) }}"
+      validate_certs: "{{ ec2_vol_validate_certs | default('omit', True) }}"
+      id: "{{ ec2_vol_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ec2_vol"
+      ec2_vol: "{{ ec2_vol }}"

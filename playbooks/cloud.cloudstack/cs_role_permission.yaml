@@ -1,0 +1,24 @@
+---
+- name: "module_cs_role_permission"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_role_permission: 
+      parent: "{{ cs_role_permission_parent | default('omit', True) }}"
+      api_url: "{{ cs_role_permission_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_role_permission_api_http_method | default('omit', True) }}"
+      permission: "{{ cs_role_permission_permission | default('omit', True) }}"
+      api_secret: "{{ cs_role_permission_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_role_permission_api_timeout | default('omit', True) }}"
+      api_region: "{{ cs_role_permission_api_region | default('omit', True) }}"
+      name: "{{ cs_role_permission_name | default('omit', True) }}"
+      state: "{{ cs_role_permission_state | default('omit', True) }}"
+      role: "{{ cs_role_permission_role | default('omit', True) }}"
+      api_key: "{{ cs_role_permission_api_key | default('omit', True) }}"
+      description: "{{ cs_role_permission_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_role_permission"
+      cs_role_permission: "{{ cs_role_permission }}"

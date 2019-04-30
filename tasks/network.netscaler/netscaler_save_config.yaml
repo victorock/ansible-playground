@@ -1,0 +1,11 @@
+---
+- name: "module_netscaler_save_config"
+  netscaler_save_config: "{{ netscaler_save_config }}"
+  vars:
+    netscaler_save_config: 
+      nitro_protocol: "{{ netscaler_save_config_nitro_protocol | default(omit, True) }}"
+      nsip: "{{ netscaler_save_config_nsip | default(omit, True) }}"
+      nitro_user: "{{ netscaler_save_config_nitro_user | default(omit, True) }}"
+      nitro_pass: "{{ netscaler_save_config_nitro_pass | default(omit, True) }}"
+      validate_certs: "{{ netscaler_save_config_validate_certs | default(omit, True) }}"
+      nitro_timeout: "{{ netscaler_save_config_nitro_timeout | default(omit, True) }}"

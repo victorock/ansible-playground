@@ -1,0 +1,24 @@
+---
+- name: "module_bigip_firewall_dos_profile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_firewall_dos_profile: 
+      description: "{{ bigip_firewall_dos_profile_description | default('omit', True) }}"
+      threshold_sensitivity: "{{ bigip_firewall_dos_profile_threshold_sensitivity | default('omit', True) }}"
+      partition: "{{ bigip_firewall_dos_profile_partition | default('omit', True) }}"
+      server: "{{ bigip_firewall_dos_profile_server | default('omit', True) }}"
+      state: "{{ bigip_firewall_dos_profile_state | default('omit', True) }}"
+      user: "{{ bigip_firewall_dos_profile_user | default('omit', True) }}"
+      server_port: "{{ bigip_firewall_dos_profile_server_port | default('omit', True) }}"
+      provider: "{{ bigip_firewall_dos_profile_provider | default('omit', True) }}"
+      default_whitelist: "{{ bigip_firewall_dos_profile_default_whitelist | default('omit', True) }}"
+      password: "{{ bigip_firewall_dos_profile_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_firewall_dos_profile_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_firewall_dos_profile_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_firewall_dos_profile"
+      bigip_firewall_dos_profile: "{{ bigip_firewall_dos_profile }}"

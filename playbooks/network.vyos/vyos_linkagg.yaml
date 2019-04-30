@@ -1,0 +1,18 @@
+---
+- name: "module_vyos_linkagg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vyos_linkagg: 
+      name: "{{ vyos_linkagg_name | default('omit', True) }}"
+      state: "{{ vyos_linkagg_state | default('omit', True) }}"
+      mode: "{{ vyos_linkagg_mode | default('omit', True) }}"
+      members: "{{ vyos_linkagg_members | default('omit', True) }}"
+      provider: "{{ vyos_linkagg_provider | default('omit', True) }}"
+      aggregate: "{{ vyos_linkagg_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vyos_linkagg"
+      vyos_linkagg: "{{ vyos_linkagg }}"

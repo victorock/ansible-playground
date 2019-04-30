@@ -1,0 +1,6 @@
+---
+- name: "module_package_facts"
+  package_facts: "{{ package_facts }}"
+  vars:
+    package_facts: 
+      manager: "{{ package_facts_manager | default(omit, True) }}"

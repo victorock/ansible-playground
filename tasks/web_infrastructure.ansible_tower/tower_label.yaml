@@ -1,0 +1,13 @@
+---
+- name: "module_tower_label"
+  tower_label: "{{ tower_label }}"
+  vars:
+    tower_label: 
+      name: "{{ tower_label_name | default(omit, True) }}"
+      tower_host: "{{ tower_label_tower_host | default(omit, True) }}"
+      tower_username: "{{ tower_label_tower_username | default(omit, True) }}"
+      state: "{{ tower_label_state | default(omit, True) }}"
+      tower_password: "{{ tower_label_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_label_tower_config_file | default(omit, True) }}"
+      organization: "{{ tower_label_organization | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_label_tower_verify_ssl | default(omit, True) }}"

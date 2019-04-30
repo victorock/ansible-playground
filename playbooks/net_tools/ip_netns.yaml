@@ -1,0 +1,14 @@
+---
+- name: "module_ip_netns"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ip_netns: 
+      state: "{{ ip_netns_state | default('omit', True) }}"
+      name: "{{ ip_netns_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ip_netns"
+      ip_netns: "{{ ip_netns }}"

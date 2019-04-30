@@ -1,0 +1,10 @@
+---
+- name: "module_win_unzip"
+  win_unzip: "{{ win_unzip }}"
+  vars:
+    win_unzip: 
+      dest: "{{ win_unzip_dest | default(omit, True) }}"
+      src: "{{ win_unzip_src | default(omit, True) }}"
+      delete_archive: "{{ win_unzip_delete_archive | default(omit, True) }}"
+      recurse: "{{ win_unzip_recurse | default(omit, True) }}"
+      creates: "{{ win_unzip_creates | default(omit, True) }}"

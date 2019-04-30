@@ -1,0 +1,20 @@
+---
+- name: "module_infini_export_client"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    infini_export_client: 
+      no_root_squash: "{{ infini_export_client_no_root_squash | default('omit', True) }}"
+      password: "{{ infini_export_client_password | default('omit', True) }}"
+      system: "{{ infini_export_client_system | default('omit', True) }}"
+      state: "{{ infini_export_client_state | default('omit', True) }}"
+      client: "{{ infini_export_client_client | default('omit', True) }}"
+      export: "{{ infini_export_client_export | default('omit', True) }}"
+      user: "{{ infini_export_client_user | default('omit', True) }}"
+      access_mode: "{{ infini_export_client_access_mode | default('omit', True) }}"
+  tasks:
+    - name: "plugin_infini_export_client"
+      infini_export_client: "{{ infini_export_client }}"

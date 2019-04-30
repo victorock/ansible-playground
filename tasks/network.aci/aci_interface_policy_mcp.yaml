@@ -1,0 +1,20 @@
+---
+- name: "module_aci_interface_policy_mcp"
+  aci_interface_policy_mcp: "{{ aci_interface_policy_mcp }}"
+  vars:
+    aci_interface_policy_mcp: 
+      username: "{{ aci_interface_policy_mcp_username | default(omit, True) }}"
+      use_proxy: "{{ aci_interface_policy_mcp_use_proxy | default(omit, True) }}"
+      private_key: "{{ aci_interface_policy_mcp_private_key | default(omit, True) }}"
+      description: "{{ aci_interface_policy_mcp_description | default(omit, True) }}"
+      certificate_name: "{{ aci_interface_policy_mcp_certificate_name | default(omit, True) }}"
+      state: "{{ aci_interface_policy_mcp_state | default(omit, True) }}"
+      output_level: "{{ aci_interface_policy_mcp_output_level | default(omit, True) }}"
+      host: "{{ aci_interface_policy_mcp_host | default(omit, True) }}"
+      admin_state: "{{ aci_interface_policy_mcp_admin_state | default(omit, True) }}"
+      timeout: "{{ aci_interface_policy_mcp_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_interface_policy_mcp_use_ssl | default(omit, True) }}"
+      password: "{{ aci_interface_policy_mcp_password | default(omit, True) }}"
+      validate_certs: "{{ aci_interface_policy_mcp_validate_certs | default(omit, True) }}"
+      port: "{{ aci_interface_policy_mcp_port | default(omit, True) }}"
+      mcp: "{{ aci_interface_policy_mcp_mcp | default(omit, True) }}"

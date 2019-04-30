@@ -1,0 +1,16 @@
+---
+- name: "module_nios_srv_record"
+  nios_srv_record: "{{ nios_srv_record }}"
+  vars:
+    nios_srv_record: 
+      comment: "{{ nios_srv_record_comment | default(omit, True) }}"
+      target: "{{ nios_srv_record_target | default(omit, True) }}"
+      weight: "{{ nios_srv_record_weight | default(omit, True) }}"
+      extattrs: "{{ nios_srv_record_extattrs | default(omit, True) }}"
+      provider: "{{ nios_srv_record_provider | default(omit, True) }}"
+      priority: "{{ nios_srv_record_priority | default(omit, True) }}"
+      state: "{{ nios_srv_record_state | default(omit, True) }}"
+      ttl: "{{ nios_srv_record_ttl | default(omit, True) }}"
+      view: "{{ nios_srv_record_view | default(omit, True) }}"
+      port: "{{ nios_srv_record_port | default(omit, True) }}"
+      name: "{{ nios_srv_record_name | default(omit, True) }}"

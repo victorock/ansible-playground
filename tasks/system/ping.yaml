@@ -1,0 +1,6 @@
+---
+- name: "module_ping"
+  ping: "{{ ping }}"
+  vars:
+    ping: 
+      data: "{{ ping_data | default(omit, True) }}"

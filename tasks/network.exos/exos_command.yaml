@@ -1,0 +1,10 @@
+---
+- name: "module_exos_command"
+  exos_command: "{{ exos_command }}"
+  vars:
+    exos_command: 
+      retries: "{{ exos_command_retries | default(omit, True) }}"
+      commands: "{{ exos_command_commands | default(omit, True) }}"
+      wait_for: "{{ exos_command_wait_for | default(omit, True) }}"
+      match: "{{ exos_command_match | default(omit, True) }}"
+      interval: "{{ exos_command_interval | default(omit, True) }}"

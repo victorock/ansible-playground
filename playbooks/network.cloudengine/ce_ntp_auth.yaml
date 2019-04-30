@@ -1,0 +1,19 @@
+---
+- name: "module_ce_ntp_auth"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_ntp_auth: 
+      auth_type: "{{ ce_ntp_auth_auth_type | default('omit', True) }}"
+      auth_pwd: "{{ ce_ntp_auth_auth_pwd | default('omit', True) }}"
+      state: "{{ ce_ntp_auth_state | default('omit', True) }}"
+      auth_mode: "{{ ce_ntp_auth_auth_mode | default('omit', True) }}"
+      authentication: "{{ ce_ntp_auth_authentication | default('omit', True) }}"
+      trusted_key: "{{ ce_ntp_auth_trusted_key | default('omit', True) }}"
+      key_id: "{{ ce_ntp_auth_key_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_ntp_auth"
+      ce_ntp_auth: "{{ ce_ntp_auth }}"

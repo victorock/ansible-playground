@@ -1,0 +1,23 @@
+---
+- name: "module_win_nssm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_nssm: 
+      name: "{{ win_nssm_name | default('omit', True) }}"
+      start_mode: "{{ win_nssm_start_mode | default('omit', True) }}"
+      stderr_file: "{{ win_nssm_stderr_file | default('omit', True) }}"
+      app_parameters_free_form: "{{ win_nssm_app_parameters_free_form | default('omit', True) }}"
+      application: "{{ win_nssm_application | default('omit', True) }}"
+      state: "{{ win_nssm_state | default('omit', True) }}"
+      dependencies: "{{ win_nssm_dependencies | default('omit', True) }}"
+      user: "{{ win_nssm_user | default('omit', True) }}"
+      password: "{{ win_nssm_password | default('omit', True) }}"
+      stdout_file: "{{ win_nssm_stdout_file | default('omit', True) }}"
+      app_parameters: "{{ win_nssm_app_parameters | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_nssm"
+      win_nssm: "{{ win_nssm }}"

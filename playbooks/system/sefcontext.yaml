@@ -1,0 +1,19 @@
+---
+- name: "module_sefcontext"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sefcontext: 
+      target: "{{ sefcontext_target | default('omit', True) }}"
+      selevel: "{{ sefcontext_selevel | default('omit', True) }}"
+      seuser: "{{ sefcontext_seuser | default('omit', True) }}"
+      setype: "{{ sefcontext_setype | default('omit', True) }}"
+      reload: "{{ sefcontext_reload | default('omit', True) }}"
+      state: "{{ sefcontext_state | default('omit', True) }}"
+      ftype: "{{ sefcontext_ftype | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sefcontext"
+      sefcontext: "{{ sefcontext }}"

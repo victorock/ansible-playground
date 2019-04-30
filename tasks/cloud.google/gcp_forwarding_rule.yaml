@@ -1,0 +1,12 @@
+---
+- name: "module_gcp_forwarding_rule"
+  gcp_forwarding_rule: "{{ gcp_forwarding_rule }}"
+  vars:
+    gcp_forwarding_rule: 
+      protocol: "{{ gcp_forwarding_rule_protocol | default(omit, True) }}"
+      target: "{{ gcp_forwarding_rule_target | default(omit, True) }}"
+      region: "{{ gcp_forwarding_rule_region | default(omit, True) }}"
+      forwarding_rule_name: "{{ gcp_forwarding_rule_forwarding_rule_name | default(omit, True) }}"
+      port_range: "{{ gcp_forwarding_rule_port_range | default(omit, True) }}"
+      state: "{{ gcp_forwarding_rule_state | default(omit, True) }}"
+      address: "{{ gcp_forwarding_rule_address | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_pn_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_vlan: 
+      pn_scope: "{{ pn_vlan_pn_scope | default('omit', True) }}"
+      pn_clipassword: "{{ pn_vlan_pn_clipassword | default('omit', True) }}"
+      pn_cliusername: "{{ pn_vlan_pn_cliusername | default('omit', True) }}"
+      pn_vlanid: "{{ pn_vlan_pn_vlanid | default('omit', True) }}"
+      state: "{{ pn_vlan_state | default('omit', True) }}"
+      pn_ports: "{{ pn_vlan_pn_ports | default('omit', True) }}"
+      pn_untagged_ports: "{{ pn_vlan_pn_untagged_ports | default('omit', True) }}"
+      pn_cliswitch: "{{ pn_vlan_pn_cliswitch | default('omit', True) }}"
+      pn_stats: "{{ pn_vlan_pn_stats | default('omit', True) }}"
+      pn_description: "{{ pn_vlan_pn_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pn_vlan"
+      pn_vlan: "{{ pn_vlan }}"

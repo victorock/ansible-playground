@@ -1,0 +1,8 @@
+---
+- name: "module_debug"
+  debug: "{{ debug }}"
+  vars:
+    debug: 
+      msg: "{{ debug_msg | default(omit, True) }}"
+      var: "{{ debug_var | default(omit, True) }}"
+      verbosity: "{{ debug_verbosity | default(omit, True) }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_win_iis_webapplication"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_iis_webapplication: 
+      state: "{{ win_iis_webapplication_state | default('omit', True) }}"
+      application_pool: "{{ win_iis_webapplication_application_pool | default('omit', True) }}"
+      name: "{{ win_iis_webapplication_name | default('omit', True) }}"
+      physical_path: "{{ win_iis_webapplication_physical_path | default('omit', True) }}"
+      site: "{{ win_iis_webapplication_site | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_iis_webapplication"
+      win_iis_webapplication: "{{ win_iis_webapplication }}"

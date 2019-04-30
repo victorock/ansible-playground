@@ -1,0 +1,13 @@
+---
+- name: "module_vertica_role"
+  vertica_role: "{{ vertica_role }}"
+  vars:
+    vertica_role: 
+      assigned_roles: "{{ vertica_role_assigned_roles | default(omit, True) }}"
+      name: "{{ vertica_role_name | default(omit, True) }}"
+      login_user: "{{ vertica_role_login_user | default(omit, True) }}"
+      db: "{{ vertica_role_db | default(omit, True) }}"
+      cluster: "{{ vertica_role_cluster | default(omit, True) }}"
+      state: "{{ vertica_role_state | default(omit, True) }}"
+      login_password: "{{ vertica_role_login_password | default(omit, True) }}"
+      port: "{{ vertica_role_port | default(omit, True) }}"

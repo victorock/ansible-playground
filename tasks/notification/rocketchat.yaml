@@ -1,0 +1,17 @@
+---
+- name: "module_rocketchat"
+  rocketchat: "{{ rocketchat }}"
+  vars:
+    rocketchat: 
+      username: "{{ rocketchat_username | default(omit, True) }}"
+      domain: "{{ rocketchat_domain | default(omit, True) }}"
+      protocol: "{{ rocketchat_protocol | default(omit, True) }}"
+      attachments: "{{ rocketchat_attachments | default(omit, True) }}"
+      color: "{{ rocketchat_color | default(omit, True) }}"
+      icon_url: "{{ rocketchat_icon_url | default(omit, True) }}"
+      token: "{{ rocketchat_token | default(omit, True) }}"
+      icon_emoji: "{{ rocketchat_icon_emoji | default(omit, True) }}"
+      link_names: "{{ rocketchat_link_names | default(omit, True) }}"
+      msg: "{{ rocketchat_msg | default(omit, True) }}"
+      validate_certs: "{{ rocketchat_validate_certs | default(omit, True) }}"
+      channel: "{{ rocketchat_channel | default(omit, True) }}"

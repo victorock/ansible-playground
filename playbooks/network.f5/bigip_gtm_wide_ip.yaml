@@ -1,0 +1,26 @@
+---
+- name: "module_bigip_gtm_wide_ip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_gtm_wide_ip: 
+      name: "{{ bigip_gtm_wide_ip_name | default('omit', True) }}"
+      pool_lb_method: "{{ bigip_gtm_wide_ip_pool_lb_method | default('omit', True) }}"
+      type: "{{ bigip_gtm_wide_ip_type | default('omit', True) }}"
+      partition: "{{ bigip_gtm_wide_ip_partition | default('omit', True) }}"
+      server: "{{ bigip_gtm_wide_ip_server | default('omit', True) }}"
+      irules: "{{ bigip_gtm_wide_ip_irules | default('omit', True) }}"
+      state: "{{ bigip_gtm_wide_ip_state | default('omit', True) }}"
+      user: "{{ bigip_gtm_wide_ip_user | default('omit', True) }}"
+      server_port: "{{ bigip_gtm_wide_ip_server_port | default('omit', True) }}"
+      provider: "{{ bigip_gtm_wide_ip_provider | default('omit', True) }}"
+      pools: "{{ bigip_gtm_wide_ip_pools | default('omit', True) }}"
+      password: "{{ bigip_gtm_wide_ip_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_gtm_wide_ip_validate_certs | default('omit', True) }}"
+      aliases: "{{ bigip_gtm_wide_ip_aliases | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_gtm_wide_ip"
+      bigip_gtm_wide_ip: "{{ bigip_gtm_wide_ip }}"

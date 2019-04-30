@@ -1,0 +1,15 @@
+---
+- name: "module_ipa_sudocmd"
+  ipa_sudocmd: "{{ ipa_sudocmd }}"
+  vars:
+    ipa_sudocmd: 
+      ipa_port: "{{ ipa_sudocmd_ipa_port | default(omit, True) }}"
+      description: "{{ ipa_sudocmd_description | default(omit, True) }}"
+      ipa_prot: "{{ ipa_sudocmd_ipa_prot | default(omit, True) }}"
+      state: "{{ ipa_sudocmd_state | default(omit, True) }}"
+      ipa_user: "{{ ipa_sudocmd_ipa_user | default(omit, True) }}"
+      sudocmd: "{{ ipa_sudocmd_sudocmd | default(omit, True) }}"
+      ipa_pass: "{{ ipa_sudocmd_ipa_pass | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_sudocmd_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_sudocmd_validate_certs | default(omit, True) }}"
+      ipa_host: "{{ ipa_sudocmd_ipa_host | default(omit, True) }}"

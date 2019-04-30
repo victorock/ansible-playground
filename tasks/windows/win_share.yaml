@@ -1,0 +1,16 @@
+---
+- name: "module_win_share"
+  win_share: "{{ win_share }}"
+  vars:
+    win_share: 
+      deny: "{{ win_share_deny | default(omit, True) }}"
+      caching_mode: "{{ win_share_caching_mode | default(omit, True) }}"
+      encrypt: "{{ win_share_encrypt | default(omit, True) }}"
+      description: "{{ win_share_description | default(omit, True) }}"
+      read: "{{ win_share_read | default(omit, True) }}"
+      list: "{{ win_share_list | default(omit, True) }}"
+      state: "{{ win_share_state | default(omit, True) }}"
+      full: "{{ win_share_full | default(omit, True) }}"
+      path: "{{ win_share_path | default(omit, True) }}"
+      change: "{{ win_share_change | default(omit, True) }}"
+      name: "{{ win_share_name | default(omit, True) }}"

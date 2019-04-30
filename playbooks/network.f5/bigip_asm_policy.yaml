@@ -1,0 +1,24 @@
+---
+- name: "module_bigip_asm_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_asm_policy: 
+      template: "{{ bigip_asm_policy_template | default('omit', True) }}"
+      partition: "{{ bigip_asm_policy_partition | default('omit', True) }}"
+      server: "{{ bigip_asm_policy_server | default('omit', True) }}"
+      state: "{{ bigip_asm_policy_state | default('omit', True) }}"
+      server_port: "{{ bigip_asm_policy_server_port | default('omit', True) }}"
+      user: "{{ bigip_asm_policy_user | default('omit', True) }}"
+      file: "{{ bigip_asm_policy_file | default('omit', True) }}"
+      provider: "{{ bigip_asm_policy_provider | default('omit', True) }}"
+      active: "{{ bigip_asm_policy_active | default('omit', True) }}"
+      password: "{{ bigip_asm_policy_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_asm_policy_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_asm_policy_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_asm_policy"
+      bigip_asm_policy: "{{ bigip_asm_policy }}"

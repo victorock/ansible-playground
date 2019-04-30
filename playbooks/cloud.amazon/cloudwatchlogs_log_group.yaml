@@ -1,0 +1,25 @@
+---
+- name: "module_cloudwatchlogs_log_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cloudwatchlogs_log_group: 
+      profile: "{{ cloudwatchlogs_log_group_profile | default('omit', True) }}"
+      aws_secret_key: "{{ cloudwatchlogs_log_group_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ cloudwatchlogs_log_group_aws_access_key | default('omit', True) }}"
+      security_token: "{{ cloudwatchlogs_log_group_security_token | default('omit', True) }}"
+      tags: "{{ cloudwatchlogs_log_group_tags | default('omit', True) }}"
+      region: "{{ cloudwatchlogs_log_group_region | default('omit', True) }}"
+      kms_key_id: "{{ cloudwatchlogs_log_group_kms_key_id | default('omit', True) }}"
+      state: "{{ cloudwatchlogs_log_group_state | default('omit', True) }}"
+      log_group_name: "{{ cloudwatchlogs_log_group_log_group_name | default('omit', True) }}"
+      ec2_url: "{{ cloudwatchlogs_log_group_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ cloudwatchlogs_log_group_validate_certs | default('omit', True) }}"
+      overwrite: "{{ cloudwatchlogs_log_group_overwrite | default('omit', True) }}"
+      retention: "{{ cloudwatchlogs_log_group_retention | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cloudwatchlogs_log_group"
+      cloudwatchlogs_log_group: "{{ cloudwatchlogs_log_group }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_ce_vrf_af"
+  ce_vrf_af: "{{ ce_vrf_af }}"
+  vars:
+    ce_vrf_af: 
+      vpn_target_type: "{{ ce_vrf_af_vpn_target_type | default(omit, True) }}"
+      vpn_target_state: "{{ ce_vrf_af_vpn_target_state | default(omit, True) }}"
+      vrf_aftype: "{{ ce_vrf_af_vrf_aftype | default(omit, True) }}"
+      state: "{{ ce_vrf_af_state | default(omit, True) }}"
+      route_distinguisher: "{{ ce_vrf_af_route_distinguisher | default(omit, True) }}"
+      vrf: "{{ ce_vrf_af_vrf | default(omit, True) }}"
+      evpn: "{{ ce_vrf_af_evpn | default(omit, True) }}"
+      vpn_target_value: "{{ ce_vrf_af_vpn_target_value | default(omit, True) }}"

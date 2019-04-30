@@ -1,0 +1,19 @@
+---
+- name: "module_gcp_compute_target_pool"
+  gcp_compute_target_pool: "{{ gcp_compute_target_pool }}"
+  vars:
+    gcp_compute_target_pool: 
+      scopes: "{{ gcp_compute_target_pool_scopes | default(omit, True) }}"
+      health_check: "{{ gcp_compute_target_pool_health_check | default(omit, True) }}"
+      failover_ratio: "{{ gcp_compute_target_pool_failover_ratio | default(omit, True) }}"
+      description: "{{ gcp_compute_target_pool_description | default(omit, True) }}"
+      project: "{{ gcp_compute_target_pool_project | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_target_pool_service_account_email | default(omit, True) }}"
+      region: "{{ gcp_compute_target_pool_region | default(omit, True) }}"
+      name: "{{ gcp_compute_target_pool_name | default(omit, True) }}"
+      backup_pool: "{{ gcp_compute_target_pool_backup_pool | default(omit, True) }}"
+      instances: "{{ gcp_compute_target_pool_instances | default(omit, True) }}"
+      state: "{{ gcp_compute_target_pool_state | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_target_pool_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_target_pool_auth_kind | default(omit, True) }}"
+      session_affinity: "{{ gcp_compute_target_pool_session_affinity | default(omit, True) }}"

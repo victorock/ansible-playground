@@ -1,0 +1,38 @@
+---
+- name: "module_synchronize"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    synchronize: 
+      partial: "{{ synchronize_partial | default('omit', True) }}"
+      link_dest: "{{ synchronize_link_dest | default('omit', True) }}"
+      copy_links: "{{ synchronize_copy_links | default('omit', True) }}"
+      perms: "{{ synchronize_perms | default('omit', True) }}"
+      owner: "{{ synchronize_owner | default('omit', True) }}"
+      rsync_path: "{{ synchronize_rsync_path | default('omit', True) }}"
+      dest_port: "{{ synchronize_dest_port | default('omit', True) }}"
+      group: "{{ synchronize_group | default('omit', True) }}"
+      existing_only: "{{ synchronize_existing_only | default('omit', True) }}"
+      links: "{{ synchronize_links | default('omit', True) }}"
+      archive: "{{ synchronize_archive | default('omit', True) }}"
+      verify_host: "{{ synchronize_verify_host | default('omit', True) }}"
+      use_ssh_args: "{{ synchronize_use_ssh_args | default('omit', True) }}"
+      dirs: "{{ synchronize_dirs | default('omit', True) }}"
+      private_key: "{{ synchronize_private_key | default('omit', True) }}"
+      dest: "{{ synchronize_dest | default('omit', True) }}"
+      compress: "{{ synchronize_compress | default('omit', True) }}"
+      rsync_timeout: "{{ synchronize_rsync_timeout | default('omit', True) }}"
+      rsync_opts: "{{ synchronize_rsync_opts | default('omit', True) }}"
+      set_remote_user: "{{ synchronize_set_remote_user | default('omit', True) }}"
+      recursive: "{{ synchronize_recursive | default('omit', True) }}"
+      src: "{{ synchronize_src | default('omit', True) }}"
+      checksum: "{{ synchronize_checksum | default('omit', True) }}"
+      times: "{{ synchronize_times | default('omit', True) }}"
+      mode: "{{ synchronize_mode | default('omit', True) }}"
+      delete: "{{ synchronize_delete | default('omit', True) }}"
+  tasks:
+    - name: "plugin_synchronize"
+      synchronize: "{{ synchronize }}"

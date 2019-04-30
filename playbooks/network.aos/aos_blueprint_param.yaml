@@ -1,0 +1,19 @@
+---
+- name: "module_aos_blueprint_param"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aos_blueprint_param: 
+      blueprint: "{{ aos_blueprint_param_blueprint | default('omit', True) }}"
+      name: "{{ aos_blueprint_param_name | default('omit', True) }}"
+      value: "{{ aos_blueprint_param_value | default('omit', True) }}"
+      state: "{{ aos_blueprint_param_state | default('omit', True) }}"
+      session: "{{ aos_blueprint_param_session | default('omit', True) }}"
+      param_map: "{{ aos_blueprint_param_param_map | default('omit', True) }}"
+      get_param_list: "{{ aos_blueprint_param_get_param_list | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aos_blueprint_param"
+      aos_blueprint_param: "{{ aos_blueprint_param }}"

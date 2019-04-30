@@ -1,0 +1,22 @@
+---
+- name: "module_bigiq_application_https_waf"
+  bigiq_application_https_waf: "{{ bigiq_application_https_waf }}"
+  vars:
+    bigiq_application_https_waf: 
+      servers: "{{ bigiq_application_https_waf_servers | default(omit, True) }}"
+      service_environment: "{{ bigiq_application_https_waf_service_environment | default(omit, True) }}"
+      description: "{{ bigiq_application_https_waf_description | default(omit, True) }}"
+      name: "{{ bigiq_application_https_waf_name | default(omit, True) }}"
+      add_analytics: "{{ bigiq_application_https_waf_add_analytics | default(omit, True) }}"
+      domain_names: "{{ bigiq_application_https_waf_domain_names | default(omit, True) }}"
+      server: "{{ bigiq_application_https_waf_server | default(omit, True) }}"
+      state: "{{ bigiq_application_https_waf_state | default(omit, True) }}"
+      redirect_virtual: "{{ bigiq_application_https_waf_redirect_virtual | default(omit, True) }}"
+      user: "{{ bigiq_application_https_waf_user | default(omit, True) }}"
+      server_port: "{{ bigiq_application_https_waf_server_port | default(omit, True) }}"
+      provider: "{{ bigiq_application_https_waf_provider | default(omit, True) }}"
+      inbound_virtual: "{{ bigiq_application_https_waf_inbound_virtual | default(omit, True) }}"
+      password: "{{ bigiq_application_https_waf_password | default(omit, True) }}"
+      validate_certs: "{{ bigiq_application_https_waf_validate_certs | default(omit, True) }}"
+      client_ssl_profile: "{{ bigiq_application_https_waf_client_ssl_profile | default(omit, True) }}"
+      wait: "{{ bigiq_application_https_waf_wait | default(omit, True) }}"

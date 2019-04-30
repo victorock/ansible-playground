@@ -1,0 +1,24 @@
+---
+- name: "module_bigip_profile_udp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_profile_udp: 
+      partition: "{{ bigip_profile_udp_partition | default('omit', True) }}"
+      name: "{{ bigip_profile_udp_name | default('omit', True) }}"
+      parent: "{{ bigip_profile_udp_parent | default('omit', True) }}"
+      datagram_load_balancing: "{{ bigip_profile_udp_datagram_load_balancing | default('omit', True) }}"
+      state: "{{ bigip_profile_udp_state | default('omit', True) }}"
+      server: "{{ bigip_profile_udp_server | default('omit', True) }}"
+      idle_timeout: "{{ bigip_profile_udp_idle_timeout | default('omit', True) }}"
+      user: "{{ bigip_profile_udp_user | default('omit', True) }}"
+      server_port: "{{ bigip_profile_udp_server_port | default('omit', True) }}"
+      provider: "{{ bigip_profile_udp_provider | default('omit', True) }}"
+      password: "{{ bigip_profile_udp_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_profile_udp_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_profile_udp"
+      bigip_profile_udp: "{{ bigip_profile_udp }}"

@@ -1,0 +1,7 @@
+---
+- name: "module_nxos_overlay_global"
+  nxos_overlay_global: "{{ nxos_overlay_global }}"
+  vars:
+    nxos_overlay_global: 
+      anycast_gateway_mac: "{{ nxos_overlay_global_anycast_gateway_mac | default(omit, True) }}"
+      provider: "{{ nxos_overlay_global_provider | default(omit, True) }}"

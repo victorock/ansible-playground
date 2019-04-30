@@ -1,0 +1,18 @@
+---
+- name: "module_cs_configuration"
+  cs_configuration: "{{ cs_configuration }}"
+  vars:
+    cs_configuration: 
+      domain: "{{ cs_configuration_domain | default(omit, True) }}"
+      api_key: "{{ cs_configuration_api_key | default(omit, True) }}"
+      name: "{{ cs_configuration_name | default(omit, True) }}"
+      api_http_method: "{{ cs_configuration_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_configuration_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_configuration_api_timeout | default(omit, True) }}"
+      storage: "{{ cs_configuration_storage | default(omit, True) }}"
+      account: "{{ cs_configuration_account | default(omit, True) }}"
+      value: "{{ cs_configuration_value | default(omit, True) }}"
+      api_region: "{{ cs_configuration_api_region | default(omit, True) }}"
+      cluster: "{{ cs_configuration_cluster | default(omit, True) }}"
+      zone: "{{ cs_configuration_zone | default(omit, True) }}"
+      api_url: "{{ cs_configuration_api_url | default(omit, True) }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_na_elementsw_volume"
+  na_elementsw_volume: "{{ na_elementsw_volume }}"
+  vars:
+    na_elementsw_volume: 
+      username: "{{ na_elementsw_volume_username | default(omit, True) }}"
+      enable512e: "{{ na_elementsw_volume_enable512e | default(omit, True) }}"
+      qos: "{{ na_elementsw_volume_qos | default(omit, True) }}"
+      account_id: "{{ na_elementsw_volume_account_id | default(omit, True) }}"
+      hostname: "{{ na_elementsw_volume_hostname | default(omit, True) }}"
+      size_unit: "{{ na_elementsw_volume_size_unit | default(omit, True) }}"
+      name: "{{ na_elementsw_volume_name | default(omit, True) }}"
+      access: "{{ na_elementsw_volume_access | default(omit, True) }}"
+      state: "{{ na_elementsw_volume_state | default(omit, True) }}"
+      attributes: "{{ na_elementsw_volume_attributes | default(omit, True) }}"
+      password: "{{ na_elementsw_volume_password | default(omit, True) }}"
+      size: "{{ na_elementsw_volume_size | default(omit, True) }}"

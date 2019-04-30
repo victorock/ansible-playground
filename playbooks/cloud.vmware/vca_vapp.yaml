@@ -1,0 +1,31 @@
+---
+- name: "module_vca_vapp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vca_vapp: 
+      vm_name: "{{ vca_vapp_vm_name | default('omit', True) }}"
+      username: "{{ vca_vapp_username | default('omit', True) }}"
+      vm_memory: "{{ vca_vapp_vm_memory | default('omit', True) }}"
+      gateway_name: "{{ vca_vapp_gateway_name | default('omit', True) }}"
+      vapp_name: "{{ vca_vapp_vapp_name | default('omit', True) }}"
+      template_name: "{{ vca_vapp_template_name | default('omit', True) }}"
+      state: "{{ vca_vapp_state | default('omit', True) }}"
+      vm_cpus: "{{ vca_vapp_vm_cpus | default('omit', True) }}"
+      instance_id: "{{ vca_vapp_instance_id | default('omit', True) }}"
+      host: "{{ vca_vapp_host | default('omit', True) }}"
+      api_version: "{{ vca_vapp_api_version | default('omit', True) }}"
+      service_type: "{{ vca_vapp_service_type | default('omit', True) }}"
+      org: "{{ vca_vapp_org | default('omit', True) }}"
+      operation: "{{ vca_vapp_operation | default('omit', True) }}"
+      password: "{{ vca_vapp_password | default('omit', True) }}"
+      network_name: "{{ vca_vapp_network_name | default('omit', True) }}"
+      vdc_name: "{{ vca_vapp_vdc_name | default('omit', True) }}"
+      network_mode: "{{ vca_vapp_network_mode | default('omit', True) }}"
+      verify_certs: "{{ vca_vapp_verify_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vca_vapp"
+      vca_vapp: "{{ vca_vapp }}"

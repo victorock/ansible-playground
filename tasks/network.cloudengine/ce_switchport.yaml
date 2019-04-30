@@ -1,0 +1,11 @@
+---
+- name: "module_ce_switchport"
+  ce_switchport: "{{ ce_switchport }}"
+  vars:
+    ce_switchport: 
+      native_vlan: "{{ ce_switchport_native_vlan | default(omit, True) }}"
+      access_vlan: "{{ ce_switchport_access_vlan | default(omit, True) }}"
+      state: "{{ ce_switchport_state | default(omit, True) }}"
+      trunk_vlans: "{{ ce_switchport_trunk_vlans | default(omit, True) }}"
+      mode: "{{ ce_switchport_mode | default(omit, True) }}"
+      interface: "{{ ce_switchport_interface | default(omit, True) }}"

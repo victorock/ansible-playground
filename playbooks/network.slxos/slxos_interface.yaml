@@ -1,0 +1,23 @@
+---
+- name: "module_slxos_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    slxos_interface: 
+      neighbors: "{{ slxos_interface_neighbors | default('omit', True) }}"
+      delay: "{{ slxos_interface_delay | default('omit', True) }}"
+      description: "{{ slxos_interface_description | default('omit', True) }}"
+      enabled: "{{ slxos_interface_enabled | default('omit', True) }}"
+      mtu: "{{ slxos_interface_mtu | default('omit', True) }}"
+      rx_rate: "{{ slxos_interface_rx_rate | default('omit', True) }}"
+      state: "{{ slxos_interface_state | default('omit', True) }}"
+      aggregate: "{{ slxos_interface_aggregate | default('omit', True) }}"
+      speed: "{{ slxos_interface_speed | default('omit', True) }}"
+      tx_rate: "{{ slxos_interface_tx_rate | default('omit', True) }}"
+      name: "{{ slxos_interface_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_slxos_interface"
+      slxos_interface: "{{ slxos_interface }}"

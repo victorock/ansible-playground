@@ -1,0 +1,15 @@
+---
+- name: "module_gluster_peer"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gluster_peer: 
+      state: "{{ gluster_peer_state | default('omit', True) }}"
+      force: "{{ gluster_peer_force | default('omit', True) }}"
+      nodes: "{{ gluster_peer_nodes | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gluster_peer"
+      gluster_peer: "{{ gluster_peer }}"

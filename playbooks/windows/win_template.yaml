@@ -1,0 +1,21 @@
+---
+- name: "module_win_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_template: 
+      src: "{{ win_template_src | default('omit', True) }}"
+      force: "{{ win_template_force | default('omit', True) }}"
+      trim_blocks: "{{ win_template_trim_blocks | default('omit', True) }}"
+      dest: "{{ win_template_dest | default('omit', True) }}"
+      block_end_string: "{{ win_template_block_end_string | default('omit', True) }}"
+      variable_start_string: "{{ win_template_variable_start_string | default('omit', True) }}"
+      block_start_string: "{{ win_template_block_start_string | default('omit', True) }}"
+      variable_end_string: "{{ win_template_variable_end_string | default('omit', True) }}"
+      newline_sequence: "{{ win_template_newline_sequence | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_template"
+      win_template: "{{ win_template }}"

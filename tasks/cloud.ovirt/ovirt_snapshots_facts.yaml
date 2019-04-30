@@ -1,0 +1,11 @@
+---
+- name: "module_ovirt_snapshots_facts"
+  ovirt_snapshots_facts: "{{ ovirt_snapshots_facts }}"
+  vars:
+    ovirt_snapshots_facts: 
+      description: "{{ ovirt_snapshots_facts_description | default(omit, True) }}"
+      vm: "{{ ovirt_snapshots_facts_vm | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_snapshots_facts_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_snapshots_facts_fetch_nested | default(omit, True) }}"
+      auth: "{{ ovirt_snapshots_facts_auth | default(omit, True) }}"
+      snapshot_id: "{{ ovirt_snapshots_facts_snapshot_id | default(omit, True) }}"

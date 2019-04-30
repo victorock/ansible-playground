@@ -1,0 +1,29 @@
+---
+- name: "module_gluster_volume"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gluster_volume: 
+      arbiters: "{{ gluster_volume_arbiters | default('omit', True) }}"
+      force: "{{ gluster_volume_force | default('omit', True) }}"
+      name: "{{ gluster_volume_name | default('omit', True) }}"
+      replicas: "{{ gluster_volume_replicas | default('omit', True) }}"
+      bricks: "{{ gluster_volume_bricks | default('omit', True) }}"
+      quota: "{{ gluster_volume_quota | default('omit', True) }}"
+      disperses: "{{ gluster_volume_disperses | default('omit', True) }}"
+      stripes: "{{ gluster_volume_stripes | default('omit', True) }}"
+      cluster: "{{ gluster_volume_cluster | default('omit', True) }}"
+      host: "{{ gluster_volume_host | default('omit', True) }}"
+      state: "{{ gluster_volume_state | default('omit', True) }}"
+      start_on_create: "{{ gluster_volume_start_on_create | default('omit', True) }}"
+      redundancies: "{{ gluster_volume_redundancies | default('omit', True) }}"
+      directory: "{{ gluster_volume_directory | default('omit', True) }}"
+      rebalance: "{{ gluster_volume_rebalance | default('omit', True) }}"
+      options: "{{ gluster_volume_options | default('omit', True) }}"
+      transport: "{{ gluster_volume_transport | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gluster_volume"
+      gluster_volume: "{{ gluster_volume }}"

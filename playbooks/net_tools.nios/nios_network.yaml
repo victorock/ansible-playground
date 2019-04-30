@@ -1,0 +1,19 @@
+---
+- name: "module_nios_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nios_network: 
+      comment: "{{ nios_network_comment | default('omit', True) }}"
+      network: "{{ nios_network_network | default('omit', True) }}"
+      network_view: "{{ nios_network_network_view | default('omit', True) }}"
+      extattrs: "{{ nios_network_extattrs | default('omit', True) }}"
+      state: "{{ nios_network_state | default('omit', True) }}"
+      provider: "{{ nios_network_provider | default('omit', True) }}"
+      options: "{{ nios_network_options | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nios_network"
+      nios_network: "{{ nios_network }}"

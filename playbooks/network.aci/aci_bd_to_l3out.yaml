@@ -1,0 +1,27 @@
+---
+- name: "module_aci_bd_to_l3out"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_bd_to_l3out: 
+      bd: "{{ aci_bd_to_l3out_bd | default('omit', True) }}"
+      username: "{{ aci_bd_to_l3out_username | default('omit', True) }}"
+      private_key: "{{ aci_bd_to_l3out_private_key | default('omit', True) }}"
+      use_proxy: "{{ aci_bd_to_l3out_use_proxy | default('omit', True) }}"
+      certificate_name: "{{ aci_bd_to_l3out_certificate_name | default('omit', True) }}"
+      state: "{{ aci_bd_to_l3out_state | default('omit', True) }}"
+      l3out: "{{ aci_bd_to_l3out_l3out | default('omit', True) }}"
+      host: "{{ aci_bd_to_l3out_host | default('omit', True) }}"
+      output_level: "{{ aci_bd_to_l3out_output_level | default('omit', True) }}"
+      timeout: "{{ aci_bd_to_l3out_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_bd_to_l3out_use_ssl | default('omit', True) }}"
+      password: "{{ aci_bd_to_l3out_password | default('omit', True) }}"
+      validate_certs: "{{ aci_bd_to_l3out_validate_certs | default('omit', True) }}"
+      port: "{{ aci_bd_to_l3out_port | default('omit', True) }}"
+      tenant: "{{ aci_bd_to_l3out_tenant | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_bd_to_l3out"
+      aci_bd_to_l3out: "{{ aci_bd_to_l3out }}"

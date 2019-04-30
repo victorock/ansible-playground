@@ -1,0 +1,34 @@
+---
+- name: "module_ipa_hbacrule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ipa_hbacrule: 
+      cn: "{{ ipa_hbacrule_cn | default('omit', True) }}"
+      ipa_host: "{{ ipa_hbacrule_ipa_host | default('omit', True) }}"
+      usergroup: "{{ ipa_hbacrule_usergroup | default('omit', True) }}"
+      servicegroup: "{{ ipa_hbacrule_servicegroup | default('omit', True) }}"
+      service: "{{ ipa_hbacrule_service | default('omit', True) }}"
+      state: "{{ ipa_hbacrule_state | default('omit', True) }}"
+      ipa_pass: "{{ ipa_hbacrule_ipa_pass | default('omit', True) }}"
+      sourcehostcategory: "{{ ipa_hbacrule_sourcehostcategory | default('omit', True) }}"
+      description: "{{ ipa_hbacrule_description | default('omit', True) }}"
+      servicecategory: "{{ ipa_hbacrule_servicecategory | default('omit', True) }}"
+      host: "{{ ipa_hbacrule_host | default('omit', True) }}"
+      user: "{{ ipa_hbacrule_user | default('omit', True) }}"
+      ipa_port: "{{ ipa_hbacrule_ipa_port | default('omit', True) }}"
+      ipa_prot: "{{ ipa_hbacrule_ipa_prot | default('omit', True) }}"
+      hostcategory: "{{ ipa_hbacrule_hostcategory | default('omit', True) }}"
+      hostgroup: "{{ ipa_hbacrule_hostgroup | default('omit', True) }}"
+      usercategory: "{{ ipa_hbacrule_usercategory | default('omit', True) }}"
+      ipa_user: "{{ ipa_hbacrule_ipa_user | default('omit', True) }}"
+      ipa_timeout: "{{ ipa_hbacrule_ipa_timeout | default('omit', True) }}"
+      validate_certs: "{{ ipa_hbacrule_validate_certs | default('omit', True) }}"
+      sourcehostgroup: "{{ ipa_hbacrule_sourcehostgroup | default('omit', True) }}"
+      sourcehost: "{{ ipa_hbacrule_sourcehost | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ipa_hbacrule"
+      ipa_hbacrule: "{{ ipa_hbacrule }}"

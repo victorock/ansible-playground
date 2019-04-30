@@ -1,0 +1,12 @@
+---
+- name: "module_net_static_route"
+  net_static_route: "{{ net_static_route }}"
+  vars:
+    net_static_route: 
+      mask: "{{ net_static_route_mask | default(omit, True) }}"
+      state: "{{ net_static_route_state | default(omit, True) }}"
+      admin_distance: "{{ net_static_route_admin_distance | default(omit, True) }}"
+      purge: "{{ net_static_route_purge | default(omit, True) }}"
+      prefix: "{{ net_static_route_prefix | default(omit, True) }}"
+      next_hop: "{{ net_static_route_next_hop | default(omit, True) }}"
+      aggregate: "{{ net_static_route_aggregate | default(omit, True) }}"

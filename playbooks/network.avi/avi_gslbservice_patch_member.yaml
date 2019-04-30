@@ -1,0 +1,24 @@
+---
+- name: "module_avi_gslbservice_patch_member"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_gslbservice_patch_member: 
+      username: "{{ avi_gslbservice_patch_member_username | default('omit', True) }}"
+      name: "{{ avi_gslbservice_patch_member_name | default('omit', True) }}"
+      state: "{{ avi_gslbservice_patch_member_state | default('omit', True) }}"
+      avi_credentials: "{{ avi_gslbservice_patch_member_avi_credentials | default('omit', True) }}"
+      controller: "{{ avi_gslbservice_patch_member_controller | default('omit', True) }}"
+      params: "{{ avi_gslbservice_patch_member_params | default('omit', True) }}"
+      api_version: "{{ avi_gslbservice_patch_member_api_version | default('omit', True) }}"
+      api_context: "{{ avi_gslbservice_patch_member_api_context | default('omit', True) }}"
+      password: "{{ avi_gslbservice_patch_member_password | default('omit', True) }}"
+      data: "{{ avi_gslbservice_patch_member_data | default('omit', True) }}"
+      tenant_uuid: "{{ avi_gslbservice_patch_member_tenant_uuid | default('omit', True) }}"
+      tenant: "{{ avi_gslbservice_patch_member_tenant | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_gslbservice_patch_member"
+      avi_gslbservice_patch_member: "{{ avi_gslbservice_patch_member }}"

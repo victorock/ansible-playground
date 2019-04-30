@@ -1,0 +1,35 @@
+---
+- name: "module_avi_actiongroupconfig"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_actiongroupconfig: 
+      api_context: "{{ avi_actiongroupconfig_api_context | default('omit', True) }}"
+      autoscale_trigger_notification: "{{ avi_actiongroupconfig_autoscale_trigger_notification | default('omit', True) }}"
+      uuid: "{{ avi_actiongroupconfig_uuid | default('omit', True) }}"
+      state: "{{ avi_actiongroupconfig_state | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_actiongroupconfig_avi_api_patch_op | default('omit', True) }}"
+      avi_credentials: "{{ avi_actiongroupconfig_avi_credentials | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_actiongroupconfig_avi_api_update_method | default('omit', True) }}"
+      api_version: "{{ avi_actiongroupconfig_api_version | default('omit', True) }}"
+      username: "{{ avi_actiongroupconfig_username | default('omit', True) }}"
+      snmp_trap_profile_ref: "{{ avi_actiongroupconfig_snmp_trap_profile_ref | default('omit', True) }}"
+      description: "{{ avi_actiongroupconfig_description | default('omit', True) }}"
+      controller: "{{ avi_actiongroupconfig_controller | default('omit', True) }}"
+      external_only: "{{ avi_actiongroupconfig_external_only | default('omit', True) }}"
+      email_config_ref: "{{ avi_actiongroupconfig_email_config_ref | default('omit', True) }}"
+      password: "{{ avi_actiongroupconfig_password | default('omit', True) }}"
+      tenant: "{{ avi_actiongroupconfig_tenant | default('omit', True) }}"
+      name: "{{ avi_actiongroupconfig_name | default('omit', True) }}"
+      level: "{{ avi_actiongroupconfig_level | default('omit', True) }}"
+      url: "{{ avi_actiongroupconfig_url | default('omit', True) }}"
+      syslog_config_ref: "{{ avi_actiongroupconfig_syslog_config_ref | default('omit', True) }}"
+      tenant_ref: "{{ avi_actiongroupconfig_tenant_ref | default('omit', True) }}"
+      action_script_config_ref: "{{ avi_actiongroupconfig_action_script_config_ref | default('omit', True) }}"
+      tenant_uuid: "{{ avi_actiongroupconfig_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_actiongroupconfig"
+      avi_actiongroupconfig: "{{ avi_actiongroupconfig }}"

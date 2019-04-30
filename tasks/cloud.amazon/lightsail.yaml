@@ -1,0 +1,21 @@
+---
+- name: "module_lightsail"
+  lightsail: "{{ lightsail }}"
+  vars:
+    lightsail: 
+      profile: "{{ lightsail_profile | default(omit, True) }}"
+      aws_secret_key: "{{ lightsail_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ lightsail_aws_access_key | default(omit, True) }}"
+      name: "{{ lightsail_name | default(omit, True) }}"
+      security_token: "{{ lightsail_security_token | default(omit, True) }}"
+      blueprint_id: "{{ lightsail_blueprint_id | default(omit, True) }}"
+      region: "{{ lightsail_region | default(omit, True) }}"
+      user_data: "{{ lightsail_user_data | default(omit, True) }}"
+      state: "{{ lightsail_state | default(omit, True) }}"
+      key_pair_name: "{{ lightsail_key_pair_name | default(omit, True) }}"
+      ec2_url: "{{ lightsail_ec2_url | default(omit, True) }}"
+      bundle_id: "{{ lightsail_bundle_id | default(omit, True) }}"
+      zone: "{{ lightsail_zone | default(omit, True) }}"
+      validate_certs: "{{ lightsail_validate_certs | default(omit, True) }}"
+      wait_timeout: "{{ lightsail_wait_timeout | default(omit, True) }}"
+      wait: "{{ lightsail_wait | default(omit, True) }}"

@@ -1,0 +1,6 @@
+---
+- name: "module_win_webpicmd"
+  win_webpicmd: "{{ win_webpicmd }}"
+  vars:
+    win_webpicmd: 
+      name: "{{ win_webpicmd_name | default(omit, True) }}"

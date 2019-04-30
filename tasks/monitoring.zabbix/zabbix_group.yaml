@@ -1,0 +1,14 @@
+---
+- name: "module_zabbix_group"
+  zabbix_group: "{{ zabbix_group }}"
+  vars:
+    zabbix_group: 
+      http_login_password: "{{ zabbix_group_http_login_password | default(omit, True) }}"
+      host_groups: "{{ zabbix_group_host_groups | default(omit, True) }}"
+      login_user: "{{ zabbix_group_login_user | default(omit, True) }}"
+      http_login_user: "{{ zabbix_group_http_login_user | default(omit, True) }}"
+      server_url: "{{ zabbix_group_server_url | default(omit, True) }}"
+      state: "{{ zabbix_group_state | default(omit, True) }}"
+      timeout: "{{ zabbix_group_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_group_login_password | default(omit, True) }}"
+      validate_certs: "{{ zabbix_group_validate_certs | default(omit, True) }}"

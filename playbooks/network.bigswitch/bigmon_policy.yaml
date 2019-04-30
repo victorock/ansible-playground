@@ -1,0 +1,23 @@
+---
+- name: "module_bigmon_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigmon_policy: 
+      policy_description: "{{ bigmon_policy_policy_description | default('omit', True) }}"
+      name: "{{ bigmon_policy_name | default('omit', True) }}"
+      access_token: "{{ bigmon_policy_access_token | default('omit', True) }}"
+      start_time: "{{ bigmon_policy_start_time | default('omit', True) }}"
+      state: "{{ bigmon_policy_state | default('omit', True) }}"
+      priority: "{{ bigmon_policy_priority | default('omit', True) }}"
+      action: "{{ bigmon_policy_action | default('omit', True) }}"
+      controller: "{{ bigmon_policy_controller | default('omit', True) }}"
+      duration: "{{ bigmon_policy_duration | default('omit', True) }}"
+      validate_certs: "{{ bigmon_policy_validate_certs | default('omit', True) }}"
+      delivery_packet_count: "{{ bigmon_policy_delivery_packet_count | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigmon_policy"
+      bigmon_policy: "{{ bigmon_policy }}"

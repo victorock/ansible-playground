@@ -1,0 +1,35 @@
+---
+- name: "module_na_ontap_volume"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_volume: 
+      size: "{{ na_ontap_volume_size | default('omit', True) }}"
+      http_port: "{{ na_ontap_volume_http_port | default('omit', True) }}"
+      encrypt: "{{ na_ontap_volume_encrypt | default('omit', True) }}"
+      hostname: "{{ na_ontap_volume_hostname | default('omit', True) }}"
+      size_unit: "{{ na_ontap_volume_size_unit | default('omit', True) }}"
+      vserver: "{{ na_ontap_volume_vserver | default('omit', True) }}"
+      state: "{{ na_ontap_volume_state | default('omit', True) }}"
+      https: "{{ na_ontap_volume_https | default('omit', True) }}"
+      policy: "{{ na_ontap_volume_policy | default('omit', True) }}"
+      aggregate_name: "{{ na_ontap_volume_aggregate_name | default('omit', True) }}"
+      type: "{{ na_ontap_volume_type | default('omit', True) }}"
+      username: "{{ na_ontap_volume_username | default('omit', True) }}"
+      from_name: "{{ na_ontap_volume_from_name | default('omit', True) }}"
+      is_infinite: "{{ na_ontap_volume_is_infinite | default('omit', True) }}"
+      junction_path: "{{ na_ontap_volume_junction_path | default('omit', True) }}"
+      is_online: "{{ na_ontap_volume_is_online | default('omit', True) }}"
+      password: "{{ na_ontap_volume_password | default('omit', True) }}"
+      efficiency_policy: "{{ na_ontap_volume_efficiency_policy | default('omit', True) }}"
+      volume_security_style: "{{ na_ontap_volume_volume_security_style | default('omit', True) }}"
+      name: "{{ na_ontap_volume_name | default('omit', True) }}"
+      percent_snapshot_space: "{{ na_ontap_volume_percent_snapshot_space | default('omit', True) }}"
+      space_guarantee: "{{ na_ontap_volume_space_guarantee | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_volume_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_volume"
+      na_ontap_volume: "{{ na_ontap_volume }}"

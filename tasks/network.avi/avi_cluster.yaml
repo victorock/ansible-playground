@@ -1,0 +1,23 @@
+---
+- name: "module_avi_cluster"
+  avi_cluster: "{{ avi_cluster }}"
+  vars:
+    avi_cluster: 
+      username: "{{ avi_cluster_username | default(omit, True) }}"
+      rejoin_nodes_automatically: "{{ avi_cluster_rejoin_nodes_automatically | default(omit, True) }}"
+      uuid: "{{ avi_cluster_uuid | default(omit, True) }}"
+      state: "{{ avi_cluster_state | default(omit, True) }}"
+      url: "{{ avi_cluster_url | default(omit, True) }}"
+      controller: "{{ avi_cluster_controller | default(omit, True) }}"
+      tenant_ref: "{{ avi_cluster_tenant_ref | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_cluster_avi_api_patch_op | default(omit, True) }}"
+      api_version: "{{ avi_cluster_api_version | default(omit, True) }}"
+      avi_credentials: "{{ avi_cluster_avi_credentials | default(omit, True) }}"
+      virtual_ip: "{{ avi_cluster_virtual_ip | default(omit, True) }}"
+      api_context: "{{ avi_cluster_api_context | default(omit, True) }}"
+      tenant: "{{ avi_cluster_tenant | default(omit, True) }}"
+      nodes: "{{ avi_cluster_nodes | default(omit, True) }}"
+      password: "{{ avi_cluster_password | default(omit, True) }}"
+      tenant_uuid: "{{ avi_cluster_tenant_uuid | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_cluster_avi_api_update_method | default(omit, True) }}"
+      name: "{{ avi_cluster_name | default(omit, True) }}"

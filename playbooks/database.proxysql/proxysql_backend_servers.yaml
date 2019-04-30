@@ -1,0 +1,31 @@
+---
+- name: "module_proxysql_backend_servers"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    proxysql_backend_servers: 
+      status: "{{ proxysql_backend_servers_status | default('omit', True) }}"
+      comment: "{{ proxysql_backend_servers_comment | default('omit', True) }}"
+      config_file: "{{ proxysql_backend_servers_config_file | default('omit', True) }}"
+      compression: "{{ proxysql_backend_servers_compression | default('omit', True) }}"
+      weight: "{{ proxysql_backend_servers_weight | default('omit', True) }}"
+      login_port: "{{ proxysql_backend_servers_login_port | default('omit', True) }}"
+      login_user: "{{ proxysql_backend_servers_login_user | default('omit', True) }}"
+      login_host: "{{ proxysql_backend_servers_login_host | default('omit', True) }}"
+      hostname: "{{ proxysql_backend_servers_hostname | default('omit', True) }}"
+      hostgroup_id: "{{ proxysql_backend_servers_hostgroup_id | default('omit', True) }}"
+      state: "{{ proxysql_backend_servers_state | default('omit', True) }}"
+      load_to_runtime: "{{ proxysql_backend_servers_load_to_runtime | default('omit', True) }}"
+      login_password: "{{ proxysql_backend_servers_login_password | default('omit', True) }}"
+      save_to_disk: "{{ proxysql_backend_servers_save_to_disk | default('omit', True) }}"
+      use_ssl: "{{ proxysql_backend_servers_use_ssl | default('omit', True) }}"
+      max_replication_lag: "{{ proxysql_backend_servers_max_replication_lag | default('omit', True) }}"
+      port: "{{ proxysql_backend_servers_port | default('omit', True) }}"
+      max_latency_ms: "{{ proxysql_backend_servers_max_latency_ms | default('omit', True) }}"
+      max_connections: "{{ proxysql_backend_servers_max_connections | default('omit', True) }}"
+  tasks:
+    - name: "plugin_proxysql_backend_servers"
+      proxysql_backend_servers: "{{ proxysql_backend_servers }}"

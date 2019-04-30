@@ -1,0 +1,8 @@
+---
+- name: "module_win_wakeonlan"
+  win_wakeonlan: "{{ win_wakeonlan }}"
+  vars:
+    win_wakeonlan: 
+      broadcast: "{{ win_wakeonlan_broadcast | default(omit, True) }}"
+      mac: "{{ win_wakeonlan_mac | default(omit, True) }}"
+      port: "{{ win_wakeonlan_port | default(omit, True) }}"

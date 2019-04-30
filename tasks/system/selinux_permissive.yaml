@@ -1,0 +1,9 @@
+---
+- name: "module_selinux_permissive"
+  selinux_permissive: "{{ selinux_permissive }}"
+  vars:
+    selinux_permissive: 
+      domain: "{{ selinux_permissive_domain | default(omit, True) }}"
+      store: "{{ selinux_permissive_store | default(omit, True) }}"
+      no_reload: "{{ selinux_permissive_no_reload | default(omit, True) }}"
+      permissive: "{{ selinux_permissive_permissive | default(omit, True) }}"

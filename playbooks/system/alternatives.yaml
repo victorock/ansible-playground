@@ -1,0 +1,16 @@
+---
+- name: "module_alternatives"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    alternatives: 
+      priority: "{{ alternatives_priority | default('omit', True) }}"
+      path: "{{ alternatives_path | default('omit', True) }}"
+      link: "{{ alternatives_link | default('omit', True) }}"
+      name: "{{ alternatives_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_alternatives"
+      alternatives: "{{ alternatives }}"

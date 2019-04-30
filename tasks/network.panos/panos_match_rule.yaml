@@ -1,0 +1,22 @@
+---
+- name: "module_panos_match_rule"
+  panos_match_rule: "{{ panos_match_rule }}"
+  vars:
+    panos_match_rule: 
+      username: "{{ panos_match_rule_username | default(omit, True) }}"
+      rule_type: "{{ panos_match_rule_rule_type | default(omit, True) }}"
+      destination_ip: "{{ panos_match_rule_destination_ip | default(omit, True) }}"
+      api_key: "{{ panos_match_rule_api_key | default(omit, True) }}"
+      protocol: "{{ panos_match_rule_protocol | default(omit, True) }}"
+      category: "{{ panos_match_rule_category | default(omit, True) }}"
+      vsys_id: "{{ panos_match_rule_vsys_id | default(omit, True) }}"
+      source_zone: "{{ panos_match_rule_source_zone | default(omit, True) }}"
+      source_ip: "{{ panos_match_rule_source_ip | default(omit, True) }}"
+      source_user: "{{ panos_match_rule_source_user | default(omit, True) }}"
+      application: "{{ panos_match_rule_application | default(omit, True) }}"
+      destination_zone: "{{ panos_match_rule_destination_zone | default(omit, True) }}"
+      source_port: "{{ panos_match_rule_source_port | default(omit, True) }}"
+      destination_port: "{{ panos_match_rule_destination_port | default(omit, True) }}"
+      password: "{{ panos_match_rule_password | default(omit, True) }}"
+      ip_address: "{{ panos_match_rule_ip_address | default(omit, True) }}"
+      to_interface: "{{ panos_match_rule_to_interface | default(omit, True) }}"

@@ -1,0 +1,31 @@
+---
+- name: "module_bigip_device_httpd"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_device_httpd: 
+      auth_pam_validate_ip: "{{ bigip_device_httpd_auth_pam_validate_ip | default('omit', True) }}"
+      hostname_lookup: "{{ bigip_device_httpd_hostname_lookup | default('omit', True) }}"
+      log_level: "{{ bigip_device_httpd_log_level | default('omit', True) }}"
+      allow: "{{ bigip_device_httpd_allow | default('omit', True) }}"
+      ssl_protocols: "{{ bigip_device_httpd_ssl_protocols | default('omit', True) }}"
+      auth_name: "{{ bigip_device_httpd_auth_name | default('omit', True) }}"
+      validate_certs: "{{ bigip_device_httpd_validate_certs | default('omit', True) }}"
+      auth_pam_dashboard_timeout: "{{ bigip_device_httpd_auth_pam_dashboard_timeout | default('omit', True) }}"
+      server: "{{ bigip_device_httpd_server | default('omit', True) }}"
+      redirect_http_to_https: "{{ bigip_device_httpd_redirect_http_to_https | default('omit', True) }}"
+      fast_cgi_timeout: "{{ bigip_device_httpd_fast_cgi_timeout | default('omit', True) }}"
+      user: "{{ bigip_device_httpd_user | default('omit', True) }}"
+      server_port: "{{ bigip_device_httpd_server_port | default('omit', True) }}"
+      provider: "{{ bigip_device_httpd_provider | default('omit', True) }}"
+      ssl_port: "{{ bigip_device_httpd_ssl_port | default('omit', True) }}"
+      password: "{{ bigip_device_httpd_password | default('omit', True) }}"
+      max_clients: "{{ bigip_device_httpd_max_clients | default('omit', True) }}"
+      auth_pam_idle_timeout: "{{ bigip_device_httpd_auth_pam_idle_timeout | default('omit', True) }}"
+      ssl_cipher_suite: "{{ bigip_device_httpd_ssl_cipher_suite | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_device_httpd"
+      bigip_device_httpd: "{{ bigip_device_httpd }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_ldap_entry"
+  ldap_entry: "{{ ldap_entry }}"
+  vars:
+    ldap_entry: 
+      dn: "{{ ldap_entry_dn | default(omit, True) }}"
+      server_uri: "{{ ldap_entry_server_uri | default(omit, True) }}"
+      start_tls: "{{ ldap_entry_start_tls | default(omit, True) }}"
+      bind_dn: "{{ ldap_entry_bind_dn | default(omit, True) }}"
+      objectClass: "{{ ldap_entry_objectClass | default(omit, True) }}"
+      state: "{{ ldap_entry_state | default(omit, True) }}"
+      params: "{{ ldap_entry_params | default(omit, True) }}"
+      bind_pw: "{{ ldap_entry_bind_pw | default(omit, True) }}"
+      attributes: "{{ ldap_entry_attributes | default(omit, True) }}"
+      validate_certs: "{{ ldap_entry_validate_certs | default(omit, True) }}"

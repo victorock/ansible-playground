@@ -1,0 +1,11 @@
+---
+- name: "module_ios_banner"
+  ios_banner: "{{ ios_banner }}"
+  vars:
+    ios_banner: 
+      authorize: "{{ ios_banner_authorize | default(omit, True) }}"
+      text: "{{ ios_banner_text | default(omit, True) }}"
+      auth_pass: "{{ ios_banner_auth_pass | default(omit, True) }}"
+      state: "{{ ios_banner_state | default(omit, True) }}"
+      provider: "{{ ios_banner_provider | default(omit, True) }}"
+      banner: "{{ ios_banner_banner | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_service"
+  service: "{{ service }}"
+  vars:
+    service: 
+      use: "{{ service_use | default(omit, True) }}"
+      name: "{{ service_name | default(omit, True) }}"
+      pattern: "{{ service_pattern | default(omit, True) }}"
+      enabled: "{{ service_enabled | default(omit, True) }}"
+      state: "{{ service_state | default(omit, True) }}"
+      sleep: "{{ service_sleep | default(omit, True) }}"
+      arguments: "{{ service_arguments | default(omit, True) }}"
+      runlevel: "{{ service_runlevel | default(omit, True) }}"

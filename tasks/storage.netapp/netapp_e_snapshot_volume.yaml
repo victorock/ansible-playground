@@ -1,0 +1,17 @@
+---
+- name: "module_netapp_e_snapshot_volume"
+  netapp_e_snapshot_volume: "{{ netapp_e_snapshot_volume }}"
+  vars:
+    netapp_e_snapshot_volume: 
+      ssid: "{{ netapp_e_snapshot_volume_ssid | default(omit, True) }}"
+      snapshot_image_id: "{{ netapp_e_snapshot_volume_snapshot_image_id | default(omit, True) }}"
+      api_url: "{{ netapp_e_snapshot_volume_api_url | default(omit, True) }}"
+      state: "{{ netapp_e_snapshot_volume_state | default(omit, True) }}"
+      repo_percentage: "{{ netapp_e_snapshot_volume_repo_percentage | default(omit, True) }}"
+      api_password: "{{ netapp_e_snapshot_volume_api_password | default(omit, True) }}"
+      full_threshold: "{{ netapp_e_snapshot_volume_full_threshold | default(omit, True) }}"
+      view_mode: "{{ netapp_e_snapshot_volume_view_mode | default(omit, True) }}"
+      storage_pool_name: "{{ netapp_e_snapshot_volume_storage_pool_name | default(omit, True) }}"
+      api_username: "{{ netapp_e_snapshot_volume_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_snapshot_volume_validate_certs | default(omit, True) }}"
+      name: "{{ netapp_e_snapshot_volume_name | default(omit, True) }}"

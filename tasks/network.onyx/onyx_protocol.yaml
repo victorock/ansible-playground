@@ -1,0 +1,16 @@
+---
+- name: "module_onyx_protocol"
+  onyx_protocol: "{{ onyx_protocol }}"
+  vars:
+    onyx_protocol: 
+      spanning_tree: "{{ onyx_protocol_spanning_tree | default(omit, True) }}"
+      lldp: "{{ onyx_protocol_lldp | default(omit, True) }}"
+      mlag: "{{ onyx_protocol_mlag | default(omit, True) }}"
+      magp: "{{ onyx_protocol_magp | default(omit, True) }}"
+      ip_routing: "{{ onyx_protocol_ip_routing | default(omit, True) }}"
+      lacp: "{{ onyx_protocol_lacp | default(omit, True) }}"
+      ip_l3: "{{ onyx_protocol_ip_l3 | default(omit, True) }}"
+      igmp_snooping: "{{ onyx_protocol_igmp_snooping | default(omit, True) }}"
+      dcb_pfc: "{{ onyx_protocol_dcb_pfc | default(omit, True) }}"
+      ospf: "{{ onyx_protocol_ospf | default(omit, True) }}"
+      bgp: "{{ onyx_protocol_bgp | default(omit, True) }}"

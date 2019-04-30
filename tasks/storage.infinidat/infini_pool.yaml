@@ -1,0 +1,13 @@
+---
+- name: "module_infini_pool"
+  infini_pool: "{{ infini_pool }}"
+  vars:
+    infini_pool: 
+      ssd_cache: "{{ infini_pool_ssd_cache | default(omit, True) }}"
+      name: "{{ infini_pool_name | default(omit, True) }}"
+      system: "{{ infini_pool_system | default(omit, True) }}"
+      state: "{{ infini_pool_state | default(omit, True) }}"
+      user: "{{ infini_pool_user | default(omit, True) }}"
+      password: "{{ infini_pool_password | default(omit, True) }}"
+      vsize: "{{ infini_pool_vsize | default(omit, True) }}"
+      size: "{{ infini_pool_size | default(omit, True) }}"

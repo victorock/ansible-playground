@@ -1,0 +1,24 @@
+---
+- name: "module_java_cert"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    java_cert: 
+      keystore_create: "{{ java_cert_keystore_create | default('omit', True) }}"
+      cert_alias: "{{ java_cert_cert_alias | default('omit', True) }}"
+      executable: "{{ java_cert_executable | default('omit', True) }}"
+      pkcs12_password: "{{ java_cert_pkcs12_password | default('omit', True) }}"
+      cert_port: "{{ java_cert_cert_port | default('omit', True) }}"
+      pkcs12_alias: "{{ java_cert_pkcs12_alias | default('omit', True) }}"
+      state: "{{ java_cert_state | default('omit', True) }}"
+      keystore_pass: "{{ java_cert_keystore_pass | default('omit', True) }}"
+      pkcs12_path: "{{ java_cert_pkcs12_path | default('omit', True) }}"
+      cert_url: "{{ java_cert_cert_url | default('omit', True) }}"
+      cert_path: "{{ java_cert_cert_path | default('omit', True) }}"
+      keystore_path: "{{ java_cert_keystore_path | default('omit', True) }}"
+  tasks:
+    - name: "plugin_java_cert"
+      java_cert: "{{ java_cert }}"

@@ -1,0 +1,14 @@
+---
+- name: "module_locale_gen"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    locale_gen: 
+      state: "{{ locale_gen_state | default('omit', True) }}"
+      name: "{{ locale_gen_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_locale_gen"
+      locale_gen: "{{ locale_gen }}"

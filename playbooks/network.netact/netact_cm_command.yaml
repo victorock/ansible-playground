@@ -1,0 +1,26 @@
+---
+- name: "module_netact_cm_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netact_cm_command: 
+      DN: "{{ netact_cm_command_DN | default('omit', True) }}"
+      planName: "{{ netact_cm_command_planName | default('omit', True) }}"
+      verbose: "{{ netact_cm_command_verbose | default('omit', True) }}"
+      opsName: "{{ netact_cm_command_opsName | default('omit', True) }}"
+      fileName: "{{ netact_cm_command_fileName | default('omit', True) }}"
+      typeOption: "{{ netact_cm_command_typeOption | default('omit', True) }}"
+      WS: "{{ netact_cm_command_WS | default('omit', True) }}"
+      MR: "{{ netact_cm_command_MR | default('omit', True) }}"
+      extra_opts: "{{ netact_cm_command_extra_opts | default('omit', True) }}"
+      operation: "{{ netact_cm_command_operation | default('omit', True) }}"
+      createBackupPlan: "{{ netact_cm_command_createBackupPlan | default('omit', True) }}"
+      backupPlanName: "{{ netact_cm_command_backupPlanName | default('omit', True) }}"
+      fileFormat: "{{ netact_cm_command_fileFormat | default('omit', True) }}"
+      inputFile: "{{ netact_cm_command_inputFile | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netact_cm_command"
+      netact_cm_command: "{{ netact_cm_command }}"

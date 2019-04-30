@@ -1,0 +1,32 @@
+---
+- name: "module_cs_zone"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_zone: 
+      internal_dns1: "{{ cs_zone_internal_dns1 | default('omit', True) }}"
+      domain: "{{ cs_zone_domain | default('omit', True) }}"
+      network_domain: "{{ cs_zone_network_domain | default('omit', True) }}"
+      api_url: "{{ cs_zone_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_zone_api_http_method | default('omit', True) }}"
+      name: "{{ cs_zone_name | default('omit', True) }}"
+      api_secret: "{{ cs_zone_api_secret | default('omit', True) }}"
+      dhcp_provider: "{{ cs_zone_dhcp_provider | default('omit', True) }}"
+      api_timeout: "{{ cs_zone_api_timeout | default('omit', True) }}"
+      dns1: "{{ cs_zone_dns1 | default('omit', True) }}"
+      guest_cidr_address: "{{ cs_zone_guest_cidr_address | default('omit', True) }}"
+      api_region: "{{ cs_zone_api_region | default('omit', True) }}"
+      internal_dns2: "{{ cs_zone_internal_dns2 | default('omit', True) }}"
+      state: "{{ cs_zone_state | default('omit', True) }}"
+      dns2: "{{ cs_zone_dns2 | default('omit', True) }}"
+      api_key: "{{ cs_zone_api_key | default('omit', True) }}"
+      dns2_ipv6: "{{ cs_zone_dns2_ipv6 | default('omit', True) }}"
+      id: "{{ cs_zone_id | default('omit', True) }}"
+      network_type: "{{ cs_zone_network_type | default('omit', True) }}"
+      dns1_ipv6: "{{ cs_zone_dns1_ipv6 | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_zone"
+      cs_zone: "{{ cs_zone }}"

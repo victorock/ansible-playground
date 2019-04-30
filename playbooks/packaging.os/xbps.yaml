@@ -1,0 +1,17 @@
+---
+- name: "module_xbps"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    xbps: 
+      update_cache: "{{ xbps_update_cache | default('omit', True) }}"
+      state: "{{ xbps_state | default('omit', True) }}"
+      upgrade: "{{ xbps_upgrade | default('omit', True) }}"
+      recurse: "{{ xbps_recurse | default('omit', True) }}"
+      name: "{{ xbps_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_xbps"
+      xbps: "{{ xbps }}"

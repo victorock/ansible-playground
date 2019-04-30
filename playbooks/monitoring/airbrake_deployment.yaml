@@ -1,0 +1,19 @@
+---
+- name: "module_airbrake_deployment"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    airbrake_deployment: 
+      repo: "{{ airbrake_deployment_repo | default('omit', True) }}"
+      url: "{{ airbrake_deployment_url | default('omit', True) }}"
+      environment: "{{ airbrake_deployment_environment | default('omit', True) }}"
+      token: "{{ airbrake_deployment_token | default('omit', True) }}"
+      user: "{{ airbrake_deployment_user | default('omit', True) }}"
+      validate_certs: "{{ airbrake_deployment_validate_certs | default('omit', True) }}"
+      revision: "{{ airbrake_deployment_revision | default('omit', True) }}"
+  tasks:
+    - name: "plugin_airbrake_deployment"
+      airbrake_deployment: "{{ airbrake_deployment }}"

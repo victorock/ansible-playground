@@ -1,0 +1,20 @@
+---
+- name: "module_aci_rest"
+  aci_rest: "{{ aci_rest }}"
+  vars:
+    aci_rest: 
+      username: "{{ aci_rest_username | default(omit, True) }}"
+      src: "{{ aci_rest_src | default(omit, True) }}"
+      private_key: "{{ aci_rest_private_key | default(omit, True) }}"
+      use_proxy: "{{ aci_rest_use_proxy | default(omit, True) }}"
+      certificate_name: "{{ aci_rest_certificate_name | default(omit, True) }}"
+      method: "{{ aci_rest_method | default(omit, True) }}"
+      output_level: "{{ aci_rest_output_level | default(omit, True) }}"
+      host: "{{ aci_rest_host | default(omit, True) }}"
+      timeout: "{{ aci_rest_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_rest_use_ssl | default(omit, True) }}"
+      content: "{{ aci_rest_content | default(omit, True) }}"
+      path: "{{ aci_rest_path | default(omit, True) }}"
+      password: "{{ aci_rest_password | default(omit, True) }}"
+      validate_certs: "{{ aci_rest_validate_certs | default(omit, True) }}"
+      port: "{{ aci_rest_port | default(omit, True) }}"

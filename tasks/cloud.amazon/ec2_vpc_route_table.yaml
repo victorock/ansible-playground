@@ -1,0 +1,23 @@
+---
+- name: "module_ec2_vpc_route_table"
+  ec2_vpc_route_table: "{{ ec2_vpc_route_table }}"
+  vars:
+    ec2_vpc_route_table: 
+      profile: "{{ ec2_vpc_route_table_profile | default(omit, True) }}"
+      subnets: "{{ ec2_vpc_route_table_subnets | default(omit, True) }}"
+      aws_access_key: "{{ ec2_vpc_route_table_aws_access_key | default(omit, True) }}"
+      security_token: "{{ ec2_vpc_route_table_security_token | default(omit, True) }}"
+      tags: "{{ ec2_vpc_route_table_tags | default(omit, True) }}"
+      purge_tags: "{{ ec2_vpc_route_table_purge_tags | default(omit, True) }}"
+      region: "{{ ec2_vpc_route_table_region | default(omit, True) }}"
+      purge_subnets: "{{ ec2_vpc_route_table_purge_subnets | default(omit, True) }}"
+      aws_secret_key: "{{ ec2_vpc_route_table_aws_secret_key | default(omit, True) }}"
+      routes: "{{ ec2_vpc_route_table_routes | default(omit, True) }}"
+      purge_routes: "{{ ec2_vpc_route_table_purge_routes | default(omit, True) }}"
+      state: "{{ ec2_vpc_route_table_state | default(omit, True) }}"
+      lookup: "{{ ec2_vpc_route_table_lookup | default(omit, True) }}"
+      ec2_url: "{{ ec2_vpc_route_table_ec2_url | default(omit, True) }}"
+      route_table_id: "{{ ec2_vpc_route_table_route_table_id | default(omit, True) }}"
+      vpc_id: "{{ ec2_vpc_route_table_vpc_id | default(omit, True) }}"
+      validate_certs: "{{ ec2_vpc_route_table_validate_certs | default(omit, True) }}"
+      propagating_vgw_ids: "{{ ec2_vpc_route_table_propagating_vgw_ids | default(omit, True) }}"

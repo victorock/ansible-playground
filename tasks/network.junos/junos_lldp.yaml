@@ -1,0 +1,11 @@
+---
+- name: "module_junos_lldp"
+  junos_lldp: "{{ junos_lldp }}"
+  vars:
+    junos_lldp: 
+      interval: "{{ junos_lldp_interval | default(omit, True) }}"
+      state: "{{ junos_lldp_state | default(omit, True) }}"
+      provider: "{{ junos_lldp_provider | default(omit, True) }}"
+      active: "{{ junos_lldp_active | default(omit, True) }}"
+      hold_multiplier: "{{ junos_lldp_hold_multiplier | default(omit, True) }}"
+      transmit_delay: "{{ junos_lldp_transmit_delay | default(omit, True) }}"

@@ -1,0 +1,34 @@
+---
+- name: "module_avi_pkiprofile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_pkiprofile: 
+      username: "{{ avi_pkiprofile_username | default('omit', True) }}"
+      uuid: "{{ avi_pkiprofile_uuid | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_pkiprofile_avi_api_patch_op | default('omit', True) }}"
+      created_by: "{{ avi_pkiprofile_created_by | default('omit', True) }}"
+      state: "{{ avi_pkiprofile_state | default('omit', True) }}"
+      tenant: "{{ avi_pkiprofile_tenant | default('omit', True) }}"
+      validate_only_leaf_crl: "{{ avi_pkiprofile_validate_only_leaf_crl | default('omit', True) }}"
+      api_version: "{{ avi_pkiprofile_api_version | default('omit', True) }}"
+      crls: "{{ avi_pkiprofile_crls | default('omit', True) }}"
+      ignore_peer_chain: "{{ avi_pkiprofile_ignore_peer_chain | default('omit', True) }}"
+      controller: "{{ avi_pkiprofile_controller | default('omit', True) }}"
+      api_context: "{{ avi_pkiprofile_api_context | default('omit', True) }}"
+      password: "{{ avi_pkiprofile_password | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_pkiprofile_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_pkiprofile_name | default('omit', True) }}"
+      url: "{{ avi_pkiprofile_url | default('omit', True) }}"
+      avi_credentials: "{{ avi_pkiprofile_avi_credentials | default('omit', True) }}"
+      tenant_ref: "{{ avi_pkiprofile_tenant_ref | default('omit', True) }}"
+      is_federated: "{{ avi_pkiprofile_is_federated | default('omit', True) }}"
+      ca_certs: "{{ avi_pkiprofile_ca_certs | default('omit', True) }}"
+      crl_check: "{{ avi_pkiprofile_crl_check | default('omit', True) }}"
+      tenant_uuid: "{{ avi_pkiprofile_tenant_uuid | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_pkiprofile"
+      avi_pkiprofile: "{{ avi_pkiprofile }}"

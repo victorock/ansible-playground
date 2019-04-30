@@ -1,0 +1,28 @@
+---
+- name: "module_gcp_compute_route"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_compute_route: 
+      dest_range: "{{ gcp_compute_route_dest_range | default('omit', True) }}"
+      scopes: "{{ gcp_compute_route_scopes | default('omit', True) }}"
+      project: "{{ gcp_compute_route_project | default('omit', True) }}"
+      description: "{{ gcp_compute_route_description | default('omit', True) }}"
+      next_hop_instance: "{{ gcp_compute_route_next_hop_instance | default('omit', True) }}"
+      tags: "{{ gcp_compute_route_tags | default('omit', True) }}"
+      service_account_email: "{{ gcp_compute_route_service_account_email | default('omit', True) }}"
+      next_hop_gateway: "{{ gcp_compute_route_next_hop_gateway | default('omit', True) }}"
+      next_hop_ip: "{{ gcp_compute_route_next_hop_ip | default('omit', True) }}"
+      priority: "{{ gcp_compute_route_priority | default('omit', True) }}"
+      network: "{{ gcp_compute_route_network | default('omit', True) }}"
+      state: "{{ gcp_compute_route_state | default('omit', True) }}"
+      service_account_file: "{{ gcp_compute_route_service_account_file | default('omit', True) }}"
+      next_hop_vpn_tunnel: "{{ gcp_compute_route_next_hop_vpn_tunnel | default('omit', True) }}"
+      auth_kind: "{{ gcp_compute_route_auth_kind | default('omit', True) }}"
+      name: "{{ gcp_compute_route_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_compute_route"
+      gcp_compute_route: "{{ gcp_compute_route }}"

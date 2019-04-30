@@ -1,0 +1,19 @@
+---
+- name: "module_nxos_pim_interface"
+  nxos_pim_interface: "{{ nxos_pim_interface }}"
+  vars:
+    nxos_pim_interface: 
+      jp_policy_in: "{{ nxos_pim_interface_jp_policy_in | default(omit, True) }}"
+      dr_prio: "{{ nxos_pim_interface_dr_prio | default(omit, True) }}"
+      sparse: "{{ nxos_pim_interface_sparse | default(omit, True) }}"
+      jp_type_in: "{{ nxos_pim_interface_jp_type_in | default(omit, True) }}"
+      jp_policy_out: "{{ nxos_pim_interface_jp_policy_out | default(omit, True) }}"
+      neighbor_type: "{{ nxos_pim_interface_neighbor_type | default(omit, True) }}"
+      state: "{{ nxos_pim_interface_state | default(omit, True) }}"
+      neighbor_policy: "{{ nxos_pim_interface_neighbor_policy | default(omit, True) }}"
+      hello_interval: "{{ nxos_pim_interface_hello_interval | default(omit, True) }}"
+      provider: "{{ nxos_pim_interface_provider | default(omit, True) }}"
+      interface: "{{ nxos_pim_interface_interface | default(omit, True) }}"
+      hello_auth_key: "{{ nxos_pim_interface_hello_auth_key | default(omit, True) }}"
+      border: "{{ nxos_pim_interface_border | default(omit, True) }}"
+      jp_type_out: "{{ nxos_pim_interface_jp_type_out | default(omit, True) }}"

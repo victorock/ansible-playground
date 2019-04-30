@@ -1,0 +1,11 @@
+---
+- name: "module_vyos_l3_interface"
+  vyos_l3_interface: "{{ vyos_l3_interface }}"
+  vars:
+    vyos_l3_interface: 
+      name: "{{ vyos_l3_interface_name | default(omit, True) }}"
+      ipv6: "{{ vyos_l3_interface_ipv6 | default(omit, True) }}"
+      state: "{{ vyos_l3_interface_state | default(omit, True) }}"
+      ipv4: "{{ vyos_l3_interface_ipv4 | default(omit, True) }}"
+      provider: "{{ vyos_l3_interface_provider | default(omit, True) }}"
+      aggregate: "{{ vyos_l3_interface_aggregate | default(omit, True) }}"

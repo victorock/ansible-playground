@@ -1,0 +1,15 @@
+---
+- name: "module_slackpkg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    slackpkg: 
+      state: "{{ slackpkg_state | default('omit', True) }}"
+      update_cache: "{{ slackpkg_update_cache | default('omit', True) }}"
+      name: "{{ slackpkg_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_slackpkg"
+      slackpkg: "{{ slackpkg }}"

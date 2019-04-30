@@ -1,0 +1,15 @@
+---
+- name: "module_panos_dag_tags"
+  panos_dag_tags: "{{ panos_dag_tags }}"
+  vars:
+    panos_dag_tags: 
+      username: "{{ panos_dag_tags_username | default(omit, True) }}"
+      api_key: "{{ panos_dag_tags_api_key | default(omit, True) }}"
+      devicegroup: "{{ panos_dag_tags_devicegroup | default(omit, True) }}"
+      description: "{{ panos_dag_tags_description | default(omit, True) }}"
+      tag_names: "{{ panos_dag_tags_tag_names | default(omit, True) }}"
+      commit: "{{ panos_dag_tags_commit | default(omit, True) }}"
+      operation: "{{ panos_dag_tags_operation | default(omit, True) }}"
+      password: "{{ panos_dag_tags_password | default(omit, True) }}"
+      ip_address: "{{ panos_dag_tags_ip_address | default(omit, True) }}"
+      ip_to_register: "{{ panos_dag_tags_ip_to_register | default(omit, True) }}"

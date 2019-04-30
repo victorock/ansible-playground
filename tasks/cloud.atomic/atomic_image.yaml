@@ -1,0 +1,9 @@
+---
+- name: "module_atomic_image"
+  atomic_image: "{{ atomic_image }}"
+  vars:
+    atomic_image: 
+      started: "{{ atomic_image_started | default(omit, True) }}"
+      state: "{{ atomic_image_state | default(omit, True) }}"
+      name: "{{ atomic_image_name | default(omit, True) }}"
+      backend: "{{ atomic_image_backend | default(omit, True) }}"

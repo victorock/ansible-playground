@@ -1,0 +1,11 @@
+---
+- name: "module_purefb_snap"
+  purefb_snap: "{{ purefb_snap }}"
+  vars:
+    purefb_snap: 
+      fb_url: "{{ purefb_snap_fb_url | default(omit, True) }}"
+      suffix: "{{ purefb_snap_suffix | default(omit, True) }}"
+      name: "{{ purefb_snap_name | default(omit, True) }}"
+      state: "{{ purefb_snap_state | default(omit, True) }}"
+      api_token: "{{ purefb_snap_api_token | default(omit, True) }}"
+      eradicate: "{{ purefb_snap_eradicate | default(omit, True) }}"

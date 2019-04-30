@@ -1,0 +1,8 @@
+---
+- name: "module_gluster_peer"
+  gluster_peer: "{{ gluster_peer }}"
+  vars:
+    gluster_peer: 
+      state: "{{ gluster_peer_state | default(omit, True) }}"
+      force: "{{ gluster_peer_force | default(omit, True) }}"
+      nodes: "{{ gluster_peer_nodes | default(omit, True) }}"

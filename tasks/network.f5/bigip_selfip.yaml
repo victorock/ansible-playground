@@ -1,0 +1,20 @@
+---
+- name: "module_bigip_selfip"
+  bigip_selfip: "{{ bigip_selfip }}"
+  vars:
+    bigip_selfip: 
+      partition: "{{ bigip_selfip_partition | default(omit, True) }}"
+      name: "{{ bigip_selfip_name | default(omit, True) }}"
+      state: "{{ bigip_selfip_state | default(omit, True) }}"
+      vlan: "{{ bigip_selfip_vlan | default(omit, True) }}"
+      netmask: "{{ bigip_selfip_netmask | default(omit, True) }}"
+      allow_service: "{{ bigip_selfip_allow_service | default(omit, True) }}"
+      server: "{{ bigip_selfip_server | default(omit, True) }}"
+      route_domain: "{{ bigip_selfip_route_domain | default(omit, True) }}"
+      user: "{{ bigip_selfip_user | default(omit, True) }}"
+      server_port: "{{ bigip_selfip_server_port | default(omit, True) }}"
+      address: "{{ bigip_selfip_address | default(omit, True) }}"
+      traffic_group: "{{ bigip_selfip_traffic_group | default(omit, True) }}"
+      password: "{{ bigip_selfip_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_selfip_validate_certs | default(omit, True) }}"
+      provider: "{{ bigip_selfip_provider | default(omit, True) }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_vmware_guest_powerstate"
+  vmware_guest_powerstate: "{{ vmware_guest_powerstate }}"
+  vars:
+    vmware_guest_powerstate: 
+      username: "{{ vmware_guest_powerstate_username | default(omit, True) }}"
+      state_change_timeout: "{{ vmware_guest_powerstate_state_change_timeout | default(omit, True) }}"
+      force: "{{ vmware_guest_powerstate_force | default(omit, True) }}"
+      name: "{{ vmware_guest_powerstate_name | default(omit, True) }}"
+      hostname: "{{ vmware_guest_powerstate_hostname | default(omit, True) }}"
+      scheduled_at: "{{ vmware_guest_powerstate_scheduled_at | default(omit, True) }}"
+      state: "{{ vmware_guest_powerstate_state | default(omit, True) }}"
+      name_match: "{{ vmware_guest_powerstate_name_match | default(omit, True) }}"
+      folder: "{{ vmware_guest_powerstate_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_powerstate_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_powerstate_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_powerstate_port | default(omit, True) }}"
+      uuid: "{{ vmware_guest_powerstate_uuid | default(omit, True) }}"

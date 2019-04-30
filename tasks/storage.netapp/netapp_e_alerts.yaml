@@ -1,0 +1,17 @@
+---
+- name: "module_netapp_e_alerts"
+  netapp_e_alerts: "{{ netapp_e_alerts }}"
+  vars:
+    netapp_e_alerts: 
+      sender: "{{ netapp_e_alerts_sender | default(omit, True) }}"
+      ssid: "{{ netapp_e_alerts_ssid | default(omit, True) }}"
+      recipients: "{{ netapp_e_alerts_recipients | default(omit, True) }}"
+      log_path: "{{ netapp_e_alerts_log_path | default(omit, True) }}"
+      api_password: "{{ netapp_e_alerts_api_password | default(omit, True) }}"
+      server: "{{ netapp_e_alerts_server | default(omit, True) }}"
+      state: "{{ netapp_e_alerts_state | default(omit, True) }}"
+      contact: "{{ netapp_e_alerts_contact | default(omit, True) }}"
+      api_username: "{{ netapp_e_alerts_api_username | default(omit, True) }}"
+      test: "{{ netapp_e_alerts_test | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_alerts_validate_certs | default(omit, True) }}"
+      api_url: "{{ netapp_e_alerts_api_url | default(omit, True) }}"

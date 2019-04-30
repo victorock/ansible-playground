@@ -1,0 +1,19 @@
+---
+- name: "module_win_get_url"
+  win_get_url: "{{ win_get_url }}"
+  vars:
+    win_get_url: 
+      url_password: "{{ win_get_url_url_password | default(omit, True) }}"
+      proxy_url: "{{ win_get_url_proxy_url | default(omit, True) }}"
+      force: "{{ win_get_url_force | default(omit, True) }}"
+      use_proxy: "{{ win_get_url_use_proxy | default(omit, True) }}"
+      headers: "{{ win_get_url_headers | default(omit, True) }}"
+      dest: "{{ win_get_url_dest | default(omit, True) }}"
+      skip_certificate_validation: "{{ win_get_url_skip_certificate_validation | default(omit, True) }}"
+      force_basic_auth: "{{ win_get_url_force_basic_auth | default(omit, True) }}"
+      timeout: "{{ win_get_url_timeout | default(omit, True) }}"
+      proxy_password: "{{ win_get_url_proxy_password | default(omit, True) }}"
+      url: "{{ win_get_url_url | default(omit, True) }}"
+      proxy_username: "{{ win_get_url_proxy_username | default(omit, True) }}"
+      url_username: "{{ win_get_url_url_username | default(omit, True) }}"
+      validate_certs: "{{ win_get_url_validate_certs | default(omit, True) }}"

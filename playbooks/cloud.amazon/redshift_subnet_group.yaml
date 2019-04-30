@@ -1,0 +1,23 @@
+---
+- name: "module_redshift_subnet_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    redshift_subnet_group: 
+      profile: "{{ redshift_subnet_group_profile | default('omit', True) }}"
+      aws_secret_key: "{{ redshift_subnet_group_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ redshift_subnet_group_aws_access_key | default('omit', True) }}"
+      security_token: "{{ redshift_subnet_group_security_token | default('omit', True) }}"
+      region: "{{ redshift_subnet_group_region | default('omit', True) }}"
+      ec2_url: "{{ redshift_subnet_group_ec2_url | default('omit', True) }}"
+      group_name: "{{ redshift_subnet_group_group_name | default('omit', True) }}"
+      state: "{{ redshift_subnet_group_state | default('omit', True) }}"
+      group_subnets: "{{ redshift_subnet_group_group_subnets | default('omit', True) }}"
+      group_description: "{{ redshift_subnet_group_group_description | default('omit', True) }}"
+      validate_certs: "{{ redshift_subnet_group_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_redshift_subnet_group"
+      redshift_subnet_group: "{{ redshift_subnet_group }}"

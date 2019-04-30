@@ -1,0 +1,18 @@
+---
+- name: "module_nos_config"
+  nos_config: "{{ nos_config }}"
+  vars:
+    nos_config: 
+      multiline_delimiter: "{{ nos_config_multiline_delimiter | default(omit, True) }}"
+      src: "{{ nos_config_src | default(omit, True) }}"
+      intended_config: "{{ nos_config_intended_config | default(omit, True) }}"
+      after: "{{ nos_config_after | default(omit, True) }}"
+      lines: "{{ nos_config_lines | default(omit, True) }}"
+      diff_against: "{{ nos_config_diff_against | default(omit, True) }}"
+      replace: "{{ nos_config_replace | default(omit, True) }}"
+      running_config: "{{ nos_config_running_config | default(omit, True) }}"
+      parents: "{{ nos_config_parents | default(omit, True) }}"
+      before: "{{ nos_config_before | default(omit, True) }}"
+      backup: "{{ nos_config_backup | default(omit, True) }}"
+      match: "{{ nos_config_match | default(omit, True) }}"
+      diff_ignore_lines: "{{ nos_config_diff_ignore_lines | default(omit, True) }}"

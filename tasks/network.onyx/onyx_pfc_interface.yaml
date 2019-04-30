@@ -1,0 +1,9 @@
+---
+- name: "module_onyx_pfc_interface"
+  onyx_pfc_interface: "{{ onyx_pfc_interface }}"
+  vars:
+    onyx_pfc_interface: 
+      aggregate: "{{ onyx_pfc_interface_aggregate | default(omit, True) }}"
+      purge: "{{ onyx_pfc_interface_purge | default(omit, True) }}"
+      state: "{{ onyx_pfc_interface_state | default(omit, True) }}"
+      name: "{{ onyx_pfc_interface_name | default(omit, True) }}"

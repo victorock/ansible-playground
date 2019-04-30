@@ -1,0 +1,20 @@
+---
+- name: "module_nxos_vxlan_vtep"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_vxlan_vtep: 
+      description: "{{ nxos_vxlan_vtep_description | default('omit', True) }}"
+      source_interface: "{{ nxos_vxlan_vtep_source_interface | default('omit', True) }}"
+      host_reachability: "{{ nxos_vxlan_vtep_host_reachability | default('omit', True) }}"
+      source_interface_hold_down_time: "{{ nxos_vxlan_vtep_source_interface_hold_down_time | default('omit', True) }}"
+      state: "{{ nxos_vxlan_vtep_state | default('omit', True) }}"
+      shutdown: "{{ nxos_vxlan_vtep_shutdown | default('omit', True) }}"
+      provider: "{{ nxos_vxlan_vtep_provider | default('omit', True) }}"
+      interface: "{{ nxos_vxlan_vtep_interface | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_vxlan_vtep"
+      nxos_vxlan_vtep: "{{ nxos_vxlan_vtep }}"

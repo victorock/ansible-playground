@@ -1,0 +1,17 @@
+---
+- name: "module_aos_logical_device_map"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aos_logical_device_map: 
+      content: "{{ aos_logical_device_map_content | default('omit', True) }}"
+      state: "{{ aos_logical_device_map_state | default('omit', True) }}"
+      session: "{{ aos_logical_device_map_session | default('omit', True) }}"
+      name: "{{ aos_logical_device_map_name | default('omit', True) }}"
+      id: "{{ aos_logical_device_map_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aos_logical_device_map"
+      aos_logical_device_map: "{{ aos_logical_device_map }}"

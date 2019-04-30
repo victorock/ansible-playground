@@ -1,0 +1,17 @@
+---
+- name: "module_filesystem"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    filesystem: 
+      resizefs: "{{ filesystem_resizefs | default('omit', True) }}"
+      force: "{{ filesystem_force | default('omit', True) }}"
+      opts: "{{ filesystem_opts | default('omit', True) }}"
+      dev: "{{ filesystem_dev | default('omit', True) }}"
+      fstype: "{{ filesystem_fstype | default('omit', True) }}"
+  tasks:
+    - name: "plugin_filesystem"
+      filesystem: "{{ filesystem }}"

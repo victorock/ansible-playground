@@ -1,0 +1,28 @@
+---
+- name: "module_logicmonitor"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    logicmonitor: 
+      displayname: "{{ logicmonitor_displayname | default('omit', True) }}"
+      description: "{{ logicmonitor_description | default('omit', True) }}"
+      company: "{{ logicmonitor_company | default('omit', True) }}"
+      hostname: "{{ logicmonitor_hostname | default('omit', True) }}"
+      id: "{{ logicmonitor_id | default('omit', True) }}"
+      action: "{{ logicmonitor_action | default('omit', True) }}"
+      user: "{{ logicmonitor_user | default('omit', True) }}"
+      groups: "{{ logicmonitor_groups | default('omit', True) }}"
+      duration: "{{ logicmonitor_duration | default('omit', True) }}"
+      alertenable: "{{ logicmonitor_alertenable | default('omit', True) }}"
+      fullpath: "{{ logicmonitor_fullpath | default('omit', True) }}"
+      password: "{{ logicmonitor_password | default('omit', True) }}"
+      collector: "{{ logicmonitor_collector | default('omit', True) }}"
+      properties: "{{ logicmonitor_properties | default('omit', True) }}"
+      starttime: "{{ logicmonitor_starttime | default('omit', True) }}"
+      target: "{{ logicmonitor_target | default('omit', True) }}"
+  tasks:
+    - name: "plugin_logicmonitor"
+      logicmonitor: "{{ logicmonitor }}"

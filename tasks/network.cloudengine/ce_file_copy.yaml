@@ -1,0 +1,8 @@
+---
+- name: "module_ce_file_copy"
+  ce_file_copy: "{{ ce_file_copy }}"
+  vars:
+    ce_file_copy: 
+      remote_file: "{{ ce_file_copy_remote_file | default(omit, True) }}"
+      local_file: "{{ ce_file_copy_local_file | default(omit, True) }}"
+      file_system: "{{ ce_file_copy_file_system | default(omit, True) }}"

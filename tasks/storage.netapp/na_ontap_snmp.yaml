@@ -1,0 +1,14 @@
+---
+- name: "module_na_ontap_snmp"
+  na_ontap_snmp: "{{ na_ontap_snmp }}"
+  vars:
+    na_ontap_snmp: 
+      username: "{{ na_ontap_snmp_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_snmp_http_port | default(omit, True) }}"
+      access_control: "{{ na_ontap_snmp_access_control | default(omit, True) }}"
+      hostname: "{{ na_ontap_snmp_hostname | default(omit, True) }}"
+      community_name: "{{ na_ontap_snmp_community_name | default(omit, True) }}"
+      state: "{{ na_ontap_snmp_state | default(omit, True) }}"
+      https: "{{ na_ontap_snmp_https | default(omit, True) }}"
+      password: "{{ na_ontap_snmp_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_snmp_validate_certs | default(omit, True) }}"

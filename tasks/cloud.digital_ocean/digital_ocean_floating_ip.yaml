@@ -1,0 +1,10 @@
+---
+- name: "module_digital_ocean_floating_ip"
+  digital_ocean_floating_ip: "{{ digital_ocean_floating_ip }}"
+  vars:
+    digital_ocean_floating_ip: 
+      ip: "{{ digital_ocean_floating_ip_ip | default(omit, True) }}"
+      state: "{{ digital_ocean_floating_ip_state | default(omit, True) }}"
+      oauth_token: "{{ digital_ocean_floating_ip_oauth_token | default(omit, True) }}"
+      region: "{{ digital_ocean_floating_ip_region | default(omit, True) }}"
+      droplet_id: "{{ digital_ocean_floating_ip_droplet_id | default(omit, True) }}"

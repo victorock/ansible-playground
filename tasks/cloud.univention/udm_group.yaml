@@ -1,0 +1,11 @@
+---
+- name: "module_udm_group"
+  udm_group: "{{ udm_group }}"
+  vars:
+    udm_group: 
+      description: "{{ udm_group_description | default(omit, True) }}"
+      subpath: "{{ udm_group_subpath | default(omit, True) }}"
+      state: "{{ udm_group_state | default(omit, True) }}"
+      position: "{{ udm_group_position | default(omit, True) }}"
+      ou: "{{ udm_group_ou | default(omit, True) }}"
+      name: "{{ udm_group_name | default(omit, True) }}"

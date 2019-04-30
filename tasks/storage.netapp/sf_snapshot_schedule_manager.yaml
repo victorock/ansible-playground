@@ -1,0 +1,20 @@
+---
+- name: "module_sf_snapshot_schedule_manager"
+  sf_snapshot_schedule_manager: "{{ sf_snapshot_schedule_manager }}"
+  vars:
+    sf_snapshot_schedule_manager: 
+      username: "{{ sf_snapshot_schedule_manager_username | default(omit, True) }}"
+      time_interval_days: "{{ sf_snapshot_schedule_manager_time_interval_days | default(omit, True) }}"
+      name: "{{ sf_snapshot_schedule_manager_name | default(omit, True) }}"
+      time_interval_minutes: "{{ sf_snapshot_schedule_manager_time_interval_minutes | default(omit, True) }}"
+      hostname: "{{ sf_snapshot_schedule_manager_hostname | default(omit, True) }}"
+      state: "{{ sf_snapshot_schedule_manager_state | default(omit, True) }}"
+      time_interval_hours: "{{ sf_snapshot_schedule_manager_time_interval_hours | default(omit, True) }}"
+      paused: "{{ sf_snapshot_schedule_manager_paused | default(omit, True) }}"
+      schedule_id: "{{ sf_snapshot_schedule_manager_schedule_id | default(omit, True) }}"
+      snapshot_name: "{{ sf_snapshot_schedule_manager_snapshot_name | default(omit, True) }}"
+      volumes: "{{ sf_snapshot_schedule_manager_volumes | default(omit, True) }}"
+      starting_date: "{{ sf_snapshot_schedule_manager_starting_date | default(omit, True) }}"
+      password: "{{ sf_snapshot_schedule_manager_password | default(omit, True) }}"
+      recurring: "{{ sf_snapshot_schedule_manager_recurring | default(omit, True) }}"
+      retention: "{{ sf_snapshot_schedule_manager_retention | default(omit, True) }}"

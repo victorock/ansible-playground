@@ -1,0 +1,15 @@
+---
+- name: "module_bigip_config"
+  bigip_config: "{{ bigip_config }}"
+  vars:
+    bigip_config: 
+      reset: "{{ bigip_config_reset | default(omit, True) }}"
+      save: "{{ bigip_config_save | default(omit, True) }}"
+      merge_content: "{{ bigip_config_merge_content | default(omit, True) }}"
+      verify: "{{ bigip_config_verify | default(omit, True) }}"
+      server: "{{ bigip_config_server | default(omit, True) }}"
+      user: "{{ bigip_config_user | default(omit, True) }}"
+      server_port: "{{ bigip_config_server_port | default(omit, True) }}"
+      provider: "{{ bigip_config_provider | default(omit, True) }}"
+      password: "{{ bigip_config_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_config_validate_certs | default(omit, True) }}"

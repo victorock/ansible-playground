@@ -1,0 +1,14 @@
+---
+- name: "module_cnos_conditional_template"
+  cnos_conditional_template: "{{ cnos_conditional_template }}"
+  vars:
+    cnos_conditional_template: 
+      username: "{{ cnos_conditional_template_username | default(omit, True) }}"
+      outputfile: "{{ cnos_conditional_template_outputfile | default(omit, True) }}"
+      host: "{{ cnos_conditional_template_host | default(omit, True) }}"
+      flag: "{{ cnos_conditional_template_flag | default(omit, True) }}"
+      deviceType: "{{ cnos_conditional_template_deviceType | default(omit, True) }}"
+      commandfile: "{{ cnos_conditional_template_commandfile | default(omit, True) }}"
+      password: "{{ cnos_conditional_template_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_conditional_template_enablePassword | default(omit, True) }}"
+      condition: "{{ cnos_conditional_template_condition | default(omit, True) }}"

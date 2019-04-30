@@ -1,0 +1,23 @@
+---
+- name: "module_cobbler_system"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cobbler_system: 
+      username: "{{ cobbler_system_username | default('omit', True) }}"
+      name: "{{ cobbler_system_name | default('omit', True) }}"
+      state: "{{ cobbler_system_state | default('omit', True) }}"
+      interfaces: "{{ cobbler_system_interfaces | default('omit', True) }}"
+      sync: "{{ cobbler_system_sync | default('omit', True) }}"
+      properties: "{{ cobbler_system_properties | default('omit', True) }}"
+      host: "{{ cobbler_system_host | default('omit', True) }}"
+      use_ssl: "{{ cobbler_system_use_ssl | default('omit', True) }}"
+      password: "{{ cobbler_system_password | default('omit', True) }}"
+      validate_certs: "{{ cobbler_system_validate_certs | default('omit', True) }}"
+      port: "{{ cobbler_system_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cobbler_system"
+      cobbler_system: "{{ cobbler_system }}"

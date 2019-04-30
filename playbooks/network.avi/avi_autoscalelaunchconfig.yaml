@@ -1,0 +1,32 @@
+---
+- name: "module_avi_autoscalelaunchconfig"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_autoscalelaunchconfig: 
+      username: "{{ avi_autoscalelaunchconfig_username | default('omit', True) }}"
+      uuid: "{{ avi_autoscalelaunchconfig_uuid | default('omit', True) }}"
+      description: "{{ avi_autoscalelaunchconfig_description | default('omit', True) }}"
+      mesos: "{{ avi_autoscalelaunchconfig_mesos | default('omit', True) }}"
+      state: "{{ avi_autoscalelaunchconfig_state | default('omit', True) }}"
+      url: "{{ avi_autoscalelaunchconfig_url | default('omit', True) }}"
+      controller: "{{ avi_autoscalelaunchconfig_controller | default('omit', True) }}"
+      tenant_ref: "{{ avi_autoscalelaunchconfig_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_autoscalelaunchconfig_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_autoscalelaunchconfig_api_version | default('omit', True) }}"
+      image_id: "{{ avi_autoscalelaunchconfig_image_id | default('omit', True) }}"
+      avi_credentials: "{{ avi_autoscalelaunchconfig_avi_credentials | default('omit', True) }}"
+      use_external_asg: "{{ avi_autoscalelaunchconfig_use_external_asg | default('omit', True) }}"
+      tenant: "{{ avi_autoscalelaunchconfig_tenant | default('omit', True) }}"
+      api_context: "{{ avi_autoscalelaunchconfig_api_context | default('omit', True) }}"
+      openstack: "{{ avi_autoscalelaunchconfig_openstack | default('omit', True) }}"
+      password: "{{ avi_autoscalelaunchconfig_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_autoscalelaunchconfig_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_autoscalelaunchconfig_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_autoscalelaunchconfig_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_autoscalelaunchconfig"
+      avi_autoscalelaunchconfig: "{{ avi_autoscalelaunchconfig }}"

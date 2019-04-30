@@ -1,0 +1,23 @@
+---
+- name: "module_na_ontap_user_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_user_role: 
+      username: "{{ na_ontap_user_role_username | default('omit', True) }}"
+      http_port: "{{ na_ontap_user_role_http_port | default('omit', True) }}"
+      name: "{{ na_ontap_user_role_name | default('omit', True) }}"
+      hostname: "{{ na_ontap_user_role_hostname | default('omit', True) }}"
+      vserver: "{{ na_ontap_user_role_vserver | default('omit', True) }}"
+      access_level: "{{ na_ontap_user_role_access_level | default('omit', True) }}"
+      state: "{{ na_ontap_user_role_state | default('omit', True) }}"
+      https: "{{ na_ontap_user_role_https | default('omit', True) }}"
+      password: "{{ na_ontap_user_role_password | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_user_role_validate_certs | default('omit', True) }}"
+      command_directory_name: "{{ na_ontap_user_role_command_directory_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_user_role"
+      na_ontap_user_role: "{{ na_ontap_user_role }}"

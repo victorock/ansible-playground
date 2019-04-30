@@ -1,0 +1,27 @@
+---
+- name: "module_ec2_snapshot_copy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ec2_snapshot_copy: 
+      profile: "{{ ec2_snapshot_copy_profile | default('omit', True) }}"
+      aws_secret_key: "{{ ec2_snapshot_copy_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ ec2_snapshot_copy_aws_access_key | default('omit', True) }}"
+      description: "{{ ec2_snapshot_copy_description | default('omit', True) }}"
+      security_token: "{{ ec2_snapshot_copy_security_token | default('omit', True) }}"
+      tags: "{{ ec2_snapshot_copy_tags | default('omit', True) }}"
+      encrypted: "{{ ec2_snapshot_copy_encrypted | default('omit', True) }}"
+      region: "{{ ec2_snapshot_copy_region | default('omit', True) }}"
+      kms_key_id: "{{ ec2_snapshot_copy_kms_key_id | default('omit', True) }}"
+      source_region: "{{ ec2_snapshot_copy_source_region | default('omit', True) }}"
+      validate_certs: "{{ ec2_snapshot_copy_validate_certs | default('omit', True) }}"
+      wait_timeout: "{{ ec2_snapshot_copy_wait_timeout | default('omit', True) }}"
+      ec2_url: "{{ ec2_snapshot_copy_ec2_url | default('omit', True) }}"
+      source_snapshot_id: "{{ ec2_snapshot_copy_source_snapshot_id | default('omit', True) }}"
+      wait: "{{ ec2_snapshot_copy_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ec2_snapshot_copy"
+      ec2_snapshot_copy: "{{ ec2_snapshot_copy }}"

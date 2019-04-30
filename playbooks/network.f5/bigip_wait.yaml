@@ -1,0 +1,22 @@
+---
+- name: "module_bigip_wait"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_wait: 
+      server_port: "{{ bigip_wait_server_port | default('omit', True) }}"
+      server: "{{ bigip_wait_server | default('omit', True) }}"
+      delay: "{{ bigip_wait_delay | default('omit', True) }}"
+      sleep: "{{ bigip_wait_sleep | default('omit', True) }}"
+      user: "{{ bigip_wait_user | default('omit', True) }}"
+      timeout: "{{ bigip_wait_timeout | default('omit', True) }}"
+      provider: "{{ bigip_wait_provider | default('omit', True) }}"
+      msg: "{{ bigip_wait_msg | default('omit', True) }}"
+      password: "{{ bigip_wait_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_wait_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_wait"
+      bigip_wait: "{{ bigip_wait }}"

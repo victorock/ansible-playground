@@ -1,0 +1,6 @@
+---
+- name: "module_meta"
+  meta: "{{ meta }}"
+  vars:
+    meta: 
+      free_form: "{{ meta_free_form | default(omit, True) }}"

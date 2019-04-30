@@ -1,0 +1,12 @@
+---
+- name: "module_pn_ospf"
+  pn_ospf: "{{ pn_ospf }}"
+  vars:
+    pn_ospf: 
+      pn_vrouter_name: "{{ pn_ospf_pn_vrouter_name | default(omit, True) }}"
+      pn_clipassword: "{{ pn_ospf_pn_clipassword | default(omit, True) }}"
+      pn_ospf_area: "{{ pn_ospf_pn_ospf_area | default(omit, True) }}"
+      pn_network_ip: "{{ pn_ospf_pn_network_ip | default(omit, True) }}"
+      pn_cliusername: "{{ pn_ospf_pn_cliusername | default(omit, True) }}"
+      state: "{{ pn_ospf_state | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_ospf_pn_cliswitch | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_rundeck_acl_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rundeck_acl_policy: 
+      name: "{{ rundeck_acl_policy_name | default('omit', True) }}"
+      url: "{{ rundeck_acl_policy_url | default('omit', True) }}"
+      state: "{{ rundeck_acl_policy_state | default('omit', True) }}"
+      project: "{{ rundeck_acl_policy_project | default('omit', True) }}"
+      token: "{{ rundeck_acl_policy_token | default('omit', True) }}"
+      policy: "{{ rundeck_acl_policy_policy | default('omit', True) }}"
+      api_version: "{{ rundeck_acl_policy_api_version | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rundeck_acl_policy"
+      rundeck_acl_policy: "{{ rundeck_acl_policy }}"

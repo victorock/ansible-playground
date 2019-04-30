@@ -1,0 +1,29 @@
+---
+- name: "module_aci_contract_subject_to_filter"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_contract_subject_to_filter: 
+      username: "{{ aci_contract_subject_to_filter_username | default('omit', True) }}"
+      filter: "{{ aci_contract_subject_to_filter_filter | default('omit', True) }}"
+      private_key: "{{ aci_contract_subject_to_filter_private_key | default('omit', True) }}"
+      use_proxy: "{{ aci_contract_subject_to_filter_use_proxy | default('omit', True) }}"
+      certificate_name: "{{ aci_contract_subject_to_filter_certificate_name | default('omit', True) }}"
+      state: "{{ aci_contract_subject_to_filter_state | default('omit', True) }}"
+      contract: "{{ aci_contract_subject_to_filter_contract | default('omit', True) }}"
+      output_level: "{{ aci_contract_subject_to_filter_output_level | default('omit', True) }}"
+      host: "{{ aci_contract_subject_to_filter_host | default('omit', True) }}"
+      log: "{{ aci_contract_subject_to_filter_log | default('omit', True) }}"
+      timeout: "{{ aci_contract_subject_to_filter_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_contract_subject_to_filter_use_ssl | default('omit', True) }}"
+      password: "{{ aci_contract_subject_to_filter_password | default('omit', True) }}"
+      validate_certs: "{{ aci_contract_subject_to_filter_validate_certs | default('omit', True) }}"
+      port: "{{ aci_contract_subject_to_filter_port | default('omit', True) }}"
+      tenant: "{{ aci_contract_subject_to_filter_tenant | default('omit', True) }}"
+      subject: "{{ aci_contract_subject_to_filter_subject | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_contract_subject_to_filter"
+      aci_contract_subject_to_filter: "{{ aci_contract_subject_to_filter }}"

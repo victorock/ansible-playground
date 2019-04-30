@@ -1,0 +1,11 @@
+---
+- name: "module_sorcery"
+  sorcery: "{{ sorcery }}"
+  vars:
+    sorcery: 
+      name: "{{ sorcery_name | default(omit, True) }}"
+      depends: "{{ sorcery_depends | default(omit, True) }}"
+      update: "{{ sorcery_update | default(omit, True) }}"
+      state: "{{ sorcery_state | default(omit, True) }}"
+      update_cache: "{{ sorcery_update_cache | default(omit, True) }}"
+      cache_valid_time: "{{ sorcery_cache_valid_time | default(omit, True) }}"

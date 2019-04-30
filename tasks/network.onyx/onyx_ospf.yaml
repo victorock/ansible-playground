@@ -1,0 +1,9 @@
+---
+- name: "module_onyx_ospf"
+  onyx_ospf: "{{ onyx_ospf }}"
+  vars:
+    onyx_ospf: 
+      router_id: "{{ onyx_ospf_router_id | default(omit, True) }}"
+      interfaces: "{{ onyx_ospf_interfaces | default(omit, True) }}"
+      ospf: "{{ onyx_ospf_ospf | default(omit, True) }}"
+      state: "{{ onyx_ospf_state | default(omit, True) }}"

@@ -1,0 +1,7 @@
+---
+- name: "module_win_regmerge"
+  win_regmerge: "{{ win_regmerge }}"
+  vars:
+    win_regmerge: 
+      path: "{{ win_regmerge_path | default(omit, True) }}"
+      compare_key: "{{ win_regmerge_compare_key | default(omit, True) }}"

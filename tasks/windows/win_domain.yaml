@@ -1,0 +1,10 @@
+---
+- name: "module_win_domain"
+  win_domain: "{{ win_domain }}"
+  vars:
+    win_domain: 
+      dns_domain_name: "{{ win_domain_dns_domain_name | default(omit, True) }}"
+      database_path: "{{ win_domain_database_path | default(omit, True) }}"
+      safe_mode_password: "{{ win_domain_safe_mode_password | default(omit, True) }}"
+      domain_netbios_name: "{{ win_domain_domain_netbios_name | default(omit, True) }}"
+      sysvol_path: "{{ win_domain_sysvol_path | default(omit, True) }}"

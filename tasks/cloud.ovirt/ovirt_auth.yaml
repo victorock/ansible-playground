@@ -1,0 +1,17 @@
+---
+- name: "module_ovirt_auth"
+  ovirt_auth: "{{ ovirt_auth }}"
+  vars:
+    ovirt_auth: 
+      username: "{{ ovirt_auth_username | default(omit, True) }}"
+      hostname: "{{ ovirt_auth_hostname | default(omit, True) }}"
+      timeout: "{{ ovirt_auth_timeout | default(omit, True) }}"
+      url: "{{ ovirt_auth_url | default(omit, True) }}"
+      insecure: "{{ ovirt_auth_insecure | default(omit, True) }}"
+      kerberos: "{{ ovirt_auth_kerberos | default(omit, True) }}"
+      compress: "{{ ovirt_auth_compress | default(omit, True) }}"
+      token: "{{ ovirt_auth_token | default(omit, True) }}"
+      headers: "{{ ovirt_auth_headers | default(omit, True) }}"
+      state: "{{ ovirt_auth_state | default(omit, True) }}"
+      ca_file: "{{ ovirt_auth_ca_file | default(omit, True) }}"
+      password: "{{ ovirt_auth_password | default(omit, True) }}"

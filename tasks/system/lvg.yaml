@@ -1,0 +1,12 @@
+---
+- name: "module_lvg"
+  lvg: "{{ lvg }}"
+  vars:
+    lvg: 
+      vg_options: "{{ lvg_vg_options | default(omit, True) }}"
+      pvs: "{{ lvg_pvs | default(omit, True) }}"
+      force: "{{ lvg_force | default(omit, True) }}"
+      vg: "{{ lvg_vg | default(omit, True) }}"
+      state: "{{ lvg_state | default(omit, True) }}"
+      pesize: "{{ lvg_pesize | default(omit, True) }}"
+      pv_options: "{{ lvg_pv_options | default(omit, True) }}"

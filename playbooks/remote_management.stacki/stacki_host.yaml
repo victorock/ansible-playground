@@ -1,0 +1,20 @@
+---
+- name: "module_stacki_host"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    stacki_host: 
+      prim_intf_ip: "{{ stacki_host_prim_intf_ip | default('omit', True) }}"
+      name: "{{ stacki_host_name | default('omit', True) }}"
+      stacki_user: "{{ stacki_host_stacki_user | default('omit', True) }}"
+      stacki_endpoint: "{{ stacki_host_stacki_endpoint | default('omit', True) }}"
+      prim_intf: "{{ stacki_host_prim_intf | default('omit', True) }}"
+      stacki_password: "{{ stacki_host_stacki_password | default('omit', True) }}"
+      force_install: "{{ stacki_host_force_install | default('omit', True) }}"
+      prim_intf_mac: "{{ stacki_host_prim_intf_mac | default('omit', True) }}"
+  tasks:
+    - name: "plugin_stacki_host"
+      stacki_host: "{{ stacki_host }}"

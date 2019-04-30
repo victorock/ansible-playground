@@ -1,0 +1,10 @@
+---
+- name: "module_etcd3"
+  etcd3: "{{ etcd3 }}"
+  vars:
+    etcd3: 
+      value: "{{ etcd3_value | default(omit, True) }}"
+      host: "{{ etcd3_host | default(omit, True) }}"
+      state: "{{ etcd3_state | default(omit, True) }}"
+      key: "{{ etcd3_key | default(omit, True) }}"
+      port: "{{ etcd3_port | default(omit, True) }}"

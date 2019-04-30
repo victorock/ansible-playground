@@ -1,0 +1,8 @@
+---
+- name: "module_win_iis_webapppool"
+  win_iis_webapppool: "{{ win_iis_webapppool }}"
+  vars:
+    win_iis_webapppool: 
+      attributes: "{{ win_iis_webapppool_attributes | default(omit, True) }}"
+      state: "{{ win_iis_webapppool_state | default(omit, True) }}"
+      name: "{{ win_iis_webapppool_name | default(omit, True) }}"

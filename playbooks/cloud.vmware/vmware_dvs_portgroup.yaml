@@ -1,0 +1,27 @@
+---
+- name: "module_vmware_dvs_portgroup"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_dvs_portgroup: 
+      username: "{{ vmware_dvs_portgroup_username | default('omit', True) }}"
+      portgroup_name: "{{ vmware_dvs_portgroup_portgroup_name | default('omit', True) }}"
+      portgroup_type: "{{ vmware_dvs_portgroup_portgroup_type | default('omit', True) }}"
+      teaming_policy: "{{ vmware_dvs_portgroup_teaming_policy | default('omit', True) }}"
+      port_policy: "{{ vmware_dvs_portgroup_port_policy | default('omit', True) }}"
+      hostname: "{{ vmware_dvs_portgroup_hostname | default('omit', True) }}"
+      port: "{{ vmware_dvs_portgroup_port | default('omit', True) }}"
+      network_policy: "{{ vmware_dvs_portgroup_network_policy | default('omit', True) }}"
+      state: "{{ vmware_dvs_portgroup_state | default('omit', True) }}"
+      num_ports: "{{ vmware_dvs_portgroup_num_ports | default('omit', True) }}"
+      vlan_trunk: "{{ vmware_dvs_portgroup_vlan_trunk | default('omit', True) }}"
+      password: "{{ vmware_dvs_portgroup_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_dvs_portgroup_validate_certs | default('omit', True) }}"
+      switch_name: "{{ vmware_dvs_portgroup_switch_name | default('omit', True) }}"
+      vlan_id: "{{ vmware_dvs_portgroup_vlan_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_dvs_portgroup"
+      vmware_dvs_portgroup: "{{ vmware_dvs_portgroup }}"

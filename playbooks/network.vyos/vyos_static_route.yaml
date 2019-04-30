@@ -1,0 +1,19 @@
+---
+- name: "module_vyos_static_route"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vyos_static_route: 
+      mask: "{{ vyos_static_route_mask | default('omit', True) }}"
+      state: "{{ vyos_static_route_state | default('omit', True) }}"
+      admin_distance: "{{ vyos_static_route_admin_distance | default('omit', True) }}"
+      prefix: "{{ vyos_static_route_prefix | default('omit', True) }}"
+      next_hop: "{{ vyos_static_route_next_hop | default('omit', True) }}"
+      provider: "{{ vyos_static_route_provider | default('omit', True) }}"
+      aggregate: "{{ vyos_static_route_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vyos_static_route"
+      vyos_static_route: "{{ vyos_static_route }}"

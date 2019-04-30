@@ -1,0 +1,19 @@
+---
+- name: "module_sysctl"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    sysctl: 
+      name: "{{ sysctl_name | default('omit', True) }}"
+      ignoreerrors: "{{ sysctl_ignoreerrors | default('omit', True) }}"
+      value: "{{ sysctl_value | default('omit', True) }}"
+      reload: "{{ sysctl_reload | default('omit', True) }}"
+      state: "{{ sysctl_state | default('omit', True) }}"
+      sysctl_set: "{{ sysctl_sysctl_set | default('omit', True) }}"
+      sysctl_file: "{{ sysctl_sysctl_file | default('omit', True) }}"
+  tasks:
+    - name: "plugin_sysctl"
+      sysctl: "{{ sysctl }}"

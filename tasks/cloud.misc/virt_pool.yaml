@@ -1,0 +1,12 @@
+---
+- name: "module_virt_pool"
+  virt_pool: "{{ virt_pool }}"
+  vars:
+    virt_pool: 
+      xml: "{{ virt_pool_xml | default(omit, True) }}"
+      name: "{{ virt_pool_name | default(omit, True) }}"
+      uri: "{{ virt_pool_uri | default(omit, True) }}"
+      state: "{{ virt_pool_state | default(omit, True) }}"
+      command: "{{ virt_pool_command | default(omit, True) }}"
+      mode: "{{ virt_pool_mode | default(omit, True) }}"
+      autostart: "{{ virt_pool_autostart | default(omit, True) }}"

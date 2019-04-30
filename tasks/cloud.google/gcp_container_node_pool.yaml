@@ -1,0 +1,18 @@
+---
+- name: "module_gcp_container_node_pool"
+  gcp_container_node_pool: "{{ gcp_container_node_pool }}"
+  vars:
+    gcp_container_node_pool: 
+      initial_node_count: "{{ gcp_container_node_pool_initial_node_count | default(omit, True) }}"
+      management: "{{ gcp_container_node_pool_management | default(omit, True) }}"
+      name: "{{ gcp_container_node_pool_name | default(omit, True) }}"
+      zone: "{{ gcp_container_node_pool_zone | default(omit, True) }}"
+      scopes: "{{ gcp_container_node_pool_scopes | default(omit, True) }}"
+      service_account_email: "{{ gcp_container_node_pool_service_account_email | default(omit, True) }}"
+      autoscaling: "{{ gcp_container_node_pool_autoscaling | default(omit, True) }}"
+      project: "{{ gcp_container_node_pool_project | default(omit, True) }}"
+      cluster: "{{ gcp_container_node_pool_cluster | default(omit, True) }}"
+      state: "{{ gcp_container_node_pool_state | default(omit, True) }}"
+      service_account_file: "{{ gcp_container_node_pool_service_account_file | default(omit, True) }}"
+      config: "{{ gcp_container_node_pool_config | default(omit, True) }}"
+      auth_kind: "{{ gcp_container_node_pool_auth_kind | default(omit, True) }}"

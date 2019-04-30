@@ -1,0 +1,47 @@
+---
+- name: "module_netscaler_gslb_vserver"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netscaler_gslb_vserver: 
+      comment: "{{ netscaler_gslb_vserver_comment | default('omit', True) }}"
+      save_config: "{{ netscaler_gslb_vserver_save_config | default('omit', True) }}"
+      disabled: "{{ netscaler_gslb_vserver_disabled | default('omit', True) }}"
+      nitro_protocol: "{{ netscaler_gslb_vserver_nitro_protocol | default('omit', True) }}"
+      servicetype: "{{ netscaler_gslb_vserver_servicetype | default('omit', True) }}"
+      service_bindings: "{{ netscaler_gslb_vserver_service_bindings | default('omit', True) }}"
+      state: "{{ netscaler_gslb_vserver_state | default('omit', True) }}"
+      nitro_user: "{{ netscaler_gslb_vserver_nitro_user | default('omit', True) }}"
+      mir: "{{ netscaler_gslb_vserver_mir | default('omit', True) }}"
+      tolerance: "{{ netscaler_gslb_vserver_tolerance | default('omit', True) }}"
+      lbmethod: "{{ netscaler_gslb_vserver_lbmethod | default('omit', True) }}"
+      sothreshold: "{{ netscaler_gslb_vserver_sothreshold | default('omit', True) }}"
+      sopersistence: "{{ netscaler_gslb_vserver_sopersistence | default('omit', True) }}"
+      appflowlog: "{{ netscaler_gslb_vserver_appflowlog | default('omit', True) }}"
+      persistenceid: "{{ netscaler_gslb_vserver_persistenceid | default('omit', True) }}"
+      sobackupaction: "{{ netscaler_gslb_vserver_sobackupaction | default('omit', True) }}"
+      domain_bindings: "{{ netscaler_gslb_vserver_domain_bindings | default('omit', True) }}"
+      dnsrecordtype: "{{ netscaler_gslb_vserver_dnsrecordtype | default('omit', True) }}"
+      disableprimaryondown: "{{ netscaler_gslb_vserver_disableprimaryondown | default('omit', True) }}"
+      netmask: "{{ netscaler_gslb_vserver_netmask | default('omit', True) }}"
+      v6netmasklen: "{{ netscaler_gslb_vserver_v6netmasklen | default('omit', True) }}"
+      persistencetype: "{{ netscaler_gslb_vserver_persistencetype | default('omit', True) }}"
+      name: "{{ netscaler_gslb_vserver_name | default('omit', True) }}"
+      considereffectivestate: "{{ netscaler_gslb_vserver_considereffectivestate | default('omit', True) }}"
+      backuplbmethod: "{{ netscaler_gslb_vserver_backuplbmethod | default('omit', True) }}"
+      dynamicweight: "{{ netscaler_gslb_vserver_dynamicweight | default('omit', True) }}"
+      somethod: "{{ netscaler_gslb_vserver_somethod | default('omit', True) }}"
+      nitro_timeout: "{{ netscaler_gslb_vserver_nitro_timeout | default('omit', True) }}"
+      sopersistencetimeout: "{{ netscaler_gslb_vserver_sopersistencetimeout | default('omit', True) }}"
+      nsip: "{{ netscaler_gslb_vserver_nsip | default('omit', True) }}"
+      persistmask: "{{ netscaler_gslb_vserver_persistmask | default('omit', True) }}"
+      timeout: "{{ netscaler_gslb_vserver_timeout | default('omit', True) }}"
+      v6persistmasklen: "{{ netscaler_gslb_vserver_v6persistmasklen | default('omit', True) }}"
+      nitro_pass: "{{ netscaler_gslb_vserver_nitro_pass | default('omit', True) }}"
+      validate_certs: "{{ netscaler_gslb_vserver_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netscaler_gslb_vserver"
+      netscaler_gslb_vserver: "{{ netscaler_gslb_vserver }}"

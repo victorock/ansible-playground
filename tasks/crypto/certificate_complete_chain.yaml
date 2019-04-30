@@ -1,0 +1,8 @@
+---
+- name: "module_certificate_complete_chain"
+  certificate_complete_chain: "{{ certificate_complete_chain }}"
+  vars:
+    certificate_complete_chain: 
+      root_certificates: "{{ certificate_complete_chain_root_certificates | default(omit, True) }}"
+      intermediate_certificates: "{{ certificate_complete_chain_intermediate_certificates | default(omit, True) }}"
+      input_chain: "{{ certificate_complete_chain_input_chain | default(omit, True) }}"

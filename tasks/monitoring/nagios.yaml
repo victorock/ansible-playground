@@ -1,0 +1,14 @@
+---
+- name: "module_nagios"
+  nagios: "{{ nagios }}"
+  vars:
+    nagios: 
+      comment: "{{ nagios_comment | default(omit, True) }}"
+      servicegroup: "{{ nagios_servicegroup | default(omit, True) }}"
+      author: "{{ nagios_author | default(omit, True) }}"
+      services: "{{ nagios_services | default(omit, True) }}"
+      host: "{{ nagios_host | default(omit, True) }}"
+      command: "{{ nagios_command | default(omit, True) }}"
+      action: "{{ nagios_action | default(omit, True) }}"
+      minutes: "{{ nagios_minutes | default(omit, True) }}"
+      cmdfile: "{{ nagios_cmdfile | default(omit, True) }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_bearychat"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bearychat: 
+      url: "{{ bearychat_url | default('omit', True) }}"
+      text: "{{ bearychat_text | default('omit', True) }}"
+      markdown: "{{ bearychat_markdown | default('omit', True) }}"
+      attachments: "{{ bearychat_attachments | default('omit', True) }}"
+      channel: "{{ bearychat_channel | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bearychat"
+      bearychat: "{{ bearychat }}"

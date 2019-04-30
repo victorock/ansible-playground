@@ -1,0 +1,18 @@
+---
+- name: "module_netscaler_cs_action"
+  netscaler_cs_action: "{{ netscaler_cs_action }}"
+  vars:
+    netscaler_cs_action: 
+      comment: "{{ netscaler_cs_action_comment | default(omit, True) }}"
+      name: "{{ netscaler_cs_action_name | default(omit, True) }}"
+      save_config: "{{ netscaler_cs_action_save_config | default(omit, True) }}"
+      nsip: "{{ netscaler_cs_action_nsip | default(omit, True) }}"
+      targetlbvserver: "{{ netscaler_cs_action_targetlbvserver | default(omit, True) }}"
+      nitro_protocol: "{{ netscaler_cs_action_nitro_protocol | default(omit, True) }}"
+      state: "{{ netscaler_cs_action_state | default(omit, True) }}"
+      targetvserver: "{{ netscaler_cs_action_targetvserver | default(omit, True) }}"
+      nitro_user: "{{ netscaler_cs_action_nitro_user | default(omit, True) }}"
+      nitro_pass: "{{ netscaler_cs_action_nitro_pass | default(omit, True) }}"
+      validate_certs: "{{ netscaler_cs_action_validate_certs | default(omit, True) }}"
+      nitro_timeout: "{{ netscaler_cs_action_nitro_timeout | default(omit, True) }}"
+      targetvserverexpr: "{{ netscaler_cs_action_targetvserverexpr | default(omit, True) }}"

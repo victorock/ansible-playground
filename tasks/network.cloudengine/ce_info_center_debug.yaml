@@ -1,0 +1,11 @@
+---
+- name: "module_ce_info_center_debug"
+  ce_info_center_debug: "{{ ce_info_center_debug }}"
+  vars:
+    ce_info_center_debug: 
+      debug_enable: "{{ ce_info_center_debug_debug_enable | default(omit, True) }}"
+      debug_level: "{{ ce_info_center_debug_debug_level | default(omit, True) }}"
+      debug_time_stamp: "{{ ce_info_center_debug_debug_time_stamp | default(omit, True) }}"
+      channel_id: "{{ ce_info_center_debug_channel_id | default(omit, True) }}"
+      state: "{{ ce_info_center_debug_state | default(omit, True) }}"
+      module_name: "{{ ce_info_center_debug_module_name | default(omit, True) }}"

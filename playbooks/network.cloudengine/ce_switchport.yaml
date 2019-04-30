@@ -1,0 +1,18 @@
+---
+- name: "module_ce_switchport"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_switchport: 
+      native_vlan: "{{ ce_switchport_native_vlan | default('omit', True) }}"
+      access_vlan: "{{ ce_switchport_access_vlan | default('omit', True) }}"
+      state: "{{ ce_switchport_state | default('omit', True) }}"
+      trunk_vlans: "{{ ce_switchport_trunk_vlans | default('omit', True) }}"
+      mode: "{{ ce_switchport_mode | default('omit', True) }}"
+      interface: "{{ ce_switchport_interface | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_switchport"
+      ce_switchport: "{{ ce_switchport }}"

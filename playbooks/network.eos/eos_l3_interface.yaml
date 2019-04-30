@@ -1,0 +1,20 @@
+---
+- name: "module_eos_l3_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    eos_l3_interface: 
+      authorize: "{{ eos_l3_interface_authorize | default('omit', True) }}"
+      name: "{{ eos_l3_interface_name | default('omit', True) }}"
+      auth_pass: "{{ eos_l3_interface_auth_pass | default('omit', True) }}"
+      provider: "{{ eos_l3_interface_provider | default('omit', True) }}"
+      state: "{{ eos_l3_interface_state | default('omit', True) }}"
+      ipv4: "{{ eos_l3_interface_ipv4 | default('omit', True) }}"
+      ipv6: "{{ eos_l3_interface_ipv6 | default('omit', True) }}"
+      aggregate: "{{ eos_l3_interface_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_eos_l3_interface"
+      eos_l3_interface: "{{ eos_l3_interface }}"

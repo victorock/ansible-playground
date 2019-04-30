@@ -1,0 +1,16 @@
+---
+- name: "module_clc_aa_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    clc_aa_policy: 
+      state: "{{ clc_aa_policy_state | default('omit', True) }}"
+      wait: "{{ clc_aa_policy_wait | default('omit', True) }}"
+      location: "{{ clc_aa_policy_location | default('omit', True) }}"
+      name: "{{ clc_aa_policy_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_clc_aa_policy"
+      clc_aa_policy: "{{ clc_aa_policy }}"

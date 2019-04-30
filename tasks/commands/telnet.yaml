@@ -1,0 +1,16 @@
+---
+- name: "module_telnet"
+  telnet: "{{ telnet }}"
+  vars:
+    telnet: 
+      pause: "{{ telnet_pause | default(omit, True) }}"
+      password_prompt: "{{ telnet_password_prompt | default(omit, True) }}"
+      prompts: "{{ telnet_prompts | default(omit, True) }}"
+      host: "{{ telnet_host | default(omit, True) }}"
+      command: "{{ telnet_command | default(omit, True) }}"
+      user: "{{ telnet_user | default(omit, True) }}"
+      timeout: "{{ telnet_timeout | default(omit, True) }}"
+      login_prompt: "{{ telnet_login_prompt | default(omit, True) }}"
+      password: "{{ telnet_password | default(omit, True) }}"
+      port: "{{ telnet_port | default(omit, True) }}"
+      send_newline: "{{ telnet_send_newline | default(omit, True) }}"

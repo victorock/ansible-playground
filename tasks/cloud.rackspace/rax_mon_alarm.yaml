@@ -1,0 +1,23 @@
+---
+- name: "module_rax_mon_alarm"
+  rax_mon_alarm: "{{ rax_mon_alarm }}"
+  vars:
+    rax_mon_alarm: 
+      username: "{{ rax_mon_alarm_username | default(omit, True) }}"
+      metadata: "{{ rax_mon_alarm_metadata | default(omit, True) }}"
+      entity_id: "{{ rax_mon_alarm_entity_id | default(omit, True) }}"
+      notification_plan_id: "{{ rax_mon_alarm_notification_plan_id | default(omit, True) }}"
+      check_id: "{{ rax_mon_alarm_check_id | default(omit, True) }}"
+      tenant_name: "{{ rax_mon_alarm_tenant_name | default(omit, True) }}"
+      region: "{{ rax_mon_alarm_region | default(omit, True) }}"
+      criteria: "{{ rax_mon_alarm_criteria | default(omit, True) }}"
+      state: "{{ rax_mon_alarm_state | default(omit, True) }}"
+      label: "{{ rax_mon_alarm_label | default(omit, True) }}"
+      disabled: "{{ rax_mon_alarm_disabled | default(omit, True) }}"
+      identity_type: "{{ rax_mon_alarm_identity_type | default(omit, True) }}"
+      verify_ssl: "{{ rax_mon_alarm_verify_ssl | default(omit, True) }}"
+      env: "{{ rax_mon_alarm_env | default(omit, True) }}"
+      tenant_id: "{{ rax_mon_alarm_tenant_id | default(omit, True) }}"
+      credentials: "{{ rax_mon_alarm_credentials | default(omit, True) }}"
+      api_key: "{{ rax_mon_alarm_api_key | default(omit, True) }}"
+      auth_endpoint: "{{ rax_mon_alarm_auth_endpoint | default(omit, True) }}"

@@ -1,0 +1,32 @@
+---
+- name: "module_netscaler_server"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netscaler_server: 
+      comment: "{{ netscaler_server_comment | default('omit', True) }}"
+      delay: "{{ netscaler_server_delay | default('omit', True) }}"
+      domain: "{{ netscaler_server_domain | default('omit', True) }}"
+      name: "{{ netscaler_server_name | default('omit', True) }}"
+      ipv6address: "{{ netscaler_server_ipv6address | default('omit', True) }}"
+      nsip: "{{ netscaler_server_nsip | default('omit', True) }}"
+      validate_certs: "{{ netscaler_server_validate_certs | default('omit', True) }}"
+      save_config: "{{ netscaler_server_save_config | default('omit', True) }}"
+      domainresolveretry: "{{ netscaler_server_domainresolveretry | default('omit', True) }}"
+      translationmask: "{{ netscaler_server_translationmask | default('omit', True) }}"
+      nitro_timeout: "{{ netscaler_server_nitro_timeout | default('omit', True) }}"
+      disabled: "{{ netscaler_server_disabled | default('omit', True) }}"
+      nitro_protocol: "{{ netscaler_server_nitro_protocol | default('omit', True) }}"
+      state: "{{ netscaler_server_state | default('omit', True) }}"
+      translationip: "{{ netscaler_server_translationip | default('omit', True) }}"
+      nitro_user: "{{ netscaler_server_nitro_user | default('omit', True) }}"
+      graceful: "{{ netscaler_server_graceful | default('omit', True) }}"
+      td: "{{ netscaler_server_td | default('omit', True) }}"
+      ipaddress: "{{ netscaler_server_ipaddress | default('omit', True) }}"
+      nitro_pass: "{{ netscaler_server_nitro_pass | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netscaler_server"
+      netscaler_server: "{{ netscaler_server }}"

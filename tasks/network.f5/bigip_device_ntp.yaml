@@ -1,0 +1,14 @@
+---
+- name: "module_bigip_device_ntp"
+  bigip_device_ntp: "{{ bigip_device_ntp }}"
+  vars:
+    bigip_device_ntp: 
+      ntp_servers: "{{ bigip_device_ntp_ntp_servers | default(omit, True) }}"
+      server: "{{ bigip_device_ntp_server | default(omit, True) }}"
+      state: "{{ bigip_device_ntp_state | default(omit, True) }}"
+      user: "{{ bigip_device_ntp_user | default(omit, True) }}"
+      server_port: "{{ bigip_device_ntp_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_ntp_provider | default(omit, True) }}"
+      timezone: "{{ bigip_device_ntp_timezone | default(omit, True) }}"
+      password: "{{ bigip_device_ntp_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_ntp_validate_certs | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_aci_interface_policy_l2"
+  aci_interface_policy_l2: "{{ aci_interface_policy_l2 }}"
+  vars:
+    aci_interface_policy_l2: 
+      username: "{{ aci_interface_policy_l2_username | default(omit, True) }}"
+      private_key: "{{ aci_interface_policy_l2_private_key | default(omit, True) }}"
+      description: "{{ aci_interface_policy_l2_description | default(omit, True) }}"
+      certificate_name: "{{ aci_interface_policy_l2_certificate_name | default(omit, True) }}"
+      vepa: "{{ aci_interface_policy_l2_vepa | default(omit, True) }}"
+      state: "{{ aci_interface_policy_l2_state | default(omit, True) }}"
+      output_level: "{{ aci_interface_policy_l2_output_level | default(omit, True) }}"
+      validate_certs: "{{ aci_interface_policy_l2_validate_certs | default(omit, True) }}"
+      host: "{{ aci_interface_policy_l2_host | default(omit, True) }}"
+      qinq: "{{ aci_interface_policy_l2_qinq | default(omit, True) }}"
+      timeout: "{{ aci_interface_policy_l2_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_interface_policy_l2_use_ssl | default(omit, True) }}"
+      l2_policy: "{{ aci_interface_policy_l2_l2_policy | default(omit, True) }}"
+      password: "{{ aci_interface_policy_l2_password | default(omit, True) }}"
+      vlan_scope: "{{ aci_interface_policy_l2_vlan_scope | default(omit, True) }}"
+      port: "{{ aci_interface_policy_l2_port | default(omit, True) }}"
+      use_proxy: "{{ aci_interface_policy_l2_use_proxy | default(omit, True) }}"

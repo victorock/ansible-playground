@@ -1,0 +1,10 @@
+---
+- name: "module_slxos_l3_interface"
+  slxos_l3_interface: "{{ slxos_l3_interface }}"
+  vars:
+    slxos_l3_interface: 
+      aggregate: "{{ slxos_l3_interface_aggregate | default(omit, True) }}"
+      state: "{{ slxos_l3_interface_state | default(omit, True) }}"
+      ipv6: "{{ slxos_l3_interface_ipv6 | default(omit, True) }}"
+      ipv4: "{{ slxos_l3_interface_ipv4 | default(omit, True) }}"
+      name: "{{ slxos_l3_interface_name | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_ce_netstream_template"
+  ce_netstream_template: "{{ ce_netstream_template }}"
+  vars:
+    ce_netstream_template: 
+      record_name: "{{ ce_netstream_template_record_name | default(omit, True) }}"
+      description: "{{ ce_netstream_template_description | default(omit, True) }}"
+      collect_counter: "{{ ce_netstream_template_collect_counter | default(omit, True) }}"
+      state: "{{ ce_netstream_template_state | default(omit, True) }}"
+      collect_interface: "{{ ce_netstream_template_collect_interface | default(omit, True) }}"
+      type: "{{ ce_netstream_template_type | default(omit, True) }}"
+      match: "{{ ce_netstream_template_match | default(omit, True) }}"

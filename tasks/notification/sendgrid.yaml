@@ -1,0 +1,17 @@
+---
+- name: "module_sendgrid"
+  sendgrid: "{{ sendgrid }}"
+  vars:
+    sendgrid: 
+      username: "{{ sendgrid_username | default(omit, True) }}"
+      from_name: "{{ sendgrid_from_name | default(omit, True) }}"
+      from_address: "{{ sendgrid_from_address | default(omit, True) }}"
+      cc: "{{ sendgrid_cc | default(omit, True) }}"
+      bcc: "{{ sendgrid_bcc | default(omit, True) }}"
+      attachments: "{{ sendgrid_attachments | default(omit, True) }}"
+      headers: "{{ sendgrid_headers | default(omit, True) }}"
+      to_addresses: "{{ sendgrid_to_addresses | default(omit, True) }}"
+      html_body: "{{ sendgrid_html_body | default(omit, True) }}"
+      api_key: "{{ sendgrid_api_key | default(omit, True) }}"
+      password: "{{ sendgrid_password | default(omit, True) }}"
+      subject: "{{ sendgrid_subject | default(omit, True) }}"

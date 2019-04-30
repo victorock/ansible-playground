@@ -1,0 +1,28 @@
+---
+- name: "module_route53_health_check"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    route53_health_check: 
+      profile: "{{ route53_health_check_profile | default('omit', True) }}"
+      aws_secret_key: "{{ route53_health_check_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ route53_health_check_aws_access_key | default('omit', True) }}"
+      type: "{{ route53_health_check_type | default('omit', True) }}"
+      request_interval: "{{ route53_health_check_request_interval | default('omit', True) }}"
+      security_token: "{{ route53_health_check_security_token | default('omit', True) }}"
+      ip_address: "{{ route53_health_check_ip_address | default('omit', True) }}"
+      region: "{{ route53_health_check_region | default('omit', True) }}"
+      failure_threshold: "{{ route53_health_check_failure_threshold | default('omit', True) }}"
+      fqdn: "{{ route53_health_check_fqdn | default('omit', True) }}"
+      string_match: "{{ route53_health_check_string_match | default('omit', True) }}"
+      state: "{{ route53_health_check_state | default('omit', True) }}"
+      resource_path: "{{ route53_health_check_resource_path | default('omit', True) }}"
+      ec2_url: "{{ route53_health_check_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ route53_health_check_validate_certs | default('omit', True) }}"
+      port: "{{ route53_health_check_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_route53_health_check"
+      route53_health_check: "{{ route53_health_check }}"

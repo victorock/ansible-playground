@@ -1,0 +1,7 @@
+---
+- name: "module_say"
+  say: "{{ say }}"
+  vars:
+    say: 
+      msg: "{{ say_msg | default(omit, True) }}"
+      voice: "{{ say_voice | default(omit, True) }}"

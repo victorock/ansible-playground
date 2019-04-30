@@ -1,0 +1,12 @@
+---
+- name: "module_vyos_logging"
+  vyos_logging: "{{ vyos_logging }}"
+  vars:
+    vyos_logging: 
+      name: "{{ vyos_logging_name | default(omit, True) }}"
+      level: "{{ vyos_logging_level | default(omit, True) }}"
+      dest: "{{ vyos_logging_dest | default(omit, True) }}"
+      facility: "{{ vyos_logging_facility | default(omit, True) }}"
+      state: "{{ vyos_logging_state | default(omit, True) }}"
+      provider: "{{ vyos_logging_provider | default(omit, True) }}"
+      aggregate: "{{ vyos_logging_aggregate | default(omit, True) }}"

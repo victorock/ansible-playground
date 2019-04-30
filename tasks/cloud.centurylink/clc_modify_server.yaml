@@ -1,0 +1,14 @@
+---
+- name: "module_clc_modify_server"
+  clc_modify_server: "{{ clc_modify_server }}"
+  vars:
+    clc_modify_server: 
+      alert_policy_name: "{{ clc_modify_server_alert_policy_name | default(omit, True) }}"
+      anti_affinity_policy_name: "{{ clc_modify_server_anti_affinity_policy_name | default(omit, True) }}"
+      state: "{{ clc_modify_server_state | default(omit, True) }}"
+      anti_affinity_policy_id: "{{ clc_modify_server_anti_affinity_policy_id | default(omit, True) }}"
+      alert_policy_id: "{{ clc_modify_server_alert_policy_id | default(omit, True) }}"
+      memory: "{{ clc_modify_server_memory | default(omit, True) }}"
+      server_ids: "{{ clc_modify_server_server_ids | default(omit, True) }}"
+      cpu: "{{ clc_modify_server_cpu | default(omit, True) }}"
+      wait: "{{ clc_modify_server_wait | default(omit, True) }}"

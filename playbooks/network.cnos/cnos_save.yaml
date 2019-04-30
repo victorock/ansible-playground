@@ -1,0 +1,18 @@
+---
+- name: "module_cnos_save"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_save: 
+      username: "{{ cnos_save_username | default('omit', True) }}"
+      outputfile: "{{ cnos_save_outputfile | default('omit', True) }}"
+      host: "{{ cnos_save_host | default('omit', True) }}"
+      deviceType: "{{ cnos_save_deviceType | default('omit', True) }}"
+      password: "{{ cnos_save_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_save_enablePassword | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_save"
+      cnos_save: "{{ cnos_save }}"

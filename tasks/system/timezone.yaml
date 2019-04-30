@@ -1,0 +1,7 @@
+---
+- name: "module_timezone"
+  timezone: "{{ timezone }}"
+  vars:
+    timezone: 
+      hwclock: "{{ timezone_hwclock | default(omit, True) }}"
+      name: "{{ timezone_name | default(omit, True) }}"

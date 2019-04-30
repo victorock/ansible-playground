@@ -1,0 +1,10 @@
+---
+- name: "module_aos_rack_type"
+  aos_rack_type: "{{ aos_rack_type }}"
+  vars:
+    aos_rack_type: 
+      content: "{{ aos_rack_type_content | default(omit, True) }}"
+      state: "{{ aos_rack_type_state | default(omit, True) }}"
+      session: "{{ aos_rack_type_session | default(omit, True) }}"
+      name: "{{ aos_rack_type_name | default(omit, True) }}"
+      id: "{{ aos_rack_type_id | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_na_elementsw_cluster_pair"
+  na_elementsw_cluster_pair: "{{ na_elementsw_cluster_pair }}"
+  vars:
+    na_elementsw_cluster_pair: 
+      username: "{{ na_elementsw_cluster_pair_username | default(omit, True) }}"
+      dest_username: "{{ na_elementsw_cluster_pair_dest_username | default(omit, True) }}"
+      hostname: "{{ na_elementsw_cluster_pair_hostname | default(omit, True) }}"
+      state: "{{ na_elementsw_cluster_pair_state | default(omit, True) }}"
+      dest_mvip: "{{ na_elementsw_cluster_pair_dest_mvip | default(omit, True) }}"
+      dest_password: "{{ na_elementsw_cluster_pair_dest_password | default(omit, True) }}"
+      password: "{{ na_elementsw_cluster_pair_password | default(omit, True) }}"

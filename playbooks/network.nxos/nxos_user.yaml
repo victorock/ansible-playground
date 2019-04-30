@@ -1,0 +1,21 @@
+---
+- name: "module_nxos_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_user: 
+      update_password: "{{ nxos_user_update_password | default('omit', True) }}"
+      configured_password: "{{ nxos_user_configured_password | default('omit', True) }}"
+      name: "{{ nxos_user_name | default('omit', True) }}"
+      purge: "{{ nxos_user_purge | default('omit', True) }}"
+      state: "{{ nxos_user_state | default('omit', True) }}"
+      role: "{{ nxos_user_role | default('omit', True) }}"
+      provider: "{{ nxos_user_provider | default('omit', True) }}"
+      aggregate: "{{ nxos_user_aggregate | default('omit', True) }}"
+      sshkey: "{{ nxos_user_sshkey | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_user"
+      nxos_user: "{{ nxos_user }}"

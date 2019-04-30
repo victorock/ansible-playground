@@ -1,0 +1,28 @@
+---
+- name: "module_cs_ip_address"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_ip_address: 
+      domain: "{{ cs_ip_address_domain | default('omit', True) }}"
+      api_key: "{{ cs_ip_address_api_key | default('omit', True) }}"
+      poll_async: "{{ cs_ip_address_poll_async | default('omit', True) }}"
+      api_url: "{{ cs_ip_address_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_ip_address_api_http_method | default('omit', True) }}"
+      tags: "{{ cs_ip_address_tags | default('omit', True) }}"
+      api_secret: "{{ cs_ip_address_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_ip_address_api_timeout | default('omit', True) }}"
+      account: "{{ cs_ip_address_account | default('omit', True) }}"
+      api_region: "{{ cs_ip_address_api_region | default('omit', True) }}"
+      project: "{{ cs_ip_address_project | default('omit', True) }}"
+      state: "{{ cs_ip_address_state | default('omit', True) }}"
+      vpc: "{{ cs_ip_address_vpc | default('omit', True) }}"
+      zone: "{{ cs_ip_address_zone | default('omit', True) }}"
+      ip_address: "{{ cs_ip_address_ip_address | default('omit', True) }}"
+      network: "{{ cs_ip_address_network | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_ip_address"
+      cs_ip_address: "{{ cs_ip_address }}"

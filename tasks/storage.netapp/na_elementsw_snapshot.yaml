@@ -1,0 +1,17 @@
+---
+- name: "module_na_elementsw_snapshot"
+  na_elementsw_snapshot: "{{ na_elementsw_snapshot }}"
+  vars:
+    na_elementsw_snapshot: 
+      enable_remote_replication: "{{ na_elementsw_snapshot_enable_remote_replication | default(omit, True) }}"
+      username: "{{ na_elementsw_snapshot_username | default(omit, True) }}"
+      src_snapshot_id: "{{ na_elementsw_snapshot_src_snapshot_id | default(omit, True) }}"
+      account_id: "{{ na_elementsw_snapshot_account_id | default(omit, True) }}"
+      hostname: "{{ na_elementsw_snapshot_hostname | default(omit, True) }}"
+      name: "{{ na_elementsw_snapshot_name | default(omit, True) }}"
+      state: "{{ na_elementsw_snapshot_state | default(omit, True) }}"
+      snap_mirror_label: "{{ na_elementsw_snapshot_snap_mirror_label | default(omit, True) }}"
+      expiration_time: "{{ na_elementsw_snapshot_expiration_time | default(omit, True) }}"
+      password: "{{ na_elementsw_snapshot_password | default(omit, True) }}"
+      src_volume_id: "{{ na_elementsw_snapshot_src_volume_id | default(omit, True) }}"
+      retention: "{{ na_elementsw_snapshot_retention | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_win_domain_membership"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_domain_membership: 
+      workgroup_name: "{{ win_domain_membership_workgroup_name | default('omit', True) }}"
+      domain_admin_user: "{{ win_domain_membership_domain_admin_user | default('omit', True) }}"
+      dns_domain_name: "{{ win_domain_membership_dns_domain_name | default('omit', True) }}"
+      hostname: "{{ win_domain_membership_hostname | default('omit', True) }}"
+      domain_admin_password: "{{ win_domain_membership_domain_admin_password | default('omit', True) }}"
+      state: "{{ win_domain_membership_state | default('omit', True) }}"
+      domain_ou_path: "{{ win_domain_membership_domain_ou_path | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_domain_membership"
+      win_domain_membership: "{{ win_domain_membership }}"

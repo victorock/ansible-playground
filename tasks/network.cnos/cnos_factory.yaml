@@ -1,0 +1,11 @@
+---
+- name: "module_cnos_factory"
+  cnos_factory: "{{ cnos_factory }}"
+  vars:
+    cnos_factory: 
+      username: "{{ cnos_factory_username | default(omit, True) }}"
+      outputfile: "{{ cnos_factory_outputfile | default(omit, True) }}"
+      host: "{{ cnos_factory_host | default(omit, True) }}"
+      deviceType: "{{ cnos_factory_deviceType | default(omit, True) }}"
+      password: "{{ cnos_factory_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_factory_enablePassword | default(omit, True) }}"

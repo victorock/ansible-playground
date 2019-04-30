@@ -1,0 +1,37 @@
+---
+- name: "module_aci_epg_to_domain"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_epg_to_domain: 
+      domain: "{{ aci_epg_to_domain_domain | default('omit', True) }}"
+      allow_useg: "{{ aci_epg_to_domain_allow_useg | default('omit', True) }}"
+      ap: "{{ aci_epg_to_domain_ap | default('omit', True) }}"
+      use_ssl: "{{ aci_epg_to_domain_use_ssl | default('omit', True) }}"
+      vm_provider: "{{ aci_epg_to_domain_vm_provider | default('omit', True) }}"
+      port: "{{ aci_epg_to_domain_port | default('omit', True) }}"
+      use_proxy: "{{ aci_epg_to_domain_use_proxy | default('omit', True) }}"
+      primary_encap: "{{ aci_epg_to_domain_primary_encap | default('omit', True) }}"
+      state: "{{ aci_epg_to_domain_state | default('omit', True) }}"
+      encap: "{{ aci_epg_to_domain_encap | default('omit', True) }}"
+      username: "{{ aci_epg_to_domain_username | default('omit', True) }}"
+      private_key: "{{ aci_epg_to_domain_private_key | default('omit', True) }}"
+      certificate_name: "{{ aci_epg_to_domain_certificate_name | default('omit', True) }}"
+      domain_type: "{{ aci_epg_to_domain_domain_type | default('omit', True) }}"
+      host: "{{ aci_epg_to_domain_host | default('omit', True) }}"
+      encap_mode: "{{ aci_epg_to_domain_encap_mode | default('omit', True) }}"
+      netflow: "{{ aci_epg_to_domain_netflow | default('omit', True) }}"
+      password: "{{ aci_epg_to_domain_password | default('omit', True) }}"
+      resolution_immediacy: "{{ aci_epg_to_domain_resolution_immediacy | default('omit', True) }}"
+      tenant: "{{ aci_epg_to_domain_tenant | default('omit', True) }}"
+      deploy_immediacy: "{{ aci_epg_to_domain_deploy_immediacy | default('omit', True) }}"
+      output_level: "{{ aci_epg_to_domain_output_level | default('omit', True) }}"
+      timeout: "{{ aci_epg_to_domain_timeout | default('omit', True) }}"
+      epg: "{{ aci_epg_to_domain_epg | default('omit', True) }}"
+      validate_certs: "{{ aci_epg_to_domain_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_epg_to_domain"
+      aci_epg_to_domain: "{{ aci_epg_to_domain }}"

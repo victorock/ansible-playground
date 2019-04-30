@@ -1,0 +1,11 @@
+---
+- name: "module_aos_asn_pool"
+  aos_asn_pool: "{{ aos_asn_pool }}"
+  vars:
+    aos_asn_pool: 
+      ranges: "{{ aos_asn_pool_ranges | default(omit, True) }}"
+      name: "{{ aos_asn_pool_name | default(omit, True) }}"
+      content: "{{ aos_asn_pool_content | default(omit, True) }}"
+      state: "{{ aos_asn_pool_state | default(omit, True) }}"
+      session: "{{ aos_asn_pool_session | default(omit, True) }}"
+      id: "{{ aos_asn_pool_id | default(omit, True) }}"

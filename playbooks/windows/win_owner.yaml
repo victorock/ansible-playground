@@ -1,0 +1,15 @@
+---
+- name: "module_win_owner"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_owner: 
+      path: "{{ win_owner_path | default('omit', True) }}"
+      recurse: "{{ win_owner_recurse | default('omit', True) }}"
+      user: "{{ win_owner_user | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_owner"
+      win_owner: "{{ win_owner }}"

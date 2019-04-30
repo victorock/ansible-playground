@@ -1,0 +1,23 @@
+---
+- name: "module_ovirt_snapshots"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_snapshots: 
+      vm_name: "{{ ovirt_snapshots_vm_name | default('omit', True) }}"
+      description: "{{ ovirt_snapshots_description | default('omit', True) }}"
+      use_memory: "{{ ovirt_snapshots_use_memory | default('omit', True) }}"
+      poll_interval: "{{ ovirt_snapshots_poll_interval | default('omit', True) }}"
+      state: "{{ ovirt_snapshots_state | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_snapshots_nested_attributes | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_snapshots_fetch_nested | default('omit', True) }}"
+      auth: "{{ ovirt_snapshots_auth | default('omit', True) }}"
+      timeout: "{{ ovirt_snapshots_timeout | default('omit', True) }}"
+      snapshot_id: "{{ ovirt_snapshots_snapshot_id | default('omit', True) }}"
+      wait: "{{ ovirt_snapshots_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_snapshots"
+      ovirt_snapshots: "{{ ovirt_snapshots }}"

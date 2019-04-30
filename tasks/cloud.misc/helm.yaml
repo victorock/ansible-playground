@@ -1,0 +1,13 @@
+---
+- name: "module_helm"
+  helm: "{{ helm }}"
+  vars:
+    helm: 
+      disable_hooks: "{{ helm_disable_hooks | default(omit, True) }}"
+      name: "{{ helm_name | default(omit, True) }}"
+      namespace: "{{ helm_namespace | default(omit, True) }}"
+      host: "{{ helm_host | default(omit, True) }}"
+      chart: "{{ helm_chart | default(omit, True) }}"
+      state: "{{ helm_state | default(omit, True) }}"
+      values: "{{ helm_values | default(omit, True) }}"
+      port: "{{ helm_port | default(omit, True) }}"

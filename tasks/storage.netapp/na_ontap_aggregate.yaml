@@ -1,0 +1,22 @@
+---
+- name: "module_na_ontap_aggregate"
+  na_ontap_aggregate: "{{ na_ontap_aggregate }}"
+  vars:
+    na_ontap_aggregate: 
+      username: "{{ na_ontap_aggregate_username | default(omit, True) }}"
+      from_name: "{{ na_ontap_aggregate_from_name | default(omit, True) }}"
+      disk_size: "{{ na_ontap_aggregate_disk_size | default(omit, True) }}"
+      name: "{{ na_ontap_aggregate_name | default(omit, True) }}"
+      service_state: "{{ na_ontap_aggregate_service_state | default(omit, True) }}"
+      hostname: "{{ na_ontap_aggregate_hostname | default(omit, True) }}"
+      disk_count: "{{ na_ontap_aggregate_disk_count | default(omit, True) }}"
+      raid_type: "{{ na_ontap_aggregate_raid_type | default(omit, True) }}"
+      state: "{{ na_ontap_aggregate_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_aggregate_http_port | default(omit, True) }}"
+      raid_size: "{{ na_ontap_aggregate_raid_size | default(omit, True) }}"
+      https: "{{ na_ontap_aggregate_https | default(omit, True) }}"
+      nodes: "{{ na_ontap_aggregate_nodes | default(omit, True) }}"
+      password: "{{ na_ontap_aggregate_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_aggregate_validate_certs | default(omit, True) }}"
+      disk_type: "{{ na_ontap_aggregate_disk_type | default(omit, True) }}"
+      unmount_volumes: "{{ na_ontap_aggregate_unmount_volumes | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_vertica_configuration"
+  vertica_configuration: "{{ vertica_configuration }}"
+  vars:
+    vertica_configuration: 
+      name: "{{ vertica_configuration_name | default(omit, True) }}"
+      login_user: "{{ vertica_configuration_login_user | default(omit, True) }}"
+      db: "{{ vertica_configuration_db | default(omit, True) }}"
+      value: "{{ vertica_configuration_value | default(omit, True) }}"
+      cluster: "{{ vertica_configuration_cluster | default(omit, True) }}"
+      login_password: "{{ vertica_configuration_login_password | default(omit, True) }}"
+      port: "{{ vertica_configuration_port | default(omit, True) }}"

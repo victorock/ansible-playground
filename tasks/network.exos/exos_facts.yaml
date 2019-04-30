@@ -1,0 +1,6 @@
+---
+- name: "module_exos_facts"
+  exos_facts: "{{ exos_facts }}"
+  vars:
+    exos_facts: 
+      gather_subset: "{{ exos_facts_gather_subset | default(omit, True) }}"

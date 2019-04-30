@@ -1,0 +1,9 @@
+---
+- name: "module_win_path"
+  win_path: "{{ win_path }}"
+  vars:
+    win_path: 
+      scope: "{{ win_path_scope | default(omit, True) }}"
+      state: "{{ win_path_state | default(omit, True) }}"
+      elements: "{{ win_path_elements | default(omit, True) }}"
+      name: "{{ win_path_name | default(omit, True) }}"

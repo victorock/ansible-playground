@@ -1,0 +1,20 @@
+---
+- name: "module_gitlab_user"
+  gitlab_user: "{{ gitlab_user }}"
+  vars:
+    gitlab_user: 
+      username: "{{ gitlab_user_username | default(omit, True) }}"
+      group: "{{ gitlab_user_group | default(omit, True) }}"
+      name: "{{ gitlab_user_name | default(omit, True) }}"
+      sshkey_file: "{{ gitlab_user_sshkey_file | default(omit, True) }}"
+      sshkey_name: "{{ gitlab_user_sshkey_name | default(omit, True) }}"
+      login_user: "{{ gitlab_user_login_user | default(omit, True) }}"
+      login_token: "{{ gitlab_user_login_token | default(omit, True) }}"
+      confirm: "{{ gitlab_user_confirm | default(omit, True) }}"
+      server_url: "{{ gitlab_user_server_url | default(omit, True) }}"
+      access_level: "{{ gitlab_user_access_level | default(omit, True) }}"
+      state: "{{ gitlab_user_state | default(omit, True) }}"
+      login_password: "{{ gitlab_user_login_password | default(omit, True) }}"
+      password: "{{ gitlab_user_password | default(omit, True) }}"
+      validate_certs: "{{ gitlab_user_validate_certs | default(omit, True) }}"
+      email: "{{ gitlab_user_email | default(omit, True) }}"

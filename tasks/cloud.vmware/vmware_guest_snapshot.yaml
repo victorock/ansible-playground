@@ -1,0 +1,23 @@
+---
+- name: "module_vmware_guest_snapshot"
+  vmware_guest_snapshot: "{{ vmware_guest_snapshot }}"
+  vars:
+    vmware_guest_snapshot: 
+      username: "{{ vmware_guest_snapshot_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_snapshot_datacenter | default(omit, True) }}"
+      uuid: "{{ vmware_guest_snapshot_uuid | default(omit, True) }}"
+      new_snapshot_name: "{{ vmware_guest_snapshot_new_snapshot_name | default(omit, True) }}"
+      description: "{{ vmware_guest_snapshot_description | default(omit, True) }}"
+      quiesce: "{{ vmware_guest_snapshot_quiesce | default(omit, True) }}"
+      new_description: "{{ vmware_guest_snapshot_new_description | default(omit, True) }}"
+      hostname: "{{ vmware_guest_snapshot_hostname | default(omit, True) }}"
+      memory_dump: "{{ vmware_guest_snapshot_memory_dump | default(omit, True) }}"
+      state: "{{ vmware_guest_snapshot_state | default(omit, True) }}"
+      snapshot_name: "{{ vmware_guest_snapshot_snapshot_name | default(omit, True) }}"
+      name_match: "{{ vmware_guest_snapshot_name_match | default(omit, True) }}"
+      remove_children: "{{ vmware_guest_snapshot_remove_children | default(omit, True) }}"
+      folder: "{{ vmware_guest_snapshot_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_snapshot_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_snapshot_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_snapshot_port | default(omit, True) }}"
+      name: "{{ vmware_guest_snapshot_name | default(omit, True) }}"

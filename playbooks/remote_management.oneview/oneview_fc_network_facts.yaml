@@ -1,0 +1,15 @@
+---
+- name: "module_oneview_fc_network_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    oneview_fc_network_facts: 
+      config: "{{ oneview_fc_network_facts_config | default('omit', True) }}"
+      params: "{{ oneview_fc_network_facts_params | default('omit', True) }}"
+      name: "{{ oneview_fc_network_facts_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_oneview_fc_network_facts"
+      oneview_fc_network_facts: "{{ oneview_fc_network_facts }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_atomic_container"
+  atomic_container: "{{ atomic_container }}"
+  vars:
+    atomic_container: 
+      name: "{{ atomic_container_name | default(omit, True) }}"
+      image: "{{ atomic_container_image | default(omit, True) }}"
+      state: "{{ atomic_container_state | default(omit, True) }}"
+      values: "{{ atomic_container_values | default(omit, True) }}"
+      mode: "{{ atomic_container_mode | default(omit, True) }}"
+      backend: "{{ atomic_container_backend | default(omit, True) }}"
+      rootfs: "{{ atomic_container_rootfs | default(omit, True) }}"

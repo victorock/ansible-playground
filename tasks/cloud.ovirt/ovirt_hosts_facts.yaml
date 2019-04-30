@@ -1,0 +1,10 @@
+---
+- name: "module_ovirt_hosts_facts"
+  ovirt_hosts_facts: "{{ ovirt_hosts_facts }}"
+  vars:
+    ovirt_hosts_facts: 
+      all_content: "{{ ovirt_hosts_facts_all_content | default(omit, True) }}"
+      pattern: "{{ ovirt_hosts_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_hosts_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_hosts_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_hosts_facts_auth | default(omit, True) }}"

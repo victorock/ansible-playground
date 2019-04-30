@@ -1,0 +1,17 @@
+---
+- name: "module_nxos_vrf"
+  nxos_vrf: "{{ nxos_vrf }}"
+  vars:
+    nxos_vrf: 
+      purge: "{{ nxos_vrf_purge | default(omit, True) }}"
+      description: "{{ nxos_vrf_description | default(omit, True) }}"
+      interfaces: "{{ nxos_vrf_interfaces | default(omit, True) }}"
+      vni: "{{ nxos_vrf_vni | default(omit, True) }}"
+      rd: "{{ nxos_vrf_rd | default(omit, True) }}"
+      aggregate: "{{ nxos_vrf_aggregate | default(omit, True) }}"
+      state: "{{ nxos_vrf_state | default(omit, True) }}"
+      delay: "{{ nxos_vrf_delay | default(omit, True) }}"
+      admin_state: "{{ nxos_vrf_admin_state | default(omit, True) }}"
+      provider: "{{ nxos_vrf_provider | default(omit, True) }}"
+      associated_interfaces: "{{ nxos_vrf_associated_interfaces | default(omit, True) }}"
+      name: "{{ nxos_vrf_name | default(omit, True) }}"

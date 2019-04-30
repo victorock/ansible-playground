@@ -1,0 +1,26 @@
+---
+- name: "module_ce_stp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_stp: 
+      loop_protection: "{{ ce_stp_loop_protection | default('omit', True) }}"
+      tc_protection_threshold: "{{ ce_stp_tc_protection_threshold | default('omit', True) }}"
+      bpdu_filter: "{{ ce_stp_bpdu_filter | default('omit', True) }}"
+      stp_converge: "{{ ce_stp_stp_converge | default('omit', True) }}"
+      edged_port: "{{ ce_stp_edged_port | default('omit', True) }}"
+      bpdu_protection: "{{ ce_stp_bpdu_protection | default('omit', True) }}"
+      root_protection: "{{ ce_stp_root_protection | default('omit', True) }}"
+      state: "{{ ce_stp_state | default('omit', True) }}"
+      cost: "{{ ce_stp_cost | default('omit', True) }}"
+      stp_enable: "{{ ce_stp_stp_enable | default('omit', True) }}"
+      interface: "{{ ce_stp_interface | default('omit', True) }}"
+      tc_protection: "{{ ce_stp_tc_protection | default('omit', True) }}"
+      stp_mode: "{{ ce_stp_stp_mode | default('omit', True) }}"
+      tc_protection_interval: "{{ ce_stp_tc_protection_interval | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_stp"
+      ce_stp: "{{ ce_stp }}"

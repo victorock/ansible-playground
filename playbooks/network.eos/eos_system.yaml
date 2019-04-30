@@ -1,0 +1,21 @@
+---
+- name: "module_eos_system"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    eos_system: 
+      authorize: "{{ eos_system_authorize | default('omit', True) }}"
+      hostname: "{{ eos_system_hostname | default('omit', True) }}"
+      lookup_source: "{{ eos_system_lookup_source | default('omit', True) }}"
+      domain_search: "{{ eos_system_domain_search | default('omit', True) }}"
+      auth_pass: "{{ eos_system_auth_pass | default('omit', True) }}"
+      domain_name: "{{ eos_system_domain_name | default('omit', True) }}"
+      state: "{{ eos_system_state | default('omit', True) }}"
+      provider: "{{ eos_system_provider | default('omit', True) }}"
+      name_servers: "{{ eos_system_name_servers | default('omit', True) }}"
+  tasks:
+    - name: "plugin_eos_system"
+      eos_system: "{{ eos_system }}"

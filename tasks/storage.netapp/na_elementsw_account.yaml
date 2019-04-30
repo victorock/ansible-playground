@@ -1,0 +1,16 @@
+---
+- name: "module_na_elementsw_account"
+  na_elementsw_account: "{{ na_elementsw_account }}"
+  vars:
+    na_elementsw_account: 
+      status: "{{ na_elementsw_account_status | default(omit, True) }}"
+      username: "{{ na_elementsw_account_username | default(omit, True) }}"
+      element_username: "{{ na_elementsw_account_element_username | default(omit, True) }}"
+      account_id: "{{ na_elementsw_account_account_id | default(omit, True) }}"
+      hostname: "{{ na_elementsw_account_hostname | default(omit, True) }}"
+      target_secret: "{{ na_elementsw_account_target_secret | default(omit, True) }}"
+      initiator_secret: "{{ na_elementsw_account_initiator_secret | default(omit, True) }}"
+      state: "{{ na_elementsw_account_state | default(omit, True) }}"
+      attributes: "{{ na_elementsw_account_attributes | default(omit, True) }}"
+      new_element_username: "{{ na_elementsw_account_new_element_username | default(omit, True) }}"
+      password: "{{ na_elementsw_account_password | default(omit, True) }}"

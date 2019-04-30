@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_logical_interconnect_group"
+  oneview_logical_interconnect_group: "{{ oneview_logical_interconnect_group }}"
+  vars:
+    oneview_logical_interconnect_group: 
+      data: "{{ oneview_logical_interconnect_group_data | default(omit, True) }}"
+      state: "{{ oneview_logical_interconnect_group_state | default(omit, True) }}"
+      validate_etag: "{{ oneview_logical_interconnect_group_validate_etag | default(omit, True) }}"
+      config: "{{ oneview_logical_interconnect_group_config | default(omit, True) }}"

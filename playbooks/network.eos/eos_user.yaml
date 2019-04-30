@@ -1,0 +1,25 @@
+---
+- name: "module_eos_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    eos_user: 
+      authorize: "{{ eos_user_authorize | default('omit', True) }}"
+      update_password: "{{ eos_user_update_password | default('omit', True) }}"
+      configured_password: "{{ eos_user_configured_password | default('omit', True) }}"
+      sshkey: "{{ eos_user_sshkey | default('omit', True) }}"
+      auth_pass: "{{ eos_user_auth_pass | default('omit', True) }}"
+      purge: "{{ eos_user_purge | default('omit', True) }}"
+      nopassword: "{{ eos_user_nopassword | default('omit', True) }}"
+      state: "{{ eos_user_state | default('omit', True) }}"
+      role: "{{ eos_user_role | default('omit', True) }}"
+      provider: "{{ eos_user_provider | default('omit', True) }}"
+      aggregate: "{{ eos_user_aggregate | default('omit', True) }}"
+      privilege: "{{ eos_user_privilege | default('omit', True) }}"
+      name: "{{ eos_user_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_eos_user"
+      eos_user: "{{ eos_user }}"

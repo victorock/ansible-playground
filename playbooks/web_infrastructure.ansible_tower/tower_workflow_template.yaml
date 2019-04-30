@@ -1,0 +1,26 @@
+---
+- name: "module_tower_workflow_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    tower_workflow_template: 
+      description: "{{ tower_workflow_template_description | default('omit', True) }}"
+      allow_simultaneous: "{{ tower_workflow_template_allow_simultaneous | default('omit', True) }}"
+      extra_vars: "{{ tower_workflow_template_extra_vars | default('omit', True) }}"
+      tower_host: "{{ tower_workflow_template_tower_host | default('omit', True) }}"
+      tower_config_file: "{{ tower_workflow_template_tower_config_file | default('omit', True) }}"
+      state: "{{ tower_workflow_template_state | default('omit', True) }}"
+      survey: "{{ tower_workflow_template_survey | default('omit', True) }}"
+      tower_password: "{{ tower_workflow_template_tower_password | default('omit', True) }}"
+      tower_username: "{{ tower_workflow_template_tower_username | default('omit', True) }}"
+      organization: "{{ tower_workflow_template_organization | default('omit', True) }}"
+      schema: "{{ tower_workflow_template_schema | default('omit', True) }}"
+      tower_verify_ssl: "{{ tower_workflow_template_tower_verify_ssl | default('omit', True) }}"
+      survey_enabled: "{{ tower_workflow_template_survey_enabled | default('omit', True) }}"
+      name: "{{ tower_workflow_template_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_tower_workflow_template"
+      tower_workflow_template: "{{ tower_workflow_template }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_lvol"
+  lvol: "{{ lvol }}"
+  vars:
+    lvol: 
+      pvs: "{{ lvol_pvs | default(omit, True) }}"
+      force: "{{ lvol_force | default(omit, True) }}"
+      vg: "{{ lvol_vg | default(omit, True) }}"
+      lv: "{{ lvol_lv | default(omit, True) }}"
+      resizefs: "{{ lvol_resizefs | default(omit, True) }}"
+      state: "{{ lvol_state | default(omit, True) }}"
+      thinpool: "{{ lvol_thinpool | default(omit, True) }}"
+      snapshot: "{{ lvol_snapshot | default(omit, True) }}"
+      active: "{{ lvol_active | default(omit, True) }}"
+      shrink: "{{ lvol_shrink | default(omit, True) }}"
+      opts: "{{ lvol_opts | default(omit, True) }}"
+      size: "{{ lvol_size | default(omit, True) }}"

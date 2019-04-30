@@ -1,0 +1,25 @@
+---
+- name: "module_fmgr_script"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_script: 
+      username: "{{ fmgr_script_username | default('omit', True) }}"
+      script_content: "{{ fmgr_script_script_content | default('omit', True) }}"
+      adom: "{{ fmgr_script_adom | default('omit', True) }}"
+      script_scope: "{{ fmgr_script_script_scope | default('omit', True) }}"
+      script_target: "{{ fmgr_script_script_target | default('omit', True) }}"
+      script_name: "{{ fmgr_script_script_name | default('omit', True) }}"
+      host: "{{ fmgr_script_host | default('omit', True) }}"
+      state: "{{ fmgr_script_state | default('omit', True) }}"
+      script_description: "{{ fmgr_script_script_description | default('omit', True) }}"
+      script_package: "{{ fmgr_script_script_package | default('omit', True) }}"
+      password: "{{ fmgr_script_password | default('omit', True) }}"
+      vdom: "{{ fmgr_script_vdom | default('omit', True) }}"
+      script_type: "{{ fmgr_script_script_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_fmgr_script"
+      fmgr_script: "{{ fmgr_script }}"

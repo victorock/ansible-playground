@@ -1,0 +1,8 @@
+---
+- name: "module_win_owner"
+  win_owner: "{{ win_owner }}"
+  vars:
+    win_owner: 
+      path: "{{ win_owner_path | default(omit, True) }}"
+      recurse: "{{ win_owner_recurse | default(omit, True) }}"
+      user: "{{ win_owner_user | default(omit, True) }}"

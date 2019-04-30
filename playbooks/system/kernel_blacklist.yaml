@@ -1,0 +1,15 @@
+---
+- name: "module_kernel_blacklist"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    kernel_blacklist: 
+      blacklist_file: "{{ kernel_blacklist_blacklist_file | default('omit', True) }}"
+      state: "{{ kernel_blacklist_state | default('omit', True) }}"
+      name: "{{ kernel_blacklist_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_kernel_blacklist"
+      kernel_blacklist: "{{ kernel_blacklist }}"

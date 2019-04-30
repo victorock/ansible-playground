@@ -1,0 +1,10 @@
+---
+- name: "module_xbps"
+  xbps: "{{ xbps }}"
+  vars:
+    xbps: 
+      update_cache: "{{ xbps_update_cache | default(omit, True) }}"
+      state: "{{ xbps_state | default(omit, True) }}"
+      upgrade: "{{ xbps_upgrade | default(omit, True) }}"
+      recurse: "{{ xbps_recurse | default(omit, True) }}"
+      name: "{{ xbps_name | default(omit, True) }}"

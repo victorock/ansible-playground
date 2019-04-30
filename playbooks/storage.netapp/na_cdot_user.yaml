@@ -1,0 +1,22 @@
+---
+- name: "module_na_cdot_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_cdot_user: 
+      username: "{{ na_cdot_user_username | default('omit', True) }}"
+      name: "{{ na_cdot_user_name | default('omit', True) }}"
+      authentication_method: "{{ na_cdot_user_authentication_method | default('omit', True) }}"
+      hostname: "{{ na_cdot_user_hostname | default('omit', True) }}"
+      vserver: "{{ na_cdot_user_vserver | default('omit', True) }}"
+      application: "{{ na_cdot_user_application | default('omit', True) }}"
+      state: "{{ na_cdot_user_state | default('omit', True) }}"
+      role_name: "{{ na_cdot_user_role_name | default('omit', True) }}"
+      password: "{{ na_cdot_user_password | default('omit', True) }}"
+      set_password: "{{ na_cdot_user_set_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_cdot_user"
+      na_cdot_user: "{{ na_cdot_user }}"

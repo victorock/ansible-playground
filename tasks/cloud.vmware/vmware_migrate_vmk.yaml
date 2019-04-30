@@ -1,0 +1,16 @@
+---
+- name: "module_vmware_migrate_vmk"
+  vmware_migrate_vmk: "{{ vmware_migrate_vmk }}"
+  vars:
+    vmware_migrate_vmk: 
+      username: "{{ vmware_migrate_vmk_username | default(omit, True) }}"
+      current_switch_name: "{{ vmware_migrate_vmk_current_switch_name | default(omit, True) }}"
+      migrate_switch_name: "{{ vmware_migrate_vmk_migrate_switch_name | default(omit, True) }}"
+      current_portgroup_name: "{{ vmware_migrate_vmk_current_portgroup_name | default(omit, True) }}"
+      hostname: "{{ vmware_migrate_vmk_hostname | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_migrate_vmk_esxi_hostname | default(omit, True) }}"
+      device: "{{ vmware_migrate_vmk_device | default(omit, True) }}"
+      migrate_portgroup_name: "{{ vmware_migrate_vmk_migrate_portgroup_name | default(omit, True) }}"
+      password: "{{ vmware_migrate_vmk_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_migrate_vmk_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_migrate_vmk_port | default(omit, True) }}"

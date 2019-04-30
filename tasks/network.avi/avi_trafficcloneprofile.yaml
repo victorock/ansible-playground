@@ -1,0 +1,23 @@
+---
+- name: "module_avi_trafficcloneprofile"
+  avi_trafficcloneprofile: "{{ avi_trafficcloneprofile }}"
+  vars:
+    avi_trafficcloneprofile: 
+      username: "{{ avi_trafficcloneprofile_username | default(omit, True) }}"
+      uuid: "{{ avi_trafficcloneprofile_uuid | default(omit, True) }}"
+      state: "{{ avi_trafficcloneprofile_state | default(omit, True) }}"
+      cloud_ref: "{{ avi_trafficcloneprofile_cloud_ref | default(omit, True) }}"
+      controller: "{{ avi_trafficcloneprofile_controller | default(omit, True) }}"
+      tenant_ref: "{{ avi_trafficcloneprofile_tenant_ref | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_trafficcloneprofile_avi_api_patch_op | default(omit, True) }}"
+      api_version: "{{ avi_trafficcloneprofile_api_version | default(omit, True) }}"
+      url: "{{ avi_trafficcloneprofile_url | default(omit, True) }}"
+      avi_credentials: "{{ avi_trafficcloneprofile_avi_credentials | default(omit, True) }}"
+      tenant: "{{ avi_trafficcloneprofile_tenant | default(omit, True) }}"
+      api_context: "{{ avi_trafficcloneprofile_api_context | default(omit, True) }}"
+      clone_servers: "{{ avi_trafficcloneprofile_clone_servers | default(omit, True) }}"
+      password: "{{ avi_trafficcloneprofile_password | default(omit, True) }}"
+      preserve_client_ip: "{{ avi_trafficcloneprofile_preserve_client_ip | default(omit, True) }}"
+      tenant_uuid: "{{ avi_trafficcloneprofile_tenant_uuid | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_trafficcloneprofile_avi_api_update_method | default(omit, True) }}"
+      name: "{{ avi_trafficcloneprofile_name | default(omit, True) }}"

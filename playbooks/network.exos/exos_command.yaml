@@ -1,0 +1,17 @@
+---
+- name: "module_exos_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    exos_command: 
+      retries: "{{ exos_command_retries | default('omit', True) }}"
+      commands: "{{ exos_command_commands | default('omit', True) }}"
+      wait_for: "{{ exos_command_wait_for | default('omit', True) }}"
+      match: "{{ exos_command_match | default('omit', True) }}"
+      interval: "{{ exos_command_interval | default('omit', True) }}"
+  tasks:
+    - name: "plugin_exos_command"
+      exos_command: "{{ exos_command }}"

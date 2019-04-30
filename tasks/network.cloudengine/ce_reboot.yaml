@@ -1,0 +1,7 @@
+---
+- name: "module_ce_reboot"
+  ce_reboot: "{{ ce_reboot }}"
+  vars:
+    ce_reboot: 
+      save_config: "{{ ce_reboot_save_config | default(omit, True) }}"
+      confirm: "{{ ce_reboot_confirm | default(omit, True) }}"

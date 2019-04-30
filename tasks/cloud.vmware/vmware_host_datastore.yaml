@@ -1,0 +1,20 @@
+---
+- name: "module_vmware_host_datastore"
+  vmware_host_datastore: "{{ vmware_host_datastore }}"
+  vars:
+    vmware_host_datastore: 
+      username: "{{ vmware_host_datastore_username | default(omit, True) }}"
+      vmfs_version: "{{ vmware_host_datastore_vmfs_version | default(omit, True) }}"
+      vmfs_device_name: "{{ vmware_host_datastore_vmfs_device_name | default(omit, True) }}"
+      datacenter_name: "{{ vmware_host_datastore_datacenter_name | default(omit, True) }}"
+      hostname: "{{ vmware_host_datastore_hostname | default(omit, True) }}"
+      datastore_name: "{{ vmware_host_datastore_datastore_name | default(omit, True) }}"
+      nfs_ro: "{{ vmware_host_datastore_nfs_ro | default(omit, True) }}"
+      state: "{{ vmware_host_datastore_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_datastore_esxi_hostname | default(omit, True) }}"
+      datastore_type: "{{ vmware_host_datastore_datastore_type | default(omit, True) }}"
+      nfs_server: "{{ vmware_host_datastore_nfs_server | default(omit, True) }}"
+      nfs_path: "{{ vmware_host_datastore_nfs_path | default(omit, True) }}"
+      password: "{{ vmware_host_datastore_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_datastore_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_datastore_port | default(omit, True) }}"

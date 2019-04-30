@@ -1,0 +1,16 @@
+---
+- name: "module_zabbix_host_facts"
+  zabbix_host_facts: "{{ zabbix_host_facts }}"
+  vars:
+    zabbix_host_facts: 
+      http_login_password: "{{ zabbix_host_facts_http_login_password | default(omit, True) }}"
+      login_user: "{{ zabbix_host_facts_login_user | default(omit, True) }}"
+      http_login_user: "{{ zabbix_host_facts_http_login_user | default(omit, True) }}"
+      exact_match: "{{ zabbix_host_facts_exact_match | default(omit, True) }}"
+      host_ip: "{{ zabbix_host_facts_host_ip | default(omit, True) }}"
+      server_url: "{{ zabbix_host_facts_server_url | default(omit, True) }}"
+      remove_duplicate: "{{ zabbix_host_facts_remove_duplicate | default(omit, True) }}"
+      host_name: "{{ zabbix_host_facts_host_name | default(omit, True) }}"
+      timeout: "{{ zabbix_host_facts_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_host_facts_login_password | default(omit, True) }}"
+      validate_certs: "{{ zabbix_host_facts_validate_certs | default(omit, True) }}"

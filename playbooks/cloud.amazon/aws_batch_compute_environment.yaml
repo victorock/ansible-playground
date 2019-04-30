@@ -1,0 +1,37 @@
+---
+- name: "module_aws_batch_compute_environment"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aws_batch_compute_environment: 
+      instance_types: "{{ aws_batch_compute_environment_instance_types | default('omit', True) }}"
+      ec2_url: "{{ aws_batch_compute_environment_ec2_url | default('omit', True) }}"
+      aws_secret_key: "{{ aws_batch_compute_environment_aws_secret_key | default('omit', True) }}"
+      desiredv_cpus: "{{ aws_batch_compute_environment_desiredv_cpus | default('omit', True) }}"
+      minv_cpus: "{{ aws_batch_compute_environment_minv_cpus | default('omit', True) }}"
+      state: "{{ aws_batch_compute_environment_state | default('omit', True) }}"
+      service_role: "{{ aws_batch_compute_environment_service_role | default('omit', True) }}"
+      compute_environment_name: "{{ aws_batch_compute_environment_compute_environment_name | default('omit', True) }}"
+      type: "{{ aws_batch_compute_environment_type | default('omit', True) }}"
+      ec2_key_pair: "{{ aws_batch_compute_environment_ec2_key_pair | default('omit', True) }}"
+      profile: "{{ aws_batch_compute_environment_profile | default('omit', True) }}"
+      subnets: "{{ aws_batch_compute_environment_subnets | default('omit', True) }}"
+      tags: "{{ aws_batch_compute_environment_tags | default('omit', True) }}"
+      spot_iam_fleet_role: "{{ aws_batch_compute_environment_spot_iam_fleet_role | default('omit', True) }}"
+      bid_percentage: "{{ aws_batch_compute_environment_bid_percentage | default('omit', True) }}"
+      image_id: "{{ aws_batch_compute_environment_image_id | default('omit', True) }}"
+      maxv_cpus: "{{ aws_batch_compute_environment_maxv_cpus | default('omit', True) }}"
+      security_group_ids: "{{ aws_batch_compute_environment_security_group_ids | default('omit', True) }}"
+      instance_role: "{{ aws_batch_compute_environment_instance_role | default('omit', True) }}"
+      aws_access_key: "{{ aws_batch_compute_environment_aws_access_key | default('omit', True) }}"
+      security_token: "{{ aws_batch_compute_environment_security_token | default('omit', True) }}"
+      compute_resource_type: "{{ aws_batch_compute_environment_compute_resource_type | default('omit', True) }}"
+      region: "{{ aws_batch_compute_environment_region | default('omit', True) }}"
+      compute_environment_state: "{{ aws_batch_compute_environment_compute_environment_state | default('omit', True) }}"
+      validate_certs: "{{ aws_batch_compute_environment_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aws_batch_compute_environment"
+      aws_batch_compute_environment: "{{ aws_batch_compute_environment }}"

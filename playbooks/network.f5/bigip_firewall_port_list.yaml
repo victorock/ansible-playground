@@ -1,0 +1,25 @@
+---
+- name: "module_bigip_firewall_port_list"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_firewall_port_list: 
+      description: "{{ bigip_firewall_port_list_description | default('omit', True) }}"
+      port_ranges: "{{ bigip_firewall_port_list_port_ranges | default('omit', True) }}"
+      partition: "{{ bigip_firewall_port_list_partition | default('omit', True) }}"
+      port_lists: "{{ bigip_firewall_port_list_port_lists | default('omit', True) }}"
+      server: "{{ bigip_firewall_port_list_server | default('omit', True) }}"
+      state: "{{ bigip_firewall_port_list_state | default('omit', True) }}"
+      user: "{{ bigip_firewall_port_list_user | default('omit', True) }}"
+      server_port: "{{ bigip_firewall_port_list_server_port | default('omit', True) }}"
+      provider: "{{ bigip_firewall_port_list_provider | default('omit', True) }}"
+      password: "{{ bigip_firewall_port_list_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_firewall_port_list_validate_certs | default('omit', True) }}"
+      ports: "{{ bigip_firewall_port_list_ports | default('omit', True) }}"
+      name: "{{ bigip_firewall_port_list_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_firewall_port_list"
+      bigip_firewall_port_list: "{{ bigip_firewall_port_list }}"

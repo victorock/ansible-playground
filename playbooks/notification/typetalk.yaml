@@ -1,0 +1,16 @@
+---
+- name: "module_typetalk"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    typetalk: 
+      topic: "{{ typetalk_topic | default('omit', True) }}"
+      client_secret: "{{ typetalk_client_secret | default('omit', True) }}"
+      client_id: "{{ typetalk_client_id | default('omit', True) }}"
+      msg: "{{ typetalk_msg | default('omit', True) }}"
+  tasks:
+    - name: "plugin_typetalk"
+      typetalk: "{{ typetalk }}"

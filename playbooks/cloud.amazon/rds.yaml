@@ -1,0 +1,52 @@
+---
+- name: "module_rds"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rds: 
+      profile: "{{ rds_profile | default('omit', True) }}"
+      db_engine: "{{ rds_db_engine | default('omit', True) }}"
+      iops: "{{ rds_iops | default('omit', True) }}"
+      publicly_accessible: "{{ rds_publicly_accessible | default('omit', True) }}"
+      ec2_url: "{{ rds_ec2_url | default('omit', True) }}"
+      backup_retention: "{{ rds_backup_retention | default('omit', True) }}"
+      port: "{{ rds_port | default('omit', True) }}"
+      security_groups: "{{ rds_security_groups | default('omit', True) }}"
+      size: "{{ rds_size | default('omit', True) }}"
+      aws_secret_key: "{{ rds_aws_secret_key | default('omit', True) }}"
+      subnet: "{{ rds_subnet | default('omit', True) }}"
+      vpc_security_groups: "{{ rds_vpc_security_groups | default('omit', True) }}"
+      upgrade: "{{ rds_upgrade | default('omit', True) }}"
+      zone: "{{ rds_zone | default('omit', True) }}"
+      source_instance: "{{ rds_source_instance | default('omit', True) }}"
+      parameter_group: "{{ rds_parameter_group | default('omit', True) }}"
+      command: "{{ rds_command | default('omit', True) }}"
+      multi_zone: "{{ rds_multi_zone | default('omit', True) }}"
+      new_instance_name: "{{ rds_new_instance_name | default('omit', True) }}"
+      username: "{{ rds_username | default('omit', True) }}"
+      tags: "{{ rds_tags | default('omit', True) }}"
+      character_set_name: "{{ rds_character_set_name | default('omit', True) }}"
+      wait_timeout: "{{ rds_wait_timeout | default('omit', True) }}"
+      license_model: "{{ rds_license_model | default('omit', True) }}"
+      password: "{{ rds_password | default('omit', True) }}"
+      apply_immediately: "{{ rds_apply_immediately | default('omit', True) }}"
+      wait: "{{ rds_wait | default('omit', True) }}"
+      aws_access_key: "{{ rds_aws_access_key | default('omit', True) }}"
+      security_token: "{{ rds_security_token | default('omit', True) }}"
+      force_failover: "{{ rds_force_failover | default('omit', True) }}"
+      maint_window: "{{ rds_maint_window | default('omit', True) }}"
+      region: "{{ rds_region | default('omit', True) }}"
+      option_group: "{{ rds_option_group | default('omit', True) }}"
+      engine_version: "{{ rds_engine_version | default('omit', True) }}"
+      instance_name: "{{ rds_instance_name | default('omit', True) }}"
+      instance_type: "{{ rds_instance_type | default('omit', True) }}"
+      db_name: "{{ rds_db_name | default('omit', True) }}"
+      snapshot: "{{ rds_snapshot | default('omit', True) }}"
+      backup_window: "{{ rds_backup_window | default('omit', True) }}"
+      validate_certs: "{{ rds_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rds"
+      rds: "{{ rds }}"

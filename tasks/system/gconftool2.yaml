@@ -1,0 +1,11 @@
+---
+- name: "module_gconftool2"
+  gconftool2: "{{ gconftool2 }}"
+  vars:
+    gconftool2: 
+      direct: "{{ gconftool2_direct | default(omit, True) }}"
+      value: "{{ gconftool2_value | default(omit, True) }}"
+      config_source: "{{ gconftool2_config_source | default(omit, True) }}"
+      state: "{{ gconftool2_state | default(omit, True) }}"
+      value_type: "{{ gconftool2_value_type | default(omit, True) }}"
+      key: "{{ gconftool2_key | default(omit, True) }}"

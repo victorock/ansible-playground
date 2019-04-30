@@ -1,0 +1,8 @@
+---
+- name: "module_package"
+  package: "{{ package }}"
+  vars:
+    package: 
+      state: "{{ package_state | default(omit, True) }}"
+      use: "{{ package_use | default(omit, True) }}"
+      name: "{{ package_name | default(omit, True) }}"

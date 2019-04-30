@@ -1,0 +1,35 @@
+---
+- name: "module_bigip_gtm_monitor_http"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_gtm_monitor_http: 
+      update_password: "{{ bigip_gtm_monitor_http_update_password | default('omit', True) }}"
+      interval: "{{ bigip_gtm_monitor_http_interval | default('omit', True) }}"
+      ip: "{{ bigip_gtm_monitor_http_ip | default('omit', True) }}"
+      port: "{{ bigip_gtm_monitor_http_port | default('omit', True) }}"
+      send: "{{ bigip_gtm_monitor_http_send | default('omit', True) }}"
+      target_username: "{{ bigip_gtm_monitor_http_target_username | default('omit', True) }}"
+      state: "{{ bigip_gtm_monitor_http_state | default('omit', True) }}"
+      ignore_down_response: "{{ bigip_gtm_monitor_http_ignore_down_response | default('omit', True) }}"
+      server_port: "{{ bigip_gtm_monitor_http_server_port | default('omit', True) }}"
+      provider: "{{ bigip_gtm_monitor_http_provider | default('omit', True) }}"
+      probe_timeout: "{{ bigip_gtm_monitor_http_probe_timeout | default('omit', True) }}"
+      parent: "{{ bigip_gtm_monitor_http_parent | default('omit', True) }}"
+      user: "{{ bigip_gtm_monitor_http_user | default('omit', True) }}"
+      password: "{{ bigip_gtm_monitor_http_password | default('omit', True) }}"
+      transparent: "{{ bigip_gtm_monitor_http_transparent | default('omit', True) }}"
+      name: "{{ bigip_gtm_monitor_http_name | default('omit', True) }}"
+      reverse: "{{ bigip_gtm_monitor_http_reverse | default('omit', True) }}"
+      receive: "{{ bigip_gtm_monitor_http_receive | default('omit', True) }}"
+      partition: "{{ bigip_gtm_monitor_http_partition | default('omit', True) }}"
+      server: "{{ bigip_gtm_monitor_http_server | default('omit', True) }}"
+      timeout: "{{ bigip_gtm_monitor_http_timeout | default('omit', True) }}"
+      target_password: "{{ bigip_gtm_monitor_http_target_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_gtm_monitor_http_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_gtm_monitor_http"
+      bigip_gtm_monitor_http: "{{ bigip_gtm_monitor_http }}"

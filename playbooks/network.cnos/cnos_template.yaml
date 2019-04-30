@@ -1,0 +1,19 @@
+---
+- name: "module_cnos_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_template: 
+      username: "{{ cnos_template_username | default('omit', True) }}"
+      outputfile: "{{ cnos_template_outputfile | default('omit', True) }}"
+      host: "{{ cnos_template_host | default('omit', True) }}"
+      deviceType: "{{ cnos_template_deviceType | default('omit', True) }}"
+      password: "{{ cnos_template_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_template_enablePassword | default('omit', True) }}"
+      commandfile: "{{ cnos_template_commandfile | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_template"
+      cnos_template: "{{ cnos_template }}"

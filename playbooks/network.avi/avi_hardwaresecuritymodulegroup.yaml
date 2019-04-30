@@ -1,0 +1,28 @@
+---
+- name: "module_avi_hardwaresecuritymodulegroup"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_hardwaresecuritymodulegroup: 
+      username: "{{ avi_hardwaresecuritymodulegroup_username | default('omit', True) }}"
+      api_version: "{{ avi_hardwaresecuritymodulegroup_api_version | default('omit', True) }}"
+      uuid: "{{ avi_hardwaresecuritymodulegroup_uuid | default('omit', True) }}"
+      state: "{{ avi_hardwaresecuritymodulegroup_state | default('omit', True) }}"
+      url: "{{ avi_hardwaresecuritymodulegroup_url | default('omit', True) }}"
+      tenant_ref: "{{ avi_hardwaresecuritymodulegroup_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_hardwaresecuritymodulegroup_avi_api_patch_op | default('omit', True) }}"
+      hsm: "{{ avi_hardwaresecuritymodulegroup_hsm | default('omit', True) }}"
+      avi_credentials: "{{ avi_hardwaresecuritymodulegroup_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_hardwaresecuritymodulegroup_tenant | default('omit', True) }}"
+      api_context: "{{ avi_hardwaresecuritymodulegroup_api_context | default('omit', True) }}"
+      password: "{{ avi_hardwaresecuritymodulegroup_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_hardwaresecuritymodulegroup_tenant_uuid | default('omit', True) }}"
+      controller: "{{ avi_hardwaresecuritymodulegroup_controller | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_hardwaresecuritymodulegroup_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_hardwaresecuritymodulegroup_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_hardwaresecuritymodulegroup"
+      avi_hardwaresecuritymodulegroup: "{{ avi_hardwaresecuritymodulegroup }}"

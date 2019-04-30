@@ -1,0 +1,11 @@
+---
+- name: "module_na_cdot_aggregate"
+  na_cdot_aggregate: "{{ na_cdot_aggregate }}"
+  vars:
+    na_cdot_aggregate: 
+      username: "{{ na_cdot_aggregate_username | default(omit, True) }}"
+      name: "{{ na_cdot_aggregate_name | default(omit, True) }}"
+      hostname: "{{ na_cdot_aggregate_hostname | default(omit, True) }}"
+      disk_count: "{{ na_cdot_aggregate_disk_count | default(omit, True) }}"
+      state: "{{ na_cdot_aggregate_state | default(omit, True) }}"
+      password: "{{ na_cdot_aggregate_password | default(omit, True) }}"

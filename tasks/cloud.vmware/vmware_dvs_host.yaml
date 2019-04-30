@@ -1,0 +1,14 @@
+---
+- name: "module_vmware_dvs_host"
+  vmware_dvs_host: "{{ vmware_dvs_host }}"
+  vars:
+    vmware_dvs_host: 
+      username: "{{ vmware_dvs_host_username | default(omit, True) }}"
+      vmnics: "{{ vmware_dvs_host_vmnics | default(omit, True) }}"
+      hostname: "{{ vmware_dvs_host_hostname | default(omit, True) }}"
+      port: "{{ vmware_dvs_host_port | default(omit, True) }}"
+      state: "{{ vmware_dvs_host_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_dvs_host_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_dvs_host_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_dvs_host_validate_certs | default(omit, True) }}"
+      switch_name: "{{ vmware_dvs_host_switch_name | default(omit, True) }}"

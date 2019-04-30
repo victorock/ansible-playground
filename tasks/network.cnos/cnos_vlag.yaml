@@ -1,0 +1,15 @@
+---
+- name: "module_cnos_vlag"
+  cnos_vlag: "{{ cnos_vlag }}"
+  vars:
+    cnos_vlag: 
+      username: "{{ cnos_vlag_username | default(omit, True) }}"
+      outputfile: "{{ cnos_vlag_outputfile | default(omit, True) }}"
+      vlagArg2: "{{ cnos_vlag_vlagArg2 | default(omit, True) }}"
+      vlagArg3: "{{ cnos_vlag_vlagArg3 | default(omit, True) }}"
+      vlagArg1: "{{ cnos_vlag_vlagArg1 | default(omit, True) }}"
+      vlagArg4: "{{ cnos_vlag_vlagArg4 | default(omit, True) }}"
+      host: "{{ cnos_vlag_host | default(omit, True) }}"
+      deviceType: "{{ cnos_vlag_deviceType | default(omit, True) }}"
+      password: "{{ cnos_vlag_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_vlag_enablePassword | default(omit, True) }}"

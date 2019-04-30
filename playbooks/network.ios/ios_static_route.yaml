@@ -1,0 +1,21 @@
+---
+- name: "module_ios_static_route"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_static_route: 
+      authorize: "{{ ios_static_route_authorize | default('omit', True) }}"
+      auth_pass: "{{ ios_static_route_auth_pass | default('omit', True) }}"
+      mask: "{{ ios_static_route_mask | default('omit', True) }}"
+      state: "{{ ios_static_route_state | default('omit', True) }}"
+      admin_distance: "{{ ios_static_route_admin_distance | default('omit', True) }}"
+      prefix: "{{ ios_static_route_prefix | default('omit', True) }}"
+      next_hop: "{{ ios_static_route_next_hop | default('omit', True) }}"
+      provider: "{{ ios_static_route_provider | default('omit', True) }}"
+      aggregate: "{{ ios_static_route_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ios_static_route"
+      ios_static_route: "{{ ios_static_route }}"

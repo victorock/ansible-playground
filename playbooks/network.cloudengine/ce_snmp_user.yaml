@@ -1,0 +1,21 @@
+---
+- name: "module_ce_snmp_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_snmp_user: 
+      priv_key: "{{ ce_snmp_user_priv_key | default('omit', True) }}"
+      aaa_local_user: "{{ ce_snmp_user_aaa_local_user | default('omit', True) }}"
+      auth_key: "{{ ce_snmp_user_auth_key | default('omit', True) }}"
+      usm_user_name: "{{ ce_snmp_user_usm_user_name | default('omit', True) }}"
+      acl_number: "{{ ce_snmp_user_acl_number | default('omit', True) }}"
+      auth_protocol: "{{ ce_snmp_user_auth_protocol | default('omit', True) }}"
+      remote_engine_id: "{{ ce_snmp_user_remote_engine_id | default('omit', True) }}"
+      priv_protocol: "{{ ce_snmp_user_priv_protocol | default('omit', True) }}"
+      user_group: "{{ ce_snmp_user_user_group | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_snmp_user"
+      ce_snmp_user: "{{ ce_snmp_user }}"

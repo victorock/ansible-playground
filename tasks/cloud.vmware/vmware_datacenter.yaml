@@ -1,0 +1,12 @@
+---
+- name: "module_vmware_datacenter"
+  vmware_datacenter: "{{ vmware_datacenter }}"
+  vars:
+    vmware_datacenter: 
+      username: "{{ vmware_datacenter_username | default(omit, True) }}"
+      datacenter_name: "{{ vmware_datacenter_datacenter_name | default(omit, True) }}"
+      hostname: "{{ vmware_datacenter_hostname | default(omit, True) }}"
+      state: "{{ vmware_datacenter_state | default(omit, True) }}"
+      password: "{{ vmware_datacenter_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_datacenter_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_datacenter_port | default(omit, True) }}"

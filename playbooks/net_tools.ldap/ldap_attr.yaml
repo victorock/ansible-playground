@@ -1,0 +1,21 @@
+---
+- name: "module_ldap_attr"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ldap_attr: 
+      dn: "{{ ldap_attr_dn | default('omit', True) }}"
+      name: "{{ ldap_attr_name | default('omit', True) }}"
+      server_uri: "{{ ldap_attr_server_uri | default('omit', True) }}"
+      start_tls: "{{ ldap_attr_start_tls | default('omit', True) }}"
+      bind_dn: "{{ ldap_attr_bind_dn | default('omit', True) }}"
+      state: "{{ ldap_attr_state | default('omit', True) }}"
+      values: "{{ ldap_attr_values | default('omit', True) }}"
+      bind_pw: "{{ ldap_attr_bind_pw | default('omit', True) }}"
+      validate_certs: "{{ ldap_attr_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ldap_attr"
+      ldap_attr: "{{ ldap_attr }}"

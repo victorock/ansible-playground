@@ -1,0 +1,26 @@
+---
+- name: "module_bigip_qkview"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_qkview: 
+      max_file_size: "{{ bigip_qkview_max_file_size | default('omit', True) }}"
+      force: "{{ bigip_qkview_force | default('omit', True) }}"
+      server_port: "{{ bigip_qkview_server_port | default('omit', True) }}"
+      asm_request_log: "{{ bigip_qkview_asm_request_log | default('omit', True) }}"
+      dest: "{{ bigip_qkview_dest | default('omit', True) }}"
+      server: "{{ bigip_qkview_server | default('omit', True) }}"
+      filename: "{{ bigip_qkview_filename | default('omit', True) }}"
+      exclude_core: "{{ bigip_qkview_exclude_core | default('omit', True) }}"
+      user: "{{ bigip_qkview_user | default('omit', True) }}"
+      complete_information: "{{ bigip_qkview_complete_information | default('omit', True) }}"
+      provider: "{{ bigip_qkview_provider | default('omit', True) }}"
+      exclude: "{{ bigip_qkview_exclude | default('omit', True) }}"
+      password: "{{ bigip_qkview_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_qkview_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_qkview"
+      bigip_qkview: "{{ bigip_qkview }}"

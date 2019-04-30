@@ -1,0 +1,19 @@
+---
+- name: "module_vdirect_runnable"
+  vdirect_runnable: "{{ vdirect_runnable }}"
+  vars:
+    vdirect_runnable: 
+      vdirect_user: "{{ vdirect_runnable_vdirect_user | default(omit, True) }}"
+      vdirect_wait: "{{ vdirect_runnable_vdirect_wait | default(omit, True) }}"
+      runnable_name: "{{ vdirect_runnable_runnable_name | default(omit, True) }}"
+      parameters: "{{ vdirect_runnable_parameters | default(omit, True) }}"
+      vdirect_https_port: "{{ vdirect_runnable_vdirect_https_port | default(omit, True) }}"
+      vdirect_http_port: "{{ vdirect_runnable_vdirect_http_port | default(omit, True) }}"
+      vdirect_timeout: "{{ vdirect_runnable_vdirect_timeout | default(omit, True) }}"
+      vdirect_password: "{{ vdirect_runnable_vdirect_password | default(omit, True) }}"
+      vdirect_ip: "{{ vdirect_runnable_vdirect_ip | default(omit, True) }}"
+      action_name: "{{ vdirect_runnable_action_name | default(omit, True) }}"
+      vdirect_validate_certs: "{{ vdirect_runnable_vdirect_validate_certs | default(omit, True) }}"
+      runnable_type: "{{ vdirect_runnable_runnable_type | default(omit, True) }}"
+      vdirect_secondary_ip: "{{ vdirect_runnable_vdirect_secondary_ip | default(omit, True) }}"
+      vdirect_use_ssl: "{{ vdirect_runnable_vdirect_use_ssl | default(omit, True) }}"

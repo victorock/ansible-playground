@@ -1,0 +1,22 @@
+---
+- name: "module_aci_vrf"
+  aci_vrf: "{{ aci_vrf }}"
+  vars:
+    aci_vrf: 
+      username: "{{ aci_vrf_username | default(omit, True) }}"
+      private_key: "{{ aci_vrf_private_key | default(omit, True) }}"
+      policy_control_preference: "{{ aci_vrf_policy_control_preference | default(omit, True) }}"
+      certificate_name: "{{ aci_vrf_certificate_name | default(omit, True) }}"
+      description: "{{ aci_vrf_description | default(omit, True) }}"
+      state: "{{ aci_vrf_state | default(omit, True) }}"
+      policy_control_direction: "{{ aci_vrf_policy_control_direction | default(omit, True) }}"
+      output_level: "{{ aci_vrf_output_level | default(omit, True) }}"
+      host: "{{ aci_vrf_host | default(omit, True) }}"
+      vrf: "{{ aci_vrf_vrf | default(omit, True) }}"
+      timeout: "{{ aci_vrf_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_vrf_use_ssl | default(omit, True) }}"
+      password: "{{ aci_vrf_password | default(omit, True) }}"
+      validate_certs: "{{ aci_vrf_validate_certs | default(omit, True) }}"
+      port: "{{ aci_vrf_port | default(omit, True) }}"
+      tenant: "{{ aci_vrf_tenant | default(omit, True) }}"
+      use_proxy: "{{ aci_vrf_use_proxy | default(omit, True) }}"

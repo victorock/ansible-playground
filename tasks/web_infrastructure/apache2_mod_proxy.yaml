@@ -1,0 +1,11 @@
+---
+- name: "module_apache2_mod_proxy"
+  apache2_mod_proxy: "{{ apache2_mod_proxy }}"
+  vars:
+    apache2_mod_proxy: 
+      tls: "{{ apache2_mod_proxy_tls | default(omit, True) }}"
+      balancer_vhost: "{{ apache2_mod_proxy_balancer_vhost | default(omit, True) }}"
+      balancer_url_suffix: "{{ apache2_mod_proxy_balancer_url_suffix | default(omit, True) }}"
+      member_host: "{{ apache2_mod_proxy_member_host | default(omit, True) }}"
+      state: "{{ apache2_mod_proxy_state | default(omit, True) }}"
+      validate_certs: "{{ apache2_mod_proxy_validate_certs | default(omit, True) }}"

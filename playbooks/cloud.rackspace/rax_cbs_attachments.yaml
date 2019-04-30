@@ -1,0 +1,28 @@
+---
+- name: "module_rax_cbs_attachments"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rax_cbs_attachments: 
+      username: "{{ rax_cbs_attachments_username | default('omit', True) }}"
+      identity_type: "{{ rax_cbs_attachments_identity_type | default('omit', True) }}"
+      tenant_name: "{{ rax_cbs_attachments_tenant_name | default('omit', True) }}"
+      region: "{{ rax_cbs_attachments_region | default('omit', True) }}"
+      state: "{{ rax_cbs_attachments_state | default('omit', True) }}"
+      wait: "{{ rax_cbs_attachments_wait | default('omit', True) }}"
+      server: "{{ rax_cbs_attachments_server | default('omit', True) }}"
+      volume: "{{ rax_cbs_attachments_volume | default('omit', True) }}"
+      verify_ssl: "{{ rax_cbs_attachments_verify_ssl | default('omit', True) }}"
+      wait_timeout: "{{ rax_cbs_attachments_wait_timeout | default('omit', True) }}"
+      env: "{{ rax_cbs_attachments_env | default('omit', True) }}"
+      tenant_id: "{{ rax_cbs_attachments_tenant_id | default('omit', True) }}"
+      device: "{{ rax_cbs_attachments_device | default('omit', True) }}"
+      credentials: "{{ rax_cbs_attachments_credentials | default('omit', True) }}"
+      api_key: "{{ rax_cbs_attachments_api_key | default('omit', True) }}"
+      auth_endpoint: "{{ rax_cbs_attachments_auth_endpoint | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rax_cbs_attachments"
+      rax_cbs_attachments: "{{ rax_cbs_attachments }}"

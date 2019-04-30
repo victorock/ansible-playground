@@ -1,0 +1,10 @@
+---
+- name: "module_one_image_facts"
+  one_image_facts: "{{ one_image_facts }}"
+  vars:
+    one_image_facts: 
+      ids: "{{ one_image_facts_ids | default(omit, True) }}"
+      api_password: "{{ one_image_facts_api_password | default(omit, True) }}"
+      api_url: "{{ one_image_facts_api_url | default(omit, True) }}"
+      name: "{{ one_image_facts_name | default(omit, True) }}"
+      api_username: "{{ one_image_facts_api_username | default(omit, True) }}"

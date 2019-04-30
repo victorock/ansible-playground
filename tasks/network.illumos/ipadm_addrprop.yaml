@@ -1,0 +1,10 @@
+---
+- name: "module_ipadm_addrprop"
+  ipadm_addrprop: "{{ ipadm_addrprop }}"
+  vars:
+    ipadm_addrprop: 
+      state: "{{ ipadm_addrprop_state | default(omit, True) }}"
+      property: "{{ ipadm_addrprop_property | default(omit, True) }}"
+      temporary: "{{ ipadm_addrprop_temporary | default(omit, True) }}"
+      value: "{{ ipadm_addrprop_value | default(omit, True) }}"
+      addrobj: "{{ ipadm_addrprop_addrobj | default(omit, True) }}"

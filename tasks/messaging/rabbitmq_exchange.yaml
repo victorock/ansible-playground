@@ -1,0 +1,17 @@
+---
+- name: "module_rabbitmq_exchange"
+  rabbitmq_exchange: "{{ rabbitmq_exchange }}"
+  vars:
+    rabbitmq_exchange: 
+      login_port: "{{ rabbitmq_exchange_login_port | default(omit, True) }}"
+      name: "{{ rabbitmq_exchange_name | default(omit, True) }}"
+      login_user: "{{ rabbitmq_exchange_login_user | default(omit, True) }}"
+      login_host: "{{ rabbitmq_exchange_login_host | default(omit, True) }}"
+      exchange_type: "{{ rabbitmq_exchange_exchange_type | default(omit, True) }}"
+      vhost: "{{ rabbitmq_exchange_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_exchange_state | default(omit, True) }}"
+      internal: "{{ rabbitmq_exchange_internal | default(omit, True) }}"
+      arguments: "{{ rabbitmq_exchange_arguments | default(omit, True) }}"
+      auto_delete: "{{ rabbitmq_exchange_auto_delete | default(omit, True) }}"
+      login_password: "{{ rabbitmq_exchange_login_password | default(omit, True) }}"
+      durable: "{{ rabbitmq_exchange_durable | default(omit, True) }}"

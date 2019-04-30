@@ -1,0 +1,16 @@
+---
+- name: "module_syslogger"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    syslogger: 
+      msg: "{{ syslogger_msg | default('omit', True) }}"
+      priority: "{{ syslogger_priority | default('omit', True) }}"
+      log_pid: "{{ syslogger_log_pid | default('omit', True) }}"
+      facility: "{{ syslogger_facility | default('omit', True) }}"
+  tasks:
+    - name: "plugin_syslogger"
+      syslogger: "{{ syslogger }}"

@@ -1,0 +1,14 @@
+---
+- name: "module_yarn"
+  yarn: "{{ yarn }}"
+  vars:
+    yarn: 
+      executable: "{{ yarn_executable | default(omit, True) }}"
+      name: "{{ yarn_name | default(omit, True) }}"
+      global: "{{ yarn_global | default(omit, True) }}"
+      ignore_scripts: "{{ yarn_ignore_scripts | default(omit, True) }}"
+      state: "{{ yarn_state | default(omit, True) }}"
+      production: "{{ yarn_production | default(omit, True) }}"
+      registry: "{{ yarn_registry | default(omit, True) }}"
+      version: "{{ yarn_version | default(omit, True) }}"
+      path: "{{ yarn_path | default(omit, True) }}"

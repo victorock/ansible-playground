@@ -1,0 +1,7 @@
+---
+- name: "module_memset_dns_reload"
+  memset_dns_reload: "{{ memset_dns_reload }}"
+  vars:
+    memset_dns_reload: 
+      poll: "{{ memset_dns_reload_poll | default(omit, True) }}"
+      api_key: "{{ memset_dns_reload_api_key | default(omit, True) }}"

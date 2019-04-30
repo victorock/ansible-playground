@@ -1,0 +1,8 @@
+---
+- name: "module_gce_eip"
+  gce_eip: "{{ gce_eip }}"
+  vars:
+    gce_eip: 
+      region: "{{ gce_eip_region | default(omit, True) }}"
+      name: "{{ gce_eip_name | default(omit, True) }}"
+      state: "{{ gce_eip_state | default(omit, True) }}"

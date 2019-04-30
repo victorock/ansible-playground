@@ -1,0 +1,12 @@
+---
+- name: "module_ovirt_vm_facts"
+  ovirt_vm_facts: "{{ ovirt_vm_facts }}"
+  vars:
+    ovirt_vm_facts: 
+      all_content: "{{ ovirt_vm_facts_all_content | default(omit, True) }}"
+      max: "{{ ovirt_vm_facts_max | default(omit, True) }}"
+      auth: "{{ ovirt_vm_facts_auth | default(omit, True) }}"
+      case_sensitive: "{{ ovirt_vm_facts_case_sensitive | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_vm_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_vm_facts_nested_attributes | default(omit, True) }}"
+      pattern: "{{ ovirt_vm_facts_pattern | default(omit, True) }}"

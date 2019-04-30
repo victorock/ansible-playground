@@ -1,0 +1,19 @@
+---
+- name: "module_win_domain_computer"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_domain_computer: 
+      description: "{{ win_domain_computer_description | default('omit', True) }}"
+      enabled: "{{ win_domain_computer_enabled | default('omit', True) }}"
+      dns_hostname: "{{ win_domain_computer_dns_hostname | default('omit', True) }}"
+      sam_account_name: "{{ win_domain_computer_sam_account_name | default('omit', True) }}"
+      state: "{{ win_domain_computer_state | default('omit', True) }}"
+      ou: "{{ win_domain_computer_ou | default('omit', True) }}"
+      name: "{{ win_domain_computer_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_domain_computer"
+      win_domain_computer: "{{ win_domain_computer }}"

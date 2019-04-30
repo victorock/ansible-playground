@@ -1,0 +1,14 @@
+---
+- name: "module_win_disk_image"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_disk_image: 
+      state: "{{ win_disk_image_state | default('omit', True) }}"
+      image_path: "{{ win_disk_image_image_path | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_disk_image"
+      win_disk_image: "{{ win_disk_image }}"

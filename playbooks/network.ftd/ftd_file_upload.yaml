@@ -1,0 +1,15 @@
+---
+- name: "module_ftd_file_upload"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ftd_file_upload: 
+      register_as: "{{ ftd_file_upload_register_as | default('omit', True) }}"
+      operation: "{{ ftd_file_upload_operation | default('omit', True) }}"
+      file_to_upload: "{{ ftd_file_upload_file_to_upload | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ftd_file_upload"
+      ftd_file_upload: "{{ ftd_file_upload }}"

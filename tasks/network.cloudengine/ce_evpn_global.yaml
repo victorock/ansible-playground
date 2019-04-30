@@ -1,0 +1,6 @@
+---
+- name: "module_ce_evpn_global"
+  ce_evpn_global: "{{ ce_evpn_global }}"
+  vars:
+    ce_evpn_global: 
+      evpn_overlay_enable: "{{ ce_evpn_global_evpn_overlay_enable | default(omit, True) }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_svc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    svc: 
+      name: "{{ svc_name | default('omit', True) }}"
+      downed: "{{ svc_downed | default('omit', True) }}"
+      enabled: "{{ svc_enabled | default('omit', True) }}"
+      service_dir: "{{ svc_service_dir | default('omit', True) }}"
+      state: "{{ svc_state | default('omit', True) }}"
+      service_src: "{{ svc_service_src | default('omit', True) }}"
+  tasks:
+    - name: "plugin_svc"
+      svc: "{{ svc }}"

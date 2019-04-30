@@ -1,0 +1,14 @@
+---
+- name: "module_nxos_pim"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_pim: 
+      ssm_range: "{{ nxos_pim_ssm_range | default('omit', True) }}"
+      provider: "{{ nxos_pim_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_pim"
+      nxos_pim: "{{ nxos_pim }}"

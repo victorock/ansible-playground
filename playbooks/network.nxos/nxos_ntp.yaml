@@ -1,0 +1,21 @@
+---
+- name: "module_nxos_ntp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_ntp: 
+      source_addr: "{{ nxos_ntp_source_addr | default('omit', True) }}"
+      prefer: "{{ nxos_ntp_prefer | default('omit', True) }}"
+      source_int: "{{ nxos_ntp_source_int | default('omit', True) }}"
+      state: "{{ nxos_ntp_state | default('omit', True) }}"
+      vrf_name: "{{ nxos_ntp_vrf_name | default('omit', True) }}"
+      provider: "{{ nxos_ntp_provider | default('omit', True) }}"
+      peer: "{{ nxos_ntp_peer | default('omit', True) }}"
+      key_id: "{{ nxos_ntp_key_id | default('omit', True) }}"
+      server: "{{ nxos_ntp_server | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_ntp"
+      nxos_ntp: "{{ nxos_ntp }}"

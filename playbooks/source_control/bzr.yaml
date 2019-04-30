@@ -1,0 +1,17 @@
+---
+- name: "module_bzr"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bzr: 
+      dest: "{{ bzr_dest | default('omit', True) }}"
+      executable: "{{ bzr_executable | default('omit', True) }}"
+      version: "{{ bzr_version | default('omit', True) }}"
+      force: "{{ bzr_force | default('omit', True) }}"
+      name: "{{ bzr_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bzr"
+      bzr: "{{ bzr }}"

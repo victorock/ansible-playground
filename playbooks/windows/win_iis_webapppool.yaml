@@ -1,0 +1,15 @@
+---
+- name: "module_win_iis_webapppool"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_iis_webapppool: 
+      attributes: "{{ win_iis_webapppool_attributes | default('omit', True) }}"
+      state: "{{ win_iis_webapppool_state | default('omit', True) }}"
+      name: "{{ win_iis_webapppool_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_iis_webapppool"
+      win_iis_webapppool: "{{ win_iis_webapppool }}"

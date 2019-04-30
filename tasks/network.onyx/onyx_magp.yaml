@@ -1,0 +1,10 @@
+---
+- name: "module_onyx_magp"
+  onyx_magp: "{{ onyx_magp }}"
+  vars:
+    onyx_magp: 
+      interface: "{{ onyx_magp_interface | default(omit, True) }}"
+      router_mac: "{{ onyx_magp_router_mac | default(omit, True) }}"
+      state: "{{ onyx_magp_state | default(omit, True) }}"
+      router_ip: "{{ onyx_magp_router_ip | default(omit, True) }}"
+      magp_id: "{{ onyx_magp_magp_id | default(omit, True) }}"

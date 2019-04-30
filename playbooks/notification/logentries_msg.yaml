@@ -1,0 +1,16 @@
+---
+- name: "module_logentries_msg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    logentries_msg: 
+      msg: "{{ logentries_msg_msg | default('omit', True) }}"
+      token: "{{ logentries_msg_token | default('omit', True) }}"
+      api: "{{ logentries_msg_api | default('omit', True) }}"
+      port: "{{ logentries_msg_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_logentries_msg"
+      logentries_msg: "{{ logentries_msg }}"

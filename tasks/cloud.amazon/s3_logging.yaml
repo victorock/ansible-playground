@@ -1,0 +1,16 @@
+---
+- name: "module_s3_logging"
+  s3_logging: "{{ s3_logging }}"
+  vars:
+    s3_logging: 
+      profile: "{{ s3_logging_profile | default(omit, True) }}"
+      aws_secret_key: "{{ s3_logging_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ s3_logging_aws_access_key | default(omit, True) }}"
+      name: "{{ s3_logging_name | default(omit, True) }}"
+      security_token: "{{ s3_logging_security_token | default(omit, True) }}"
+      region: "{{ s3_logging_region | default(omit, True) }}"
+      target_prefix: "{{ s3_logging_target_prefix | default(omit, True) }}"
+      target_bucket: "{{ s3_logging_target_bucket | default(omit, True) }}"
+      state: "{{ s3_logging_state | default(omit, True) }}"
+      ec2_url: "{{ s3_logging_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ s3_logging_validate_certs | default(omit, True) }}"

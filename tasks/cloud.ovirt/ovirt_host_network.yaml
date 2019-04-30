@@ -1,0 +1,19 @@
+---
+- name: "module_ovirt_host_network"
+  ovirt_host_network: "{{ ovirt_host_network }}"
+  vars:
+    ovirt_host_network: 
+      bond: "{{ ovirt_host_network_bond | default(omit, True) }}"
+      name: "{{ ovirt_host_network_name | default(omit, True) }}"
+      labels: "{{ ovirt_host_network_labels | default(omit, True) }}"
+      poll_interval: "{{ ovirt_host_network_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_host_network_state | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_host_network_nested_attributes | default(omit, True) }}"
+      networks: "{{ ovirt_host_network_networks | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_host_network_fetch_nested | default(omit, True) }}"
+      auth: "{{ ovirt_host_network_auth | default(omit, True) }}"
+      timeout: "{{ ovirt_host_network_timeout | default(omit, True) }}"
+      interface: "{{ ovirt_host_network_interface | default(omit, True) }}"
+      save: "{{ ovirt_host_network_save | default(omit, True) }}"
+      check: "{{ ovirt_host_network_check | default(omit, True) }}"
+      wait: "{{ ovirt_host_network_wait | default(omit, True) }}"

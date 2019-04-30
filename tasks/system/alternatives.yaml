@@ -1,0 +1,9 @@
+---
+- name: "module_alternatives"
+  alternatives: "{{ alternatives }}"
+  vars:
+    alternatives: 
+      priority: "{{ alternatives_priority | default(omit, True) }}"
+      path: "{{ alternatives_path | default(omit, True) }}"
+      link: "{{ alternatives_link | default(omit, True) }}"
+      name: "{{ alternatives_name | default(omit, True) }}"

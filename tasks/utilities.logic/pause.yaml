@@ -1,0 +1,9 @@
+---
+- name: "module_pause"
+  pause: "{{ pause }}"
+  vars:
+    pause: 
+      seconds: "{{ pause_seconds | default(omit, True) }}"
+      prompt: "{{ pause_prompt | default(omit, True) }}"
+      minutes: "{{ pause_minutes | default(omit, True) }}"
+      echo: "{{ pause_echo | default(omit, True) }}"

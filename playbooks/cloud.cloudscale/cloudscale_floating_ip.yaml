@@ -1,0 +1,20 @@
+---
+- name: "module_cloudscale_floating_ip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cloudscale_floating_ip: 
+      reverse_ptr: "{{ cloudscale_floating_ip_reverse_ptr | default('omit', True) }}"
+      ip: "{{ cloudscale_floating_ip_ip | default('omit', True) }}"
+      api_timeout: "{{ cloudscale_floating_ip_api_timeout | default('omit', True) }}"
+      server: "{{ cloudscale_floating_ip_server | default('omit', True) }}"
+      state: "{{ cloudscale_floating_ip_state | default('omit', True) }}"
+      prefix_length: "{{ cloudscale_floating_ip_prefix_length | default('omit', True) }}"
+      api_token: "{{ cloudscale_floating_ip_api_token | default('omit', True) }}"
+      ip_version: "{{ cloudscale_floating_ip_ip_version | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cloudscale_floating_ip"
+      cloudscale_floating_ip: "{{ cloudscale_floating_ip }}"

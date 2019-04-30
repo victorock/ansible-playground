@@ -1,0 +1,38 @@
+---
+- name: "module_ce_bgp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_bgp: 
+      vrf_rid_auto_sel: "{{ ce_bgp_vrf_rid_auto_sel | default('omit', True) }}"
+      suppress_interval: "{{ ce_bgp_suppress_interval | default('omit', True) }}"
+      memory_limit: "{{ ce_bgp_memory_limit | default('omit', True) }}"
+      is_shutdown: "{{ ce_bgp_is_shutdown | default('omit', True) }}"
+      check_first_as: "{{ ce_bgp_check_first_as | default('omit', True) }}"
+      hold_interval: "{{ ce_bgp_hold_interval | default('omit', True) }}"
+      state: "{{ ce_bgp_state | default('omit', True) }}"
+      keep_all_routes: "{{ ce_bgp_keep_all_routes | default('omit', True) }}"
+      vrf_name: "{{ ce_bgp_vrf_name | default('omit', True) }}"
+      gr_peer_reset: "{{ ce_bgp_gr_peer_reset | default('omit', True) }}"
+      router_id: "{{ ce_bgp_router_id | default('omit', True) }}"
+      as_number: "{{ ce_bgp_as_number | default('omit', True) }}"
+      as_path_limit: "{{ ce_bgp_as_path_limit | default('omit', True) }}"
+      confed_id_number: "{{ ce_bgp_confed_id_number | default('omit', True) }}"
+      bgp_rid_auto_sel: "{{ ce_bgp_bgp_rid_auto_sel | default('omit', True) }}"
+      conn_retry_time: "{{ ce_bgp_conn_retry_time | default('omit', True) }}"
+      confed_peer_as_num: "{{ ce_bgp_confed_peer_as_num | default('omit', True) }}"
+      min_hold_time: "{{ ce_bgp_min_hold_time | default('omit', True) }}"
+      ebgp_if_sensitive: "{{ ce_bgp_ebgp_if_sensitive | default('omit', True) }}"
+      hold_time: "{{ ce_bgp_hold_time | default('omit', True) }}"
+      clear_interval: "{{ ce_bgp_clear_interval | default('omit', True) }}"
+      graceful_restart: "{{ ce_bgp_graceful_restart | default('omit', True) }}"
+      time_wait_for_rib: "{{ ce_bgp_time_wait_for_rib | default('omit', True) }}"
+      default_af_type: "{{ ce_bgp_default_af_type | default('omit', True) }}"
+      keepalive_time: "{{ ce_bgp_keepalive_time | default('omit', True) }}"
+      confed_nonstanded: "{{ ce_bgp_confed_nonstanded | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_bgp"
+      ce_bgp: "{{ ce_bgp }}"

@@ -1,0 +1,33 @@
+---
+- name: "module_os_floating_ip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_floating_ip: 
+      auth_type: "{{ os_floating_ip_auth_type | default('omit', True) }}"
+      fixed_address: "{{ os_floating_ip_fixed_address | default('omit', True) }}"
+      reuse: "{{ os_floating_ip_reuse | default('omit', True) }}"
+      region_name: "{{ os_floating_ip_region_name | default('omit', True) }}"
+      availability_zone: "{{ os_floating_ip_availability_zone | default('omit', True) }}"
+      verify: "{{ os_floating_ip_verify | default('omit', True) }}"
+      api_timeout: "{{ os_floating_ip_api_timeout | default('omit', True) }}"
+      state: "{{ os_floating_ip_state | default('omit', True) }}"
+      auth: "{{ os_floating_ip_auth | default('omit', True) }}"
+      server: "{{ os_floating_ip_server | default('omit', True) }}"
+      purge: "{{ os_floating_ip_purge | default('omit', True) }}"
+      cacert: "{{ os_floating_ip_cacert | default('omit', True) }}"
+      cert: "{{ os_floating_ip_cert | default('omit', True) }}"
+      timeout: "{{ os_floating_ip_timeout | default('omit', True) }}"
+      floating_ip_address: "{{ os_floating_ip_floating_ip_address | default('omit', True) }}"
+      key: "{{ os_floating_ip_key | default('omit', True) }}"
+      interface: "{{ os_floating_ip_interface | default('omit', True) }}"
+      nat_destination: "{{ os_floating_ip_nat_destination | default('omit', True) }}"
+      network: "{{ os_floating_ip_network | default('omit', True) }}"
+      cloud: "{{ os_floating_ip_cloud | default('omit', True) }}"
+      wait: "{{ os_floating_ip_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_floating_ip"
+      os_floating_ip: "{{ os_floating_ip }}"

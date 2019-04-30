@@ -1,0 +1,33 @@
+---
+- name: "module_lineinfile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    lineinfile: 
+      group: "{{ lineinfile_group | default('omit', True) }}"
+      insertbefore: "{{ lineinfile_insertbefore | default('omit', True) }}"
+      unsafe_writes: "{{ lineinfile_unsafe_writes | default('omit', True) }}"
+      selevel: "{{ lineinfile_selevel | default('omit', True) }}"
+      create: "{{ lineinfile_create | default('omit', True) }}"
+      seuser: "{{ lineinfile_seuser | default('omit', True) }}"
+      state: "{{ lineinfile_state | default('omit', True) }}"
+      backrefs: "{{ lineinfile_backrefs | default('omit', True) }}"
+      insertafter: "{{ lineinfile_insertafter | default('omit', True) }}"
+      serole: "{{ lineinfile_serole | default('omit', True) }}"
+      mode: "{{ lineinfile_mode | default('omit', True) }}"
+      setype: "{{ lineinfile_setype | default('omit', True) }}"
+      firstmatch: "{{ lineinfile_firstmatch | default('omit', True) }}"
+      owner: "{{ lineinfile_owner | default('omit', True) }}"
+      regexp: "{{ lineinfile_regexp | default('omit', True) }}"
+      line: "{{ lineinfile_line | default('omit', True) }}"
+      path: "{{ lineinfile_path | default('omit', True) }}"
+      backup: "{{ lineinfile_backup | default('omit', True) }}"
+      validate: "{{ lineinfile_validate | default('omit', True) }}"
+      others: "{{ lineinfile_others | default('omit', True) }}"
+      attributes: "{{ lineinfile_attributes | default('omit', True) }}"
+  tasks:
+    - name: "plugin_lineinfile"
+      lineinfile: "{{ lineinfile }}"

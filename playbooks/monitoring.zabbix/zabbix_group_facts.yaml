@@ -1,0 +1,20 @@
+---
+- name: "module_zabbix_group_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    zabbix_group_facts: 
+      http_login_password: "{{ zabbix_group_facts_http_login_password | default('omit', True) }}"
+      login_user: "{{ zabbix_group_facts_login_user | default('omit', True) }}"
+      http_login_user: "{{ zabbix_group_facts_http_login_user | default('omit', True) }}"
+      server_url: "{{ zabbix_group_facts_server_url | default('omit', True) }}"
+      hostgroup_name: "{{ zabbix_group_facts_hostgroup_name | default('omit', True) }}"
+      timeout: "{{ zabbix_group_facts_timeout | default('omit', True) }}"
+      login_password: "{{ zabbix_group_facts_login_password | default('omit', True) }}"
+      validate_certs: "{{ zabbix_group_facts_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_zabbix_group_facts"
+      zabbix_group_facts: "{{ zabbix_group_facts }}"

@@ -1,0 +1,9 @@
+---
+- name: "module_pkgutil"
+  pkgutil: "{{ pkgutil }}"
+  vars:
+    pkgutil: 
+      state: "{{ pkgutil_state | default(omit, True) }}"
+      update_catalog: "{{ pkgutil_update_catalog | default(omit, True) }}"
+      name: "{{ pkgutil_name | default(omit, True) }}"
+      site: "{{ pkgutil_site | default(omit, True) }}"

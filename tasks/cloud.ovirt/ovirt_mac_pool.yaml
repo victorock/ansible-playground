@@ -1,0 +1,16 @@
+---
+- name: "module_ovirt_mac_pool"
+  ovirt_mac_pool: "{{ ovirt_mac_pool }}"
+  vars:
+    ovirt_mac_pool: 
+      allow_duplicates: "{{ ovirt_mac_pool_allow_duplicates | default(omit, True) }}"
+      description: "{{ ovirt_mac_pool_description | default(omit, True) }}"
+      poll_interval: "{{ ovirt_mac_pool_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_mac_pool_state | default(omit, True) }}"
+      auth: "{{ ovirt_mac_pool_auth | default(omit, True) }}"
+      name: "{{ ovirt_mac_pool_name | default(omit, True) }}"
+      ranges: "{{ ovirt_mac_pool_ranges | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_mac_pool_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_mac_pool_nested_attributes | default(omit, True) }}"
+      timeout: "{{ ovirt_mac_pool_timeout | default(omit, True) }}"
+      wait: "{{ ovirt_mac_pool_wait | default(omit, True) }}"

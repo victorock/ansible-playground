@@ -1,0 +1,32 @@
+---
+- name: "module_aci_encap_pool_range"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_encap_pool_range: 
+      range_end: "{{ aci_encap_pool_range_range_end | default('omit', True) }}"
+      range_start: "{{ aci_encap_pool_range_range_start | default('omit', True) }}"
+      private_key: "{{ aci_encap_pool_range_private_key | default('omit', True) }}"
+      pool_allocation_mode: "{{ aci_encap_pool_range_pool_allocation_mode | default('omit', True) }}"
+      description: "{{ aci_encap_pool_range_description | default('omit', True) }}"
+      certificate_name: "{{ aci_encap_pool_range_certificate_name | default('omit', True) }}"
+      use_proxy: "{{ aci_encap_pool_range_use_proxy | default('omit', True) }}"
+      state: "{{ aci_encap_pool_range_state | default('omit', True) }}"
+      username: "{{ aci_encap_pool_range_username | default('omit', True) }}"
+      pool_type: "{{ aci_encap_pool_range_pool_type | default('omit', True) }}"
+      host: "{{ aci_encap_pool_range_host | default('omit', True) }}"
+      output_level: "{{ aci_encap_pool_range_output_level | default('omit', True) }}"
+      timeout: "{{ aci_encap_pool_range_timeout | default('omit', True) }}"
+      password: "{{ aci_encap_pool_range_password | default('omit', True) }}"
+      use_ssl: "{{ aci_encap_pool_range_use_ssl | default('omit', True) }}"
+      allocation_mode: "{{ aci_encap_pool_range_allocation_mode | default('omit', True) }}"
+      validate_certs: "{{ aci_encap_pool_range_validate_certs | default('omit', True) }}"
+      port: "{{ aci_encap_pool_range_port | default('omit', True) }}"
+      pool: "{{ aci_encap_pool_range_pool | default('omit', True) }}"
+      range_name: "{{ aci_encap_pool_range_range_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_encap_pool_range"
+      aci_encap_pool_range: "{{ aci_encap_pool_range }}"

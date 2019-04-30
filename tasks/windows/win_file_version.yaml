@@ -1,0 +1,6 @@
+---
+- name: "module_win_file_version"
+  win_file_version: "{{ win_file_version }}"
+  vars:
+    win_file_version: 
+      path: "{{ win_file_version_path | default(omit, True) }}"

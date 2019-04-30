@@ -1,0 +1,10 @@
+---
+- name: "Self Generate playbooks and tasks"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: "self.build"
+      include_role:
+        name: "self"
+        tasks_from: "self.yaml"

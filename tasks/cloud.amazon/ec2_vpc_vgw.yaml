@@ -1,0 +1,14 @@
+---
+- name: "module_ec2_vpc_vgw"
+  ec2_vpc_vgw: "{{ ec2_vpc_vgw }}"
+  vars:
+    ec2_vpc_vgw: 
+      name: "{{ ec2_vpc_vgw_name | default(omit, True) }}"
+      tags: "{{ ec2_vpc_vgw_tags | default(omit, True) }}"
+      region: "{{ ec2_vpc_vgw_region | default(omit, True) }}"
+      state: "{{ ec2_vpc_vgw_state | default(omit, True) }}"
+      wait_timeout: "{{ ec2_vpc_vgw_wait_timeout | default(omit, True) }}"
+      vpc_id: "{{ ec2_vpc_vgw_vpc_id | default(omit, True) }}"
+      vpn_gateway_id: "{{ ec2_vpc_vgw_vpn_gateway_id | default(omit, True) }}"
+      type: "{{ ec2_vpc_vgw_type | default(omit, True) }}"
+      asn: "{{ ec2_vpc_vgw_asn | default(omit, True) }}"

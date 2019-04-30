@@ -1,0 +1,19 @@
+---
+- name: "module_puppet"
+  puppet: "{{ puppet }}"
+  vars:
+    puppet: 
+      logdest: "{{ puppet_logdest | default(omit, True) }}"
+      execute: "{{ puppet_execute | default(omit, True) }}"
+      facter_basename: "{{ puppet_facter_basename | default(omit, True) }}"
+      verbose: "{{ puppet_verbose | default(omit, True) }}"
+      tags: "{{ puppet_tags | default(omit, True) }}"
+      puppetmaster: "{{ puppet_puppetmaster | default(omit, True) }}"
+      certname: "{{ puppet_certname | default(omit, True) }}"
+      manifest: "{{ puppet_manifest | default(omit, True) }}"
+      environment: "{{ puppet_environment | default(omit, True) }}"
+      debug: "{{ puppet_debug | default(omit, True) }}"
+      timeout: "{{ puppet_timeout | default(omit, True) }}"
+      facts: "{{ puppet_facts | default(omit, True) }}"
+      summarize: "{{ puppet_summarize | default(omit, True) }}"
+      modulepath: "{{ puppet_modulepath | default(omit, True) }}"

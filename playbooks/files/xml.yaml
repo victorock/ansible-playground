@@ -1,0 +1,28 @@
+---
+- name: "module_xml"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    xml: 
+      xpath: "{{ xml_xpath | default('omit', True) }}"
+      count: "{{ xml_count | default('omit', True) }}"
+      set_children: "{{ xml_set_children | default('omit', True) }}"
+      xmlstring: "{{ xml_xmlstring | default('omit', True) }}"
+      strip_cdata_tags: "{{ xml_strip_cdata_tags | default('omit', True) }}"
+      attribute: "{{ xml_attribute | default('omit', True) }}"
+      pretty_print: "{{ xml_pretty_print | default('omit', True) }}"
+      add_children: "{{ xml_add_children | default('omit', True) }}"
+      value: "{{ xml_value | default('omit', True) }}"
+      content: "{{ xml_content | default('omit', True) }}"
+      state: "{{ xml_state | default('omit', True) }}"
+      namespaces: "{{ xml_namespaces | default('omit', True) }}"
+      input_type: "{{ xml_input_type | default('omit', True) }}"
+      print_match: "{{ xml_print_match | default('omit', True) }}"
+      path: "{{ xml_path | default('omit', True) }}"
+      backup: "{{ xml_backup | default('omit', True) }}"
+  tasks:
+    - name: "plugin_xml"
+      xml: "{{ xml }}"

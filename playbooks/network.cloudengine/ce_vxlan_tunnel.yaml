@@ -1,0 +1,20 @@
+---
+- name: "module_ce_vxlan_tunnel"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_vxlan_tunnel: 
+      vni_id: "{{ ce_vxlan_tunnel_vni_id | default('omit', True) }}"
+      nve_mode: "{{ ce_vxlan_tunnel_nve_mode | default('omit', True) }}"
+      source_ip: "{{ ce_vxlan_tunnel_source_ip | default('omit', True) }}"
+      bridge_domain_id: "{{ ce_vxlan_tunnel_bridge_domain_id | default('omit', True) }}"
+      peer_list_ip: "{{ ce_vxlan_tunnel_peer_list_ip | default('omit', True) }}"
+      state: "{{ ce_vxlan_tunnel_state | default('omit', True) }}"
+      nve_name: "{{ ce_vxlan_tunnel_nve_name | default('omit', True) }}"
+      protocol_type: "{{ ce_vxlan_tunnel_protocol_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_vxlan_tunnel"
+      ce_vxlan_tunnel: "{{ ce_vxlan_tunnel }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_na_elementsw_node"
+  na_elementsw_node: "{{ na_elementsw_node }}"
+  vars:
+    na_elementsw_node: 
+      username: "{{ na_elementsw_node_username | default(omit, True) }}"
+      state: "{{ na_elementsw_node_state | default(omit, True) }}"
+      password: "{{ na_elementsw_node_password | default(omit, True) }}"
+      hostname: "{{ na_elementsw_node_hostname | default(omit, True) }}"
+      node_id: "{{ na_elementsw_node_node_id | default(omit, True) }}"

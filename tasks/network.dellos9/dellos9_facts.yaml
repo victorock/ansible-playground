@@ -1,0 +1,7 @@
+---
+- name: "module_dellos9_facts"
+  dellos9_facts: "{{ dellos9_facts }}"
+  vars:
+    dellos9_facts: 
+      gather_subset: "{{ dellos9_facts_gather_subset | default(omit, True) }}"
+      provider: "{{ dellos9_facts_provider | default(omit, True) }}"

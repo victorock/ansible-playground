@@ -1,0 +1,10 @@
+---
+- name: "module_campfire"
+  campfire: "{{ campfire }}"
+  vars:
+    campfire: 
+      msg: "{{ campfire_msg | default(omit, True) }}"
+      token: "{{ campfire_token | default(omit, True) }}"
+      notify: "{{ campfire_notify | default(omit, True) }}"
+      room: "{{ campfire_room | default(omit, True) }}"
+      subscription: "{{ campfire_subscription | default(omit, True) }}"

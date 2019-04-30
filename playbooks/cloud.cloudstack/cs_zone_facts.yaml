@@ -1,0 +1,19 @@
+---
+- name: "module_cs_zone_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_zone_facts: 
+      name: "{{ cs_zone_facts_name | default('omit', True) }}"
+      api_http_method: "{{ cs_zone_facts_api_http_method | default('omit', True) }}"
+      api_secret: "{{ cs_zone_facts_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_zone_facts_api_timeout | default('omit', True) }}"
+      api_region: "{{ cs_zone_facts_api_region | default('omit', True) }}"
+      api_key: "{{ cs_zone_facts_api_key | default('omit', True) }}"
+      api_url: "{{ cs_zone_facts_api_url | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_zone_facts"
+      cs_zone_facts: "{{ cs_zone_facts }}"

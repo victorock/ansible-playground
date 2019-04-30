@@ -1,0 +1,30 @@
+---
+- name: "module_avi_webhook"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_webhook: 
+      username: "{{ avi_webhook_username | default('omit', True) }}"
+      uuid: "{{ avi_webhook_uuid | default('omit', True) }}"
+      callback_url: "{{ avi_webhook_callback_url | default('omit', True) }}"
+      description: "{{ avi_webhook_description | default('omit', True) }}"
+      state: "{{ avi_webhook_state | default('omit', True) }}"
+      url: "{{ avi_webhook_url | default('omit', True) }}"
+      controller: "{{ avi_webhook_controller | default('omit', True) }}"
+      tenant_ref: "{{ avi_webhook_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_webhook_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_webhook_api_version | default('omit', True) }}"
+      verification_token: "{{ avi_webhook_verification_token | default('omit', True) }}"
+      avi_credentials: "{{ avi_webhook_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_webhook_tenant | default('omit', True) }}"
+      api_context: "{{ avi_webhook_api_context | default('omit', True) }}"
+      password: "{{ avi_webhook_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_webhook_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_webhook_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_webhook_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_webhook"
+      avi_webhook: "{{ avi_webhook }}"

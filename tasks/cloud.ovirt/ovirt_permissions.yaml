@@ -1,0 +1,21 @@
+---
+- name: "module_ovirt_permissions"
+  ovirt_permissions: "{{ ovirt_permissions }}"
+  vars:
+    ovirt_permissions: 
+      authz_name: "{{ ovirt_permissions_authz_name | default(omit, True) }}"
+      object_type: "{{ ovirt_permissions_object_type | default(omit, True) }}"
+      namespace: "{{ ovirt_permissions_namespace | default(omit, True) }}"
+      state: "{{ ovirt_permissions_state | default(omit, True) }}"
+      object_id: "{{ ovirt_permissions_object_id | default(omit, True) }}"
+      poll_interval: "{{ ovirt_permissions_poll_interval | default(omit, True) }}"
+      object_name: "{{ ovirt_permissions_object_name | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_permissions_fetch_nested | default(omit, True) }}"
+      role: "{{ ovirt_permissions_role | default(omit, True) }}"
+      auth: "{{ ovirt_permissions_auth | default(omit, True) }}"
+      timeout: "{{ ovirt_permissions_timeout | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_permissions_nested_attributes | default(omit, True) }}"
+      quota_name: "{{ ovirt_permissions_quota_name | default(omit, True) }}"
+      group_name: "{{ ovirt_permissions_group_name | default(omit, True) }}"
+      user_name: "{{ ovirt_permissions_user_name | default(omit, True) }}"
+      wait: "{{ ovirt_permissions_wait | default(omit, True) }}"

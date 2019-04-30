@@ -1,0 +1,12 @@
+---
+- name: "module_beadm"
+  beadm: "{{ beadm }}"
+  vars:
+    beadm: 
+      force: "{{ beadm_force | default(omit, True) }}"
+      name: "{{ beadm_name | default(omit, True) }}"
+      state: "{{ beadm_state | default(omit, True) }}"
+      snapshot: "{{ beadm_snapshot | default(omit, True) }}"
+      mountpoint: "{{ beadm_mountpoint | default(omit, True) }}"
+      options: "{{ beadm_options | default(omit, True) }}"
+      description: "{{ beadm_description | default(omit, True) }}"

@@ -1,0 +1,6 @@
+---
+- name: "module_slurp"
+  slurp: "{{ slurp }}"
+  vars:
+    slurp: 
+      src: "{{ slurp_src | default(omit, True) }}"

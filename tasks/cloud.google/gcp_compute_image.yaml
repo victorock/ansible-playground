@@ -1,0 +1,23 @@
+---
+- name: "module_gcp_compute_image"
+  gcp_compute_image: "{{ gcp_compute_image }}"
+  vars:
+    gcp_compute_image: 
+      scopes: "{{ gcp_compute_image_scopes | default(omit, True) }}"
+      source_disk: "{{ gcp_compute_image_source_disk | default(omit, True) }}"
+      disk_size_gb: "{{ gcp_compute_image_disk_size_gb | default(omit, True) }}"
+      description: "{{ gcp_compute_image_description | default(omit, True) }}"
+      family: "{{ gcp_compute_image_family | default(omit, True) }}"
+      source_disk_id: "{{ gcp_compute_image_source_disk_id | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_image_service_account_email | default(omit, True) }}"
+      guest_os_features: "{{ gcp_compute_image_guest_os_features | default(omit, True) }}"
+      image_encryption_key: "{{ gcp_compute_image_image_encryption_key | default(omit, True) }}"
+      raw_disk: "{{ gcp_compute_image_raw_disk | default(omit, True) }}"
+      project: "{{ gcp_compute_image_project | default(omit, True) }}"
+      source_type: "{{ gcp_compute_image_source_type | default(omit, True) }}"
+      state: "{{ gcp_compute_image_state | default(omit, True) }}"
+      source_disk_encryption_key: "{{ gcp_compute_image_source_disk_encryption_key | default(omit, True) }}"
+      licenses: "{{ gcp_compute_image_licenses | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_image_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_image_auth_kind | default(omit, True) }}"
+      name: "{{ gcp_compute_image_name | default(omit, True) }}"

@@ -1,0 +1,24 @@
+---
+- name: "module_junos_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_config: 
+      comment: "{{ junos_config_comment | default('omit', True) }}"
+      src: "{{ junos_config_src | default('omit', True) }}"
+      rollback: "{{ junos_config_rollback | default('omit', True) }}"
+      confirm: "{{ junos_config_confirm | default('omit', True) }}"
+      lines: "{{ junos_config_lines | default('omit', True) }}"
+      update: "{{ junos_config_update | default('omit', True) }}"
+      replace: "{{ junos_config_replace | default('omit', True) }}"
+      confirm_commit: "{{ junos_config_confirm_commit | default('omit', True) }}"
+      zeroize: "{{ junos_config_zeroize | default('omit', True) }}"
+      src_format: "{{ junos_config_src_format | default('omit', True) }}"
+      provider: "{{ junos_config_provider | default('omit', True) }}"
+      backup: "{{ junos_config_backup | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_config"
+      junos_config: "{{ junos_config }}"

@@ -1,0 +1,9 @@
+---
+- name: "module_hponcfg"
+  hponcfg: "{{ hponcfg }}"
+  vars:
+    hponcfg: 
+      path: "{{ hponcfg_path | default(omit, True) }}"
+      executable: "{{ hponcfg_executable | default(omit, True) }}"
+      minfw: "{{ hponcfg_minfw | default(omit, True) }}"
+      verbose: "{{ hponcfg_verbose | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_avi_cloudproperties"
+  avi_cloudproperties: "{{ avi_cloudproperties }}"
+  vars:
+    avi_cloudproperties: 
+      username: "{{ avi_cloudproperties_username | default(omit, True) }}"
+      info: "{{ avi_cloudproperties_info | default(omit, True) }}"
+      api_version: "{{ avi_cloudproperties_api_version | default(omit, True) }}"
+      uuid: "{{ avi_cloudproperties_uuid | default(omit, True) }}"
+      hyp_props: "{{ avi_cloudproperties_hyp_props | default(omit, True) }}"
+      url: "{{ avi_cloudproperties_url | default(omit, True) }}"
+      avi_credentials: "{{ avi_cloudproperties_avi_credentials | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_cloudproperties_avi_api_patch_op | default(omit, True) }}"
+      tenant_uuid: "{{ avi_cloudproperties_tenant_uuid | default(omit, True) }}"
+      controller: "{{ avi_cloudproperties_controller | default(omit, True) }}"
+      state: "{{ avi_cloudproperties_state | default(omit, True) }}"
+      cc_props: "{{ avi_cloudproperties_cc_props | default(omit, True) }}"
+      api_context: "{{ avi_cloudproperties_api_context | default(omit, True) }}"
+      password: "{{ avi_cloudproperties_password | default(omit, True) }}"
+      cc_vtypes: "{{ avi_cloudproperties_cc_vtypes | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_cloudproperties_avi_api_update_method | default(omit, True) }}"
+      tenant: "{{ avi_cloudproperties_tenant | default(omit, True) }}"

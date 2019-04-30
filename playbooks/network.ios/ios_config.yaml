@@ -1,0 +1,32 @@
+---
+- name: "module_ios_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_config: 
+      multiline_delimiter: "{{ ios_config_multiline_delimiter | default('omit', True) }}"
+      authorize: "{{ ios_config_authorize | default('omit', True) }}"
+      diff_ignore_lines: "{{ ios_config_diff_ignore_lines | default('omit', True) }}"
+      auth_pass: "{{ ios_config_auth_pass | default('omit', True) }}"
+      force: "{{ ios_config_force | default('omit', True) }}"
+      src: "{{ ios_config_src | default('omit', True) }}"
+      after: "{{ ios_config_after | default('omit', True) }}"
+      lines: "{{ ios_config_lines | default('omit', True) }}"
+      intended_config: "{{ ios_config_intended_config | default('omit', True) }}"
+      diff_against: "{{ ios_config_diff_against | default('omit', True) }}"
+      save: "{{ ios_config_save | default('omit', True) }}"
+      running_config: "{{ ios_config_running_config | default('omit', True) }}"
+      save_when: "{{ ios_config_save_when | default('omit', True) }}"
+      defaults: "{{ ios_config_defaults | default('omit', True) }}"
+      provider: "{{ ios_config_provider | default('omit', True) }}"
+      parents: "{{ ios_config_parents | default('omit', True) }}"
+      replace: "{{ ios_config_replace | default('omit', True) }}"
+      backup: "{{ ios_config_backup | default('omit', True) }}"
+      match: "{{ ios_config_match | default('omit', True) }}"
+      before: "{{ ios_config_before | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ios_config"
+      ios_config: "{{ ios_config }}"

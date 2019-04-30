@@ -1,0 +1,8 @@
+---
+- name: "module_portinstall"
+  portinstall: "{{ portinstall }}"
+  vars:
+    portinstall: 
+      state: "{{ portinstall_state | default(omit, True) }}"
+      use_packages: "{{ portinstall_use_packages | default(omit, True) }}"
+      name: "{{ portinstall_name | default(omit, True) }}"

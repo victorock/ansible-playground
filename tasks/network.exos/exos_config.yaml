@@ -1,0 +1,18 @@
+---
+- name: "module_exos_config"
+  exos_config: "{{ exos_config }}"
+  vars:
+    exos_config: 
+      intended_config: "{{ exos_config_intended_config | default(omit, True) }}"
+      src: "{{ exos_config_src | default(omit, True) }}"
+      save_when: "{{ exos_config_save_when | default(omit, True) }}"
+      after: "{{ exos_config_after | default(omit, True) }}"
+      lines: "{{ exos_config_lines | default(omit, True) }}"
+      diff_against: "{{ exos_config_diff_against | default(omit, True) }}"
+      replace: "{{ exos_config_replace | default(omit, True) }}"
+      running_config: "{{ exos_config_running_config | default(omit, True) }}"
+      defaults: "{{ exos_config_defaults | default(omit, True) }}"
+      before: "{{ exos_config_before | default(omit, True) }}"
+      backup: "{{ exos_config_backup | default(omit, True) }}"
+      match: "{{ exos_config_match | default(omit, True) }}"
+      diff_ignore_lines: "{{ exos_config_diff_ignore_lines | default(omit, True) }}"

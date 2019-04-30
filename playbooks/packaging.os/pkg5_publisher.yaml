@@ -1,0 +1,18 @@
+---
+- name: "module_pkg5_publisher"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pkg5_publisher: 
+      origin: "{{ pkg5_publisher_origin | default('omit', True) }}"
+      name: "{{ pkg5_publisher_name | default('omit', True) }}"
+      enabled: "{{ pkg5_publisher_enabled | default('omit', True) }}"
+      sticky: "{{ pkg5_publisher_sticky | default('omit', True) }}"
+      state: "{{ pkg5_publisher_state | default('omit', True) }}"
+      mirror: "{{ pkg5_publisher_mirror | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pkg5_publisher"
+      pkg5_publisher: "{{ pkg5_publisher }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_manageiq_alerts"
+  manageiq_alerts: "{{ manageiq_alerts }}"
+  vars:
+    manageiq_alerts: 
+      description: "{{ manageiq_alerts_description | default(omit, True) }}"
+      expression_type: "{{ manageiq_alerts_expression_type | default(omit, True) }}"
+      enabled: "{{ manageiq_alerts_enabled | default(omit, True) }}"
+      state: "{{ manageiq_alerts_state | default(omit, True) }}"
+      manageiq_connection: "{{ manageiq_alerts_manageiq_connection | default(omit, True) }}"
+      expression: "{{ manageiq_alerts_expression | default(omit, True) }}"
+      options: "{{ manageiq_alerts_options | default(omit, True) }}"
+      resource_type: "{{ manageiq_alerts_resource_type | default(omit, True) }}"

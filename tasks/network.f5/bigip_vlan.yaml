@@ -1,0 +1,22 @@
+---
+- name: "module_bigip_vlan"
+  bigip_vlan: "{{ bigip_vlan }}"
+  vars:
+    bigip_vlan: 
+      password: "{{ bigip_vlan_password | default(omit, True) }}"
+      dag_round_robin: "{{ bigip_vlan_dag_round_robin | default(omit, True) }}"
+      description: "{{ bigip_vlan_description | default(omit, True) }}"
+      untagged_interfaces: "{{ bigip_vlan_untagged_interfaces | default(omit, True) }}"
+      server_port: "{{ bigip_vlan_server_port | default(omit, True) }}"
+      partition: "{{ bigip_vlan_partition | default(omit, True) }}"
+      dag_tunnel: "{{ bigip_vlan_dag_tunnel | default(omit, True) }}"
+      state: "{{ bigip_vlan_state | default(omit, True) }}"
+      tag: "{{ bigip_vlan_tag | default(omit, True) }}"
+      user: "{{ bigip_vlan_user | default(omit, True) }}"
+      tagged_interfaces: "{{ bigip_vlan_tagged_interfaces | default(omit, True) }}"
+      provider: "{{ bigip_vlan_provider | default(omit, True) }}"
+      mtu: "{{ bigip_vlan_mtu | default(omit, True) }}"
+      server: "{{ bigip_vlan_server | default(omit, True) }}"
+      validate_certs: "{{ bigip_vlan_validate_certs | default(omit, True) }}"
+      cmp_hash: "{{ bigip_vlan_cmp_hash | default(omit, True) }}"
+      name: "{{ bigip_vlan_name | default(omit, True) }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_manageiq_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    manageiq_user: 
+      update_password: "{{ manageiq_user_update_password | default('omit', True) }}"
+      group: "{{ manageiq_user_group | default('omit', True) }}"
+      name: "{{ manageiq_user_name | default('omit', True) }}"
+      userid: "{{ manageiq_user_userid | default('omit', True) }}"
+      state: "{{ manageiq_user_state | default('omit', True) }}"
+      manageiq_connection: "{{ manageiq_user_manageiq_connection | default('omit', True) }}"
+      password: "{{ manageiq_user_password | default('omit', True) }}"
+      email: "{{ manageiq_user_email | default('omit', True) }}"
+  tasks:
+    - name: "plugin_manageiq_user"
+      manageiq_user: "{{ manageiq_user }}"

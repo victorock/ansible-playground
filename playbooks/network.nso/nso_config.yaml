@@ -1,0 +1,17 @@
+---
+- name: "module_nso_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nso_config: 
+      url: "{{ nso_config_url | default('omit', True) }}"
+      username: "{{ nso_config_username | default('omit', True) }}"
+      password: "{{ nso_config_password | default('omit', True) }}"
+      data: "{{ nso_config_data | default('omit', True) }}"
+      timeout: "{{ nso_config_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nso_config"
+      nso_config: "{{ nso_config }}"

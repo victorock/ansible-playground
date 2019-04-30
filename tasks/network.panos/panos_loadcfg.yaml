@@ -1,0 +1,10 @@
+---
+- name: "module_panos_loadcfg"
+  panos_loadcfg: "{{ panos_loadcfg }}"
+  vars:
+    panos_loadcfg: 
+      username: "{{ panos_loadcfg_username | default(omit, True) }}"
+      commit: "{{ panos_loadcfg_commit | default(omit, True) }}"
+      password: "{{ panos_loadcfg_password | default(omit, True) }}"
+      ip_address: "{{ panos_loadcfg_ip_address | default(omit, True) }}"
+      file: "{{ panos_loadcfg_file | default(omit, True) }}"

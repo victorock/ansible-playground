@@ -1,0 +1,20 @@
+---
+- name: "module_enos_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    enos_command: 
+      authorize: "{{ enos_command_authorize | default('omit', True) }}"
+      retries: "{{ enos_command_retries | default('omit', True) }}"
+      commands: "{{ enos_command_commands | default('omit', True) }}"
+      interval: "{{ enos_command_interval | default('omit', True) }}"
+      auth_pass: "{{ enos_command_auth_pass | default('omit', True) }}"
+      provider: "{{ enos_command_provider | default('omit', True) }}"
+      wait_for: "{{ enos_command_wait_for | default('omit', True) }}"
+      match: "{{ enos_command_match | default('omit', True) }}"
+  tasks:
+    - name: "plugin_enos_command"
+      enos_command: "{{ enos_command }}"

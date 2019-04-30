@@ -1,0 +1,15 @@
+---
+- name: "module_vmware_host_service_manager"
+  vmware_host_service_manager: "{{ vmware_host_service_manager }}"
+  vars:
+    vmware_host_service_manager: 
+      username: "{{ vmware_host_service_manager_username | default(omit, True) }}"
+      service_policy: "{{ vmware_host_service_manager_service_policy | default(omit, True) }}"
+      service_name: "{{ vmware_host_service_manager_service_name | default(omit, True) }}"
+      hostname: "{{ vmware_host_service_manager_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_service_manager_cluster_name | default(omit, True) }}"
+      state: "{{ vmware_host_service_manager_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_service_manager_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_service_manager_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_service_manager_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_service_manager_port | default(omit, True) }}"

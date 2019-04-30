@@ -1,0 +1,22 @@
+---
+- name: "module_mount"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mount: 
+      src: "{{ mount_src | default('omit', True) }}"
+      dump: "{{ mount_dump | default('omit', True) }}"
+      boot: "{{ mount_boot | default('omit', True) }}"
+      fstab: "{{ mount_fstab | default('omit', True) }}"
+      passno: "{{ mount_passno | default('omit', True) }}"
+      fstype: "{{ mount_fstype | default('omit', True) }}"
+      state: "{{ mount_state | default('omit', True) }}"
+      path: "{{ mount_path | default('omit', True) }}"
+      backup: "{{ mount_backup | default('omit', True) }}"
+      opts: "{{ mount_opts | default('omit', True) }}"
+  tasks:
+    - name: "plugin_mount"
+      mount: "{{ mount }}"

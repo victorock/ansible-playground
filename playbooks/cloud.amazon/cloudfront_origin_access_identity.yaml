@@ -1,0 +1,23 @@
+---
+- name: "module_cloudfront_origin_access_identity"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cloudfront_origin_access_identity: 
+      comment: "{{ cloudfront_origin_access_identity_comment | default('omit', True) }}"
+      profile: "{{ cloudfront_origin_access_identity_profile | default('omit', True) }}"
+      aws_access_key: "{{ cloudfront_origin_access_identity_aws_access_key | default('omit', True) }}"
+      security_token: "{{ cloudfront_origin_access_identity_security_token | default('omit', True) }}"
+      validate_certs: "{{ cloudfront_origin_access_identity_validate_certs | default('omit', True) }}"
+      region: "{{ cloudfront_origin_access_identity_region | default('omit', True) }}"
+      aws_secret_key: "{{ cloudfront_origin_access_identity_aws_secret_key | default('omit', True) }}"
+      origin_access_identity_id: "{{ cloudfront_origin_access_identity_origin_access_identity_id | default('omit', True) }}"
+      state: "{{ cloudfront_origin_access_identity_state | default('omit', True) }}"
+      ec2_url: "{{ cloudfront_origin_access_identity_ec2_url | default('omit', True) }}"
+      caller_reference: "{{ cloudfront_origin_access_identity_caller_reference | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cloudfront_origin_access_identity"
+      cloudfront_origin_access_identity: "{{ cloudfront_origin_access_identity }}"

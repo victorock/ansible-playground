@@ -1,0 +1,10 @@
+---
+- name: "module_debconf"
+  debconf: "{{ debconf }}"
+  vars:
+    debconf: 
+      unseen: "{{ debconf_unseen | default(omit, True) }}"
+      vtype: "{{ debconf_vtype | default(omit, True) }}"
+      question: "{{ debconf_question | default(omit, True) }}"
+      name: "{{ debconf_name | default(omit, True) }}"
+      value: "{{ debconf_value | default(omit, True) }}"

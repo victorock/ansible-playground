@@ -1,0 +1,30 @@
+---
+- name: "module_na_ontap_svm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_svm: 
+      username: "{{ na_ontap_svm_username | default('omit', True) }}"
+      from_name: "{{ na_ontap_svm_from_name | default('omit', True) }}"
+      root_volume_aggregate: "{{ na_ontap_svm_root_volume_aggregate | default('omit', True) }}"
+      name: "{{ na_ontap_svm_name | default('omit', True) }}"
+      language: "{{ na_ontap_svm_language | default('omit', True) }}"
+      aggr_list: "{{ na_ontap_svm_aggr_list | default('omit', True) }}"
+      hostname: "{{ na_ontap_svm_hostname | default('omit', True) }}"
+      ipspace: "{{ na_ontap_svm_ipspace | default('omit', True) }}"
+      root_volume_security_style: "{{ na_ontap_svm_root_volume_security_style | default('omit', True) }}"
+      allowed_protocols: "{{ na_ontap_svm_allowed_protocols | default('omit', True) }}"
+      subtype: "{{ na_ontap_svm_subtype | default('omit', True) }}"
+      state: "{{ na_ontap_svm_state | default('omit', True) }}"
+      http_port: "{{ na_ontap_svm_http_port | default('omit', True) }}"
+      https: "{{ na_ontap_svm_https | default('omit', True) }}"
+      snapshot_policy: "{{ na_ontap_svm_snapshot_policy | default('omit', True) }}"
+      password: "{{ na_ontap_svm_password | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_svm_validate_certs | default('omit', True) }}"
+      root_volume: "{{ na_ontap_svm_root_volume | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_svm"
+      na_ontap_svm: "{{ na_ontap_svm }}"

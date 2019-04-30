@@ -1,0 +1,22 @@
+---
+- name: "module_ce_snmp_community"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_snmp_community: 
+      notify_view: "{{ ce_snmp_community_notify_view | default('omit', True) }}"
+      write_view: "{{ ce_snmp_community_write_view | default('omit', True) }}"
+      community_mib_view: "{{ ce_snmp_community_community_mib_view | default('omit', True) }}"
+      read_view: "{{ ce_snmp_community_read_view | default('omit', True) }}"
+      acl_number: "{{ ce_snmp_community_acl_number | default('omit', True) }}"
+      group_name: "{{ ce_snmp_community_group_name | default('omit', True) }}"
+      community_name: "{{ ce_snmp_community_community_name | default('omit', True) }}"
+      state: "{{ ce_snmp_community_state | default('omit', True) }}"
+      security_level: "{{ ce_snmp_community_security_level | default('omit', True) }}"
+      access_right: "{{ ce_snmp_community_access_right | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_snmp_community"
+      ce_snmp_community: "{{ ce_snmp_community }}"

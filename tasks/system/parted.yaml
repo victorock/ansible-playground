@@ -1,0 +1,16 @@
+---
+- name: "module_parted"
+  parted: "{{ parted }}"
+  vars:
+    parted: 
+      part_start: "{{ parted_part_start | default(omit, True) }}"
+      part_end: "{{ parted_part_end | default(omit, True) }}"
+      name: "{{ parted_name | default(omit, True) }}"
+      align: "{{ parted_align | default(omit, True) }}"
+      number: "{{ parted_number | default(omit, True) }}"
+      label: "{{ parted_label | default(omit, True) }}"
+      state: "{{ parted_state | default(omit, True) }}"
+      part_type: "{{ parted_part_type | default(omit, True) }}"
+      flags: "{{ parted_flags | default(omit, True) }}"
+      device: "{{ parted_device | default(omit, True) }}"
+      unit: "{{ parted_unit | default(omit, True) }}"

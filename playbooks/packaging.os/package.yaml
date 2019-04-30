@@ -1,0 +1,15 @@
+---
+- name: "module_package"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    package: 
+      state: "{{ package_state | default('omit', True) }}"
+      use: "{{ package_use | default('omit', True) }}"
+      name: "{{ package_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_package"
+      package: "{{ package }}"

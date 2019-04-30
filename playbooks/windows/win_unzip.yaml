@@ -1,0 +1,17 @@
+---
+- name: "module_win_unzip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_unzip: 
+      dest: "{{ win_unzip_dest | default('omit', True) }}"
+      src: "{{ win_unzip_src | default('omit', True) }}"
+      delete_archive: "{{ win_unzip_delete_archive | default('omit', True) }}"
+      recurse: "{{ win_unzip_recurse | default('omit', True) }}"
+      creates: "{{ win_unzip_creates | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_unzip"
+      win_unzip: "{{ win_unzip }}"

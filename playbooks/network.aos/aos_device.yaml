@@ -1,0 +1,18 @@
+---
+- name: "module_aos_device"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aos_device: 
+      name: "{{ aos_device_name | default('omit', True) }}"
+      state: "{{ aos_device_state | default('omit', True) }}"
+      session: "{{ aos_device_session | default('omit', True) }}"
+      location: "{{ aos_device_location | default('omit', True) }}"
+      approve: "{{ aos_device_approve | default('omit', True) }}"
+      id: "{{ aos_device_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aos_device"
+      aos_device: "{{ aos_device }}"

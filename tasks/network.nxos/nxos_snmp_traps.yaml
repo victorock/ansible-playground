@@ -1,0 +1,8 @@
+---
+- name: "module_nxos_snmp_traps"
+  nxos_snmp_traps: "{{ nxos_snmp_traps }}"
+  vars:
+    nxos_snmp_traps: 
+      state: "{{ nxos_snmp_traps_state | default(omit, True) }}"
+      group: "{{ nxos_snmp_traps_group | default(omit, True) }}"
+      provider: "{{ nxos_snmp_traps_provider | default(omit, True) }}"

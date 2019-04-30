@@ -1,0 +1,22 @@
+---
+- name: "module_{{ plugin.key }}"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+{% if plugin.value.spec.options is defined %}
+  vars:
+    {{ plugin.key }}: 
+{% for k,v in plugin.value.spec.options.iteritems() %}
+      {{ k }}: {{ '"{{' }} {{ plugin.key }}_{{ k }} | default('omit', True) {{ '}}"' }}
+{% endfor %}
+  tasks:
+    - name: "plugin_{{ plugin.key }}"
+      {{ plugin.key }}: {{ '"{{ ' + plugin.key + ' }}"' }}
+{% else %}
+  tasks:
+    - name: "module_{{ plugin.key }}"
+      {{ plugin.key }}:
+  
+{% endif %}

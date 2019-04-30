@@ -1,0 +1,10 @@
+---
+- name: "module_rundeck_project"
+  rundeck_project: "{{ rundeck_project }}"
+  vars:
+    rundeck_project: 
+      url: "{{ rundeck_project_url | default(omit, True) }}"
+      token: "{{ rundeck_project_token | default(omit, True) }}"
+      state: "{{ rundeck_project_state | default(omit, True) }}"
+      api_version: "{{ rundeck_project_api_version | default(omit, True) }}"
+      name: "{{ rundeck_project_name | default(omit, True) }}"

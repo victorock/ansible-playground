@@ -1,0 +1,24 @@
+---
+- name: "module_taiga_issue"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    taiga_issue: 
+      status: "{{ taiga_issue_status | default('omit', True) }}"
+      priority: "{{ taiga_issue_priority | default('omit', True) }}"
+      description: "{{ taiga_issue_description | default('omit', True) }}"
+      tags: "{{ taiga_issue_tags | default('omit', True) }}"
+      severity: "{{ taiga_issue_severity | default('omit', True) }}"
+      project: "{{ taiga_issue_project | default('omit', True) }}"
+      taiga_host: "{{ taiga_issue_taiga_host | default('omit', True) }}"
+      state: "{{ taiga_issue_state | default('omit', True) }}"
+      attachment: "{{ taiga_issue_attachment | default('omit', True) }}"
+      issue_type: "{{ taiga_issue_issue_type | default('omit', True) }}"
+      attachment_description: "{{ taiga_issue_attachment_description | default('omit', True) }}"
+      subject: "{{ taiga_issue_subject | default('omit', True) }}"
+  tasks:
+    - name: "plugin_taiga_issue"
+      taiga_issue: "{{ taiga_issue }}"

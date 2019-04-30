@@ -1,0 +1,19 @@
+---
+- name: "module_cyberark_user"
+  cyberark_user: "{{ cyberark_user }}"
+  vars:
+    cyberark_user: 
+      username: "{{ cyberark_user_username | default(omit, True) }}"
+      first_name: "{{ cyberark_user_first_name | default(omit, True) }}"
+      last_name: "{{ cyberark_user_last_name | default(omit, True) }}"
+      initial_password: "{{ cyberark_user_initial_password | default(omit, True) }}"
+      user_type_name: "{{ cyberark_user_user_type_name | default(omit, True) }}"
+      new_password: "{{ cyberark_user_new_password | default(omit, True) }}"
+      cyberark_session: "{{ cyberark_user_cyberark_session | default(omit, True) }}"
+      group_name: "{{ cyberark_user_group_name | default(omit, True) }}"
+      disabled: "{{ cyberark_user_disabled | default(omit, True) }}"
+      change_password_on_the_next_logon: "{{ cyberark_user_change_password_on_the_next_logon | default(omit, True) }}"
+      state: "{{ cyberark_user_state | default(omit, True) }}"
+      expiry_date: "{{ cyberark_user_expiry_date | default(omit, True) }}"
+      location: "{{ cyberark_user_location | default(omit, True) }}"
+      email: "{{ cyberark_user_email | default(omit, True) }}"

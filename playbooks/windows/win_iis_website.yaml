@@ -1,0 +1,22 @@
+---
+- name: "module_win_iis_website"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_iis_website: 
+      hostname: "{{ win_iis_website_hostname | default('omit', True) }}"
+      name: "{{ win_iis_website_name | default('omit', True) }}"
+      parameters: "{{ win_iis_website_parameters | default('omit', True) }}"
+      ip: "{{ win_iis_website_ip | default('omit', True) }}"
+      physical_path: "{{ win_iis_website_physical_path | default('omit', True) }}"
+      application_pool: "{{ win_iis_website_application_pool | default('omit', True) }}"
+      site_id: "{{ win_iis_website_site_id | default('omit', True) }}"
+      ssl: "{{ win_iis_website_ssl | default('omit', True) }}"
+      state: "{{ win_iis_website_state | default('omit', True) }}"
+      port: "{{ win_iis_website_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_iis_website"
+      win_iis_website: "{{ win_iis_website }}"

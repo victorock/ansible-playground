@@ -1,0 +1,13 @@
+---
+- name: "module_junos_command"
+  junos_command: "{{ junos_command }}"
+  vars:
+    junos_command: 
+      retries: "{{ junos_command_retries | default(omit, True) }}"
+      commands: "{{ junos_command_commands | default(omit, True) }}"
+      rpcs: "{{ junos_command_rpcs | default(omit, True) }}"
+      interval: "{{ junos_command_interval | default(omit, True) }}"
+      provider: "{{ junos_command_provider | default(omit, True) }}"
+      wait_for: "{{ junos_command_wait_for | default(omit, True) }}"
+      display: "{{ junos_command_display | default(omit, True) }}"
+      match: "{{ junos_command_match | default(omit, True) }}"

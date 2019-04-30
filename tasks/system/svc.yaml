@@ -1,0 +1,11 @@
+---
+- name: "module_svc"
+  svc: "{{ svc }}"
+  vars:
+    svc: 
+      name: "{{ svc_name | default(omit, True) }}"
+      downed: "{{ svc_downed | default(omit, True) }}"
+      enabled: "{{ svc_enabled | default(omit, True) }}"
+      service_dir: "{{ svc_service_dir | default(omit, True) }}"
+      state: "{{ svc_state | default(omit, True) }}"
+      service_src: "{{ svc_service_src | default(omit, True) }}"

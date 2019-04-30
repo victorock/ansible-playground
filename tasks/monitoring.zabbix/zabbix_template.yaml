@@ -1,0 +1,19 @@
+---
+- name: "module_zabbix_template"
+  zabbix_template: "{{ zabbix_template }}"
+  vars:
+    zabbix_template: 
+      http_login_password: "{{ zabbix_template_http_login_password | default(omit, True) }}"
+      clear_templates: "{{ zabbix_template_clear_templates | default(omit, True) }}"
+      template_json: "{{ zabbix_template_template_json | default(omit, True) }}"
+      login_user: "{{ zabbix_template_login_user | default(omit, True) }}"
+      template_name: "{{ zabbix_template_template_name | default(omit, True) }}"
+      http_login_user: "{{ zabbix_template_http_login_user | default(omit, True) }}"
+      server_url: "{{ zabbix_template_server_url | default(omit, True) }}"
+      macros: "{{ zabbix_template_macros | default(omit, True) }}"
+      state: "{{ zabbix_template_state | default(omit, True) }}"
+      timeout: "{{ zabbix_template_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_template_login_password | default(omit, True) }}"
+      template_groups: "{{ zabbix_template_template_groups | default(omit, True) }}"
+      validate_certs: "{{ zabbix_template_validate_certs | default(omit, True) }}"
+      link_templates: "{{ zabbix_template_link_templates | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_oneandone_private_network"
+  oneandone_private_network: "{{ oneandone_private_network }}"
+  vars:
+    oneandone_private_network: 
+      datacenter: "{{ oneandone_private_network_datacenter | default(omit, True) }}"
+      description: "{{ oneandone_private_network_description | default(omit, True) }}"
+      wait_interval: "{{ oneandone_private_network_wait_interval | default(omit, True) }}"
+      auth_token: "{{ oneandone_private_network_auth_token | default(omit, True) }}"
+      network_address: "{{ oneandone_private_network_network_address | default(omit, True) }}"
+      name: "{{ oneandone_private_network_name | default(omit, True) }}"
+      subnet_mask: "{{ oneandone_private_network_subnet_mask | default(omit, True) }}"
+      state: "{{ oneandone_private_network_state | default(omit, True) }}"
+      wait_timeout: "{{ oneandone_private_network_wait_timeout | default(omit, True) }}"
+      add_members: "{{ oneandone_private_network_add_members | default(omit, True) }}"
+      api_url: "{{ oneandone_private_network_api_url | default(omit, True) }}"
+      private_network: "{{ oneandone_private_network_private_network | default(omit, True) }}"
+      remove_members: "{{ oneandone_private_network_remove_members | default(omit, True) }}"
+      wait: "{{ oneandone_private_network_wait | default(omit, True) }}"

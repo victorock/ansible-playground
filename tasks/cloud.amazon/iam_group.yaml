@@ -1,0 +1,18 @@
+---
+- name: "module_iam_group"
+  iam_group: "{{ iam_group }}"
+  vars:
+    iam_group: 
+      profile: "{{ iam_group_profile | default(omit, True) }}"
+      aws_secret_key: "{{ iam_group_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ iam_group_aws_access_key | default(omit, True) }}"
+      users: "{{ iam_group_users | default(omit, True) }}"
+      security_token: "{{ iam_group_security_token | default(omit, True) }}"
+      region: "{{ iam_group_region | default(omit, True) }}"
+      purge_users: "{{ iam_group_purge_users | default(omit, True) }}"
+      managed_policy: "{{ iam_group_managed_policy | default(omit, True) }}"
+      state: "{{ iam_group_state | default(omit, True) }}"
+      ec2_url: "{{ iam_group_ec2_url | default(omit, True) }}"
+      purge_policy: "{{ iam_group_purge_policy | default(omit, True) }}"
+      validate_certs: "{{ iam_group_validate_certs | default(omit, True) }}"
+      name: "{{ iam_group_name | default(omit, True) }}"

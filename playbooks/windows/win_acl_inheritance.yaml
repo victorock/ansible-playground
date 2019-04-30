@@ -1,0 +1,15 @@
+---
+- name: "module_win_acl_inheritance"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_acl_inheritance: 
+      path: "{{ win_acl_inheritance_path | default('omit', True) }}"
+      state: "{{ win_acl_inheritance_state | default('omit', True) }}"
+      reorganize: "{{ win_acl_inheritance_reorganize | default('omit', True) }}"
+  tasks:
+    - name: "plugin_win_acl_inheritance"
+      win_acl_inheritance: "{{ win_acl_inheritance }}"

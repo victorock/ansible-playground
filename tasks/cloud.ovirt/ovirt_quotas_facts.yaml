@@ -1,0 +1,10 @@
+---
+- name: "module_ovirt_quotas_facts"
+  ovirt_quotas_facts: "{{ ovirt_quotas_facts }}"
+  vars:
+    ovirt_quotas_facts: 
+      nested_attributes: "{{ ovirt_quotas_facts_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_quotas_facts_fetch_nested | default(omit, True) }}"
+      name: "{{ ovirt_quotas_facts_name | default(omit, True) }}"
+      auth: "{{ ovirt_quotas_facts_auth | default(omit, True) }}"
+      data_center: "{{ ovirt_quotas_facts_data_center | default(omit, True) }}"

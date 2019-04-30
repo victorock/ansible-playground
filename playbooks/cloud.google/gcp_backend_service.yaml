@@ -1,0 +1,23 @@
+---
+- name: "module_gcp_backend_service"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_backend_service: 
+      protocol: "{{ gcp_backend_service_protocol | default('omit', True) }}"
+      service_account_email: "{{ gcp_backend_service_service_account_email | default('omit', True) }}"
+      backends: "{{ gcp_backend_service_backends | default('omit', True) }}"
+      state: "{{ gcp_backend_service_state | default('omit', True) }}"
+      enable_cdn: "{{ gcp_backend_service_enable_cdn | default('omit', True) }}"
+      port_name: "{{ gcp_backend_service_port_name | default('omit', True) }}"
+      timeout: "{{ gcp_backend_service_timeout | default('omit', True) }}"
+      credentials_file: "{{ gcp_backend_service_credentials_file | default('omit', True) }}"
+      healthchecks: "{{ gcp_backend_service_healthchecks | default('omit', True) }}"
+      backend_service_name: "{{ gcp_backend_service_backend_service_name | default('omit', True) }}"
+      project_id: "{{ gcp_backend_service_project_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_backend_service"
+      gcp_backend_service: "{{ gcp_backend_service }}"

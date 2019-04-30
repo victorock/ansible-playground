@@ -1,0 +1,12 @@
+---
+- name: "module_jabber"
+  jabber: "{{ jabber }}"
+  vars:
+    jabber: 
+      encoding: "{{ jabber_encoding | default(omit, True) }}"
+      to: "{{ jabber_to | default(omit, True) }}"
+      host: "{{ jabber_host | default(omit, True) }}"
+      user: "{{ jabber_user | default(omit, True) }}"
+      msg: "{{ jabber_msg | default(omit, True) }}"
+      password: "{{ jabber_password | default(omit, True) }}"
+      port: "{{ jabber_port | default(omit, True) }}"

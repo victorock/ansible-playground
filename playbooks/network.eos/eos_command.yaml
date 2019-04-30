@@ -1,0 +1,20 @@
+---
+- name: "module_eos_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    eos_command: 
+      authorize: "{{ eos_command_authorize | default('omit', True) }}"
+      retries: "{{ eos_command_retries | default('omit', True) }}"
+      commands: "{{ eos_command_commands | default('omit', True) }}"
+      interval: "{{ eos_command_interval | default('omit', True) }}"
+      auth_pass: "{{ eos_command_auth_pass | default('omit', True) }}"
+      provider: "{{ eos_command_provider | default('omit', True) }}"
+      wait_for: "{{ eos_command_wait_for | default('omit', True) }}"
+      match: "{{ eos_command_match | default('omit', True) }}"
+  tasks:
+    - name: "plugin_eos_command"
+      eos_command: "{{ eos_command }}"

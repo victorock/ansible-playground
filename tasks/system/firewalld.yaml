@@ -1,0 +1,16 @@
+---
+- name: "module_firewalld"
+  firewalld: "{{ firewalld }}"
+  vars:
+    firewalld: 
+      service: "{{ firewalld_service | default(omit, True) }}"
+      zone: "{{ firewalld_zone | default(omit, True) }}"
+      masquerade: "{{ firewalld_masquerade | default(omit, True) }}"
+      immediate: "{{ firewalld_immediate | default(omit, True) }}"
+      source: "{{ firewalld_source | default(omit, True) }}"
+      state: "{{ firewalld_state | default(omit, True) }}"
+      permanent: "{{ firewalld_permanent | default(omit, True) }}"
+      timeout: "{{ firewalld_timeout | default(omit, True) }}"
+      interface: "{{ firewalld_interface | default(omit, True) }}"
+      port: "{{ firewalld_port | default(omit, True) }}"
+      rich_rule: "{{ firewalld_rich_rule | default(omit, True) }}"

@@ -1,0 +1,24 @@
+---
+- name: "module_mqtt"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mqtt: 
+      username: "{{ mqtt_username | default('omit', True) }}"
+      qos: "{{ mqtt_qos | default('omit', True) }}"
+      server: "{{ mqtt_server | default('omit', True) }}"
+      port: "{{ mqtt_port | default('omit', True) }}"
+      topic: "{{ mqtt_topic | default('omit', True) }}"
+      client_id: "{{ mqtt_client_id | default('omit', True) }}"
+      retain: "{{ mqtt_retain | default('omit', True) }}"
+      ca_certs: "{{ mqtt_ca_certs | default('omit', True) }}"
+      certfile: "{{ mqtt_certfile | default('omit', True) }}"
+      password: "{{ mqtt_password | default('omit', True) }}"
+      keyfile: "{{ mqtt_keyfile | default('omit', True) }}"
+      payload: "{{ mqtt_payload | default('omit', True) }}"
+  tasks:
+    - name: "plugin_mqtt"
+      mqtt: "{{ mqtt }}"

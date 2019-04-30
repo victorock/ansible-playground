@@ -1,0 +1,23 @@
+---
+- name: "module_eos_vrf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    eos_vrf: 
+      authorize: "{{ eos_vrf_authorize | default('omit', True) }}"
+      purge: "{{ eos_vrf_purge | default('omit', True) }}"
+      name: "{{ eos_vrf_name | default('omit', True) }}"
+      interfaces: "{{ eos_vrf_interfaces | default('omit', True) }}"
+      auth_pass: "{{ eos_vrf_auth_pass | default('omit', True) }}"
+      delay: "{{ eos_vrf_delay | default('omit', True) }}"
+      aggregate: "{{ eos_vrf_aggregate | default('omit', True) }}"
+      state: "{{ eos_vrf_state | default('omit', True) }}"
+      provider: "{{ eos_vrf_provider | default('omit', True) }}"
+      associated_interfaces: "{{ eos_vrf_associated_interfaces | default('omit', True) }}"
+      rd: "{{ eos_vrf_rd | default('omit', True) }}"
+  tasks:
+    - name: "plugin_eos_vrf"
+      eos_vrf: "{{ eos_vrf }}"

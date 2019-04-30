@@ -1,0 +1,12 @@
+---
+- name: "module_packet_sshkey"
+  packet_sshkey: "{{ packet_sshkey }}"
+  vars:
+    packet_sshkey: 
+      auth_token: "{{ packet_sshkey_auth_token | default(omit, True) }}"
+      label: "{{ packet_sshkey_label | default(omit, True) }}"
+      state: "{{ packet_sshkey_state | default(omit, True) }}"
+      key: "{{ packet_sshkey_key | default(omit, True) }}"
+      fingerprint: "{{ packet_sshkey_fingerprint | default(omit, True) }}"
+      key_file: "{{ packet_sshkey_key_file | default(omit, True) }}"
+      id: "{{ packet_sshkey_id | default(omit, True) }}"

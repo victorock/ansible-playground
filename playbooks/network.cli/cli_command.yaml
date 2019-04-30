@@ -1,0 +1,17 @@
+---
+- name: "module_cli_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cli_command: 
+      answer: "{{ cli_command_answer | default('omit', True) }}"
+      prompt: "{{ cli_command_prompt | default('omit', True) }}"
+      command: "{{ cli_command_command | default('omit', True) }}"
+      sendonly: "{{ cli_command_sendonly | default('omit', True) }}"
+      check_all: "{{ cli_command_check_all | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cli_command"
+      cli_command: "{{ cli_command }}"

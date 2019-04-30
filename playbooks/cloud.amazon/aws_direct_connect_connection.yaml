@@ -1,0 +1,26 @@
+---
+- name: "module_aws_direct_connect_connection"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aws_direct_connect_connection: 
+      profile: "{{ aws_direct_connect_connection_profile | default('omit', True) }}"
+      forced_update: "{{ aws_direct_connect_connection_forced_update | default('omit', True) }}"
+      aws_access_key: "{{ aws_direct_connect_connection_aws_access_key | default('omit', True) }}"
+      name: "{{ aws_direct_connect_connection_name | default('omit', True) }}"
+      security_token: "{{ aws_direct_connect_connection_security_token | default('omit', True) }}"
+      state: "{{ aws_direct_connect_connection_state | default('omit', True) }}"
+      region: "{{ aws_direct_connect_connection_region | default('omit', True) }}"
+      aws_secret_key: "{{ aws_direct_connect_connection_aws_secret_key | default('omit', True) }}"
+      connection_id: "{{ aws_direct_connect_connection_connection_id | default('omit', True) }}"
+      bandwidth: "{{ aws_direct_connect_connection_bandwidth | default('omit', True) }}"
+      link_aggregation_group: "{{ aws_direct_connect_connection_link_aggregation_group | default('omit', True) }}"
+      ec2_url: "{{ aws_direct_connect_connection_ec2_url | default('omit', True) }}"
+      validate_certs: "{{ aws_direct_connect_connection_validate_certs | default('omit', True) }}"
+      location: "{{ aws_direct_connect_connection_location | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aws_direct_connect_connection"
+      aws_direct_connect_connection: "{{ aws_direct_connect_connection }}"

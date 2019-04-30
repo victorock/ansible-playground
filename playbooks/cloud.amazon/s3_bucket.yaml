@@ -1,0 +1,28 @@
+---
+- name: "module_s3_bucket"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    s3_bucket: 
+      profile: "{{ s3_bucket_profile | default('omit', True) }}"
+      aws_secret_key: "{{ s3_bucket_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ s3_bucket_aws_access_key | default('omit', True) }}"
+      force: "{{ s3_bucket_force | default('omit', True) }}"
+      name: "{{ s3_bucket_name | default('omit', True) }}"
+      security_token: "{{ s3_bucket_security_token | default('omit', True) }}"
+      tags: "{{ s3_bucket_tags | default('omit', True) }}"
+      region: "{{ s3_bucket_region | default('omit', True) }}"
+      ceph: "{{ s3_bucket_ceph | default('omit', True) }}"
+      state: "{{ s3_bucket_state | default('omit', True) }}"
+      ec2_url: "{{ s3_bucket_ec2_url | default('omit', True) }}"
+      policy: "{{ s3_bucket_policy | default('omit', True) }}"
+      requester_pays: "{{ s3_bucket_requester_pays | default('omit', True) }}"
+      validate_certs: "{{ s3_bucket_validate_certs | default('omit', True) }}"
+      s3_url: "{{ s3_bucket_s3_url | default('omit', True) }}"
+      versioning: "{{ s3_bucket_versioning | default('omit', True) }}"
+  tasks:
+    - name: "plugin_s3_bucket"
+      s3_bucket: "{{ s3_bucket }}"

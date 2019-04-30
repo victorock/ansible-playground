@@ -1,0 +1,39 @@
+---
+- name: "module_nxos_acl"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_acl: 
+      seq: "{{ nxos_acl_seq | default('omit', True) }}"
+      time_range: "{{ nxos_acl_time_range | default('omit', True) }}"
+      dest_port_op: "{{ nxos_acl_dest_port_op | default('omit', True) }}"
+      established: "{{ nxos_acl_established | default('omit', True) }}"
+      log: "{{ nxos_acl_log | default('omit', True) }}"
+      proto: "{{ nxos_acl_proto | default('omit', True) }}"
+      state: "{{ nxos_acl_state | default('omit', True) }}"
+      provider: "{{ nxos_acl_provider | default('omit', True) }}"
+      fragments: "{{ nxos_acl_fragments | default('omit', True) }}"
+      fin: "{{ nxos_acl_fin | default('omit', True) }}"
+      src_port2: "{{ nxos_acl_src_port2 | default('omit', True) }}"
+      src_port_op: "{{ nxos_acl_src_port_op | default('omit', True) }}"
+      psh: "{{ nxos_acl_psh | default('omit', True) }}"
+      dest: "{{ nxos_acl_dest | default('omit', True) }}"
+      syn: "{{ nxos_acl_syn | default('omit', True) }}"
+      dscp: "{{ nxos_acl_dscp | default('omit', True) }}"
+      rst: "{{ nxos_acl_rst | default('omit', True) }}"
+      src: "{{ nxos_acl_src | default('omit', True) }}"
+      remark: "{{ nxos_acl_remark | default('omit', True) }}"
+      urg: "{{ nxos_acl_urg | default('omit', True) }}"
+      name: "{{ nxos_acl_name | default('omit', True) }}"
+      ack: "{{ nxos_acl_ack | default('omit', True) }}"
+      src_port1: "{{ nxos_acl_src_port1 | default('omit', True) }}"
+      precedence: "{{ nxos_acl_precedence | default('omit', True) }}"
+      action: "{{ nxos_acl_action | default('omit', True) }}"
+      dest_port1: "{{ nxos_acl_dest_port1 | default('omit', True) }}"
+      dest_port2: "{{ nxos_acl_dest_port2 | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_acl"
+      nxos_acl: "{{ nxos_acl }}"

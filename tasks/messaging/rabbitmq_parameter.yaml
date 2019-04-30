@@ -1,0 +1,11 @@
+---
+- name: "module_rabbitmq_parameter"
+  rabbitmq_parameter: "{{ rabbitmq_parameter }}"
+  vars:
+    rabbitmq_parameter: 
+      node: "{{ rabbitmq_parameter_node | default(omit, True) }}"
+      name: "{{ rabbitmq_parameter_name | default(omit, True) }}"
+      component: "{{ rabbitmq_parameter_component | default(omit, True) }}"
+      value: "{{ rabbitmq_parameter_value | default(omit, True) }}"
+      vhost: "{{ rabbitmq_parameter_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_parameter_state | default(omit, True) }}"

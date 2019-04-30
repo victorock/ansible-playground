@@ -1,0 +1,19 @@
+---
+- name: "module_na_ontap_firewall_policy"
+  na_ontap_firewall_policy: "{{ na_ontap_firewall_policy }}"
+  vars:
+    na_ontap_firewall_policy: 
+      node: "{{ na_ontap_firewall_policy_node | default(omit, True) }}"
+      username: "{{ na_ontap_firewall_policy_username | default(omit, True) }}"
+      enable: "{{ na_ontap_firewall_policy_enable | default(omit, True) }}"
+      logging: "{{ na_ontap_firewall_policy_logging | default(omit, True) }}"
+      service: "{{ na_ontap_firewall_policy_service | default(omit, True) }}"
+      allow_list: "{{ na_ontap_firewall_policy_allow_list | default(omit, True) }}"
+      hostname: "{{ na_ontap_firewall_policy_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_firewall_policy_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_firewall_policy_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_firewall_policy_http_port | default(omit, True) }}"
+      https: "{{ na_ontap_firewall_policy_https | default(omit, True) }}"
+      policy: "{{ na_ontap_firewall_policy_policy | default(omit, True) }}"
+      password: "{{ na_ontap_firewall_policy_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_firewall_policy_validate_certs | default(omit, True) }}"

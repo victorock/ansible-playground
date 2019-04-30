@@ -1,0 +1,29 @@
+---
+- name: "module_lambda_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    lambda_policy: 
+      profile: "{{ lambda_policy_profile | default('omit', True) }}"
+      aws_secret_key: "{{ lambda_policy_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ lambda_policy_aws_access_key | default('omit', True) }}"
+      event_source_token: "{{ lambda_policy_event_source_token | default('omit', True) }}"
+      statement_id: "{{ lambda_policy_statement_id | default('omit', True) }}"
+      security_token: "{{ lambda_policy_security_token | default('omit', True) }}"
+      region: "{{ lambda_policy_region | default('omit', True) }}"
+      alias: "{{ lambda_policy_alias | default('omit', True) }}"
+      state: "{{ lambda_policy_state | default('omit', True) }}"
+      version: "{{ lambda_policy_version | default('omit', True) }}"
+      function_name: "{{ lambda_policy_function_name | default('omit', True) }}"
+      ec2_url: "{{ lambda_policy_ec2_url | default('omit', True) }}"
+      action: "{{ lambda_policy_action | default('omit', True) }}"
+      source_arn: "{{ lambda_policy_source_arn | default('omit', True) }}"
+      principal: "{{ lambda_policy_principal | default('omit', True) }}"
+      validate_certs: "{{ lambda_policy_validate_certs | default('omit', True) }}"
+      source_account: "{{ lambda_policy_source_account | default('omit', True) }}"
+  tasks:
+    - name: "plugin_lambda_policy"
+      lambda_policy: "{{ lambda_policy }}"

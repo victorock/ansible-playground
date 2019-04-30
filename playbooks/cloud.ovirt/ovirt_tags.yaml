@@ -1,0 +1,24 @@
+---
+- name: "module_ovirt_tags"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_tags: 
+      description: "{{ ovirt_tags_description | default('omit', True) }}"
+      parent: "{{ ovirt_tags_parent | default('omit', True) }}"
+      poll_interval: "{{ ovirt_tags_poll_interval | default('omit', True) }}"
+      state: "{{ ovirt_tags_state | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_tags_nested_attributes | default('omit', True) }}"
+      name: "{{ ovirt_tags_name | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_tags_fetch_nested | default('omit', True) }}"
+      hosts: "{{ ovirt_tags_hosts | default('omit', True) }}"
+      auth: "{{ ovirt_tags_auth | default('omit', True) }}"
+      timeout: "{{ ovirt_tags_timeout | default('omit', True) }}"
+      vms: "{{ ovirt_tags_vms | default('omit', True) }}"
+      wait: "{{ ovirt_tags_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_tags"
+      ovirt_tags: "{{ ovirt_tags }}"

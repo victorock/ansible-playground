@@ -1,0 +1,9 @@
+---
+- name: "module_net_put"
+  net_put: "{{ net_put }}"
+  vars:
+    net_put: 
+      dest: "{{ net_put_dest | default(omit, True) }}"
+      src: "{{ net_put_src | default(omit, True) }}"
+      protocol: "{{ net_put_protocol | default(omit, True) }}"
+      mode: "{{ net_put_mode | default(omit, True) }}"

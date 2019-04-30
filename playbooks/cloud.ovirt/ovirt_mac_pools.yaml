@@ -1,0 +1,23 @@
+---
+- name: "module_ovirt_mac_pools"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_mac_pools: 
+      allow_duplicates: "{{ ovirt_mac_pools_allow_duplicates | default('omit', True) }}"
+      description: "{{ ovirt_mac_pools_description | default('omit', True) }}"
+      poll_interval: "{{ ovirt_mac_pools_poll_interval | default('omit', True) }}"
+      state: "{{ ovirt_mac_pools_state | default('omit', True) }}"
+      auth: "{{ ovirt_mac_pools_auth | default('omit', True) }}"
+      name: "{{ ovirt_mac_pools_name | default('omit', True) }}"
+      ranges: "{{ ovirt_mac_pools_ranges | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_mac_pools_fetch_nested | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_mac_pools_nested_attributes | default('omit', True) }}"
+      timeout: "{{ ovirt_mac_pools_timeout | default('omit', True) }}"
+      wait: "{{ ovirt_mac_pools_wait | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_mac_pools"
+      ovirt_mac_pools: "{{ ovirt_mac_pools }}"

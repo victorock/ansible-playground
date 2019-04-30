@@ -1,0 +1,8 @@
+---
+- name: "module_ftd_file_upload"
+  ftd_file_upload: "{{ ftd_file_upload }}"
+  vars:
+    ftd_file_upload: 
+      register_as: "{{ ftd_file_upload_register_as | default(omit, True) }}"
+      operation: "{{ ftd_file_upload_operation | default(omit, True) }}"
+      file_to_upload: "{{ ftd_file_upload_file_to_upload | default(omit, True) }}"

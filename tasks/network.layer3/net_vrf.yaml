@@ -1,0 +1,10 @@
+---
+- name: "module_net_vrf"
+  net_vrf: "{{ net_vrf }}"
+  vars:
+    net_vrf: 
+      aggregate: "{{ net_vrf_aggregate | default(omit, True) }}"
+      purge: "{{ net_vrf_purge | default(omit, True) }}"
+      interfaces: "{{ net_vrf_interfaces | default(omit, True) }}"
+      name: "{{ net_vrf_name | default(omit, True) }}"
+      state: "{{ net_vrf_state | default(omit, True) }}"

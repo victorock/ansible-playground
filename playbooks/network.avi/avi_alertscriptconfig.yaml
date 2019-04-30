@@ -1,0 +1,28 @@
+---
+- name: "module_avi_alertscriptconfig"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_alertscriptconfig: 
+      username: "{{ avi_alertscriptconfig_username | default('omit', True) }}"
+      uuid: "{{ avi_alertscriptconfig_uuid | default('omit', True) }}"
+      action_script: "{{ avi_alertscriptconfig_action_script | default('omit', True) }}"
+      state: "{{ avi_alertscriptconfig_state | default('omit', True) }}"
+      url: "{{ avi_alertscriptconfig_url | default('omit', True) }}"
+      controller: "{{ avi_alertscriptconfig_controller | default('omit', True) }}"
+      tenant_ref: "{{ avi_alertscriptconfig_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_alertscriptconfig_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_alertscriptconfig_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_alertscriptconfig_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_alertscriptconfig_tenant | default('omit', True) }}"
+      api_context: "{{ avi_alertscriptconfig_api_context | default('omit', True) }}"
+      password: "{{ avi_alertscriptconfig_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_alertscriptconfig_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_alertscriptconfig_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_alertscriptconfig_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_alertscriptconfig"
+      avi_alertscriptconfig: "{{ avi_alertscriptconfig }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_ce_evpn_bgp_rr"
+  ce_evpn_bgp_rr: "{{ ce_evpn_bgp_rr }}"
+  vars:
+    ce_evpn_bgp_rr: 
+      as_number: "{{ ce_evpn_bgp_rr_as_number | default(omit, True) }}"
+      bgp_evpn_enable: "{{ ce_evpn_bgp_rr_bgp_evpn_enable | default(omit, True) }}"
+      policy_vpn_target: "{{ ce_evpn_bgp_rr_policy_vpn_target | default(omit, True) }}"
+      reflect_client: "{{ ce_evpn_bgp_rr_reflect_client | default(omit, True) }}"
+      bgp_instance: "{{ ce_evpn_bgp_rr_bgp_instance | default(omit, True) }}"
+      peer: "{{ ce_evpn_bgp_rr_peer | default(omit, True) }}"
+      peer_type: "{{ ce_evpn_bgp_rr_peer_type | default(omit, True) }}"

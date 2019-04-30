@@ -1,0 +1,23 @@
+---
+- name: "module_digital_ocean_block_storage"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    digital_ocean_block_storage: 
+      droplet_id: "{{ digital_ocean_block_storage_droplet_id | default('omit', True) }}"
+      description: "{{ digital_ocean_block_storage_description | default('omit', True) }}"
+      region: "{{ digital_ocean_block_storage_region | default('omit', True) }}"
+      volume_name: "{{ digital_ocean_block_storage_volume_name | default('omit', True) }}"
+      state: "{{ digital_ocean_block_storage_state | default('omit', True) }}"
+      command: "{{ digital_ocean_block_storage_command | default('omit', True) }}"
+      timeout: "{{ digital_ocean_block_storage_timeout | default('omit', True) }}"
+      snapshot_id: "{{ digital_ocean_block_storage_snapshot_id | default('omit', True) }}"
+      oauth_token: "{{ digital_ocean_block_storage_oauth_token | default('omit', True) }}"
+      block_size: "{{ digital_ocean_block_storage_block_size | default('omit', True) }}"
+      validate_certs: "{{ digital_ocean_block_storage_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_digital_ocean_block_storage"
+      digital_ocean_block_storage: "{{ digital_ocean_block_storage }}"

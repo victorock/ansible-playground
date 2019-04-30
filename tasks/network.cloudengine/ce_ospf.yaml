@@ -1,0 +1,17 @@
+---
+- name: "module_ce_ospf"
+  ce_ospf: "{{ ce_ospf }}"
+  vars:
+    ce_ospf: 
+      addr: "{{ ce_ospf_addr | default(omit, True) }}"
+      area: "{{ ce_ospf_area | default(omit, True) }}"
+      max_load_balance: "{{ ce_ospf_max_load_balance | default(omit, True) }}"
+      mask: "{{ ce_ospf_mask | default(omit, True) }}"
+      auth_mode: "{{ ce_ospf_auth_mode | default(omit, True) }}"
+      auth_key_id: "{{ ce_ospf_auth_key_id | default(omit, True) }}"
+      auth_text_simple: "{{ ce_ospf_auth_text_simple | default(omit, True) }}"
+      state: "{{ ce_ospf_state | default(omit, True) }}"
+      process_id: "{{ ce_ospf_process_id | default(omit, True) }}"
+      nexthop_addr: "{{ ce_ospf_nexthop_addr | default(omit, True) }}"
+      auth_text_md5: "{{ ce_ospf_auth_text_md5 | default(omit, True) }}"
+      nexthop_weight: "{{ ce_ospf_nexthop_weight | default(omit, True) }}"

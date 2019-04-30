@@ -1,0 +1,18 @@
+---
+- name: "module_cnos_showrun"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_showrun: 
+      username: "{{ cnos_showrun_username | default('omit', True) }}"
+      outputfile: "{{ cnos_showrun_outputfile | default('omit', True) }}"
+      host: "{{ cnos_showrun_host | default('omit', True) }}"
+      deviceType: "{{ cnos_showrun_deviceType | default('omit', True) }}"
+      password: "{{ cnos_showrun_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_showrun_enablePassword | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_showrun"
+      cnos_showrun: "{{ cnos_showrun }}"

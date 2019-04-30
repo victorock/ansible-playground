@@ -1,0 +1,23 @@
+---
+- name: "module_vdirect_file"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vdirect_file: 
+      vdirect_user: "{{ vdirect_file_vdirect_user | default('omit', True) }}"
+      vdirect_wait: "{{ vdirect_file_vdirect_wait | default('omit', True) }}"
+      vdirect_http_port: "{{ vdirect_file_vdirect_http_port | default('omit', True) }}"
+      vdirect_validate_certs: "{{ vdirect_file_vdirect_validate_certs | default('omit', True) }}"
+      file_name: "{{ vdirect_file_file_name | default('omit', True) }}"
+      vdirect_timeout: "{{ vdirect_file_vdirect_timeout | default('omit', True) }}"
+      vdirect_password: "{{ vdirect_file_vdirect_password | default('omit', True) }}"
+      vdirect_ip: "{{ vdirect_file_vdirect_ip | default('omit', True) }}"
+      vdirect_https_port: "{{ vdirect_file_vdirect_https_port | default('omit', True) }}"
+      vdirect_secondary_ip: "{{ vdirect_file_vdirect_secondary_ip | default('omit', True) }}"
+      vdirect_use_ssl: "{{ vdirect_file_vdirect_use_ssl | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vdirect_file"
+      vdirect_file: "{{ vdirect_file }}"

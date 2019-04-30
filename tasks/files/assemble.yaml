@@ -1,0 +1,23 @@
+---
+- name: "module_assemble"
+  assemble: "{{ assemble }}"
+  vars:
+    assemble: 
+      ignore_hidden: "{{ assemble_ignore_hidden | default(omit, True) }}"
+      src: "{{ assemble_src | default(omit, True) }}"
+      group: "{{ assemble_group | default(omit, True) }}"
+      remote_src: "{{ assemble_remote_src | default(omit, True) }}"
+      dest: "{{ assemble_dest | default(omit, True) }}"
+      selevel: "{{ assemble_selevel | default(omit, True) }}"
+      seuser: "{{ assemble_seuser | default(omit, True) }}"
+      decrypt: "{{ assemble_decrypt | default(omit, True) }}"
+      delimiter: "{{ assemble_delimiter | default(omit, True) }}"
+      unsafe_writes: "{{ assemble_unsafe_writes | default(omit, True) }}"
+      serole: "{{ assemble_serole | default(omit, True) }}"
+      mode: "{{ assemble_mode | default(omit, True) }}"
+      attributes: "{{ assemble_attributes | default(omit, True) }}"
+      owner: "{{ assemble_owner | default(omit, True) }}"
+      regexp: "{{ assemble_regexp | default(omit, True) }}"
+      validate: "{{ assemble_validate | default(omit, True) }}"
+      backup: "{{ assemble_backup | default(omit, True) }}"
+      setype: "{{ assemble_setype | default(omit, True) }}"

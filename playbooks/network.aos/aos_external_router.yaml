@@ -1,0 +1,19 @@
+---
+- name: "module_aos_external_router"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aos_external_router: 
+      name: "{{ aos_external_router_name | default('omit', True) }}"
+      loopback: "{{ aos_external_router_loopback | default('omit', True) }}"
+      asn: "{{ aos_external_router_asn | default('omit', True) }}"
+      content: "{{ aos_external_router_content | default('omit', True) }}"
+      state: "{{ aos_external_router_state | default('omit', True) }}"
+      session: "{{ aos_external_router_session | default('omit', True) }}"
+      id: "{{ aos_external_router_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aos_external_router"
+      aos_external_router: "{{ aos_external_router }}"

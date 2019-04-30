@@ -1,0 +1,19 @@
+---
+- name: "module_composer"
+  composer: "{{ composer }}"
+  vars:
+    composer: 
+      arguments: "{{ composer_arguments | default(omit, True) }}"
+      executable: "{{ composer_executable | default(omit, True) }}"
+      apcu_autoloader: "{{ composer_apcu_autoloader | default(omit, True) }}"
+      no_scripts: "{{ composer_no_scripts | default(omit, True) }}"
+      no_plugins: "{{ composer_no_plugins | default(omit, True) }}"
+      optimize_autoloader: "{{ composer_optimize_autoloader | default(omit, True) }}"
+      working_dir: "{{ composer_working_dir | default(omit, True) }}"
+      ignore_platform_reqs: "{{ composer_ignore_platform_reqs | default(omit, True) }}"
+      global_command: "{{ composer_global_command | default(omit, True) }}"
+      classmap_authoritative: "{{ composer_classmap_authoritative | default(omit, True) }}"
+      command: "{{ composer_command | default(omit, True) }}"
+      no_dev: "{{ composer_no_dev | default(omit, True) }}"
+      prefer_dist: "{{ composer_prefer_dist | default(omit, True) }}"
+      prefer_source: "{{ composer_prefer_source | default(omit, True) }}"

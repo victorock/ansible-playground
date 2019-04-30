@@ -1,0 +1,21 @@
+---
+- name: "module_pkgng"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pkgng: 
+      chroot: "{{ pkgng_chroot | default('omit', True) }}"
+      name: "{{ pkgng_name | default('omit', True) }}"
+      cached: "{{ pkgng_cached | default('omit', True) }}"
+      pkgsite: "{{ pkgng_pkgsite | default('omit', True) }}"
+      state: "{{ pkgng_state | default('omit', True) }}"
+      rootdir: "{{ pkgng_rootdir | default('omit', True) }}"
+      autoremove: "{{ pkgng_autoremove | default('omit', True) }}"
+      jail: "{{ pkgng_jail | default('omit', True) }}"
+      annotation: "{{ pkgng_annotation | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pkgng"
+      pkgng: "{{ pkgng }}"

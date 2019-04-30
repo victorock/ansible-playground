@@ -1,0 +1,10 @@
+---
+- name: "module_foreman"
+  foreman: "{{ foreman }}"
+  vars:
+    foreman: 
+      username: "{{ foreman_username | default(omit, True) }}"
+      password: "{{ foreman_password | default(omit, True) }}"
+      params: "{{ foreman_params | default(omit, True) }}"
+      server_url: "{{ foreman_server_url | default(omit, True) }}"
+      entity: "{{ foreman_entity | default(omit, True) }}"

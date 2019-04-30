@@ -1,0 +1,11 @@
+---
+- name: "module_nios_dns_view"
+  nios_dns_view: "{{ nios_dns_view }}"
+  vars:
+    nios_dns_view: 
+      comment: "{{ nios_dns_view_comment | default(omit, True) }}"
+      name: "{{ nios_dns_view_name | default(omit, True) }}"
+      network_view: "{{ nios_dns_view_network_view | default(omit, True) }}"
+      extattrs: "{{ nios_dns_view_extattrs | default(omit, True) }}"
+      state: "{{ nios_dns_view_state | default(omit, True) }}"
+      provider: "{{ nios_dns_view_provider | default(omit, True) }}"

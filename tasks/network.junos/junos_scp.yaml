@@ -1,0 +1,10 @@
+---
+- name: "module_junos_scp"
+  junos_scp: "{{ junos_scp }}"
+  vars:
+    junos_scp: 
+      dest: "{{ junos_scp_dest | default(omit, True) }}"
+      src: "{{ junos_scp_src | default(omit, True) }}"
+      remote_src: "{{ junos_scp_remote_src | default(omit, True) }}"
+      recursive: "{{ junos_scp_recursive | default(omit, True) }}"
+      provider: "{{ junos_scp_provider | default(omit, True) }}"

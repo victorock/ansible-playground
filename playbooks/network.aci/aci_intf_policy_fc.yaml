@@ -1,0 +1,27 @@
+---
+- name: "module_aci_intf_policy_fc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_intf_policy_fc: 
+      username: "{{ aci_intf_policy_fc_username | default('omit', True) }}"
+      port_mode: "{{ aci_intf_policy_fc_port_mode | default('omit', True) }}"
+      private_key: "{{ aci_intf_policy_fc_private_key | default('omit', True) }}"
+      description: "{{ aci_intf_policy_fc_description | default('omit', True) }}"
+      certificate_name: "{{ aci_intf_policy_fc_certificate_name | default('omit', True) }}"
+      state: "{{ aci_intf_policy_fc_state | default('omit', True) }}"
+      output_level: "{{ aci_intf_policy_fc_output_level | default('omit', True) }}"
+      host: "{{ aci_intf_policy_fc_host | default('omit', True) }}"
+      fc_policy: "{{ aci_intf_policy_fc_fc_policy | default('omit', True) }}"
+      timeout: "{{ aci_intf_policy_fc_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_intf_policy_fc_use_ssl | default('omit', True) }}"
+      password: "{{ aci_intf_policy_fc_password | default('omit', True) }}"
+      validate_certs: "{{ aci_intf_policy_fc_validate_certs | default('omit', True) }}"
+      port: "{{ aci_intf_policy_fc_port | default('omit', True) }}"
+      use_proxy: "{{ aci_intf_policy_fc_use_proxy | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_intf_policy_fc"
+      aci_intf_policy_fc: "{{ aci_intf_policy_fc }}"

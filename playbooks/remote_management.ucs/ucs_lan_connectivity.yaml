@@ -1,0 +1,24 @@
+---
+- name: "module_ucs_lan_connectivity"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ucs_lan_connectivity: 
+      username: "{{ ucs_lan_connectivity_username | default('omit', True) }}"
+      use_proxy: "{{ ucs_lan_connectivity_use_proxy | default('omit', True) }}"
+      description: "{{ ucs_lan_connectivity_description | default('omit', True) }}"
+      hostname: "{{ ucs_lan_connectivity_hostname | default('omit', True) }}"
+      org_dn: "{{ ucs_lan_connectivity_org_dn | default('omit', True) }}"
+      vnic_list: "{{ ucs_lan_connectivity_vnic_list | default('omit', True) }}"
+      state: "{{ ucs_lan_connectivity_state | default('omit', True) }}"
+      proxy: "{{ ucs_lan_connectivity_proxy | default('omit', True) }}"
+      use_ssl: "{{ ucs_lan_connectivity_use_ssl | default('omit', True) }}"
+      password: "{{ ucs_lan_connectivity_password | default('omit', True) }}"
+      port: "{{ ucs_lan_connectivity_port | default('omit', True) }}"
+      name: "{{ ucs_lan_connectivity_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ucs_lan_connectivity"
+      ucs_lan_connectivity: "{{ ucs_lan_connectivity }}"

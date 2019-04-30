@@ -1,0 +1,24 @@
+---
+- name: "module_vmware_vm_vm_drs_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_vm_vm_drs_rule: 
+      username: "{{ vmware_vm_vm_drs_rule_username | default('omit', True) }}"
+      drs_rule_name: "{{ vmware_vm_vm_drs_rule_drs_rule_name | default('omit', True) }}"
+      mandatory: "{{ vmware_vm_vm_drs_rule_mandatory | default('omit', True) }}"
+      cluster_name: "{{ vmware_vm_vm_drs_rule_cluster_name | default('omit', True) }}"
+      hostname: "{{ vmware_vm_vm_drs_rule_hostname | default('omit', True) }}"
+      enabled: "{{ vmware_vm_vm_drs_rule_enabled | default('omit', True) }}"
+      vms: "{{ vmware_vm_vm_drs_rule_vms | default('omit', True) }}"
+      affinity_rule: "{{ vmware_vm_vm_drs_rule_affinity_rule | default('omit', True) }}"
+      state: "{{ vmware_vm_vm_drs_rule_state | default('omit', True) }}"
+      password: "{{ vmware_vm_vm_drs_rule_password | default('omit', True) }}"
+      validate_certs: "{{ vmware_vm_vm_drs_rule_validate_certs | default('omit', True) }}"
+      port: "{{ vmware_vm_vm_drs_rule_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_vmware_vm_vm_drs_rule"
+      vmware_vm_vm_drs_rule: "{{ vmware_vm_vm_drs_rule }}"

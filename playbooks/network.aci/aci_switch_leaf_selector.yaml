@@ -1,0 +1,32 @@
+---
+- name: "module_aci_switch_leaf_selector"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_switch_leaf_selector: 
+      username: "{{ aci_switch_leaf_selector_username | default('omit', True) }}"
+      use_proxy: "{{ aci_switch_leaf_selector_use_proxy | default('omit', True) }}"
+      private_key: "{{ aci_switch_leaf_selector_private_key | default('omit', True) }}"
+      leaf: "{{ aci_switch_leaf_selector_leaf | default('omit', True) }}"
+      description: "{{ aci_switch_leaf_selector_description | default('omit', True) }}"
+      from: "{{ aci_switch_leaf_selector_from | default('omit', True) }}"
+      certificate_name: "{{ aci_switch_leaf_selector_certificate_name | default('omit', True) }}"
+      state: "{{ aci_switch_leaf_selector_state | default('omit', True) }}"
+      leaf_profile: "{{ aci_switch_leaf_selector_leaf_profile | default('omit', True) }}"
+      output_level: "{{ aci_switch_leaf_selector_output_level | default('omit', True) }}"
+      to: "{{ aci_switch_leaf_selector_to | default('omit', True) }}"
+      host: "{{ aci_switch_leaf_selector_host | default('omit', True) }}"
+      policy_group: "{{ aci_switch_leaf_selector_policy_group | default('omit', True) }}"
+      timeout: "{{ aci_switch_leaf_selector_timeout | default('omit', True) }}"
+      use_ssl: "{{ aci_switch_leaf_selector_use_ssl | default('omit', True) }}"
+      password: "{{ aci_switch_leaf_selector_password | default('omit', True) }}"
+      validate_certs: "{{ aci_switch_leaf_selector_validate_certs | default('omit', True) }}"
+      port: "{{ aci_switch_leaf_selector_port | default('omit', True) }}"
+      leaf_node_blk: "{{ aci_switch_leaf_selector_leaf_node_blk | default('omit', True) }}"
+      leaf_node_blk_description: "{{ aci_switch_leaf_selector_leaf_node_blk_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_switch_leaf_selector"
+      aci_switch_leaf_selector: "{{ aci_switch_leaf_selector }}"

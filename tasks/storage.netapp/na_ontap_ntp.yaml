@@ -1,0 +1,14 @@
+---
+- name: "module_na_ontap_ntp"
+  na_ontap_ntp: "{{ na_ontap_ntp }}"
+  vars:
+    na_ontap_ntp: 
+      username: "{{ na_ontap_ntp_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_ntp_http_port | default(omit, True) }}"
+      server_name: "{{ na_ontap_ntp_server_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_ntp_hostname | default(omit, True) }}"
+      state: "{{ na_ontap_ntp_state | default(omit, True) }}"
+      version: "{{ na_ontap_ntp_version | default(omit, True) }}"
+      https: "{{ na_ontap_ntp_https | default(omit, True) }}"
+      password: "{{ na_ontap_ntp_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_ntp_validate_certs | default(omit, True) }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_zypper_repository"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    zypper_repository: 
+      priority: "{{ zypper_repository_priority | default('omit', True) }}"
+      name: "{{ zypper_repository_name | default('omit', True) }}"
+      auto_import_keys: "{{ zypper_repository_auto_import_keys | default('omit', True) }}"
+      enabled: "{{ zypper_repository_enabled | default('omit', True) }}"
+      disable_gpg_check: "{{ zypper_repository_disable_gpg_check | default('omit', True) }}"
+      repo: "{{ zypper_repository_repo | default('omit', True) }}"
+      state: "{{ zypper_repository_state | default('omit', True) }}"
+      autorefresh: "{{ zypper_repository_autorefresh | default('omit', True) }}"
+      overwrite_multiple: "{{ zypper_repository_overwrite_multiple | default('omit', True) }}"
+      runrefresh: "{{ zypper_repository_runrefresh | default('omit', True) }}"
+      description: "{{ zypper_repository_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_zypper_repository"
+      zypper_repository: "{{ zypper_repository }}"

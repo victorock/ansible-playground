@@ -1,0 +1,9 @@
+---
+- name: "module_pacemaker_cluster"
+  pacemaker_cluster: "{{ pacemaker_cluster }}"
+  vars:
+    pacemaker_cluster: 
+      node: "{{ pacemaker_cluster_node | default(omit, True) }}"
+      state: "{{ pacemaker_cluster_state | default(omit, True) }}"
+      force: "{{ pacemaker_cluster_force | default(omit, True) }}"
+      timeout: "{{ pacemaker_cluster_timeout | default(omit, True) }}"

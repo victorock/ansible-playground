@@ -1,0 +1,19 @@
+---
+- name: "module_irc"
+  irc: "{{ irc }}"
+  vars:
+    irc: 
+      style: "{{ irc_style | default(omit, True) }}"
+      timeout: "{{ irc_timeout | default(omit, True) }}"
+      nick: "{{ irc_nick | default(omit, True) }}"
+      passwd: "{{ irc_passwd | default(omit, True) }}"
+      server: "{{ irc_server | default(omit, True) }}"
+      topic: "{{ irc_topic | default(omit, True) }}"
+      color: "{{ irc_color | default(omit, True) }}"
+      part: "{{ irc_part | default(omit, True) }}"
+      nick_to: "{{ irc_nick_to | default(omit, True) }}"
+      key: "{{ irc_key | default(omit, True) }}"
+      msg: "{{ irc_msg | default(omit, True) }}"
+      use_ssl: "{{ irc_use_ssl | default(omit, True) }}"
+      port: "{{ irc_port | default(omit, True) }}"
+      channel: "{{ irc_channel | default(omit, True) }}"

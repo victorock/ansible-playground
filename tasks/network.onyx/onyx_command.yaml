@@ -1,0 +1,11 @@
+---
+- name: "module_onyx_command"
+  onyx_command: "{{ onyx_command }}"
+  vars:
+    onyx_command: 
+      retries: "{{ onyx_command_retries | default(omit, True) }}"
+      commands: "{{ onyx_command_commands | default(omit, True) }}"
+      interval: "{{ onyx_command_interval | default(omit, True) }}"
+      provider: "{{ onyx_command_provider | default(omit, True) }}"
+      wait_for: "{{ onyx_command_wait_for | default(omit, True) }}"
+      match: "{{ onyx_command_match | default(omit, True) }}"

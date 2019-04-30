@@ -1,0 +1,17 @@
+---
+- name: "module_netapp_e_asup"
+  netapp_e_asup: "{{ netapp_e_asup }}"
+  vars:
+    netapp_e_asup: 
+      ssid: "{{ netapp_e_asup_ssid | default(omit, True) }}"
+      end: "{{ netapp_e_asup_end | default(omit, True) }}"
+      verbose: "{{ netapp_e_asup_verbose | default(omit, True) }}"
+      log_path: "{{ netapp_e_asup_log_path | default(omit, True) }}"
+      api_password: "{{ netapp_e_asup_api_password | default(omit, True) }}"
+      days: "{{ netapp_e_asup_days | default(omit, True) }}"
+      start: "{{ netapp_e_asup_start | default(omit, True) }}"
+      state: "{{ netapp_e_asup_state | default(omit, True) }}"
+      api_username: "{{ netapp_e_asup_api_username | default(omit, True) }}"
+      active: "{{ netapp_e_asup_active | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_asup_validate_certs | default(omit, True) }}"
+      api_url: "{{ netapp_e_asup_api_url | default(omit, True) }}"

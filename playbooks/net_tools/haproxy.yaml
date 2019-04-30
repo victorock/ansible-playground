@@ -1,0 +1,23 @@
+---
+- name: "module_haproxy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    haproxy: 
+      drain: "{{ haproxy_drain | default('omit', True) }}"
+      socket: "{{ haproxy_socket | default('omit', True) }}"
+      weight: "{{ haproxy_weight | default('omit', True) }}"
+      wait_retries: "{{ haproxy_wait_retries | default('omit', True) }}"
+      state: "{{ haproxy_state | default('omit', True) }}"
+      wait: "{{ haproxy_wait | default('omit', True) }}"
+      wait_interval: "{{ haproxy_wait_interval | default('omit', True) }}"
+      host: "{{ haproxy_host | default('omit', True) }}"
+      fail_on_not_found: "{{ haproxy_fail_on_not_found | default('omit', True) }}"
+      shutdown_sessions: "{{ haproxy_shutdown_sessions | default('omit', True) }}"
+      backend: "{{ haproxy_backend | default('omit', True) }}"
+  tasks:
+    - name: "plugin_haproxy"
+      haproxy: "{{ haproxy }}"

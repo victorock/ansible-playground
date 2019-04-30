@@ -1,0 +1,23 @@
+---
+- name: "module_gcp_compute_disk"
+  gcp_compute_disk: "{{ gcp_compute_disk }}"
+  vars:
+    gcp_compute_disk: 
+      scopes: "{{ gcp_compute_disk_scopes | default(omit, True) }}"
+      size_gb: "{{ gcp_compute_disk_size_gb | default(omit, True) }}"
+      type: "{{ gcp_compute_disk_type | default(omit, True) }}"
+      description: "{{ gcp_compute_disk_description | default(omit, True) }}"
+      zone: "{{ gcp_compute_disk_zone | default(omit, True) }}"
+      source_snapshot: "{{ gcp_compute_disk_source_snapshot | default(omit, True) }}"
+      labels: "{{ gcp_compute_disk_labels | default(omit, True) }}"
+      source_image: "{{ gcp_compute_disk_source_image | default(omit, True) }}"
+      project: "{{ gcp_compute_disk_project | default(omit, True) }}"
+      state: "{{ gcp_compute_disk_state | default(omit, True) }}"
+      source_image_encryption_key: "{{ gcp_compute_disk_source_image_encryption_key | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_disk_service_account_email | default(omit, True) }}"
+      licenses: "{{ gcp_compute_disk_licenses | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_disk_auth_kind | default(omit, True) }}"
+      disk_encryption_key: "{{ gcp_compute_disk_disk_encryption_key | default(omit, True) }}"
+      source_snapshot_encryption_key: "{{ gcp_compute_disk_source_snapshot_encryption_key | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_disk_service_account_file | default(omit, True) }}"
+      name: "{{ gcp_compute_disk_name | default(omit, True) }}"

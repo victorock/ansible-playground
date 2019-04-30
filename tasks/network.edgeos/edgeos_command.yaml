@@ -1,0 +1,10 @@
+---
+- name: "module_edgeos_command"
+  edgeos_command: "{{ edgeos_command }}"
+  vars:
+    edgeos_command: 
+      retries: "{{ edgeos_command_retries | default(omit, True) }}"
+      commands: "{{ edgeos_command_commands | default(omit, True) }}"
+      wait_for: "{{ edgeos_command_wait_for | default(omit, True) }}"
+      match: "{{ edgeos_command_match | default(omit, True) }}"
+      interval: "{{ edgeos_command_interval | default(omit, True) }}"

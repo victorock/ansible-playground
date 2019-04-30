@@ -1,0 +1,14 @@
+---
+- name: "module_async_status"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    async_status: 
+      jid: "{{ async_status_jid | default('omit', True) }}"
+      mode: "{{ async_status_mode | default('omit', True) }}"
+  tasks:
+    - name: "plugin_async_status"
+      async_status: "{{ async_status }}"

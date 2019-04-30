@@ -1,0 +1,13 @@
+---
+- name: "module_rabbitmq_policy"
+  rabbitmq_policy: "{{ rabbitmq_policy }}"
+  vars:
+    rabbitmq_policy: 
+      node: "{{ rabbitmq_policy_node | default(omit, True) }}"
+      name: "{{ rabbitmq_policy_name | default(omit, True) }}"
+      tags: "{{ rabbitmq_policy_tags | default(omit, True) }}"
+      pattern: "{{ rabbitmq_policy_pattern | default(omit, True) }}"
+      priority: "{{ rabbitmq_policy_priority | default(omit, True) }}"
+      vhost: "{{ rabbitmq_policy_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_policy_state | default(omit, True) }}"
+      apply_to: "{{ rabbitmq_policy_apply_to | default(omit, True) }}"

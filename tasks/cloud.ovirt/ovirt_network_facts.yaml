@@ -1,0 +1,9 @@
+---
+- name: "module_ovirt_network_facts"
+  ovirt_network_facts: "{{ ovirt_network_facts }}"
+  vars:
+    ovirt_network_facts: 
+      pattern: "{{ ovirt_network_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_network_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_network_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_network_facts_auth | default(omit, True) }}"

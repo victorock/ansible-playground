@@ -1,0 +1,16 @@
+---
+- name: "module_vmware_guest_custom_attributes"
+  vmware_guest_custom_attributes: "{{ vmware_guest_custom_attributes }}"
+  vars:
+    vmware_guest_custom_attributes: 
+      username: "{{ vmware_guest_custom_attributes_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_custom_attributes_datacenter | default(omit, True) }}"
+      name: "{{ vmware_guest_custom_attributes_name | default(omit, True) }}"
+      hostname: "{{ vmware_guest_custom_attributes_hostname | default(omit, True) }}"
+      state: "{{ vmware_guest_custom_attributes_state | default(omit, True) }}"
+      attributes: "{{ vmware_guest_custom_attributes_attributes | default(omit, True) }}"
+      folder: "{{ vmware_guest_custom_attributes_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_custom_attributes_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_custom_attributes_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_custom_attributes_port | default(omit, True) }}"
+      uuid: "{{ vmware_guest_custom_attributes_uuid | default(omit, True) }}"

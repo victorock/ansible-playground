@@ -1,0 +1,17 @@
+---
+- name: "module_onyx_interface"
+  onyx_interface: "{{ onyx_interface }}"
+  vars:
+    onyx_interface: 
+      purge: "{{ onyx_interface_purge | default(omit, True) }}"
+      description: "{{ onyx_interface_description | default(omit, True) }}"
+      duplex: "{{ onyx_interface_duplex | default(omit, True) }}"
+      enabled: "{{ onyx_interface_enabled | default(omit, True) }}"
+      mtu: "{{ onyx_interface_mtu | default(omit, True) }}"
+      rx_rate: "{{ onyx_interface_rx_rate | default(omit, True) }}"
+      state: "{{ onyx_interface_state | default(omit, True) }}"
+      delay: "{{ onyx_interface_delay | default(omit, True) }}"
+      aggregate: "{{ onyx_interface_aggregate | default(omit, True) }}"
+      speed: "{{ onyx_interface_speed | default(omit, True) }}"
+      tx_rate: "{{ onyx_interface_tx_rate | default(omit, True) }}"
+      name: "{{ onyx_interface_name | default(omit, True) }}"

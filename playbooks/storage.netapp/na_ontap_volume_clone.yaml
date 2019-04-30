@@ -1,0 +1,27 @@
+---
+- name: "module_na_ontap_volume_clone"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_volume_clone: 
+      parent_volume: "{{ na_ontap_volume_clone_parent_volume | default('omit', True) }}"
+      username: "{{ na_ontap_volume_clone_username | default('omit', True) }}"
+      password: "{{ na_ontap_volume_clone_password | default('omit', True) }}"
+      parent_snapshot: "{{ na_ontap_volume_clone_parent_snapshot | default('omit', True) }}"
+      vserver: "{{ na_ontap_volume_clone_vserver | default('omit', True) }}"
+      hostname: "{{ na_ontap_volume_clone_hostname | default('omit', True) }}"
+      state: "{{ na_ontap_volume_clone_state | default('omit', True) }}"
+      volume_type: "{{ na_ontap_volume_clone_volume_type | default('omit', True) }}"
+      volume: "{{ na_ontap_volume_clone_volume | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_volume_clone_validate_certs | default('omit', True) }}"
+      space_reserve: "{{ na_ontap_volume_clone_space_reserve | default('omit', True) }}"
+      http_port: "{{ na_ontap_volume_clone_http_port | default('omit', True) }}"
+      https: "{{ na_ontap_volume_clone_https | default('omit', True) }}"
+      qos_policy_group_name: "{{ na_ontap_volume_clone_qos_policy_group_name | default('omit', True) }}"
+      parent_vserver: "{{ na_ontap_volume_clone_parent_vserver | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_volume_clone"
+      na_ontap_volume_clone: "{{ na_ontap_volume_clone }}"

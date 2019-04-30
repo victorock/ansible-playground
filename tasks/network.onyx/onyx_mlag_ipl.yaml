@@ -1,0 +1,9 @@
+---
+- name: "module_onyx_mlag_ipl"
+  onyx_mlag_ipl: "{{ onyx_mlag_ipl }}"
+  vars:
+    onyx_mlag_ipl: 
+      vlan_interface: "{{ onyx_mlag_ipl_vlan_interface | default(omit, True) }}"
+      state: "{{ onyx_mlag_ipl_state | default(omit, True) }}"
+      name: "{{ onyx_mlag_ipl_name | default(omit, True) }}"
+      peer_address: "{{ onyx_mlag_ipl_peer_address | default(omit, True) }}"

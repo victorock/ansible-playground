@@ -1,0 +1,13 @@
+---
+- name: "module_cronvar"
+  cronvar: "{{ cronvar }}"
+  vars:
+    cronvar: 
+      name: "{{ cronvar_name | default(omit, True) }}"
+      insertbefore: "{{ cronvar_insertbefore | default(omit, True) }}"
+      cron_file: "{{ cronvar_cron_file | default(omit, True) }}"
+      value: "{{ cronvar_value | default(omit, True) }}"
+      state: "{{ cronvar_state | default(omit, True) }}"
+      user: "{{ cronvar_user | default(omit, True) }}"
+      insertafter: "{{ cronvar_insertafter | default(omit, True) }}"
+      backup: "{{ cronvar_backup | default(omit, True) }}"

@@ -1,0 +1,29 @@
+---
+- name: "module_avi_alertsyslogconfig"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_alertsyslogconfig: 
+      username: "{{ avi_alertsyslogconfig_username | default('omit', True) }}"
+      uuid: "{{ avi_alertsyslogconfig_uuid | default('omit', True) }}"
+      syslog_servers: "{{ avi_alertsyslogconfig_syslog_servers | default('omit', True) }}"
+      description: "{{ avi_alertsyslogconfig_description | default('omit', True) }}"
+      state: "{{ avi_alertsyslogconfig_state | default('omit', True) }}"
+      url: "{{ avi_alertsyslogconfig_url | default('omit', True) }}"
+      controller: "{{ avi_alertsyslogconfig_controller | default('omit', True) }}"
+      tenant_ref: "{{ avi_alertsyslogconfig_tenant_ref | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_alertsyslogconfig_avi_api_patch_op | default('omit', True) }}"
+      api_version: "{{ avi_alertsyslogconfig_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_alertsyslogconfig_avi_credentials | default('omit', True) }}"
+      tenant: "{{ avi_alertsyslogconfig_tenant | default('omit', True) }}"
+      api_context: "{{ avi_alertsyslogconfig_api_context | default('omit', True) }}"
+      password: "{{ avi_alertsyslogconfig_password | default('omit', True) }}"
+      tenant_uuid: "{{ avi_alertsyslogconfig_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_alertsyslogconfig_avi_api_update_method | default('omit', True) }}"
+      name: "{{ avi_alertsyslogconfig_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_alertsyslogconfig"
+      avi_alertsyslogconfig: "{{ avi_alertsyslogconfig }}"

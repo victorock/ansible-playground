@@ -1,0 +1,21 @@
+---
+- name: "module_influxdb_retention_policy"
+  influxdb_retention_policy: "{{ influxdb_retention_policy }}"
+  vars:
+    influxdb_retention_policy: 
+      username: "{{ influxdb_retention_policy_username | default(omit, True) }}"
+      retries: "{{ influxdb_retention_policy_retries | default(omit, True) }}"
+      use_udp: "{{ influxdb_retention_policy_use_udp | default(omit, True) }}"
+      proxies: "{{ influxdb_retention_policy_proxies | default(omit, True) }}"
+      ssl: "{{ influxdb_retention_policy_ssl | default(omit, True) }}"
+      default: "{{ influxdb_retention_policy_default | default(omit, True) }}"
+      database_name: "{{ influxdb_retention_policy_database_name | default(omit, True) }}"
+      hostname: "{{ influxdb_retention_policy_hostname | default(omit, True) }}"
+      udp_port: "{{ influxdb_retention_policy_udp_port | default(omit, True) }}"
+      policy_name: "{{ influxdb_retention_policy_policy_name | default(omit, True) }}"
+      replication: "{{ influxdb_retention_policy_replication | default(omit, True) }}"
+      timeout: "{{ influxdb_retention_policy_timeout | default(omit, True) }}"
+      duration: "{{ influxdb_retention_policy_duration | default(omit, True) }}"
+      password: "{{ influxdb_retention_policy_password | default(omit, True) }}"
+      validate_certs: "{{ influxdb_retention_policy_validate_certs | default(omit, True) }}"
+      port: "{{ influxdb_retention_policy_port | default(omit, True) }}"

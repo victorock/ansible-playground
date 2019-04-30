@@ -1,0 +1,9 @@
+---
+- name: "module_nxos_udld_interface"
+  nxos_udld_interface: "{{ nxos_udld_interface }}"
+  vars:
+    nxos_udld_interface: 
+      interface: "{{ nxos_udld_interface_interface | default(omit, True) }}"
+      state: "{{ nxos_udld_interface_state | default(omit, True) }}"
+      mode: "{{ nxos_udld_interface_mode | default(omit, True) }}"
+      provider: "{{ nxos_udld_interface_provider | default(omit, True) }}"

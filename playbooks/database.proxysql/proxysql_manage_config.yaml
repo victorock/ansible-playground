@@ -1,0 +1,21 @@
+---
+- name: "module_proxysql_manage_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    proxysql_manage_config: 
+      login_port: "{{ proxysql_manage_config_login_port | default('omit', True) }}"
+      direction: "{{ proxysql_manage_config_direction | default('omit', True) }}"
+      config_file: "{{ proxysql_manage_config_config_file | default('omit', True) }}"
+      config_settings: "{{ proxysql_manage_config_config_settings | default('omit', True) }}"
+      login_user: "{{ proxysql_manage_config_login_user | default('omit', True) }}"
+      login_host: "{{ proxysql_manage_config_login_host | default('omit', True) }}"
+      action: "{{ proxysql_manage_config_action | default('omit', True) }}"
+      login_password: "{{ proxysql_manage_config_login_password | default('omit', True) }}"
+      config_layer: "{{ proxysql_manage_config_config_layer | default('omit', True) }}"
+  tasks:
+    - name: "plugin_proxysql_manage_config"
+      proxysql_manage_config: "{{ proxysql_manage_config }}"

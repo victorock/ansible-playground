@@ -1,0 +1,11 @@
+---
+- name: "module_vultr_server_facts"
+  vultr_server_facts: "{{ vultr_server_facts }}"
+  vars:
+    vultr_server_facts: 
+      api_retries: "{{ vultr_server_facts_api_retries | default(omit, True) }}"
+      api_timeout: "{{ vultr_server_facts_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_server_facts_api_endpoint | default(omit, True) }}"
+      api_account: "{{ vultr_server_facts_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_server_facts_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_server_facts_validate_certs | default(omit, True) }}"

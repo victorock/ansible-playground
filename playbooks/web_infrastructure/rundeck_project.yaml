@@ -1,0 +1,17 @@
+---
+- name: "module_rundeck_project"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rundeck_project: 
+      url: "{{ rundeck_project_url | default('omit', True) }}"
+      token: "{{ rundeck_project_token | default('omit', True) }}"
+      state: "{{ rundeck_project_state | default('omit', True) }}"
+      api_version: "{{ rundeck_project_api_version | default('omit', True) }}"
+      name: "{{ rundeck_project_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rundeck_project"
+      rundeck_project: "{{ rundeck_project }}"

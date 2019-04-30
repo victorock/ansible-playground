@@ -1,0 +1,14 @@
+---
+- name: "module_dpkg_selections"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dpkg_selections: 
+      selection: "{{ dpkg_selections_selection | default('omit', True) }}"
+      name: "{{ dpkg_selections_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dpkg_selections"
+      dpkg_selections: "{{ dpkg_selections }}"

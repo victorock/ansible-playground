@@ -1,0 +1,12 @@
+---
+- name: "module_junos_system"
+  junos_system: "{{ junos_system }}"
+  vars:
+    junos_system: 
+      domain_search: "{{ junos_system_domain_search | default(omit, True) }}"
+      hostname: "{{ junos_system_hostname | default(omit, True) }}"
+      domain_name: "{{ junos_system_domain_name | default(omit, True) }}"
+      active: "{{ junos_system_active | default(omit, True) }}"
+      state: "{{ junos_system_state | default(omit, True) }}"
+      provider: "{{ junos_system_provider | default(omit, True) }}"
+      name_servers: "{{ junos_system_name_servers | default(omit, True) }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_nso_verify"
+  nso_verify: "{{ nso_verify }}"
+  vars:
+    nso_verify: 
+      url: "{{ nso_verify_url | default(omit, True) }}"
+      username: "{{ nso_verify_username | default(omit, True) }}"
+      password: "{{ nso_verify_password | default(omit, True) }}"
+      data: "{{ nso_verify_data | default(omit, True) }}"
+      timeout: "{{ nso_verify_timeout | default(omit, True) }}"

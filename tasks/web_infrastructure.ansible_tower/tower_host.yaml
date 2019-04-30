@@ -1,0 +1,16 @@
+---
+- name: "module_tower_host"
+  tower_host: "{{ tower_host }}"
+  vars:
+    tower_host: 
+      description: "{{ tower_host_description | default(omit, True) }}"
+      tower_host: "{{ tower_host_tower_host | default(omit, True) }}"
+      enabled: "{{ tower_host_enabled | default(omit, True) }}"
+      tower_username: "{{ tower_host_tower_username | default(omit, True) }}"
+      state: "{{ tower_host_state | default(omit, True) }}"
+      inventory: "{{ tower_host_inventory | default(omit, True) }}"
+      tower_password: "{{ tower_host_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_host_tower_config_file | default(omit, True) }}"
+      variables: "{{ tower_host_variables | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_host_tower_verify_ssl | default(omit, True) }}"
+      name: "{{ tower_host_name | default(omit, True) }}"

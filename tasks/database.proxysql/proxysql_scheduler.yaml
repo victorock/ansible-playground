@@ -1,0 +1,23 @@
+---
+- name: "module_proxysql_scheduler"
+  proxysql_scheduler: "{{ proxysql_scheduler }}"
+  vars:
+    proxysql_scheduler: 
+      comment: "{{ proxysql_scheduler_comment | default(omit, True) }}"
+      login_port: "{{ proxysql_scheduler_login_port | default(omit, True) }}"
+      arg3: "{{ proxysql_scheduler_arg3 | default(omit, True) }}"
+      config_file: "{{ proxysql_scheduler_config_file | default(omit, True) }}"
+      arg1: "{{ proxysql_scheduler_arg1 | default(omit, True) }}"
+      login_user: "{{ proxysql_scheduler_login_user | default(omit, True) }}"
+      arg2: "{{ proxysql_scheduler_arg2 | default(omit, True) }}"
+      login_password: "{{ proxysql_scheduler_login_password | default(omit, True) }}"
+      arg4: "{{ proxysql_scheduler_arg4 | default(omit, True) }}"
+      arg5: "{{ proxysql_scheduler_arg5 | default(omit, True) }}"
+      filename: "{{ proxysql_scheduler_filename | default(omit, True) }}"
+      state: "{{ proxysql_scheduler_state | default(omit, True) }}"
+      interval_ms: "{{ proxysql_scheduler_interval_ms | default(omit, True) }}"
+      load_to_runtime: "{{ proxysql_scheduler_load_to_runtime | default(omit, True) }}"
+      save_to_disk: "{{ proxysql_scheduler_save_to_disk | default(omit, True) }}"
+      active: "{{ proxysql_scheduler_active | default(omit, True) }}"
+      force_delete: "{{ proxysql_scheduler_force_delete | default(omit, True) }}"
+      login_host: "{{ proxysql_scheduler_login_host | default(omit, True) }}"

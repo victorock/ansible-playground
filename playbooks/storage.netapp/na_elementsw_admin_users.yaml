@@ -1,0 +1,20 @@
+---
+- name: "module_na_elementsw_admin_users"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_elementsw_admin_users: 
+      username: "{{ na_elementsw_admin_users_username | default('omit', True) }}"
+      element_username: "{{ na_elementsw_admin_users_element_username | default('omit', True) }}"
+      hostname: "{{ na_elementsw_admin_users_hostname | default('omit', True) }}"
+      access: "{{ na_elementsw_admin_users_access | default('omit', True) }}"
+      state: "{{ na_elementsw_admin_users_state | default('omit', True) }}"
+      acceptEula: "{{ na_elementsw_admin_users_acceptEula | default('omit', True) }}"
+      element_password: "{{ na_elementsw_admin_users_element_password | default('omit', True) }}"
+      password: "{{ na_elementsw_admin_users_password | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_elementsw_admin_users"
+      na_elementsw_admin_users: "{{ na_elementsw_admin_users }}"

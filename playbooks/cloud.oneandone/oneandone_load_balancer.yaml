@@ -1,0 +1,34 @@
+---
+- name: "module_oneandone_load_balancer"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    oneandone_load_balancer: 
+      add_rules: "{{ oneandone_load_balancer_add_rules | default('omit', True) }}"
+      auth_token: "{{ oneandone_load_balancer_auth_token | default('omit', True) }}"
+      add_server_ips: "{{ oneandone_load_balancer_add_server_ips | default('omit', True) }}"
+      health_check_path: "{{ oneandone_load_balancer_health_check_path | default('omit', True) }}"
+      api_url: "{{ oneandone_load_balancer_api_url | default('omit', True) }}"
+      wait_interval: "{{ oneandone_load_balancer_wait_interval | default('omit', True) }}"
+      state: "{{ oneandone_load_balancer_state | default('omit', True) }}"
+      method: "{{ oneandone_load_balancer_method | default('omit', True) }}"
+      persistence: "{{ oneandone_load_balancer_persistence | default('omit', True) }}"
+      load_balancer: "{{ oneandone_load_balancer_load_balancer | default('omit', True) }}"
+      health_check_parse: "{{ oneandone_load_balancer_health_check_parse | default('omit', True) }}"
+      description: "{{ oneandone_load_balancer_description | default('omit', True) }}"
+      rules: "{{ oneandone_load_balancer_rules | default('omit', True) }}"
+      health_check_test: "{{ oneandone_load_balancer_health_check_test | default('omit', True) }}"
+      wait_timeout: "{{ oneandone_load_balancer_wait_timeout | default('omit', True) }}"
+      wait: "{{ oneandone_load_balancer_wait | default('omit', True) }}"
+      datacenter: "{{ oneandone_load_balancer_datacenter | default('omit', True) }}"
+      persistence_time: "{{ oneandone_load_balancer_persistence_time | default('omit', True) }}"
+      health_check_interval: "{{ oneandone_load_balancer_health_check_interval | default('omit', True) }}"
+      name: "{{ oneandone_load_balancer_name | default('omit', True) }}"
+      remove_server_ips: "{{ oneandone_load_balancer_remove_server_ips | default('omit', True) }}"
+      remove_rules: "{{ oneandone_load_balancer_remove_rules | default('omit', True) }}"
+  tasks:
+    - name: "plugin_oneandone_load_balancer"
+      oneandone_load_balancer: "{{ oneandone_load_balancer }}"

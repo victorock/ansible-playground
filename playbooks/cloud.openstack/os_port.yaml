@@ -1,0 +1,37 @@
+---
+- name: "module_os_port"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_port: 
+      auth_type: "{{ os_port_auth_type | default('omit', True) }}"
+      allowed_address_pairs: "{{ os_port_allowed_address_pairs | default('omit', True) }}"
+      availability_zone: "{{ os_port_availability_zone | default('omit', True) }}"
+      extra_dhcp_opts: "{{ os_port_extra_dhcp_opts | default('omit', True) }}"
+      cacert: "{{ os_port_cacert | default('omit', True) }}"
+      device_owner: "{{ os_port_device_owner | default('omit', True) }}"
+      fixed_ips: "{{ os_port_fixed_ips | default('omit', True) }}"
+      security_groups: "{{ os_port_security_groups | default('omit', True) }}"
+      network: "{{ os_port_network | default('omit', True) }}"
+      verify: "{{ os_port_verify | default('omit', True) }}"
+      state: "{{ os_port_state | default('omit', True) }}"
+      cloud: "{{ os_port_cloud | default('omit', True) }}"
+      mac_address: "{{ os_port_mac_address | default('omit', True) }}"
+      device_id: "{{ os_port_device_id | default('omit', True) }}"
+      region_name: "{{ os_port_region_name | default('omit', True) }}"
+      api_timeout: "{{ os_port_api_timeout | default('omit', True) }}"
+      auth: "{{ os_port_auth | default('omit', True) }}"
+      key: "{{ os_port_key | default('omit', True) }}"
+      interface: "{{ os_port_interface | default('omit', True) }}"
+      wait: "{{ os_port_wait | default('omit', True) }}"
+      name: "{{ os_port_name | default('omit', True) }}"
+      admin_state_up: "{{ os_port_admin_state_up | default('omit', True) }}"
+      cert: "{{ os_port_cert | default('omit', True) }}"
+      no_security_groups: "{{ os_port_no_security_groups | default('omit', True) }}"
+      timeout: "{{ os_port_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_os_port"
+      os_port: "{{ os_port }}"

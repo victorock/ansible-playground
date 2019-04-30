@@ -1,0 +1,8 @@
+---
+- name: "module_gcpubsub_facts"
+  gcpubsub_facts: "{{ gcpubsub_facts }}"
+  vars:
+    gcpubsub_facts: 
+      topic: "{{ gcpubsub_facts_topic | default(omit, True) }}"
+      state: "{{ gcpubsub_facts_state | default(omit, True) }}"
+      view: "{{ gcpubsub_facts_view | default(omit, True) }}"

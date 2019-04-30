@@ -1,0 +1,14 @@
+---
+- name: "module_oc"
+  oc: "{{ oc }}"
+  vars:
+    oc: 
+      kind: "{{ oc_kind | default(omit, True) }}"
+      name: "{{ oc_name | default(omit, True) }}"
+      namespace: "{{ oc_namespace | default(omit, True) }}"
+      state: "{{ oc_state | default(omit, True) }}"
+      host: "{{ oc_host | default(omit, True) }}"
+      token: "{{ oc_token | default(omit, True) }}"
+      inline: "{{ oc_inline | default(omit, True) }}"
+      validate_certs: "{{ oc_validate_certs | default(omit, True) }}"
+      port: "{{ oc_port | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_infini_export"
+  infini_export: "{{ infini_export }}"
+  vars:
+    infini_export: 
+      inner_path: "{{ infini_export_inner_path | default(omit, True) }}"
+      client_list: "{{ infini_export_client_list | default(omit, True) }}"
+      name: "{{ infini_export_name | default(omit, True) }}"
+      system: "{{ infini_export_system | default(omit, True) }}"
+      state: "{{ infini_export_state | default(omit, True) }}"
+      user: "{{ infini_export_user | default(omit, True) }}"
+      filesystem: "{{ infini_export_filesystem | default(omit, True) }}"
+      password: "{{ infini_export_password | default(omit, True) }}"

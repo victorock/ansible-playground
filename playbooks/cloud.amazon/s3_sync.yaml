@@ -1,0 +1,30 @@
+---
+- name: "module_s3_sync"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    s3_sync: 
+      profile: "{{ s3_sync_profile | default('omit', True) }}"
+      aws_secret_key: "{{ s3_sync_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ s3_sync_aws_access_key | default('omit', True) }}"
+      file_change_strategy: "{{ s3_sync_file_change_strategy | default('omit', True) }}"
+      file_root: "{{ s3_sync_file_root | default('omit', True) }}"
+      security_token: "{{ s3_sync_security_token | default('omit', True) }}"
+      permission: "{{ s3_sync_permission | default('omit', True) }}"
+      region: "{{ s3_sync_region | default('omit', True) }}"
+      bucket: "{{ s3_sync_bucket | default('omit', True) }}"
+      include: "{{ s3_sync_include | default('omit', True) }}"
+      mode: "{{ s3_sync_mode | default('omit', True) }}"
+      ec2_url: "{{ s3_sync_ec2_url | default('omit', True) }}"
+      exclude: "{{ s3_sync_exclude | default('omit', True) }}"
+      mime_map: "{{ s3_sync_mime_map | default('omit', True) }}"
+      validate_certs: "{{ s3_sync_validate_certs | default('omit', True) }}"
+      cache_control: "{{ s3_sync_cache_control | default('omit', True) }}"
+      key_prefix: "{{ s3_sync_key_prefix | default('omit', True) }}"
+      delete: "{{ s3_sync_delete | default('omit', True) }}"
+  tasks:
+    - name: "plugin_s3_sync"
+      s3_sync: "{{ s3_sync }}"

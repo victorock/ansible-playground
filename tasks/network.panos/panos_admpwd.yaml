@@ -1,0 +1,9 @@
+---
+- name: "module_panos_admpwd"
+  panos_admpwd: "{{ panos_admpwd }}"
+  vars:
+    panos_admpwd: 
+      username: "{{ panos_admpwd_username | default(omit, True) }}"
+      newpassword: "{{ panos_admpwd_newpassword | default(omit, True) }}"
+      key_filename: "{{ panos_admpwd_key_filename | default(omit, True) }}"
+      ip_address: "{{ panos_admpwd_ip_address | default(omit, True) }}"

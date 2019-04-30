@@ -1,0 +1,23 @@
+---
+- name: "module_avi_gslbgeodbprofile"
+  avi_gslbgeodbprofile: "{{ avi_gslbgeodbprofile }}"
+  vars:
+    avi_gslbgeodbprofile: 
+      username: "{{ avi_gslbgeodbprofile_username | default(omit, True) }}"
+      api_version: "{{ avi_gslbgeodbprofile_api_version | default(omit, True) }}"
+      uuid: "{{ avi_gslbgeodbprofile_uuid | default(omit, True) }}"
+      url: "{{ avi_gslbgeodbprofile_url | default(omit, True) }}"
+      description: "{{ avi_gslbgeodbprofile_description | default(omit, True) }}"
+      avi_credentials: "{{ avi_gslbgeodbprofile_avi_credentials | default(omit, True) }}"
+      tenant_ref: "{{ avi_gslbgeodbprofile_tenant_ref | default(omit, True) }}"
+      controller: "{{ avi_gslbgeodbprofile_controller | default(omit, True) }}"
+      avi_api_patch_op: "{{ avi_gslbgeodbprofile_avi_api_patch_op | default(omit, True) }}"
+      state: "{{ avi_gslbgeodbprofile_state | default(omit, True) }}"
+      is_federated: "{{ avi_gslbgeodbprofile_is_federated | default(omit, True) }}"
+      tenant: "{{ avi_gslbgeodbprofile_tenant | default(omit, True) }}"
+      api_context: "{{ avi_gslbgeodbprofile_api_context | default(omit, True) }}"
+      entries: "{{ avi_gslbgeodbprofile_entries | default(omit, True) }}"
+      password: "{{ avi_gslbgeodbprofile_password | default(omit, True) }}"
+      tenant_uuid: "{{ avi_gslbgeodbprofile_tenant_uuid | default(omit, True) }}"
+      avi_api_update_method: "{{ avi_gslbgeodbprofile_avi_api_update_method | default(omit, True) }}"
+      name: "{{ avi_gslbgeodbprofile_name | default(omit, True) }}"

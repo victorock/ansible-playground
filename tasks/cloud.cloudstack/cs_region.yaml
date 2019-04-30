@@ -1,0 +1,15 @@
+---
+- name: "module_cs_region"
+  cs_region: "{{ cs_region }}"
+  vars:
+    cs_region: 
+      endpoint: "{{ cs_region_endpoint | default(omit, True) }}"
+      api_url: "{{ cs_region_api_url | default(omit, True) }}"
+      api_http_method: "{{ cs_region_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_region_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_region_api_timeout | default(omit, True) }}"
+      api_region: "{{ cs_region_api_region | default(omit, True) }}"
+      state: "{{ cs_region_state | default(omit, True) }}"
+      api_key: "{{ cs_region_api_key | default(omit, True) }}"
+      id: "{{ cs_region_id | default(omit, True) }}"
+      name: "{{ cs_region_name | default(omit, True) }}"

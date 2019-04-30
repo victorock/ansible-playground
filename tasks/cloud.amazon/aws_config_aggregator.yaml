@@ -1,0 +1,16 @@
+---
+- name: "module_aws_config_aggregator"
+  aws_config_aggregator: "{{ aws_config_aggregator }}"
+  vars:
+    aws_config_aggregator: 
+      profile: "{{ aws_config_aggregator_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_config_aggregator_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_config_aggregator_aws_access_key | default(omit, True) }}"
+      organization_source: "{{ aws_config_aggregator_organization_source | default(omit, True) }}"
+      name: "{{ aws_config_aggregator_name | default(omit, True) }}"
+      security_token: "{{ aws_config_aggregator_security_token | default(omit, True) }}"
+      account_sources: "{{ aws_config_aggregator_account_sources | default(omit, True) }}"
+      region: "{{ aws_config_aggregator_region | default(omit, True) }}"
+      state: "{{ aws_config_aggregator_state | default(omit, True) }}"
+      ec2_url: "{{ aws_config_aggregator_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ aws_config_aggregator_validate_certs | default(omit, True) }}"

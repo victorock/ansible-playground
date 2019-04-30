@@ -1,0 +1,11 @@
+---
+- name: "module_script"
+  script: "{{ script }}"
+  vars:
+    script: 
+      executable: "{{ script_executable | default(omit, True) }}"
+      chdir: "{{ script_chdir | default(omit, True) }}"
+      decrypt: "{{ script_decrypt | default(omit, True) }}"
+      removes: "{{ script_removes | default(omit, True) }}"
+      creates: "{{ script_creates | default(omit, True) }}"
+      free_form: "{{ script_free_form | default(omit, True) }}"

@@ -1,0 +1,48 @@
+---
+- name: "module_tower_job_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    tower_job_template: 
+      ask_diff_mode: "{{ tower_job_template_ask_diff_mode | default('omit', True) }}"
+      ask_limit: "{{ tower_job_template_ask_limit | default('omit', True) }}"
+      ask_inventory: "{{ tower_job_template_ask_inventory | default('omit', True) }}"
+      job_type: "{{ tower_job_template_job_type | default('omit', True) }}"
+      ask_job_type: "{{ tower_job_template_ask_job_type | default('omit', True) }}"
+      host_config_key: "{{ tower_job_template_host_config_key | default('omit', True) }}"
+      skip_tags: "{{ tower_job_template_skip_tags | default('omit', True) }}"
+      playbook: "{{ tower_job_template_playbook | default('omit', True) }}"
+      tower_username: "{{ tower_job_template_tower_username | default('omit', True) }}"
+      survey_enabled: "{{ tower_job_template_survey_enabled | default('omit', True) }}"
+      job_tags: "{{ tower_job_template_job_tags | default('omit', True) }}"
+      force_handlers_enabled: "{{ tower_job_template_force_handlers_enabled | default('omit', True) }}"
+      state: "{{ tower_job_template_state | default('omit', True) }}"
+      inventory: "{{ tower_job_template_inventory | default('omit', True) }}"
+      extra_vars_path: "{{ tower_job_template_extra_vars_path | default('omit', True) }}"
+      forks: "{{ tower_job_template_forks | default('omit', True) }}"
+      concurrent_jobs_enabled: "{{ tower_job_template_concurrent_jobs_enabled | default('omit', True) }}"
+      vault_credential: "{{ tower_job_template_vault_credential | default('omit', True) }}"
+      become_enabled: "{{ tower_job_template_become_enabled | default('omit', True) }}"
+      credential: "{{ tower_job_template_credential | default('omit', True) }}"
+      ask_verbosity: "{{ tower_job_template_ask_verbosity | default('omit', True) }}"
+      description: "{{ tower_job_template_description | default('omit', True) }}"
+      fact_caching_enabled: "{{ tower_job_template_fact_caching_enabled | default('omit', True) }}"
+      tower_host: "{{ tower_job_template_tower_host | default('omit', True) }}"
+      ask_skip_tags: "{{ tower_job_template_ask_skip_tags | default('omit', True) }}"
+      start_at_task: "{{ tower_job_template_start_at_task | default('omit', True) }}"
+      tower_password: "{{ tower_job_template_tower_password | default('omit', True) }}"
+      tower_config_file: "{{ tower_job_template_tower_config_file | default('omit', True) }}"
+      ask_credential: "{{ tower_job_template_ask_credential | default('omit', True) }}"
+      name: "{{ tower_job_template_name | default('omit', True) }}"
+      verbosity: "{{ tower_job_template_verbosity | default('omit', True) }}"
+      project: "{{ tower_job_template_project | default('omit', True) }}"
+      ask_extra_vars: "{{ tower_job_template_ask_extra_vars | default('omit', True) }}"
+      limit: "{{ tower_job_template_limit | default('omit', True) }}"
+      ask_tags: "{{ tower_job_template_ask_tags | default('omit', True) }}"
+      tower_verify_ssl: "{{ tower_job_template_tower_verify_ssl | default('omit', True) }}"
+  tasks:
+    - name: "plugin_tower_job_template"
+      tower_job_template: "{{ tower_job_template }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_zabbix_hostmacro"
+  zabbix_hostmacro: "{{ zabbix_hostmacro }}"
+  vars:
+    zabbix_hostmacro: 
+      http_login_password: "{{ zabbix_hostmacro_http_login_password | default(omit, True) }}"
+      force: "{{ zabbix_hostmacro_force | default(omit, True) }}"
+      macro_value: "{{ zabbix_hostmacro_macro_value | default(omit, True) }}"
+      login_user: "{{ zabbix_hostmacro_login_user | default(omit, True) }}"
+      http_login_user: "{{ zabbix_hostmacro_http_login_user | default(omit, True) }}"
+      server_url: "{{ zabbix_hostmacro_server_url | default(omit, True) }}"
+      state: "{{ zabbix_hostmacro_state | default(omit, True) }}"
+      host_name: "{{ zabbix_hostmacro_host_name | default(omit, True) }}"
+      timeout: "{{ zabbix_hostmacro_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_hostmacro_login_password | default(omit, True) }}"
+      macro_name: "{{ zabbix_hostmacro_macro_name | default(omit, True) }}"
+      validate_certs: "{{ zabbix_hostmacro_validate_certs | default(omit, True) }}"

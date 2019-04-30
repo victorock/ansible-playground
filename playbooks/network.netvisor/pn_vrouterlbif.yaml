@@ -1,0 +1,19 @@
+---
+- name: "module_pn_vrouterlbif"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_vrouterlbif: 
+      pn_vrouter_name: "{{ pn_vrouterlbif_pn_vrouter_name | default('omit', True) }}"
+      pn_clipassword: "{{ pn_vrouterlbif_pn_clipassword | default('omit', True) }}"
+      pn_index: "{{ pn_vrouterlbif_pn_index | default('omit', True) }}"
+      pn_interface_ip: "{{ pn_vrouterlbif_pn_interface_ip | default('omit', True) }}"
+      state: "{{ pn_vrouterlbif_state | default('omit', True) }}"
+      pn_cliusername: "{{ pn_vrouterlbif_pn_cliusername | default('omit', True) }}"
+      pn_cliswitch: "{{ pn_vrouterlbif_pn_cliswitch | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pn_vrouterlbif"
+      pn_vrouterlbif: "{{ pn_vrouterlbif }}"

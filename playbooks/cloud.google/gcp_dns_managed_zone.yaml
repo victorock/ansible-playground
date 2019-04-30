@@ -1,0 +1,22 @@
+---
+- name: "module_gcp_dns_managed_zone"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_dns_managed_zone: 
+      scopes: "{{ gcp_dns_managed_zone_scopes | default('omit', True) }}"
+      description: "{{ gcp_dns_managed_zone_description | default('omit', True) }}"
+      name_server_set: "{{ gcp_dns_managed_zone_name_server_set | default('omit', True) }}"
+      service_account_email: "{{ gcp_dns_managed_zone_service_account_email | default('omit', True) }}"
+      project: "{{ gcp_dns_managed_zone_project | default('omit', True) }}"
+      state: "{{ gcp_dns_managed_zone_state | default('omit', True) }}"
+      dns_name: "{{ gcp_dns_managed_zone_dns_name | default('omit', True) }}"
+      auth_kind: "{{ gcp_dns_managed_zone_auth_kind | default('omit', True) }}"
+      service_account_file: "{{ gcp_dns_managed_zone_service_account_file | default('omit', True) }}"
+      name: "{{ gcp_dns_managed_zone_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_dns_managed_zone"
+      gcp_dns_managed_zone: "{{ gcp_dns_managed_zone }}"

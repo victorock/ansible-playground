@@ -1,0 +1,27 @@
+---
+- name: "module_ce_vxlan_gateway"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_vxlan_gateway: 
+      dfs_source_vpn: "{{ ce_vxlan_gateway_dfs_source_vpn | default('omit', True) }}"
+      dfs_id: "{{ ce_vxlan_gateway_dfs_id | default('omit', True) }}"
+      arp_direct_route: "{{ ce_vxlan_gateway_arp_direct_route | default('omit', True) }}"
+      dfs_peer_vpn: "{{ ce_vxlan_gateway_dfs_peer_vpn | default('omit', True) }}"
+      vbdif_name: "{{ ce_vxlan_gateway_vbdif_name | default('omit', True) }}"
+      arp_distribute_gateway: "{{ ce_vxlan_gateway_arp_distribute_gateway | default('omit', True) }}"
+      vpn_vni: "{{ ce_vxlan_gateway_vpn_vni | default('omit', True) }}"
+      vbdif_mac: "{{ ce_vxlan_gateway_vbdif_mac | default('omit', True) }}"
+      state: "{{ ce_vxlan_gateway_state | default('omit', True) }}"
+      dfs_source_ip: "{{ ce_vxlan_gateway_dfs_source_ip | default('omit', True) }}"
+      dfs_udp_port: "{{ ce_vxlan_gateway_dfs_udp_port | default('omit', True) }}"
+      vbdif_bind_vpn: "{{ ce_vxlan_gateway_vbdif_bind_vpn | default('omit', True) }}"
+      dfs_all_active: "{{ ce_vxlan_gateway_dfs_all_active | default('omit', True) }}"
+      vpn_instance: "{{ ce_vxlan_gateway_vpn_instance | default('omit', True) }}"
+      dfs_peer_ip: "{{ ce_vxlan_gateway_dfs_peer_ip | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_vxlan_gateway"
+      ce_vxlan_gateway: "{{ ce_vxlan_gateway }}"

@@ -1,0 +1,30 @@
+---
+- name: "module_dynamodb_table"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dynamodb_table: 
+      profile: "{{ dynamodb_table_profile | default('omit', True) }}"
+      aws_secret_key: "{{ dynamodb_table_aws_secret_key | default('omit', True) }}"
+      read_capacity: "{{ dynamodb_table_read_capacity | default('omit', True) }}"
+      hash_key_name: "{{ dynamodb_table_hash_key_name | default('omit', True) }}"
+      range_key_type: "{{ dynamodb_table_range_key_type | default('omit', True) }}"
+      name: "{{ dynamodb_table_name | default('omit', True) }}"
+      security_token: "{{ dynamodb_table_security_token | default('omit', True) }}"
+      tags: "{{ dynamodb_table_tags | default('omit', True) }}"
+      region: "{{ dynamodb_table_region | default('omit', True) }}"
+      aws_access_key: "{{ dynamodb_table_aws_access_key | default('omit', True) }}"
+      indexes: "{{ dynamodb_table_indexes | default('omit', True) }}"
+      range_key_name: "{{ dynamodb_table_range_key_name | default('omit', True) }}"
+      state: "{{ dynamodb_table_state | default('omit', True) }}"
+      wait_for_active_timeout: "{{ dynamodb_table_wait_for_active_timeout | default('omit', True) }}"
+      ec2_url: "{{ dynamodb_table_ec2_url | default('omit', True) }}"
+      write_capacity: "{{ dynamodb_table_write_capacity | default('omit', True) }}"
+      validate_certs: "{{ dynamodb_table_validate_certs | default('omit', True) }}"
+      hash_key_type: "{{ dynamodb_table_hash_key_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dynamodb_table"
+      dynamodb_table: "{{ dynamodb_table }}"

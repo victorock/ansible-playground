@@ -1,0 +1,30 @@
+---
+- name: "module_avi_tenant"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    avi_tenant: 
+      username: "{{ avi_tenant_username | default('omit', True) }}"
+      password: "{{ avi_tenant_password | default('omit', True) }}"
+      uuid: "{{ avi_tenant_uuid | default('omit', True) }}"
+      name: "{{ avi_tenant_name | default('omit', True) }}"
+      state: "{{ avi_tenant_state | default('omit', True) }}"
+      url: "{{ avi_tenant_url | default('omit', True) }}"
+      api_version: "{{ avi_tenant_api_version | default('omit', True) }}"
+      avi_credentials: "{{ avi_tenant_avi_credentials | default('omit', True) }}"
+      created_by: "{{ avi_tenant_created_by | default('omit', True) }}"
+      avi_api_patch_op: "{{ avi_tenant_avi_api_patch_op | default('omit', True) }}"
+      controller: "{{ avi_tenant_controller | default('omit', True) }}"
+      tenant: "{{ avi_tenant_tenant | default('omit', True) }}"
+      api_context: "{{ avi_tenant_api_context | default('omit', True) }}"
+      config_settings: "{{ avi_tenant_config_settings | default('omit', True) }}"
+      local: "{{ avi_tenant_local | default('omit', True) }}"
+      tenant_uuid: "{{ avi_tenant_tenant_uuid | default('omit', True) }}"
+      avi_api_update_method: "{{ avi_tenant_avi_api_update_method | default('omit', True) }}"
+      description: "{{ avi_tenant_description | default('omit', True) }}"
+  tasks:
+    - name: "plugin_avi_tenant"
+      avi_tenant: "{{ avi_tenant }}"

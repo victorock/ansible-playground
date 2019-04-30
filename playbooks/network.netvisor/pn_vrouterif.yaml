@@ -1,0 +1,31 @@
+---
+- name: "module_pn_vrouterif"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_vrouterif: 
+      pn_nic_enable: "{{ pn_vrouterif_pn_nic_enable | default('omit', True) }}"
+      pn_exclusive: "{{ pn_vrouterif_pn_exclusive | default('omit', True) }}"
+      pn_nic_str: "{{ pn_vrouterif_pn_nic_str | default('omit', True) }}"
+      pn_clipassword: "{{ pn_vrouterif_pn_clipassword | default('omit', True) }}"
+      pn_vrrp_priority: "{{ pn_vrouterif_pn_vrrp_priority | default('omit', True) }}"
+      pn_vrouter_name: "{{ pn_vrouterif_pn_vrouter_name | default('omit', True) }}"
+      pn_secondary_macs: "{{ pn_vrouterif_pn_secondary_macs | default('omit', True) }}"
+      pn_cliusername: "{{ pn_vrouterif_pn_cliusername | default('omit', True) }}"
+      pn_interface_ip: "{{ pn_vrouterif_pn_interface_ip | default('omit', True) }}"
+      pn_vrrp_adv_int: "{{ pn_vrouterif_pn_vrrp_adv_int | default('omit', True) }}"
+      state: "{{ pn_vrouterif_state | default('omit', True) }}"
+      pn_vrrp_id: "{{ pn_vrouterif_pn_vrrp_id | default('omit', True) }}"
+      pn_vlan: "{{ pn_vrouterif_pn_vlan | default('omit', True) }}"
+      pn_interface: "{{ pn_vrouterif_pn_interface | default('omit', True) }}"
+      pn_alias: "{{ pn_vrouterif_pn_alias | default('omit', True) }}"
+      pn_l3port: "{{ pn_vrouterif_pn_l3port | default('omit', True) }}"
+      pn_vxlan: "{{ pn_vrouterif_pn_vxlan | default('omit', True) }}"
+      pn_cliswitch: "{{ pn_vrouterif_pn_cliswitch | default('omit', True) }}"
+      pn_assignment: "{{ pn_vrouterif_pn_assignment | default('omit', True) }}"
+  tasks:
+    - name: "plugin_pn_vrouterif"
+      pn_vrouterif: "{{ pn_vrouterif }}"

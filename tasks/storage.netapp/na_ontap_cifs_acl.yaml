@@ -1,0 +1,16 @@
+---
+- name: "module_na_ontap_cifs_acl"
+  na_ontap_cifs_acl: "{{ na_ontap_cifs_acl }}"
+  vars:
+    na_ontap_cifs_acl: 
+      username: "{{ na_ontap_cifs_acl_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_cifs_acl_http_port | default(omit, True) }}"
+      share_name: "{{ na_ontap_cifs_acl_share_name | default(omit, True) }}"
+      permission: "{{ na_ontap_cifs_acl_permission | default(omit, True) }}"
+      hostname: "{{ na_ontap_cifs_acl_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_cifs_acl_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_cifs_acl_state | default(omit, True) }}"
+      https: "{{ na_ontap_cifs_acl_https | default(omit, True) }}"
+      user_or_group: "{{ na_ontap_cifs_acl_user_or_group | default(omit, True) }}"
+      password: "{{ na_ontap_cifs_acl_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_cifs_acl_validate_certs | default(omit, True) }}"

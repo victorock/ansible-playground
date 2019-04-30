@@ -1,0 +1,15 @@
+---
+- name: "module_na_ontap_cifs"
+  na_ontap_cifs: "{{ na_ontap_cifs }}"
+  vars:
+    na_ontap_cifs: 
+      username: "{{ na_ontap_cifs_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_cifs_http_port | default(omit, True) }}"
+      share_name: "{{ na_ontap_cifs_share_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_cifs_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_cifs_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_cifs_state | default(omit, True) }}"
+      https: "{{ na_ontap_cifs_https | default(omit, True) }}"
+      path: "{{ na_ontap_cifs_path | default(omit, True) }}"
+      password: "{{ na_ontap_cifs_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_cifs_validate_certs | default(omit, True) }}"

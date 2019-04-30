@@ -1,0 +1,16 @@
+---
+- name: "module_netconf_rpc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netconf_rpc: 
+      content: "{{ netconf_rpc_content | default('omit', True) }}"
+      rpc: "{{ netconf_rpc_rpc | default('omit', True) }}"
+      xmlns: "{{ netconf_rpc_xmlns | default('omit', True) }}"
+      display: "{{ netconf_rpc_display | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netconf_rpc"
+      netconf_rpc: "{{ netconf_rpc }}"

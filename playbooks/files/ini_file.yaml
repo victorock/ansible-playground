@@ -1,0 +1,31 @@
+---
+- name: "module_ini_file"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ini_file: 
+      seuser: "{{ ini_file_seuser | default('omit', True) }}"
+      group: "{{ ini_file_group | default('omit', True) }}"
+      option: "{{ ini_file_option | default('omit', True) }}"
+      unsafe_writes: "{{ ini_file_unsafe_writes | default('omit', True) }}"
+      selevel: "{{ ini_file_selevel | default('omit', True) }}"
+      section: "{{ ini_file_section | default('omit', True) }}"
+      no_extra_spaces: "{{ ini_file_no_extra_spaces | default('omit', True) }}"
+      state: "{{ ini_file_state | default('omit', True) }}"
+      value: "{{ ini_file_value | default('omit', True) }}"
+      allow_no_value: "{{ ini_file_allow_no_value | default('omit', True) }}"
+      serole: "{{ ini_file_serole | default('omit', True) }}"
+      mode: "{{ ini_file_mode | default('omit', True) }}"
+      others: "{{ ini_file_others | default('omit', True) }}"
+      owner: "{{ ini_file_owner | default('omit', True) }}"
+      path: "{{ ini_file_path | default('omit', True) }}"
+      attributes: "{{ ini_file_attributes | default('omit', True) }}"
+      backup: "{{ ini_file_backup | default('omit', True) }}"
+      create: "{{ ini_file_create | default('omit', True) }}"
+      setype: "{{ ini_file_setype | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ini_file"
+      ini_file: "{{ ini_file }}"

@@ -1,0 +1,34 @@
+---
+- name: "module_ovirt_storage_connection"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_storage_connection: 
+      force: "{{ ovirt_storage_connection_force | default('omit', True) }}"
+      fetch_nested: "{{ ovirt_storage_connection_fetch_nested | default('omit', True) }}"
+      mount_options: "{{ ovirt_storage_connection_mount_options | default('omit', True) }}"
+      id: "{{ ovirt_storage_connection_id | default('omit', True) }}"
+      storage: "{{ ovirt_storage_connection_storage | default('omit', True) }}"
+      port: "{{ ovirt_storage_connection_port | default('omit', True) }}"
+      state: "{{ ovirt_storage_connection_state | default('omit', True) }}"
+      type: "{{ ovirt_storage_connection_type | default('omit', True) }}"
+      username: "{{ ovirt_storage_connection_username | default('omit', True) }}"
+      auth: "{{ ovirt_storage_connection_auth | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_storage_connection_nested_attributes | default('omit', True) }}"
+      address: "{{ ovirt_storage_connection_address | default('omit', True) }}"
+      nfs_timeout: "{{ ovirt_storage_connection_nfs_timeout | default('omit', True) }}"
+      path: "{{ ovirt_storage_connection_path | default('omit', True) }}"
+      password: "{{ ovirt_storage_connection_password | default('omit', True) }}"
+      nfs_version: "{{ ovirt_storage_connection_nfs_version | default('omit', True) }}"
+      wait: "{{ ovirt_storage_connection_wait | default('omit', True) }}"
+      target: "{{ ovirt_storage_connection_target | default('omit', True) }}"
+      poll_interval: "{{ ovirt_storage_connection_poll_interval | default('omit', True) }}"
+      nfs_retrans: "{{ ovirt_storage_connection_nfs_retrans | default('omit', True) }}"
+      timeout: "{{ ovirt_storage_connection_timeout | default('omit', True) }}"
+      vfs_type: "{{ ovirt_storage_connection_vfs_type | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_storage_connection"
+      ovirt_storage_connection: "{{ ovirt_storage_connection }}"

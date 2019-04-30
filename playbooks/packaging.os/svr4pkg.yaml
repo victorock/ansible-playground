@@ -1,0 +1,19 @@
+---
+- name: "module_svr4pkg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    svr4pkg: 
+      category: "{{ svr4pkg_category | default('omit', True) }}"
+      src: "{{ svr4pkg_src | default('omit', True) }}"
+      name: "{{ svr4pkg_name | default('omit', True) }}"
+      zone: "{{ svr4pkg_zone | default('omit', True) }}"
+      state: "{{ svr4pkg_state | default('omit', True) }}"
+      proxy: "{{ svr4pkg_proxy | default('omit', True) }}"
+      response_file: "{{ svr4pkg_response_file | default('omit', True) }}"
+  tasks:
+    - name: "plugin_svr4pkg"
+      svr4pkg: "{{ svr4pkg }}"

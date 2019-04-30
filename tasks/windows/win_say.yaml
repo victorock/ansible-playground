@@ -1,0 +1,11 @@
+---
+- name: "module_win_say"
+  win_say: "{{ win_say }}"
+  vars:
+    win_say: 
+      start_sound_path: "{{ win_say_start_sound_path | default(omit, True) }}"
+      msg_file: "{{ win_say_msg_file | default(omit, True) }}"
+      end_sound_path: "{{ win_say_end_sound_path | default(omit, True) }}"
+      msg: "{{ win_say_msg | default(omit, True) }}"
+      voice: "{{ win_say_voice | default(omit, True) }}"
+      speech_speed: "{{ win_say_speech_speed | default(omit, True) }}"

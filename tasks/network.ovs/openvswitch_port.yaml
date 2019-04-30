@@ -1,0 +1,12 @@
+---
+- name: "module_openvswitch_port"
+  openvswitch_port: "{{ openvswitch_port }}"
+  vars:
+    openvswitch_port: 
+      bridge: "{{ openvswitch_port_bridge | default(omit, True) }}"
+      set: "{{ openvswitch_port_set | default(omit, True) }}"
+      state: "{{ openvswitch_port_state | default(omit, True) }}"
+      tag: "{{ openvswitch_port_tag | default(omit, True) }}"
+      timeout: "{{ openvswitch_port_timeout | default(omit, True) }}"
+      external_ids: "{{ openvswitch_port_external_ids | default(omit, True) }}"
+      port: "{{ openvswitch_port_port | default(omit, True) }}"

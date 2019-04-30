@@ -1,0 +1,11 @@
+---
+- name: "module_cnos_command"
+  cnos_command: "{{ cnos_command }}"
+  vars:
+    cnos_command: 
+      retries: "{{ cnos_command_retries | default(omit, True) }}"
+      commands: "{{ cnos_command_commands | default(omit, True) }}"
+      interval: "{{ cnos_command_interval | default(omit, True) }}"
+      provider: "{{ cnos_command_provider | default(omit, True) }}"
+      wait_for: "{{ cnos_command_wait_for | default(omit, True) }}"
+      match: "{{ cnos_command_match | default(omit, True) }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_capabilities"
+  capabilities: "{{ capabilities }}"
+  vars:
+    capabilities: 
+      capability: "{{ capabilities_capability | default(omit, True) }}"
+      path: "{{ capabilities_path | default(omit, True) }}"
+      state: "{{ capabilities_state | default(omit, True) }}"

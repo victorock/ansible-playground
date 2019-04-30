@@ -1,0 +1,20 @@
+---
+- name: "module_ios_ping"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_ping: 
+      count: "{{ ios_ping_count | default('omit', True) }}"
+      authorize: "{{ ios_ping_authorize | default('omit', True) }}"
+      dest: "{{ ios_ping_dest | default('omit', True) }}"
+      auth_pass: "{{ ios_ping_auth_pass | default('omit', True) }}"
+      source: "{{ ios_ping_source | default('omit', True) }}"
+      state: "{{ ios_ping_state | default('omit', True) }}"
+      vrf: "{{ ios_ping_vrf | default('omit', True) }}"
+      provider: "{{ ios_ping_provider | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ios_ping"
+      ios_ping: "{{ ios_ping }}"

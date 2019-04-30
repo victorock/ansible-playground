@@ -1,0 +1,21 @@
+---
+- name: "module_junos_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_user: 
+      name: "{{ junos_user_name | default('omit', True) }}"
+      purge: "{{ junos_user_purge | default('omit', True) }}"
+      active: "{{ junos_user_active | default('omit', True) }}"
+      state: "{{ junos_user_state | default('omit', True) }}"
+      role: "{{ junos_user_role | default('omit', True) }}"
+      full_name: "{{ junos_user_full_name | default('omit', True) }}"
+      provider: "{{ junos_user_provider | default('omit', True) }}"
+      aggregate: "{{ junos_user_aggregate | default('omit', True) }}"
+      sshkey: "{{ junos_user_sshkey | default('omit', True) }}"
+  tasks:
+    - name: "plugin_junos_user"
+      junos_user: "{{ junos_user }}"

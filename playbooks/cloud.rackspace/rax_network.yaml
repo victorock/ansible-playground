@@ -1,0 +1,25 @@
+---
+- name: "module_rax_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rax_network: 
+      username: "{{ rax_network_username | default('omit', True) }}"
+      identity_type: "{{ rax_network_identity_type | default('omit', True) }}"
+      tenant_name: "{{ rax_network_tenant_name | default('omit', True) }}"
+      region: "{{ rax_network_region | default('omit', True) }}"
+      state: "{{ rax_network_state | default('omit', True) }}"
+      label: "{{ rax_network_label | default('omit', True) }}"
+      verify_ssl: "{{ rax_network_verify_ssl | default('omit', True) }}"
+      env: "{{ rax_network_env | default('omit', True) }}"
+      tenant_id: "{{ rax_network_tenant_id | default('omit', True) }}"
+      credentials: "{{ rax_network_credentials | default('omit', True) }}"
+      cidr: "{{ rax_network_cidr | default('omit', True) }}"
+      api_key: "{{ rax_network_api_key | default('omit', True) }}"
+      auth_endpoint: "{{ rax_network_auth_endpoint | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rax_network"
+      rax_network: "{{ rax_network }}"

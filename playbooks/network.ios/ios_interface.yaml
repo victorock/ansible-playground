@@ -1,0 +1,27 @@
+---
+- name: "module_ios_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_interface: 
+      neighbors: "{{ ios_interface_neighbors | default('omit', True) }}"
+      authorize: "{{ ios_interface_authorize | default('omit', True) }}"
+      description: "{{ ios_interface_description | default('omit', True) }}"
+      duplex: "{{ ios_interface_duplex | default('omit', True) }}"
+      auth_pass: "{{ ios_interface_auth_pass | default('omit', True) }}"
+      enabled: "{{ ios_interface_enabled | default('omit', True) }}"
+      mtu: "{{ ios_interface_mtu | default('omit', True) }}"
+      rx_rate: "{{ ios_interface_rx_rate | default('omit', True) }}"
+      state: "{{ ios_interface_state | default('omit', True) }}"
+      delay: "{{ ios_interface_delay | default('omit', True) }}"
+      provider: "{{ ios_interface_provider | default('omit', True) }}"
+      aggregate: "{{ ios_interface_aggregate | default('omit', True) }}"
+      speed: "{{ ios_interface_speed | default('omit', True) }}"
+      tx_rate: "{{ ios_interface_tx_rate | default('omit', True) }}"
+      name: "{{ ios_interface_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ios_interface"
+      ios_interface: "{{ ios_interface }}"

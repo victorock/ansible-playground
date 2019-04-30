@@ -1,0 +1,18 @@
+---
+- name: "module_cnos_factory"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_factory: 
+      username: "{{ cnos_factory_username | default('omit', True) }}"
+      outputfile: "{{ cnos_factory_outputfile | default('omit', True) }}"
+      host: "{{ cnos_factory_host | default('omit', True) }}"
+      deviceType: "{{ cnos_factory_deviceType | default('omit', True) }}"
+      password: "{{ cnos_factory_password | default('omit', True) }}"
+      enablePassword: "{{ cnos_factory_enablePassword | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cnos_factory"
+      cnos_factory: "{{ cnos_factory }}"

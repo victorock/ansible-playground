@@ -1,0 +1,11 @@
+---
+- name: "module_cnos_reload"
+  cnos_reload: "{{ cnos_reload }}"
+  vars:
+    cnos_reload: 
+      username: "{{ cnos_reload_username | default(omit, True) }}"
+      outputfile: "{{ cnos_reload_outputfile | default(omit, True) }}"
+      host: "{{ cnos_reload_host | default(omit, True) }}"
+      deviceType: "{{ cnos_reload_deviceType | default(omit, True) }}"
+      password: "{{ cnos_reload_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_reload_enablePassword | default(omit, True) }}"

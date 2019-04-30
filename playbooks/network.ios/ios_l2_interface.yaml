@@ -1,0 +1,23 @@
+---
+- name: "module_ios_l2_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_l2_interface: 
+      native_vlan: "{{ ios_l2_interface_native_vlan | default('omit', True) }}"
+      authorize: "{{ ios_l2_interface_authorize | default('omit', True) }}"
+      name: "{{ ios_l2_interface_name | default('omit', True) }}"
+      access_vlan: "{{ ios_l2_interface_access_vlan | default('omit', True) }}"
+      auth_pass: "{{ ios_l2_interface_auth_pass | default('omit', True) }}"
+      state: "{{ ios_l2_interface_state | default('omit', True) }}"
+      trunk_vlans: "{{ ios_l2_interface_trunk_vlans | default('omit', True) }}"
+      trunk_allowed_vlans: "{{ ios_l2_interface_trunk_allowed_vlans | default('omit', True) }}"
+      mode: "{{ ios_l2_interface_mode | default('omit', True) }}"
+      provider: "{{ ios_l2_interface_provider | default('omit', True) }}"
+      aggregate: "{{ ios_l2_interface_aggregate | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ios_l2_interface"
+      ios_l2_interface: "{{ ios_l2_interface }}"

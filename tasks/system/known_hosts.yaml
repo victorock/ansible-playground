@@ -1,0 +1,10 @@
+---
+- name: "module_known_hosts"
+  known_hosts: "{{ known_hosts }}"
+  vars:
+    known_hosts: 
+      path: "{{ known_hosts_path | default(omit, True) }}"
+      state: "{{ known_hosts_state | default(omit, True) }}"
+      hash_host: "{{ known_hosts_hash_host | default(omit, True) }}"
+      name: "{{ known_hosts_name | default(omit, True) }}"
+      key: "{{ known_hosts_key | default(omit, True) }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_gcp_sql_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_sql_user: 
+      scopes: "{{ gcp_sql_user_scopes | default('omit', True) }}"
+      name: "{{ gcp_sql_user_name | default('omit', True) }}"
+      service_account_email: "{{ gcp_sql_user_service_account_email | default('omit', True) }}"
+      host: "{{ gcp_sql_user_host | default('omit', True) }}"
+      project: "{{ gcp_sql_user_project | default('omit', True) }}"
+      instance: "{{ gcp_sql_user_instance | default('omit', True) }}"
+      state: "{{ gcp_sql_user_state | default('omit', True) }}"
+      service_account_file: "{{ gcp_sql_user_service_account_file | default('omit', True) }}"
+      password: "{{ gcp_sql_user_password | default('omit', True) }}"
+      auth_kind: "{{ gcp_sql_user_auth_kind | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_sql_user"
+      gcp_sql_user: "{{ gcp_sql_user }}"

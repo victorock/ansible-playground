@@ -1,0 +1,12 @@
+---
+- name: "module_office_365_connector_card"
+  office_365_connector_card: "{{ office_365_connector_card }}"
+  vars:
+    office_365_connector_card: 
+      title: "{{ office_365_connector_card_title | default(omit, True) }}"
+      color: "{{ office_365_connector_card_color | default(omit, True) }}"
+      text: "{{ office_365_connector_card_text | default(omit, True) }}"
+      webhook: "{{ office_365_connector_card_webhook | default(omit, True) }}"
+      actions: "{{ office_365_connector_card_actions | default(omit, True) }}"
+      summary: "{{ office_365_connector_card_summary | default(omit, True) }}"
+      sections: "{{ office_365_connector_card_sections | default(omit, True) }}"

@@ -1,0 +1,45 @@
+---
+- name: "module_nxos_bgp_af"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_bgp_af: 
+      dampening_max_suppress_time: "{{ nxos_bgp_af_dampening_max_suppress_time | default('omit', True) }}"
+      additional_paths_send: "{{ nxos_bgp_af_additional_paths_send | default('omit', True) }}"
+      additional_paths_install: "{{ nxos_bgp_af_additional_paths_install | default('omit', True) }}"
+      dampening_state: "{{ nxos_bgp_af_dampening_state | default('omit', True) }}"
+      additional_paths_receive: "{{ nxos_bgp_af_additional_paths_receive | default('omit', True) }}"
+      suppress_inactive: "{{ nxos_bgp_af_suppress_inactive | default('omit', True) }}"
+      dampening_routemap: "{{ nxos_bgp_af_dampening_routemap | default('omit', True) }}"
+      distance_ibgp: "{{ nxos_bgp_af_distance_ibgp | default('omit', True) }}"
+      distance_local: "{{ nxos_bgp_af_distance_local | default('omit', True) }}"
+      advertise_l2vpn_evpn: "{{ nxos_bgp_af_advertise_l2vpn_evpn | default('omit', True) }}"
+      afi: "{{ nxos_bgp_af_afi | default('omit', True) }}"
+      state: "{{ nxos_bgp_af_state | default('omit', True) }}"
+      networks: "{{ nxos_bgp_af_networks | default('omit', True) }}"
+      default_information_originate: "{{ nxos_bgp_af_default_information_originate | default('omit', True) }}"
+      next_hop_route_map: "{{ nxos_bgp_af_next_hop_route_map | default('omit', True) }}"
+      provider: "{{ nxos_bgp_af_provider | default('omit', True) }}"
+      table_map_filter: "{{ nxos_bgp_af_table_map_filter | default('omit', True) }}"
+      safi: "{{ nxos_bgp_af_safi | default('omit', True) }}"
+      default_metric: "{{ nxos_bgp_af_default_metric | default('omit', True) }}"
+      client_to_client: "{{ nxos_bgp_af_client_to_client | default('omit', True) }}"
+      dampen_igp_metric: "{{ nxos_bgp_af_dampen_igp_metric | default('omit', True) }}"
+      additional_paths_selection: "{{ nxos_bgp_af_additional_paths_selection | default('omit', True) }}"
+      maximum_paths_ibgp: "{{ nxos_bgp_af_maximum_paths_ibgp | default('omit', True) }}"
+      vrf: "{{ nxos_bgp_af_vrf | default('omit', True) }}"
+      distance_ebgp: "{{ nxos_bgp_af_distance_ebgp | default('omit', True) }}"
+      asn: "{{ nxos_bgp_af_asn | default('omit', True) }}"
+      redistribute: "{{ nxos_bgp_af_redistribute | default('omit', True) }}"
+      dampening_reuse_time: "{{ nxos_bgp_af_dampening_reuse_time | default('omit', True) }}"
+      maximum_paths: "{{ nxos_bgp_af_maximum_paths | default('omit', True) }}"
+      inject_map: "{{ nxos_bgp_af_inject_map | default('omit', True) }}"
+      dampening_suppress_time: "{{ nxos_bgp_af_dampening_suppress_time | default('omit', True) }}"
+      table_map: "{{ nxos_bgp_af_table_map | default('omit', True) }}"
+      dampening_half_time: "{{ nxos_bgp_af_dampening_half_time | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_bgp_af"
+      nxos_bgp_af: "{{ nxos_bgp_af }}"

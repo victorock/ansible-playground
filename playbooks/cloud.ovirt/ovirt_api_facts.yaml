@@ -1,0 +1,15 @@
+---
+- name: "module_ovirt_api_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ovirt_api_facts: 
+      fetch_nested: "{{ ovirt_api_facts_fetch_nested | default('omit', True) }}"
+      auth: "{{ ovirt_api_facts_auth | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_api_facts_nested_attributes | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ovirt_api_facts"
+      ovirt_api_facts: "{{ ovirt_api_facts }}"

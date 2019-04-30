@@ -1,0 +1,25 @@
+---
+- name: "module_nios_naptr_record"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nios_naptr_record: 
+      comment: "{{ nios_naptr_record_comment | default('omit', True) }}"
+      name: "{{ nios_naptr_record_name | default('omit', True) }}"
+      extattrs: "{{ nios_naptr_record_extattrs | default('omit', True) }}"
+      provider: "{{ nios_naptr_record_provider | default('omit', True) }}"
+      state: "{{ nios_naptr_record_state | default('omit', True) }}"
+      flags: "{{ nios_naptr_record_flags | default('omit', True) }}"
+      preference: "{{ nios_naptr_record_preference | default('omit', True) }}"
+      ttl: "{{ nios_naptr_record_ttl | default('omit', True) }}"
+      services: "{{ nios_naptr_record_services | default('omit', True) }}"
+      regexp: "{{ nios_naptr_record_regexp | default('omit', True) }}"
+      view: "{{ nios_naptr_record_view | default('omit', True) }}"
+      order: "{{ nios_naptr_record_order | default('omit', True) }}"
+      replacement: "{{ nios_naptr_record_replacement | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nios_naptr_record"
+      nios_naptr_record: "{{ nios_naptr_record }}"

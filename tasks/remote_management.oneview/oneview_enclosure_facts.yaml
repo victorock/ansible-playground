@@ -1,0 +1,9 @@
+---
+- name: "module_oneview_enclosure_facts"
+  oneview_enclosure_facts: "{{ oneview_enclosure_facts }}"
+  vars:
+    oneview_enclosure_facts: 
+      config: "{{ oneview_enclosure_facts_config | default(omit, True) }}"
+      params: "{{ oneview_enclosure_facts_params | default(omit, True) }}"
+      name: "{{ oneview_enclosure_facts_name | default(omit, True) }}"
+      options: "{{ oneview_enclosure_facts_options | default(omit, True) }}"

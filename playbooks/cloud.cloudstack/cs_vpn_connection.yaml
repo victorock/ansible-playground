@@ -1,0 +1,27 @@
+---
+- name: "module_cs_vpn_connection"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_vpn_connection: 
+      vpn_customer_gateway: "{{ cs_vpn_connection_vpn_customer_gateway | default('omit', True) }}"
+      project: "{{ cs_vpn_connection_project | default('omit', True) }}"
+      domain: "{{ cs_vpn_connection_domain | default('omit', True) }}"
+      force: "{{ cs_vpn_connection_force | default('omit', True) }}"
+      api_url: "{{ cs_vpn_connection_api_url | default('omit', True) }}"
+      api_http_method: "{{ cs_vpn_connection_api_http_method | default('omit', True) }}"
+      api_secret: "{{ cs_vpn_connection_api_secret | default('omit', True) }}"
+      api_timeout: "{{ cs_vpn_connection_api_timeout | default('omit', True) }}"
+      account: "{{ cs_vpn_connection_account | default('omit', True) }}"
+      api_region: "{{ cs_vpn_connection_api_region | default('omit', True) }}"
+      passive: "{{ cs_vpn_connection_passive | default('omit', True) }}"
+      state: "{{ cs_vpn_connection_state | default('omit', True) }}"
+      vpc: "{{ cs_vpn_connection_vpc | default('omit', True) }}"
+      poll_async: "{{ cs_vpn_connection_poll_async | default('omit', True) }}"
+      api_key: "{{ cs_vpn_connection_api_key | default('omit', True) }}"
+  tasks:
+    - name: "plugin_cs_vpn_connection"
+      cs_vpn_connection: "{{ cs_vpn_connection }}"

@@ -1,0 +1,22 @@
+---
+- name: "module_open_iscsi"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    open_iscsi: 
+      auto_node_startup: "{{ open_iscsi_auto_node_startup | default('omit', True) }}"
+      target: "{{ open_iscsi_target | default('omit', True) }}"
+      show_nodes: "{{ open_iscsi_show_nodes | default('omit', True) }}"
+      node_auth: "{{ open_iscsi_node_auth | default('omit', True) }}"
+      node_pass: "{{ open_iscsi_node_pass | default('omit', True) }}"
+      discover: "{{ open_iscsi_discover | default('omit', True) }}"
+      portal: "{{ open_iscsi_portal | default('omit', True) }}"
+      login: "{{ open_iscsi_login | default('omit', True) }}"
+      node_user: "{{ open_iscsi_node_user | default('omit', True) }}"
+      port: "{{ open_iscsi_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_open_iscsi"
+      open_iscsi: "{{ open_iscsi }}"

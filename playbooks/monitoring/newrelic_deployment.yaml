@@ -1,0 +1,22 @@
+---
+- name: "module_newrelic_deployment"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    newrelic_deployment: 
+      application_id: "{{ newrelic_deployment_application_id | default('omit', True) }}"
+      description: "{{ newrelic_deployment_description | default('omit', True) }}"
+      changelog: "{{ newrelic_deployment_changelog | default('omit', True) }}"
+      appname: "{{ newrelic_deployment_appname | default('omit', True) }}"
+      environment: "{{ newrelic_deployment_environment | default('omit', True) }}"
+      token: "{{ newrelic_deployment_token | default('omit', True) }}"
+      user: "{{ newrelic_deployment_user | default('omit', True) }}"
+      app_name: "{{ newrelic_deployment_app_name | default('omit', True) }}"
+      validate_certs: "{{ newrelic_deployment_validate_certs | default('omit', True) }}"
+      revision: "{{ newrelic_deployment_revision | default('omit', True) }}"
+  tasks:
+    - name: "plugin_newrelic_deployment"
+      newrelic_deployment: "{{ newrelic_deployment }}"

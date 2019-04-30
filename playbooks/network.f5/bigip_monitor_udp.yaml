@@ -1,0 +1,31 @@
+---
+- name: "module_bigip_monitor_udp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_monitor_udp: 
+      partition: "{{ bigip_monitor_udp_partition | default('omit', True) }}"
+      description: "{{ bigip_monitor_udp_description | default('omit', True) }}"
+      parent: "{{ bigip_monitor_udp_parent | default('omit', True) }}"
+      receive: "{{ bigip_monitor_udp_receive | default('omit', True) }}"
+      ip: "{{ bigip_monitor_udp_ip | default('omit', True) }}"
+      interval: "{{ bigip_monitor_udp_interval | default('omit', True) }}"
+      timeout: "{{ bigip_monitor_udp_timeout | default('omit', True) }}"
+      send: "{{ bigip_monitor_udp_send | default('omit', True) }}"
+      server: "{{ bigip_monitor_udp_server | default('omit', True) }}"
+      state: "{{ bigip_monitor_udp_state | default('omit', True) }}"
+      time_until_up: "{{ bigip_monitor_udp_time_until_up | default('omit', True) }}"
+      user: "{{ bigip_monitor_udp_user | default('omit', True) }}"
+      server_port: "{{ bigip_monitor_udp_server_port | default('omit', True) }}"
+      provider: "{{ bigip_monitor_udp_provider | default('omit', True) }}"
+      receive_disable: "{{ bigip_monitor_udp_receive_disable | default('omit', True) }}"
+      password: "{{ bigip_monitor_udp_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_monitor_udp_validate_certs | default('omit', True) }}"
+      port: "{{ bigip_monitor_udp_port | default('omit', True) }}"
+      name: "{{ bigip_monitor_udp_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_monitor_udp"
+      bigip_monitor_udp: "{{ bigip_monitor_udp }}"

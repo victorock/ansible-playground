@@ -1,0 +1,17 @@
+---
+- name: "module_debconf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    debconf: 
+      unseen: "{{ debconf_unseen | default('omit', True) }}"
+      vtype: "{{ debconf_vtype | default('omit', True) }}"
+      question: "{{ debconf_question | default('omit', True) }}"
+      name: "{{ debconf_name | default('omit', True) }}"
+      value: "{{ debconf_value | default('omit', True) }}"
+  tasks:
+    - name: "plugin_debconf"
+      debconf: "{{ debconf }}"

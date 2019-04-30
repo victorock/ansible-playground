@@ -1,0 +1,11 @@
+---
+- name: "module_logstash_plugin"
+  logstash_plugin: "{{ logstash_plugin }}"
+  vars:
+    logstash_plugin: 
+      name: "{{ logstash_plugin_name | default(omit, True) }}"
+      proxy_host: "{{ logstash_plugin_proxy_host | default(omit, True) }}"
+      proxy_port: "{{ logstash_plugin_proxy_port | default(omit, True) }}"
+      state: "{{ logstash_plugin_state | default(omit, True) }}"
+      version: "{{ logstash_plugin_version | default(omit, True) }}"
+      plugin_bin: "{{ logstash_plugin_plugin_bin | default(omit, True) }}"

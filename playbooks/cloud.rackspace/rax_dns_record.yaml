@@ -1,0 +1,33 @@
+---
+- name: "module_rax_dns_record"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rax_dns_record: 
+      comment: "{{ rax_dns_record_comment | default('omit', True) }}"
+      username: "{{ rax_dns_record_username | default('omit', True) }}"
+      domain: "{{ rax_dns_record_domain | default('omit', True) }}"
+      type: "{{ rax_dns_record_type | default('omit', True) }}"
+      name: "{{ rax_dns_record_name | default('omit', True) }}"
+      identity_type: "{{ rax_dns_record_identity_type | default('omit', True) }}"
+      tenant_name: "{{ rax_dns_record_tenant_name | default('omit', True) }}"
+      region: "{{ rax_dns_record_region | default('omit', True) }}"
+      state: "{{ rax_dns_record_state | default('omit', True) }}"
+      server: "{{ rax_dns_record_server | default('omit', True) }}"
+      priority: "{{ rax_dns_record_priority | default('omit', True) }}"
+      verify_ssl: "{{ rax_dns_record_verify_ssl | default('omit', True) }}"
+      tenant_id: "{{ rax_dns_record_tenant_id | default('omit', True) }}"
+      loadbalancer: "{{ rax_dns_record_loadbalancer | default('omit', True) }}"
+      env: "{{ rax_dns_record_env | default('omit', True) }}"
+      ttl: "{{ rax_dns_record_ttl | default('omit', True) }}"
+      credentials: "{{ rax_dns_record_credentials | default('omit', True) }}"
+      api_key: "{{ rax_dns_record_api_key | default('omit', True) }}"
+      data: "{{ rax_dns_record_data | default('omit', True) }}"
+      overwrite: "{{ rax_dns_record_overwrite | default('omit', True) }}"
+      auth_endpoint: "{{ rax_dns_record_auth_endpoint | default('omit', True) }}"
+  tasks:
+    - name: "plugin_rax_dns_record"
+      rax_dns_record: "{{ rax_dns_record }}"

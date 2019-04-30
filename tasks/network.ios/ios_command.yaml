@@ -1,0 +1,13 @@
+---
+- name: "module_ios_command"
+  ios_command: "{{ ios_command }}"
+  vars:
+    ios_command: 
+      authorize: "{{ ios_command_authorize | default(omit, True) }}"
+      retries: "{{ ios_command_retries | default(omit, True) }}"
+      commands: "{{ ios_command_commands | default(omit, True) }}"
+      interval: "{{ ios_command_interval | default(omit, True) }}"
+      auth_pass: "{{ ios_command_auth_pass | default(omit, True) }}"
+      provider: "{{ ios_command_provider | default(omit, True) }}"
+      wait_for: "{{ ios_command_wait_for | default(omit, True) }}"
+      match: "{{ ios_command_match | default(omit, True) }}"

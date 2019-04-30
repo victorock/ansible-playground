@@ -1,0 +1,23 @@
+---
+- name: "module_gcp_dns_resource_record_set"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_dns_resource_record_set: 
+      scopes: "{{ gcp_dns_resource_record_set_scopes | default('omit', True) }}"
+      target: "{{ gcp_dns_resource_record_set_target | default('omit', True) }}"
+      service_account_email: "{{ gcp_dns_resource_record_set_service_account_email | default('omit', True) }}"
+      project: "{{ gcp_dns_resource_record_set_project | default('omit', True) }}"
+      state: "{{ gcp_dns_resource_record_set_state | default('omit', True) }}"
+      ttl: "{{ gcp_dns_resource_record_set_ttl | default('omit', True) }}"
+      managed_zone: "{{ gcp_dns_resource_record_set_managed_zone | default('omit', True) }}"
+      service_account_file: "{{ gcp_dns_resource_record_set_service_account_file | default('omit', True) }}"
+      type: "{{ gcp_dns_resource_record_set_type | default('omit', True) }}"
+      auth_kind: "{{ gcp_dns_resource_record_set_auth_kind | default('omit', True) }}"
+      name: "{{ gcp_dns_resource_record_set_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_gcp_dns_resource_record_set"
+      gcp_dns_resource_record_set: "{{ gcp_dns_resource_record_set }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_webfaction_site"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    webfaction_site: 
+      site_apps: "{{ webfaction_site_site_apps | default('omit', True) }}"
+      host: "{{ webfaction_site_host | default('omit', True) }}"
+      subdomains: "{{ webfaction_site_subdomains | default('omit', True) }}"
+      state: "{{ webfaction_site_state | default('omit', True) }}"
+      https: "{{ webfaction_site_https | default('omit', True) }}"
+      login_password: "{{ webfaction_site_login_password | default('omit', True) }}"
+      login_name: "{{ webfaction_site_login_name | default('omit', True) }}"
+      name: "{{ webfaction_site_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_webfaction_site"
+      webfaction_site: "{{ webfaction_site }}"

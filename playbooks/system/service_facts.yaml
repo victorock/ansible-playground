@@ -1,0 +1,11 @@
+---
+- name: "module_service_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  tasks:
+    - name: "module_service_facts"
+      service_facts:
+  

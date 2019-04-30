@@ -1,0 +1,20 @@
+---
+- name: "module_onyx_igmp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_igmp: 
+      default_version: "{{ onyx_igmp_default_version | default('omit', True) }}"
+      last_member_query_interval: "{{ onyx_igmp_last_member_query_interval | default('omit', True) }}"
+      unregistered_multicast: "{{ onyx_igmp_unregistered_multicast | default('omit', True) }}"
+      state: "{{ onyx_igmp_state | default('omit', True) }}"
+      report_suppression_interval: "{{ onyx_igmp_report_suppression_interval | default('omit', True) }}"
+      proxy_reporting: "{{ onyx_igmp_proxy_reporting | default('omit', True) }}"
+      mrouter_timeout: "{{ onyx_igmp_mrouter_timeout | default('omit', True) }}"
+      port_purge_timeout: "{{ onyx_igmp_port_purge_timeout | default('omit', True) }}"
+  tasks:
+    - name: "plugin_onyx_igmp"
+      onyx_igmp: "{{ onyx_igmp }}"

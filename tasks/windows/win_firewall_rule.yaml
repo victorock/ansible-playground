@@ -1,0 +1,20 @@
+---
+- name: "module_win_firewall_rule"
+  win_firewall_rule: "{{ win_firewall_rule }}"
+  vars:
+    win_firewall_rule: 
+      remoteport: "{{ win_firewall_rule_remoteport | default(omit, True) }}"
+      direction: "{{ win_firewall_rule_direction | default(omit, True) }}"
+      force: "{{ win_firewall_rule_force | default(omit, True) }}"
+      description: "{{ win_firewall_rule_description | default(omit, True) }}"
+      service: "{{ win_firewall_rule_service | default(omit, True) }}"
+      enabled: "{{ win_firewall_rule_enabled | default(omit, True) }}"
+      profiles: "{{ win_firewall_rule_profiles | default(omit, True) }}"
+      name: "{{ win_firewall_rule_name | default(omit, True) }}"
+      localip: "{{ win_firewall_rule_localip | default(omit, True) }}"
+      state: "{{ win_firewall_rule_state | default(omit, True) }}"
+      program: "{{ win_firewall_rule_program | default(omit, True) }}"
+      remoteip: "{{ win_firewall_rule_remoteip | default(omit, True) }}"
+      action: "{{ win_firewall_rule_action | default(omit, True) }}"
+      protocol: "{{ win_firewall_rule_protocol | default(omit, True) }}"
+      localport: "{{ win_firewall_rule_localport | default(omit, True) }}"

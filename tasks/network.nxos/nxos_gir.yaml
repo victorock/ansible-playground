@@ -1,0 +1,12 @@
+---
+- name: "module_nxos_gir"
+  nxos_gir: "{{ nxos_gir }}"
+  vars:
+    nxos_gir: 
+      system_mode_maintenance_dont_generate_profile: "{{ nxos_gir_system_mode_maintenance_dont_generate_profile | default(omit, True) }}"
+      system_mode_maintenance_shutdown: "{{ nxos_gir_system_mode_maintenance_shutdown | default(omit, True) }}"
+      state: "{{ nxos_gir_state | default(omit, True) }}"
+      system_mode_maintenance_timeout: "{{ nxos_gir_system_mode_maintenance_timeout | default(omit, True) }}"
+      provider: "{{ nxos_gir_provider | default(omit, True) }}"
+      system_mode_maintenance: "{{ nxos_gir_system_mode_maintenance | default(omit, True) }}"
+      system_mode_maintenance_on_reload_reset_reason: "{{ nxos_gir_system_mode_maintenance_on_reload_reset_reason | default(omit, True) }}"

@@ -1,0 +1,8 @@
+---
+- name: "module_slackpkg"
+  slackpkg: "{{ slackpkg }}"
+  vars:
+    slackpkg: 
+      state: "{{ slackpkg_state | default(omit, True) }}"
+      update_cache: "{{ slackpkg_update_cache | default(omit, True) }}"
+      name: "{{ slackpkg_name | default(omit, True) }}"

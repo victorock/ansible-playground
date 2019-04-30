@@ -1,0 +1,17 @@
+---
+- name: "module_flatpak_remote"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    flatpak_remote: 
+      name: "{{ flatpak_remote_name | default('omit', True) }}"
+      executable: "{{ flatpak_remote_executable | default('omit', True) }}"
+      method: "{{ flatpak_remote_method | default('omit', True) }}"
+      flatpakrepo_url: "{{ flatpak_remote_flatpakrepo_url | default('omit', True) }}"
+      state: "{{ flatpak_remote_state | default('omit', True) }}"
+  tasks:
+    - name: "plugin_flatpak_remote"
+      flatpak_remote: "{{ flatpak_remote }}"

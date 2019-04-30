@@ -1,0 +1,18 @@
+---
+- name: "module_ce_ip_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_ip_interface: 
+      addr: "{{ ce_ip_interface_addr | default('omit', True) }}"
+      mask: "{{ ce_ip_interface_mask | default('omit', True) }}"
+      ipv4_type: "{{ ce_ip_interface_ipv4_type | default('omit', True) }}"
+      state: "{{ ce_ip_interface_state | default('omit', True) }}"
+      version: "{{ ce_ip_interface_version | default('omit', True) }}"
+      interface: "{{ ce_ip_interface_interface | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_ip_interface"
+      ce_ip_interface: "{{ ce_ip_interface }}"

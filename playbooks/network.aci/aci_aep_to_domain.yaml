@@ -1,0 +1,28 @@
+---
+- name: "module_aci_aep_to_domain"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_aep_to_domain: 
+      username: "{{ aci_aep_to_domain_username | default('omit', True) }}"
+      aep: "{{ aci_aep_to_domain_aep | default('omit', True) }}"
+      domain: "{{ aci_aep_to_domain_domain | default('omit', True) }}"
+      use_proxy: "{{ aci_aep_to_domain_use_proxy | default('omit', True) }}"
+      certificate_name: "{{ aci_aep_to_domain_certificate_name | default('omit', True) }}"
+      private_key: "{{ aci_aep_to_domain_private_key | default('omit', True) }}"
+      domain_type: "{{ aci_aep_to_domain_domain_type | default('omit', True) }}"
+      state: "{{ aci_aep_to_domain_state | default('omit', True) }}"
+      output_level: "{{ aci_aep_to_domain_output_level | default('omit', True) }}"
+      timeout: "{{ aci_aep_to_domain_timeout | default('omit', True) }}"
+      host: "{{ aci_aep_to_domain_host | default('omit', True) }}"
+      use_ssl: "{{ aci_aep_to_domain_use_ssl | default('omit', True) }}"
+      vm_provider: "{{ aci_aep_to_domain_vm_provider | default('omit', True) }}"
+      password: "{{ aci_aep_to_domain_password | default('omit', True) }}"
+      validate_certs: "{{ aci_aep_to_domain_validate_certs | default('omit', True) }}"
+      port: "{{ aci_aep_to_domain_port | default('omit', True) }}"
+  tasks:
+    - name: "plugin_aci_aep_to_domain"
+      aci_aep_to_domain: "{{ aci_aep_to_domain }}"

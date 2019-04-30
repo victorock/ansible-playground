@@ -1,0 +1,9 @@
+---
+- name: "module_opkg"
+  opkg: "{{ opkg }}"
+  vars:
+    opkg: 
+      update_cache: "{{ opkg_update_cache | default(omit, True) }}"
+      state: "{{ opkg_state | default(omit, True) }}"
+      force: "{{ opkg_force | default(omit, True) }}"
+      name: "{{ opkg_name | default(omit, True) }}"

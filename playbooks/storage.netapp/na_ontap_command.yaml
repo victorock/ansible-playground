@@ -1,0 +1,19 @@
+---
+- name: "module_na_ontap_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_command: 
+      username: "{{ na_ontap_command_username | default('omit', True) }}"
+      http_port: "{{ na_ontap_command_http_port | default('omit', True) }}"
+      hostname: "{{ na_ontap_command_hostname | default('omit', True) }}"
+      command: "{{ na_ontap_command_command | default('omit', True) }}"
+      https: "{{ na_ontap_command_https | default('omit', True) }}"
+      password: "{{ na_ontap_command_password | default('omit', True) }}"
+      validate_certs: "{{ na_ontap_command_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_na_ontap_command"
+      na_ontap_command: "{{ na_ontap_command }}"

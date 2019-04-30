@@ -1,0 +1,19 @@
+---
+- name: "module_ovirt_nic"
+  ovirt_nic: "{{ ovirt_nic }}"
+  vars:
+    ovirt_nic: 
+      profile: "{{ ovirt_nic_profile | default(omit, True) }}"
+      timeout: "{{ ovirt_nic_timeout | default(omit, True) }}"
+      name: "{{ ovirt_nic_name | default(omit, True) }}"
+      state: "{{ ovirt_nic_state | default(omit, True) }}"
+      poll_interval: "{{ ovirt_nic_poll_interval | default(omit, True) }}"
+      vm: "{{ ovirt_nic_vm | default(omit, True) }}"
+      auth: "{{ ovirt_nic_auth | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_nic_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_nic_nested_attributes | default(omit, True) }}"
+      template: "{{ ovirt_nic_template | default(omit, True) }}"
+      mac_address: "{{ ovirt_nic_mac_address | default(omit, True) }}"
+      interface: "{{ ovirt_nic_interface | default(omit, True) }}"
+      wait: "{{ ovirt_nic_wait | default(omit, True) }}"
+      network: "{{ ovirt_nic_network | default(omit, True) }}"

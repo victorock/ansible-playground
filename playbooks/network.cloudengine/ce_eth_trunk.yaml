@@ -1,0 +1,19 @@
+---
+- name: "module_ce_eth_trunk"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ce_eth_trunk: 
+      force: "{{ ce_eth_trunk_force | default('omit', True) }}"
+      hash_type: "{{ ce_eth_trunk_hash_type | default('omit', True) }}"
+      state: "{{ ce_eth_trunk_state | default('omit', True) }}"
+      mode: "{{ ce_eth_trunk_mode | default('omit', True) }}"
+      members: "{{ ce_eth_trunk_members | default('omit', True) }}"
+      min_links: "{{ ce_eth_trunk_min_links | default('omit', True) }}"
+      trunk_id: "{{ ce_eth_trunk_trunk_id | default('omit', True) }}"
+  tasks:
+    - name: "plugin_ce_eth_trunk"
+      ce_eth_trunk: "{{ ce_eth_trunk }}"

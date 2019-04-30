@@ -1,0 +1,23 @@
+---
+- name: "module_digital_ocean"
+  digital_ocean: "{{ digital_ocean }}"
+  vars:
+    digital_ocean: 
+      unique_name: "{{ digital_ocean_unique_name | default(omit, True) }}"
+      virtio: "{{ digital_ocean_virtio | default(omit, True) }}"
+      region_id: "{{ digital_ocean_region_id | default(omit, True) }}"
+      name: "{{ digital_ocean_name | default(omit, True) }}"
+      size_id: "{{ digital_ocean_size_id | default(omit, True) }}"
+      ipv6: "{{ digital_ocean_ipv6 | default(omit, True) }}"
+      backups_enabled: "{{ digital_ocean_backups_enabled | default(omit, True) }}"
+      user_data: "{{ digital_ocean_user_data | default(omit, True) }}"
+      ssh_pub_key: "{{ digital_ocean_ssh_pub_key | default(omit, True) }}"
+      image_id: "{{ digital_ocean_image_id | default(omit, True) }}"
+      state: "{{ digital_ocean_state | default(omit, True) }}"
+      wait_timeout: "{{ digital_ocean_wait_timeout | default(omit, True) }}"
+      command: "{{ digital_ocean_command | default(omit, True) }}"
+      ssh_key_ids: "{{ digital_ocean_ssh_key_ids | default(omit, True) }}"
+      api_token: "{{ digital_ocean_api_token | default(omit, True) }}"
+      private_networking: "{{ digital_ocean_private_networking | default(omit, True) }}"
+      id: "{{ digital_ocean_id | default(omit, True) }}"
+      wait: "{{ digital_ocean_wait | default(omit, True) }}"

@@ -1,0 +1,23 @@
+---
+- name: "module_iam_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iam_user: 
+      profile: "{{ iam_user_profile | default('omit', True) }}"
+      aws_secret_key: "{{ iam_user_aws_secret_key | default('omit', True) }}"
+      aws_access_key: "{{ iam_user_aws_access_key | default('omit', True) }}"
+      name: "{{ iam_user_name | default('omit', True) }}"
+      security_token: "{{ iam_user_security_token | default('omit', True) }}"
+      region: "{{ iam_user_region | default('omit', True) }}"
+      state: "{{ iam_user_state | default('omit', True) }}"
+      managed_policy: "{{ iam_user_managed_policy | default('omit', True) }}"
+      ec2_url: "{{ iam_user_ec2_url | default('omit', True) }}"
+      purge_policy: "{{ iam_user_purge_policy | default('omit', True) }}"
+      validate_certs: "{{ iam_user_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_iam_user"
+      iam_user: "{{ iam_user }}"

@@ -1,0 +1,5 @@
+---
+- name: "module_win_product_facts"
+  win_product_facts: "{{ win_product_facts }}"
+  vars:
+    win_product_facts: 

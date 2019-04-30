@@ -1,0 +1,23 @@
+---
+- name: "module_dnsimple"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    dnsimple: 
+      solo: "{{ dnsimple_solo | default('omit', True) }}"
+      domain: "{{ dnsimple_domain | default('omit', True) }}"
+      account_email: "{{ dnsimple_account_email | default('omit', True) }}"
+      record_ids: "{{ dnsimple_record_ids | default('omit', True) }}"
+      value: "{{ dnsimple_value | default('omit', True) }}"
+      priority: "{{ dnsimple_priority | default('omit', True) }}"
+      record: "{{ dnsimple_record | default('omit', True) }}"
+      state: "{{ dnsimple_state | default('omit', True) }}"
+      ttl: "{{ dnsimple_ttl | default('omit', True) }}"
+      type: "{{ dnsimple_type | default('omit', True) }}"
+      account_api_token: "{{ dnsimple_account_api_token | default('omit', True) }}"
+  tasks:
+    - name: "plugin_dnsimple"
+      dnsimple: "{{ dnsimple }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_bigip_ucs_fetch"
+  bigip_ucs_fetch: "{{ bigip_ucs_fetch }}"
+  vars:
+    bigip_ucs_fetch: 
+      src: "{{ bigip_ucs_fetch_src | default(omit, True) }}"
+      force: "{{ bigip_ucs_fetch_force | default(omit, True) }}"
+      server_port: "{{ bigip_ucs_fetch_server_port | default(omit, True) }}"
+      encryption_password: "{{ bigip_ucs_fetch_encryption_password | default(omit, True) }}"
+      dest: "{{ bigip_ucs_fetch_dest | default(omit, True) }}"
+      backup: "{{ bigip_ucs_fetch_backup | default(omit, True) }}"
+      server: "{{ bigip_ucs_fetch_server | default(omit, True) }}"
+      user: "{{ bigip_ucs_fetch_user | default(omit, True) }}"
+      fail_on_missing: "{{ bigip_ucs_fetch_fail_on_missing | default(omit, True) }}"
+      provider: "{{ bigip_ucs_fetch_provider | default(omit, True) }}"
+      create_on_missing: "{{ bigip_ucs_fetch_create_on_missing | default(omit, True) }}"
+      password: "{{ bigip_ucs_fetch_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_ucs_fetch_validate_certs | default(omit, True) }}"

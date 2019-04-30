@@ -1,0 +1,15 @@
+---
+- name: "module_swdepot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    swdepot: 
+      state: "{{ swdepot_state | default('omit', True) }}"
+      depot: "{{ swdepot_depot | default('omit', True) }}"
+      name: "{{ swdepot_name | default('omit', True) }}"
+  tasks:
+    - name: "plugin_swdepot"
+      swdepot: "{{ swdepot }}"

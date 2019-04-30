@@ -1,0 +1,23 @@
+---
+- name: "module_nxos_vpc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nxos_vpc: 
+      domain: "{{ nxos_vpc_domain | default('omit', True) }}"
+      system_priority: "{{ nxos_vpc_system_priority | default('omit', True) }}"
+      role_priority: "{{ nxos_vpc_role_priority | default('omit', True) }}"
+      auto_recovery: "{{ nxos_vpc_auto_recovery | default('omit', True) }}"
+      pkl_vrf: "{{ nxos_vpc_pkl_vrf | default('omit', True) }}"
+      delay_restore: "{{ nxos_vpc_delay_restore | default('omit', True) }}"
+      peer_gw: "{{ nxos_vpc_peer_gw | default('omit', True) }}"
+      state: "{{ nxos_vpc_state | default('omit', True) }}"
+      provider: "{{ nxos_vpc_provider | default('omit', True) }}"
+      pkl_dest: "{{ nxos_vpc_pkl_dest | default('omit', True) }}"
+      pkl_src: "{{ nxos_vpc_pkl_src | default('omit', True) }}"
+  tasks:
+    - name: "plugin_nxos_vpc"
+      nxos_vpc: "{{ nxos_vpc }}"

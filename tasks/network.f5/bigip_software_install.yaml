@@ -1,0 +1,14 @@
+---
+- name: "module_bigip_software_install"
+  bigip_software_install: "{{ bigip_software_install }}"
+  vars:
+    bigip_software_install: 
+      image: "{{ bigip_software_install_image | default(omit, True) }}"
+      server: "{{ bigip_software_install_server | default(omit, True) }}"
+      volume: "{{ bigip_software_install_volume | default(omit, True) }}"
+      state: "{{ bigip_software_install_state | default(omit, True) }}"
+      user: "{{ bigip_software_install_user | default(omit, True) }}"
+      server_port: "{{ bigip_software_install_server_port | default(omit, True) }}"
+      provider: "{{ bigip_software_install_provider | default(omit, True) }}"
+      password: "{{ bigip_software_install_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_software_install_validate_certs | default(omit, True) }}"

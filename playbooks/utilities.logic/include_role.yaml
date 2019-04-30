@@ -1,0 +1,20 @@
+---
+- name: "module_include_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    include_role: 
+      name: "{{ include_role_name | default('omit', True) }}"
+      private: "{{ include_role_private | default('omit', True) }}"
+      allow_duplicates: "{{ include_role_allow_duplicates | default('omit', True) }}"
+      tasks_from: "{{ include_role_tasks_from | default('omit', True) }}"
+      vars_from: "{{ include_role_vars_from | default('omit', True) }}"
+      apply: "{{ include_role_apply | default('omit', True) }}"
+      defaults_from: "{{ include_role_defaults_from | default('omit', True) }}"
+      public: "{{ include_role_public | default('omit', True) }}"
+  tasks:
+    - name: "plugin_include_role"
+      include_role: "{{ include_role }}"

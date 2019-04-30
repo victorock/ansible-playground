@@ -1,0 +1,23 @@
+---
+- name: "module_bigip_device_dns"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_device_dns: 
+      search: "{{ bigip_device_dns_search | default('omit', True) }}"
+      cache: "{{ bigip_device_dns_cache | default('omit', True) }}"
+      server: "{{ bigip_device_dns_server | default('omit', True) }}"
+      ip_version: "{{ bigip_device_dns_ip_version | default('omit', True) }}"
+      state: "{{ bigip_device_dns_state | default('omit', True) }}"
+      user: "{{ bigip_device_dns_user | default('omit', True) }}"
+      server_port: "{{ bigip_device_dns_server_port | default('omit', True) }}"
+      provider: "{{ bigip_device_dns_provider | default('omit', True) }}"
+      name_servers: "{{ bigip_device_dns_name_servers | default('omit', True) }}"
+      password: "{{ bigip_device_dns_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_device_dns_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_device_dns"
+      bigip_device_dns: "{{ bigip_device_dns }}"

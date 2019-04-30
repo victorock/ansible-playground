@@ -1,0 +1,9 @@
+---
+- name: "module_win_tempfile"
+  win_tempfile: "{{ win_tempfile }}"
+  vars:
+    win_tempfile: 
+      path: "{{ win_tempfile_path | default(omit, True) }}"
+      state: "{{ win_tempfile_state | default(omit, True) }}"
+      prefix: "{{ win_tempfile_prefix | default(omit, True) }}"
+      suffix: "{{ win_tempfile_suffix | default(omit, True) }}"

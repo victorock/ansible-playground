@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_software_image"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_software_image: 
+      force: "{{ bigip_software_image_force | default('omit', True) }}"
+      image: "{{ bigip_software_image_image | default('omit', True) }}"
+      server: "{{ bigip_software_image_server | default('omit', True) }}"
+      state: "{{ bigip_software_image_state | default('omit', True) }}"
+      user: "{{ bigip_software_image_user | default('omit', True) }}"
+      server_port: "{{ bigip_software_image_server_port | default('omit', True) }}"
+      provider: "{{ bigip_software_image_provider | default('omit', True) }}"
+      password: "{{ bigip_software_image_password | default('omit', True) }}"
+      validate_certs: "{{ bigip_software_image_validate_certs | default('omit', True) }}"
+  tasks:
+    - name: "plugin_bigip_software_image"
+      bigip_software_image: "{{ bigip_software_image }}"

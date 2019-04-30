@@ -1,0 +1,23 @@
+---
+- name: "module_flowadm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    flowadm: 
+      dsfield: "{{ flowadm_dsfield | default('omit', True) }}"
+      temporary: "{{ flowadm_temporary | default('omit', True) }}"
+      name: "{{ flowadm_name | default('omit', True) }}"
+      maxbw: "{{ flowadm_maxbw | default('omit', True) }}"
+      local_port: "{{ flowadm_local_port | default('omit', True) }}"
+      local_ip: "{{ flowadm_local_ip | default('omit', True) }}"
+      priority: "{{ flowadm_priority | default('omit', True) }}"
+      state: "{{ flowadm_state | default('omit', True) }}"
+      link: "{{ flowadm_link | default('omit', True) }}"
+      transport: "{{ flowadm_transport | default('omit', True) }}"
+      remote_ip: "{{ flowadm_remote_ip | default('omit', True) }}"
+  tasks:
+    - name: "plugin_flowadm"
+      flowadm: "{{ flowadm }}"

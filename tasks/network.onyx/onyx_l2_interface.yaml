@@ -1,0 +1,11 @@
+---
+- name: "module_onyx_l2_interface"
+  onyx_l2_interface: "{{ onyx_l2_interface }}"
+  vars:
+    onyx_l2_interface: 
+      access_vlan: "{{ onyx_l2_interface_access_vlan | default(omit, True) }}"
+      name: "{{ onyx_l2_interface_name | default(omit, True) }}"
+      state: "{{ onyx_l2_interface_state | default(omit, True) }}"
+      trunk_allowed_vlans: "{{ onyx_l2_interface_trunk_allowed_vlans | default(omit, True) }}"
+      mode: "{{ onyx_l2_interface_mode | default(omit, True) }}"
+      aggregate: "{{ onyx_l2_interface_aggregate | default(omit, True) }}"

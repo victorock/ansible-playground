@@ -1,0 +1,8 @@
+---
+- name: "module_swdepot"
+  swdepot: "{{ swdepot }}"
+  vars:
+    swdepot: 
+      state: "{{ swdepot_state | default(omit, True) }}"
+      depot: "{{ swdepot_depot | default(omit, True) }}"
+      name: "{{ swdepot_name | default(omit, True) }}"

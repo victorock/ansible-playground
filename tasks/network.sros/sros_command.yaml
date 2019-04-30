@@ -1,0 +1,11 @@
+---
+- name: "module_sros_command"
+  sros_command: "{{ sros_command }}"
+  vars:
+    sros_command: 
+      retries: "{{ sros_command_retries | default(omit, True) }}"
+      commands: "{{ sros_command_commands | default(omit, True) }}"
+      interval: "{{ sros_command_interval | default(omit, True) }}"
+      provider: "{{ sros_command_provider | default(omit, True) }}"
+      wait_for: "{{ sros_command_wait_for | default(omit, True) }}"
+      match: "{{ sros_command_match | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_netapp_e_global"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netapp_e_global: 
+      ssid: "{{ netapp_e_global_ssid | default('omit', True) }}"
+      log_path: "{{ netapp_e_global_log_path | default('omit', True) }}"
+      api_password: "{{ netapp_e_global_api_password | default('omit', True) }}"
+      name: "{{ netapp_e_global_name | default('omit', True) }}"
+      api_username: "{{ netapp_e_global_api_username | default('omit', True) }}"
+      validate_certs: "{{ netapp_e_global_validate_certs | default('omit', True) }}"
+      api_url: "{{ netapp_e_global_api_url | default('omit', True) }}"
+  tasks:
+    - name: "plugin_netapp_e_global"
+      netapp_e_global: "{{ netapp_e_global }}"

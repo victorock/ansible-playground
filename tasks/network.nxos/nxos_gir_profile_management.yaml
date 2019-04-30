@@ -1,0 +1,9 @@
+---
+- name: "module_nxos_gir_profile_management"
+  nxos_gir_profile_management: "{{ nxos_gir_profile_management }}"
+  vars:
+    nxos_gir_profile_management: 
+      mode: "{{ nxos_gir_profile_management_mode | default(omit, True) }}"
+      commands: "{{ nxos_gir_profile_management_commands | default(omit, True) }}"
+      state: "{{ nxos_gir_profile_management_state | default(omit, True) }}"
+      provider: "{{ nxos_gir_profile_management_provider | default(omit, True) }}"

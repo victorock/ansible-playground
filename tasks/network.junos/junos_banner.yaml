@@ -1,0 +1,10 @@
+---
+- name: "module_junos_banner"
+  junos_banner: "{{ junos_banner }}"
+  vars:
+    junos_banner: 
+      active: "{{ junos_banner_active | default(omit, True) }}"
+      text: "{{ junos_banner_text | default(omit, True) }}"
+      state: "{{ junos_banner_state | default(omit, True) }}"
+      banner: "{{ junos_banner_banner | default(omit, True) }}"
+      provider: "{{ junos_banner_provider | default(omit, True) }}"

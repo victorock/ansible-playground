@@ -1,0 +1,12 @@
+---
+- name: "module_win_copy"
+  win_copy: "{{ win_copy }}"
+  vars:
+    win_copy: 
+      src: "{{ win_copy_src | default(omit, True) }}"
+      force: "{{ win_copy_force | default(omit, True) }}"
+      remote_src: "{{ win_copy_remote_src | default(omit, True) }}"
+      dest: "{{ win_copy_dest | default(omit, True) }}"
+      decrypt: "{{ win_copy_decrypt | default(omit, True) }}"
+      content: "{{ win_copy_content | default(omit, True) }}"
+      local_follow: "{{ win_copy_local_follow | default(omit, True) }}"
