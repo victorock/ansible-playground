@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_vpn_ipsec_phase1_interface"
+  fortios_vpn_ipsec_phase1_interface: "{{ fortios_vpn_ipsec_phase1_interface }}"
+  register: r_fortios_vpn_ipsec_phase1_interface
+  vars:
+    fortios_vpn_ipsec_phase1_interface: 
+      username: "{{ fortios_vpn_ipsec_phase1_interface_username | default(omit, True) }}"
+      vpn_ipsec_phase1_interface: "{{ fortios_vpn_ipsec_phase1_interface_vpn_ipsec_phase1_interface | default(omit, True) }}"
+      host: "{{ fortios_vpn_ipsec_phase1_interface_host | default(omit, True) }}"
+      https: "{{ fortios_vpn_ipsec_phase1_interface_https | default(omit, True) }}"
+      password: "{{ fortios_vpn_ipsec_phase1_interface_password | default(omit, True) }}"
+      vdom: "{{ fortios_vpn_ipsec_phase1_interface_vdom | default(omit, True) }}"

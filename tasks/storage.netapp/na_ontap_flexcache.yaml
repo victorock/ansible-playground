@@ -1,0 +1,28 @@
+---
+- name: "module_na_ontap_flexcache"
+  na_ontap_flexcache: "{{ na_ontap_flexcache }}"
+  register: r_na_ontap_flexcache
+  vars:
+    na_ontap_flexcache: 
+      origin_cluster: "{{ na_ontap_flexcache_origin_cluster | default(omit, True) }}"
+      origin_volume: "{{ na_ontap_flexcache_origin_volume | default(omit, True) }}"
+      http_port: "{{ na_ontap_flexcache_http_port | default(omit, True) }}"
+      size_unit: "{{ na_ontap_flexcache_size_unit | default(omit, True) }}"
+      size: "{{ na_ontap_flexcache_size | default(omit, True) }}"
+      aggr_list: "{{ na_ontap_flexcache_aggr_list | default(omit, True) }}"
+      hostname: "{{ na_ontap_flexcache_hostname | default(omit, True) }}"
+      force_unmount: "{{ na_ontap_flexcache_force_unmount | default(omit, True) }}"
+      origin_vserver: "{{ na_ontap_flexcache_origin_vserver | default(omit, True) }}"
+      vserver: "{{ na_ontap_flexcache_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_flexcache_state | default(omit, True) }}"
+      https: "{{ na_ontap_flexcache_https | default(omit, True) }}"
+      auto_provision_as: "{{ na_ontap_flexcache_auto_provision_as | default(omit, True) }}"
+      force_offline: "{{ na_ontap_flexcache_force_offline | default(omit, True) }}"
+      username: "{{ na_ontap_flexcache_username | default(omit, True) }}"
+      volume: "{{ na_ontap_flexcache_volume | default(omit, True) }}"
+      junction_path: "{{ na_ontap_flexcache_junction_path | default(omit, True) }}"
+      ontapi: "{{ na_ontap_flexcache_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_flexcache_password | default(omit, True) }}"
+      aggr_list_multiplier: "{{ na_ontap_flexcache_aggr_list_multiplier | default(omit, True) }}"
+      time_out: "{{ na_ontap_flexcache_time_out | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_flexcache_validate_certs | default(omit, True) }}"

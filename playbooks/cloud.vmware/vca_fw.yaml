@@ -16,9 +16,9 @@
       service_type: "{{ vca_fw_service_type | default(omit, True) }}"
       org: "{{ vca_fw_org | default(omit, True) }}"
       password: "{{ vca_fw_password | default(omit, True) }}"
+      validate_certs: "{{ vca_fw_validate_certs | default(omit, True) }}"
       vdc_name: "{{ vca_fw_vdc_name | default(omit, True) }}"
       api_version: "{{ vca_fw_api_version | default(omit, True) }}"
-      verify_certs: "{{ vca_fw_verify_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vca_fw"
       vca_fw: "{{ vca_fw }}"

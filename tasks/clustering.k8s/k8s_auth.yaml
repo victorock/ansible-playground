@@ -1,0 +1,13 @@
+---
+- name: "module_k8s_auth"
+  k8s_auth: "{{ k8s_auth }}"
+  register: r_k8s_auth
+  vars:
+    k8s_auth: 
+      username: "{{ k8s_auth_username | default(omit, True) }}"
+      api_key: "{{ k8s_auth_api_key | default(omit, True) }}"
+      ca_cert: "{{ k8s_auth_ca_cert | default(omit, True) }}"
+      host: "{{ k8s_auth_host | default(omit, True) }}"
+      state: "{{ k8s_auth_state | default(omit, True) }}"
+      password: "{{ k8s_auth_password | default(omit, True) }}"
+      validate_certs: "{{ k8s_auth_validate_certs | default(omit, True) }}"

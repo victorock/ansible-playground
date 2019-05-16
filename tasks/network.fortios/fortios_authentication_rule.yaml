@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_authentication_rule"
+  fortios_authentication_rule: "{{ fortios_authentication_rule }}"
+  register: r_fortios_authentication_rule
+  vars:
+    fortios_authentication_rule: 
+      username: "{{ fortios_authentication_rule_username | default(omit, True) }}"
+      authentication_rule: "{{ fortios_authentication_rule_authentication_rule | default(omit, True) }}"
+      host: "{{ fortios_authentication_rule_host | default(omit, True) }}"
+      https: "{{ fortios_authentication_rule_https | default(omit, True) }}"
+      password: "{{ fortios_authentication_rule_password | default(omit, True) }}"
+      vdom: "{{ fortios_authentication_rule_vdom | default(omit, True) }}"

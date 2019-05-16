@@ -1,0 +1,18 @@
+---
+- name: "module_pn_vflow_table_profile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_vflow_table_profile: 
+      pn_hw_tbl: "{{ pn_vflow_table_profile_pn_hw_tbl | default(omit, True) }}"
+      pn_enable: "{{ pn_vflow_table_profile_pn_enable | default(omit, True) }}"
+      state: "{{ pn_vflow_table_profile_state | default(omit, True) }}"
+      pn_profile: "{{ pn_vflow_table_profile_pn_profile | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_vflow_table_profile_pn_cliswitch | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_vflow_table_profile"
+      pn_vflow_table_profile: "{{ pn_vflow_table_profile }}"
+      register: r_pn_vflow_table_profile

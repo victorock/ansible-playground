@@ -1,0 +1,31 @@
+---
+- name: "module_azure_rm_roledefinition"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_roledefinition: 
+      profile: "{{ azure_rm_roledefinition_profile | default(omit, True) }}"
+      description: "{{ azure_rm_roledefinition_description | default(omit, True) }}"
+      name: "{{ azure_rm_roledefinition_name | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_roledefinition_cloud_environment | default(omit, True) }}"
+      ad_user: "{{ azure_rm_roledefinition_ad_user | default(omit, True) }}"
+      state: "{{ azure_rm_roledefinition_state | default(omit, True) }}"
+      api_profile: "{{ azure_rm_roledefinition_api_profile | default(omit, True) }}"
+      secret: "{{ azure_rm_roledefinition_secret | default(omit, True) }}"
+      client_id: "{{ azure_rm_roledefinition_client_id | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_roledefinition_cert_validation_mode | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_roledefinition_adfs_authority_url | default(omit, True) }}"
+      auth_source: "{{ azure_rm_roledefinition_auth_source | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_roledefinition_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_roledefinition_password | default(omit, True) }}"
+      assignable_scopes: "{{ azure_rm_roledefinition_assignable_scopes | default(omit, True) }}"
+      scope: "{{ azure_rm_roledefinition_scope | default(omit, True) }}"
+      tenant: "{{ azure_rm_roledefinition_tenant | default(omit, True) }}"
+      permissions: "{{ azure_rm_roledefinition_permissions | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_roledefinition"
+      azure_rm_roledefinition: "{{ azure_rm_roledefinition }}"
+      register: r_azure_rm_roledefinition

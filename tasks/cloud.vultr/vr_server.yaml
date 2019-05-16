@@ -25,5 +25,6 @@
       os: "{{ vr_server_os | default(omit, True) }}"
       region: "{{ vr_server_region | default(omit, True) }}"
       auto_backup_enabled: "{{ vr_server_auto_backup_enabled | default(omit, True) }}"
+      snapshot: "{{ vr_server_snapshot | default(omit, True) }}"
       startup_script: "{{ vr_server_startup_script | default(omit, True) }}"
       validate_certs: "{{ vr_server_validate_certs | default(omit, True) }}"

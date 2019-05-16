@@ -1,0 +1,13 @@
+---
+- name: "module_luks_device"
+  luks_device: "{{ luks_device }}"
+  register: r_luks_device
+  vars:
+    luks_device: 
+      name: "{{ luks_device_name | default(omit, True) }}"
+      force_remove_last_key: "{{ luks_device_force_remove_last_key | default(omit, True) }}"
+      remove_keyfile: "{{ luks_device_remove_keyfile | default(omit, True) }}"
+      state: "{{ luks_device_state | default(omit, True) }}"
+      device: "{{ luks_device_device | default(omit, True) }}"
+      keyfile: "{{ luks_device_keyfile | default(omit, True) }}"
+      new_keyfile: "{{ luks_device_new_keyfile | default(omit, True) }}"

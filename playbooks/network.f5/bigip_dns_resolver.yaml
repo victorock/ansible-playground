@@ -1,0 +1,30 @@
+---
+- name: "module_bigip_dns_resolver"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_dns_resolver: 
+      use_udp: "{{ bigip_dns_resolver_use_udp | default(omit, True) }}"
+      randomize_query_case: "{{ bigip_dns_resolver_randomize_query_case | default(omit, True) }}"
+      name: "{{ bigip_dns_resolver_name | default(omit, True) }}"
+      partition: "{{ bigip_dns_resolver_partition | default(omit, True) }}"
+      state: "{{ bigip_dns_resolver_state | default(omit, True) }}"
+      server: "{{ bigip_dns_resolver_server | default(omit, True) }}"
+      answer_default_zones: "{{ bigip_dns_resolver_answer_default_zones | default(omit, True) }}"
+      route_domain: "{{ bigip_dns_resolver_route_domain | default(omit, True) }}"
+      user: "{{ bigip_dns_resolver_user | default(omit, True) }}"
+      server_port: "{{ bigip_dns_resolver_server_port | default(omit, True) }}"
+      use_ipv6: "{{ bigip_dns_resolver_use_ipv6 | default(omit, True) }}"
+      cache_size: "{{ bigip_dns_resolver_cache_size | default(omit, True) }}"
+      password: "{{ bigip_dns_resolver_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_dns_resolver_validate_certs | default(omit, True) }}"
+      provider: "{{ bigip_dns_resolver_provider | default(omit, True) }}"
+      use_tcp: "{{ bigip_dns_resolver_use_tcp | default(omit, True) }}"
+      use_ipv4: "{{ bigip_dns_resolver_use_ipv4 | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_dns_resolver"
+      bigip_dns_resolver: "{{ bigip_dns_resolver }}"
+      register: r_bigip_dns_resolver

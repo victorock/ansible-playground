@@ -12,6 +12,7 @@
       scopes: "{{ gcp_storage_bucket_access_control_scopes | default(omit, True) }}"
       service_account_email: "{{ gcp_storage_bucket_access_control_service_account_email | default(omit, True) }}"
       bucket: "{{ gcp_storage_bucket_access_control_bucket | default(omit, True) }}"
+      service_account_contents: "{{ gcp_storage_bucket_access_control_service_account_contents | default(omit, True) }}"
       entity: "{{ gcp_storage_bucket_access_control_entity | default(omit, True) }}"
       project: "{{ gcp_storage_bucket_access_control_project | default(omit, True) }}"
       state: "{{ gcp_storage_bucket_access_control_state | default(omit, True) }}"

@@ -1,0 +1,38 @@
+---
+- name: "module_bigip_device_syslog"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_device_syslog: 
+      auth_priv_from: "{{ bigip_device_syslog_auth_priv_from | default(omit, True) }}"
+      user_log_from: "{{ bigip_device_syslog_user_log_from | default(omit, True) }}"
+      kern_to: "{{ bigip_device_syslog_kern_to | default(omit, True) }}"
+      daemon_from: "{{ bigip_device_syslog_daemon_from | default(omit, True) }}"
+      local6_to: "{{ bigip_device_syslog_local6_to | default(omit, True) }}"
+      messages_from: "{{ bigip_device_syslog_messages_from | default(omit, True) }}"
+      cron_from: "{{ bigip_device_syslog_cron_from | default(omit, True) }}"
+      server_port: "{{ bigip_device_syslog_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_syslog_provider | default(omit, True) }}"
+      user_log_to: "{{ bigip_device_syslog_user_log_to | default(omit, True) }}"
+      include: "{{ bigip_device_syslog_include | default(omit, True) }}"
+      local6_from: "{{ bigip_device_syslog_local6_from | default(omit, True) }}"
+      daemon_to: "{{ bigip_device_syslog_daemon_to | default(omit, True) }}"
+      mail_to: "{{ bigip_device_syslog_mail_to | default(omit, True) }}"
+      kern_from: "{{ bigip_device_syslog_kern_from | default(omit, True) }}"
+      console_log: "{{ bigip_device_syslog_console_log | default(omit, True) }}"
+      user: "{{ bigip_device_syslog_user | default(omit, True) }}"
+      password: "{{ bigip_device_syslog_password | default(omit, True) }}"
+      mail_from: "{{ bigip_device_syslog_mail_from | default(omit, True) }}"
+      auth_priv_to: "{{ bigip_device_syslog_auth_priv_to | default(omit, True) }}"
+      messages_to: "{{ bigip_device_syslog_messages_to | default(omit, True) }}"
+      server: "{{ bigip_device_syslog_server | default(omit, True) }}"
+      iso_date: "{{ bigip_device_syslog_iso_date | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_syslog_validate_certs | default(omit, True) }}"
+      cron_to: "{{ bigip_device_syslog_cron_to | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_device_syslog"
+      bigip_device_syslog: "{{ bigip_device_syslog }}"
+      register: r_bigip_device_syslog

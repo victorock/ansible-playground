@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_search_engine"
+  fortios_webfilter_search_engine: "{{ fortios_webfilter_search_engine }}"
+  register: r_fortios_webfilter_search_engine
+  vars:
+    fortios_webfilter_search_engine: 
+      username: "{{ fortios_webfilter_search_engine_username | default(omit, True) }}"
+      webfilter_search_engine: "{{ fortios_webfilter_search_engine_webfilter_search_engine | default(omit, True) }}"
+      host: "{{ fortios_webfilter_search_engine_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_search_engine_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_search_engine_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_search_engine_vdom | default(omit, True) }}"

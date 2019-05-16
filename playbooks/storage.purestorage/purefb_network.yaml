@@ -1,0 +1,20 @@
+---
+- name: "module_purefb_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefb_network: 
+      itype: "{{ purefb_network_itype | default(omit, True) }}"
+      name: "{{ purefb_network_name | default(omit, True) }}"
+      address: "{{ purefb_network_address | default(omit, True) }}"
+      state: "{{ purefb_network_state | default(omit, True) }}"
+      api_token: "{{ purefb_network_api_token | default(omit, True) }}"
+      services: "{{ purefb_network_services | default(omit, True) }}"
+      fb_url: "{{ purefb_network_fb_url | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefb_network"
+      purefb_network: "{{ purefb_network }}"
+      register: r_purefb_network

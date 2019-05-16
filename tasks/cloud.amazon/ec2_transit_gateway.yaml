@@ -1,0 +1,27 @@
+---
+- name: "module_ec2_transit_gateway"
+  ec2_transit_gateway: "{{ ec2_transit_gateway }}"
+  register: r_ec2_transit_gateway
+  vars:
+    ec2_transit_gateway: 
+      transit_gateway_id: "{{ ec2_transit_gateway_transit_gateway_id | default(omit, True) }}"
+      profile: "{{ ec2_transit_gateway_profile | default(omit, True) }}"
+      aws_access_key: "{{ ec2_transit_gateway_aws_access_key | default(omit, True) }}"
+      description: "{{ ec2_transit_gateway_description | default(omit, True) }}"
+      security_token: "{{ ec2_transit_gateway_security_token | default(omit, True) }}"
+      tags: "{{ ec2_transit_gateway_tags | default(omit, True) }}"
+      purge_tags: "{{ ec2_transit_gateway_purge_tags | default(omit, True) }}"
+      region: "{{ ec2_transit_gateway_region | default(omit, True) }}"
+      dns_support: "{{ ec2_transit_gateway_dns_support | default(omit, True) }}"
+      vpn_ecmp_support: "{{ ec2_transit_gateway_vpn_ecmp_support | default(omit, True) }}"
+      aws_secret_key: "{{ ec2_transit_gateway_aws_secret_key | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_transit_gateway_debug_botocore_endpoint_logs | default(omit, True) }}"
+      state: "{{ ec2_transit_gateway_state | default(omit, True) }}"
+      wait_timeout: "{{ ec2_transit_gateway_wait_timeout | default(omit, True) }}"
+      auto_attach: "{{ ec2_transit_gateway_auto_attach | default(omit, True) }}"
+      ec2_url: "{{ ec2_transit_gateway_ec2_url | default(omit, True) }}"
+      auto_associate: "{{ ec2_transit_gateway_auto_associate | default(omit, True) }}"
+      auto_propagate: "{{ ec2_transit_gateway_auto_propagate | default(omit, True) }}"
+      validate_certs: "{{ ec2_transit_gateway_validate_certs | default(omit, True) }}"
+      asn: "{{ ec2_transit_gateway_asn | default(omit, True) }}"
+      wait: "{{ ec2_transit_gateway_wait | default(omit, True) }}"

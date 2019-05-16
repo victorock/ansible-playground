@@ -1,0 +1,39 @@
+---
+- name: "module_bigip_ssl_ocsp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_ssl_ocsp: 
+      update_password: "{{ bigip_ssl_ocsp_update_password | default(omit, True) }}"
+      cache_error_timeout: "{{ bigip_ssl_ocsp_cache_error_timeout | default(omit, True) }}"
+      passphrase: "{{ bigip_ssl_ocsp_passphrase | default(omit, True) }}"
+      clock_skew: "{{ bigip_ssl_ocsp_clock_skew | default(omit, True) }}"
+      cache_timeout: "{{ bigip_ssl_ocsp_cache_timeout | default(omit, True) }}"
+      certificate: "{{ bigip_ssl_ocsp_certificate | default(omit, True) }}"
+      state: "{{ bigip_ssl_ocsp_state | default(omit, True) }}"
+      trusted_responders: "{{ bigip_ssl_ocsp_trusted_responders | default(omit, True) }}"
+      server_port: "{{ bigip_ssl_ocsp_server_port | default(omit, True) }}"
+      provider: "{{ bigip_ssl_ocsp_provider | default(omit, True) }}"
+      proxy_server_pool: "{{ bigip_ssl_ocsp_proxy_server_pool | default(omit, True) }}"
+      dns_resolver: "{{ bigip_ssl_ocsp_dns_resolver | default(omit, True) }}"
+      user: "{{ bigip_ssl_ocsp_user | default(omit, True) }}"
+      key: "{{ bigip_ssl_ocsp_key | default(omit, True) }}"
+      responder_url: "{{ bigip_ssl_ocsp_responder_url | default(omit, True) }}"
+      connection_timeout: "{{ bigip_ssl_ocsp_connection_timeout | default(omit, True) }}"
+      password: "{{ bigip_ssl_ocsp_password | default(omit, True) }}"
+      name: "{{ bigip_ssl_ocsp_name | default(omit, True) }}"
+      strict_responder_checking: "{{ bigip_ssl_ocsp_strict_responder_checking | default(omit, True) }}"
+      partition: "{{ bigip_ssl_ocsp_partition | default(omit, True) }}"
+      connections_limit: "{{ bigip_ssl_ocsp_connections_limit | default(omit, True) }}"
+      server: "{{ bigip_ssl_ocsp_server | default(omit, True) }}"
+      status_age: "{{ bigip_ssl_ocsp_status_age | default(omit, True) }}"
+      route_domain: "{{ bigip_ssl_ocsp_route_domain | default(omit, True) }}"
+      hash_algorithm: "{{ bigip_ssl_ocsp_hash_algorithm | default(omit, True) }}"
+      validate_certs: "{{ bigip_ssl_ocsp_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_ssl_ocsp"
+      bigip_ssl_ocsp: "{{ bigip_ssl_ocsp }}"
+      register: r_bigip_ssl_ocsp

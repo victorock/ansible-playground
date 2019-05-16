@@ -4,12 +4,13 @@
   register: r_dynamodb_ttl
   vars:
     dynamodb_ttl: 
-      aws_secret_key: "{{ dynamodb_ttl_aws_secret_key | default(omit, True) }}"
       profile: "{{ dynamodb_ttl_profile | default(omit, True) }}"
+      aws_secret_key: "{{ dynamodb_ttl_aws_secret_key | default(omit, True) }}"
       aws_access_key: "{{ dynamodb_ttl_aws_access_key | default(omit, True) }}"
       attribute_name: "{{ dynamodb_ttl_attribute_name | default(omit, True) }}"
       security_token: "{{ dynamodb_ttl_security_token | default(omit, True) }}"
       region: "{{ dynamodb_ttl_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ dynamodb_ttl_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ dynamodb_ttl_state | default(omit, True) }}"
       table_name: "{{ dynamodb_ttl_table_name | default(omit, True) }}"
       ec2_url: "{{ dynamodb_ttl_ec2_url | default(omit, True) }}"

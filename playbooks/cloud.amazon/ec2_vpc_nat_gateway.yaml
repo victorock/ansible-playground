@@ -16,6 +16,7 @@
       allocation_id: "{{ ec2_vpc_nat_gateway_allocation_id | default(omit, True) }}"
       eip_address: "{{ ec2_vpc_nat_gateway_eip_address | default(omit, True) }}"
       region: "{{ ec2_vpc_nat_gateway_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_vpc_nat_gateway_debug_botocore_endpoint_logs | default(omit, True) }}"
       if_exist_do_not_create: "{{ ec2_vpc_nat_gateway_if_exist_do_not_create | default(omit, True) }}"
       subnet_id: "{{ ec2_vpc_nat_gateway_subnet_id | default(omit, True) }}"
       state: "{{ ec2_vpc_nat_gateway_state | default(omit, True) }}"

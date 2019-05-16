@@ -1,0 +1,10 @@
+---
+- name: "module_onyx_buffer_pool"
+  onyx_buffer_pool: "{{ onyx_buffer_pool }}"
+  register: r_onyx_buffer_pool
+  vars:
+    onyx_buffer_pool: 
+      pool_type: "{{ onyx_buffer_pool_pool_type | default(omit, True) }}"
+      memory_percent: "{{ onyx_buffer_pool_memory_percent | default(omit, True) }}"
+      name: "{{ onyx_buffer_pool_name | default(omit, True) }}"
+      switch_priority: "{{ onyx_buffer_pool_switch_priority | default(omit, True) }}"

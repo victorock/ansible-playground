@@ -1,0 +1,22 @@
+---
+- name: "module_vmware_guest_video"
+  vmware_guest_video: "{{ vmware_guest_video }}"
+  register: r_vmware_guest_video
+  vars:
+    vmware_guest_video: 
+      username: "{{ vmware_guest_video_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_video_datacenter | default(omit, True) }}"
+      gather_video_facts: "{{ vmware_guest_video_gather_video_facts | default(omit, True) }}"
+      enable_3D: "{{ vmware_guest_video_enable_3D | default(omit, True) }}"
+      memory_3D_mb: "{{ vmware_guest_video_memory_3D_mb | default(omit, True) }}"
+      use_auto_detect: "{{ vmware_guest_video_use_auto_detect | default(omit, True) }}"
+      hostname: "{{ vmware_guest_video_hostname | default(omit, True) }}"
+      renderer_3D: "{{ vmware_guest_video_renderer_3D | default(omit, True) }}"
+      name: "{{ vmware_guest_video_name | default(omit, True) }}"
+      video_memory_mb: "{{ vmware_guest_video_video_memory_mb | default(omit, True) }}"
+      display_number: "{{ vmware_guest_video_display_number | default(omit, True) }}"
+      folder: "{{ vmware_guest_video_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_video_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_video_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_video_port | default(omit, True) }}"
+      uuid: "{{ vmware_guest_video_uuid | default(omit, True) }}"

@@ -12,6 +12,7 @@
       aws_access_key: "{{ rds_instance_facts_aws_access_key | default(omit, True) }}"
       security_token: "{{ rds_instance_facts_security_token | default(omit, True) }}"
       region: "{{ rds_instance_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ rds_instance_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       profile: "{{ rds_instance_facts_profile | default(omit, True) }}"
       filters: "{{ rds_instance_facts_filters | default(omit, True) }}"
       ec2_url: "{{ rds_instance_facts_ec2_url | default(omit, True) }}"

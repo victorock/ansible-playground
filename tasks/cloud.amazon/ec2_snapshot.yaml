@@ -12,6 +12,7 @@
       snapshot_tags: "{{ ec2_snapshot_snapshot_tags | default(omit, True) }}"
       region: "{{ ec2_snapshot_region | default(omit, True) }}"
       ec2_url: "{{ ec2_snapshot_ec2_url | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_snapshot_debug_botocore_endpoint_logs | default(omit, True) }}"
       device_name: "{{ ec2_snapshot_device_name | default(omit, True) }}"
       instance_id: "{{ ec2_snapshot_instance_id | default(omit, True) }}"
       state: "{{ ec2_snapshot_state | default(omit, True) }}"

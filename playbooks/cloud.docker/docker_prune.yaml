@@ -1,0 +1,33 @@
+---
+- name: "module_docker_prune"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    docker_prune: 
+      tls: "{{ docker_prune_tls | default(omit, True) }}"
+      networks_filters: "{{ docker_prune_networks_filters | default(omit, True) }}"
+      images_filters: "{{ docker_prune_images_filters | default(omit, True) }}"
+      volumes: "{{ docker_prune_volumes | default(omit, True) }}"
+      ca_cert: "{{ docker_prune_ca_cert | default(omit, True) }}"
+      debug: "{{ docker_prune_debug | default(omit, True) }}"
+      volumes_filters: "{{ docker_prune_volumes_filters | default(omit, True) }}"
+      builder_cache: "{{ docker_prune_builder_cache | default(omit, True) }}"
+      ssl_version: "{{ docker_prune_ssl_version | default(omit, True) }}"
+      client_cert: "{{ docker_prune_client_cert | default(omit, True) }}"
+      tls_hostname: "{{ docker_prune_tls_hostname | default(omit, True) }}"
+      docker_host: "{{ docker_prune_docker_host | default(omit, True) }}"
+      containers: "{{ docker_prune_containers | default(omit, True) }}"
+      timeout: "{{ docker_prune_timeout | default(omit, True) }}"
+      containers_filters: "{{ docker_prune_containers_filters | default(omit, True) }}"
+      images: "{{ docker_prune_images | default(omit, True) }}"
+      validate_certs: "{{ docker_prune_validate_certs | default(omit, True) }}"
+      networks: "{{ docker_prune_networks | default(omit, True) }}"
+      api_version: "{{ docker_prune_api_version | default(omit, True) }}"
+      client_key: "{{ docker_prune_client_key | default(omit, True) }}"
+  tasks:
+    - name: "plugin_docker_prune"
+      docker_prune: "{{ docker_prune }}"
+      register: r_docker_prune

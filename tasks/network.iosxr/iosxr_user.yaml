@@ -9,6 +9,7 @@
       configured_password: "{{ iosxr_user_configured_password | default(omit, True) }}"
       group: "{{ iosxr_user_group | default(omit, True) }}"
       name: "{{ iosxr_user_name | default(omit, True) }}"
+      admin: "{{ iosxr_user_admin | default(omit, True) }}"
       purge: "{{ iosxr_user_purge | default(omit, True) }}"
       state: "{{ iosxr_user_state | default(omit, True) }}"
       public_key_contents: "{{ iosxr_user_public_key_contents | default(omit, True) }}"

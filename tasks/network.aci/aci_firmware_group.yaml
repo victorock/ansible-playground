@@ -1,0 +1,20 @@
+---
+- name: "module_aci_firmware_group"
+  aci_firmware_group: "{{ aci_firmware_group }}"
+  register: r_aci_firmware_group
+  vars:
+    aci_firmware_group: 
+      username: "{{ aci_firmware_group_username | default(omit, True) }}"
+      private_key: "{{ aci_firmware_group_private_key | default(omit, True) }}"
+      group: "{{ aci_firmware_group_group | default(omit, True) }}"
+      use_proxy: "{{ aci_firmware_group_use_proxy | default(omit, True) }}"
+      certificate_name: "{{ aci_firmware_group_certificate_name | default(omit, True) }}"
+      firmwarepol: "{{ aci_firmware_group_firmwarepol | default(omit, True) }}"
+      state: "{{ aci_firmware_group_state | default(omit, True) }}"
+      output_level: "{{ aci_firmware_group_output_level | default(omit, True) }}"
+      host: "{{ aci_firmware_group_host | default(omit, True) }}"
+      timeout: "{{ aci_firmware_group_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_firmware_group_use_ssl | default(omit, True) }}"
+      password: "{{ aci_firmware_group_password | default(omit, True) }}"
+      validate_certs: "{{ aci_firmware_group_validate_certs | default(omit, True) }}"
+      port: "{{ aci_firmware_group_port | default(omit, True) }}"

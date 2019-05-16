@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_dlp_settings"
+  fortios_dlp_settings: "{{ fortios_dlp_settings }}"
+  register: r_fortios_dlp_settings
+  vars:
+    fortios_dlp_settings: 
+      username: "{{ fortios_dlp_settings_username | default(omit, True) }}"
+      host: "{{ fortios_dlp_settings_host | default(omit, True) }}"
+      https: "{{ fortios_dlp_settings_https | default(omit, True) }}"
+      password: "{{ fortios_dlp_settings_password | default(omit, True) }}"
+      dlp_settings: "{{ fortios_dlp_settings_dlp_settings | default(omit, True) }}"
+      vdom: "{{ fortios_dlp_settings_vdom | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_purefa_dsrole"
+  purefa_dsrole: "{{ purefa_dsrole }}"
+  register: r_purefa_dsrole
+  vars:
+    purefa_dsrole: 
+      group_base: "{{ purefa_dsrole_group_base | default(omit, True) }}"
+      group: "{{ purefa_dsrole_group | default(omit, True) }}"
+      state: "{{ purefa_dsrole_state | default(omit, True) }}"
+      role: "{{ purefa_dsrole_role | default(omit, True) }}"
+      api_token: "{{ purefa_dsrole_api_token | default(omit, True) }}"
+      fa_url: "{{ purefa_dsrole_fa_url | default(omit, True) }}"

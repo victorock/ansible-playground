@@ -1,0 +1,19 @@
+---
+- name: "module_na_ontap_unix_user"
+  na_ontap_unix_user: "{{ na_ontap_unix_user }}"
+  register: r_na_ontap_unix_user
+  vars:
+    na_ontap_unix_user: 
+      username: "{{ na_ontap_unix_user_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_unix_user_http_port | default(omit, True) }}"
+      name: "{{ na_ontap_unix_user_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_unix_user_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_unix_user_vserver | default(omit, True) }}"
+      group_id: "{{ na_ontap_unix_user_group_id | default(omit, True) }}"
+      state: "{{ na_ontap_unix_user_state | default(omit, True) }}"
+      full_name: "{{ na_ontap_unix_user_full_name | default(omit, True) }}"
+      ontapi: "{{ na_ontap_unix_user_ontapi | default(omit, True) }}"
+      https: "{{ na_ontap_unix_user_https | default(omit, True) }}"
+      password: "{{ na_ontap_unix_user_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_unix_user_validate_certs | default(omit, True) }}"
+      id: "{{ na_ontap_unix_user_id | default(omit, True) }}"

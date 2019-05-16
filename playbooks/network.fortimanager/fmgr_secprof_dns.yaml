@@ -1,0 +1,31 @@
+---
+- name: "module_fmgr_secprof_dns"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_secprof_dns: 
+      comment: "{{ fmgr_secprof_dns_comment | default(omit, True) }}"
+      external_ip_blocklist: "{{ fmgr_secprof_dns_external_ip_blocklist | default(omit, True) }}"
+      domain_filter_domain_filter_table: "{{ fmgr_secprof_dns_domain_filter_domain_filter_table | default(omit, True) }}"
+      youtube_restrict: "{{ fmgr_secprof_dns_youtube_restrict | default(omit, True) }}"
+      adom: "{{ fmgr_secprof_dns_adom | default(omit, True) }}"
+      safe_search: "{{ fmgr_secprof_dns_safe_search | default(omit, True) }}"
+      log_all_domain: "{{ fmgr_secprof_dns_log_all_domain | default(omit, True) }}"
+      block_botnet: "{{ fmgr_secprof_dns_block_botnet | default(omit, True) }}"
+      name: "{{ fmgr_secprof_dns_name | default(omit, True) }}"
+      sdns_ftgd_err_log: "{{ fmgr_secprof_dns_sdns_ftgd_err_log | default(omit, True) }}"
+      block_action: "{{ fmgr_secprof_dns_block_action | default(omit, True) }}"
+      mode: "{{ fmgr_secprof_dns_mode | default(omit, True) }}"
+      redirect_portal: "{{ fmgr_secprof_dns_redirect_portal | default(omit, True) }}"
+      ftgd_dns_options: "{{ fmgr_secprof_dns_ftgd_dns_options | default(omit, True) }}"
+      ftgd_dns_filters_log: "{{ fmgr_secprof_dns_ftgd_dns_filters_log | default(omit, True) }}"
+      ftgd_dns_filters_category: "{{ fmgr_secprof_dns_ftgd_dns_filters_category | default(omit, True) }}"
+      ftgd_dns_filters_action: "{{ fmgr_secprof_dns_ftgd_dns_filters_action | default(omit, True) }}"
+      sdns_domain_log: "{{ fmgr_secprof_dns_sdns_domain_log | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fmgr_secprof_dns"
+      fmgr_secprof_dns: "{{ fmgr_secprof_dns }}"
+      register: r_fmgr_secprof_dns

@@ -1,0 +1,12 @@
+---
+- name: "module_selogin"
+  selogin: "{{ selogin }}"
+  register: r_selogin
+  vars:
+    selogin: 
+      selevel: "{{ selogin_selevel | default(omit, True) }}"
+      seuser: "{{ selogin_seuser | default(omit, True) }}"
+      ignore_selinux_state: "{{ selogin_ignore_selinux_state | default(omit, True) }}"
+      reload: "{{ selogin_reload | default(omit, True) }}"
+      state: "{{ selogin_state | default(omit, True) }}"
+      login: "{{ selogin_login | default(omit, True) }}"

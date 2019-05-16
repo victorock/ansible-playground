@@ -13,11 +13,12 @@
       security_token: "{{ ec2_ami_facts_security_token | default(omit, True) }}"
       executable_users: "{{ ec2_ami_facts_executable_users | default(omit, True) }}"
       region: "{{ ec2_ami_facts_region | default(omit, True) }}"
-      owners: "{{ ec2_ami_facts_owners | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_ami_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       image_ids: "{{ ec2_ami_facts_image_ids | default(omit, True) }}"
       describe_image_attributes: "{{ ec2_ami_facts_describe_image_attributes | default(omit, True) }}"
       filters: "{{ ec2_ami_facts_filters | default(omit, True) }}"
       ec2_url: "{{ ec2_ami_facts_ec2_url | default(omit, True) }}"
+      owners: "{{ ec2_ami_facts_owners | default(omit, True) }}"
       validate_certs: "{{ ec2_ami_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_ec2_ami_facts"

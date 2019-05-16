@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_system_vdom"
+  fortios_system_vdom: "{{ fortios_system_vdom }}"
+  register: r_fortios_system_vdom
+  vars:
+    fortios_system_vdom: 
+      username: "{{ fortios_system_vdom_username | default(omit, True) }}"
+      system_vdom: "{{ fortios_system_vdom_system_vdom | default(omit, True) }}"
+      host: "{{ fortios_system_vdom_host | default(omit, True) }}"
+      https: "{{ fortios_system_vdom_https | default(omit, True) }}"
+      password: "{{ fortios_system_vdom_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_vdom_vdom | default(omit, True) }}"

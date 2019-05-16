@@ -7,11 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_vrf_af: 
-      afi: "{{ nxos_vrf_af_afi | default(omit, True) }}"
-      safi: "{{ nxos_vrf_af_safi | default(omit, True) }}"
+      vrf: "{{ nxos_vrf_af_vrf | default(omit, True) }}"
       state: "{{ nxos_vrf_af_state | default(omit, True) }}"
       route_target_both_auto_evpn: "{{ nxos_vrf_af_route_target_both_auto_evpn | default(omit, True) }}"
-      vrf: "{{ nxos_vrf_af_vrf | default(omit, True) }}"
+      afi: "{{ nxos_vrf_af_afi | default(omit, True) }}"
       provider: "{{ nxos_vrf_af_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_vrf_af"

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_log_null_device_filter"
+  fortios_log_null_device_filter: "{{ fortios_log_null_device_filter }}"
+  register: r_fortios_log_null_device_filter
+  vars:
+    fortios_log_null_device_filter: 
+      username: "{{ fortios_log_null_device_filter_username | default(omit, True) }}"
+      log_null_device_filter: "{{ fortios_log_null_device_filter_log_null_device_filter | default(omit, True) }}"
+      host: "{{ fortios_log_null_device_filter_host | default(omit, True) }}"
+      https: "{{ fortios_log_null_device_filter_https | default(omit, True) }}"
+      password: "{{ fortios_log_null_device_filter_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_null_device_filter_vdom | default(omit, True) }}"

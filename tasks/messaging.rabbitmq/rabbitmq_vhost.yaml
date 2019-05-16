@@ -1,0 +1,10 @@
+---
+- name: "module_rabbitmq_vhost"
+  rabbitmq_vhost: "{{ rabbitmq_vhost }}"
+  register: r_rabbitmq_vhost
+  vars:
+    rabbitmq_vhost: 
+      node: "{{ rabbitmq_vhost_node | default(omit, True) }}"
+      tracing: "{{ rabbitmq_vhost_tracing | default(omit, True) }}"
+      state: "{{ rabbitmq_vhost_state | default(omit, True) }}"
+      name: "{{ rabbitmq_vhost_name | default(omit, True) }}"

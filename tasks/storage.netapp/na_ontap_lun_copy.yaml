@@ -1,0 +1,18 @@
+---
+- name: "module_na_ontap_lun_copy"
+  na_ontap_lun_copy: "{{ na_ontap_lun_copy }}"
+  register: r_na_ontap_lun_copy
+  vars:
+    na_ontap_lun_copy: 
+      username: "{{ na_ontap_lun_copy_username | default(omit, True) }}"
+      destination_vserver: "{{ na_ontap_lun_copy_destination_vserver | default(omit, True) }}"
+      http_port: "{{ na_ontap_lun_copy_http_port | default(omit, True) }}"
+      destination_path: "{{ na_ontap_lun_copy_destination_path | default(omit, True) }}"
+      hostname: "{{ na_ontap_lun_copy_hostname | default(omit, True) }}"
+      source_path: "{{ na_ontap_lun_copy_source_path | default(omit, True) }}"
+      source_vserver: "{{ na_ontap_lun_copy_source_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_lun_copy_state | default(omit, True) }}"
+      https: "{{ na_ontap_lun_copy_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_lun_copy_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_lun_copy_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_lun_copy_validate_certs | default(omit, True) }}"

@@ -1,0 +1,30 @@
+---
+- name: "module_vcenter_extension"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vcenter_extension: 
+      username: "{{ vcenter_extension_username | default(omit, True) }}"
+      extension_key: "{{ vcenter_extension_extension_key | default(omit, True) }}"
+      description: "{{ vcenter_extension_description | default(omit, True) }}"
+      server_type: "{{ vcenter_extension_server_type | default(omit, True) }}"
+      url: "{{ vcenter_extension_url | default(omit, True) }}"
+      company: "{{ vcenter_extension_company | default(omit, True) }}"
+      hostname: "{{ vcenter_extension_hostname | default(omit, True) }}"
+      email: "{{ vcenter_extension_email | default(omit, True) }}"
+      visible: "{{ vcenter_extension_visible | default(omit, True) }}"
+      state: "{{ vcenter_extension_state | default(omit, True) }}"
+      client_type: "{{ vcenter_extension_client_type | default(omit, True) }}"
+      version: "{{ vcenter_extension_version | default(omit, True) }}"
+      ssl_thumbprint: "{{ vcenter_extension_ssl_thumbprint | default(omit, True) }}"
+      password: "{{ vcenter_extension_password | default(omit, True) }}"
+      validate_certs: "{{ vcenter_extension_validate_certs | default(omit, True) }}"
+      port: "{{ vcenter_extension_port | default(omit, True) }}"
+      name: "{{ vcenter_extension_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vcenter_extension"
+      vcenter_extension: "{{ vcenter_extension }}"
+      register: r_vcenter_extension

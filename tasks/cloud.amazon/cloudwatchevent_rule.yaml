@@ -11,6 +11,7 @@
       description: "{{ cloudwatchevent_rule_description | default(omit, True) }}"
       security_token: "{{ cloudwatchevent_rule_security_token | default(omit, True) }}"
       region: "{{ cloudwatchevent_rule_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ cloudwatchevent_rule_debug_botocore_endpoint_logs | default(omit, True) }}"
       event_pattern: "{{ cloudwatchevent_rule_event_pattern | default(omit, True) }}"
       schedule_expression: "{{ cloudwatchevent_rule_schedule_expression | default(omit, True) }}"
       state: "{{ cloudwatchevent_rule_state | default(omit, True) }}"

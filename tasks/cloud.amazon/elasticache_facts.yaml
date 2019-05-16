@@ -10,5 +10,6 @@
       name: "{{ elasticache_facts_name | default(omit, True) }}"
       security_token: "{{ elasticache_facts_security_token | default(omit, True) }}"
       region: "{{ elasticache_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ elasticache_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ elasticache_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elasticache_facts_validate_certs | default(omit, True) }}"

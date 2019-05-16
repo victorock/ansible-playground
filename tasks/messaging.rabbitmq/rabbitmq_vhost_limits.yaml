@@ -1,0 +1,11 @@
+---
+- name: "module_rabbitmq_vhost_limits"
+  rabbitmq_vhost_limits: "{{ rabbitmq_vhost_limits }}"
+  register: r_rabbitmq_vhost_limits
+  vars:
+    rabbitmq_vhost_limits: 
+      node: "{{ rabbitmq_vhost_limits_node | default(omit, True) }}"
+      vhost: "{{ rabbitmq_vhost_limits_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_vhost_limits_state | default(omit, True) }}"
+      max_queues: "{{ rabbitmq_vhost_limits_max_queues | default(omit, True) }}"
+      max_connections: "{{ rabbitmq_vhost_limits_max_connections | default(omit, True) }}"

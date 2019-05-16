@@ -1,0 +1,30 @@
+---
+- name: "module_mso_site"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_site: 
+      username: "{{ mso_site_username | default(omit, True) }}"
+      apic_site_id: "{{ mso_site_apic_site_id | default(omit, True) }}"
+      use_proxy: "{{ mso_site_use_proxy | default(omit, True) }}"
+      apic_password: "{{ mso_site_apic_password | default(omit, True) }}"
+      labels: "{{ mso_site_labels | default(omit, True) }}"
+      site: "{{ mso_site_site | default(omit, True) }}"
+      apic_username: "{{ mso_site_apic_username | default(omit, True) }}"
+      output_level: "{{ mso_site_output_level | default(omit, True) }}"
+      state: "{{ mso_site_state | default(omit, True) }}"
+      location: "{{ mso_site_location | default(omit, True) }}"
+      timeout: "{{ mso_site_timeout | default(omit, True) }}"
+      urls: "{{ mso_site_urls | default(omit, True) }}"
+      host: "{{ mso_site_host | default(omit, True) }}"
+      use_ssl: "{{ mso_site_use_ssl | default(omit, True) }}"
+      password: "{{ mso_site_password | default(omit, True) }}"
+      validate_certs: "{{ mso_site_validate_certs | default(omit, True) }}"
+      port: "{{ mso_site_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_site"
+      mso_site: "{{ mso_site }}"
+      register: r_mso_site

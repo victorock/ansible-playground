@@ -14,5 +14,6 @@
       snapmirror_label: "{{ na_ontap_cg_snapshot_snapmirror_label | default(omit, True) }}"
       snapshot: "{{ na_ontap_cg_snapshot_snapshot | default(omit, True) }}"
       https: "{{ na_ontap_cg_snapshot_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_cg_snapshot_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_cg_snapshot_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_cg_snapshot_validate_certs | default(omit, True) }}"

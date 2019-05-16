@@ -1,0 +1,15 @@
+---
+- name: "module_vmware_dvs_portgroup_facts"
+  vmware_dvs_portgroup_facts: "{{ vmware_dvs_portgroup_facts }}"
+  register: r_vmware_dvs_portgroup_facts
+  vars:
+    vmware_dvs_portgroup_facts: 
+      username: "{{ vmware_dvs_portgroup_facts_username | default(omit, True) }}"
+      datacenter: "{{ vmware_dvs_portgroup_facts_datacenter | default(omit, True) }}"
+      show_teaming_policy: "{{ vmware_dvs_portgroup_facts_show_teaming_policy | default(omit, True) }}"
+      hostname: "{{ vmware_dvs_portgroup_facts_hostname | default(omit, True) }}"
+      show_port_policy: "{{ vmware_dvs_portgroup_facts_show_port_policy | default(omit, True) }}"
+      password: "{{ vmware_dvs_portgroup_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_dvs_portgroup_facts_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_dvs_portgroup_facts_port | default(omit, True) }}"
+      show_network_policy: "{{ vmware_dvs_portgroup_facts_show_network_policy | default(omit, True) }}"

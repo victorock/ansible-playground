@@ -8,6 +8,7 @@
       name: "{{ azure_rm_aks_facts_name | default(omit, True) }}"
       resource_group: "{{ azure_rm_aks_facts_resource_group | default(omit, True) }}"
       tags: "{{ azure_rm_aks_facts_tags | default(omit, True) }}"
+      show_kubeconfig: "{{ azure_rm_aks_facts_show_kubeconfig | default(omit, True) }}"
       ad_user: "{{ azure_rm_aks_facts_ad_user | default(omit, True) }}"
       cloud_environment: "{{ azure_rm_aks_facts_cloud_environment | default(omit, True) }}"
       secret: "{{ azure_rm_aks_facts_secret | default(omit, True) }}"

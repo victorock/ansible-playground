@@ -1,0 +1,12 @@
+---
+- name: "module_gcp_resourcemanager_project_facts"
+  gcp_resourcemanager_project_facts: "{{ gcp_resourcemanager_project_facts }}"
+  register: r_gcp_resourcemanager_project_facts
+  vars:
+    gcp_resourcemanager_project_facts: 
+      scopes: "{{ gcp_resourcemanager_project_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_resourcemanager_project_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_resourcemanager_project_facts_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_resourcemanager_project_facts_project | default(omit, True) }}"
+      auth_kind: "{{ gcp_resourcemanager_project_facts_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_resourcemanager_project_facts_service_account_file | default(omit, True) }}"

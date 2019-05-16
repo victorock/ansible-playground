@@ -6,6 +6,7 @@
     gem: 
       include_dependencies: "{{ gem_include_dependencies | default(omit, True) }}"
       install_dir: "{{ gem_install_dir | default(omit, True) }}"
+      force: "{{ gem_force | default(omit, True) }}"
       gem_source: "{{ gem_gem_source | default(omit, True) }}"
       repository: "{{ gem_repository | default(omit, True) }}"
       build_flags: "{{ gem_build_flags | default(omit, True) }}"

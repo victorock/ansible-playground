@@ -13,6 +13,7 @@
       security_token: "{{ ecs_service_facts_security_token | default(omit, True) }}"
       service: "{{ ecs_service_facts_service | default(omit, True) }}"
       region: "{{ ecs_service_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ecs_service_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       cluster: "{{ ecs_service_facts_cluster | default(omit, True) }}"
       details: "{{ ecs_service_facts_details | default(omit, True) }}"
       ec2_url: "{{ ecs_service_facts_ec2_url | default(omit, True) }}"

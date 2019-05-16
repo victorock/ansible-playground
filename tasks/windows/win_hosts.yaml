@@ -1,0 +1,11 @@
+---
+- name: "module_win_hosts"
+  win_hosts: "{{ win_hosts }}"
+  register: r_win_hosts
+  vars:
+    win_hosts: 
+      action: "{{ win_hosts_action | default(omit, True) }}"
+      state: "{{ win_hosts_state | default(omit, True) }}"
+      ip_address: "{{ win_hosts_ip_address | default(omit, True) }}"
+      canonical_name: "{{ win_hosts_canonical_name | default(omit, True) }}"
+      aliases: "{{ win_hosts_aliases | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_ssh_local_ca"
+  fortios_firewall_ssh_local_ca: "{{ fortios_firewall_ssh_local_ca }}"
+  register: r_fortios_firewall_ssh_local_ca
+  vars:
+    fortios_firewall_ssh_local_ca: 
+      username: "{{ fortios_firewall_ssh_local_ca_username | default(omit, True) }}"
+      host: "{{ fortios_firewall_ssh_local_ca_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_ssh_local_ca_https | default(omit, True) }}"
+      firewall_ssh_local_ca: "{{ fortios_firewall_ssh_local_ca_firewall_ssh_local_ca | default(omit, True) }}"
+      password: "{{ fortios_firewall_ssh_local_ca_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_ssh_local_ca_vdom | default(omit, True) }}"

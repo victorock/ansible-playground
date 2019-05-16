@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_schedule_recurring"
+  fortios_firewall_schedule_recurring: "{{ fortios_firewall_schedule_recurring }}"
+  register: r_fortios_firewall_schedule_recurring
+  vars:
+    fortios_firewall_schedule_recurring: 
+      username: "{{ fortios_firewall_schedule_recurring_username | default(omit, True) }}"
+      host: "{{ fortios_firewall_schedule_recurring_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_schedule_recurring_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_schedule_recurring_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_schedule_recurring_vdom | default(omit, True) }}"
+      firewall_schedule_recurring: "{{ fortios_firewall_schedule_recurring_firewall_schedule_recurring | default(omit, True) }}"

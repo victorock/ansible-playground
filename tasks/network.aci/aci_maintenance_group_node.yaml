@@ -1,0 +1,20 @@
+---
+- name: "module_aci_maintenance_group_node"
+  aci_maintenance_group_node: "{{ aci_maintenance_group_node }}"
+  register: r_aci_maintenance_group_node
+  vars:
+    aci_maintenance_group_node: 
+      node: "{{ aci_maintenance_group_node_node | default(omit, True) }}"
+      username: "{{ aci_maintenance_group_node_username | default(omit, True) }}"
+      private_key: "{{ aci_maintenance_group_node_private_key | default(omit, True) }}"
+      group: "{{ aci_maintenance_group_node_group | default(omit, True) }}"
+      use_proxy: "{{ aci_maintenance_group_node_use_proxy | default(omit, True) }}"
+      certificate_name: "{{ aci_maintenance_group_node_certificate_name | default(omit, True) }}"
+      state: "{{ aci_maintenance_group_node_state | default(omit, True) }}"
+      output_level: "{{ aci_maintenance_group_node_output_level | default(omit, True) }}"
+      host: "{{ aci_maintenance_group_node_host | default(omit, True) }}"
+      timeout: "{{ aci_maintenance_group_node_timeout | default(omit, True) }}"
+      use_ssl: "{{ aci_maintenance_group_node_use_ssl | default(omit, True) }}"
+      password: "{{ aci_maintenance_group_node_password | default(omit, True) }}"
+      validate_certs: "{{ aci_maintenance_group_node_validate_certs | default(omit, True) }}"
+      port: "{{ aci_maintenance_group_node_port | default(omit, True) }}"

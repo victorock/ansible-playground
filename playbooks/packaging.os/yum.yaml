@@ -7,6 +7,7 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     yum: 
+      lock_timeout: "{{ yum_lock_timeout | default(omit, True) }}"
       update_cache: "{{ yum_update_cache | default(omit, True) }}"
       conf_file: "{{ yum_conf_file | default(omit, True) }}"
       exclude: "{{ yum_exclude | default(omit, True) }}"
@@ -20,7 +21,9 @@
       releasever: "{{ yum_releasever | default(omit, True) }}"
       skip_broken: "{{ yum_skip_broken | default(omit, True) }}"
       autoremove: "{{ yum_autoremove | default(omit, True) }}"
+      download_dir: "{{ yum_download_dir | default(omit, True) }}"
       installroot: "{{ yum_installroot | default(omit, True) }}"
+      install_weak_deps: "{{ yum_install_weak_deps | default(omit, True) }}"
       name: "{{ yum_name | default(omit, True) }}"
       download_only: "{{ yum_download_only | default(omit, True) }}"
       bugfix: "{{ yum_bugfix | default(omit, True) }}"

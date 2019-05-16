@@ -7,6 +7,7 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netconf_config: 
+      backup_options: "{{ netconf_config_backup_options | default(omit, True) }}"
       lock: "{{ netconf_config_lock | default(omit, True) }}"
       source_datastore: "{{ netconf_config_source_datastore | default(omit, True) }}"
       port: "{{ netconf_config_port | default(omit, True) }}"

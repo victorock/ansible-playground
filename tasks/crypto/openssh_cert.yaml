@@ -1,0 +1,28 @@
+---
+- name: "module_openssh_cert"
+  openssh_cert: "{{ openssh_cert }}"
+  register: r_openssh_cert
+  vars:
+    openssh_cert: 
+      force: "{{ openssh_cert_force | default(omit, True) }}"
+      signing_key: "{{ openssh_cert_signing_key | default(omit, True) }}"
+      owner: "{{ openssh_cert_owner | default(omit, True) }}"
+      valid_from: "{{ openssh_cert_valid_from | default(omit, True) }}"
+      group: "{{ openssh_cert_group | default(omit, True) }}"
+      unsafe_writes: "{{ openssh_cert_unsafe_writes | default(omit, True) }}"
+      serole: "{{ openssh_cert_serole | default(omit, True) }}"
+      state: "{{ openssh_cert_state | default(omit, True) }}"
+      serial_number: "{{ openssh_cert_serial_number | default(omit, True) }}"
+      principals: "{{ openssh_cert_principals | default(omit, True) }}"
+      type: "{{ openssh_cert_type | default(omit, True) }}"
+      setype: "{{ openssh_cert_setype | default(omit, True) }}"
+      selevel: "{{ openssh_cert_selevel | default(omit, True) }}"
+      path: "{{ openssh_cert_path | default(omit, True) }}"
+      public_key: "{{ openssh_cert_public_key | default(omit, True) }}"
+      seuser: "{{ openssh_cert_seuser | default(omit, True) }}"
+      valid_to: "{{ openssh_cert_valid_to | default(omit, True) }}"
+      mode: "{{ openssh_cert_mode | default(omit, True) }}"
+      attributes: "{{ openssh_cert_attributes | default(omit, True) }}"
+      identifier: "{{ openssh_cert_identifier | default(omit, True) }}"
+      options: "{{ openssh_cert_options | default(omit, True) }}"
+      valid_at: "{{ openssh_cert_valid_at | default(omit, True) }}"

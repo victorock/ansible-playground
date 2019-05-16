@@ -1,0 +1,10 @@
+---
+- name: "module_hcloud_location_facts"
+  hcloud_location_facts: "{{ hcloud_location_facts }}"
+  register: r_hcloud_location_facts
+  vars:
+    hcloud_location_facts: 
+      endpoint: "{{ hcloud_location_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_location_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_location_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_location_facts_api_token | default(omit, True) }}"

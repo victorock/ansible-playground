@@ -1,0 +1,25 @@
+---
+- name: "module_ftd_install"
+  ftd_install: "{{ ftd_install }}"
+  register: r_ftd_install
+  vars:
+    ftd_install: 
+      device_new_password: "{{ ftd_install_device_new_password | default(omit, True) }}"
+      console_username: "{{ ftd_install_console_username | default(omit, True) }}"
+      dns_server: "{{ ftd_install_dns_server | default(omit, True) }}"
+      rommon_file_location: "{{ ftd_install_rommon_file_location | default(omit, True) }}"
+      search_domains: "{{ ftd_install_search_domains | default(omit, True) }}"
+      image_file_location: "{{ ftd_install_image_file_location | default(omit, True) }}"
+      device_ip: "{{ ftd_install_device_ip | default(omit, True) }}"
+      device_username: "{{ ftd_install_device_username | default(omit, True) }}"
+      device_netmask: "{{ ftd_install_device_netmask | default(omit, True) }}"
+      device_model: "{{ ftd_install_device_model | default(omit, True) }}"
+      device_sudo_password: "{{ ftd_install_device_sudo_password | default(omit, True) }}"
+      console_port: "{{ ftd_install_console_port | default(omit, True) }}"
+      force_install: "{{ ftd_install_force_install | default(omit, True) }}"
+      device_hostname: "{{ ftd_install_device_hostname | default(omit, True) }}"
+      console_ip: "{{ ftd_install_console_ip | default(omit, True) }}"
+      device_gateway: "{{ ftd_install_device_gateway | default(omit, True) }}"
+      device_password: "{{ ftd_install_device_password | default(omit, True) }}"
+      image_version: "{{ ftd_install_image_version | default(omit, True) }}"
+      console_password: "{{ ftd_install_console_password | default(omit, True) }}"

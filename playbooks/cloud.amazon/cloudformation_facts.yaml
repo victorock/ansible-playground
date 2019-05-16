@@ -15,6 +15,7 @@
       all_facts: "{{ cloudformation_facts_all_facts | default(omit, True) }}"
       stack_policy: "{{ cloudformation_facts_stack_policy | default(omit, True) }}"
       region: "{{ cloudformation_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ cloudformation_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       stack_events: "{{ cloudformation_facts_stack_events | default(omit, True) }}"
       stack_name: "{{ cloudformation_facts_stack_name | default(omit, True) }}"
       ec2_url: "{{ cloudformation_facts_ec2_url | default(omit, True) }}"

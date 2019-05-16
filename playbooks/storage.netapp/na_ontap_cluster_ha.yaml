@@ -12,6 +12,7 @@
       hostname: "{{ na_ontap_cluster_ha_hostname | default(omit, True) }}"
       state: "{{ na_ontap_cluster_ha_state | default(omit, True) }}"
       https: "{{ na_ontap_cluster_ha_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_cluster_ha_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_cluster_ha_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_cluster_ha_validate_certs | default(omit, True) }}"
   tasks:

@@ -1,0 +1,19 @@
+---
+- name: "module_onyx_igmp_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_igmp_vlan: 
+      mrouter: "{{ onyx_igmp_vlan_mrouter | default(omit, True) }}"
+      state: "{{ onyx_igmp_vlan_state | default(omit, True) }}"
+      version: "{{ onyx_igmp_vlan_version | default(omit, True) }}"
+      querier: "{{ onyx_igmp_vlan_querier | default(omit, True) }}"
+      static_groups: "{{ onyx_igmp_vlan_static_groups | default(omit, True) }}"
+      vlan_id: "{{ onyx_igmp_vlan_vlan_id | default(omit, True) }}"
+  tasks:
+    - name: "plugin_onyx_igmp_vlan"
+      onyx_igmp_vlan: "{{ onyx_igmp_vlan }}"
+      register: r_onyx_igmp_vlan

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_waf_profile"
+  fortios_waf_profile: "{{ fortios_waf_profile }}"
+  register: r_fortios_waf_profile
+  vars:
+    fortios_waf_profile: 
+      username: "{{ fortios_waf_profile_username | default(omit, True) }}"
+      waf_profile: "{{ fortios_waf_profile_waf_profile | default(omit, True) }}"
+      host: "{{ fortios_waf_profile_host | default(omit, True) }}"
+      https: "{{ fortios_waf_profile_https | default(omit, True) }}"
+      password: "{{ fortios_waf_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_waf_profile_vdom | default(omit, True) }}"

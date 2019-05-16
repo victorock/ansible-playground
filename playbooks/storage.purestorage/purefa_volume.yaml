@@ -8,6 +8,7 @@
   vars:
     purefa_volume: 
       size: "{{ purefa_volume_size | default(omit, True) }}"
+      qos: "{{ purefa_volume_qos | default(omit, True) }}"
       target: "{{ purefa_volume_target | default(omit, True) }}"
       name: "{{ purefa_volume_name | default(omit, True) }}"
       state: "{{ purefa_volume_state | default(omit, True) }}"

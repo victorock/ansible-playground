@@ -1,0 +1,13 @@
+---
+- name: "module_win_dns_record"
+  win_dns_record: "{{ win_dns_record }}"
+  register: r_win_dns_record
+  vars:
+    win_dns_record: 
+      name: "{{ win_dns_record_name | default(omit, True) }}"
+      zone: "{{ win_dns_record_zone | default(omit, True) }}"
+      value: "{{ win_dns_record_value | default(omit, True) }}"
+      state: "{{ win_dns_record_state | default(omit, True) }}"
+      computer_name: "{{ win_dns_record_computer_name | default(omit, True) }}"
+      ttl: "{{ win_dns_record_ttl | default(omit, True) }}"
+      type: "{{ win_dns_record_type | default(omit, True) }}"

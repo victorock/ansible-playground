@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_antivirus_quarantine"
+  fortios_antivirus_quarantine: "{{ fortios_antivirus_quarantine }}"
+  register: r_fortios_antivirus_quarantine
+  vars:
+    fortios_antivirus_quarantine: 
+      username: "{{ fortios_antivirus_quarantine_username | default(omit, True) }}"
+      antivirus_quarantine: "{{ fortios_antivirus_quarantine_antivirus_quarantine | default(omit, True) }}"
+      host: "{{ fortios_antivirus_quarantine_host | default(omit, True) }}"
+      https: "{{ fortios_antivirus_quarantine_https | default(omit, True) }}"
+      password: "{{ fortios_antivirus_quarantine_password | default(omit, True) }}"
+      vdom: "{{ fortios_antivirus_quarantine_vdom | default(omit, True) }}"

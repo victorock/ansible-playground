@@ -8,6 +8,8 @@
       force: "{{ junos_package_force | default(omit, True) }}"
       no_copy: "{{ junos_package_no_copy | default(omit, True) }}"
       reboot: "{{ junos_package_reboot | default(omit, True) }}"
+      issu: "{{ junos_package_issu | default(omit, True) }}"
       version: "{{ junos_package_version | default(omit, True) }}"
       provider: "{{ junos_package_provider | default(omit, True) }}"
+      force_host: "{{ junos_package_force_host | default(omit, True) }}"
       validate: "{{ junos_package_validate | default(omit, True) }}"

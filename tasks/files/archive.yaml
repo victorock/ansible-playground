@@ -4,6 +4,7 @@
   register: r_archive
   vars:
     archive: 
+      force_archive: "{{ archive_force_archive | default(omit, True) }}"
       exclude_path: "{{ archive_exclude_path | default(omit, True) }}"
       format: "{{ archive_format | default(omit, True) }}"
       dest: "{{ archive_dest | default(omit, True) }}"

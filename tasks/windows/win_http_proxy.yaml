@@ -1,0 +1,9 @@
+---
+- name: "module_win_http_proxy"
+  win_http_proxy: "{{ win_http_proxy }}"
+  register: r_win_http_proxy
+  vars:
+    win_http_proxy: 
+      source: "{{ win_http_proxy_source | default(omit, True) }}"
+      proxy: "{{ win_http_proxy_proxy | default(omit, True) }}"
+      bypass: "{{ win_http_proxy_bypass | default(omit, True) }}"

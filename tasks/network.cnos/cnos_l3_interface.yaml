@@ -1,0 +1,12 @@
+---
+- name: "module_cnos_l3_interface"
+  cnos_l3_interface: "{{ cnos_l3_interface }}"
+  register: r_cnos_l3_interface
+  vars:
+    cnos_l3_interface: 
+      name: "{{ cnos_l3_interface_name | default(omit, True) }}"
+      ipv6: "{{ cnos_l3_interface_ipv6 | default(omit, True) }}"
+      state: "{{ cnos_l3_interface_state | default(omit, True) }}"
+      ipv4: "{{ cnos_l3_interface_ipv4 | default(omit, True) }}"
+      provider: "{{ cnos_l3_interface_provider | default(omit, True) }}"
+      aggregate: "{{ cnos_l3_interface_aggregate | default(omit, True) }}"

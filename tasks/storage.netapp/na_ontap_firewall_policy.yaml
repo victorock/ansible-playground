@@ -16,5 +16,6 @@
       http_port: "{{ na_ontap_firewall_policy_http_port | default(omit, True) }}"
       https: "{{ na_ontap_firewall_policy_https | default(omit, True) }}"
       policy: "{{ na_ontap_firewall_policy_policy | default(omit, True) }}"
+      ontapi: "{{ na_ontap_firewall_policy_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_firewall_policy_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_firewall_policy_validate_certs | default(omit, True) }}"

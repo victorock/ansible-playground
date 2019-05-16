@@ -6,8 +6,9 @@
     edgeos_config: 
       comment: "{{ edgeos_config_comment | default(omit, True) }}"
       src: "{{ edgeos_config_src | default(omit, True) }}"
-      config: "{{ edgeos_config_config | default(omit, True) }}"
+      backup_options: "{{ edgeos_config_backup_options | default(omit, True) }}"
+      backup: "{{ edgeos_config_backup | default(omit, True) }}"
       lines: "{{ edgeos_config_lines | default(omit, True) }}"
       save: "{{ edgeos_config_save | default(omit, True) }}"
-      backup: "{{ edgeos_config_backup | default(omit, True) }}"
+      config: "{{ edgeos_config_config | default(omit, True) }}"
       match: "{{ edgeos_config_match | default(omit, True) }}"

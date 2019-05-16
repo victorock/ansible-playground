@@ -1,0 +1,7 @@
+---
+- name: "module_pip_package_info"
+  pip_package_info: "{{ pip_package_info }}"
+  register: r_pip_package_info
+  vars:
+    pip_package_info: 
+      clients: "{{ pip_package_info_clients | default(omit, True) }}"

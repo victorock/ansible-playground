@@ -8,11 +8,11 @@
   vars:
     nxos_interface_ospf: 
       cost: "{{ nxos_interface_ospf_cost | default(omit, True) }}"
-      passive_interface: "{{ nxos_interface_ospf_passive_interface | default(omit, True) }}"
+      network: "{{ nxos_interface_ospf_network | default(omit, True) }}"
       area: "{{ nxos_interface_ospf_area | default(omit, True) }}"
       message_digest_algorithm_type: "{{ nxos_interface_ospf_message_digest_algorithm_type | default(omit, True) }}"
       message_digest_key_id: "{{ nxos_interface_ospf_message_digest_key_id | default(omit, True) }}"
-      provider: "{{ nxos_interface_ospf_provider | default(omit, True) }}"
+      passive_interface: "{{ nxos_interface_ospf_passive_interface | default(omit, True) }}"
       message_digest_encryption_type: "{{ nxos_interface_ospf_message_digest_encryption_type | default(omit, True) }}"
       state: "{{ nxos_interface_ospf_state | default(omit, True) }}"
       dead_interval: "{{ nxos_interface_ospf_dead_interval | default(omit, True) }}"
@@ -20,6 +20,7 @@
       message_digest_password: "{{ nxos_interface_ospf_message_digest_password | default(omit, True) }}"
       interface: "{{ nxos_interface_ospf_interface | default(omit, True) }}"
       ospf: "{{ nxos_interface_ospf_ospf | default(omit, True) }}"
+      provider: "{{ nxos_interface_ospf_provider | default(omit, True) }}"
       message_digest: "{{ nxos_interface_ospf_message_digest | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_interface_ospf"

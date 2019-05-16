@@ -1,0 +1,22 @@
+---
+- name: "module_gcp_cloudbuild_trigger"
+  gcp_cloudbuild_trigger: "{{ gcp_cloudbuild_trigger }}"
+  register: r_gcp_cloudbuild_trigger
+  vars:
+    gcp_cloudbuild_trigger: 
+      scopes: "{{ gcp_cloudbuild_trigger_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_cloudbuild_trigger_service_account_contents | default(omit, True) }}"
+      service_account_file: "{{ gcp_cloudbuild_trigger_service_account_file | default(omit, True) }}"
+      description: "{{ gcp_cloudbuild_trigger_description | default(omit, True) }}"
+      ignored_files: "{{ gcp_cloudbuild_trigger_ignored_files | default(omit, True) }}"
+      service_account_email: "{{ gcp_cloudbuild_trigger_service_account_email | default(omit, True) }}"
+      filename: "{{ gcp_cloudbuild_trigger_filename | default(omit, True) }}"
+      project: "{{ gcp_cloudbuild_trigger_project | default(omit, True) }}"
+      state: "{{ gcp_cloudbuild_trigger_state | default(omit, True) }}"
+      build: "{{ gcp_cloudbuild_trigger_build | default(omit, True) }}"
+      disabled: "{{ gcp_cloudbuild_trigger_disabled | default(omit, True) }}"
+      included_files: "{{ gcp_cloudbuild_trigger_included_files | default(omit, True) }}"
+      auth_kind: "{{ gcp_cloudbuild_trigger_auth_kind | default(omit, True) }}"
+      substitutions: "{{ gcp_cloudbuild_trigger_substitutions | default(omit, True) }}"
+      id: "{{ gcp_cloudbuild_trigger_id | default(omit, True) }}"
+      trigger_template: "{{ gcp_cloudbuild_trigger_trigger_template | default(omit, True) }}"

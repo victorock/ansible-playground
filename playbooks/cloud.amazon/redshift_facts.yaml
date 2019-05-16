@@ -14,6 +14,7 @@
       cluster_identifier: "{{ redshift_facts_cluster_identifier | default(omit, True) }}"
       tags: "{{ redshift_facts_tags | default(omit, True) }}"
       region: "{{ redshift_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ redshift_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ redshift_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ redshift_facts_validate_certs | default(omit, True) }}"
   tasks:

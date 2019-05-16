@@ -11,6 +11,7 @@
       datacenter: "{{ vmware_guest_find_datacenter | default(omit, True) }}"
       name: "{{ vmware_guest_find_name | default(omit, True) }}"
       hostname: "{{ vmware_guest_find_hostname | default(omit, True) }}"
+      use_instance_uuid: "{{ vmware_guest_find_use_instance_uuid | default(omit, True) }}"
       password: "{{ vmware_guest_find_password | default(omit, True) }}"
       validate_certs: "{{ vmware_guest_find_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_find_port | default(omit, True) }}"

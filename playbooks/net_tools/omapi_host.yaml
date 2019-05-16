@@ -9,8 +9,8 @@
     omapi_host: 
       macaddr: "{{ omapi_host_macaddr | default(omit, True) }}"
       statements: "{{ omapi_host_statements | default(omit, True) }}"
-      name: "{{ omapi_host_name | default(omit, True) }}"
       ip: "{{ omapi_host_ip | default(omit, True) }}"
+      hostname: "{{ omapi_host_hostname | default(omit, True) }}"
       host: "{{ omapi_host_host | default(omit, True) }}"
       state: "{{ omapi_host_state | default(omit, True) }}"
       ddns: "{{ omapi_host_ddns | default(omit, True) }}"

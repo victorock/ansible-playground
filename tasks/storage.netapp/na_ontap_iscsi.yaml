@@ -10,6 +10,7 @@
       vserver: "{{ na_ontap_iscsi_vserver | default(omit, True) }}"
       state: "{{ na_ontap_iscsi_state | default(omit, True) }}"
       https: "{{ na_ontap_iscsi_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_iscsi_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_iscsi_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_iscsi_validate_certs | default(omit, True) }}"
       service_state: "{{ na_ontap_iscsi_service_state | default(omit, True) }}"

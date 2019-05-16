@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_vpn_ipsec_concentrator"
+  fortios_vpn_ipsec_concentrator: "{{ fortios_vpn_ipsec_concentrator }}"
+  register: r_fortios_vpn_ipsec_concentrator
+  vars:
+    fortios_vpn_ipsec_concentrator: 
+      username: "{{ fortios_vpn_ipsec_concentrator_username | default(omit, True) }}"
+      host: "{{ fortios_vpn_ipsec_concentrator_host | default(omit, True) }}"
+      vpn_ipsec_concentrator: "{{ fortios_vpn_ipsec_concentrator_vpn_ipsec_concentrator | default(omit, True) }}"
+      https: "{{ fortios_vpn_ipsec_concentrator_https | default(omit, True) }}"
+      password: "{{ fortios_vpn_ipsec_concentrator_password | default(omit, True) }}"
+      vdom: "{{ fortios_vpn_ipsec_concentrator_vdom | default(omit, True) }}"

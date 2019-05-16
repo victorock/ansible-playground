@@ -19,7 +19,7 @@
       selevel: "{{ get_url_selevel | default(omit, True) }}"
       force_basic_auth: "{{ get_url_force_basic_auth | default(omit, True) }}"
       sha256sum: "{{ get_url_sha256sum | default(omit, True) }}"
-      others: "{{ get_url_others | default(omit, True) }}"
+      http_agent: "{{ get_url_http_agent | default(omit, True) }}"
       url_password: "{{ get_url_url_password | default(omit, True) }}"
       url: "{{ get_url_url | default(omit, True) }}"
       checksum: "{{ get_url_checksum | default(omit, True) }}"

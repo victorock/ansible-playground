@@ -1,0 +1,34 @@
+---
+- name: "module_mso_schema_template_bd"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_schema_template_bd: 
+      bd: "{{ mso_schema_template_bd_bd | default(omit, True) }}"
+      subnets: "{{ mso_schema_template_bd_subnets | default(omit, True) }}"
+      layer2_unknown_unicast: "{{ mso_schema_template_bd_layer2_unknown_unicast | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_template_bd_use_proxy | default(omit, True) }}"
+      display_name: "{{ mso_schema_template_bd_display_name | default(omit, True) }}"
+      layer2_stretch: "{{ mso_schema_template_bd_layer2_stretch | default(omit, True) }}"
+      output_level: "{{ mso_schema_template_bd_output_level | default(omit, True) }}"
+      state: "{{ mso_schema_template_bd_state | default(omit, True) }}"
+      optimize_wan_bandwidth: "{{ mso_schema_template_bd_optimize_wan_bandwidth | default(omit, True) }}"
+      intersite_bum_traffic: "{{ mso_schema_template_bd_intersite_bum_traffic | default(omit, True) }}"
+      username: "{{ mso_schema_template_bd_username | default(omit, True) }}"
+      schema: "{{ mso_schema_template_bd_schema | default(omit, True) }}"
+      host: "{{ mso_schema_template_bd_host | default(omit, True) }}"
+      template: "{{ mso_schema_template_bd_template | default(omit, True) }}"
+      vrf: "{{ mso_schema_template_bd_vrf | default(omit, True) }}"
+      timeout: "{{ mso_schema_template_bd_timeout | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_template_bd_use_ssl | default(omit, True) }}"
+      password: "{{ mso_schema_template_bd_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_template_bd_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_template_bd_port | default(omit, True) }}"
+      layer3_multicast: "{{ mso_schema_template_bd_layer3_multicast | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_schema_template_bd"
+      mso_schema_template_bd: "{{ mso_schema_template_bd }}"
+      register: r_mso_schema_template_bd

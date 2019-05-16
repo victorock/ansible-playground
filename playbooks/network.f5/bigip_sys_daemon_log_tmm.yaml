@@ -1,0 +1,30 @@
+---
+- name: "module_bigip_sys_daemon_log_tmm"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_sys_daemon_log_tmm: 
+      http_compression_log_level: "{{ bigip_sys_daemon_log_tmm_http_compression_log_level | default(omit, True) }}"
+      pva_log_level: "{{ bigip_sys_daemon_log_tmm_pva_log_level | default(omit, True) }}"
+      password: "{{ bigip_sys_daemon_log_tmm_password | default(omit, True) }}"
+      layer4_log_level: "{{ bigip_sys_daemon_log_tmm_layer4_log_level | default(omit, True) }}"
+      ip_log_level: "{{ bigip_sys_daemon_log_tmm_ip_log_level | default(omit, True) }}"
+      state: "{{ bigip_sys_daemon_log_tmm_state | default(omit, True) }}"
+      os_log_level: "{{ bigip_sys_daemon_log_tmm_os_log_level | default(omit, True) }}"
+      server: "{{ bigip_sys_daemon_log_tmm_server | default(omit, True) }}"
+      validate_certs: "{{ bigip_sys_daemon_log_tmm_validate_certs | default(omit, True) }}"
+      arp_log_level: "{{ bigip_sys_daemon_log_tmm_arp_log_level | default(omit, True) }}"
+      user: "{{ bigip_sys_daemon_log_tmm_user | default(omit, True) }}"
+      server_port: "{{ bigip_sys_daemon_log_tmm_server_port | default(omit, True) }}"
+      provider: "{{ bigip_sys_daemon_log_tmm_provider | default(omit, True) }}"
+      ssl_log_level: "{{ bigip_sys_daemon_log_tmm_ssl_log_level | default(omit, True) }}"
+      net_log_level: "{{ bigip_sys_daemon_log_tmm_net_log_level | default(omit, True) }}"
+      irule_log_level: "{{ bigip_sys_daemon_log_tmm_irule_log_level | default(omit, True) }}"
+      http_log_level: "{{ bigip_sys_daemon_log_tmm_http_log_level | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_sys_daemon_log_tmm"
+      bigip_sys_daemon_log_tmm: "{{ bigip_sys_daemon_log_tmm }}"
+      register: r_bigip_sys_daemon_log_tmm

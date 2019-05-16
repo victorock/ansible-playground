@@ -1,0 +1,20 @@
+---
+- name: "module_acme_account_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    acme_account_info: 
+      acme_directory: "{{ acme_account_info_acme_directory | default(omit, True) }}"
+      account_key_content: "{{ acme_account_info_account_key_content | default(omit, True) }}"
+      account_uri: "{{ acme_account_info_account_uri | default(omit, True) }}"
+      select_crypto_backend: "{{ acme_account_info_select_crypto_backend | default(omit, True) }}"
+      acme_version: "{{ acme_account_info_acme_version | default(omit, True) }}"
+      validate_certs: "{{ acme_account_info_validate_certs | default(omit, True) }}"
+      account_key_src: "{{ acme_account_info_account_key_src | default(omit, True) }}"
+  tasks:
+    - name: "plugin_acme_account_info"
+      acme_account_info: "{{ acme_account_info }}"
+      register: r_acme_account_info

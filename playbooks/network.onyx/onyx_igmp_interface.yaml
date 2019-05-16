@@ -1,0 +1,15 @@
+---
+- name: "module_onyx_igmp_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_igmp_interface: 
+      state: "{{ onyx_igmp_interface_state | default(omit, True) }}"
+      name: "{{ onyx_igmp_interface_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_onyx_igmp_interface"
+      onyx_igmp_interface: "{{ onyx_igmp_interface }}"
+      register: r_onyx_igmp_interface

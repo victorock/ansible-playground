@@ -1,0 +1,17 @@
+---
+- name: "module_win_format"
+  win_format: "{{ win_format }}"
+  register: r_win_format
+  vars:
+    win_format: 
+      integrity_streams: "{{ win_format_integrity_streams | default(omit, True) }}"
+      full: "{{ win_format_full | default(omit, True) }}"
+      force: "{{ win_format_force | default(omit, True) }}"
+      compress: "{{ win_format_compress | default(omit, True) }}"
+      allocation_unit_size: "{{ win_format_allocation_unit_size | default(omit, True) }}"
+      label: "{{ win_format_label | default(omit, True) }}"
+      new_label: "{{ win_format_new_label | default(omit, True) }}"
+      drive_letter: "{{ win_format_drive_letter | default(omit, True) }}"
+      path: "{{ win_format_path | default(omit, True) }}"
+      large_frs: "{{ win_format_large_frs | default(omit, True) }}"
+      file_system: "{{ win_format_file_system | default(omit, True) }}"

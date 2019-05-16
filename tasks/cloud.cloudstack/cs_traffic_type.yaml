@@ -1,0 +1,24 @@
+---
+- name: "module_cs_traffic_type"
+  cs_traffic_type: "{{ cs_traffic_type }}"
+  register: r_cs_traffic_type
+  vars:
+    cs_traffic_type: 
+      api_timeout: "{{ cs_traffic_type_api_timeout | default(omit, True) }}"
+      poll_async: "{{ cs_traffic_type_poll_async | default(omit, True) }}"
+      api_url: "{{ cs_traffic_type_api_url | default(omit, True) }}"
+      api_http_method: "{{ cs_traffic_type_api_http_method | default(omit, True) }}"
+      hyperv_networklabel: "{{ cs_traffic_type_hyperv_networklabel | default(omit, True) }}"
+      api_secret: "{{ cs_traffic_type_api_secret | default(omit, True) }}"
+      vlan: "{{ cs_traffic_type_vlan | default(omit, True) }}"
+      vmware_networklabel: "{{ cs_traffic_type_vmware_networklabel | default(omit, True) }}"
+      api_region: "{{ cs_traffic_type_api_region | default(omit, True) }}"
+      isolation_method: "{{ cs_traffic_type_isolation_method | default(omit, True) }}"
+      state: "{{ cs_traffic_type_state | default(omit, True) }}"
+      physical_network: "{{ cs_traffic_type_physical_network | default(omit, True) }}"
+      kvm_networklabel: "{{ cs_traffic_type_kvm_networklabel | default(omit, True) }}"
+      api_key: "{{ cs_traffic_type_api_key | default(omit, True) }}"
+      xen_networklabel: "{{ cs_traffic_type_xen_networklabel | default(omit, True) }}"
+      traffic_type: "{{ cs_traffic_type_traffic_type | default(omit, True) }}"
+      zone: "{{ cs_traffic_type_zone | default(omit, True) }}"
+      ovm3_networklabel: "{{ cs_traffic_type_ovm3_networklabel | default(omit, True) }}"

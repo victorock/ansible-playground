@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_system_global"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_system_global: 
+      username: "{{ fortios_system_global_username | default(omit, True) }}"
+      host: "{{ fortios_system_global_host | default(omit, True) }}"
+      https: "{{ fortios_system_global_https | default(omit, True) }}"
+      system_global: "{{ fortios_system_global_system_global | default(omit, True) }}"
+      password: "{{ fortios_system_global_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_global_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_system_global"
+      fortios_system_global: "{{ fortios_system_global }}"
+      register: r_fortios_system_global

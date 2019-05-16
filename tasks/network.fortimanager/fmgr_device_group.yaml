@@ -1,0 +1,12 @@
+---
+- name: "module_fmgr_device_group"
+  fmgr_device_group: "{{ fmgr_device_group }}"
+  register: r_fmgr_device_group
+  vars:
+    fmgr_device_group: 
+      grp_desc: "{{ fmgr_device_group_grp_desc | default(omit, True) }}"
+      adom: "{{ fmgr_device_group_adom | default(omit, True) }}"
+      grp_members: "{{ fmgr_device_group_grp_members | default(omit, True) }}"
+      mode: "{{ fmgr_device_group_mode | default(omit, True) }}"
+      grp_name: "{{ fmgr_device_group_grp_name | default(omit, True) }}"
+      vdom: "{{ fmgr_device_group_vdom | default(omit, True) }}"

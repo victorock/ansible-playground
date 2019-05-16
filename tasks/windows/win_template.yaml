@@ -13,3 +13,4 @@
       block_start_string: "{{ win_template_block_start_string | default(omit, True) }}"
       variable_end_string: "{{ win_template_variable_end_string | default(omit, True) }}"
       newline_sequence: "{{ win_template_newline_sequence | default(omit, True) }}"
+      backup: "{{ win_template_backup | default(omit, True) }}"

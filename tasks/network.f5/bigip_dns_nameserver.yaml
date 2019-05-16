@@ -1,0 +1,19 @@
+---
+- name: "module_bigip_dns_nameserver"
+  bigip_dns_nameserver: "{{ bigip_dns_nameserver }}"
+  register: r_bigip_dns_nameserver
+  vars:
+    bigip_dns_nameserver: 
+      name: "{{ bigip_dns_nameserver_name | default(omit, True) }}"
+      service_port: "{{ bigip_dns_nameserver_service_port | default(omit, True) }}"
+      partition: "{{ bigip_dns_nameserver_partition | default(omit, True) }}"
+      state: "{{ bigip_dns_nameserver_state | default(omit, True) }}"
+      server: "{{ bigip_dns_nameserver_server | default(omit, True) }}"
+      route_domain: "{{ bigip_dns_nameserver_route_domain | default(omit, True) }}"
+      tsig_key: "{{ bigip_dns_nameserver_tsig_key | default(omit, True) }}"
+      user: "{{ bigip_dns_nameserver_user | default(omit, True) }}"
+      server_port: "{{ bigip_dns_nameserver_server_port | default(omit, True) }}"
+      address: "{{ bigip_dns_nameserver_address | default(omit, True) }}"
+      password: "{{ bigip_dns_nameserver_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_dns_nameserver_validate_certs | default(omit, True) }}"
+      provider: "{{ bigip_dns_nameserver_provider | default(omit, True) }}"

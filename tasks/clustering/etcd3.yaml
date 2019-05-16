@@ -4,8 +4,14 @@
   register: r_etcd3
   vars:
     etcd3: 
-      value: "{{ etcd3_value | default(omit, True) }}"
-      host: "{{ etcd3_host | default(omit, True) }}"
+      timeout: "{{ etcd3_timeout | default(omit, True) }}"
+      ca_cert: "{{ etcd3_ca_cert | default(omit, True) }}"
       state: "{{ etcd3_state | default(omit, True) }}"
+      value: "{{ etcd3_value | default(omit, True) }}"
+      client_cert: "{{ etcd3_client_cert | default(omit, True) }}"
+      host: "{{ etcd3_host | default(omit, True) }}"
+      user: "{{ etcd3_user | default(omit, True) }}"
       key: "{{ etcd3_key | default(omit, True) }}"
+      password: "{{ etcd3_password | default(omit, True) }}"
       port: "{{ etcd3_port | default(omit, True) }}"
+      client_key: "{{ etcd3_client_key | default(omit, True) }}"

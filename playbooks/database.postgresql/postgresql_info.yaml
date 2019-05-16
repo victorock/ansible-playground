@@ -1,0 +1,23 @@
+---
+- name: "module_postgresql_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_info: 
+      ssl_mode: "{{ postgresql_info_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_info_ca_cert | default(omit, True) }}"
+      login_user: "{{ postgresql_info_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_info_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_info_session_role | default(omit, True) }}"
+      db: "{{ postgresql_info_db | default(omit, True) }}"
+      filter: "{{ postgresql_info_filter | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_info_login_unix_socket | default(omit, True) }}"
+      login_password: "{{ postgresql_info_login_password | default(omit, True) }}"
+      port: "{{ postgresql_info_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_postgresql_info"
+      postgresql_info: "{{ postgresql_info }}"
+      register: r_postgresql_info

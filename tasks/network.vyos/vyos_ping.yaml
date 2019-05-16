@@ -1,0 +1,14 @@
+---
+- name: "module_vyos_ping"
+  vyos_ping: "{{ vyos_ping }}"
+  register: r_vyos_ping
+  vars:
+    vyos_ping: 
+      count: "{{ vyos_ping_count | default(omit, True) }}"
+      interval: "{{ vyos_ping_interval | default(omit, True) }}"
+      dest: "{{ vyos_ping_dest | default(omit, True) }}"
+      ttl: "{{ vyos_ping_ttl | default(omit, True) }}"
+      source: "{{ vyos_ping_source | default(omit, True) }}"
+      state: "{{ vyos_ping_state | default(omit, True) }}"
+      provider: "{{ vyos_ping_provider | default(omit, True) }}"
+      size: "{{ vyos_ping_size | default(omit, True) }}"

@@ -1,0 +1,21 @@
+---
+- name: "module_ibm_sa_host_ports"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ibm_sa_host_ports: 
+      username: "{{ ibm_sa_host_ports_username | default(omit, True) }}"
+      fcaddress: "{{ ibm_sa_host_ports_fcaddress | default(omit, True) }}"
+      password: "{{ ibm_sa_host_ports_password | default(omit, True) }}"
+      num_of_visible_targets: "{{ ibm_sa_host_ports_num_of_visible_targets | default(omit, True) }}"
+      state: "{{ ibm_sa_host_ports_state | default(omit, True) }}"
+      iscsi_name: "{{ ibm_sa_host_ports_iscsi_name | default(omit, True) }}"
+      host: "{{ ibm_sa_host_ports_host | default(omit, True) }}"
+      endpoints: "{{ ibm_sa_host_ports_endpoints | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ibm_sa_host_ports"
+      ibm_sa_host_ports: "{{ ibm_sa_host_ports }}"
+      register: r_ibm_sa_host_ports

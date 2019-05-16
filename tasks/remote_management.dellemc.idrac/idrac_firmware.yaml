@@ -1,0 +1,17 @@
+---
+- name: "module_idrac_firmware"
+  idrac_firmware: "{{ idrac_firmware }}"
+  register: r_idrac_firmware
+  vars:
+    idrac_firmware: 
+      idrac_user: "{{ idrac_firmware_idrac_user | default(omit, True) }}"
+      share_password: "{{ idrac_firmware_share_password | default(omit, True) }}"
+      idrac_port: "{{ idrac_firmware_idrac_port | default(omit, True) }}"
+      share_name: "{{ idrac_firmware_share_name | default(omit, True) }}"
+      reboot: "{{ idrac_firmware_reboot | default(omit, True) }}"
+      share_user: "{{ idrac_firmware_share_user | default(omit, True) }}"
+      catalog_file_name: "{{ idrac_firmware_catalog_file_name | default(omit, True) }}"
+      share_mnt: "{{ idrac_firmware_share_mnt | default(omit, True) }}"
+      job_wait: "{{ idrac_firmware_job_wait | default(omit, True) }}"
+      idrac_ip: "{{ idrac_firmware_idrac_ip | default(omit, True) }}"
+      idrac_password: "{{ idrac_firmware_idrac_password | default(omit, True) }}"

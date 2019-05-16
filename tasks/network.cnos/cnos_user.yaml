@@ -1,0 +1,14 @@
+---
+- name: "module_cnos_user"
+  cnos_user: "{{ cnos_user }}"
+  register: r_cnos_user
+  vars:
+    cnos_user: 
+      update_password: "{{ cnos_user_update_password | default(omit, True) }}"
+      configured_password: "{{ cnos_user_configured_password | default(omit, True) }}"
+      name: "{{ cnos_user_name | default(omit, True) }}"
+      purge: "{{ cnos_user_purge | default(omit, True) }}"
+      state: "{{ cnos_user_state | default(omit, True) }}"
+      role: "{{ cnos_user_role | default(omit, True) }}"
+      aggregate: "{{ cnos_user_aggregate | default(omit, True) }}"
+      sshkey: "{{ cnos_user_sshkey | default(omit, True) }}"

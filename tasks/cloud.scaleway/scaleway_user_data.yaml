@@ -1,0 +1,14 @@
+---
+- name: "module_scaleway_user_data"
+  scaleway_user_data: "{{ scaleway_user_data }}"
+  register: r_scaleway_user_data
+  vars:
+    scaleway_user_data: 
+      server_id: "{{ scaleway_user_data_server_id | default(omit, True) }}"
+      api_url: "{{ scaleway_user_data_api_url | default(omit, True) }}"
+      query_parameters: "{{ scaleway_user_data_query_parameters | default(omit, True) }}"
+      region: "{{ scaleway_user_data_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_user_data_api_timeout | default(omit, True) }}"
+      user_data: "{{ scaleway_user_data_user_data | default(omit, True) }}"
+      api_token: "{{ scaleway_user_data_api_token | default(omit, True) }}"
+      validate_certs: "{{ scaleway_user_data_validate_certs | default(omit, True) }}"

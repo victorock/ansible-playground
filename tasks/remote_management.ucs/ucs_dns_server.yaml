@@ -1,0 +1,17 @@
+---
+- name: "module_ucs_dns_server"
+  ucs_dns_server: "{{ ucs_dns_server }}"
+  register: r_ucs_dns_server
+  vars:
+    ucs_dns_server: 
+      delegate_to: "{{ ucs_dns_server_delegate_to | default(omit, True) }}"
+      username: "{{ ucs_dns_server_username | default(omit, True) }}"
+      dns_server: "{{ ucs_dns_server_dns_server | default(omit, True) }}"
+      description: "{{ ucs_dns_server_description | default(omit, True) }}"
+      hostname: "{{ ucs_dns_server_hostname | default(omit, True) }}"
+      state: "{{ ucs_dns_server_state | default(omit, True) }}"
+      proxy: "{{ ucs_dns_server_proxy | default(omit, True) }}"
+      use_ssl: "{{ ucs_dns_server_use_ssl | default(omit, True) }}"
+      password: "{{ ucs_dns_server_password | default(omit, True) }}"
+      port: "{{ ucs_dns_server_port | default(omit, True) }}"
+      use_proxy: "{{ ucs_dns_server_use_proxy | default(omit, True) }}"

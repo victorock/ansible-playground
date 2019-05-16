@@ -4,11 +4,12 @@
   register: r_lambda_facts
   vars:
     lambda_facts: 
-      aws_secret_key: "{{ lambda_facts_aws_secret_key | default(omit, True) }}"
       profile: "{{ lambda_facts_profile | default(omit, True) }}"
+      aws_secret_key: "{{ lambda_facts_aws_secret_key | default(omit, True) }}"
       aws_access_key: "{{ lambda_facts_aws_access_key | default(omit, True) }}"
       security_token: "{{ lambda_facts_security_token | default(omit, True) }}"
       region: "{{ lambda_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ lambda_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       event_source_arn: "{{ lambda_facts_event_source_arn | default(omit, True) }}"
       ec2_url: "{{ lambda_facts_ec2_url | default(omit, True) }}"
       query: "{{ lambda_facts_query | default(omit, True) }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_vexata_volume"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vexata_volume: 
+      name: "{{ vexata_volume_name | default(omit, True) }}"
+      state: "{{ vexata_volume_state | default(omit, True) }}"
+      user: "{{ vexata_volume_user | default(omit, True) }}"
+      array: "{{ vexata_volume_array | default(omit, True) }}"
+      password: "{{ vexata_volume_password | default(omit, True) }}"
+      validate_certs: "{{ vexata_volume_validate_certs | default(omit, True) }}"
+      size: "{{ vexata_volume_size | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vexata_volume"
+      vexata_volume: "{{ vexata_volume }}"
+      register: r_vexata_volume

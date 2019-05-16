@@ -10,6 +10,7 @@
       ratio: "{{ bigip_node_ratio | default(omit, True) }}"
       fqdn_address_type: "{{ bigip_node_fqdn_address_type | default(omit, True) }}"
       state: "{{ bigip_node_state | default(omit, True) }}"
+      availability_requirements: "{{ bigip_node_availability_requirements | default(omit, True) }}"
       server_port: "{{ bigip_node_server_port | default(omit, True) }}"
       provider: "{{ bigip_node_provider | default(omit, True) }}"
       dynamic_ratio: "{{ bigip_node_dynamic_ratio | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_antivirus_heuristic"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_antivirus_heuristic: 
+      username: "{{ fortios_antivirus_heuristic_username | default(omit, True) }}"
+      antivirus_heuristic: "{{ fortios_antivirus_heuristic_antivirus_heuristic | default(omit, True) }}"
+      host: "{{ fortios_antivirus_heuristic_host | default(omit, True) }}"
+      https: "{{ fortios_antivirus_heuristic_https | default(omit, True) }}"
+      password: "{{ fortios_antivirus_heuristic_password | default(omit, True) }}"
+      vdom: "{{ fortios_antivirus_heuristic_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_antivirus_heuristic"
+      fortios_antivirus_heuristic: "{{ fortios_antivirus_heuristic }}"
+      register: r_fortios_antivirus_heuristic

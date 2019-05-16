@@ -1,0 +1,17 @@
+---
+- name: "module_hcloud_datacenter_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hcloud_datacenter_facts: 
+      endpoint: "{{ hcloud_datacenter_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_datacenter_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_datacenter_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_datacenter_facts_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_hcloud_datacenter_facts"
+      hcloud_datacenter_facts: "{{ hcloud_datacenter_facts }}"
+      register: r_hcloud_datacenter_facts

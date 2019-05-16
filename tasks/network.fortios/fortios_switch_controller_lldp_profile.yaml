@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_switch_controller_lldp_profile"
+  fortios_switch_controller_lldp_profile: "{{ fortios_switch_controller_lldp_profile }}"
+  register: r_fortios_switch_controller_lldp_profile
+  vars:
+    fortios_switch_controller_lldp_profile: 
+      username: "{{ fortios_switch_controller_lldp_profile_username | default(omit, True) }}"
+      https: "{{ fortios_switch_controller_lldp_profile_https | default(omit, True) }}"
+      host: "{{ fortios_switch_controller_lldp_profile_host | default(omit, True) }}"
+      switch_controller_lldp_profile: "{{ fortios_switch_controller_lldp_profile_switch_controller_lldp_profile | default(omit, True) }}"
+      password: "{{ fortios_switch_controller_lldp_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_switch_controller_lldp_profile_vdom | default(omit, True) }}"

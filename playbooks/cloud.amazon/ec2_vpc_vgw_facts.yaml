@@ -13,6 +13,7 @@
       vpn_gateway_ids: "{{ ec2_vpc_vgw_facts_vpn_gateway_ids | default(omit, True) }}"
       security_token: "{{ ec2_vpc_vgw_facts_security_token | default(omit, True) }}"
       region: "{{ ec2_vpc_vgw_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_vpc_vgw_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       filters: "{{ ec2_vpc_vgw_facts_filters | default(omit, True) }}"
       ec2_url: "{{ ec2_vpc_vgw_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_vgw_facts_validate_certs | default(omit, True) }}"

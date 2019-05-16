@@ -10,9 +10,10 @@
       target: "{{ sefcontext_target | default(omit, True) }}"
       selevel: "{{ sefcontext_selevel | default(omit, True) }}"
       seuser: "{{ sefcontext_seuser | default(omit, True) }}"
-      setype: "{{ sefcontext_setype | default(omit, True) }}"
-      reload: "{{ sefcontext_reload | default(omit, True) }}"
       state: "{{ sefcontext_state | default(omit, True) }}"
+      ignore_selinux_state: "{{ sefcontext_ignore_selinux_state | default(omit, True) }}"
+      reload: "{{ sefcontext_reload | default(omit, True) }}"
+      setype: "{{ sefcontext_setype | default(omit, True) }}"
       ftype: "{{ sefcontext_ftype | default(omit, True) }}"
   tasks:
     - name: "plugin_sefcontext"

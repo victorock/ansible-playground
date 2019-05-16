@@ -7,6 +7,7 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_user: 
+      encrypted_password: "{{ junos_user_encrypted_password | default(omit, True) }}"
       name: "{{ junos_user_name | default(omit, True) }}"
       purge: "{{ junos_user_purge | default(omit, True) }}"
       active: "{{ junos_user_active | default(omit, True) }}"

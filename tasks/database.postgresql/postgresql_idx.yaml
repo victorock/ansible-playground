@@ -1,0 +1,26 @@
+---
+- name: "module_postgresql_idx"
+  postgresql_idx: "{{ postgresql_idx }}"
+  register: r_postgresql_idx
+  vars:
+    postgresql_idx: 
+      idxname: "{{ postgresql_idx_idxname | default(omit, True) }}"
+      ssl_mode: "{{ postgresql_idx_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_idx_ca_cert | default(omit, True) }}"
+      storage_params: "{{ postgresql_idx_storage_params | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_idx_login_unix_socket | default(omit, True) }}"
+      login_user: "{{ postgresql_idx_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_idx_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_idx_session_role | default(omit, True) }}"
+      db: "{{ postgresql_idx_db | default(omit, True) }}"
+      concurrent: "{{ postgresql_idx_concurrent | default(omit, True) }}"
+      state: "{{ postgresql_idx_state | default(omit, True) }}"
+      cascade: "{{ postgresql_idx_cascade | default(omit, True) }}"
+      tablespace: "{{ postgresql_idx_tablespace | default(omit, True) }}"
+      login_password: "{{ postgresql_idx_login_password | default(omit, True) }}"
+      table: "{{ postgresql_idx_table | default(omit, True) }}"
+      idxtype: "{{ postgresql_idx_idxtype | default(omit, True) }}"
+      cond: "{{ postgresql_idx_cond | default(omit, True) }}"
+      port: "{{ postgresql_idx_port | default(omit, True) }}"
+      columns: "{{ postgresql_idx_columns | default(omit, True) }}"
+      schema: "{{ postgresql_idx_schema | default(omit, True) }}"

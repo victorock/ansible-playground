@@ -1,0 +1,17 @@
+---
+- name: "module_apt_repo"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    apt_repo: 
+      repo: "{{ apt_repo_repo | default(omit, True) }}"
+      state: "{{ apt_repo_state | default(omit, True) }}"
+      remove_others: "{{ apt_repo_remove_others | default(omit, True) }}"
+      update: "{{ apt_repo_update | default(omit, True) }}"
+  tasks:
+    - name: "plugin_apt_repo"
+      apt_repo: "{{ apt_repo }}"
+      register: r_apt_repo

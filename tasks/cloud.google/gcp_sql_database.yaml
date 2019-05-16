@@ -5,6 +5,7 @@
   vars:
     gcp_sql_database: 
       scopes: "{{ gcp_sql_database_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_sql_database_service_account_contents | default(omit, True) }}"
       name: "{{ gcp_sql_database_name | default(omit, True) }}"
       service_account_email: "{{ gcp_sql_database_service_account_email | default(omit, True) }}"
       charset: "{{ gcp_sql_database_charset | default(omit, True) }}"
@@ -12,5 +13,5 @@
       instance: "{{ gcp_sql_database_instance | default(omit, True) }}"
       state: "{{ gcp_sql_database_state | default(omit, True) }}"
       collation: "{{ gcp_sql_database_collation | default(omit, True) }}"
-      auth_kind: "{{ gcp_sql_database_auth_kind | default(omit, True) }}"
       service_account_file: "{{ gcp_sql_database_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_sql_database_auth_kind | default(omit, True) }}"

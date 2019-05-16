@@ -1,0 +1,15 @@
+---
+- name: "module_vmware_tag_manager"
+  vmware_tag_manager: "{{ vmware_tag_manager }}"
+  register: r_vmware_tag_manager
+  vars:
+    vmware_tag_manager: 
+      username: "{{ vmware_tag_manager_username | default(omit, True) }}"
+      object_type: "{{ vmware_tag_manager_object_type | default(omit, True) }}"
+      protocol: "{{ vmware_tag_manager_protocol | default(omit, True) }}"
+      hostname: "{{ vmware_tag_manager_hostname | default(omit, True) }}"
+      object_name: "{{ vmware_tag_manager_object_name | default(omit, True) }}"
+      state: "{{ vmware_tag_manager_state | default(omit, True) }}"
+      tag_names: "{{ vmware_tag_manager_tag_names | default(omit, True) }}"
+      password: "{{ vmware_tag_manager_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_tag_manager_validate_certs | default(omit, True) }}"

@@ -1,0 +1,28 @@
+---
+- name: "module_oci_vcn"
+  oci_vcn: "{{ oci_vcn }}"
+  register: r_oci_vcn
+  vars:
+    oci_vcn: 
+      auth_type: "{{ oci_vcn_auth_type | default(omit, True) }}"
+      config_profile_name: "{{ oci_vcn_config_profile_name | default(omit, True) }}"
+      config_file_location: "{{ oci_vcn_config_file_location | default(omit, True) }}"
+      dns_label: "{{ oci_vcn_dns_label | default(omit, True) }}"
+      display_name: "{{ oci_vcn_display_name | default(omit, True) }}"
+      compartment_id: "{{ oci_vcn_compartment_id | default(omit, True) }}"
+      defined_tags: "{{ oci_vcn_defined_tags | default(omit, True) }}"
+      freeform_tags: "{{ oci_vcn_freeform_tags | default(omit, True) }}"
+      state: "{{ oci_vcn_state | default(omit, True) }}"
+      key_by: "{{ oci_vcn_key_by | default(omit, True) }}"
+      vcn_id: "{{ oci_vcn_vcn_id | default(omit, True) }}"
+      force_create: "{{ oci_vcn_force_create | default(omit, True) }}"
+      tenancy: "{{ oci_vcn_tenancy | default(omit, True) }}"
+      api_user_key_file: "{{ oci_vcn_api_user_key_file | default(omit, True) }}"
+      cidr_block: "{{ oci_vcn_cidr_block | default(omit, True) }}"
+      wait: "{{ oci_vcn_wait | default(omit, True) }}"
+      api_user_key_pass_phrase: "{{ oci_vcn_api_user_key_pass_phrase | default(omit, True) }}"
+      api_user: "{{ oci_vcn_api_user | default(omit, True) }}"
+      region: "{{ oci_vcn_region | default(omit, True) }}"
+      wait_until: "{{ oci_vcn_wait_until | default(omit, True) }}"
+      wait_timeout: "{{ oci_vcn_wait_timeout | default(omit, True) }}"
+      api_user_fingerprint: "{{ oci_vcn_api_user_fingerprint | default(omit, True) }}"

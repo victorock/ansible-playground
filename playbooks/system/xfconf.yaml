@@ -1,0 +1,18 @@
+---
+- name: "module_xfconf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    xfconf: 
+      state: "{{ xfconf_state | default(omit, True) }}"
+      property: "{{ xfconf_property | default(omit, True) }}"
+      value_type: "{{ xfconf_value_type | default(omit, True) }}"
+      value: "{{ xfconf_value | default(omit, True) }}"
+      channel: "{{ xfconf_channel | default(omit, True) }}"
+  tasks:
+    - name: "plugin_xfconf"
+      xfconf: "{{ xfconf }}"
+      register: r_xfconf

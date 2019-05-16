@@ -1,0 +1,29 @@
+---
+- name: "module_meraki_content_filtering"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    meraki_content_filtering: 
+      org_name: "{{ meraki_content_filtering_org_name | default(omit, True) }}"
+      blocked_urls: "{{ meraki_content_filtering_blocked_urls | default(omit, True) }}"
+      use_proxy: "{{ meraki_content_filtering_use_proxy | default(omit, True) }}"
+      auth_key: "{{ meraki_content_filtering_auth_key | default(omit, True) }}"
+      org_id: "{{ meraki_content_filtering_org_id | default(omit, True) }}"
+      blocked_categories: "{{ meraki_content_filtering_blocked_categories | default(omit, True) }}"
+      output_level: "{{ meraki_content_filtering_output_level | default(omit, True) }}"
+      state: "{{ meraki_content_filtering_state | default(omit, True) }}"
+      category_list_size: "{{ meraki_content_filtering_category_list_size | default(omit, True) }}"
+      net_name: "{{ meraki_content_filtering_net_name | default(omit, True) }}"
+      timeout: "{{ meraki_content_filtering_timeout | default(omit, True) }}"
+      host: "{{ meraki_content_filtering_host | default(omit, True) }}"
+      allowed_urls: "{{ meraki_content_filtering_allowed_urls | default(omit, True) }}"
+      validate_certs: "{{ meraki_content_filtering_validate_certs | default(omit, True) }}"
+      net_id: "{{ meraki_content_filtering_net_id | default(omit, True) }}"
+      use_https: "{{ meraki_content_filtering_use_https | default(omit, True) }}"
+  tasks:
+    - name: "plugin_meraki_content_filtering"
+      meraki_content_filtering: "{{ meraki_content_filtering }}"
+      register: r_meraki_content_filtering

@@ -1,0 +1,22 @@
+---
+- name: "module_pn_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_role: 
+      pn_name: "{{ pn_role_pn_name | default(omit, True) }}"
+      pn_access: "{{ pn_role_pn_access | default(omit, True) }}"
+      pn_scope: "{{ pn_role_pn_scope | default(omit, True) }}"
+      pn_sudo: "{{ pn_role_pn_sudo | default(omit, True) }}"
+      state: "{{ pn_role_state | default(omit, True) }}"
+      pn_shell: "{{ pn_role_pn_shell | default(omit, True) }}"
+      pn_delete_from_users: "{{ pn_role_pn_delete_from_users | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_role_pn_cliswitch | default(omit, True) }}"
+      pn_running_config: "{{ pn_role_pn_running_config | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_role"
+      pn_role: "{{ pn_role }}"
+      register: r_pn_role

@@ -1,0 +1,30 @@
+---
+- name: "module_na_ontap_vscan_on_access_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_vscan_on_access_policy: 
+      username: "{{ na_ontap_vscan_on_access_policy_username | default(omit, True) }}"
+      max_file_size: "{{ na_ontap_vscan_on_access_policy_max_file_size | default(omit, True) }}"
+      http_port: "{{ na_ontap_vscan_on_access_policy_http_port | default(omit, True) }}"
+      filters: "{{ na_ontap_vscan_on_access_policy_filters | default(omit, True) }}"
+      is_scan_mandatory: "{{ na_ontap_vscan_on_access_policy_is_scan_mandatory | default(omit, True) }}"
+      hostname: "{{ na_ontap_vscan_on_access_policy_hostname | default(omit, True) }}"
+      scan_files_with_no_ext: "{{ na_ontap_vscan_on_access_policy_scan_files_with_no_ext | default(omit, True) }}"
+      policy_name: "{{ na_ontap_vscan_on_access_policy_policy_name | default(omit, True) }}"
+      file_ext_to_include: "{{ na_ontap_vscan_on_access_policy_file_ext_to_include | default(omit, True) }}"
+      state: "{{ na_ontap_vscan_on_access_policy_state | default(omit, True) }}"
+      paths_to_exclude: "{{ na_ontap_vscan_on_access_policy_paths_to_exclude | default(omit, True) }}"
+      file_ext_to_exclude: "{{ na_ontap_vscan_on_access_policy_file_ext_to_exclude | default(omit, True) }}"
+      vserver: "{{ na_ontap_vscan_on_access_policy_vserver | default(omit, True) }}"
+      ontapi: "{{ na_ontap_vscan_on_access_policy_ontapi | default(omit, True) }}"
+      https: "{{ na_ontap_vscan_on_access_policy_https | default(omit, True) }}"
+      password: "{{ na_ontap_vscan_on_access_policy_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_vscan_on_access_policy_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_na_ontap_vscan_on_access_policy"
+      na_ontap_vscan_on_access_policy: "{{ na_ontap_vscan_on_access_policy }}"
+      register: r_na_ontap_vscan_on_access_policy

@@ -8,6 +8,7 @@
   vars:
     aws_s3: 
       encryption_kms_key_id: "{{ aws_s3_encryption_kms_key_id | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_s3_debug_botocore_endpoint_logs | default(omit, True) }}"
       prefix: "{{ aws_s3_prefix | default(omit, True) }}"
       ec2_url: "{{ aws_s3_ec2_url | default(omit, True) }}"
       marker: "{{ aws_s3_marker | default(omit, True) }}"

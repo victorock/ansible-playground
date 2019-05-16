@@ -1,0 +1,17 @@
+---
+- name: "module_hcloud_location_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hcloud_location_facts: 
+      endpoint: "{{ hcloud_location_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_location_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_location_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_location_facts_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_hcloud_location_facts"
+      hcloud_location_facts: "{{ hcloud_location_facts }}"
+      register: r_hcloud_location_facts

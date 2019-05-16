@@ -1,0 +1,24 @@
+---
+- name: "module_edgeswitch_vlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    edgeswitch_vlan: 
+      purge: "{{ edgeswitch_vlan_purge | default(omit, True) }}"
+      name: "{{ edgeswitch_vlan_name | default(omit, True) }}"
+      untagged_interfaces: "{{ edgeswitch_vlan_untagged_interfaces | default(omit, True) }}"
+      auto_exclude: "{{ edgeswitch_vlan_auto_exclude | default(omit, True) }}"
+      excluded_interfaces: "{{ edgeswitch_vlan_excluded_interfaces | default(omit, True) }}"
+      auto_tag: "{{ edgeswitch_vlan_auto_tag | default(omit, True) }}"
+      state: "{{ edgeswitch_vlan_state | default(omit, True) }}"
+      tagged_interfaces: "{{ edgeswitch_vlan_tagged_interfaces | default(omit, True) }}"
+      aggregate: "{{ edgeswitch_vlan_aggregate | default(omit, True) }}"
+      auto_untag: "{{ edgeswitch_vlan_auto_untag | default(omit, True) }}"
+      vlan_id: "{{ edgeswitch_vlan_vlan_id | default(omit, True) }}"
+  tasks:
+    - name: "plugin_edgeswitch_vlan"
+      edgeswitch_vlan: "{{ edgeswitch_vlan }}"
+      register: r_edgeswitch_vlan

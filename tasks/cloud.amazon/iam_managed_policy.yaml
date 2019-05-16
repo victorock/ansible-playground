@@ -10,6 +10,7 @@
       policy_description: "{{ iam_managed_policy_policy_description | default(omit, True) }}"
       security_token: "{{ iam_managed_policy_security_token | default(omit, True) }}"
       region: "{{ iam_managed_policy_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ iam_managed_policy_debug_botocore_endpoint_logs | default(omit, True) }}"
       policy_name: "{{ iam_managed_policy_policy_name | default(omit, True) }}"
       state: "{{ iam_managed_policy_state | default(omit, True) }}"
       make_default: "{{ iam_managed_policy_make_default | default(omit, True) }}"

@@ -1,0 +1,10 @@
+---
+- name: "module_hcloud_server_type_facts"
+  hcloud_server_type_facts: "{{ hcloud_server_type_facts }}"
+  register: r_hcloud_server_type_facts
+  vars:
+    hcloud_server_type_facts: 
+      endpoint: "{{ hcloud_server_type_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_server_type_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_server_type_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_server_type_facts_api_token | default(omit, True) }}"

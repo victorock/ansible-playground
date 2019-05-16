@@ -1,0 +1,10 @@
+---
+- name: "module_win_psrepository"
+  win_psrepository: "{{ win_psrepository }}"
+  register: r_win_psrepository
+  vars:
+    win_psrepository: 
+      source: "{{ win_psrepository_source | default(omit, True) }}"
+      state: "{{ win_psrepository_state | default(omit, True) }}"
+      name: "{{ win_psrepository_name | default(omit, True) }}"
+      installation_policy: "{{ win_psrepository_installation_policy | default(omit, True) }}"

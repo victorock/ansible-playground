@@ -1,0 +1,21 @@
+---
+- name: "module_win_rds_cap"
+  win_rds_cap: "{{ win_rds_cap }}"
+  register: r_win_rds_cap
+  vars:
+    win_rds_cap: 
+      computer_groups: "{{ win_rds_cap_computer_groups | default(omit, True) }}"
+      name: "{{ win_rds_cap_name | default(omit, True) }}"
+      session_timeout_action: "{{ win_rds_cap_session_timeout_action | default(omit, True) }}"
+      redirect_drives: "{{ win_rds_cap_redirect_drives | default(omit, True) }}"
+      redirect_serial: "{{ win_rds_cap_redirect_serial | default(omit, True) }}"
+      redirect_printers: "{{ win_rds_cap_redirect_printers | default(omit, True) }}"
+      user_groups: "{{ win_rds_cap_user_groups | default(omit, True) }}"
+      order: "{{ win_rds_cap_order | default(omit, True) }}"
+      idle_timeout: "{{ win_rds_cap_idle_timeout | default(omit, True) }}"
+      state: "{{ win_rds_cap_state | default(omit, True) }}"
+      allow_only_sdrts_servers: "{{ win_rds_cap_allow_only_sdrts_servers | default(omit, True) }}"
+      redirect_clipboard: "{{ win_rds_cap_redirect_clipboard | default(omit, True) }}"
+      session_timeout: "{{ win_rds_cap_session_timeout | default(omit, True) }}"
+      auth_method: "{{ win_rds_cap_auth_method | default(omit, True) }}"
+      redirect_pnp: "{{ win_rds_cap_redirect_pnp | default(omit, True) }}"

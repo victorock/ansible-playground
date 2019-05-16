@@ -1,0 +1,12 @@
+---
+- name: "module_xenserver_guest_facts"
+  xenserver_guest_facts: "{{ xenserver_guest_facts }}"
+  register: r_xenserver_guest_facts
+  vars:
+    xenserver_guest_facts: 
+      username: "{{ xenserver_guest_facts_username | default(omit, True) }}"
+      name: "{{ xenserver_guest_facts_name | default(omit, True) }}"
+      hostname: "{{ xenserver_guest_facts_hostname | default(omit, True) }}"
+      password: "{{ xenserver_guest_facts_password | default(omit, True) }}"
+      validate_certs: "{{ xenserver_guest_facts_validate_certs | default(omit, True) }}"
+      uuid: "{{ xenserver_guest_facts_uuid | default(omit, True) }}"

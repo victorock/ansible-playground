@@ -14,6 +14,7 @@
       security_token: "{{ rds_snapshot_facts_security_token | default(omit, True) }}"
       region: "{{ rds_snapshot_facts_region | default(omit, True) }}"
       ec2_url: "{{ rds_snapshot_facts_ec2_url | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ rds_snapshot_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       snapshot_type: "{{ rds_snapshot_facts_snapshot_type | default(omit, True) }}"
       db_cluster_snapshot_identifier: "{{ rds_snapshot_facts_db_cluster_snapshot_identifier | default(omit, True) }}"
       db_instance_identifier: "{{ rds_snapshot_facts_db_instance_identifier | default(omit, True) }}"

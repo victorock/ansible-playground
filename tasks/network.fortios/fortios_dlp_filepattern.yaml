@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_dlp_filepattern"
+  fortios_dlp_filepattern: "{{ fortios_dlp_filepattern }}"
+  register: r_fortios_dlp_filepattern
+  vars:
+    fortios_dlp_filepattern: 
+      username: "{{ fortios_dlp_filepattern_username | default(omit, True) }}"
+      host: "{{ fortios_dlp_filepattern_host | default(omit, True) }}"
+      vdom: "{{ fortios_dlp_filepattern_vdom | default(omit, True) }}"
+      https: "{{ fortios_dlp_filepattern_https | default(omit, True) }}"
+      password: "{{ fortios_dlp_filepattern_password | default(omit, True) }}"
+      dlp_filepattern: "{{ fortios_dlp_filepattern_dlp_filepattern | default(omit, True) }}"

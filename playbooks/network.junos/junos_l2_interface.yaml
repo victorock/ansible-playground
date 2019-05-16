@@ -9,14 +9,16 @@
     junos_l2_interface: 
       native_vlan: "{{ junos_l2_interface_native_vlan | default(omit, True) }}"
       access_vlan: "{{ junos_l2_interface_access_vlan | default(omit, True) }}"
+      filter_output: "{{ junos_l2_interface_filter_output | default(omit, True) }}"
       description: "{{ junos_l2_interface_description | default(omit, True) }}"
+      filter_input: "{{ junos_l2_interface_filter_input | default(omit, True) }}"
       state: "{{ junos_l2_interface_state | default(omit, True) }}"
       enhanced_layer: "{{ junos_l2_interface_enhanced_layer | default(omit, True) }}"
-      aggregate: "{{ junos_l2_interface_aggregate | default(omit, True) }}"
+      active: "{{ junos_l2_interface_active | default(omit, True) }}"
       trunk_vlans: "{{ junos_l2_interface_trunk_vlans | default(omit, True) }}"
       mode: "{{ junos_l2_interface_mode | default(omit, True) }}"
       provider: "{{ junos_l2_interface_provider | default(omit, True) }}"
-      active: "{{ junos_l2_interface_active | default(omit, True) }}"
+      aggregate: "{{ junos_l2_interface_aggregate | default(omit, True) }}"
       unit: "{{ junos_l2_interface_unit | default(omit, True) }}"
       name: "{{ junos_l2_interface_name | default(omit, True) }}"
   tasks:

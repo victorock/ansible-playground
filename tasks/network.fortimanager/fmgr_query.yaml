@@ -1,0 +1,15 @@
+---
+- name: "module_fmgr_query"
+  fmgr_query: "{{ fmgr_query }}"
+  register: r_fmgr_query
+  vars:
+    fmgr_query: 
+      custom_endpoint: "{{ fmgr_query_custom_endpoint | default(omit, True) }}"
+      device_ip: "{{ fmgr_query_device_ip | default(omit, True) }}"
+      task_id: "{{ fmgr_query_task_id | default(omit, True) }}"
+      adom: "{{ fmgr_query_adom | default(omit, True) }}"
+      object: "{{ fmgr_query_object | default(omit, True) }}"
+      custom_dict: "{{ fmgr_query_custom_dict | default(omit, True) }}"
+      device_unique_name: "{{ fmgr_query_device_unique_name | default(omit, True) }}"
+      nodes: "{{ fmgr_query_nodes | default(omit, True) }}"
+      device_serial: "{{ fmgr_query_device_serial | default(omit, True) }}"

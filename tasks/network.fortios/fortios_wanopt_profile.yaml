@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_wanopt_profile"
+  fortios_wanopt_profile: "{{ fortios_wanopt_profile }}"
+  register: r_fortios_wanopt_profile
+  vars:
+    fortios_wanopt_profile: 
+      username: "{{ fortios_wanopt_profile_username | default(omit, True) }}"
+      wanopt_profile: "{{ fortios_wanopt_profile_wanopt_profile | default(omit, True) }}"
+      host: "{{ fortios_wanopt_profile_host | default(omit, True) }}"
+      https: "{{ fortios_wanopt_profile_https | default(omit, True) }}"
+      password: "{{ fortios_wanopt_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_wanopt_profile_vdom | default(omit, True) }}"

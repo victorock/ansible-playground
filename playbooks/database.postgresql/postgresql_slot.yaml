@@ -1,0 +1,27 @@
+---
+- name: "module_postgresql_slot"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_slot: 
+      ssl_mode: "{{ postgresql_slot_ssl_mode | default(omit, True) }}"
+      name: "{{ postgresql_slot_name | default(omit, True) }}"
+      ca_cert: "{{ postgresql_slot_ca_cert | default(omit, True) }}"
+      login_user: "{{ postgresql_slot_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_slot_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_slot_session_role | default(omit, True) }}"
+      db: "{{ postgresql_slot_db | default(omit, True) }}"
+      state: "{{ postgresql_slot_state | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_slot_login_unix_socket | default(omit, True) }}"
+      slot_type: "{{ postgresql_slot_slot_type | default(omit, True) }}"
+      output_plugin: "{{ postgresql_slot_output_plugin | default(omit, True) }}"
+      login_password: "{{ postgresql_slot_login_password | default(omit, True) }}"
+      immediately_reserve: "{{ postgresql_slot_immediately_reserve | default(omit, True) }}"
+      port: "{{ postgresql_slot_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_postgresql_slot"
+      postgresql_slot: "{{ postgresql_slot }}"
+      register: r_postgresql_slot

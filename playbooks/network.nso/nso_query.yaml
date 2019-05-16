@@ -13,6 +13,7 @@
       fields: "{{ nso_query_fields | default(omit, True) }}"
       timeout: "{{ nso_query_timeout | default(omit, True) }}"
       password: "{{ nso_query_password | default(omit, True) }}"
+      validate_certs: "{{ nso_query_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_nso_query"
       nso_query: "{{ nso_query }}"

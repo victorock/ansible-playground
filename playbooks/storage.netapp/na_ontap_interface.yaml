@@ -12,6 +12,7 @@
       firewall_policy: "{{ na_ontap_interface_firewall_policy | default(omit, True) }}"
       http_port: "{{ na_ontap_interface_http_port | default(omit, True) }}"
       home_node: "{{ na_ontap_interface_home_node | default(omit, True) }}"
+      ontapi: "{{ na_ontap_interface_ontapi | default(omit, True) }}"
       hostname: "{{ na_ontap_interface_hostname | default(omit, True) }}"
       interface_name: "{{ na_ontap_interface_interface_name | default(omit, True) }}"
       state: "{{ na_ontap_interface_state | default(omit, True) }}"
@@ -26,6 +27,7 @@
       password: "{{ na_ontap_interface_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_interface_validate_certs | default(omit, True) }}"
       protocols: "{{ na_ontap_interface_protocols | default(omit, True) }}"
+      subnet_name: "{{ na_ontap_interface_subnet_name | default(omit, True) }}"
   tasks:
     - name: "plugin_na_ontap_interface"
       na_ontap_interface: "{{ na_ontap_interface }}"

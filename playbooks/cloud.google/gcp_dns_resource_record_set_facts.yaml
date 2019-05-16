@@ -1,0 +1,20 @@
+---
+- name: "module_gcp_dns_resource_record_set_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_dns_resource_record_set_facts: 
+      scopes: "{{ gcp_dns_resource_record_set_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_dns_resource_record_set_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_dns_resource_record_set_facts_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_dns_resource_record_set_facts_project | default(omit, True) }}"
+      managed_zone: "{{ gcp_dns_resource_record_set_facts_managed_zone | default(omit, True) }}"
+      auth_kind: "{{ gcp_dns_resource_record_set_facts_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_dns_resource_record_set_facts_service_account_file | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_dns_resource_record_set_facts"
+      gcp_dns_resource_record_set_facts: "{{ gcp_dns_resource_record_set_facts }}"
+      register: r_gcp_dns_resource_record_set_facts

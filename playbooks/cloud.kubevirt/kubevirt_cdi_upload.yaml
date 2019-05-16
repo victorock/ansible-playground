@@ -1,0 +1,29 @@
+---
+- name: "module_kubevirt_cdi_upload"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    kubevirt_cdi_upload: 
+      username: "{{ kubevirt_cdi_upload_username | default(omit, True) }}"
+      merge_type: "{{ kubevirt_cdi_upload_merge_type | default(omit, True) }}"
+      upload_host_validate_certs: "{{ kubevirt_cdi_upload_upload_host_validate_certs | default(omit, True) }}"
+      client_key: "{{ kubevirt_cdi_upload_client_key | default(omit, True) }}"
+      ca_cert: "{{ kubevirt_cdi_upload_ca_cert | default(omit, True) }}"
+      kubeconfig: "{{ kubevirt_cdi_upload_kubeconfig | default(omit, True) }}"
+      api_key: "{{ kubevirt_cdi_upload_api_key | default(omit, True) }}"
+      host: "{{ kubevirt_cdi_upload_host | default(omit, True) }}"
+      pvc_namespace: "{{ kubevirt_cdi_upload_pvc_namespace | default(omit, True) }}"
+      context: "{{ kubevirt_cdi_upload_context | default(omit, True) }}"
+      upload_host: "{{ kubevirt_cdi_upload_upload_host | default(omit, True) }}"
+      path: "{{ kubevirt_cdi_upload_path | default(omit, True) }}"
+      password: "{{ kubevirt_cdi_upload_password | default(omit, True) }}"
+      validate_certs: "{{ kubevirt_cdi_upload_validate_certs | default(omit, True) }}"
+      pvc_name: "{{ kubevirt_cdi_upload_pvc_name | default(omit, True) }}"
+      client_cert: "{{ kubevirt_cdi_upload_client_cert | default(omit, True) }}"
+  tasks:
+    - name: "plugin_kubevirt_cdi_upload"
+      kubevirt_cdi_upload: "{{ kubevirt_cdi_upload }}"
+      register: r_kubevirt_cdi_upload

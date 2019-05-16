@@ -8,6 +8,7 @@
       pool_lb_method: "{{ bigip_gtm_wide_ip_pool_lb_method | default(omit, True) }}"
       type: "{{ bigip_gtm_wide_ip_type | default(omit, True) }}"
       partition: "{{ bigip_gtm_wide_ip_partition | default(omit, True) }}"
+      last_resort_pool: "{{ bigip_gtm_wide_ip_last_resort_pool | default(omit, True) }}"
       server: "{{ bigip_gtm_wide_ip_server | default(omit, True) }}"
       irules: "{{ bigip_gtm_wide_ip_irules | default(omit, True) }}"
       state: "{{ bigip_gtm_wide_ip_state | default(omit, True) }}"

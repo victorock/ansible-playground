@@ -7,15 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     firewalld: 
+      icmp_block_inversion: "{{ firewalld_icmp_block_inversion | default(omit, True) }}"
       service: "{{ firewalld_service | default(omit, True) }}"
       zone: "{{ firewalld_zone | default(omit, True) }}"
       masquerade: "{{ firewalld_masquerade | default(omit, True) }}"
+      icmp_block: "{{ firewalld_icmp_block | default(omit, True) }}"
       immediate: "{{ firewalld_immediate | default(omit, True) }}"
       source: "{{ firewalld_source | default(omit, True) }}"
       state: "{{ firewalld_state | default(omit, True) }}"
       permanent: "{{ firewalld_permanent | default(omit, True) }}"
       timeout: "{{ firewalld_timeout | default(omit, True) }}"
       interface: "{{ firewalld_interface | default(omit, True) }}"
+      offline: "{{ firewalld_offline | default(omit, True) }}"
       port: "{{ firewalld_port | default(omit, True) }}"
       rich_rule: "{{ firewalld_rich_rule | default(omit, True) }}"
   tasks:

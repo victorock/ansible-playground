@@ -1,0 +1,14 @@
+---
+- name: "module_docker_stack"
+  docker_stack: "{{ docker_stack }}"
+  register: r_docker_stack
+  vars:
+    docker_stack: 
+      compose: "{{ docker_stack_compose | default(omit, True) }}"
+      name: "{{ docker_stack_name | default(omit, True) }}"
+      resolve_image: "{{ docker_stack_resolve_image | default(omit, True) }}"
+      state: "{{ docker_stack_state | default(omit, True) }}"
+      absent_retries_interval: "{{ docker_stack_absent_retries_interval | default(omit, True) }}"
+      with_registry_auth: "{{ docker_stack_with_registry_auth | default(omit, True) }}"
+      absent_retries: "{{ docker_stack_absent_retries | default(omit, True) }}"
+      prune: "{{ docker_stack_prune | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     scaleway_organization_facts: 
+      api_token: "{{ scaleway_organization_facts_api_token | default(omit, True) }}"
       api_timeout: "{{ scaleway_organization_facts_api_timeout | default(omit, True) }}"
       validate_certs: "{{ scaleway_organization_facts_validate_certs | default(omit, True) }}"
       api_url: "{{ scaleway_organization_facts_api_url | default(omit, True) }}"
-      api_token: "{{ scaleway_organization_facts_api_token | default(omit, True) }}"
+      query_parameters: "{{ scaleway_organization_facts_query_parameters | default(omit, True) }}"
   tasks:
     - name: "plugin_scaleway_organization_facts"
       scaleway_organization_facts: "{{ scaleway_organization_facts }}"

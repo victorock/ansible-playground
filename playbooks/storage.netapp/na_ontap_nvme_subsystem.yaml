@@ -1,0 +1,28 @@
+---
+- name: "module_na_ontap_nvme_subsystem"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_nvme_subsystem: 
+      subsystem: "{{ na_ontap_nvme_subsystem_subsystem | default(omit, True) }}"
+      username: "{{ na_ontap_nvme_subsystem_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_nvme_subsystem_http_port | default(omit, True) }}"
+      paths: "{{ na_ontap_nvme_subsystem_paths | default(omit, True) }}"
+      skip_host_check: "{{ na_ontap_nvme_subsystem_skip_host_check | default(omit, True) }}"
+      hostname: "{{ na_ontap_nvme_subsystem_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_nvme_subsystem_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_nvme_subsystem_state | default(omit, True) }}"
+      hosts: "{{ na_ontap_nvme_subsystem_hosts | default(omit, True) }}"
+      https: "{{ na_ontap_nvme_subsystem_https | default(omit, True) }}"
+      ostype: "{{ na_ontap_nvme_subsystem_ostype | default(omit, True) }}"
+      ontapi: "{{ na_ontap_nvme_subsystem_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_nvme_subsystem_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_nvme_subsystem_validate_certs | default(omit, True) }}"
+      skip_mapped_check: "{{ na_ontap_nvme_subsystem_skip_mapped_check | default(omit, True) }}"
+  tasks:
+    - name: "plugin_na_ontap_nvme_subsystem"
+      na_ontap_nvme_subsystem: "{{ na_ontap_nvme_subsystem }}"
+      register: r_na_ontap_nvme_subsystem

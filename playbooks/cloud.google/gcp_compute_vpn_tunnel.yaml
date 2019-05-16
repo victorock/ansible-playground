@@ -9,11 +9,11 @@
     gcp_compute_vpn_tunnel: 
       ike_version: "{{ gcp_compute_vpn_tunnel_ike_version | default(omit, True) }}"
       scopes: "{{ gcp_compute_vpn_tunnel_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_vpn_tunnel_service_account_contents | default(omit, True) }}"
       remote_traffic_selector: "{{ gcp_compute_vpn_tunnel_remote_traffic_selector | default(omit, True) }}"
       description: "{{ gcp_compute_vpn_tunnel_description | default(omit, True) }}"
       service_account_email: "{{ gcp_compute_vpn_tunnel_service_account_email | default(omit, True) }}"
       region: "{{ gcp_compute_vpn_tunnel_region | default(omit, True) }}"
-      labels: "{{ gcp_compute_vpn_tunnel_labels | default(omit, True) }}"
       peer_ip: "{{ gcp_compute_vpn_tunnel_peer_ip | default(omit, True) }}"
       project: "{{ gcp_compute_vpn_tunnel_project | default(omit, True) }}"
       state: "{{ gcp_compute_vpn_tunnel_state | default(omit, True) }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_ibm_sa_vol_map"
+  ibm_sa_vol_map: "{{ ibm_sa_vol_map }}"
+  register: r_ibm_sa_vol_map
+  vars:
+    ibm_sa_vol_map: 
+      username: "{{ ibm_sa_vol_map_username | default(omit, True) }}"
+      password: "{{ ibm_sa_vol_map_password | default(omit, True) }}"
+      vol: "{{ ibm_sa_vol_map_vol | default(omit, True) }}"
+      host: "{{ ibm_sa_vol_map_host | default(omit, True) }}"
+      cluster: "{{ ibm_sa_vol_map_cluster | default(omit, True) }}"
+      state: "{{ ibm_sa_vol_map_state | default(omit, True) }}"
+      override: "{{ ibm_sa_vol_map_override | default(omit, True) }}"
+      endpoints: "{{ ibm_sa_vol_map_endpoints | default(omit, True) }}"
+      lun: "{{ ibm_sa_vol_map_lun | default(omit, True) }}"

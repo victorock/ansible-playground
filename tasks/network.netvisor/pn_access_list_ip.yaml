@@ -1,0 +1,10 @@
+---
+- name: "module_pn_access_list_ip"
+  pn_access_list_ip: "{{ pn_access_list_ip }}"
+  register: r_pn_access_list_ip
+  vars:
+    pn_access_list_ip: 
+      state: "{{ pn_access_list_ip_state | default(omit, True) }}"
+      pn_name: "{{ pn_access_list_ip_pn_name | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_access_list_ip_pn_cliswitch | default(omit, True) }}"
+      pn_ip: "{{ pn_access_list_ip_pn_ip | default(omit, True) }}"

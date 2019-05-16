@@ -1,0 +1,14 @@
+---
+- name: "module_hcloud_ssh_key"
+  hcloud_ssh_key: "{{ hcloud_ssh_key }}"
+  register: r_hcloud_ssh_key
+  vars:
+    hcloud_ssh_key: 
+      public_key: "{{ hcloud_ssh_key_public_key | default(omit, True) }}"
+      endpoint: "{{ hcloud_ssh_key_endpoint | default(omit, True) }}"
+      name: "{{ hcloud_ssh_key_name | default(omit, True) }}"
+      api_token: "{{ hcloud_ssh_key_api_token | default(omit, True) }}"
+      labels: "{{ hcloud_ssh_key_labels | default(omit, True) }}"
+      state: "{{ hcloud_ssh_key_state | default(omit, True) }}"
+      fingerprint: "{{ hcloud_ssh_key_fingerprint | default(omit, True) }}"
+      id: "{{ hcloud_ssh_key_id | default(omit, True) }}"

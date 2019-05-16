@@ -9,6 +9,7 @@
     iosxr_config: 
       comment: "{{ iosxr_config_comment | default(omit, True) }}"
       src: "{{ iosxr_config_src | default(omit, True) }}"
+      backup_options: "{{ iosxr_config_backup_options | default(omit, True) }}"
       force: "{{ iosxr_config_force | default(omit, True) }}"
       admin: "{{ iosxr_config_admin | default(omit, True) }}"
       backup: "{{ iosxr_config_backup | default(omit, True) }}"

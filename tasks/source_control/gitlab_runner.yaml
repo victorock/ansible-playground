@@ -1,0 +1,21 @@
+---
+- name: "module_gitlab_runner"
+  gitlab_runner: "{{ gitlab_runner }}"
+  register: r_gitlab_runner
+  vars:
+    gitlab_runner: 
+      run_untagged: "{{ gitlab_runner_run_untagged | default(omit, True) }}"
+      locked: "{{ gitlab_runner_locked | default(omit, True) }}"
+      maximum_timeout: "{{ gitlab_runner_maximum_timeout | default(omit, True) }}"
+      url: "{{ gitlab_runner_url | default(omit, True) }}"
+      registration_token: "{{ gitlab_runner_registration_token | default(omit, True) }}"
+      api_password: "{{ gitlab_runner_api_password | default(omit, True) }}"
+      access_level: "{{ gitlab_runner_access_level | default(omit, True) }}"
+      state: "{{ gitlab_runner_state | default(omit, True) }}"
+      api_token: "{{ gitlab_runner_api_token | default(omit, True) }}"
+      active: "{{ gitlab_runner_active | default(omit, True) }}"
+      api_url: "{{ gitlab_runner_api_url | default(omit, True) }}"
+      tag_list: "{{ gitlab_runner_tag_list | default(omit, True) }}"
+      validate_certs: "{{ gitlab_runner_validate_certs | default(omit, True) }}"
+      api_username: "{{ gitlab_runner_api_username | default(omit, True) }}"
+      description: "{{ gitlab_runner_description | default(omit, True) }}"

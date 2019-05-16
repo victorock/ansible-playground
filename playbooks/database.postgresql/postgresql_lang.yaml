@@ -8,12 +8,16 @@
   vars:
     postgresql_lang: 
       lang: "{{ postgresql_lang_lang | default(omit, True) }}"
-      cascade: "{{ postgresql_lang_cascade | default(omit, True) }}"
+      ssl_mode: "{{ postgresql_lang_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_lang_ca_cert | default(omit, True) }}"
+      force_trust: "{{ postgresql_lang_force_trust | default(omit, True) }}"
       login_user: "{{ postgresql_lang_login_user | default(omit, True) }}"
       login_host: "{{ postgresql_lang_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_lang_session_role | default(omit, True) }}"
       db: "{{ postgresql_lang_db | default(omit, True) }}"
-      force_trust: "{{ postgresql_lang_force_trust | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_lang_login_unix_socket | default(omit, True) }}"
       state: "{{ postgresql_lang_state | default(omit, True) }}"
+      cascade: "{{ postgresql_lang_cascade | default(omit, True) }}"
       login_password: "{{ postgresql_lang_login_password | default(omit, True) }}"
       trust: "{{ postgresql_lang_trust | default(omit, True) }}"
       fail_on_drop: "{{ postgresql_lang_fail_on_drop | default(omit, True) }}"

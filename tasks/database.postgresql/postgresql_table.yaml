@@ -1,0 +1,26 @@
+---
+- name: "module_postgresql_table"
+  postgresql_table: "{{ postgresql_table }}"
+  register: r_postgresql_table
+  vars:
+    postgresql_table: 
+      rename: "{{ postgresql_table_rename | default(omit, True) }}"
+      ssl_mode: "{{ postgresql_table_ssl_mode | default(omit, True) }}"
+      storage_params: "{{ postgresql_table_storage_params | default(omit, True) }}"
+      truncate: "{{ postgresql_table_truncate | default(omit, True) }}"
+      unlogged: "{{ postgresql_table_unlogged | default(omit, True) }}"
+      login_user: "{{ postgresql_table_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_table_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_table_session_role | default(omit, True) }}"
+      db: "{{ postgresql_table_db | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_table_login_unix_socket | default(omit, True) }}"
+      state: "{{ postgresql_table_state | default(omit, True) }}"
+      tablespace: "{{ postgresql_table_tablespace | default(omit, True) }}"
+      login_password: "{{ postgresql_table_login_password | default(omit, True) }}"
+      owner: "{{ postgresql_table_owner | default(omit, True) }}"
+      including: "{{ postgresql_table_including | default(omit, True) }}"
+      ca_cert: "{{ postgresql_table_ca_cert | default(omit, True) }}"
+      table: "{{ postgresql_table_table | default(omit, True) }}"
+      port: "{{ postgresql_table_port | default(omit, True) }}"
+      columns: "{{ postgresql_table_columns | default(omit, True) }}"
+      like: "{{ postgresql_table_like | default(omit, True) }}"

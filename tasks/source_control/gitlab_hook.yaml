@@ -1,0 +1,24 @@
+---
+- name: "module_gitlab_hook"
+  gitlab_hook: "{{ gitlab_hook }}"
+  register: r_gitlab_hook
+  vars:
+    gitlab_hook: 
+      hook_validate_certs: "{{ gitlab_hook_hook_validate_certs | default(omit, True) }}"
+      hook_url: "{{ gitlab_hook_hook_url | default(omit, True) }}"
+      api_token: "{{ gitlab_hook_api_token | default(omit, True) }}"
+      job_events: "{{ gitlab_hook_job_events | default(omit, True) }}"
+      tag_push_events: "{{ gitlab_hook_tag_push_events | default(omit, True) }}"
+      note_events: "{{ gitlab_hook_note_events | default(omit, True) }}"
+      api_password: "{{ gitlab_hook_api_password | default(omit, True) }}"
+      token: "{{ gitlab_hook_token | default(omit, True) }}"
+      project: "{{ gitlab_hook_project | default(omit, True) }}"
+      issues_events: "{{ gitlab_hook_issues_events | default(omit, True) }}"
+      state: "{{ gitlab_hook_state | default(omit, True) }}"
+      push_events: "{{ gitlab_hook_push_events | default(omit, True) }}"
+      merge_requests_events: "{{ gitlab_hook_merge_requests_events | default(omit, True) }}"
+      api_username: "{{ gitlab_hook_api_username | default(omit, True) }}"
+      validate_certs: "{{ gitlab_hook_validate_certs | default(omit, True) }}"
+      pipeline_events: "{{ gitlab_hook_pipeline_events | default(omit, True) }}"
+      wiki_page_events: "{{ gitlab_hook_wiki_page_events | default(omit, True) }}"
+      api_url: "{{ gitlab_hook_api_url | default(omit, True) }}"

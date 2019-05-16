@@ -10,6 +10,7 @@
       no_block: "{{ systemd_no_block | default(omit, True) }}"
       force: "{{ systemd_force | default(omit, True) }}"
       name: "{{ systemd_name | default(omit, True) }}"
+      daemon_reexec: "{{ systemd_daemon_reexec | default(omit, True) }}"
       enabled: "{{ systemd_enabled | default(omit, True) }}"
       daemon_reload: "{{ systemd_daemon_reload | default(omit, True) }}"
       state: "{{ systemd_state | default(omit, True) }}"

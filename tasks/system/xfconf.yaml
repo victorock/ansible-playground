@@ -1,0 +1,11 @@
+---
+- name: "module_xfconf"
+  xfconf: "{{ xfconf }}"
+  register: r_xfconf
+  vars:
+    xfconf: 
+      state: "{{ xfconf_state | default(omit, True) }}"
+      property: "{{ xfconf_property | default(omit, True) }}"
+      value_type: "{{ xfconf_value_type | default(omit, True) }}"
+      value: "{{ xfconf_value | default(omit, True) }}"
+      channel: "{{ xfconf_channel | default(omit, True) }}"

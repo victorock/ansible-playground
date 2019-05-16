@@ -1,0 +1,18 @@
+---
+- name: "module_onyx_ptp_global"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_ptp_global: 
+      primary_priority: "{{ onyx_ptp_global_primary_priority | default(omit, True) }}"
+      domain: "{{ onyx_ptp_global_domain | default(omit, True) }}"
+      secondary_priority: "{{ onyx_ptp_global_secondary_priority | default(omit, True) }}"
+      ntp_state: "{{ onyx_ptp_global_ntp_state | default(omit, True) }}"
+      ptp_state: "{{ onyx_ptp_global_ptp_state | default(omit, True) }}"
+  tasks:
+    - name: "plugin_onyx_ptp_global"
+      onyx_ptp_global: "{{ onyx_ptp_global }}"
+      register: r_onyx_ptp_global

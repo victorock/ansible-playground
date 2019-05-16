@@ -1,0 +1,28 @@
+---
+- name: "module_voss_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    voss_config: 
+      intended_config: "{{ voss_config_intended_config | default(omit, True) }}"
+      src: "{{ voss_config_src | default(omit, True) }}"
+      backup_options: "{{ voss_config_backup_options | default(omit, True) }}"
+      after: "{{ voss_config_after | default(omit, True) }}"
+      lines: "{{ voss_config_lines | default(omit, True) }}"
+      diff_against: "{{ voss_config_diff_against | default(omit, True) }}"
+      replace: "{{ voss_config_replace | default(omit, True) }}"
+      running_config: "{{ voss_config_running_config | default(omit, True) }}"
+      save_when: "{{ voss_config_save_when | default(omit, True) }}"
+      defaults: "{{ voss_config_defaults | default(omit, True) }}"
+      parents: "{{ voss_config_parents | default(omit, True) }}"
+      before: "{{ voss_config_before | default(omit, True) }}"
+      backup: "{{ voss_config_backup | default(omit, True) }}"
+      match: "{{ voss_config_match | default(omit, True) }}"
+      diff_ignore_lines: "{{ voss_config_diff_ignore_lines | default(omit, True) }}"
+  tasks:
+    - name: "plugin_voss_config"
+      voss_config: "{{ voss_config }}"
+      register: r_voss_config

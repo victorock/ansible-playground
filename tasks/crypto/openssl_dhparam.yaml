@@ -16,4 +16,5 @@
       owner: "{{ openssl_dhparam_owner | default(omit, True) }}"
       group: "{{ openssl_dhparam_group | default(omit, True) }}"
       attributes: "{{ openssl_dhparam_attributes | default(omit, True) }}"
+      backup: "{{ openssl_dhparam_backup | default(omit, True) }}"
       size: "{{ openssl_dhparam_size | default(omit, True) }}"

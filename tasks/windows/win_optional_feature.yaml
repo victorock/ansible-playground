@@ -1,0 +1,10 @@
+---
+- name: "module_win_optional_feature"
+  win_optional_feature: "{{ win_optional_feature }}"
+  register: r_win_optional_feature
+  vars:
+    win_optional_feature: 
+      source: "{{ win_optional_feature_source | default(omit, True) }}"
+      state: "{{ win_optional_feature_state | default(omit, True) }}"
+      name: "{{ win_optional_feature_name | default(omit, True) }}"
+      include_parent: "{{ win_optional_feature_include_parent | default(omit, True) }}"

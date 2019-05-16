@@ -1,0 +1,22 @@
+---
+- name: "module_zfs_delegate_admin"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    zfs_delegate_admin: 
+      everyone: "{{ zfs_delegate_admin_everyone | default(omit, True) }}"
+      users: "{{ zfs_delegate_admin_users | default(omit, True) }}"
+      recursive: "{{ zfs_delegate_admin_recursive | default(omit, True) }}"
+      descendents: "{{ zfs_delegate_admin_descendents | default(omit, True) }}"
+      name: "{{ zfs_delegate_admin_name | default(omit, True) }}"
+      state: "{{ zfs_delegate_admin_state | default(omit, True) }}"
+      groups: "{{ zfs_delegate_admin_groups | default(omit, True) }}"
+      local: "{{ zfs_delegate_admin_local | default(omit, True) }}"
+      permissions: "{{ zfs_delegate_admin_permissions | default(omit, True) }}"
+  tasks:
+    - name: "plugin_zfs_delegate_admin"
+      zfs_delegate_admin: "{{ zfs_delegate_admin }}"
+      register: r_zfs_delegate_admin

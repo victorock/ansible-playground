@@ -11,5 +11,6 @@
       vserver: "{{ na_ontap_fcp_vserver | default(omit, True) }}"
       state: "{{ na_ontap_fcp_state | default(omit, True) }}"
       https: "{{ na_ontap_fcp_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_fcp_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_fcp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_fcp_validate_certs | default(omit, True) }}"

@@ -1,0 +1,20 @@
+---
+- name: "module_checkpoint_host"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    checkpoint_host: 
+      name: "{{ checkpoint_host_name | default(omit, True) }}"
+      auto_install_policy: "{{ checkpoint_host_auto_install_policy | default(omit, True) }}"
+      state: "{{ checkpoint_host_state | default(omit, True) }}"
+      auto_publish_session: "{{ checkpoint_host_auto_publish_session | default(omit, True) }}"
+      policy_package: "{{ checkpoint_host_policy_package | default(omit, True) }}"
+      ip_address: "{{ checkpoint_host_ip_address | default(omit, True) }}"
+      targets: "{{ checkpoint_host_targets | default(omit, True) }}"
+  tasks:
+    - name: "plugin_checkpoint_host"
+      checkpoint_host: "{{ checkpoint_host }}"
+      register: r_checkpoint_host

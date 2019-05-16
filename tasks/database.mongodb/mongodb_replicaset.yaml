@@ -1,0 +1,21 @@
+---
+- name: "module_mongodb_replicaset"
+  mongodb_replicaset: "{{ mongodb_replicaset }}"
+  register: r_mongodb_replicaset
+  vars:
+    mongodb_replicaset: 
+      election_timeout_millis: "{{ mongodb_replicaset_election_timeout_millis | default(omit, True) }}"
+      arbiter_at_index: "{{ mongodb_replicaset_arbiter_at_index | default(omit, True) }}"
+      login_port: "{{ mongodb_replicaset_login_port | default(omit, True) }}"
+      login_user: "{{ mongodb_replicaset_login_user | default(omit, True) }}"
+      login_host: "{{ mongodb_replicaset_login_host | default(omit, True) }}"
+      login_database: "{{ mongodb_replicaset_login_database | default(omit, True) }}"
+      ssl_cert_reqs: "{{ mongodb_replicaset_ssl_cert_reqs | default(omit, True) }}"
+      heartbeat_timeout_secs: "{{ mongodb_replicaset_heartbeat_timeout_secs | default(omit, True) }}"
+      ssl: "{{ mongodb_replicaset_ssl | default(omit, True) }}"
+      members: "{{ mongodb_replicaset_members | default(omit, True) }}"
+      login_password: "{{ mongodb_replicaset_login_password | default(omit, True) }}"
+      chaining_allowed: "{{ mongodb_replicaset_chaining_allowed | default(omit, True) }}"
+      protocol_version: "{{ mongodb_replicaset_protocol_version | default(omit, True) }}"
+      validate: "{{ mongodb_replicaset_validate | default(omit, True) }}"
+      replica_set: "{{ mongodb_replicaset_replica_set | default(omit, True) }}"

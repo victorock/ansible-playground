@@ -1,0 +1,23 @@
+---
+- name: "module_nios_fixed_address"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    nios_fixed_address: 
+      comment: "{{ nios_fixed_address_comment | default(omit, True) }}"
+      network: "{{ nios_fixed_address_network | default(omit, True) }}"
+      network_view: "{{ nios_fixed_address_network_view | default(omit, True) }}"
+      provider: "{{ nios_fixed_address_provider | default(omit, True) }}"
+      ipaddr: "{{ nios_fixed_address_ipaddr | default(omit, True) }}"
+      mac: "{{ nios_fixed_address_mac | default(omit, True) }}"
+      state: "{{ nios_fixed_address_state | default(omit, True) }}"
+      extattrs: "{{ nios_fixed_address_extattrs | default(omit, True) }}"
+      options: "{{ nios_fixed_address_options | default(omit, True) }}"
+      name: "{{ nios_fixed_address_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_nios_fixed_address"
+      nios_fixed_address: "{{ nios_fixed_address }}"
+      register: r_nios_fixed_address

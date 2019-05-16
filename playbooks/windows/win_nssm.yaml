@@ -7,17 +7,21 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_nssm: 
-      name: "{{ win_nssm_name | default(omit, True) }}"
+      executable: "{{ win_nssm_executable | default(omit, True) }}"
+      display_name: "{{ win_nssm_display_name | default(omit, True) }}"
+      description: "{{ win_nssm_description | default(omit, True) }}"
       start_mode: "{{ win_nssm_start_mode | default(omit, True) }}"
-      stderr_file: "{{ win_nssm_stderr_file | default(omit, True) }}"
-      app_parameters_free_form: "{{ win_nssm_app_parameters_free_form | default(omit, True) }}"
-      application: "{{ win_nssm_application | default(omit, True) }}"
+      arguments: "{{ win_nssm_arguments | default(omit, True) }}"
       state: "{{ win_nssm_state | default(omit, True) }}"
+      application: "{{ win_nssm_application | default(omit, True) }}"
+      stderr_file: "{{ win_nssm_stderr_file | default(omit, True) }}"
       dependencies: "{{ win_nssm_dependencies | default(omit, True) }}"
+      working_directory: "{{ win_nssm_working_directory | default(omit, True) }}"
       user: "{{ win_nssm_user | default(omit, True) }}"
       password: "{{ win_nssm_password | default(omit, True) }}"
       stdout_file: "{{ win_nssm_stdout_file | default(omit, True) }}"
       app_parameters: "{{ win_nssm_app_parameters | default(omit, True) }}"
+      name: "{{ win_nssm_name | default(omit, True) }}"
   tasks:
     - name: "plugin_win_nssm"
       win_nssm: "{{ win_nssm }}"

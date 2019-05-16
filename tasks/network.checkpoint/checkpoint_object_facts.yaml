@@ -1,0 +1,10 @@
+---
+- name: "module_checkpoint_object_facts"
+  checkpoint_object_facts: "{{ checkpoint_object_facts }}"
+  register: r_checkpoint_object_facts
+  vars:
+    checkpoint_object_facts: 
+      object_type: "{{ checkpoint_object_facts_object_type | default(omit, True) }}"
+      ip_only: "{{ checkpoint_object_facts_ip_only | default(omit, True) }}"
+      uid: "{{ checkpoint_object_facts_uid | default(omit, True) }}"
+      object_filter: "{{ checkpoint_object_facts_object_filter | default(omit, True) }}"

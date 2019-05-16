@@ -1,0 +1,20 @@
+---
+- name: "module_purefa_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefa_user: 
+      name: "{{ purefa_user_name | default(omit, True) }}"
+      state: "{{ purefa_user_state | default(omit, True) }}"
+      role: "{{ purefa_user_role | default(omit, True) }}"
+      api_token: "{{ purefa_user_api_token | default(omit, True) }}"
+      password: "{{ purefa_user_password | default(omit, True) }}"
+      old_password: "{{ purefa_user_old_password | default(omit, True) }}"
+      fa_url: "{{ purefa_user_fa_url | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefa_user"
+      purefa_user: "{{ purefa_user }}"
+      register: r_purefa_user

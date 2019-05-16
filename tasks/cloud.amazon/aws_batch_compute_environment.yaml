@@ -5,6 +5,7 @@
   vars:
     aws_batch_compute_environment: 
       instance_types: "{{ aws_batch_compute_environment_instance_types | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_batch_compute_environment_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ aws_batch_compute_environment_ec2_url | default(omit, True) }}"
       aws_secret_key: "{{ aws_batch_compute_environment_aws_secret_key | default(omit, True) }}"
       desiredv_cpus: "{{ aws_batch_compute_environment_desiredv_cpus | default(omit, True) }}"

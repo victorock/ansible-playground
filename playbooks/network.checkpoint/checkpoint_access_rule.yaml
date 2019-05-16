@@ -1,0 +1,25 @@
+---
+- name: "module_checkpoint_access_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    checkpoint_access_rule: 
+      layer: "{{ checkpoint_access_rule_layer | default(omit, True) }}"
+      name: "{{ checkpoint_access_rule_name | default(omit, True) }}"
+      auto_install_policy: "{{ checkpoint_access_rule_auto_install_policy | default(omit, True) }}"
+      destination: "{{ checkpoint_access_rule_destination | default(omit, True) }}"
+      enabled: "{{ checkpoint_access_rule_enabled | default(omit, True) }}"
+      source: "{{ checkpoint_access_rule_source | default(omit, True) }}"
+      state: "{{ checkpoint_access_rule_state | default(omit, True) }}"
+      auto_publish_session: "{{ checkpoint_access_rule_auto_publish_session | default(omit, True) }}"
+      position: "{{ checkpoint_access_rule_position | default(omit, True) }}"
+      action: "{{ checkpoint_access_rule_action | default(omit, True) }}"
+      policy_package: "{{ checkpoint_access_rule_policy_package | default(omit, True) }}"
+      targets: "{{ checkpoint_access_rule_targets | default(omit, True) }}"
+  tasks:
+    - name: "plugin_checkpoint_access_rule"
+      checkpoint_access_rule: "{{ checkpoint_access_rule }}"
+      register: r_checkpoint_access_rule

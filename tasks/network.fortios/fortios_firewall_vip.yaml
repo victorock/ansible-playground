@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_vip"
+  fortios_firewall_vip: "{{ fortios_firewall_vip }}"
+  register: r_fortios_firewall_vip
+  vars:
+    fortios_firewall_vip: 
+      username: "{{ fortios_firewall_vip_username | default(omit, True) }}"
+      firewall_vip: "{{ fortios_firewall_vip_firewall_vip | default(omit, True) }}"
+      host: "{{ fortios_firewall_vip_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_vip_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_vip_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_vip_vdom | default(omit, True) }}"

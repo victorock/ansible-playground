@@ -20,6 +20,7 @@
       session: "{{ win_psexec_session | default(omit, True) }}"
       command: "{{ win_psexec_command | default(omit, True) }}"
       timeout: "{{ win_psexec_timeout | default(omit, True) }}"
+      extra_opts: "{{ win_psexec_extra_opts | default(omit, True) }}"
       password: "{{ win_psexec_password | default(omit, True) }}"
       hostnames: "{{ win_psexec_hostnames | default(omit, True) }}"
       wait: "{{ win_psexec_wait | default(omit, True) }}"

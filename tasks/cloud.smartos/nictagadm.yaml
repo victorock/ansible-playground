@@ -1,0 +1,12 @@
+---
+- name: "module_nictagadm"
+  nictagadm: "{{ nictagadm }}"
+  register: r_nictagadm
+  vars:
+    nictagadm: 
+      force: "{{ nictagadm_force | default(omit, True) }}"
+      name: "{{ nictagadm_name | default(omit, True) }}"
+      state: "{{ nictagadm_state | default(omit, True) }}"
+      mtu: "{{ nictagadm_mtu | default(omit, True) }}"
+      mac: "{{ nictagadm_mac | default(omit, True) }}"
+      etherstub: "{{ nictagadm_etherstub | default(omit, True) }}"

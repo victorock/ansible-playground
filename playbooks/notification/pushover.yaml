@@ -11,6 +11,7 @@
       user_key: "{{ pushover_user_key | default(omit, True) }}"
       app_token: "{{ pushover_app_token | default(omit, True) }}"
       pri: "{{ pushover_pri | default(omit, True) }}"
+      title: "{{ pushover_title | default(omit, True) }}"
   tasks:
     - name: "plugin_pushover"
       pushover: "{{ pushover }}"

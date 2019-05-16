@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_router_access_list"
+  fortios_router_access_list: "{{ fortios_router_access_list }}"
+  register: r_fortios_router_access_list
+  vars:
+    fortios_router_access_list: 
+      username: "{{ fortios_router_access_list_username | default(omit, True) }}"
+      router_access_list: "{{ fortios_router_access_list_router_access_list | default(omit, True) }}"
+      host: "{{ fortios_router_access_list_host | default(omit, True) }}"
+      https: "{{ fortios_router_access_list_https | default(omit, True) }}"
+      password: "{{ fortios_router_access_list_password | default(omit, True) }}"
+      vdom: "{{ fortios_router_access_list_vdom | default(omit, True) }}"

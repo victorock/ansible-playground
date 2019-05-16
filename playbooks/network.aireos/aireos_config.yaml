@@ -8,15 +8,16 @@
   vars:
     aireos_config: 
       src: "{{ aireos_config_src | default(omit, True) }}"
-      save: "{{ aireos_config_save | default(omit, True) }}"
+      backup_options: "{{ aireos_config_backup_options | default(omit, True) }}"
       after: "{{ aireos_config_after | default(omit, True) }}"
       lines: "{{ aireos_config_lines | default(omit, True) }}"
       diff_against: "{{ aireos_config_diff_against | default(omit, True) }}"
       intended_config: "{{ aireos_config_intended_config | default(omit, True) }}"
       running_config: "{{ aireos_config_running_config | default(omit, True) }}"
+      save_when: "{{ aireos_config_save_when | default(omit, True) }}"
       provider: "{{ aireos_config_provider | default(omit, True) }}"
       before: "{{ aireos_config_before | default(omit, True) }}"
-      save_when: "{{ aireos_config_save_when | default(omit, True) }}"
+      save: "{{ aireos_config_save | default(omit, True) }}"
       backup: "{{ aireos_config_backup | default(omit, True) }}"
       match: "{{ aireos_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ aireos_config_diff_ignore_lines | default(omit, True) }}"

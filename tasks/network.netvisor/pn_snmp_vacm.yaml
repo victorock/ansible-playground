@@ -1,0 +1,13 @@
+---
+- name: "module_pn_snmp_vacm"
+  pn_snmp_vacm: "{{ pn_snmp_vacm }}"
+  register: r_pn_snmp_vacm
+  vars:
+    pn_snmp_vacm: 
+      pn_user_name: "{{ pn_snmp_vacm_pn_user_name | default(omit, True) }}"
+      pn_oid_restrict: "{{ pn_snmp_vacm_pn_oid_restrict | default(omit, True) }}"
+      pn_priv: "{{ pn_snmp_vacm_pn_priv | default(omit, True) }}"
+      state: "{{ pn_snmp_vacm_state | default(omit, True) }}"
+      pn_auth: "{{ pn_snmp_vacm_pn_auth | default(omit, True) }}"
+      pn_user_type: "{{ pn_snmp_vacm_pn_user_type | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_snmp_vacm_pn_cliswitch | default(omit, True) }}"

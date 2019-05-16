@@ -14,6 +14,7 @@
       region: "{{ iam_cert_region | default(omit, True) }}"
       cert: "{{ iam_cert_cert | default(omit, True) }}"
       aws_access_key: "{{ iam_cert_aws_access_key | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ iam_cert_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ iam_cert_state | default(omit, True) }}"
       key: "{{ iam_cert_key | default(omit, True) }}"
       ec2_url: "{{ iam_cert_ec2_url | default(omit, True) }}"

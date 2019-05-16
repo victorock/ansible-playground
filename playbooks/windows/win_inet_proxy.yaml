@@ -1,0 +1,18 @@
+---
+- name: "module_win_inet_proxy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_inet_proxy: 
+      connection: "{{ win_inet_proxy_connection | default(omit, True) }}"
+      auto_config_url: "{{ win_inet_proxy_auto_config_url | default(omit, True) }}"
+      bypass: "{{ win_inet_proxy_bypass | default(omit, True) }}"
+      auto_detect: "{{ win_inet_proxy_auto_detect | default(omit, True) }}"
+      proxy: "{{ win_inet_proxy_proxy | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_inet_proxy"
+      win_inet_proxy: "{{ win_inet_proxy }}"
+      register: r_win_inet_proxy

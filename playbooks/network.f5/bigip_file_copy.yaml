@@ -1,0 +1,25 @@
+---
+- name: "module_bigip_file_copy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_file_copy: 
+      force: "{{ bigip_file_copy_force | default(omit, True) }}"
+      name: "{{ bigip_file_copy_name | default(omit, True) }}"
+      partition: "{{ bigip_file_copy_partition | default(omit, True) }}"
+      server: "{{ bigip_file_copy_server | default(omit, True) }}"
+      source: "{{ bigip_file_copy_source | default(omit, True) }}"
+      state: "{{ bigip_file_copy_state | default(omit, True) }}"
+      user: "{{ bigip_file_copy_user | default(omit, True) }}"
+      server_port: "{{ bigip_file_copy_server_port | default(omit, True) }}"
+      provider: "{{ bigip_file_copy_provider | default(omit, True) }}"
+      datastore: "{{ bigip_file_copy_datastore | default(omit, True) }}"
+      password: "{{ bigip_file_copy_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_file_copy_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_file_copy"
+      bigip_file_copy: "{{ bigip_file_copy }}"
+      register: r_bigip_file_copy

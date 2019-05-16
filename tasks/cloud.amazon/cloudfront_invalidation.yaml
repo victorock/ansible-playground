@@ -11,6 +11,7 @@
       alias: "{{ cloudfront_invalidation_alias | default(omit, True) }}"
       region: "{{ cloudfront_invalidation_region | default(omit, True) }}"
       caller_reference: "{{ cloudfront_invalidation_caller_reference | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ cloudfront_invalidation_debug_botocore_endpoint_logs | default(omit, True) }}"
       target_paths: "{{ cloudfront_invalidation_target_paths | default(omit, True) }}"
       distribution_id: "{{ cloudfront_invalidation_distribution_id | default(omit, True) }}"
       ec2_url: "{{ cloudfront_invalidation_ec2_url | default(omit, True) }}"

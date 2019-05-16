@@ -1,0 +1,15 @@
+---
+- name: "module_purefb_ds"
+  purefb_ds: "{{ purefb_ds }}"
+  register: r_purefb_ds
+  vars:
+    purefb_ds: 
+      bind_user: "{{ purefb_ds_bind_user | default(omit, True) }}"
+      dstype: "{{ purefb_ds_dstype | default(omit, True) }}"
+      enable: "{{ purefb_ds_enable | default(omit, True) }}"
+      fb_url: "{{ purefb_ds_fb_url | default(omit, True) }}"
+      base_dn: "{{ purefb_ds_base_dn | default(omit, True) }}"
+      uri: "{{ purefb_ds_uri | default(omit, True) }}"
+      state: "{{ purefb_ds_state | default(omit, True) }}"
+      bind_password: "{{ purefb_ds_bind_password | default(omit, True) }}"
+      api_token: "{{ purefb_ds_api_token | default(omit, True) }}"

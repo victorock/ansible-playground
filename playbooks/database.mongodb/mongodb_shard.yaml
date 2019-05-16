@@ -1,0 +1,22 @@
+---
+- name: "module_mongodb_shard"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mongodb_shard: 
+      login_port: "{{ mongodb_shard_login_port | default(omit, True) }}"
+      login_user: "{{ mongodb_shard_login_user | default(omit, True) }}"
+      login_host: "{{ mongodb_shard_login_host | default(omit, True) }}"
+      login_database: "{{ mongodb_shard_login_database | default(omit, True) }}"
+      ssl_cert_reqs: "{{ mongodb_shard_ssl_cert_reqs | default(omit, True) }}"
+      shard: "{{ mongodb_shard_shard | default(omit, True) }}"
+      ssl: "{{ mongodb_shard_ssl | default(omit, True) }}"
+      state: "{{ mongodb_shard_state | default(omit, True) }}"
+      login_password: "{{ mongodb_shard_login_password | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mongodb_shard"
+      mongodb_shard: "{{ mongodb_shard }}"
+      register: r_mongodb_shard

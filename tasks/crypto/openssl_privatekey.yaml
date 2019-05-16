@@ -5,11 +5,14 @@
   vars:
     openssl_privatekey: 
       force: "{{ openssl_privatekey_force | default(omit, True) }}"
+      backup: "{{ openssl_privatekey_backup | default(omit, True) }}"
       unsafe_writes: "{{ openssl_privatekey_unsafe_writes | default(omit, True) }}"
       selevel: "{{ openssl_privatekey_selevel | default(omit, True) }}"
       seuser: "{{ openssl_privatekey_seuser | default(omit, True) }}"
+      curve: "{{ openssl_privatekey_curve | default(omit, True) }}"
       state: "{{ openssl_privatekey_state | default(omit, True) }}"
       group: "{{ openssl_privatekey_group | default(omit, True) }}"
+      select_crypto_backend: "{{ openssl_privatekey_select_crypto_backend | default(omit, True) }}"
       serole: "{{ openssl_privatekey_serole | default(omit, True) }}"
       cipher: "{{ openssl_privatekey_cipher | default(omit, True) }}"
       mode: "{{ openssl_privatekey_mode | default(omit, True) }}"

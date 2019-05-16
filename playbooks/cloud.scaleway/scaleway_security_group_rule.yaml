@@ -1,0 +1,26 @@
+---
+- name: "module_scaleway_security_group_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    scaleway_security_group_rule: 
+      direction: "{{ scaleway_security_group_rule_direction | default(omit, True) }}"
+      protocol: "{{ scaleway_security_group_rule_protocol | default(omit, True) }}"
+      api_url: "{{ scaleway_security_group_rule_api_url | default(omit, True) }}"
+      query_parameters: "{{ scaleway_security_group_rule_query_parameters | default(omit, True) }}"
+      region: "{{ scaleway_security_group_rule_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_security_group_rule_api_timeout | default(omit, True) }}"
+      action: "{{ scaleway_security_group_rule_action | default(omit, True) }}"
+      state: "{{ scaleway_security_group_rule_state | default(omit, True) }}"
+      ip_range: "{{ scaleway_security_group_rule_ip_range | default(omit, True) }}"
+      api_token: "{{ scaleway_security_group_rule_api_token | default(omit, True) }}"
+      security_group: "{{ scaleway_security_group_rule_security_group | default(omit, True) }}"
+      validate_certs: "{{ scaleway_security_group_rule_validate_certs | default(omit, True) }}"
+      port: "{{ scaleway_security_group_rule_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_scaleway_security_group_rule"
+      scaleway_security_group_rule: "{{ scaleway_security_group_rule }}"
+      register: r_scaleway_security_group_rule

@@ -1,0 +1,37 @@
+---
+- name: "module_bigip_profile_analytics"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_profile_analytics: 
+      collect_max_tps_and_throughput: "{{ bigip_profile_analytics_collect_max_tps_and_throughput | default(omit, True) }}"
+      collected_stats_external_logging: "{{ bigip_profile_analytics_collected_stats_external_logging | default(omit, True) }}"
+      collect_ip: "{{ bigip_profile_analytics_collect_ip | default(omit, True) }}"
+      collect_geo: "{{ bigip_profile_analytics_collect_geo | default(omit, True) }}"
+      collect_user_sessions: "{{ bigip_profile_analytics_collect_user_sessions | default(omit, True) }}"
+      collect_page_load_time: "{{ bigip_profile_analytics_collect_page_load_time | default(omit, True) }}"
+      state: "{{ bigip_profile_analytics_state | default(omit, True) }}"
+      server_port: "{{ bigip_profile_analytics_server_port | default(omit, True) }}"
+      provider: "{{ bigip_profile_analytics_provider | default(omit, True) }}"
+      collected_stats_internal_logging: "{{ bigip_profile_analytics_collected_stats_internal_logging | default(omit, True) }}"
+      collect_url: "{{ bigip_profile_analytics_collect_url | default(omit, True) }}"
+      notification_email_addresses: "{{ bigip_profile_analytics_notification_email_addresses | default(omit, True) }}"
+      notification_by_email: "{{ bigip_profile_analytics_notification_by_email | default(omit, True) }}"
+      description: "{{ bigip_profile_analytics_description | default(omit, True) }}"
+      parent: "{{ bigip_profile_analytics_parent | default(omit, True) }}"
+      external_logging_publisher: "{{ bigip_profile_analytics_external_logging_publisher | default(omit, True) }}"
+      user: "{{ bigip_profile_analytics_user | default(omit, True) }}"
+      password: "{{ bigip_profile_analytics_password | default(omit, True) }}"
+      name: "{{ bigip_profile_analytics_name | default(omit, True) }}"
+      notification_by_syslog: "{{ bigip_profile_analytics_notification_by_syslog | default(omit, True) }}"
+      collect_user_agent: "{{ bigip_profile_analytics_collect_user_agent | default(omit, True) }}"
+      partition: "{{ bigip_profile_analytics_partition | default(omit, True) }}"
+      server: "{{ bigip_profile_analytics_server | default(omit, True) }}"
+      validate_certs: "{{ bigip_profile_analytics_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_profile_analytics"
+      bigip_profile_analytics: "{{ bigip_profile_analytics }}"
+      register: r_bigip_profile_analytics

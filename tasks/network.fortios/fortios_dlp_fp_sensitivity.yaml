@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_dlp_fp_sensitivity"
+  fortios_dlp_fp_sensitivity: "{{ fortios_dlp_fp_sensitivity }}"
+  register: r_fortios_dlp_fp_sensitivity
+  vars:
+    fortios_dlp_fp_sensitivity: 
+      username: "{{ fortios_dlp_fp_sensitivity_username | default(omit, True) }}"
+      dlp_fp_sensitivity: "{{ fortios_dlp_fp_sensitivity_dlp_fp_sensitivity | default(omit, True) }}"
+      host: "{{ fortios_dlp_fp_sensitivity_host | default(omit, True) }}"
+      https: "{{ fortios_dlp_fp_sensitivity_https | default(omit, True) }}"
+      password: "{{ fortios_dlp_fp_sensitivity_password | default(omit, True) }}"
+      vdom: "{{ fortios_dlp_fp_sensitivity_vdom | default(omit, True) }}"

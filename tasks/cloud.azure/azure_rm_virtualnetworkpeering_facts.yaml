@@ -1,0 +1,21 @@
+---
+- name: "module_azure_rm_virtualnetworkpeering_facts"
+  azure_rm_virtualnetworkpeering_facts: "{{ azure_rm_virtualnetworkpeering_facts }}"
+  register: r_azure_rm_virtualnetworkpeering_facts
+  vars:
+    azure_rm_virtualnetworkpeering_facts: 
+      profile: "{{ azure_rm_virtualnetworkpeering_facts_profile | default(omit, True) }}"
+      virtual_network: "{{ azure_rm_virtualnetworkpeering_facts_virtual_network | default(omit, True) }}"
+      name: "{{ azure_rm_virtualnetworkpeering_facts_name | default(omit, True) }}"
+      resource_group: "{{ azure_rm_virtualnetworkpeering_facts_resource_group | default(omit, True) }}"
+      ad_user: "{{ azure_rm_virtualnetworkpeering_facts_ad_user | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_virtualnetworkpeering_facts_cloud_environment | default(omit, True) }}"
+      secret: "{{ azure_rm_virtualnetworkpeering_facts_secret | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_virtualnetworkpeering_facts_cert_validation_mode | default(omit, True) }}"
+      client_id: "{{ azure_rm_virtualnetworkpeering_facts_client_id | default(omit, True) }}"
+      api_profile: "{{ azure_rm_virtualnetworkpeering_facts_api_profile | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_virtualnetworkpeering_facts_adfs_authority_url | default(omit, True) }}"
+      auth_source: "{{ azure_rm_virtualnetworkpeering_facts_auth_source | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_virtualnetworkpeering_facts_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_virtualnetworkpeering_facts_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_virtualnetworkpeering_facts_tenant | default(omit, True) }}"

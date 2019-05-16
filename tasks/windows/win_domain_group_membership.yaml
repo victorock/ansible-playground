@@ -1,0 +1,12 @@
+---
+- name: "module_win_domain_group_membership"
+  win_domain_group_membership: "{{ win_domain_group_membership }}"
+  register: r_win_domain_group_membership
+  vars:
+    win_domain_group_membership: 
+      name: "{{ win_domain_group_membership_name | default(omit, True) }}"
+      domain_username: "{{ win_domain_group_membership_domain_username | default(omit, True) }}"
+      state: "{{ win_domain_group_membership_state | default(omit, True) }}"
+      domain_password: "{{ win_domain_group_membership_domain_password | default(omit, True) }}"
+      members: "{{ win_domain_group_membership_members | default(omit, True) }}"
+      domain_server: "{{ win_domain_group_membership_domain_server | default(omit, True) }}"

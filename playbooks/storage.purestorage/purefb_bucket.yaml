@@ -1,0 +1,19 @@
+---
+- name: "module_purefb_bucket"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefb_bucket: 
+      account: "{{ purefb_bucket_account | default(omit, True) }}"
+      fb_url: "{{ purefb_bucket_fb_url | default(omit, True) }}"
+      name: "{{ purefb_bucket_name | default(omit, True) }}"
+      state: "{{ purefb_bucket_state | default(omit, True) }}"
+      api_token: "{{ purefb_bucket_api_token | default(omit, True) }}"
+      eradicate: "{{ purefb_bucket_eradicate | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefb_bucket"
+      purefb_bucket: "{{ purefb_bucket }}"
+      register: r_purefb_bucket

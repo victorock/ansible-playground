@@ -1,0 +1,21 @@
+---
+- name: "module_gcp_bigquery_dataset"
+  gcp_bigquery_dataset: "{{ gcp_bigquery_dataset }}"
+  register: r_gcp_bigquery_dataset
+  vars:
+    gcp_bigquery_dataset: 
+      scopes: "{{ gcp_bigquery_dataset_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_bigquery_dataset_service_account_contents | default(omit, True) }}"
+      description: "{{ gcp_bigquery_dataset_description | default(omit, True) }}"
+      service_account_email: "{{ gcp_bigquery_dataset_service_account_email | default(omit, True) }}"
+      default_table_expiration_ms: "{{ gcp_bigquery_dataset_default_table_expiration_ms | default(omit, True) }}"
+      labels: "{{ gcp_bigquery_dataset_labels | default(omit, True) }}"
+      friendly_name: "{{ gcp_bigquery_dataset_friendly_name | default(omit, True) }}"
+      access: "{{ gcp_bigquery_dataset_access | default(omit, True) }}"
+      project: "{{ gcp_bigquery_dataset_project | default(omit, True) }}"
+      state: "{{ gcp_bigquery_dataset_state | default(omit, True) }}"
+      location: "{{ gcp_bigquery_dataset_location | default(omit, True) }}"
+      service_account_file: "{{ gcp_bigquery_dataset_service_account_file | default(omit, True) }}"
+      dataset_reference: "{{ gcp_bigquery_dataset_dataset_reference | default(omit, True) }}"
+      auth_kind: "{{ gcp_bigquery_dataset_auth_kind | default(omit, True) }}"
+      name: "{{ gcp_bigquery_dataset_name | default(omit, True) }}"

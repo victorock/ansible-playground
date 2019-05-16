@@ -15,6 +15,7 @@
       vserver: "{{ na_ontap_cifs_acl_vserver | default(omit, True) }}"
       state: "{{ na_ontap_cifs_acl_state | default(omit, True) }}"
       https: "{{ na_ontap_cifs_acl_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_cifs_acl_ontapi | default(omit, True) }}"
       user_or_group: "{{ na_ontap_cifs_acl_user_or_group | default(omit, True) }}"
       password: "{{ na_ontap_cifs_acl_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_cifs_acl_validate_certs | default(omit, True) }}"

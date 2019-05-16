@@ -1,0 +1,28 @@
+---
+- name: "module_rabbitmq_binding"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rabbitmq_binding: 
+      login_port: "{{ rabbitmq_binding_login_port | default(omit, True) }}"
+      name: "{{ rabbitmq_binding_name | default(omit, True) }}"
+      ca_cert: "{{ rabbitmq_binding_ca_cert | default(omit, True) }}"
+      login_user: "{{ rabbitmq_binding_login_user | default(omit, True) }}"
+      login_host: "{{ rabbitmq_binding_login_host | default(omit, True) }}"
+      destination: "{{ rabbitmq_binding_destination | default(omit, True) }}"
+      routing_key: "{{ rabbitmq_binding_routing_key | default(omit, True) }}"
+      vhost: "{{ rabbitmq_binding_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_binding_state | default(omit, True) }}"
+      login_protocol: "{{ rabbitmq_binding_login_protocol | default(omit, True) }}"
+      arguments: "{{ rabbitmq_binding_arguments | default(omit, True) }}"
+      login_password: "{{ rabbitmq_binding_login_password | default(omit, True) }}"
+      destination_type: "{{ rabbitmq_binding_destination_type | default(omit, True) }}"
+      client_cert: "{{ rabbitmq_binding_client_cert | default(omit, True) }}"
+      client_key: "{{ rabbitmq_binding_client_key | default(omit, True) }}"
+  tasks:
+    - name: "plugin_rabbitmq_binding"
+      rabbitmq_binding: "{{ rabbitmq_binding }}"
+      register: r_rabbitmq_binding

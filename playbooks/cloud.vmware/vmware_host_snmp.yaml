@@ -1,0 +1,26 @@
+---
+- name: "module_vmware_host_snmp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_host_snmp: 
+      hw_source: "{{ vmware_host_snmp_hw_source | default(omit, True) }}"
+      username: "{{ vmware_host_snmp_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_snmp_hostname | default(omit, True) }}"
+      log_level: "{{ vmware_host_snmp_log_level | default(omit, True) }}"
+      snmp_port: "{{ vmware_host_snmp_snmp_port | default(omit, True) }}"
+      trap_targets: "{{ vmware_host_snmp_trap_targets | default(omit, True) }}"
+      community: "{{ vmware_host_snmp_community | default(omit, True) }}"
+      state: "{{ vmware_host_snmp_state | default(omit, True) }}"
+      send_trap: "{{ vmware_host_snmp_send_trap | default(omit, True) }}"
+      trap_filter: "{{ vmware_host_snmp_trap_filter | default(omit, True) }}"
+      password: "{{ vmware_host_snmp_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_snmp_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_snmp_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_host_snmp"
+      vmware_host_snmp: "{{ vmware_host_snmp }}"
+      register: r_vmware_host_snmp

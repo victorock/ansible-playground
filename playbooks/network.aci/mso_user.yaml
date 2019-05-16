@@ -1,0 +1,32 @@
+---
+- name: "module_mso_user"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_user: 
+      username: "{{ mso_user_username | default(omit, True) }}"
+      domain: "{{ mso_user_domain | default(omit, True) }}"
+      last_name: "{{ mso_user_last_name | default(omit, True) }}"
+      use_proxy: "{{ mso_user_use_proxy | default(omit, True) }}"
+      roles: "{{ mso_user_roles | default(omit, True) }}"
+      host: "{{ mso_user_host | default(omit, True) }}"
+      user_password: "{{ mso_user_user_password | default(omit, True) }}"
+      first_name: "{{ mso_user_first_name | default(omit, True) }}"
+      email: "{{ mso_user_email | default(omit, True) }}"
+      output_level: "{{ mso_user_output_level | default(omit, True) }}"
+      phone: "{{ mso_user_phone | default(omit, True) }}"
+      state: "{{ mso_user_state | default(omit, True) }}"
+      user: "{{ mso_user_user | default(omit, True) }}"
+      timeout: "{{ mso_user_timeout | default(omit, True) }}"
+      account_status: "{{ mso_user_account_status | default(omit, True) }}"
+      use_ssl: "{{ mso_user_use_ssl | default(omit, True) }}"
+      password: "{{ mso_user_password | default(omit, True) }}"
+      validate_certs: "{{ mso_user_validate_certs | default(omit, True) }}"
+      port: "{{ mso_user_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_user"
+      mso_user: "{{ mso_user }}"
+      register: r_mso_user

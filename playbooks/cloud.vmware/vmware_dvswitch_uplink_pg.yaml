@@ -1,0 +1,26 @@
+---
+- name: "module_vmware_dvswitch_uplink_pg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_dvswitch_uplink_pg: 
+      username: "{{ vmware_dvswitch_uplink_pg_username | default(omit, True) }}"
+      vlan_trunk_range: "{{ vmware_dvswitch_uplink_pg_vlan_trunk_range | default(omit, True) }}"
+      description: "{{ vmware_dvswitch_uplink_pg_description | default(omit, True) }}"
+      hostname: "{{ vmware_dvswitch_uplink_pg_hostname | default(omit, True) }}"
+      netflow_enabled: "{{ vmware_dvswitch_uplink_pg_netflow_enabled | default(omit, True) }}"
+      lacp: "{{ vmware_dvswitch_uplink_pg_lacp | default(omit, True) }}"
+      switch: "{{ vmware_dvswitch_uplink_pg_switch | default(omit, True) }}"
+      block_all_ports: "{{ vmware_dvswitch_uplink_pg_block_all_ports | default(omit, True) }}"
+      password: "{{ vmware_dvswitch_uplink_pg_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_dvswitch_uplink_pg_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_dvswitch_uplink_pg_port | default(omit, True) }}"
+      advanced: "{{ vmware_dvswitch_uplink_pg_advanced | default(omit, True) }}"
+      name: "{{ vmware_dvswitch_uplink_pg_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_dvswitch_uplink_pg"
+      vmware_dvswitch_uplink_pg: "{{ vmware_dvswitch_uplink_pg }}"
+      register: r_vmware_dvswitch_uplink_pg

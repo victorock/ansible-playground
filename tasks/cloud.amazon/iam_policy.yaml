@@ -11,6 +11,7 @@
       policy_document: "{{ iam_policy_policy_document | default(omit, True) }}"
       region: "{{ iam_policy_region | default(omit, True) }}"
       iam_name: "{{ iam_policy_iam_name | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ iam_policy_debug_botocore_endpoint_logs | default(omit, True) }}"
       iam_type: "{{ iam_policy_iam_type | default(omit, True) }}"
       policy_name: "{{ iam_policy_policy_name | default(omit, True) }}"
       state: "{{ iam_policy_state | default(omit, True) }}"

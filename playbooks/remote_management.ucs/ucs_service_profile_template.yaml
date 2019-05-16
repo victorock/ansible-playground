@@ -1,0 +1,52 @@
+---
+- name: "module_ucs_service_profile_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ucs_service_profile_template: 
+      mgmt_interface_mode: "{{ ucs_service_profile_template_mgmt_interface_mode | default(omit, True) }}"
+      use_ssl: "{{ ucs_service_profile_template_use_ssl | default(omit, True) }}"
+      server_pool_qualification: "{{ ucs_service_profile_template_server_pool_qualification | default(omit, True) }}"
+      port: "{{ ucs_service_profile_template_port | default(omit, True) }}"
+      description: "{{ ucs_service_profile_template_description | default(omit, True) }}"
+      power_control_policy: "{{ ucs_service_profile_template_power_control_policy | default(omit, True) }}"
+      use_proxy: "{{ ucs_service_profile_template_use_proxy | default(omit, True) }}"
+      san_connectivity_policy: "{{ ucs_service_profile_template_san_connectivity_policy | default(omit, True) }}"
+      mgmt_vnet_name: "{{ ucs_service_profile_template_mgmt_vnet_name | default(omit, True) }}"
+      hostname: "{{ ucs_service_profile_template_hostname | default(omit, True) }}"
+      org_dn: "{{ ucs_service_profile_template_org_dn | default(omit, True) }}"
+      power_sync_policy: "{{ ucs_service_profile_template_power_sync_policy | default(omit, True) }}"
+      template_type: "{{ ucs_service_profile_template_template_type | default(omit, True) }}"
+      iqn_pool: "{{ ucs_service_profile_template_iqn_pool | default(omit, True) }}"
+      state: "{{ ucs_service_profile_template_state | default(omit, True) }}"
+      maintenance_policy: "{{ ucs_service_profile_template_maintenance_policy | default(omit, True) }}"
+      bios_policy: "{{ ucs_service_profile_template_bios_policy | default(omit, True) }}"
+      power_state: "{{ ucs_service_profile_template_power_state | default(omit, True) }}"
+      user_label: "{{ ucs_service_profile_template_user_label | default(omit, True) }}"
+      server_pool: "{{ ucs_service_profile_template_server_pool | default(omit, True) }}"
+      mgmt_inband_pool_name: "{{ ucs_service_profile_template_mgmt_inband_pool_name | default(omit, True) }}"
+      username: "{{ ucs_service_profile_template_username | default(omit, True) }}"
+      ipmi_access_profile: "{{ ucs_service_profile_template_ipmi_access_profile | default(omit, True) }}"
+      local_disk_policy: "{{ ucs_service_profile_template_local_disk_policy | default(omit, True) }}"
+      storage_profile: "{{ ucs_service_profile_template_storage_profile | default(omit, True) }}"
+      proxy: "{{ ucs_service_profile_template_proxy | default(omit, True) }}"
+      password: "{{ ucs_service_profile_template_password | default(omit, True) }}"
+      lan_connectivity_policy: "{{ ucs_service_profile_template_lan_connectivity_policy | default(omit, True) }}"
+      kvm_mgmt_policy: "{{ ucs_service_profile_template_kvm_mgmt_policy | default(omit, True) }}"
+      sol_policy: "{{ ucs_service_profile_template_sol_policy | default(omit, True) }}"
+      name: "{{ ucs_service_profile_template_name | default(omit, True) }}"
+      scrub_policy: "{{ ucs_service_profile_template_scrub_policy | default(omit, True) }}"
+      threshold_policy: "{{ ucs_service_profile_template_threshold_policy | default(omit, True) }}"
+      mgmt_ip_pool: "{{ ucs_service_profile_template_mgmt_ip_pool | default(omit, True) }}"
+      boot_policy: "{{ ucs_service_profile_template_boot_policy | default(omit, True) }}"
+      host_firmware_package: "{{ ucs_service_profile_template_host_firmware_package | default(omit, True) }}"
+      uuid_pool: "{{ ucs_service_profile_template_uuid_pool | default(omit, True) }}"
+      graphics_card_policy: "{{ ucs_service_profile_template_graphics_card_policy | default(omit, True) }}"
+      vmedia_policy: "{{ ucs_service_profile_template_vmedia_policy | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ucs_service_profile_template"
+      ucs_service_profile_template: "{{ ucs_service_profile_template }}"
+      register: r_ucs_service_profile_template

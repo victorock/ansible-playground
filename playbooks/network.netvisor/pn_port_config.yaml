@@ -1,0 +1,42 @@
+---
+- name: "module_pn_port_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_port_config: 
+      pn_defer_bringup: "{{ pn_port_config_pn_defer_bringup | default(omit, True) }}"
+      pn_enable: "{{ pn_port_config_pn_enable | default(omit, True) }}"
+      pn_port_mac_address: "{{ pn_port_config_pn_port_mac_address | default(omit, True) }}"
+      pn_crc_check_enable: "{{ pn_port_config_pn_crc_check_enable | default(omit, True) }}"
+      pn_eth_mode: "{{ pn_port_config_pn_eth_mode | default(omit, True) }}"
+      pn_mirror_only: "{{ pn_port_config_pn_mirror_only | default(omit, True) }}"
+      pn_send_port: "{{ pn_port_config_pn_send_port | default(omit, True) }}"
+      pn_host_enable: "{{ pn_port_config_pn_host_enable | default(omit, True) }}"
+      pn_routing: "{{ pn_port_config_pn_routing | default(omit, True) }}"
+      pn_local_switching: "{{ pn_port_config_pn_local_switching | default(omit, True) }}"
+      pn_egress_rate_limit: "{{ pn_port_config_pn_egress_rate_limit | default(omit, True) }}"
+      state: "{{ pn_port_config_state | default(omit, True) }}"
+      pn_port: "{{ pn_port_config_pn_port | default(omit, True) }}"
+      pn_allowed_tpid: "{{ pn_port_config_pn_allowed_tpid | default(omit, True) }}"
+      pn_dscp_map: "{{ pn_port_config_pn_dscp_map | default(omit, True) }}"
+      pn_loopback: "{{ pn_port_config_pn_loopback | default(omit, True) }}"
+      pn_reflect: "{{ pn_port_config_pn_reflect | default(omit, True) }}"
+      pn_autoneg: "{{ pn_port_config_pn_autoneg | default(omit, True) }}"
+      pn_speed: "{{ pn_port_config_pn_speed | default(omit, True) }}"
+      pn_edge_switch: "{{ pn_port_config_pn_edge_switch | default(omit, True) }}"
+      pn_intf: "{{ pn_port_config_pn_intf | default(omit, True) }}"
+      pn_jumbo: "{{ pn_port_config_pn_jumbo | default(omit, True) }}"
+      pn_fabric_guard: "{{ pn_port_config_pn_fabric_guard | default(omit, True) }}"
+      pn_vxlan_termination: "{{ pn_port_config_pn_vxlan_termination | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_port_config_pn_cliswitch | default(omit, True) }}"
+      pn_lacp_priority: "{{ pn_port_config_pn_lacp_priority | default(omit, True) }}"
+      pn_loop_vlans: "{{ pn_port_config_pn_loop_vlans | default(omit, True) }}"
+      pn_pause: "{{ pn_port_config_pn_pause | default(omit, True) }}"
+      pn_description: "{{ pn_port_config_pn_description | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_port_config"
+      pn_port_config: "{{ pn_port_config }}"
+      register: r_pn_port_config

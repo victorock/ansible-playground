@@ -1,0 +1,13 @@
+---
+- name: "module_cnos_logging"
+  cnos_logging: "{{ cnos_logging }}"
+  register: r_cnos_logging
+  vars:
+    cnos_logging: 
+      name: "{{ cnos_logging_name | default(omit, True) }}"
+      level: "{{ cnos_logging_level | default(omit, True) }}"
+      dest: "{{ cnos_logging_dest | default(omit, True) }}"
+      facility: "{{ cnos_logging_facility | default(omit, True) }}"
+      state: "{{ cnos_logging_state | default(omit, True) }}"
+      aggregate: "{{ cnos_logging_aggregate | default(omit, True) }}"
+      size: "{{ cnos_logging_size | default(omit, True) }}"

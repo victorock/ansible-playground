@@ -12,6 +12,7 @@
       tags: "{{ ec2_vpc_dhcp_option_tags | default(omit, True) }}"
       ntp_servers: "{{ ec2_vpc_dhcp_option_ntp_servers | default(omit, True) }}"
       region: "{{ ec2_vpc_dhcp_option_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_vpc_dhcp_option_debug_botocore_endpoint_logs | default(omit, True) }}"
       domain_name: "{{ ec2_vpc_dhcp_option_domain_name | default(omit, True) }}"
       delete_old: "{{ ec2_vpc_dhcp_option_delete_old | default(omit, True) }}"
       state: "{{ ec2_vpc_dhcp_option_state | default(omit, True) }}"

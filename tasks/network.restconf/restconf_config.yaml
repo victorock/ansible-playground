@@ -1,0 +1,10 @@
+---
+- name: "module_restconf_config"
+  restconf_config: "{{ restconf_config }}"
+  register: r_restconf_config
+  vars:
+    restconf_config: 
+      content: "{{ restconf_config_content | default(omit, True) }}"
+      path: "{{ restconf_config_path | default(omit, True) }}"
+      method: "{{ restconf_config_method | default(omit, True) }}"
+      format: "{{ restconf_config_format | default(omit, True) }}"

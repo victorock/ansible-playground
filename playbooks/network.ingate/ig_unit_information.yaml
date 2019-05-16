@@ -1,0 +1,14 @@
+---
+- name: "module_ig_unit_information"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ig_unit_information: 
+      client: "{{ ig_unit_information_client | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ig_unit_information"
+      ig_unit_information: "{{ ig_unit_information }}"
+      register: r_ig_unit_information

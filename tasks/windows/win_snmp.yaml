@@ -1,0 +1,9 @@
+---
+- name: "module_win_snmp"
+  win_snmp: "{{ win_snmp }}"
+  register: r_win_snmp
+  vars:
+    win_snmp: 
+      action: "{{ win_snmp_action | default(omit, True) }}"
+      permitted_managers: "{{ win_snmp_permitted_managers | default(omit, True) }}"
+      community_strings: "{{ win_snmp_community_strings | default(omit, True) }}"

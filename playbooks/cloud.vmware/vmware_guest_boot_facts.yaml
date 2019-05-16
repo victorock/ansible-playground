@@ -10,6 +10,7 @@
       username: "{{ vmware_guest_boot_facts_username | default(omit, True) }}"
       uuid: "{{ vmware_guest_boot_facts_uuid | default(omit, True) }}"
       hostname: "{{ vmware_guest_boot_facts_hostname | default(omit, True) }}"
+      use_instance_uuid: "{{ vmware_guest_boot_facts_use_instance_uuid | default(omit, True) }}"
       name_match: "{{ vmware_guest_boot_facts_name_match | default(omit, True) }}"
       password: "{{ vmware_guest_boot_facts_password | default(omit, True) }}"
       validate_certs: "{{ vmware_guest_boot_facts_validate_certs | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_aix_filesystem"
+  aix_filesystem: "{{ aix_filesystem }}"
+  register: r_aix_filesystem
+  vars:
+    aix_filesystem: 
+      vg: "{{ aix_filesystem_vg | default(omit, True) }}"
+      rm_mount_point: "{{ aix_filesystem_rm_mount_point | default(omit, True) }}"
+      auto_mount: "{{ aix_filesystem_auto_mount | default(omit, True) }}"
+      account_subsystem: "{{ aix_filesystem_account_subsystem | default(omit, True) }}"
+      mount_group: "{{ aix_filesystem_mount_group | default(omit, True) }}"
+      state: "{{ aix_filesystem_state | default(omit, True) }}"
+      fs_type: "{{ aix_filesystem_fs_type | default(omit, True) }}"
+      filesystem: "{{ aix_filesystem_filesystem | default(omit, True) }}"
+      device: "{{ aix_filesystem_device | default(omit, True) }}"
+      nfs_server: "{{ aix_filesystem_nfs_server | default(omit, True) }}"
+      permissions: "{{ aix_filesystem_permissions | default(omit, True) }}"
+      attributes: "{{ aix_filesystem_attributes | default(omit, True) }}"
+      size: "{{ aix_filesystem_size | default(omit, True) }}"

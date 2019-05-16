@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nso_config: 
-      url: "{{ nso_config_url | default(omit, True) }}"
       username: "{{ nso_config_username | default(omit, True) }}"
-      password: "{{ nso_config_password | default(omit, True) }}"
+      url: "{{ nso_config_url | default(omit, True) }}"
       data: "{{ nso_config_data | default(omit, True) }}"
       timeout: "{{ nso_config_timeout | default(omit, True) }}"
+      password: "{{ nso_config_password | default(omit, True) }}"
+      validate_certs: "{{ nso_config_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_nso_config"
       nso_config: "{{ nso_config }}"

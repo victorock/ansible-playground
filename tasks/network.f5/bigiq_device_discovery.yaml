@@ -1,0 +1,28 @@
+---
+- name: "module_bigiq_device_discovery"
+  bigiq_device_discovery: "{{ bigiq_device_discovery }}"
+  register: r_bigiq_device_discovery
+  vars:
+    bigiq_device_discovery: 
+      device_address: "{{ bigiq_device_discovery_device_address | default(omit, True) }}"
+      force: "{{ bigiq_device_discovery_force | default(omit, True) }}"
+      access_group_first_device: "{{ bigiq_device_discovery_access_group_first_device | default(omit, True) }}"
+      device_username: "{{ bigiq_device_discovery_device_username | default(omit, True) }}"
+      statistics: "{{ bigiq_device_discovery_statistics | default(omit, True) }}"
+      versioned_conflict_policy: "{{ bigiq_device_discovery_versioned_conflict_policy | default(omit, True) }}"
+      device_conflict_policy: "{{ bigiq_device_discovery_device_conflict_policy | default(omit, True) }}"
+      state: "{{ bigiq_device_discovery_state | default(omit, True) }}"
+      server_port: "{{ bigiq_device_discovery_server_port | default(omit, True) }}"
+      provider: "{{ bigiq_device_discovery_provider | default(omit, True) }}"
+      conflict_policy: "{{ bigiq_device_discovery_conflict_policy | default(omit, True) }}"
+      device_password: "{{ bigiq_device_discovery_device_password | default(omit, True) }}"
+      user: "{{ bigiq_device_discovery_user | default(omit, True) }}"
+      access_group_name: "{{ bigiq_device_discovery_access_group_name | default(omit, True) }}"
+      ha_name: "{{ bigiq_device_discovery_ha_name | default(omit, True) }}"
+      password: "{{ bigiq_device_discovery_password | default(omit, True) }}"
+      access_conflict_policy: "{{ bigiq_device_discovery_access_conflict_policy | default(omit, True) }}"
+      use_bigiq_sync: "{{ bigiq_device_discovery_use_bigiq_sync | default(omit, True) }}"
+      modules: "{{ bigiq_device_discovery_modules | default(omit, True) }}"
+      server: "{{ bigiq_device_discovery_server | default(omit, True) }}"
+      device_port: "{{ bigiq_device_discovery_device_port | default(omit, True) }}"
+      validate_certs: "{{ bigiq_device_discovery_validate_certs | default(omit, True) }}"

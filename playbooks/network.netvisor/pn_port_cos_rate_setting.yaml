@@ -1,0 +1,24 @@
+---
+- name: "module_pn_port_cos_rate_setting"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_port_cos_rate_setting: 
+      pn_cos0_rate: "{{ pn_port_cos_rate_setting_pn_cos0_rate | default(omit, True) }}"
+      pn_cos3_rate: "{{ pn_port_cos_rate_setting_pn_cos3_rate | default(omit, True) }}"
+      pn_cos7_rate: "{{ pn_port_cos_rate_setting_pn_cos7_rate | default(omit, True) }}"
+      state: "{{ pn_port_cos_rate_setting_state | default(omit, True) }}"
+      pn_cos2_rate: "{{ pn_port_cos_rate_setting_pn_cos2_rate | default(omit, True) }}"
+      pn_cos4_rate: "{{ pn_port_cos_rate_setting_pn_cos4_rate | default(omit, True) }}"
+      pn_cos1_rate: "{{ pn_port_cos_rate_setting_pn_cos1_rate | default(omit, True) }}"
+      pn_cos6_rate: "{{ pn_port_cos_rate_setting_pn_cos6_rate | default(omit, True) }}"
+      pn_cos5_rate: "{{ pn_port_cos_rate_setting_pn_cos5_rate | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_port_cos_rate_setting_pn_cliswitch | default(omit, True) }}"
+      pn_port: "{{ pn_port_cos_rate_setting_pn_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_port_cos_rate_setting"
+      pn_port_cos_rate_setting: "{{ pn_port_cos_rate_setting }}"
+      register: r_pn_port_cos_rate_setting

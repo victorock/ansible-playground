@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_firewall_profile_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_firewall_profile_group: 
+      username: "{{ fortios_firewall_profile_group_username | default(omit, True) }}"
+      firewall_profile_group: "{{ fortios_firewall_profile_group_firewall_profile_group | default(omit, True) }}"
+      host: "{{ fortios_firewall_profile_group_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_profile_group_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_profile_group_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_profile_group_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_firewall_profile_group"
+      fortios_firewall_profile_group: "{{ fortios_firewall_profile_group }}"
+      register: r_fortios_firewall_profile_group

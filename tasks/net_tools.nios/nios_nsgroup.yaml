@@ -1,0 +1,17 @@
+---
+- name: "module_nios_nsgroup"
+  nios_nsgroup: "{{ nios_nsgroup }}"
+  register: r_nios_nsgroup
+  vars:
+    nios_nsgroup: 
+      comment: "{{ nios_nsgroup_comment | default(omit, True) }}"
+      use_external_primary: "{{ nios_nsgroup_use_external_primary | default(omit, True) }}"
+      name: "{{ nios_nsgroup_name | default(omit, True) }}"
+      grid_primary: "{{ nios_nsgroup_grid_primary | default(omit, True) }}"
+      external_primaries: "{{ nios_nsgroup_external_primaries | default(omit, True) }}"
+      external_secondaries: "{{ nios_nsgroup_external_secondaries | default(omit, True) }}"
+      extattrs: "{{ nios_nsgroup_extattrs | default(omit, True) }}"
+      state: "{{ nios_nsgroup_state | default(omit, True) }}"
+      is_grid_default: "{{ nios_nsgroup_is_grid_default | default(omit, True) }}"
+      grid_secondaries: "{{ nios_nsgroup_grid_secondaries | default(omit, True) }}"
+      provider: "{{ nios_nsgroup_provider | default(omit, True) }}"

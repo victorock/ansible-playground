@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_web_proxy_profile"
+  fortios_web_proxy_profile: "{{ fortios_web_proxy_profile }}"
+  register: r_fortios_web_proxy_profile
+  vars:
+    fortios_web_proxy_profile: 
+      username: "{{ fortios_web_proxy_profile_username | default(omit, True) }}"
+      web_proxy_profile: "{{ fortios_web_proxy_profile_web_proxy_profile | default(omit, True) }}"
+      host: "{{ fortios_web_proxy_profile_host | default(omit, True) }}"
+      https: "{{ fortios_web_proxy_profile_https | default(omit, True) }}"
+      password: "{{ fortios_web_proxy_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_web_proxy_profile_vdom | default(omit, True) }}"

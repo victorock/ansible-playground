@@ -1,0 +1,56 @@
+---
+- name: "module_bigip_profile_fastl4"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_profile_fastl4: 
+      ip_df_mode: "{{ bigip_profile_fastl4_ip_df_mode | default(omit, True) }}"
+      receive_window_size: "{{ bigip_profile_fastl4_receive_window_size | default(omit, True) }}"
+      tcp_handshake_timeout: "{{ bigip_profile_fastl4_tcp_handshake_timeout | default(omit, True) }}"
+      ip_tos_to_client: "{{ bigip_profile_fastl4_ip_tos_to_client | default(omit, True) }}"
+      tcp_timestamp_mode: "{{ bigip_profile_fastl4_tcp_timestamp_mode | default(omit, True) }}"
+      late_binding: "{{ bigip_profile_fastl4_late_binding | default(omit, True) }}"
+      tcp_close_timeout: "{{ bigip_profile_fastl4_tcp_close_timeout | default(omit, True) }}"
+      server_timestamp: "{{ bigip_profile_fastl4_server_timestamp | default(omit, True) }}"
+      link_qos_to_server: "{{ bigip_profile_fastl4_link_qos_to_server | default(omit, True) }}"
+      state: "{{ bigip_profile_fastl4_state | default(omit, True) }}"
+      tcp_time_wait_timeout: "{{ bigip_profile_fastl4_tcp_time_wait_timeout | default(omit, True) }}"
+      loose_initialization: "{{ bigip_profile_fastl4_loose_initialization | default(omit, True) }}"
+      server_port: "{{ bigip_profile_fastl4_server_port | default(omit, True) }}"
+      provider: "{{ bigip_profile_fastl4_provider | default(omit, True) }}"
+      reassemble_fragments: "{{ bigip_profile_fastl4_reassemble_fragments | default(omit, True) }}"
+      ip_ttl_mode: "{{ bigip_profile_fastl4_ip_ttl_mode | default(omit, True) }}"
+      ip_ttl_v6: "{{ bigip_profile_fastl4_ip_ttl_v6 | default(omit, True) }}"
+      mss_override: "{{ bigip_profile_fastl4_mss_override | default(omit, True) }}"
+      tcp_strip_sack: "{{ bigip_profile_fastl4_tcp_strip_sack | default(omit, True) }}"
+      keep_alive_interval: "{{ bigip_profile_fastl4_keep_alive_interval | default(omit, True) }}"
+      description: "{{ bigip_profile_fastl4_description | default(omit, True) }}"
+      parent: "{{ bigip_profile_fastl4_parent | default(omit, True) }}"
+      idle_timeout: "{{ bigip_profile_fastl4_idle_timeout | default(omit, True) }}"
+      user: "{{ bigip_profile_fastl4_user | default(omit, True) }}"
+      ip_tos_to_server: "{{ bigip_profile_fastl4_ip_tos_to_server | default(omit, True) }}"
+      timeout_recovery: "{{ bigip_profile_fastl4_timeout_recovery | default(omit, True) }}"
+      password: "{{ bigip_profile_fastl4_password | default(omit, True) }}"
+      name: "{{ bigip_profile_fastl4_name | default(omit, True) }}"
+      server_sack: "{{ bigip_profile_fastl4_server_sack | default(omit, True) }}"
+      reset_on_timeout: "{{ bigip_profile_fastl4_reset_on_timeout | default(omit, True) }}"
+      loose_close: "{{ bigip_profile_fastl4_loose_close | default(omit, True) }}"
+      partition: "{{ bigip_profile_fastl4_partition | default(omit, True) }}"
+      tcp_wscale_mode: "{{ bigip_profile_fastl4_tcp_wscale_mode | default(omit, True) }}"
+      rtt_from_client: "{{ bigip_profile_fastl4_rtt_from_client | default(omit, True) }}"
+      rtt_from_server: "{{ bigip_profile_fastl4_rtt_from_server | default(omit, True) }}"
+      server: "{{ bigip_profile_fastl4_server | default(omit, True) }}"
+      explicit_flow_migration: "{{ bigip_profile_fastl4_explicit_flow_migration | default(omit, True) }}"
+      ip_ttl_v4: "{{ bigip_profile_fastl4_ip_ttl_v4 | default(omit, True) }}"
+      link_qos_to_client: "{{ bigip_profile_fastl4_link_qos_to_client | default(omit, True) }}"
+      client_timeout: "{{ bigip_profile_fastl4_client_timeout | default(omit, True) }}"
+      validate_certs: "{{ bigip_profile_fastl4_validate_certs | default(omit, True) }}"
+      tcp_generate_isn: "{{ bigip_profile_fastl4_tcp_generate_isn | default(omit, True) }}"
+      syn_cookie_mss: "{{ bigip_profile_fastl4_syn_cookie_mss | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_profile_fastl4"
+      bigip_profile_fastl4: "{{ bigip_profile_fastl4 }}"
+      register: r_bigip_profile_fastl4

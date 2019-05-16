@@ -1,0 +1,21 @@
+---
+- name: "module_mso_schema_site_anp_epg"
+  mso_schema_site_anp_epg: "{{ mso_schema_site_anp_epg }}"
+  register: r_mso_schema_site_anp_epg
+  vars:
+    mso_schema_site_anp_epg: 
+      username: "{{ mso_schema_site_anp_epg_username | default(omit, True) }}"
+      timeout: "{{ mso_schema_site_anp_epg_timeout | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_site_anp_epg_use_proxy | default(omit, True) }}"
+      state: "{{ mso_schema_site_anp_epg_state | default(omit, True) }}"
+      site: "{{ mso_schema_site_anp_epg_site | default(omit, True) }}"
+      output_level: "{{ mso_schema_site_anp_epg_output_level | default(omit, True) }}"
+      host: "{{ mso_schema_site_anp_epg_host | default(omit, True) }}"
+      anp: "{{ mso_schema_site_anp_epg_anp | default(omit, True) }}"
+      template: "{{ mso_schema_site_anp_epg_template | default(omit, True) }}"
+      epg: "{{ mso_schema_site_anp_epg_epg | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_site_anp_epg_use_ssl | default(omit, True) }}"
+      password: "{{ mso_schema_site_anp_epg_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_site_anp_epg_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_site_anp_epg_port | default(omit, True) }}"
+      schema: "{{ mso_schema_site_anp_epg_schema | default(omit, True) }}"

@@ -12,6 +12,7 @@
       aws_access_key: "{{ ec2_elb_aws_access_key | default(omit, True) }}"
       security_token: "{{ ec2_elb_security_token | default(omit, True) }}"
       region: "{{ ec2_elb_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_elb_debug_botocore_endpoint_logs | default(omit, True) }}"
       instance_id: "{{ ec2_elb_instance_id | default(omit, True) }}"
       state: "{{ ec2_elb_state | default(omit, True) }}"
       wait_timeout: "{{ ec2_elb_wait_timeout | default(omit, True) }}"

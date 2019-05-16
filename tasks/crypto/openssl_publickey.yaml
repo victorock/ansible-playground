@@ -17,5 +17,6 @@
       attributes: "{{ openssl_publickey_attributes | default(omit, True) }}"
       owner: "{{ openssl_publickey_owner | default(omit, True) }}"
       path: "{{ openssl_publickey_path | default(omit, True) }}"
+      backup: "{{ openssl_publickey_backup | default(omit, True) }}"
       group: "{{ openssl_publickey_group | default(omit, True) }}"
       setype: "{{ openssl_publickey_setype | default(omit, True) }}"

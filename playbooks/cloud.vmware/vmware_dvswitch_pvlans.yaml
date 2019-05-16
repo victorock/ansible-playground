@@ -1,0 +1,21 @@
+---
+- name: "module_vmware_dvswitch_pvlans"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_dvswitch_pvlans: 
+      username: "{{ vmware_dvswitch_pvlans_username | default(omit, True) }}"
+      primary_pvlans: "{{ vmware_dvswitch_pvlans_primary_pvlans | default(omit, True) }}"
+      hostname: "{{ vmware_dvswitch_pvlans_hostname | default(omit, True) }}"
+      secondary_pvlans: "{{ vmware_dvswitch_pvlans_secondary_pvlans | default(omit, True) }}"
+      switch: "{{ vmware_dvswitch_pvlans_switch | default(omit, True) }}"
+      password: "{{ vmware_dvswitch_pvlans_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_dvswitch_pvlans_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_dvswitch_pvlans_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_dvswitch_pvlans"
+      vmware_dvswitch_pvlans: "{{ vmware_dvswitch_pvlans }}"
+      register: r_vmware_dvswitch_pvlans

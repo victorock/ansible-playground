@@ -13,6 +13,7 @@
       name: "{{ aws_config_delivery_channel_name | default(omit, True) }}"
       security_token: "{{ aws_config_delivery_channel_security_token | default(omit, True) }}"
       s3_bucket: "{{ aws_config_delivery_channel_s3_bucket | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_config_delivery_channel_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ aws_config_delivery_channel_state | default(omit, True) }}"
       s3_prefix: "{{ aws_config_delivery_channel_s3_prefix | default(omit, True) }}"
       ec2_url: "{{ aws_config_delivery_channel_ec2_url | default(omit, True) }}"

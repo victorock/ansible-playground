@@ -1,0 +1,24 @@
+---
+- name: "module_bigip_gtm_topology_record"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_gtm_topology_record: 
+      partition: "{{ bigip_gtm_topology_record_partition | default(omit, True) }}"
+      weight: "{{ bigip_gtm_topology_record_weight | default(omit, True) }}"
+      destination: "{{ bigip_gtm_topology_record_destination | default(omit, True) }}"
+      server: "{{ bigip_gtm_topology_record_server | default(omit, True) }}"
+      source: "{{ bigip_gtm_topology_record_source | default(omit, True) }}"
+      state: "{{ bigip_gtm_topology_record_state | default(omit, True) }}"
+      user: "{{ bigip_gtm_topology_record_user | default(omit, True) }}"
+      server_port: "{{ bigip_gtm_topology_record_server_port | default(omit, True) }}"
+      provider: "{{ bigip_gtm_topology_record_provider | default(omit, True) }}"
+      password: "{{ bigip_gtm_topology_record_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_gtm_topology_record_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_gtm_topology_record"
+      bigip_gtm_topology_record: "{{ bigip_gtm_topology_record }}"
+      register: r_bigip_gtm_topology_record

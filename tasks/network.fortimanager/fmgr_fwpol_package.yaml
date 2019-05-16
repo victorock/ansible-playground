@@ -1,0 +1,20 @@
+---
+- name: "module_fmgr_fwpol_package"
+  fmgr_fwpol_package: "{{ fmgr_fwpol_package }}"
+  register: r_fmgr_fwpol_package
+  vars:
+    fmgr_fwpol_package: 
+      ngfw_mode: "{{ fmgr_fwpol_package_ngfw_mode | default(omit, True) }}"
+      name: "{{ fmgr_fwpol_package_name | default(omit, True) }}"
+      adom: "{{ fmgr_fwpol_package_adom | default(omit, True) }}"
+      object_type: "{{ fmgr_fwpol_package_object_type | default(omit, True) }}"
+      ssl_ssh_profile: "{{ fmgr_fwpol_package_ssl_ssh_profile | default(omit, True) }}"
+      central_nat: "{{ fmgr_fwpol_package_central_nat | default(omit, True) }}"
+      scope_members: "{{ fmgr_fwpol_package_scope_members | default(omit, True) }}"
+      mode: "{{ fmgr_fwpol_package_mode | default(omit, True) }}"
+      package_folder: "{{ fmgr_fwpol_package_package_folder | default(omit, True) }}"
+      parent_folder: "{{ fmgr_fwpol_package_parent_folder | default(omit, True) }}"
+      scope_members_vdom: "{{ fmgr_fwpol_package_scope_members_vdom | default(omit, True) }}"
+      fwpolicy_implicit_log: "{{ fmgr_fwpol_package_fwpolicy_implicit_log | default(omit, True) }}"
+      fwpolicy6_implicit_log: "{{ fmgr_fwpol_package_fwpolicy6_implicit_log | default(omit, True) }}"
+      inspection_mode: "{{ fmgr_fwpol_package_inspection_mode | default(omit, True) }}"

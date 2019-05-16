@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_system_api_user"
+  fortios_system_api_user: "{{ fortios_system_api_user }}"
+  register: r_fortios_system_api_user
+  vars:
+    fortios_system_api_user: 
+      username: "{{ fortios_system_api_user_username | default(omit, True) }}"
+      host: "{{ fortios_system_api_user_host | default(omit, True) }}"
+      https: "{{ fortios_system_api_user_https | default(omit, True) }}"
+      password: "{{ fortios_system_api_user_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_api_user_vdom | default(omit, True) }}"
+      system_api_user: "{{ fortios_system_api_user_system_api_user | default(omit, True) }}"

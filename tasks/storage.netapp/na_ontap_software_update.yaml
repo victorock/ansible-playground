@@ -4,7 +4,6 @@
   register: r_na_ontap_software_update
   vars:
     na_ontap_software_update: 
-      node: "{{ na_ontap_software_update_node | default(omit, True) }}"
       username: "{{ na_ontap_software_update_username | default(omit, True) }}"
       http_port: "{{ na_ontap_software_update_http_port | default(omit, True) }}"
       validate_certs: "{{ na_ontap_software_update_validate_certs | default(omit, True) }}"
@@ -12,6 +11,8 @@
       hostname: "{{ na_ontap_software_update_hostname | default(omit, True) }}"
       state: "{{ na_ontap_software_update_state | default(omit, True) }}"
       https: "{{ na_ontap_software_update_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_software_update_ontapi | default(omit, True) }}"
       package_url: "{{ na_ontap_software_update_package_url | default(omit, True) }}"
+      nodes: "{{ na_ontap_software_update_nodes | default(omit, True) }}"
       password: "{{ na_ontap_software_update_password | default(omit, True) }}"
       ignore_validation_warning: "{{ na_ontap_software_update_ignore_validation_warning | default(omit, True) }}"

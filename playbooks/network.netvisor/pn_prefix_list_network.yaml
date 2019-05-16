@@ -1,0 +1,18 @@
+---
+- name: "module_pn_prefix_list_network"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_prefix_list_network: 
+      state: "{{ pn_prefix_list_network_state | default(omit, True) }}"
+      pn_name: "{{ pn_prefix_list_network_pn_name | default(omit, True) }}"
+      pn_netmask: "{{ pn_prefix_list_network_pn_netmask | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_prefix_list_network_pn_cliswitch | default(omit, True) }}"
+      pn_network: "{{ pn_prefix_list_network_pn_network | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_prefix_list_network"
+      pn_prefix_list_network: "{{ pn_prefix_list_network }}"
+      register: r_pn_prefix_list_network

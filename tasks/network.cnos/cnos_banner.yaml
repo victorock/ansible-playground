@@ -1,0 +1,10 @@
+---
+- name: "module_cnos_banner"
+  cnos_banner: "{{ cnos_banner }}"
+  register: r_cnos_banner
+  vars:
+    cnos_banner: 
+      text: "{{ cnos_banner_text | default(omit, True) }}"
+      state: "{{ cnos_banner_state | default(omit, True) }}"
+      banner: "{{ cnos_banner_banner | default(omit, True) }}"
+      provider: "{{ cnos_banner_provider | default(omit, True) }}"

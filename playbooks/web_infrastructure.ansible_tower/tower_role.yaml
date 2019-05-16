@@ -20,7 +20,7 @@
       tower_config_file: "{{ tower_role_tower_config_file | default(omit, True) }}"
       organization: "{{ tower_role_organization | default(omit, True) }}"
       target_team: "{{ tower_role_target_team | default(omit, True) }}"
-      tower_verify_ssl: "{{ tower_role_tower_verify_ssl | default(omit, True) }}"
+      validate_certs: "{{ tower_role_validate_certs | default(omit, True) }}"
       inventory: "{{ tower_role_inventory | default(omit, True) }}"
   tasks:
     - name: "plugin_tower_role"

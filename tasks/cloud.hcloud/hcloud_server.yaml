@@ -1,0 +1,22 @@
+---
+- name: "module_hcloud_server"
+  hcloud_server: "{{ hcloud_server }}"
+  register: r_hcloud_server
+  vars:
+    hcloud_server: 
+      datacenter: "{{ hcloud_server_datacenter | default(omit, True) }}"
+      endpoint: "{{ hcloud_server_endpoint | default(omit, True) }}"
+      force_upgrade: "{{ hcloud_server_force_upgrade | default(omit, True) }}"
+      server_type: "{{ hcloud_server_server_type | default(omit, True) }}"
+      image: "{{ hcloud_server_image | default(omit, True) }}"
+      labels: "{{ hcloud_server_labels | default(omit, True) }}"
+      user_data: "{{ hcloud_server_user_data | default(omit, True) }}"
+      name: "{{ hcloud_server_name | default(omit, True) }}"
+      state: "{{ hcloud_server_state | default(omit, True) }}"
+      location: "{{ hcloud_server_location | default(omit, True) }}"
+      volumes: "{{ hcloud_server_volumes | default(omit, True) }}"
+      api_token: "{{ hcloud_server_api_token | default(omit, True) }}"
+      backups: "{{ hcloud_server_backups | default(omit, True) }}"
+      upgrade_disk: "{{ hcloud_server_upgrade_disk | default(omit, True) }}"
+      id: "{{ hcloud_server_id | default(omit, True) }}"
+      ssh_keys: "{{ hcloud_server_ssh_keys | default(omit, True) }}"

@@ -10,6 +10,7 @@
       color: "{{ slack_color | default(omit, True) }}"
       icon_url: "{{ slack_icon_url | default(omit, True) }}"
       parse: "{{ slack_parse | default(omit, True) }}"
+      thread_id: "{{ slack_thread_id | default(omit, True) }}"
       token: "{{ slack_token | default(omit, True) }}"
       icon_emoji: "{{ slack_icon_emoji | default(omit, True) }}"
       link_names: "{{ slack_link_names | default(omit, True) }}"

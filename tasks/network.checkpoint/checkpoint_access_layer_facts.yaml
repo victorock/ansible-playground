@@ -1,0 +1,8 @@
+---
+- name: "module_checkpoint_access_layer_facts"
+  checkpoint_access_layer_facts: "{{ checkpoint_access_layer_facts }}"
+  register: r_checkpoint_access_layer_facts
+  vars:
+    checkpoint_access_layer_facts: 
+      uid: "{{ checkpoint_access_layer_facts_uid | default(omit, True) }}"
+      name: "{{ checkpoint_access_layer_facts_name | default(omit, True) }}"

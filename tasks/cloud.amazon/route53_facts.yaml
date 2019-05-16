@@ -15,6 +15,7 @@
       dns_name: "{{ route53_facts_dns_name | default(omit, True) }}"
       health_check_method: "{{ route53_facts_health_check_method | default(omit, True) }}"
       delegation_set_id: "{{ route53_facts_delegation_set_id | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ route53_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       max_items: "{{ route53_facts_max_items | default(omit, True) }}"
       hosted_zone_id: "{{ route53_facts_hosted_zone_id | default(omit, True) }}"
       query: "{{ route53_facts_query | default(omit, True) }}"

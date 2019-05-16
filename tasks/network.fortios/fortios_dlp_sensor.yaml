@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_dlp_sensor"
+  fortios_dlp_sensor: "{{ fortios_dlp_sensor }}"
+  register: r_fortios_dlp_sensor
+  vars:
+    fortios_dlp_sensor: 
+      username: "{{ fortios_dlp_sensor_username | default(omit, True) }}"
+      dlp_sensor: "{{ fortios_dlp_sensor_dlp_sensor | default(omit, True) }}"
+      host: "{{ fortios_dlp_sensor_host | default(omit, True) }}"
+      https: "{{ fortios_dlp_sensor_https | default(omit, True) }}"
+      password: "{{ fortios_dlp_sensor_password | default(omit, True) }}"
+      vdom: "{{ fortios_dlp_sensor_vdom | default(omit, True) }}"

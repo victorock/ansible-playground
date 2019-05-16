@@ -1,0 +1,18 @@
+---
+- name: "module_gcp_storage_object"
+  gcp_storage_object: "{{ gcp_storage_object }}"
+  register: r_gcp_storage_object
+  vars:
+    gcp_storage_object: 
+      scopes: "{{ gcp_storage_object_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_storage_object_service_account_contents | default(omit, True) }}"
+      src: "{{ gcp_storage_object_src | default(omit, True) }}"
+      dest: "{{ gcp_storage_object_dest | default(omit, True) }}"
+      service_account_email: "{{ gcp_storage_object_service_account_email | default(omit, True) }}"
+      bucket: "{{ gcp_storage_object_bucket | default(omit, True) }}"
+      project: "{{ gcp_storage_object_project | default(omit, True) }}"
+      state: "{{ gcp_storage_object_state | default(omit, True) }}"
+      action: "{{ gcp_storage_object_action | default(omit, True) }}"
+      service_account_file: "{{ gcp_storage_object_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_storage_object_auth_kind | default(omit, True) }}"
+      overwrite: "{{ gcp_storage_object_overwrite | default(omit, True) }}"

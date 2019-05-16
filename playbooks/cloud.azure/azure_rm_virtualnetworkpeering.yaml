@@ -1,0 +1,34 @@
+---
+- name: "module_azure_rm_virtualnetworkpeering"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_virtualnetworkpeering: 
+      profile: "{{ azure_rm_virtualnetworkpeering_profile | default(omit, True) }}"
+      virtual_network: "{{ azure_rm_virtualnetworkpeering_virtual_network | default(omit, True) }}"
+      name: "{{ azure_rm_virtualnetworkpeering_name | default(omit, True) }}"
+      resource_group: "{{ azure_rm_virtualnetworkpeering_resource_group | default(omit, True) }}"
+      state: "{{ azure_rm_virtualnetworkpeering_state | default(omit, True) }}"
+      ad_user: "{{ azure_rm_virtualnetworkpeering_ad_user | default(omit, True) }}"
+      allow_virtual_network_access: "{{ azure_rm_virtualnetworkpeering_allow_virtual_network_access | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_virtualnetworkpeering_cloud_environment | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_virtualnetworkpeering_cert_validation_mode | default(omit, True) }}"
+      use_remote_gateways: "{{ azure_rm_virtualnetworkpeering_use_remote_gateways | default(omit, True) }}"
+      secret: "{{ azure_rm_virtualnetworkpeering_secret | default(omit, True) }}"
+      remote_virtual_network: "{{ azure_rm_virtualnetworkpeering_remote_virtual_network | default(omit, True) }}"
+      client_id: "{{ azure_rm_virtualnetworkpeering_client_id | default(omit, True) }}"
+      allow_forwarded_traffic: "{{ azure_rm_virtualnetworkpeering_allow_forwarded_traffic | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_virtualnetworkpeering_adfs_authority_url | default(omit, True) }}"
+      auth_source: "{{ azure_rm_virtualnetworkpeering_auth_source | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_virtualnetworkpeering_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_virtualnetworkpeering_password | default(omit, True) }}"
+      allow_gateway_transit: "{{ azure_rm_virtualnetworkpeering_allow_gateway_transit | default(omit, True) }}"
+      tenant: "{{ azure_rm_virtualnetworkpeering_tenant | default(omit, True) }}"
+      api_profile: "{{ azure_rm_virtualnetworkpeering_api_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_virtualnetworkpeering"
+      azure_rm_virtualnetworkpeering: "{{ azure_rm_virtualnetworkpeering }}"
+      register: r_azure_rm_virtualnetworkpeering

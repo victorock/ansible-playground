@@ -1,0 +1,19 @@
+---
+- name: "module_na_ontap_portset"
+  na_ontap_portset: "{{ na_ontap_portset }}"
+  register: r_na_ontap_portset
+  vars:
+    na_ontap_portset: 
+      username: "{{ na_ontap_portset_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_portset_http_port | default(omit, True) }}"
+      force: "{{ na_ontap_portset_force | default(omit, True) }}"
+      name: "{{ na_ontap_portset_name | default(omit, True) }}"
+      type: "{{ na_ontap_portset_type | default(omit, True) }}"
+      hostname: "{{ na_ontap_portset_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_portset_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_portset_state | default(omit, True) }}"
+      https: "{{ na_ontap_portset_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_portset_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_portset_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_portset_validate_certs | default(omit, True) }}"
+      ports: "{{ na_ontap_portset_ports | default(omit, True) }}"

@@ -18,6 +18,7 @@
       timeout: "{{ zabbix_host_facts_timeout | default(omit, True) }}"
       login_password: "{{ zabbix_host_facts_login_password | default(omit, True) }}"
       validate_certs: "{{ zabbix_host_facts_validate_certs | default(omit, True) }}"
+      host_inventory: "{{ zabbix_host_facts_host_inventory | default(omit, True) }}"
   tasks:
     - name: "plugin_zabbix_host_facts"
       zabbix_host_facts: "{{ zabbix_host_facts }}"

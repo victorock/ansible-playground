@@ -1,0 +1,30 @@
+---
+- name: "module_azure_rm_postgresqlconfiguration"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_postgresqlconfiguration: 
+      profile: "{{ azure_rm_postgresqlconfiguration_profile | default(omit, True) }}"
+      name: "{{ azure_rm_postgresqlconfiguration_name | default(omit, True) }}"
+      server_name: "{{ azure_rm_postgresqlconfiguration_server_name | default(omit, True) }}"
+      ad_user: "{{ azure_rm_postgresqlconfiguration_ad_user | default(omit, True) }}"
+      resource_group: "{{ azure_rm_postgresqlconfiguration_resource_group | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_postgresqlconfiguration_cloud_environment | default(omit, True) }}"
+      state: "{{ azure_rm_postgresqlconfiguration_state | default(omit, True) }}"
+      value: "{{ azure_rm_postgresqlconfiguration_value | default(omit, True) }}"
+      secret: "{{ azure_rm_postgresqlconfiguration_secret | default(omit, True) }}"
+      client_id: "{{ azure_rm_postgresqlconfiguration_client_id | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_postgresqlconfiguration_cert_validation_mode | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_postgresqlconfiguration_adfs_authority_url | default(omit, True) }}"
+      auth_source: "{{ azure_rm_postgresqlconfiguration_auth_source | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_postgresqlconfiguration_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_postgresqlconfiguration_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_postgresqlconfiguration_tenant | default(omit, True) }}"
+      api_profile: "{{ azure_rm_postgresqlconfiguration_api_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_postgresqlconfiguration"
+      azure_rm_postgresqlconfiguration: "{{ azure_rm_postgresqlconfiguration }}"
+      register: r_azure_rm_postgresqlconfiguration

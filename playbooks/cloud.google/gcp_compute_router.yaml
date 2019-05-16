@@ -8,16 +8,17 @@
   vars:
     gcp_compute_router: 
       scopes: "{{ gcp_compute_router_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_router_service_account_contents | default(omit, True) }}"
       description: "{{ gcp_compute_router_description | default(omit, True) }}"
       project: "{{ gcp_compute_router_project | default(omit, True) }}"
       service_account_email: "{{ gcp_compute_router_service_account_email | default(omit, True) }}"
       region: "{{ gcp_compute_router_region | default(omit, True) }}"
-      name: "{{ gcp_compute_router_name | default(omit, True) }}"
       bgp: "{{ gcp_compute_router_bgp | default(omit, True) }}"
+      network: "{{ gcp_compute_router_network | default(omit, True) }}"
       state: "{{ gcp_compute_router_state | default(omit, True) }}"
       service_account_file: "{{ gcp_compute_router_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_router_auth_kind | default(omit, True) }}"
-      network: "{{ gcp_compute_router_network | default(omit, True) }}"
+      name: "{{ gcp_compute_router_name | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_compute_router"
       gcp_compute_router: "{{ gcp_compute_router }}"

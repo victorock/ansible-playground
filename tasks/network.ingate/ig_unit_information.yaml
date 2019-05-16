@@ -1,0 +1,7 @@
+---
+- name: "module_ig_unit_information"
+  ig_unit_information: "{{ ig_unit_information }}"
+  register: r_ig_unit_information
+  vars:
+    ig_unit_information: 
+      client: "{{ ig_unit_information_client | default(omit, True) }}"

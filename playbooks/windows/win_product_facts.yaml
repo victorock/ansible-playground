@@ -5,9 +5,8 @@
   # connection: Define the variable ansible_connection in the inventory
   # become: Define the variable ansible_become in the inventory
   # gather_facts: Define the variable ansible_gather_facts in the inventory
-  vars:
-    win_product_facts: 
   tasks:
-    - name: "plugin_win_product_facts"
-      win_product_facts: "{{ win_product_facts }}"
+    - name: "module_win_product_facts"
+      win_product_facts:
       register: r_win_product_facts
+

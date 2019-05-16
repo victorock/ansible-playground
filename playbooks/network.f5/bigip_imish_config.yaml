@@ -1,0 +1,34 @@
+---
+- name: "module_bigip_imish_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_imish_config: 
+      src: "{{ bigip_imish_config_src | default(omit, True) }}"
+      save_when: "{{ bigip_imish_config_save_when | default(omit, True) }}"
+      backup_options: "{{ bigip_imish_config_backup_options | default(omit, True) }}"
+      diff_against: "{{ bigip_imish_config_diff_against | default(omit, True) }}"
+      backup: "{{ bigip_imish_config_backup | default(omit, True) }}"
+      after: "{{ bigip_imish_config_after | default(omit, True) }}"
+      lines: "{{ bigip_imish_config_lines | default(omit, True) }}"
+      intended_config: "{{ bigip_imish_config_intended_config | default(omit, True) }}"
+      server: "{{ bigip_imish_config_server | default(omit, True) }}"
+      replace: "{{ bigip_imish_config_replace | default(omit, True) }}"
+      route_domain: "{{ bigip_imish_config_route_domain | default(omit, True) }}"
+      running_config: "{{ bigip_imish_config_running_config | default(omit, True) }}"
+      user: "{{ bigip_imish_config_user | default(omit, True) }}"
+      server_port: "{{ bigip_imish_config_server_port | default(omit, True) }}"
+      provider: "{{ bigip_imish_config_provider | default(omit, True) }}"
+      before: "{{ bigip_imish_config_before | default(omit, True) }}"
+      parents: "{{ bigip_imish_config_parents | default(omit, True) }}"
+      password: "{{ bigip_imish_config_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_imish_config_validate_certs | default(omit, True) }}"
+      match: "{{ bigip_imish_config_match | default(omit, True) }}"
+      diff_ignore_lines: "{{ bigip_imish_config_diff_ignore_lines | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_imish_config"
+      bigip_imish_config: "{{ bigip_imish_config }}"
+      register: r_bigip_imish_config

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_voip_profile"
+  fortios_voip_profile: "{{ fortios_voip_profile }}"
+  register: r_fortios_voip_profile
+  vars:
+    fortios_voip_profile: 
+      username: "{{ fortios_voip_profile_username | default(omit, True) }}"
+      host: "{{ fortios_voip_profile_host | default(omit, True) }}"
+      https: "{{ fortios_voip_profile_https | default(omit, True) }}"
+      voip_profile: "{{ fortios_voip_profile_voip_profile | default(omit, True) }}"
+      password: "{{ fortios_voip_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_voip_profile_vdom | default(omit, True) }}"

@@ -1,0 +1,18 @@
+---
+- name: "module_github_webhook_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    github_webhook_facts: 
+      github_url: "{{ github_webhook_facts_github_url | default(omit, True) }}"
+      token: "{{ github_webhook_facts_token | default(omit, True) }}"
+      password: "{{ github_webhook_facts_password | default(omit, True) }}"
+      user: "{{ github_webhook_facts_user | default(omit, True) }}"
+      repository: "{{ github_webhook_facts_repository | default(omit, True) }}"
+  tasks:
+    - name: "plugin_github_webhook_facts"
+      github_webhook_facts: "{{ github_webhook_facts }}"
+      register: r_github_webhook_facts

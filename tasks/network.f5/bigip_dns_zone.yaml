@@ -1,0 +1,18 @@
+---
+- name: "module_bigip_dns_zone"
+  bigip_dns_zone: "{{ bigip_dns_zone }}"
+  register: r_bigip_dns_zone
+  vars:
+    bigip_dns_zone: 
+      name: "{{ bigip_dns_zone_name | default(omit, True) }}"
+      dns_express: "{{ bigip_dns_zone_dns_express | default(omit, True) }}"
+      nameservers: "{{ bigip_dns_zone_nameservers | default(omit, True) }}"
+      partition: "{{ bigip_dns_zone_partition | default(omit, True) }}"
+      server: "{{ bigip_dns_zone_server | default(omit, True) }}"
+      tsig_server_key: "{{ bigip_dns_zone_tsig_server_key | default(omit, True) }}"
+      state: "{{ bigip_dns_zone_state | default(omit, True) }}"
+      user: "{{ bigip_dns_zone_user | default(omit, True) }}"
+      server_port: "{{ bigip_dns_zone_server_port | default(omit, True) }}"
+      provider: "{{ bigip_dns_zone_provider | default(omit, True) }}"
+      password: "{{ bigip_dns_zone_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_dns_zone_validate_certs | default(omit, True) }}"

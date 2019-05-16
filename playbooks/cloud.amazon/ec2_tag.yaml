@@ -15,6 +15,7 @@
       tags: "{{ ec2_tag_tags | default(omit, True) }}"
       purge_tags: "{{ ec2_tag_purge_tags | default(omit, True) }}"
       region: "{{ ec2_tag_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_tag_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ ec2_tag_state | default(omit, True) }}"
       ec2_url: "{{ ec2_tag_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_tag_validate_certs | default(omit, True) }}"

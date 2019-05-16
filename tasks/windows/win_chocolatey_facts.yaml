@@ -1,0 +1,4 @@
+---
+- name: "module_win_chocolatey_facts"
+  win_chocolatey_facts:
+  register: r_win_chocolatey_facts

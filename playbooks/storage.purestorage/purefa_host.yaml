@@ -8,14 +8,16 @@
   vars:
     purefa_host: 
       protocol: "{{ purefa_host_protocol | default(omit, True) }}"
-      personality: "{{ purefa_host_personality | default(omit, True) }}"
       state: "{{ purefa_host_state | default(omit, True) }}"
       volume: "{{ purefa_host_volume | default(omit, True) }}"
       host: "{{ purefa_host_host | default(omit, True) }}"
       iqn: "{{ purefa_host_iqn | default(omit, True) }}"
-      api_token: "{{ purefa_host_api_token | default(omit, True) }}"
-      fa_url: "{{ purefa_host_fa_url | default(omit, True) }}"
       wwns: "{{ purefa_host_wwns | default(omit, True) }}"
+      api_token: "{{ purefa_host_api_token | default(omit, True) }}"
+      personality: "{{ purefa_host_personality | default(omit, True) }}"
+      nqn: "{{ purefa_host_nqn | default(omit, True) }}"
+      lun: "{{ purefa_host_lun | default(omit, True) }}"
+      fa_url: "{{ purefa_host_fa_url | default(omit, True) }}"
   tasks:
     - name: "plugin_purefa_host"
       purefa_host: "{{ purefa_host }}"

@@ -1,0 +1,16 @@
+---
+- name: "module_bigip_firewall_global_rules"
+  bigip_firewall_global_rules: "{{ bigip_firewall_global_rules }}"
+  register: r_bigip_firewall_global_rules
+  vars:
+    bigip_firewall_global_rules: 
+      service_policy: "{{ bigip_firewall_global_rules_service_policy | default(omit, True) }}"
+      description: "{{ bigip_firewall_global_rules_description | default(omit, True) }}"
+      enforced_policy: "{{ bigip_firewall_global_rules_enforced_policy | default(omit, True) }}"
+      staged_policy: "{{ bigip_firewall_global_rules_staged_policy | default(omit, True) }}"
+      server: "{{ bigip_firewall_global_rules_server | default(omit, True) }}"
+      user: "{{ bigip_firewall_global_rules_user | default(omit, True) }}"
+      server_port: "{{ bigip_firewall_global_rules_server_port | default(omit, True) }}"
+      provider: "{{ bigip_firewall_global_rules_provider | default(omit, True) }}"
+      password: "{{ bigip_firewall_global_rules_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_firewall_global_rules_validate_certs | default(omit, True) }}"

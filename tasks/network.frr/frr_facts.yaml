@@ -1,0 +1,7 @@
+---
+- name: "module_frr_facts"
+  frr_facts: "{{ frr_facts }}"
+  register: r_frr_facts
+  vars:
+    frr_facts: 
+      gather_subset: "{{ frr_facts_gather_subset | default(omit, True) }}"

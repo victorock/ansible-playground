@@ -1,0 +1,25 @@
+---
+- name: "module_na_ontap_unix_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_unix_group: 
+      username: "{{ na_ontap_unix_group_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_unix_group_http_port | default(omit, True) }}"
+      name: "{{ na_ontap_unix_group_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_unix_group_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_unix_group_vserver | default(omit, True) }}"
+      skip_name_validation: "{{ na_ontap_unix_group_skip_name_validation | default(omit, True) }}"
+      state: "{{ na_ontap_unix_group_state | default(omit, True) }}"
+      https: "{{ na_ontap_unix_group_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_unix_group_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_unix_group_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_unix_group_validate_certs | default(omit, True) }}"
+      id: "{{ na_ontap_unix_group_id | default(omit, True) }}"
+  tasks:
+    - name: "plugin_na_ontap_unix_group"
+      na_ontap_unix_group: "{{ na_ontap_unix_group }}"
+      register: r_na_ontap_unix_group

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_vpn_ipsec_forticlient"
+  fortios_vpn_ipsec_forticlient: "{{ fortios_vpn_ipsec_forticlient }}"
+  register: r_fortios_vpn_ipsec_forticlient
+  vars:
+    fortios_vpn_ipsec_forticlient: 
+      username: "{{ fortios_vpn_ipsec_forticlient_username | default(omit, True) }}"
+      vpn_ipsec_forticlient: "{{ fortios_vpn_ipsec_forticlient_vpn_ipsec_forticlient | default(omit, True) }}"
+      host: "{{ fortios_vpn_ipsec_forticlient_host | default(omit, True) }}"
+      https: "{{ fortios_vpn_ipsec_forticlient_https | default(omit, True) }}"
+      password: "{{ fortios_vpn_ipsec_forticlient_password | default(omit, True) }}"
+      vdom: "{{ fortios_vpn_ipsec_forticlient_vdom | default(omit, True) }}"

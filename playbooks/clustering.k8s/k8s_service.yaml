@@ -1,0 +1,32 @@
+---
+- name: "module_k8s_service"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    k8s_service: 
+      username: "{{ k8s_service_username | default(omit, True) }}"
+      merge_type: "{{ k8s_service_merge_type | default(omit, True) }}"
+      password: "{{ k8s_service_password | default(omit, True) }}"
+      force: "{{ k8s_service_force | default(omit, True) }}"
+      name: "{{ k8s_service_name | default(omit, True) }}"
+      ca_cert: "{{ k8s_service_ca_cert | default(omit, True) }}"
+      type: "{{ k8s_service_type | default(omit, True) }}"
+      namespace: "{{ k8s_service_namespace | default(omit, True) }}"
+      state: "{{ k8s_service_state | default(omit, True) }}"
+      selector: "{{ k8s_service_selector | default(omit, True) }}"
+      ports: "{{ k8s_service_ports | default(omit, True) }}"
+      host: "{{ k8s_service_host | default(omit, True) }}"
+      context: "{{ k8s_service_context | default(omit, True) }}"
+      kubeconfig: "{{ k8s_service_kubeconfig | default(omit, True) }}"
+      resource_definition: "{{ k8s_service_resource_definition | default(omit, True) }}"
+      api_key: "{{ k8s_service_api_key | default(omit, True) }}"
+      validate_certs: "{{ k8s_service_validate_certs | default(omit, True) }}"
+      client_cert: "{{ k8s_service_client_cert | default(omit, True) }}"
+      client_key: "{{ k8s_service_client_key | default(omit, True) }}"
+  tasks:
+    - name: "plugin_k8s_service"
+      k8s_service: "{{ k8s_service }}"
+      register: r_k8s_service

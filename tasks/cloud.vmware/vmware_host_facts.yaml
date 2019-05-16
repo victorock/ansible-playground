@@ -5,7 +5,8 @@
   vars:
     vmware_host_facts: 
       username: "{{ vmware_host_facts_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_facts_hostname | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_facts_esxi_hostname | default(omit, True) }}"
       password: "{{ vmware_host_facts_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_facts_validate_certs | default(omit, True) }}"
-      hostname: "{{ vmware_host_facts_hostname | default(omit, True) }}"
       port: "{{ vmware_host_facts_port | default(omit, True) }}"

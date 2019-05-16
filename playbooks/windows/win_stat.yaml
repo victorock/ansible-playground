@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_stat: 
-      path: "{{ win_stat_path | default(omit, True) }}"
-      get_md5: "{{ win_stat_get_md5 | default(omit, True) }}"
-      get_checksum: "{{ win_stat_get_checksum | default(omit, True) }}"
       checksum_algorithm: "{{ win_stat_checksum_algorithm | default(omit, True) }}"
+      get_md5: "{{ win_stat_get_md5 | default(omit, True) }}"
+      follow: "{{ win_stat_follow | default(omit, True) }}"
+      get_checksum: "{{ win_stat_get_checksum | default(omit, True) }}"
+      path: "{{ win_stat_path | default(omit, True) }}"
   tasks:
     - name: "plugin_win_stat"
       win_stat: "{{ win_stat }}"

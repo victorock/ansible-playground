@@ -1,0 +1,15 @@
+---
+- name: "module_cnos_static_route"
+  cnos_static_route: "{{ cnos_static_route }}"
+  register: r_cnos_static_route
+  vars:
+    cnos_static_route: 
+      description: "{{ cnos_static_route_description | default(omit, True) }}"
+      mask: "{{ cnos_static_route_mask | default(omit, True) }}"
+      tag: "{{ cnos_static_route_tag | default(omit, True) }}"
+      prefix: "{{ cnos_static_route_prefix | default(omit, True) }}"
+      admin_distance: "{{ cnos_static_route_admin_distance | default(omit, True) }}"
+      aggregate: "{{ cnos_static_route_aggregate | default(omit, True) }}"
+      state: "{{ cnos_static_route_state | default(omit, True) }}"
+      next_hop: "{{ cnos_static_route_next_hop | default(omit, True) }}"
+      interface: "{{ cnos_static_route_interface | default(omit, True) }}"

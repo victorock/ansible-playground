@@ -1,0 +1,16 @@
+---
+- name: "module_intersight_rest_api"
+  intersight_rest_api: "{{ intersight_rest_api }}"
+  register: r_intersight_rest_api
+  vars:
+    intersight_rest_api: 
+      api_uri: "{{ intersight_rest_api_api_uri | default(omit, True) }}"
+      query_params: "{{ intersight_rest_api_query_params | default(omit, True) }}"
+      use_proxy: "{{ intersight_rest_api_use_proxy | default(omit, True) }}"
+      api_private_key: "{{ intersight_rest_api_api_private_key | default(omit, True) }}"
+      update_method: "{{ intersight_rest_api_update_method | default(omit, True) }}"
+      state: "{{ intersight_rest_api_state | default(omit, True) }}"
+      resource_path: "{{ intersight_rest_api_resource_path | default(omit, True) }}"
+      api_key_id: "{{ intersight_rest_api_api_key_id | default(omit, True) }}"
+      api_body: "{{ intersight_rest_api_api_body | default(omit, True) }}"
+      validate_certs: "{{ intersight_rest_api_validate_certs | default(omit, True) }}"

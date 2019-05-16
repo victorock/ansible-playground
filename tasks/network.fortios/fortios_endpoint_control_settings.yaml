@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_endpoint_control_settings"
+  fortios_endpoint_control_settings: "{{ fortios_endpoint_control_settings }}"
+  register: r_fortios_endpoint_control_settings
+  vars:
+    fortios_endpoint_control_settings: 
+      username: "{{ fortios_endpoint_control_settings_username | default(omit, True) }}"
+      endpoint_control_settings: "{{ fortios_endpoint_control_settings_endpoint_control_settings | default(omit, True) }}"
+      host: "{{ fortios_endpoint_control_settings_host | default(omit, True) }}"
+      https: "{{ fortios_endpoint_control_settings_https | default(omit, True) }}"
+      password: "{{ fortios_endpoint_control_settings_password | default(omit, True) }}"
+      vdom: "{{ fortios_endpoint_control_settings_vdom | default(omit, True) }}"

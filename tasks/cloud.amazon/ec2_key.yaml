@@ -11,6 +11,7 @@
       name: "{{ ec2_key_name | default(omit, True) }}"
       security_token: "{{ ec2_key_security_token | default(omit, True) }}"
       region: "{{ ec2_key_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_key_debug_botocore_endpoint_logs | default(omit, True) }}"
       key_material: "{{ ec2_key_key_material | default(omit, True) }}"
       state: "{{ ec2_key_state | default(omit, True) }}"
       wait_timeout: "{{ ec2_key_wait_timeout | default(omit, True) }}"

@@ -10,3 +10,4 @@
       timeout: "{{ nso_show_timeout | default(omit, True) }}"
       path: "{{ nso_show_path | default(omit, True) }}"
       password: "{{ nso_show_password | default(omit, True) }}"
+      validate_certs: "{{ nso_show_validate_certs | default(omit, True) }}"

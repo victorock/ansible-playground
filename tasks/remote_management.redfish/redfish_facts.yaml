@@ -5,7 +5,8 @@
   vars:
     redfish_facts: 
       category: "{{ redfish_facts_category | default(omit, True) }}"
+      username: "{{ redfish_facts_username | default(omit, True) }}"
       baseuri: "{{ redfish_facts_baseuri | default(omit, True) }}"
-      password: "{{ redfish_facts_password | default(omit, True) }}"
       command: "{{ redfish_facts_command | default(omit, True) }}"
-      user: "{{ redfish_facts_user | default(omit, True) }}"
+      timeout: "{{ redfish_facts_timeout | default(omit, True) }}"
+      password: "{{ redfish_facts_password | default(omit, True) }}"

@@ -5,8 +5,9 @@
   vars:
     sros_config: 
       src: "{{ sros_config_src | default(omit, True) }}"
+      backup_options: "{{ sros_config_backup_options | default(omit, True) }}"
       force: "{{ sros_config_force | default(omit, True) }}"
-      backup: "{{ sros_config_backup | default(omit, True) }}"
+      config: "{{ sros_config_config | default(omit, True) }}"
       after: "{{ sros_config_after | default(omit, True) }}"
       lines: "{{ sros_config_lines | default(omit, True) }}"
       replace: "{{ sros_config_replace | default(omit, True) }}"
@@ -14,6 +15,6 @@
       defaults: "{{ sros_config_defaults | default(omit, True) }}"
       provider: "{{ sros_config_provider | default(omit, True) }}"
       save: "{{ sros_config_save | default(omit, True) }}"
-      config: "{{ sros_config_config | default(omit, True) }}"
+      backup: "{{ sros_config_backup | default(omit, True) }}"
       match: "{{ sros_config_match | default(omit, True) }}"
       before: "{{ sros_config_before | default(omit, True) }}"

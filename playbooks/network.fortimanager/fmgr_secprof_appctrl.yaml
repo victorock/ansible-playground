@@ -1,0 +1,52 @@
+---
+- name: "module_fmgr_secprof_appctrl"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_secprof_appctrl: 
+      comment: "{{ fmgr_secprof_appctrl_comment | default(omit, True) }}"
+      entries_popularity: "{{ fmgr_secprof_appctrl_entries_popularity | default(omit, True) }}"
+      entries_log: "{{ fmgr_secprof_appctrl_entries_log | default(omit, True) }}"
+      extended_log: "{{ fmgr_secprof_appctrl_extended_log | default(omit, True) }}"
+      deep_app_inspection: "{{ fmgr_secprof_appctrl_deep_app_inspection | default(omit, True) }}"
+      entries_sub_category: "{{ fmgr_secprof_appctrl_entries_sub_category | default(omit, True) }}"
+      entries_protocols: "{{ fmgr_secprof_appctrl_entries_protocols | default(omit, True) }}"
+      entries_rate_mode: "{{ fmgr_secprof_appctrl_entries_rate_mode | default(omit, True) }}"
+      entries_shaper: "{{ fmgr_secprof_appctrl_entries_shaper | default(omit, True) }}"
+      entries_action: "{{ fmgr_secprof_appctrl_entries_action | default(omit, True) }}"
+      replacemsg_group: "{{ fmgr_secprof_appctrl_replacemsg_group | default(omit, True) }}"
+      unknown_application_log: "{{ fmgr_secprof_appctrl_unknown_application_log | default(omit, True) }}"
+      unknown_application_action: "{{ fmgr_secprof_appctrl_unknown_application_action | default(omit, True) }}"
+      entries_quarantine: "{{ fmgr_secprof_appctrl_entries_quarantine | default(omit, True) }}"
+      entries_category: "{{ fmgr_secprof_appctrl_entries_category | default(omit, True) }}"
+      adom: "{{ fmgr_secprof_appctrl_adom | default(omit, True) }}"
+      entries_application: "{{ fmgr_secprof_appctrl_entries_application | default(omit, True) }}"
+      app_replacemsg: "{{ fmgr_secprof_appctrl_app_replacemsg | default(omit, True) }}"
+      other_application_log: "{{ fmgr_secprof_appctrl_other_application_log | default(omit, True) }}"
+      entries_behavior: "{{ fmgr_secprof_appctrl_entries_behavior | default(omit, True) }}"
+      entries_vendor: "{{ fmgr_secprof_appctrl_entries_vendor | default(omit, True) }}"
+      entries_per_ip_shaper: "{{ fmgr_secprof_appctrl_entries_per_ip_shaper | default(omit, True) }}"
+      entries_shaper_reverse: "{{ fmgr_secprof_appctrl_entries_shaper_reverse | default(omit, True) }}"
+      entries_rate_count: "{{ fmgr_secprof_appctrl_entries_rate_count | default(omit, True) }}"
+      entries_risk: "{{ fmgr_secprof_appctrl_entries_risk | default(omit, True) }}"
+      entries_log_packet: "{{ fmgr_secprof_appctrl_entries_log_packet | default(omit, True) }}"
+      entries_quarantine_expiry: "{{ fmgr_secprof_appctrl_entries_quarantine_expiry | default(omit, True) }}"
+      entries_quarantine_log: "{{ fmgr_secprof_appctrl_entries_quarantine_log | default(omit, True) }}"
+      entries: "{{ fmgr_secprof_appctrl_entries | default(omit, True) }}"
+      entries_technology: "{{ fmgr_secprof_appctrl_entries_technology | default(omit, True) }}"
+      name: "{{ fmgr_secprof_appctrl_name | default(omit, True) }}"
+      other_application_action: "{{ fmgr_secprof_appctrl_other_application_action | default(omit, True) }}"
+      p2p_black_list: "{{ fmgr_secprof_appctrl_p2p_black_list | default(omit, True) }}"
+      entries_parameters_value: "{{ fmgr_secprof_appctrl_entries_parameters_value | default(omit, True) }}"
+      entries_session_ttl: "{{ fmgr_secprof_appctrl_entries_session_ttl | default(omit, True) }}"
+      entries_rate_track: "{{ fmgr_secprof_appctrl_entries_rate_track | default(omit, True) }}"
+      mode: "{{ fmgr_secprof_appctrl_mode | default(omit, True) }}"
+      options: "{{ fmgr_secprof_appctrl_options | default(omit, True) }}"
+      entries_rate_duration: "{{ fmgr_secprof_appctrl_entries_rate_duration | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fmgr_secprof_appctrl"
+      fmgr_secprof_appctrl: "{{ fmgr_secprof_appctrl }}"
+      register: r_fmgr_secprof_appctrl

@@ -1,0 +1,25 @@
+---
+- name: "module_vmware_vcenter_settings"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_vcenter_settings: 
+      username: "{{ vmware_vcenter_settings_username | default(omit, True) }}"
+      user_directory: "{{ vmware_vcenter_settings_user_directory | default(omit, True) }}"
+      database: "{{ vmware_vcenter_settings_database | default(omit, True) }}"
+      hostname: "{{ vmware_vcenter_settings_hostname | default(omit, True) }}"
+      snmp_receivers: "{{ vmware_vcenter_settings_snmp_receivers | default(omit, True) }}"
+      timeout_settings: "{{ vmware_vcenter_settings_timeout_settings | default(omit, True) }}"
+      runtime_settings: "{{ vmware_vcenter_settings_runtime_settings | default(omit, True) }}"
+      logging_options: "{{ vmware_vcenter_settings_logging_options | default(omit, True) }}"
+      mail: "{{ vmware_vcenter_settings_mail | default(omit, True) }}"
+      password: "{{ vmware_vcenter_settings_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vcenter_settings_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vcenter_settings_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_vcenter_settings"
+      vmware_vcenter_settings: "{{ vmware_vcenter_settings }}"
+      register: r_vmware_vcenter_settings

@@ -1,0 +1,17 @@
+---
+- name: "module_win_psrepository"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_psrepository: 
+      source: "{{ win_psrepository_source | default(omit, True) }}"
+      state: "{{ win_psrepository_state | default(omit, True) }}"
+      name: "{{ win_psrepository_name | default(omit, True) }}"
+      installation_policy: "{{ win_psrepository_installation_policy | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_psrepository"
+      win_psrepository: "{{ win_psrepository }}"
+      register: r_win_psrepository

@@ -8,12 +8,13 @@
   vars:
     gcp_sql_user: 
       scopes: "{{ gcp_sql_user_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_sql_user_service_account_contents | default(omit, True) }}"
       name: "{{ gcp_sql_user_name | default(omit, True) }}"
       service_account_email: "{{ gcp_sql_user_service_account_email | default(omit, True) }}"
-      host: "{{ gcp_sql_user_host | default(omit, True) }}"
+      state: "{{ gcp_sql_user_state | default(omit, True) }}"
       project: "{{ gcp_sql_user_project | default(omit, True) }}"
       instance: "{{ gcp_sql_user_instance | default(omit, True) }}"
-      state: "{{ gcp_sql_user_state | default(omit, True) }}"
+      host: "{{ gcp_sql_user_host | default(omit, True) }}"
       service_account_file: "{{ gcp_sql_user_service_account_file | default(omit, True) }}"
       password: "{{ gcp_sql_user_password | default(omit, True) }}"
       auth_kind: "{{ gcp_sql_user_auth_kind | default(omit, True) }}"

@@ -15,6 +15,7 @@
       state: "{{ na_ontap_net_vlan_state | default(omit, True) }}"
       https: "{{ na_ontap_net_vlan_https | default(omit, True) }}"
       parent_interface: "{{ na_ontap_net_vlan_parent_interface | default(omit, True) }}"
+      ontapi: "{{ na_ontap_net_vlan_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_net_vlan_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_net_vlan_validate_certs | default(omit, True) }}"
   tasks:

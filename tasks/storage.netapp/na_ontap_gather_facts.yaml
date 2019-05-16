@@ -8,6 +8,8 @@
       http_port: "{{ na_ontap_gather_facts_http_port | default(omit, True) }}"
       hostname: "{{ na_ontap_gather_facts_hostname | default(omit, True) }}"
       state: "{{ na_ontap_gather_facts_state | default(omit, True) }}"
+      gather_subset: "{{ na_ontap_gather_facts_gather_subset | default(omit, True) }}"
       https: "{{ na_ontap_gather_facts_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_gather_facts_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_gather_facts_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_gather_facts_validate_certs | default(omit, True) }}"

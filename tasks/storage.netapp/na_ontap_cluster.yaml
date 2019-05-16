@@ -5,14 +5,15 @@
   vars:
     na_ontap_cluster: 
       username: "{{ na_ontap_cluster_username | default(omit, True) }}"
+      password: "{{ na_ontap_cluster_password | default(omit, True) }}"
       node_serial_number: "{{ na_ontap_cluster_node_serial_number | default(omit, True) }}"
       license_code: "{{ na_ontap_cluster_license_code | default(omit, True) }}"
       cluster_ip_address: "{{ na_ontap_cluster_cluster_ip_address | default(omit, True) }}"
       hostname: "{{ na_ontap_cluster_hostname | default(omit, True) }}"
-      state: "{{ na_ontap_cluster_state | default(omit, True) }}"
       cluster_name: "{{ na_ontap_cluster_cluster_name | default(omit, True) }}"
-      license_package: "{{ na_ontap_cluster_license_package | default(omit, True) }}"
+      state: "{{ na_ontap_cluster_state | default(omit, True) }}"
       http_port: "{{ na_ontap_cluster_http_port | default(omit, True) }}"
       https: "{{ na_ontap_cluster_https | default(omit, True) }}"
-      password: "{{ na_ontap_cluster_password | default(omit, True) }}"
+      ontapi: "{{ na_ontap_cluster_ontapi | default(omit, True) }}"
+      license_package: "{{ na_ontap_cluster_license_package | default(omit, True) }}"
       validate_certs: "{{ na_ontap_cluster_validate_certs | default(omit, True) }}"

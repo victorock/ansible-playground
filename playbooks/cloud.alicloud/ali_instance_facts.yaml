@@ -1,0 +1,21 @@
+---
+- name: "module_ali_instance_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ali_instance_facts: 
+      availability_zone: "{{ ali_instance_facts_availability_zone | default(omit, True) }}"
+      instance_names: "{{ ali_instance_facts_instance_names | default(omit, True) }}"
+      instance_ids: "{{ ali_instance_facts_instance_ids | default(omit, True) }}"
+      alicloud_region: "{{ ali_instance_facts_alicloud_region | default(omit, True) }}"
+      alicloud_secret_key: "{{ ali_instance_facts_alicloud_secret_key | default(omit, True) }}"
+      alicloud_access_key: "{{ ali_instance_facts_alicloud_access_key | default(omit, True) }}"
+      alicloud_security_token: "{{ ali_instance_facts_alicloud_security_token | default(omit, True) }}"
+      instance_tags: "{{ ali_instance_facts_instance_tags | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ali_instance_facts"
+      ali_instance_facts: "{{ ali_instance_facts }}"
+      register: r_ali_instance_facts

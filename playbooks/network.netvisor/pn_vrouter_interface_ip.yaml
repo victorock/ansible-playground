@@ -1,0 +1,21 @@
+---
+- name: "module_pn_vrouter_interface_ip"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_vrouter_interface_ip: 
+      pn_bd: "{{ pn_vrouter_interface_ip_pn_bd | default(omit, True) }}"
+      pn_vrouter_name: "{{ pn_vrouter_interface_ip_pn_vrouter_name | default(omit, True) }}"
+      pn_ip: "{{ pn_vrouter_interface_ip_pn_ip | default(omit, True) }}"
+      pn_vnet: "{{ pn_vrouter_interface_ip_pn_vnet | default(omit, True) }}"
+      state: "{{ pn_vrouter_interface_ip_state | default(omit, True) }}"
+      pn_netmask: "{{ pn_vrouter_interface_ip_pn_netmask | default(omit, True) }}"
+      pn_nic: "{{ pn_vrouter_interface_ip_pn_nic | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_vrouter_interface_ip_pn_cliswitch | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_vrouter_interface_ip"
+      pn_vrouter_interface_ip: "{{ pn_vrouter_interface_ip }}"
+      register: r_pn_vrouter_interface_ip

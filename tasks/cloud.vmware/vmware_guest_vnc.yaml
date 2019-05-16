@@ -1,0 +1,20 @@
+---
+- name: "module_vmware_guest_vnc"
+  vmware_guest_vnc: "{{ vmware_guest_vnc }}"
+  register: r_vmware_guest_vnc
+  vars:
+    vmware_guest_vnc: 
+      username: "{{ vmware_guest_vnc_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_vnc_datacenter | default(omit, True) }}"
+      hostname: "{{ vmware_guest_vnc_hostname | default(omit, True) }}"
+      name: "{{ vmware_guest_vnc_name | default(omit, True) }}"
+      vnc_port: "{{ vmware_guest_vnc_vnc_port | default(omit, True) }}"
+      vnc_password: "{{ vmware_guest_vnc_vnc_password | default(omit, True) }}"
+      state: "{{ vmware_guest_vnc_state | default(omit, True) }}"
+      vnc_ip: "{{ vmware_guest_vnc_vnc_ip | default(omit, True) }}"
+      name_match: "{{ vmware_guest_vnc_name_match | default(omit, True) }}"
+      folder: "{{ vmware_guest_vnc_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_vnc_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_vnc_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_vnc_port | default(omit, True) }}"
+      uuid: "{{ vmware_guest_vnc_uuid | default(omit, True) }}"

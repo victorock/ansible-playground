@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_log_syslogd_setting"
+  fortios_log_syslogd_setting: "{{ fortios_log_syslogd_setting }}"
+  register: r_fortios_log_syslogd_setting
+  vars:
+    fortios_log_syslogd_setting: 
+      username: "{{ fortios_log_syslogd_setting_username | default(omit, True) }}"
+      log_syslogd_setting: "{{ fortios_log_syslogd_setting_log_syslogd_setting | default(omit, True) }}"
+      host: "{{ fortios_log_syslogd_setting_host | default(omit, True) }}"
+      https: "{{ fortios_log_syslogd_setting_https | default(omit, True) }}"
+      password: "{{ fortios_log_syslogd_setting_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_syslogd_setting_vdom | default(omit, True) }}"

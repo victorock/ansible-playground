@@ -1,0 +1,40 @@
+---
+- name: "module_utm_proxy_frontend"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_proxy_frontend: 
+      comment: "{{ utm_proxy_frontend_comment | default(omit, True) }}"
+      utm_host: "{{ utm_proxy_frontend_utm_host | default(omit, True) }}"
+      domain: "{{ utm_proxy_frontend_domain | default(omit, True) }}"
+      implicitredirect: "{{ utm_proxy_frontend_implicitredirect | default(omit, True) }}"
+      locations: "{{ utm_proxy_frontend_locations | default(omit, True) }}"
+      preservehost: "{{ utm_proxy_frontend_preservehost | default(omit, True) }}"
+      port: "{{ utm_proxy_frontend_port | default(omit, True) }}"
+      htmlrewrite: "{{ utm_proxy_frontend_htmlrewrite | default(omit, True) }}"
+      certificate: "{{ utm_proxy_frontend_certificate | default(omit, True) }}"
+      state: "{{ utm_proxy_frontend_state | default(omit, True) }}"
+      add_content_type_header: "{{ utm_proxy_frontend_add_content_type_header | default(omit, True) }}"
+      htmlrewrite_cookies: "{{ utm_proxy_frontend_htmlrewrite_cookies | default(omit, True) }}"
+      type: "{{ utm_proxy_frontend_type | default(omit, True) }}"
+      lbmethod: "{{ utm_proxy_frontend_lbmethod | default(omit, True) }}"
+      status: "{{ utm_proxy_frontend_status | default(omit, True) }}"
+      utm_token: "{{ utm_proxy_frontend_utm_token | default(omit, True) }}"
+      disable_compression: "{{ utm_proxy_frontend_disable_compression | default(omit, True) }}"
+      profile: "{{ utm_proxy_frontend_profile | default(omit, True) }}"
+      address: "{{ utm_proxy_frontend_address | default(omit, True) }}"
+      allowed_networks: "{{ utm_proxy_frontend_allowed_networks | default(omit, True) }}"
+      name: "{{ utm_proxy_frontend_name | default(omit, True) }}"
+      xheaders: "{{ utm_proxy_frontend_xheaders | default(omit, True) }}"
+      utm_protocol: "{{ utm_proxy_frontend_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_proxy_frontend_headers | default(omit, True) }}"
+      exceptions: "{{ utm_proxy_frontend_exceptions | default(omit, True) }}"
+      validate_certs: "{{ utm_proxy_frontend_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_proxy_frontend_utm_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_proxy_frontend"
+      utm_proxy_frontend: "{{ utm_proxy_frontend }}"
+      register: r_utm_proxy_frontend

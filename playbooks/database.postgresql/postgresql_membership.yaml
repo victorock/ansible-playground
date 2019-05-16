@@ -1,0 +1,26 @@
+---
+- name: "module_postgresql_membership"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_membership: 
+      ssl_mode: "{{ postgresql_membership_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_membership_ca_cert | default(omit, True) }}"
+      login_user: "{{ postgresql_membership_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_membership_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_membership_session_role | default(omit, True) }}"
+      db: "{{ postgresql_membership_db | default(omit, True) }}"
+      target_roles: "{{ postgresql_membership_target_roles | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_membership_login_unix_socket | default(omit, True) }}"
+      state: "{{ postgresql_membership_state | default(omit, True) }}"
+      groups: "{{ postgresql_membership_groups | default(omit, True) }}"
+      login_password: "{{ postgresql_membership_login_password | default(omit, True) }}"
+      fail_on_role: "{{ postgresql_membership_fail_on_role | default(omit, True) }}"
+      port: "{{ postgresql_membership_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_postgresql_membership"
+      postgresql_membership: "{{ postgresql_membership }}"
+      register: r_postgresql_membership

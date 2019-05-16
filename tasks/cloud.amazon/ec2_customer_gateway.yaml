@@ -12,6 +12,7 @@
       validate_certs: "{{ ec2_customer_gateway_validate_certs | default(omit, True) }}"
       region: "{{ ec2_customer_gateway_region | default(omit, True) }}"
       ec2_url: "{{ ec2_customer_gateway_ec2_url | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_customer_gateway_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ ec2_customer_gateway_state | default(omit, True) }}"
       routing: "{{ ec2_customer_gateway_routing | default(omit, True) }}"
       bgp_asn: "{{ ec2_customer_gateway_bgp_asn | default(omit, True) }}"

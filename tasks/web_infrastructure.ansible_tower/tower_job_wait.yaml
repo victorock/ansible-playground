@@ -12,4 +12,4 @@
       timeout: "{{ tower_job_wait_timeout | default(omit, True) }}"
       tower_password: "{{ tower_job_wait_tower_password | default(omit, True) }}"
       tower_config_file: "{{ tower_job_wait_tower_config_file | default(omit, True) }}"
-      tower_verify_ssl: "{{ tower_job_wait_tower_verify_ssl | default(omit, True) }}"
+      validate_certs: "{{ tower_job_wait_validate_certs | default(omit, True) }}"

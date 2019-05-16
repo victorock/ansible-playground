@@ -1,0 +1,31 @@
+---
+- name: "module_mso_schema_site_vrf_region_cidr_subnet"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_schema_site_vrf_region_cidr_subnet: 
+      username: "{{ mso_schema_site_vrf_region_cidr_subnet_username | default(omit, True) }}"
+      subnet: "{{ mso_schema_site_vrf_region_cidr_subnet_subnet | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_site_vrf_region_cidr_subnet_use_proxy | default(omit, True) }}"
+      zone: "{{ mso_schema_site_vrf_region_cidr_subnet_zone | default(omit, True) }}"
+      region: "{{ mso_schema_site_vrf_region_cidr_subnet_region | default(omit, True) }}"
+      site: "{{ mso_schema_site_vrf_region_cidr_subnet_site | default(omit, True) }}"
+      template: "{{ mso_schema_site_vrf_region_cidr_subnet_template | default(omit, True) }}"
+      output_level: "{{ mso_schema_site_vrf_region_cidr_subnet_output_level | default(omit, True) }}"
+      state: "{{ mso_schema_site_vrf_region_cidr_subnet_state | default(omit, True) }}"
+      vrf: "{{ mso_schema_site_vrf_region_cidr_subnet_vrf | default(omit, True) }}"
+      timeout: "{{ mso_schema_site_vrf_region_cidr_subnet_timeout | default(omit, True) }}"
+      host: "{{ mso_schema_site_vrf_region_cidr_subnet_host | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_site_vrf_region_cidr_subnet_use_ssl | default(omit, True) }}"
+      cidr: "{{ mso_schema_site_vrf_region_cidr_subnet_cidr | default(omit, True) }}"
+      password: "{{ mso_schema_site_vrf_region_cidr_subnet_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_site_vrf_region_cidr_subnet_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_site_vrf_region_cidr_subnet_port | default(omit, True) }}"
+      schema: "{{ mso_schema_site_vrf_region_cidr_subnet_schema | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_schema_site_vrf_region_cidr_subnet"
+      mso_schema_site_vrf_region_cidr_subnet: "{{ mso_schema_site_vrf_region_cidr_subnet }}"
+      register: r_mso_schema_site_vrf_region_cidr_subnet

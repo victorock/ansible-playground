@@ -1,0 +1,31 @@
+---
+- name: "module_azure_rm_applicationsecuritygroup"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_applicationsecuritygroup: 
+      profile: "{{ azure_rm_applicationsecuritygroup_profile | default(omit, True) }}"
+      name: "{{ azure_rm_applicationsecuritygroup_name | default(omit, True) }}"
+      resource_group: "{{ azure_rm_applicationsecuritygroup_resource_group | default(omit, True) }}"
+      tags: "{{ azure_rm_applicationsecuritygroup_tags | default(omit, True) }}"
+      ad_user: "{{ azure_rm_applicationsecuritygroup_ad_user | default(omit, True) }}"
+      append_tags: "{{ azure_rm_applicationsecuritygroup_append_tags | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_applicationsecuritygroup_cloud_environment | default(omit, True) }}"
+      secret: "{{ azure_rm_applicationsecuritygroup_secret | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_applicationsecuritygroup_cert_validation_mode | default(omit, True) }}"
+      state: "{{ azure_rm_applicationsecuritygroup_state | default(omit, True) }}"
+      location: "{{ azure_rm_applicationsecuritygroup_location | default(omit, True) }}"
+      client_id: "{{ azure_rm_applicationsecuritygroup_client_id | default(omit, True) }}"
+      auth_source: "{{ azure_rm_applicationsecuritygroup_auth_source | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_applicationsecuritygroup_adfs_authority_url | default(omit, True) }}"
+      api_profile: "{{ azure_rm_applicationsecuritygroup_api_profile | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_applicationsecuritygroup_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_applicationsecuritygroup_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_applicationsecuritygroup_tenant | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_applicationsecuritygroup"
+      azure_rm_applicationsecuritygroup: "{{ azure_rm_applicationsecuritygroup }}"
+      register: r_azure_rm_applicationsecuritygroup

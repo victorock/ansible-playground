@@ -1,0 +1,25 @@
+---
+- name: "module_purefa_offload"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefa_offload: 
+      access_key: "{{ purefa_offload_access_key | default(omit, True) }}"
+      protocol: "{{ purefa_offload_protocol | default(omit, True) }}"
+      name: "{{ purefa_offload_name | default(omit, True) }}"
+      bucket: "{{ purefa_offload_bucket | default(omit, True) }}"
+      api_token: "{{ purefa_offload_api_token | default(omit, True) }}"
+      share: "{{ purefa_offload_share | default(omit, True) }}"
+      secret: "{{ purefa_offload_secret | default(omit, True) }}"
+      state: "{{ purefa_offload_state | default(omit, True) }}"
+      address: "{{ purefa_offload_address | default(omit, True) }}"
+      initialize: "{{ purefa_offload_initialize | default(omit, True) }}"
+      options: "{{ purefa_offload_options | default(omit, True) }}"
+      fa_url: "{{ purefa_offload_fa_url | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefa_offload"
+      purefa_offload: "{{ purefa_offload }}"
+      register: r_purefa_offload

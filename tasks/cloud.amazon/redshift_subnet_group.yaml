@@ -10,6 +10,7 @@
       security_token: "{{ redshift_subnet_group_security_token | default(omit, True) }}"
       region: "{{ redshift_subnet_group_region | default(omit, True) }}"
       ec2_url: "{{ redshift_subnet_group_ec2_url | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ redshift_subnet_group_debug_botocore_endpoint_logs | default(omit, True) }}"
       group_name: "{{ redshift_subnet_group_group_name | default(omit, True) }}"
       state: "{{ redshift_subnet_group_state | default(omit, True) }}"
       group_subnets: "{{ redshift_subnet_group_group_subnets | default(omit, True) }}"

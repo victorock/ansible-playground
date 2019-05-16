@@ -15,6 +15,7 @@
       security_token: "{{ elasticache_snapshot_security_token | default(omit, True) }}"
       region: "{{ elasticache_snapshot_region | default(omit, True) }}"
       bucket: "{{ elasticache_snapshot_bucket | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ elasticache_snapshot_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ elasticache_snapshot_state | default(omit, True) }}"
       cluster_id: "{{ elasticache_snapshot_cluster_id | default(omit, True) }}"
       ec2_url: "{{ elasticache_snapshot_ec2_url | default(omit, True) }}"

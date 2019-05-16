@@ -1,0 +1,7 @@
+---
+- name: "module_gather_facts"
+  gather_facts: "{{ gather_facts }}"
+  register: r_gather_facts
+  vars:
+    gather_facts: 
+      parallel: "{{ gather_facts_parallel | default(omit, True) }}"

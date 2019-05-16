@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_ips_urlfilter_cache_setting"
+  fortios_webfilter_ips_urlfilter_cache_setting: "{{ fortios_webfilter_ips_urlfilter_cache_setting }}"
+  register: r_fortios_webfilter_ips_urlfilter_cache_setting
+  vars:
+    fortios_webfilter_ips_urlfilter_cache_setting: 
+      username: "{{ fortios_webfilter_ips_urlfilter_cache_setting_username | default(omit, True) }}"
+      webfilter_ips_urlfilter_cache_setting: "{{ fortios_webfilter_ips_urlfilter_cache_setting_webfilter_ips_urlfilter_cache_setting | default(omit, True) }}"
+      host: "{{ fortios_webfilter_ips_urlfilter_cache_setting_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_ips_urlfilter_cache_setting_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_ips_urlfilter_cache_setting_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_ips_urlfilter_cache_setting_vdom | default(omit, True) }}"

@@ -13,7 +13,7 @@
       tower_username: "{{ tower_settings_tower_username | default(omit, True) }}"
       tower_password: "{{ tower_settings_tower_password | default(omit, True) }}"
       tower_config_file: "{{ tower_settings_tower_config_file | default(omit, True) }}"
-      tower_verify_ssl: "{{ tower_settings_tower_verify_ssl | default(omit, True) }}"
+      validate_certs: "{{ tower_settings_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_tower_settings"
       tower_settings: "{{ tower_settings }}"

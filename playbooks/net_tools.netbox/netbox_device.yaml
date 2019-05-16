@@ -1,0 +1,18 @@
+---
+- name: "module_netbox_device"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netbox_device: 
+      data: "{{ netbox_device_data | default(omit, True) }}"
+      state: "{{ netbox_device_state | default(omit, True) }}"
+      netbox_url: "{{ netbox_device_netbox_url | default(omit, True) }}"
+      netbox_token: "{{ netbox_device_netbox_token | default(omit, True) }}"
+      validate_certs: "{{ netbox_device_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_netbox_device"
+      netbox_device: "{{ netbox_device }}"
+      register: r_netbox_device

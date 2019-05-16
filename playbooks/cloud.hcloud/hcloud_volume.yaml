@@ -1,0 +1,24 @@
+---
+- name: "module_hcloud_volume"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hcloud_volume: 
+      endpoint: "{{ hcloud_volume_endpoint | default(omit, True) }}"
+      name: "{{ hcloud_volume_name | default(omit, True) }}"
+      format: "{{ hcloud_volume_format | default(omit, True) }}"
+      automount: "{{ hcloud_volume_automount | default(omit, True) }}"
+      labels: "{{ hcloud_volume_labels | default(omit, True) }}"
+      server: "{{ hcloud_volume_server | default(omit, True) }}"
+      state: "{{ hcloud_volume_state | default(omit, True) }}"
+      location: "{{ hcloud_volume_location | default(omit, True) }}"
+      api_token: "{{ hcloud_volume_api_token | default(omit, True) }}"
+      id: "{{ hcloud_volume_id | default(omit, True) }}"
+      size: "{{ hcloud_volume_size | default(omit, True) }}"
+  tasks:
+    - name: "plugin_hcloud_volume"
+      hcloud_volume: "{{ hcloud_volume }}"
+      register: r_hcloud_volume

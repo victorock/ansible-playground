@@ -1,0 +1,18 @@
+---
+- name: "module_github_webhook"
+  github_webhook: "{{ github_webhook }}"
+  register: r_github_webhook
+  vars:
+    github_webhook: 
+      repository: "{{ github_webhook_repository | default(omit, True) }}"
+      github_url: "{{ github_webhook_github_url | default(omit, True) }}"
+      url: "{{ github_webhook_url | default(omit, True) }}"
+      state: "{{ github_webhook_state | default(omit, True) }}"
+      insecure_ssl: "{{ github_webhook_insecure_ssl | default(omit, True) }}"
+      secret: "{{ github_webhook_secret | default(omit, True) }}"
+      user: "{{ github_webhook_user | default(omit, True) }}"
+      content_type: "{{ github_webhook_content_type | default(omit, True) }}"
+      active: "{{ github_webhook_active | default(omit, True) }}"
+      password: "{{ github_webhook_password | default(omit, True) }}"
+      events: "{{ github_webhook_events | default(omit, True) }}"
+      token: "{{ github_webhook_token | default(omit, True) }}"

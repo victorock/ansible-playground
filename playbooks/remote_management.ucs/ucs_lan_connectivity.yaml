@@ -10,6 +10,7 @@
       username: "{{ ucs_lan_connectivity_username | default(omit, True) }}"
       use_proxy: "{{ ucs_lan_connectivity_use_proxy | default(omit, True) }}"
       description: "{{ ucs_lan_connectivity_description | default(omit, True) }}"
+      iscsi_vnic_list: "{{ ucs_lan_connectivity_iscsi_vnic_list | default(omit, True) }}"
       hostname: "{{ ucs_lan_connectivity_hostname | default(omit, True) }}"
       org_dn: "{{ ucs_lan_connectivity_org_dn | default(omit, True) }}"
       vnic_list: "{{ ucs_lan_connectivity_vnic_list | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_purefb_network"
+  purefb_network: "{{ purefb_network }}"
+  register: r_purefb_network
+  vars:
+    purefb_network: 
+      itype: "{{ purefb_network_itype | default(omit, True) }}"
+      name: "{{ purefb_network_name | default(omit, True) }}"
+      address: "{{ purefb_network_address | default(omit, True) }}"
+      state: "{{ purefb_network_state | default(omit, True) }}"
+      api_token: "{{ purefb_network_api_token | default(omit, True) }}"
+      services: "{{ purefb_network_services | default(omit, True) }}"
+      fb_url: "{{ purefb_network_fb_url | default(omit, True) }}"

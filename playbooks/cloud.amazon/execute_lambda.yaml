@@ -15,6 +15,7 @@
       dry_run: "{{ execute_lambda_dry_run | default(omit, True) }}"
       function_arn: "{{ execute_lambda_function_arn | default(omit, True) }}"
       region: "{{ execute_lambda_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ execute_lambda_debug_botocore_endpoint_logs | default(omit, True) }}"
       tail_log: "{{ execute_lambda_tail_log | default(omit, True) }}"
       ec2_url: "{{ execute_lambda_ec2_url | default(omit, True) }}"
       version_qualifier: "{{ execute_lambda_version_qualifier | default(omit, True) }}"

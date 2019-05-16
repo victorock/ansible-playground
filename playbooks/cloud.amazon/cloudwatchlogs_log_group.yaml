@@ -14,6 +14,7 @@
       tags: "{{ cloudwatchlogs_log_group_tags | default(omit, True) }}"
       region: "{{ cloudwatchlogs_log_group_region | default(omit, True) }}"
       kms_key_id: "{{ cloudwatchlogs_log_group_kms_key_id | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ cloudwatchlogs_log_group_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ cloudwatchlogs_log_group_state | default(omit, True) }}"
       log_group_name: "{{ cloudwatchlogs_log_group_log_group_name | default(omit, True) }}"
       ec2_url: "{{ cloudwatchlogs_log_group_ec2_url | default(omit, True) }}"

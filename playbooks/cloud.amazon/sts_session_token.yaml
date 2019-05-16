@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     sts_session_token: 
-      aws_secret_key: "{{ sts_session_token_aws_secret_key | default(omit, True) }}"
       profile: "{{ sts_session_token_profile | default(omit, True) }}"
+      aws_secret_key: "{{ sts_session_token_aws_secret_key | default(omit, True) }}"
       aws_access_key: "{{ sts_session_token_aws_access_key | default(omit, True) }}"
       security_token: "{{ sts_session_token_security_token | default(omit, True) }}"
       duration_seconds: "{{ sts_session_token_duration_seconds | default(omit, True) }}"
       mfa_serial_number: "{{ sts_session_token_mfa_serial_number | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ sts_session_token_debug_botocore_endpoint_logs | default(omit, True) }}"
       mfa_token: "{{ sts_session_token_mfa_token | default(omit, True) }}"
       ec2_url: "{{ sts_session_token_ec2_url | default(omit, True) }}"
       validate_certs: "{{ sts_session_token_validate_certs | default(omit, True) }}"

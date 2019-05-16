@@ -14,6 +14,7 @@
       security_token: "{{ ecs_ecr_security_token | default(omit, True) }}"
       registry_id: "{{ ecs_ecr_registry_id | default(omit, True) }}"
       region: "{{ ecs_ecr_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ecs_ecr_debug_botocore_endpoint_logs | default(omit, True) }}"
       delete_policy: "{{ ecs_ecr_delete_policy | default(omit, True) }}"
       force_set_policy: "{{ ecs_ecr_force_set_policy | default(omit, True) }}"
       state: "{{ ecs_ecr_state | default(omit, True) }}"

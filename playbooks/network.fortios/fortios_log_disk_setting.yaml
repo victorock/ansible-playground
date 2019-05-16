@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_log_disk_setting"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_log_disk_setting: 
+      username: "{{ fortios_log_disk_setting_username | default(omit, True) }}"
+      log_disk_setting: "{{ fortios_log_disk_setting_log_disk_setting | default(omit, True) }}"
+      host: "{{ fortios_log_disk_setting_host | default(omit, True) }}"
+      https: "{{ fortios_log_disk_setting_https | default(omit, True) }}"
+      password: "{{ fortios_log_disk_setting_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_disk_setting_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_log_disk_setting"
+      fortios_log_disk_setting: "{{ fortios_log_disk_setting }}"
+      register: r_fortios_log_disk_setting

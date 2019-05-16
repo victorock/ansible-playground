@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_profile_protocol_options"
+  fortios_firewall_profile_protocol_options: "{{ fortios_firewall_profile_protocol_options }}"
+  register: r_fortios_firewall_profile_protocol_options
+  vars:
+    fortios_firewall_profile_protocol_options: 
+      username: "{{ fortios_firewall_profile_protocol_options_username | default(omit, True) }}"
+      firewall_profile_protocol_options: "{{ fortios_firewall_profile_protocol_options_firewall_profile_protocol_options | default(omit, True) }}"
+      host: "{{ fortios_firewall_profile_protocol_options_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_profile_protocol_options_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_profile_protocol_options_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_profile_protocol_options_vdom | default(omit, True) }}"

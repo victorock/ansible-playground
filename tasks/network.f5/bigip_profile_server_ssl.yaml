@@ -1,0 +1,28 @@
+---
+- name: "module_bigip_profile_server_ssl"
+  bigip_profile_server_ssl: "{{ bigip_profile_server_ssl }}"
+  register: r_bigip_profile_server_ssl
+  vars:
+    bigip_profile_server_ssl: 
+      update_password: "{{ bigip_profile_server_ssl_update_password | default(omit, True) }}"
+      chain: "{{ bigip_profile_server_ssl_chain | default(omit, True) }}"
+      sni_require: "{{ bigip_profile_server_ssl_sni_require | default(omit, True) }}"
+      passphrase: "{{ bigip_profile_server_ssl_passphrase | default(omit, True) }}"
+      certificate: "{{ bigip_profile_server_ssl_certificate | default(omit, True) }}"
+      secure_renegotiation: "{{ bigip_profile_server_ssl_secure_renegotiation | default(omit, True) }}"
+      ocsp_profile: "{{ bigip_profile_server_ssl_ocsp_profile | default(omit, True) }}"
+      state: "{{ bigip_profile_server_ssl_state | default(omit, True) }}"
+      server_port: "{{ bigip_profile_server_ssl_server_port | default(omit, True) }}"
+      provider: "{{ bigip_profile_server_ssl_provider | default(omit, True) }}"
+      sni_default: "{{ bigip_profile_server_ssl_sni_default | default(omit, True) }}"
+      parent: "{{ bigip_profile_server_ssl_parent | default(omit, True) }}"
+      ciphers: "{{ bigip_profile_server_ssl_ciphers | default(omit, True) }}"
+      server_certificate: "{{ bigip_profile_server_ssl_server_certificate | default(omit, True) }}"
+      user: "{{ bigip_profile_server_ssl_user | default(omit, True) }}"
+      key: "{{ bigip_profile_server_ssl_key | default(omit, True) }}"
+      password: "{{ bigip_profile_server_ssl_password | default(omit, True) }}"
+      name: "{{ bigip_profile_server_ssl_name | default(omit, True) }}"
+      server_name: "{{ bigip_profile_server_ssl_server_name | default(omit, True) }}"
+      partition: "{{ bigip_profile_server_ssl_partition | default(omit, True) }}"
+      server: "{{ bigip_profile_server_ssl_server | default(omit, True) }}"
+      validate_certs: "{{ bigip_profile_server_ssl_validate_certs | default(omit, True) }}"

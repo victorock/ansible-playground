@@ -1,0 +1,20 @@
+---
+- name: "module_pn_port_cos_bw"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_port_cos_bw: 
+      pn_weight: "{{ pn_port_cos_bw_pn_weight | default(omit, True) }}"
+      state: "{{ pn_port_cos_bw_state | default(omit, True) }}"
+      pn_min_bw_guarantee: "{{ pn_port_cos_bw_pn_min_bw_guarantee | default(omit, True) }}"
+      pn_cos: "{{ pn_port_cos_bw_pn_cos | default(omit, True) }}"
+      pn_max_bw_limit: "{{ pn_port_cos_bw_pn_max_bw_limit | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_port_cos_bw_pn_cliswitch | default(omit, True) }}"
+      pn_port: "{{ pn_port_cos_bw_pn_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_port_cos_bw"
+      pn_port_cos_bw: "{{ pn_port_cos_bw }}"
+      register: r_pn_port_cos_bw

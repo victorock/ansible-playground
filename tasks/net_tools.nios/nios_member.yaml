@@ -1,0 +1,27 @@
+---
+- name: "module_nios_member"
+  nios_member: "{{ nios_member }}"
+  register: r_nios_member
+  vars:
+    nios_member: 
+      comment: "{{ nios_member_comment | default(omit, True) }}"
+      router_id: "{{ nios_member_router_id | default(omit, True) }}"
+      lan2_enabled: "{{ nios_member_lan2_enabled | default(omit, True) }}"
+      syslog_servers: "{{ nios_member_syslog_servers | default(omit, True) }}"
+      lan2_port_setting: "{{ nios_member_lan2_port_setting | default(omit, True) }}"
+      state: "{{ nios_member_state | default(omit, True) }}"
+      config_addr_type: "{{ nios_member_config_addr_type | default(omit, True) }}"
+      upgrade_group: "{{ nios_member_upgrade_group | default(omit, True) }}"
+      create_token: "{{ nios_member_create_token | default(omit, True) }}"
+      mgmt_port_setting: "{{ nios_member_mgmt_port_setting | default(omit, True) }}"
+      platform: "{{ nios_member_platform | default(omit, True) }}"
+      node_info: "{{ nios_member_node_info | default(omit, True) }}"
+      use_syslog_proxy_setting: "{{ nios_member_use_syslog_proxy_setting | default(omit, True) }}"
+      enable_ha: "{{ nios_member_enable_ha | default(omit, True) }}"
+      external_syslog_server_enable: "{{ nios_member_external_syslog_server_enable | default(omit, True) }}"
+      ipv6_setting: "{{ nios_member_ipv6_setting | default(omit, True) }}"
+      extattrs: "{{ nios_member_extattrs | default(omit, True) }}"
+      pre_provisioning: "{{ nios_member_pre_provisioning | default(omit, True) }}"
+      vip_setting: "{{ nios_member_vip_setting | default(omit, True) }}"
+      provider: "{{ nios_member_provider | default(omit, True) }}"
+      host_name: "{{ nios_member_host_name | default(omit, True) }}"

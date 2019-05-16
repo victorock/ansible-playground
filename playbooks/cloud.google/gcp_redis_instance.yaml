@@ -1,0 +1,32 @@
+---
+- name: "module_gcp_redis_instance"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_redis_instance: 
+      scopes: "{{ gcp_redis_instance_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_redis_instance_service_account_contents | default(omit, True) }}"
+      redis_configs: "{{ gcp_redis_instance_redis_configs | default(omit, True) }}"
+      name: "{{ gcp_redis_instance_name | default(omit, True) }}"
+      service_account_email: "{{ gcp_redis_instance_service_account_email | default(omit, True) }}"
+      region: "{{ gcp_redis_instance_region | default(omit, True) }}"
+      labels: "{{ gcp_redis_instance_labels | default(omit, True) }}"
+      memory_size_gb: "{{ gcp_redis_instance_memory_size_gb | default(omit, True) }}"
+      project: "{{ gcp_redis_instance_project | default(omit, True) }}"
+      state: "{{ gcp_redis_instance_state | default(omit, True) }}"
+      service_account_file: "{{ gcp_redis_instance_service_account_file | default(omit, True) }}"
+      reserved_ip_range: "{{ gcp_redis_instance_reserved_ip_range | default(omit, True) }}"
+      tier: "{{ gcp_redis_instance_tier | default(omit, True) }}"
+      alternative_location_id: "{{ gcp_redis_instance_alternative_location_id | default(omit, True) }}"
+      auth_kind: "{{ gcp_redis_instance_auth_kind | default(omit, True) }}"
+      location_id: "{{ gcp_redis_instance_location_id | default(omit, True) }}"
+      redis_version: "{{ gcp_redis_instance_redis_version | default(omit, True) }}"
+      authorized_network: "{{ gcp_redis_instance_authorized_network | default(omit, True) }}"
+      display_name: "{{ gcp_redis_instance_display_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_redis_instance"
+      gcp_redis_instance: "{{ gcp_redis_instance }}"
+      register: r_gcp_redis_instance

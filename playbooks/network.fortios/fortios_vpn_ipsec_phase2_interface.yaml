@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_vpn_ipsec_phase2_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_vpn_ipsec_phase2_interface: 
+      username: "{{ fortios_vpn_ipsec_phase2_interface_username | default(omit, True) }}"
+      host: "{{ fortios_vpn_ipsec_phase2_interface_host | default(omit, True) }}"
+      https: "{{ fortios_vpn_ipsec_phase2_interface_https | default(omit, True) }}"
+      vpn_ipsec_phase2_interface: "{{ fortios_vpn_ipsec_phase2_interface_vpn_ipsec_phase2_interface | default(omit, True) }}"
+      password: "{{ fortios_vpn_ipsec_phase2_interface_password | default(omit, True) }}"
+      vdom: "{{ fortios_vpn_ipsec_phase2_interface_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_vpn_ipsec_phase2_interface"
+      fortios_vpn_ipsec_phase2_interface: "{{ fortios_vpn_ipsec_phase2_interface }}"
+      register: r_fortios_vpn_ipsec_phase2_interface

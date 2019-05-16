@@ -1,0 +1,25 @@
+---
+- name: "module_gcp_bigquery_table"
+  gcp_bigquery_table: "{{ gcp_bigquery_table }}"
+  register: r_gcp_bigquery_table
+  vars:
+    gcp_bigquery_table: 
+      scopes: "{{ gcp_bigquery_table_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_bigquery_table_service_account_contents | default(omit, True) }}"
+      table_reference: "{{ gcp_bigquery_table_table_reference | default(omit, True) }}"
+      name: "{{ gcp_bigquery_table_name | default(omit, True) }}"
+      encryption_configuration: "{{ gcp_bigquery_table_encryption_configuration | default(omit, True) }}"
+      service_account_email: "{{ gcp_bigquery_table_service_account_email | default(omit, True) }}"
+      labels: "{{ gcp_bigquery_table_labels | default(omit, True) }}"
+      friendly_name: "{{ gcp_bigquery_table_friendly_name | default(omit, True) }}"
+      schema: "{{ gcp_bigquery_table_schema | default(omit, True) }}"
+      dataset: "{{ gcp_bigquery_table_dataset | default(omit, True) }}"
+      project: "{{ gcp_bigquery_table_project | default(omit, True) }}"
+      state: "{{ gcp_bigquery_table_state | default(omit, True) }}"
+      service_account_file: "{{ gcp_bigquery_table_service_account_file | default(omit, True) }}"
+      external_data_configuration: "{{ gcp_bigquery_table_external_data_configuration | default(omit, True) }}"
+      time_partitioning: "{{ gcp_bigquery_table_time_partitioning | default(omit, True) }}"
+      auth_kind: "{{ gcp_bigquery_table_auth_kind | default(omit, True) }}"
+      view: "{{ gcp_bigquery_table_view | default(omit, True) }}"
+      expiration_time: "{{ gcp_bigquery_table_expiration_time | default(omit, True) }}"
+      description: "{{ gcp_bigquery_table_description | default(omit, True) }}"

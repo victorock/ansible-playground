@@ -20,6 +20,7 @@
       description: "{{ ec2_metric_alarm_description | default(omit, True) }}"
       evaluation_periods: "{{ ec2_metric_alarm_evaluation_periods | default(omit, True) }}"
       aws_access_key: "{{ ec2_metric_alarm_aws_access_key | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_metric_alarm_debug_botocore_endpoint_logs | default(omit, True) }}"
       comparison: "{{ ec2_metric_alarm_comparison | default(omit, True) }}"
       alarm_actions: "{{ ec2_metric_alarm_alarm_actions | default(omit, True) }}"
       name: "{{ ec2_metric_alarm_name | default(omit, True) }}"

@@ -1,0 +1,14 @@
+---
+- name: "module_cloudscale_volume"
+  cloudscale_volume: "{{ cloudscale_volume }}"
+  register: r_cloudscale_volume
+  vars:
+    cloudscale_volume: 
+      size_gb: "{{ cloudscale_volume_size_gb | default(omit, True) }}"
+      name: "{{ cloudscale_volume_name | default(omit, True) }}"
+      server_uuids: "{{ cloudscale_volume_server_uuids | default(omit, True) }}"
+      api_timeout: "{{ cloudscale_volume_api_timeout | default(omit, True) }}"
+      state: "{{ cloudscale_volume_state | default(omit, True) }}"
+      api_token: "{{ cloudscale_volume_api_token | default(omit, True) }}"
+      type: "{{ cloudscale_volume_type | default(omit, True) }}"
+      uuid: "{{ cloudscale_volume_uuid | default(omit, True) }}"

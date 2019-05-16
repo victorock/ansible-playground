@@ -1,0 +1,19 @@
+---
+- name: "module_meraki_syslog"
+  meraki_syslog: "{{ meraki_syslog }}"
+  register: r_meraki_syslog
+  vars:
+    meraki_syslog: 
+      org_name: "{{ meraki_syslog_org_name | default(omit, True) }}"
+      use_proxy: "{{ meraki_syslog_use_proxy | default(omit, True) }}"
+      auth_key: "{{ meraki_syslog_auth_key | default(omit, True) }}"
+      org_id: "{{ meraki_syslog_org_id | default(omit, True) }}"
+      state: "{{ meraki_syslog_state | default(omit, True) }}"
+      servers: "{{ meraki_syslog_servers | default(omit, True) }}"
+      output_level: "{{ meraki_syslog_output_level | default(omit, True) }}"
+      host: "{{ meraki_syslog_host | default(omit, True) }}"
+      net_name: "{{ meraki_syslog_net_name | default(omit, True) }}"
+      timeout: "{{ meraki_syslog_timeout | default(omit, True) }}"
+      validate_certs: "{{ meraki_syslog_validate_certs | default(omit, True) }}"
+      net_id: "{{ meraki_syslog_net_id | default(omit, True) }}"
+      use_https: "{{ meraki_syslog_use_https | default(omit, True) }}"

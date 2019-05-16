@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_router_bfd6"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_router_bfd6: 
+      username: "{{ fortios_router_bfd6_username | default(omit, True) }}"
+      host: "{{ fortios_router_bfd6_host | default(omit, True) }}"
+      router_bfd6: "{{ fortios_router_bfd6_router_bfd6 | default(omit, True) }}"
+      https: "{{ fortios_router_bfd6_https | default(omit, True) }}"
+      password: "{{ fortios_router_bfd6_password | default(omit, True) }}"
+      vdom: "{{ fortios_router_bfd6_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_router_bfd6"
+      fortios_router_bfd6: "{{ fortios_router_bfd6 }}"
+      register: r_fortios_router_bfd6

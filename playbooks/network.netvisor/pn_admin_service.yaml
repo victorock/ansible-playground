@@ -1,0 +1,26 @@
+---
+- name: "module_pn_admin_service"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_admin_service: 
+      pn_web_port: "{{ pn_admin_service_pn_web_port | default(omit, True) }}"
+      pn_web: "{{ pn_admin_service_pn_web | default(omit, True) }}"
+      pn_net_api: "{{ pn_admin_service_pn_net_api | default(omit, True) }}"
+      pn_web_ssl: "{{ pn_admin_service_pn_web_ssl | default(omit, True) }}"
+      pn__if: "{{ pn_admin_service_pn__if | default(omit, True) }}"
+      pn_icmp: "{{ pn_admin_service_pn_icmp | default(omit, True) }}"
+      state: "{{ pn_admin_service_state | default(omit, True) }}"
+      pn_web_ssl_port: "{{ pn_admin_service_pn_web_ssl_port | default(omit, True) }}"
+      pn_nfs: "{{ pn_admin_service_pn_nfs | default(omit, True) }}"
+      pn_ssh: "{{ pn_admin_service_pn_ssh | default(omit, True) }}"
+      pn_web_log: "{{ pn_admin_service_pn_web_log | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_admin_service_pn_cliswitch | default(omit, True) }}"
+      pn_snmp: "{{ pn_admin_service_pn_snmp | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_admin_service"
+      pn_admin_service: "{{ pn_admin_service }}"
+      register: r_pn_admin_service

@@ -4,8 +4,9 @@
   register: r_nso_verify
   vars:
     nso_verify: 
-      url: "{{ nso_verify_url | default(omit, True) }}"
       username: "{{ nso_verify_username | default(omit, True) }}"
-      password: "{{ nso_verify_password | default(omit, True) }}"
+      url: "{{ nso_verify_url | default(omit, True) }}"
       data: "{{ nso_verify_data | default(omit, True) }}"
       timeout: "{{ nso_verify_timeout | default(omit, True) }}"
+      password: "{{ nso_verify_password | default(omit, True) }}"
+      validate_certs: "{{ nso_verify_validate_certs | default(omit, True) }}"

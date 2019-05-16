@@ -5,6 +5,7 @@
   vars:
     onyx_config: 
       src: "{{ onyx_config_src | default(omit, True) }}"
+      backup_options: "{{ onyx_config_backup_options | default(omit, True) }}"
       backup: "{{ onyx_config_backup | default(omit, True) }}"
       after: "{{ onyx_config_after | default(omit, True) }}"
       lines: "{{ onyx_config_lines | default(omit, True) }}"

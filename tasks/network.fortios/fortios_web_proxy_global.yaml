@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_web_proxy_global"
+  fortios_web_proxy_global: "{{ fortios_web_proxy_global }}"
+  register: r_fortios_web_proxy_global
+  vars:
+    fortios_web_proxy_global: 
+      username: "{{ fortios_web_proxy_global_username | default(omit, True) }}"
+      host: "{{ fortios_web_proxy_global_host | default(omit, True) }}"
+      web_proxy_global: "{{ fortios_web_proxy_global_web_proxy_global | default(omit, True) }}"
+      https: "{{ fortios_web_proxy_global_https | default(omit, True) }}"
+      password: "{{ fortios_web_proxy_global_password | default(omit, True) }}"
+      vdom: "{{ fortios_web_proxy_global_vdom | default(omit, True) }}"

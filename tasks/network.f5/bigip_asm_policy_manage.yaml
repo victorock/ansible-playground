@@ -1,0 +1,17 @@
+---
+- name: "module_bigip_asm_policy_manage"
+  bigip_asm_policy_manage: "{{ bigip_asm_policy_manage }}"
+  register: r_bigip_asm_policy_manage
+  vars:
+    bigip_asm_policy_manage: 
+      name: "{{ bigip_asm_policy_manage_name | default(omit, True) }}"
+      partition: "{{ bigip_asm_policy_manage_partition | default(omit, True) }}"
+      server: "{{ bigip_asm_policy_manage_server | default(omit, True) }}"
+      state: "{{ bigip_asm_policy_manage_state | default(omit, True) }}"
+      server_port: "{{ bigip_asm_policy_manage_server_port | default(omit, True) }}"
+      user: "{{ bigip_asm_policy_manage_user | default(omit, True) }}"
+      template: "{{ bigip_asm_policy_manage_template | default(omit, True) }}"
+      provider: "{{ bigip_asm_policy_manage_provider | default(omit, True) }}"
+      active: "{{ bigip_asm_policy_manage_active | default(omit, True) }}"
+      password: "{{ bigip_asm_policy_manage_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_asm_policy_manage_validate_certs | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_report_dataset"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_report_dataset: 
+      username: "{{ fortios_report_dataset_username | default(omit, True) }}"
+      report_dataset: "{{ fortios_report_dataset_report_dataset | default(omit, True) }}"
+      host: "{{ fortios_report_dataset_host | default(omit, True) }}"
+      https: "{{ fortios_report_dataset_https | default(omit, True) }}"
+      password: "{{ fortios_report_dataset_password | default(omit, True) }}"
+      vdom: "{{ fortios_report_dataset_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_report_dataset"
+      fortios_report_dataset: "{{ fortios_report_dataset }}"
+      register: r_fortios_report_dataset

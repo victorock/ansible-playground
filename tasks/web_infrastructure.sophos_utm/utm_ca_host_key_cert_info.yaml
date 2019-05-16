@@ -1,0 +1,14 @@
+---
+- name: "module_utm_ca_host_key_cert_info"
+  utm_ca_host_key_cert_info: "{{ utm_ca_host_key_cert_info }}"
+  register: r_utm_ca_host_key_cert_info
+  vars:
+    utm_ca_host_key_cert_info: 
+      utm_host: "{{ utm_ca_host_key_cert_info_utm_host | default(omit, True) }}"
+      name: "{{ utm_ca_host_key_cert_info_name | default(omit, True) }}"
+      utm_token: "{{ utm_ca_host_key_cert_info_utm_token | default(omit, True) }}"
+      utm_protocol: "{{ utm_ca_host_key_cert_info_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_ca_host_key_cert_info_headers | default(omit, True) }}"
+      state: "{{ utm_ca_host_key_cert_info_state | default(omit, True) }}"
+      validate_certs: "{{ utm_ca_host_key_cert_info_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_ca_host_key_cert_info_utm_port | default(omit, True) }}"

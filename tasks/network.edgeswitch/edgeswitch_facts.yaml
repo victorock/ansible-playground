@@ -1,0 +1,7 @@
+---
+- name: "module_edgeswitch_facts"
+  edgeswitch_facts: "{{ edgeswitch_facts }}"
+  register: r_edgeswitch_facts
+  vars:
+    edgeswitch_facts: 
+      gather_subset: "{{ edgeswitch_facts_gather_subset | default(omit, True) }}"

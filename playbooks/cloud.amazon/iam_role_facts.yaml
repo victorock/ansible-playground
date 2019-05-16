@@ -14,6 +14,7 @@
       security_token: "{{ iam_role_facts_security_token | default(omit, True) }}"
       region: "{{ iam_role_facts_region | default(omit, True) }}"
       ec2_url: "{{ iam_role_facts_ec2_url | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ iam_role_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       path_prefix: "{{ iam_role_facts_path_prefix | default(omit, True) }}"
       validate_certs: "{{ iam_role_facts_validate_certs | default(omit, True) }}"
   tasks:

@@ -6,6 +6,7 @@
     route53: 
       weight: "{{ route53_weight | default(omit, True) }}"
       ec2_url: "{{ route53_ec2_url | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ route53_debug_botocore_endpoint_logs | default(omit, True) }}"
       hosted_zone_id: "{{ route53_hosted_zone_id | default(omit, True) }}"
       alias_evaluate_target_health: "{{ route53_alias_evaluate_target_health | default(omit, True) }}"
       ttl: "{{ route53_ttl | default(omit, True) }}"

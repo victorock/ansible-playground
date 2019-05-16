@@ -5,13 +5,18 @@
   vars:
     ecs_service: 
       network_configuration: "{{ ecs_service_network_configuration | default(omit, True) }}"
+      health_check_grace_period_seconds: "{{ ecs_service_health_check_grace_period_seconds | default(omit, True) }}"
       desired_count: "{{ ecs_service_desired_count | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ecs_service_debug_botocore_endpoint_logs | default(omit, True) }}"
       cluster: "{{ ecs_service_cluster | default(omit, True) }}"
       ec2_url: "{{ ecs_service_ec2_url | default(omit, True) }}"
+      scheduling_strategy: "{{ ecs_service_scheduling_strategy | default(omit, True) }}"
       aws_secret_key: "{{ ecs_service_aws_secret_key | default(omit, True) }}"
+      force_new_deployment: "{{ ecs_service_force_new_deployment | default(omit, True) }}"
       state: "{{ ecs_service_state | default(omit, True) }}"
       delay: "{{ ecs_service_delay | default(omit, True) }}"
       task_definition: "{{ ecs_service_task_definition | default(omit, True) }}"
+      service_registries: "{{ ecs_service_service_registries | default(omit, True) }}"
       role: "{{ ecs_service_role | default(omit, True) }}"
       client_token: "{{ ecs_service_client_token | default(omit, True) }}"
       profile: "{{ ecs_service_profile | default(omit, True) }}"

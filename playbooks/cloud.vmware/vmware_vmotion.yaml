@@ -11,6 +11,7 @@
       username: "{{ vmware_vmotion_username | default(omit, True) }}"
       hostname: "{{ vmware_vmotion_hostname | default(omit, True) }}"
       destination_host: "{{ vmware_vmotion_destination_host | default(omit, True) }}"
+      use_instance_uuid: "{{ vmware_vmotion_use_instance_uuid | default(omit, True) }}"
       vm_uuid: "{{ vmware_vmotion_vm_uuid | default(omit, True) }}"
       destination_datastore: "{{ vmware_vmotion_destination_datastore | default(omit, True) }}"
       password: "{{ vmware_vmotion_password | default(omit, True) }}"

@@ -12,6 +12,7 @@
       delegation_set_id: "{{ route53_zone_delegation_set_id | default(omit, True) }}"
       region: "{{ route53_zone_region | default(omit, True) }}"
       aws_secret_key: "{{ route53_zone_aws_secret_key | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ route53_zone_debug_botocore_endpoint_logs | default(omit, True) }}"
       hosted_zone_id: "{{ route53_zone_hosted_zone_id | default(omit, True) }}"
       state: "{{ route53_zone_state | default(omit, True) }}"
       ec2_url: "{{ route53_zone_ec2_url | default(omit, True) }}"

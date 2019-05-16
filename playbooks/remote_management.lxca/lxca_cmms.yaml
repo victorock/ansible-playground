@@ -1,0 +1,19 @@
+---
+- name: "module_lxca_cmms"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    lxca_cmms: 
+      uuid: "{{ lxca_cmms_uuid | default(omit, True) }}"
+      login_user: "{{ lxca_cmms_login_user | default(omit, True) }}"
+      command_options: "{{ lxca_cmms_command_options | default(omit, True) }}"
+      chassis: "{{ lxca_cmms_chassis | default(omit, True) }}"
+      auth_url: "{{ lxca_cmms_auth_url | default(omit, True) }}"
+      login_password: "{{ lxca_cmms_login_password | default(omit, True) }}"
+  tasks:
+    - name: "plugin_lxca_cmms"
+      lxca_cmms: "{{ lxca_cmms }}"
+      register: r_lxca_cmms

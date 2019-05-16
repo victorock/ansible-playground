@@ -4,8 +4,9 @@
   register: r_seport
   vars:
     seport: 
+      proto: "{{ seport_proto | default(omit, True) }}"
+      state: "{{ seport_state | default(omit, True) }}"
+      ignore_selinux_state: "{{ seport_ignore_selinux_state | default(omit, True) }}"
       reload: "{{ seport_reload | default(omit, True) }}"
       setype: "{{ seport_setype | default(omit, True) }}"
-      state: "{{ seport_state | default(omit, True) }}"
       ports: "{{ seport_ports | default(omit, True) }}"
-      proto: "{{ seport_proto | default(omit, True) }}"

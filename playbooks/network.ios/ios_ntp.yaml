@@ -1,0 +1,24 @@
+---
+- name: "module_ios_ntp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_ntp: 
+      authorize: "{{ ios_ntp_authorize | default(omit, True) }}"
+      logging: "{{ ios_ntp_logging | default(omit, True) }}"
+      auth_key: "{{ ios_ntp_auth_key | default(omit, True) }}"
+      auth_pass: "{{ ios_ntp_auth_pass | default(omit, True) }}"
+      auth: "{{ ios_ntp_auth | default(omit, True) }}"
+      server: "{{ ios_ntp_server | default(omit, True) }}"
+      state: "{{ ios_ntp_state | default(omit, True) }}"
+      provider: "{{ ios_ntp_provider | default(omit, True) }}"
+      key_id: "{{ ios_ntp_key_id | default(omit, True) }}"
+      source_int: "{{ ios_ntp_source_int | default(omit, True) }}"
+      acl: "{{ ios_ntp_acl | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ios_ntp"
+      ios_ntp: "{{ ios_ntp }}"
+      register: r_ios_ntp

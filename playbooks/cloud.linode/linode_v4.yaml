@@ -1,0 +1,23 @@
+---
+- name: "module_linode_v4"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    linode_v4: 
+      root_pass: "{{ linode_v4_root_pass | default(omit, True) }}"
+      group: "{{ linode_v4_group | default(omit, True) }}"
+      tags: "{{ linode_v4_tags | default(omit, True) }}"
+      access_token: "{{ linode_v4_access_token | default(omit, True) }}"
+      region: "{{ linode_v4_region | default(omit, True) }}"
+      label: "{{ linode_v4_label | default(omit, True) }}"
+      state: "{{ linode_v4_state | default(omit, True) }}"
+      authorized_keys: "{{ linode_v4_authorized_keys | default(omit, True) }}"
+      type: "{{ linode_v4_type | default(omit, True) }}"
+      image: "{{ linode_v4_image | default(omit, True) }}"
+  tasks:
+    - name: "plugin_linode_v4"
+      linode_v4: "{{ linode_v4 }}"
+      register: r_linode_v4

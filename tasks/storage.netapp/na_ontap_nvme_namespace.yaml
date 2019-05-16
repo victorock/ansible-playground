@@ -1,0 +1,18 @@
+---
+- name: "module_na_ontap_nvme_namespace"
+  na_ontap_nvme_namespace: "{{ na_ontap_nvme_namespace }}"
+  register: r_na_ontap_nvme_namespace
+  vars:
+    na_ontap_nvme_namespace: 
+      username: "{{ na_ontap_nvme_namespace_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_nvme_namespace_http_port | default(omit, True) }}"
+      hostname: "{{ na_ontap_nvme_namespace_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_nvme_namespace_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_nvme_namespace_state | default(omit, True) }}"
+      https: "{{ na_ontap_nvme_namespace_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_nvme_namespace_ontapi | default(omit, True) }}"
+      ostype: "{{ na_ontap_nvme_namespace_ostype | default(omit, True) }}"
+      path: "{{ na_ontap_nvme_namespace_path | default(omit, True) }}"
+      password: "{{ na_ontap_nvme_namespace_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_nvme_namespace_validate_certs | default(omit, True) }}"
+      size: "{{ na_ontap_nvme_namespace_size | default(omit, True) }}"

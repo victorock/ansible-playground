@@ -1,0 +1,18 @@
+---
+- name: "module_gcp_iam_role"
+  gcp_iam_role: "{{ gcp_iam_role }}"
+  register: r_gcp_iam_role
+  vars:
+    gcp_iam_role: 
+      scopes: "{{ gcp_iam_role_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_iam_role_service_account_contents | default(omit, True) }}"
+      description: "{{ gcp_iam_role_description | default(omit, True) }}"
+      title: "{{ gcp_iam_role_title | default(omit, True) }}"
+      service_account_email: "{{ gcp_iam_role_service_account_email | default(omit, True) }}"
+      name: "{{ gcp_iam_role_name | default(omit, True) }}"
+      project: "{{ gcp_iam_role_project | default(omit, True) }}"
+      state: "{{ gcp_iam_role_state | default(omit, True) }}"
+      auth_kind: "{{ gcp_iam_role_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_iam_role_service_account_file | default(omit, True) }}"
+      included_permissions: "{{ gcp_iam_role_included_permissions | default(omit, True) }}"
+      stage: "{{ gcp_iam_role_stage | default(omit, True) }}"

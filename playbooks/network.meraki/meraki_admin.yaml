@@ -8,7 +8,6 @@
   vars:
     meraki_admin: 
       org_name: "{{ meraki_admin_org_name | default(omit, True) }}"
-      orgAccess: "{{ meraki_admin_orgAccess | default(omit, True) }}"
       use_proxy: "{{ meraki_admin_use_proxy | default(omit, True) }}"
       auth_key: "{{ meraki_admin_auth_key | default(omit, True) }}"
       tags: "{{ meraki_admin_tags | default(omit, True) }}"
@@ -18,6 +17,7 @@
       output_level: "{{ meraki_admin_output_level | default(omit, True) }}"
       host: "{{ meraki_admin_host | default(omit, True) }}"
       timeout: "{{ meraki_admin_timeout | default(omit, True) }}"
+      org_access: "{{ meraki_admin_org_access | default(omit, True) }}"
       validate_certs: "{{ meraki_admin_validate_certs | default(omit, True) }}"
       networks: "{{ meraki_admin_networks | default(omit, True) }}"
       use_https: "{{ meraki_admin_use_https | default(omit, True) }}"

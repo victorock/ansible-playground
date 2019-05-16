@@ -1,0 +1,11 @@
+---
+- name: "module_hcloud_volume_facts"
+  hcloud_volume_facts: "{{ hcloud_volume_facts }}"
+  register: r_hcloud_volume_facts
+  vars:
+    hcloud_volume_facts: 
+      label_selector: "{{ hcloud_volume_facts_label_selector | default(omit, True) }}"
+      endpoint: "{{ hcloud_volume_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_volume_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_volume_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_volume_facts_api_token | default(omit, True) }}"

@@ -1,0 +1,16 @@
+---
+- name: "module_pn_stp_port"
+  pn_stp_port: "{{ pn_stp_port }}"
+  register: r_pn_stp_port
+  vars:
+    pn_stp_port: 
+      pn_bpdu_guard: "{{ pn_stp_port_pn_bpdu_guard | default(omit, True) }}"
+      pn_cost: "{{ pn_stp_port_pn_cost | default(omit, True) }}"
+      pn_priority: "{{ pn_stp_port_pn_priority | default(omit, True) }}"
+      state: "{{ pn_stp_port_state | default(omit, True) }}"
+      pn_block: "{{ pn_stp_port_pn_block | default(omit, True) }}"
+      pn_edge: "{{ pn_stp_port_pn_edge | default(omit, True) }}"
+      pn_filter: "{{ pn_stp_port_pn_filter | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_stp_port_pn_cliswitch | default(omit, True) }}"
+      pn_root_guard: "{{ pn_stp_port_pn_root_guard | default(omit, True) }}"
+      pn_port: "{{ pn_stp_port_pn_port | default(omit, True) }}"

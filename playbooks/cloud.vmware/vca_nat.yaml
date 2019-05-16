@@ -17,9 +17,9 @@
       service_type: "{{ vca_nat_service_type | default(omit, True) }}"
       org: "{{ vca_nat_org | default(omit, True) }}"
       password: "{{ vca_nat_password | default(omit, True) }}"
+      validate_certs: "{{ vca_nat_validate_certs | default(omit, True) }}"
       vdc_name: "{{ vca_nat_vdc_name | default(omit, True) }}"
       api_version: "{{ vca_nat_api_version | default(omit, True) }}"
-      verify_certs: "{{ vca_nat_verify_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vca_nat"
       vca_nat: "{{ vca_nat }}"

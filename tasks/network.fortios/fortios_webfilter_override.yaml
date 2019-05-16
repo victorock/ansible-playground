@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_override"
+  fortios_webfilter_override: "{{ fortios_webfilter_override }}"
+  register: r_fortios_webfilter_override
+  vars:
+    fortios_webfilter_override: 
+      username: "{{ fortios_webfilter_override_username | default(omit, True) }}"
+      webfilter_override: "{{ fortios_webfilter_override_webfilter_override | default(omit, True) }}"
+      host: "{{ fortios_webfilter_override_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_override_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_override_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_override_vdom | default(omit, True) }}"

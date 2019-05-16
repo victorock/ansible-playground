@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_ftp_proxy_explicit"
+  fortios_ftp_proxy_explicit: "{{ fortios_ftp_proxy_explicit }}"
+  register: r_fortios_ftp_proxy_explicit
+  vars:
+    fortios_ftp_proxy_explicit: 
+      username: "{{ fortios_ftp_proxy_explicit_username | default(omit, True) }}"
+      ftp_proxy_explicit: "{{ fortios_ftp_proxy_explicit_ftp_proxy_explicit | default(omit, True) }}"
+      host: "{{ fortios_ftp_proxy_explicit_host | default(omit, True) }}"
+      https: "{{ fortios_ftp_proxy_explicit_https | default(omit, True) }}"
+      password: "{{ fortios_ftp_proxy_explicit_password | default(omit, True) }}"
+      vdom: "{{ fortios_ftp_proxy_explicit_vdom | default(omit, True) }}"

@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_remote_syslog: 
-      remote_port: "{{ bigip_remote_syslog_remote_port | default(omit, True) }}"
-      remote_host: "{{ bigip_remote_syslog_remote_host | default(omit, True) }}"
+      name: "{{ bigip_remote_syslog_name | default(omit, True) }}"
       local_ip: "{{ bigip_remote_syslog_local_ip | default(omit, True) }}"
+      validate_certs: "{{ bigip_remote_syslog_validate_certs | default(omit, True) }}"
+      remote_port: "{{ bigip_remote_syslog_remote_port | default(omit, True) }}"
       server: "{{ bigip_remote_syslog_server | default(omit, True) }}"
       state: "{{ bigip_remote_syslog_state | default(omit, True) }}"
       user: "{{ bigip_remote_syslog_user | default(omit, True) }}"
       server_port: "{{ bigip_remote_syslog_server_port | default(omit, True) }}"
       provider: "{{ bigip_remote_syslog_provider | default(omit, True) }}"
       password: "{{ bigip_remote_syslog_password | default(omit, True) }}"
-      validate_certs: "{{ bigip_remote_syslog_validate_certs | default(omit, True) }}"
+      remote_host: "{{ bigip_remote_syslog_remote_host | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_remote_syslog"
       bigip_remote_syslog: "{{ bigip_remote_syslog }}"

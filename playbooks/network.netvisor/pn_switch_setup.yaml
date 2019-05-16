@@ -1,0 +1,46 @@
+---
+- name: "module_pn_switch_setup"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_switch_setup: 
+      pn_ntp_secondary_server: "{{ pn_switch_setup_pn_ntp_secondary_server | default(omit, True) }}"
+      pn_ntp_server: "{{ pn_switch_setup_pn_ntp_server | default(omit, True) }}"
+      pn_dns_ip: "{{ pn_switch_setup_pn_dns_ip | default(omit, True) }}"
+      pn_motd: "{{ pn_switch_setup_pn_motd | default(omit, True) }}"
+      pn_eula_accepted: "{{ pn_switch_setup_pn_eula_accepted | default(omit, True) }}"
+      pn_in_band_ip6_assign: "{{ pn_switch_setup_pn_in_band_ip6_assign | default(omit, True) }}"
+      state: "{{ pn_switch_setup_state | default(omit, True) }}"
+      pn_in_band_ip6: "{{ pn_switch_setup_pn_in_band_ip6 | default(omit, True) }}"
+      pn_loopback_ip6: "{{ pn_switch_setup_pn_loopback_ip6 | default(omit, True) }}"
+      pn_banner: "{{ pn_switch_setup_pn_banner | default(omit, True) }}"
+      pn_timezone: "{{ pn_switch_setup_pn_timezone | default(omit, True) }}"
+      pn_date: "{{ pn_switch_setup_pn_date | default(omit, True) }}"
+      pn_mgmt_netmask_ip6: "{{ pn_switch_setup_pn_mgmt_netmask_ip6 | default(omit, True) }}"
+      pn_mgmt_ip: "{{ pn_switch_setup_pn_mgmt_ip | default(omit, True) }}"
+      pn_enable_host_ports: "{{ pn_switch_setup_pn_enable_host_ports | default(omit, True) }}"
+      pn_mgmt_ip6_assignment: "{{ pn_switch_setup_pn_mgmt_ip6_assignment | default(omit, True) }}"
+      pn_switch_name: "{{ pn_switch_setup_pn_switch_name | default(omit, True) }}"
+      pn_loopback_ip: "{{ pn_switch_setup_pn_loopback_ip | default(omit, True) }}"
+      pn_in_band_netmask_ip6: "{{ pn_switch_setup_pn_in_band_netmask_ip6 | default(omit, True) }}"
+      pn_force: "{{ pn_switch_setup_pn_force | default(omit, True) }}"
+      pn_in_band_ip: "{{ pn_switch_setup_pn_in_band_ip | default(omit, True) }}"
+      pn_password: "{{ pn_switch_setup_pn_password | default(omit, True) }}"
+      pn_domain_name: "{{ pn_switch_setup_pn_domain_name | default(omit, True) }}"
+      pn_gateway_ip6: "{{ pn_switch_setup_pn_gateway_ip6 | default(omit, True) }}"
+      pn_dns_secondary_ip: "{{ pn_switch_setup_pn_dns_secondary_ip | default(omit, True) }}"
+      pn_analytics_store: "{{ pn_switch_setup_pn_analytics_store | default(omit, True) }}"
+      pn_mgmt_netmask: "{{ pn_switch_setup_pn_mgmt_netmask | default(omit, True) }}"
+      pn_mgmt_ip_assignment: "{{ pn_switch_setup_pn_mgmt_ip_assignment | default(omit, True) }}"
+      pn_in_band_netmask: "{{ pn_switch_setup_pn_in_band_netmask | default(omit, True) }}"
+      pn_gateway_ip: "{{ pn_switch_setup_pn_gateway_ip | default(omit, True) }}"
+      pn_eula_timestamp: "{{ pn_switch_setup_pn_eula_timestamp | default(omit, True) }}"
+      pn_mgmt_ip6: "{{ pn_switch_setup_pn_mgmt_ip6 | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_switch_setup_pn_cliswitch | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_switch_setup"
+      pn_switch_setup: "{{ pn_switch_setup }}"
+      register: r_pn_switch_setup

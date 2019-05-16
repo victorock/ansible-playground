@@ -1,0 +1,7 @@
+---
+- name: "module_rhsm_release"
+  rhsm_release: "{{ rhsm_release }}"
+  register: r_rhsm_release
+  vars:
+    rhsm_release: 
+      release: "{{ rhsm_release_release | default(omit, True) }}"

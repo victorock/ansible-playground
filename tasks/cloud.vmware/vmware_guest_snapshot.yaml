@@ -13,6 +13,7 @@
       new_description: "{{ vmware_guest_snapshot_new_description | default(omit, True) }}"
       hostname: "{{ vmware_guest_snapshot_hostname | default(omit, True) }}"
       memory_dump: "{{ vmware_guest_snapshot_memory_dump | default(omit, True) }}"
+      use_instance_uuid: "{{ vmware_guest_snapshot_use_instance_uuid | default(omit, True) }}"
       state: "{{ vmware_guest_snapshot_state | default(omit, True) }}"
       snapshot_name: "{{ vmware_guest_snapshot_snapshot_name | default(omit, True) }}"
       name_match: "{{ vmware_guest_snapshot_name_match | default(omit, True) }}"

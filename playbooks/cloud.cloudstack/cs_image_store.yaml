@@ -1,0 +1,25 @@
+---
+- name: "module_cs_image_store"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_image_store: 
+      name: "{{ cs_image_store_name | default(omit, True) }}"
+      zone: "{{ cs_image_store_zone | default(omit, True) }}"
+      url: "{{ cs_image_store_url | default(omit, True) }}"
+      api_secret: "{{ cs_image_store_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_image_store_api_timeout | default(omit, True) }}"
+      api_region: "{{ cs_image_store_api_region | default(omit, True) }}"
+      force_recreate: "{{ cs_image_store_force_recreate | default(omit, True) }}"
+      state: "{{ cs_image_store_state | default(omit, True) }}"
+      api_http_method: "{{ cs_image_store_api_http_method | default(omit, True) }}"
+      provider: "{{ cs_image_store_provider | default(omit, True) }}"
+      api_key: "{{ cs_image_store_api_key | default(omit, True) }}"
+      api_url: "{{ cs_image_store_api_url | default(omit, True) }}"
+  tasks:
+    - name: "plugin_cs_image_store"
+      cs_image_store: "{{ cs_image_store }}"
+      register: r_cs_image_store

@@ -1,0 +1,21 @@
+---
+- name: "module_vyos_ping"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vyos_ping: 
+      count: "{{ vyos_ping_count | default(omit, True) }}"
+      interval: "{{ vyos_ping_interval | default(omit, True) }}"
+      dest: "{{ vyos_ping_dest | default(omit, True) }}"
+      ttl: "{{ vyos_ping_ttl | default(omit, True) }}"
+      source: "{{ vyos_ping_source | default(omit, True) }}"
+      state: "{{ vyos_ping_state | default(omit, True) }}"
+      provider: "{{ vyos_ping_provider | default(omit, True) }}"
+      size: "{{ vyos_ping_size | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vyos_ping"
+      vyos_ping: "{{ vyos_ping }}"
+      register: r_vyos_ping

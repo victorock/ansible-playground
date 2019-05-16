@@ -9,6 +9,7 @@
     cs_loadbalancer_rule_member: 
       domain: "{{ cs_loadbalancer_rule_member_domain | default(omit, True) }}"
       api_key: "{{ cs_loadbalancer_rule_member_api_key | default(omit, True) }}"
+      poll_async: "{{ cs_loadbalancer_rule_member_poll_async | default(omit, True) }}"
       api_url: "{{ cs_loadbalancer_rule_member_api_url | default(omit, True) }}"
       api_http_method: "{{ cs_loadbalancer_rule_member_api_http_method | default(omit, True) }}"
       api_secret: "{{ cs_loadbalancer_rule_member_api_secret | default(omit, True) }}"

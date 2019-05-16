@@ -11,6 +11,7 @@
       http_login_password: "{{ zabbix_proxy_http_login_password | default(omit, True) }}"
       tls_psk: "{{ zabbix_proxy_tls_psk | default(omit, True) }}"
       description: "{{ zabbix_proxy_description | default(omit, True) }}"
+      ca_cert: "{{ zabbix_proxy_ca_cert | default(omit, True) }}"
       login_user: "{{ zabbix_proxy_login_user | default(omit, True) }}"
       http_login_user: "{{ zabbix_proxy_http_login_user | default(omit, True) }}"
       tls_accept: "{{ zabbix_proxy_tls_accept | default(omit, True) }}"
@@ -23,7 +24,6 @@
       tls_subject: "{{ zabbix_proxy_tls_subject | default(omit, True) }}"
       validate_certs: "{{ zabbix_proxy_validate_certs | default(omit, True) }}"
       tls_psk_identity: "{{ zabbix_proxy_tls_psk_identity | default(omit, True) }}"
-      tls_issuer: "{{ zabbix_proxy_tls_issuer | default(omit, True) }}"
       tls_connect: "{{ zabbix_proxy_tls_connect | default(omit, True) }}"
   tasks:
     - name: "plugin_zabbix_proxy"

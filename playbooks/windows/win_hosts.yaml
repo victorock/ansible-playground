@@ -1,0 +1,18 @@
+---
+- name: "module_win_hosts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_hosts: 
+      action: "{{ win_hosts_action | default(omit, True) }}"
+      state: "{{ win_hosts_state | default(omit, True) }}"
+      ip_address: "{{ win_hosts_ip_address | default(omit, True) }}"
+      canonical_name: "{{ win_hosts_canonical_name | default(omit, True) }}"
+      aliases: "{{ win_hosts_aliases | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_hosts"
+      win_hosts: "{{ win_hosts }}"
+      register: r_win_hosts

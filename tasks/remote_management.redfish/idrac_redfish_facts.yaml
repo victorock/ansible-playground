@@ -1,0 +1,12 @@
+---
+- name: "module_idrac_redfish_facts"
+  idrac_redfish_facts: "{{ idrac_redfish_facts }}"
+  register: r_idrac_redfish_facts
+  vars:
+    idrac_redfish_facts: 
+      category: "{{ idrac_redfish_facts_category | default(omit, True) }}"
+      username: "{{ idrac_redfish_facts_username | default(omit, True) }}"
+      baseuri: "{{ idrac_redfish_facts_baseuri | default(omit, True) }}"
+      command: "{{ idrac_redfish_facts_command | default(omit, True) }}"
+      timeout: "{{ idrac_redfish_facts_timeout | default(omit, True) }}"
+      password: "{{ idrac_redfish_facts_password | default(omit, True) }}"

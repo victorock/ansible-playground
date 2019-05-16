@@ -1,0 +1,15 @@
+---
+- name: "module_openssl_csr_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    openssl_csr_info: 
+      select_crypto_backend: "{{ openssl_csr_info_select_crypto_backend | default(omit, True) }}"
+      path: "{{ openssl_csr_info_path | default(omit, True) }}"
+  tasks:
+    - name: "plugin_openssl_csr_info"
+      openssl_csr_info: "{{ openssl_csr_info }}"
+      register: r_openssl_csr_info

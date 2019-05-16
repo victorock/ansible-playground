@@ -1,0 +1,21 @@
+---
+- name: "module_ibm_sa_domain"
+  ibm_sa_domain: "{{ ibm_sa_domain }}"
+  register: r_ibm_sa_domain
+  vars:
+    ibm_sa_domain: 
+      username: "{{ ibm_sa_domain_username | default(omit, True) }}"
+      max_cgs: "{{ ibm_sa_domain_max_cgs | default(omit, True) }}"
+      domain: "{{ ibm_sa_domain_domain | default(omit, True) }}"
+      max_pools: "{{ ibm_sa_domain_max_pools | default(omit, True) }}"
+      state: "{{ ibm_sa_domain_state | default(omit, True) }}"
+      perf_class: "{{ ibm_sa_domain_perf_class | default(omit, True) }}"
+      endpoints: "{{ ibm_sa_domain_endpoints | default(omit, True) }}"
+      ldap_id: "{{ ibm_sa_domain_ldap_id | default(omit, True) }}"
+      hard_capacity: "{{ ibm_sa_domain_hard_capacity | default(omit, True) }}"
+      max_volumes: "{{ ibm_sa_domain_max_volumes | default(omit, True) }}"
+      soft_capacity: "{{ ibm_sa_domain_soft_capacity | default(omit, True) }}"
+      max_mirrors: "{{ ibm_sa_domain_max_mirrors | default(omit, True) }}"
+      password: "{{ ibm_sa_domain_password | default(omit, True) }}"
+      max_dms: "{{ ibm_sa_domain_max_dms | default(omit, True) }}"
+      size: "{{ ibm_sa_domain_size | default(omit, True) }}"

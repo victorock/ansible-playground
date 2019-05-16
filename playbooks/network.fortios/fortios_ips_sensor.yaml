@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_ips_sensor"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_ips_sensor: 
+      username: "{{ fortios_ips_sensor_username | default(omit, True) }}"
+      ips_sensor: "{{ fortios_ips_sensor_ips_sensor | default(omit, True) }}"
+      host: "{{ fortios_ips_sensor_host | default(omit, True) }}"
+      https: "{{ fortios_ips_sensor_https | default(omit, True) }}"
+      password: "{{ fortios_ips_sensor_password | default(omit, True) }}"
+      vdom: "{{ fortios_ips_sensor_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_ips_sensor"
+      fortios_ips_sensor: "{{ fortios_ips_sensor }}"
+      register: r_fortios_ips_sensor

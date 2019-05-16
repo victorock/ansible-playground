@@ -7,7 +7,7 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_data_group: 
-      name: "{{ bigip_data_group_name | default(omit, True) }}"
+      description: "{{ bigip_data_group_description | default(omit, True) }}"
       delete_data_group_file: "{{ bigip_data_group_delete_data_group_file | default(omit, True) }}"
       type: "{{ bigip_data_group_type | default(omit, True) }}"
       partition: "{{ bigip_data_group_partition | default(omit, True) }}"
@@ -23,6 +23,7 @@
       external_file_name: "{{ bigip_data_group_external_file_name | default(omit, True) }}"
       password: "{{ bigip_data_group_password | default(omit, True) }}"
       validate_certs: "{{ bigip_data_group_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_data_group_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_data_group"
       bigip_data_group: "{{ bigip_data_group }}"

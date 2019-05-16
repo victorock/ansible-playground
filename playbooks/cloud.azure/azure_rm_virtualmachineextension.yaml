@@ -1,0 +1,36 @@
+---
+- name: "module_azure_rm_virtualmachineextension"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_virtualmachineextension: 
+      resource_group: "{{ azure_rm_virtualmachineextension_resource_group | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_virtualmachineextension_cloud_environment | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_virtualmachineextension_cert_validation_mode | default(omit, True) }}"
+      ad_user: "{{ azure_rm_virtualmachineextension_ad_user | default(omit, True) }}"
+      secret: "{{ azure_rm_virtualmachineextension_secret | default(omit, True) }}"
+      state: "{{ azure_rm_virtualmachineextension_state | default(omit, True) }}"
+      location: "{{ azure_rm_virtualmachineextension_location | default(omit, True) }}"
+      protected_settings: "{{ azure_rm_virtualmachineextension_protected_settings | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_virtualmachineextension_subscription_id | default(omit, True) }}"
+      type_handler_version: "{{ azure_rm_virtualmachineextension_type_handler_version | default(omit, True) }}"
+      profile: "{{ azure_rm_virtualmachineextension_profile | default(omit, True) }}"
+      auto_upgrade_minor_version: "{{ azure_rm_virtualmachineextension_auto_upgrade_minor_version | default(omit, True) }}"
+      virtual_machine_extension_type: "{{ azure_rm_virtualmachineextension_virtual_machine_extension_type | default(omit, True) }}"
+      client_id: "{{ azure_rm_virtualmachineextension_client_id | default(omit, True) }}"
+      auth_source: "{{ azure_rm_virtualmachineextension_auth_source | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_virtualmachineextension_adfs_authority_url | default(omit, True) }}"
+      password: "{{ azure_rm_virtualmachineextension_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_virtualmachineextension_tenant | default(omit, True) }}"
+      virtual_machine_name: "{{ azure_rm_virtualmachineextension_virtual_machine_name | default(omit, True) }}"
+      publisher: "{{ azure_rm_virtualmachineextension_publisher | default(omit, True) }}"
+      name: "{{ azure_rm_virtualmachineextension_name | default(omit, True) }}"
+      settings: "{{ azure_rm_virtualmachineextension_settings | default(omit, True) }}"
+      api_profile: "{{ azure_rm_virtualmachineextension_api_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_virtualmachineextension"
+      azure_rm_virtualmachineextension: "{{ azure_rm_virtualmachineextension }}"
+      register: r_azure_rm_virtualmachineextension

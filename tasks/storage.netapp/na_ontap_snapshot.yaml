@@ -6,7 +6,7 @@
     na_ontap_snapshot: 
       comment: "{{ na_ontap_snapshot_comment | default(omit, True) }}"
       username: "{{ na_ontap_snapshot_username | default(omit, True) }}"
-      http_port: "{{ na_ontap_snapshot_http_port | default(omit, True) }}"
+      from_name: "{{ na_ontap_snapshot_from_name | default(omit, True) }}"
       snapshot_instance_uuid: "{{ na_ontap_snapshot_snapshot_instance_uuid | default(omit, True) }}"
       vserver: "{{ na_ontap_snapshot_vserver | default(omit, True) }}"
       hostname: "{{ na_ontap_snapshot_hostname | default(omit, True) }}"
@@ -15,7 +15,9 @@
       volume: "{{ na_ontap_snapshot_volume | default(omit, True) }}"
       async_bool: "{{ na_ontap_snapshot_async_bool | default(omit, True) }}"
       snapmirror_label: "{{ na_ontap_snapshot_snapmirror_label | default(omit, True) }}"
+      http_port: "{{ na_ontap_snapshot_http_port | default(omit, True) }}"
       snapshot: "{{ na_ontap_snapshot_snapshot | default(omit, True) }}"
       https: "{{ na_ontap_snapshot_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_snapshot_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_snapshot_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_snapshot_validate_certs | default(omit, True) }}"

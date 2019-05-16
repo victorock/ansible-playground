@@ -9,8 +9,7 @@
     nxos_config: 
       src: "{{ nxos_config_src | default(omit, True) }}"
       diff_ignore_lines: "{{ nxos_config_diff_ignore_lines | default(omit, True) }}"
-      save: "{{ nxos_config_save | default(omit, True) }}"
-      force: "{{ nxos_config_force | default(omit, True) }}"
+      backup_options: "{{ nxos_config_backup_options | default(omit, True) }}"
       replace_src: "{{ nxos_config_replace_src | default(omit, True) }}"
       after: "{{ nxos_config_after | default(omit, True) }}"
       lines: "{{ nxos_config_lines | default(omit, True) }}"

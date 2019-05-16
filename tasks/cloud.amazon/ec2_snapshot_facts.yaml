@@ -10,6 +10,7 @@
       security_token: "{{ ec2_snapshot_facts_security_token | default(omit, True) }}"
       region: "{{ ec2_snapshot_facts_region | default(omit, True) }}"
       snapshot_ids: "{{ ec2_snapshot_facts_snapshot_ids | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_snapshot_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       filters: "{{ ec2_snapshot_facts_filters | default(omit, True) }}"
       ec2_url: "{{ ec2_snapshot_facts_ec2_url | default(omit, True) }}"
       restorable_by_user_ids: "{{ ec2_snapshot_facts_restorable_by_user_ids | default(omit, True) }}"

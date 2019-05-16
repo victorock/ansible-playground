@@ -13,6 +13,7 @@
       vserver: "{{ na_ontap_motd_vserver | default(omit, True) }}"
       state: "{{ na_ontap_motd_state | default(omit, True) }}"
       https: "{{ na_ontap_motd_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_motd_ontapi | default(omit, True) }}"
       message: "{{ na_ontap_motd_message | default(omit, True) }}"
       password: "{{ na_ontap_motd_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_motd_validate_certs | default(omit, True) }}"

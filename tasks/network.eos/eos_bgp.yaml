@@ -1,0 +1,8 @@
+---
+- name: "module_eos_bgp"
+  eos_bgp: "{{ eos_bgp }}"
+  register: r_eos_bgp
+  vars:
+    eos_bgp: 
+      operation: "{{ eos_bgp_operation | default(omit, True) }}"
+      config: "{{ eos_bgp_config | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_ftgd_local_cat"
+  fortios_webfilter_ftgd_local_cat: "{{ fortios_webfilter_ftgd_local_cat }}"
+  register: r_fortios_webfilter_ftgd_local_cat
+  vars:
+    fortios_webfilter_ftgd_local_cat: 
+      username: "{{ fortios_webfilter_ftgd_local_cat_username | default(omit, True) }}"
+      webfilter_ftgd_local_cat: "{{ fortios_webfilter_ftgd_local_cat_webfilter_ftgd_local_cat | default(omit, True) }}"
+      host: "{{ fortios_webfilter_ftgd_local_cat_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_ftgd_local_cat_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_ftgd_local_cat_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_ftgd_local_cat_vdom | default(omit, True) }}"

@@ -1,0 +1,17 @@
+---
+- name: "module_bigip_apm_policy_import"
+  bigip_apm_policy_import: "{{ bigip_apm_policy_import }}"
+  register: r_bigip_apm_policy_import
+  vars:
+    bigip_apm_policy_import: 
+      force: "{{ bigip_apm_policy_import_force | default(omit, True) }}"
+      name: "{{ bigip_apm_policy_import_name | default(omit, True) }}"
+      validate_certs: "{{ bigip_apm_policy_import_validate_certs | default(omit, True) }}"
+      partition: "{{ bigip_apm_policy_import_partition | default(omit, True) }}"
+      server: "{{ bigip_apm_policy_import_server | default(omit, True) }}"
+      source: "{{ bigip_apm_policy_import_source | default(omit, True) }}"
+      user: "{{ bigip_apm_policy_import_user | default(omit, True) }}"
+      server_port: "{{ bigip_apm_policy_import_server_port | default(omit, True) }}"
+      provider: "{{ bigip_apm_policy_import_provider | default(omit, True) }}"
+      password: "{{ bigip_apm_policy_import_password | default(omit, True) }}"
+      type: "{{ bigip_apm_policy_import_type | default(omit, True) }}"

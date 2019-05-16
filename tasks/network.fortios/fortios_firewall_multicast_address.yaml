@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_multicast_address"
+  fortios_firewall_multicast_address: "{{ fortios_firewall_multicast_address }}"
+  register: r_fortios_firewall_multicast_address
+  vars:
+    fortios_firewall_multicast_address: 
+      username: "{{ fortios_firewall_multicast_address_username | default(omit, True) }}"
+      host: "{{ fortios_firewall_multicast_address_host | default(omit, True) }}"
+      firewall_multicast_address: "{{ fortios_firewall_multicast_address_firewall_multicast_address | default(omit, True) }}"
+      https: "{{ fortios_firewall_multicast_address_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_multicast_address_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_multicast_address_vdom | default(omit, True) }}"

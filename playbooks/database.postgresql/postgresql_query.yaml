@@ -1,0 +1,26 @@
+---
+- name: "module_postgresql_query"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_query: 
+      ssl_mode: "{{ postgresql_query_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_query_ca_cert | default(omit, True) }}"
+      named_args: "{{ postgresql_query_named_args | default(omit, True) }}"
+      login_user: "{{ postgresql_query_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_query_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_query_session_role | default(omit, True) }}"
+      db: "{{ postgresql_query_db | default(omit, True) }}"
+      positional_args: "{{ postgresql_query_positional_args | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_query_login_unix_socket | default(omit, True) }}"
+      path_to_script: "{{ postgresql_query_path_to_script | default(omit, True) }}"
+      login_password: "{{ postgresql_query_login_password | default(omit, True) }}"
+      query: "{{ postgresql_query_query | default(omit, True) }}"
+      port: "{{ postgresql_query_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_postgresql_query"
+      postgresql_query: "{{ postgresql_query }}"
+      register: r_postgresql_query

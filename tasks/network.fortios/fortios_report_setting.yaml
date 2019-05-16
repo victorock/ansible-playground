@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_report_setting"
+  fortios_report_setting: "{{ fortios_report_setting }}"
+  register: r_fortios_report_setting
+  vars:
+    fortios_report_setting: 
+      username: "{{ fortios_report_setting_username | default(omit, True) }}"
+      host: "{{ fortios_report_setting_host | default(omit, True) }}"
+      https: "{{ fortios_report_setting_https | default(omit, True) }}"
+      report_setting: "{{ fortios_report_setting_report_setting | default(omit, True) }}"
+      password: "{{ fortios_report_setting_password | default(omit, True) }}"
+      vdom: "{{ fortios_report_setting_vdom | default(omit, True) }}"

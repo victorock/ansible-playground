@@ -1,0 +1,10 @@
+---
+- name: "module_get_certificate"
+  get_certificate: "{{ get_certificate }}"
+  register: r_get_certificate
+  vars:
+    get_certificate: 
+      host: "{{ get_certificate_host | default(omit, True) }}"
+      timeout: "{{ get_certificate_timeout | default(omit, True) }}"
+      port: "{{ get_certificate_port | default(omit, True) }}"
+      ca_cert: "{{ get_certificate_ca_cert | default(omit, True) }}"

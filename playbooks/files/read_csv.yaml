@@ -1,0 +1,21 @@
+---
+- name: "module_read_csv"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    read_csv: 
+      dialect: "{{ read_csv_dialect | default(omit, True) }}"
+      skipinitialspace: "{{ read_csv_skipinitialspace | default(omit, True) }}"
+      fieldnames: "{{ read_csv_fieldnames | default(omit, True) }}"
+      strict: "{{ read_csv_strict | default(omit, True) }}"
+      delimiter: "{{ read_csv_delimiter | default(omit, True) }}"
+      key: "{{ read_csv_key | default(omit, True) }}"
+      path: "{{ read_csv_path | default(omit, True) }}"
+      unique: "{{ read_csv_unique | default(omit, True) }}"
+  tasks:
+    - name: "plugin_read_csv"
+      read_csv: "{{ read_csv }}"
+      register: r_read_csv

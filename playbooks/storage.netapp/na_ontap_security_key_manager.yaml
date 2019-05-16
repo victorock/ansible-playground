@@ -1,0 +1,24 @@
+---
+- name: "module_na_ontap_security_key_manager"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_security_key_manager: 
+      node: "{{ na_ontap_security_key_manager_node | default(omit, True) }}"
+      username: "{{ na_ontap_security_key_manager_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_security_key_manager_http_port | default(omit, True) }}"
+      tcp_port: "{{ na_ontap_security_key_manager_tcp_port | default(omit, True) }}"
+      hostname: "{{ na_ontap_security_key_manager_hostname | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_security_key_manager_validate_certs | default(omit, True) }}"
+      state: "{{ na_ontap_security_key_manager_state | default(omit, True) }}"
+      https: "{{ na_ontap_security_key_manager_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_security_key_manager_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_security_key_manager_password | default(omit, True) }}"
+      ip_address: "{{ na_ontap_security_key_manager_ip_address | default(omit, True) }}"
+  tasks:
+    - name: "plugin_na_ontap_security_key_manager"
+      na_ontap_security_key_manager: "{{ na_ontap_security_key_manager }}"
+      register: r_na_ontap_security_key_manager

@@ -1,0 +1,17 @@
+---
+- name: "module_pn_dscp_map"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_dscp_map: 
+      state: "{{ pn_dscp_map_state | default(omit, True) }}"
+      pn_name: "{{ pn_dscp_map_pn_name | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_dscp_map_pn_cliswitch | default(omit, True) }}"
+      pn_scope: "{{ pn_dscp_map_pn_scope | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_dscp_map"
+      pn_dscp_map: "{{ pn_dscp_map }}"
+      register: r_pn_dscp_map

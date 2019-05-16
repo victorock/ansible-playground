@@ -6,6 +6,7 @@
     gcp_compute_route: 
       dest_range: "{{ gcp_compute_route_dest_range | default(omit, True) }}"
       scopes: "{{ gcp_compute_route_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_route_service_account_contents | default(omit, True) }}"
       project: "{{ gcp_compute_route_project | default(omit, True) }}"
       description: "{{ gcp_compute_route_description | default(omit, True) }}"
       next_hop_instance: "{{ gcp_compute_route_next_hop_instance | default(omit, True) }}"

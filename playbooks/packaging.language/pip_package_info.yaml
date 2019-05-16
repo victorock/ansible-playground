@@ -1,0 +1,14 @@
+---
+- name: "module_pip_package_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pip_package_info: 
+      clients: "{{ pip_package_info_clients | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pip_package_info"
+      pip_package_info: "{{ pip_package_info }}"
+      register: r_pip_package_info

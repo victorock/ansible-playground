@@ -1,0 +1,25 @@
+---
+- name: "module_pn_igmp_snooping"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_igmp_snooping: 
+      pn_enable_vlans: "{{ pn_igmp_snooping_pn_enable_vlans | default(omit, True) }}"
+      pn_scope: "{{ pn_igmp_snooping_pn_scope | default(omit, True) }}"
+      pn_query_interval: "{{ pn_igmp_snooping_pn_query_interval | default(omit, True) }}"
+      pn_igmpv2_vlans: "{{ pn_igmp_snooping_pn_igmpv2_vlans | default(omit, True) }}"
+      pn_query_max_response_time: "{{ pn_igmp_snooping_pn_query_max_response_time | default(omit, True) }}"
+      pn_igmpv3_vlans: "{{ pn_igmp_snooping_pn_igmpv3_vlans | default(omit, True) }}"
+      pn_enable: "{{ pn_igmp_snooping_pn_enable | default(omit, True) }}"
+      state: "{{ pn_igmp_snooping_state | default(omit, True) }}"
+      pn_no_snoop_linklocal_vlans: "{{ pn_igmp_snooping_pn_no_snoop_linklocal_vlans | default(omit, True) }}"
+      pn_vxlan: "{{ pn_igmp_snooping_pn_vxlan | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_igmp_snooping_pn_cliswitch | default(omit, True) }}"
+      pn_snoop_linklocal_vlans: "{{ pn_igmp_snooping_pn_snoop_linklocal_vlans | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_igmp_snooping"
+      pn_igmp_snooping: "{{ pn_igmp_snooping }}"
+      register: r_pn_igmp_snooping

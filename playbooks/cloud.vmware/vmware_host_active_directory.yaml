@@ -1,0 +1,24 @@
+---
+- name: "module_vmware_host_active_directory"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_host_active_directory: 
+      username: "{{ vmware_host_active_directory_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_active_directory_hostname | default(omit, True) }}"
+      ad_user: "{{ vmware_host_active_directory_ad_user | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_active_directory_cluster_name | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_active_directory_esxi_hostname | default(omit, True) }}"
+      ad_state: "{{ vmware_host_active_directory_ad_state | default(omit, True) }}"
+      ad_password: "{{ vmware_host_active_directory_ad_password | default(omit, True) }}"
+      password: "{{ vmware_host_active_directory_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_active_directory_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_active_directory_port | default(omit, True) }}"
+      ad_domain: "{{ vmware_host_active_directory_ad_domain | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_host_active_directory"
+      vmware_host_active_directory: "{{ vmware_host_active_directory }}"
+      register: r_vmware_host_active_directory

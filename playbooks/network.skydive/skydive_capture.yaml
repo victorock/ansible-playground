@@ -1,0 +1,24 @@
+---
+- name: "module_skydive_capture"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    skydive_capture: 
+      capture_name: "{{ skydive_capture_capture_name | default(omit, True) }}"
+      description: "{{ skydive_capture_description | default(omit, True) }}"
+      reassemble_tcp: "{{ skydive_capture_reassemble_tcp | default(omit, True) }}"
+      layer_key_mode: "{{ skydive_capture_layer_key_mode | default(omit, True) }}"
+      state: "{{ skydive_capture_state | default(omit, True) }}"
+      extra_tcp_metric: "{{ skydive_capture_extra_tcp_metric | default(omit, True) }}"
+      ip_defrag: "{{ skydive_capture_ip_defrag | default(omit, True) }}"
+      provider: "{{ skydive_capture_provider | default(omit, True) }}"
+      query: "{{ skydive_capture_query | default(omit, True) }}"
+      interface_name: "{{ skydive_capture_interface_name | default(omit, True) }}"
+      type: "{{ skydive_capture_type | default(omit, True) }}"
+  tasks:
+    - name: "plugin_skydive_capture"
+      skydive_capture: "{{ skydive_capture }}"
+      register: r_skydive_capture

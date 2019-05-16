@@ -1,0 +1,28 @@
+---
+- name: "module_utm_proxy_exception"
+  utm_proxy_exception: "{{ utm_proxy_exception }}"
+  register: r_utm_proxy_exception
+  vars:
+    utm_proxy_exception: 
+      utm_host: "{{ utm_proxy_exception_utm_host | default(omit, True) }}"
+      skipbadclients: "{{ utm_proxy_exception_skipbadclients | default(omit, True) }}"
+      skipform: "{{ utm_proxy_exception_skipform | default(omit, True) }}"
+      skipurl: "{{ utm_proxy_exception_skipurl | default(omit, True) }}"
+      skipcookie: "{{ utm_proxy_exception_skipcookie | default(omit, True) }}"
+      source: "{{ utm_proxy_exception_source | default(omit, True) }}"
+      state: "{{ utm_proxy_exception_state | default(omit, True) }}"
+      status: "{{ utm_proxy_exception_status | default(omit, True) }}"
+      utm_token: "{{ utm_proxy_exception_utm_token | default(omit, True) }}"
+      skipform_missingtoken: "{{ utm_proxy_exception_skipform_missingtoken | default(omit, True) }}"
+      skiphtmlrewrite: "{{ utm_proxy_exception_skiphtmlrewrite | default(omit, True) }}"
+      path: "{{ utm_proxy_exception_path | default(omit, True) }}"
+      skipav: "{{ utm_proxy_exception_skipav | default(omit, True) }}"
+      name: "{{ utm_proxy_exception_name | default(omit, True) }}"
+      skiptft: "{{ utm_proxy_exception_skiptft | default(omit, True) }}"
+      utm_protocol: "{{ utm_proxy_exception_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_proxy_exception_headers | default(omit, True) }}"
+      skip_threats_filter_categories: "{{ utm_proxy_exception_skip_threats_filter_categories | default(omit, True) }}"
+      skip_custom_threats_filters: "{{ utm_proxy_exception_skip_custom_threats_filters | default(omit, True) }}"
+      validate_certs: "{{ utm_proxy_exception_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_proxy_exception_utm_port | default(omit, True) }}"
+      op: "{{ utm_proxy_exception_op | default(omit, True) }}"

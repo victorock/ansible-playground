@@ -1,0 +1,27 @@
+---
+- name: "module_bigip_traffic_selector"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_traffic_selector: 
+      ipsec_policy: "{{ bigip_traffic_selector_ipsec_policy | default(omit, True) }}"
+      description: "{{ bigip_traffic_selector_description | default(omit, True) }}"
+      source_address: "{{ bigip_traffic_selector_source_address | default(omit, True) }}"
+      partition: "{{ bigip_traffic_selector_partition | default(omit, True) }}"
+      server: "{{ bigip_traffic_selector_server | default(omit, True) }}"
+      state: "{{ bigip_traffic_selector_state | default(omit, True) }}"
+      user: "{{ bigip_traffic_selector_user | default(omit, True) }}"
+      server_port: "{{ bigip_traffic_selector_server_port | default(omit, True) }}"
+      provider: "{{ bigip_traffic_selector_provider | default(omit, True) }}"
+      destination_address: "{{ bigip_traffic_selector_destination_address | default(omit, True) }}"
+      password: "{{ bigip_traffic_selector_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_traffic_selector_validate_certs | default(omit, True) }}"
+      order: "{{ bigip_traffic_selector_order | default(omit, True) }}"
+      name: "{{ bigip_traffic_selector_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_traffic_selector"
+      bigip_traffic_selector: "{{ bigip_traffic_selector }}"
+      register: r_bigip_traffic_selector

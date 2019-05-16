@@ -1,0 +1,12 @@
+---
+- name: "module_cloudscale_server_group"
+  cloudscale_server_group: "{{ cloudscale_server_group }}"
+  register: r_cloudscale_server_group
+  vars:
+    cloudscale_server_group: 
+      uuid: "{{ cloudscale_server_group_uuid | default(omit, True) }}"
+      api_timeout: "{{ cloudscale_server_group_api_timeout | default(omit, True) }}"
+      state: "{{ cloudscale_server_group_state | default(omit, True) }}"
+      api_token: "{{ cloudscale_server_group_api_token | default(omit, True) }}"
+      type: "{{ cloudscale_server_group_type | default(omit, True) }}"
+      name: "{{ cloudscale_server_group_name | default(omit, True) }}"

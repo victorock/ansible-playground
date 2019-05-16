@@ -1,0 +1,14 @@
+---
+- name: "module_vmware_dvswitch_lacp"
+  vmware_dvswitch_lacp: "{{ vmware_dvswitch_lacp }}"
+  register: r_vmware_dvswitch_lacp
+  vars:
+    vmware_dvswitch_lacp: 
+      username: "{{ vmware_dvswitch_lacp_username | default(omit, True) }}"
+      support_mode: "{{ vmware_dvswitch_lacp_support_mode | default(omit, True) }}"
+      hostname: "{{ vmware_dvswitch_lacp_hostname | default(omit, True) }}"
+      link_aggregation_groups: "{{ vmware_dvswitch_lacp_link_aggregation_groups | default(omit, True) }}"
+      switch: "{{ vmware_dvswitch_lacp_switch | default(omit, True) }}"
+      password: "{{ vmware_dvswitch_lacp_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_dvswitch_lacp_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_dvswitch_lacp_port | default(omit, True) }}"

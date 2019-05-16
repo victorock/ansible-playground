@@ -1,0 +1,36 @@
+---
+- name: "module_cs_vlan_ip_range"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cs_vlan_ip_range: 
+      domain: "{{ cs_vlan_ip_range_domain | default(omit, True) }}"
+      end_ipv6: "{{ cs_vlan_ip_range_end_ipv6 | default(omit, True) }}"
+      api_http_method: "{{ cs_vlan_ip_range_api_http_method | default(omit, True) }}"
+      for_virtual_network: "{{ cs_vlan_ip_range_for_virtual_network | default(omit, True) }}"
+      gateway: "{{ cs_vlan_ip_range_gateway | default(omit, True) }}"
+      api_url: "{{ cs_vlan_ip_range_api_url | default(omit, True) }}"
+      zone: "{{ cs_vlan_ip_range_zone | default(omit, True) }}"
+      start_ipv6: "{{ cs_vlan_ip_range_start_ipv6 | default(omit, True) }}"
+      cidr_ipv6: "{{ cs_vlan_ip_range_cidr_ipv6 | default(omit, True) }}"
+      state: "{{ cs_vlan_ip_range_state | default(omit, True) }}"
+      end_ip: "{{ cs_vlan_ip_range_end_ip | default(omit, True) }}"
+      physical_network: "{{ cs_vlan_ip_range_physical_network | default(omit, True) }}"
+      api_key: "{{ cs_vlan_ip_range_api_key | default(omit, True) }}"
+      vlan: "{{ cs_vlan_ip_range_vlan | default(omit, True) }}"
+      api_secret: "{{ cs_vlan_ip_range_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_vlan_ip_range_api_timeout | default(omit, True) }}"
+      netmask: "{{ cs_vlan_ip_range_netmask | default(omit, True) }}"
+      start_ip: "{{ cs_vlan_ip_range_start_ip | default(omit, True) }}"
+      gateway_ipv6: "{{ cs_vlan_ip_range_gateway_ipv6 | default(omit, True) }}"
+      network: "{{ cs_vlan_ip_range_network | default(omit, True) }}"
+      account: "{{ cs_vlan_ip_range_account | default(omit, True) }}"
+      api_region: "{{ cs_vlan_ip_range_api_region | default(omit, True) }}"
+      project: "{{ cs_vlan_ip_range_project | default(omit, True) }}"
+  tasks:
+    - name: "plugin_cs_vlan_ip_range"
+      cs_vlan_ip_range: "{{ cs_vlan_ip_range }}"
+      register: r_cs_vlan_ip_range

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_report_theme"
+  fortios_report_theme: "{{ fortios_report_theme }}"
+  register: r_fortios_report_theme
+  vars:
+    fortios_report_theme: 
+      username: "{{ fortios_report_theme_username | default(omit, True) }}"
+      host: "{{ fortios_report_theme_host | default(omit, True) }}"
+      https: "{{ fortios_report_theme_https | default(omit, True) }}"
+      password: "{{ fortios_report_theme_password | default(omit, True) }}"
+      report_theme: "{{ fortios_report_theme_report_theme | default(omit, True) }}"
+      vdom: "{{ fortios_report_theme_vdom | default(omit, True) }}"

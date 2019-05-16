@@ -5,13 +5,16 @@
   vars:
     gcp_compute_subnetwork: 
       scopes: "{{ gcp_compute_subnetwork_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_subnetwork_service_account_contents | default(omit, True) }}"
       description: "{{ gcp_compute_subnetwork_description | default(omit, True) }}"
       private_ip_google_access: "{{ gcp_compute_subnetwork_private_ip_google_access | default(omit, True) }}"
       service_account_email: "{{ gcp_compute_subnetwork_service_account_email | default(omit, True) }}"
       region: "{{ gcp_compute_subnetwork_region | default(omit, True) }}"
+      state: "{{ gcp_compute_subnetwork_state | default(omit, True) }}"
       project: "{{ gcp_compute_subnetwork_project | default(omit, True) }}"
       network: "{{ gcp_compute_subnetwork_network | default(omit, True) }}"
-      state: "{{ gcp_compute_subnetwork_state | default(omit, True) }}"
+      enable_flow_logs: "{{ gcp_compute_subnetwork_enable_flow_logs | default(omit, True) }}"
+      secondary_ip_ranges: "{{ gcp_compute_subnetwork_secondary_ip_ranges | default(omit, True) }}"
       service_account_file: "{{ gcp_compute_subnetwork_service_account_file | default(omit, True) }}"
       ip_cidr_range: "{{ gcp_compute_subnetwork_ip_cidr_range | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_subnetwork_auth_kind | default(omit, True) }}"

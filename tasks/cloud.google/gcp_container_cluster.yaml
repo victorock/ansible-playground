@@ -5,9 +5,9 @@
   vars:
     gcp_container_cluster: 
       initial_node_count: "{{ gcp_container_cluster_initial_node_count | default(omit, True) }}"
+      service_account_contents: "{{ gcp_container_cluster_service_account_contents | default(omit, True) }}"
       monitoring_service: "{{ gcp_container_cluster_monitoring_service | default(omit, True) }}"
       description: "{{ gcp_container_cluster_description | default(omit, True) }}"
-      zone: "{{ gcp_container_cluster_zone | default(omit, True) }}"
       scopes: "{{ gcp_container_cluster_scopes | default(omit, True) }}"
       cluster_ipv4_cidr: "{{ gcp_container_cluster_cluster_ipv4_cidr | default(omit, True) }}"
       service_account_email: "{{ gcp_container_cluster_service_account_email | default(omit, True) }}"
@@ -16,6 +16,7 @@
       name: "{{ gcp_container_cluster_name | default(omit, True) }}"
       project: "{{ gcp_container_cluster_project | default(omit, True) }}"
       node_config: "{{ gcp_container_cluster_node_config | default(omit, True) }}"
+      private_cluster_config: "{{ gcp_container_cluster_private_cluster_config | default(omit, True) }}"
       location: "{{ gcp_container_cluster_location | default(omit, True) }}"
       auth_kind: "{{ gcp_container_cluster_auth_kind | default(omit, True) }}"
       addons_config: "{{ gcp_container_cluster_addons_config | default(omit, True) }}"

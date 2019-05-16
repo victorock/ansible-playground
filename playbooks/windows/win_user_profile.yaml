@@ -1,0 +1,17 @@
+---
+- name: "module_win_user_profile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_user_profile: 
+      username: "{{ win_user_profile_username | default(omit, True) }}"
+      state: "{{ win_user_profile_state | default(omit, True) }}"
+      remove_multiple: "{{ win_user_profile_remove_multiple | default(omit, True) }}"
+      name: "{{ win_user_profile_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_user_profile"
+      win_user_profile: "{{ win_user_profile }}"
+      register: r_win_user_profile

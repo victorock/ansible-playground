@@ -9,7 +9,6 @@
       tenant_name: "{{ rax_mon_check_tenant_name | default(omit, True) }}"
       period: "{{ rax_mon_check_period | default(omit, True) }}"
       disabled: "{{ rax_mon_check_disabled | default(omit, True) }}"
-      verify_ssl: "{{ rax_mon_check_verify_ssl | default(omit, True) }}"
       auth_endpoint: "{{ rax_mon_check_auth_endpoint | default(omit, True) }}"
       label: "{{ rax_mon_check_label | default(omit, True) }}"
       state: "{{ rax_mon_check_state | default(omit, True) }}"
@@ -26,3 +25,4 @@
       region: "{{ rax_mon_check_region | default(omit, True) }}"
       timeout: "{{ rax_mon_check_timeout | default(omit, True) }}"
       monitoring_zones_poll: "{{ rax_mon_check_monitoring_zones_poll | default(omit, True) }}"
+      validate_certs: "{{ rax_mon_check_validate_certs | default(omit, True) }}"

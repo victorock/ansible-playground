@@ -14,6 +14,7 @@
       gather_volumes: "{{ aws_sgw_facts_gather_volumes | default(omit, True) }}"
       region: "{{ aws_sgw_facts_region | default(omit, True) }}"
       gather_tapes: "{{ aws_sgw_facts_gather_tapes | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_sgw_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ aws_sgw_facts_ec2_url | default(omit, True) }}"
       gather_local_disks: "{{ aws_sgw_facts_gather_local_disks | default(omit, True) }}"
       gather_file_shares: "{{ aws_sgw_facts_gather_file_shares | default(omit, True) }}"

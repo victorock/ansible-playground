@@ -1,0 +1,31 @@
+---
+- name: "module_pn_connection_stats_settings"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_connection_stats_settings: 
+      pn_client_server_stats_max_memory: "{{ pn_connection_stats_settings_pn_client_server_stats_max_memory | default(omit, True) }}"
+      pn_connection_max_memory: "{{ pn_connection_stats_settings_pn_connection_max_memory | default(omit, True) }}"
+      pn_connection_stats_max_memory: "{{ pn_connection_stats_settings_pn_connection_stats_max_memory | default(omit, True) }}"
+      pn_connection_backup_enable: "{{ pn_connection_stats_settings_pn_connection_backup_enable | default(omit, True) }}"
+      pn_client_server_stats_log_interval: "{{ pn_connection_stats_settings_pn_client_server_stats_log_interval | default(omit, True) }}"
+      pn_connection_backup_interval: "{{ pn_connection_stats_settings_pn_connection_backup_interval | default(omit, True) }}"
+      pn_fabric_connection_backup_enable: "{{ pn_connection_stats_settings_pn_fabric_connection_backup_enable | default(omit, True) }}"
+      pn_connection_stats_log_interval: "{{ pn_connection_stats_settings_pn_connection_stats_log_interval | default(omit, True) }}"
+      pn_client_server_stats_log_disk_space: "{{ pn_connection_stats_settings_pn_client_server_stats_log_disk_space | default(omit, True) }}"
+      pn_service_stat_max_memory: "{{ pn_connection_stats_settings_pn_service_stat_max_memory | default(omit, True) }}"
+      pn_enable: "{{ pn_connection_stats_settings_pn_enable | default(omit, True) }}"
+      state: "{{ pn_connection_stats_settings_state | default(omit, True) }}"
+      pn_fabric_connection_max_memory: "{{ pn_connection_stats_settings_pn_fabric_connection_max_memory | default(omit, True) }}"
+      pn_fabric_connection_backup_interval: "{{ pn_connection_stats_settings_pn_fabric_connection_backup_interval | default(omit, True) }}"
+      pn_connection_stats_log_enable: "{{ pn_connection_stats_settings_pn_connection_stats_log_enable | default(omit, True) }}"
+      pn_connection_stats_log_disk_space: "{{ pn_connection_stats_settings_pn_connection_stats_log_disk_space | default(omit, True) }}"
+      pn_client_server_stats_log_enable: "{{ pn_connection_stats_settings_pn_client_server_stats_log_enable | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_connection_stats_settings_pn_cliswitch | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_connection_stats_settings"
+      pn_connection_stats_settings: "{{ pn_connection_stats_settings }}"
+      register: r_pn_connection_stats_settings

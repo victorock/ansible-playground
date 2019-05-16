@@ -12,4 +12,5 @@
       state: "{{ ldap_attr_state | default(omit, True) }}"
       values: "{{ ldap_attr_values | default(omit, True) }}"
       bind_pw: "{{ ldap_attr_bind_pw | default(omit, True) }}"
+      params: "{{ ldap_attr_params | default(omit, True) }}"
       validate_certs: "{{ ldap_attr_validate_certs | default(omit, True) }}"

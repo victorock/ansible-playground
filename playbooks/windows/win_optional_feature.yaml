@@ -1,0 +1,17 @@
+---
+- name: "module_win_optional_feature"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_optional_feature: 
+      source: "{{ win_optional_feature_source | default(omit, True) }}"
+      state: "{{ win_optional_feature_state | default(omit, True) }}"
+      name: "{{ win_optional_feature_name | default(omit, True) }}"
+      include_parent: "{{ win_optional_feature_include_parent | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_optional_feature"
+      win_optional_feature: "{{ win_optional_feature }}"
+      register: r_win_optional_feature

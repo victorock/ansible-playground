@@ -13,6 +13,7 @@
       name: "{{ iam_cert_facts_name | default(omit, True) }}"
       security_token: "{{ iam_cert_facts_security_token | default(omit, True) }}"
       region: "{{ iam_cert_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ iam_cert_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ iam_cert_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ iam_cert_facts_validate_certs | default(omit, True) }}"
   tasks:

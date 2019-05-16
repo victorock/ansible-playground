@@ -1,0 +1,25 @@
+---
+- name: "module_aerospike_migrations"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aerospike_migrations: 
+      tries_limit: "{{ aerospike_migrations_tries_limit | default(omit, True) }}"
+      consecutive_good_checks: "{{ aerospike_migrations_consecutive_good_checks | default(omit, True) }}"
+      local_only: "{{ aerospike_migrations_local_only | default(omit, True) }}"
+      min_cluster_size: "{{ aerospike_migrations_min_cluster_size | default(omit, True) }}"
+      migrate_tx_key: "{{ aerospike_migrations_migrate_tx_key | default(omit, True) }}"
+      connect_timeout: "{{ aerospike_migrations_connect_timeout | default(omit, True) }}"
+      host: "{{ aerospike_migrations_host | default(omit, True) }}"
+      target_cluster_size: "{{ aerospike_migrations_target_cluster_size | default(omit, True) }}"
+      fail_on_cluster_change: "{{ aerospike_migrations_fail_on_cluster_change | default(omit, True) }}"
+      sleep_between_checks: "{{ aerospike_migrations_sleep_between_checks | default(omit, True) }}"
+      port: "{{ aerospike_migrations_port | default(omit, True) }}"
+      migrate_rx_key: "{{ aerospike_migrations_migrate_rx_key | default(omit, True) }}"
+  tasks:
+    - name: "plugin_aerospike_migrations"
+      aerospike_migrations: "{{ aerospike_migrations }}"
+      register: r_aerospike_migrations

@@ -1,0 +1,43 @@
+---
+- name: "module_kubevirt_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    kubevirt_template: 
+      force: "{{ kubevirt_template_force | default(omit, True) }}"
+      documentation_url: "{{ kubevirt_template_documentation_url | default(omit, True) }}"
+      icon_class: "{{ kubevirt_template_icon_class | default(omit, True) }}"
+      long_description: "{{ kubevirt_template_long_description | default(omit, True) }}"
+      client_key: "{{ kubevirt_template_client_key | default(omit, True) }}"
+      display_name: "{{ kubevirt_template_display_name | default(omit, True) }}"
+      default_volume: "{{ kubevirt_template_default_volume | default(omit, True) }}"
+      support_url: "{{ kubevirt_template_support_url | default(omit, True) }}"
+      namespace: "{{ kubevirt_template_namespace | default(omit, True) }}"
+      state: "{{ kubevirt_template_state | default(omit, True) }}"
+      version: "{{ kubevirt_template_version | default(omit, True) }}"
+      api_key: "{{ kubevirt_template_api_key | default(omit, True) }}"
+      client_cert: "{{ kubevirt_template_client_cert | default(omit, True) }}"
+      username: "{{ kubevirt_template_username | default(omit, True) }}"
+      description: "{{ kubevirt_template_description | default(omit, True) }}"
+      ca_cert: "{{ kubevirt_template_ca_cert | default(omit, True) }}"
+      default_nic: "{{ kubevirt_template_default_nic | default(omit, True) }}"
+      editable: "{{ kubevirt_template_editable | default(omit, True) }}"
+      host: "{{ kubevirt_template_host | default(omit, True) }}"
+      objects: "{{ kubevirt_template_objects | default(omit, True) }}"
+      password: "{{ kubevirt_template_password | default(omit, True) }}"
+      name: "{{ kubevirt_template_name | default(omit, True) }}"
+      merge_type: "{{ kubevirt_template_merge_type | default(omit, True) }}"
+      parameters: "{{ kubevirt_template_parameters | default(omit, True) }}"
+      provider_display_name: "{{ kubevirt_template_provider_display_name | default(omit, True) }}"
+      default_disk: "{{ kubevirt_template_default_disk | default(omit, True) }}"
+      kubeconfig: "{{ kubevirt_template_kubeconfig | default(omit, True) }}"
+      default_network: "{{ kubevirt_template_default_network | default(omit, True) }}"
+      context: "{{ kubevirt_template_context | default(omit, True) }}"
+      validate_certs: "{{ kubevirt_template_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_kubevirt_template"
+      kubevirt_template: "{{ kubevirt_template }}"
+      register: r_kubevirt_template

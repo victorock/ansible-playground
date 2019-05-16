@@ -1,0 +1,17 @@
+---
+- name: "module_purefb_s3acc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefb_s3acc: 
+      state: "{{ purefb_s3acc_state | default(omit, True) }}"
+      fb_url: "{{ purefb_s3acc_fb_url | default(omit, True) }}"
+      name: "{{ purefb_s3acc_name | default(omit, True) }}"
+      api_token: "{{ purefb_s3acc_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefb_s3acc"
+      purefb_s3acc: "{{ purefb_s3acc }}"
+      register: r_purefb_s3acc

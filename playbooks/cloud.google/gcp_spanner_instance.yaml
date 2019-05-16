@@ -8,16 +8,17 @@
   vars:
     gcp_spanner_instance: 
       scopes: "{{ gcp_spanner_instance_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_spanner_instance_service_account_contents | default(omit, True) }}"
       display_name: "{{ gcp_spanner_instance_display_name | default(omit, True) }}"
       name: "{{ gcp_spanner_instance_name | default(omit, True) }}"
       service_account_email: "{{ gcp_spanner_instance_service_account_email | default(omit, True) }}"
       labels: "{{ gcp_spanner_instance_labels | default(omit, True) }}"
       project: "{{ gcp_spanner_instance_project | default(omit, True) }}"
       state: "{{ gcp_spanner_instance_state | default(omit, True) }}"
-      auth_kind: "{{ gcp_spanner_instance_auth_kind | default(omit, True) }}"
-      service_account_file: "{{ gcp_spanner_instance_service_account_file | default(omit, True) }}"
-      config: "{{ gcp_spanner_instance_config | default(omit, True) }}"
       node_count: "{{ gcp_spanner_instance_node_count | default(omit, True) }}"
+      auth_kind: "{{ gcp_spanner_instance_auth_kind | default(omit, True) }}"
+      config: "{{ gcp_spanner_instance_config | default(omit, True) }}"
+      service_account_file: "{{ gcp_spanner_instance_service_account_file | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_spanner_instance"
       gcp_spanner_instance: "{{ gcp_spanner_instance }}"

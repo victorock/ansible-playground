@@ -1,0 +1,34 @@
+---
+- name: "module_mso_schema_template_contract_filter"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_schema_template_contract_filter: 
+      username: "{{ mso_schema_template_contract_filter_username | default(omit, True) }}"
+      filter: "{{ mso_schema_template_contract_filter_filter | default(omit, True) }}"
+      timeout: "{{ mso_schema_template_contract_filter_timeout | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_template_contract_filter_use_proxy | default(omit, True) }}"
+      state: "{{ mso_schema_template_contract_filter_state | default(omit, True) }}"
+      filter_type: "{{ mso_schema_template_contract_filter_filter_type | default(omit, True) }}"
+      output_level: "{{ mso_schema_template_contract_filter_output_level | default(omit, True) }}"
+      schema: "{{ mso_schema_template_contract_filter_schema | default(omit, True) }}"
+      host: "{{ mso_schema_template_contract_filter_host | default(omit, True) }}"
+      template: "{{ mso_schema_template_contract_filter_template | default(omit, True) }}"
+      contract_display_name: "{{ mso_schema_template_contract_filter_contract_display_name | default(omit, True) }}"
+      contract: "{{ mso_schema_template_contract_filter_contract | default(omit, True) }}"
+      filter_directives: "{{ mso_schema_template_contract_filter_filter_directives | default(omit, True) }}"
+      contract_scope: "{{ mso_schema_template_contract_filter_contract_scope | default(omit, True) }}"
+      filter_template: "{{ mso_schema_template_contract_filter_filter_template | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_template_contract_filter_use_ssl | default(omit, True) }}"
+      contract_filter_type: "{{ mso_schema_template_contract_filter_contract_filter_type | default(omit, True) }}"
+      password: "{{ mso_schema_template_contract_filter_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_template_contract_filter_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_template_contract_filter_port | default(omit, True) }}"
+      filter_schema: "{{ mso_schema_template_contract_filter_filter_schema | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_schema_template_contract_filter"
+      mso_schema_template_contract_filter: "{{ mso_schema_template_contract_filter }}"
+      register: r_mso_schema_template_contract_filter

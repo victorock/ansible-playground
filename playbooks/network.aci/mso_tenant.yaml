@@ -1,0 +1,28 @@
+---
+- name: "module_mso_tenant"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_tenant: 
+      username: "{{ mso_tenant_username | default(omit, True) }}"
+      use_proxy: "{{ mso_tenant_use_proxy | default(omit, True) }}"
+      display_name: "{{ mso_tenant_display_name | default(omit, True) }}"
+      description: "{{ mso_tenant_description | default(omit, True) }}"
+      state: "{{ mso_tenant_state | default(omit, True) }}"
+      sites: "{{ mso_tenant_sites | default(omit, True) }}"
+      output_level: "{{ mso_tenant_output_level | default(omit, True) }}"
+      host: "{{ mso_tenant_host | default(omit, True) }}"
+      timeout: "{{ mso_tenant_timeout | default(omit, True) }}"
+      use_ssl: "{{ mso_tenant_use_ssl | default(omit, True) }}"
+      password: "{{ mso_tenant_password | default(omit, True) }}"
+      validate_certs: "{{ mso_tenant_validate_certs | default(omit, True) }}"
+      port: "{{ mso_tenant_port | default(omit, True) }}"
+      tenant: "{{ mso_tenant_tenant | default(omit, True) }}"
+      users: "{{ mso_tenant_users | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_tenant"
+      mso_tenant: "{{ mso_tenant }}"
+      register: r_mso_tenant

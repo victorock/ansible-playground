@@ -14,4 +14,5 @@
       fetch_nested: "{{ ovirt_mac_pool_fetch_nested | default(omit, True) }}"
       nested_attributes: "{{ ovirt_mac_pool_nested_attributes | default(omit, True) }}"
       timeout: "{{ ovirt_mac_pool_timeout | default(omit, True) }}"
+      id: "{{ ovirt_mac_pool_id | default(omit, True) }}"
       wait: "{{ ovirt_mac_pool_wait | default(omit, True) }}"

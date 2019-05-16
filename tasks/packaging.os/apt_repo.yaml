@@ -1,0 +1,10 @@
+---
+- name: "module_apt_repo"
+  apt_repo: "{{ apt_repo }}"
+  register: r_apt_repo
+  vars:
+    apt_repo: 
+      repo: "{{ apt_repo_repo | default(omit, True) }}"
+      state: "{{ apt_repo_state | default(omit, True) }}"
+      remove_others: "{{ apt_repo_remove_others | default(omit, True) }}"
+      update: "{{ apt_repo_update | default(omit, True) }}"

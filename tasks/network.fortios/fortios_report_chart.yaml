@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_report_chart"
+  fortios_report_chart: "{{ fortios_report_chart }}"
+  register: r_fortios_report_chart
+  vars:
+    fortios_report_chart: 
+      username: "{{ fortios_report_chart_username | default(omit, True) }}"
+      report_chart: "{{ fortios_report_chart_report_chart | default(omit, True) }}"
+      host: "{{ fortios_report_chart_host | default(omit, True) }}"
+      https: "{{ fortios_report_chart_https | default(omit, True) }}"
+      password: "{{ fortios_report_chart_password | default(omit, True) }}"
+      vdom: "{{ fortios_report_chart_vdom | default(omit, True) }}"

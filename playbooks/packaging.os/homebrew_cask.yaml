@@ -9,6 +9,7 @@
     homebrew_cask: 
       install_options: "{{ homebrew_cask_install_options | default(omit, True) }}"
       upgrade: "{{ homebrew_cask_upgrade | default(omit, True) }}"
+      sudo_password: "{{ homebrew_cask_sudo_password | default(omit, True) }}"
       name: "{{ homebrew_cask_name | default(omit, True) }}"
       update_homebrew: "{{ homebrew_cask_update_homebrew | default(omit, True) }}"
       upgrade_all: "{{ homebrew_cask_upgrade_all | default(omit, True) }}"

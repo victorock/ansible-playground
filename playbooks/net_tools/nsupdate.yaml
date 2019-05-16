@@ -8,6 +8,7 @@
   vars:
     nsupdate: 
       key_algorithm: "{{ nsupdate_key_algorithm | default(omit, True) }}"
+      protocol: "{{ nsupdate_protocol | default(omit, True) }}"
       zone: "{{ nsupdate_zone | default(omit, True) }}"
       key_name: "{{ nsupdate_key_name | default(omit, True) }}"
       value: "{{ nsupdate_value | default(omit, True) }}"

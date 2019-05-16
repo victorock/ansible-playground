@@ -8,10 +8,10 @@
   vars:
     import_role: 
       name: "{{ import_role_name | default(omit, True) }}"
-      private: "{{ import_role_private | default(omit, True) }}"
       allow_duplicates: "{{ import_role_allow_duplicates | default(omit, True) }}"
       tasks_from: "{{ import_role_tasks_from | default(omit, True) }}"
       vars_from: "{{ import_role_vars_from | default(omit, True) }}"
+      handlers_from: "{{ import_role_handlers_from | default(omit, True) }}"
       defaults_from: "{{ import_role_defaults_from | default(omit, True) }}"
   tasks:
     - name: "plugin_import_role"

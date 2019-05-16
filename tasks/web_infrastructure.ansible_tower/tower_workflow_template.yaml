@@ -15,6 +15,6 @@
       tower_username: "{{ tower_workflow_template_tower_username | default(omit, True) }}"
       organization: "{{ tower_workflow_template_organization | default(omit, True) }}"
       schema: "{{ tower_workflow_template_schema | default(omit, True) }}"
-      tower_verify_ssl: "{{ tower_workflow_template_tower_verify_ssl | default(omit, True) }}"
+      validate_certs: "{{ tower_workflow_template_validate_certs | default(omit, True) }}"
       survey_enabled: "{{ tower_workflow_template_survey_enabled | default(omit, True) }}"
       name: "{{ tower_workflow_template_name | default(omit, True) }}"

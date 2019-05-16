@@ -1,0 +1,20 @@
+---
+- name: "module_ss_3par_cpg"
+  ss_3par_cpg: "{{ ss_3par_cpg }}"
+  register: r_ss_3par_cpg
+  vars:
+    ss_3par_cpg: 
+      storage_system_password: "{{ ss_3par_cpg_storage_system_password | default(omit, True) }}"
+      domain: "{{ ss_3par_cpg_domain | default(omit, True) }}"
+      storage_system_username: "{{ ss_3par_cpg_storage_system_username | default(omit, True) }}"
+      secure: "{{ ss_3par_cpg_secure | default(omit, True) }}"
+      cpg_name: "{{ ss_3par_cpg_cpg_name | default(omit, True) }}"
+      raid_type: "{{ ss_3par_cpg_raid_type | default(omit, True) }}"
+      growth_increment: "{{ ss_3par_cpg_growth_increment | default(omit, True) }}"
+      state: "{{ ss_3par_cpg_state | default(omit, True) }}"
+      set_size: "{{ ss_3par_cpg_set_size | default(omit, True) }}"
+      storage_system_ip: "{{ ss_3par_cpg_storage_system_ip | default(omit, True) }}"
+      growth_warning: "{{ ss_3par_cpg_growth_warning | default(omit, True) }}"
+      disk_type: "{{ ss_3par_cpg_disk_type | default(omit, True) }}"
+      growth_limit: "{{ ss_3par_cpg_growth_limit | default(omit, True) }}"
+      high_availability: "{{ ss_3par_cpg_high_availability | default(omit, True) }}"

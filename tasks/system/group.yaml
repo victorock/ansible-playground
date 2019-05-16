@@ -4,8 +4,9 @@
   register: r_group
   vars:
     group: 
+      non_unique: "{{ group_non_unique | default(omit, True) }}"
+      name: "{{ group_name | default(omit, True) }}"
+      system: "{{ group_system | default(omit, True) }}"
       state: "{{ group_state | default(omit, True) }}"
       gid: "{{ group_gid | default(omit, True) }}"
       local: "{{ group_local | default(omit, True) }}"
-      name: "{{ group_name | default(omit, True) }}"
-      system: "{{ group_system | default(omit, True) }}"

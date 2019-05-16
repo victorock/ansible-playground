@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_ftgd_local_rating"
+  fortios_webfilter_ftgd_local_rating: "{{ fortios_webfilter_ftgd_local_rating }}"
+  register: r_fortios_webfilter_ftgd_local_rating
+  vars:
+    fortios_webfilter_ftgd_local_rating: 
+      username: "{{ fortios_webfilter_ftgd_local_rating_username | default(omit, True) }}"
+      webfilter_ftgd_local_rating: "{{ fortios_webfilter_ftgd_local_rating_webfilter_ftgd_local_rating | default(omit, True) }}"
+      host: "{{ fortios_webfilter_ftgd_local_rating_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_ftgd_local_rating_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_ftgd_local_rating_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_ftgd_local_rating_vdom | default(omit, True) }}"

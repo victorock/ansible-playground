@@ -1,0 +1,11 @@
+---
+- name: "module_github_webhook_facts"
+  github_webhook_facts: "{{ github_webhook_facts }}"
+  register: r_github_webhook_facts
+  vars:
+    github_webhook_facts: 
+      github_url: "{{ github_webhook_facts_github_url | default(omit, True) }}"
+      token: "{{ github_webhook_facts_token | default(omit, True) }}"
+      password: "{{ github_webhook_facts_password | default(omit, True) }}"
+      user: "{{ github_webhook_facts_user | default(omit, True) }}"
+      repository: "{{ github_webhook_facts_repository | default(omit, True) }}"

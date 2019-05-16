@@ -1,0 +1,28 @@
+---
+- name: "module_mso_schema_site_anp_epg_staticport"
+  mso_schema_site_anp_epg_staticport: "{{ mso_schema_site_anp_epg_staticport }}"
+  register: r_mso_schema_site_anp_epg_staticport
+  vars:
+    mso_schema_site_anp_epg_staticport: 
+      site: "{{ mso_schema_site_anp_epg_staticport_site | default(omit, True) }}"
+      anp: "{{ mso_schema_site_anp_epg_staticport_anp | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_site_anp_epg_staticport_use_ssl | default(omit, True) }}"
+      pod: "{{ mso_schema_site_anp_epg_staticport_pod | default(omit, True) }}"
+      port: "{{ mso_schema_site_anp_epg_staticport_port | default(omit, True) }}"
+      leaf: "{{ mso_schema_site_anp_epg_staticport_leaf | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_site_anp_epg_staticport_use_proxy | default(omit, True) }}"
+      state: "{{ mso_schema_site_anp_epg_staticport_state | default(omit, True) }}"
+      deployment_immediacy: "{{ mso_schema_site_anp_epg_staticport_deployment_immediacy | default(omit, True) }}"
+      type: "{{ mso_schema_site_anp_epg_staticport_type | default(omit, True) }}"
+      schema: "{{ mso_schema_site_anp_epg_staticport_schema | default(omit, True) }}"
+      username: "{{ mso_schema_site_anp_epg_staticport_username | default(omit, True) }}"
+      template: "{{ mso_schema_site_anp_epg_staticport_template | default(omit, True) }}"
+      vlan: "{{ mso_schema_site_anp_epg_staticport_vlan | default(omit, True) }}"
+      host: "{{ mso_schema_site_anp_epg_staticport_host | default(omit, True) }}"
+      path: "{{ mso_schema_site_anp_epg_staticport_path | default(omit, True) }}"
+      password: "{{ mso_schema_site_anp_epg_staticport_password | default(omit, True) }}"
+      output_level: "{{ mso_schema_site_anp_epg_staticport_output_level | default(omit, True) }}"
+      mode: "{{ mso_schema_site_anp_epg_staticport_mode | default(omit, True) }}"
+      timeout: "{{ mso_schema_site_anp_epg_staticport_timeout | default(omit, True) }}"
+      epg: "{{ mso_schema_site_anp_epg_staticport_epg | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_site_anp_epg_staticport_validate_certs | default(omit, True) }}"

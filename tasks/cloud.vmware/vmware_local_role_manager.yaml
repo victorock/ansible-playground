@@ -10,6 +10,7 @@
       port: "{{ vmware_local_role_manager_port | default(omit, True) }}"
       force_remove: "{{ vmware_local_role_manager_force_remove | default(omit, True) }}"
       state: "{{ vmware_local_role_manager_state | default(omit, True) }}"
+      action: "{{ vmware_local_role_manager_action | default(omit, True) }}"
       password: "{{ vmware_local_role_manager_password | default(omit, True) }}"
       validate_certs: "{{ vmware_local_role_manager_validate_certs | default(omit, True) }}"
       local_privilege_ids: "{{ vmware_local_role_manager_local_privilege_ids | default(omit, True) }}"

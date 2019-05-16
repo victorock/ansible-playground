@@ -16,9 +16,10 @@
       mode: "{{ na_ontap_net_ifgrp_mode | default(omit, True) }}"
       https: "{{ na_ontap_net_ifgrp_https | default(omit, True) }}"
       distribution_function: "{{ na_ontap_net_ifgrp_distribution_function | default(omit, True) }}"
+      ontapi: "{{ na_ontap_net_ifgrp_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_net_ifgrp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_net_ifgrp_validate_certs | default(omit, True) }}"
-      port: "{{ na_ontap_net_ifgrp_port | default(omit, True) }}"
+      ports: "{{ na_ontap_net_ifgrp_ports | default(omit, True) }}"
   tasks:
     - name: "plugin_na_ontap_net_ifgrp"
       na_ontap_net_ifgrp: "{{ na_ontap_net_ifgrp }}"

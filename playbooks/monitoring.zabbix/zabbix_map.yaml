@@ -1,0 +1,30 @@
+---
+- name: "module_zabbix_map"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    zabbix_map: 
+      http_login_password: "{{ zabbix_map_http_login_password | default(omit, True) }}"
+      label_type: "{{ zabbix_map_label_type | default(omit, True) }}"
+      name: "{{ zabbix_map_name | default(omit, True) }}"
+      login_user: "{{ zabbix_map_login_user | default(omit, True) }}"
+      expand_problem: "{{ zabbix_map_expand_problem | default(omit, True) }}"
+      http_login_user: "{{ zabbix_map_http_login_user | default(omit, True) }}"
+      server_url: "{{ zabbix_map_server_url | default(omit, True) }}"
+      margin: "{{ zabbix_map_margin | default(omit, True) }}"
+      height: "{{ zabbix_map_height | default(omit, True) }}"
+      width: "{{ zabbix_map_width | default(omit, True) }}"
+      state: "{{ zabbix_map_state | default(omit, True) }}"
+      default_image: "{{ zabbix_map_default_image | default(omit, True) }}"
+      data: "{{ zabbix_map_data | default(omit, True) }}"
+      timeout: "{{ zabbix_map_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_map_login_password | default(omit, True) }}"
+      highlight: "{{ zabbix_map_highlight | default(omit, True) }}"
+      validate_certs: "{{ zabbix_map_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_zabbix_map"
+      zabbix_map: "{{ zabbix_map }}"
+      register: r_zabbix_map

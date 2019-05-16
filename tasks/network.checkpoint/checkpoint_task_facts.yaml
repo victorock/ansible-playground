@@ -1,0 +1,7 @@
+---
+- name: "module_checkpoint_task_facts"
+  checkpoint_task_facts: "{{ checkpoint_task_facts }}"
+  register: r_checkpoint_task_facts
+  vars:
+    checkpoint_task_facts: 
+      task_id: "{{ checkpoint_task_facts_task_id | default(omit, True) }}"

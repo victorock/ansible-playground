@@ -15,6 +15,7 @@
       udp_port: "{{ influxdb_user_udp_port | default(omit, True) }}"
       ssl: "{{ influxdb_user_ssl | default(omit, True) }}"
       state: "{{ influxdb_user_state | default(omit, True) }}"
+      grants: "{{ influxdb_user_grants | default(omit, True) }}"
       timeout: "{{ influxdb_user_timeout | default(omit, True) }}"
       password: "{{ influxdb_user_password | default(omit, True) }}"
       validate_certs: "{{ influxdb_user_validate_certs | default(omit, True) }}"

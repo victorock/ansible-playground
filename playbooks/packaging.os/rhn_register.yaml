@@ -9,11 +9,11 @@
     rhn_register: 
       username: "{{ rhn_register_username | default(omit, True) }}"
       systemorgid: "{{ rhn_register_systemorgid | default(omit, True) }}"
+      ca_cert: "{{ rhn_register_ca_cert | default(omit, True) }}"
       enable_eus: "{{ rhn_register_enable_eus | default(omit, True) }}"
       server_url: "{{ rhn_register_server_url | default(omit, True) }}"
       channels: "{{ rhn_register_channels | default(omit, True) }}"
       state: "{{ rhn_register_state | default(omit, True) }}"
-      sslcacert: "{{ rhn_register_sslcacert | default(omit, True) }}"
       activationkey: "{{ rhn_register_activationkey | default(omit, True) }}"
       profilename: "{{ rhn_register_profilename | default(omit, True) }}"
       password: "{{ rhn_register_password | default(omit, True) }}"

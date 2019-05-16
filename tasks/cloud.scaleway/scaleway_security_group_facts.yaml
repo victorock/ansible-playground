@@ -4,7 +4,9 @@
   register: r_scaleway_security_group_facts
   vars:
     scaleway_security_group_facts: 
-      api_timeout: "{{ scaleway_security_group_facts_api_timeout | default(omit, True) }}"
-      validate_certs: "{{ scaleway_security_group_facts_validate_certs | default(omit, True) }}"
       api_url: "{{ scaleway_security_group_facts_api_url | default(omit, True) }}"
+      query_parameters: "{{ scaleway_security_group_facts_query_parameters | default(omit, True) }}"
+      region: "{{ scaleway_security_group_facts_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_security_group_facts_api_timeout | default(omit, True) }}"
       api_token: "{{ scaleway_security_group_facts_api_token | default(omit, True) }}"
+      validate_certs: "{{ scaleway_security_group_facts_validate_certs | default(omit, True) }}"

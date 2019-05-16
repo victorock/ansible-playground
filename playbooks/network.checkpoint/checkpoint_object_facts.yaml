@@ -1,0 +1,17 @@
+---
+- name: "module_checkpoint_object_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    checkpoint_object_facts: 
+      object_type: "{{ checkpoint_object_facts_object_type | default(omit, True) }}"
+      ip_only: "{{ checkpoint_object_facts_ip_only | default(omit, True) }}"
+      uid: "{{ checkpoint_object_facts_uid | default(omit, True) }}"
+      object_filter: "{{ checkpoint_object_facts_object_filter | default(omit, True) }}"
+  tasks:
+    - name: "plugin_checkpoint_object_facts"
+      checkpoint_object_facts: "{{ checkpoint_object_facts }}"
+      register: r_checkpoint_object_facts

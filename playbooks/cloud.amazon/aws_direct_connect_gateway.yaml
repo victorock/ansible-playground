@@ -14,6 +14,7 @@
       security_token: "{{ aws_direct_connect_gateway_security_token | default(omit, True) }}"
       virtual_gateway_id: "{{ aws_direct_connect_gateway_virtual_gateway_id | default(omit, True) }}"
       region: "{{ aws_direct_connect_gateway_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_direct_connect_gateway_debug_botocore_endpoint_logs | default(omit, True) }}"
       validate_certs: "{{ aws_direct_connect_gateway_validate_certs | default(omit, True) }}"
       state: "{{ aws_direct_connect_gateway_state | default(omit, True) }}"
       ec2_url: "{{ aws_direct_connect_gateway_ec2_url | default(omit, True) }}"

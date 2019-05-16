@@ -1,0 +1,26 @@
+---
+- name: "module_bigip_asm_policy_signature_set"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_asm_policy_signature_set: 
+      learn: "{{ bigip_asm_policy_signature_set_learn | default(omit, True) }}"
+      name: "{{ bigip_asm_policy_signature_set_name | default(omit, True) }}"
+      alarm: "{{ bigip_asm_policy_signature_set_alarm | default(omit, True) }}"
+      partition: "{{ bigip_asm_policy_signature_set_partition | default(omit, True) }}"
+      server: "{{ bigip_asm_policy_signature_set_server | default(omit, True) }}"
+      policy_name: "{{ bigip_asm_policy_signature_set_policy_name | default(omit, True) }}"
+      state: "{{ bigip_asm_policy_signature_set_state | default(omit, True) }}"
+      user: "{{ bigip_asm_policy_signature_set_user | default(omit, True) }}"
+      server_port: "{{ bigip_asm_policy_signature_set_server_port | default(omit, True) }}"
+      provider: "{{ bigip_asm_policy_signature_set_provider | default(omit, True) }}"
+      password: "{{ bigip_asm_policy_signature_set_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_asm_policy_signature_set_validate_certs | default(omit, True) }}"
+      block: "{{ bigip_asm_policy_signature_set_block | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_asm_policy_signature_set"
+      bigip_asm_policy_signature_set: "{{ bigip_asm_policy_signature_set }}"
+      register: r_bigip_asm_policy_signature_set

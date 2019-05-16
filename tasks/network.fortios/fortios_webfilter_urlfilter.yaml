@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_urlfilter"
+  fortios_webfilter_urlfilter: "{{ fortios_webfilter_urlfilter }}"
+  register: r_fortios_webfilter_urlfilter
+  vars:
+    fortios_webfilter_urlfilter: 
+      username: "{{ fortios_webfilter_urlfilter_username | default(omit, True) }}"
+      webfilter_urlfilter: "{{ fortios_webfilter_urlfilter_webfilter_urlfilter | default(omit, True) }}"
+      host: "{{ fortios_webfilter_urlfilter_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_urlfilter_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_urlfilter_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_urlfilter_vdom | default(omit, True) }}"

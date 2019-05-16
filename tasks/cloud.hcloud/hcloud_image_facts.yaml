@@ -1,0 +1,12 @@
+---
+- name: "module_hcloud_image_facts"
+  hcloud_image_facts: "{{ hcloud_image_facts }}"
+  register: r_hcloud_image_facts
+  vars:
+    hcloud_image_facts: 
+      endpoint: "{{ hcloud_image_facts_endpoint | default(omit, True) }}"
+      name: "{{ hcloud_image_facts_name | default(omit, True) }}"
+      label_selector: "{{ hcloud_image_facts_label_selector | default(omit, True) }}"
+      api_token: "{{ hcloud_image_facts_api_token | default(omit, True) }}"
+      type: "{{ hcloud_image_facts_type | default(omit, True) }}"
+      id: "{{ hcloud_image_facts_id | default(omit, True) }}"

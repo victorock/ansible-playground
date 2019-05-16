@@ -12,6 +12,7 @@
       aws_access_key: "{{ elb_application_lb_facts_aws_access_key | default(omit, True) }}"
       security_token: "{{ elb_application_lb_facts_security_token | default(omit, True) }}"
       region: "{{ elb_application_lb_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ elb_application_lb_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       names: "{{ elb_application_lb_facts_names | default(omit, True) }}"
       ec2_url: "{{ elb_application_lb_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elb_application_lb_facts_validate_certs | default(omit, True) }}"

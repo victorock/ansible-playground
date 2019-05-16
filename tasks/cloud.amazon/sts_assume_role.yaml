@@ -12,6 +12,7 @@
       duration_seconds: "{{ sts_assume_role_duration_seconds | default(omit, True) }}"
       external_id: "{{ sts_assume_role_external_id | default(omit, True) }}"
       mfa_serial_number: "{{ sts_assume_role_mfa_serial_number | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ sts_assume_role_debug_botocore_endpoint_logs | default(omit, True) }}"
       role_session_name: "{{ sts_assume_role_role_session_name | default(omit, True) }}"
       mfa_token: "{{ sts_assume_role_mfa_token | default(omit, True) }}"
       ec2_url: "{{ sts_assume_role_ec2_url | default(omit, True) }}"

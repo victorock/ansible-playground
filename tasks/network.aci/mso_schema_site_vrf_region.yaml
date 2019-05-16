@@ -1,0 +1,21 @@
+---
+- name: "module_mso_schema_site_vrf_region"
+  mso_schema_site_vrf_region: "{{ mso_schema_site_vrf_region }}"
+  register: r_mso_schema_site_vrf_region
+  vars:
+    mso_schema_site_vrf_region: 
+      username: "{{ mso_schema_site_vrf_region_username | default(omit, True) }}"
+      timeout: "{{ mso_schema_site_vrf_region_timeout | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_site_vrf_region_use_proxy | default(omit, True) }}"
+      state: "{{ mso_schema_site_vrf_region_state | default(omit, True) }}"
+      region: "{{ mso_schema_site_vrf_region_region | default(omit, True) }}"
+      site: "{{ mso_schema_site_vrf_region_site | default(omit, True) }}"
+      output_level: "{{ mso_schema_site_vrf_region_output_level | default(omit, True) }}"
+      host: "{{ mso_schema_site_vrf_region_host | default(omit, True) }}"
+      vrf: "{{ mso_schema_site_vrf_region_vrf | default(omit, True) }}"
+      template: "{{ mso_schema_site_vrf_region_template | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_site_vrf_region_use_ssl | default(omit, True) }}"
+      password: "{{ mso_schema_site_vrf_region_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_site_vrf_region_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_site_vrf_region_port | default(omit, True) }}"
+      schema: "{{ mso_schema_site_vrf_region_schema | default(omit, True) }}"

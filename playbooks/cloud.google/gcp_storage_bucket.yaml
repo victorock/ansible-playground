@@ -9,6 +9,7 @@
     gcp_storage_bucket: 
       website: "{{ gcp_storage_bucket_website | default(omit, True) }}"
       scopes: "{{ gcp_storage_bucket_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_storage_bucket_service_account_contents | default(omit, True) }}"
       logging: "{{ gcp_storage_bucket_logging | default(omit, True) }}"
       name: "{{ gcp_storage_bucket_name | default(omit, True) }}"
       service_account_email: "{{ gcp_storage_bucket_service_account_email | default(omit, True) }}"

@@ -8,6 +8,7 @@
   vars:
     dellos9_config: 
       src: "{{ dellos9_config_src | default(omit, True) }}"
+      backup_options: "{{ dellos9_config_backup_options | default(omit, True) }}"
       config: "{{ dellos9_config_config | default(omit, True) }}"
       after: "{{ dellos9_config_after | default(omit, True) }}"
       lines: "{{ dellos9_config_lines | default(omit, True) }}"

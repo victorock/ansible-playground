@@ -1,0 +1,13 @@
+---
+- name: "module_win_rds_rap"
+  win_rds_rap: "{{ win_rds_rap }}"
+  register: r_win_rds_rap
+  vars:
+    win_rds_rap: 
+      computer_group_type: "{{ win_rds_rap_computer_group_type | default(omit, True) }}"
+      description: "{{ win_rds_rap_description | default(omit, True) }}"
+      user_groups: "{{ win_rds_rap_user_groups | default(omit, True) }}"
+      allowed_ports: "{{ win_rds_rap_allowed_ports | default(omit, True) }}"
+      computer_group: "{{ win_rds_rap_computer_group | default(omit, True) }}"
+      state: "{{ win_rds_rap_state | default(omit, True) }}"
+      name: "{{ win_rds_rap_name | default(omit, True) }}"

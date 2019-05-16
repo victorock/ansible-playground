@@ -11,7 +11,6 @@
       tenant_name: "{{ rax_tenant_name | default(omit, True) }}"
       image: "{{ rax_image | default(omit, True) }}"
       user_data: "{{ rax_user_data | default(omit, True) }}"
-      verify_ssl: "{{ rax_verify_ssl | default(omit, True) }}"
       meta: "{{ rax_meta | default(omit, True) }}"
       flavor: "{{ rax_flavor | default(omit, True) }}"
       networks: "{{ rax_networks | default(omit, True) }}"
@@ -41,6 +40,7 @@
       region: "{{ rax_region | default(omit, True) }}"
       username: "{{ rax_username | default(omit, True) }}"
       tenant_id: "{{ rax_tenant_id | default(omit, True) }}"
+      validate_certs: "{{ rax_validate_certs | default(omit, True) }}"
       extra_create_args: "{{ rax_extra_create_args | default(omit, True) }}"
   tasks:
     - name: "plugin_rax"

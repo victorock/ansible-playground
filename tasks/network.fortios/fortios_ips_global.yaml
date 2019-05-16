@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_ips_global"
+  fortios_ips_global: "{{ fortios_ips_global }}"
+  register: r_fortios_ips_global
+  vars:
+    fortios_ips_global: 
+      username: "{{ fortios_ips_global_username | default(omit, True) }}"
+      ips_global: "{{ fortios_ips_global_ips_global | default(omit, True) }}"
+      host: "{{ fortios_ips_global_host | default(omit, True) }}"
+      https: "{{ fortios_ips_global_https | default(omit, True) }}"
+      password: "{{ fortios_ips_global_password | default(omit, True) }}"
+      vdom: "{{ fortios_ips_global_vdom | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     macports: 
-      update_ports: "{{ macports_update_ports | default(omit, True) }}"
-      variant: "{{ macports_variant | default(omit, True) }}"
       state: "{{ macports_state | default(omit, True) }}"
+      upgrade: "{{ macports_upgrade | default(omit, True) }}"
+      variant: "{{ macports_variant | default(omit, True) }}"
       name: "{{ macports_name | default(omit, True) }}"
+      selfupdate: "{{ macports_selfupdate | default(omit, True) }}"
   tasks:
     - name: "plugin_macports"
       macports: "{{ macports }}"

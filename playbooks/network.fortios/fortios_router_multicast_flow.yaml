@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_router_multicast_flow"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_router_multicast_flow: 
+      username: "{{ fortios_router_multicast_flow_username | default(omit, True) }}"
+      router_multicast_flow: "{{ fortios_router_multicast_flow_router_multicast_flow | default(omit, True) }}"
+      host: "{{ fortios_router_multicast_flow_host | default(omit, True) }}"
+      https: "{{ fortios_router_multicast_flow_https | default(omit, True) }}"
+      password: "{{ fortios_router_multicast_flow_password | default(omit, True) }}"
+      vdom: "{{ fortios_router_multicast_flow_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_router_multicast_flow"
+      fortios_router_multicast_flow: "{{ fortios_router_multicast_flow }}"
+      register: r_fortios_router_multicast_flow

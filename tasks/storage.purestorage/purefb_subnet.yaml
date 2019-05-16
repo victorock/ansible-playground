@@ -1,0 +1,14 @@
+---
+- name: "module_purefb_subnet"
+  purefb_subnet: "{{ purefb_subnet }}"
+  register: r_purefb_subnet
+  vars:
+    purefb_subnet: 
+      fb_url: "{{ purefb_subnet_fb_url | default(omit, True) }}"
+      name: "{{ purefb_subnet_name | default(omit, True) }}"
+      vlan: "{{ purefb_subnet_vlan | default(omit, True) }}"
+      prefix: "{{ purefb_subnet_prefix | default(omit, True) }}"
+      mtu: "{{ purefb_subnet_mtu | default(omit, True) }}"
+      state: "{{ purefb_subnet_state | default(omit, True) }}"
+      api_token: "{{ purefb_subnet_api_token | default(omit, True) }}"
+      gateway: "{{ purefb_subnet_gateway | default(omit, True) }}"

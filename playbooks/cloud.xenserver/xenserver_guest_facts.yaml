@@ -1,0 +1,19 @@
+---
+- name: "module_xenserver_guest_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    xenserver_guest_facts: 
+      username: "{{ xenserver_guest_facts_username | default(omit, True) }}"
+      name: "{{ xenserver_guest_facts_name | default(omit, True) }}"
+      hostname: "{{ xenserver_guest_facts_hostname | default(omit, True) }}"
+      password: "{{ xenserver_guest_facts_password | default(omit, True) }}"
+      validate_certs: "{{ xenserver_guest_facts_validate_certs | default(omit, True) }}"
+      uuid: "{{ xenserver_guest_facts_uuid | default(omit, True) }}"
+  tasks:
+    - name: "plugin_xenserver_guest_facts"
+      xenserver_guest_facts: "{{ xenserver_guest_facts }}"
+      register: r_xenserver_guest_facts

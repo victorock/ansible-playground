@@ -1,0 +1,14 @@
+---
+- name: "module_cnos_vrf"
+  cnos_vrf: "{{ cnos_vrf }}"
+  register: r_cnos_vrf
+  vars:
+    cnos_vrf: 
+      rd: "{{ cnos_vrf_rd | default(omit, True) }}"
+      name: "{{ cnos_vrf_name | default(omit, True) }}"
+      interfaces: "{{ cnos_vrf_interfaces | default(omit, True) }}"
+      purge: "{{ cnos_vrf_purge | default(omit, True) }}"
+      aggregate: "{{ cnos_vrf_aggregate | default(omit, True) }}"
+      state: "{{ cnos_vrf_state | default(omit, True) }}"
+      delay: "{{ cnos_vrf_delay | default(omit, True) }}"
+      associated_interfaces: "{{ cnos_vrf_associated_interfaces | default(omit, True) }}"

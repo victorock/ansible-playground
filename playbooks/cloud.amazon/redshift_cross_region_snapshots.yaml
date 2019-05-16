@@ -1,0 +1,26 @@
+---
+- name: "module_redshift_cross_region_snapshots"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    redshift_cross_region_snapshots: 
+      profile: "{{ redshift_cross_region_snapshots_profile | default(omit, True) }}"
+      aws_secret_key: "{{ redshift_cross_region_snapshots_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ redshift_cross_region_snapshots_aws_access_key | default(omit, True) }}"
+      destination_region: "{{ redshift_cross_region_snapshots_destination_region | default(omit, True) }}"
+      security_token: "{{ redshift_cross_region_snapshots_security_token | default(omit, True) }}"
+      validate_certs: "{{ redshift_cross_region_snapshots_validate_certs | default(omit, True) }}"
+      region: "{{ redshift_cross_region_snapshots_region | default(omit, True) }}"
+      snapshot_copy_grant: "{{ redshift_cross_region_snapshots_snapshot_copy_grant | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ redshift_cross_region_snapshots_debug_botocore_endpoint_logs | default(omit, True) }}"
+      cluster_name: "{{ redshift_cross_region_snapshots_cluster_name | default(omit, True) }}"
+      state: "{{ redshift_cross_region_snapshots_state | default(omit, True) }}"
+      ec2_url: "{{ redshift_cross_region_snapshots_ec2_url | default(omit, True) }}"
+      snapshot_retention_period: "{{ redshift_cross_region_snapshots_snapshot_retention_period | default(omit, True) }}"
+  tasks:
+    - name: "plugin_redshift_cross_region_snapshots"
+      redshift_cross_region_snapshots: "{{ redshift_cross_region_snapshots }}"
+      register: r_redshift_cross_region_snapshots

@@ -12,6 +12,7 @@
       force: "{{ vmware_guest_powerstate_force | default(omit, True) }}"
       name: "{{ vmware_guest_powerstate_name | default(omit, True) }}"
       hostname: "{{ vmware_guest_powerstate_hostname | default(omit, True) }}"
+      use_instance_uuid: "{{ vmware_guest_powerstate_use_instance_uuid | default(omit, True) }}"
       scheduled_at: "{{ vmware_guest_powerstate_scheduled_at | default(omit, True) }}"
       state: "{{ vmware_guest_powerstate_state | default(omit, True) }}"
       name_match: "{{ vmware_guest_powerstate_name_match | default(omit, True) }}"

@@ -8,6 +8,7 @@
   vars:
     elb_classic_lb: 
       purge_subnets: "{{ elb_classic_lb_purge_subnets | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ elb_classic_lb_debug_botocore_endpoint_logs | default(omit, True) }}"
       zones: "{{ elb_classic_lb_zones | default(omit, True) }}"
       ec2_url: "{{ elb_classic_lb_ec2_url | default(omit, True) }}"
       aws_secret_key: "{{ elb_classic_lb_aws_secret_key | default(omit, True) }}"

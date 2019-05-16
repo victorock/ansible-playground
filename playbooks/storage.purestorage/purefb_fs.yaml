@@ -11,6 +11,7 @@
       fastremove: "{{ purefb_fs_fastremove | default(omit, True) }}"
       name: "{{ purefb_fs_name | default(omit, True) }}"
       http: "{{ purefb_fs_http | default(omit, True) }}"
+      hard_limit: "{{ purefb_fs_hard_limit | default(omit, True) }}"
       nfs: "{{ purefb_fs_nfs | default(omit, True) }}"
       state: "{{ purefb_fs_state | default(omit, True) }}"
       snapshot: "{{ purefb_fs_snapshot | default(omit, True) }}"

@@ -10,5 +10,6 @@
       security_token: "{{ iam_mfa_device_facts_security_token | default(omit, True) }}"
       user_name: "{{ iam_mfa_device_facts_user_name | default(omit, True) }}"
       region: "{{ iam_mfa_device_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ iam_mfa_device_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ iam_mfa_device_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ iam_mfa_device_facts_validate_certs | default(omit, True) }}"

@@ -1,0 +1,14 @@
+---
+- name: "module_rhsm_release"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rhsm_release: 
+      release: "{{ rhsm_release_release | default(omit, True) }}"
+  tasks:
+    - name: "plugin_rhsm_release"
+      rhsm_release: "{{ rhsm_release }}"
+      register: r_rhsm_release

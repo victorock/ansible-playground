@@ -14,6 +14,7 @@
       validate_certs: "{{ ec2_asg_lifecycle_hook_validate_certs | default(omit, True) }}"
       region: "{{ ec2_asg_lifecycle_hook_region | default(omit, True) }}"
       lifecycle_hook_name: "{{ ec2_asg_lifecycle_hook_lifecycle_hook_name | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_asg_lifecycle_hook_debug_botocore_endpoint_logs | default(omit, True) }}"
       heartbeat_timeout: "{{ ec2_asg_lifecycle_hook_heartbeat_timeout | default(omit, True) }}"
       state: "{{ ec2_asg_lifecycle_hook_state | default(omit, True) }}"
       ec2_url: "{{ ec2_asg_lifecycle_hook_ec2_url | default(omit, True) }}"

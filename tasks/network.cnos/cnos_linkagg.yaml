@@ -1,0 +1,13 @@
+---
+- name: "module_cnos_linkagg"
+  cnos_linkagg: "{{ cnos_linkagg }}"
+  register: r_cnos_linkagg
+  vars:
+    cnos_linkagg: 
+      group: "{{ cnos_linkagg_group | default(omit, True) }}"
+      purge: "{{ cnos_linkagg_purge | default(omit, True) }}"
+      state: "{{ cnos_linkagg_state | default(omit, True) }}"
+      mode: "{{ cnos_linkagg_mode | default(omit, True) }}"
+      members: "{{ cnos_linkagg_members | default(omit, True) }}"
+      provider: "{{ cnos_linkagg_provider | default(omit, True) }}"
+      aggregate: "{{ cnos_linkagg_aggregate | default(omit, True) }}"

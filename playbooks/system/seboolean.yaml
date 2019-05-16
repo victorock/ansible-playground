@@ -8,8 +8,9 @@
   vars:
     seboolean: 
       state: "{{ seboolean_state | default(omit, True) }}"
-      name: "{{ seboolean_name | default(omit, True) }}"
+      ignore_selinux_state: "{{ seboolean_ignore_selinux_state | default(omit, True) }}"
       persistent: "{{ seboolean_persistent | default(omit, True) }}"
+      name: "{{ seboolean_name | default(omit, True) }}"
   tasks:
     - name: "plugin_seboolean"
       seboolean: "{{ seboolean }}"

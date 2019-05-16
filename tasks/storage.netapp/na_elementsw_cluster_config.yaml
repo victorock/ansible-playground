@@ -1,0 +1,13 @@
+---
+- name: "module_na_elementsw_cluster_config"
+  na_elementsw_cluster_config: "{{ na_elementsw_cluster_config }}"
+  register: r_na_elementsw_cluster_config
+  vars:
+    na_elementsw_cluster_config: 
+      encryption_at_rest: "{{ na_elementsw_cluster_config_encryption_at_rest | default(omit, True) }}"
+      username: "{{ na_elementsw_cluster_config_username | default(omit, True) }}"
+      enable_virtual_volumes: "{{ na_elementsw_cluster_config_enable_virtual_volumes | default(omit, True) }}"
+      set_ntp_info: "{{ na_elementsw_cluster_config_set_ntp_info | default(omit, True) }}"
+      modify_cluster_full_threshold: "{{ na_elementsw_cluster_config_modify_cluster_full_threshold | default(omit, True) }}"
+      hostname: "{{ na_elementsw_cluster_config_hostname | default(omit, True) }}"
+      password: "{{ na_elementsw_cluster_config_password | default(omit, True) }}"

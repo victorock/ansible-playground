@@ -1,0 +1,18 @@
+---
+- name: "module_aws_ses_rule_set"
+  aws_ses_rule_set: "{{ aws_ses_rule_set }}"
+  register: r_aws_ses_rule_set
+  vars:
+    aws_ses_rule_set: 
+      profile: "{{ aws_ses_rule_set_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_ses_rule_set_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_ses_rule_set_aws_access_key | default(omit, True) }}"
+      force: "{{ aws_ses_rule_set_force | default(omit, True) }}"
+      name: "{{ aws_ses_rule_set_name | default(omit, True) }}"
+      security_token: "{{ aws_ses_rule_set_security_token | default(omit, True) }}"
+      region: "{{ aws_ses_rule_set_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_ses_rule_set_debug_botocore_endpoint_logs | default(omit, True) }}"
+      state: "{{ aws_ses_rule_set_state | default(omit, True) }}"
+      ec2_url: "{{ aws_ses_rule_set_ec2_url | default(omit, True) }}"
+      active: "{{ aws_ses_rule_set_active | default(omit, True) }}"
+      validate_certs: "{{ aws_ses_rule_set_validate_certs | default(omit, True) }}"

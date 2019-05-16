@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_webfilter_ftgd_local_cat"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_webfilter_ftgd_local_cat: 
+      username: "{{ fortios_webfilter_ftgd_local_cat_username | default(omit, True) }}"
+      webfilter_ftgd_local_cat: "{{ fortios_webfilter_ftgd_local_cat_webfilter_ftgd_local_cat | default(omit, True) }}"
+      host: "{{ fortios_webfilter_ftgd_local_cat_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_ftgd_local_cat_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_ftgd_local_cat_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_ftgd_local_cat_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_webfilter_ftgd_local_cat"
+      fortios_webfilter_ftgd_local_cat: "{{ fortios_webfilter_ftgd_local_cat }}"
+      register: r_fortios_webfilter_ftgd_local_cat

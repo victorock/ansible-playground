@@ -7,10 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     scaleway_volume_facts: 
-      api_timeout: "{{ scaleway_volume_facts_api_timeout | default(omit, True) }}"
-      validate_certs: "{{ scaleway_volume_facts_validate_certs | default(omit, True) }}"
       api_url: "{{ scaleway_volume_facts_api_url | default(omit, True) }}"
+      query_parameters: "{{ scaleway_volume_facts_query_parameters | default(omit, True) }}"
+      region: "{{ scaleway_volume_facts_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_volume_facts_api_timeout | default(omit, True) }}"
       api_token: "{{ scaleway_volume_facts_api_token | default(omit, True) }}"
+      validate_certs: "{{ scaleway_volume_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_scaleway_volume_facts"
       scaleway_volume_facts: "{{ scaleway_volume_facts }}"

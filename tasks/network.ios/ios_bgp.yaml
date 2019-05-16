@@ -1,0 +1,8 @@
+---
+- name: "module_ios_bgp"
+  ios_bgp: "{{ ios_bgp }}"
+  register: r_ios_bgp
+  vars:
+    ios_bgp: 
+      operation: "{{ ios_bgp_operation | default(omit, True) }}"
+      config: "{{ ios_bgp_config | default(omit, True) }}"

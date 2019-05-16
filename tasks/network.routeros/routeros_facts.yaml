@@ -1,0 +1,7 @@
+---
+- name: "module_routeros_facts"
+  routeros_facts: "{{ routeros_facts }}"
+  register: r_routeros_facts
+  vars:
+    routeros_facts: 
+      gather_subset: "{{ routeros_facts_gather_subset | default(omit, True) }}"

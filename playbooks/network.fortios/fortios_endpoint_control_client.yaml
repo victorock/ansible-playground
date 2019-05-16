@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_endpoint_control_client"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_endpoint_control_client: 
+      username: "{{ fortios_endpoint_control_client_username | default(omit, True) }}"
+      endpoint_control_client: "{{ fortios_endpoint_control_client_endpoint_control_client | default(omit, True) }}"
+      host: "{{ fortios_endpoint_control_client_host | default(omit, True) }}"
+      https: "{{ fortios_endpoint_control_client_https | default(omit, True) }}"
+      password: "{{ fortios_endpoint_control_client_password | default(omit, True) }}"
+      vdom: "{{ fortios_endpoint_control_client_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_endpoint_control_client"
+      fortios_endpoint_control_client: "{{ fortios_endpoint_control_client }}"
+      register: r_fortios_endpoint_control_client

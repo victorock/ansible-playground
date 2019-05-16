@@ -1,0 +1,18 @@
+---
+- name: "module_aix_devices"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aix_devices: 
+      device: "{{ aix_devices_device | default(omit, True) }}"
+      attributes: "{{ aix_devices_attributes | default(omit, True) }}"
+      state: "{{ aix_devices_state | default(omit, True) }}"
+      force: "{{ aix_devices_force | default(omit, True) }}"
+      recursive: "{{ aix_devices_recursive | default(omit, True) }}"
+  tasks:
+    - name: "plugin_aix_devices"
+      aix_devices: "{{ aix_devices }}"
+      register: r_aix_devices

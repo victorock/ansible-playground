@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_log_fortianalyzer_override_filter"
+  fortios_log_fortianalyzer_override_filter: "{{ fortios_log_fortianalyzer_override_filter }}"
+  register: r_fortios_log_fortianalyzer_override_filter
+  vars:
+    fortios_log_fortianalyzer_override_filter: 
+      username: "{{ fortios_log_fortianalyzer_override_filter_username | default(omit, True) }}"
+      log_fortianalyzer_override_filter: "{{ fortios_log_fortianalyzer_override_filter_log_fortianalyzer_override_filter | default(omit, True) }}"
+      host: "{{ fortios_log_fortianalyzer_override_filter_host | default(omit, True) }}"
+      https: "{{ fortios_log_fortianalyzer_override_filter_https | default(omit, True) }}"
+      password: "{{ fortios_log_fortianalyzer_override_filter_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_fortianalyzer_override_filter_vdom | default(omit, True) }}"

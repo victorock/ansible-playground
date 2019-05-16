@@ -1,0 +1,20 @@
+---
+- name: "module_na_elementsw_cluster_snmp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_elementsw_cluster_snmp: 
+      username: "{{ na_elementsw_cluster_snmp_username | default(omit, True) }}"
+      usm_users: "{{ na_elementsw_cluster_snmp_usm_users | default(omit, True) }}"
+      snmp_v3_enabled: "{{ na_elementsw_cluster_snmp_snmp_v3_enabled | default(omit, True) }}"
+      hostname: "{{ na_elementsw_cluster_snmp_hostname | default(omit, True) }}"
+      state: "{{ na_elementsw_cluster_snmp_state | default(omit, True) }}"
+      password: "{{ na_elementsw_cluster_snmp_password | default(omit, True) }}"
+      networks: "{{ na_elementsw_cluster_snmp_networks | default(omit, True) }}"
+  tasks:
+    - name: "plugin_na_elementsw_cluster_snmp"
+      na_elementsw_cluster_snmp: "{{ na_elementsw_cluster_snmp }}"
+      register: r_na_elementsw_cluster_snmp

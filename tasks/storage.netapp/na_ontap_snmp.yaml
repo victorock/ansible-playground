@@ -11,5 +11,6 @@
       community_name: "{{ na_ontap_snmp_community_name | default(omit, True) }}"
       state: "{{ na_ontap_snmp_state | default(omit, True) }}"
       https: "{{ na_ontap_snmp_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_snmp_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_snmp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_snmp_validate_certs | default(omit, True) }}"

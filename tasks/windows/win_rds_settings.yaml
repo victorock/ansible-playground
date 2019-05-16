@@ -1,0 +1,10 @@
+---
+- name: "module_win_rds_settings"
+  win_rds_settings: "{{ win_rds_settings }}"
+  register: r_win_rds_settings
+  vars:
+    win_rds_settings: 
+      certificate_hash: "{{ win_rds_settings_certificate_hash | default(omit, True) }}"
+      enable_only_messaging_capable_clients: "{{ win_rds_settings_enable_only_messaging_capable_clients | default(omit, True) }}"
+      ssl_bridging: "{{ win_rds_settings_ssl_bridging | default(omit, True) }}"
+      max_connections: "{{ win_rds_settings_max_connections | default(omit, True) }}"

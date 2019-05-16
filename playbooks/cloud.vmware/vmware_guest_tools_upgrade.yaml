@@ -1,0 +1,23 @@
+---
+- name: "module_vmware_guest_tools_upgrade"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_guest_tools_upgrade: 
+      username: "{{ vmware_guest_tools_upgrade_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_tools_upgrade_datacenter | default(omit, True) }}"
+      uuid: "{{ vmware_guest_tools_upgrade_uuid | default(omit, True) }}"
+      hostname: "{{ vmware_guest_tools_upgrade_hostname | default(omit, True) }}"
+      name_match: "{{ vmware_guest_tools_upgrade_name_match | default(omit, True) }}"
+      folder: "{{ vmware_guest_tools_upgrade_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_tools_upgrade_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_tools_upgrade_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_tools_upgrade_port | default(omit, True) }}"
+      name: "{{ vmware_guest_tools_upgrade_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_guest_tools_upgrade"
+      vmware_guest_tools_upgrade: "{{ vmware_guest_tools_upgrade }}"
+      register: r_vmware_guest_tools_upgrade

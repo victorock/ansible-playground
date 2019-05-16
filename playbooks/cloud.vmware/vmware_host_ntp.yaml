@@ -8,6 +8,7 @@
   vars:
     vmware_host_ntp: 
       username: "{{ vmware_host_ntp_username | default(omit, True) }}"
+      verbose: "{{ vmware_host_ntp_verbose | default(omit, True) }}"
       ntp_servers: "{{ vmware_host_ntp_ntp_servers | default(omit, True) }}"
       hostname: "{{ vmware_host_ntp_hostname | default(omit, True) }}"
       cluster_name: "{{ vmware_host_ntp_cluster_name | default(omit, True) }}"

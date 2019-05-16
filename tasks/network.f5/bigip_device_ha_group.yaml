@@ -1,0 +1,19 @@
+---
+- name: "module_bigip_device_ha_group"
+  bigip_device_ha_group: "{{ bigip_device_ha_group }}"
+  register: r_bigip_device_ha_group
+  vars:
+    bigip_device_ha_group: 
+      enable: "{{ bigip_device_ha_group_enable | default(omit, True) }}"
+      description: "{{ bigip_device_ha_group_description | default(omit, True) }}"
+      server: "{{ bigip_device_ha_group_server | default(omit, True) }}"
+      state: "{{ bigip_device_ha_group_state | default(omit, True) }}"
+      trunks: "{{ bigip_device_ha_group_trunks | default(omit, True) }}"
+      user: "{{ bigip_device_ha_group_user | default(omit, True) }}"
+      server_port: "{{ bigip_device_ha_group_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_ha_group_provider | default(omit, True) }}"
+      pools: "{{ bigip_device_ha_group_pools | default(omit, True) }}"
+      active_bonus: "{{ bigip_device_ha_group_active_bonus | default(omit, True) }}"
+      password: "{{ bigip_device_ha_group_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_ha_group_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_device_ha_group_name | default(omit, True) }}"

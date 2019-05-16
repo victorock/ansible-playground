@@ -21,7 +21,9 @@
       api_profile: "{{ azure_rm_storageaccount_facts_api_profile | default(omit, True) }}"
       subscription_id: "{{ azure_rm_storageaccount_facts_subscription_id | default(omit, True) }}"
       password: "{{ azure_rm_storageaccount_facts_password | default(omit, True) }}"
+      show_connection_string: "{{ azure_rm_storageaccount_facts_show_connection_string | default(omit, True) }}"
       tenant: "{{ azure_rm_storageaccount_facts_tenant | default(omit, True) }}"
+      show_blob_cors: "{{ azure_rm_storageaccount_facts_show_blob_cors | default(omit, True) }}"
   tasks:
     - name: "plugin_azure_rm_storageaccount_facts"
       azure_rm_storageaccount_facts: "{{ azure_rm_storageaccount_facts }}"

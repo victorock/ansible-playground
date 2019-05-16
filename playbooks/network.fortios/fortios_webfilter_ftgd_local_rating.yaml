@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_webfilter_ftgd_local_rating"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_webfilter_ftgd_local_rating: 
+      username: "{{ fortios_webfilter_ftgd_local_rating_username | default(omit, True) }}"
+      webfilter_ftgd_local_rating: "{{ fortios_webfilter_ftgd_local_rating_webfilter_ftgd_local_rating | default(omit, True) }}"
+      host: "{{ fortios_webfilter_ftgd_local_rating_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_ftgd_local_rating_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_ftgd_local_rating_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_ftgd_local_rating_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_webfilter_ftgd_local_rating"
+      fortios_webfilter_ftgd_local_rating: "{{ fortios_webfilter_ftgd_local_rating }}"
+      register: r_fortios_webfilter_ftgd_local_rating

@@ -1,0 +1,8 @@
+---
+- name: "module_gluster_heal_facts"
+  gluster_heal_facts: "{{ gluster_heal_facts }}"
+  register: r_gluster_heal_facts
+  vars:
+    gluster_heal_facts: 
+      name: "{{ gluster_heal_facts_name | default(omit, True) }}"
+      status_filter: "{{ gluster_heal_facts_status_filter | default(omit, True) }}"

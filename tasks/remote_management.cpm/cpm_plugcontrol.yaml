@@ -1,0 +1,15 @@
+---
+- name: "module_cpm_plugcontrol"
+  cpm_plugcontrol: "{{ cpm_plugcontrol }}"
+  register: r_cpm_plugcontrol
+  vars:
+    cpm_plugcontrol: 
+      use_proxy: "{{ cpm_plugcontrol_use_proxy | default(omit, True) }}"
+      cpm_password: "{{ cpm_plugcontrol_cpm_password | default(omit, True) }}"
+      cpm_url: "{{ cpm_plugcontrol_cpm_url | default(omit, True) }}"
+      plug_id: "{{ cpm_plugcontrol_plug_id | default(omit, True) }}"
+      plug_state: "{{ cpm_plugcontrol_plug_state | default(omit, True) }}"
+      cpm_action: "{{ cpm_plugcontrol_cpm_action | default(omit, True) }}"
+      cpm_username: "{{ cpm_plugcontrol_cpm_username | default(omit, True) }}"
+      validate_certs: "{{ cpm_plugcontrol_validate_certs | default(omit, True) }}"
+      use_https: "{{ cpm_plugcontrol_use_https | default(omit, True) }}"

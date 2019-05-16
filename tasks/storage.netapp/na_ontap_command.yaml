@@ -9,5 +9,7 @@
       hostname: "{{ na_ontap_command_hostname | default(omit, True) }}"
       command: "{{ na_ontap_command_command | default(omit, True) }}"
       https: "{{ na_ontap_command_https | default(omit, True) }}"
+      privilege: "{{ na_ontap_command_privilege | default(omit, True) }}"
+      ontapi: "{{ na_ontap_command_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_command_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_command_validate_certs | default(omit, True) }}"

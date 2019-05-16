@@ -18,6 +18,7 @@
       vmhost: "{{ rhevm_vmhost | default(omit, True) }}"
       boot_order: "{{ rhevm_boot_order | default(omit, True) }}"
       user: "{{ rhevm_user | default(omit, True) }}"
+      password: "{{ rhevm_password | default(omit, True) }}"
       datacenter: "{{ rhevm_datacenter | default(omit, True) }}"
       name: "{{ rhevm_name | default(omit, True) }}"
       disks: "{{ rhevm_disks | default(omit, True) }}"

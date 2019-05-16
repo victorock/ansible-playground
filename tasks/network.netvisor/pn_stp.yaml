@@ -1,0 +1,19 @@
+---
+- name: "module_pn_stp"
+  pn_stp: "{{ pn_stp }}"
+  register: r_pn_stp
+  vars:
+    pn_stp: 
+      pn_mst_max_hops: "{{ pn_stp_pn_mst_max_hops | default(omit, True) }}"
+      pn_bpdus_bridge_ports: "{{ pn_stp_pn_bpdus_bridge_ports | default(omit, True) }}"
+      pn_bridge_id: "{{ pn_stp_pn_bridge_id | default(omit, True) }}"
+      pn_mst_config_name: "{{ pn_stp_pn_mst_config_name | default(omit, True) }}"
+      pn_bridge_priority: "{{ pn_stp_pn_bridge_priority | default(omit, True) }}"
+      pn_root_guard_wait_time: "{{ pn_stp_pn_root_guard_wait_time | default(omit, True) }}"
+      pn_hello_time: "{{ pn_stp_pn_hello_time | default(omit, True) }}"
+      pn_enable: "{{ pn_stp_pn_enable | default(omit, True) }}"
+      state: "{{ pn_stp_state | default(omit, True) }}"
+      pn_stp_mode: "{{ pn_stp_pn_stp_mode | default(omit, True) }}"
+      pn_forwarding_delay: "{{ pn_stp_pn_forwarding_delay | default(omit, True) }}"
+      pn_max_age: "{{ pn_stp_pn_max_age | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_stp_pn_cliswitch | default(omit, True) }}"

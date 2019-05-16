@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_icap_server"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_icap_server: 
+      username: "{{ fortios_icap_server_username | default(omit, True) }}"
+      host: "{{ fortios_icap_server_host | default(omit, True) }}"
+      icap_server: "{{ fortios_icap_server_icap_server | default(omit, True) }}"
+      https: "{{ fortios_icap_server_https | default(omit, True) }}"
+      password: "{{ fortios_icap_server_password | default(omit, True) }}"
+      vdom: "{{ fortios_icap_server_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_icap_server"
+      fortios_icap_server: "{{ fortios_icap_server }}"
+      register: r_fortios_icap_server

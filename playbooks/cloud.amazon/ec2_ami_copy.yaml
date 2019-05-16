@@ -17,11 +17,12 @@
       region: "{{ ec2_ami_copy_region | default(omit, True) }}"
       kms_key_id: "{{ ec2_ami_copy_kms_key_id | default(omit, True) }}"
       source_image_id: "{{ ec2_ami_copy_source_image_id | default(omit, True) }}"
-      name: "{{ ec2_ami_copy_name | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_ami_copy_debug_botocore_endpoint_logs | default(omit, True) }}"
       tag_equality: "{{ ec2_ami_copy_tag_equality | default(omit, True) }}"
       source_region: "{{ ec2_ami_copy_source_region | default(omit, True) }}"
       ec2_url: "{{ ec2_ami_copy_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_ami_copy_validate_certs | default(omit, True) }}"
+      name: "{{ ec2_ami_copy_name | default(omit, True) }}"
       wait_timeout: "{{ ec2_ami_copy_wait_timeout | default(omit, True) }}"
       wait: "{{ ec2_ami_copy_wait | default(omit, True) }}"
   tasks:

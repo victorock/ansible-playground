@@ -1,0 +1,29 @@
+---
+- name: "module_utm_dns_host"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_dns_host: 
+      comment: "{{ utm_dns_host_comment | default(omit, True) }}"
+      resolved: "{{ utm_dns_host_resolved | default(omit, True) }}"
+      hostname: "{{ utm_dns_host_hostname | default(omit, True) }}"
+      name: "{{ utm_dns_host_name | default(omit, True) }}"
+      utm_host: "{{ utm_dns_host_utm_host | default(omit, True) }}"
+      utm_token: "{{ utm_dns_host_utm_token | default(omit, True) }}"
+      address6: "{{ utm_dns_host_address6 | default(omit, True) }}"
+      utm_protocol: "{{ utm_dns_host_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_dns_host_headers | default(omit, True) }}"
+      state: "{{ utm_dns_host_state | default(omit, True) }}"
+      timeout: "{{ utm_dns_host_timeout | default(omit, True) }}"
+      address: "{{ utm_dns_host_address | default(omit, True) }}"
+      interface: "{{ utm_dns_host_interface | default(omit, True) }}"
+      validate_certs: "{{ utm_dns_host_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_dns_host_utm_port | default(omit, True) }}"
+      resolved6: "{{ utm_dns_host_resolved6 | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_dns_host"
+      utm_dns_host: "{{ utm_dns_host }}"
+      register: r_utm_dns_host

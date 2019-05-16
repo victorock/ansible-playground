@@ -19,4 +19,5 @@
       data_center: "{{ ovirt_quota_data_center | default(omit, True) }}"
       clusters: "{{ ovirt_quota_clusters | default(omit, True) }}"
       storages: "{{ ovirt_quota_storages | default(omit, True) }}"
+      id: "{{ ovirt_quota_id | default(omit, True) }}"
       wait: "{{ ovirt_quota_wait | default(omit, True) }}"

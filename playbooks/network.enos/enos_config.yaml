@@ -9,10 +9,11 @@
     enos_config: 
       comment: "{{ enos_config_comment | default(omit, True) }}"
       authorize: "{{ enos_config_authorize | default(omit, True) }}"
-      auth_pass: "{{ enos_config_auth_pass | default(omit, True) }}"
+      backup_options: "{{ enos_config_backup_options | default(omit, True) }}"
+      backup: "{{ enos_config_backup | default(omit, True) }}"
       src: "{{ enos_config_src | default(omit, True) }}"
       admin: "{{ enos_config_admin | default(omit, True) }}"
-      backup: "{{ enos_config_backup | default(omit, True) }}"
+      auth_pass: "{{ enos_config_auth_pass | default(omit, True) }}"
       after: "{{ enos_config_after | default(omit, True) }}"
       lines: "{{ enos_config_lines | default(omit, True) }}"
       replace: "{{ enos_config_replace | default(omit, True) }}"

@@ -16,6 +16,7 @@
       state: "{{ na_ontap_qtree_state | default(omit, True) }}"
       http_port: "{{ na_ontap_qtree_http_port | default(omit, True) }}"
       https: "{{ na_ontap_qtree_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_qtree_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_qtree_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_qtree_validate_certs | default(omit, True) }}"
   tasks:

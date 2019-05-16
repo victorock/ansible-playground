@@ -15,6 +15,7 @@
       security_token: "{{ aws_batch_job_queue_security_token | default(omit, True) }}"
       compute_environment_order: "{{ aws_batch_job_queue_compute_environment_order | default(omit, True) }}"
       region: "{{ aws_batch_job_queue_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_batch_job_queue_debug_botocore_endpoint_logs | default(omit, True) }}"
       priority: "{{ aws_batch_job_queue_priority | default(omit, True) }}"
       state: "{{ aws_batch_job_queue_state | default(omit, True) }}"
       ec2_url: "{{ aws_batch_job_queue_ec2_url | default(omit, True) }}"

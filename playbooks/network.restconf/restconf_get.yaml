@@ -1,0 +1,16 @@
+---
+- name: "module_restconf_get"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    restconf_get: 
+      content: "{{ restconf_get_content | default(omit, True) }}"
+      path: "{{ restconf_get_path | default(omit, True) }}"
+      output: "{{ restconf_get_output | default(omit, True) }}"
+  tasks:
+    - name: "plugin_restconf_get"
+      restconf_get: "{{ restconf_get }}"
+      register: r_restconf_get

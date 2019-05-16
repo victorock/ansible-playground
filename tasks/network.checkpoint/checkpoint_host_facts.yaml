@@ -1,0 +1,8 @@
+---
+- name: "module_checkpoint_host_facts"
+  checkpoint_host_facts: "{{ checkpoint_host_facts }}"
+  register: r_checkpoint_host_facts
+  vars:
+    checkpoint_host_facts: 
+      name: "{{ checkpoint_host_facts_name | default(omit, True) }}"
+      uid: "{{ checkpoint_host_facts_uid | default(omit, True) }}"

@@ -1,0 +1,27 @@
+---
+- name: "module_bigip_ipsec_policy"
+  bigip_ipsec_policy: "{{ bigip_ipsec_policy }}"
+  register: r_bigip_ipsec_policy
+  vars:
+    bigip_ipsec_policy: 
+      protocol: "{{ bigip_ipsec_policy_protocol | default(omit, True) }}"
+      description: "{{ bigip_ipsec_policy_description | default(omit, True) }}"
+      tunnel_remote_address: "{{ bigip_ipsec_policy_tunnel_remote_address | default(omit, True) }}"
+      partition: "{{ bigip_ipsec_policy_partition | default(omit, True) }}"
+      state: "{{ bigip_ipsec_policy_state | default(omit, True) }}"
+      auth_algorithm: "{{ bigip_ipsec_policy_auth_algorithm | default(omit, True) }}"
+      tunnel_local_address: "{{ bigip_ipsec_policy_tunnel_local_address | default(omit, True) }}"
+      kb_lifetime: "{{ bigip_ipsec_policy_kb_lifetime | default(omit, True) }}"
+      route_domain: "{{ bigip_ipsec_policy_route_domain | default(omit, True) }}"
+      perfect_forward_secrecy: "{{ bigip_ipsec_policy_perfect_forward_secrecy | default(omit, True) }}"
+      ipcomp: "{{ bigip_ipsec_policy_ipcomp | default(omit, True) }}"
+      user: "{{ bigip_ipsec_policy_user | default(omit, True) }}"
+      server_port: "{{ bigip_ipsec_policy_server_port | default(omit, True) }}"
+      provider: "{{ bigip_ipsec_policy_provider | default(omit, True) }}"
+      encrypt_algorithm: "{{ bigip_ipsec_policy_encrypt_algorithm | default(omit, True) }}"
+      mode: "{{ bigip_ipsec_policy_mode | default(omit, True) }}"
+      password: "{{ bigip_ipsec_policy_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_ipsec_policy_validate_certs | default(omit, True) }}"
+      server: "{{ bigip_ipsec_policy_server | default(omit, True) }}"
+      lifetime: "{{ bigip_ipsec_policy_lifetime | default(omit, True) }}"
+      name: "{{ bigip_ipsec_policy_name | default(omit, True) }}"

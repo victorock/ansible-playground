@@ -1,0 +1,16 @@
+---
+- name: "module_fmgr_ha"
+  fmgr_ha: "{{ fmgr_ha }}"
+  register: r_fmgr_ha
+  vars:
+    fmgr_ha: 
+      fmgr_ha_peer_sn: "{{ fmgr_ha_fmgr_ha_peer_sn | default(omit, True) }}"
+      fmgr_ha_hb_threshold: "{{ fmgr_ha_fmgr_ha_hb_threshold | default(omit, True) }}"
+      fmgr_ha_cluster_pw: "{{ fmgr_ha_fmgr_ha_cluster_pw | default(omit, True) }}"
+      fmgr_ha_hb_interval: "{{ fmgr_ha_fmgr_ha_hb_interval | default(omit, True) }}"
+      fmgr_ha_peer_status: "{{ fmgr_ha_fmgr_ha_peer_status | default(omit, True) }}"
+      fmgr_ha_file_quota: "{{ fmgr_ha_fmgr_ha_file_quota | default(omit, True) }}"
+      fmgr_ha_cluster_id: "{{ fmgr_ha_fmgr_ha_cluster_id | default(omit, True) }}"
+      fmgr_ha_peer_ipv4: "{{ fmgr_ha_fmgr_ha_peer_ipv4 | default(omit, True) }}"
+      fmgr_ha_peer_ipv6: "{{ fmgr_ha_fmgr_ha_peer_ipv6 | default(omit, True) }}"
+      fmgr_ha_mode: "{{ fmgr_ha_fmgr_ha_mode | default(omit, True) }}"

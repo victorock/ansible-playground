@@ -1,0 +1,21 @@
+---
+- name: "module_podman_image"
+  podman_image: "{{ podman_image }}"
+  register: r_podman_image
+  vars:
+    podman_image: 
+      username: "{{ podman_image_username | default(omit, True) }}"
+      pull: "{{ podman_image_pull | default(omit, True) }}"
+      executable: "{{ podman_image_executable | default(omit, True) }}"
+      force: "{{ podman_image_force | default(omit, True) }}"
+      name: "{{ podman_image_name | default(omit, True) }}"
+      push_args: "{{ podman_image_push_args | default(omit, True) }}"
+      state: "{{ podman_image_state | default(omit, True) }}"
+      ca_cert_dir: "{{ podman_image_ca_cert_dir | default(omit, True) }}"
+      tag: "{{ podman_image_tag | default(omit, True) }}"
+      build: "{{ podman_image_build | default(omit, True) }}"
+      auth_file: "{{ podman_image_auth_file | default(omit, True) }}"
+      push: "{{ podman_image_push | default(omit, True) }}"
+      path: "{{ podman_image_path | default(omit, True) }}"
+      password: "{{ podman_image_password | default(omit, True) }}"
+      validate_certs: "{{ podman_image_validate_certs | default(omit, True) }}"

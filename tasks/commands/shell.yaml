@@ -4,10 +4,11 @@
   register: r_shell
   vars:
     shell: 
-      warn: "{{ shell_warn | default(omit, True) }}"
+      creates: "{{ shell_creates | default(omit, True) }}"
       executable: "{{ shell_executable | default(omit, True) }}"
       chdir: "{{ shell_chdir | default(omit, True) }}"
       stdin: "{{ shell_stdin | default(omit, True) }}"
       removes: "{{ shell_removes | default(omit, True) }}"
-      creates: "{{ shell_creates | default(omit, True) }}"
+      warn: "{{ shell_warn | default(omit, True) }}"
       free_form: "{{ shell_free_form | default(omit, True) }}"
+      stdin_add_newline: "{{ shell_stdin_add_newline | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_ssh_filter_profile"
+  fortios_ssh_filter_profile: "{{ fortios_ssh_filter_profile }}"
+  register: r_fortios_ssh_filter_profile
+  vars:
+    fortios_ssh_filter_profile: 
+      username: "{{ fortios_ssh_filter_profile_username | default(omit, True) }}"
+      host: "{{ fortios_ssh_filter_profile_host | default(omit, True) }}"
+      https: "{{ fortios_ssh_filter_profile_https | default(omit, True) }}"
+      password: "{{ fortios_ssh_filter_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_ssh_filter_profile_vdom | default(omit, True) }}"
+      ssh_filter_profile: "{{ fortios_ssh_filter_profile_ssh_filter_profile | default(omit, True) }}"

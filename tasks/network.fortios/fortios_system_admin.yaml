@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_system_admin"
+  fortios_system_admin: "{{ fortios_system_admin }}"
+  register: r_fortios_system_admin
+  vars:
+    fortios_system_admin: 
+      username: "{{ fortios_system_admin_username | default(omit, True) }}"
+      host: "{{ fortios_system_admin_host | default(omit, True) }}"
+      https: "{{ fortios_system_admin_https | default(omit, True) }}"
+      password: "{{ fortios_system_admin_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_admin_vdom | default(omit, True) }}"
+      system_admin: "{{ fortios_system_admin_system_admin | default(omit, True) }}"

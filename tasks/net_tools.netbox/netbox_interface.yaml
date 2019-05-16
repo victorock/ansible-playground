@@ -1,0 +1,11 @@
+---
+- name: "module_netbox_interface"
+  netbox_interface: "{{ netbox_interface }}"
+  register: r_netbox_interface
+  vars:
+    netbox_interface: 
+      data: "{{ netbox_interface_data | default(omit, True) }}"
+      state: "{{ netbox_interface_state | default(omit, True) }}"
+      netbox_url: "{{ netbox_interface_netbox_url | default(omit, True) }}"
+      netbox_token: "{{ netbox_interface_netbox_token | default(omit, True) }}"
+      validate_certs: "{{ netbox_interface_validate_certs | default(omit, True) }}"

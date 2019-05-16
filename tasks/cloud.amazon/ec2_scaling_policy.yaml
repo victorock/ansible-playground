@@ -14,6 +14,7 @@
       adjustment_type: "{{ ec2_scaling_policy_adjustment_type | default(omit, True) }}"
       min_adjustment_step: "{{ ec2_scaling_policy_min_adjustment_step | default(omit, True) }}"
       scaling_adjustment: "{{ ec2_scaling_policy_scaling_adjustment | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_scaling_policy_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ ec2_scaling_policy_state | default(omit, True) }}"
       cooldown: "{{ ec2_scaling_policy_cooldown | default(omit, True) }}"
       ec2_url: "{{ ec2_scaling_policy_ec2_url | default(omit, True) }}"

@@ -11,6 +11,7 @@
       purge_rules: "{{ aws_waf_web_acl_purge_rules | default(omit, True) }}"
       rules: "{{ aws_waf_web_acl_rules | default(omit, True) }}"
       region: "{{ aws_waf_web_acl_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_waf_web_acl_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ aws_waf_web_acl_state | default(omit, True) }}"
       ec2_url: "{{ aws_waf_web_acl_ec2_url | default(omit, True) }}"
       security_token: "{{ aws_waf_web_acl_security_token | default(omit, True) }}"

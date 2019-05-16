@@ -10,6 +10,7 @@
       pkcs12_password: "{{ java_cert_pkcs12_password | default(omit, True) }}"
       cert_port: "{{ java_cert_cert_port | default(omit, True) }}"
       pkcs12_alias: "{{ java_cert_pkcs12_alias | default(omit, True) }}"
+      keystore_type: "{{ java_cert_keystore_type | default(omit, True) }}"
       state: "{{ java_cert_state | default(omit, True) }}"
       keystore_pass: "{{ java_cert_keystore_pass | default(omit, True) }}"
       pkcs12_path: "{{ java_cert_pkcs12_path | default(omit, True) }}"

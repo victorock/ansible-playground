@@ -1,0 +1,12 @@
+---
+- name: "module_onyx_vxlan"
+  onyx_vxlan: "{{ onyx_vxlan }}"
+  register: r_onyx_vxlan
+  vars:
+    onyx_vxlan: 
+      arp_suppression: "{{ onyx_vxlan_arp_suppression | default(omit, True) }}"
+      nve_id: "{{ onyx_vxlan_nve_id | default(omit, True) }}"
+      mlag_tunnel_ip: "{{ onyx_vxlan_mlag_tunnel_ip | default(omit, True) }}"
+      bgp: "{{ onyx_vxlan_bgp | default(omit, True) }}"
+      loopback_id: "{{ onyx_vxlan_loopback_id | default(omit, True) }}"
+      vni_vlan_list: "{{ onyx_vxlan_vni_vlan_list | default(omit, True) }}"

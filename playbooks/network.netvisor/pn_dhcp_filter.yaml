@@ -1,0 +1,17 @@
+---
+- name: "module_pn_dhcp_filter"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_dhcp_filter: 
+      pn_name: "{{ pn_dhcp_filter_pn_name | default(omit, True) }}"
+      state: "{{ pn_dhcp_filter_state | default(omit, True) }}"
+      pn_trusted_ports: "{{ pn_dhcp_filter_pn_trusted_ports | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_dhcp_filter_pn_cliswitch | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_dhcp_filter"
+      pn_dhcp_filter: "{{ pn_dhcp_filter }}"
+      register: r_pn_dhcp_filter

@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_application_custom"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_application_custom: 
+      username: "{{ fortios_application_custom_username | default(omit, True) }}"
+      application_custom: "{{ fortios_application_custom_application_custom | default(omit, True) }}"
+      host: "{{ fortios_application_custom_host | default(omit, True) }}"
+      https: "{{ fortios_application_custom_https | default(omit, True) }}"
+      password: "{{ fortios_application_custom_password | default(omit, True) }}"
+      vdom: "{{ fortios_application_custom_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_application_custom"
+      fortios_application_custom: "{{ fortios_application_custom }}"
+      register: r_fortios_application_custom

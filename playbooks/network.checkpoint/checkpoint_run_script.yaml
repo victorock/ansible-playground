@@ -1,0 +1,16 @@
+---
+- name: "module_checkpoint_run_script"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    checkpoint_run_script: 
+      targets: "{{ checkpoint_run_script_targets | default(omit, True) }}"
+      script_name: "{{ checkpoint_run_script_script_name | default(omit, True) }}"
+      script: "{{ checkpoint_run_script_script | default(omit, True) }}"
+  tasks:
+    - name: "plugin_checkpoint_run_script"
+      checkpoint_run_script: "{{ checkpoint_run_script }}"
+      register: r_checkpoint_run_script

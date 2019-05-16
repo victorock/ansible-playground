@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_endpoint_control_forticlient_registration_sync"
+  fortios_endpoint_control_forticlient_registration_sync: "{{ fortios_endpoint_control_forticlient_registration_sync }}"
+  register: r_fortios_endpoint_control_forticlient_registration_sync
+  vars:
+    fortios_endpoint_control_forticlient_registration_sync: 
+      username: "{{ fortios_endpoint_control_forticlient_registration_sync_username | default(omit, True) }}"
+      endpoint_control_forticlient_registration_sync: "{{ fortios_endpoint_control_forticlient_registration_sync_endpoint_control_forticlient_registration_sync | default(omit, True) }}"
+      host: "{{ fortios_endpoint_control_forticlient_registration_sync_host | default(omit, True) }}"
+      https: "{{ fortios_endpoint_control_forticlient_registration_sync_https | default(omit, True) }}"
+      password: "{{ fortios_endpoint_control_forticlient_registration_sync_password | default(omit, True) }}"
+      vdom: "{{ fortios_endpoint_control_forticlient_registration_sync_vdom | default(omit, True) }}"

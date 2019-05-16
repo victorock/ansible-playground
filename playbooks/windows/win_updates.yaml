@@ -15,6 +15,7 @@
       use_scheduled_task: "{{ win_updates_use_scheduled_task | default(omit, True) }}"
       blacklist: "{{ win_updates_blacklist | default(omit, True) }}"
       state: "{{ win_updates_state | default(omit, True) }}"
+      server_selection: "{{ win_updates_server_selection | default(omit, True) }}"
   tasks:
     - name: "plugin_win_updates"
       win_updates: "{{ win_updates }}"

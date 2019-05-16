@@ -1,0 +1,18 @@
+---
+- name: "module_postgresql_set"
+  postgresql_set: "{{ postgresql_set }}"
+  register: r_postgresql_set
+  vars:
+    postgresql_set: 
+      reset: "{{ postgresql_set_reset | default(omit, True) }}"
+      ssl_mode: "{{ postgresql_set_ssl_mode | default(omit, True) }}"
+      name: "{{ postgresql_set_name | default(omit, True) }}"
+      ca_cert: "{{ postgresql_set_ca_cert | default(omit, True) }}"
+      login_user: "{{ postgresql_set_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_set_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_set_session_role | default(omit, True) }}"
+      db: "{{ postgresql_set_db | default(omit, True) }}"
+      value: "{{ postgresql_set_value | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_set_login_unix_socket | default(omit, True) }}"
+      login_password: "{{ postgresql_set_login_password | default(omit, True) }}"
+      port: "{{ postgresql_set_port | default(omit, True) }}"

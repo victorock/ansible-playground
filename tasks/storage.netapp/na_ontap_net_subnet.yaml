@@ -1,0 +1,21 @@
+---
+- name: "module_na_ontap_net_subnet"
+  na_ontap_net_subnet: "{{ na_ontap_net_subnet }}"
+  register: r_na_ontap_net_subnet
+  vars:
+    na_ontap_net_subnet: 
+      username: "{{ na_ontap_net_subnet_username | default(omit, True) }}"
+      subnet: "{{ na_ontap_net_subnet_subnet | default(omit, True) }}"
+      from_name: "{{ na_ontap_net_subnet_from_name | default(omit, True) }}"
+      name: "{{ na_ontap_net_subnet_name | default(omit, True) }}"
+      broadcast_domain: "{{ na_ontap_net_subnet_broadcast_domain | default(omit, True) }}"
+      hostname: "{{ na_ontap_net_subnet_hostname | default(omit, True) }}"
+      ipspace: "{{ na_ontap_net_subnet_ipspace | default(omit, True) }}"
+      ip_ranges: "{{ na_ontap_net_subnet_ip_ranges | default(omit, True) }}"
+      state: "{{ na_ontap_net_subnet_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_net_subnet_http_port | default(omit, True) }}"
+      https: "{{ na_ontap_net_subnet_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_net_subnet_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_net_subnet_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_net_subnet_validate_certs | default(omit, True) }}"
+      gateway: "{{ na_ontap_net_subnet_gateway | default(omit, True) }}"

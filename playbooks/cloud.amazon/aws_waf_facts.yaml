@@ -13,6 +13,7 @@
       name: "{{ aws_waf_facts_name | default(omit, True) }}"
       security_token: "{{ aws_waf_facts_security_token | default(omit, True) }}"
       region: "{{ aws_waf_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_waf_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ aws_waf_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_waf_facts_validate_certs | default(omit, True) }}"
   tasks:

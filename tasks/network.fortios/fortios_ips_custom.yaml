@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_ips_custom"
+  fortios_ips_custom: "{{ fortios_ips_custom }}"
+  register: r_fortios_ips_custom
+  vars:
+    fortios_ips_custom: 
+      username: "{{ fortios_ips_custom_username | default(omit, True) }}"
+      ips_custom: "{{ fortios_ips_custom_ips_custom | default(omit, True) }}"
+      host: "{{ fortios_ips_custom_host | default(omit, True) }}"
+      https: "{{ fortios_ips_custom_https | default(omit, True) }}"
+      password: "{{ fortios_ips_custom_password | default(omit, True) }}"
+      vdom: "{{ fortios_ips_custom_vdom | default(omit, True) }}"

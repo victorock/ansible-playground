@@ -1,0 +1,28 @@
+---
+- name: "module_mso_schema_template_anp_epg_contract"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_schema_template_anp_epg_contract: 
+      username: "{{ mso_schema_template_anp_epg_contract_username | default(omit, True) }}"
+      timeout: "{{ mso_schema_template_anp_epg_contract_timeout | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_template_anp_epg_contract_use_proxy | default(omit, True) }}"
+      state: "{{ mso_schema_template_anp_epg_contract_state | default(omit, True) }}"
+      contract: "{{ mso_schema_template_anp_epg_contract_contract | default(omit, True) }}"
+      output_level: "{{ mso_schema_template_anp_epg_contract_output_level | default(omit, True) }}"
+      host: "{{ mso_schema_template_anp_epg_contract_host | default(omit, True) }}"
+      anp: "{{ mso_schema_template_anp_epg_contract_anp | default(omit, True) }}"
+      template: "{{ mso_schema_template_anp_epg_contract_template | default(omit, True) }}"
+      epg: "{{ mso_schema_template_anp_epg_contract_epg | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_template_anp_epg_contract_use_ssl | default(omit, True) }}"
+      password: "{{ mso_schema_template_anp_epg_contract_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_template_anp_epg_contract_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_template_anp_epg_contract_port | default(omit, True) }}"
+      schema: "{{ mso_schema_template_anp_epg_contract_schema | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_schema_template_anp_epg_contract"
+      mso_schema_template_anp_epg_contract: "{{ mso_schema_template_anp_epg_contract }}"
+      register: r_mso_schema_template_anp_epg_contract

@@ -1,0 +1,11 @@
+---
+- name: "module_na_elementsw_initiators"
+  na_elementsw_initiators: "{{ na_elementsw_initiators }}"
+  register: r_na_elementsw_initiators
+  vars:
+    na_elementsw_initiators: 
+      initiators: "{{ na_elementsw_initiators_initiators | default(omit, True) }}"
+      username: "{{ na_elementsw_initiators_username | default(omit, True) }}"
+      state: "{{ na_elementsw_initiators_state | default(omit, True) }}"
+      password: "{{ na_elementsw_initiators_password | default(omit, True) }}"
+      hostname: "{{ na_elementsw_initiators_hostname | default(omit, True) }}"

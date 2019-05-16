@@ -10,5 +10,6 @@
       hostname: "{{ na_ontap_node_hostname | default(omit, True) }}"
       http_port: "{{ na_ontap_node_http_port | default(omit, True) }}"
       https: "{{ na_ontap_node_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_node_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_node_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_node_validate_certs | default(omit, True) }}"

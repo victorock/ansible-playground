@@ -1,0 +1,26 @@
+---
+- name: "module_utm_network_interface_address"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_network_interface_address: 
+      comment: "{{ utm_network_interface_address_comment | default(omit, True) }}"
+      resolved: "{{ utm_network_interface_address_resolved | default(omit, True) }}"
+      name: "{{ utm_network_interface_address_name | default(omit, True) }}"
+      utm_host: "{{ utm_network_interface_address_utm_host | default(omit, True) }}"
+      utm_token: "{{ utm_network_interface_address_utm_token | default(omit, True) }}"
+      address6: "{{ utm_network_interface_address_address6 | default(omit, True) }}"
+      utm_protocol: "{{ utm_network_interface_address_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_network_interface_address_headers | default(omit, True) }}"
+      state: "{{ utm_network_interface_address_state | default(omit, True) }}"
+      address: "{{ utm_network_interface_address_address | default(omit, True) }}"
+      validate_certs: "{{ utm_network_interface_address_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_network_interface_address_utm_port | default(omit, True) }}"
+      resolved6: "{{ utm_network_interface_address_resolved6 | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_network_interface_address"
+      utm_network_interface_address: "{{ utm_network_interface_address }}"
+      register: r_utm_network_interface_address

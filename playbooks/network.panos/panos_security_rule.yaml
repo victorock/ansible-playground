@@ -15,6 +15,7 @@
       log_start: "{{ panos_security_rule_log_start | default(omit, True) }}"
       operation: "{{ panos_security_rule_operation | default(omit, True) }}"
       data_filtering: "{{ panos_security_rule_data_filtering | default(omit, True) }}"
+      category: "{{ panos_security_rule_category | default(omit, True) }}"
       service: "{{ panos_security_rule_service | default(omit, True) }}"
       url_filtering: "{{ panos_security_rule_url_filtering | default(omit, True) }}"
       source_user: "{{ panos_security_rule_source_user | default(omit, True) }}"

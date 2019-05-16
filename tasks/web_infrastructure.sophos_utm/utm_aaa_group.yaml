@@ -1,0 +1,27 @@
+---
+- name: "module_utm_aaa_group"
+  utm_aaa_group: "{{ utm_aaa_group }}"
+  register: r_utm_aaa_group
+  vars:
+    utm_aaa_group: 
+      comment: "{{ utm_aaa_group_comment | default(omit, True) }}"
+      utm_host: "{{ utm_aaa_group_utm_host | default(omit, True) }}"
+      ipsec_dn: "{{ utm_aaa_group_ipsec_dn | default(omit, True) }}"
+      ldap_attribute: "{{ utm_aaa_group_ldap_attribute | default(omit, True) }}"
+      network: "{{ utm_aaa_group_network | default(omit, True) }}"
+      adirectory_groups_sids: "{{ utm_aaa_group_adirectory_groups_sids | default(omit, True) }}"
+      dynamic: "{{ utm_aaa_group_dynamic | default(omit, True) }}"
+      utm_token: "{{ utm_aaa_group_utm_token | default(omit, True) }}"
+      adirectory_groups: "{{ utm_aaa_group_adirectory_groups | default(omit, True) }}"
+      utm_protocol: "{{ utm_aaa_group_utm_protocol | default(omit, True) }}"
+      edirectory_groups: "{{ utm_aaa_group_edirectory_groups | default(omit, True) }}"
+      headers: "{{ utm_aaa_group_headers | default(omit, True) }}"
+      state: "{{ utm_aaa_group_state | default(omit, True) }}"
+      ldap_attribute_value: "{{ utm_aaa_group_ldap_attribute_value | default(omit, True) }}"
+      members: "{{ utm_aaa_group_members | default(omit, True) }}"
+      tacacs_groups: "{{ utm_aaa_group_tacacs_groups | default(omit, True) }}"
+      radius_groups: "{{ utm_aaa_group_radius_groups | default(omit, True) }}"
+      backend_match: "{{ utm_aaa_group_backend_match | default(omit, True) }}"
+      validate_certs: "{{ utm_aaa_group_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_aaa_group_utm_port | default(omit, True) }}"
+      name: "{{ utm_aaa_group_name | default(omit, True) }}"

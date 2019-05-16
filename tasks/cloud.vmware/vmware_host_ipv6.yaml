@@ -1,0 +1,14 @@
+---
+- name: "module_vmware_host_ipv6"
+  vmware_host_ipv6: "{{ vmware_host_ipv6 }}"
+  register: r_vmware_host_ipv6
+  vars:
+    vmware_host_ipv6: 
+      username: "{{ vmware_host_ipv6_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_ipv6_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_ipv6_cluster_name | default(omit, True) }}"
+      state: "{{ vmware_host_ipv6_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_ipv6_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_ipv6_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_ipv6_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_ipv6_port | default(omit, True) }}"

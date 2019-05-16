@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_webfilter_content"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_webfilter_content: 
+      username: "{{ fortios_webfilter_content_username | default(omit, True) }}"
+      webfilter_content: "{{ fortios_webfilter_content_webfilter_content | default(omit, True) }}"
+      host: "{{ fortios_webfilter_content_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_content_https | default(omit, True) }}"
+      password: "{{ fortios_webfilter_content_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_content_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_webfilter_content"
+      fortios_webfilter_content: "{{ fortios_webfilter_content }}"
+      register: r_fortios_webfilter_content

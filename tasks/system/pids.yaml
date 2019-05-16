@@ -1,0 +1,7 @@
+---
+- name: "module_pids"
+  pids: "{{ pids }}"
+  register: r_pids
+  vars:
+    pids: 
+      name: "{{ pids_name | default(omit, True) }}"

@@ -14,10 +14,11 @@
       security_token: "{{ aws_waf_rule_security_token | default(omit, True) }}"
       purge_conditions: "{{ aws_waf_rule_purge_conditions | default(omit, True) }}"
       region: "{{ aws_waf_rule_region | default(omit, True) }}"
-      validate_certs: "{{ aws_waf_rule_validate_certs | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_waf_rule_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ aws_waf_rule_state | default(omit, True) }}"
-      ec2_url: "{{ aws_waf_rule_ec2_url | default(omit, True) }}"
       conditions: "{{ aws_waf_rule_conditions | default(omit, True) }}"
+      ec2_url: "{{ aws_waf_rule_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ aws_waf_rule_validate_certs | default(omit, True) }}"
       name: "{{ aws_waf_rule_name | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_waf_rule"

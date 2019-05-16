@@ -1,0 +1,20 @@
+---
+- name: "module_bitbucket_access_key"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bitbucket_access_key: 
+      username: "{{ bitbucket_access_key_username | default(omit, True) }}"
+      key: "{{ bitbucket_access_key_key | default(omit, True) }}"
+      repository: "{{ bitbucket_access_key_repository | default(omit, True) }}"
+      label: "{{ bitbucket_access_key_label | default(omit, True) }}"
+      state: "{{ bitbucket_access_key_state | default(omit, True) }}"
+      client_id: "{{ bitbucket_access_key_client_id | default(omit, True) }}"
+      client_secret: "{{ bitbucket_access_key_client_secret | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bitbucket_access_key"
+      bitbucket_access_key: "{{ bitbucket_access_key }}"
+      register: r_bitbucket_access_key

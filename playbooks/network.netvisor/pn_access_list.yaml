@@ -1,0 +1,17 @@
+---
+- name: "module_pn_access_list"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_access_list: 
+      state: "{{ pn_access_list_state | default(omit, True) }}"
+      pn_name: "{{ pn_access_list_pn_name | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_access_list_pn_cliswitch | default(omit, True) }}"
+      pn_scope: "{{ pn_access_list_pn_scope | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_access_list"
+      pn_access_list: "{{ pn_access_list }}"
+      register: r_pn_access_list

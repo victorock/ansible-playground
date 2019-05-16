@@ -1,0 +1,24 @@
+---
+- name: "module_vmware_export_ovf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_export_ovf: 
+      export_with_images: "{{ vmware_export_ovf_export_with_images | default(omit, True) }}"
+      username: "{{ vmware_export_ovf_username | default(omit, True) }}"
+      export_dir: "{{ vmware_export_ovf_export_dir | default(omit, True) }}"
+      name: "{{ vmware_export_ovf_name | default(omit, True) }}"
+      datacenter: "{{ vmware_export_ovf_datacenter | default(omit, True) }}"
+      hostname: "{{ vmware_export_ovf_hostname | default(omit, True) }}"
+      folder: "{{ vmware_export_ovf_folder | default(omit, True) }}"
+      password: "{{ vmware_export_ovf_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_export_ovf_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_export_ovf_port | default(omit, True) }}"
+      uuid: "{{ vmware_export_ovf_uuid | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_export_ovf"
+      vmware_export_ovf: "{{ vmware_export_ovf }}"
+      register: r_vmware_export_ovf

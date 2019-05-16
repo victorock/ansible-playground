@@ -1,0 +1,20 @@
+---
+- name: "module_scaleway_security_group"
+  scaleway_security_group: "{{ scaleway_security_group }}"
+  register: r_scaleway_security_group
+  vars:
+    scaleway_security_group: 
+      outbound_default_policy: "{{ scaleway_security_group_outbound_default_policy | default(omit, True) }}"
+      api_url: "{{ scaleway_security_group_api_url | default(omit, True) }}"
+      query_parameters: "{{ scaleway_security_group_query_parameters | default(omit, True) }}"
+      region: "{{ scaleway_security_group_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_security_group_api_timeout | default(omit, True) }}"
+      name: "{{ scaleway_security_group_name | default(omit, True) }}"
+      stateful: "{{ scaleway_security_group_stateful | default(omit, True) }}"
+      state: "{{ scaleway_security_group_state | default(omit, True) }}"
+      inbound_default_policy: "{{ scaleway_security_group_inbound_default_policy | default(omit, True) }}"
+      api_token: "{{ scaleway_security_group_api_token | default(omit, True) }}"
+      organization: "{{ scaleway_security_group_organization | default(omit, True) }}"
+      organization_default: "{{ scaleway_security_group_organization_default | default(omit, True) }}"
+      validate_certs: "{{ scaleway_security_group_validate_certs | default(omit, True) }}"
+      description: "{{ scaleway_security_group_description | default(omit, True) }}"

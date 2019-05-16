@@ -1,0 +1,24 @@
+---
+- name: "module_azure_rm_virtualmachinescalesetinstance"
+  azure_rm_virtualmachinescalesetinstance: "{{ azure_rm_virtualmachinescalesetinstance }}"
+  register: r_azure_rm_virtualmachinescalesetinstance
+  vars:
+    azure_rm_virtualmachinescalesetinstance: 
+      profile: "{{ azure_rm_virtualmachinescalesetinstance_profile | default(omit, True) }}"
+      vmss_name: "{{ azure_rm_virtualmachinescalesetinstance_vmss_name | default(omit, True) }}"
+      power_state: "{{ azure_rm_virtualmachinescalesetinstance_power_state | default(omit, True) }}"
+      resource_group: "{{ azure_rm_virtualmachinescalesetinstance_resource_group | default(omit, True) }}"
+      state: "{{ azure_rm_virtualmachinescalesetinstance_state | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_virtualmachinescalesetinstance_cloud_environment | default(omit, True) }}"
+      ad_user: "{{ azure_rm_virtualmachinescalesetinstance_ad_user | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_virtualmachinescalesetinstance_cert_validation_mode | default(omit, True) }}"
+      instance_id: "{{ azure_rm_virtualmachinescalesetinstance_instance_id | default(omit, True) }}"
+      secret: "{{ azure_rm_virtualmachinescalesetinstance_secret | default(omit, True) }}"
+      client_id: "{{ azure_rm_virtualmachinescalesetinstance_client_id | default(omit, True) }}"
+      auth_source: "{{ azure_rm_virtualmachinescalesetinstance_auth_source | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_virtualmachinescalesetinstance_adfs_authority_url | default(omit, True) }}"
+      api_profile: "{{ azure_rm_virtualmachinescalesetinstance_api_profile | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_virtualmachinescalesetinstance_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_virtualmachinescalesetinstance_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_virtualmachinescalesetinstance_tenant | default(omit, True) }}"
+      latest_model: "{{ azure_rm_virtualmachinescalesetinstance_latest_model | default(omit, True) }}"

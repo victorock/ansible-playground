@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_user_adgrp"
+  fortios_user_adgrp: "{{ fortios_user_adgrp }}"
+  register: r_fortios_user_adgrp
+  vars:
+    fortios_user_adgrp: 
+      username: "{{ fortios_user_adgrp_username | default(omit, True) }}"
+      host: "{{ fortios_user_adgrp_host | default(omit, True) }}"
+      https: "{{ fortios_user_adgrp_https | default(omit, True) }}"
+      user_adgrp: "{{ fortios_user_adgrp_user_adgrp | default(omit, True) }}"
+      password: "{{ fortios_user_adgrp_password | default(omit, True) }}"
+      vdom: "{{ fortios_user_adgrp_vdom | default(omit, True) }}"

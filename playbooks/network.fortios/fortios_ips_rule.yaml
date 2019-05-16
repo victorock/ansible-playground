@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_ips_rule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_ips_rule: 
+      username: "{{ fortios_ips_rule_username | default(omit, True) }}"
+      host: "{{ fortios_ips_rule_host | default(omit, True) }}"
+      https: "{{ fortios_ips_rule_https | default(omit, True) }}"
+      password: "{{ fortios_ips_rule_password | default(omit, True) }}"
+      vdom: "{{ fortios_ips_rule_vdom | default(omit, True) }}"
+      ips_rule: "{{ fortios_ips_rule_ips_rule | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_ips_rule"
+      fortios_ips_rule: "{{ fortios_ips_rule }}"
+      register: r_fortios_ips_rule

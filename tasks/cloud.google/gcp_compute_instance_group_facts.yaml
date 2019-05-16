@@ -5,6 +5,7 @@
   vars:
     gcp_compute_instance_group_facts: 
       scopes: "{{ gcp_compute_instance_group_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_instance_group_facts_service_account_contents | default(omit, True) }}"
       zone: "{{ gcp_compute_instance_group_facts_zone | default(omit, True) }}"
       service_account_email: "{{ gcp_compute_instance_group_facts_service_account_email | default(omit, True) }}"
       project: "{{ gcp_compute_instance_group_facts_project | default(omit, True) }}"

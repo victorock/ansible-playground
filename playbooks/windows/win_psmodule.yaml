@@ -7,11 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_psmodule: 
-      url: "{{ win_psmodule_url | default(omit, True) }}"
       allow_clobber: "{{ win_psmodule_allow_clobber | default(omit, True) }}"
       name: "{{ win_psmodule_name | default(omit, True) }}"
       repository: "{{ win_psmodule_repository | default(omit, True) }}"
+      url: "{{ win_psmodule_url | default(omit, True) }}"
+      maximum_version: "{{ win_psmodule_maximum_version | default(omit, True) }}"
+      skip_publisher_check: "{{ win_psmodule_skip_publisher_check | default(omit, True) }}"
       state: "{{ win_psmodule_state | default(omit, True) }}"
+      allow_prerelease: "{{ win_psmodule_allow_prerelease | default(omit, True) }}"
+      required_version: "{{ win_psmodule_required_version | default(omit, True) }}"
+      minimum_version: "{{ win_psmodule_minimum_version | default(omit, True) }}"
   tasks:
     - name: "plugin_win_psmodule"
       win_psmodule: "{{ win_psmodule }}"

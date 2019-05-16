@@ -10,6 +10,7 @@
       profile: "{{ azure_rm_resourcegroup_facts_profile | default(omit, True) }}"
       name: "{{ azure_rm_resourcegroup_facts_name | default(omit, True) }}"
       tags: "{{ azure_rm_resourcegroup_facts_tags | default(omit, True) }}"
+      list_resources: "{{ azure_rm_resourcegroup_facts_list_resources | default(omit, True) }}"
       ad_user: "{{ azure_rm_resourcegroup_facts_ad_user | default(omit, True) }}"
       cloud_environment: "{{ azure_rm_resourcegroup_facts_cloud_environment | default(omit, True) }}"
       secret: "{{ azure_rm_resourcegroup_facts_secret | default(omit, True) }}"

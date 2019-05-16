@@ -1,0 +1,38 @@
+---
+- name: "module_bigip_profile_persistence_cookie"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_profile_persistence_cookie: 
+      update_password: "{{ bigip_profile_persistence_cookie_update_password | default(omit, True) }}"
+      secure: "{{ bigip_profile_persistence_cookie_secure | default(omit, True) }}"
+      cookie_encryption: "{{ bigip_profile_persistence_cookie_cookie_encryption | default(omit, True) }}"
+      match_across_pools: "{{ bigip_profile_persistence_cookie_match_across_pools | default(omit, True) }}"
+      state: "{{ bigip_profile_persistence_cookie_state | default(omit, True) }}"
+      server_port: "{{ bigip_profile_persistence_cookie_server_port | default(omit, True) }}"
+      provider: "{{ bigip_profile_persistence_cookie_provider | default(omit, True) }}"
+      http_only: "{{ bigip_profile_persistence_cookie_http_only | default(omit, True) }}"
+      description: "{{ bigip_profile_persistence_cookie_description | default(omit, True) }}"
+      parent: "{{ bigip_profile_persistence_cookie_parent | default(omit, True) }}"
+      cookie_name: "{{ bigip_profile_persistence_cookie_cookie_name | default(omit, True) }}"
+      user: "{{ bigip_profile_persistence_cookie_user | default(omit, True) }}"
+      password: "{{ bigip_profile_persistence_cookie_password | default(omit, True) }}"
+      always_send: "{{ bigip_profile_persistence_cookie_always_send | default(omit, True) }}"
+      cookie_method: "{{ bigip_profile_persistence_cookie_cookie_method | default(omit, True) }}"
+      name: "{{ bigip_profile_persistence_cookie_name | default(omit, True) }}"
+      partition: "{{ bigip_profile_persistence_cookie_partition | default(omit, True) }}"
+      match_across_services: "{{ bigip_profile_persistence_cookie_match_across_services | default(omit, True) }}"
+      server: "{{ bigip_profile_persistence_cookie_server | default(omit, True) }}"
+      match_across_virtuals: "{{ bigip_profile_persistence_cookie_match_across_virtuals | default(omit, True) }}"
+      expiration: "{{ bigip_profile_persistence_cookie_expiration | default(omit, True) }}"
+      override_connection_limit: "{{ bigip_profile_persistence_cookie_override_connection_limit | default(omit, True) }}"
+      encryption_passphrase: "{{ bigip_profile_persistence_cookie_encryption_passphrase | default(omit, True) }}"
+      validate_certs: "{{ bigip_profile_persistence_cookie_validate_certs | default(omit, True) }}"
+      encrypt_cookie_pool_name: "{{ bigip_profile_persistence_cookie_encrypt_cookie_pool_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_profile_persistence_cookie"
+      bigip_profile_persistence_cookie: "{{ bigip_profile_persistence_cookie }}"
+      register: r_bigip_profile_persistence_cookie

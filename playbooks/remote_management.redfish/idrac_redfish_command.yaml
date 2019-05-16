@@ -1,0 +1,19 @@
+---
+- name: "module_idrac_redfish_command"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    idrac_redfish_command: 
+      category: "{{ idrac_redfish_command_category | default(omit, True) }}"
+      username: "{{ idrac_redfish_command_username | default(omit, True) }}"
+      baseuri: "{{ idrac_redfish_command_baseuri | default(omit, True) }}"
+      command: "{{ idrac_redfish_command_command | default(omit, True) }}"
+      timeout: "{{ idrac_redfish_command_timeout | default(omit, True) }}"
+      password: "{{ idrac_redfish_command_password | default(omit, True) }}"
+  tasks:
+    - name: "plugin_idrac_redfish_command"
+      idrac_redfish_command: "{{ idrac_redfish_command }}"
+      register: r_idrac_redfish_command

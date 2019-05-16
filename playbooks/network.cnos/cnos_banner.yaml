@@ -1,0 +1,17 @@
+---
+- name: "module_cnos_banner"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_banner: 
+      text: "{{ cnos_banner_text | default(omit, True) }}"
+      state: "{{ cnos_banner_state | default(omit, True) }}"
+      banner: "{{ cnos_banner_banner | default(omit, True) }}"
+      provider: "{{ cnos_banner_provider | default(omit, True) }}"
+  tasks:
+    - name: "plugin_cnos_banner"
+      cnos_banner: "{{ cnos_banner }}"
+      register: r_cnos_banner

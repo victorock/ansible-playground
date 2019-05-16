@@ -1,0 +1,10 @@
+---
+- name: "module_hcloud_datacenter_facts"
+  hcloud_datacenter_facts: "{{ hcloud_datacenter_facts }}"
+  register: r_hcloud_datacenter_facts
+  vars:
+    hcloud_datacenter_facts: 
+      endpoint: "{{ hcloud_datacenter_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_datacenter_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_datacenter_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_datacenter_facts_api_token | default(omit, True) }}"

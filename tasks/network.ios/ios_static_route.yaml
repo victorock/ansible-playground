@@ -5,11 +5,16 @@
   vars:
     ios_static_route: 
       authorize: "{{ ios_static_route_authorize | default(omit, True) }}"
+      name: "{{ ios_static_route_name | default(omit, True) }}"
+      track: "{{ ios_static_route_track | default(omit, True) }}"
       auth_pass: "{{ ios_static_route_auth_pass | default(omit, True) }}"
       mask: "{{ ios_static_route_mask | default(omit, True) }}"
       state: "{{ ios_static_route_state | default(omit, True) }}"
       admin_distance: "{{ ios_static_route_admin_distance | default(omit, True) }}"
+      aggregate: "{{ ios_static_route_aggregate | default(omit, True) }}"
       prefix: "{{ ios_static_route_prefix | default(omit, True) }}"
       next_hop: "{{ ios_static_route_next_hop | default(omit, True) }}"
+      vrf: "{{ ios_static_route_vrf | default(omit, True) }}"
       provider: "{{ ios_static_route_provider | default(omit, True) }}"
-      aggregate: "{{ ios_static_route_aggregate | default(omit, True) }}"
+      interface: "{{ ios_static_route_interface | default(omit, True) }}"
+      tag: "{{ ios_static_route_tag | default(omit, True) }}"

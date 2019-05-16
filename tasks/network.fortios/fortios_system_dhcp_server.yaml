@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_system_dhcp_server"
+  fortios_system_dhcp_server: "{{ fortios_system_dhcp_server }}"
+  register: r_fortios_system_dhcp_server
+  vars:
+    fortios_system_dhcp_server: 
+      username: "{{ fortios_system_dhcp_server_username | default(omit, True) }}"
+      host: "{{ fortios_system_dhcp_server_host | default(omit, True) }}"
+      https: "{{ fortios_system_dhcp_server_https | default(omit, True) }}"
+      system_dhcp_server: "{{ fortios_system_dhcp_server_system_dhcp_server | default(omit, True) }}"
+      password: "{{ fortios_system_dhcp_server_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_dhcp_server_vdom | default(omit, True) }}"

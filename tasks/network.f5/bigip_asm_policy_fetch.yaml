@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_asm_policy_fetch"
+  bigip_asm_policy_fetch: "{{ bigip_asm_policy_fetch }}"
+  register: r_bigip_asm_policy_fetch
+  vars:
+    bigip_asm_policy_fetch: 
+      compact: "{{ bigip_asm_policy_fetch_compact | default(omit, True) }}"
+      binary: "{{ bigip_asm_policy_fetch_binary | default(omit, True) }}"
+      base64: "{{ bigip_asm_policy_fetch_base64 | default(omit, True) }}"
+      force: "{{ bigip_asm_policy_fetch_force | default(omit, True) }}"
+      name: "{{ bigip_asm_policy_fetch_name | default(omit, True) }}"
+      dest: "{{ bigip_asm_policy_fetch_dest | default(omit, True) }}"
+      partition: "{{ bigip_asm_policy_fetch_partition | default(omit, True) }}"
+      server: "{{ bigip_asm_policy_fetch_server | default(omit, True) }}"
+      server_port: "{{ bigip_asm_policy_fetch_server_port | default(omit, True) }}"
+      user: "{{ bigip_asm_policy_fetch_user | default(omit, True) }}"
+      file: "{{ bigip_asm_policy_fetch_file | default(omit, True) }}"
+      provider: "{{ bigip_asm_policy_fetch_provider | default(omit, True) }}"
+      inline: "{{ bigip_asm_policy_fetch_inline | default(omit, True) }}"
+      password: "{{ bigip_asm_policy_fetch_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_asm_policy_fetch_validate_certs | default(omit, True) }}"

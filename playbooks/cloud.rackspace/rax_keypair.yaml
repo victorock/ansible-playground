@@ -14,11 +14,11 @@
       tenant_name: "{{ rax_keypair_tenant_name | default(omit, True) }}"
       region: "{{ rax_keypair_region | default(omit, True) }}"
       state: "{{ rax_keypair_state | default(omit, True) }}"
-      verify_ssl: "{{ rax_keypair_verify_ssl | default(omit, True) }}"
       env: "{{ rax_keypair_env | default(omit, True) }}"
       tenant_id: "{{ rax_keypair_tenant_id | default(omit, True) }}"
       credentials: "{{ rax_keypair_credentials | default(omit, True) }}"
       api_key: "{{ rax_keypair_api_key | default(omit, True) }}"
+      validate_certs: "{{ rax_keypair_validate_certs | default(omit, True) }}"
       auth_endpoint: "{{ rax_keypair_auth_endpoint | default(omit, True) }}"
   tasks:
     - name: "plugin_rax_keypair"

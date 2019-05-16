@@ -1,0 +1,14 @@
+---
+- name: "module_postgresql_ping"
+  postgresql_ping: "{{ postgresql_ping }}"
+  register: r_postgresql_ping
+  vars:
+    postgresql_ping: 
+      ssl_mode: "{{ postgresql_ping_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_ping_ca_cert | default(omit, True) }}"
+      login_user: "{{ postgresql_ping_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_ping_login_host | default(omit, True) }}"
+      db: "{{ postgresql_ping_db | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_ping_login_unix_socket | default(omit, True) }}"
+      login_password: "{{ postgresql_ping_login_password | default(omit, True) }}"
+      port: "{{ postgresql_ping_port | default(omit, True) }}"

@@ -1,0 +1,13 @@
+---
+- name: "module_skydive_node"
+  skydive_node: "{{ skydive_node }}"
+  register: r_skydive_node
+  vars:
+    skydive_node: 
+      name: "{{ skydive_node_name | default(omit, True) }}"
+      state: "{{ skydive_node_state | default(omit, True) }}"
+      node_type: "{{ skydive_node_node_type | default(omit, True) }}"
+      host: "{{ skydive_node_host | default(omit, True) }}"
+      seed: "{{ skydive_node_seed | default(omit, True) }}"
+      provider: "{{ skydive_node_provider | default(omit, True) }}"
+      metadata: "{{ skydive_node_metadata | default(omit, True) }}"

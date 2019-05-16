@@ -15,10 +15,11 @@
       authentication_method: "{{ na_ontap_user_authentication_method | default(omit, True) }}"
       hostname: "{{ na_ontap_user_hostname | default(omit, True) }}"
       vserver: "{{ na_ontap_user_vserver | default(omit, True) }}"
-      application: "{{ na_ontap_user_application | default(omit, True) }}"
+      applications: "{{ na_ontap_user_applications | default(omit, True) }}"
       state: "{{ na_ontap_user_state | default(omit, True) }}"
       role_name: "{{ na_ontap_user_role_name | default(omit, True) }}"
       https: "{{ na_ontap_user_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_user_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_user_password | default(omit, True) }}"
       set_password: "{{ na_ontap_user_set_password | default(omit, True) }}"
   tasks:

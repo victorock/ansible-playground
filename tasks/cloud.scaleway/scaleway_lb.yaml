@@ -1,0 +1,20 @@
+---
+- name: "module_scaleway_lb"
+  scaleway_lb: "{{ scaleway_lb }}"
+  register: r_scaleway_lb
+  vars:
+    scaleway_lb: 
+      description: "{{ scaleway_lb_description | default(omit, True) }}"
+      tags: "{{ scaleway_lb_tags | default(omit, True) }}"
+      region: "{{ scaleway_lb_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_lb_api_timeout | default(omit, True) }}"
+      name: "{{ scaleway_lb_name | default(omit, True) }}"
+      organization_id: "{{ scaleway_lb_organization_id | default(omit, True) }}"
+      query_parameters: "{{ scaleway_lb_query_parameters | default(omit, True) }}"
+      state: "{{ scaleway_lb_state | default(omit, True) }}"
+      wait_timeout: "{{ scaleway_lb_wait_timeout | default(omit, True) }}"
+      api_token: "{{ scaleway_lb_api_token | default(omit, True) }}"
+      api_url: "{{ scaleway_lb_api_url | default(omit, True) }}"
+      validate_certs: "{{ scaleway_lb_validate_certs | default(omit, True) }}"
+      wait_sleep_time: "{{ scaleway_lb_wait_sleep_time | default(omit, True) }}"
+      wait: "{{ scaleway_lb_wait | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_onyx_ptp_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_ptp_interface: 
+      sync_interval: "{{ onyx_ptp_interface_sync_interval | default(omit, True) }}"
+      name: "{{ onyx_ptp_interface_name | default(omit, True) }}"
+      delay_request: "{{ onyx_ptp_interface_delay_request | default(omit, True) }}"
+      state: "{{ onyx_ptp_interface_state | default(omit, True) }}"
+      announce_interval: "{{ onyx_ptp_interface_announce_interval | default(omit, True) }}"
+      announce_timeout: "{{ onyx_ptp_interface_announce_timeout | default(omit, True) }}"
+  tasks:
+    - name: "plugin_onyx_ptp_interface"
+      onyx_ptp_interface: "{{ onyx_ptp_interface }}"
+      register: r_onyx_ptp_interface

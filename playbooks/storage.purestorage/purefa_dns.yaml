@@ -1,0 +1,18 @@
+---
+- name: "module_purefa_dns"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefa_dns: 
+      nameservers: "{{ purefa_dns_nameservers | default(omit, True) }}"
+      state: "{{ purefa_dns_state | default(omit, True) }}"
+      fa_url: "{{ purefa_dns_fa_url | default(omit, True) }}"
+      domain: "{{ purefa_dns_domain | default(omit, True) }}"
+      api_token: "{{ purefa_dns_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefa_dns"
+      purefa_dns: "{{ purefa_dns }}"
+      register: r_purefa_dns

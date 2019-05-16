@@ -1,0 +1,10 @@
+---
+- name: "module_rabbitmq_global_parameter"
+  rabbitmq_global_parameter: "{{ rabbitmq_global_parameter }}"
+  register: r_rabbitmq_global_parameter
+  vars:
+    rabbitmq_global_parameter: 
+      node: "{{ rabbitmq_global_parameter_node | default(omit, True) }}"
+      state: "{{ rabbitmq_global_parameter_state | default(omit, True) }}"
+      name: "{{ rabbitmq_global_parameter_name | default(omit, True) }}"
+      value: "{{ rabbitmq_global_parameter_value | default(omit, True) }}"

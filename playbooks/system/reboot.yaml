@@ -9,6 +9,7 @@
     reboot: 
       pre_reboot_delay: "{{ reboot_pre_reboot_delay | default(omit, True) }}"
       reboot_timeout: "{{ reboot_reboot_timeout | default(omit, True) }}"
+      search_paths: "{{ reboot_search_paths | default(omit, True) }}"
       post_reboot_delay: "{{ reboot_post_reboot_delay | default(omit, True) }}"
       test_command: "{{ reboot_test_command | default(omit, True) }}"
       msg: "{{ reboot_msg | default(omit, True) }}"

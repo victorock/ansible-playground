@@ -14,6 +14,7 @@
       state: "{{ na_ontap_ntp_state | default(omit, True) }}"
       version: "{{ na_ontap_ntp_version | default(omit, True) }}"
       https: "{{ na_ontap_ntp_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_ntp_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_ntp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_ntp_validate_certs | default(omit, True) }}"
   tasks:

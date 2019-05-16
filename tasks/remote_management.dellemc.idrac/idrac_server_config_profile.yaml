@@ -1,0 +1,21 @@
+---
+- name: "module_idrac_server_config_profile"
+  idrac_server_config_profile: "{{ idrac_server_config_profile }}"
+  register: r_idrac_server_config_profile
+  vars:
+    idrac_server_config_profile: 
+      end_host_power_state: "{{ idrac_server_config_profile_end_host_power_state | default(omit, True) }}"
+      idrac_user: "{{ idrac_server_config_profile_idrac_user | default(omit, True) }}"
+      scp_file: "{{ idrac_server_config_profile_scp_file | default(omit, True) }}"
+      export_use: "{{ idrac_server_config_profile_export_use | default(omit, True) }}"
+      share_password: "{{ idrac_server_config_profile_share_password | default(omit, True) }}"
+      idrac_port: "{{ idrac_server_config_profile_idrac_port | default(omit, True) }}"
+      share_name: "{{ idrac_server_config_profile_share_name | default(omit, True) }}"
+      scp_components: "{{ idrac_server_config_profile_scp_components | default(omit, True) }}"
+      share_user: "{{ idrac_server_config_profile_share_user | default(omit, True) }}"
+      shutdown_type: "{{ idrac_server_config_profile_shutdown_type | default(omit, True) }}"
+      command: "{{ idrac_server_config_profile_command | default(omit, True) }}"
+      export_format: "{{ idrac_server_config_profile_export_format | default(omit, True) }}"
+      job_wait: "{{ idrac_server_config_profile_job_wait | default(omit, True) }}"
+      idrac_ip: "{{ idrac_server_config_profile_idrac_ip | default(omit, True) }}"
+      idrac_password: "{{ idrac_server_config_profile_idrac_password | default(omit, True) }}"

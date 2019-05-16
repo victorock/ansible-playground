@@ -12,6 +12,7 @@
       security_token: "{{ s3_bucket_security_token | default(omit, True) }}"
       tags: "{{ s3_bucket_tags | default(omit, True) }}"
       region: "{{ s3_bucket_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ s3_bucket_debug_botocore_endpoint_logs | default(omit, True) }}"
       ceph: "{{ s3_bucket_ceph | default(omit, True) }}"
       state: "{{ s3_bucket_state | default(omit, True) }}"
       ec2_url: "{{ s3_bucket_ec2_url | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_onyx_vxlan"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    onyx_vxlan: 
+      arp_suppression: "{{ onyx_vxlan_arp_suppression | default(omit, True) }}"
+      nve_id: "{{ onyx_vxlan_nve_id | default(omit, True) }}"
+      mlag_tunnel_ip: "{{ onyx_vxlan_mlag_tunnel_ip | default(omit, True) }}"
+      bgp: "{{ onyx_vxlan_bgp | default(omit, True) }}"
+      loopback_id: "{{ onyx_vxlan_loopback_id | default(omit, True) }}"
+      vni_vlan_list: "{{ onyx_vxlan_vni_vlan_list | default(omit, True) }}"
+  tasks:
+    - name: "plugin_onyx_vxlan"
+      onyx_vxlan: "{{ onyx_vxlan }}"
+      register: r_onyx_vxlan

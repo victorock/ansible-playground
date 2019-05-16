@@ -1,0 +1,11 @@
+---
+- name: "module_netbox_ip_address"
+  netbox_ip_address: "{{ netbox_ip_address }}"
+  register: r_netbox_ip_address
+  vars:
+    netbox_ip_address: 
+      data: "{{ netbox_ip_address_data | default(omit, True) }}"
+      state: "{{ netbox_ip_address_state | default(omit, True) }}"
+      netbox_url: "{{ netbox_ip_address_netbox_url | default(omit, True) }}"
+      netbox_token: "{{ netbox_ip_address_netbox_token | default(omit, True) }}"
+      validate_certs: "{{ netbox_ip_address_validate_certs | default(omit, True) }}"

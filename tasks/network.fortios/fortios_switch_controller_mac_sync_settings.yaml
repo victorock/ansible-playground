@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_switch_controller_mac_sync_settings"
+  fortios_switch_controller_mac_sync_settings: "{{ fortios_switch_controller_mac_sync_settings }}"
+  register: r_fortios_switch_controller_mac_sync_settings
+  vars:
+    fortios_switch_controller_mac_sync_settings: 
+      username: "{{ fortios_switch_controller_mac_sync_settings_username | default(omit, True) }}"
+      host: "{{ fortios_switch_controller_mac_sync_settings_host | default(omit, True) }}"
+      switch_controller_mac_sync_settings: "{{ fortios_switch_controller_mac_sync_settings_switch_controller_mac_sync_settings | default(omit, True) }}"
+      https: "{{ fortios_switch_controller_mac_sync_settings_https | default(omit, True) }}"
+      password: "{{ fortios_switch_controller_mac_sync_settings_password | default(omit, True) }}"
+      vdom: "{{ fortios_switch_controller_mac_sync_settings_vdom | default(omit, True) }}"

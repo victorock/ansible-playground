@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_icap_profile"
+  fortios_icap_profile: "{{ fortios_icap_profile }}"
+  register: r_fortios_icap_profile
+  vars:
+    fortios_icap_profile: 
+      username: "{{ fortios_icap_profile_username | default(omit, True) }}"
+      icap_profile: "{{ fortios_icap_profile_icap_profile | default(omit, True) }}"
+      host: "{{ fortios_icap_profile_host | default(omit, True) }}"
+      https: "{{ fortios_icap_profile_https | default(omit, True) }}"
+      password: "{{ fortios_icap_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_icap_profile_vdom | default(omit, True) }}"

@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     scaleway_image_facts: 
+      api_url: "{{ scaleway_image_facts_api_url | default(omit, True) }}"
+      query_parameters: "{{ scaleway_image_facts_query_parameters | default(omit, True) }}"
       region: "{{ scaleway_image_facts_region | default(omit, True) }}"
       api_timeout: "{{ scaleway_image_facts_api_timeout | default(omit, True) }}"
-      validate_certs: "{{ scaleway_image_facts_validate_certs | default(omit, True) }}"
-      api_url: "{{ scaleway_image_facts_api_url | default(omit, True) }}"
       api_token: "{{ scaleway_image_facts_api_token | default(omit, True) }}"
+      validate_certs: "{{ scaleway_image_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_scaleway_image_facts"
       scaleway_image_facts: "{{ scaleway_image_facts }}"

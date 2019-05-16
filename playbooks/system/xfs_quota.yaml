@@ -1,0 +1,23 @@
+---
+- name: "module_xfs_quota"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    xfs_quota: 
+      rtbsoft: "{{ xfs_quota_rtbsoft | default(omit, True) }}"
+      name: "{{ xfs_quota_name | default(omit, True) }}"
+      rtbhard: "{{ xfs_quota_rtbhard | default(omit, True) }}"
+      ihard: "{{ xfs_quota_ihard | default(omit, True) }}"
+      isoft: "{{ xfs_quota_isoft | default(omit, True) }}"
+      state: "{{ xfs_quota_state | default(omit, True) }}"
+      bsoft: "{{ xfs_quota_bsoft | default(omit, True) }}"
+      bhard: "{{ xfs_quota_bhard | default(omit, True) }}"
+      mountpoint: "{{ xfs_quota_mountpoint | default(omit, True) }}"
+      type: "{{ xfs_quota_type | default(omit, True) }}"
+  tasks:
+    - name: "plugin_xfs_quota"
+      xfs_quota: "{{ xfs_quota }}"
+      register: r_xfs_quota

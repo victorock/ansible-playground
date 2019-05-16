@@ -1,0 +1,21 @@
+---
+- name: "module_bitbucket_pipeline_variable"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bitbucket_pipeline_variable: 
+      username: "{{ bitbucket_pipeline_variable_username | default(omit, True) }}"
+      name: "{{ bitbucket_pipeline_variable_name | default(omit, True) }}"
+      repository: "{{ bitbucket_pipeline_variable_repository | default(omit, True) }}"
+      secured: "{{ bitbucket_pipeline_variable_secured | default(omit, True) }}"
+      value: "{{ bitbucket_pipeline_variable_value | default(omit, True) }}"
+      state: "{{ bitbucket_pipeline_variable_state | default(omit, True) }}"
+      client_id: "{{ bitbucket_pipeline_variable_client_id | default(omit, True) }}"
+      client_secret: "{{ bitbucket_pipeline_variable_client_secret | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bitbucket_pipeline_variable"
+      bitbucket_pipeline_variable: "{{ bitbucket_pipeline_variable }}"
+      register: r_bitbucket_pipeline_variable

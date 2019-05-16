@@ -1,0 +1,14 @@
+---
+- name: "module_bigip_lx_package"
+  bigip_lx_package: "{{ bigip_lx_package }}"
+  register: r_bigip_lx_package
+  vars:
+    bigip_lx_package: 
+      package: "{{ bigip_lx_package_package | default(omit, True) }}"
+      server: "{{ bigip_lx_package_server | default(omit, True) }}"
+      state: "{{ bigip_lx_package_state | default(omit, True) }}"
+      user: "{{ bigip_lx_package_user | default(omit, True) }}"
+      server_port: "{{ bigip_lx_package_server_port | default(omit, True) }}"
+      provider: "{{ bigip_lx_package_provider | default(omit, True) }}"
+      password: "{{ bigip_lx_package_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_lx_package_validate_certs | default(omit, True) }}"

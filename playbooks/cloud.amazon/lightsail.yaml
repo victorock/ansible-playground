@@ -14,6 +14,7 @@
       security_token: "{{ lightsail_security_token | default(omit, True) }}"
       blueprint_id: "{{ lightsail_blueprint_id | default(omit, True) }}"
       region: "{{ lightsail_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ lightsail_debug_botocore_endpoint_logs | default(omit, True) }}"
       user_data: "{{ lightsail_user_data | default(omit, True) }}"
       state: "{{ lightsail_state | default(omit, True) }}"
       key_pair_name: "{{ lightsail_key_pair_name | default(omit, True) }}"

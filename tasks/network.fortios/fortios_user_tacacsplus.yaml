@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_user_tacacsplus"
+  fortios_user_tacacsplus: "{{ fortios_user_tacacsplus }}"
+  register: r_fortios_user_tacacsplus
+  vars:
+    fortios_user_tacacsplus: 
+      username: "{{ fortios_user_tacacsplus_username | default(omit, True) }}"
+      host: "{{ fortios_user_tacacsplus_host | default(omit, True) }}"
+      https: "{{ fortios_user_tacacsplus_https | default(omit, True) }}"
+      password: "{{ fortios_user_tacacsplus_password | default(omit, True) }}"
+      user_tacacsplus: "{{ fortios_user_tacacsplus_user_tacacsplus | default(omit, True) }}"
+      vdom: "{{ fortios_user_tacacsplus_vdom | default(omit, True) }}"

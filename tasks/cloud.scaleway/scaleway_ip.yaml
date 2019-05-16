@@ -1,0 +1,17 @@
+---
+- name: "module_scaleway_ip"
+  scaleway_ip: "{{ scaleway_ip }}"
+  register: r_scaleway_ip
+  vars:
+    scaleway_ip: 
+      reverse: "{{ scaleway_ip_reverse | default(omit, True) }}"
+      query_parameters: "{{ scaleway_ip_query_parameters | default(omit, True) }}"
+      region: "{{ scaleway_ip_region | default(omit, True) }}"
+      api_timeout: "{{ scaleway_ip_api_timeout | default(omit, True) }}"
+      server: "{{ scaleway_ip_server | default(omit, True) }}"
+      state: "{{ scaleway_ip_state | default(omit, True) }}"
+      api_token: "{{ scaleway_ip_api_token | default(omit, True) }}"
+      organization: "{{ scaleway_ip_organization | default(omit, True) }}"
+      validate_certs: "{{ scaleway_ip_validate_certs | default(omit, True) }}"
+      id: "{{ scaleway_ip_id | default(omit, True) }}"
+      api_url: "{{ scaleway_ip_api_url | default(omit, True) }}"

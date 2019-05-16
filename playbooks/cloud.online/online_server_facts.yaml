@@ -1,0 +1,17 @@
+---
+- name: "module_online_server_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    online_server_facts: 
+      api_timeout: "{{ online_server_facts_api_timeout | default(omit, True) }}"
+      validate_certs: "{{ online_server_facts_validate_certs | default(omit, True) }}"
+      api_url: "{{ online_server_facts_api_url | default(omit, True) }}"
+      api_token: "{{ online_server_facts_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_online_server_facts"
+      online_server_facts: "{{ online_server_facts }}"
+      register: r_online_server_facts

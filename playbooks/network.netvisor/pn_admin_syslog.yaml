@@ -1,0 +1,21 @@
+---
+- name: "module_pn_admin_syslog"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_admin_syslog: 
+      pn_name: "{{ pn_admin_syslog_pn_name | default(omit, True) }}"
+      pn_host: "{{ pn_admin_syslog_pn_host | default(omit, True) }}"
+      pn_scope: "{{ pn_admin_syslog_pn_scope | default(omit, True) }}"
+      state: "{{ pn_admin_syslog_state | default(omit, True) }}"
+      pn_message_format: "{{ pn_admin_syslog_pn_message_format | default(omit, True) }}"
+      pn_transport: "{{ pn_admin_syslog_pn_transport | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_admin_syslog_pn_cliswitch | default(omit, True) }}"
+      pn_port: "{{ pn_admin_syslog_pn_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_admin_syslog"
+      pn_admin_syslog: "{{ pn_admin_syslog }}"
+      register: r_pn_admin_syslog

@@ -1,0 +1,18 @@
+---
+- name: "module_cpm_plugconfig"
+  cpm_plugconfig: "{{ cpm_plugconfig }}"
+  register: r_cpm_plugconfig
+  vars:
+    cpm_plugconfig: 
+      plug_default: "{{ cpm_plugconfig_plug_default | default(omit, True) }}"
+      use_proxy: "{{ cpm_plugconfig_use_proxy | default(omit, True) }}"
+      cpm_password: "{{ cpm_plugconfig_cpm_password | default(omit, True) }}"
+      cpm_url: "{{ cpm_plugconfig_cpm_url | default(omit, True) }}"
+      plug_name: "{{ cpm_plugconfig_plug_name | default(omit, True) }}"
+      plug_bootdelay: "{{ cpm_plugconfig_plug_bootdelay | default(omit, True) }}"
+      plug_id: "{{ cpm_plugconfig_plug_id | default(omit, True) }}"
+      cpm_action: "{{ cpm_plugconfig_cpm_action | default(omit, True) }}"
+      plug_bootpriority: "{{ cpm_plugconfig_plug_bootpriority | default(omit, True) }}"
+      cpm_username: "{{ cpm_plugconfig_cpm_username | default(omit, True) }}"
+      validate_certs: "{{ cpm_plugconfig_validate_certs | default(omit, True) }}"
+      use_https: "{{ cpm_plugconfig_use_https | default(omit, True) }}"

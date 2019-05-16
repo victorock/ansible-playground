@@ -1,0 +1,25 @@
+---
+- name: "module_ucs_org"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ucs_org: 
+      org_name: "{{ ucs_org_org_name | default(omit, True) }}"
+      delegate_to: "{{ ucs_org_delegate_to | default(omit, True) }}"
+      description: "{{ ucs_org_description | default(omit, True) }}"
+      hostname: "{{ ucs_org_hostname | default(omit, True) }}"
+      username: "{{ ucs_org_username | default(omit, True) }}"
+      state: "{{ ucs_org_state | default(omit, True) }}"
+      proxy: "{{ ucs_org_proxy | default(omit, True) }}"
+      use_ssl: "{{ ucs_org_use_ssl | default(omit, True) }}"
+      password: "{{ ucs_org_password | default(omit, True) }}"
+      parent_org_path: "{{ ucs_org_parent_org_path | default(omit, True) }}"
+      port: "{{ ucs_org_port | default(omit, True) }}"
+      use_proxy: "{{ ucs_org_use_proxy | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ucs_org"
+      ucs_org: "{{ ucs_org }}"
+      register: r_ucs_org

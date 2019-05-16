@@ -6,6 +6,7 @@
     lambda: 
       s3_key: "{{ lambda_s3_key | default(omit, True) }}"
       s3_object_version: "{{ lambda_s3_object_version | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ lambda_debug_botocore_endpoint_logs | default(omit, True) }}"
       memory_size: "{{ lambda_memory_size | default(omit, True) }}"
       ec2_url: "{{ lambda_ec2_url | default(omit, True) }}"
       aws_secret_key: "{{ lambda_aws_secret_key | default(omit, True) }}"

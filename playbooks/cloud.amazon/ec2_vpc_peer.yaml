@@ -15,6 +15,7 @@
       tags: "{{ ec2_vpc_peer_tags | default(omit, True) }}"
       region: "{{ ec2_vpc_peer_region | default(omit, True) }}"
       peer_vpc_id: "{{ ec2_vpc_peer_peer_vpc_id | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_vpc_peer_debug_botocore_endpoint_logs | default(omit, True) }}"
       peer_owner_id: "{{ ec2_vpc_peer_peer_owner_id | default(omit, True) }}"
       state: "{{ ec2_vpc_peer_state | default(omit, True) }}"
       ec2_url: "{{ ec2_vpc_peer_ec2_url | default(omit, True) }}"

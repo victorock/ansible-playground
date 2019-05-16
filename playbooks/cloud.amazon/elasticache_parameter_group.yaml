@@ -14,6 +14,7 @@
       security_token: "{{ elasticache_parameter_group_security_token | default(omit, True) }}"
       group_family: "{{ elasticache_parameter_group_group_family | default(omit, True) }}"
       region: "{{ elasticache_parameter_group_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ elasticache_parameter_group_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ elasticache_parameter_group_state | default(omit, True) }}"
       values: "{{ elasticache_parameter_group_values | default(omit, True) }}"
       ec2_url: "{{ elasticache_parameter_group_ec2_url | default(omit, True) }}"

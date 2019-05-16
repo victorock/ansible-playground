@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_spamfilter_profile"
+  fortios_spamfilter_profile: "{{ fortios_spamfilter_profile }}"
+  register: r_fortios_spamfilter_profile
+  vars:
+    fortios_spamfilter_profile: 
+      username: "{{ fortios_spamfilter_profile_username | default(omit, True) }}"
+      spamfilter_profile: "{{ fortios_spamfilter_profile_spamfilter_profile | default(omit, True) }}"
+      host: "{{ fortios_spamfilter_profile_host | default(omit, True) }}"
+      https: "{{ fortios_spamfilter_profile_https | default(omit, True) }}"
+      password: "{{ fortios_spamfilter_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_spamfilter_profile_vdom | default(omit, True) }}"

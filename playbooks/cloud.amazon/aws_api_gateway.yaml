@@ -15,6 +15,7 @@
       region: "{{ aws_api_gateway_region | default(omit, True) }}"
       aws_secret_key: "{{ aws_api_gateway_aws_secret_key | default(omit, True) }}"
       deploy_desc: "{{ aws_api_gateway_deploy_desc | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_api_gateway_debug_botocore_endpoint_logs | default(omit, True) }}"
       api_id: "{{ aws_api_gateway_api_id | default(omit, True) }}"
       state: "{{ aws_api_gateway_state | default(omit, True) }}"
       ec2_url: "{{ aws_api_gateway_ec2_url | default(omit, True) }}"

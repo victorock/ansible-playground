@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_firewall_ippool6"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_firewall_ippool6: 
+      username: "{{ fortios_firewall_ippool6_username | default(omit, True) }}"
+      firewall_ippool6: "{{ fortios_firewall_ippool6_firewall_ippool6 | default(omit, True) }}"
+      host: "{{ fortios_firewall_ippool6_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_ippool6_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_ippool6_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_ippool6_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_firewall_ippool6"
+      fortios_firewall_ippool6: "{{ fortios_firewall_ippool6 }}"
+      register: r_fortios_firewall_ippool6

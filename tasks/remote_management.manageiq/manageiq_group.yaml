@@ -1,0 +1,17 @@
+---
+- name: "module_manageiq_group"
+  manageiq_group: "{{ manageiq_group }}"
+  register: r_manageiq_group
+  vars:
+    manageiq_group: 
+      description: "{{ manageiq_group_description | default(omit, True) }}"
+      tenant_id: "{{ manageiq_group_tenant_id | default(omit, True) }}"
+      belongsto_filters_merge_mode: "{{ manageiq_group_belongsto_filters_merge_mode | default(omit, True) }}"
+      role_id: "{{ manageiq_group_role_id | default(omit, True) }}"
+      managed_filters: "{{ manageiq_group_managed_filters | default(omit, True) }}"
+      state: "{{ manageiq_group_state | default(omit, True) }}"
+      role: "{{ manageiq_group_role | default(omit, True) }}"
+      managed_filters_merge_mode: "{{ manageiq_group_managed_filters_merge_mode | default(omit, True) }}"
+      manageiq_connection: "{{ manageiq_group_manageiq_connection | default(omit, True) }}"
+      belongsto_filters: "{{ manageiq_group_belongsto_filters | default(omit, True) }}"
+      tenant: "{{ manageiq_group_tenant | default(omit, True) }}"

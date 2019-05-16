@@ -14,6 +14,7 @@
       security_token: "{{ efs_facts_security_token | default(omit, True) }}"
       tags: "{{ efs_facts_tags | default(omit, True) }}"
       region: "{{ efs_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ efs_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       targets: "{{ efs_facts_targets | default(omit, True) }}"
       ec2_url: "{{ efs_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ efs_facts_validate_certs | default(omit, True) }}"

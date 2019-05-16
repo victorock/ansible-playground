@@ -1,0 +1,8 @@
+---
+- name: "module_frr_bgp"
+  frr_bgp: "{{ frr_bgp }}"
+  register: r_frr_bgp
+  vars:
+    frr_bgp: 
+      operation: "{{ frr_bgp_operation | default(omit, True) }}"
+      config: "{{ frr_bgp_config | default(omit, True) }}"

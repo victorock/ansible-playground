@@ -1,0 +1,12 @@
+---
+- name: "module_pn_cpu_class"
+  pn_cpu_class: "{{ pn_cpu_class }}"
+  register: r_pn_cpu_class
+  vars:
+    pn_cpu_class: 
+      pn_name: "{{ pn_cpu_class_pn_name | default(omit, True) }}"
+      pn_scope: "{{ pn_cpu_class_pn_scope | default(omit, True) }}"
+      pn_rate_limit: "{{ pn_cpu_class_pn_rate_limit | default(omit, True) }}"
+      pn_hog_protect: "{{ pn_cpu_class_pn_hog_protect | default(omit, True) }}"
+      state: "{{ pn_cpu_class_state | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_cpu_class_pn_cliswitch | default(omit, True) }}"

@@ -1,0 +1,30 @@
+---
+- name: "module_rabbitmq_publish"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rabbitmq_publish: 
+      username: "{{ rabbitmq_publish_username | default(omit, True) }}"
+      body: "{{ rabbitmq_publish_body | default(omit, True) }}"
+      auto_delete: "{{ rabbitmq_publish_auto_delete | default(omit, True) }}"
+      exchange: "{{ rabbitmq_publish_exchange | default(omit, True) }}"
+      url: "{{ rabbitmq_publish_url | default(omit, True) }}"
+      durable: "{{ rabbitmq_publish_durable | default(omit, True) }}"
+      proto: "{{ rabbitmq_publish_proto | default(omit, True) }}"
+      routing_key: "{{ rabbitmq_publish_routing_key | default(omit, True) }}"
+      queue: "{{ rabbitmq_publish_queue | default(omit, True) }}"
+      vhost: "{{ rabbitmq_publish_vhost | default(omit, True) }}"
+      host: "{{ rabbitmq_publish_host | default(omit, True) }}"
+      src: "{{ rabbitmq_publish_src | default(omit, True) }}"
+      exclusive: "{{ rabbitmq_publish_exclusive | default(omit, True) }}"
+      content_type: "{{ rabbitmq_publish_content_type | default(omit, True) }}"
+      password: "{{ rabbitmq_publish_password | default(omit, True) }}"
+      port: "{{ rabbitmq_publish_port | default(omit, True) }}"
+      headers: "{{ rabbitmq_publish_headers | default(omit, True) }}"
+  tasks:
+    - name: "plugin_rabbitmq_publish"
+      rabbitmq_publish: "{{ rabbitmq_publish }}"
+      register: r_rabbitmq_publish

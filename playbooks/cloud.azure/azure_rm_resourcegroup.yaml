@@ -8,7 +8,6 @@
   vars:
     azure_rm_resourcegroup: 
       profile: "{{ azure_rm_resourcegroup_profile | default(omit, True) }}"
-      force: "{{ azure_rm_resourcegroup_force | default(omit, True) }}"
       name: "{{ azure_rm_resourcegroup_name | default(omit, True) }}"
       tags: "{{ azure_rm_resourcegroup_tags | default(omit, True) }}"
       ad_user: "{{ azure_rm_resourcegroup_ad_user | default(omit, True) }}"
@@ -19,12 +18,13 @@
       state: "{{ azure_rm_resourcegroup_state | default(omit, True) }}"
       location: "{{ azure_rm_resourcegroup_location | default(omit, True) }}"
       client_id: "{{ azure_rm_resourcegroup_client_id | default(omit, True) }}"
-      auth_source: "{{ azure_rm_resourcegroup_auth_source | default(omit, True) }}"
-      adfs_authority_url: "{{ azure_rm_resourcegroup_adfs_authority_url | default(omit, True) }}"
       api_profile: "{{ azure_rm_resourcegroup_api_profile | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_resourcegroup_adfs_authority_url | default(omit, True) }}"
+      auth_source: "{{ azure_rm_resourcegroup_auth_source | default(omit, True) }}"
       subscription_id: "{{ azure_rm_resourcegroup_subscription_id | default(omit, True) }}"
       password: "{{ azure_rm_resourcegroup_password | default(omit, True) }}"
       tenant: "{{ azure_rm_resourcegroup_tenant | default(omit, True) }}"
+      force_delete_nonempty: "{{ azure_rm_resourcegroup_force_delete_nonempty | default(omit, True) }}"
   tasks:
     - name: "plugin_azure_rm_resourcegroup"
       azure_rm_resourcegroup: "{{ azure_rm_resourcegroup }}"

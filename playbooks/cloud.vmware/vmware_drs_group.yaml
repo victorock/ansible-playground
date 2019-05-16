@@ -1,0 +1,24 @@
+---
+- name: "module_vmware_drs_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_drs_group: 
+      username: "{{ vmware_drs_group_username | default(omit, True) }}"
+      datacenter: "{{ vmware_drs_group_datacenter | default(omit, True) }}"
+      cluster_name: "{{ vmware_drs_group_cluster_name | default(omit, True) }}"
+      hostname: "{{ vmware_drs_group_hostname | default(omit, True) }}"
+      group_name: "{{ vmware_drs_group_group_name | default(omit, True) }}"
+      port: "{{ vmware_drs_group_port | default(omit, True) }}"
+      state: "{{ vmware_drs_group_state | default(omit, True) }}"
+      hosts: "{{ vmware_drs_group_hosts | default(omit, True) }}"
+      password: "{{ vmware_drs_group_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_drs_group_validate_certs | default(omit, True) }}"
+      vms: "{{ vmware_drs_group_vms | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_drs_group"
+      vmware_drs_group: "{{ vmware_drs_group }}"
+      register: r_vmware_drs_group

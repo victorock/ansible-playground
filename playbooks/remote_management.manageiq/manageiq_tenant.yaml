@@ -1,0 +1,20 @@
+---
+- name: "module_manageiq_tenant"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    manageiq_tenant: 
+      name: "{{ manageiq_tenant_name | default(omit, True) }}"
+      parent: "{{ manageiq_tenant_parent | default(omit, True) }}"
+      quotas: "{{ manageiq_tenant_quotas | default(omit, True) }}"
+      parent_id: "{{ manageiq_tenant_parent_id | default(omit, True) }}"
+      state: "{{ manageiq_tenant_state | default(omit, True) }}"
+      manageiq_connection: "{{ manageiq_tenant_manageiq_connection | default(omit, True) }}"
+      description: "{{ manageiq_tenant_description | default(omit, True) }}"
+  tasks:
+    - name: "plugin_manageiq_tenant"
+      manageiq_tenant: "{{ manageiq_tenant }}"
+      register: r_manageiq_tenant

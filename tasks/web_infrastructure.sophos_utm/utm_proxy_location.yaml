@@ -1,0 +1,27 @@
+---
+- name: "module_utm_proxy_location"
+  utm_proxy_location: "{{ utm_proxy_location }}"
+  register: r_utm_proxy_location
+  vars:
+    utm_proxy_location: 
+      comment: "{{ utm_proxy_location_comment | default(omit, True) }}"
+      utm_host: "{{ utm_proxy_location_utm_host | default(omit, True) }}"
+      name: "{{ utm_proxy_location_name | default(omit, True) }}"
+      denied_networks: "{{ utm_proxy_location_denied_networks | default(omit, True) }}"
+      stickysession_id: "{{ utm_proxy_location_stickysession_id | default(omit, True) }}"
+      auth_profile: "{{ utm_proxy_location_auth_profile | default(omit, True) }}"
+      validate_certs: "{{ utm_proxy_location_validate_certs | default(omit, True) }}"
+      utm_token: "{{ utm_proxy_location_utm_token | default(omit, True) }}"
+      state: "{{ utm_proxy_location_state | default(omit, True) }}"
+      websocket_passthrough: "{{ utm_proxy_location_websocket_passthrough | default(omit, True) }}"
+      headers: "{{ utm_proxy_location_headers | default(omit, True) }}"
+      hot_standby: "{{ utm_proxy_location_hot_standby | default(omit, True) }}"
+      status: "{{ utm_proxy_location_status | default(omit, True) }}"
+      utm_port: "{{ utm_proxy_location_utm_port | default(omit, True) }}"
+      path: "{{ utm_proxy_location_path | default(omit, True) }}"
+      access_control: "{{ utm_proxy_location_access_control | default(omit, True) }}"
+      stickysession_status: "{{ utm_proxy_location_stickysession_status | default(omit, True) }}"
+      utm_protocol: "{{ utm_proxy_location_utm_protocol | default(omit, True) }}"
+      be_path: "{{ utm_proxy_location_be_path | default(omit, True) }}"
+      allowed_networks: "{{ utm_proxy_location_allowed_networks | default(omit, True) }}"
+      backend: "{{ utm_proxy_location_backend | default(omit, True) }}"

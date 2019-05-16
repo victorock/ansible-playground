@@ -1,0 +1,16 @@
+---
+- name: "module_win_snmp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_snmp: 
+      action: "{{ win_snmp_action | default(omit, True) }}"
+      permitted_managers: "{{ win_snmp_permitted_managers | default(omit, True) }}"
+      community_strings: "{{ win_snmp_community_strings | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_snmp"
+      win_snmp: "{{ win_snmp }}"
+      register: r_win_snmp

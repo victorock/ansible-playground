@@ -13,6 +13,7 @@
       permission: "{{ s3_sync_permission | default(omit, True) }}"
       region: "{{ s3_sync_region | default(omit, True) }}"
       bucket: "{{ s3_sync_bucket | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ s3_sync_debug_botocore_endpoint_logs | default(omit, True) }}"
       include: "{{ s3_sync_include | default(omit, True) }}"
       mode: "{{ s3_sync_mode | default(omit, True) }}"
       ec2_url: "{{ s3_sync_ec2_url | default(omit, True) }}"

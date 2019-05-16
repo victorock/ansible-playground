@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_authentication_scheme"
+  fortios_authentication_scheme: "{{ fortios_authentication_scheme }}"
+  register: r_fortios_authentication_scheme
+  vars:
+    fortios_authentication_scheme: 
+      username: "{{ fortios_authentication_scheme_username | default(omit, True) }}"
+      host: "{{ fortios_authentication_scheme_host | default(omit, True) }}"
+      https: "{{ fortios_authentication_scheme_https | default(omit, True) }}"
+      authentication_scheme: "{{ fortios_authentication_scheme_authentication_scheme | default(omit, True) }}"
+      password: "{{ fortios_authentication_scheme_password | default(omit, True) }}"
+      vdom: "{{ fortios_authentication_scheme_vdom | default(omit, True) }}"

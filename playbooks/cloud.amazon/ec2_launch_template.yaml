@@ -1,0 +1,46 @@
+---
+- name: "module_ec2_launch_template"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ec2_launch_template: 
+      template_name: "{{ ec2_launch_template_template_name | default(omit, True) }}"
+      ram_disk_id: "{{ ec2_launch_template_ram_disk_id | default(omit, True) }}"
+      user_data: "{{ ec2_launch_template_user_data | default(omit, True) }}"
+      cpu_options: "{{ ec2_launch_template_cpu_options | default(omit, True) }}"
+      ec2_url: "{{ ec2_launch_template_ec2_url | default(omit, True) }}"
+      security_groups: "{{ ec2_launch_template_security_groups | default(omit, True) }}"
+      aws_secret_key: "{{ ec2_launch_template_aws_secret_key | default(omit, True) }}"
+      elastic_gpu_specifications: "{{ ec2_launch_template_elastic_gpu_specifications | default(omit, True) }}"
+      monitoring: "{{ ec2_launch_template_monitoring | default(omit, True) }}"
+      credit_specification: "{{ ec2_launch_template_credit_specification | default(omit, True) }}"
+      ebs_optimized: "{{ ec2_launch_template_ebs_optimized | default(omit, True) }}"
+      iam_instance_profile: "{{ ec2_launch_template_iam_instance_profile | default(omit, True) }}"
+      state: "{{ ec2_launch_template_state | default(omit, True) }}"
+      key_name: "{{ ec2_launch_template_key_name | default(omit, True) }}"
+      profile: "{{ ec2_launch_template_profile | default(omit, True) }}"
+      default_version: "{{ ec2_launch_template_default_version | default(omit, True) }}"
+      tags: "{{ ec2_launch_template_tags | default(omit, True) }}"
+      kernel_id: "{{ ec2_launch_template_kernel_id | default(omit, True) }}"
+      disable_api_termination: "{{ ec2_launch_template_disable_api_termination | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_launch_template_debug_botocore_endpoint_logs | default(omit, True) }}"
+      image_id: "{{ ec2_launch_template_image_id | default(omit, True) }}"
+      security_group_ids: "{{ ec2_launch_template_security_group_ids | default(omit, True) }}"
+      block_device_mappings: "{{ ec2_launch_template_block_device_mappings | default(omit, True) }}"
+      aws_access_key: "{{ ec2_launch_template_aws_access_key | default(omit, True) }}"
+      placement: "{{ ec2_launch_template_placement | default(omit, True) }}"
+      security_token: "{{ ec2_launch_template_security_token | default(omit, True) }}"
+      instance_market_options: "{{ ec2_launch_template_instance_market_options | default(omit, True) }}"
+      region: "{{ ec2_launch_template_region | default(omit, True) }}"
+      network_interfaces: "{{ ec2_launch_template_network_interfaces | default(omit, True) }}"
+      instance_initiated_shutdown_behavior: "{{ ec2_launch_template_instance_initiated_shutdown_behavior | default(omit, True) }}"
+      instance_type: "{{ ec2_launch_template_instance_type | default(omit, True) }}"
+      validate_certs: "{{ ec2_launch_template_validate_certs | default(omit, True) }}"
+      template_id: "{{ ec2_launch_template_template_id | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ec2_launch_template"
+      ec2_launch_template: "{{ ec2_launch_template }}"
+      register: r_ec2_launch_template

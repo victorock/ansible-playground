@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_webfilter_fortiguard"
+  fortios_webfilter_fortiguard: "{{ fortios_webfilter_fortiguard }}"
+  register: r_fortios_webfilter_fortiguard
+  vars:
+    fortios_webfilter_fortiguard: 
+      username: "{{ fortios_webfilter_fortiguard_username | default(omit, True) }}"
+      host: "{{ fortios_webfilter_fortiguard_host | default(omit, True) }}"
+      https: "{{ fortios_webfilter_fortiguard_https | default(omit, True) }}"
+      webfilter_fortiguard: "{{ fortios_webfilter_fortiguard_webfilter_fortiguard | default(omit, True) }}"
+      password: "{{ fortios_webfilter_fortiguard_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_fortiguard_vdom | default(omit, True) }}"

@@ -9,6 +9,7 @@
     junos_config: 
       comment: "{{ junos_config_comment | default(omit, True) }}"
       src: "{{ junos_config_src | default(omit, True) }}"
+      backup_options: "{{ junos_config_backup_options | default(omit, True) }}"
       rollback: "{{ junos_config_rollback | default(omit, True) }}"
       confirm: "{{ junos_config_confirm | default(omit, True) }}"
       lines: "{{ junos_config_lines | default(omit, True) }}"
@@ -18,6 +19,7 @@
       zeroize: "{{ junos_config_zeroize | default(omit, True) }}"
       src_format: "{{ junos_config_src_format | default(omit, True) }}"
       provider: "{{ junos_config_provider | default(omit, True) }}"
+      check_commit: "{{ junos_config_check_commit | default(omit, True) }}"
       backup: "{{ junos_config_backup | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_config"

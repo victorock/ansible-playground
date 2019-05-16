@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_dnsfilter_domain_filter"
+  fortios_dnsfilter_domain_filter: "{{ fortios_dnsfilter_domain_filter }}"
+  register: r_fortios_dnsfilter_domain_filter
+  vars:
+    fortios_dnsfilter_domain_filter: 
+      username: "{{ fortios_dnsfilter_domain_filter_username | default(omit, True) }}"
+      dnsfilter_domain_filter: "{{ fortios_dnsfilter_domain_filter_dnsfilter_domain_filter | default(omit, True) }}"
+      host: "{{ fortios_dnsfilter_domain_filter_host | default(omit, True) }}"
+      https: "{{ fortios_dnsfilter_domain_filter_https | default(omit, True) }}"
+      password: "{{ fortios_dnsfilter_domain_filter_password | default(omit, True) }}"
+      vdom: "{{ fortios_dnsfilter_domain_filter_vdom | default(omit, True) }}"

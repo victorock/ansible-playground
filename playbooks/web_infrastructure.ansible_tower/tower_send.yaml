@@ -1,0 +1,22 @@
+---
+- name: "module_tower_send"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    tower_send: 
+      files: "{{ tower_send_files | default(omit, True) }}"
+      prevent: "{{ tower_send_prevent | default(omit, True) }}"
+      assets: "{{ tower_send_assets | default(omit, True) }}"
+      tower_host: "{{ tower_send_tower_host | default(omit, True) }}"
+      password_management: "{{ tower_send_password_management | default(omit, True) }}"
+      tower_username: "{{ tower_send_tower_username | default(omit, True) }}"
+      tower_password: "{{ tower_send_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_send_tower_config_file | default(omit, True) }}"
+      validate_certs: "{{ tower_send_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_tower_send"
+      tower_send: "{{ tower_send }}"
+      register: r_tower_send

@@ -1,0 +1,17 @@
+---
+- name: "module_rabbitmq_plugin"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rabbitmq_plugin: 
+      state: "{{ rabbitmq_plugin_state | default(omit, True) }}"
+      names: "{{ rabbitmq_plugin_names | default(omit, True) }}"
+      prefix: "{{ rabbitmq_plugin_prefix | default(omit, True) }}"
+      new_only: "{{ rabbitmq_plugin_new_only | default(omit, True) }}"
+  tasks:
+    - name: "plugin_rabbitmq_plugin"
+      rabbitmq_plugin: "{{ rabbitmq_plugin }}"
+      register: r_rabbitmq_plugin

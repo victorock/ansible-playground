@@ -1,0 +1,12 @@
+---
+- name: "module_intersight_facts"
+  intersight_facts: "{{ intersight_facts }}"
+  register: r_intersight_facts
+  vars:
+    intersight_facts: 
+      api_uri: "{{ intersight_facts_api_uri | default(omit, True) }}"
+      use_proxy: "{{ intersight_facts_use_proxy | default(omit, True) }}"
+      api_private_key: "{{ intersight_facts_api_private_key | default(omit, True) }}"
+      api_key_id: "{{ intersight_facts_api_key_id | default(omit, True) }}"
+      server_names: "{{ intersight_facts_server_names | default(omit, True) }}"
+      validate_certs: "{{ intersight_facts_validate_certs | default(omit, True) }}"

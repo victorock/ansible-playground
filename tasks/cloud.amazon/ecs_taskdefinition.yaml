@@ -13,6 +13,7 @@
       region: "{{ ecs_taskdefinition_region | default(omit, True) }}"
       memory: "{{ ecs_taskdefinition_memory | default(omit, True) }}"
       force_create: "{{ ecs_taskdefinition_force_create | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ecs_taskdefinition_debug_botocore_endpoint_logs | default(omit, True) }}"
       execution_role_arn: "{{ ecs_taskdefinition_execution_role_arn | default(omit, True) }}"
       network_mode: "{{ ecs_taskdefinition_network_mode | default(omit, True) }}"
       state: "{{ ecs_taskdefinition_state | default(omit, True) }}"

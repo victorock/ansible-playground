@@ -4,6 +4,7 @@
   register: r_dnf
   vars:
     dnf: 
+      lock_timeout: "{{ dnf_lock_timeout | default(omit, True) }}"
       update_cache: "{{ dnf_update_cache | default(omit, True) }}"
       conf_file: "{{ dnf_conf_file | default(omit, True) }}"
       exclude: "{{ dnf_exclude | default(omit, True) }}"
@@ -15,8 +16,10 @@
       releasever: "{{ dnf_releasever | default(omit, True) }}"
       skip_broken: "{{ dnf_skip_broken | default(omit, True) }}"
       autoremove: "{{ dnf_autoremove | default(omit, True) }}"
+      download_dir: "{{ dnf_download_dir | default(omit, True) }}"
       enable_plugin: "{{ dnf_enable_plugin | default(omit, True) }}"
       installroot: "{{ dnf_installroot | default(omit, True) }}"
+      install_weak_deps: "{{ dnf_install_weak_deps | default(omit, True) }}"
       name: "{{ dnf_name | default(omit, True) }}"
       download_only: "{{ dnf_download_only | default(omit, True) }}"
       bugfix: "{{ dnf_bugfix | default(omit, True) }}"

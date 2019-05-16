@@ -1,0 +1,24 @@
+---
+- name: "module_na_ontap_quotas"
+  na_ontap_quotas: "{{ na_ontap_quotas }}"
+  register: r_na_ontap_quotas
+  vars:
+    na_ontap_quotas: 
+      username: "{{ na_ontap_quotas_username | default(omit, True) }}"
+      volume: "{{ na_ontap_quotas_volume | default(omit, True) }}"
+      http_port: "{{ na_ontap_quotas_http_port | default(omit, True) }}"
+      quota_target: "{{ na_ontap_quotas_quota_target | default(omit, True) }}"
+      file_limit: "{{ na_ontap_quotas_file_limit | default(omit, True) }}"
+      vserver: "{{ na_ontap_quotas_vserver | default(omit, True) }}"
+      set_quota_status: "{{ na_ontap_quotas_set_quota_status | default(omit, True) }}"
+      hostname: "{{ na_ontap_quotas_hostname | default(omit, True) }}"
+      disk_limit: "{{ na_ontap_quotas_disk_limit | default(omit, True) }}"
+      qtree: "{{ na_ontap_quotas_qtree | default(omit, True) }}"
+      policy: "{{ na_ontap_quotas_policy | default(omit, True) }}"
+      state: "{{ na_ontap_quotas_state | default(omit, True) }}"
+      https: "{{ na_ontap_quotas_https | default(omit, True) }}"
+      type: "{{ na_ontap_quotas_type | default(omit, True) }}"
+      threshold: "{{ na_ontap_quotas_threshold | default(omit, True) }}"
+      ontapi: "{{ na_ontap_quotas_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_quotas_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_quotas_validate_certs | default(omit, True) }}"

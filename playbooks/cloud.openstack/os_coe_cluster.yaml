@@ -1,0 +1,37 @@
+---
+- name: "module_os_coe_cluster"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    os_coe_cluster: 
+      auth_type: "{{ os_coe_cluster_auth_type | default(omit, True) }}"
+      availability_zone: "{{ os_coe_cluster_availability_zone | default(omit, True) }}"
+      labels: "{{ os_coe_cluster_labels | default(omit, True) }}"
+      keypair: "{{ os_coe_cluster_keypair | default(omit, True) }}"
+      cloud: "{{ os_coe_cluster_cloud | default(omit, True) }}"
+      docker_volume_size: "{{ os_coe_cluster_docker_volume_size | default(omit, True) }}"
+      master_flavor_id: "{{ os_coe_cluster_master_flavor_id | default(omit, True) }}"
+      state: "{{ os_coe_cluster_state | default(omit, True) }}"
+      node_count: "{{ os_coe_cluster_node_count | default(omit, True) }}"
+      client_key: "{{ os_coe_cluster_client_key | default(omit, True) }}"
+      client_cert: "{{ os_coe_cluster_client_cert | default(omit, True) }}"
+      region_name: "{{ os_coe_cluster_region_name | default(omit, True) }}"
+      ca_cert: "{{ os_coe_cluster_ca_cert | default(omit, True) }}"
+      api_timeout: "{{ os_coe_cluster_api_timeout | default(omit, True) }}"
+      auth: "{{ os_coe_cluster_auth | default(omit, True) }}"
+      master_count: "{{ os_coe_cluster_master_count | default(omit, True) }}"
+      interface: "{{ os_coe_cluster_interface | default(omit, True) }}"
+      wait: "{{ os_coe_cluster_wait | default(omit, True) }}"
+      cluster_template_id: "{{ os_coe_cluster_cluster_template_id | default(omit, True) }}"
+      name: "{{ os_coe_cluster_name | default(omit, True) }}"
+      flavor_id: "{{ os_coe_cluster_flavor_id | default(omit, True) }}"
+      timeout: "{{ os_coe_cluster_timeout | default(omit, True) }}"
+      validate_certs: "{{ os_coe_cluster_validate_certs | default(omit, True) }}"
+      discovery_url: "{{ os_coe_cluster_discovery_url | default(omit, True) }}"
+  tasks:
+    - name: "plugin_os_coe_cluster"
+      os_coe_cluster: "{{ os_coe_cluster }}"
+      register: r_os_coe_cluster

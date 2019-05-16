@@ -1,0 +1,12 @@
+---
+- name: "module_lxca_nodes"
+  lxca_nodes: "{{ lxca_nodes }}"
+  register: r_lxca_nodes
+  vars:
+    lxca_nodes: 
+      uuid: "{{ lxca_nodes_uuid | default(omit, True) }}"
+      login_user: "{{ lxca_nodes_login_user | default(omit, True) }}"
+      command_options: "{{ lxca_nodes_command_options | default(omit, True) }}"
+      chassis: "{{ lxca_nodes_chassis | default(omit, True) }}"
+      auth_url: "{{ lxca_nodes_auth_url | default(omit, True) }}"
+      login_password: "{{ lxca_nodes_login_password | default(omit, True) }}"

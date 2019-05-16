@@ -6,6 +6,7 @@
     rds: 
       profile: "{{ rds_profile | default(omit, True) }}"
       db_engine: "{{ rds_db_engine | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ rds_debug_botocore_endpoint_logs | default(omit, True) }}"
       iops: "{{ rds_iops | default(omit, True) }}"
       publicly_accessible: "{{ rds_publicly_accessible | default(omit, True) }}"
       ec2_url: "{{ rds_ec2_url | default(omit, True) }}"

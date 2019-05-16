@@ -7,17 +7,23 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_logging: 
+      purge: "{{ nxos_logging_purge | default(omit, True) }}"
       facility_level: "{{ nxos_logging_facility_level | default(omit, True) }}"
-      name: "{{ nxos_logging_name | default(omit, True) }}"
+      remote_server: "{{ nxos_logging_remote_server | default(omit, True) }}"
       facility: "{{ nxos_logging_facility | default(omit, True) }}"
       dest: "{{ nxos_logging_dest | default(omit, True) }}"
-      dest_level: "{{ nxos_logging_dest_level | default(omit, True) }}"
+      timestamp: "{{ nxos_logging_timestamp | default(omit, True) }}"
+      provider: "{{ nxos_logging_provider | default(omit, True) }}"
+      use_vrf: "{{ nxos_logging_use_vrf | default(omit, True) }}"
+      interface_message: "{{ nxos_logging_interface_message | default(omit, True) }}"
       aggregate: "{{ nxos_logging_aggregate | default(omit, True) }}"
       state: "{{ nxos_logging_state | default(omit, True) }}"
-      provider: "{{ nxos_logging_provider | default(omit, True) }}"
+      facility_link_status: "{{ nxos_logging_facility_link_status | default(omit, True) }}"
+      file_size: "{{ nxos_logging_file_size | default(omit, True) }}"
       interface: "{{ nxos_logging_interface | default(omit, True) }}"
-      use_vrf: "{{ nxos_logging_use_vrf | default(omit, True) }}"
-      remote_server: "{{ nxos_logging_remote_server | default(omit, True) }}"
+      dest_level: "{{ nxos_logging_dest_level | default(omit, True) }}"
+      event: "{{ nxos_logging_event | default(omit, True) }}"
+      name: "{{ nxos_logging_name | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_logging"
       nxos_logging: "{{ nxos_logging }}"

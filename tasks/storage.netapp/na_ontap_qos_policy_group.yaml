@@ -1,0 +1,20 @@
+---
+- name: "module_na_ontap_qos_policy_group"
+  na_ontap_qos_policy_group: "{{ na_ontap_qos_policy_group }}"
+  register: r_na_ontap_qos_policy_group
+  vars:
+    na_ontap_qos_policy_group: 
+      username: "{{ na_ontap_qos_policy_group_username | default(omit, True) }}"
+      from_name: "{{ na_ontap_qos_policy_group_from_name | default(omit, True) }}"
+      force: "{{ na_ontap_qos_policy_group_force | default(omit, True) }}"
+      max_throughput: "{{ na_ontap_qos_policy_group_max_throughput | default(omit, True) }}"
+      hostname: "{{ na_ontap_qos_policy_group_hostname | default(omit, True) }}"
+      vserver: "{{ na_ontap_qos_policy_group_vserver | default(omit, True) }}"
+      state: "{{ na_ontap_qos_policy_group_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_qos_policy_group_http_port | default(omit, True) }}"
+      min_throughput: "{{ na_ontap_qos_policy_group_min_throughput | default(omit, True) }}"
+      https: "{{ na_ontap_qos_policy_group_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_qos_policy_group_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_qos_policy_group_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_qos_policy_group_validate_certs | default(omit, True) }}"
+      name: "{{ na_ontap_qos_policy_group_name | default(omit, True) }}"

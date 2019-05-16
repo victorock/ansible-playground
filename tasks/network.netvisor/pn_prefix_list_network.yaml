@@ -1,0 +1,11 @@
+---
+- name: "module_pn_prefix_list_network"
+  pn_prefix_list_network: "{{ pn_prefix_list_network }}"
+  register: r_pn_prefix_list_network
+  vars:
+    pn_prefix_list_network: 
+      state: "{{ pn_prefix_list_network_state | default(omit, True) }}"
+      pn_name: "{{ pn_prefix_list_network_pn_name | default(omit, True) }}"
+      pn_netmask: "{{ pn_prefix_list_network_pn_netmask | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_prefix_list_network_pn_cliswitch | default(omit, True) }}"
+      pn_network: "{{ pn_prefix_list_network_pn_network | default(omit, True) }}"

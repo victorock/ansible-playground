@@ -6,5 +6,4 @@
     cnos_facts: 
       authorize: "{{ cnos_facts_authorize | default(omit, True) }}"
       auth_pass: "{{ cnos_facts_auth_pass | default(omit, True) }}"
-      provider: "{{ cnos_facts_provider | default(omit, True) }}"
       gather_subset: "{{ cnos_facts_gather_subset | default(omit, True) }}"

@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_antivirus_profile"
+  fortios_antivirus_profile: "{{ fortios_antivirus_profile }}"
+  register: r_fortios_antivirus_profile
+  vars:
+    fortios_antivirus_profile: 
+      username: "{{ fortios_antivirus_profile_username | default(omit, True) }}"
+      antivirus_profile: "{{ fortios_antivirus_profile_antivirus_profile | default(omit, True) }}"
+      host: "{{ fortios_antivirus_profile_host | default(omit, True) }}"
+      https: "{{ fortios_antivirus_profile_https | default(omit, True) }}"
+      password: "{{ fortios_antivirus_profile_password | default(omit, True) }}"
+      vdom: "{{ fortios_antivirus_profile_vdom | default(omit, True) }}"

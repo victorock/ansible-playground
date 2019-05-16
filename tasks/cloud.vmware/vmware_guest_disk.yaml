@@ -1,0 +1,16 @@
+---
+- name: "module_vmware_guest_disk"
+  vmware_guest_disk: "{{ vmware_guest_disk }}"
+  register: r_vmware_guest_disk
+  vars:
+    vmware_guest_disk: 
+      username: "{{ vmware_guest_disk_username | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_disk_datacenter | default(omit, True) }}"
+      disk: "{{ vmware_guest_disk_disk | default(omit, True) }}"
+      name: "{{ vmware_guest_disk_name | default(omit, True) }}"
+      hostname: "{{ vmware_guest_disk_hostname | default(omit, True) }}"
+      folder: "{{ vmware_guest_disk_folder | default(omit, True) }}"
+      password: "{{ vmware_guest_disk_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_disk_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_disk_port | default(omit, True) }}"
+      uuid: "{{ vmware_guest_disk_uuid | default(omit, True) }}"

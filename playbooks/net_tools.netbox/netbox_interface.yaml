@@ -1,0 +1,18 @@
+---
+- name: "module_netbox_interface"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    netbox_interface: 
+      data: "{{ netbox_interface_data | default(omit, True) }}"
+      state: "{{ netbox_interface_state | default(omit, True) }}"
+      netbox_url: "{{ netbox_interface_netbox_url | default(omit, True) }}"
+      netbox_token: "{{ netbox_interface_netbox_token | default(omit, True) }}"
+      validate_certs: "{{ netbox_interface_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_netbox_interface"
+      netbox_interface: "{{ netbox_interface }}"
+      register: r_netbox_interface

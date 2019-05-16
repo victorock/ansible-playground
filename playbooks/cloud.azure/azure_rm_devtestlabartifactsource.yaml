@@ -1,0 +1,39 @@
+---
+- name: "module_azure_rm_devtestlabartifactsource"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_devtestlabartifactsource: 
+      profile: "{{ azure_rm_devtestlabartifactsource_profile | default(omit, True) }}"
+      folder_path: "{{ azure_rm_devtestlabartifactsource_folder_path | default(omit, True) }}"
+      resource_group: "{{ azure_rm_devtestlabartifactsource_resource_group | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_devtestlabartifactsource_cloud_environment | default(omit, True) }}"
+      secret: "{{ azure_rm_devtestlabartifactsource_secret | default(omit, True) }}"
+      arm_template_folder_path: "{{ azure_rm_devtestlabartifactsource_arm_template_folder_path | default(omit, True) }}"
+      display_name: "{{ azure_rm_devtestlabartifactsource_display_name | default(omit, True) }}"
+      append_tags: "{{ azure_rm_devtestlabartifactsource_append_tags | default(omit, True) }}"
+      ad_user: "{{ azure_rm_devtestlabartifactsource_ad_user | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_devtestlabartifactsource_cert_validation_mode | default(omit, True) }}"
+      lab_name: "{{ azure_rm_devtestlabartifactsource_lab_name | default(omit, True) }}"
+      state: "{{ azure_rm_devtestlabartifactsource_state | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_devtestlabartifactsource_subscription_id | default(omit, True) }}"
+      is_enabled: "{{ azure_rm_devtestlabartifactsource_is_enabled | default(omit, True) }}"
+      branch_ref: "{{ azure_rm_devtestlabartifactsource_branch_ref | default(omit, True) }}"
+      tags: "{{ azure_rm_devtestlabartifactsource_tags | default(omit, True) }}"
+      source_type: "{{ azure_rm_devtestlabartifactsource_source_type | default(omit, True) }}"
+      client_id: "{{ azure_rm_devtestlabartifactsource_client_id | default(omit, True) }}"
+      api_profile: "{{ azure_rm_devtestlabartifactsource_api_profile | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_devtestlabartifactsource_adfs_authority_url | default(omit, True) }}"
+      password: "{{ azure_rm_devtestlabartifactsource_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_devtestlabartifactsource_tenant | default(omit, True) }}"
+      name: "{{ azure_rm_devtestlabartifactsource_name | default(omit, True) }}"
+      security_token: "{{ azure_rm_devtestlabartifactsource_security_token | default(omit, True) }}"
+      uri: "{{ azure_rm_devtestlabartifactsource_uri | default(omit, True) }}"
+      auth_source: "{{ azure_rm_devtestlabartifactsource_auth_source | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_devtestlabartifactsource"
+      azure_rm_devtestlabartifactsource: "{{ azure_rm_devtestlabartifactsource }}"
+      register: r_azure_rm_devtestlabartifactsource

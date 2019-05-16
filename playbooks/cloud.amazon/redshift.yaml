@@ -11,6 +11,7 @@
       username: "{{ redshift_username | default(omit, True) }}"
       availability_zone: "{{ redshift_availability_zone | default(omit, True) }}"
       encrypted: "{{ redshift_encrypted | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ redshift_debug_botocore_endpoint_logs | default(omit, True) }}"
       node_type: "{{ redshift_node_type | default(omit, True) }}"
       publicly_accessible: "{{ redshift_publicly_accessible | default(omit, True) }}"
       ec2_url: "{{ redshift_ec2_url | default(omit, True) }}"

@@ -9,6 +9,7 @@
       aws_access_key: "{{ ec2_placement_group_facts_aws_access_key | default(omit, True) }}"
       security_token: "{{ ec2_placement_group_facts_security_token | default(omit, True) }}"
       region: "{{ ec2_placement_group_facts_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_placement_group_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       names: "{{ ec2_placement_group_facts_names | default(omit, True) }}"
       ec2_url: "{{ ec2_placement_group_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_placement_group_facts_validate_certs | default(omit, True) }}"

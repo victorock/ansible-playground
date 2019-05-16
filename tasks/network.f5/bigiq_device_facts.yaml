@@ -1,0 +1,13 @@
+---
+- name: "module_bigiq_device_facts"
+  bigiq_device_facts: "{{ bigiq_device_facts }}"
+  register: r_bigiq_device_facts
+  vars:
+    bigiq_device_facts: 
+      server: "{{ bigiq_device_facts_server | default(omit, True) }}"
+      gather_subset: "{{ bigiq_device_facts_gather_subset | default(omit, True) }}"
+      user: "{{ bigiq_device_facts_user | default(omit, True) }}"
+      server_port: "{{ bigiq_device_facts_server_port | default(omit, True) }}"
+      provider: "{{ bigiq_device_facts_provider | default(omit, True) }}"
+      password: "{{ bigiq_device_facts_password | default(omit, True) }}"
+      validate_certs: "{{ bigiq_device_facts_validate_certs | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_selogin"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    selogin: 
+      selevel: "{{ selogin_selevel | default(omit, True) }}"
+      seuser: "{{ selogin_seuser | default(omit, True) }}"
+      ignore_selinux_state: "{{ selogin_ignore_selinux_state | default(omit, True) }}"
+      reload: "{{ selogin_reload | default(omit, True) }}"
+      state: "{{ selogin_state | default(omit, True) }}"
+      login: "{{ selogin_login | default(omit, True) }}"
+  tasks:
+    - name: "plugin_selogin"
+      selogin: "{{ selogin }}"
+      register: r_selogin

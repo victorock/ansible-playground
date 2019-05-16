@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_vpn_ssl_settings"
+  fortios_vpn_ssl_settings: "{{ fortios_vpn_ssl_settings }}"
+  register: r_fortios_vpn_ssl_settings
+  vars:
+    fortios_vpn_ssl_settings: 
+      username: "{{ fortios_vpn_ssl_settings_username | default(omit, True) }}"
+      vpn_ssl_settings: "{{ fortios_vpn_ssl_settings_vpn_ssl_settings | default(omit, True) }}"
+      host: "{{ fortios_vpn_ssl_settings_host | default(omit, True) }}"
+      https: "{{ fortios_vpn_ssl_settings_https | default(omit, True) }}"
+      password: "{{ fortios_vpn_ssl_settings_password | default(omit, True) }}"
+      vdom: "{{ fortios_vpn_ssl_settings_vdom | default(omit, True) }}"

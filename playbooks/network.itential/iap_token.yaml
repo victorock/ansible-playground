@@ -1,0 +1,19 @@
+---
+- name: "module_iap_token"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iap_token: 
+      username: "{{ iap_token_username | default(omit, True) }}"
+      iap_fqdn: "{{ iap_token_iap_fqdn | default(omit, True) }}"
+      iap_port: "{{ iap_token_iap_port | default(omit, True) }}"
+      https: "{{ iap_token_https | default(omit, True) }}"
+      password: "{{ iap_token_password | default(omit, True) }}"
+      validate_certs: "{{ iap_token_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_iap_token"
+      iap_token: "{{ iap_token }}"
+      register: r_iap_token

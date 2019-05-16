@@ -12,6 +12,7 @@
       security_token: "{{ sns_topic_security_token | default(omit, True) }}"
       subscriptions: "{{ sns_topic_subscriptions | default(omit, True) }}"
       delivery_policy: "{{ sns_topic_delivery_policy | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ sns_topic_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ sns_topic_state | default(omit, True) }}"
       ec2_url: "{{ sns_topic_ec2_url | default(omit, True) }}"
       policy: "{{ sns_topic_policy | default(omit, True) }}"

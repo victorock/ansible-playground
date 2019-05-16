@@ -1,0 +1,16 @@
+---
+- name: "module_ovirt_event_facts"
+  ovirt_event_facts: "{{ ovirt_event_facts }}"
+  register: r_ovirt_event_facts
+  vars:
+    ovirt_event_facts: 
+      search: "{{ ovirt_event_facts_search | default(omit, True) }}"
+      max: "{{ ovirt_event_facts_max | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_event_facts_nested_attributes | default(omit, True) }}"
+      case_sensitive: "{{ ovirt_event_facts_case_sensitive | default(omit, True) }}"
+      headers: "{{ ovirt_event_facts_headers | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_event_facts_fetch_nested | default(omit, True) }}"
+      auth: "{{ ovirt_event_facts_auth | default(omit, True) }}"
+      query: "{{ ovirt_event_facts_query | default(omit, True) }}"
+      from_: "{{ ovirt_event_facts_from_ | default(omit, True) }}"
+      wait: "{{ ovirt_event_facts_wait | default(omit, True) }}"

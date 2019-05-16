@@ -9,6 +9,7 @@
       license: "{{ vcenter_license_license | default(omit, True) }}"
       labels: "{{ vcenter_license_labels | default(omit, True) }}"
       state: "{{ vcenter_license_state | default(omit, True) }}"
+      esxi_hostname: "{{ vcenter_license_esxi_hostname | default(omit, True) }}"
       password: "{{ vcenter_license_password | default(omit, True) }}"
       validate_certs: "{{ vcenter_license_validate_certs | default(omit, True) }}"
       port: "{{ vcenter_license_port | default(omit, True) }}"

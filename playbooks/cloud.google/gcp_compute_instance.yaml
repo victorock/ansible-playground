@@ -7,7 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcp_compute_instance: 
+      status: "{{ gcp_compute_instance_status | default(omit, True) }}"
       scopes: "{{ gcp_compute_instance_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_instance_service_account_contents | default(omit, True) }}"
       network_interfaces: "{{ gcp_compute_instance_network_interfaces | default(omit, True) }}"
       name: "{{ gcp_compute_instance_name | default(omit, True) }}"
       zone: "{{ gcp_compute_instance_zone | default(omit, True) }}"

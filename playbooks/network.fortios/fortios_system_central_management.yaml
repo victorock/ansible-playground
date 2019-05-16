@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_system_central_management"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_system_central_management: 
+      username: "{{ fortios_system_central_management_username | default(omit, True) }}"
+      system_central_management: "{{ fortios_system_central_management_system_central_management | default(omit, True) }}"
+      host: "{{ fortios_system_central_management_host | default(omit, True) }}"
+      https: "{{ fortios_system_central_management_https | default(omit, True) }}"
+      password: "{{ fortios_system_central_management_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_central_management_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_system_central_management"
+      fortios_system_central_management: "{{ fortios_system_central_management }}"
+      register: r_fortios_system_central_management

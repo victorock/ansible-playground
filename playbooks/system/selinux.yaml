@@ -9,7 +9,7 @@
     selinux: 
       policy: "{{ selinux_policy | default(omit, True) }}"
       state: "{{ selinux_state | default(omit, True) }}"
-      conf: "{{ selinux_conf | default(omit, True) }}"
+      configfile: "{{ selinux_configfile | default(omit, True) }}"
   tasks:
     - name: "plugin_selinux"
       selinux: "{{ selinux }}"

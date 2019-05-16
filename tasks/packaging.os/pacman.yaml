@@ -8,5 +8,8 @@
       force: "{{ pacman_force | default(omit, True) }}"
       name: "{{ pacman_name | default(omit, True) }}"
       recurse: "{{ pacman_recurse | default(omit, True) }}"
+      extra_args: "{{ pacman_extra_args | default(omit, True) }}"
       state: "{{ pacman_state | default(omit, True) }}"
       update_cache: "{{ pacman_update_cache | default(omit, True) }}"
+      update_cache_extra_args: "{{ pacman_update_cache_extra_args | default(omit, True) }}"
+      upgrade_extra_args: "{{ pacman_upgrade_extra_args | default(omit, True) }}"

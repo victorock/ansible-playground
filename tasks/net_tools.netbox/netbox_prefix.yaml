@@ -1,0 +1,12 @@
+---
+- name: "module_netbox_prefix"
+  netbox_prefix: "{{ netbox_prefix }}"
+  register: r_netbox_prefix
+  vars:
+    netbox_prefix: 
+      first_available: "{{ netbox_prefix_first_available | default(omit, True) }}"
+      netbox_url: "{{ netbox_prefix_netbox_url | default(omit, True) }}"
+      data: "{{ netbox_prefix_data | default(omit, True) }}"
+      state: "{{ netbox_prefix_state | default(omit, True) }}"
+      netbox_token: "{{ netbox_prefix_netbox_token | default(omit, True) }}"
+      validate_certs: "{{ netbox_prefix_validate_certs | default(omit, True) }}"

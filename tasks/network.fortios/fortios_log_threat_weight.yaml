@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_log_threat_weight"
+  fortios_log_threat_weight: "{{ fortios_log_threat_weight }}"
+  register: r_fortios_log_threat_weight
+  vars:
+    fortios_log_threat_weight: 
+      username: "{{ fortios_log_threat_weight_username | default(omit, True) }}"
+      log_threat_weight: "{{ fortios_log_threat_weight_log_threat_weight | default(omit, True) }}"
+      host: "{{ fortios_log_threat_weight_host | default(omit, True) }}"
+      https: "{{ fortios_log_threat_weight_https | default(omit, True) }}"
+      password: "{{ fortios_log_threat_weight_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_threat_weight_vdom | default(omit, True) }}"

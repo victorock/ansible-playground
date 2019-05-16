@@ -8,13 +8,12 @@
   vars:
     redfish_config: 
       category: "{{ redfish_config_category | default(omit, True) }}"
+      username: "{{ redfish_config_username | default(omit, True) }}"
+      bios_attribute_value: "{{ redfish_config_bios_attribute_value | default(omit, True) }}"
       baseuri: "{{ redfish_config_baseuri | default(omit, True) }}"
-      bios_attr_name: "{{ redfish_config_bios_attr_name | default(omit, True) }}"
-      bios_attr_value: "{{ redfish_config_bios_attr_value | default(omit, True) }}"
-      mgr_attr_name: "{{ redfish_config_mgr_attr_name | default(omit, True) }}"
       command: "{{ redfish_config_command | default(omit, True) }}"
-      user: "{{ redfish_config_user | default(omit, True) }}"
-      mgr_attr_value: "{{ redfish_config_mgr_attr_value | default(omit, True) }}"
+      timeout: "{{ redfish_config_timeout | default(omit, True) }}"
+      bios_attribute_name: "{{ redfish_config_bios_attribute_name | default(omit, True) }}"
       password: "{{ redfish_config_password | default(omit, True) }}"
   tasks:
     - name: "plugin_redfish_config"

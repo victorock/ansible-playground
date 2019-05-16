@@ -1,0 +1,11 @@
+---
+- name: "module_pn_cpu_mgmt_class"
+  pn_cpu_mgmt_class: "{{ pn_cpu_mgmt_class }}"
+  register: r_pn_cpu_mgmt_class
+  vars:
+    pn_cpu_mgmt_class: 
+      state: "{{ pn_cpu_mgmt_class_state | default(omit, True) }}"
+      pn_name: "{{ pn_cpu_mgmt_class_pn_name | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_cpu_mgmt_class_pn_cliswitch | default(omit, True) }}"
+      pn_rate_limit: "{{ pn_cpu_mgmt_class_pn_rate_limit | default(omit, True) }}"
+      pn_burst_size: "{{ pn_cpu_mgmt_class_pn_burst_size | default(omit, True) }}"

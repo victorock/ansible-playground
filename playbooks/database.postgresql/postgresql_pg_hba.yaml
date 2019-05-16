@@ -1,0 +1,35 @@
+---
+- name: "module_postgresql_pg_hba"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    postgresql_pg_hba: 
+      backup_file: "{{ postgresql_pg_hba_backup_file | default(omit, True) }}"
+      owner: "{{ postgresql_pg_hba_owner | default(omit, True) }}"
+      group: "{{ postgresql_pg_hba_group | default(omit, True) }}"
+      unsafe_writes: "{{ postgresql_pg_hba_unsafe_writes | default(omit, True) }}"
+      create: "{{ postgresql_pg_hba_create | default(omit, True) }}"
+      serole: "{{ postgresql_pg_hba_serole | default(omit, True) }}"
+      state: "{{ postgresql_pg_hba_state | default(omit, True) }}"
+      contype: "{{ postgresql_pg_hba_contype | default(omit, True) }}"
+      method: "{{ postgresql_pg_hba_method | default(omit, True) }}"
+      setype: "{{ postgresql_pg_hba_setype | default(omit, True) }}"
+      users: "{{ postgresql_pg_hba_users | default(omit, True) }}"
+      dest: "{{ postgresql_pg_hba_dest | default(omit, True) }}"
+      selevel: "{{ postgresql_pg_hba_selevel | default(omit, True) }}"
+      netmask: "{{ postgresql_pg_hba_netmask | default(omit, True) }}"
+      address: "{{ postgresql_pg_hba_address | default(omit, True) }}"
+      seuser: "{{ postgresql_pg_hba_seuser | default(omit, True) }}"
+      order: "{{ postgresql_pg_hba_order | default(omit, True) }}"
+      mode: "{{ postgresql_pg_hba_mode | default(omit, True) }}"
+      databases: "{{ postgresql_pg_hba_databases | default(omit, True) }}"
+      attributes: "{{ postgresql_pg_hba_attributes | default(omit, True) }}"
+      backup: "{{ postgresql_pg_hba_backup | default(omit, True) }}"
+      options: "{{ postgresql_pg_hba_options | default(omit, True) }}"
+  tasks:
+    - name: "plugin_postgresql_pg_hba"
+      postgresql_pg_hba: "{{ postgresql_pg_hba }}"
+      register: r_postgresql_pg_hba

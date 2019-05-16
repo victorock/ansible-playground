@@ -1,0 +1,24 @@
+---
+- name: "module_digital_ocean_droplet"
+  digital_ocean_droplet: "{{ digital_ocean_droplet }}"
+  register: r_digital_ocean_droplet
+  vars:
+    digital_ocean_droplet: 
+      unique_name: "{{ digital_ocean_droplet_unique_name | default(omit, True) }}"
+      monitoring: "{{ digital_ocean_droplet_monitoring | default(omit, True) }}"
+      ssh_keys: "{{ digital_ocean_droplet_ssh_keys | default(omit, True) }}"
+      tags: "{{ digital_ocean_droplet_tags | default(omit, True) }}"
+      image: "{{ digital_ocean_droplet_image | default(omit, True) }}"
+      user_data: "{{ digital_ocean_droplet_user_data | default(omit, True) }}"
+      name: "{{ digital_ocean_droplet_name | default(omit, True) }}"
+      state: "{{ digital_ocean_droplet_state | default(omit, True) }}"
+      wait_timeout: "{{ digital_ocean_droplet_wait_timeout | default(omit, True) }}"
+      oauth_token: "{{ digital_ocean_droplet_oauth_token | default(omit, True) }}"
+      volumes: "{{ digital_ocean_droplet_volumes | default(omit, True) }}"
+      ipv6: "{{ digital_ocean_droplet_ipv6 | default(omit, True) }}"
+      private_networking: "{{ digital_ocean_droplet_private_networking | default(omit, True) }}"
+      region: "{{ digital_ocean_droplet_region | default(omit, True) }}"
+      backups: "{{ digital_ocean_droplet_backups | default(omit, True) }}"
+      wait: "{{ digital_ocean_droplet_wait | default(omit, True) }}"
+      id: "{{ digital_ocean_droplet_id | default(omit, True) }}"
+      size: "{{ digital_ocean_droplet_size | default(omit, True) }}"

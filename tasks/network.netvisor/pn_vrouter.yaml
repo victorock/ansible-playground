@@ -21,4 +21,5 @@
       pn_service_state: "{{ pn_vrouter_pn_service_state | default(omit, True) }}"
       pn_service_type: "{{ pn_vrouter_pn_service_type | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vrouter_pn_cliswitch | default(omit, True) }}"
+      pn_vrrp_track_port: "{{ pn_vrouter_pn_vrrp_track_port | default(omit, True) }}"
       pn_bgp_as: "{{ pn_vrouter_pn_bgp_as | default(omit, True) }}"

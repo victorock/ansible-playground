@@ -9,6 +9,7 @@
     gcp_compute_ssl_policy: 
       profile: "{{ gcp_compute_ssl_policy_profile | default(omit, True) }}"
       scopes: "{{ gcp_compute_ssl_policy_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_ssl_policy_service_account_contents | default(omit, True) }}"
       description: "{{ gcp_compute_ssl_policy_description | default(omit, True) }}"
       min_tls_version: "{{ gcp_compute_ssl_policy_min_tls_version | default(omit, True) }}"
       service_account_email: "{{ gcp_compute_ssl_policy_service_account_email | default(omit, True) }}"

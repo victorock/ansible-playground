@@ -1,0 +1,32 @@
+---
+- name: "module_azure_rm_mariadbdatabase"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_mariadbdatabase: 
+      profile: "{{ azure_rm_mariadbdatabase_profile | default(omit, True) }}"
+      charset: "{{ azure_rm_mariadbdatabase_charset | default(omit, True) }}"
+      name: "{{ azure_rm_mariadbdatabase_name | default(omit, True) }}"
+      server_name: "{{ azure_rm_mariadbdatabase_server_name | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_mariadbdatabase_cloud_environment | default(omit, True) }}"
+      resource_group: "{{ azure_rm_mariadbdatabase_resource_group | default(omit, True) }}"
+      force_update: "{{ azure_rm_mariadbdatabase_force_update | default(omit, True) }}"
+      ad_user: "{{ azure_rm_mariadbdatabase_ad_user | default(omit, True) }}"
+      state: "{{ azure_rm_mariadbdatabase_state | default(omit, True) }}"
+      collation: "{{ azure_rm_mariadbdatabase_collation | default(omit, True) }}"
+      secret: "{{ azure_rm_mariadbdatabase_secret | default(omit, True) }}"
+      client_id: "{{ azure_rm_mariadbdatabase_client_id | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_mariadbdatabase_cert_validation_mode | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_mariadbdatabase_adfs_authority_url | default(omit, True) }}"
+      auth_source: "{{ azure_rm_mariadbdatabase_auth_source | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_mariadbdatabase_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_mariadbdatabase_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_mariadbdatabase_tenant | default(omit, True) }}"
+      api_profile: "{{ azure_rm_mariadbdatabase_api_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_mariadbdatabase"
+      azure_rm_mariadbdatabase: "{{ azure_rm_mariadbdatabase }}"
+      register: r_azure_rm_mariadbdatabase

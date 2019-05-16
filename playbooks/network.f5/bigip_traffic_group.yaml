@@ -7,14 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_traffic_group: 
+      ha_order: "{{ bigip_traffic_group_ha_order | default(omit, True) }}"
       name: "{{ bigip_traffic_group_name | default(omit, True) }}"
+      auto_failback_time: "{{ bigip_traffic_group_auto_failback_time | default(omit, True) }}"
       partition: "{{ bigip_traffic_group_partition | default(omit, True) }}"
-      provider: "{{ bigip_traffic_group_provider | default(omit, True) }}"
+      ha_group: "{{ bigip_traffic_group_ha_group | default(omit, True) }}"
       server: "{{ bigip_traffic_group_server | default(omit, True) }}"
+      auto_failback: "{{ bigip_traffic_group_auto_failback | default(omit, True) }}"
+      mac_address: "{{ bigip_traffic_group_mac_address | default(omit, True) }}"
       state: "{{ bigip_traffic_group_state | default(omit, True) }}"
+      ha_load_factor: "{{ bigip_traffic_group_ha_load_factor | default(omit, True) }}"
       user: "{{ bigip_traffic_group_user | default(omit, True) }}"
       server_port: "{{ bigip_traffic_group_server_port | default(omit, True) }}"
-      mac_address: "{{ bigip_traffic_group_mac_address | default(omit, True) }}"
+      provider: "{{ bigip_traffic_group_provider | default(omit, True) }}"
       password: "{{ bigip_traffic_group_password | default(omit, True) }}"
       validate_certs: "{{ bigip_traffic_group_validate_certs | default(omit, True) }}"
   tasks:

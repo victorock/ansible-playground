@@ -1,0 +1,27 @@
+---
+- name: "module_mso_schema_site_vrf"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_schema_site_vrf: 
+      username: "{{ mso_schema_site_vrf_username | default(omit, True) }}"
+      timeout: "{{ mso_schema_site_vrf_timeout | default(omit, True) }}"
+      use_proxy: "{{ mso_schema_site_vrf_use_proxy | default(omit, True) }}"
+      state: "{{ mso_schema_site_vrf_state | default(omit, True) }}"
+      site: "{{ mso_schema_site_vrf_site | default(omit, True) }}"
+      output_level: "{{ mso_schema_site_vrf_output_level | default(omit, True) }}"
+      host: "{{ mso_schema_site_vrf_host | default(omit, True) }}"
+      vrf: "{{ mso_schema_site_vrf_vrf | default(omit, True) }}"
+      template: "{{ mso_schema_site_vrf_template | default(omit, True) }}"
+      use_ssl: "{{ mso_schema_site_vrf_use_ssl | default(omit, True) }}"
+      password: "{{ mso_schema_site_vrf_password | default(omit, True) }}"
+      validate_certs: "{{ mso_schema_site_vrf_validate_certs | default(omit, True) }}"
+      port: "{{ mso_schema_site_vrf_port | default(omit, True) }}"
+      schema: "{{ mso_schema_site_vrf_schema | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_schema_site_vrf"
+      mso_schema_site_vrf: "{{ mso_schema_site_vrf }}"
+      register: r_mso_schema_site_vrf

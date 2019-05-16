@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_log_syslogd_filter"
+  fortios_log_syslogd_filter: "{{ fortios_log_syslogd_filter }}"
+  register: r_fortios_log_syslogd_filter
+  vars:
+    fortios_log_syslogd_filter: 
+      username: "{{ fortios_log_syslogd_filter_username | default(omit, True) }}"
+      host: "{{ fortios_log_syslogd_filter_host | default(omit, True) }}"
+      log_syslogd_filter: "{{ fortios_log_syslogd_filter_log_syslogd_filter | default(omit, True) }}"
+      https: "{{ fortios_log_syslogd_filter_https | default(omit, True) }}"
+      password: "{{ fortios_log_syslogd_filter_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_syslogd_filter_vdom | default(omit, True) }}"

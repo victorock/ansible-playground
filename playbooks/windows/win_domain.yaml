@@ -7,11 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_domain: 
-      dns_domain_name: "{{ win_domain_dns_domain_name | default(omit, True) }}"
       database_path: "{{ win_domain_database_path | default(omit, True) }}"
-      safe_mode_password: "{{ win_domain_safe_mode_password | default(omit, True) }}"
       domain_netbios_name: "{{ win_domain_domain_netbios_name | default(omit, True) }}"
+      create_dns_delegation: "{{ win_domain_create_dns_delegation | default(omit, True) }}"
+      dns_domain_name: "{{ win_domain_dns_domain_name | default(omit, True) }}"
+      safe_mode_password: "{{ win_domain_safe_mode_password | default(omit, True) }}"
       sysvol_path: "{{ win_domain_sysvol_path | default(omit, True) }}"
+      forest_mode: "{{ win_domain_forest_mode | default(omit, True) }}"
+      domain_mode: "{{ win_domain_domain_mode | default(omit, True) }}"
   tasks:
     - name: "plugin_win_domain"
       win_domain: "{{ win_domain }}"

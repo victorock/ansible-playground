@@ -1,0 +1,20 @@
+---
+- name: "module_cnos_linkagg"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    cnos_linkagg: 
+      group: "{{ cnos_linkagg_group | default(omit, True) }}"
+      purge: "{{ cnos_linkagg_purge | default(omit, True) }}"
+      state: "{{ cnos_linkagg_state | default(omit, True) }}"
+      mode: "{{ cnos_linkagg_mode | default(omit, True) }}"
+      members: "{{ cnos_linkagg_members | default(omit, True) }}"
+      provider: "{{ cnos_linkagg_provider | default(omit, True) }}"
+      aggregate: "{{ cnos_linkagg_aggregate | default(omit, True) }}"
+  tasks:
+    - name: "plugin_cnos_linkagg"
+      cnos_linkagg: "{{ cnos_linkagg }}"
+      register: r_cnos_linkagg

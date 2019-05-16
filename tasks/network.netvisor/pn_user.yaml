@@ -1,0 +1,12 @@
+---
+- name: "module_pn_user"
+  pn_user: "{{ pn_user }}"
+  register: r_pn_user
+  vars:
+    pn_user: 
+      pn_name: "{{ pn_user_pn_name | default(omit, True) }}"
+      pn_initial_role: "{{ pn_user_pn_initial_role | default(omit, True) }}"
+      pn_scope: "{{ pn_user_pn_scope | default(omit, True) }}"
+      state: "{{ pn_user_state | default(omit, True) }}"
+      pn_password: "{{ pn_user_pn_password | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_user_pn_cliswitch | default(omit, True) }}"

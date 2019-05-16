@@ -1,0 +1,21 @@
+---
+- name: "module_bigip_device_traffic_group"
+  bigip_device_traffic_group: "{{ bigip_device_traffic_group }}"
+  register: r_bigip_device_traffic_group
+  vars:
+    bigip_device_traffic_group: 
+      ha_order: "{{ bigip_device_traffic_group_ha_order | default(omit, True) }}"
+      name: "{{ bigip_device_traffic_group_name | default(omit, True) }}"
+      auto_failback_time: "{{ bigip_device_traffic_group_auto_failback_time | default(omit, True) }}"
+      partition: "{{ bigip_device_traffic_group_partition | default(omit, True) }}"
+      ha_group: "{{ bigip_device_traffic_group_ha_group | default(omit, True) }}"
+      server: "{{ bigip_device_traffic_group_server | default(omit, True) }}"
+      auto_failback: "{{ bigip_device_traffic_group_auto_failback | default(omit, True) }}"
+      mac_address: "{{ bigip_device_traffic_group_mac_address | default(omit, True) }}"
+      state: "{{ bigip_device_traffic_group_state | default(omit, True) }}"
+      ha_load_factor: "{{ bigip_device_traffic_group_ha_load_factor | default(omit, True) }}"
+      user: "{{ bigip_device_traffic_group_user | default(omit, True) }}"
+      server_port: "{{ bigip_device_traffic_group_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_traffic_group_provider | default(omit, True) }}"
+      password: "{{ bigip_device_traffic_group_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_traffic_group_validate_certs | default(omit, True) }}"

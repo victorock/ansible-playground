@@ -1,0 +1,20 @@
+---
+- name: "module_postgresql_owner"
+  postgresql_owner: "{{ postgresql_owner }}"
+  register: r_postgresql_owner
+  vars:
+    postgresql_owner: 
+      obj_type: "{{ postgresql_owner_obj_type | default(omit, True) }}"
+      reassign_owned_by: "{{ postgresql_owner_reassign_owned_by | default(omit, True) }}"
+      ssl_mode: "{{ postgresql_owner_ssl_mode | default(omit, True) }}"
+      ca_cert: "{{ postgresql_owner_ca_cert | default(omit, True) }}"
+      login_user: "{{ postgresql_owner_login_user | default(omit, True) }}"
+      login_host: "{{ postgresql_owner_login_host | default(omit, True) }}"
+      new_owner: "{{ postgresql_owner_new_owner | default(omit, True) }}"
+      db: "{{ postgresql_owner_db | default(omit, True) }}"
+      session_role: "{{ postgresql_owner_session_role | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_owner_login_unix_socket | default(omit, True) }}"
+      obj_name: "{{ postgresql_owner_obj_name | default(omit, True) }}"
+      login_password: "{{ postgresql_owner_login_password | default(omit, True) }}"
+      fail_on_role: "{{ postgresql_owner_fail_on_role | default(omit, True) }}"
+      port: "{{ postgresql_owner_port | default(omit, True) }}"

@@ -5,6 +5,7 @@
   vars:
     gcp_dns_resource_record_set: 
       scopes: "{{ gcp_dns_resource_record_set_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_dns_resource_record_set_service_account_contents | default(omit, True) }}"
       target: "{{ gcp_dns_resource_record_set_target | default(omit, True) }}"
       service_account_email: "{{ gcp_dns_resource_record_set_service_account_email | default(omit, True) }}"
       project: "{{ gcp_dns_resource_record_set_project | default(omit, True) }}"

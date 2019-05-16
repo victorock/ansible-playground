@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_log_webtrends_filter"
+  fortios_log_webtrends_filter: "{{ fortios_log_webtrends_filter }}"
+  register: r_fortios_log_webtrends_filter
+  vars:
+    fortios_log_webtrends_filter: 
+      username: "{{ fortios_log_webtrends_filter_username | default(omit, True) }}"
+      host: "{{ fortios_log_webtrends_filter_host | default(omit, True) }}"
+      log_webtrends_filter: "{{ fortios_log_webtrends_filter_log_webtrends_filter | default(omit, True) }}"
+      https: "{{ fortios_log_webtrends_filter_https | default(omit, True) }}"
+      password: "{{ fortios_log_webtrends_filter_password | default(omit, True) }}"
+      vdom: "{{ fortios_log_webtrends_filter_vdom | default(omit, True) }}"

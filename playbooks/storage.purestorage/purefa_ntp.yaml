@@ -1,0 +1,17 @@
+---
+- name: "module_purefa_ntp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    purefa_ntp: 
+      ntp_servers: "{{ purefa_ntp_ntp_servers | default(omit, True) }}"
+      state: "{{ purefa_ntp_state | default(omit, True) }}"
+      fa_url: "{{ purefa_ntp_fa_url | default(omit, True) }}"
+      api_token: "{{ purefa_ntp_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_purefa_ntp"
+      purefa_ntp: "{{ purefa_ntp }}"
+      register: r_purefa_ntp

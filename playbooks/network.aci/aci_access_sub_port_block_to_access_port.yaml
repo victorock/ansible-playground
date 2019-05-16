@@ -1,0 +1,35 @@
+---
+- name: "module_aci_access_sub_port_block_to_access_port"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_access_sub_port_block_to_access_port: 
+      access_port_selector: "{{ aci_access_sub_port_block_to_access_port_access_port_selector | default(omit, True) }}"
+      to_card: "{{ aci_access_sub_port_block_to_access_port_to_card | default(omit, True) }}"
+      use_ssl: "{{ aci_access_sub_port_block_to_access_port_use_ssl | default(omit, True) }}"
+      port: "{{ aci_access_sub_port_block_to_access_port_port | default(omit, True) }}"
+      from_card: "{{ aci_access_sub_port_block_to_access_port_from_card | default(omit, True) }}"
+      use_proxy: "{{ aci_access_sub_port_block_to_access_port_use_proxy | default(omit, True) }}"
+      from_sub_port: "{{ aci_access_sub_port_block_to_access_port_from_sub_port | default(omit, True) }}"
+      to_port: "{{ aci_access_sub_port_block_to_access_port_to_port | default(omit, True) }}"
+      state: "{{ aci_access_sub_port_block_to_access_port_state | default(omit, True) }}"
+      username: "{{ aci_access_sub_port_block_to_access_port_username | default(omit, True) }}"
+      to_sub_port: "{{ aci_access_sub_port_block_to_access_port_to_sub_port | default(omit, True) }}"
+      private_key: "{{ aci_access_sub_port_block_to_access_port_private_key | default(omit, True) }}"
+      from_port: "{{ aci_access_sub_port_block_to_access_port_from_port | default(omit, True) }}"
+      certificate_name: "{{ aci_access_sub_port_block_to_access_port_certificate_name | default(omit, True) }}"
+      leaf_port_blk: "{{ aci_access_sub_port_block_to_access_port_leaf_port_blk | default(omit, True) }}"
+      leaf_port_blk_description: "{{ aci_access_sub_port_block_to_access_port_leaf_port_blk_description | default(omit, True) }}"
+      host: "{{ aci_access_sub_port_block_to_access_port_host | default(omit, True) }}"
+      password: "{{ aci_access_sub_port_block_to_access_port_password | default(omit, True) }}"
+      validate_certs: "{{ aci_access_sub_port_block_to_access_port_validate_certs | default(omit, True) }}"
+      output_level: "{{ aci_access_sub_port_block_to_access_port_output_level | default(omit, True) }}"
+      timeout: "{{ aci_access_sub_port_block_to_access_port_timeout | default(omit, True) }}"
+      leaf_interface_profile: "{{ aci_access_sub_port_block_to_access_port_leaf_interface_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_aci_access_sub_port_block_to_access_port"
+      aci_access_sub_port_block_to_access_port: "{{ aci_access_sub_port_block_to_access_port }}"
+      register: r_aci_access_sub_port_block_to_access_port

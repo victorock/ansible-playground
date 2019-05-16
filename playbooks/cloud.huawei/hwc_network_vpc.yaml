@@ -1,0 +1,24 @@
+---
+- name: "module_hwc_network_vpc"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hwc_network_vpc: 
+      domain: "{{ hwc_network_vpc_domain | default(omit, True) }}"
+      name: "{{ hwc_network_vpc_name | default(omit, True) }}"
+      timeouts: "{{ hwc_network_vpc_timeouts | default(omit, True) }}"
+      region: "{{ hwc_network_vpc_region | default(omit, True) }}"
+      project: "{{ hwc_network_vpc_project | default(omit, True) }}"
+      state: "{{ hwc_network_vpc_state | default(omit, True) }}"
+      user: "{{ hwc_network_vpc_user | default(omit, True) }}"
+      cidr: "{{ hwc_network_vpc_cidr | default(omit, True) }}"
+      password: "{{ hwc_network_vpc_password | default(omit, True) }}"
+      id: "{{ hwc_network_vpc_id | default(omit, True) }}"
+      identity_endpoint: "{{ hwc_network_vpc_identity_endpoint | default(omit, True) }}"
+  tasks:
+    - name: "plugin_hwc_network_vpc"
+      hwc_network_vpc: "{{ hwc_network_vpc }}"
+      register: r_hwc_network_vpc

@@ -1,0 +1,18 @@
+---
+- name: "module_hcloud_volume_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hcloud_volume_facts: 
+      label_selector: "{{ hcloud_volume_facts_label_selector | default(omit, True) }}"
+      endpoint: "{{ hcloud_volume_facts_endpoint | default(omit, True) }}"
+      id: "{{ hcloud_volume_facts_id | default(omit, True) }}"
+      name: "{{ hcloud_volume_facts_name | default(omit, True) }}"
+      api_token: "{{ hcloud_volume_facts_api_token | default(omit, True) }}"
+  tasks:
+    - name: "plugin_hcloud_volume_facts"
+      hcloud_volume_facts: "{{ hcloud_volume_facts }}"
+      register: r_hcloud_volume_facts

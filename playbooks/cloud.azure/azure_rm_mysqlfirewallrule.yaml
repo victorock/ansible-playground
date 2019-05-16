@@ -1,0 +1,31 @@
+---
+- name: "module_azure_rm_mysqlfirewallrule"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_mysqlfirewallrule: 
+      profile: "{{ azure_rm_mysqlfirewallrule_profile | default(omit, True) }}"
+      name: "{{ azure_rm_mysqlfirewallrule_name | default(omit, True) }}"
+      server_name: "{{ azure_rm_mysqlfirewallrule_server_name | default(omit, True) }}"
+      start_ip_address: "{{ azure_rm_mysqlfirewallrule_start_ip_address | default(omit, True) }}"
+      resource_group: "{{ azure_rm_mysqlfirewallrule_resource_group | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_mysqlfirewallrule_cloud_environment | default(omit, True) }}"
+      ad_user: "{{ azure_rm_mysqlfirewallrule_ad_user | default(omit, True) }}"
+      secret: "{{ azure_rm_mysqlfirewallrule_secret | default(omit, True) }}"
+      state: "{{ azure_rm_mysqlfirewallrule_state | default(omit, True) }}"
+      auth_source: "{{ azure_rm_mysqlfirewallrule_auth_source | default(omit, True) }}"
+      end_ip_address: "{{ azure_rm_mysqlfirewallrule_end_ip_address | default(omit, True) }}"
+      client_id: "{{ azure_rm_mysqlfirewallrule_client_id | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_mysqlfirewallrule_cert_validation_mode | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_mysqlfirewallrule_adfs_authority_url | default(omit, True) }}"
+      api_profile: "{{ azure_rm_mysqlfirewallrule_api_profile | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_mysqlfirewallrule_subscription_id | default(omit, True) }}"
+      password: "{{ azure_rm_mysqlfirewallrule_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_mysqlfirewallrule_tenant | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_mysqlfirewallrule"
+      azure_rm_mysqlfirewallrule: "{{ azure_rm_mysqlfirewallrule }}"
+      register: r_azure_rm_mysqlfirewallrule

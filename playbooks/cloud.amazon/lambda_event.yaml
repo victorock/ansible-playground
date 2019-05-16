@@ -15,6 +15,7 @@
       region: "{{ lambda_event_region | default(omit, True) }}"
       lambda_function_arn: "{{ lambda_event_lambda_function_arn | default(omit, True) }}"
       aws_secret_key: "{{ lambda_event_aws_secret_key | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ lambda_event_debug_botocore_endpoint_logs | default(omit, True) }}"
       alias: "{{ lambda_event_alias | default(omit, True) }}"
       state: "{{ lambda_event_state | default(omit, True) }}"
       version: "{{ lambda_event_version | default(omit, True) }}"

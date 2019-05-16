@@ -1,0 +1,11 @@
+---
+- name: "module_pn_dscp_map_pri_map"
+  pn_dscp_map_pri_map: "{{ pn_dscp_map_pri_map }}"
+  register: r_pn_dscp_map_pri_map
+  vars:
+    pn_dscp_map_pri_map: 
+      pn_dsmap: "{{ pn_dscp_map_pri_map_pn_dsmap | default(omit, True) }}"
+      pn_pri: "{{ pn_dscp_map_pri_map_pn_pri | default(omit, True) }}"
+      pn_name: "{{ pn_dscp_map_pri_map_pn_name | default(omit, True) }}"
+      state: "{{ pn_dscp_map_pri_map_state | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_dscp_map_pri_map_pn_cliswitch | default(omit, True) }}"

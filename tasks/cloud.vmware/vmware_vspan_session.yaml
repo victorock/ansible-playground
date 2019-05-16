@@ -1,0 +1,28 @@
+---
+- name: "module_vmware_vspan_session"
+  vmware_vspan_session: "{{ vmware_vspan_session }}"
+  register: r_vmware_vspan_session
+  vars:
+    vmware_vspan_session: 
+      destination_vm: "{{ vmware_vspan_session_destination_vm | default(omit, True) }}"
+      normal_traffic_allowed: "{{ vmware_vspan_session_normal_traffic_allowed | default(omit, True) }}"
+      port: "{{ vmware_vspan_session_port | default(omit, True) }}"
+      source_port_received: "{{ vmware_vspan_session_source_port_received | default(omit, True) }}"
+      hostname: "{{ vmware_vspan_session_hostname | default(omit, True) }}"
+      source_port_transmitted: "{{ vmware_vspan_session_source_port_transmitted | default(omit, True) }}"
+      state: "{{ vmware_vspan_session_state | default(omit, True) }}"
+      sampling_rate: "{{ vmware_vspan_session_sampling_rate | default(omit, True) }}"
+      source_vm_transmitted: "{{ vmware_vspan_session_source_vm_transmitted | default(omit, True) }}"
+      username: "{{ vmware_vspan_session_username | default(omit, True) }}"
+      description: "{{ vmware_vspan_session_description | default(omit, True) }}"
+      session_type: "{{ vmware_vspan_session_session_type | default(omit, True) }}"
+      source_vm_received: "{{ vmware_vspan_session_source_vm_received | default(omit, True) }}"
+      encapsulation_vlan_id: "{{ vmware_vspan_session_encapsulation_vlan_id | default(omit, True) }}"
+      destination_port: "{{ vmware_vspan_session_destination_port | default(omit, True) }}"
+      password: "{{ vmware_vspan_session_password | default(omit, True) }}"
+      name: "{{ vmware_vspan_session_name | default(omit, True) }}"
+      enabled: "{{ vmware_vspan_session_enabled | default(omit, True) }}"
+      mirrored_packet_length: "{{ vmware_vspan_session_mirrored_packet_length | default(omit, True) }}"
+      switch: "{{ vmware_vspan_session_switch | default(omit, True) }}"
+      validate_certs: "{{ vmware_vspan_session_validate_certs | default(omit, True) }}"
+      strip_original_vlan: "{{ vmware_vspan_session_strip_original_vlan | default(omit, True) }}"

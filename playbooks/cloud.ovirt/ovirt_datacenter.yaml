@@ -21,6 +21,7 @@
       auth: "{{ ovirt_datacenter_auth | default(omit, True) }}"
       timeout: "{{ ovirt_datacenter_timeout | default(omit, True) }}"
       local: "{{ ovirt_datacenter_local | default(omit, True) }}"
+      id: "{{ ovirt_datacenter_id | default(omit, True) }}"
       wait: "{{ ovirt_datacenter_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_datacenter"

@@ -1,0 +1,29 @@
+---
+- name: "module_fmgr_secprof_proxy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_secprof_proxy: 
+      headers_action: "{{ fmgr_secprof_proxy_headers_action | default(omit, True) }}"
+      header_x_authenticated_groups: "{{ fmgr_secprof_proxy_header_x_authenticated_groups | default(omit, True) }}"
+      header_front_end_https: "{{ fmgr_secprof_proxy_header_front_end_https | default(omit, True) }}"
+      adom: "{{ fmgr_secprof_proxy_adom | default(omit, True) }}"
+      headers_content: "{{ fmgr_secprof_proxy_headers_content | default(omit, True) }}"
+      header_x_authenticated_user: "{{ fmgr_secprof_proxy_header_x_authenticated_user | default(omit, True) }}"
+      log_header_change: "{{ fmgr_secprof_proxy_log_header_change | default(omit, True) }}"
+      header_client_ip: "{{ fmgr_secprof_proxy_header_client_ip | default(omit, True) }}"
+      headers_name: "{{ fmgr_secprof_proxy_headers_name | default(omit, True) }}"
+      header_x_forwarded_for: "{{ fmgr_secprof_proxy_header_x_forwarded_for | default(omit, True) }}"
+      strip_encoding: "{{ fmgr_secprof_proxy_strip_encoding | default(omit, True) }}"
+      mode: "{{ fmgr_secprof_proxy_mode | default(omit, True) }}"
+      headers: "{{ fmgr_secprof_proxy_headers | default(omit, True) }}"
+      header_via_response: "{{ fmgr_secprof_proxy_header_via_response | default(omit, True) }}"
+      header_via_request: "{{ fmgr_secprof_proxy_header_via_request | default(omit, True) }}"
+      name: "{{ fmgr_secprof_proxy_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fmgr_secprof_proxy"
+      fmgr_secprof_proxy: "{{ fmgr_secprof_proxy }}"
+      register: r_fmgr_secprof_proxy

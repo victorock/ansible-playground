@@ -11,6 +11,7 @@
       statement_id: "{{ lambda_policy_statement_id | default(omit, True) }}"
       security_token: "{{ lambda_policy_security_token | default(omit, True) }}"
       region: "{{ lambda_policy_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ lambda_policy_debug_botocore_endpoint_logs | default(omit, True) }}"
       alias: "{{ lambda_policy_alias | default(omit, True) }}"
       state: "{{ lambda_policy_state | default(omit, True) }}"
       version: "{{ lambda_policy_version | default(omit, True) }}"

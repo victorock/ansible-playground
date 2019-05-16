@@ -1,0 +1,12 @@
+---
+- name: "module_hcloud_ssh_key_facts"
+  hcloud_ssh_key_facts: "{{ hcloud_ssh_key_facts }}"
+  register: r_hcloud_ssh_key_facts
+  vars:
+    hcloud_ssh_key_facts: 
+      endpoint: "{{ hcloud_ssh_key_facts_endpoint | default(omit, True) }}"
+      name: "{{ hcloud_ssh_key_facts_name | default(omit, True) }}"
+      label_selector: "{{ hcloud_ssh_key_facts_label_selector | default(omit, True) }}"
+      fingerprint: "{{ hcloud_ssh_key_facts_fingerprint | default(omit, True) }}"
+      api_token: "{{ hcloud_ssh_key_facts_api_token | default(omit, True) }}"
+      id: "{{ hcloud_ssh_key_facts_id | default(omit, True) }}"

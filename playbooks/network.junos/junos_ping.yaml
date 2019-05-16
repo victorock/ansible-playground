@@ -1,0 +1,22 @@
+---
+- name: "module_junos_ping"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    junos_ping: 
+      count: "{{ junos_ping_count | default(omit, True) }}"
+      dest: "{{ junos_ping_dest | default(omit, True) }}"
+      interval: "{{ junos_ping_interval | default(omit, True) }}"
+      provider: "{{ junos_ping_provider | default(omit, True) }}"
+      source: "{{ junos_ping_source | default(omit, True) }}"
+      state: "{{ junos_ping_state | default(omit, True) }}"
+      ttl: "{{ junos_ping_ttl | default(omit, True) }}"
+      interface: "{{ junos_ping_interface | default(omit, True) }}"
+      size: "{{ junos_ping_size | default(omit, True) }}"
+  tasks:
+    - name: "plugin_junos_ping"
+      junos_ping: "{{ junos_ping }}"
+      register: r_junos_ping

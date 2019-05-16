@@ -1,0 +1,17 @@
+---
+- name: "module_asa_og"
+  asa_og: "{{ asa_og }}"
+  register: r_asa_og
+  vars:
+    asa_og: 
+      protocol: "{{ asa_og_protocol | default(omit, True) }}"
+      service_cfg: "{{ asa_og_service_cfg | default(omit, True) }}"
+      port_range: "{{ asa_og_port_range | default(omit, True) }}"
+      host_ip: "{{ asa_og_host_ip | default(omit, True) }}"
+      name: "{{ asa_og_name | default(omit, True) }}"
+      ip_mask: "{{ asa_og_ip_mask | default(omit, True) }}"
+      state: "{{ asa_og_state | default(omit, True) }}"
+      group_object: "{{ asa_og_group_object | default(omit, True) }}"
+      port_eq: "{{ asa_og_port_eq | default(omit, True) }}"
+      group_type: "{{ asa_og_group_type | default(omit, True) }}"
+      description: "{{ asa_og_description | default(omit, True) }}"

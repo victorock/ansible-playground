@@ -18,6 +18,7 @@
       region: "{{ cloudtrail_region | default(omit, True) }}"
       kms_key_id: "{{ cloudtrail_kms_key_id | default(omit, True) }}"
       cloudwatch_logs_log_group_arn: "{{ cloudtrail_cloudwatch_logs_log_group_arn | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ cloudtrail_debug_botocore_endpoint_logs | default(omit, True) }}"
       s3_bucket_name: "{{ cloudtrail_s3_bucket_name | default(omit, True) }}"
       is_multi_region_trail: "{{ cloudtrail_is_multi_region_trail | default(omit, True) }}"
       state: "{{ cloudtrail_state | default(omit, True) }}"

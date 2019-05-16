@@ -1,0 +1,18 @@
+---
+- name: "module_rabbitmq_vhost_limits"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rabbitmq_vhost_limits: 
+      node: "{{ rabbitmq_vhost_limits_node | default(omit, True) }}"
+      vhost: "{{ rabbitmq_vhost_limits_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_vhost_limits_state | default(omit, True) }}"
+      max_queues: "{{ rabbitmq_vhost_limits_max_queues | default(omit, True) }}"
+      max_connections: "{{ rabbitmq_vhost_limits_max_connections | default(omit, True) }}"
+  tasks:
+    - name: "plugin_rabbitmq_vhost_limits"
+      rabbitmq_vhost_limits: "{{ rabbitmq_vhost_limits }}"
+      register: r_rabbitmq_vhost_limits

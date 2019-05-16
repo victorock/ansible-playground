@@ -1,0 +1,23 @@
+---
+- name: "module_tower_receive"
+  tower_receive: "{{ tower_receive }}"
+  register: r_tower_receive
+  vars:
+    tower_receive: 
+      credential: "{{ tower_receive_credential | default(omit, True) }}"
+      all: "{{ tower_receive_all | default(omit, True) }}"
+      job_template: "{{ tower_receive_job_template | default(omit, True) }}"
+      workflow: "{{ tower_receive_workflow | default(omit, True) }}"
+      inventory_script: "{{ tower_receive_inventory_script | default(omit, True) }}"
+      team: "{{ tower_receive_team | default(omit, True) }}"
+      project: "{{ tower_receive_project | default(omit, True) }}"
+      credential_type: "{{ tower_receive_credential_type | default(omit, True) }}"
+      user: "{{ tower_receive_user | default(omit, True) }}"
+      tower_password: "{{ tower_receive_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_receive_tower_config_file | default(omit, True) }}"
+      organization: "{{ tower_receive_organization | default(omit, True) }}"
+      notification_template: "{{ tower_receive_notification_template | default(omit, True) }}"
+      validate_certs: "{{ tower_receive_validate_certs | default(omit, True) }}"
+      tower_host: "{{ tower_receive_tower_host | default(omit, True) }}"
+      tower_username: "{{ tower_receive_tower_username | default(omit, True) }}"
+      inventory: "{{ tower_receive_inventory | default(omit, True) }}"

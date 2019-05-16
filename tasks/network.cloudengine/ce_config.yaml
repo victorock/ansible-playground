@@ -5,6 +5,7 @@
   vars:
     ce_config: 
       src: "{{ ce_config_src | default(omit, True) }}"
+      backup_options: "{{ ce_config_backup_options | default(omit, True) }}"
       backup: "{{ ce_config_backup | default(omit, True) }}"
       after: "{{ ce_config_after | default(omit, True) }}"
       lines: "{{ ce_config_lines | default(omit, True) }}"

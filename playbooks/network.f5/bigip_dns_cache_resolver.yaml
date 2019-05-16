@@ -1,0 +1,25 @@
+---
+- name: "module_bigip_dns_cache_resolver"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    bigip_dns_cache_resolver: 
+      name: "{{ bigip_dns_cache_resolver_name | default(omit, True) }}"
+      partition: "{{ bigip_dns_cache_resolver_partition | default(omit, True) }}"
+      state: "{{ bigip_dns_cache_resolver_state | default(omit, True) }}"
+      server: "{{ bigip_dns_cache_resolver_server | default(omit, True) }}"
+      answer_default_zones: "{{ bigip_dns_cache_resolver_answer_default_zones | default(omit, True) }}"
+      route_domain: "{{ bigip_dns_cache_resolver_route_domain | default(omit, True) }}"
+      server_port: "{{ bigip_dns_cache_resolver_server_port | default(omit, True) }}"
+      user: "{{ bigip_dns_cache_resolver_user | default(omit, True) }}"
+      forward_zones: "{{ bigip_dns_cache_resolver_forward_zones | default(omit, True) }}"
+      provider: "{{ bigip_dns_cache_resolver_provider | default(omit, True) }}"
+      password: "{{ bigip_dns_cache_resolver_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_dns_cache_resolver_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_bigip_dns_cache_resolver"
+      bigip_dns_cache_resolver: "{{ bigip_dns_cache_resolver }}"
+      register: r_bigip_dns_cache_resolver

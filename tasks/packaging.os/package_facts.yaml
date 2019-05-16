@@ -5,3 +5,4 @@
   vars:
     package_facts: 
       manager: "{{ package_facts_manager | default(omit, True) }}"
+      strategy: "{{ package_facts_strategy | default(omit, True) }}"

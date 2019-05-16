@@ -1,0 +1,13 @@
+---
+- name: "module_gcp_redis_instance_facts"
+  gcp_redis_instance_facts: "{{ gcp_redis_instance_facts }}"
+  register: r_gcp_redis_instance_facts
+  vars:
+    gcp_redis_instance_facts: 
+      scopes: "{{ gcp_redis_instance_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_redis_instance_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_redis_instance_facts_service_account_email | default(omit, True) }}"
+      region: "{{ gcp_redis_instance_facts_region | default(omit, True) }}"
+      project: "{{ gcp_redis_instance_facts_project | default(omit, True) }}"
+      service_account_file: "{{ gcp_redis_instance_facts_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_redis_instance_facts_auth_kind | default(omit, True) }}"

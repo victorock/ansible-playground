@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_vpn_ssl_web_portal"
+  fortios_vpn_ssl_web_portal: "{{ fortios_vpn_ssl_web_portal }}"
+  register: r_fortios_vpn_ssl_web_portal
+  vars:
+    fortios_vpn_ssl_web_portal: 
+      username: "{{ fortios_vpn_ssl_web_portal_username | default(omit, True) }}"
+      vpn_ssl_web_portal: "{{ fortios_vpn_ssl_web_portal_vpn_ssl_web_portal | default(omit, True) }}"
+      host: "{{ fortios_vpn_ssl_web_portal_host | default(omit, True) }}"
+      https: "{{ fortios_vpn_ssl_web_portal_https | default(omit, True) }}"
+      password: "{{ fortios_vpn_ssl_web_portal_password | default(omit, True) }}"
+      vdom: "{{ fortios_vpn_ssl_web_portal_vdom | default(omit, True) }}"

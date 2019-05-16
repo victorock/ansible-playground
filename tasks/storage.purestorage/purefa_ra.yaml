@@ -1,0 +1,9 @@
+---
+- name: "module_purefa_ra"
+  purefa_ra: "{{ purefa_ra }}"
+  register: r_purefa_ra
+  vars:
+    purefa_ra: 
+      state: "{{ purefa_ra_state | default(omit, True) }}"
+      fa_url: "{{ purefa_ra_fa_url | default(omit, True) }}"
+      api_token: "{{ purefa_ra_api_token | default(omit, True) }}"

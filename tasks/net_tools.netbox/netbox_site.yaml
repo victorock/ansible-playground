@@ -1,0 +1,11 @@
+---
+- name: "module_netbox_site"
+  netbox_site: "{{ netbox_site }}"
+  register: r_netbox_site
+  vars:
+    netbox_site: 
+      data: "{{ netbox_site_data | default(omit, True) }}"
+      state: "{{ netbox_site_state | default(omit, True) }}"
+      netbox_url: "{{ netbox_site_netbox_url | default(omit, True) }}"
+      netbox_token: "{{ netbox_site_netbox_token | default(omit, True) }}"
+      validate_certs: "{{ netbox_site_validate_certs | default(omit, True) }}"

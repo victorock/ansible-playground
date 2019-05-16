@@ -1,0 +1,17 @@
+---
+- name: "module_pn_snmp_community"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    pn_snmp_community: 
+      state: "{{ pn_snmp_community_state | default(omit, True) }}"
+      pn_community_string: "{{ pn_snmp_community_pn_community_string | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_snmp_community_pn_cliswitch | default(omit, True) }}"
+      pn_community_type: "{{ pn_snmp_community_pn_community_type | default(omit, True) }}"
+  tasks:
+    - name: "plugin_pn_snmp_community"
+      pn_snmp_community: "{{ pn_snmp_community }}"
+      register: r_pn_snmp_community

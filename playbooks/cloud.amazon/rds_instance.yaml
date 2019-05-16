@@ -53,6 +53,7 @@
       enable_cloudwatch_logs_exports: "{{ rds_instance_enable_cloudwatch_logs_exports | default(omit, True) }}"
       ca_certificate_identifier: "{{ rds_instance_ca_certificate_identifier | default(omit, True) }}"
       auto_minor_version_upgrade: "{{ rds_instance_auto_minor_version_upgrade | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ rds_instance_debug_botocore_endpoint_logs | default(omit, True) }}"
       allow_major_version_upgrade: "{{ rds_instance_allow_major_version_upgrade | default(omit, True) }}"
       state: "{{ rds_instance_state | default(omit, True) }}"
       license_model: "{{ rds_instance_license_model | default(omit, True) }}"

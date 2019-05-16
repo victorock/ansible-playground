@@ -14,6 +14,7 @@
       manifest: "{{ puppet_manifest | default(omit, True) }}"
       environment: "{{ puppet_environment | default(omit, True) }}"
       debug: "{{ puppet_debug | default(omit, True) }}"
+      noop: "{{ puppet_noop | default(omit, True) }}"
       timeout: "{{ puppet_timeout | default(omit, True) }}"
       facts: "{{ puppet_facts | default(omit, True) }}"
       summarize: "{{ puppet_summarize | default(omit, True) }}"

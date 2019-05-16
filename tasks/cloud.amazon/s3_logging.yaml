@@ -10,6 +10,7 @@
       name: "{{ s3_logging_name | default(omit, True) }}"
       security_token: "{{ s3_logging_security_token | default(omit, True) }}"
       region: "{{ s3_logging_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ s3_logging_debug_botocore_endpoint_logs | default(omit, True) }}"
       target_prefix: "{{ s3_logging_target_prefix | default(omit, True) }}"
       target_bucket: "{{ s3_logging_target_bucket | default(omit, True) }}"
       state: "{{ s3_logging_state | default(omit, True) }}"

@@ -1,0 +1,30 @@
+---
+- name: "module_fmgr_secprof_profile_group"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_secprof_profile_group: 
+      spamfilter_profile: "{{ fmgr_secprof_profile_group_spamfilter_profile | default(omit, True) }}"
+      webfilter_profile: "{{ fmgr_secprof_profile_group_webfilter_profile | default(omit, True) }}"
+      name: "{{ fmgr_secprof_profile_group_name | default(omit, True) }}"
+      adom: "{{ fmgr_secprof_profile_group_adom | default(omit, True) }}"
+      application_list: "{{ fmgr_secprof_profile_group_application_list | default(omit, True) }}"
+      dlp_sensor: "{{ fmgr_secprof_profile_group_dlp_sensor | default(omit, True) }}"
+      ssl_ssh_profile: "{{ fmgr_secprof_profile_group_ssl_ssh_profile | default(omit, True) }}"
+      ips_sensor: "{{ fmgr_secprof_profile_group_ips_sensor | default(omit, True) }}"
+      waf_profile: "{{ fmgr_secprof_profile_group_waf_profile | default(omit, True) }}"
+      icap_profile: "{{ fmgr_secprof_profile_group_icap_profile | default(omit, True) }}"
+      mms_profile: "{{ fmgr_secprof_profile_group_mms_profile | default(omit, True) }}"
+      dnsfilter_profile: "{{ fmgr_secprof_profile_group_dnsfilter_profile | default(omit, True) }}"
+      mode: "{{ fmgr_secprof_profile_group_mode | default(omit, True) }}"
+      voip_profile: "{{ fmgr_secprof_profile_group_voip_profile | default(omit, True) }}"
+      av_profile: "{{ fmgr_secprof_profile_group_av_profile | default(omit, True) }}"
+      profile_protocol_options: "{{ fmgr_secprof_profile_group_profile_protocol_options | default(omit, True) }}"
+      ssh_filter_profile: "{{ fmgr_secprof_profile_group_ssh_filter_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fmgr_secprof_profile_group"
+      fmgr_secprof_profile_group: "{{ fmgr_secprof_profile_group }}"
+      register: r_fmgr_secprof_profile_group

@@ -1,0 +1,32 @@
+---
+- name: "module_gcp_compute_region_disk"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_compute_region_disk: 
+      scopes: "{{ gcp_compute_region_disk_scopes | default(omit, True) }}"
+      size_gb: "{{ gcp_compute_region_disk_size_gb | default(omit, True) }}"
+      type: "{{ gcp_compute_region_disk_type | default(omit, True) }}"
+      description: "{{ gcp_compute_region_disk_description | default(omit, True) }}"
+      source_snapshot: "{{ gcp_compute_region_disk_source_snapshot | default(omit, True) }}"
+      region: "{{ gcp_compute_region_disk_region | default(omit, True) }}"
+      labels: "{{ gcp_compute_region_disk_labels | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_region_disk_service_account_contents | default(omit, True) }}"
+      replica_zones: "{{ gcp_compute_region_disk_replica_zones | default(omit, True) }}"
+      project: "{{ gcp_compute_region_disk_project | default(omit, True) }}"
+      state: "{{ gcp_compute_region_disk_state | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_region_disk_service_account_email | default(omit, True) }}"
+      licenses: "{{ gcp_compute_region_disk_licenses | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_region_disk_auth_kind | default(omit, True) }}"
+      disk_encryption_key: "{{ gcp_compute_region_disk_disk_encryption_key | default(omit, True) }}"
+      source_snapshot_encryption_key: "{{ gcp_compute_region_disk_source_snapshot_encryption_key | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_region_disk_service_account_file | default(omit, True) }}"
+      physical_block_size_bytes: "{{ gcp_compute_region_disk_physical_block_size_bytes | default(omit, True) }}"
+      name: "{{ gcp_compute_region_disk_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_compute_region_disk"
+      gcp_compute_region_disk: "{{ gcp_compute_region_disk }}"
+      register: r_gcp_compute_region_disk

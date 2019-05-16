@@ -5,6 +5,7 @@
   vars:
     dellos10_config: 
       src: "{{ dellos10_config_src | default(omit, True) }}"
+      backup_options: "{{ dellos10_config_backup_options | default(omit, True) }}"
       config: "{{ dellos10_config_config | default(omit, True) }}"
       after: "{{ dellos10_config_after | default(omit, True) }}"
       lines: "{{ dellos10_config_lines | default(omit, True) }}"

@@ -12,6 +12,7 @@
       http_port: "{{ na_ontap_disks_http_port | default(omit, True) }}"
       hostname: "{{ na_ontap_disks_hostname | default(omit, True) }}"
       https: "{{ na_ontap_disks_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_disks_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_disks_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_disks_validate_certs | default(omit, True) }}"
   tasks:

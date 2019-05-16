@@ -13,6 +13,7 @@
       removes: "{{ win_shell_removes | default(omit, True) }}"
       creates: "{{ win_shell_creates | default(omit, True) }}"
       free_form: "{{ win_shell_free_form | default(omit, True) }}"
+      no_profile: "{{ win_shell_no_profile | default(omit, True) }}"
   tasks:
     - name: "plugin_win_shell"
       win_shell: "{{ win_shell }}"

@@ -4,6 +4,7 @@
   register: r_nxos_static_route
   vars:
     nxos_static_route: 
+      track: "{{ nxos_static_route_track | default(omit, True) }}"
       pref: "{{ nxos_static_route_pref | default(omit, True) }}"
       tag: "{{ nxos_static_route_tag | default(omit, True) }}"
       state: "{{ nxos_static_route_state | default(omit, True) }}"

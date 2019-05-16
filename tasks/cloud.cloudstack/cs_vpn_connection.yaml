@@ -7,6 +7,7 @@
       vpn_customer_gateway: "{{ cs_vpn_connection_vpn_customer_gateway | default(omit, True) }}"
       project: "{{ cs_vpn_connection_project | default(omit, True) }}"
       domain: "{{ cs_vpn_connection_domain | default(omit, True) }}"
+      api_key: "{{ cs_vpn_connection_api_key | default(omit, True) }}"
       force: "{{ cs_vpn_connection_force | default(omit, True) }}"
       api_url: "{{ cs_vpn_connection_api_url | default(omit, True) }}"
       api_http_method: "{{ cs_vpn_connection_api_http_method | default(omit, True) }}"
@@ -18,4 +19,4 @@
       state: "{{ cs_vpn_connection_state | default(omit, True) }}"
       vpc: "{{ cs_vpn_connection_vpc | default(omit, True) }}"
       poll_async: "{{ cs_vpn_connection_poll_async | default(omit, True) }}"
-      api_key: "{{ cs_vpn_connection_api_key | default(omit, True) }}"
+      zone: "{{ cs_vpn_connection_zone | default(omit, True) }}"

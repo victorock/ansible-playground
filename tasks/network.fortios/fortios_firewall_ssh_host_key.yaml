@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_ssh_host_key"
+  fortios_firewall_ssh_host_key: "{{ fortios_firewall_ssh_host_key }}"
+  register: r_fortios_firewall_ssh_host_key
+  vars:
+    fortios_firewall_ssh_host_key: 
+      username: "{{ fortios_firewall_ssh_host_key_username | default(omit, True) }}"
+      firewall_ssh_host_key: "{{ fortios_firewall_ssh_host_key_firewall_ssh_host_key | default(omit, True) }}"
+      host: "{{ fortios_firewall_ssh_host_key_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_ssh_host_key_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_ssh_host_key_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_ssh_host_key_vdom | default(omit, True) }}"

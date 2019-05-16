@@ -1,0 +1,36 @@
+---
+- name: "module_na_ontap_vscan_on_demand_task"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    na_ontap_vscan_on_demand_task: 
+      scan_files_with_no_ext: "{{ na_ontap_vscan_on_demand_task_scan_files_with_no_ext | default(omit, True) }}"
+      scan_priority: "{{ na_ontap_vscan_on_demand_task_scan_priority | default(omit, True) }}"
+      directory_recursion: "{{ na_ontap_vscan_on_demand_task_directory_recursion | default(omit, True) }}"
+      max_file_size: "{{ na_ontap_vscan_on_demand_task_max_file_size | default(omit, True) }}"
+      http_port: "{{ na_ontap_vscan_on_demand_task_http_port | default(omit, True) }}"
+      scan_paths: "{{ na_ontap_vscan_on_demand_task_scan_paths | default(omit, True) }}"
+      hostname: "{{ na_ontap_vscan_on_demand_task_hostname | default(omit, True) }}"
+      state: "{{ na_ontap_vscan_on_demand_task_state | default(omit, True) }}"
+      vserver: "{{ na_ontap_vscan_on_demand_task_vserver | default(omit, True) }}"
+      report_log_level: "{{ na_ontap_vscan_on_demand_task_report_log_level | default(omit, True) }}"
+      https: "{{ na_ontap_vscan_on_demand_task_https | default(omit, True) }}"
+      username: "{{ na_ontap_vscan_on_demand_task_username | default(omit, True) }}"
+      request_timeout: "{{ na_ontap_vscan_on_demand_task_request_timeout | default(omit, True) }}"
+      schedule: "{{ na_ontap_vscan_on_demand_task_schedule | default(omit, True) }}"
+      file_ext_to_exclude: "{{ na_ontap_vscan_on_demand_task_file_ext_to_exclude | default(omit, True) }}"
+      ontapi: "{{ na_ontap_vscan_on_demand_task_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_vscan_on_demand_task_password | default(omit, True) }}"
+      cross_junction: "{{ na_ontap_vscan_on_demand_task_cross_junction | default(omit, True) }}"
+      file_ext_to_include: "{{ na_ontap_vscan_on_demand_task_file_ext_to_include | default(omit, True) }}"
+      report_directory: "{{ na_ontap_vscan_on_demand_task_report_directory | default(omit, True) }}"
+      paths_to_exclude: "{{ na_ontap_vscan_on_demand_task_paths_to_exclude | default(omit, True) }}"
+      task_name: "{{ na_ontap_vscan_on_demand_task_task_name | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_vscan_on_demand_task_validate_certs | default(omit, True) }}"
+  tasks:
+    - name: "plugin_na_ontap_vscan_on_demand_task"
+      na_ontap_vscan_on_demand_task: "{{ na_ontap_vscan_on_demand_task }}"
+      register: r_na_ontap_vscan_on_demand_task

@@ -1,0 +1,21 @@
+---
+- name: "module_gcp_container_node_pool_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_container_node_pool_facts: 
+      scopes: "{{ gcp_container_node_pool_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_container_node_pool_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_container_node_pool_facts_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_container_node_pool_facts_project | default(omit, True) }}"
+      cluster: "{{ gcp_container_node_pool_facts_cluster | default(omit, True) }}"
+      location: "{{ gcp_container_node_pool_facts_location | default(omit, True) }}"
+      auth_kind: "{{ gcp_container_node_pool_facts_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_container_node_pool_facts_service_account_file | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_container_node_pool_facts"
+      gcp_container_node_pool_facts: "{{ gcp_container_node_pool_facts }}"
+      register: r_gcp_container_node_pool_facts

@@ -5,13 +5,15 @@
   vars:
     na_ontap_broadcast_domain: 
       username: "{{ na_ontap_broadcast_domain_username | default(omit, True) }}"
-      http_port: "{{ na_ontap_broadcast_domain_http_port | default(omit, True) }}"
-      broadcast_domain: "{{ na_ontap_broadcast_domain_broadcast_domain | default(omit, True) }}"
+      from_name: "{{ na_ontap_broadcast_domain_from_name | default(omit, True) }}"
+      name: "{{ na_ontap_broadcast_domain_name | default(omit, True) }}"
       hostname: "{{ na_ontap_broadcast_domain_hostname | default(omit, True) }}"
       ipspace: "{{ na_ontap_broadcast_domain_ipspace | default(omit, True) }}"
       mtu: "{{ na_ontap_broadcast_domain_mtu | default(omit, True) }}"
       state: "{{ na_ontap_broadcast_domain_state | default(omit, True) }}"
+      http_port: "{{ na_ontap_broadcast_domain_http_port | default(omit, True) }}"
       https: "{{ na_ontap_broadcast_domain_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_broadcast_domain_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_broadcast_domain_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_broadcast_domain_validate_certs | default(omit, True) }}"
       ports: "{{ na_ontap_broadcast_domain_ports | default(omit, True) }}"

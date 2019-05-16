@@ -1,0 +1,15 @@
+---
+- name: "module_vsphere_file"
+  vsphere_file: "{{ vsphere_file }}"
+  register: r_vsphere_file
+  vars:
+    vsphere_file: 
+      username: "{{ vsphere_file_username | default(omit, True) }}"
+      datacenter: "{{ vsphere_file_datacenter | default(omit, True) }}"
+      host: "{{ vsphere_file_host | default(omit, True) }}"
+      state: "{{ vsphere_file_state | default(omit, True) }}"
+      timeout: "{{ vsphere_file_timeout | default(omit, True) }}"
+      path: "{{ vsphere_file_path | default(omit, True) }}"
+      datastore: "{{ vsphere_file_datastore | default(omit, True) }}"
+      password: "{{ vsphere_file_password | default(omit, True) }}"
+      validate_certs: "{{ vsphere_file_validate_certs | default(omit, True) }}"

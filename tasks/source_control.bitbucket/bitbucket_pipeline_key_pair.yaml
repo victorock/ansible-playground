@@ -1,0 +1,13 @@
+---
+- name: "module_bitbucket_pipeline_key_pair"
+  bitbucket_pipeline_key_pair: "{{ bitbucket_pipeline_key_pair }}"
+  register: r_bitbucket_pipeline_key_pair
+  vars:
+    bitbucket_pipeline_key_pair: 
+      username: "{{ bitbucket_pipeline_key_pair_username | default(omit, True) }}"
+      public_key: "{{ bitbucket_pipeline_key_pair_public_key | default(omit, True) }}"
+      private_key: "{{ bitbucket_pipeline_key_pair_private_key | default(omit, True) }}"
+      repository: "{{ bitbucket_pipeline_key_pair_repository | default(omit, True) }}"
+      state: "{{ bitbucket_pipeline_key_pair_state | default(omit, True) }}"
+      client_id: "{{ bitbucket_pipeline_key_pair_client_id | default(omit, True) }}"
+      client_secret: "{{ bitbucket_pipeline_key_pair_client_secret | default(omit, True) }}"

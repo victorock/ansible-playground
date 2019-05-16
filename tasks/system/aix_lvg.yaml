@@ -1,0 +1,12 @@
+---
+- name: "module_aix_lvg"
+  aix_lvg: "{{ aix_lvg }}"
+  register: r_aix_lvg
+  vars:
+    aix_lvg: 
+      pvs: "{{ aix_lvg_pvs | default(omit, True) }}"
+      force: "{{ aix_lvg_force | default(omit, True) }}"
+      vg: "{{ aix_lvg_vg | default(omit, True) }}"
+      vg_type: "{{ aix_lvg_vg_type | default(omit, True) }}"
+      state: "{{ aix_lvg_state | default(omit, True) }}"
+      pp_size: "{{ aix_lvg_pp_size | default(omit, True) }}"

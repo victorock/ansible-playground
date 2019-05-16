@@ -1,0 +1,8 @@
+---
+- name: "module_podman_image_info"
+  podman_image_info: "{{ podman_image_info }}"
+  register: r_podman_image_info
+  vars:
+    podman_image_info: 
+      executable: "{{ podman_image_info_executable | default(omit, True) }}"
+      name: "{{ podman_image_info_name | default(omit, True) }}"

@@ -4,7 +4,9 @@
   register: r_gcp_compute_target_ssl_proxy
   vars:
     gcp_compute_target_ssl_proxy: 
+      ssl_policy: "{{ gcp_compute_target_ssl_proxy_ssl_policy | default(omit, True) }}"
       scopes: "{{ gcp_compute_target_ssl_proxy_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_target_ssl_proxy_service_account_contents | default(omit, True) }}"
       description: "{{ gcp_compute_target_ssl_proxy_description | default(omit, True) }}"
       service: "{{ gcp_compute_target_ssl_proxy_service | default(omit, True) }}"
       ssl_certificates: "{{ gcp_compute_target_ssl_proxy_ssl_certificates | default(omit, True) }}"

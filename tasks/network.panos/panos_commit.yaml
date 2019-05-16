@@ -5,8 +5,11 @@
   vars:
     panos_commit: 
       username: "{{ panos_commit_username | default(omit, True) }}"
+      description: "{{ panos_commit_description | default(omit, True) }}"
+      commit_vsys: "{{ panos_commit_commit_vsys | default(omit, True) }}"
       interval: "{{ panos_commit_interval | default(omit, True) }}"
       sync: "{{ panos_commit_sync | default(omit, True) }}"
       timeout: "{{ panos_commit_timeout | default(omit, True) }}"
+      commit_changes_by: "{{ panos_commit_commit_changes_by | default(omit, True) }}"
       password: "{{ panos_commit_password | default(omit, True) }}"
       ip_address: "{{ panos_commit_ip_address | default(omit, True) }}"

@@ -10,6 +10,7 @@
       description: "{{ lambda_alias_description | default(omit, True) }}"
       security_token: "{{ lambda_alias_security_token | default(omit, True) }}"
       region: "{{ lambda_alias_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ lambda_alias_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ lambda_alias_state | default(omit, True) }}"
       version: "{{ lambda_alias_version | default(omit, True) }}"
       ec2_url: "{{ lambda_alias_ec2_url | default(omit, True) }}"

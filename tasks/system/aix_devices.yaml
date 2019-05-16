@@ -1,0 +1,11 @@
+---
+- name: "module_aix_devices"
+  aix_devices: "{{ aix_devices }}"
+  register: r_aix_devices
+  vars:
+    aix_devices: 
+      device: "{{ aix_devices_device | default(omit, True) }}"
+      attributes: "{{ aix_devices_attributes | default(omit, True) }}"
+      state: "{{ aix_devices_state | default(omit, True) }}"
+      force: "{{ aix_devices_force | default(omit, True) }}"
+      recursive: "{{ aix_devices_recursive | default(omit, True) }}"

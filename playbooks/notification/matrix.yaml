@@ -1,0 +1,20 @@
+---
+- name: "module_matrix"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    matrix: 
+      user_id: "{{ matrix_user_id | default(omit, True) }}"
+      token: "{{ matrix_token | default(omit, True) }}"
+      msg_plain: "{{ matrix_msg_plain | default(omit, True) }}"
+      room_id: "{{ matrix_room_id | default(omit, True) }}"
+      msg_html: "{{ matrix_msg_html | default(omit, True) }}"
+      hs_url: "{{ matrix_hs_url | default(omit, True) }}"
+      password: "{{ matrix_password | default(omit, True) }}"
+  tasks:
+    - name: "plugin_matrix"
+      matrix: "{{ matrix }}"
+      register: r_matrix

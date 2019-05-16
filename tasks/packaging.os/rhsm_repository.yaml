@@ -4,5 +4,6 @@
   register: r_rhsm_repository
   vars:
     rhsm_repository: 
+      purge: "{{ rhsm_repository_purge | default(omit, True) }}"
       state: "{{ rhsm_repository_state | default(omit, True) }}"
       name: "{{ rhsm_repository_name | default(omit, True) }}"

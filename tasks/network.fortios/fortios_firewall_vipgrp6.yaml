@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_vipgrp6"
+  fortios_firewall_vipgrp6: "{{ fortios_firewall_vipgrp6 }}"
+  register: r_fortios_firewall_vipgrp6
+  vars:
+    fortios_firewall_vipgrp6: 
+      username: "{{ fortios_firewall_vipgrp6_username | default(omit, True) }}"
+      firewall_vipgrp6: "{{ fortios_firewall_vipgrp6_firewall_vipgrp6 | default(omit, True) }}"
+      host: "{{ fortios_firewall_vipgrp6_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_vipgrp6_https | default(omit, True) }}"
+      password: "{{ fortios_firewall_vipgrp6_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_vipgrp6_vdom | default(omit, True) }}"

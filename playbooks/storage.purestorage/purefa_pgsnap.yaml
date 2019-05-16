@@ -12,8 +12,10 @@
       name: "{{ purefa_pgsnap_name | default(omit, True) }}"
       state: "{{ purefa_pgsnap_state | default(omit, True) }}"
       api_token: "{{ purefa_pgsnap_api_token | default(omit, True) }}"
-      eradicate: "{{ purefa_pgsnap_eradicate | default(omit, True) }}"
       fa_url: "{{ purefa_pgsnap_fa_url | default(omit, True) }}"
+      target: "{{ purefa_pgsnap_target | default(omit, True) }}"
+      overwrite: "{{ purefa_pgsnap_overwrite | default(omit, True) }}"
+      eradicate: "{{ purefa_pgsnap_eradicate | default(omit, True) }}"
   tasks:
     - name: "plugin_purefa_pgsnap"
       purefa_pgsnap: "{{ purefa_pgsnap }}"

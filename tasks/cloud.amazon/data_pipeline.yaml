@@ -11,6 +11,7 @@
       security_token: "{{ data_pipeline_security_token | default(omit, True) }}"
       tags: "{{ data_pipeline_tags | default(omit, True) }}"
       region: "{{ data_pipeline_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ data_pipeline_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ data_pipeline_state | default(omit, True) }}"
       objects: "{{ data_pipeline_objects | default(omit, True) }}"
       values: "{{ data_pipeline_values | default(omit, True) }}"

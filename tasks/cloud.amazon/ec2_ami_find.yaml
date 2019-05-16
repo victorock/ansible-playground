@@ -6,6 +6,7 @@
     ec2_ami_find: 
       sort: "{{ ec2_ami_find_sort | default(omit, True) }}"
       root_device_type: "{{ ec2_ami_find_root_device_type | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_ami_find_debug_botocore_endpoint_logs | default(omit, True) }}"
       sort_order: "{{ ec2_ami_find_sort_order | default(omit, True) }}"
       ec2_url: "{{ ec2_ami_find_ec2_url | default(omit, True) }}"
       owner: "{{ ec2_ami_find_owner | default(omit, True) }}"

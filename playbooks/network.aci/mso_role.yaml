@@ -1,0 +1,27 @@
+---
+- name: "module_mso_role"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    mso_role: 
+      username: "{{ mso_role_username | default(omit, True) }}"
+      use_proxy: "{{ mso_role_use_proxy | default(omit, True) }}"
+      display_name: "{{ mso_role_display_name | default(omit, True) }}"
+      description: "{{ mso_role_description | default(omit, True) }}"
+      state: "{{ mso_role_state | default(omit, True) }}"
+      output_level: "{{ mso_role_output_level | default(omit, True) }}"
+      host: "{{ mso_role_host | default(omit, True) }}"
+      role: "{{ mso_role_role | default(omit, True) }}"
+      timeout: "{{ mso_role_timeout | default(omit, True) }}"
+      use_ssl: "{{ mso_role_use_ssl | default(omit, True) }}"
+      password: "{{ mso_role_password | default(omit, True) }}"
+      validate_certs: "{{ mso_role_validate_certs | default(omit, True) }}"
+      port: "{{ mso_role_port | default(omit, True) }}"
+      permissions: "{{ mso_role_permissions | default(omit, True) }}"
+  tasks:
+    - name: "plugin_mso_role"
+      mso_role: "{{ mso_role }}"
+      register: r_mso_role

@@ -1,0 +1,10 @@
+---
+- name: "module_installp"
+  installp: "{{ installp }}"
+  register: r_installp
+  vars:
+    installp: 
+      repository_path: "{{ installp_repository_path | default(omit, True) }}"
+      accept_license: "{{ installp_accept_license | default(omit, True) }}"
+      name: "{{ installp_name | default(omit, True) }}"
+      state: "{{ installp_state | default(omit, True) }}"

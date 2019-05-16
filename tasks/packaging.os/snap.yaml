@@ -1,0 +1,10 @@
+---
+- name: "module_snap"
+  snap: "{{ snap }}"
+  register: r_snap
+  vars:
+    snap: 
+      state: "{{ snap_state | default(omit, True) }}"
+      name: "{{ snap_name | default(omit, True) }}"
+      channel: "{{ snap_channel | default(omit, True) }}"
+      classic: "{{ snap_classic | default(omit, True) }}"

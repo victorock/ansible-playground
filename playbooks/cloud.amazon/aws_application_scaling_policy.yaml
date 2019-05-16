@@ -17,6 +17,7 @@
       validate_certs: "{{ aws_application_scaling_policy_validate_certs | default(omit, True) }}"
       region: "{{ aws_application_scaling_policy_region | default(omit, True) }}"
       target_tracking_scaling_policy_configuration: "{{ aws_application_scaling_policy_target_tracking_scaling_policy_configuration | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_application_scaling_policy_debug_botocore_endpoint_logs | default(omit, True) }}"
       step_scaling_policy_configuration: "{{ aws_application_scaling_policy_step_scaling_policy_configuration | default(omit, True) }}"
       minimum_tasks: "{{ aws_application_scaling_policy_minimum_tasks | default(omit, True) }}"
       ec2_url: "{{ aws_application_scaling_policy_ec2_url | default(omit, True) }}"

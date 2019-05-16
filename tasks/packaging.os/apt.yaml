@@ -8,6 +8,7 @@
       autoremove: "{{ apt_autoremove | default(omit, True) }}"
       force: "{{ apt_force | default(omit, True) }}"
       force_apt_get: "{{ apt_force_apt_get | default(omit, True) }}"
+      policy_rc_d: "{{ apt_policy_rc_d | default(omit, True) }}"
       install_recommends: "{{ apt_install_recommends | default(omit, True) }}"
       autoclean: "{{ apt_autoclean | default(omit, True) }}"
       purge: "{{ apt_purge | default(omit, True) }}"

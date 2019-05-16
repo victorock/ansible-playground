@@ -1,0 +1,21 @@
+---
+- name: "module_utm_proxy_frontend_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_proxy_frontend_info: 
+      utm_host: "{{ utm_proxy_frontend_info_utm_host | default(omit, True) }}"
+      name: "{{ utm_proxy_frontend_info_name | default(omit, True) }}"
+      utm_token: "{{ utm_proxy_frontend_info_utm_token | default(omit, True) }}"
+      utm_protocol: "{{ utm_proxy_frontend_info_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_proxy_frontend_info_headers | default(omit, True) }}"
+      state: "{{ utm_proxy_frontend_info_state | default(omit, True) }}"
+      validate_certs: "{{ utm_proxy_frontend_info_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_proxy_frontend_info_utm_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_proxy_frontend_info"
+      utm_proxy_frontend_info: "{{ utm_proxy_frontend_info }}"
+      register: r_utm_proxy_frontend_info

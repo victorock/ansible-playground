@@ -1,0 +1,18 @@
+---
+- name: "module_vmware_object_role_permission"
+  vmware_object_role_permission: "{{ vmware_object_role_permission }}"
+  register: r_vmware_object_role_permission
+  vars:
+    vmware_object_role_permission: 
+      username: "{{ vmware_object_role_permission_username | default(omit, True) }}"
+      hostname: "{{ vmware_object_role_permission_hostname | default(omit, True) }}"
+      group: "{{ vmware_object_role_permission_group | default(omit, True) }}"
+      recursive: "{{ vmware_object_role_permission_recursive | default(omit, True) }}"
+      object_type: "{{ vmware_object_role_permission_object_type | default(omit, True) }}"
+      state: "{{ vmware_object_role_permission_state | default(omit, True) }}"
+      object_name: "{{ vmware_object_role_permission_object_name | default(omit, True) }}"
+      role: "{{ vmware_object_role_permission_role | default(omit, True) }}"
+      password: "{{ vmware_object_role_permission_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_object_role_permission_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_object_role_permission_port | default(omit, True) }}"
+      principal: "{{ vmware_object_role_permission_principal | default(omit, True) }}"

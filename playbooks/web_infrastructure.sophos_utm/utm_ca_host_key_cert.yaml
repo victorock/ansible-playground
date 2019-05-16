@@ -1,0 +1,27 @@
+---
+- name: "module_utm_ca_host_key_cert"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_ca_host_key_cert: 
+      comment: "{{ utm_ca_host_key_cert_comment | default(omit, True) }}"
+      utm_host: "{{ utm_ca_host_key_cert_utm_host | default(omit, True) }}"
+      name: "{{ utm_ca_host_key_cert_name | default(omit, True) }}"
+      certificate: "{{ utm_ca_host_key_cert_certificate | default(omit, True) }}"
+      encrypted: "{{ utm_ca_host_key_cert_encrypted | default(omit, True) }}"
+      ca: "{{ utm_ca_host_key_cert_ca | default(omit, True) }}"
+      utm_token: "{{ utm_ca_host_key_cert_utm_token | default(omit, True) }}"
+      utm_protocol: "{{ utm_ca_host_key_cert_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_ca_host_key_cert_headers | default(omit, True) }}"
+      state: "{{ utm_ca_host_key_cert_state | default(omit, True) }}"
+      meta: "{{ utm_ca_host_key_cert_meta | default(omit, True) }}"
+      key: "{{ utm_ca_host_key_cert_key | default(omit, True) }}"
+      validate_certs: "{{ utm_ca_host_key_cert_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_ca_host_key_cert_utm_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_ca_host_key_cert"
+      utm_ca_host_key_cert: "{{ utm_ca_host_key_cert }}"
+      register: r_utm_ca_host_key_cert

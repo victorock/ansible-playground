@@ -1,0 +1,24 @@
+---
+- name: "module_hwc_smn_topic"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    hwc_smn_topic: 
+      domain: "{{ hwc_smn_topic_domain | default(omit, True) }}"
+      display_name: "{{ hwc_smn_topic_display_name | default(omit, True) }}"
+      name: "{{ hwc_smn_topic_name | default(omit, True) }}"
+      timeouts: "{{ hwc_smn_topic_timeouts | default(omit, True) }}"
+      region: "{{ hwc_smn_topic_region | default(omit, True) }}"
+      project: "{{ hwc_smn_topic_project | default(omit, True) }}"
+      state: "{{ hwc_smn_topic_state | default(omit, True) }}"
+      user: "{{ hwc_smn_topic_user | default(omit, True) }}"
+      password: "{{ hwc_smn_topic_password | default(omit, True) }}"
+      id: "{{ hwc_smn_topic_id | default(omit, True) }}"
+      identity_endpoint: "{{ hwc_smn_topic_identity_endpoint | default(omit, True) }}"
+  tasks:
+    - name: "plugin_hwc_smn_topic"
+      hwc_smn_topic: "{{ hwc_smn_topic }}"
+      register: r_hwc_smn_topic

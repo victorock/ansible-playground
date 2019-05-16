@@ -15,6 +15,8 @@
       access_level: "{{ na_ontap_user_role_access_level | default(omit, True) }}"
       state: "{{ na_ontap_user_role_state | default(omit, True) }}"
       https: "{{ na_ontap_user_role_https | default(omit, True) }}"
+      query: "{{ na_ontap_user_role_query | default(omit, True) }}"
+      ontapi: "{{ na_ontap_user_role_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_user_role_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_user_role_validate_certs | default(omit, True) }}"
       command_directory_name: "{{ na_ontap_user_role_command_directory_name | default(omit, True) }}"

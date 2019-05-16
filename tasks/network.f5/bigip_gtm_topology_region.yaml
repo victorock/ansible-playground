@@ -1,0 +1,16 @@
+---
+- name: "module_bigip_gtm_topology_region"
+  bigip_gtm_topology_region: "{{ bigip_gtm_topology_region }}"
+  register: r_bigip_gtm_topology_region
+  vars:
+    bigip_gtm_topology_region: 
+      region_members: "{{ bigip_gtm_topology_region_region_members | default(omit, True) }}"
+      name: "{{ bigip_gtm_topology_region_name | default(omit, True) }}"
+      partition: "{{ bigip_gtm_topology_region_partition | default(omit, True) }}"
+      server: "{{ bigip_gtm_topology_region_server | default(omit, True) }}"
+      state: "{{ bigip_gtm_topology_region_state | default(omit, True) }}"
+      user: "{{ bigip_gtm_topology_region_user | default(omit, True) }}"
+      server_port: "{{ bigip_gtm_topology_region_server_port | default(omit, True) }}"
+      provider: "{{ bigip_gtm_topology_region_provider | default(omit, True) }}"
+      password: "{{ bigip_gtm_topology_region_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_gtm_topology_region_validate_certs | default(omit, True) }}"

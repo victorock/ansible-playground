@@ -8,15 +8,16 @@
   vars:
     vmware_guest_move: 
       dest_folder: "{{ vmware_guest_move_dest_folder | default(omit, True) }}"
-      datacenter: "{{ vmware_guest_move_datacenter | default(omit, True) }}"
-      uuid: "{{ vmware_guest_move_uuid | default(omit, True) }}"
-      hostname: "{{ vmware_guest_move_hostname | default(omit, True) }}"
       username: "{{ vmware_guest_move_username | default(omit, True) }}"
+      name: "{{ vmware_guest_move_name | default(omit, True) }}"
+      datacenter: "{{ vmware_guest_move_datacenter | default(omit, True) }}"
+      hostname: "{{ vmware_guest_move_hostname | default(omit, True) }}"
+      use_instance_uuid: "{{ vmware_guest_move_use_instance_uuid | default(omit, True) }}"
       name_match: "{{ vmware_guest_move_name_match | default(omit, True) }}"
       password: "{{ vmware_guest_move_password | default(omit, True) }}"
       validate_certs: "{{ vmware_guest_move_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_move_port | default(omit, True) }}"
-      name: "{{ vmware_guest_move_name | default(omit, True) }}"
+      uuid: "{{ vmware_guest_move_uuid | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_guest_move"
       vmware_guest_move: "{{ vmware_guest_move }}"

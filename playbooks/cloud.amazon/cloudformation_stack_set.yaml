@@ -8,6 +8,7 @@
   vars:
     cloudformation_stack_set: 
       template_body: "{{ cloudformation_stack_set_template_body | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ cloudformation_stack_set_debug_botocore_endpoint_logs | default(omit, True) }}"
       accounts: "{{ cloudformation_stack_set_accounts | default(omit, True) }}"
       ec2_url: "{{ cloudformation_stack_set_ec2_url | default(omit, True) }}"
       aws_secret_key: "{{ cloudformation_stack_set_aws_secret_key | default(omit, True) }}"

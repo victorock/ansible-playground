@@ -1,0 +1,22 @@
+---
+- name: "module_vmware_host_kernel_manager"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    vmware_host_kernel_manager: 
+      username: "{{ vmware_host_kernel_manager_username | default(omit, True) }}"
+      kernel_module_name: "{{ vmware_host_kernel_manager_kernel_module_name | default(omit, True) }}"
+      kernel_module_option: "{{ vmware_host_kernel_manager_kernel_module_option | default(omit, True) }}"
+      hostname: "{{ vmware_host_kernel_manager_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_kernel_manager_cluster_name | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_kernel_manager_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_kernel_manager_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_kernel_manager_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_kernel_manager_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_vmware_host_kernel_manager"
+      vmware_host_kernel_manager: "{{ vmware_host_kernel_manager }}"
+      register: r_vmware_host_kernel_manager

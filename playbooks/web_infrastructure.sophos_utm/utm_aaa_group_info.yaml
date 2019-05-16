@@ -1,0 +1,21 @@
+---
+- name: "module_utm_aaa_group_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_aaa_group_info: 
+      utm_host: "{{ utm_aaa_group_info_utm_host | default(omit, True) }}"
+      name: "{{ utm_aaa_group_info_name | default(omit, True) }}"
+      utm_token: "{{ utm_aaa_group_info_utm_token | default(omit, True) }}"
+      utm_protocol: "{{ utm_aaa_group_info_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_aaa_group_info_headers | default(omit, True) }}"
+      state: "{{ utm_aaa_group_info_state | default(omit, True) }}"
+      validate_certs: "{{ utm_aaa_group_info_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_aaa_group_info_utm_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_aaa_group_info"
+      utm_aaa_group_info: "{{ utm_aaa_group_info }}"
+      register: r_utm_aaa_group_info

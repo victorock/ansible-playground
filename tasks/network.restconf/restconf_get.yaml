@@ -1,0 +1,9 @@
+---
+- name: "module_restconf_get"
+  restconf_get: "{{ restconf_get }}"
+  register: r_restconf_get
+  vars:
+    restconf_get: 
+      content: "{{ restconf_get_content | default(omit, True) }}"
+      path: "{{ restconf_get_path | default(omit, True) }}"
+      output: "{{ restconf_get_output | default(omit, True) }}"

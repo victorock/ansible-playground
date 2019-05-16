@@ -4,8 +4,9 @@
   register: r_git_config
   vars:
     git_config: 
-      repo: "{{ git_config_repo | default(omit, True) }}"
-      scope: "{{ git_config_scope | default(omit, True) }}"
-      list_all: "{{ git_config_list_all | default(omit, True) }}"
       name: "{{ git_config_name | default(omit, True) }}"
       value: "{{ git_config_value | default(omit, True) }}"
+      repo: "{{ git_config_repo | default(omit, True) }}"
+      state: "{{ git_config_state | default(omit, True) }}"
+      list_all: "{{ git_config_list_all | default(omit, True) }}"
+      scope: "{{ git_config_scope | default(omit, True) }}"

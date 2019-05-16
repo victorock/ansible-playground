@@ -1,0 +1,36 @@
+---
+- name: "module_azure_rm_servicebussaspolicy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_servicebussaspolicy: 
+      resource_group: "{{ azure_rm_servicebussaspolicy_resource_group | default(omit, True) }}"
+      ad_user: "{{ azure_rm_servicebussaspolicy_ad_user | default(omit, True) }}"
+      secret: "{{ azure_rm_servicebussaspolicy_secret | default(omit, True) }}"
+      regenerate_secondary_key: "{{ azure_rm_servicebussaspolicy_regenerate_secondary_key | default(omit, True) }}"
+      topic: "{{ azure_rm_servicebussaspolicy_topic | default(omit, True) }}"
+      append_tags: "{{ azure_rm_servicebussaspolicy_append_tags | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_servicebussaspolicy_cloud_environment | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_servicebussaspolicy_cert_validation_mode | default(omit, True) }}"
+      regenerate_primary_key: "{{ azure_rm_servicebussaspolicy_regenerate_primary_key | default(omit, True) }}"
+      state: "{{ azure_rm_servicebussaspolicy_state | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_servicebussaspolicy_subscription_id | default(omit, True) }}"
+      profile: "{{ azure_rm_servicebussaspolicy_profile | default(omit, True) }}"
+      tags: "{{ azure_rm_servicebussaspolicy_tags | default(omit, True) }}"
+      client_id: "{{ azure_rm_servicebussaspolicy_client_id | default(omit, True) }}"
+      api_profile: "{{ azure_rm_servicebussaspolicy_api_profile | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_servicebussaspolicy_adfs_authority_url | default(omit, True) }}"
+      password: "{{ azure_rm_servicebussaspolicy_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_servicebussaspolicy_tenant | default(omit, True) }}"
+      name: "{{ azure_rm_servicebussaspolicy_name | default(omit, True) }}"
+      rights: "{{ azure_rm_servicebussaspolicy_rights | default(omit, True) }}"
+      queue: "{{ azure_rm_servicebussaspolicy_queue | default(omit, True) }}"
+      auth_source: "{{ azure_rm_servicebussaspolicy_auth_source | default(omit, True) }}"
+      namespace: "{{ azure_rm_servicebussaspolicy_namespace | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_servicebussaspolicy"
+      azure_rm_servicebussaspolicy: "{{ azure_rm_servicebussaspolicy }}"
+      register: r_azure_rm_servicebussaspolicy

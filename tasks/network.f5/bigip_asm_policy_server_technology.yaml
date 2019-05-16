@@ -1,0 +1,16 @@
+---
+- name: "module_bigip_asm_policy_server_technology"
+  bigip_asm_policy_server_technology: "{{ bigip_asm_policy_server_technology }}"
+  register: r_bigip_asm_policy_server_technology
+  vars:
+    bigip_asm_policy_server_technology: 
+      name: "{{ bigip_asm_policy_server_technology_name | default(omit, True) }}"
+      partition: "{{ bigip_asm_policy_server_technology_partition | default(omit, True) }}"
+      server: "{{ bigip_asm_policy_server_technology_server | default(omit, True) }}"
+      state: "{{ bigip_asm_policy_server_technology_state | default(omit, True) }}"
+      user: "{{ bigip_asm_policy_server_technology_user | default(omit, True) }}"
+      server_port: "{{ bigip_asm_policy_server_technology_server_port | default(omit, True) }}"
+      provider: "{{ bigip_asm_policy_server_technology_provider | default(omit, True) }}"
+      policy_name: "{{ bigip_asm_policy_server_technology_policy_name | default(omit, True) }}"
+      password: "{{ bigip_asm_policy_server_technology_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_asm_policy_server_technology_validate_certs | default(omit, True) }}"

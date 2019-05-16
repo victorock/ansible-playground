@@ -1,0 +1,30 @@
+---
+- name: "module_ig_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ig_config: 
+      return_rowid: "{{ ig_config_return_rowid | default(omit, True) }}"
+      get: "{{ ig_config_get | default(omit, True) }}"
+      modify: "{{ ig_config_modify | default(omit, True) }}"
+      revert: "{{ ig_config_revert | default(omit, True) }}"
+      factory: "{{ ig_config_factory | default(omit, True) }}"
+      no_response: "{{ ig_config_no_response | default(omit, True) }}"
+      filename: "{{ ig_config_filename | default(omit, True) }}"
+      store_download: "{{ ig_config_store_download | default(omit, True) }}"
+      add: "{{ ig_config_add | default(omit, True) }}"
+      client: "{{ ig_config_client | default(omit, True) }}"
+      columns: "{{ ig_config_columns | default(omit, True) }}"
+      rowid: "{{ ig_config_rowid | default(omit, True) }}"
+      table: "{{ ig_config_table | default(omit, True) }}"
+      download: "{{ ig_config_download | default(omit, True) }}"
+      path: "{{ ig_config_path | default(omit, True) }}"
+      store: "{{ ig_config_store | default(omit, True) }}"
+      delete: "{{ ig_config_delete | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ig_config"
+      ig_config: "{{ ig_config }}"
+      register: r_ig_config

@@ -1,0 +1,8 @@
+---
+- name: "module_onyx_igmp_interface"
+  onyx_igmp_interface: "{{ onyx_igmp_interface }}"
+  register: r_onyx_igmp_interface
+  vars:
+    onyx_igmp_interface: 
+      state: "{{ onyx_igmp_interface_state | default(omit, True) }}"
+      name: "{{ onyx_igmp_interface_name | default(omit, True) }}"

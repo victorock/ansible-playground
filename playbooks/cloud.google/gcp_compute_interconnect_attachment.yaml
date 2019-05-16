@@ -1,0 +1,29 @@
+---
+- name: "module_gcp_compute_interconnect_attachment"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_compute_interconnect_attachment: 
+      scopes: "{{ gcp_compute_interconnect_attachment_scopes | default(omit, True) }}"
+      edge_availability_domain: "{{ gcp_compute_interconnect_attachment_edge_availability_domain | default(omit, True) }}"
+      interconnect: "{{ gcp_compute_interconnect_attachment_interconnect | default(omit, True) }}"
+      description: "{{ gcp_compute_interconnect_attachment_description | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_interconnect_attachment_service_account_email | default(omit, True) }}"
+      region: "{{ gcp_compute_interconnect_attachment_region | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_interconnect_attachment_service_account_contents | default(omit, True) }}"
+      candidate_subnets: "{{ gcp_compute_interconnect_attachment_candidate_subnets | default(omit, True) }}"
+      project: "{{ gcp_compute_interconnect_attachment_project | default(omit, True) }}"
+      state: "{{ gcp_compute_interconnect_attachment_state | default(omit, True) }}"
+      vlan_tag8021q: "{{ gcp_compute_interconnect_attachment_vlan_tag8021q | default(omit, True) }}"
+      router: "{{ gcp_compute_interconnect_attachment_router | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_interconnect_attachment_service_account_file | default(omit, True) }}"
+      type: "{{ gcp_compute_interconnect_attachment_type | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_interconnect_attachment_auth_kind | default(omit, True) }}"
+      name: "{{ gcp_compute_interconnect_attachment_name | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_compute_interconnect_attachment"
+      gcp_compute_interconnect_attachment: "{{ gcp_compute_interconnect_attachment }}"
+      register: r_gcp_compute_interconnect_attachment

@@ -1,0 +1,28 @@
+---
+- name: "module_bigip_device_auth_ldap"
+  bigip_device_auth_ldap: "{{ bigip_device_auth_ldap }}"
+  register: r_bigip_device_auth_ldap
+  vars:
+    bigip_device_auth_ldap: 
+      update_password: "{{ bigip_device_auth_ldap_update_password | default(omit, True) }}"
+      remote_directory_tree: "{{ bigip_device_auth_ldap_remote_directory_tree | default(omit, True) }}"
+      servers: "{{ bigip_device_auth_ldap_servers | default(omit, True) }}"
+      port: "{{ bigip_device_auth_ldap_port | default(omit, True) }}"
+      client_key: "{{ bigip_device_auth_ldap_client_key | default(omit, True) }}"
+      login_ldap_attr: "{{ bigip_device_auth_ldap_login_ldap_attr | default(omit, True) }}"
+      user_template: "{{ bigip_device_auth_ldap_user_template | default(omit, True) }}"
+      bind_dn: "{{ bigip_device_auth_ldap_bind_dn | default(omit, True) }}"
+      fallback_to_local: "{{ bigip_device_auth_ldap_fallback_to_local | default(omit, True) }}"
+      state: "{{ bigip_device_auth_ldap_state | default(omit, True) }}"
+      server_port: "{{ bigip_device_auth_ldap_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_auth_ldap_provider | default(omit, True) }}"
+      scope: "{{ bigip_device_auth_ldap_scope | default(omit, True) }}"
+      client_cert: "{{ bigip_device_auth_ldap_client_cert | default(omit, True) }}"
+      bind_password: "{{ bigip_device_auth_ldap_bind_password | default(omit, True) }}"
+      ca_cert: "{{ bigip_device_auth_ldap_ca_cert | default(omit, True) }}"
+      ssl: "{{ bigip_device_auth_ldap_ssl | default(omit, True) }}"
+      user: "{{ bigip_device_auth_ldap_user | default(omit, True) }}"
+      password: "{{ bigip_device_auth_ldap_password | default(omit, True) }}"
+      check_member_attr: "{{ bigip_device_auth_ldap_check_member_attr | default(omit, True) }}"
+      server: "{{ bigip_device_auth_ldap_server | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_auth_ldap_validate_certs | default(omit, True) }}"

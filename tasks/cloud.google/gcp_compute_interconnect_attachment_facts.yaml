@@ -1,0 +1,14 @@
+---
+- name: "module_gcp_compute_interconnect_attachment_facts"
+  gcp_compute_interconnect_attachment_facts: "{{ gcp_compute_interconnect_attachment_facts }}"
+  register: r_gcp_compute_interconnect_attachment_facts
+  vars:
+    gcp_compute_interconnect_attachment_facts: 
+      scopes: "{{ gcp_compute_interconnect_attachment_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_compute_interconnect_attachment_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_interconnect_attachment_facts_service_account_email | default(omit, True) }}"
+      region: "{{ gcp_compute_interconnect_attachment_facts_region | default(omit, True) }}"
+      project: "{{ gcp_compute_interconnect_attachment_facts_project | default(omit, True) }}"
+      filters: "{{ gcp_compute_interconnect_attachment_facts_filters | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_interconnect_attachment_facts_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_interconnect_attachment_facts_auth_kind | default(omit, True) }}"

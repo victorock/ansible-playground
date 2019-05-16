@@ -1,0 +1,22 @@
+---
+- name: "module_ucs_managed_objects"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ucs_managed_objects: 
+      username: "{{ ucs_managed_objects_username | default(omit, True) }}"
+      use_proxy: "{{ ucs_managed_objects_use_proxy | default(omit, True) }}"
+      hostname: "{{ ucs_managed_objects_hostname | default(omit, True) }}"
+      state: "{{ ucs_managed_objects_state | default(omit, True) }}"
+      objects: "{{ ucs_managed_objects_objects | default(omit, True) }}"
+      proxy: "{{ ucs_managed_objects_proxy | default(omit, True) }}"
+      use_ssl: "{{ ucs_managed_objects_use_ssl | default(omit, True) }}"
+      password: "{{ ucs_managed_objects_password | default(omit, True) }}"
+      port: "{{ ucs_managed_objects_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ucs_managed_objects"
+      ucs_managed_objects: "{{ ucs_managed_objects }}"
+      register: r_ucs_managed_objects

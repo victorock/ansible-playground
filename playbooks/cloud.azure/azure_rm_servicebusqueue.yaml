@@ -1,0 +1,46 @@
+---
+- name: "module_azure_rm_servicebusqueue"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_servicebusqueue: 
+      status: "{{ azure_rm_servicebusqueue_status | default(omit, True) }}"
+      resource_group: "{{ azure_rm_servicebusqueue_resource_group | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_servicebusqueue_cloud_environment | default(omit, True) }}"
+      secret: "{{ azure_rm_servicebusqueue_secret | default(omit, True) }}"
+      enable_express: "{{ azure_rm_servicebusqueue_enable_express | default(omit, True) }}"
+      max_delivery_count: "{{ azure_rm_servicebusqueue_max_delivery_count | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_servicebusqueue_cert_validation_mode | default(omit, True) }}"
+      max_size_in_mb: "{{ azure_rm_servicebusqueue_max_size_in_mb | default(omit, True) }}"
+      requires_duplicate_detection: "{{ azure_rm_servicebusqueue_requires_duplicate_detection | default(omit, True) }}"
+      append_tags: "{{ azure_rm_servicebusqueue_append_tags | default(omit, True) }}"
+      ad_user: "{{ azure_rm_servicebusqueue_ad_user | default(omit, True) }}"
+      enable_partitioning: "{{ azure_rm_servicebusqueue_enable_partitioning | default(omit, True) }}"
+      forward_dead_lettered_messages_to: "{{ azure_rm_servicebusqueue_forward_dead_lettered_messages_to | default(omit, True) }}"
+      state: "{{ azure_rm_servicebusqueue_state | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_servicebusqueue_subscription_id | default(omit, True) }}"
+      profile: "{{ azure_rm_servicebusqueue_profile | default(omit, True) }}"
+      lock_duration_in_seconds: "{{ azure_rm_servicebusqueue_lock_duration_in_seconds | default(omit, True) }}"
+      default_message_time_to_live_seconds: "{{ azure_rm_servicebusqueue_default_message_time_to_live_seconds | default(omit, True) }}"
+      duplicate_detection_time_in_seconds: "{{ azure_rm_servicebusqueue_duplicate_detection_time_in_seconds | default(omit, True) }}"
+      tags: "{{ azure_rm_servicebusqueue_tags | default(omit, True) }}"
+      enable_batched_operations: "{{ azure_rm_servicebusqueue_enable_batched_operations | default(omit, True) }}"
+      auto_delete_on_idle_in_seconds: "{{ azure_rm_servicebusqueue_auto_delete_on_idle_in_seconds | default(omit, True) }}"
+      forward_to: "{{ azure_rm_servicebusqueue_forward_to | default(omit, True) }}"
+      client_id: "{{ azure_rm_servicebusqueue_client_id | default(omit, True) }}"
+      api_profile: "{{ azure_rm_servicebusqueue_api_profile | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_servicebusqueue_adfs_authority_url | default(omit, True) }}"
+      password: "{{ azure_rm_servicebusqueue_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_servicebusqueue_tenant | default(omit, True) }}"
+      name: "{{ azure_rm_servicebusqueue_name | default(omit, True) }}"
+      requires_session: "{{ azure_rm_servicebusqueue_requires_session | default(omit, True) }}"
+      dead_lettering_on_message_expiration: "{{ azure_rm_servicebusqueue_dead_lettering_on_message_expiration | default(omit, True) }}"
+      auth_source: "{{ azure_rm_servicebusqueue_auth_source | default(omit, True) }}"
+      namespace: "{{ azure_rm_servicebusqueue_namespace | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_servicebusqueue"
+      azure_rm_servicebusqueue: "{{ azure_rm_servicebusqueue }}"
+      register: r_azure_rm_servicebusqueue

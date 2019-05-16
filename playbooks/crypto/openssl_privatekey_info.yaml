@@ -1,0 +1,17 @@
+---
+- name: "module_openssl_privatekey_info"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    openssl_privatekey_info: 
+      select_crypto_backend: "{{ openssl_privatekey_info_select_crypto_backend | default(omit, True) }}"
+      path: "{{ openssl_privatekey_info_path | default(omit, True) }}"
+      return_private_key_data: "{{ openssl_privatekey_info_return_private_key_data | default(omit, True) }}"
+      passphrase: "{{ openssl_privatekey_info_passphrase | default(omit, True) }}"
+  tasks:
+    - name: "plugin_openssl_privatekey_info"
+      openssl_privatekey_info: "{{ openssl_privatekey_info }}"
+      register: r_openssl_privatekey_info

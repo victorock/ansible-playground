@@ -1,0 +1,56 @@
+---
+- name: "module_fmgr_secprof_spam"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_secprof_spam: 
+      comment: "{{ fmgr_secprof_spam_comment | default(omit, True) }}"
+      spam_bword_threshold: "{{ fmgr_secprof_spam_spam_bword_threshold | default(omit, True) }}"
+      spam_iptrust_table: "{{ fmgr_secprof_spam_spam_iptrust_table | default(omit, True) }}"
+      spam_log_fortiguard_response: "{{ fmgr_secprof_spam_spam_log_fortiguard_response | default(omit, True) }}"
+      mapi_log: "{{ fmgr_secprof_spam_mapi_log | default(omit, True) }}"
+      msn_hotmail_log: "{{ fmgr_secprof_spam_msn_hotmail_log | default(omit, True) }}"
+      replacemsg_group: "{{ fmgr_secprof_spam_replacemsg_group | default(omit, True) }}"
+      imap_tag_msg: "{{ fmgr_secprof_spam_imap_tag_msg | default(omit, True) }}"
+      gmail: "{{ fmgr_secprof_spam_gmail | default(omit, True) }}"
+      smtp_hdrip: "{{ fmgr_secprof_spam_smtp_hdrip | default(omit, True) }}"
+      smtp_log: "{{ fmgr_secprof_spam_smtp_log | default(omit, True) }}"
+      spam_mheader_table: "{{ fmgr_secprof_spam_spam_mheader_table | default(omit, True) }}"
+      spam_rbl_table: "{{ fmgr_secprof_spam_spam_rbl_table | default(omit, True) }}"
+      mapi: "{{ fmgr_secprof_spam_mapi | default(omit, True) }}"
+      spam_bword_table: "{{ fmgr_secprof_spam_spam_bword_table | default(omit, True) }}"
+      yahoo_mail: "{{ fmgr_secprof_spam_yahoo_mail | default(omit, True) }}"
+      gmail_log: "{{ fmgr_secprof_spam_gmail_log | default(omit, True) }}"
+      yahoo_mail_log: "{{ fmgr_secprof_spam_yahoo_mail_log | default(omit, True) }}"
+      spam_log: "{{ fmgr_secprof_spam_spam_log | default(omit, True) }}"
+      smtp_tag_msg: "{{ fmgr_secprof_spam_smtp_tag_msg | default(omit, True) }}"
+      flow_based: "{{ fmgr_secprof_spam_flow_based | default(omit, True) }}"
+      adom: "{{ fmgr_secprof_spam_adom | default(omit, True) }}"
+      smtp: "{{ fmgr_secprof_spam_smtp | default(omit, True) }}"
+      smtp_action: "{{ fmgr_secprof_spam_smtp_action | default(omit, True) }}"
+      pop3_log: "{{ fmgr_secprof_spam_pop3_log | default(omit, True) }}"
+      pop3: "{{ fmgr_secprof_spam_pop3 | default(omit, True) }}"
+      external: "{{ fmgr_secprof_spam_external | default(omit, True) }}"
+      smtp_local_override: "{{ fmgr_secprof_spam_smtp_local_override | default(omit, True) }}"
+      imap: "{{ fmgr_secprof_spam_imap | default(omit, True) }}"
+      imap_tag_type: "{{ fmgr_secprof_spam_imap_tag_type | default(omit, True) }}"
+      pop3_tag_type: "{{ fmgr_secprof_spam_pop3_tag_type | default(omit, True) }}"
+      msn_hotmail: "{{ fmgr_secprof_spam_msn_hotmail | default(omit, True) }}"
+      name: "{{ fmgr_secprof_spam_name | default(omit, True) }}"
+      imap_log: "{{ fmgr_secprof_spam_imap_log | default(omit, True) }}"
+      spam_filtering: "{{ fmgr_secprof_spam_spam_filtering | default(omit, True) }}"
+      pop3_tag_msg: "{{ fmgr_secprof_spam_pop3_tag_msg | default(omit, True) }}"
+      imap_action: "{{ fmgr_secprof_spam_imap_action | default(omit, True) }}"
+      pop3_action: "{{ fmgr_secprof_spam_pop3_action | default(omit, True) }}"
+      mode: "{{ fmgr_secprof_spam_mode | default(omit, True) }}"
+      smtp_tag_type: "{{ fmgr_secprof_spam_smtp_tag_type | default(omit, True) }}"
+      options: "{{ fmgr_secprof_spam_options | default(omit, True) }}"
+      spam_bwl_table: "{{ fmgr_secprof_spam_spam_bwl_table | default(omit, True) }}"
+      mapi_action: "{{ fmgr_secprof_spam_mapi_action | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fmgr_secprof_spam"
+      fmgr_secprof_spam: "{{ fmgr_secprof_spam }}"
+      register: r_fmgr_secprof_spam

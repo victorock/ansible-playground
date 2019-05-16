@@ -4,16 +4,18 @@
   register: r_postgresql_db
   vars:
     postgresql_db: 
-      ssl_rootcert: "{{ postgresql_db_ssl_rootcert | default(omit, True) }}"
+      lc_collate: "{{ postgresql_db_lc_collate | default(omit, True) }}"
+      target_opts: "{{ postgresql_db_target_opts | default(omit, True) }}"
       ssl_mode: "{{ postgresql_db_ssl_mode | default(omit, True) }}"
       target: "{{ postgresql_db_target | default(omit, True) }}"
-      lc_collate: "{{ postgresql_db_lc_collate | default(omit, True) }}"
+      ca_cert: "{{ postgresql_db_ca_cert | default(omit, True) }}"
       encoding: "{{ postgresql_db_encoding | default(omit, True) }}"
       login_user: "{{ postgresql_db_login_user | default(omit, True) }}"
       login_host: "{{ postgresql_db_login_host | default(omit, True) }}"
-      target_opts: "{{ postgresql_db_target_opts | default(omit, True) }}"
+      session_role: "{{ postgresql_db_session_role | default(omit, True) }}"
       lc_ctype: "{{ postgresql_db_lc_ctype | default(omit, True) }}"
       maintenance_db: "{{ postgresql_db_maintenance_db | default(omit, True) }}"
+      conn_limit: "{{ postgresql_db_conn_limit | default(omit, True) }}"
       login_unix_socket: "{{ postgresql_db_login_unix_socket | default(omit, True) }}"
       state: "{{ postgresql_db_state | default(omit, True) }}"
       template: "{{ postgresql_db_template | default(omit, True) }}"

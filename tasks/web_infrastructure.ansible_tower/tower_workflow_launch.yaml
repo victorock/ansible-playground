@@ -1,0 +1,15 @@
+---
+- name: "module_tower_workflow_launch"
+  tower_workflow_launch: "{{ tower_workflow_launch }}"
+  register: r_tower_workflow_launch
+  vars:
+    tower_workflow_launch: 
+      extra_vars: "{{ tower_workflow_launch_extra_vars | default(omit, True) }}"
+      tower_host: "{{ tower_workflow_launch_tower_host | default(omit, True) }}"
+      tower_username: "{{ tower_workflow_launch_tower_username | default(omit, True) }}"
+      timeout: "{{ tower_workflow_launch_timeout | default(omit, True) }}"
+      tower_password: "{{ tower_workflow_launch_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_workflow_launch_tower_config_file | default(omit, True) }}"
+      workflow_template: "{{ tower_workflow_launch_workflow_template | default(omit, True) }}"
+      validate_certs: "{{ tower_workflow_launch_validate_certs | default(omit, True) }}"
+      wait: "{{ tower_workflow_launch_wait | default(omit, True) }}"

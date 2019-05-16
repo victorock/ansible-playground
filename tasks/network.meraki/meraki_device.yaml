@@ -10,6 +10,7 @@
       use_https: "{{ meraki_device_use_https | default(omit, True) }}"
       use_proxy: "{{ meraki_device_use_proxy | default(omit, True) }}"
       hostname: "{{ meraki_device_hostname | default(omit, True) }}"
+      note: "{{ meraki_device_note | default(omit, True) }}"
       state: "{{ meraki_device_state | default(omit, True) }}"
       serial_lldp_cdp: "{{ meraki_device_serial_lldp_cdp | default(omit, True) }}"
       org_name: "{{ meraki_device_org_name | default(omit, True) }}"

@@ -5,13 +5,14 @@
   vars:
     na_elementsw_access_group: 
       username: "{{ na_elementsw_access_group_username | default(omit, True) }}"
-      new_name: "{{ na_elementsw_access_group_new_name | default(omit, True) }}"
+      from_name: "{{ na_elementsw_access_group_from_name | default(omit, True) }}"
+      account_id: "{{ na_elementsw_access_group_account_id | default(omit, True) }}"
       hostname: "{{ na_elementsw_access_group_hostname | default(omit, True) }}"
       virtual_network_id: "{{ na_elementsw_access_group_virtual_network_id | default(omit, True) }}"
       state: "{{ na_elementsw_access_group_state | default(omit, True) }}"
       volumes: "{{ na_elementsw_access_group_volumes | default(omit, True) }}"
       initiators: "{{ na_elementsw_access_group_initiators | default(omit, True) }}"
       attributes: "{{ na_elementsw_access_group_attributes | default(omit, True) }}"
-      src_access_group_id: "{{ na_elementsw_access_group_src_access_group_id | default(omit, True) }}"
-      password: "{{ na_elementsw_access_group_password | default(omit, True) }}"
       virtual_network_tags: "{{ na_elementsw_access_group_virtual_network_tags | default(omit, True) }}"
+      password: "{{ na_elementsw_access_group_password | default(omit, True) }}"
+      name: "{{ na_elementsw_access_group_name | default(omit, True) }}"

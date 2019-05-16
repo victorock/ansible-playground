@@ -1,0 +1,19 @@
+---
+- name: "module_gcp_iam_role_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_iam_role_facts: 
+      scopes: "{{ gcp_iam_role_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_iam_role_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_iam_role_facts_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_iam_role_facts_project | default(omit, True) }}"
+      auth_kind: "{{ gcp_iam_role_facts_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_iam_role_facts_service_account_file | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_iam_role_facts"
+      gcp_iam_role_facts: "{{ gcp_iam_role_facts }}"
+      register: r_gcp_iam_role_facts

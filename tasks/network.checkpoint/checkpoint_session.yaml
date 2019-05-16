@@ -1,0 +1,8 @@
+---
+- name: "module_checkpoint_session"
+  checkpoint_session: "{{ checkpoint_session }}"
+  register: r_checkpoint_session
+  vars:
+    checkpoint_session: 
+      state: "{{ checkpoint_session_state | default(omit, True) }}"
+      uid: "{{ checkpoint_session_uid | default(omit, True) }}"

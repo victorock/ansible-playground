@@ -1,0 +1,10 @@
+---
+- name: "module_purefb_s3acc"
+  purefb_s3acc: "{{ purefb_s3acc }}"
+  register: r_purefb_s3acc
+  vars:
+    purefb_s3acc: 
+      state: "{{ purefb_s3acc_state | default(omit, True) }}"
+      fb_url: "{{ purefb_s3acc_fb_url | default(omit, True) }}"
+      name: "{{ purefb_s3acc_name | default(omit, True) }}"
+      api_token: "{{ purefb_s3acc_api_token | default(omit, True) }}"

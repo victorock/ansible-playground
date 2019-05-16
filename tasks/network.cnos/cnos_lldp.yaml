@@ -1,0 +1,7 @@
+---
+- name: "module_cnos_lldp"
+  cnos_lldp: "{{ cnos_lldp }}"
+  register: r_cnos_lldp
+  vars:
+    cnos_lldp: 
+      state: "{{ cnos_lldp_state | default(omit, True) }}"

@@ -16,6 +16,7 @@
       virtual_gateway_id: "{{ aws_direct_connect_virtual_interface_virtual_gateway_id | default(omit, True) }}"
       region: "{{ aws_direct_connect_virtual_interface_region | default(omit, True) }}"
       vlan: "{{ aws_direct_connect_virtual_interface_vlan | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_direct_connect_virtual_interface_debug_botocore_endpoint_logs | default(omit, True) }}"
       public: "{{ aws_direct_connect_virtual_interface_public | default(omit, True) }}"
       customer_address: "{{ aws_direct_connect_virtual_interface_customer_address | default(omit, True) }}"
       state: "{{ aws_direct_connect_virtual_interface_state | default(omit, True) }}"

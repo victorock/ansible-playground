@@ -9,7 +9,6 @@
       image: "{{ rax_scaling_group_image | default(omit, True) }}"
       user_data: "{{ rax_scaling_group_user_data | default(omit, True) }}"
       min_entities: "{{ rax_scaling_group_min_entities | default(omit, True) }}"
-      verify_ssl: "{{ rax_scaling_group_verify_ssl | default(omit, True) }}"
       cooldown: "{{ rax_scaling_group_cooldown | default(omit, True) }}"
       flavor: "{{ rax_scaling_group_flavor | default(omit, True) }}"
       networks: "{{ rax_scaling_group_networks | default(omit, True) }}"
@@ -32,3 +31,4 @@
       tenant_id: "{{ rax_scaling_group_tenant_id | default(omit, True) }}"
       region: "{{ rax_scaling_group_region | default(omit, True) }}"
       meta: "{{ rax_scaling_group_meta | default(omit, True) }}"
+      validate_certs: "{{ rax_scaling_group_validate_certs | default(omit, True) }}"

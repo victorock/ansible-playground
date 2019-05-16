@@ -1,0 +1,12 @@
+---
+- name: "module_onyx_ptp_interface"
+  onyx_ptp_interface: "{{ onyx_ptp_interface }}"
+  register: r_onyx_ptp_interface
+  vars:
+    onyx_ptp_interface: 
+      sync_interval: "{{ onyx_ptp_interface_sync_interval | default(omit, True) }}"
+      name: "{{ onyx_ptp_interface_name | default(omit, True) }}"
+      delay_request: "{{ onyx_ptp_interface_delay_request | default(omit, True) }}"
+      state: "{{ onyx_ptp_interface_state | default(omit, True) }}"
+      announce_interval: "{{ onyx_ptp_interface_announce_interval | default(omit, True) }}"
+      announce_timeout: "{{ onyx_ptp_interface_announce_timeout | default(omit, True) }}"

@@ -1,0 +1,15 @@
+---
+- name: "module_ios_bgp"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    ios_bgp: 
+      operation: "{{ ios_bgp_operation | default(omit, True) }}"
+      config: "{{ ios_bgp_config | default(omit, True) }}"
+  tasks:
+    - name: "plugin_ios_bgp"
+      ios_bgp: "{{ ios_bgp }}"
+      register: r_ios_bgp

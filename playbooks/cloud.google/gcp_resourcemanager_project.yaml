@@ -1,0 +1,24 @@
+---
+- name: "module_gcp_resourcemanager_project"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_resourcemanager_project: 
+      scopes: "{{ gcp_resourcemanager_project_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_resourcemanager_project_service_account_contents | default(omit, True) }}"
+      name: "{{ gcp_resourcemanager_project_name | default(omit, True) }}"
+      parent: "{{ gcp_resourcemanager_project_parent | default(omit, True) }}"
+      service_account_email: "{{ gcp_resourcemanager_project_service_account_email | default(omit, True) }}"
+      labels: "{{ gcp_resourcemanager_project_labels | default(omit, True) }}"
+      project: "{{ gcp_resourcemanager_project_project | default(omit, True) }}"
+      state: "{{ gcp_resourcemanager_project_state | default(omit, True) }}"
+      auth_kind: "{{ gcp_resourcemanager_project_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_resourcemanager_project_service_account_file | default(omit, True) }}"
+      id: "{{ gcp_resourcemanager_project_id | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_resourcemanager_project"
+      gcp_resourcemanager_project: "{{ gcp_resourcemanager_project }}"
+      register: r_gcp_resourcemanager_project

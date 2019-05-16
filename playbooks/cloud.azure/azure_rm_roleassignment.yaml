@@ -1,0 +1,30 @@
+---
+- name: "module_azure_rm_roleassignment"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_roleassignment: 
+      profile: "{{ azure_rm_roleassignment_profile | default(omit, True) }}"
+      name: "{{ azure_rm_roleassignment_name | default(omit, True) }}"
+      ad_user: "{{ azure_rm_roleassignment_ad_user | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_roleassignment_cloud_environment | default(omit, True) }}"
+      state: "{{ azure_rm_roleassignment_state | default(omit, True) }}"
+      assignee_object_id: "{{ azure_rm_roleassignment_assignee_object_id | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_roleassignment_cert_validation_mode | default(omit, True) }}"
+      secret: "{{ azure_rm_roleassignment_secret | default(omit, True) }}"
+      client_id: "{{ azure_rm_roleassignment_client_id | default(omit, True) }}"
+      auth_source: "{{ azure_rm_roleassignment_auth_source | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_roleassignment_adfs_authority_url | default(omit, True) }}"
+      scope: "{{ azure_rm_roleassignment_scope | default(omit, True) }}"
+      role_definition_id: "{{ azure_rm_roleassignment_role_definition_id | default(omit, True) }}"
+      password: "{{ azure_rm_roleassignment_password | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_roleassignment_subscription_id | default(omit, True) }}"
+      tenant: "{{ azure_rm_roleassignment_tenant | default(omit, True) }}"
+      api_profile: "{{ azure_rm_roleassignment_api_profile | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_roleassignment"
+      azure_rm_roleassignment: "{{ azure_rm_roleassignment }}"
+      register: r_azure_rm_roleassignment

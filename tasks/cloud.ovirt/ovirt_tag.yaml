@@ -14,5 +14,6 @@
       hosts: "{{ ovirt_tag_hosts | default(omit, True) }}"
       auth: "{{ ovirt_tag_auth | default(omit, True) }}"
       timeout: "{{ ovirt_tag_timeout | default(omit, True) }}"
+      id: "{{ ovirt_tag_id | default(omit, True) }}"
       vms: "{{ ovirt_tag_vms | default(omit, True) }}"
       wait: "{{ ovirt_tag_wait | default(omit, True) }}"

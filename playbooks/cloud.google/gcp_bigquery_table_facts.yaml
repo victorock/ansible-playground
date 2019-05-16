@@ -1,0 +1,20 @@
+---
+- name: "module_gcp_bigquery_table_facts"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    gcp_bigquery_table_facts: 
+      scopes: "{{ gcp_bigquery_table_facts_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_bigquery_table_facts_service_account_contents | default(omit, True) }}"
+      service_account_email: "{{ gcp_bigquery_table_facts_service_account_email | default(omit, True) }}"
+      dataset: "{{ gcp_bigquery_table_facts_dataset | default(omit, True) }}"
+      project: "{{ gcp_bigquery_table_facts_project | default(omit, True) }}"
+      auth_kind: "{{ gcp_bigquery_table_facts_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_bigquery_table_facts_service_account_file | default(omit, True) }}"
+  tasks:
+    - name: "plugin_gcp_bigquery_table_facts"
+      gcp_bigquery_table_facts: "{{ gcp_bigquery_table_facts }}"
+      register: r_gcp_bigquery_table_facts

@@ -9,6 +9,7 @@
     ironware_config: 
       authorize: "{{ ironware_config_authorize | default(omit, True) }}"
       src: "{{ ironware_config_src | default(omit, True) }}"
+      backup_options: "{{ ironware_config_backup_options | default(omit, True) }}"
       config: "{{ ironware_config_config | default(omit, True) }}"
       after: "{{ ironware_config_after | default(omit, True) }}"
       lines: "{{ ironware_config_lines | default(omit, True) }}"

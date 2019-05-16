@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_application_rule_settings"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_application_rule_settings: 
+      username: "{{ fortios_application_rule_settings_username | default(omit, True) }}"
+      host: "{{ fortios_application_rule_settings_host | default(omit, True) }}"
+      https: "{{ fortios_application_rule_settings_https | default(omit, True) }}"
+      application_rule_settings: "{{ fortios_application_rule_settings_application_rule_settings | default(omit, True) }}"
+      password: "{{ fortios_application_rule_settings_password | default(omit, True) }}"
+      vdom: "{{ fortios_application_rule_settings_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_application_rule_settings"
+      fortios_application_rule_settings: "{{ fortios_application_rule_settings }}"
+      register: r_fortios_application_rule_settings

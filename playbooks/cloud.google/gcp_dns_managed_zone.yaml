@@ -8,14 +8,18 @@
   vars:
     gcp_dns_managed_zone: 
       scopes: "{{ gcp_dns_managed_zone_scopes | default(omit, True) }}"
+      service_account_contents: "{{ gcp_dns_managed_zone_service_account_contents | default(omit, True) }}"
       description: "{{ gcp_dns_managed_zone_description | default(omit, True) }}"
       name_server_set: "{{ gcp_dns_managed_zone_name_server_set | default(omit, True) }}"
       service_account_email: "{{ gcp_dns_managed_zone_service_account_email | default(omit, True) }}"
+      labels: "{{ gcp_dns_managed_zone_labels | default(omit, True) }}"
+      private_visibility_config: "{{ gcp_dns_managed_zone_private_visibility_config | default(omit, True) }}"
+      visibility: "{{ gcp_dns_managed_zone_visibility | default(omit, True) }}"
       project: "{{ gcp_dns_managed_zone_project | default(omit, True) }}"
       state: "{{ gcp_dns_managed_zone_state | default(omit, True) }}"
       dns_name: "{{ gcp_dns_managed_zone_dns_name | default(omit, True) }}"
-      auth_kind: "{{ gcp_dns_managed_zone_auth_kind | default(omit, True) }}"
       service_account_file: "{{ gcp_dns_managed_zone_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_dns_managed_zone_auth_kind | default(omit, True) }}"
       name: "{{ gcp_dns_managed_zone_name | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_dns_managed_zone"

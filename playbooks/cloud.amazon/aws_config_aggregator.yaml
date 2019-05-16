@@ -15,6 +15,7 @@
       security_token: "{{ aws_config_aggregator_security_token | default(omit, True) }}"
       account_sources: "{{ aws_config_aggregator_account_sources | default(omit, True) }}"
       region: "{{ aws_config_aggregator_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_config_aggregator_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ aws_config_aggregator_state | default(omit, True) }}"
       ec2_url: "{{ aws_config_aggregator_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_config_aggregator_validate_certs | default(omit, True) }}"

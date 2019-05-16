@@ -1,0 +1,12 @@
+---
+- name: "module_onyx_igmp_vlan"
+  onyx_igmp_vlan: "{{ onyx_igmp_vlan }}"
+  register: r_onyx_igmp_vlan
+  vars:
+    onyx_igmp_vlan: 
+      mrouter: "{{ onyx_igmp_vlan_mrouter | default(omit, True) }}"
+      state: "{{ onyx_igmp_vlan_state | default(omit, True) }}"
+      version: "{{ onyx_igmp_vlan_version | default(omit, True) }}"
+      querier: "{{ onyx_igmp_vlan_querier | default(omit, True) }}"
+      static_groups: "{{ onyx_igmp_vlan_static_groups | default(omit, True) }}"
+      vlan_id: "{{ onyx_igmp_vlan_vlan_id | default(omit, True) }}"

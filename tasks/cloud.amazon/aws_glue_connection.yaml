@@ -13,6 +13,7 @@
       subnet_id: "{{ aws_glue_connection_subnet_id | default(omit, True) }}"
       region: "{{ aws_glue_connection_region | default(omit, True) }}"
       aws_secret_key: "{{ aws_glue_connection_aws_secret_key | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_glue_connection_debug_botocore_endpoint_logs | default(omit, True) }}"
       state: "{{ aws_glue_connection_state | default(omit, True) }}"
       catalog_id: "{{ aws_glue_connection_catalog_id | default(omit, True) }}"
       ec2_url: "{{ aws_glue_connection_ec2_url | default(omit, True) }}"

@@ -1,0 +1,19 @@
+---
+- name: "module_na_ontap_vscan_scanner_pool"
+  na_ontap_vscan_scanner_pool: "{{ na_ontap_vscan_scanner_pool }}"
+  register: r_na_ontap_vscan_scanner_pool
+  vars:
+    na_ontap_vscan_scanner_pool: 
+      username: "{{ na_ontap_vscan_scanner_pool_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_vscan_scanner_pool_http_port | default(omit, True) }}"
+      hostname: "{{ na_ontap_vscan_scanner_pool_hostname | default(omit, True) }}"
+      state: "{{ na_ontap_vscan_scanner_pool_state | default(omit, True) }}"
+      vserver: "{{ na_ontap_vscan_scanner_pool_vserver | default(omit, True) }}"
+      scanner_policy: "{{ na_ontap_vscan_scanner_pool_scanner_policy | default(omit, True) }}"
+      privileged_users: "{{ na_ontap_vscan_scanner_pool_privileged_users | default(omit, True) }}"
+      hostnames: "{{ na_ontap_vscan_scanner_pool_hostnames | default(omit, True) }}"
+      https: "{{ na_ontap_vscan_scanner_pool_https | default(omit, True) }}"
+      ontapi: "{{ na_ontap_vscan_scanner_pool_ontapi | default(omit, True) }}"
+      password: "{{ na_ontap_vscan_scanner_pool_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_vscan_scanner_pool_validate_certs | default(omit, True) }}"
+      scanner_pool: "{{ na_ontap_vscan_scanner_pool_scanner_pool | default(omit, True) }}"

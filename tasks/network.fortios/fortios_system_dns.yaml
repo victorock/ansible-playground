@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_system_dns"
+  fortios_system_dns: "{{ fortios_system_dns }}"
+  register: r_fortios_system_dns
+  vars:
+    fortios_system_dns: 
+      username: "{{ fortios_system_dns_username | default(omit, True) }}"
+      system_dns: "{{ fortios_system_dns_system_dns | default(omit, True) }}"
+      host: "{{ fortios_system_dns_host | default(omit, True) }}"
+      https: "{{ fortios_system_dns_https | default(omit, True) }}"
+      password: "{{ fortios_system_dns_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_dns_vdom | default(omit, True) }}"

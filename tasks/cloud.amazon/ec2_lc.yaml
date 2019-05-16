@@ -17,6 +17,7 @@
       profile: "{{ ec2_lc_profile | default(omit, True) }}"
       kernel_id: "{{ ec2_lc_kernel_id | default(omit, True) }}"
       key_name: "{{ ec2_lc_key_name | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ ec2_lc_debug_botocore_endpoint_logs | default(omit, True) }}"
       image_id: "{{ ec2_lc_image_id | default(omit, True) }}"
       assign_public_ip: "{{ ec2_lc_assign_public_ip | default(omit, True) }}"
       instance_monitoring: "{{ ec2_lc_instance_monitoring | default(omit, True) }}"

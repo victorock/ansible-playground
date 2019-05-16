@@ -1,0 +1,46 @@
+---
+- name: "module_utm_proxy_auth_profile"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    utm_proxy_auth_profile: 
+      comment: "{{ utm_proxy_auth_profile_comment | default(omit, True) }}"
+      utm_host: "{{ utm_proxy_auth_profile_utm_host | default(omit, True) }}"
+      frontend_session_timeout_scope: "{{ utm_proxy_auth_profile_frontend_session_timeout_scope | default(omit, True) }}"
+      logout_mode: "{{ utm_proxy_auth_profile_logout_mode | default(omit, True) }}"
+      backend_user_prefix: "{{ utm_proxy_auth_profile_backend_user_prefix | default(omit, True) }}"
+      backend_strip_basic_auth: "{{ utm_proxy_auth_profile_backend_strip_basic_auth | default(omit, True) }}"
+      logout_delegation_urls: "{{ utm_proxy_auth_profile_logout_delegation_urls | default(omit, True) }}"
+      basic_prompt: "{{ utm_proxy_auth_profile_basic_prompt | default(omit, True) }}"
+      frontend_cookie: "{{ utm_proxy_auth_profile_frontend_cookie | default(omit, True) }}"
+      frontend_logout: "{{ utm_proxy_auth_profile_frontend_logout | default(omit, True) }}"
+      frontend_login: "{{ utm_proxy_auth_profile_frontend_login | default(omit, True) }}"
+      state: "{{ utm_proxy_auth_profile_state | default(omit, True) }}"
+      backend_user_suffix: "{{ utm_proxy_auth_profile_backend_user_suffix | default(omit, True) }}"
+      redirect_to_requested_url: "{{ utm_proxy_auth_profile_redirect_to_requested_url | default(omit, True) }}"
+      frontend_session_allow_persistency: "{{ utm_proxy_auth_profile_frontend_session_allow_persistency | default(omit, True) }}"
+      utm_token: "{{ utm_proxy_auth_profile_utm_token | default(omit, True) }}"
+      frontend_form: "{{ utm_proxy_auth_profile_frontend_form | default(omit, True) }}"
+      backend_mode: "{{ utm_proxy_auth_profile_backend_mode | default(omit, True) }}"
+      frontend_session_lifetime_scope: "{{ utm_proxy_auth_profile_frontend_session_lifetime_scope | default(omit, True) }}"
+      frontend_session_timeout: "{{ utm_proxy_auth_profile_frontend_session_timeout | default(omit, True) }}"
+      frontend_session_lifetime_limited: "{{ utm_proxy_auth_profile_frontend_session_lifetime_limited | default(omit, True) }}"
+      frontend_form_template: "{{ utm_proxy_auth_profile_frontend_form_template | default(omit, True) }}"
+      frontend_mode: "{{ utm_proxy_auth_profile_frontend_mode | default(omit, True) }}"
+      aaa: "{{ utm_proxy_auth_profile_aaa | default(omit, True) }}"
+      name: "{{ utm_proxy_auth_profile_name | default(omit, True) }}"
+      frontend_realm: "{{ utm_proxy_auth_profile_frontend_realm | default(omit, True) }}"
+      frontend_session_timeout_enabled: "{{ utm_proxy_auth_profile_frontend_session_timeout_enabled | default(omit, True) }}"
+      utm_protocol: "{{ utm_proxy_auth_profile_utm_protocol | default(omit, True) }}"
+      headers: "{{ utm_proxy_auth_profile_headers | default(omit, True) }}"
+      frontend_session_lifetime: "{{ utm_proxy_auth_profile_frontend_session_lifetime | default(omit, True) }}"
+      frontend_cookie_secret: "{{ utm_proxy_auth_profile_frontend_cookie_secret | default(omit, True) }}"
+      validate_certs: "{{ utm_proxy_auth_profile_validate_certs | default(omit, True) }}"
+      utm_port: "{{ utm_proxy_auth_profile_utm_port | default(omit, True) }}"
+  tasks:
+    - name: "plugin_utm_proxy_auth_profile"
+      utm_proxy_auth_profile: "{{ utm_proxy_auth_profile }}"
+      register: r_utm_proxy_auth_profile

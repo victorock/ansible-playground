@@ -1,0 +1,12 @@
+---
+- name: "module_fortios_firewall_ttl_policy"
+  fortios_firewall_ttl_policy: "{{ fortios_firewall_ttl_policy }}"
+  register: r_fortios_firewall_ttl_policy
+  vars:
+    fortios_firewall_ttl_policy: 
+      username: "{{ fortios_firewall_ttl_policy_username | default(omit, True) }}"
+      host: "{{ fortios_firewall_ttl_policy_host | default(omit, True) }}"
+      https: "{{ fortios_firewall_ttl_policy_https | default(omit, True) }}"
+      firewall_ttl_policy: "{{ fortios_firewall_ttl_policy_firewall_ttl_policy | default(omit, True) }}"
+      password: "{{ fortios_firewall_ttl_policy_password | default(omit, True) }}"
+      vdom: "{{ fortios_firewall_ttl_policy_vdom | default(omit, True) }}"

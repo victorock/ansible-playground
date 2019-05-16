@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_ips_decoder"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_ips_decoder: 
+      username: "{{ fortios_ips_decoder_username | default(omit, True) }}"
+      host: "{{ fortios_ips_decoder_host | default(omit, True) }}"
+      ips_decoder: "{{ fortios_ips_decoder_ips_decoder | default(omit, True) }}"
+      https: "{{ fortios_ips_decoder_https | default(omit, True) }}"
+      password: "{{ fortios_ips_decoder_password | default(omit, True) }}"
+      vdom: "{{ fortios_ips_decoder_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_ips_decoder"
+      fortios_ips_decoder: "{{ fortios_ips_decoder }}"
+      register: r_fortios_ips_decoder

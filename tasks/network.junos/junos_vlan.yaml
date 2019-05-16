@@ -4,12 +4,14 @@
   register: r_junos_vlan
   vars:
     junos_vlan: 
-      name: "{{ junos_vlan_name | default(omit, True) }}"
+      filter_input: "{{ junos_vlan_filter_input | default(omit, True) }}"
+      filter_output: "{{ junos_vlan_filter_output | default(omit, True) }}"
+      description: "{{ junos_vlan_description | default(omit, True) }}"
       interfaces: "{{ junos_vlan_interfaces | default(omit, True) }}"
       l3_interface: "{{ junos_vlan_l3_interface | default(omit, True) }}"
-      active: "{{ junos_vlan_active | default(omit, True) }}"
+      aggregate: "{{ junos_vlan_aggregate | default(omit, True) }}"
       state: "{{ junos_vlan_state | default(omit, True) }}"
       provider: "{{ junos_vlan_provider | default(omit, True) }}"
-      aggregate: "{{ junos_vlan_aggregate | default(omit, True) }}"
+      active: "{{ junos_vlan_active | default(omit, True) }}"
       vlan_id: "{{ junos_vlan_vlan_id | default(omit, True) }}"
-      description: "{{ junos_vlan_description | default(omit, True) }}"
+      name: "{{ junos_vlan_name | default(omit, True) }}"

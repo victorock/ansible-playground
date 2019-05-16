@@ -12,6 +12,7 @@
       aws_access_key: "{{ aws_ses_identity_policy_aws_access_key | default(omit, True) }}"
       security_token: "{{ aws_ses_identity_policy_security_token | default(omit, True) }}"
       region: "{{ aws_ses_identity_policy_region | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ aws_ses_identity_policy_debug_botocore_endpoint_logs | default(omit, True) }}"
       policy_name: "{{ aws_ses_identity_policy_policy_name | default(omit, True) }}"
       state: "{{ aws_ses_identity_policy_state | default(omit, True) }}"
       ec2_url: "{{ aws_ses_identity_policy_ec2_url | default(omit, True) }}"

@@ -1,0 +1,36 @@
+---
+- name: "module_azure_rm_virtualmachinescalesetextension"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    azure_rm_virtualmachinescalesetextension: 
+      resource_group: "{{ azure_rm_virtualmachinescalesetextension_resource_group | default(omit, True) }}"
+      cloud_environment: "{{ azure_rm_virtualmachinescalesetextension_cloud_environment | default(omit, True) }}"
+      cert_validation_mode: "{{ azure_rm_virtualmachinescalesetextension_cert_validation_mode | default(omit, True) }}"
+      ad_user: "{{ azure_rm_virtualmachinescalesetextension_ad_user | default(omit, True) }}"
+      secret: "{{ azure_rm_virtualmachinescalesetextension_secret | default(omit, True) }}"
+      state: "{{ azure_rm_virtualmachinescalesetextension_state | default(omit, True) }}"
+      location: "{{ azure_rm_virtualmachinescalesetextension_location | default(omit, True) }}"
+      protected_settings: "{{ azure_rm_virtualmachinescalesetextension_protected_settings | default(omit, True) }}"
+      subscription_id: "{{ azure_rm_virtualmachinescalesetextension_subscription_id | default(omit, True) }}"
+      type: "{{ azure_rm_virtualmachinescalesetextension_type | default(omit, True) }}"
+      profile: "{{ azure_rm_virtualmachinescalesetextension_profile | default(omit, True) }}"
+      auto_upgrade_minor_version: "{{ azure_rm_virtualmachinescalesetextension_auto_upgrade_minor_version | default(omit, True) }}"
+      client_id: "{{ azure_rm_virtualmachinescalesetextension_client_id | default(omit, True) }}"
+      api_profile: "{{ azure_rm_virtualmachinescalesetextension_api_profile | default(omit, True) }}"
+      adfs_authority_url: "{{ azure_rm_virtualmachinescalesetextension_adfs_authority_url | default(omit, True) }}"
+      password: "{{ azure_rm_virtualmachinescalesetextension_password | default(omit, True) }}"
+      tenant: "{{ azure_rm_virtualmachinescalesetextension_tenant | default(omit, True) }}"
+      publisher: "{{ azure_rm_virtualmachinescalesetextension_publisher | default(omit, True) }}"
+      vmss_name: "{{ azure_rm_virtualmachinescalesetextension_vmss_name | default(omit, True) }}"
+      name: "{{ azure_rm_virtualmachinescalesetextension_name | default(omit, True) }}"
+      settings: "{{ azure_rm_virtualmachinescalesetextension_settings | default(omit, True) }}"
+      type_handler_version: "{{ azure_rm_virtualmachinescalesetextension_type_handler_version | default(omit, True) }}"
+      auth_source: "{{ azure_rm_virtualmachinescalesetextension_auth_source | default(omit, True) }}"
+  tasks:
+    - name: "plugin_azure_rm_virtualmachinescalesetextension"
+      azure_rm_virtualmachinescalesetextension: "{{ azure_rm_virtualmachinescalesetextension }}"
+      register: r_azure_rm_virtualmachinescalesetextension

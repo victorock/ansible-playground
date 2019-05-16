@@ -1,0 +1,17 @@
+---
+- name: "module_acme_inspect"
+  acme_inspect: "{{ acme_inspect }}"
+  register: r_acme_inspect
+  vars:
+    acme_inspect: 
+      acme_directory: "{{ acme_inspect_acme_directory | default(omit, True) }}"
+      url: "{{ acme_inspect_url | default(omit, True) }}"
+      method: "{{ acme_inspect_method | default(omit, True) }}"
+      content: "{{ acme_inspect_content | default(omit, True) }}"
+      fail_on_acme_error: "{{ acme_inspect_fail_on_acme_error | default(omit, True) }}"
+      account_uri: "{{ acme_inspect_account_uri | default(omit, True) }}"
+      select_crypto_backend: "{{ acme_inspect_select_crypto_backend | default(omit, True) }}"
+      account_key_content: "{{ acme_inspect_account_key_content | default(omit, True) }}"
+      acme_version: "{{ acme_inspect_acme_version | default(omit, True) }}"
+      validate_certs: "{{ acme_inspect_validate_certs | default(omit, True) }}"
+      account_key_src: "{{ acme_inspect_account_key_src | default(omit, True) }}"

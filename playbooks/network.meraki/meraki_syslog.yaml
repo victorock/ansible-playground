@@ -1,0 +1,26 @@
+---
+- name: "module_meraki_syslog"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    meraki_syslog: 
+      org_name: "{{ meraki_syslog_org_name | default(omit, True) }}"
+      use_proxy: "{{ meraki_syslog_use_proxy | default(omit, True) }}"
+      auth_key: "{{ meraki_syslog_auth_key | default(omit, True) }}"
+      org_id: "{{ meraki_syslog_org_id | default(omit, True) }}"
+      state: "{{ meraki_syslog_state | default(omit, True) }}"
+      servers: "{{ meraki_syslog_servers | default(omit, True) }}"
+      output_level: "{{ meraki_syslog_output_level | default(omit, True) }}"
+      host: "{{ meraki_syslog_host | default(omit, True) }}"
+      net_name: "{{ meraki_syslog_net_name | default(omit, True) }}"
+      timeout: "{{ meraki_syslog_timeout | default(omit, True) }}"
+      validate_certs: "{{ meraki_syslog_validate_certs | default(omit, True) }}"
+      net_id: "{{ meraki_syslog_net_id | default(omit, True) }}"
+      use_https: "{{ meraki_syslog_use_https | default(omit, True) }}"
+  tasks:
+    - name: "plugin_meraki_syslog"
+      meraki_syslog: "{{ meraki_syslog }}"
+      register: r_meraki_syslog

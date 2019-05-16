@@ -9,5 +9,6 @@
       value: "{{ osx_defaults_value | default(omit, True) }}"
       host: "{{ osx_defaults_host | default(omit, True) }}"
       key: "{{ osx_defaults_key | default(omit, True) }}"
+      path: "{{ osx_defaults_path | default(omit, True) }}"
       type: "{{ osx_defaults_type | default(omit, True) }}"
       array_add: "{{ osx_defaults_array_add | default(omit, True) }}"

@@ -1,0 +1,24 @@
+---
+- name: "module_win_partition"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    win_partition: 
+      read_only: "{{ win_partition_read_only | default(omit, True) }}"
+      partition_size: "{{ win_partition_partition_size | default(omit, True) }}"
+      gpt_type: "{{ win_partition_gpt_type | default(omit, True) }}"
+      disk_number: "{{ win_partition_disk_number | default(omit, True) }}"
+      partition_number: "{{ win_partition_partition_number | default(omit, True) }}"
+      mbr_type: "{{ win_partition_mbr_type | default(omit, True) }}"
+      state: "{{ win_partition_state | default(omit, True) }}"
+      drive_letter: "{{ win_partition_drive_letter | default(omit, True) }}"
+      active: "{{ win_partition_active | default(omit, True) }}"
+      hidden: "{{ win_partition_hidden | default(omit, True) }}"
+      offline: "{{ win_partition_offline | default(omit, True) }}"
+  tasks:
+    - name: "plugin_win_partition"
+      win_partition: "{{ win_partition }}"
+      register: r_win_partition

@@ -14,6 +14,7 @@
       target_status_timeout: "{{ elb_target_target_status_timeout | default(omit, True) }}"
       region: "{{ elb_target_region | default(omit, True) }}"
       target_id: "{{ elb_target_target_id | default(omit, True) }}"
+      debug_botocore_endpoint_logs: "{{ elb_target_debug_botocore_endpoint_logs | default(omit, True) }}"
       target_group_name: "{{ elb_target_target_group_name | default(omit, True) }}"
       state: "{{ elb_target_state | default(omit, True) }}"
       target_group_arn: "{{ elb_target_target_group_arn | default(omit, True) }}"

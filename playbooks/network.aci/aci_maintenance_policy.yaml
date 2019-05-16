@@ -1,0 +1,31 @@
+---
+- name: "module_aci_maintenance_policy"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    aci_maintenance_policy: 
+      username: "{{ aci_maintenance_policy_username | default(omit, True) }}"
+      private_key: "{{ aci_maintenance_policy_private_key | default(omit, True) }}"
+      name: "{{ aci_maintenance_policy_name | default(omit, True) }}"
+      certificate_name: "{{ aci_maintenance_policy_certificate_name | default(omit, True) }}"
+      state: "{{ aci_maintenance_policy_state | default(omit, True) }}"
+      adminst: "{{ aci_maintenance_policy_adminst | default(omit, True) }}"
+      output_level: "{{ aci_maintenance_policy_output_level | default(omit, True) }}"
+      runmode: "{{ aci_maintenance_policy_runmode | default(omit, True) }}"
+      host: "{{ aci_maintenance_policy_host | default(omit, True) }}"
+      timeout: "{{ aci_maintenance_policy_timeout | default(omit, True) }}"
+      scheduler: "{{ aci_maintenance_policy_scheduler | default(omit, True) }}"
+      graceful: "{{ aci_maintenance_policy_graceful | default(omit, True) }}"
+      ignoreCompat: "{{ aci_maintenance_policy_ignoreCompat | default(omit, True) }}"
+      use_ssl: "{{ aci_maintenance_policy_use_ssl | default(omit, True) }}"
+      password: "{{ aci_maintenance_policy_password | default(omit, True) }}"
+      validate_certs: "{{ aci_maintenance_policy_validate_certs | default(omit, True) }}"
+      port: "{{ aci_maintenance_policy_port | default(omit, True) }}"
+      use_proxy: "{{ aci_maintenance_policy_use_proxy | default(omit, True) }}"
+  tasks:
+    - name: "plugin_aci_maintenance_policy"
+      aci_maintenance_policy: "{{ aci_maintenance_policy }}"
+      register: r_aci_maintenance_policy

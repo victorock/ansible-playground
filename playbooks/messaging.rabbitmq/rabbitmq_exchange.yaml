@@ -1,0 +1,29 @@
+---
+- name: "module_rabbitmq_exchange"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    rabbitmq_exchange: 
+      login_port: "{{ rabbitmq_exchange_login_port | default(omit, True) }}"
+      name: "{{ rabbitmq_exchange_name | default(omit, True) }}"
+      ca_cert: "{{ rabbitmq_exchange_ca_cert | default(omit, True) }}"
+      login_user: "{{ rabbitmq_exchange_login_user | default(omit, True) }}"
+      login_host: "{{ rabbitmq_exchange_login_host | default(omit, True) }}"
+      exchange_type: "{{ rabbitmq_exchange_exchange_type | default(omit, True) }}"
+      vhost: "{{ rabbitmq_exchange_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_exchange_state | default(omit, True) }}"
+      internal: "{{ rabbitmq_exchange_internal | default(omit, True) }}"
+      login_protocol: "{{ rabbitmq_exchange_login_protocol | default(omit, True) }}"
+      arguments: "{{ rabbitmq_exchange_arguments | default(omit, True) }}"
+      auto_delete: "{{ rabbitmq_exchange_auto_delete | default(omit, True) }}"
+      login_password: "{{ rabbitmq_exchange_login_password | default(omit, True) }}"
+      client_cert: "{{ rabbitmq_exchange_client_cert | default(omit, True) }}"
+      durable: "{{ rabbitmq_exchange_durable | default(omit, True) }}"
+      client_key: "{{ rabbitmq_exchange_client_key | default(omit, True) }}"
+  tasks:
+    - name: "plugin_rabbitmq_exchange"
+      rabbitmq_exchange: "{{ rabbitmq_exchange }}"
+      register: r_rabbitmq_exchange

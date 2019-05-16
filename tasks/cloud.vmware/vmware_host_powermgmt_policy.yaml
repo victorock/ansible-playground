@@ -1,0 +1,14 @@
+---
+- name: "module_vmware_host_powermgmt_policy"
+  vmware_host_powermgmt_policy: "{{ vmware_host_powermgmt_policy }}"
+  register: r_vmware_host_powermgmt_policy
+  vars:
+    vmware_host_powermgmt_policy: 
+      username: "{{ vmware_host_powermgmt_policy_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_powermgmt_policy_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_powermgmt_policy_cluster_name | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_powermgmt_policy_esxi_hostname | default(omit, True) }}"
+      policy: "{{ vmware_host_powermgmt_policy_policy | default(omit, True) }}"
+      password: "{{ vmware_host_powermgmt_policy_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_powermgmt_policy_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_powermgmt_policy_port | default(omit, True) }}"

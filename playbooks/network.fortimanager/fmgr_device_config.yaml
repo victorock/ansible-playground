@@ -1,0 +1,20 @@
+---
+- name: "module_fmgr_device_config"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fmgr_device_config: 
+      adom: "{{ fmgr_device_config_adom | default(omit, True) }}"
+      interface: "{{ fmgr_device_config_interface | default(omit, True) }}"
+      device_unique_name: "{{ fmgr_device_config_device_unique_name | default(omit, True) }}"
+      install_config: "{{ fmgr_device_config_install_config | default(omit, True) }}"
+      device_hostname: "{{ fmgr_device_config_device_hostname | default(omit, True) }}"
+      interface_ip: "{{ fmgr_device_config_interface_ip | default(omit, True) }}"
+      interface_allow_access: "{{ fmgr_device_config_interface_allow_access | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fmgr_device_config"
+      fmgr_device_config: "{{ fmgr_device_config }}"
+      register: r_fmgr_device_config

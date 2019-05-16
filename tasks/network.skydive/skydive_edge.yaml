@@ -1,0 +1,13 @@
+---
+- name: "module_skydive_edge"
+  skydive_edge: "{{ skydive_edge }}"
+  register: r_skydive_edge
+  vars:
+    skydive_edge: 
+      state: "{{ skydive_edge_state | default(omit, True) }}"
+      relation_type: "{{ skydive_edge_relation_type | default(omit, True) }}"
+      host: "{{ skydive_edge_host | default(omit, True) }}"
+      child_node: "{{ skydive_edge_child_node | default(omit, True) }}"
+      provider: "{{ skydive_edge_provider | default(omit, True) }}"
+      parent_node: "{{ skydive_edge_parent_node | default(omit, True) }}"
+      metadata: "{{ skydive_edge_metadata | default(omit, True) }}"

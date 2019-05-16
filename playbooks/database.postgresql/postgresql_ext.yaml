@@ -7,13 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     postgresql_ext: 
+      ssl_mode: "{{ postgresql_ext_ssl_mode | default(omit, True) }}"
       name: "{{ postgresql_ext_name | default(omit, True) }}"
+      ca_cert: "{{ postgresql_ext_ca_cert | default(omit, True) }}"
+      cascade: "{{ postgresql_ext_cascade | default(omit, True) }}"
       login_user: "{{ postgresql_ext_login_user | default(omit, True) }}"
       login_host: "{{ postgresql_ext_login_host | default(omit, True) }}"
+      session_role: "{{ postgresql_ext_session_role | default(omit, True) }}"
       db: "{{ postgresql_ext_db | default(omit, True) }}"
+      login_unix_socket: "{{ postgresql_ext_login_unix_socket | default(omit, True) }}"
       state: "{{ postgresql_ext_state | default(omit, True) }}"
       login_password: "{{ postgresql_ext_login_password | default(omit, True) }}"
       port: "{{ postgresql_ext_port | default(omit, True) }}"
+      schema: "{{ postgresql_ext_schema | default(omit, True) }}"
   tasks:
     - name: "plugin_postgresql_ext"
       postgresql_ext: "{{ postgresql_ext }}"

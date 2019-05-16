@@ -1,0 +1,19 @@
+---
+- name: "module_fortios_system_virtual_wan_link"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    fortios_system_virtual_wan_link: 
+      username: "{{ fortios_system_virtual_wan_link_username | default(omit, True) }}"
+      system_virtual_wan_link: "{{ fortios_system_virtual_wan_link_system_virtual_wan_link | default(omit, True) }}"
+      host: "{{ fortios_system_virtual_wan_link_host | default(omit, True) }}"
+      https: "{{ fortios_system_virtual_wan_link_https | default(omit, True) }}"
+      password: "{{ fortios_system_virtual_wan_link_password | default(omit, True) }}"
+      vdom: "{{ fortios_system_virtual_wan_link_vdom | default(omit, True) }}"
+  tasks:
+    - name: "plugin_fortios_system_virtual_wan_link"
+      fortios_system_virtual_wan_link: "{{ fortios_system_virtual_wan_link }}"
+      register: r_fortios_system_virtual_wan_link

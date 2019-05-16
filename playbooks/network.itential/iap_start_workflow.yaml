@@ -1,0 +1,21 @@
+---
+- name: "module_iap_start_workflow"
+  hosts: all
+  # hosts: localhost, Define the --limit localhost.
+  # connection: Define the variable ansible_connection in the inventory
+  # become: Define the variable ansible_become in the inventory
+  # gather_facts: Define the variable ansible_gather_facts in the inventory
+  vars:
+    iap_start_workflow: 
+      description: "{{ iap_start_workflow_description | default(omit, True) }}"
+      iap_fqdn: "{{ iap_start_workflow_iap_fqdn | default(omit, True) }}"
+      workflow_name: "{{ iap_start_workflow_workflow_name | default(omit, True) }}"
+      token_key: "{{ iap_start_workflow_token_key | default(omit, True) }}"
+      iap_port: "{{ iap_start_workflow_iap_port | default(omit, True) }}"
+      https: "{{ iap_start_workflow_https | default(omit, True) }}"
+      validate_certs: "{{ iap_start_workflow_validate_certs | default(omit, True) }}"
+      variables: "{{ iap_start_workflow_variables | default(omit, True) }}"
+  tasks:
+    - name: "plugin_iap_start_workflow"
+      iap_start_workflow: "{{ iap_start_workflow }}"
+      register: r_iap_start_workflow
