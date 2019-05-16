@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_poolgroup"
   avi_poolgroup: "{{ avi_poolgroup }}"
+  register: r_avi_poolgroup
   vars:
     avi_poolgroup: 
       implicit_priority_labels: "{{ avi_poolgroup_implicit_priority_labels | default(omit, True) }}"

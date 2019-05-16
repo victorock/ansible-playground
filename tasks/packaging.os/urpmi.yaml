@@ -1,6 +1,7 @@
 ---
 - name: "module_urpmi"
   urpmi: "{{ urpmi }}"
+  register: r_urpmi
   vars:
     urpmi: 
       force: "{{ urpmi_force | default(omit, True) }}"

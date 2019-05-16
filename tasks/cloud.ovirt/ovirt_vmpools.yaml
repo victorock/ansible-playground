@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_vmpools"
   ovirt_vmpools: "{{ ovirt_vmpools }}"
+  register: r_ovirt_vmpools
   vars:
     ovirt_vmpools: 
       comment: "{{ ovirt_vmpools_comment | default(omit, True) }}"

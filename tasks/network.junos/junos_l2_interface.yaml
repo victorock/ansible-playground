@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_l2_interface"
   junos_l2_interface: "{{ junos_l2_interface }}"
+  register: r_junos_l2_interface
   vars:
     junos_l2_interface: 
       native_vlan: "{{ junos_l2_interface_native_vlan | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_pool"
   avi_pool: "{{ avi_pool }}"
+  register: r_avi_pool
   vars:
     avi_pool: 
       lb_algorithm: "{{ avi_pool_lb_algorithm | default(omit, True) }}"

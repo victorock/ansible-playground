@@ -1,6 +1,7 @@
 ---
 - name: "module_subversion"
   subversion: "{{ subversion }}"
+  register: r_subversion
   vars:
     subversion: 
       username: "{{ subversion_username | default(omit, True) }}"

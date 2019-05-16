@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     redfish_facts: 
-      category: "{{ redfish_facts_category | default('omit', True) }}"
-      baseuri: "{{ redfish_facts_baseuri | default('omit', True) }}"
-      password: "{{ redfish_facts_password | default('omit', True) }}"
-      command: "{{ redfish_facts_command | default('omit', True) }}"
-      user: "{{ redfish_facts_user | default('omit', True) }}"
+      category: "{{ redfish_facts_category | default(omit, True) }}"
+      baseuri: "{{ redfish_facts_baseuri | default(omit, True) }}"
+      password: "{{ redfish_facts_password | default(omit, True) }}"
+      command: "{{ redfish_facts_command | default(omit, True) }}"
+      user: "{{ redfish_facts_user | default(omit, True) }}"
   tasks:
     - name: "plugin_redfish_facts"
       redfish_facts: "{{ redfish_facts }}"
+      register: r_redfish_facts

@@ -1,6 +1,7 @@
 ---
 - name: "module_os_image"
   os_image: "{{ os_image }}"
+  register: r_os_image
   vars:
     os_image: 
       auth_type: "{{ os_image_auth_type | default(omit, True) }}"

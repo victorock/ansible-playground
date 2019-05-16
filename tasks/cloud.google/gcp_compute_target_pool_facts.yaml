@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_target_pool_facts"
   gcp_compute_target_pool_facts: "{{ gcp_compute_target_pool_facts }}"
+  register: r_gcp_compute_target_pool_facts
   vars:
     gcp_compute_target_pool_facts: 
       scopes: "{{ gcp_compute_target_pool_facts_scopes | default(omit, True) }}"

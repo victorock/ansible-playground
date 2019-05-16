@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_logging"
   iosxr_logging: "{{ iosxr_logging }}"
+  register: r_iosxr_logging
   vars:
     iosxr_logging: 
       name: "{{ iosxr_logging_name | default(omit, True) }}"

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     onyx_l3_interface: 
-      name: "{{ onyx_l3_interface_name | default('omit', True) }}"
-      purge: "{{ onyx_l3_interface_purge | default('omit', True) }}"
-      state: "{{ onyx_l3_interface_state | default('omit', True) }}"
-      ipv4: "{{ onyx_l3_interface_ipv4 | default('omit', True) }}"
-      ipv6: "{{ onyx_l3_interface_ipv6 | default('omit', True) }}"
-      aggregate: "{{ onyx_l3_interface_aggregate | default('omit', True) }}"
+      name: "{{ onyx_l3_interface_name | default(omit, True) }}"
+      purge: "{{ onyx_l3_interface_purge | default(omit, True) }}"
+      state: "{{ onyx_l3_interface_state | default(omit, True) }}"
+      ipv4: "{{ onyx_l3_interface_ipv4 | default(omit, True) }}"
+      ipv6: "{{ onyx_l3_interface_ipv6 | default(omit, True) }}"
+      aggregate: "{{ onyx_l3_interface_aggregate | default(omit, True) }}"
   tasks:
     - name: "plugin_onyx_l3_interface"
       onyx_l3_interface: "{{ onyx_l3_interface }}"
+      register: r_onyx_l3_interface

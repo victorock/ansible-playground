@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_amg"
   netapp_e_amg: "{{ netapp_e_amg }}"
+  register: r_netapp_e_amg
   vars:
     netapp_e_amg: 
       ssid: "{{ netapp_e_amg_ssid | default(omit, True) }}"

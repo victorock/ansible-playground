@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_firewall_facts"
   vmware_host_firewall_facts: "{{ vmware_host_firewall_facts }}"
+  register: r_vmware_host_firewall_facts
   vars:
     vmware_host_firewall_facts: 
       username: "{{ vmware_host_firewall_facts_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_snmp_community"
   bigip_snmp_community: "{{ bigip_snmp_community }}"
+  register: r_bigip_snmp_community
   vars:
     bigip_snmp_community: 
       snmp_privacy_protocol: "{{ bigip_snmp_community_snmp_privacy_protocol | default(omit, True) }}"

@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_ontap_net_ifgrp: 
-      node: "{{ na_ontap_net_ifgrp_node | default('omit', True) }}"
-      username: "{{ na_ontap_net_ifgrp_username | default('omit', True) }}"
-      http_port: "{{ na_ontap_net_ifgrp_http_port | default('omit', True) }}"
-      name: "{{ na_ontap_net_ifgrp_name | default('omit', True) }}"
-      hostname: "{{ na_ontap_net_ifgrp_hostname | default('omit', True) }}"
-      state: "{{ na_ontap_net_ifgrp_state | default('omit', True) }}"
-      mode: "{{ na_ontap_net_ifgrp_mode | default('omit', True) }}"
-      https: "{{ na_ontap_net_ifgrp_https | default('omit', True) }}"
-      distribution_function: "{{ na_ontap_net_ifgrp_distribution_function | default('omit', True) }}"
-      password: "{{ na_ontap_net_ifgrp_password | default('omit', True) }}"
-      validate_certs: "{{ na_ontap_net_ifgrp_validate_certs | default('omit', True) }}"
-      port: "{{ na_ontap_net_ifgrp_port | default('omit', True) }}"
+      node: "{{ na_ontap_net_ifgrp_node | default(omit, True) }}"
+      username: "{{ na_ontap_net_ifgrp_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_net_ifgrp_http_port | default(omit, True) }}"
+      name: "{{ na_ontap_net_ifgrp_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_net_ifgrp_hostname | default(omit, True) }}"
+      state: "{{ na_ontap_net_ifgrp_state | default(omit, True) }}"
+      mode: "{{ na_ontap_net_ifgrp_mode | default(omit, True) }}"
+      https: "{{ na_ontap_net_ifgrp_https | default(omit, True) }}"
+      distribution_function: "{{ na_ontap_net_ifgrp_distribution_function | default(omit, True) }}"
+      password: "{{ na_ontap_net_ifgrp_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_net_ifgrp_validate_certs | default(omit, True) }}"
+      port: "{{ na_ontap_net_ifgrp_port | default(omit, True) }}"
   tasks:
     - name: "plugin_na_ontap_net_ifgrp"
       na_ontap_net_ifgrp: "{{ na_ontap_net_ifgrp }}"
+      register: r_na_ontap_net_ifgrp

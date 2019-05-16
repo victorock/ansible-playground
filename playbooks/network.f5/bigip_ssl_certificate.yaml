@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_ssl_certificate: 
-      name: "{{ bigip_ssl_certificate_name | default('omit', True) }}"
-      partition: "{{ bigip_ssl_certificate_partition | default('omit', True) }}"
-      server: "{{ bigip_ssl_certificate_server | default('omit', True) }}"
-      content: "{{ bigip_ssl_certificate_content | default('omit', True) }}"
-      issuer_cert: "{{ bigip_ssl_certificate_issuer_cert | default('omit', True) }}"
-      state: "{{ bigip_ssl_certificate_state | default('omit', True) }}"
-      user: "{{ bigip_ssl_certificate_user | default('omit', True) }}"
-      server_port: "{{ bigip_ssl_certificate_server_port | default('omit', True) }}"
-      provider: "{{ bigip_ssl_certificate_provider | default('omit', True) }}"
-      password: "{{ bigip_ssl_certificate_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_ssl_certificate_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_ssl_certificate_name | default(omit, True) }}"
+      partition: "{{ bigip_ssl_certificate_partition | default(omit, True) }}"
+      server: "{{ bigip_ssl_certificate_server | default(omit, True) }}"
+      content: "{{ bigip_ssl_certificate_content | default(omit, True) }}"
+      issuer_cert: "{{ bigip_ssl_certificate_issuer_cert | default(omit, True) }}"
+      state: "{{ bigip_ssl_certificate_state | default(omit, True) }}"
+      user: "{{ bigip_ssl_certificate_user | default(omit, True) }}"
+      server_port: "{{ bigip_ssl_certificate_server_port | default(omit, True) }}"
+      provider: "{{ bigip_ssl_certificate_provider | default(omit, True) }}"
+      password: "{{ bigip_ssl_certificate_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_ssl_certificate_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_ssl_certificate"
       bigip_ssl_certificate: "{{ bigip_ssl_certificate }}"
+      register: r_bigip_ssl_certificate

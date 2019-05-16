@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_security_port_list"
   bigip_security_port_list: "{{ bigip_security_port_list }}"
+  register: r_bigip_security_port_list
   vars:
     bigip_security_port_list: 
       description: "{{ bigip_security_port_list_description | default(omit, True) }}"

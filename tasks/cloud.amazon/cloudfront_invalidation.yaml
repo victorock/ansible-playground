@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudfront_invalidation"
   cloudfront_invalidation: "{{ cloudfront_invalidation }}"
+  register: r_cloudfront_invalidation
   vars:
     cloudfront_invalidation: 
       profile: "{{ cloudfront_invalidation_profile | default(omit, True) }}"

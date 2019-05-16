@@ -1,6 +1,7 @@
 ---
 - name: "module_oc"
   oc: "{{ oc }}"
+  register: r_oc
   vars:
     oc: 
       kind: "{{ oc_kind | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_interface"
   eos_interface: "{{ eos_interface }}"
+  register: r_eos_interface
   vars:
     eos_interface: 
       neighbors: "{{ eos_interface_neighbors | default(omit, True) }}"

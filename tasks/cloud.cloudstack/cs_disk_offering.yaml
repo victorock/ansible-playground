@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_disk_offering"
   cs_disk_offering: "{{ cs_disk_offering }}"
+  register: r_cs_disk_offering
   vars:
     cs_disk_offering: 
       domain: "{{ cs_disk_offering_domain | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_user"
   iosxr_user: "{{ iosxr_user }}"
+  register: r_iosxr_user
   vars:
     iosxr_user: 
       public_key: "{{ iosxr_user_public_key | default(omit, True) }}"

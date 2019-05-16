@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_file_version: 
-      path: "{{ win_file_version_path | default('omit', True) }}"
+      path: "{{ win_file_version_path | default(omit, True) }}"
   tasks:
     - name: "plugin_win_file_version"
       win_file_version: "{{ win_file_version }}"
+      register: r_win_file_version

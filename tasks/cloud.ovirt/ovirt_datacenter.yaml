@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_datacenter"
   ovirt_datacenter: "{{ ovirt_datacenter }}"
+  register: r_ovirt_datacenter
   vars:
     ovirt_datacenter: 
       comment: "{{ ovirt_datacenter_comment | default(omit, True) }}"

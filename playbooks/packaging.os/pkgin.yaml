@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pkgin: 
-      upgrade: "{{ pkgin_upgrade | default('omit', True) }}"
-      force: "{{ pkgin_force | default('omit', True) }}"
-      name: "{{ pkgin_name | default('omit', True) }}"
-      full_upgrade: "{{ pkgin_full_upgrade | default('omit', True) }}"
-      state: "{{ pkgin_state | default('omit', True) }}"
-      update_cache: "{{ pkgin_update_cache | default('omit', True) }}"
-      clean: "{{ pkgin_clean | default('omit', True) }}"
+      upgrade: "{{ pkgin_upgrade | default(omit, True) }}"
+      force: "{{ pkgin_force | default(omit, True) }}"
+      name: "{{ pkgin_name | default(omit, True) }}"
+      full_upgrade: "{{ pkgin_full_upgrade | default(omit, True) }}"
+      state: "{{ pkgin_state | default(omit, True) }}"
+      update_cache: "{{ pkgin_update_cache | default(omit, True) }}"
+      clean: "{{ pkgin_clean | default(omit, True) }}"
   tasks:
     - name: "plugin_pkgin"
       pkgin: "{{ pkgin }}"
+      register: r_pkgin

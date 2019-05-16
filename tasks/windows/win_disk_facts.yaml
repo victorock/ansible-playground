@@ -1,3 +1,4 @@
 ---
 - name: "module_win_disk_facts"
   win_disk_facts:
+  register: r_win_disk_facts

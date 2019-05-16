@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_sql_database"
   gcp_sql_database: "{{ gcp_sql_database }}"
+  register: r_gcp_sql_database
   vars:
     gcp_sql_database: 
       scopes: "{{ gcp_sql_database_scopes | default(omit, True) }}"

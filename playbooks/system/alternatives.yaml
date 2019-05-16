@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     alternatives: 
-      priority: "{{ alternatives_priority | default('omit', True) }}"
-      path: "{{ alternatives_path | default('omit', True) }}"
-      link: "{{ alternatives_link | default('omit', True) }}"
-      name: "{{ alternatives_name | default('omit', True) }}"
+      priority: "{{ alternatives_priority | default(omit, True) }}"
+      path: "{{ alternatives_path | default(omit, True) }}"
+      link: "{{ alternatives_link | default(omit, True) }}"
+      name: "{{ alternatives_name | default(omit, True) }}"
   tasks:
     - name: "plugin_alternatives"
       alternatives: "{{ alternatives }}"
+      register: r_alternatives

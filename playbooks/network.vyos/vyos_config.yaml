@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vyos_config: 
-      comment: "{{ vyos_config_comment | default('omit', True) }}"
-      src: "{{ vyos_config_src | default('omit', True) }}"
-      backup: "{{ vyos_config_backup | default('omit', True) }}"
-      lines: "{{ vyos_config_lines | default('omit', True) }}"
-      provider: "{{ vyos_config_provider | default('omit', True) }}"
-      save: "{{ vyos_config_save | default('omit', True) }}"
-      config: "{{ vyos_config_config | default('omit', True) }}"
-      match: "{{ vyos_config_match | default('omit', True) }}"
+      comment: "{{ vyos_config_comment | default(omit, True) }}"
+      src: "{{ vyos_config_src | default(omit, True) }}"
+      backup: "{{ vyos_config_backup | default(omit, True) }}"
+      lines: "{{ vyos_config_lines | default(omit, True) }}"
+      provider: "{{ vyos_config_provider | default(omit, True) }}"
+      save: "{{ vyos_config_save | default(omit, True) }}"
+      config: "{{ vyos_config_config | default(omit, True) }}"
+      match: "{{ vyos_config_match | default(omit, True) }}"
   tasks:
     - name: "plugin_vyos_config"
       vyos_config: "{{ vyos_config }}"
+      register: r_vyos_config

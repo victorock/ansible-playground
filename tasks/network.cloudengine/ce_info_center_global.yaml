@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_info_center_global"
   ce_info_center_global: "{{ ce_info_center_global }}"
+  register: r_ce_info_center_global
   vars:
     ce_info_center_global: 
       facility: "{{ ce_info_center_global_facility | default(omit, True) }}"

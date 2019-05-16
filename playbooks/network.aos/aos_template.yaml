@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aos_template: 
-      content: "{{ aos_template_content | default('omit', True) }}"
-      state: "{{ aos_template_state | default('omit', True) }}"
-      session: "{{ aos_template_session | default('omit', True) }}"
-      name: "{{ aos_template_name | default('omit', True) }}"
-      id: "{{ aos_template_id | default('omit', True) }}"
+      content: "{{ aos_template_content | default(omit, True) }}"
+      state: "{{ aos_template_state | default(omit, True) }}"
+      session: "{{ aos_template_session | default(omit, True) }}"
+      name: "{{ aos_template_name | default(omit, True) }}"
+      id: "{{ aos_template_id | default(omit, True) }}"
   tasks:
     - name: "plugin_aos_template"
       aos_template: "{{ aos_template }}"
+      register: r_aos_template

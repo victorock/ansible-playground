@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     opx_cps: 
-      qualifier: "{{ opx_cps_qualifier | default('omit', True) }}"
-      commit_event: "{{ opx_cps_commit_event | default('omit', True) }}"
-      db: "{{ opx_cps_db | default('omit', True) }}"
-      attr_data: "{{ opx_cps_attr_data | default('omit', True) }}"
-      module_name: "{{ opx_cps_module_name | default('omit', True) }}"
-      operation: "{{ opx_cps_operation | default('omit', True) }}"
-      attr_type: "{{ opx_cps_attr_type | default('omit', True) }}"
+      qualifier: "{{ opx_cps_qualifier | default(omit, True) }}"
+      commit_event: "{{ opx_cps_commit_event | default(omit, True) }}"
+      db: "{{ opx_cps_db | default(omit, True) }}"
+      attr_data: "{{ opx_cps_attr_data | default(omit, True) }}"
+      module_name: "{{ opx_cps_module_name | default(omit, True) }}"
+      operation: "{{ opx_cps_operation | default(omit, True) }}"
+      attr_type: "{{ opx_cps_attr_type | default(omit, True) }}"
   tasks:
     - name: "plugin_opx_cps"
       opx_cps: "{{ opx_cps }}"
+      register: r_opx_cps

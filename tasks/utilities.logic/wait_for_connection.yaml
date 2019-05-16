@@ -1,6 +1,7 @@
 ---
 - name: "module_wait_for_connection"
   wait_for_connection: "{{ wait_for_connection }}"
+  register: r_wait_for_connection
   vars:
     wait_for_connection: 
       delay: "{{ wait_for_connection_delay | default(omit, True) }}"

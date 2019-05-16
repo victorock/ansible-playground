@@ -1,6 +1,7 @@
 ---
 - name: "module_os_floating_ip"
   os_floating_ip: "{{ os_floating_ip }}"
+  register: r_os_floating_ip
   vars:
     os_floating_ip: 
       auth_type: "{{ os_floating_ip_auth_type | default(omit, True) }}"

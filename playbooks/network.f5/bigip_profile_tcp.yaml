@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_profile_tcp: 
-      parent: "{{ bigip_profile_tcp_parent | default('omit', True) }}"
-      time_wait_recycle: "{{ bigip_profile_tcp_time_wait_recycle | default('omit', True) }}"
-      partition: "{{ bigip_profile_tcp_partition | default('omit', True) }}"
-      state: "{{ bigip_profile_tcp_state | default('omit', True) }}"
-      server: "{{ bigip_profile_tcp_server | default('omit', True) }}"
-      idle_timeout: "{{ bigip_profile_tcp_idle_timeout | default('omit', True) }}"
-      user: "{{ bigip_profile_tcp_user | default('omit', True) }}"
-      server_port: "{{ bigip_profile_tcp_server_port | default('omit', True) }}"
-      provider: "{{ bigip_profile_tcp_provider | default('omit', True) }}"
-      password: "{{ bigip_profile_tcp_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_profile_tcp_validate_certs | default('omit', True) }}"
-      name: "{{ bigip_profile_tcp_name | default('omit', True) }}"
+      parent: "{{ bigip_profile_tcp_parent | default(omit, True) }}"
+      time_wait_recycle: "{{ bigip_profile_tcp_time_wait_recycle | default(omit, True) }}"
+      partition: "{{ bigip_profile_tcp_partition | default(omit, True) }}"
+      state: "{{ bigip_profile_tcp_state | default(omit, True) }}"
+      server: "{{ bigip_profile_tcp_server | default(omit, True) }}"
+      idle_timeout: "{{ bigip_profile_tcp_idle_timeout | default(omit, True) }}"
+      user: "{{ bigip_profile_tcp_user | default(omit, True) }}"
+      server_port: "{{ bigip_profile_tcp_server_port | default(omit, True) }}"
+      provider: "{{ bigip_profile_tcp_provider | default(omit, True) }}"
+      password: "{{ bigip_profile_tcp_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_profile_tcp_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_profile_tcp_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_profile_tcp"
       bigip_profile_tcp: "{{ bigip_profile_tcp }}"
+      register: r_bigip_profile_tcp

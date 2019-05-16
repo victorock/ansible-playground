@@ -1,6 +1,7 @@
 ---
 - name: "module_zfs_facts"
   zfs_facts: "{{ zfs_facts }}"
+  register: r_zfs_facts
   vars:
     zfs_facts: 
       name: "{{ zfs_facts_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_k8s_raw"
   k8s_raw: "{{ k8s_raw }}"
+  register: r_k8s_raw
   vars:
     k8s_raw: 
       username: "{{ k8s_raw_username | default(omit, True) }}"

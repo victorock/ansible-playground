@@ -1,6 +1,7 @@
 ---
 - name: "module_import_tasks"
   import_tasks: "{{ import_tasks }}"
+  register: r_import_tasks
   vars:
     import_tasks: 
       free-form: "{{ import_tasks_free-form | default(omit, True) }}"

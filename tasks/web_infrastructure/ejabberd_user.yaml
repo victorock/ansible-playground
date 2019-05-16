@@ -1,6 +1,7 @@
 ---
 - name: "module_ejabberd_user"
   ejabberd_user: "{{ ejabberd_user }}"
+  register: r_ejabberd_user
   vars:
     ejabberd_user: 
       username: "{{ ejabberd_user_username | default(omit, True) }}"

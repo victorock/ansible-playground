@@ -1,6 +1,7 @@
 ---
 - name: "module_proxmox_template"
   proxmox_template: "{{ proxmox_template }}"
+  register: r_proxmox_template
   vars:
     proxmox_template: 
       node: "{{ proxmox_template_node | default(omit, True) }}"

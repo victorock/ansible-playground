@@ -1,6 +1,7 @@
 ---
 - name: "module_script"
   script: "{{ script }}"
+  register: r_script
   vars:
     script: 
       executable: "{{ script_executable | default(omit, True) }}"

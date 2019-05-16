@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_check"
   panos_check: "{{ panos_check }}"
+  register: r_panos_check
   vars:
     panos_check: 
       username: "{{ panos_check_username | default(omit, True) }}"

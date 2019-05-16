@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_datastore_facts"
   vmware_datastore_facts: "{{ vmware_datastore_facts }}"
+  register: r_vmware_datastore_facts
   vars:
     vmware_datastore_facts: 
       username: "{{ vmware_datastore_facts_username | default(omit, True) }}"

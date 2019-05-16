@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipadm_addr: 
-      addrtype: "{{ ipadm_addr_addrtype | default('omit', True) }}"
-      temporary: "{{ ipadm_addr_temporary | default('omit', True) }}"
-      state: "{{ ipadm_addr_state | default('omit', True) }}"
-      address: "{{ ipadm_addr_address | default('omit', True) }}"
-      wait: "{{ ipadm_addr_wait | default('omit', True) }}"
-      addrobj: "{{ ipadm_addr_addrobj | default('omit', True) }}"
+      addrtype: "{{ ipadm_addr_addrtype | default(omit, True) }}"
+      temporary: "{{ ipadm_addr_temporary | default(omit, True) }}"
+      state: "{{ ipadm_addr_state | default(omit, True) }}"
+      address: "{{ ipadm_addr_address | default(omit, True) }}"
+      wait: "{{ ipadm_addr_wait | default(omit, True) }}"
+      addrobj: "{{ ipadm_addr_addrobj | default(omit, True) }}"
   tasks:
     - name: "plugin_ipadm_addr"
       ipadm_addr: "{{ ipadm_addr }}"
+      register: r_ipadm_addr

@@ -1,6 +1,7 @@
 ---
 - name: "module_reboot"
   reboot: "{{ reboot }}"
+  register: r_reboot
   vars:
     reboot: 
       pre_reboot_delay: "{{ reboot_pre_reboot_delay | default(omit, True) }}"

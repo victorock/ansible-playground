@@ -1,6 +1,7 @@
 ---
 - name: "module_dladm_vlan"
   dladm_vlan: "{{ dladm_vlan }}"
+  register: r_dladm_vlan
   vars:
     dladm_vlan: 
       temporary: "{{ dladm_vlan_temporary | default(omit, True) }}"

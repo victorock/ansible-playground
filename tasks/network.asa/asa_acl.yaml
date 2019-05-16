@@ -1,6 +1,7 @@
 ---
 - name: "module_asa_acl"
   asa_acl: "{{ asa_acl }}"
+  register: r_asa_acl
   vars:
     asa_acl: 
       authorize: "{{ asa_acl_authorize | default(omit, True) }}"

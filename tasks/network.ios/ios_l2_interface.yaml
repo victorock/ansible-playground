@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_l2_interface"
   ios_l2_interface: "{{ ios_l2_interface }}"
+  register: r_ios_l2_interface
   vars:
     ios_l2_interface: 
       native_vlan: "{{ ios_l2_interface_native_vlan | default(omit, True) }}"

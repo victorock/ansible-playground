@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     eos_lldp: 
-      authorize: "{{ eos_lldp_authorize | default('omit', True) }}"
-      state: "{{ eos_lldp_state | default('omit', True) }}"
-      auth_pass: "{{ eos_lldp_auth_pass | default('omit', True) }}"
-      provider: "{{ eos_lldp_provider | default('omit', True) }}"
+      authorize: "{{ eos_lldp_authorize | default(omit, True) }}"
+      state: "{{ eos_lldp_state | default(omit, True) }}"
+      auth_pass: "{{ eos_lldp_auth_pass | default(omit, True) }}"
+      provider: "{{ eos_lldp_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_eos_lldp"
       eos_lldp: "{{ eos_lldp }}"
+      register: r_eos_lldp

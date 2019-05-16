@@ -1,6 +1,7 @@
 ---
 - name: "module_dnsmadeeasy"
   dnsmadeeasy: "{{ dnsmadeeasy }}"
+  register: r_dnsmadeeasy
   vars:
     dnsmadeeasy: 
       httpFqdn: "{{ dnsmadeeasy_httpFqdn | default(omit, True) }}"

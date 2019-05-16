@@ -1,6 +1,7 @@
 ---
 - name: "module_acme_account_facts"
   acme_account_facts: "{{ acme_account_facts }}"
+  register: r_acme_account_facts
   vars:
     acme_account_facts: 
       acme_directory: "{{ acme_account_facts_acme_directory | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_airbrake_deployment"
   airbrake_deployment: "{{ airbrake_deployment }}"
+  register: r_airbrake_deployment
   vars:
     airbrake_deployment: 
       repo: "{{ airbrake_deployment_repo | default(omit, True) }}"

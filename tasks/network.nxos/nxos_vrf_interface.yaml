@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vrf_interface"
   nxos_vrf_interface: "{{ nxos_vrf_interface }}"
+  register: r_nxos_vrf_interface
   vars:
     nxos_vrf_interface: 
       interface: "{{ nxos_vrf_interface_interface | default(omit, True) }}"

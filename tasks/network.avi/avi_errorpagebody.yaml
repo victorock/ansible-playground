@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_errorpagebody"
   avi_errorpagebody: "{{ avi_errorpagebody }}"
+  register: r_avi_errorpagebody
   vars:
     avi_errorpagebody: 
       username: "{{ avi_errorpagebody_username | default(omit, True) }}"

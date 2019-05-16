@@ -1,6 +1,7 @@
 ---
 - name: "module_rhn_register"
   rhn_register: "{{ rhn_register }}"
+  register: r_rhn_register
   vars:
     rhn_register: 
       username: "{{ rhn_register_username | default(omit, True) }}"

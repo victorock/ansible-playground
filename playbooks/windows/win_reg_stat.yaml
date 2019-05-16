@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_reg_stat: 
-      path: "{{ win_reg_stat_path | default('omit', True) }}"
-      name: "{{ win_reg_stat_name | default('omit', True) }}"
+      path: "{{ win_reg_stat_path | default(omit, True) }}"
+      name: "{{ win_reg_stat_name | default(omit, True) }}"
   tasks:
     - name: "plugin_win_reg_stat"
       win_reg_stat: "{{ win_reg_stat }}"
+      register: r_win_reg_stat

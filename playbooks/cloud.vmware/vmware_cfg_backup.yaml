@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_cfg_backup: 
-      username: "{{ vmware_cfg_backup_username | default('omit', True) }}"
-      src: "{{ vmware_cfg_backup_src | default('omit', True) }}"
-      dest: "{{ vmware_cfg_backup_dest | default('omit', True) }}"
-      hostname: "{{ vmware_cfg_backup_hostname | default('omit', True) }}"
-      state: "{{ vmware_cfg_backup_state | default('omit', True) }}"
-      esxi_hostname: "{{ vmware_cfg_backup_esxi_hostname | default('omit', True) }}"
-      password: "{{ vmware_cfg_backup_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_cfg_backup_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_cfg_backup_port | default('omit', True) }}"
+      username: "{{ vmware_cfg_backup_username | default(omit, True) }}"
+      src: "{{ vmware_cfg_backup_src | default(omit, True) }}"
+      dest: "{{ vmware_cfg_backup_dest | default(omit, True) }}"
+      hostname: "{{ vmware_cfg_backup_hostname | default(omit, True) }}"
+      state: "{{ vmware_cfg_backup_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_cfg_backup_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_cfg_backup_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_cfg_backup_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_cfg_backup_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_cfg_backup"
       vmware_cfg_backup: "{{ vmware_cfg_backup }}"
+      register: r_vmware_cfg_backup

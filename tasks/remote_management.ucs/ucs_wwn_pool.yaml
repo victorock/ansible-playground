@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_wwn_pool"
   ucs_wwn_pool: "{{ ucs_wwn_pool }}"
+  register: r_ucs_wwn_pool
   vars:
     ucs_wwn_pool: 
       username: "{{ ucs_wwn_pool_username | default(omit, True) }}"

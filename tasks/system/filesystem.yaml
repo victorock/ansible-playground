@@ -1,6 +1,7 @@
 ---
 - name: "module_filesystem"
   filesystem: "{{ filesystem }}"
+  register: r_filesystem
   vars:
     filesystem: 
       resizefs: "{{ filesystem_resizefs | default(omit, True) }}"

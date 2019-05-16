@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_deployment"
   azure_rm_deployment: "{{ azure_rm_deployment }}"
+  register: r_azure_rm_deployment
   vars:
     azure_rm_deployment: 
       deployment_name: "{{ azure_rm_deployment_deployment_name | default(omit, True) }}"

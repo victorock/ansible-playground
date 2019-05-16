@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_waf_condition"
   aws_waf_condition: "{{ aws_waf_condition }}"
+  register: r_aws_waf_condition
   vars:
     aws_waf_condition: 
       profile: "{{ aws_waf_condition_profile | default(omit, True) }}"

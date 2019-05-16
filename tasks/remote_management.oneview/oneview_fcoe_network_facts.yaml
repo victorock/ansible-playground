@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_fcoe_network_facts"
   oneview_fcoe_network_facts: "{{ oneview_fcoe_network_facts }}"
+  register: r_oneview_fcoe_network_facts
   vars:
     oneview_fcoe_network_facts: 
       config: "{{ oneview_fcoe_network_facts_config | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_netact_cm_command"
   netact_cm_command: "{{ netact_cm_command }}"
+  register: r_netact_cm_command
   vars:
     netact_cm_command: 
       DN: "{{ netact_cm_command_DN | default(omit, True) }}"

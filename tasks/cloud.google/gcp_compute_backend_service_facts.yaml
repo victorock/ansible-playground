@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_backend_service_facts"
   gcp_compute_backend_service_facts: "{{ gcp_compute_backend_service_facts }}"
+  register: r_gcp_compute_backend_service_facts
   vars:
     gcp_compute_backend_service_facts: 
       scopes: "{{ gcp_compute_backend_service_facts_scopes | default(omit, True) }}"

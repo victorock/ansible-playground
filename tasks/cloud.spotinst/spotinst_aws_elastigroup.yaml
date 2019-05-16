@@ -1,6 +1,7 @@
 ---
 - name: "module_spotinst_aws_elastigroup"
   spotinst_aws_elastigroup: "{{ spotinst_aws_elastigroup }}"
+  register: r_spotinst_aws_elastigroup
   vars:
     spotinst_aws_elastigroup: 
       ebs_volume_pool: "{{ spotinst_aws_elastigroup_ebs_volume_pool | default(omit, True) }}"

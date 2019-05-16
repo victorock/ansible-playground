@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_software_image"
   bigip_software_image: "{{ bigip_software_image }}"
+  register: r_bigip_software_image
   vars:
     bigip_software_image: 
       force: "{{ bigip_software_image_force | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_data_pipeline"
   data_pipeline: "{{ data_pipeline }}"
+  register: r_data_pipeline
   vars:
     data_pipeline: 
       profile: "{{ data_pipeline_profile | default(omit, True) }}"

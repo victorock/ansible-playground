@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_availabilityset"
   azure_rm_availabilityset: "{{ azure_rm_availabilityset }}"
+  register: r_azure_rm_availabilityset
   vars:
     azure_rm_availabilityset: 
       profile: "{{ azure_rm_availabilityset_profile | default(omit, True) }}"

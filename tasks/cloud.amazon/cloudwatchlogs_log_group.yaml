@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudwatchlogs_log_group"
   cloudwatchlogs_log_group: "{{ cloudwatchlogs_log_group }}"
+  register: r_cloudwatchlogs_log_group
   vars:
     cloudwatchlogs_log_group: 
       profile: "{{ cloudwatchlogs_log_group_profile | default(omit, True) }}"

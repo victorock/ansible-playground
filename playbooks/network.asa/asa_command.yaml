@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     asa_command: 
-      authorize: "{{ asa_command_authorize | default('omit', True) }}"
-      retries: "{{ asa_command_retries | default('omit', True) }}"
-      commands: "{{ asa_command_commands | default('omit', True) }}"
-      interval: "{{ asa_command_interval | default('omit', True) }}"
-      context: "{{ asa_command_context | default('omit', True) }}"
-      provider: "{{ asa_command_provider | default('omit', True) }}"
-      wait_for: "{{ asa_command_wait_for | default('omit', True) }}"
-      match: "{{ asa_command_match | default('omit', True) }}"
+      authorize: "{{ asa_command_authorize | default(omit, True) }}"
+      retries: "{{ asa_command_retries | default(omit, True) }}"
+      commands: "{{ asa_command_commands | default(omit, True) }}"
+      interval: "{{ asa_command_interval | default(omit, True) }}"
+      context: "{{ asa_command_context | default(omit, True) }}"
+      provider: "{{ asa_command_provider | default(omit, True) }}"
+      wait_for: "{{ asa_command_wait_for | default(omit, True) }}"
+      match: "{{ asa_command_match | default(omit, True) }}"
   tasks:
     - name: "plugin_asa_command"
       asa_command: "{{ asa_command }}"
+      register: r_asa_command

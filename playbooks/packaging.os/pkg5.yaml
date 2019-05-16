@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pkg5: 
-      accept_licenses: "{{ pkg5_accept_licenses | default('omit', True) }}"
-      state: "{{ pkg5_state | default('omit', True) }}"
-      name: "{{ pkg5_name | default('omit', True) }}"
+      accept_licenses: "{{ pkg5_accept_licenses | default(omit, True) }}"
+      state: "{{ pkg5_state | default(omit, True) }}"
+      name: "{{ pkg5_name | default(omit, True) }}"
   tasks:
     - name: "plugin_pkg5"
       pkg5: "{{ pkg5 }}"
+      register: r_pkg5

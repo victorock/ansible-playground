@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_tools_wait"
   vmware_guest_tools_wait: "{{ vmware_guest_tools_wait }}"
+  register: r_vmware_guest_tools_wait
   vars:
     vmware_guest_tools_wait: 
       username: "{{ vmware_guest_tools_wait_username | default(omit, True) }}"

@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ibm_sa_pool: 
-      username: "{{ ibm_sa_pool_username | default('omit', True) }}"
-      domain: "{{ ibm_sa_pool_domain | default('omit', True) }}"
-      endpoints: "{{ ibm_sa_pool_endpoints | default('omit', True) }}"
-      perf_class: "{{ ibm_sa_pool_perf_class | default('omit', True) }}"
-      state: "{{ ibm_sa_pool_state | default('omit', True) }}"
-      password: "{{ ibm_sa_pool_password | default('omit', True) }}"
-      snapshot_size: "{{ ibm_sa_pool_snapshot_size | default('omit', True) }}"
-      pool: "{{ ibm_sa_pool_pool | default('omit', True) }}"
-      size: "{{ ibm_sa_pool_size | default('omit', True) }}"
+      username: "{{ ibm_sa_pool_username | default(omit, True) }}"
+      domain: "{{ ibm_sa_pool_domain | default(omit, True) }}"
+      endpoints: "{{ ibm_sa_pool_endpoints | default(omit, True) }}"
+      perf_class: "{{ ibm_sa_pool_perf_class | default(omit, True) }}"
+      state: "{{ ibm_sa_pool_state | default(omit, True) }}"
+      password: "{{ ibm_sa_pool_password | default(omit, True) }}"
+      snapshot_size: "{{ ibm_sa_pool_snapshot_size | default(omit, True) }}"
+      pool: "{{ ibm_sa_pool_pool | default(omit, True) }}"
+      size: "{{ ibm_sa_pool_size | default(omit, True) }}"
   tasks:
     - name: "plugin_ibm_sa_pool"
       ibm_sa_pool: "{{ ibm_sa_pool }}"
+      register: r_ibm_sa_pool

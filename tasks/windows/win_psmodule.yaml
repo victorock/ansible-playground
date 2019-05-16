@@ -1,6 +1,7 @@
 ---
 - name: "module_win_psmodule"
   win_psmodule: "{{ win_psmodule }}"
+  register: r_win_psmodule
   vars:
     win_psmodule: 
       url: "{{ win_psmodule_url | default(omit, True) }}"

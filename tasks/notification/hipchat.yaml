@@ -1,6 +1,7 @@
 ---
 - name: "module_hipchat"
   hipchat: "{{ hipchat }}"
+  register: r_hipchat
   vars:
     hipchat: 
       from: "{{ hipchat_from | default(omit, True) }}"

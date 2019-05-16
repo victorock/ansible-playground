@@ -1,6 +1,7 @@
 ---
 - name: "module_os_project_facts"
   os_project_facts: "{{ os_project_facts }}"
+  register: r_os_project_facts
   vars:
     os_project_facts: 
       auth_type: "{{ os_project_facts_auth_type | default(omit, True) }}"

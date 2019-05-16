@@ -1,6 +1,7 @@
 ---
 - name: "module_nios_zone"
   nios_zone: "{{ nios_zone }}"
+  register: r_nios_zone
   vars:
     nios_zone: 
       comment: "{{ nios_zone_comment | default(omit, True) }}"

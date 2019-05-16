@@ -1,6 +1,7 @@
 ---
 - name: "module_redis"
   redis: "{{ redis }}"
+  register: r_redis
   vars:
     redis: 
       login_port: "{{ redis_login_port | default(omit, True) }}"

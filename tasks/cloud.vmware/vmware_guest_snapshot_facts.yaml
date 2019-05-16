@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_snapshot_facts"
   vmware_guest_snapshot_facts: "{{ vmware_guest_snapshot_facts }}"
+  register: r_vmware_guest_snapshot_facts
   vars:
     vmware_guest_snapshot_facts: 
       username: "{{ vmware_guest_snapshot_facts_username | default(omit, True) }}"

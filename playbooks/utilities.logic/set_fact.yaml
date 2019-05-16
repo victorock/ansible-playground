@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     set_fact: 
-      key_value: "{{ set_fact_key_value | default('omit', True) }}"
-      cacheable: "{{ set_fact_cacheable | default('omit', True) }}"
+      key_value: "{{ set_fact_key_value | default(omit, True) }}"
+      cacheable: "{{ set_fact_cacheable | default(omit, True) }}"
   tasks:
     - name: "plugin_set_fact"
       set_fact: "{{ set_fact }}"
+      register: r_set_fact

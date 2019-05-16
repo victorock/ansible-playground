@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_partition: 
-      name: "{{ bigip_partition_name | default('omit', True) }}"
-      state: "{{ bigip_partition_state | default('omit', True) }}"
-      server: "{{ bigip_partition_server | default('omit', True) }}"
-      route_domain: "{{ bigip_partition_route_domain | default('omit', True) }}"
-      user: "{{ bigip_partition_user | default('omit', True) }}"
-      server_port: "{{ bigip_partition_server_port | default('omit', True) }}"
-      provider: "{{ bigip_partition_provider | default('omit', True) }}"
-      password: "{{ bigip_partition_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_partition_validate_certs | default('omit', True) }}"
-      description: "{{ bigip_partition_description | default('omit', True) }}"
+      name: "{{ bigip_partition_name | default(omit, True) }}"
+      state: "{{ bigip_partition_state | default(omit, True) }}"
+      server: "{{ bigip_partition_server | default(omit, True) }}"
+      route_domain: "{{ bigip_partition_route_domain | default(omit, True) }}"
+      user: "{{ bigip_partition_user | default(omit, True) }}"
+      server_port: "{{ bigip_partition_server_port | default(omit, True) }}"
+      provider: "{{ bigip_partition_provider | default(omit, True) }}"
+      password: "{{ bigip_partition_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_partition_validate_certs | default(omit, True) }}"
+      description: "{{ bigip_partition_description | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_partition"
       bigip_partition: "{{ bigip_partition }}"
+      register: r_bigip_partition

@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     mattermost: 
-      username: "{{ mattermost_username | default('omit', True) }}"
-      url: "{{ mattermost_url | default('omit', True) }}"
-      text: "{{ mattermost_text | default('omit', True) }}"
-      icon_url: "{{ mattermost_icon_url | default('omit', True) }}"
-      api_key: "{{ mattermost_api_key | default('omit', True) }}"
-      validate_certs: "{{ mattermost_validate_certs | default('omit', True) }}"
-      channel: "{{ mattermost_channel | default('omit', True) }}"
+      username: "{{ mattermost_username | default(omit, True) }}"
+      url: "{{ mattermost_url | default(omit, True) }}"
+      text: "{{ mattermost_text | default(omit, True) }}"
+      icon_url: "{{ mattermost_icon_url | default(omit, True) }}"
+      api_key: "{{ mattermost_api_key | default(omit, True) }}"
+      validate_certs: "{{ mattermost_validate_certs | default(omit, True) }}"
+      channel: "{{ mattermost_channel | default(omit, True) }}"
   tasks:
     - name: "plugin_mattermost"
       mattermost: "{{ mattermost }}"
+      register: r_mattermost

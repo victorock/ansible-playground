@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_resourcelimit"
   cs_resourcelimit: "{{ cs_resourcelimit }}"
+  register: r_cs_resourcelimit
   vars:
     cs_resourcelimit: 
       domain: "{{ cs_resourcelimit_domain | default(omit, True) }}"

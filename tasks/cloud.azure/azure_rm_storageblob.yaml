@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_storageblob"
   azure_rm_storageblob: "{{ azure_rm_storageblob }}"
+  register: r_azure_rm_storageblob
   vars:
     azure_rm_storageblob: 
       force: "{{ azure_rm_storageblob_force | default(omit, True) }}"

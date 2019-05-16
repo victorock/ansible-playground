@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_persistence_src_addr"
   bigip_profile_persistence_src_addr: "{{ bigip_profile_persistence_src_addr }}"
+  register: r_bigip_profile_persistence_src_addr
   vars:
     bigip_profile_persistence_src_addr: 
       name: "{{ bigip_profile_persistence_src_addr_name | default(omit, True) }}"

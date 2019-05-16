@@ -1,6 +1,7 @@
 ---
 - name: "module_os_client_config"
   os_client_config: "{{ os_client_config }}"
+  register: r_os_client_config
   vars:
     os_client_config: 
       clouds: "{{ os_client_config_clouds | default(omit, True) }}"

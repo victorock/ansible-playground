@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_dns_config"
   vmware_dns_config: "{{ vmware_dns_config }}"
+  register: r_vmware_dns_config
   vars:
     vmware_dns_config: 
       username: "{{ vmware_dns_config_username | default(omit, True) }}"

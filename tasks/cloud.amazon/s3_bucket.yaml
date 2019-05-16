@@ -1,6 +1,7 @@
 ---
 - name: "module_s3_bucket"
   s3_bucket: "{{ s3_bucket }}"
+  register: r_s3_bucket
   vars:
     s3_bucket: 
       profile: "{{ s3_bucket_profile | default(omit, True) }}"

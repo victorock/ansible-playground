@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_serviceenginegroup"
   avi_serviceenginegroup: "{{ avi_serviceenginegroup }}"
+  register: r_avi_serviceenginegroup
   vars:
     avi_serviceenginegroup: 
       disable_tso: "{{ avi_serviceenginegroup_disable_tso | default(omit, True) }}"

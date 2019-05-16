@@ -1,6 +1,7 @@
 ---
 - name: "module_sros_config"
   sros_config: "{{ sros_config }}"
+  register: r_sros_config
   vars:
     sros_config: 
       src: "{{ sros_config_src | default(omit, True) }}"

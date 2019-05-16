@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_group_facts"
   ovirt_group_facts: "{{ ovirt_group_facts }}"
+  register: r_ovirt_group_facts
   vars:
     ovirt_group_facts: 
       pattern: "{{ ovirt_group_facts_pattern | default(omit, True) }}"

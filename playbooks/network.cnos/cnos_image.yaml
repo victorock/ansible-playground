@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cnos_image: 
-      username: "{{ cnos_image_username | default('omit', True) }}"
-      serverpassword: "{{ cnos_image_serverpassword | default('omit', True) }}"
-      outputfile: "{{ cnos_image_outputfile | default('omit', True) }}"
-      protocol: "{{ cnos_image_protocol | default('omit', True) }}"
-      serverip: "{{ cnos_image_serverip | default('omit', True) }}"
-      imgpath: "{{ cnos_image_imgpath | default('omit', True) }}"
-      host: "{{ cnos_image_host | default('omit', True) }}"
-      deviceType: "{{ cnos_image_deviceType | default('omit', True) }}"
-      serverusername: "{{ cnos_image_serverusername | default('omit', True) }}"
-      imgtype: "{{ cnos_image_imgtype | default('omit', True) }}"
-      password: "{{ cnos_image_password | default('omit', True) }}"
-      enablePassword: "{{ cnos_image_enablePassword | default('omit', True) }}"
+      username: "{{ cnos_image_username | default(omit, True) }}"
+      serverpassword: "{{ cnos_image_serverpassword | default(omit, True) }}"
+      outputfile: "{{ cnos_image_outputfile | default(omit, True) }}"
+      protocol: "{{ cnos_image_protocol | default(omit, True) }}"
+      serverip: "{{ cnos_image_serverip | default(omit, True) }}"
+      imgpath: "{{ cnos_image_imgpath | default(omit, True) }}"
+      host: "{{ cnos_image_host | default(omit, True) }}"
+      deviceType: "{{ cnos_image_deviceType | default(omit, True) }}"
+      serverusername: "{{ cnos_image_serverusername | default(omit, True) }}"
+      imgtype: "{{ cnos_image_imgtype | default(omit, True) }}"
+      password: "{{ cnos_image_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_image_enablePassword | default(omit, True) }}"
   tasks:
     - name: "plugin_cnos_image"
       cnos_image: "{{ cnos_image }}"
+      register: r_cnos_image

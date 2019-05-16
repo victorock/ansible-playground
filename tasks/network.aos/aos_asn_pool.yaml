@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_asn_pool"
   aos_asn_pool: "{{ aos_asn_pool }}"
+  register: r_aos_asn_pool
   vars:
     aos_asn_pool: 
       ranges: "{{ aos_asn_pool_ranges | default(omit, True) }}"

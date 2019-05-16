@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     make: 
-      chdir: "{{ make_chdir | default('omit', True) }}"
-      params: "{{ make_params | default('omit', True) }}"
-      target: "{{ make_target | default('omit', True) }}"
-      file: "{{ make_file | default('omit', True) }}"
+      chdir: "{{ make_chdir | default(omit, True) }}"
+      params: "{{ make_params | default(omit, True) }}"
+      target: "{{ make_target | default(omit, True) }}"
+      file: "{{ make_file | default(omit, True) }}"
   tasks:
     - name: "plugin_make"
       make: "{{ make }}"
+      register: r_make

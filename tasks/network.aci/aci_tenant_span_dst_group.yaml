@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_tenant_span_dst_group"
   aci_tenant_span_dst_group: "{{ aci_tenant_span_dst_group }}"
+  register: r_aci_tenant_span_dst_group
   vars:
     aci_tenant_span_dst_group: 
       username: "{{ aci_tenant_span_dst_group_username | default(omit, True) }}"

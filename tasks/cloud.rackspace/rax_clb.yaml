@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_clb"
   rax_clb: "{{ rax_clb }}"
+  register: r_rax_clb
   vars:
     rax_clb: 
       username: "{{ rax_clb_username | default(omit, True) }}"

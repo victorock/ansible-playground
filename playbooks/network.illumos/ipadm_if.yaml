@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipadm_if: 
-      state: "{{ ipadm_if_state | default('omit', True) }}"
-      temporary: "{{ ipadm_if_temporary | default('omit', True) }}"
-      name: "{{ ipadm_if_name | default('omit', True) }}"
+      state: "{{ ipadm_if_state | default(omit, True) }}"
+      temporary: "{{ ipadm_if_temporary | default(omit, True) }}"
+      name: "{{ ipadm_if_name | default(omit, True) }}"
   tasks:
     - name: "plugin_ipadm_if"
       ipadm_if: "{{ ipadm_if }}"
+      register: r_ipadm_if

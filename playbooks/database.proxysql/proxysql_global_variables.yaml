@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     proxysql_global_variables: 
-      login_port: "{{ proxysql_global_variables_login_port | default('omit', True) }}"
-      config_file: "{{ proxysql_global_variables_config_file | default('omit', True) }}"
-      login_user: "{{ proxysql_global_variables_login_user | default('omit', True) }}"
-      login_host: "{{ proxysql_global_variables_login_host | default('omit', True) }}"
-      login_password: "{{ proxysql_global_variables_login_password | default('omit', True) }}"
-      value: "{{ proxysql_global_variables_value | default('omit', True) }}"
-      load_to_runtime: "{{ proxysql_global_variables_load_to_runtime | default('omit', True) }}"
-      save_to_disk: "{{ proxysql_global_variables_save_to_disk | default('omit', True) }}"
-      variable: "{{ proxysql_global_variables_variable | default('omit', True) }}"
+      login_port: "{{ proxysql_global_variables_login_port | default(omit, True) }}"
+      config_file: "{{ proxysql_global_variables_config_file | default(omit, True) }}"
+      login_user: "{{ proxysql_global_variables_login_user | default(omit, True) }}"
+      login_host: "{{ proxysql_global_variables_login_host | default(omit, True) }}"
+      login_password: "{{ proxysql_global_variables_login_password | default(omit, True) }}"
+      value: "{{ proxysql_global_variables_value | default(omit, True) }}"
+      load_to_runtime: "{{ proxysql_global_variables_load_to_runtime | default(omit, True) }}"
+      save_to_disk: "{{ proxysql_global_variables_save_to_disk | default(omit, True) }}"
+      variable: "{{ proxysql_global_variables_variable | default(omit, True) }}"
   tasks:
     - name: "plugin_proxysql_global_variables"
       proxysql_global_variables: "{{ proxysql_global_variables }}"
+      register: r_proxysql_global_variables

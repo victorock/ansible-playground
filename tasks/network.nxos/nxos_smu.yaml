@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_smu"
   nxos_smu: "{{ nxos_smu }}"
+  register: r_nxos_smu
   vars:
     nxos_smu: 
       pkg: "{{ nxos_smu_pkg | default(omit, True) }}"

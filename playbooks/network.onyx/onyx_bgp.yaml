@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     onyx_bgp: 
-      router_id: "{{ onyx_bgp_router_id | default('omit', True) }}"
-      as_number: "{{ onyx_bgp_as_number | default('omit', True) }}"
-      state: "{{ onyx_bgp_state | default('omit', True) }}"
-      networks: "{{ onyx_bgp_networks | default('omit', True) }}"
-      neighbors: "{{ onyx_bgp_neighbors | default('omit', True) }}"
+      router_id: "{{ onyx_bgp_router_id | default(omit, True) }}"
+      as_number: "{{ onyx_bgp_as_number | default(omit, True) }}"
+      state: "{{ onyx_bgp_state | default(omit, True) }}"
+      networks: "{{ onyx_bgp_networks | default(omit, True) }}"
+      neighbors: "{{ onyx_bgp_neighbors | default(omit, True) }}"
   tasks:
     - name: "plugin_onyx_bgp"
       onyx_bgp: "{{ onyx_bgp }}"
+      register: r_onyx_bgp

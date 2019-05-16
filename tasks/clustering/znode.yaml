@@ -1,6 +1,7 @@
 ---
 - name: "module_znode"
   znode: "{{ znode }}"
+  register: r_znode
   vars:
     znode: 
       name: "{{ znode_name | default(omit, True) }}"

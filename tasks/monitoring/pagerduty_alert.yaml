@@ -1,6 +1,7 @@
 ---
 - name: "module_pagerduty_alert"
   pagerduty_alert: "{{ pagerduty_alert }}"
+  register: r_pagerduty_alert
   vars:
     pagerduty_alert: 
       client_url: "{{ pagerduty_alert_client_url | default(omit, True) }}"

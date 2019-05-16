@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     onyx_mlag_ipl: 
-      vlan_interface: "{{ onyx_mlag_ipl_vlan_interface | default('omit', True) }}"
-      state: "{{ onyx_mlag_ipl_state | default('omit', True) }}"
-      name: "{{ onyx_mlag_ipl_name | default('omit', True) }}"
-      peer_address: "{{ onyx_mlag_ipl_peer_address | default('omit', True) }}"
+      vlan_interface: "{{ onyx_mlag_ipl_vlan_interface | default(omit, True) }}"
+      state: "{{ onyx_mlag_ipl_state | default(omit, True) }}"
+      name: "{{ onyx_mlag_ipl_name | default(omit, True) }}"
+      peer_address: "{{ onyx_mlag_ipl_peer_address | default(omit, True) }}"
   tasks:
     - name: "plugin_onyx_mlag_ipl"
       onyx_mlag_ipl: "{{ onyx_mlag_ipl }}"
+      register: r_onyx_mlag_ipl

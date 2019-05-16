@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_interface"
   iosxr_interface: "{{ iosxr_interface }}"
+  register: r_iosxr_interface
   vars:
     iosxr_interface: 
       delay: "{{ iosxr_interface_delay | default(omit, True) }}"

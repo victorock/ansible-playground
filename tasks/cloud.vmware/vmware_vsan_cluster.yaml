@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vsan_cluster"
   vmware_vsan_cluster: "{{ vmware_vsan_cluster }}"
+  register: r_vmware_vsan_cluster
   vars:
     vmware_vsan_cluster: 
       username: "{{ vmware_vsan_cluster_username | default(omit, True) }}"

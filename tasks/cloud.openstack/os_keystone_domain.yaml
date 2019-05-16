@@ -1,6 +1,7 @@
 ---
 - name: "module_os_keystone_domain"
   os_keystone_domain: "{{ os_keystone_domain }}"
+  register: r_os_keystone_domain
   vars:
     os_keystone_domain: 
       auth_type: "{{ os_keystone_domain_auth_type | default(omit, True) }}"

@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ldap_passwd: 
-      dn: "{{ ldap_passwd_dn | default('omit', True) }}"
-      server_uri: "{{ ldap_passwd_server_uri | default('omit', True) }}"
-      start_tls: "{{ ldap_passwd_start_tls | default('omit', True) }}"
-      bind_dn: "{{ ldap_passwd_bind_dn | default('omit', True) }}"
-      passwd: "{{ ldap_passwd_passwd | default('omit', True) }}"
-      bind_pw: "{{ ldap_passwd_bind_pw | default('omit', True) }}"
-      validate_certs: "{{ ldap_passwd_validate_certs | default('omit', True) }}"
+      dn: "{{ ldap_passwd_dn | default(omit, True) }}"
+      server_uri: "{{ ldap_passwd_server_uri | default(omit, True) }}"
+      start_tls: "{{ ldap_passwd_start_tls | default(omit, True) }}"
+      bind_dn: "{{ ldap_passwd_bind_dn | default(omit, True) }}"
+      passwd: "{{ ldap_passwd_passwd | default(omit, True) }}"
+      bind_pw: "{{ ldap_passwd_bind_pw | default(omit, True) }}"
+      validate_certs: "{{ ldap_passwd_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_ldap_passwd"
       ldap_passwd: "{{ ldap_passwd }}"
+      register: r_ldap_passwd

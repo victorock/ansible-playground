@@ -1,6 +1,7 @@
 ---
 - name: "module_rabbitmq_user"
   rabbitmq_user: "{{ rabbitmq_user }}"
+  register: r_rabbitmq_user
   vars:
     rabbitmq_user: 
       node: "{{ rabbitmq_user_node | default(omit, True) }}"

@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     librato_annotation: 
-      description: "{{ librato_annotation_description | default('omit', True) }}"
-      links: "{{ librato_annotation_links | default('omit', True) }}"
-      title: "{{ librato_annotation_title | default('omit', True) }}"
-      start_time: "{{ librato_annotation_start_time | default('omit', True) }}"
-      name: "{{ librato_annotation_name | default('omit', True) }}"
-      source: "{{ librato_annotation_source | default('omit', True) }}"
-      user: "{{ librato_annotation_user | default('omit', True) }}"
-      api_key: "{{ librato_annotation_api_key | default('omit', True) }}"
-      end_time: "{{ librato_annotation_end_time | default('omit', True) }}"
+      description: "{{ librato_annotation_description | default(omit, True) }}"
+      links: "{{ librato_annotation_links | default(omit, True) }}"
+      title: "{{ librato_annotation_title | default(omit, True) }}"
+      start_time: "{{ librato_annotation_start_time | default(omit, True) }}"
+      name: "{{ librato_annotation_name | default(omit, True) }}"
+      source: "{{ librato_annotation_source | default(omit, True) }}"
+      user: "{{ librato_annotation_user | default(omit, True) }}"
+      api_key: "{{ librato_annotation_api_key | default(omit, True) }}"
+      end_time: "{{ librato_annotation_end_time | default(omit, True) }}"
   tasks:
     - name: "plugin_librato_annotation"
       librato_annotation: "{{ librato_annotation }}"
+      register: r_librato_annotation

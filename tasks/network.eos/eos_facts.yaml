@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_facts"
   eos_facts: "{{ eos_facts }}"
+  register: r_eos_facts
   vars:
     eos_facts: 
       authorize: "{{ eos_facts_authorize | default(omit, True) }}"

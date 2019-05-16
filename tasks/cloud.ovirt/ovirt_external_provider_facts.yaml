@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_external_provider_facts"
   ovirt_external_provider_facts: "{{ ovirt_external_provider_facts }}"
+  register: r_ovirt_external_provider_facts
   vars:
     ovirt_external_provider_facts: 
       nested_attributes: "{{ ovirt_external_provider_facts_nested_attributes | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_wide_ip"
   bigip_gtm_wide_ip: "{{ bigip_gtm_wide_ip }}"
+  register: r_bigip_gtm_wide_ip
   vars:
     bigip_gtm_wide_ip: 
       name: "{{ bigip_gtm_wide_ip_name | default(omit, True) }}"

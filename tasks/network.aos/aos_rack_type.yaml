@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_rack_type"
   aos_rack_type: "{{ aos_rack_type }}"
+  register: r_aos_rack_type
   vars:
     aos_rack_type: 
       content: "{{ aos_rack_type_content | default(omit, True) }}"

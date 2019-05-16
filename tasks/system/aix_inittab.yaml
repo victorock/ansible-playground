@@ -1,6 +1,7 @@
 ---
 - name: "module_aix_inittab"
   aix_inittab: "{{ aix_inittab }}"
+  register: r_aix_inittab
   vars:
     aix_inittab: 
       name: "{{ aix_inittab_name | default(omit, True) }}"

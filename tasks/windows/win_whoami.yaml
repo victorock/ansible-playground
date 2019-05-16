@@ -1,3 +1,4 @@
 ---
 - name: "module_win_whoami"
   win_whoami:
+  register: r_win_whoami

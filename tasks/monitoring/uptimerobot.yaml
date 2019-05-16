@@ -1,6 +1,7 @@
 ---
 - name: "module_uptimerobot"
   uptimerobot: "{{ uptimerobot }}"
+  register: r_uptimerobot
   vars:
     uptimerobot: 
       monitorid: "{{ uptimerobot_monitorid | default(omit, True) }}"

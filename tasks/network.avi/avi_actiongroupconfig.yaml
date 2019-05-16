@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_actiongroupconfig"
   avi_actiongroupconfig: "{{ avi_actiongroupconfig }}"
+  register: r_avi_actiongroupconfig
   vars:
     avi_actiongroupconfig: 
       api_context: "{{ avi_actiongroupconfig_api_context | default(omit, True) }}"

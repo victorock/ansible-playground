@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_vxlan_vtep_vni: 
-      assoc_vrf: "{{ nxos_vxlan_vtep_vni_assoc_vrf | default('omit', True) }}"
-      vni: "{{ nxos_vxlan_vtep_vni_vni | default('omit', True) }}"
-      multicast_group: "{{ nxos_vxlan_vtep_vni_multicast_group | default('omit', True) }}"
-      state: "{{ nxos_vxlan_vtep_vni_state | default('omit', True) }}"
-      peer_list: "{{ nxos_vxlan_vtep_vni_peer_list | default('omit', True) }}"
-      provider: "{{ nxos_vxlan_vtep_vni_provider | default('omit', True) }}"
-      interface: "{{ nxos_vxlan_vtep_vni_interface | default('omit', True) }}"
-      ingress_replication: "{{ nxos_vxlan_vtep_vni_ingress_replication | default('omit', True) }}"
-      suppress_arp: "{{ nxos_vxlan_vtep_vni_suppress_arp | default('omit', True) }}"
+      assoc_vrf: "{{ nxos_vxlan_vtep_vni_assoc_vrf | default(omit, True) }}"
+      vni: "{{ nxos_vxlan_vtep_vni_vni | default(omit, True) }}"
+      multicast_group: "{{ nxos_vxlan_vtep_vni_multicast_group | default(omit, True) }}"
+      state: "{{ nxos_vxlan_vtep_vni_state | default(omit, True) }}"
+      peer_list: "{{ nxos_vxlan_vtep_vni_peer_list | default(omit, True) }}"
+      provider: "{{ nxos_vxlan_vtep_vni_provider | default(omit, True) }}"
+      interface: "{{ nxos_vxlan_vtep_vni_interface | default(omit, True) }}"
+      ingress_replication: "{{ nxos_vxlan_vtep_vni_ingress_replication | default(omit, True) }}"
+      suppress_arp: "{{ nxos_vxlan_vtep_vni_suppress_arp | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_vxlan_vtep_vni"
       nxos_vxlan_vtep_vni: "{{ nxos_vxlan_vtep_vni }}"
+      register: r_nxos_vxlan_vtep_vni

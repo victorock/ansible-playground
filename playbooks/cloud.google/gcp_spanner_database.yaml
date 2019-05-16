@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcp_spanner_database: 
-      scopes: "{{ gcp_spanner_database_scopes | default('omit', True) }}"
-      extra_statements: "{{ gcp_spanner_database_extra_statements | default('omit', True) }}"
-      name: "{{ gcp_spanner_database_name | default('omit', True) }}"
-      service_account_email: "{{ gcp_spanner_database_service_account_email | default('omit', True) }}"
-      project: "{{ gcp_spanner_database_project | default('omit', True) }}"
-      instance: "{{ gcp_spanner_database_instance | default('omit', True) }}"
-      state: "{{ gcp_spanner_database_state | default('omit', True) }}"
-      auth_kind: "{{ gcp_spanner_database_auth_kind | default('omit', True) }}"
-      service_account_file: "{{ gcp_spanner_database_service_account_file | default('omit', True) }}"
+      scopes: "{{ gcp_spanner_database_scopes | default(omit, True) }}"
+      extra_statements: "{{ gcp_spanner_database_extra_statements | default(omit, True) }}"
+      name: "{{ gcp_spanner_database_name | default(omit, True) }}"
+      service_account_email: "{{ gcp_spanner_database_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_spanner_database_project | default(omit, True) }}"
+      instance: "{{ gcp_spanner_database_instance | default(omit, True) }}"
+      state: "{{ gcp_spanner_database_state | default(omit, True) }}"
+      auth_kind: "{{ gcp_spanner_database_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_spanner_database_service_account_file | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_spanner_database"
       gcp_spanner_database: "{{ gcp_spanner_database }}"
+      register: r_gcp_spanner_database

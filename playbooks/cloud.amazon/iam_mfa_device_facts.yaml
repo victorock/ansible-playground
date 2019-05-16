@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     iam_mfa_device_facts: 
-      aws_secret_key: "{{ iam_mfa_device_facts_aws_secret_key | default('omit', True) }}"
-      profile: "{{ iam_mfa_device_facts_profile | default('omit', True) }}"
-      aws_access_key: "{{ iam_mfa_device_facts_aws_access_key | default('omit', True) }}"
-      security_token: "{{ iam_mfa_device_facts_security_token | default('omit', True) }}"
-      user_name: "{{ iam_mfa_device_facts_user_name | default('omit', True) }}"
-      region: "{{ iam_mfa_device_facts_region | default('omit', True) }}"
-      ec2_url: "{{ iam_mfa_device_facts_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ iam_mfa_device_facts_validate_certs | default('omit', True) }}"
+      aws_secret_key: "{{ iam_mfa_device_facts_aws_secret_key | default(omit, True) }}"
+      profile: "{{ iam_mfa_device_facts_profile | default(omit, True) }}"
+      aws_access_key: "{{ iam_mfa_device_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ iam_mfa_device_facts_security_token | default(omit, True) }}"
+      user_name: "{{ iam_mfa_device_facts_user_name | default(omit, True) }}"
+      region: "{{ iam_mfa_device_facts_region | default(omit, True) }}"
+      ec2_url: "{{ iam_mfa_device_facts_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ iam_mfa_device_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_iam_mfa_device_facts"
       iam_mfa_device_facts: "{{ iam_mfa_device_facts }}"
+      register: r_iam_mfa_device_facts

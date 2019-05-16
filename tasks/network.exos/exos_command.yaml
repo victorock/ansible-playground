@@ -1,6 +1,7 @@
 ---
 - name: "module_exos_command"
   exos_command: "{{ exos_command }}"
+  register: r_exos_command
   vars:
     exos_command: 
       retries: "{{ exos_command_retries | default(omit, True) }}"

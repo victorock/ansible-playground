@@ -1,6 +1,7 @@
 ---
 - name: "module_helm"
   helm: "{{ helm }}"
+  register: r_helm
   vars:
     helm: 
       disable_hooks: "{{ helm_disable_hooks | default(omit, True) }}"

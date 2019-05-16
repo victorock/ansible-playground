@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_iscsi_interface"
   netapp_e_iscsi_interface: "{{ netapp_e_iscsi_interface }}"
+  register: r_netapp_e_iscsi_interface
   vars:
     netapp_e_iscsi_interface: 
       ssid: "{{ netapp_e_iscsi_interface_ssid | default(omit, True) }}"

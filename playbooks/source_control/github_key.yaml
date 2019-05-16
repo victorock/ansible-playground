@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     github_key: 
-      force: "{{ github_key_force | default('omit', True) }}"
-      token: "{{ github_key_token | default('omit', True) }}"
-      pubkey: "{{ github_key_pubkey | default('omit', True) }}"
-      name: "{{ github_key_name | default('omit', True) }}"
-      state: "{{ github_key_state | default('omit', True) }}"
+      force: "{{ github_key_force | default(omit, True) }}"
+      token: "{{ github_key_token | default(omit, True) }}"
+      pubkey: "{{ github_key_pubkey | default(omit, True) }}"
+      name: "{{ github_key_name | default(omit, True) }}"
+      state: "{{ github_key_state | default(omit, True) }}"
   tasks:
     - name: "plugin_github_key"
       github_key: "{{ github_key }}"
+      register: r_github_key

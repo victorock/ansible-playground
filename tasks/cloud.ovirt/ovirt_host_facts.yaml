@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_host_facts"
   ovirt_host_facts: "{{ ovirt_host_facts }}"
+  register: r_ovirt_host_facts
   vars:
     ovirt_host_facts: 
       all_content: "{{ ovirt_host_facts_all_content | default(omit, True) }}"

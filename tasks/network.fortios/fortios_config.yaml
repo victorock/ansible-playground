@@ -1,6 +1,7 @@
 ---
 - name: "module_fortios_config"
   fortios_config: "{{ fortios_config }}"
+  register: r_fortios_config
   vars:
     fortios_config: 
       username: "{{ fortios_config_username | default(omit, True) }}"

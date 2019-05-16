@@ -1,6 +1,7 @@
 ---
 - name: "module_win_acl"
   win_acl: "{{ win_acl }}"
+  register: r_win_acl
   vars:
     win_acl: 
       rights: "{{ win_acl_rights | default(omit, True) }}"

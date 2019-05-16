@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     modprobe: 
-      state: "{{ modprobe_state | default('omit', True) }}"
-      params: "{{ modprobe_params | default('omit', True) }}"
-      name: "{{ modprobe_name | default('omit', True) }}"
+      state: "{{ modprobe_state | default(omit, True) }}"
+      params: "{{ modprobe_params | default(omit, True) }}"
+      name: "{{ modprobe_name | default(omit, True) }}"
   tasks:
     - name: "plugin_modprobe"
       modprobe: "{{ modprobe }}"
+      register: r_modprobe

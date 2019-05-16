@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_pool_member"
   bigip_gtm_pool_member: "{{ bigip_gtm_pool_member }}"
+  register: r_bigip_gtm_pool_member
   vars:
     bigip_gtm_pool_member: 
       password: "{{ bigip_gtm_pool_member_password | default(omit, True) }}"

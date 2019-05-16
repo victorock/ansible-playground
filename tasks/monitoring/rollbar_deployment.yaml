@@ -1,6 +1,7 @@
 ---
 - name: "module_rollbar_deployment"
   rollbar_deployment: "{{ rollbar_deployment }}"
+  register: r_rollbar_deployment
   vars:
     rollbar_deployment: 
       comment: "{{ rollbar_deployment_comment | default(omit, True) }}"

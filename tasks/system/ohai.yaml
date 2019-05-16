@@ -1,5 +1,6 @@
 ---
 - name: "module_ohai"
   ohai: "{{ ohai }}"
+  register: r_ohai
   vars:
     ohai: 

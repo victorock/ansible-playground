@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nios_ptr_record: 
-      comment: "{{ nios_ptr_record_comment | default('omit', True) }}"
-      ptrdname: "{{ nios_ptr_record_ptrdname | default('omit', True) }}"
-      name: "{{ nios_ptr_record_name | default('omit', True) }}"
-      extattrs: "{{ nios_ptr_record_extattrs | default('omit', True) }}"
-      ipv4addr: "{{ nios_ptr_record_ipv4addr | default('omit', True) }}"
-      provider: "{{ nios_ptr_record_provider | default('omit', True) }}"
-      state: "{{ nios_ptr_record_state | default('omit', True) }}"
-      ttl: "{{ nios_ptr_record_ttl | default('omit', True) }}"
-      ipv6addr: "{{ nios_ptr_record_ipv6addr | default('omit', True) }}"
-      view: "{{ nios_ptr_record_view | default('omit', True) }}"
+      comment: "{{ nios_ptr_record_comment | default(omit, True) }}"
+      ptrdname: "{{ nios_ptr_record_ptrdname | default(omit, True) }}"
+      name: "{{ nios_ptr_record_name | default(omit, True) }}"
+      extattrs: "{{ nios_ptr_record_extattrs | default(omit, True) }}"
+      ipv4addr: "{{ nios_ptr_record_ipv4addr | default(omit, True) }}"
+      provider: "{{ nios_ptr_record_provider | default(omit, True) }}"
+      state: "{{ nios_ptr_record_state | default(omit, True) }}"
+      ttl: "{{ nios_ptr_record_ttl | default(omit, True) }}"
+      ipv6addr: "{{ nios_ptr_record_ipv6addr | default(omit, True) }}"
+      view: "{{ nios_ptr_record_view | default(omit, True) }}"
   tasks:
     - name: "plugin_nios_ptr_record"
       nios_ptr_record: "{{ nios_ptr_record }}"
+      register: r_nios_ptr_record

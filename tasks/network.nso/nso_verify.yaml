@@ -1,6 +1,7 @@
 ---
 - name: "module_nso_verify"
   nso_verify: "{{ nso_verify }}"
+  register: r_nso_verify
   vars:
     nso_verify: 
       url: "{{ nso_verify_url | default(omit, True) }}"

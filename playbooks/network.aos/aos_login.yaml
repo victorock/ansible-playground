@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aos_login: 
-      passwd: "{{ aos_login_passwd | default('omit', True) }}"
-      user: "{{ aos_login_user | default('omit', True) }}"
-      port: "{{ aos_login_port | default('omit', True) }}"
-      server: "{{ aos_login_server | default('omit', True) }}"
+      passwd: "{{ aos_login_passwd | default(omit, True) }}"
+      user: "{{ aos_login_user | default(omit, True) }}"
+      port: "{{ aos_login_port | default(omit, True) }}"
+      server: "{{ aos_login_server | default(omit, True) }}"
   tasks:
     - name: "plugin_aos_login"
       aos_login: "{{ aos_login }}"
+      register: r_aos_login

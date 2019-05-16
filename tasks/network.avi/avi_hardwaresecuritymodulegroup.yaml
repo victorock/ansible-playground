@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_hardwaresecuritymodulegroup"
   avi_hardwaresecuritymodulegroup: "{{ avi_hardwaresecuritymodulegroup }}"
+  register: r_avi_hardwaresecuritymodulegroup
   vars:
     avi_hardwaresecuritymodulegroup: 
       username: "{{ avi_hardwaresecuritymodulegroup_username | default(omit, True) }}"

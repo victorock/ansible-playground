@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     scaleway_sshkey: 
-      api_url: "{{ scaleway_sshkey_api_url | default('omit', True) }}"
-      api_timeout: "{{ scaleway_sshkey_api_timeout | default('omit', True) }}"
-      state: "{{ scaleway_sshkey_state | default('omit', True) }}"
-      api_token: "{{ scaleway_sshkey_api_token | default('omit', True) }}"
-      validate_certs: "{{ scaleway_sshkey_validate_certs | default('omit', True) }}"
-      ssh_pub_key: "{{ scaleway_sshkey_ssh_pub_key | default('omit', True) }}"
+      api_url: "{{ scaleway_sshkey_api_url | default(omit, True) }}"
+      api_timeout: "{{ scaleway_sshkey_api_timeout | default(omit, True) }}"
+      state: "{{ scaleway_sshkey_state | default(omit, True) }}"
+      api_token: "{{ scaleway_sshkey_api_token | default(omit, True) }}"
+      validate_certs: "{{ scaleway_sshkey_validate_certs | default(omit, True) }}"
+      ssh_pub_key: "{{ scaleway_sshkey_ssh_pub_key | default(omit, True) }}"
   tasks:
     - name: "plugin_scaleway_sshkey"
       scaleway_sshkey: "{{ scaleway_sshkey }}"
+      register: r_scaleway_sshkey

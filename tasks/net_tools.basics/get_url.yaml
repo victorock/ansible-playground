@@ -1,6 +1,7 @@
 ---
 - name: "module_get_url"
   get_url: "{{ get_url }}"
+  register: r_get_url
   vars:
     get_url: 
       force: "{{ get_url_force | default(omit, True) }}"

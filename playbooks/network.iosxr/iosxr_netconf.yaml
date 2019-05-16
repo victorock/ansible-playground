@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     iosxr_netconf: 
-      state: "{{ iosxr_netconf_state | default('omit', True) }}"
-      netconf_vrf: "{{ iosxr_netconf_netconf_vrf | default('omit', True) }}"
-      netconf_port: "{{ iosxr_netconf_netconf_port | default('omit', True) }}"
-      provider: "{{ iosxr_netconf_provider | default('omit', True) }}"
+      state: "{{ iosxr_netconf_state | default(omit, True) }}"
+      netconf_vrf: "{{ iosxr_netconf_netconf_vrf | default(omit, True) }}"
+      netconf_port: "{{ iosxr_netconf_netconf_port | default(omit, True) }}"
+      provider: "{{ iosxr_netconf_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_iosxr_netconf"
       iosxr_netconf: "{{ iosxr_netconf }}"
+      register: r_iosxr_netconf

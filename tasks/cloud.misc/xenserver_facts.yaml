@@ -1,5 +1,6 @@
 ---
 - name: "module_xenserver_facts"
   xenserver_facts: "{{ xenserver_facts }}"
+  register: r_xenserver_facts
   vars:
     xenserver_facts: 

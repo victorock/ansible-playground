@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_wafpolicy"
   avi_wafpolicy: "{{ avi_wafpolicy }}"
+  register: r_avi_wafpolicy
   vars:
     avi_wafpolicy: 
       pre_crs_groups: "{{ avi_wafpolicy_pre_crs_groups | default(omit, True) }}"

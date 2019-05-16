@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     webfaction_domain: 
-      state: "{{ webfaction_domain_state | default('omit', True) }}"
-      login_password: "{{ webfaction_domain_login_password | default('omit', True) }}"
-      login_name: "{{ webfaction_domain_login_name | default('omit', True) }}"
-      name: "{{ webfaction_domain_name | default('omit', True) }}"
-      subdomains: "{{ webfaction_domain_subdomains | default('omit', True) }}"
+      state: "{{ webfaction_domain_state | default(omit, True) }}"
+      login_password: "{{ webfaction_domain_login_password | default(omit, True) }}"
+      login_name: "{{ webfaction_domain_login_name | default(omit, True) }}"
+      name: "{{ webfaction_domain_name | default(omit, True) }}"
+      subdomains: "{{ webfaction_domain_subdomains | default(omit, True) }}"
   tasks:
     - name: "plugin_webfaction_domain"
       webfaction_domain: "{{ webfaction_domain }}"
+      register: r_webfaction_domain

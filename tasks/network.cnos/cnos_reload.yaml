@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_reload"
   cnos_reload: "{{ cnos_reload }}"
+  register: r_cnos_reload
   vars:
     cnos_reload: 
       username: "{{ cnos_reload_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_target_pool"
   gcp_compute_target_pool: "{{ gcp_compute_target_pool }}"
+  register: r_gcp_compute_target_pool
   vars:
     gcp_compute_target_pool: 
       scopes: "{{ gcp_compute_target_pool_scopes | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_net_l2_interface"
   net_l2_interface: "{{ net_l2_interface }}"
+  register: r_net_l2_interface
   vars:
     net_l2_interface: 
       native_vlan: "{{ net_l2_interface_native_vlan | default(omit, True) }}"

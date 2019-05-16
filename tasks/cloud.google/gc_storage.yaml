@@ -1,6 +1,7 @@
 ---
 - name: "module_gc_storage"
   gc_storage: "{{ gc_storage }}"
+  register: r_gc_storage
   vars:
     gc_storage: 
       src: "{{ gc_storage_src | default(omit, True) }}"

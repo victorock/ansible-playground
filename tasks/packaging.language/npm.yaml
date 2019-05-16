@@ -1,6 +1,7 @@
 ---
 - name: "module_npm"
   npm: "{{ npm }}"
+  register: r_npm
   vars:
     npm: 
       executable: "{{ npm_executable | default(omit, True) }}"

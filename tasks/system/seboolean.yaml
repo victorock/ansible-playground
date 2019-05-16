@@ -1,6 +1,7 @@
 ---
 - name: "module_seboolean"
   seboolean: "{{ seboolean }}"
+  register: r_seboolean
   vars:
     seboolean: 
       state: "{{ seboolean_state | default(omit, True) }}"

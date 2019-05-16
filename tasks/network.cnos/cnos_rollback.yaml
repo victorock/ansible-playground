@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_rollback"
   cnos_rollback: "{{ cnos_rollback }}"
+  register: r_cnos_rollback
   vars:
     cnos_rollback: 
       username: "{{ cnos_rollback_username | default(omit, True) }}"

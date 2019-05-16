@@ -1,6 +1,7 @@
 ---
 - name: "module_pkg5"
   pkg5: "{{ pkg5 }}"
+  register: r_pkg5
   vars:
     pkg5: 
       accept_licenses: "{{ pkg5_accept_licenses | default(omit, True) }}"

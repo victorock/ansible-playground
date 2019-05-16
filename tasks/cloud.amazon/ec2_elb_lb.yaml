@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_elb_lb"
   ec2_elb_lb: "{{ ec2_elb_lb }}"
+  register: r_ec2_elb_lb
   vars:
     ec2_elb_lb: 
       purge_subnets: "{{ ec2_elb_lb_purge_subnets | default(omit, True) }}"

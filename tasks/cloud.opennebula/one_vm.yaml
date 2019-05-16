@@ -1,6 +1,7 @@
 ---
 - name: "module_one_vm"
   one_vm: "{{ one_vm }}"
+  register: r_one_vm
   vars:
     one_vm: 
       template_name: "{{ one_vm_template_name | default(omit, True) }}"

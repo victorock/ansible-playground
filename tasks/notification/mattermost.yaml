@@ -1,6 +1,7 @@
 ---
 - name: "module_mattermost"
   mattermost: "{{ mattermost }}"
+  register: r_mattermost
   vars:
     mattermost: 
       username: "{{ mattermost_username | default(omit, True) }}"

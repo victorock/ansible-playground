@@ -1,6 +1,7 @@
 ---
 - name: "module_os_user_facts"
   os_user_facts: "{{ os_user_facts }}"
+  register: r_os_user_facts
   vars:
     os_user_facts: 
       auth_type: "{{ os_user_facts_auth_type | default(omit, True) }}"

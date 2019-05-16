@@ -1,6 +1,7 @@
 ---
 - name: "module_xbps"
   xbps: "{{ xbps }}"
+  register: r_xbps
   vars:
     xbps: 
       update_cache: "{{ xbps_update_cache | default(omit, True) }}"

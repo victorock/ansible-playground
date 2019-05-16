@@ -1,6 +1,7 @@
 ---
 - name: "module_include"
   include: "{{ include }}"
+  register: r_include
   vars:
     include: 
       free-form: "{{ include_free-form | default(omit, True) }}"

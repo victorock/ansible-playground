@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_router"
   cs_router: "{{ cs_router }}"
+  register: r_cs_router
   vars:
     cs_router: 
       domain: "{{ cs_router_domain | default(omit, True) }}"

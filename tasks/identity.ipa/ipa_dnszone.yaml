@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_dnszone"
   ipa_dnszone: "{{ ipa_dnszone }}"
+  register: r_ipa_dnszone
   vars:
     ipa_dnszone: 
       ipa_port: "{{ ipa_dnszone_ipa_port | default(omit, True) }}"

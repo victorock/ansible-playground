@@ -1,6 +1,7 @@
 ---
 - name: "module_nios_cname_record"
   nios_cname_record: "{{ nios_cname_record }}"
+  register: r_nios_cname_record
   vars:
     nios_cname_record: 
       comment: "{{ nios_cname_record_comment | default(omit, True) }}"

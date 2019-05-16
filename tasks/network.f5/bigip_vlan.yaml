@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_vlan"
   bigip_vlan: "{{ bigip_vlan }}"
+  register: r_bigip_vlan
   vars:
     bigip_vlan: 
       password: "{{ bigip_vlan_password | default(omit, True) }}"

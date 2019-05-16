@@ -1,6 +1,7 @@
 ---
 - name: "module_packet_device"
   packet_device: "{{ packet_device }}"
+  register: r_packet_device
   vars:
     packet_device: 
       count: "{{ packet_device_count | default(omit, True) }}"

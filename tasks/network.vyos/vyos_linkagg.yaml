@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_linkagg"
   vyos_linkagg: "{{ vyos_linkagg }}"
+  register: r_vyos_linkagg
   vars:
     vyos_linkagg: 
       name: "{{ vyos_linkagg_name | default(omit, True) }}"

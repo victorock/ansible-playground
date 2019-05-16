@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_provision: 
-      level: "{{ bigip_provision_level | default('omit', True) }}"
-      module: "{{ bigip_provision_module | default('omit', True) }}"
-      server: "{{ bigip_provision_server | default('omit', True) }}"
-      state: "{{ bigip_provision_state | default('omit', True) }}"
-      user: "{{ bigip_provision_user | default('omit', True) }}"
-      server_port: "{{ bigip_provision_server_port | default('omit', True) }}"
-      provider: "{{ bigip_provision_provider | default('omit', True) }}"
-      password: "{{ bigip_provision_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_provision_validate_certs | default('omit', True) }}"
+      level: "{{ bigip_provision_level | default(omit, True) }}"
+      module: "{{ bigip_provision_module | default(omit, True) }}"
+      server: "{{ bigip_provision_server | default(omit, True) }}"
+      state: "{{ bigip_provision_state | default(omit, True) }}"
+      user: "{{ bigip_provision_user | default(omit, True) }}"
+      server_port: "{{ bigip_provision_server_port | default(omit, True) }}"
+      provider: "{{ bigip_provision_provider | default(omit, True) }}"
+      password: "{{ bigip_provision_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_provision_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_provision"
       bigip_provision: "{{ bigip_provision }}"
+      register: r_bigip_provision

@@ -1,6 +1,7 @@
 ---
 - name: "module_import_role"
   import_role: "{{ import_role }}"
+  register: r_import_role
   vars:
     import_role: 
       name: "{{ import_role_name | default(omit, True) }}"

@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     exos_facts: 
-      gather_subset: "{{ exos_facts_gather_subset | default('omit', True) }}"
+      gather_subset: "{{ exos_facts_gather_subset | default(omit, True) }}"
   tasks:
     - name: "plugin_exos_facts"
       exos_facts: "{{ exos_facts }}"
+      register: r_exos_facts

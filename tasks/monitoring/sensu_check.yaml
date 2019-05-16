@@ -1,6 +1,7 @@
 ---
 - name: "module_sensu_check"
   sensu_check: "{{ sensu_check }}"
+  register: r_sensu_check
   vars:
     sensu_check: 
       metric: "{{ sensu_check_metric | default(omit, True) }}"

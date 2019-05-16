@@ -1,6 +1,7 @@
 ---
 - name: "module_fortios_address"
   fortios_address: "{{ fortios_address }}"
+  register: r_fortios_address
   vars:
     fortios_address: 
       comment: "{{ fortios_address_comment | default(omit, True) }}"

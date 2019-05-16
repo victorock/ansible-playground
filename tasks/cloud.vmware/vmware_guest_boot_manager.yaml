@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_boot_manager"
   vmware_guest_boot_manager: "{{ vmware_guest_boot_manager }}"
+  register: r_vmware_guest_boot_manager
   vars:
     vmware_guest_boot_manager: 
       username: "{{ vmware_guest_boot_manager_username | default(omit, True) }}"

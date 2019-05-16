@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_regkey_pool"
   bigiq_regkey_pool: "{{ bigiq_regkey_pool }}"
+  register: r_bigiq_regkey_pool
   vars:
     bigiq_regkey_pool: 
       description: "{{ bigiq_regkey_pool_description | default(omit, True) }}"

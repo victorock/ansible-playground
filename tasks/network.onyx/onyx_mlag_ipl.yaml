@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_mlag_ipl"
   onyx_mlag_ipl: "{{ onyx_mlag_ipl }}"
+  register: r_onyx_mlag_ipl
   vars:
     onyx_mlag_ipl: 
       vlan_interface: "{{ onyx_mlag_ipl_vlan_interface | default(omit, True) }}"

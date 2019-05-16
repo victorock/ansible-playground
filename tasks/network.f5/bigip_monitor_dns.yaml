@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_monitor_dns"
   bigip_monitor_dns: "{{ bigip_monitor_dns }}"
+  register: r_bigip_monitor_dns
   vars:
     bigip_monitor_dns: 
       interval: "{{ bigip_monitor_dns_interval | default(omit, True) }}"

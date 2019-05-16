@@ -1,6 +1,7 @@
 ---
 - name: "module_homebrew"
   homebrew: "{{ homebrew }}"
+  register: r_homebrew
   vars:
     homebrew: 
       install_options: "{{ homebrew_install_options | default(omit, True) }}"

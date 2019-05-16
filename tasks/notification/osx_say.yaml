@@ -1,6 +1,7 @@
 ---
 - name: "module_osx_say"
   osx_say: "{{ osx_say }}"
+  register: r_osx_say
   vars:
     osx_say: 
       msg: "{{ osx_say_msg | default(omit, True) }}"

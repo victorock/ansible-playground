@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_amg_sync"
   netapp_e_amg_sync: "{{ netapp_e_amg_sync }}"
+  register: r_netapp_e_amg_sync
   vars:
     netapp_e_amg_sync: 
       ssid: "{{ netapp_e_amg_sync_ssid | default(omit, True) }}"

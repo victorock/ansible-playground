@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_vrouterbgp"
   pn_vrouterbgp: "{{ pn_vrouterbgp }}"
+  register: r_pn_vrouterbgp
   vars:
     pn_vrouterbgp: 
       pn_vrouter_name: "{{ pn_vrouterbgp_pn_vrouter_name | default(omit, True) }}"

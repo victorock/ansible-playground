@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_sqlserver"
   azure_rm_sqlserver: "{{ azure_rm_sqlserver }}"
+  register: r_azure_rm_sqlserver
   vars:
     azure_rm_sqlserver: 
       resource_group: "{{ azure_rm_sqlserver_resource_group | default(omit, True) }}"

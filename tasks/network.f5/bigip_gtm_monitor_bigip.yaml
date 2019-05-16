@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_monitor_bigip"
   bigip_gtm_monitor_bigip: "{{ bigip_gtm_monitor_bigip }}"
+  register: r_bigip_gtm_monitor_bigip
   vars:
     bigip_gtm_monitor_bigip: 
       partition: "{{ bigip_gtm_monitor_bigip_partition | default(omit, True) }}"

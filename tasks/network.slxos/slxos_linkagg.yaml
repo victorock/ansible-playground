@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_linkagg"
   slxos_linkagg: "{{ slxos_linkagg }}"
+  register: r_slxos_linkagg
   vars:
     slxos_linkagg: 
       group: "{{ slxos_linkagg_group | default(omit, True) }}"

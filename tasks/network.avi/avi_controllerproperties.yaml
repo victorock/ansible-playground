@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_controllerproperties"
   avi_controllerproperties: "{{ avi_controllerproperties }}"
+  register: r_avi_controllerproperties
   vars:
     avi_controllerproperties: 
       vs_se_ping_fail: "{{ avi_controllerproperties_vs_se_ping_fail | default(omit, True) }}"

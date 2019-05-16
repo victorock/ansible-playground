@@ -1,6 +1,7 @@
 ---
 - name: "module_sros_rollback"
   sros_rollback: "{{ sros_rollback }}"
+  register: r_sros_rollback
   vars:
     sros_rollback: 
       remote_max_checkpoints: "{{ sros_rollback_remote_max_checkpoints | default(omit, True) }}"

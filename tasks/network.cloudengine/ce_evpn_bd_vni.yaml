@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_evpn_bd_vni"
   ce_evpn_bd_vni: "{{ ce_evpn_bd_vni }}"
+  register: r_ce_evpn_bd_vni
   vars:
     ce_evpn_bd_vni: 
       vpn_target_both: "{{ ce_evpn_bd_vni_vpn_target_both | default(omit, True) }}"

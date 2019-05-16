@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_gslbhealthmonitor"
   avi_gslbhealthmonitor: "{{ avi_gslbhealthmonitor }}"
+  register: r_avi_gslbhealthmonitor
   vars:
     avi_gslbhealthmonitor: 
       https_monitor: "{{ avi_gslbhealthmonitor_https_monitor | default(omit, True) }}"

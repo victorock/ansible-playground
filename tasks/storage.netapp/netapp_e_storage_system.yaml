@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_storage_system"
   netapp_e_storage_system: "{{ netapp_e_storage_system }}"
+  register: r_netapp_e_storage_system
   vars:
     netapp_e_storage_system: 
       ssid: "{{ netapp_e_storage_system_ssid | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_dladm_vnic"
   dladm_vnic: "{{ dladm_vnic }}"
+  register: r_dladm_vnic
   vars:
     dladm_vnic: 
       temporary: "{{ dladm_vnic_temporary | default(omit, True) }}"

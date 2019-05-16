@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_snmp_community: 
-      group: "{{ nxos_snmp_community_group | default('omit', True) }}"
-      community: "{{ nxos_snmp_community_community | default('omit', True) }}"
-      acl: "{{ nxos_snmp_community_acl | default('omit', True) }}"
-      access: "{{ nxos_snmp_community_access | default('omit', True) }}"
-      state: "{{ nxos_snmp_community_state | default('omit', True) }}"
-      provider: "{{ nxos_snmp_community_provider | default('omit', True) }}"
+      group: "{{ nxos_snmp_community_group | default(omit, True) }}"
+      community: "{{ nxos_snmp_community_community | default(omit, True) }}"
+      acl: "{{ nxos_snmp_community_acl | default(omit, True) }}"
+      access: "{{ nxos_snmp_community_access | default(omit, True) }}"
+      state: "{{ nxos_snmp_community_state | default(omit, True) }}"
+      provider: "{{ nxos_snmp_community_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_snmp_community"
       nxos_snmp_community: "{{ nxos_snmp_community }}"
+      register: r_nxos_snmp_community

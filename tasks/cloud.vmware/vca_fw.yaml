@@ -1,6 +1,7 @@
 ---
 - name: "module_vca_fw"
   vca_fw: "{{ vca_fw }}"
+  register: r_vca_fw
   vars:
     vca_fw: 
       username: "{{ vca_fw_username | default(omit, True) }}"

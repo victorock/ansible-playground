@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_monitor_external"
   bigip_gtm_monitor_external: "{{ bigip_gtm_monitor_external }}"
+  register: r_bigip_gtm_monitor_external
   vars:
     bigip_gtm_monitor_external: 
       partition: "{{ bigip_gtm_monitor_external_partition | default(omit, True) }}"

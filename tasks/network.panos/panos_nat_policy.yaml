@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_nat_policy"
   panos_nat_policy: "{{ panos_nat_policy }}"
+  register: r_panos_nat_policy
   vars:
     panos_nat_policy: 
       username: "{{ panos_nat_policy_username | default(omit, True) }}"

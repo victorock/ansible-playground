@@ -1,6 +1,7 @@
 ---
 - name: "module_zabbix_group"
   zabbix_group: "{{ zabbix_group }}"
+  register: r_zabbix_group
   vars:
     zabbix_group: 
       http_login_password: "{{ zabbix_group_http_login_password | default(omit, True) }}"

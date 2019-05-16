@@ -1,6 +1,7 @@
 ---
 - name: "module_iam_mfa_device_facts"
   iam_mfa_device_facts: "{{ iam_mfa_device_facts }}"
+  register: r_iam_mfa_device_facts
   vars:
     iam_mfa_device_facts: 
       aws_secret_key: "{{ iam_mfa_device_facts_aws_secret_key | default(omit, True) }}"

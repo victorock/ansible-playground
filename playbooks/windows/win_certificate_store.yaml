@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_certificate_store: 
-      key_exportable: "{{ win_certificate_store_key_exportable | default('omit', True) }}"
-      key_storage: "{{ win_certificate_store_key_storage | default('omit', True) }}"
-      file_type: "{{ win_certificate_store_file_type | default('omit', True) }}"
-      store_location: "{{ win_certificate_store_store_location | default('omit', True) }}"
-      store_name: "{{ win_certificate_store_store_name | default('omit', True) }}"
-      state: "{{ win_certificate_store_state | default('omit', True) }}"
-      thumbprint: "{{ win_certificate_store_thumbprint | default('omit', True) }}"
-      path: "{{ win_certificate_store_path | default('omit', True) }}"
-      password: "{{ win_certificate_store_password | default('omit', True) }}"
+      key_exportable: "{{ win_certificate_store_key_exportable | default(omit, True) }}"
+      key_storage: "{{ win_certificate_store_key_storage | default(omit, True) }}"
+      file_type: "{{ win_certificate_store_file_type | default(omit, True) }}"
+      store_location: "{{ win_certificate_store_store_location | default(omit, True) }}"
+      store_name: "{{ win_certificate_store_store_name | default(omit, True) }}"
+      state: "{{ win_certificate_store_state | default(omit, True) }}"
+      thumbprint: "{{ win_certificate_store_thumbprint | default(omit, True) }}"
+      path: "{{ win_certificate_store_path | default(omit, True) }}"
+      password: "{{ win_certificate_store_password | default(omit, True) }}"
   tasks:
     - name: "plugin_win_certificate_store"
       win_certificate_store: "{{ win_certificate_store }}"
+      register: r_win_certificate_store

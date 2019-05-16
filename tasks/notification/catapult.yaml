@@ -1,6 +1,7 @@
 ---
 - name: "module_catapult"
   catapult: "{{ catapult }}"
+  register: r_catapult
   vars:
     catapult: 
       src: "{{ catapult_src | default(omit, True) }}"

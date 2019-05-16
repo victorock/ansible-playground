@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_tenant_ep_retention_policy"
   aci_tenant_ep_retention_policy: "{{ aci_tenant_ep_retention_policy }}"
+  register: r_aci_tenant_ep_retention_policy
   vars:
     aci_tenant_ep_retention_policy: 
       username: "{{ aci_tenant_ep_retention_policy_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_region"
   cs_region: "{{ cs_region }}"
+  register: r_cs_region
   vars:
     cs_region: 
       endpoint: "{{ cs_region_endpoint | default(omit, True) }}"

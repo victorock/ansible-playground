@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_elementsw_drive: 
-      username: "{{ na_elementsw_drive_username | default('omit', True) }}"
-      force_during_bin_sync: "{{ na_elementsw_drive_force_during_bin_sync | default('omit', True) }}"
-      hostname: "{{ na_elementsw_drive_hostname | default('omit', True) }}"
-      force_during_upgrade: "{{ na_elementsw_drive_force_during_upgrade | default('omit', True) }}"
-      state: "{{ na_elementsw_drive_state | default('omit', True) }}"
-      node_id: "{{ na_elementsw_drive_node_id | default('omit', True) }}"
-      drive_id: "{{ na_elementsw_drive_drive_id | default('omit', True) }}"
-      password: "{{ na_elementsw_drive_password | default('omit', True) }}"
+      username: "{{ na_elementsw_drive_username | default(omit, True) }}"
+      force_during_bin_sync: "{{ na_elementsw_drive_force_during_bin_sync | default(omit, True) }}"
+      hostname: "{{ na_elementsw_drive_hostname | default(omit, True) }}"
+      force_during_upgrade: "{{ na_elementsw_drive_force_during_upgrade | default(omit, True) }}"
+      state: "{{ na_elementsw_drive_state | default(omit, True) }}"
+      node_id: "{{ na_elementsw_drive_node_id | default(omit, True) }}"
+      drive_id: "{{ na_elementsw_drive_drive_id | default(omit, True) }}"
+      password: "{{ na_elementsw_drive_password | default(omit, True) }}"
   tasks:
     - name: "plugin_na_elementsw_drive"
       na_elementsw_drive: "{{ na_elementsw_drive }}"
+      register: r_na_elementsw_drive

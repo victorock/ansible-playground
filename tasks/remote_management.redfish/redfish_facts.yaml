@@ -1,6 +1,7 @@
 ---
 - name: "module_redfish_facts"
   redfish_facts: "{{ redfish_facts }}"
+  register: r_redfish_facts
   vars:
     redfish_facts: 
       category: "{{ redfish_facts_category | default(omit, True) }}"

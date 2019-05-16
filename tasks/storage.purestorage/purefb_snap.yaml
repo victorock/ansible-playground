@@ -1,6 +1,7 @@
 ---
 - name: "module_purefb_snap"
   purefb_snap: "{{ purefb_snap }}"
+  register: r_purefb_snap
   vars:
     purefb_snap: 
       fb_url: "{{ purefb_snap_fb_url | default(omit, True) }}"

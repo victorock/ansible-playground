@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vxlan_vtep_vni"
   nxos_vxlan_vtep_vni: "{{ nxos_vxlan_vtep_vni }}"
+  register: r_nxos_vxlan_vtep_vni
   vars:
     nxos_vxlan_vtep_vni: 
       assoc_vrf: "{{ nxos_vxlan_vtep_vni_assoc_vrf | default(omit, True) }}"

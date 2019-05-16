@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_object"
   panos_object: "{{ panos_object }}"
+  register: r_panos_object
   vars:
     panos_object: 
       username: "{{ panos_object_username | default(omit, True) }}"

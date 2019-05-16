@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_dns"
   rax_dns: "{{ rax_dns }}"
+  register: r_rax_dns
   vars:
     rax_dns: 
       comment: "{{ rax_dns_comment | default(omit, True) }}"

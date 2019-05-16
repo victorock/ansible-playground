@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_groups: 
-      name: "{{ ovirt_groups_name | default('omit', True) }}"
-      authz_name: "{{ ovirt_groups_authz_name | default('omit', True) }}"
-      namespace: "{{ ovirt_groups_namespace | default('omit', True) }}"
-      state: "{{ ovirt_groups_state | default('omit', True) }}"
-      auth: "{{ ovirt_groups_auth | default('omit', True) }}"
-      poll_interval: "{{ ovirt_groups_poll_interval | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_groups_fetch_nested | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_groups_nested_attributes | default('omit', True) }}"
-      timeout: "{{ ovirt_groups_timeout | default('omit', True) }}"
-      wait: "{{ ovirt_groups_wait | default('omit', True) }}"
+      name: "{{ ovirt_groups_name | default(omit, True) }}"
+      authz_name: "{{ ovirt_groups_authz_name | default(omit, True) }}"
+      namespace: "{{ ovirt_groups_namespace | default(omit, True) }}"
+      state: "{{ ovirt_groups_state | default(omit, True) }}"
+      auth: "{{ ovirt_groups_auth | default(omit, True) }}"
+      poll_interval: "{{ ovirt_groups_poll_interval | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_groups_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_groups_nested_attributes | default(omit, True) }}"
+      timeout: "{{ ovirt_groups_timeout | default(omit, True) }}"
+      wait: "{{ ovirt_groups_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_groups"
       ovirt_groups: "{{ ovirt_groups }}"
+      register: r_ovirt_groups

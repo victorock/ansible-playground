@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_vrf"
   eos_vrf: "{{ eos_vrf }}"
+  register: r_eos_vrf
   vars:
     eos_vrf: 
       authorize: "{{ eos_vrf_authorize | default(omit, True) }}"

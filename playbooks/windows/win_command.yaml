@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_command: 
-      creates: "{{ win_command_creates | default('omit', True) }}"
-      free_form: "{{ win_command_free_form | default('omit', True) }}"
-      chdir: "{{ win_command_chdir | default('omit', True) }}"
-      removes: "{{ win_command_removes | default('omit', True) }}"
-      stdin: "{{ win_command_stdin | default('omit', True) }}"
+      creates: "{{ win_command_creates | default(omit, True) }}"
+      free_form: "{{ win_command_free_form | default(omit, True) }}"
+      chdir: "{{ win_command_chdir | default(omit, True) }}"
+      removes: "{{ win_command_removes | default(omit, True) }}"
+      stdin: "{{ win_command_stdin | default(omit, True) }}"
   tasks:
     - name: "plugin_win_command"
       win_command: "{{ win_command }}"
+      register: r_win_command

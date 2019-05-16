@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_monitor_firepass"
   bigip_gtm_monitor_firepass: "{{ bigip_gtm_monitor_firepass }}"
+  register: r_bigip_gtm_monitor_firepass
   vars:
     bigip_gtm_monitor_firepass: 
       update_password: "{{ bigip_gtm_monitor_firepass_update_password | default(omit, True) }}"

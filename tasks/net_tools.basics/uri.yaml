@@ -1,6 +1,7 @@
 ---
 - name: "module_uri"
   uri: "{{ uri }}"
+  register: r_uri
   vars:
     uri: 
       remote_src: "{{ uri_remote_src | default(omit, True) }}"

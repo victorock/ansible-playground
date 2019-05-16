@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_disk_facts"
   ovirt_disk_facts: "{{ ovirt_disk_facts }}"
+  register: r_ovirt_disk_facts
   vars:
     ovirt_disk_facts: 
       pattern: "{{ ovirt_disk_facts_pattern | default(omit, True) }}"

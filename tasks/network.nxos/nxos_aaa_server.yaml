@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_aaa_server"
   nxos_aaa_server: "{{ nxos_aaa_server }}"
+  register: r_nxos_aaa_server
   vars:
     nxos_aaa_server: 
       server_timeout: "{{ nxos_aaa_server_server_timeout | default(omit, True) }}"

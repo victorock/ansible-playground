@@ -1,6 +1,7 @@
 ---
 - name: "module_rabbitmq_plugin"
   rabbitmq_plugin: "{{ rabbitmq_plugin }}"
+  register: r_rabbitmq_plugin
   vars:
     rabbitmq_plugin: 
       state: "{{ rabbitmq_plugin_state | default(omit, True) }}"

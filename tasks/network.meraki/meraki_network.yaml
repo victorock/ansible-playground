@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_network"
   meraki_network: "{{ meraki_network }}"
+  register: r_meraki_network
   vars:
     meraki_network: 
       org_name: "{{ meraki_network_org_name | default(omit, True) }}"

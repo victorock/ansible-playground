@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_ntp"
   ce_ntp: "{{ ce_ntp }}"
+  register: r_ce_ntp
   vars:
     ce_ntp: 
       is_preferred: "{{ ce_ntp_is_preferred | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_route53_zone"
   route53_zone: "{{ route53_zone }}"
+  register: r_route53_zone
   vars:
     route53_zone: 
       comment: "{{ route53_zone_comment | default(omit, True) }}"

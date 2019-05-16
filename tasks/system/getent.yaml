@@ -1,6 +1,7 @@
 ---
 - name: "module_getent"
   getent: "{{ getent }}"
+  register: r_getent
   vars:
     getent: 
       fail_key: "{{ getent_fail_key | default(omit, True) }}"

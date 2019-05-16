@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_dhcp_options"
   ec2_vpc_dhcp_options: "{{ ec2_vpc_dhcp_options }}"
+  register: r_ec2_vpc_dhcp_options
   vars:
     ec2_vpc_dhcp_options: 
       profile: "{{ ec2_vpc_dhcp_options_profile | default(omit, True) }}"

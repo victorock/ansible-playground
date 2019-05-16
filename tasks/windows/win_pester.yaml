@@ -1,6 +1,7 @@
 ---
 - name: "module_win_pester"
   win_pester: "{{ win_pester }}"
+  register: r_win_pester
   vars:
     win_pester: 
       path: "{{ win_pester_path | default(omit, True) }}"

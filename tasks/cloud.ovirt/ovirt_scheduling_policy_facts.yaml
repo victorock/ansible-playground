@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_scheduling_policy_facts"
   ovirt_scheduling_policy_facts: "{{ ovirt_scheduling_policy_facts }}"
+  register: r_ovirt_scheduling_policy_facts
   vars:
     ovirt_scheduling_policy_facts: 
       nested_attributes: "{{ ovirt_scheduling_policy_facts_nested_attributes | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_trust"
   bigip_device_trust: "{{ bigip_device_trust }}"
+  register: r_bigip_device_trust
   vars:
     bigip_device_trust: 
       peer_user: "{{ bigip_device_trust_peer_user | default(omit, True) }}"

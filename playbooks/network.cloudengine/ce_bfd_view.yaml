@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_bfd_view: 
-      local_discr: "{{ ce_bfd_view_local_discr | default('omit', True) }}"
-      detect_multi: "{{ ce_bfd_view_detect_multi | default('omit', True) }}"
-      remote_discr: "{{ ce_bfd_view_remote_discr | default('omit', True) }}"
-      description: "{{ ce_bfd_view_description | default('omit', True) }}"
-      admin_down: "{{ ce_bfd_view_admin_down | default('omit', True) }}"
-      tos_exp: "{{ ce_bfd_view_tos_exp | default('omit', True) }}"
-      min_tx_interval: "{{ ce_bfd_view_min_tx_interval | default('omit', True) }}"
-      min_rx_interval: "{{ ce_bfd_view_min_rx_interval | default('omit', True) }}"
-      state: "{{ ce_bfd_view_state | default('omit', True) }}"
-      provider: "{{ ce_bfd_view_provider | default('omit', True) }}"
-      session_name: "{{ ce_bfd_view_session_name | default('omit', True) }}"
-      wtr_interval: "{{ ce_bfd_view_wtr_interval | default('omit', True) }}"
+      local_discr: "{{ ce_bfd_view_local_discr | default(omit, True) }}"
+      detect_multi: "{{ ce_bfd_view_detect_multi | default(omit, True) }}"
+      remote_discr: "{{ ce_bfd_view_remote_discr | default(omit, True) }}"
+      description: "{{ ce_bfd_view_description | default(omit, True) }}"
+      admin_down: "{{ ce_bfd_view_admin_down | default(omit, True) }}"
+      tos_exp: "{{ ce_bfd_view_tos_exp | default(omit, True) }}"
+      min_tx_interval: "{{ ce_bfd_view_min_tx_interval | default(omit, True) }}"
+      min_rx_interval: "{{ ce_bfd_view_min_rx_interval | default(omit, True) }}"
+      state: "{{ ce_bfd_view_state | default(omit, True) }}"
+      provider: "{{ ce_bfd_view_provider | default(omit, True) }}"
+      session_name: "{{ ce_bfd_view_session_name | default(omit, True) }}"
+      wtr_interval: "{{ ce_bfd_view_wtr_interval | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_bfd_view"
       ce_bfd_view: "{{ ce_bfd_view }}"
+      register: r_ce_bfd_view

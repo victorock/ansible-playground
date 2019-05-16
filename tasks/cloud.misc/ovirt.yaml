@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt"
   ovirt: "{{ ovirt }}"
+  register: r_ovirt
   vars:
     ovirt: 
       instance_mem: "{{ ovirt_instance_mem | default(omit, True) }}"

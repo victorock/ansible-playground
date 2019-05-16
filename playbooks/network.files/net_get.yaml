@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     net_get: 
-      dest: "{{ net_get_dest | default('omit', True) }}"
-      src: "{{ net_get_src | default('omit', True) }}"
-      protocol: "{{ net_get_protocol | default('omit', True) }}"
+      dest: "{{ net_get_dest | default(omit, True) }}"
+      src: "{{ net_get_src | default(omit, True) }}"
+      protocol: "{{ net_get_protocol | default(omit, True) }}"
   tasks:
     - name: "plugin_net_get"
       net_get: "{{ net_get }}"
+      register: r_net_get

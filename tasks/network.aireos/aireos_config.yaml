@@ -1,6 +1,7 @@
 ---
 - name: "module_aireos_config"
   aireos_config: "{{ aireos_config }}"
+  register: r_aireos_config
   vars:
     aireos_config: 
       src: "{{ aireos_config_src | default(omit, True) }}"

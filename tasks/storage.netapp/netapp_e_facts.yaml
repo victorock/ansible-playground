@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_facts"
   netapp_e_facts: "{{ netapp_e_facts }}"
+  register: r_netapp_e_facts
   vars:
     netapp_e_facts: 
       ssid: "{{ netapp_e_facts_ssid | default(omit, True) }}"

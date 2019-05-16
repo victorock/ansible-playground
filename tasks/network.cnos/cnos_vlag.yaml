@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_vlag"
   cnos_vlag: "{{ cnos_vlag }}"
+  register: r_cnos_vlag
   vars:
     cnos_vlag: 
       username: "{{ cnos_vlag_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_switch_leaf_selector"
   aci_switch_leaf_selector: "{{ aci_switch_leaf_selector }}"
+  register: r_aci_switch_leaf_selector
   vars:
     aci_switch_leaf_selector: 
       username: "{{ aci_switch_leaf_selector_username | default(omit, True) }}"

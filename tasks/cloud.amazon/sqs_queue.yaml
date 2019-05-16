@@ -1,6 +1,7 @@
 ---
 - name: "module_sqs_queue"
   sqs_queue: "{{ sqs_queue }}"
+  register: r_sqs_queue
   vars:
     sqs_queue: 
       profile: "{{ sqs_queue_profile | default(omit, True) }}"

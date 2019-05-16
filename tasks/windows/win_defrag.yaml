@@ -1,6 +1,7 @@
 ---
 - name: "module_win_defrag"
   win_defrag: "{{ win_defrag }}"
+  register: r_win_defrag
   vars:
     win_defrag: 
       priority: "{{ win_defrag_priority | default(omit, True) }}"

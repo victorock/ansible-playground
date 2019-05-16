@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netscaler: 
-      name: "{{ netscaler_name | default('omit', True) }}"
-      type: "{{ netscaler_type | default('omit', True) }}"
-      nsc_protocol: "{{ netscaler_nsc_protocol | default('omit', True) }}"
-      nsc_host: "{{ netscaler_nsc_host | default('omit', True) }}"
-      user: "{{ netscaler_user | default('omit', True) }}"
-      action: "{{ netscaler_action | default('omit', True) }}"
-      password: "{{ netscaler_password | default('omit', True) }}"
-      validate_certs: "{{ netscaler_validate_certs | default('omit', True) }}"
+      name: "{{ netscaler_name | default(omit, True) }}"
+      type: "{{ netscaler_type | default(omit, True) }}"
+      nsc_protocol: "{{ netscaler_nsc_protocol | default(omit, True) }}"
+      nsc_host: "{{ netscaler_nsc_host | default(omit, True) }}"
+      user: "{{ netscaler_user | default(omit, True) }}"
+      action: "{{ netscaler_action | default(omit, True) }}"
+      password: "{{ netscaler_password | default(omit, True) }}"
+      validate_certs: "{{ netscaler_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_netscaler"
       netscaler: "{{ netscaler }}"
+      register: r_netscaler

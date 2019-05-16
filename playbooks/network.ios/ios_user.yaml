@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ios_user: 
-      authorize: "{{ ios_user_authorize | default('omit', True) }}"
-      update_password: "{{ ios_user_update_password | default('omit', True) }}"
-      configured_password: "{{ ios_user_configured_password | default('omit', True) }}"
-      sshkey: "{{ ios_user_sshkey | default('omit', True) }}"
-      auth_pass: "{{ ios_user_auth_pass | default('omit', True) }}"
-      purge: "{{ ios_user_purge | default('omit', True) }}"
-      aggregate: "{{ ios_user_aggregate | default('omit', True) }}"
-      state: "{{ ios_user_state | default('omit', True) }}"
-      provider: "{{ ios_user_provider | default('omit', True) }}"
-      nopassword: "{{ ios_user_nopassword | default('omit', True) }}"
-      view: "{{ ios_user_view | default('omit', True) }}"
-      privilege: "{{ ios_user_privilege | default('omit', True) }}"
-      name: "{{ ios_user_name | default('omit', True) }}"
+      authorize: "{{ ios_user_authorize | default(omit, True) }}"
+      update_password: "{{ ios_user_update_password | default(omit, True) }}"
+      configured_password: "{{ ios_user_configured_password | default(omit, True) }}"
+      sshkey: "{{ ios_user_sshkey | default(omit, True) }}"
+      auth_pass: "{{ ios_user_auth_pass | default(omit, True) }}"
+      purge: "{{ ios_user_purge | default(omit, True) }}"
+      aggregate: "{{ ios_user_aggregate | default(omit, True) }}"
+      state: "{{ ios_user_state | default(omit, True) }}"
+      provider: "{{ ios_user_provider | default(omit, True) }}"
+      nopassword: "{{ ios_user_nopassword | default(omit, True) }}"
+      view: "{{ ios_user_view | default(omit, True) }}"
+      privilege: "{{ ios_user_privilege | default(omit, True) }}"
+      name: "{{ ios_user_name | default(omit, True) }}"
   tasks:
     - name: "plugin_ios_user"
       ios_user: "{{ ios_user }}"
+      register: r_ios_user

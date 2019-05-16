@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_application_fastl4_tcp"
   bigiq_application_fastl4_tcp: "{{ bigiq_application_fastl4_tcp }}"
+  register: r_bigiq_application_fastl4_tcp
   vars:
     bigiq_application_fastl4_tcp: 
       service_environment: "{{ bigiq_application_fastl4_tcp_service_environment | default(omit, True) }}"

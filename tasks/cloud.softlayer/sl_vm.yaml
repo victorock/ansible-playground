@@ -1,6 +1,7 @@
 ---
 - name: "module_sl_vm"
   sl_vm: "{{ sl_vm }}"
+  register: r_sl_vm
   vars:
     sl_vm: 
       domain: "{{ sl_vm_domain | default(omit, True) }}"

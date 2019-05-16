@@ -1,6 +1,7 @@
 ---
 - name: "module_grafana_datasource"
   grafana_datasource: "{{ grafana_datasource }}"
+  register: r_grafana_datasource
   vars:
     grafana_datasource: 
       tsdb_version: "{{ grafana_datasource_tsdb_version | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_zfs"
   zfs: "{{ zfs }}"
+  register: r_zfs
   vars:
     zfs: 
       origin: "{{ zfs_origin | default(omit, True) }}"

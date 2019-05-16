@@ -1,6 +1,7 @@
 ---
 - name: "module_aix_lvol"
   aix_lvol: "{{ aix_lvol }}"
+  register: r_aix_lvol
   vars:
     aix_lvol: 
       pvs: "{{ aix_lvol_pvs | default(omit, True) }}"

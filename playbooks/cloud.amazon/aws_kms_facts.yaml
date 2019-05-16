@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_kms_facts: 
-      aws_secret_key: "{{ aws_kms_facts_aws_secret_key | default('omit', True) }}"
-      profile: "{{ aws_kms_facts_profile | default('omit', True) }}"
-      aws_access_key: "{{ aws_kms_facts_aws_access_key | default('omit', True) }}"
-      security_token: "{{ aws_kms_facts_security_token | default('omit', True) }}"
-      region: "{{ aws_kms_facts_region | default('omit', True) }}"
-      filters: "{{ aws_kms_facts_filters | default('omit', True) }}"
-      ec2_url: "{{ aws_kms_facts_ec2_url | default('omit', True) }}"
-      pending_deletion: "{{ aws_kms_facts_pending_deletion | default('omit', True) }}"
-      validate_certs: "{{ aws_kms_facts_validate_certs | default('omit', True) }}"
+      aws_secret_key: "{{ aws_kms_facts_aws_secret_key | default(omit, True) }}"
+      profile: "{{ aws_kms_facts_profile | default(omit, True) }}"
+      aws_access_key: "{{ aws_kms_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ aws_kms_facts_security_token | default(omit, True) }}"
+      region: "{{ aws_kms_facts_region | default(omit, True) }}"
+      filters: "{{ aws_kms_facts_filters | default(omit, True) }}"
+      ec2_url: "{{ aws_kms_facts_ec2_url | default(omit, True) }}"
+      pending_deletion: "{{ aws_kms_facts_pending_deletion | default(omit, True) }}"
+      validate_certs: "{{ aws_kms_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_kms_facts"
       aws_kms_facts: "{{ aws_kms_facts }}"
+      register: r_aws_kms_facts

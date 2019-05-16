@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     tower_job_wait: 
-      min_interval: "{{ tower_job_wait_min_interval | default('omit', True) }}"
-      job_id: "{{ tower_job_wait_job_id | default('omit', True) }}"
-      tower_host: "{{ tower_job_wait_tower_host | default('omit', True) }}"
-      tower_username: "{{ tower_job_wait_tower_username | default('omit', True) }}"
-      max_interval: "{{ tower_job_wait_max_interval | default('omit', True) }}"
-      timeout: "{{ tower_job_wait_timeout | default('omit', True) }}"
-      tower_password: "{{ tower_job_wait_tower_password | default('omit', True) }}"
-      tower_config_file: "{{ tower_job_wait_tower_config_file | default('omit', True) }}"
-      tower_verify_ssl: "{{ tower_job_wait_tower_verify_ssl | default('omit', True) }}"
+      min_interval: "{{ tower_job_wait_min_interval | default(omit, True) }}"
+      job_id: "{{ tower_job_wait_job_id | default(omit, True) }}"
+      tower_host: "{{ tower_job_wait_tower_host | default(omit, True) }}"
+      tower_username: "{{ tower_job_wait_tower_username | default(omit, True) }}"
+      max_interval: "{{ tower_job_wait_max_interval | default(omit, True) }}"
+      timeout: "{{ tower_job_wait_timeout | default(omit, True) }}"
+      tower_password: "{{ tower_job_wait_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_job_wait_tower_config_file | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_job_wait_tower_verify_ssl | default(omit, True) }}"
   tasks:
     - name: "plugin_tower_job_wait"
       tower_job_wait: "{{ tower_job_wait }}"
+      register: r_tower_job_wait

@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_vlan"
   cnos_vlan: "{{ cnos_vlan }}"
+  register: r_cnos_vlan
   vars:
     cnos_vlan: 
       username: "{{ cnos_vlan_username | default(omit, True) }}"

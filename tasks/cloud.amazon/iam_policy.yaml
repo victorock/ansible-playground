@@ -1,6 +1,7 @@
 ---
 - name: "module_iam_policy"
   iam_policy: "{{ iam_policy }}"
+  register: r_iam_policy
   vars:
     iam_policy: 
       profile: "{{ iam_policy_profile | default(omit, True) }}"

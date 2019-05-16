@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_volume_facts"
   scaleway_volume_facts: "{{ scaleway_volume_facts }}"
+  register: r_scaleway_volume_facts
   vars:
     scaleway_volume_facts: 
       api_timeout: "{{ scaleway_volume_facts_api_timeout | default(omit, True) }}"

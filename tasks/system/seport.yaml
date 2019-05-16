@@ -1,6 +1,7 @@
 ---
 - name: "module_seport"
   seport: "{{ seport }}"
+  register: r_seport
   vars:
     seport: 
       reload: "{{ seport_reload | default(omit, True) }}"

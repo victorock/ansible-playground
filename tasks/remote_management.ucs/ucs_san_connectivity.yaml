@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_san_connectivity"
   ucs_san_connectivity: "{{ ucs_san_connectivity }}"
+  register: r_ucs_san_connectivity
   vars:
     ucs_san_connectivity: 
       username: "{{ ucs_san_connectivity_username | default(omit, True) }}"

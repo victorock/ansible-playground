@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_service_facts"
   vmware_host_service_facts: "{{ vmware_host_service_facts }}"
+  register: r_vmware_host_service_facts
   vars:
     vmware_host_service_facts: 
       username: "{{ vmware_host_service_facts_username | default(omit, True) }}"

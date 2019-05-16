@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_blueprint_param"
   aos_blueprint_param: "{{ aos_blueprint_param }}"
+  register: r_aos_blueprint_param
   vars:
     aos_blueprint_param: 
       blueprint: "{{ aos_blueprint_param_blueprint | default(omit, True) }}"

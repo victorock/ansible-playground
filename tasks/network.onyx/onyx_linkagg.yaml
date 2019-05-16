@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_linkagg"
   onyx_linkagg: "{{ onyx_linkagg }}"
+  register: r_onyx_linkagg
   vars:
     onyx_linkagg: 
       name: "{{ onyx_linkagg_name | default(omit, True) }}"

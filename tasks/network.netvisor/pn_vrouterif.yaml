@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_vrouterif"
   pn_vrouterif: "{{ pn_vrouterif }}"
+  register: r_pn_vrouterif
   vars:
     pn_vrouterif: 
       pn_nic_enable: "{{ pn_vrouterif_pn_nic_enable | default(omit, True) }}"

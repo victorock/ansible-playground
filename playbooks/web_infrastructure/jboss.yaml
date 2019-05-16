@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     jboss: 
-      src: "{{ jboss_src | default('omit', True) }}"
-      deploy_path: "{{ jboss_deploy_path | default('omit', True) }}"
-      state: "{{ jboss_state | default('omit', True) }}"
-      deployment: "{{ jboss_deployment | default('omit', True) }}"
+      src: "{{ jboss_src | default(omit, True) }}"
+      deploy_path: "{{ jboss_deploy_path | default(omit, True) }}"
+      state: "{{ jboss_state | default(omit, True) }}"
+      deployment: "{{ jboss_deployment | default(omit, True) }}"
   tasks:
     - name: "plugin_jboss"
       jboss: "{{ jboss }}"
+      register: r_jboss

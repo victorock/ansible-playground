@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_s3_cors: 
-      aws_secret_key: "{{ aws_s3_cors_aws_secret_key | default('omit', True) }}"
-      profile: "{{ aws_s3_cors_profile | default('omit', True) }}"
-      aws_access_key: "{{ aws_s3_cors_aws_access_key | default('omit', True) }}"
-      name: "{{ aws_s3_cors_name | default('omit', True) }}"
-      security_token: "{{ aws_s3_cors_security_token | default('omit', True) }}"
-      rules: "{{ aws_s3_cors_rules | default('omit', True) }}"
-      region: "{{ aws_s3_cors_region | default('omit', True) }}"
-      state: "{{ aws_s3_cors_state | default('omit', True) }}"
-      ec2_url: "{{ aws_s3_cors_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ aws_s3_cors_validate_certs | default('omit', True) }}"
+      aws_secret_key: "{{ aws_s3_cors_aws_secret_key | default(omit, True) }}"
+      profile: "{{ aws_s3_cors_profile | default(omit, True) }}"
+      aws_access_key: "{{ aws_s3_cors_aws_access_key | default(omit, True) }}"
+      name: "{{ aws_s3_cors_name | default(omit, True) }}"
+      security_token: "{{ aws_s3_cors_security_token | default(omit, True) }}"
+      rules: "{{ aws_s3_cors_rules | default(omit, True) }}"
+      region: "{{ aws_s3_cors_region | default(omit, True) }}"
+      state: "{{ aws_s3_cors_state | default(omit, True) }}"
+      ec2_url: "{{ aws_s3_cors_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ aws_s3_cors_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_s3_cors"
       aws_s3_cors: "{{ aws_s3_cors }}"
+      register: r_aws_s3_cors

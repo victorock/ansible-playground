@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_lldp_interface"
   onyx_lldp_interface: "{{ onyx_lldp_interface }}"
+  register: r_onyx_lldp_interface
   vars:
     onyx_lldp_interface: 
       aggregate: "{{ onyx_lldp_interface_aggregate | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_custom_attribute_defs"
   vmware_guest_custom_attribute_defs: "{{ vmware_guest_custom_attribute_defs }}"
+  register: r_vmware_guest_custom_attribute_defs
   vars:
     vmware_guest_custom_attribute_defs: 
       username: "{{ vmware_guest_custom_attribute_defs_username | default(omit, True) }}"

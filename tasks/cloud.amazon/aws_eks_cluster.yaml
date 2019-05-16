@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_eks_cluster"
   aws_eks_cluster: "{{ aws_eks_cluster }}"
+  register: r_aws_eks_cluster
   vars:
     aws_eks_cluster: 
       profile: "{{ aws_eks_cluster_profile | default(omit, True) }}"

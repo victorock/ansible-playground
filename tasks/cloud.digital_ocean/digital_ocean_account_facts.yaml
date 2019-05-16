@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_account_facts"
   digital_ocean_account_facts: "{{ digital_ocean_account_facts }}"
+  register: r_digital_ocean_account_facts
   vars:
     digital_ocean_account_facts: 
       validate_certs: "{{ digital_ocean_account_facts_validate_certs | default(omit, True) }}"

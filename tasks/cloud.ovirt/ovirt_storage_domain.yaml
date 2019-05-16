@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_storage_domain"
   ovirt_storage_domain: "{{ ovirt_storage_domain }}"
+  register: r_ovirt_storage_domain
   vars:
     ovirt_storage_domain: 
       comment: "{{ ovirt_storage_domain_comment | default(omit, True) }}"

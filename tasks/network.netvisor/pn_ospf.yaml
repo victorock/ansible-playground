@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_ospf"
   pn_ospf: "{{ pn_ospf }}"
+  register: r_pn_ospf
   vars:
     pn_ospf: 
       pn_vrouter_name: "{{ pn_ospf_pn_vrouter_name | default(omit, True) }}"

@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_cdot_qtree: 
-      username: "{{ na_cdot_qtree_username | default('omit', True) }}"
-      name: "{{ na_cdot_qtree_name | default('omit', True) }}"
-      flexvol_name: "{{ na_cdot_qtree_flexvol_name | default('omit', True) }}"
-      hostname: "{{ na_cdot_qtree_hostname | default('omit', True) }}"
-      vserver: "{{ na_cdot_qtree_vserver | default('omit', True) }}"
-      state: "{{ na_cdot_qtree_state | default('omit', True) }}"
-      password: "{{ na_cdot_qtree_password | default('omit', True) }}"
+      username: "{{ na_cdot_qtree_username | default(omit, True) }}"
+      name: "{{ na_cdot_qtree_name | default(omit, True) }}"
+      flexvol_name: "{{ na_cdot_qtree_flexvol_name | default(omit, True) }}"
+      hostname: "{{ na_cdot_qtree_hostname | default(omit, True) }}"
+      vserver: "{{ na_cdot_qtree_vserver | default(omit, True) }}"
+      state: "{{ na_cdot_qtree_state | default(omit, True) }}"
+      password: "{{ na_cdot_qtree_password | default(omit, True) }}"
   tasks:
     - name: "plugin_na_cdot_qtree"
       na_cdot_qtree: "{{ na_cdot_qtree }}"
+      register: r_na_cdot_qtree

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_eventlog"
   win_eventlog: "{{ win_eventlog }}"
+  register: r_win_eventlog
   vars:
     win_eventlog: 
       name: "{{ win_eventlog_name | default(omit, True) }}"

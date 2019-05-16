@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     stackdriver: 
-      repository: "{{ stackdriver_repository | default('omit', True) }}"
-      level: "{{ stackdriver_level | default('omit', True) }}"
-      annotated_by: "{{ stackdriver_annotated_by | default('omit', True) }}"
-      deployed_to: "{{ stackdriver_deployed_to | default('omit', True) }}"
-      deployed_by: "{{ stackdriver_deployed_by | default('omit', True) }}"
-      instance_id: "{{ stackdriver_instance_id | default('omit', True) }}"
-      key: "{{ stackdriver_key | default('omit', True) }}"
-      msg: "{{ stackdriver_msg | default('omit', True) }}"
-      event_epoch: "{{ stackdriver_event_epoch | default('omit', True) }}"
-      revision_id: "{{ stackdriver_revision_id | default('omit', True) }}"
-      event: "{{ stackdriver_event | default('omit', True) }}"
+      repository: "{{ stackdriver_repository | default(omit, True) }}"
+      level: "{{ stackdriver_level | default(omit, True) }}"
+      annotated_by: "{{ stackdriver_annotated_by | default(omit, True) }}"
+      deployed_to: "{{ stackdriver_deployed_to | default(omit, True) }}"
+      deployed_by: "{{ stackdriver_deployed_by | default(omit, True) }}"
+      instance_id: "{{ stackdriver_instance_id | default(omit, True) }}"
+      key: "{{ stackdriver_key | default(omit, True) }}"
+      msg: "{{ stackdriver_msg | default(omit, True) }}"
+      event_epoch: "{{ stackdriver_event_epoch | default(omit, True) }}"
+      revision_id: "{{ stackdriver_revision_id | default(omit, True) }}"
+      event: "{{ stackdriver_event | default(omit, True) }}"
   tasks:
     - name: "plugin_stackdriver"
       stackdriver: "{{ stackdriver }}"
+      register: r_stackdriver

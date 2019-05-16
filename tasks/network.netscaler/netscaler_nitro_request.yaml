@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_nitro_request"
   netscaler_nitro_request: "{{ netscaler_nitro_request }}"
+  register: r_netscaler_nitro_request
   vars:
     netscaler_nitro_request: 
       filter: "{{ netscaler_nitro_request_filter | default(omit, True) }}"

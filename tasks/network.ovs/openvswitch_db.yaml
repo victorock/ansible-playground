@@ -1,6 +1,7 @@
 ---
 - name: "module_openvswitch_db"
   openvswitch_db: "{{ openvswitch_db }}"
+  register: r_openvswitch_db
   vars:
     openvswitch_db: 
       timeout: "{{ openvswitch_db_timeout | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_config"
   junos_config: "{{ junos_config }}"
+  register: r_junos_config
   vars:
     junos_config: 
       comment: "{{ junos_config_comment | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vpc_interface"
   nxos_vpc_interface: "{{ nxos_vpc_interface }}"
+  register: r_nxos_vpc_interface
   vars:
     nxos_vpc_interface: 
       peer_link: "{{ nxos_vpc_interface_peer_link | default(omit, True) }}"

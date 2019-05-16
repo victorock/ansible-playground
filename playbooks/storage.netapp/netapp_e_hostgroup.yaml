@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_hostgroup: 
-      new_name: "{{ netapp_e_hostgroup_new_name | default('omit', True) }}"
-      api_url: "{{ netapp_e_hostgroup_api_url | default('omit', True) }}"
-      api_password: "{{ netapp_e_hostgroup_api_password | default('omit', True) }}"
-      name: "{{ netapp_e_hostgroup_name | default('omit', True) }}"
-      state: "{{ netapp_e_hostgroup_state | default('omit', True) }}"
-      hosts: "{{ netapp_e_hostgroup_hosts | default('omit', True) }}"
-      api_username: "{{ netapp_e_hostgroup_api_username | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_hostgroup_validate_certs | default('omit', True) }}"
-      id: "{{ netapp_e_hostgroup_id | default('omit', True) }}"
-      ssid: "{{ netapp_e_hostgroup_ssid | default('omit', True) }}"
+      new_name: "{{ netapp_e_hostgroup_new_name | default(omit, True) }}"
+      api_url: "{{ netapp_e_hostgroup_api_url | default(omit, True) }}"
+      api_password: "{{ netapp_e_hostgroup_api_password | default(omit, True) }}"
+      name: "{{ netapp_e_hostgroup_name | default(omit, True) }}"
+      state: "{{ netapp_e_hostgroup_state | default(omit, True) }}"
+      hosts: "{{ netapp_e_hostgroup_hosts | default(omit, True) }}"
+      api_username: "{{ netapp_e_hostgroup_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_hostgroup_validate_certs | default(omit, True) }}"
+      id: "{{ netapp_e_hostgroup_id | default(omit, True) }}"
+      ssid: "{{ netapp_e_hostgroup_ssid | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_hostgroup"
       netapp_e_hostgroup: "{{ netapp_e_hostgroup }}"
+      register: r_netapp_e_hostgroup

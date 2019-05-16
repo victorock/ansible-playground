@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     rhsm_repository: 
-      state: "{{ rhsm_repository_state | default('omit', True) }}"
-      name: "{{ rhsm_repository_name | default('omit', True) }}"
+      state: "{{ rhsm_repository_state | default(omit, True) }}"
+      name: "{{ rhsm_repository_name | default(omit, True) }}"
   tasks:
     - name: "plugin_rhsm_repository"
       rhsm_repository: "{{ rhsm_repository }}"
+      register: r_rhsm_repository

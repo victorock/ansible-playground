@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_system"
   ios_system: "{{ ios_system }}"
+  register: r_ios_system
   vars:
     ios_system: 
       authorize: "{{ ios_system_authorize | default(omit, True) }}"

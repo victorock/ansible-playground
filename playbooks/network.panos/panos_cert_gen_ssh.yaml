@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     panos_cert_gen_ssh: 
-      ip_address: "{{ panos_cert_gen_ssh_ip_address | default('omit', True) }}"
-      key_filename: "{{ panos_cert_gen_ssh_key_filename | default('omit', True) }}"
-      rsa_nbits: "{{ panos_cert_gen_ssh_rsa_nbits | default('omit', True) }}"
-      cert_cn: "{{ panos_cert_gen_ssh_cert_cn | default('omit', True) }}"
-      password: "{{ panos_cert_gen_ssh_password | default('omit', True) }}"
-      cert_friendly_name: "{{ panos_cert_gen_ssh_cert_friendly_name | default('omit', True) }}"
-      signed_by: "{{ panos_cert_gen_ssh_signed_by | default('omit', True) }}"
+      ip_address: "{{ panos_cert_gen_ssh_ip_address | default(omit, True) }}"
+      key_filename: "{{ panos_cert_gen_ssh_key_filename | default(omit, True) }}"
+      rsa_nbits: "{{ panos_cert_gen_ssh_rsa_nbits | default(omit, True) }}"
+      cert_cn: "{{ panos_cert_gen_ssh_cert_cn | default(omit, True) }}"
+      password: "{{ panos_cert_gen_ssh_password | default(omit, True) }}"
+      cert_friendly_name: "{{ panos_cert_gen_ssh_cert_friendly_name | default(omit, True) }}"
+      signed_by: "{{ panos_cert_gen_ssh_signed_by | default(omit, True) }}"
   tasks:
     - name: "plugin_panos_cert_gen_ssh"
       panos_cert_gen_ssh: "{{ panos_cert_gen_ssh }}"
+      register: r_panos_cert_gen_ssh

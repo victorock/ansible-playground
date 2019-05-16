@@ -1,6 +1,7 @@
 ---
 - name: "module_zabbix_template"
   zabbix_template: "{{ zabbix_template }}"
+  register: r_zabbix_template
   vars:
     zabbix_template: 
       http_login_password: "{{ zabbix_template_http_login_password | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_oneandone_monitoring_policy"
   oneandone_monitoring_policy: "{{ oneandone_monitoring_policy }}"
+  register: r_oneandone_monitoring_policy
   vars:
     oneandone_monitoring_policy: 
       thresholds: "{{ oneandone_monitoring_policy_thresholds | default(omit, True) }}"

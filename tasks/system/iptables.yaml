@@ -1,6 +1,7 @@
 ---
 - name: "module_iptables"
   iptables: "{{ iptables }}"
+  register: r_iptables
   vars:
     iptables: 
       tcp_flags: "{{ iptables_tcp_flags | default(omit, True) }}"

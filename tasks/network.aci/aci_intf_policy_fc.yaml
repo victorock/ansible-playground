@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_intf_policy_fc"
   aci_intf_policy_fc: "{{ aci_intf_policy_fc }}"
+  register: r_aci_intf_policy_fc
   vars:
     aci_intf_policy_fc: 
       username: "{{ aci_intf_policy_fc_username | default(omit, True) }}"

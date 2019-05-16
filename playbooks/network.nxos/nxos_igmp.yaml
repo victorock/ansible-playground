@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_igmp: 
-      state: "{{ nxos_igmp_state | default('omit', True) }}"
-      flush_routes: "{{ nxos_igmp_flush_routes | default('omit', True) }}"
-      enforce_rtr_alert: "{{ nxos_igmp_enforce_rtr_alert | default('omit', True) }}"
-      restart: "{{ nxos_igmp_restart | default('omit', True) }}"
-      provider: "{{ nxos_igmp_provider | default('omit', True) }}"
+      state: "{{ nxos_igmp_state | default(omit, True) }}"
+      flush_routes: "{{ nxos_igmp_flush_routes | default(omit, True) }}"
+      enforce_rtr_alert: "{{ nxos_igmp_enforce_rtr_alert | default(omit, True) }}"
+      restart: "{{ nxos_igmp_restart | default(omit, True) }}"
+      provider: "{{ nxos_igmp_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_igmp"
       nxos_igmp: "{{ nxos_igmp }}"
+      register: r_nxos_igmp

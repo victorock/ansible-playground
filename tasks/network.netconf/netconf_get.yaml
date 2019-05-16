@@ -1,6 +1,7 @@
 ---
 - name: "module_netconf_get"
   netconf_get: "{{ netconf_get }}"
+  register: r_netconf_get
   vars:
     netconf_get: 
       filter: "{{ netconf_get_filter | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_s3_logging"
   s3_logging: "{{ s3_logging }}"
+  register: r_s3_logging
   vars:
     s3_logging: 
       profile: "{{ s3_logging_profile | default(omit, True) }}"

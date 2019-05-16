@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_trunk"
   bigip_trunk: "{{ bigip_trunk }}"
+  register: r_bigip_trunk
   vars:
     bigip_trunk: 
       frame_distribution_hash: "{{ bigip_trunk_frame_distribution_hash | default(omit, True) }}"

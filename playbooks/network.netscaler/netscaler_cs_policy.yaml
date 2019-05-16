@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netscaler_cs_policy: 
-      policyname: "{{ netscaler_cs_policy_policyname | default('omit', True) }}"
-      domain: "{{ netscaler_cs_policy_domain | default('omit', True) }}"
-      url: "{{ netscaler_cs_policy_url | default('omit', True) }}"
-      save_config: "{{ netscaler_cs_policy_save_config | default('omit', True) }}"
-      state: "{{ netscaler_cs_policy_state | default('omit', True) }}"
-      rule: "{{ netscaler_cs_policy_rule | default('omit', True) }}"
-      nitro_protocol: "{{ netscaler_cs_policy_nitro_protocol | default('omit', True) }}"
-      nsip: "{{ netscaler_cs_policy_nsip | default('omit', True) }}"
-      nitro_user: "{{ netscaler_cs_policy_nitro_user | default('omit', True) }}"
-      action: "{{ netscaler_cs_policy_action | default('omit', True) }}"
-      nitro_pass: "{{ netscaler_cs_policy_nitro_pass | default('omit', True) }}"
-      validate_certs: "{{ netscaler_cs_policy_validate_certs | default('omit', True) }}"
-      nitro_timeout: "{{ netscaler_cs_policy_nitro_timeout | default('omit', True) }}"
+      policyname: "{{ netscaler_cs_policy_policyname | default(omit, True) }}"
+      domain: "{{ netscaler_cs_policy_domain | default(omit, True) }}"
+      url: "{{ netscaler_cs_policy_url | default(omit, True) }}"
+      save_config: "{{ netscaler_cs_policy_save_config | default(omit, True) }}"
+      state: "{{ netscaler_cs_policy_state | default(omit, True) }}"
+      rule: "{{ netscaler_cs_policy_rule | default(omit, True) }}"
+      nitro_protocol: "{{ netscaler_cs_policy_nitro_protocol | default(omit, True) }}"
+      nsip: "{{ netscaler_cs_policy_nsip | default(omit, True) }}"
+      nitro_user: "{{ netscaler_cs_policy_nitro_user | default(omit, True) }}"
+      action: "{{ netscaler_cs_policy_action | default(omit, True) }}"
+      nitro_pass: "{{ netscaler_cs_policy_nitro_pass | default(omit, True) }}"
+      validate_certs: "{{ netscaler_cs_policy_validate_certs | default(omit, True) }}"
+      nitro_timeout: "{{ netscaler_cs_policy_nitro_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_netscaler_cs_policy"
       netscaler_cs_policy: "{{ netscaler_cs_policy }}"
+      register: r_netscaler_cs_policy

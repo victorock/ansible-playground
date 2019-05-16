@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_disk"
   gcp_compute_disk: "{{ gcp_compute_disk }}"
+  register: r_gcp_compute_disk
   vars:
     gcp_compute_disk: 
       scopes: "{{ gcp_compute_disk_scopes | default(omit, True) }}"

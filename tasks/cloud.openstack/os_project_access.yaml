@@ -1,6 +1,7 @@
 ---
 - name: "module_os_project_access"
   os_project_access: "{{ os_project_access }}"
+  register: r_os_project_access
   vars:
     os_project_access: 
       auth_type: "{{ os_project_access_auth_type | default(omit, True) }}"

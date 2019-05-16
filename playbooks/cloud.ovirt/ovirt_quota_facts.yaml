@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_quota_facts: 
-      nested_attributes: "{{ ovirt_quota_facts_nested_attributes | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_quota_facts_fetch_nested | default('omit', True) }}"
-      name: "{{ ovirt_quota_facts_name | default('omit', True) }}"
-      auth: "{{ ovirt_quota_facts_auth | default('omit', True) }}"
-      data_center: "{{ ovirt_quota_facts_data_center | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_quota_facts_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_quota_facts_fetch_nested | default(omit, True) }}"
+      name: "{{ ovirt_quota_facts_name | default(omit, True) }}"
+      auth: "{{ ovirt_quota_facts_auth | default(omit, True) }}"
+      data_center: "{{ ovirt_quota_facts_data_center | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_quota_facts"
       ovirt_quota_facts: "{{ ovirt_quota_facts }}"
+      register: r_ovirt_quota_facts

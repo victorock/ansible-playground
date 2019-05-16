@@ -1,6 +1,7 @@
 ---
 - name: "module_emc_vnx_sg_member"
   emc_vnx_sg_member: "{{ emc_vnx_sg_member }}"
+  register: r_emc_vnx_sg_member
   vars:
     emc_vnx_sg_member: 
       sp_password: "{{ emc_vnx_sg_member_sp_password | default(omit, True) }}"

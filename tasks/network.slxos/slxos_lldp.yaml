@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_lldp"
   slxos_lldp: "{{ slxos_lldp }}"
+  register: r_slxos_lldp
   vars:
     slxos_lldp: 
       state: "{{ slxos_lldp_state | default(omit, True) }}"

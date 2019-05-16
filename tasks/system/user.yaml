@@ -1,6 +1,7 @@
 ---
 - name: "module_user"
   user: "{{ user }}"
+  register: r_user
   vars:
     user: 
       comment: "{{ user_comment | default(omit, True) }}"

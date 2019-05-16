@@ -1,6 +1,7 @@
 ---
 - name: "module_win_nssm"
   win_nssm: "{{ win_nssm }}"
+  register: r_win_nssm
   vars:
     win_nssm: 
       name: "{{ win_nssm_name | default(omit, True) }}"

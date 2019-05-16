@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_authprofile"
   avi_authprofile: "{{ avi_authprofile }}"
+  register: r_avi_authprofile
   vars:
     avi_authprofile: 
       username: "{{ avi_authprofile_username | default(omit, True) }}"

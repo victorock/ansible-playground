@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_network_acl_rule"
   cs_network_acl_rule: "{{ cs_network_acl_rule }}"
+  register: r_cs_network_acl_rule
   vars:
     cs_network_acl_rule: 
       domain: "{{ cs_network_acl_rule_domain | default(omit, True) }}"

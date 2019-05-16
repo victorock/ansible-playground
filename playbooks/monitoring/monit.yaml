@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     monit: 
-      state: "{{ monit_state | default('omit', True) }}"
-      name: "{{ monit_name | default('omit', True) }}"
-      timeout: "{{ monit_timeout | default('omit', True) }}"
+      state: "{{ monit_state | default(omit, True) }}"
+      name: "{{ monit_name | default(omit, True) }}"
+      timeout: "{{ monit_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_monit"
       monit: "{{ monit }}"
+      register: r_monit

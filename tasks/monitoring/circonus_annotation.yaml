@@ -1,6 +1,7 @@
 ---
 - name: "module_circonus_annotation"
   circonus_annotation: "{{ circonus_annotation }}"
+  register: r_circonus_annotation
   vars:
     circonus_annotation: 
       category: "{{ circonus_annotation_category | default(omit, True) }}"

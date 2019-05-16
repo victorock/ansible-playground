@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_firewall_policy"
   na_ontap_firewall_policy: "{{ na_ontap_firewall_policy }}"
+  register: r_na_ontap_firewall_policy
   vars:
     na_ontap_firewall_policy: 
       node: "{{ na_ontap_firewall_policy_node | default(omit, True) }}"

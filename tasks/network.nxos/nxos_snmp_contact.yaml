@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_snmp_contact"
   nxos_snmp_contact: "{{ nxos_snmp_contact }}"
+  register: r_nxos_snmp_contact
   vars:
     nxos_snmp_contact: 
       state: "{{ nxos_snmp_contact_state | default(omit, True) }}"

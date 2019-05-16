@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_volume"
   scaleway_volume: "{{ scaleway_volume }}"
+  register: r_scaleway_volume
   vars:
     scaleway_volume: 
       api_url: "{{ scaleway_volume_api_url | default(omit, True) }}"

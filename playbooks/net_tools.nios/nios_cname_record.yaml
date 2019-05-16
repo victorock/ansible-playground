@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nios_cname_record: 
-      comment: "{{ nios_cname_record_comment | default('omit', True) }}"
-      name: "{{ nios_cname_record_name | default('omit', True) }}"
-      ttl: "{{ nios_cname_record_ttl | default('omit', True) }}"
-      extattrs: "{{ nios_cname_record_extattrs | default('omit', True) }}"
-      state: "{{ nios_cname_record_state | default('omit', True) }}"
-      provider: "{{ nios_cname_record_provider | default('omit', True) }}"
-      view: "{{ nios_cname_record_view | default('omit', True) }}"
-      canonical: "{{ nios_cname_record_canonical | default('omit', True) }}"
+      comment: "{{ nios_cname_record_comment | default(omit, True) }}"
+      name: "{{ nios_cname_record_name | default(omit, True) }}"
+      ttl: "{{ nios_cname_record_ttl | default(omit, True) }}"
+      extattrs: "{{ nios_cname_record_extattrs | default(omit, True) }}"
+      state: "{{ nios_cname_record_state | default(omit, True) }}"
+      provider: "{{ nios_cname_record_provider | default(omit, True) }}"
+      view: "{{ nios_cname_record_view | default(omit, True) }}"
+      canonical: "{{ nios_cname_record_canonical | default(omit, True) }}"
   tasks:
     - name: "plugin_nios_cname_record"
       nios_cname_record: "{{ nios_cname_record }}"
+      register: r_nios_cname_record

@@ -1,6 +1,7 @@
 ---
 - name: "module_rds_instance"
   rds_instance: "{{ rds_instance }}"
+  register: r_rds_instance
   vars:
     rds_instance: 
       backup_retention_period: "{{ rds_instance_backup_retention_period | default(omit, True) }}"

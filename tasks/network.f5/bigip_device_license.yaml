@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_license"
   bigip_device_license: "{{ bigip_device_license }}"
+  register: r_bigip_device_license
   vars:
     bigip_device_license: 
       license_server: "{{ bigip_device_license_license_server | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_find"
   vmware_guest_find: "{{ vmware_guest_find }}"
+  register: r_vmware_guest_find
   vars:
     vmware_guest_find: 
       username: "{{ vmware_guest_find_username | default(omit, True) }}"

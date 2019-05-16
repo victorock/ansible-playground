@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_config"
   ce_config: "{{ ce_config }}"
+  register: r_ce_config
   vars:
     ce_config: 
       src: "{{ ce_config_src | default(omit, True) }}"

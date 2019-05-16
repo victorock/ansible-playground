@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_configsync_action"
   bigip_configsync_action: "{{ bigip_configsync_action }}"
+  register: r_bigip_configsync_action
   vars:
     bigip_configsync_action: 
       sync_most_recent_to_device: "{{ bigip_configsync_action_sync_most_recent_to_device | default(omit, True) }}"

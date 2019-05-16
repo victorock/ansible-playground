@@ -1,6 +1,7 @@
 ---
 - name: "module_pushover"
   pushover: "{{ pushover }}"
+  register: r_pushover
   vars:
     pushover: 
       msg: "{{ pushover_msg | default(omit, True) }}"

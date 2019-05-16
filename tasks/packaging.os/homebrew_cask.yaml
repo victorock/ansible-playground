@@ -1,6 +1,7 @@
 ---
 - name: "module_homebrew_cask"
   homebrew_cask: "{{ homebrew_cask }}"
+  register: r_homebrew_cask
   vars:
     homebrew_cask: 
       install_options: "{{ homebrew_cask_install_options | default(omit, True) }}"

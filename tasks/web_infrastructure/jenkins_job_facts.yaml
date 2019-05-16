@@ -1,6 +1,7 @@
 ---
 - name: "module_jenkins_job_facts"
   jenkins_job_facts: "{{ jenkins_job_facts }}"
+  register: r_jenkins_job_facts
   vars:
     jenkins_job_facts: 
       name: "{{ jenkins_job_facts_name | default(omit, True) }}"

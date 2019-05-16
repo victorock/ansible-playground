@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_ssh_key_facts"
   vultr_ssh_key_facts: "{{ vultr_ssh_key_facts }}"
+  register: r_vultr_ssh_key_facts
   vars:
     vultr_ssh_key_facts: 
       api_retries: "{{ vultr_ssh_key_facts_api_retries | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_honeybadger_deployment"
   honeybadger_deployment: "{{ honeybadger_deployment }}"
+  register: r_honeybadger_deployment
   vars:
     honeybadger_deployment: 
       repo: "{{ honeybadger_deployment_repo | default(omit, True) }}"

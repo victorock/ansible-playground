@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     panos_mgtconfig: 
-      username: "{{ panos_mgtconfig_username | default('omit', True) }}"
-      panorama_primary: "{{ panos_mgtconfig_panorama_primary | default('omit', True) }}"
-      dns_server_secondary: "{{ panos_mgtconfig_dns_server_secondary | default('omit', True) }}"
-      dns_server_primary: "{{ panos_mgtconfig_dns_server_primary | default('omit', True) }}"
-      panorama_secondary: "{{ panos_mgtconfig_panorama_secondary | default('omit', True) }}"
-      commit: "{{ panos_mgtconfig_commit | default('omit', True) }}"
-      password: "{{ panos_mgtconfig_password | default('omit', True) }}"
-      ip_address: "{{ panos_mgtconfig_ip_address | default('omit', True) }}"
+      username: "{{ panos_mgtconfig_username | default(omit, True) }}"
+      panorama_primary: "{{ panos_mgtconfig_panorama_primary | default(omit, True) }}"
+      dns_server_secondary: "{{ panos_mgtconfig_dns_server_secondary | default(omit, True) }}"
+      dns_server_primary: "{{ panos_mgtconfig_dns_server_primary | default(omit, True) }}"
+      panorama_secondary: "{{ panos_mgtconfig_panorama_secondary | default(omit, True) }}"
+      commit: "{{ panos_mgtconfig_commit | default(omit, True) }}"
+      password: "{{ panos_mgtconfig_password | default(omit, True) }}"
+      ip_address: "{{ panos_mgtconfig_ip_address | default(omit, True) }}"
   tasks:
     - name: "plugin_panos_mgtconfig"
       panos_mgtconfig: "{{ panos_mgtconfig }}"
+      register: r_panos_mgtconfig

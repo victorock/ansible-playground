@@ -1,6 +1,7 @@
 ---
 - name: "module_os_quota"
   os_quota: "{{ os_quota }}"
+  register: r_os_quota
   vars:
     os_quota: 
       snapshots_lvm: "{{ os_quota_snapshots_lvm | default(omit, True) }}"

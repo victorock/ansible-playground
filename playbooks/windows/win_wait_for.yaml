@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_wait_for: 
-      host: "{{ win_wait_for_host | default('omit', True) }}"
-      port: "{{ win_wait_for_port | default('omit', True) }}"
-      delay: "{{ win_wait_for_delay | default('omit', True) }}"
-      state: "{{ win_wait_for_state | default('omit', True) }}"
-      sleep: "{{ win_wait_for_sleep | default('omit', True) }}"
-      timeout: "{{ win_wait_for_timeout | default('omit', True) }}"
-      exclude_hosts: "{{ win_wait_for_exclude_hosts | default('omit', True) }}"
-      search_regex: "{{ win_wait_for_search_regex | default('omit', True) }}"
-      path: "{{ win_wait_for_path | default('omit', True) }}"
-      connect_timeout: "{{ win_wait_for_connect_timeout | default('omit', True) }}"
+      host: "{{ win_wait_for_host | default(omit, True) }}"
+      port: "{{ win_wait_for_port | default(omit, True) }}"
+      delay: "{{ win_wait_for_delay | default(omit, True) }}"
+      state: "{{ win_wait_for_state | default(omit, True) }}"
+      sleep: "{{ win_wait_for_sleep | default(omit, True) }}"
+      timeout: "{{ win_wait_for_timeout | default(omit, True) }}"
+      exclude_hosts: "{{ win_wait_for_exclude_hosts | default(omit, True) }}"
+      search_regex: "{{ win_wait_for_search_regex | default(omit, True) }}"
+      path: "{{ win_wait_for_path | default(omit, True) }}"
+      connect_timeout: "{{ win_wait_for_connect_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_win_wait_for"
       win_wait_for: "{{ win_wait_for }}"
+      register: r_win_wait_for

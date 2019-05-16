@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_rpm"
   nxos_rpm: "{{ nxos_rpm }}"
+  register: r_nxos_rpm
   vars:
     nxos_rpm: 
       aggregate: "{{ nxos_rpm_aggregate | default(omit, True) }}"

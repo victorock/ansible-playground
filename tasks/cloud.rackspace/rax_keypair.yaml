@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_keypair"
   rax_keypair: "{{ rax_keypair }}"
+  register: r_rax_keypair
   vars:
     rax_keypair: 
       username: "{{ rax_keypair_username | default(omit, True) }}"

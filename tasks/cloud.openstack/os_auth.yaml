@@ -1,6 +1,7 @@
 ---
 - name: "module_os_auth"
   os_auth: "{{ os_auth }}"
+  register: r_os_auth
   vars:
     os_auth: 
       auth_type: "{{ os_auth_auth_type | default(omit, True) }}"

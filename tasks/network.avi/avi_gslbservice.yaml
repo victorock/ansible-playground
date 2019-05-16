@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_gslbservice"
   avi_gslbservice: "{{ avi_gslbservice }}"
+  register: r_avi_gslbservice
   vars:
     avi_gslbservice: 
       tenant_ref: "{{ avi_gslbservice_tenant_ref | default(omit, True) }}"

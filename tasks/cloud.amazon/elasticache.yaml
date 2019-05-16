@@ -1,6 +1,7 @@
 ---
 - name: "module_elasticache"
   elasticache: "{{ elasticache }}"
+  register: r_elasticache
   vars:
     elasticache: 
       engine: "{{ elasticache_engine | default(omit, True) }}"

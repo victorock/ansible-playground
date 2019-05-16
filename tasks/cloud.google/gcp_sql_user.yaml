@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_sql_user"
   gcp_sql_user: "{{ gcp_sql_user }}"
+  register: r_gcp_sql_user
   vars:
     gcp_sql_user: 
       scopes: "{{ gcp_sql_user_scopes | default(omit, True) }}"

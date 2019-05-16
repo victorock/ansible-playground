@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_interface"
   slxos_interface: "{{ slxos_interface }}"
+  register: r_slxos_interface
   vars:
     slxos_interface: 
       neighbors: "{{ slxos_interface_neighbors | default(omit, True) }}"

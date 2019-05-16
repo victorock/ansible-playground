@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_backup"
   cnos_backup: "{{ cnos_backup }}"
+  register: r_cnos_backup
   vars:
     cnos_backup: 
       username: "{{ cnos_backup_username | default(omit, True) }}"

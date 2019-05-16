@@ -1,6 +1,7 @@
 ---
 - name: "module_webfaction_app"
   webfaction_app: "{{ webfaction_app }}"
+  register: r_webfaction_app
   vars:
     webfaction_app: 
       name: "{{ webfaction_app_name | default(omit, True) }}"

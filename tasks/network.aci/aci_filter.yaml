@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_filter"
   aci_filter: "{{ aci_filter }}"
+  register: r_aci_filter
   vars:
     aci_filter: 
       username: "{{ aci_filter_username | default(omit, True) }}"

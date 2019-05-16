@@ -1,6 +1,7 @@
 ---
 - name: "module_a10_virtual_server"
   a10_virtual_server: "{{ a10_virtual_server }}"
+  register: r_a10_virtual_server
   vars:
     a10_virtual_server: 
       username: "{{ a10_virtual_server_username | default(omit, True) }}"

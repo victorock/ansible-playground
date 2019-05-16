@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_snmp_traps"
   nxos_snmp_traps: "{{ nxos_snmp_traps }}"
+  register: r_nxos_snmp_traps
   vars:
     nxos_snmp_traps: 
       state: "{{ nxos_snmp_traps_state | default(omit, True) }}"

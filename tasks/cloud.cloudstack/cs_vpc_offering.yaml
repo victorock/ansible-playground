@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_vpc_offering"
   cs_vpc_offering: "{{ cs_vpc_offering }}"
+  register: r_cs_vpc_offering
   vars:
     cs_vpc_offering: 
       display_text: "{{ cs_vpc_offering_display_text | default(omit, True) }}"

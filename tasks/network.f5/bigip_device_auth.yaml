@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_auth"
   bigip_device_auth: "{{ bigip_device_auth }}"
+  register: r_bigip_device_auth
   vars:
     bigip_device_auth: 
       protocol_name: "{{ bigip_device_auth_protocol_name | default(omit, True) }}"

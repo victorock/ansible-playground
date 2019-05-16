@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_vpn"
   ec2_vpc_vpn: "{{ ec2_vpc_vpn }}"
+  register: r_ec2_vpc_vpn
   vars:
     ec2_vpc_vpn: 
       profile: "{{ ec2_vpc_vpn_profile | default(omit, True) }}"

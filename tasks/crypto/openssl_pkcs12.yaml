@@ -1,6 +1,7 @@
 ---
 - name: "module_openssl_pkcs12"
   openssl_pkcs12: "{{ openssl_pkcs12 }}"
+  register: r_openssl_pkcs12
   vars:
     openssl_pkcs12: 
       privatekey_passphrase: "{{ openssl_pkcs12_privatekey_passphrase | default(omit, True) }}"

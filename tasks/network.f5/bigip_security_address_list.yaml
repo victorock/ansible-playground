@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_security_address_list"
   bigip_security_address_list: "{{ bigip_security_address_list }}"
+  register: r_bigip_security_address_list
   vars:
     bigip_security_address_list: 
       geo_locations: "{{ bigip_security_address_list_geo_locations | default(omit, True) }}"

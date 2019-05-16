@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_regkey_license_assignment"
   bigiq_regkey_license_assignment: "{{ bigiq_regkey_license_assignment }}"
+  register: r_bigiq_regkey_license_assignment
   vars:
     bigiq_regkey_license_assignment: 
       device_username: "{{ bigiq_regkey_license_assignment_device_username | default(omit, True) }}"

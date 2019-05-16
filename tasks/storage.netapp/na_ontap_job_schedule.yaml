@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_job_schedule"
   na_ontap_job_schedule: "{{ na_ontap_job_schedule }}"
+  register: r_na_ontap_job_schedule
   vars:
     na_ontap_job_schedule: 
       username: "{{ na_ontap_job_schedule_username | default(omit, True) }}"

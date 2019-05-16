@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_snmp_community"
   nxos_snmp_community: "{{ nxos_snmp_community }}"
+  register: r_nxos_snmp_community
   vars:
     nxos_snmp_community: 
       group: "{{ nxos_snmp_community_group | default(omit, True) }}"

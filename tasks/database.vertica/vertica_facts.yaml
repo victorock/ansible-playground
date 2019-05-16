@@ -1,6 +1,7 @@
 ---
 - name: "module_vertica_facts"
   vertica_facts: "{{ vertica_facts }}"
+  register: r_vertica_facts
   vars:
     vertica_facts: 
       cluster: "{{ vertica_facts_cluster | default(omit, True) }}"

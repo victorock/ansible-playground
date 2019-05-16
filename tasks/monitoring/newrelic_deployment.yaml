@@ -1,6 +1,7 @@
 ---
 - name: "module_newrelic_deployment"
   newrelic_deployment: "{{ newrelic_deployment }}"
+  register: r_newrelic_deployment
   vars:
     newrelic_deployment: 
       application_id: "{{ newrelic_deployment_application_id | default(omit, True) }}"

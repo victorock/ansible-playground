@@ -1,6 +1,7 @@
 ---
 - name: "module_os_server"
   os_server: "{{ os_server }}"
+  register: r_os_server
   vars:
     os_server: 
       auth_type: "{{ os_server_auth_type | default(omit, True) }}"

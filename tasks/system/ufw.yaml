@@ -1,6 +1,7 @@
 ---
 - name: "module_ufw"
   ufw: "{{ ufw }}"
+  register: r_ufw
   vars:
     ufw: 
       comment: "{{ ufw_comment | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_cluster_facts"
   vmware_cluster_facts: "{{ vmware_cluster_facts }}"
+  register: r_vmware_cluster_facts
   vars:
     vmware_cluster_facts: 
       username: "{{ vmware_cluster_facts_username | default(omit, True) }}"

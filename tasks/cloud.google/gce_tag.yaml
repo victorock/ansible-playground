@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_tag"
   gce_tag: "{{ gce_tag }}"
+  register: r_gce_tag
   vars:
     gce_tag: 
       zone: "{{ gce_tag_zone | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_infini_export"
   infini_export: "{{ infini_export }}"
+  register: r_infini_export
   vars:
     infini_export: 
       inner_path: "{{ infini_export_inner_path | default(omit, True) }}"

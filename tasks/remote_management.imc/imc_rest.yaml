@@ -1,6 +1,7 @@
 ---
 - name: "module_imc_rest"
   imc_rest: "{{ imc_rest }}"
+  register: r_imc_rest
   vars:
     imc_rest: 
       username: "{{ imc_rest_username | default(omit, True) }}"

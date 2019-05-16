@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pn_ospfarea: 
-      pn_vrouter_name: "{{ pn_ospfarea_pn_vrouter_name | default('omit', True) }}"
-      pn_quiet: "{{ pn_ospfarea_pn_quiet | default('omit', True) }}"
-      pn_clipassword: "{{ pn_ospfarea_pn_clipassword | default('omit', True) }}"
-      pn_ospf_area: "{{ pn_ospfarea_pn_ospf_area | default('omit', True) }}"
-      pn_cliusername: "{{ pn_ospfarea_pn_cliusername | default('omit', True) }}"
-      pn_prefix_listin: "{{ pn_ospfarea_pn_prefix_listin | default('omit', True) }}"
-      state: "{{ pn_ospfarea_state | default('omit', True) }}"
-      pn_prefix_listout: "{{ pn_ospfarea_pn_prefix_listout | default('omit', True) }}"
-      pn_stub_type: "{{ pn_ospfarea_pn_stub_type | default('omit', True) }}"
-      pn_cliswitch: "{{ pn_ospfarea_pn_cliswitch | default('omit', True) }}"
+      pn_vrouter_name: "{{ pn_ospfarea_pn_vrouter_name | default(omit, True) }}"
+      pn_quiet: "{{ pn_ospfarea_pn_quiet | default(omit, True) }}"
+      pn_clipassword: "{{ pn_ospfarea_pn_clipassword | default(omit, True) }}"
+      pn_ospf_area: "{{ pn_ospfarea_pn_ospf_area | default(omit, True) }}"
+      pn_cliusername: "{{ pn_ospfarea_pn_cliusername | default(omit, True) }}"
+      pn_prefix_listin: "{{ pn_ospfarea_pn_prefix_listin | default(omit, True) }}"
+      state: "{{ pn_ospfarea_state | default(omit, True) }}"
+      pn_prefix_listout: "{{ pn_ospfarea_pn_prefix_listout | default(omit, True) }}"
+      pn_stub_type: "{{ pn_ospfarea_pn_stub_type | default(omit, True) }}"
+      pn_cliswitch: "{{ pn_ospfarea_pn_cliswitch | default(omit, True) }}"
   tasks:
     - name: "plugin_pn_ospfarea"
       pn_ospfarea: "{{ pn_ospfarea }}"
+      register: r_pn_ospfarea

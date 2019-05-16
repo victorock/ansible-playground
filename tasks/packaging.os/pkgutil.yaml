@@ -1,6 +1,7 @@
 ---
 - name: "module_pkgutil"
   pkgutil: "{{ pkgutil }}"
+  register: r_pkgutil
   vars:
     pkgutil: 
       state: "{{ pkgutil_state | default(omit, True) }}"

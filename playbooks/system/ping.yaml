@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ping: 
-      data: "{{ ping_data | default('omit', True) }}"
+      data: "{{ ping_data | default(omit, True) }}"
   tasks:
     - name: "plugin_ping"
       ping: "{{ ping }}"
+      register: r_ping

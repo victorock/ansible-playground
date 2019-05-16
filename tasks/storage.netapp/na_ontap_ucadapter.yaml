@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_ucadapter"
   na_ontap_ucadapter: "{{ na_ontap_ucadapter }}"
+  register: r_na_ontap_ucadapter
   vars:
     na_ontap_ucadapter: 
       username: "{{ na_ontap_ucadapter_username | default(omit, True) }}"

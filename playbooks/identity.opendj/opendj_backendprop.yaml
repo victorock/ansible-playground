@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     opendj_backendprop: 
-      username: "{{ opendj_backendprop_username | default('omit', True) }}"
-      name: "{{ opendj_backendprop_name | default('omit', True) }}"
-      hostname: "{{ opendj_backendprop_hostname | default('omit', True) }}"
-      value: "{{ opendj_backendprop_value | default('omit', True) }}"
-      state: "{{ opendj_backendprop_state | default('omit', True) }}"
-      passwordfile: "{{ opendj_backendprop_passwordfile | default('omit', True) }}"
-      password: "{{ opendj_backendprop_password | default('omit', True) }}"
-      opendj_bindir: "{{ opendj_backendprop_opendj_bindir | default('omit', True) }}"
-      port: "{{ opendj_backendprop_port | default('omit', True) }}"
-      backend: "{{ opendj_backendprop_backend | default('omit', True) }}"
+      username: "{{ opendj_backendprop_username | default(omit, True) }}"
+      name: "{{ opendj_backendprop_name | default(omit, True) }}"
+      hostname: "{{ opendj_backendprop_hostname | default(omit, True) }}"
+      value: "{{ opendj_backendprop_value | default(omit, True) }}"
+      state: "{{ opendj_backendprop_state | default(omit, True) }}"
+      passwordfile: "{{ opendj_backendprop_passwordfile | default(omit, True) }}"
+      password: "{{ opendj_backendprop_password | default(omit, True) }}"
+      opendj_bindir: "{{ opendj_backendprop_opendj_bindir | default(omit, True) }}"
+      port: "{{ opendj_backendprop_port | default(omit, True) }}"
+      backend: "{{ opendj_backendprop_backend | default(omit, True) }}"
   tasks:
     - name: "plugin_opendj_backendprop"
       opendj_backendprop: "{{ opendj_backendprop }}"
+      register: r_opendj_backendprop

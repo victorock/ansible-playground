@@ -1,6 +1,7 @@
 ---
 - name: "module_lxd_container"
   lxd_container: "{{ lxd_container }}"
+  register: r_lxd_container
   vars:
     lxd_container: 
       name: "{{ lxd_container_name | default(omit, True) }}"

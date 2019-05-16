@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_instance_template_facts"
   gcp_compute_instance_template_facts: "{{ gcp_compute_instance_template_facts }}"
+  register: r_gcp_compute_instance_template_facts
   vars:
     gcp_compute_instance_template_facts: 
       scopes: "{{ gcp_compute_instance_template_facts_scopes | default(omit, True) }}"

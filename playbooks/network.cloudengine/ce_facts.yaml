@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_facts: 
-      gather_subset: "{{ ce_facts_gather_subset | default('omit', True) }}"
+      gather_subset: "{{ ce_facts_gather_subset | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_facts"
       ce_facts: "{{ ce_facts }}"
+      register: r_ce_facts

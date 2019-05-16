@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_shell: 
-      executable: "{{ win_shell_executable | default('omit', True) }}"
-      chdir: "{{ win_shell_chdir | default('omit', True) }}"
-      stdin: "{{ win_shell_stdin | default('omit', True) }}"
-      removes: "{{ win_shell_removes | default('omit', True) }}"
-      creates: "{{ win_shell_creates | default('omit', True) }}"
-      free_form: "{{ win_shell_free_form | default('omit', True) }}"
+      executable: "{{ win_shell_executable | default(omit, True) }}"
+      chdir: "{{ win_shell_chdir | default(omit, True) }}"
+      stdin: "{{ win_shell_stdin | default(omit, True) }}"
+      removes: "{{ win_shell_removes | default(omit, True) }}"
+      creates: "{{ win_shell_creates | default(omit, True) }}"
+      free_form: "{{ win_shell_free_form | default(omit, True) }}"
   tasks:
     - name: "plugin_win_shell"
       win_shell: "{{ win_shell }}"
+      register: r_win_shell

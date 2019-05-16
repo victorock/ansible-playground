@@ -1,6 +1,7 @@
 ---
 - name: "module_taiga_issue"
   taiga_issue: "{{ taiga_issue }}"
+  register: r_taiga_issue
   vars:
     taiga_issue: 
       status: "{{ taiga_issue_status | default(omit, True) }}"

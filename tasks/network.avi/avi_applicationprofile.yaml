@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_applicationprofile"
   avi_applicationprofile: "{{ avi_applicationprofile }}"
+  register: r_avi_applicationprofile
   vars:
     avi_applicationprofile: 
       preserve_client_port: "{{ avi_applicationprofile_preserve_client_port | default(omit, True) }}"

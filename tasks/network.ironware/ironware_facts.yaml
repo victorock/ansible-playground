@@ -1,6 +1,7 @@
 ---
 - name: "module_ironware_facts"
   ironware_facts: "{{ ironware_facts }}"
+  register: r_ironware_facts
   vars:
     ironware_facts: 
       authorize: "{{ ironware_facts_authorize | default(omit, True) }}"

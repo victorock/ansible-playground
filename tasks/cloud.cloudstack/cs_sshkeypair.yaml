@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_sshkeypair"
   cs_sshkeypair: "{{ cs_sshkeypair }}"
+  register: r_cs_sshkeypair
   vars:
     cs_sshkeypair: 
       public_key: "{{ cs_sshkeypair_public_key | default(omit, True) }}"

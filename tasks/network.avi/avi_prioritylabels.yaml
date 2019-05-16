@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_prioritylabels"
   avi_prioritylabels: "{{ avi_prioritylabels }}"
+  register: r_avi_prioritylabels
   vars:
     avi_prioritylabels: 
       username: "{{ avi_prioritylabels_username | default(omit, True) }}"

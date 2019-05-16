@@ -1,6 +1,7 @@
 ---
 - name: "module_pubnub_blocks"
   pubnub_blocks: "{{ pubnub_blocks }}"
+  register: r_pubnub_blocks
   vars:
     pubnub_blocks: 
       account: "{{ pubnub_blocks_account | default(omit, True) }}"

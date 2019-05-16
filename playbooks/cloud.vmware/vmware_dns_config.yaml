@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_dns_config: 
-      username: "{{ vmware_dns_config_username | default('omit', True) }}"
-      dns_servers: "{{ vmware_dns_config_dns_servers | default('omit', True) }}"
-      domainname: "{{ vmware_dns_config_domainname | default('omit', True) }}"
-      change_hostname_to: "{{ vmware_dns_config_change_hostname_to | default('omit', True) }}"
-      hostname: "{{ vmware_dns_config_hostname | default('omit', True) }}"
-      password: "{{ vmware_dns_config_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_dns_config_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_dns_config_port | default('omit', True) }}"
+      username: "{{ vmware_dns_config_username | default(omit, True) }}"
+      dns_servers: "{{ vmware_dns_config_dns_servers | default(omit, True) }}"
+      domainname: "{{ vmware_dns_config_domainname | default(omit, True) }}"
+      change_hostname_to: "{{ vmware_dns_config_change_hostname_to | default(omit, True) }}"
+      hostname: "{{ vmware_dns_config_hostname | default(omit, True) }}"
+      password: "{{ vmware_dns_config_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_dns_config_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_dns_config_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_dns_config"
       vmware_dns_config: "{{ vmware_dns_config }}"
+      register: r_vmware_dns_config

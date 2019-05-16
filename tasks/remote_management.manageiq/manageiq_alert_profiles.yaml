@@ -1,6 +1,7 @@
 ---
 - name: "module_manageiq_alert_profiles"
   manageiq_alert_profiles: "{{ manageiq_alert_profiles }}"
+  register: r_manageiq_alert_profiles
   vars:
     manageiq_alert_profiles: 
       name: "{{ manageiq_alert_profiles_name | default(omit, True) }}"

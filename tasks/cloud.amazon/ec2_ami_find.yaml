@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_ami_find"
   ec2_ami_find: "{{ ec2_ami_find }}"
+  register: r_ec2_ami_find
   vars:
     ec2_ami_find: 
       sort: "{{ ec2_ami_find_sort | default(omit, True) }}"

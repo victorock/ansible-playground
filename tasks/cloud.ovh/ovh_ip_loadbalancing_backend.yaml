@@ -1,6 +1,7 @@
 ---
 - name: "module_ovh_ip_loadbalancing_backend"
   ovh_ip_loadbalancing_backend: "{{ ovh_ip_loadbalancing_backend }}"
+  register: r_ovh_ip_loadbalancing_backend
   vars:
     ovh_ip_loadbalancing_backend: 
       endpoint: "{{ ovh_ip_loadbalancing_backend_endpoint | default(omit, True) }}"

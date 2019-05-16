@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_portchannel: 
-      force: "{{ nxos_portchannel_force | default('omit', True) }}"
-      min_links: "{{ nxos_portchannel_min_links | default('omit', True) }}"
-      state: "{{ nxos_portchannel_state | default('omit', True) }}"
-      mode: "{{ nxos_portchannel_mode | default('omit', True) }}"
-      members: "{{ nxos_portchannel_members | default('omit', True) }}"
-      provider: "{{ nxos_portchannel_provider | default('omit', True) }}"
-      group: "{{ nxos_portchannel_group | default('omit', True) }}"
+      force: "{{ nxos_portchannel_force | default(omit, True) }}"
+      min_links: "{{ nxos_portchannel_min_links | default(omit, True) }}"
+      state: "{{ nxos_portchannel_state | default(omit, True) }}"
+      mode: "{{ nxos_portchannel_mode | default(omit, True) }}"
+      members: "{{ nxos_portchannel_members | default(omit, True) }}"
+      provider: "{{ nxos_portchannel_provider | default(omit, True) }}"
+      group: "{{ nxos_portchannel_group | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_portchannel"
       nxos_portchannel: "{{ nxos_portchannel }}"
+      register: r_nxos_portchannel

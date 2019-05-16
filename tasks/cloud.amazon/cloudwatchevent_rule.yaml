@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudwatchevent_rule"
   cloudwatchevent_rule: "{{ cloudwatchevent_rule }}"
+  register: r_cloudwatchevent_rule
   vars:
     cloudwatchevent_rule: 
       profile: "{{ cloudwatchevent_rule_profile | default(omit, True) }}"

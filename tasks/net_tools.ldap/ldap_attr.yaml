@@ -1,6 +1,7 @@
 ---
 - name: "module_ldap_attr"
   ldap_attr: "{{ ldap_attr }}"
+  register: r_ldap_attr
   vars:
     ldap_attr: 
       dn: "{{ ldap_attr_dn | default(omit, True) }}"

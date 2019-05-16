@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vtp_domain"
   nxos_vtp_domain: "{{ nxos_vtp_domain }}"
+  register: r_nxos_vtp_domain
   vars:
     nxos_vtp_domain: 
       domain: "{{ nxos_vtp_domain_domain | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_wait_for_process"
   win_wait_for_process: "{{ win_wait_for_process }}"
+  register: r_win_wait_for_process
   vars:
     win_wait_for_process: 
       process_name_pattern: "{{ win_wait_for_process_process_name_pattern | default(omit, True) }}"

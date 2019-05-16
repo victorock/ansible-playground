@@ -1,6 +1,7 @@
 ---
 - name: "module_zabbix_maintenance"
   zabbix_maintenance: "{{ zabbix_maintenance }}"
+  register: r_zabbix_maintenance
   vars:
     zabbix_maintenance: 
       http_login_password: "{{ zabbix_maintenance_http_login_password | default(omit, True) }}"

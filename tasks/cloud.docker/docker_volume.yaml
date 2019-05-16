@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_volume"
   docker_volume: "{{ docker_volume }}"
+  register: r_docker_volume
   vars:
     docker_volume: 
       tls: "{{ docker_volume_tls | default(omit, True) }}"

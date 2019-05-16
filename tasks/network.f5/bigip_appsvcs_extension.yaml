@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_appsvcs_extension"
   bigip_appsvcs_extension: "{{ bigip_appsvcs_extension }}"
+  register: r_bigip_appsvcs_extension
   vars:
     bigip_appsvcs_extension: 
       force: "{{ bigip_appsvcs_extension_force | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_datacenter_facts"
   oneview_datacenter_facts: "{{ oneview_datacenter_facts }}"
+  register: r_oneview_datacenter_facts
   vars:
     oneview_datacenter_facts: 
       config: "{{ oneview_datacenter_facts_config | default(omit, True) }}"

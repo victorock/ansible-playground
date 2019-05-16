@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_workflow_template"
   tower_workflow_template: "{{ tower_workflow_template }}"
+  register: r_tower_workflow_template
   vars:
     tower_workflow_template: 
       description: "{{ tower_workflow_template_description | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_selfip"
   bigip_selfip: "{{ bigip_selfip }}"
+  register: r_bigip_selfip
   vars:
     bigip_selfip: 
       partition: "{{ bigip_selfip_partition | default(omit, True) }}"

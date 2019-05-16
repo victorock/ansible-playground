@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_securitygroup"
   cs_securitygroup: "{{ cs_securitygroup }}"
+  register: r_cs_securitygroup
   vars:
     cs_securitygroup: 
       domain: "{{ cs_securitygroup_domain | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_service_policy"
   bigip_service_policy: "{{ bigip_service_policy }}"
+  register: r_bigip_service_policy
   vars:
     bigip_service_policy: 
       port_misuse_policy: "{{ bigip_service_policy_port_misuse_policy | default(omit, True) }}"

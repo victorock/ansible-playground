@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     expect: 
-      chdir: "{{ expect_chdir | default('omit', True) }}"
-      responses: "{{ expect_responses | default('omit', True) }}"
-      removes: "{{ expect_removes | default('omit', True) }}"
-      echo: "{{ expect_echo | default('omit', True) }}"
-      creates: "{{ expect_creates | default('omit', True) }}"
-      command: "{{ expect_command | default('omit', True) }}"
-      timeout: "{{ expect_timeout | default('omit', True) }}"
+      chdir: "{{ expect_chdir | default(omit, True) }}"
+      responses: "{{ expect_responses | default(omit, True) }}"
+      removes: "{{ expect_removes | default(omit, True) }}"
+      echo: "{{ expect_echo | default(omit, True) }}"
+      creates: "{{ expect_creates | default(omit, True) }}"
+      command: "{{ expect_command | default(omit, True) }}"
+      timeout: "{{ expect_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_expect"
       expect: "{{ expect }}"
+      register: r_expect

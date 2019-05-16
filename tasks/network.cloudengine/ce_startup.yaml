@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_startup"
   ce_startup: "{{ ce_startup }}"
+  register: r_ce_startup
   vars:
     ce_startup: 
       slot: "{{ ce_startup_slot | default(omit, True) }}"

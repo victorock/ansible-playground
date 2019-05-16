@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_url_map"
   gcp_url_map: "{{ gcp_url_map }}"
+  register: r_gcp_url_map
   vars:
     gcp_url_map: 
       default_service: "{{ gcp_url_map_default_service | default(omit, True) }}"

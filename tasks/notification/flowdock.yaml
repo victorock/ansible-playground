@@ -1,6 +1,7 @@
 ---
 - name: "module_flowdock"
   flowdock: "{{ flowdock }}"
+  register: r_flowdock
   vars:
     flowdock: 
       from_name: "{{ flowdock_from_name | default(omit, True) }}"

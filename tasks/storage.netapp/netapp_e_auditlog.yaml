@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_auditlog"
   netapp_e_auditlog: "{{ netapp_e_auditlog }}"
+  register: r_netapp_e_auditlog
   vars:
     netapp_e_auditlog: 
       log_level: "{{ netapp_e_auditlog_log_level | default(omit, True) }}"

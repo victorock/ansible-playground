@@ -1,6 +1,7 @@
 ---
 - name: "module_win_tempfile"
   win_tempfile: "{{ win_tempfile }}"
+  register: r_win_tempfile
   vars:
     win_tempfile: 
       path: "{{ win_tempfile_path | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_iam"
   iam: "{{ iam }}"
+  register: r_iam
   vars:
     iam: 
       profile: "{{ iam_profile | default(omit, True) }}"

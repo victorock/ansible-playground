@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_contract_subject_to_filter"
   aci_contract_subject_to_filter: "{{ aci_contract_subject_to_filter }}"
+  register: r_aci_contract_subject_to_filter
   vars:
     aci_contract_subject_to_filter: 
       username: "{{ aci_contract_subject_to_filter_username | default(omit, True) }}"

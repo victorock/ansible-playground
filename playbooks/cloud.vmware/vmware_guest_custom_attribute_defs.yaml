@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_guest_custom_attribute_defs: 
-      username: "{{ vmware_guest_custom_attribute_defs_username | default('omit', True) }}"
-      attribute_key: "{{ vmware_guest_custom_attribute_defs_attribute_key | default('omit', True) }}"
-      hostname: "{{ vmware_guest_custom_attribute_defs_hostname | default('omit', True) }}"
-      state: "{{ vmware_guest_custom_attribute_defs_state | default('omit', True) }}"
-      password: "{{ vmware_guest_custom_attribute_defs_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_guest_custom_attribute_defs_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_guest_custom_attribute_defs_port | default('omit', True) }}"
+      username: "{{ vmware_guest_custom_attribute_defs_username | default(omit, True) }}"
+      attribute_key: "{{ vmware_guest_custom_attribute_defs_attribute_key | default(omit, True) }}"
+      hostname: "{{ vmware_guest_custom_attribute_defs_hostname | default(omit, True) }}"
+      state: "{{ vmware_guest_custom_attribute_defs_state | default(omit, True) }}"
+      password: "{{ vmware_guest_custom_attribute_defs_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_guest_custom_attribute_defs_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_guest_custom_attribute_defs_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_guest_custom_attribute_defs"
       vmware_guest_custom_attribute_defs: "{{ vmware_guest_custom_attribute_defs }}"
+      register: r_vmware_guest_custom_attribute_defs

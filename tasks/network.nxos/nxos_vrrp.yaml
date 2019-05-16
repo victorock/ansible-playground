@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vrrp"
   nxos_vrrp: "{{ nxos_vrrp }}"
+  register: r_nxos_vrrp
   vars:
     nxos_vrrp: 
       group: "{{ nxos_vrrp_group | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_migrate_vmk"
   vmware_migrate_vmk: "{{ vmware_migrate_vmk }}"
+  register: r_vmware_migrate_vmk
   vars:
     vmware_migrate_vmk: 
       username: "{{ vmware_migrate_vmk_username | default(omit, True) }}"

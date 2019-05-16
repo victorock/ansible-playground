@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_http_compression"
   bigip_profile_http_compression: "{{ bigip_profile_http_compression }}"
+  register: r_bigip_profile_http_compression
   vars:
     bigip_profile_http_compression: 
       description: "{{ bigip_profile_http_compression_description | default(omit, True) }}"

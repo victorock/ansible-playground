@@ -1,6 +1,7 @@
 ---
 - name: "module_dellos6_command"
   dellos6_command: "{{ dellos6_command }}"
+  register: r_dellos6_command
   vars:
     dellos6_command: 
       retries: "{{ dellos6_command_retries | default(omit, True) }}"

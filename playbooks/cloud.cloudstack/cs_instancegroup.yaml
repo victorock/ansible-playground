@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cs_instancegroup: 
-      account: "{{ cs_instancegroup_account | default('omit', True) }}"
-      name: "{{ cs_instancegroup_name | default('omit', True) }}"
-      api_http_method: "{{ cs_instancegroup_api_http_method | default('omit', True) }}"
-      api_secret: "{{ cs_instancegroup_api_secret | default('omit', True) }}"
-      api_timeout: "{{ cs_instancegroup_api_timeout | default('omit', True) }}"
-      domain: "{{ cs_instancegroup_domain | default('omit', True) }}"
-      api_region: "{{ cs_instancegroup_api_region | default('omit', True) }}"
-      project: "{{ cs_instancegroup_project | default('omit', True) }}"
-      state: "{{ cs_instancegroup_state | default('omit', True) }}"
-      api_key: "{{ cs_instancegroup_api_key | default('omit', True) }}"
-      api_url: "{{ cs_instancegroup_api_url | default('omit', True) }}"
+      account: "{{ cs_instancegroup_account | default(omit, True) }}"
+      name: "{{ cs_instancegroup_name | default(omit, True) }}"
+      api_http_method: "{{ cs_instancegroup_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_instancegroup_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_instancegroup_api_timeout | default(omit, True) }}"
+      domain: "{{ cs_instancegroup_domain | default(omit, True) }}"
+      api_region: "{{ cs_instancegroup_api_region | default(omit, True) }}"
+      project: "{{ cs_instancegroup_project | default(omit, True) }}"
+      state: "{{ cs_instancegroup_state | default(omit, True) }}"
+      api_key: "{{ cs_instancegroup_api_key | default(omit, True) }}"
+      api_url: "{{ cs_instancegroup_api_url | default(omit, True) }}"
   tasks:
     - name: "plugin_cs_instancegroup"
       cs_instancegroup: "{{ cs_instancegroup }}"
+      register: r_cs_instancegroup

@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_timezone"
   ucs_timezone: "{{ ucs_timezone }}"
+  register: r_ucs_timezone
   vars:
     ucs_timezone: 
       username: "{{ ucs_timezone_username | default(omit, True) }}"

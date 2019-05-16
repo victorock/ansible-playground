@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_webhook"
   avi_webhook: "{{ avi_webhook }}"
+  register: r_avi_webhook
   vars:
     avi_webhook: 
       username: "{{ avi_webhook_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_lockdown"
   vmware_host_lockdown: "{{ vmware_host_lockdown }}"
+  register: r_vmware_host_lockdown
   vars:
     vmware_host_lockdown: 
       username: "{{ vmware_host_lockdown_username | default(omit, True) }}"

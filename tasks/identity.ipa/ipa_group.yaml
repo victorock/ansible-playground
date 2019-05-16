@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_group"
   ipa_group: "{{ ipa_group }}"
+  register: r_ipa_group
   vars:
     ipa_group: 
       ipa_port: "{{ ipa_group_ipa_port | default(omit, True) }}"

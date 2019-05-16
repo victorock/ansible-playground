@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     exo_dns_domain: 
-      name: "{{ exo_dns_domain_name | default('omit', True) }}"
-      api_secret: "{{ exo_dns_domain_api_secret | default('omit', True) }}"
-      api_timeout: "{{ exo_dns_domain_api_timeout | default('omit', True) }}"
-      api_region: "{{ exo_dns_domain_api_region | default('omit', True) }}"
-      state: "{{ exo_dns_domain_state | default('omit', True) }}"
-      api_key: "{{ exo_dns_domain_api_key | default('omit', True) }}"
-      validate_certs: "{{ exo_dns_domain_validate_certs | default('omit', True) }}"
+      name: "{{ exo_dns_domain_name | default(omit, True) }}"
+      api_secret: "{{ exo_dns_domain_api_secret | default(omit, True) }}"
+      api_timeout: "{{ exo_dns_domain_api_timeout | default(omit, True) }}"
+      api_region: "{{ exo_dns_domain_api_region | default(omit, True) }}"
+      state: "{{ exo_dns_domain_state | default(omit, True) }}"
+      api_key: "{{ exo_dns_domain_api_key | default(omit, True) }}"
+      validate_certs: "{{ exo_dns_domain_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_exo_dns_domain"
       exo_dns_domain: "{{ exo_dns_domain }}"
+      register: r_exo_dns_domain

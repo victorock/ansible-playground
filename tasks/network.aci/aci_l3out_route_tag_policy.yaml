@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_l3out_route_tag_policy"
   aci_l3out_route_tag_policy: "{{ aci_l3out_route_tag_policy }}"
+  register: r_aci_l3out_route_tag_policy
   vars:
     aci_l3out_route_tag_policy: 
       username: "{{ aci_l3out_route_tag_policy_username | default(omit, True) }}"

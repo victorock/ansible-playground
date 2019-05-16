@@ -1,6 +1,7 @@
 ---
 - name: "module_assert"
   assert: "{{ assert }}"
+  register: r_assert
   vars:
     assert: 
       fail_msg: "{{ assert_fail_msg | default(omit, True) }}"

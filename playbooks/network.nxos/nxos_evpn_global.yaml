@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_evpn_global: 
-      nv_overlay_evpn: "{{ nxos_evpn_global_nv_overlay_evpn | default('omit', True) }}"
-      provider: "{{ nxos_evpn_global_provider | default('omit', True) }}"
+      nv_overlay_evpn: "{{ nxos_evpn_global_nv_overlay_evpn | default(omit, True) }}"
+      provider: "{{ nxos_evpn_global_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_evpn_global"
       nxos_evpn_global: "{{ nxos_evpn_global }}"
+      register: r_nxos_evpn_global

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_find"
   win_find: "{{ win_find }}"
+  register: r_win_find
   vars:
     win_find: 
       paths: "{{ win_find_paths | default(omit, True) }}"

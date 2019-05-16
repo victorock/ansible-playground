@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_cluster"
   na_elementsw_cluster: "{{ na_elementsw_cluster }}"
+  register: r_na_elementsw_cluster
   vars:
     na_elementsw_cluster: 
       username: "{{ na_elementsw_cluster_username | default(omit, True) }}"

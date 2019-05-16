@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_feature"
   nxos_feature: "{{ nxos_feature }}"
+  register: r_nxos_feature
   vars:
     nxos_feature: 
       state: "{{ nxos_feature_state | default(omit, True) }}"

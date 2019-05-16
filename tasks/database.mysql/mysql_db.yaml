@@ -1,6 +1,7 @@
 ---
 - name: "module_mysql_db"
   mysql_db: "{{ mysql_db }}"
+  register: r_mysql_db
   vars:
     mysql_db: 
       login_port: "{{ mysql_db_login_port | default(omit, True) }}"

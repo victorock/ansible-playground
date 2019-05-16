@@ -1,6 +1,7 @@
 ---
 - name: "module_rds_param_group"
   rds_param_group: "{{ rds_param_group }}"
+  register: r_rds_param_group
   vars:
     rds_param_group: 
       engine: "{{ rds_param_group_engine | default(omit, True) }}"

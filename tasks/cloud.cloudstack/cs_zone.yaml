@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_zone"
   cs_zone: "{{ cs_zone }}"
+  register: r_cs_zone
   vars:
     cs_zone: 
       internal_dns1: "{{ cs_zone_internal_dns1 | default(omit, True) }}"

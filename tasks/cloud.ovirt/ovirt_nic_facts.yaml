@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_nic_facts"
   ovirt_nic_facts: "{{ ovirt_nic_facts }}"
+  register: r_ovirt_nic_facts
   vars:
     ovirt_nic_facts: 
       nested_attributes: "{{ ovirt_nic_facts_nested_attributes | default(omit, True) }}"

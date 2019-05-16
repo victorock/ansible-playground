@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_external_router"
   aos_external_router: "{{ aos_external_router }}"
+  register: r_aos_external_router
   vars:
     aos_external_router: 
       name: "{{ aos_external_router_name | default(omit, True) }}"

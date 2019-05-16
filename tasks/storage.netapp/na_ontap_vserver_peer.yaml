@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_vserver_peer"
   na_ontap_vserver_peer: "{{ na_ontap_vserver_peer }}"
+  register: r_na_ontap_vserver_peer
   vars:
     na_ontap_vserver_peer: 
       username: "{{ na_ontap_vserver_peer_username | default(omit, True) }}"

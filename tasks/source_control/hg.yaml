@@ -1,6 +1,7 @@
 ---
 - name: "module_hg"
   hg: "{{ hg }}"
+  register: r_hg
   vars:
     hg: 
       repo: "{{ hg_repo | default(omit, True) }}"

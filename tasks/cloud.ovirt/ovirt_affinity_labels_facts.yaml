@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_affinity_labels_facts"
   ovirt_affinity_labels_facts: "{{ ovirt_affinity_labels_facts }}"
+  register: r_ovirt_affinity_labels_facts
   vars:
     ovirt_affinity_labels_facts: 
       name: "{{ ovirt_affinity_labels_facts_name | default(omit, True) }}"

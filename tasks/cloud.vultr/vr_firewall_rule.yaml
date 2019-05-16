@@ -1,6 +1,7 @@
 ---
 - name: "module_vr_firewall_rule"
   vr_firewall_rule: "{{ vr_firewall_rule }}"
+  register: r_vr_firewall_rule
   vars:
     vr_firewall_rule: 
       api_timeout: "{{ vr_firewall_rule_api_timeout | default(omit, True) }}"

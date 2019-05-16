@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_route_table"
   ec2_vpc_route_table: "{{ ec2_vpc_route_table }}"
+  register: r_ec2_vpc_route_table
   vars:
     ec2_vpc_route_table: 
       profile: "{{ ec2_vpc_route_table_profile | default(omit, True) }}"

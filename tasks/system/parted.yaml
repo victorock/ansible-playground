@@ -1,6 +1,7 @@
 ---
 - name: "module_parted"
   parted: "{{ parted }}"
+  register: r_parted
   vars:
     parted: 
       part_start: "{{ parted_part_start | default(omit, True) }}"

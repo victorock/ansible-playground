@@ -1,6 +1,7 @@
 ---
 - name: "module_nagios"
   nagios: "{{ nagios }}"
+  register: r_nagios
   vars:
     nagios: 
       comment: "{{ nagios_comment | default(omit, True) }}"

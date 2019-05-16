@@ -1,6 +1,7 @@
 ---
 - name: "module_ironware_command"
   ironware_command: "{{ ironware_command }}"
+  register: r_ironware_command
   vars:
     ironware_command: 
       authorize: "{{ ironware_command_authorize | default(omit, True) }}"

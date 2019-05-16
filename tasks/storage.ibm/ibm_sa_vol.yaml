@@ -1,6 +1,7 @@
 ---
 - name: "module_ibm_sa_vol"
   ibm_sa_vol: "{{ ibm_sa_vol }}"
+  register: r_ibm_sa_vol
   vars:
     ibm_sa_vol: 
       username: "{{ ibm_sa_vol_username | default(omit, True) }}"

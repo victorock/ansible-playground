@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     oneview_san_manager: 
-      data: "{{ oneview_san_manager_data | default('omit', True) }}"
-      state: "{{ oneview_san_manager_state | default('omit', True) }}"
-      validate_etag: "{{ oneview_san_manager_validate_etag | default('omit', True) }}"
-      config: "{{ oneview_san_manager_config | default('omit', True) }}"
+      data: "{{ oneview_san_manager_data | default(omit, True) }}"
+      state: "{{ oneview_san_manager_state | default(omit, True) }}"
+      validate_etag: "{{ oneview_san_manager_validate_etag | default(omit, True) }}"
+      config: "{{ oneview_san_manager_config | default(omit, True) }}"
   tasks:
     - name: "plugin_oneview_san_manager"
       oneview_san_manager: "{{ oneview_san_manager }}"
+      register: r_oneview_san_manager

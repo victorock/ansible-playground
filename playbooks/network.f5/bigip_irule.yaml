@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_irule: 
-      src: "{{ bigip_irule_src | default('omit', True) }}"
-      name: "{{ bigip_irule_name | default('omit', True) }}"
-      partition: "{{ bigip_irule_partition | default('omit', True) }}"
-      module: "{{ bigip_irule_module | default('omit', True) }}"
-      server: "{{ bigip_irule_server | default('omit', True) }}"
-      content: "{{ bigip_irule_content | default('omit', True) }}"
-      state: "{{ bigip_irule_state | default('omit', True) }}"
-      user: "{{ bigip_irule_user | default('omit', True) }}"
-      server_port: "{{ bigip_irule_server_port | default('omit', True) }}"
-      provider: "{{ bigip_irule_provider | default('omit', True) }}"
-      password: "{{ bigip_irule_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_irule_validate_certs | default('omit', True) }}"
+      src: "{{ bigip_irule_src | default(omit, True) }}"
+      name: "{{ bigip_irule_name | default(omit, True) }}"
+      partition: "{{ bigip_irule_partition | default(omit, True) }}"
+      module: "{{ bigip_irule_module | default(omit, True) }}"
+      server: "{{ bigip_irule_server | default(omit, True) }}"
+      content: "{{ bigip_irule_content | default(omit, True) }}"
+      state: "{{ bigip_irule_state | default(omit, True) }}"
+      user: "{{ bigip_irule_user | default(omit, True) }}"
+      server_port: "{{ bigip_irule_server_port | default(omit, True) }}"
+      provider: "{{ bigip_irule_provider | default(omit, True) }}"
+      password: "{{ bigip_irule_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_irule_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_irule"
       bigip_irule: "{{ bigip_irule }}"
+      register: r_bigip_irule

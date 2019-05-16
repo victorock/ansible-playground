@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_firewall"
   cs_firewall: "{{ cs_firewall }}"
+  register: r_cs_firewall
   vars:
     cs_firewall: 
       domain: "{{ cs_firewall_domain | default(omit, True) }}"

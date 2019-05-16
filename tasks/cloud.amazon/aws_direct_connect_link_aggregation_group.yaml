@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_direct_connect_link_aggregation_group"
   aws_direct_connect_link_aggregation_group: "{{ aws_direct_connect_link_aggregation_group }}"
+  register: r_aws_direct_connect_link_aggregation_group
   vars:
     aws_direct_connect_link_aggregation_group: 
       profile: "{{ aws_direct_connect_link_aggregation_group_profile | default(omit, True) }}"

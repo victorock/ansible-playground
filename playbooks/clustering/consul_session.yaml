@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     consul_session: 
-      node: "{{ consul_session_node | default('omit', True) }}"
-      datacenter: "{{ consul_session_datacenter | default('omit', True) }}"
-      name: "{{ consul_session_name | default('omit', True) }}"
-      state: "{{ consul_session_state | default('omit', True) }}"
-      checks: "{{ consul_session_checks | default('omit', True) }}"
-      delay: "{{ consul_session_delay | default('omit', True) }}"
-      host: "{{ consul_session_host | default('omit', True) }}"
-      behavior: "{{ consul_session_behavior | default('omit', True) }}"
-      scheme: "{{ consul_session_scheme | default('omit', True) }}"
-      validate_certs: "{{ consul_session_validate_certs | default('omit', True) }}"
-      port: "{{ consul_session_port | default('omit', True) }}"
+      node: "{{ consul_session_node | default(omit, True) }}"
+      datacenter: "{{ consul_session_datacenter | default(omit, True) }}"
+      name: "{{ consul_session_name | default(omit, True) }}"
+      state: "{{ consul_session_state | default(omit, True) }}"
+      checks: "{{ consul_session_checks | default(omit, True) }}"
+      delay: "{{ consul_session_delay | default(omit, True) }}"
+      host: "{{ consul_session_host | default(omit, True) }}"
+      behavior: "{{ consul_session_behavior | default(omit, True) }}"
+      scheme: "{{ consul_session_scheme | default(omit, True) }}"
+      validate_certs: "{{ consul_session_validate_certs | default(omit, True) }}"
+      port: "{{ consul_session_port | default(omit, True) }}"
   tasks:
     - name: "plugin_consul_session"
       consul_session: "{{ consul_session }}"
+      register: r_consul_session

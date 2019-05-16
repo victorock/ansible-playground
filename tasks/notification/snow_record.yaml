@@ -1,6 +1,7 @@
 ---
 - name: "module_snow_record"
   snow_record: "{{ snow_record }}"
+  register: r_snow_record
   vars:
     snow_record: 
       username: "{{ snow_record_username | default(omit, True) }}"

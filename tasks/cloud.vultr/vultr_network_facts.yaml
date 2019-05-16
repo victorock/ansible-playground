@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_network_facts"
   vultr_network_facts: "{{ vultr_network_facts }}"
+  register: r_vultr_network_facts
   vars:
     vultr_network_facts: 
       api_retries: "{{ vultr_network_facts_api_retries | default(omit, True) }}"

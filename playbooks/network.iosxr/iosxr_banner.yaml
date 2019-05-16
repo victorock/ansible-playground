@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     iosxr_banner: 
-      text: "{{ iosxr_banner_text | default('omit', True) }}"
-      state: "{{ iosxr_banner_state | default('omit', True) }}"
-      banner: "{{ iosxr_banner_banner | default('omit', True) }}"
-      provider: "{{ iosxr_banner_provider | default('omit', True) }}"
+      text: "{{ iosxr_banner_text | default(omit, True) }}"
+      state: "{{ iosxr_banner_state | default(omit, True) }}"
+      banner: "{{ iosxr_banner_banner | default(omit, True) }}"
+      provider: "{{ iosxr_banner_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_iosxr_banner"
       iosxr_banner: "{{ iosxr_banner }}"
+      register: r_iosxr_banner

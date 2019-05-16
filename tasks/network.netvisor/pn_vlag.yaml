@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_vlag"
   pn_vlag: "{{ pn_vlag }}"
+  register: r_pn_vlag
   vars:
     pn_vlag: 
       pn_name: "{{ pn_vlag_pn_name | default(omit, True) }}"

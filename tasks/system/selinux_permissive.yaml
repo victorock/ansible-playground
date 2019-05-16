@@ -1,6 +1,7 @@
 ---
 - name: "module_selinux_permissive"
   selinux_permissive: "{{ selinux_permissive }}"
+  register: r_selinux_permissive
   vars:
     selinux_permissive: 
       domain: "{{ selinux_permissive_domain | default(omit, True) }}"

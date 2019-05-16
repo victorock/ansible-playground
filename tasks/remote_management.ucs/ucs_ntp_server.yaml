@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_ntp_server"
   ucs_ntp_server: "{{ ucs_ntp_server }}"
+  register: r_ucs_ntp_server
   vars:
     ucs_ntp_server: 
       username: "{{ ucs_ntp_server_username | default(omit, True) }}"

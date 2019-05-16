@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_inventory_source"
   tower_inventory_source: "{{ tower_inventory_source }}"
+  register: r_tower_inventory_source
   vars:
     tower_inventory_source: 
       source_regions: "{{ tower_inventory_source_source_regions | default(omit, True) }}"

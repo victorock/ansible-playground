@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_route: 
-      metric: "{{ win_route_metric | default('omit', True) }}"
-      destination: "{{ win_route_destination | default('omit', True) }}"
-      gateway: "{{ win_route_gateway | default('omit', True) }}"
-      state: "{{ win_route_state | default('omit', True) }}"
+      metric: "{{ win_route_metric | default(omit, True) }}"
+      destination: "{{ win_route_destination | default(omit, True) }}"
+      gateway: "{{ win_route_gateway | default(omit, True) }}"
+      state: "{{ win_route_state | default(omit, True) }}"
   tasks:
     - name: "plugin_win_route"
       win_route: "{{ win_route }}"
+      register: r_win_route

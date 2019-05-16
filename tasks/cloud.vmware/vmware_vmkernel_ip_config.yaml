@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vmkernel_ip_config"
   vmware_vmkernel_ip_config: "{{ vmware_vmkernel_ip_config }}"
+  register: r_vmware_vmkernel_ip_config
   vars:
     vmware_vmkernel_ip_config: 
       username: "{{ vmware_vmkernel_ip_config_username | default(omit, True) }}"

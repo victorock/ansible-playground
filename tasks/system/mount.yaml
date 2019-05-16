@@ -1,6 +1,7 @@
 ---
 - name: "module_mount"
   mount: "{{ mount }}"
+  register: r_mount
   vars:
     mount: 
       src: "{{ mount_src | default(omit, True) }}"

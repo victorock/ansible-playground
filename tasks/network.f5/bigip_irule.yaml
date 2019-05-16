@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_irule"
   bigip_irule: "{{ bigip_irule }}"
+  register: r_bigip_irule
   vars:
     bigip_irule: 
       src: "{{ bigip_irule_src | default(omit, True) }}"

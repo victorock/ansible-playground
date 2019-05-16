@@ -1,6 +1,7 @@
 ---
 - name: "module_sf_volume_access_group_manager"
   sf_volume_access_group_manager: "{{ sf_volume_access_group_manager }}"
+  register: r_sf_volume_access_group_manager
   vars:
     sf_volume_access_group_manager: 
       username: "{{ sf_volume_access_group_manager_username | default(omit, True) }}"

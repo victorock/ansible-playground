@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_elb"
   ec2_elb: "{{ ec2_elb }}"
+  register: r_ec2_elb
   vars:
     ec2_elb: 
       profile: "{{ ec2_elb_profile | default(omit, True) }}"

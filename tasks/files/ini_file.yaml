@@ -1,6 +1,7 @@
 ---
 - name: "module_ini_file"
   ini_file: "{{ ini_file }}"
+  register: r_ini_file
   vars:
     ini_file: 
       seuser: "{{ ini_file_seuser | default(omit, True) }}"

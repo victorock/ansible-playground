@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_category"
   vmware_category: "{{ vmware_category }}"
+  register: r_vmware_category
   vars:
     vmware_category: 
       username: "{{ vmware_category_username | default(omit, True) }}"

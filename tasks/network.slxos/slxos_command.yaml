@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_command"
   slxos_command: "{{ slxos_command }}"
+  register: r_slxos_command
   vars:
     slxos_command: 
       retries: "{{ slxos_command_retries | default(omit, True) }}"

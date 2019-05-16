@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_lldp"
   junos_lldp: "{{ junos_lldp }}"
+  register: r_junos_lldp
   vars:
     junos_lldp: 
       interval: "{{ junos_lldp_interval | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_runit"
   runit: "{{ runit }}"
+  register: r_runit
   vars:
     runit: 
       state: "{{ runit_state | default(omit, True) }}"

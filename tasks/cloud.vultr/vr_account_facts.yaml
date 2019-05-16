@@ -1,6 +1,7 @@
 ---
 - name: "module_vr_account_facts"
   vr_account_facts: "{{ vr_account_facts }}"
+  register: r_vr_account_facts
   vars:
     vr_account_facts: 
       api_retries: "{{ vr_account_facts_api_retries | default(omit, True) }}"

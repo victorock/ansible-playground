@@ -1,6 +1,7 @@
 ---
 - name: "module_online_user_facts"
   online_user_facts: "{{ online_user_facts }}"
+  register: r_online_user_facts
   vars:
     online_user_facts: 
       api_timeout: "{{ online_user_facts_api_timeout | default(omit, True) }}"

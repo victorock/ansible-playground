@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_instance_facts"
   cs_instance_facts: "{{ cs_instance_facts }}"
+  register: r_cs_instance_facts
   vars:
     cs_instance_facts: 
       account: "{{ cs_instance_facts_account | default(omit, True) }}"

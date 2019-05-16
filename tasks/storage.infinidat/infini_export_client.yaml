@@ -1,6 +1,7 @@
 ---
 - name: "module_infini_export_client"
   infini_export_client: "{{ infini_export_client }}"
+  register: r_infini_export_client
   vars:
     infini_export_client: 
       no_root_squash: "{{ infini_export_client_no_root_squash | default(omit, True) }}"

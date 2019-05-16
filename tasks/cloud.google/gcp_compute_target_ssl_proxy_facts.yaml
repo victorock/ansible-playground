@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_target_ssl_proxy_facts"
   gcp_compute_target_ssl_proxy_facts: "{{ gcp_compute_target_ssl_proxy_facts }}"
+  register: r_gcp_compute_target_ssl_proxy_facts
   vars:
     gcp_compute_target_ssl_proxy_facts: 
       scopes: "{{ gcp_compute_target_ssl_proxy_facts_scopes | default(omit, True) }}"

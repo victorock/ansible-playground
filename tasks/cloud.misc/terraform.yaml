@@ -1,6 +1,7 @@
 ---
 - name: "module_terraform"
   terraform: "{{ terraform }}"
+  register: r_terraform
   vars:
     terraform: 
       variables_file: "{{ terraform_variables_file | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_net_put"
   net_put: "{{ net_put }}"
+  register: r_net_put
   vars:
     net_put: 
       dest: "{{ net_put_dest | default(omit, True) }}"

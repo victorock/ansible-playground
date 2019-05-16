@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_netstream_aging"
   ce_netstream_aging: "{{ ce_netstream_aging }}"
+  register: r_ce_netstream_aging
   vars:
     ce_netstream_aging: 
       timeout_type: "{{ ce_netstream_aging_timeout_type | default(omit, True) }}"

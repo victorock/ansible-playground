@@ -1,6 +1,7 @@
 ---
 - name: "module_acme_certificate"
   acme_certificate: "{{ acme_certificate }}"
+  register: r_acme_certificate
   vars:
     acme_certificate: 
       acme_directory: "{{ acme_certificate_acme_directory | default(omit, True) }}"

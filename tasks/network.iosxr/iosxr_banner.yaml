@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_banner"
   iosxr_banner: "{{ iosxr_banner }}"
+  register: r_iosxr_banner
   vars:
     iosxr_banner: 
       text: "{{ iosxr_banner_text | default(omit, True) }}"

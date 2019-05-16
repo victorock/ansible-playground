@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_aggregate"
   na_ontap_aggregate: "{{ na_ontap_aggregate }}"
+  register: r_na_ontap_aggregate
   vars:
     na_ontap_aggregate: 
       username: "{{ na_ontap_aggregate_username | default(omit, True) }}"

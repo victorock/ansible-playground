@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     zfs: 
-      origin: "{{ zfs_origin | default('omit', True) }}"
-      state: "{{ zfs_state | default('omit', True) }}"
-      extra_zfs_properties: "{{ zfs_extra_zfs_properties | default('omit', True) }}"
-      name: "{{ zfs_name | default('omit', True) }}"
-      key_value: "{{ zfs_key_value | default('omit', True) }}"
+      origin: "{{ zfs_origin | default(omit, True) }}"
+      state: "{{ zfs_state | default(omit, True) }}"
+      extra_zfs_properties: "{{ zfs_extra_zfs_properties | default(omit, True) }}"
+      name: "{{ zfs_name | default(omit, True) }}"
+      key_value: "{{ zfs_key_value | default(omit, True) }}"
   tasks:
     - name: "plugin_zfs"
       zfs: "{{ zfs }}"
+      register: r_zfs

@@ -1,6 +1,7 @@
 ---
 - name: "module_virt_pool"
   virt_pool: "{{ virt_pool }}"
+  register: r_virt_pool
   vars:
     virt_pool: 
       xml: "{{ virt_pool_xml | default(omit, True) }}"

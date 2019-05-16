@@ -1,6 +1,7 @@
 ---
 - name: "module_pamd"
   pamd: "{{ pamd }}"
+  register: r_pamd
   vars:
     pamd: 
       control: "{{ pamd_control | default(omit, True) }}"

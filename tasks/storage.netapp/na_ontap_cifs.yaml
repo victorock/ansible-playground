@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_cifs"
   na_ontap_cifs: "{{ na_ontap_cifs }}"
+  register: r_na_ontap_cifs
   vars:
     na_ontap_cifs: 
       username: "{{ na_ontap_cifs_username | default(omit, True) }}"

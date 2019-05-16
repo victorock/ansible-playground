@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_net_port"
   na_ontap_net_port: "{{ na_ontap_net_port }}"
+  register: r_na_ontap_net_port
   vars:
     na_ontap_net_port: 
       node: "{{ na_ontap_net_port_node | default(omit, True) }}"

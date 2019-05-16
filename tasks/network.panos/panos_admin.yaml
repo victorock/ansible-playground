@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_admin"
   panos_admin: "{{ panos_admin }}"
+  register: r_panos_admin
   vars:
     panos_admin: 
       username: "{{ panos_admin_username | default(omit, True) }}"

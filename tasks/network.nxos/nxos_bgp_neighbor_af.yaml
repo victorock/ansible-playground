@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_bgp_neighbor_af"
   nxos_bgp_neighbor_af: "{{ nxos_bgp_neighbor_af }}"
+  register: r_nxos_bgp_neighbor_af
   vars:
     nxos_bgp_neighbor_af: 
       default_originate: "{{ nxos_bgp_neighbor_af_default_originate | default(omit, True) }}"

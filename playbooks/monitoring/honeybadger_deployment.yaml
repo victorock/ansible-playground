@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     honeybadger_deployment: 
-      repo: "{{ honeybadger_deployment_repo | default('omit', True) }}"
-      url: "{{ honeybadger_deployment_url | default('omit', True) }}"
-      environment: "{{ honeybadger_deployment_environment | default('omit', True) }}"
-      token: "{{ honeybadger_deployment_token | default('omit', True) }}"
-      user: "{{ honeybadger_deployment_user | default('omit', True) }}"
-      validate_certs: "{{ honeybadger_deployment_validate_certs | default('omit', True) }}"
-      revision: "{{ honeybadger_deployment_revision | default('omit', True) }}"
+      repo: "{{ honeybadger_deployment_repo | default(omit, True) }}"
+      url: "{{ honeybadger_deployment_url | default(omit, True) }}"
+      environment: "{{ honeybadger_deployment_environment | default(omit, True) }}"
+      token: "{{ honeybadger_deployment_token | default(omit, True) }}"
+      user: "{{ honeybadger_deployment_user | default(omit, True) }}"
+      validate_certs: "{{ honeybadger_deployment_validate_certs | default(omit, True) }}"
+      revision: "{{ honeybadger_deployment_revision | default(omit, True) }}"
   tasks:
     - name: "plugin_honeybadger_deployment"
       honeybadger_deployment: "{{ honeybadger_deployment }}"
+      register: r_honeybadger_deployment

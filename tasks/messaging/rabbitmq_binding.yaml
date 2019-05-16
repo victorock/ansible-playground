@@ -1,6 +1,7 @@
 ---
 - name: "module_rabbitmq_binding"
   rabbitmq_binding: "{{ rabbitmq_binding }}"
+  register: r_rabbitmq_binding
   vars:
     rabbitmq_binding: 
       login_port: "{{ rabbitmq_binding_login_port | default(omit, True) }}"

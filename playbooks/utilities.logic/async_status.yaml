@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     async_status: 
-      jid: "{{ async_status_jid | default('omit', True) }}"
-      mode: "{{ async_status_mode | default('omit', True) }}"
+      jid: "{{ async_status_jid | default(omit, True) }}"
+      mode: "{{ async_status_mode | default(omit, True) }}"
   tasks:
     - name: "plugin_async_status"
       async_status: "{{ async_status }}"
+      register: r_async_status

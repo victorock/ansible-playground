@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_net"
   gce_net: "{{ gce_net }}"
+  register: r_gce_net
   vars:
     gce_net: 
       src_tags: "{{ gce_net_src_tags | default(omit, True) }}"

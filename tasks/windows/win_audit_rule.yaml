@@ -1,6 +1,7 @@
 ---
 - name: "module_win_audit_rule"
   win_audit_rule: "{{ win_audit_rule }}"
+  register: r_win_audit_rule
   vars:
     win_audit_rule: 
       rights: "{{ win_audit_rule_rights | default(omit, True) }}"

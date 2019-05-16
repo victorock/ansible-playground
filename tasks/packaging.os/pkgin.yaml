@@ -1,6 +1,7 @@
 ---
 - name: "module_pkgin"
   pkgin: "{{ pkgin }}"
+  register: r_pkgin
   vars:
     pkgin: 
       upgrade: "{{ pkgin_upgrade | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_rundeck_acl_policy"
   rundeck_acl_policy: "{{ rundeck_acl_policy }}"
+  register: r_rundeck_acl_policy
   vars:
     rundeck_acl_policy: 
       name: "{{ rundeck_acl_policy_name | default(omit, True) }}"

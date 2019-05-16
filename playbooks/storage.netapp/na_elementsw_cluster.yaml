@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_elementsw_cluster: 
-      username: "{{ na_elementsw_cluster_username | default('omit', True) }}"
-      accept_eula: "{{ na_elementsw_cluster_accept_eula | default('omit', True) }}"
-      storage_virtual_ip: "{{ na_elementsw_cluster_storage_virtual_ip | default('omit', True) }}"
-      replica_count: "{{ na_elementsw_cluster_replica_count | default('omit', True) }}"
-      management_virtual_ip: "{{ na_elementsw_cluster_management_virtual_ip | default('omit', True) }}"
-      cluster_admin_username: "{{ na_elementsw_cluster_cluster_admin_username | default('omit', True) }}"
-      cluster_admin_password: "{{ na_elementsw_cluster_cluster_admin_password | default('omit', True) }}"
-      attributes: "{{ na_elementsw_cluster_attributes | default('omit', True) }}"
-      nodes: "{{ na_elementsw_cluster_nodes | default('omit', True) }}"
-      password: "{{ na_elementsw_cluster_password | default('omit', True) }}"
-      hostname: "{{ na_elementsw_cluster_hostname | default('omit', True) }}"
+      username: "{{ na_elementsw_cluster_username | default(omit, True) }}"
+      accept_eula: "{{ na_elementsw_cluster_accept_eula | default(omit, True) }}"
+      storage_virtual_ip: "{{ na_elementsw_cluster_storage_virtual_ip | default(omit, True) }}"
+      replica_count: "{{ na_elementsw_cluster_replica_count | default(omit, True) }}"
+      management_virtual_ip: "{{ na_elementsw_cluster_management_virtual_ip | default(omit, True) }}"
+      cluster_admin_username: "{{ na_elementsw_cluster_cluster_admin_username | default(omit, True) }}"
+      cluster_admin_password: "{{ na_elementsw_cluster_cluster_admin_password | default(omit, True) }}"
+      attributes: "{{ na_elementsw_cluster_attributes | default(omit, True) }}"
+      nodes: "{{ na_elementsw_cluster_nodes | default(omit, True) }}"
+      password: "{{ na_elementsw_cluster_password | default(omit, True) }}"
+      hostname: "{{ na_elementsw_cluster_hostname | default(omit, True) }}"
   tasks:
     - name: "plugin_na_elementsw_cluster"
       na_elementsw_cluster: "{{ na_elementsw_cluster }}"
+      register: r_na_elementsw_cluster

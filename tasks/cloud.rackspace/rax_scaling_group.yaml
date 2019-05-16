@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_scaling_group"
   rax_scaling_group: "{{ rax_scaling_group }}"
+  register: r_rax_scaling_group
   vars:
     rax_scaling_group: 
       files: "{{ rax_scaling_group_files | default(omit, True) }}"

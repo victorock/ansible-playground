@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ejabberd_user: 
-      username: "{{ ejabberd_user_username | default('omit', True) }}"
-      host: "{{ ejabberd_user_host | default('omit', True) }}"
-      password: "{{ ejabberd_user_password | default('omit', True) }}"
-      logging: "{{ ejabberd_user_logging | default('omit', True) }}"
-      state: "{{ ejabberd_user_state | default('omit', True) }}"
+      username: "{{ ejabberd_user_username | default(omit, True) }}"
+      host: "{{ ejabberd_user_host | default(omit, True) }}"
+      password: "{{ ejabberd_user_password | default(omit, True) }}"
+      logging: "{{ ejabberd_user_logging | default(omit, True) }}"
+      state: "{{ ejabberd_user_state | default(omit, True) }}"
   tasks:
     - name: "plugin_ejabberd_user"
       ejabberd_user: "{{ ejabberd_user }}"
+      register: r_ejabberd_user

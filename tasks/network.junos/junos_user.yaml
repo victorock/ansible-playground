@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_user"
   junos_user: "{{ junos_user }}"
+  register: r_junos_user
   vars:
     junos_user: 
       name: "{{ junos_user_name | default(omit, True) }}"

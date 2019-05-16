@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_snmp"
   na_ontap_snmp: "{{ na_ontap_snmp }}"
+  register: r_na_ontap_snmp
   vars:
     na_ontap_snmp: 
       username: "{{ na_ontap_snmp_username | default(omit, True) }}"

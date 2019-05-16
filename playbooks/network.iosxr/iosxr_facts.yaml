@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     iosxr_facts: 
-      gather_subset: "{{ iosxr_facts_gather_subset | default('omit', True) }}"
-      provider: "{{ iosxr_facts_provider | default('omit', True) }}"
+      gather_subset: "{{ iosxr_facts_gather_subset | default(omit, True) }}"
+      provider: "{{ iosxr_facts_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_iosxr_facts"
       iosxr_facts: "{{ iosxr_facts }}"
+      register: r_iosxr_facts

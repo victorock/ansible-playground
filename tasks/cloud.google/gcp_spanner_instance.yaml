@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_spanner_instance"
   gcp_spanner_instance: "{{ gcp_spanner_instance }}"
+  register: r_gcp_spanner_instance
   vars:
     gcp_spanner_instance: 
       scopes: "{{ gcp_spanner_instance_scopes | default(omit, True) }}"

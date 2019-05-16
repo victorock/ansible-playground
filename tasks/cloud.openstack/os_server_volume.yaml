@@ -1,6 +1,7 @@
 ---
 - name: "module_os_server_volume"
   os_server_volume: "{{ os_server_volume }}"
+  register: r_os_server_volume
   vars:
     os_server_volume: 
       auth_type: "{{ os_server_volume_auth_type | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_resource"
   azure_rm_resource: "{{ azure_rm_resource }}"
+  register: r_azure_rm_resource
   vars:
     azure_rm_resource: 
       profile: "{{ azure_rm_resource_profile | default(omit, True) }}"

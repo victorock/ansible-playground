@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_alertsyslogconfig"
   avi_alertsyslogconfig: "{{ avi_alertsyslogconfig }}"
+  register: r_avi_alertsyslogconfig
   vars:
     avi_alertsyslogconfig: 
       username: "{{ avi_alertsyslogconfig_username | default(omit, True) }}"

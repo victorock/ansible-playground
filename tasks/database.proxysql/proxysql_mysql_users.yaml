@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_mysql_users"
   proxysql_mysql_users: "{{ proxysql_mysql_users }}"
+  register: r_proxysql_mysql_users
   vars:
     proxysql_mysql_users: 
       username: "{{ proxysql_mysql_users_username | default(omit, True) }}"

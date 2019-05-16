@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_ssl_certificate"
   bigip_ssl_certificate: "{{ bigip_ssl_certificate }}"
+  register: r_bigip_ssl_certificate
   vars:
     bigip_ssl_certificate: 
       name: "{{ bigip_ssl_certificate_name | default(omit, True) }}"

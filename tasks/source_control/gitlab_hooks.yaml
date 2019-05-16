@@ -1,6 +1,7 @@
 ---
 - name: "module_gitlab_hooks"
   gitlab_hooks: "{{ gitlab_hooks }}"
+  register: r_gitlab_hooks
   vars:
     gitlab_hooks: 
       hook_url: "{{ gitlab_hooks_hook_url | default(omit, True) }}"

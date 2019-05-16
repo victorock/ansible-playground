@@ -1,6 +1,7 @@
 ---
 - name: "module_win_psexec"
   win_psexec: "{{ win_psexec }}"
+  register: r_win_psexec
   vars:
     win_psexec: 
       username: "{{ win_psexec_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_disk_image"
   win_disk_image: "{{ win_disk_image }}"
+  register: r_win_disk_image
   vars:
     win_disk_image: 
       state: "{{ win_disk_image_state | default(omit, True) }}"

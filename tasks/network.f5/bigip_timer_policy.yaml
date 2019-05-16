@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_timer_policy"
   bigip_timer_policy: "{{ bigip_timer_policy }}"
+  register: r_bigip_timer_policy
   vars:
     bigip_timer_policy: 
       description: "{{ bigip_timer_policy_description | default(omit, True) }}"

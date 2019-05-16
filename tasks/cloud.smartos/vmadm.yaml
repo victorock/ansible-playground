@@ -1,6 +1,7 @@
 ---
 - name: "module_vmadm"
   vmadm: "{{ vmadm }}"
+  register: r_vmadm
   vars:
     vmadm: 
       customer_metadata: "{{ vmadm_customer_metadata | default(omit, True) }}"

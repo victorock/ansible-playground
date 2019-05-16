@@ -1,6 +1,7 @@
 ---
 - name: "module_datadog_monitor"
   datadog_monitor: "{{ datadog_monitor }}"
+  register: r_datadog_monitor
   vars:
     datadog_monitor: 
       notify_audit: "{{ datadog_monitor_notify_audit | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_ip_interface"
   nxos_ip_interface: "{{ nxos_ip_interface }}"
+  register: r_nxos_ip_interface
   vars:
     nxos_ip_interface: 
       addr: "{{ nxos_ip_interface_addr | default(omit, True) }}"

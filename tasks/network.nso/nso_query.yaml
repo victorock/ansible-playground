@@ -1,6 +1,7 @@
 ---
 - name: "module_nso_query"
   nso_query: "{{ nso_query }}"
+  register: r_nso_query
   vars:
     nso_query: 
       xpath: "{{ nso_query_xpath | default(omit, True) }}"

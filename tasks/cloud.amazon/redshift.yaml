@@ -1,6 +1,7 @@
 ---
 - name: "module_redshift"
   redshift: "{{ redshift }}"
+  register: r_redshift
   vars:
     redshift: 
       cluster_parameter_group_name: "{{ redshift_cluster_parameter_group_name | default(omit, True) }}"

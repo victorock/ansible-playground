@@ -1,6 +1,7 @@
 ---
 - name: "module_os_keystone_service"
   os_keystone_service: "{{ os_keystone_service }}"
+  register: r_os_keystone_service
   vars:
     os_keystone_service: 
       auth_type: "{{ os_keystone_service_auth_type | default(omit, True) }}"

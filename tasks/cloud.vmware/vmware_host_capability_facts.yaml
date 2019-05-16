@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_capability_facts"
   vmware_host_capability_facts: "{{ vmware_host_capability_facts }}"
+  register: r_vmware_host_capability_facts
   vars:
     vmware_host_capability_facts: 
       username: "{{ vmware_host_capability_facts_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vcenter_license"
   vcenter_license: "{{ vcenter_license }}"
+  register: r_vcenter_license
   vars:
     vcenter_license: 
       username: "{{ vcenter_license_username | default(omit, True) }}"

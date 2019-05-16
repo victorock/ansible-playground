@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_policy: 
-      description: "{{ bigip_policy_description | default('omit', True) }}"
-      rules: "{{ bigip_policy_rules | default('omit', True) }}"
-      partition: "{{ bigip_policy_partition | default('omit', True) }}"
-      server: "{{ bigip_policy_server | default('omit', True) }}"
-      strategy: "{{ bigip_policy_strategy | default('omit', True) }}"
-      state: "{{ bigip_policy_state | default('omit', True) }}"
-      user: "{{ bigip_policy_user | default('omit', True) }}"
-      server_port: "{{ bigip_policy_server_port | default('omit', True) }}"
-      provider: "{{ bigip_policy_provider | default('omit', True) }}"
-      password: "{{ bigip_policy_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_policy_validate_certs | default('omit', True) }}"
-      name: "{{ bigip_policy_name | default('omit', True) }}"
+      description: "{{ bigip_policy_description | default(omit, True) }}"
+      rules: "{{ bigip_policy_rules | default(omit, True) }}"
+      partition: "{{ bigip_policy_partition | default(omit, True) }}"
+      server: "{{ bigip_policy_server | default(omit, True) }}"
+      strategy: "{{ bigip_policy_strategy | default(omit, True) }}"
+      state: "{{ bigip_policy_state | default(omit, True) }}"
+      user: "{{ bigip_policy_user | default(omit, True) }}"
+      server_port: "{{ bigip_policy_server_port | default(omit, True) }}"
+      provider: "{{ bigip_policy_provider | default(omit, True) }}"
+      password: "{{ bigip_policy_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_policy_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_policy_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_policy"
       bigip_policy: "{{ bigip_policy }}"
+      register: r_bigip_policy

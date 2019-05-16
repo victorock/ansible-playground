@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_lldp"
   vyos_lldp: "{{ vyos_lldp }}"
+  register: r_vyos_lldp
   vars:
     vyos_lldp: 
       state: "{{ vyos_lldp_state | default(omit, True) }}"

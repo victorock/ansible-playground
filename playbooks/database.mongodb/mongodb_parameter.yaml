@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     mongodb_parameter: 
-      login_port: "{{ mongodb_parameter_login_port | default('omit', True) }}"
-      database: "{{ mongodb_parameter_database | default('omit', True) }}"
-      login_user: "{{ mongodb_parameter_login_user | default('omit', True) }}"
-      login_host: "{{ mongodb_parameter_login_host | default('omit', True) }}"
-      login_database: "{{ mongodb_parameter_login_database | default('omit', True) }}"
-      param: "{{ mongodb_parameter_param | default('omit', True) }}"
-      ssl: "{{ mongodb_parameter_ssl | default('omit', True) }}"
-      param_type: "{{ mongodb_parameter_param_type | default('omit', True) }}"
-      value: "{{ mongodb_parameter_value | default('omit', True) }}"
-      login_password: "{{ mongodb_parameter_login_password | default('omit', True) }}"
-      replica_set: "{{ mongodb_parameter_replica_set | default('omit', True) }}"
+      login_port: "{{ mongodb_parameter_login_port | default(omit, True) }}"
+      database: "{{ mongodb_parameter_database | default(omit, True) }}"
+      login_user: "{{ mongodb_parameter_login_user | default(omit, True) }}"
+      login_host: "{{ mongodb_parameter_login_host | default(omit, True) }}"
+      login_database: "{{ mongodb_parameter_login_database | default(omit, True) }}"
+      param: "{{ mongodb_parameter_param | default(omit, True) }}"
+      ssl: "{{ mongodb_parameter_ssl | default(omit, True) }}"
+      param_type: "{{ mongodb_parameter_param_type | default(omit, True) }}"
+      value: "{{ mongodb_parameter_value | default(omit, True) }}"
+      login_password: "{{ mongodb_parameter_login_password | default(omit, True) }}"
+      replica_set: "{{ mongodb_parameter_replica_set | default(omit, True) }}"
   tasks:
     - name: "plugin_mongodb_parameter"
       mongodb_parameter: "{{ mongodb_parameter }}"
+      register: r_mongodb_parameter

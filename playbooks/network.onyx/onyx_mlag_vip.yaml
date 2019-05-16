@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     onyx_mlag_vip: 
-      delay: "{{ onyx_mlag_vip_delay | default('omit', True) }}"
-      state: "{{ onyx_mlag_vip_state | default('omit', True) }}"
-      mac_address: "{{ onyx_mlag_vip_mac_address | default('omit', True) }}"
-      ipaddress: "{{ onyx_mlag_vip_ipaddress | default('omit', True) }}"
-      group_name: "{{ onyx_mlag_vip_group_name | default('omit', True) }}"
+      delay: "{{ onyx_mlag_vip_delay | default(omit, True) }}"
+      state: "{{ onyx_mlag_vip_state | default(omit, True) }}"
+      mac_address: "{{ onyx_mlag_vip_mac_address | default(omit, True) }}"
+      ipaddress: "{{ onyx_mlag_vip_ipaddress | default(omit, True) }}"
+      group_name: "{{ onyx_mlag_vip_group_name | default(omit, True) }}"
   tasks:
     - name: "plugin_onyx_mlag_vip"
       onyx_mlag_vip: "{{ onyx_mlag_vip }}"
+      register: r_onyx_mlag_vip

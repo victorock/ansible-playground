@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_gtm_facts: 
-      include: "{{ bigip_gtm_facts_include | default('omit', True) }}"
-      server: "{{ bigip_gtm_facts_server | default('omit', True) }}"
-      filter: "{{ bigip_gtm_facts_filter | default('omit', True) }}"
-      user: "{{ bigip_gtm_facts_user | default('omit', True) }}"
-      server_port: "{{ bigip_gtm_facts_server_port | default('omit', True) }}"
-      provider: "{{ bigip_gtm_facts_provider | default('omit', True) }}"
-      password: "{{ bigip_gtm_facts_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_gtm_facts_validate_certs | default('omit', True) }}"
+      include: "{{ bigip_gtm_facts_include | default(omit, True) }}"
+      server: "{{ bigip_gtm_facts_server | default(omit, True) }}"
+      filter: "{{ bigip_gtm_facts_filter | default(omit, True) }}"
+      user: "{{ bigip_gtm_facts_user | default(omit, True) }}"
+      server_port: "{{ bigip_gtm_facts_server_port | default(omit, True) }}"
+      provider: "{{ bigip_gtm_facts_provider | default(omit, True) }}"
+      password: "{{ bigip_gtm_facts_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_gtm_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_gtm_facts"
       bigip_gtm_facts: "{{ bigip_gtm_facts }}"
+      register: r_bigip_gtm_facts

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_net_vlan"
   na_ontap_net_vlan: "{{ na_ontap_net_vlan }}"
+  register: r_na_ontap_net_vlan
   vars:
     na_ontap_net_vlan: 
       node: "{{ na_ontap_net_vlan_node | default(omit, True) }}"

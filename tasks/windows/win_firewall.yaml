@@ -1,6 +1,7 @@
 ---
 - name: "module_win_firewall"
   win_firewall: "{{ win_firewall }}"
+  register: r_win_firewall
   vars:
     win_firewall: 
       state: "{{ win_firewall_state | default(omit, True) }}"

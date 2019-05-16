@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_vrfcontext"
   avi_vrfcontext: "{{ avi_vrfcontext }}"
+  register: r_avi_vrfcontext
   vars:
     avi_vrfcontext: 
       system_default: "{{ avi_vrfcontext_system_default | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_s3_cors"
   aws_s3_cors: "{{ aws_s3_cors }}"
+  register: r_aws_s3_cors
   vars:
     aws_s3_cors: 
       aws_secret_key: "{{ aws_s3_cors_aws_secret_key | default(omit, True) }}"

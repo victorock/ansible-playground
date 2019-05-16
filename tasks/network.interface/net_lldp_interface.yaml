@@ -1,6 +1,7 @@
 ---
 - name: "module_net_lldp_interface"
   net_lldp_interface: "{{ net_lldp_interface }}"
+  register: r_net_lldp_interface
   vars:
     net_lldp_interface: 
       aggregate: "{{ net_lldp_interface_aggregate | default(omit, True) }}"

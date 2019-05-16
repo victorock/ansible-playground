@@ -1,6 +1,7 @@
 ---
 - name: "module_nexmo"
   nexmo: "{{ nexmo }}"
+  register: r_nexmo
   vars:
     nexmo: 
       src: "{{ nexmo_src | default(omit, True) }}"

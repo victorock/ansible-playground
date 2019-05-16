@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_netstream_aging: 
-      timeout_type: "{{ ce_netstream_aging_timeout_type | default('omit', True) }}"
-      state: "{{ ce_netstream_aging_state | default('omit', True) }}"
-      type: "{{ ce_netstream_aging_type | default('omit', True) }}"
-      manual_slot: "{{ ce_netstream_aging_manual_slot | default('omit', True) }}"
-      timeout_interval: "{{ ce_netstream_aging_timeout_interval | default('omit', True) }}"
+      timeout_type: "{{ ce_netstream_aging_timeout_type | default(omit, True) }}"
+      state: "{{ ce_netstream_aging_state | default(omit, True) }}"
+      type: "{{ ce_netstream_aging_type | default(omit, True) }}"
+      manual_slot: "{{ ce_netstream_aging_manual_slot | default(omit, True) }}"
+      timeout_interval: "{{ ce_netstream_aging_timeout_interval | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_netstream_aging"
       ce_netstream_aging: "{{ ce_netstream_aging }}"
+      register: r_ce_netstream_aging

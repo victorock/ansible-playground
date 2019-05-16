@@ -1,6 +1,7 @@
 ---
 - name: "module_gitlab_deploy_key"
   gitlab_deploy_key: "{{ gitlab_deploy_key }}"
+  register: r_gitlab_deploy_key
   vars:
     gitlab_deploy_key: 
       api_url: "{{ gitlab_deploy_key_api_url | default(omit, True) }}"

@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     include: 
-      free-form: "{{ include_free-form | default('omit', True) }}"
+      free-form: "{{ include_free-form | default(omit, True) }}"
   tasks:
     - name: "plugin_include"
       include: "{{ include }}"
+      register: r_include

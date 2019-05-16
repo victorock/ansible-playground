@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_l3_interface"
   eos_l3_interface: "{{ eos_l3_interface }}"
+  register: r_eos_l3_interface
   vars:
     eos_l3_interface: 
       authorize: "{{ eos_l3_interface_authorize | default(omit, True) }}"

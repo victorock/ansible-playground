@@ -1,6 +1,7 @@
 ---
 - name: "module_mksysb"
   mksysb: "{{ mksysb }}"
+  register: r_mksysb
   vars:
     mksysb: 
       exclude_files: "{{ mksysb_exclude_files | default(omit, True) }}"

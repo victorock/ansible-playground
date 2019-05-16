@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_cluster: 
-      username: "{{ vmware_cluster_username | default('omit', True) }}"
-      enable_ha: "{{ vmware_cluster_enable_ha | default('omit', True) }}"
-      enable_vsan: "{{ vmware_cluster_enable_vsan | default('omit', True) }}"
-      datacenter_name: "{{ vmware_cluster_datacenter_name | default('omit', True) }}"
-      hostname: "{{ vmware_cluster_hostname | default('omit', True) }}"
-      cluster_name: "{{ vmware_cluster_cluster_name | default('omit', True) }}"
-      state: "{{ vmware_cluster_state | default('omit', True) }}"
-      enable_drs: "{{ vmware_cluster_enable_drs | default('omit', True) }}"
-      password: "{{ vmware_cluster_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_cluster_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_cluster_port | default('omit', True) }}"
+      username: "{{ vmware_cluster_username | default(omit, True) }}"
+      enable_ha: "{{ vmware_cluster_enable_ha | default(omit, True) }}"
+      enable_vsan: "{{ vmware_cluster_enable_vsan | default(omit, True) }}"
+      datacenter_name: "{{ vmware_cluster_datacenter_name | default(omit, True) }}"
+      hostname: "{{ vmware_cluster_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_cluster_cluster_name | default(omit, True) }}"
+      state: "{{ vmware_cluster_state | default(omit, True) }}"
+      enable_drs: "{{ vmware_cluster_enable_drs | default(omit, True) }}"
+      password: "{{ vmware_cluster_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_cluster_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_cluster_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_cluster"
       vmware_cluster: "{{ vmware_cluster }}"
+      register: r_vmware_cluster

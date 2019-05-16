@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_bd"
   aci_bd: "{{ aci_bd }}"
+  register: r_aci_bd
   vars:
     aci_bd: 
       bd: "{{ aci_bd_bd | default(omit, True) }}"

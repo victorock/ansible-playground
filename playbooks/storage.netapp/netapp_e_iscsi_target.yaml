@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_iscsi_target: 
-      unnamed_discovery: "{{ netapp_e_iscsi_target_unnamed_discovery | default('omit', True) }}"
-      api_url: "{{ netapp_e_iscsi_target_api_url | default('omit', True) }}"
-      log_path: "{{ netapp_e_iscsi_target_log_path | default('omit', True) }}"
-      api_password: "{{ netapp_e_iscsi_target_api_password | default('omit', True) }}"
-      ping: "{{ netapp_e_iscsi_target_ping | default('omit', True) }}"
-      name: "{{ netapp_e_iscsi_target_name | default('omit', True) }}"
-      api_username: "{{ netapp_e_iscsi_target_api_username | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_iscsi_target_validate_certs | default('omit', True) }}"
-      chap_secret: "{{ netapp_e_iscsi_target_chap_secret | default('omit', True) }}"
-      ssid: "{{ netapp_e_iscsi_target_ssid | default('omit', True) }}"
+      unnamed_discovery: "{{ netapp_e_iscsi_target_unnamed_discovery | default(omit, True) }}"
+      api_url: "{{ netapp_e_iscsi_target_api_url | default(omit, True) }}"
+      log_path: "{{ netapp_e_iscsi_target_log_path | default(omit, True) }}"
+      api_password: "{{ netapp_e_iscsi_target_api_password | default(omit, True) }}"
+      ping: "{{ netapp_e_iscsi_target_ping | default(omit, True) }}"
+      name: "{{ netapp_e_iscsi_target_name | default(omit, True) }}"
+      api_username: "{{ netapp_e_iscsi_target_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_iscsi_target_validate_certs | default(omit, True) }}"
+      chap_secret: "{{ netapp_e_iscsi_target_chap_secret | default(omit, True) }}"
+      ssid: "{{ netapp_e_iscsi_target_ssid | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_iscsi_target"
       netapp_e_iscsi_target: "{{ netapp_e_iscsi_target }}"
+      register: r_netapp_e_iscsi_target

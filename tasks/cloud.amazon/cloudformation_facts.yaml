@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudformation_facts"
   cloudformation_facts: "{{ cloudformation_facts }}"
+  register: r_cloudformation_facts
   vars:
     cloudformation_facts: 
       profile: "{{ cloudformation_facts_profile | default(omit, True) }}"

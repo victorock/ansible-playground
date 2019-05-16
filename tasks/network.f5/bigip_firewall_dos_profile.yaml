@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_firewall_dos_profile"
   bigip_firewall_dos_profile: "{{ bigip_firewall_dos_profile }}"
+  register: r_bigip_firewall_dos_profile
   vars:
     bigip_firewall_dos_profile: 
       description: "{{ bigip_firewall_dos_profile_description | default(omit, True) }}"

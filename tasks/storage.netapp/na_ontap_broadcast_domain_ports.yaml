@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_broadcast_domain_ports"
   na_ontap_broadcast_domain_ports: "{{ na_ontap_broadcast_domain_ports }}"
+  register: r_na_ontap_broadcast_domain_ports
   vars:
     na_ontap_broadcast_domain_ports: 
       username: "{{ na_ontap_broadcast_domain_ports_username | default(omit, True) }}"

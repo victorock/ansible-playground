@@ -1,6 +1,7 @@
 ---
 - name: "module_influxdb_write"
   influxdb_write: "{{ influxdb_write }}"
+  register: r_influxdb_write
   vars:
     influxdb_write: 
       username: "{{ influxdb_write_username | default(omit, True) }}"

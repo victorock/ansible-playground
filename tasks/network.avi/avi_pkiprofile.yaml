@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_pkiprofile"
   avi_pkiprofile: "{{ avi_pkiprofile }}"
+  register: r_avi_pkiprofile
   vars:
     avi_pkiprofile: 
       username: "{{ avi_pkiprofile_username | default(omit, True) }}"

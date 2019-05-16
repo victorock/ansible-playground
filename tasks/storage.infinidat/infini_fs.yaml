@@ -1,6 +1,7 @@
 ---
 - name: "module_infini_fs"
   infini_fs: "{{ infini_fs }}"
+  register: r_infini_fs
   vars:
     infini_fs: 
       name: "{{ infini_fs_name | default(omit, True) }}"

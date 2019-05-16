@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_group_facts: 
-      pattern: "{{ ovirt_group_facts_pattern | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_group_facts_fetch_nested | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_group_facts_nested_attributes | default('omit', True) }}"
-      auth: "{{ ovirt_group_facts_auth | default('omit', True) }}"
+      pattern: "{{ ovirt_group_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_group_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_group_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_group_facts_auth | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_group_facts"
       ovirt_group_facts: "{{ ovirt_group_facts }}"
+      register: r_ovirt_group_facts

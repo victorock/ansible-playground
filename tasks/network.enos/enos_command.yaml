@@ -1,6 +1,7 @@
 ---
 - name: "module_enos_command"
   enos_command: "{{ enos_command }}"
+  register: r_enos_command
   vars:
     enos_command: 
       authorize: "{{ enos_command_authorize | default(omit, True) }}"

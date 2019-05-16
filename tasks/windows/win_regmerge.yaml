@@ -1,6 +1,7 @@
 ---
 - name: "module_win_regmerge"
   win_regmerge: "{{ win_regmerge }}"
+  register: r_win_regmerge
   vars:
     win_regmerge: 
       path: "{{ win_regmerge_path | default(omit, True) }}"

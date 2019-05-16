@@ -1,0 +1,33 @@
+---
+- name: "Create project"
+  tower_project:
+    name: "ansible_playground"
+    scm_type: "git"
+    organization: "Default"
+    scm_update_on_launch: "false"
+    # branch: "{{ ansible_version.string }}"
+    scm_url: "https://github.com/victorock/ansible-playground"
+    tower_verify_ssl: "false"
+
+- name: "Create job template"
+  tower_job_template:
+    name: "module_{{ (playbook.path | basename).split('.')[0] }}"
+    project: "ansible_playground: {{ ansible_version.string }}"
+    playbook: "playbooks/{{ playbook.path }}"
+    job_type: "run"
+    ask_credential: "true"
+    ask_diff_mode: "true"
+    ask_limit: "true"
+    ask_skip_tags: "true"
+    ask_tags: "true"
+    ask_job_type: "true"
+    ask_inventory: "true"
+    ask_extra_vars: "true"
+    ask_verbosity: "true"
+    tower_verify_ssl: "false"
+  when: playbook.state == 'file'
+  register: create_job_template
+  loop: "{{ q('filetree', 'playbooks/') }}"
+  loop_control:
+    loop_var: playbook
+    label: "{{ playbook.path }}"

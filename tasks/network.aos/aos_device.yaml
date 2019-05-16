@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_device"
   aos_device: "{{ aos_device }}"
+  register: r_aos_device
   vars:
     aos_device: 
       name: "{{ aos_device_name | default(omit, True) }}"

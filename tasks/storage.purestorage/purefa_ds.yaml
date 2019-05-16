@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_ds"
   purefa_ds: "{{ purefa_ds }}"
+  register: r_purefa_ds
   vars:
     purefa_ds: 
       bind_user: "{{ purefa_ds_bind_user | default(omit, True) }}"

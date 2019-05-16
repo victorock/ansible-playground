@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_mig"
   gce_mig: "{{ gce_mig }}"
+  register: r_gce_mig
   vars:
     gce_mig: 
       name: "{{ gce_mig_name | default(omit, True) }}"

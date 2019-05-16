@@ -1,6 +1,7 @@
 ---
 - name: "module_vca_vapp"
   vca_vapp: "{{ vca_vapp }}"
+  register: r_vca_vapp
   vars:
     vca_vapp: 
       vm_name: "{{ vca_vapp_vm_name | default(omit, True) }}"

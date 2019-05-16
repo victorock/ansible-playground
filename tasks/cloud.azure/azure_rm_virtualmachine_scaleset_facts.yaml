@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_virtualmachine_scaleset_facts"
   azure_rm_virtualmachine_scaleset_facts: "{{ azure_rm_virtualmachine_scaleset_facts }}"
+  register: r_azure_rm_virtualmachine_scaleset_facts
   vars:
     azure_rm_virtualmachine_scaleset_facts: 
       profile: "{{ azure_rm_virtualmachine_scaleset_facts_profile | default(omit, True) }}"

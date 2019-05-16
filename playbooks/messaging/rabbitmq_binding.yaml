@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     rabbitmq_binding: 
-      login_port: "{{ rabbitmq_binding_login_port | default('omit', True) }}"
-      name: "{{ rabbitmq_binding_name | default('omit', True) }}"
-      login_user: "{{ rabbitmq_binding_login_user | default('omit', True) }}"
-      login_host: "{{ rabbitmq_binding_login_host | default('omit', True) }}"
-      destination: "{{ rabbitmq_binding_destination | default('omit', True) }}"
-      routing_key: "{{ rabbitmq_binding_routing_key | default('omit', True) }}"
-      vhost: "{{ rabbitmq_binding_vhost | default('omit', True) }}"
-      state: "{{ rabbitmq_binding_state | default('omit', True) }}"
-      arguments: "{{ rabbitmq_binding_arguments | default('omit', True) }}"
-      login_password: "{{ rabbitmq_binding_login_password | default('omit', True) }}"
-      destination_type: "{{ rabbitmq_binding_destination_type | default('omit', True) }}"
+      login_port: "{{ rabbitmq_binding_login_port | default(omit, True) }}"
+      name: "{{ rabbitmq_binding_name | default(omit, True) }}"
+      login_user: "{{ rabbitmq_binding_login_user | default(omit, True) }}"
+      login_host: "{{ rabbitmq_binding_login_host | default(omit, True) }}"
+      destination: "{{ rabbitmq_binding_destination | default(omit, True) }}"
+      routing_key: "{{ rabbitmq_binding_routing_key | default(omit, True) }}"
+      vhost: "{{ rabbitmq_binding_vhost | default(omit, True) }}"
+      state: "{{ rabbitmq_binding_state | default(omit, True) }}"
+      arguments: "{{ rabbitmq_binding_arguments | default(omit, True) }}"
+      login_password: "{{ rabbitmq_binding_login_password | default(omit, True) }}"
+      destination_type: "{{ rabbitmq_binding_destination_type | default(omit, True) }}"
   tasks:
     - name: "plugin_rabbitmq_binding"
       rabbitmq_binding: "{{ rabbitmq_binding }}"
+      register: r_rabbitmq_binding

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_igroup"
   na_ontap_igroup: "{{ na_ontap_igroup }}"
+  register: r_na_ontap_igroup
   vars:
     na_ontap_igroup: 
       username: "{{ na_ontap_igroup_username | default(omit, True) }}"

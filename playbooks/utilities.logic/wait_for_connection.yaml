@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     wait_for_connection: 
-      delay: "{{ wait_for_connection_delay | default('omit', True) }}"
-      sleep: "{{ wait_for_connection_sleep | default('omit', True) }}"
-      connect_timeout: "{{ wait_for_connection_connect_timeout | default('omit', True) }}"
-      timeout: "{{ wait_for_connection_timeout | default('omit', True) }}"
+      delay: "{{ wait_for_connection_delay | default(omit, True) }}"
+      sleep: "{{ wait_for_connection_sleep | default(omit, True) }}"
+      connect_timeout: "{{ wait_for_connection_connect_timeout | default(omit, True) }}"
+      timeout: "{{ wait_for_connection_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_wait_for_connection"
       wait_for_connection: "{{ wait_for_connection }}"
+      register: r_wait_for_connection

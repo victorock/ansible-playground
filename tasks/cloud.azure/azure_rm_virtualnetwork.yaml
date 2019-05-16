@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_virtualnetwork"
   azure_rm_virtualnetwork: "{{ azure_rm_virtualnetwork }}"
+  register: r_azure_rm_virtualnetwork
   vars:
     azure_rm_virtualnetwork: 
       dns_servers: "{{ azure_rm_virtualnetwork_dns_servers | default(omit, True) }}"

@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_vrf_interface: 
-      state: "{{ ce_vrf_interface_state | default('omit', True) }}"
-      vrf: "{{ ce_vrf_interface_vrf | default('omit', True) }}"
-      vpn_interface: "{{ ce_vrf_interface_vpn_interface | default('omit', True) }}"
+      state: "{{ ce_vrf_interface_state | default(omit, True) }}"
+      vrf: "{{ ce_vrf_interface_vrf | default(omit, True) }}"
+      vpn_interface: "{{ ce_vrf_interface_vpn_interface | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_vrf_interface"
       ce_vrf_interface: "{{ ce_vrf_interface }}"
+      register: r_ce_vrf_interface

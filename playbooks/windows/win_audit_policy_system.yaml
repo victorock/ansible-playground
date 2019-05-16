@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_audit_policy_system: 
-      category: "{{ win_audit_policy_system_category | default('omit', True) }}"
-      audit_type: "{{ win_audit_policy_system_audit_type | default('omit', True) }}"
-      subcategory: "{{ win_audit_policy_system_subcategory | default('omit', True) }}"
+      category: "{{ win_audit_policy_system_category | default(omit, True) }}"
+      audit_type: "{{ win_audit_policy_system_audit_type | default(omit, True) }}"
+      subcategory: "{{ win_audit_policy_system_subcategory | default(omit, True) }}"
   tasks:
     - name: "plugin_win_audit_policy_system"
       win_audit_policy_system: "{{ win_audit_policy_system }}"
+      register: r_win_audit_policy_system

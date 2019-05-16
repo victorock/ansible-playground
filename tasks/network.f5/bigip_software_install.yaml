@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_software_install"
   bigip_software_install: "{{ bigip_software_install }}"
+  register: r_bigip_software_install
   vars:
     bigip_software_install: 
       image: "{{ bigip_software_install_image | default(omit, True) }}"

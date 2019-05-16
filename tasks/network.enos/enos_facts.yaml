@@ -1,6 +1,7 @@
 ---
 - name: "module_enos_facts"
   enos_facts: "{{ enos_facts }}"
+  register: r_enos_facts
   vars:
     enos_facts: 
       authorize: "{{ enos_facts_authorize | default(omit, True) }}"

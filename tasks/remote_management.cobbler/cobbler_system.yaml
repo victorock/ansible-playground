@@ -1,6 +1,7 @@
 ---
 - name: "module_cobbler_system"
   cobbler_system: "{{ cobbler_system }}"
+  register: r_cobbler_system
   vars:
     cobbler_system: 
       username: "{{ cobbler_system_username | default(omit, True) }}"

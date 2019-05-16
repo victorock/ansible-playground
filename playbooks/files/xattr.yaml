@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     xattr: 
-      namespace: "{{ xattr_namespace | default('omit', True) }}"
-      value: "{{ xattr_value | default('omit', True) }}"
-      state: "{{ xattr_state | default('omit', True) }}"
-      key: "{{ xattr_key | default('omit', True) }}"
-      follow: "{{ xattr_follow | default('omit', True) }}"
-      path: "{{ xattr_path | default('omit', True) }}"
+      namespace: "{{ xattr_namespace | default(omit, True) }}"
+      value: "{{ xattr_value | default(omit, True) }}"
+      state: "{{ xattr_state | default(omit, True) }}"
+      key: "{{ xattr_key | default(omit, True) }}"
+      follow: "{{ xattr_follow | default(omit, True) }}"
+      path: "{{ xattr_path | default(omit, True) }}"
   tasks:
     - name: "plugin_xattr"
       xattr: "{{ xattr }}"
+      register: r_xattr

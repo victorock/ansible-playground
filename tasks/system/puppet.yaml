@@ -1,6 +1,7 @@
 ---
 - name: "module_puppet"
   puppet: "{{ puppet }}"
+  register: r_puppet
   vars:
     puppet: 
       logdest: "{{ puppet_logdest | default(omit, True) }}"

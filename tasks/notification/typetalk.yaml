@@ -1,6 +1,7 @@
 ---
 - name: "module_typetalk"
   typetalk: "{{ typetalk }}"
+  register: r_typetalk
   vars:
     typetalk: 
       topic: "{{ typetalk_topic | default(omit, True) }}"

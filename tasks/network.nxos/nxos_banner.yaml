@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_banner"
   nxos_banner: "{{ nxos_banner }}"
+  register: r_nxos_banner
   vars:
     nxos_banner: 
       text: "{{ nxos_banner_text | default(omit, True) }}"

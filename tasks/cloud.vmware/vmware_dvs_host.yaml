@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_dvs_host"
   vmware_dvs_host: "{{ vmware_dvs_host }}"
+  register: r_vmware_dvs_host
   vars:
     vmware_dvs_host: 
       username: "{{ vmware_dvs_host_username | default(omit, True) }}"

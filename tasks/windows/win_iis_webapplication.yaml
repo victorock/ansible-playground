@@ -1,6 +1,7 @@
 ---
 - name: "module_win_iis_webapplication"
   win_iis_webapplication: "{{ win_iis_webapplication }}"
+  register: r_win_iis_webapplication
   vars:
     win_iis_webapplication: 
       state: "{{ win_iis_webapplication_state | default(omit, True) }}"

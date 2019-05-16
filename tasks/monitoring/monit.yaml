@@ -1,6 +1,7 @@
 ---
 - name: "module_monit"
   monit: "{{ monit }}"
+  register: r_monit
   vars:
     monit: 
       state: "{{ monit_state | default(omit, True) }}"

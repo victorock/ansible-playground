@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_trafficmanagerendpoint"
   azure_rm_trafficmanagerendpoint: "{{ azure_rm_trafficmanagerendpoint }}"
+  register: r_azure_rm_trafficmanagerendpoint
   vars:
     azure_rm_trafficmanagerendpoint: 
       weight: "{{ azure_rm_trafficmanagerendpoint_weight | default(omit, True) }}"

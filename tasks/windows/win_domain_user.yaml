@@ -1,6 +1,7 @@
 ---
 - name: "module_win_domain_user"
   win_domain_user: "{{ win_domain_user }}"
+  register: r_win_domain_user
   vars:
     win_domain_user: 
       update_password: "{{ win_domain_user_update_password | default(omit, True) }}"

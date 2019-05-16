@@ -1,6 +1,7 @@
 ---
 - name: "module_consul_session"
   consul_session: "{{ consul_session }}"
+  register: r_consul_session
   vars:
     consul_session: 
       node: "{{ consul_session_node | default(omit, True) }}"

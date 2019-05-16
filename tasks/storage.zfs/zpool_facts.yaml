@@ -1,6 +1,7 @@
 ---
 - name: "module_zpool_facts"
   zpool_facts: "{{ zpool_facts }}"
+  register: r_zpool_facts
   vars:
     zpool_facts: 
       parsable: "{{ zpool_facts_parsable | default(omit, True) }}"

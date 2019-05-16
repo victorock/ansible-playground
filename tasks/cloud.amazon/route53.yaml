@@ -1,6 +1,7 @@
 ---
 - name: "module_route53"
   route53: "{{ route53 }}"
+  register: r_route53
   vars:
     route53: 
       weight: "{{ route53_weight | default(omit, True) }}"

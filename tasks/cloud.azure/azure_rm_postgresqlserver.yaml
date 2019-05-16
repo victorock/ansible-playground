@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_postgresqlserver"
   azure_rm_postgresqlserver: "{{ azure_rm_postgresqlserver }}"
+  register: r_azure_rm_postgresqlserver
   vars:
     azure_rm_postgresqlserver: 
       resource_group: "{{ azure_rm_postgresqlserver_resource_group | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_postgresql_user"
   postgresql_user: "{{ postgresql_user }}"
+  register: r_postgresql_user
   vars:
     postgresql_user: 
       ssl_rootcert: "{{ postgresql_user_ssl_rootcert | default(omit, True) }}"

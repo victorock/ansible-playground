@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_ssl_policy"
   gcp_compute_ssl_policy: "{{ gcp_compute_ssl_policy }}"
+  register: r_gcp_compute_ssl_policy
   vars:
     gcp_compute_ssl_policy: 
       profile: "{{ gcp_compute_ssl_policy_profile | default(omit, True) }}"

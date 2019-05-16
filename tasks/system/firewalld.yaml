@@ -1,6 +1,7 @@
 ---
 - name: "module_firewalld"
   firewalld: "{{ firewalld }}"
+  register: r_firewalld
   vars:
     firewalld: 
       service: "{{ firewalld_service | default(omit, True) }}"

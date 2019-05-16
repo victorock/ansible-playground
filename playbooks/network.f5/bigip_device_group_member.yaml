@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_device_group_member: 
-      name: "{{ bigip_device_group_member_name | default('omit', True) }}"
-      device_group: "{{ bigip_device_group_member_device_group | default('omit', True) }}"
-      server: "{{ bigip_device_group_member_server | default('omit', True) }}"
-      state: "{{ bigip_device_group_member_state | default('omit', True) }}"
-      user: "{{ bigip_device_group_member_user | default('omit', True) }}"
-      server_port: "{{ bigip_device_group_member_server_port | default('omit', True) }}"
-      provider: "{{ bigip_device_group_member_provider | default('omit', True) }}"
-      password: "{{ bigip_device_group_member_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_device_group_member_validate_certs | default('omit', True) }}"
+      name: "{{ bigip_device_group_member_name | default(omit, True) }}"
+      device_group: "{{ bigip_device_group_member_device_group | default(omit, True) }}"
+      server: "{{ bigip_device_group_member_server | default(omit, True) }}"
+      state: "{{ bigip_device_group_member_state | default(omit, True) }}"
+      user: "{{ bigip_device_group_member_user | default(omit, True) }}"
+      server_port: "{{ bigip_device_group_member_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_group_member_provider | default(omit, True) }}"
+      password: "{{ bigip_device_group_member_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_group_member_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_device_group_member"
       bigip_device_group_member: "{{ bigip_device_group_member }}"
+      register: r_bigip_device_group_member

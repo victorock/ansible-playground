@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_ipamdnsproviderprofile"
   avi_ipamdnsproviderprofile: "{{ avi_ipamdnsproviderprofile }}"
+  register: r_avi_ipamdnsproviderprofile
   vars:
     avi_ipamdnsproviderprofile: 
       proxy_configuration: "{{ avi_ipamdnsproviderprofile_proxy_configuration | default(omit, True) }}"

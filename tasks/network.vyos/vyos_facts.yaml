@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_facts"
   vyos_facts: "{{ vyos_facts }}"
+  register: r_vyos_facts
   vars:
     vyos_facts: 
       gather_subset: "{{ vyos_facts_gather_subset | default(omit, True) }}"

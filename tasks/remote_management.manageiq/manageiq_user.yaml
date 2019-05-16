@@ -1,6 +1,7 @@
 ---
 - name: "module_manageiq_user"
   manageiq_user: "{{ manageiq_user }}"
+  register: r_manageiq_user
   vars:
     manageiq_user: 
       update_password: "{{ manageiq_user_update_password | default(omit, True) }}"

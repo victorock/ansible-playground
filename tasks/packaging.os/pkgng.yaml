@@ -1,6 +1,7 @@
 ---
 - name: "module_pkgng"
   pkgng: "{{ pkgng }}"
+  register: r_pkgng
   vars:
     pkgng: 
       chroot: "{{ pkgng_chroot | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_net_banner"
   net_banner: "{{ net_banner }}"
+  register: r_net_banner
   vars:
     net_banner: 
       text: "{{ net_banner_text | default(omit, True) }}"

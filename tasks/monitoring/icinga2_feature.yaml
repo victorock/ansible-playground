@@ -1,6 +1,7 @@
 ---
 - name: "module_icinga2_feature"
   icinga2_feature: "{{ icinga2_feature }}"
+  register: r_icinga2_feature
   vars:
     icinga2_feature: 
       state: "{{ icinga2_feature_state | default(omit, True) }}"

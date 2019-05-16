@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_qtree"
   na_ontap_qtree: "{{ na_ontap_qtree }}"
+  register: r_na_ontap_qtree
   vars:
     na_ontap_qtree: 
       username: "{{ na_ontap_qtree_username | default(omit, True) }}"

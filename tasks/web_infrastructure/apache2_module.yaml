@@ -1,6 +1,7 @@
 ---
 - name: "module_apache2_module"
   apache2_module: "{{ apache2_module }}"
+  register: r_apache2_module
   vars:
     apache2_module: 
       state: "{{ apache2_module_state | default(omit, True) }}"

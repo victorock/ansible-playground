@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     dellos6_command: 
-      retries: "{{ dellos6_command_retries | default('omit', True) }}"
-      commands: "{{ dellos6_command_commands | default('omit', True) }}"
-      interval: "{{ dellos6_command_interval | default('omit', True) }}"
-      provider: "{{ dellos6_command_provider | default('omit', True) }}"
-      wait_for: "{{ dellos6_command_wait_for | default('omit', True) }}"
-      match: "{{ dellos6_command_match | default('omit', True) }}"
+      retries: "{{ dellos6_command_retries | default(omit, True) }}"
+      commands: "{{ dellos6_command_commands | default(omit, True) }}"
+      interval: "{{ dellos6_command_interval | default(omit, True) }}"
+      provider: "{{ dellos6_command_provider | default(omit, True) }}"
+      wait_for: "{{ dellos6_command_wait_for | default(omit, True) }}"
+      match: "{{ dellos6_command_match | default(omit, True) }}"
   tasks:
     - name: "plugin_dellos6_command"
       dellos6_command: "{{ dellos6_command }}"
+      register: r_dellos6_command

@@ -1,6 +1,7 @@
 ---
 - name: "module_gitlab_group"
   gitlab_group: "{{ gitlab_group }}"
+  register: r_gitlab_group
   vars:
     gitlab_group: 
       name: "{{ gitlab_group_name | default(omit, True) }}"

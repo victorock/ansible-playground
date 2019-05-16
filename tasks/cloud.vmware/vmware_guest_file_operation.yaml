@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_file_operation"
   vmware_guest_file_operation: "{{ vmware_guest_file_operation }}"
+  register: r_vmware_guest_file_operation
   vars:
     vmware_guest_file_operation: 
       username: "{{ vmware_guest_file_operation_username | default(omit, True) }}"

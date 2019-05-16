@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_clb_ssl"
   rax_clb_ssl: "{{ rax_clb_ssl }}"
+  register: r_rax_clb_ssl
   vars:
     rax_clb_ssl: 
       username: "{{ rax_clb_ssl_username | default(omit, True) }}"

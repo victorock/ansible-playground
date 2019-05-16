@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_admin_users"
   na_elementsw_admin_users: "{{ na_elementsw_admin_users }}"
+  register: r_na_elementsw_admin_users
   vars:
     na_elementsw_admin_users: 
       username: "{{ na_elementsw_admin_users_username | default(omit, True) }}"

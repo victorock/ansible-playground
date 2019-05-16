@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_device"
   meraki_device: "{{ meraki_device }}"
+  register: r_meraki_device
   vars:
     meraki_device: 
       lldp_cdp_timespan: "{{ meraki_device_lldp_cdp_timespan | default(omit, True) }}"

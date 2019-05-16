@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     sros_rollback: 
-      remote_max_checkpoints: "{{ sros_rollback_remote_max_checkpoints | default('omit', True) }}"
-      local_max_checkpoints: "{{ sros_rollback_local_max_checkpoints | default('omit', True) }}"
-      rollback_location: "{{ sros_rollback_rollback_location | default('omit', True) }}"
-      state: "{{ sros_rollback_state | default('omit', True) }}"
-      rescue_location: "{{ sros_rollback_rescue_location | default('omit', True) }}"
-      provider: "{{ sros_rollback_provider | default('omit', True) }}"
+      remote_max_checkpoints: "{{ sros_rollback_remote_max_checkpoints | default(omit, True) }}"
+      local_max_checkpoints: "{{ sros_rollback_local_max_checkpoints | default(omit, True) }}"
+      rollback_location: "{{ sros_rollback_rollback_location | default(omit, True) }}"
+      state: "{{ sros_rollback_state | default(omit, True) }}"
+      rescue_location: "{{ sros_rollback_rescue_location | default(omit, True) }}"
+      provider: "{{ sros_rollback_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_sros_rollback"
       sros_rollback: "{{ sros_rollback }}"
+      register: r_sros_rollback

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_l3_interface: 
-      name: "{{ nxos_l3_interface_name | default('omit', True) }}"
-      ipv6: "{{ nxos_l3_interface_ipv6 | default('omit', True) }}"
-      state: "{{ nxos_l3_interface_state | default('omit', True) }}"
-      ipv4: "{{ nxos_l3_interface_ipv4 | default('omit', True) }}"
-      provider: "{{ nxos_l3_interface_provider | default('omit', True) }}"
-      aggregate: "{{ nxos_l3_interface_aggregate | default('omit', True) }}"
+      name: "{{ nxos_l3_interface_name | default(omit, True) }}"
+      ipv6: "{{ nxos_l3_interface_ipv6 | default(omit, True) }}"
+      state: "{{ nxos_l3_interface_state | default(omit, True) }}"
+      ipv4: "{{ nxos_l3_interface_ipv4 | default(omit, True) }}"
+      provider: "{{ nxos_l3_interface_provider | default(omit, True) }}"
+      aggregate: "{{ nxos_l3_interface_aggregate | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_l3_interface"
       nxos_l3_interface: "{{ nxos_l3_interface }}"
+      register: r_nxos_l3_interface

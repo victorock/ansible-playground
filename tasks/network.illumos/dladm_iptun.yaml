@@ -1,6 +1,7 @@
 ---
 - name: "module_dladm_iptun"
   dladm_iptun: "{{ dladm_iptun }}"
+  register: r_dladm_iptun
   vars:
     dladm_iptun: 
       temporary: "{{ dladm_iptun_temporary | default(omit, True) }}"

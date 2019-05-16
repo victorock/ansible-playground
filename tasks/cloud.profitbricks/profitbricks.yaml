@@ -1,6 +1,7 @@
 ---
 - name: "module_profitbricks"
   profitbricks: "{{ profitbricks }}"
+  register: r_profitbricks
   vars:
     profitbricks: 
       image: "{{ profitbricks_image | default(omit, True) }}"

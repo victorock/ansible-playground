@@ -1,6 +1,7 @@
 ---
 - name: "module_async_status"
   async_status: "{{ async_status }}"
+  register: r_async_status
   vars:
     async_status: 
       jid: "{{ async_status_jid | default(omit, True) }}"

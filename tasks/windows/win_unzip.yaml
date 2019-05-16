@@ -1,6 +1,7 @@
 ---
 - name: "module_win_unzip"
   win_unzip: "{{ win_unzip }}"
+  register: r_win_unzip
   vars:
     win_unzip: 
       dest: "{{ win_unzip_dest | default(omit, True) }}"

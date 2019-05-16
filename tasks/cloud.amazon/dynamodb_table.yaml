@@ -1,6 +1,7 @@
 ---
 - name: "module_dynamodb_table"
   dynamodb_table: "{{ dynamodb_table }}"
+  register: r_dynamodb_table
   vars:
     dynamodb_table: 
       profile: "{{ dynamodb_table_profile | default(omit, True) }}"

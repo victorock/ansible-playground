@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_disk_facts"
   vmware_guest_disk_facts: "{{ vmware_guest_disk_facts }}"
+  register: r_vmware_guest_disk_facts
   vars:
     vmware_guest_disk_facts: 
       username: "{{ vmware_guest_disk_facts_username | default(omit, True) }}"

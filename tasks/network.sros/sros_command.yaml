@@ -1,6 +1,7 @@
 ---
 - name: "module_sros_command"
   sros_command: "{{ sros_command }}"
+  register: r_sros_command
   vars:
     sros_command: 
       retries: "{{ sros_command_retries | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_volume"
   na_ontap_volume: "{{ na_ontap_volume }}"
+  register: r_na_ontap_volume
   vars:
     na_ontap_volume: 
       size: "{{ na_ontap_volume_size | default(omit, True) }}"

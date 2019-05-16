@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_vms"
   ovirt_vms: "{{ ovirt_vms }}"
+  register: r_ovirt_vms
   vars:
     ovirt_vms: 
       comment: "{{ ovirt_vms_comment | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_sshd"
   bigip_device_sshd: "{{ bigip_device_sshd }}"
+  register: r_bigip_device_sshd
   vars:
     bigip_device_sshd: 
       log_level: "{{ bigip_device_sshd_log_level | default(omit, True) }}"

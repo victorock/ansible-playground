@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_cbs"
   rax_cbs: "{{ rax_cbs }}"
+  register: r_rax_cbs
   vars:
     rax_cbs: 
       username: "{{ rax_cbs_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler"
   netscaler: "{{ netscaler }}"
+  register: r_netscaler
   vars:
     netscaler: 
       name: "{{ netscaler_name | default(omit, True) }}"

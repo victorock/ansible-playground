@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_eip"
   ec2_eip: "{{ ec2_eip }}"
+  register: r_ec2_eip
   vars:
     ec2_eip: 
       release_on_disassociation: "{{ ec2_eip_release_on_disassociation | default(omit, True) }}"

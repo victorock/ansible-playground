@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_interface"
   na_ontap_interface: "{{ na_ontap_interface }}"
+  register: r_na_ontap_interface
   vars:
     na_ontap_interface: 
       username: "{{ na_ontap_interface_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_facts"
   junos_facts: "{{ junos_facts }}"
+  register: r_junos_facts
   vars:
     junos_facts: 
       config_format: "{{ junos_facts_config_format | default(omit, True) }}"

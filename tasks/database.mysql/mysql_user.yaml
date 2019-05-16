@@ -1,6 +1,7 @@
 ---
 - name: "module_mysql_user"
   mysql_user: "{{ mysql_user }}"
+  register: r_mysql_user
   vars:
     mysql_user: 
       ssl_key: "{{ mysql_user_ssl_key | default(omit, True) }}"

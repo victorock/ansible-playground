@@ -1,6 +1,7 @@
 ---
 - name: "module_ipadm_ifprop"
   ipadm_ifprop: "{{ ipadm_ifprop }}"
+  register: r_ipadm_ifprop
   vars:
     ipadm_ifprop: 
       temporary: "{{ ipadm_ifprop_temporary | default(omit, True) }}"

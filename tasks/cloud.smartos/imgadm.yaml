@@ -1,6 +1,7 @@
 ---
 - name: "module_imgadm"
   imgadm: "{{ imgadm }}"
+  register: r_imgadm
   vars:
     imgadm: 
       force: "{{ imgadm_force | default(omit, True) }}"

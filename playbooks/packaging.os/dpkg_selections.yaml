@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     dpkg_selections: 
-      selection: "{{ dpkg_selections_selection | default('omit', True) }}"
-      name: "{{ dpkg_selections_name | default('omit', True) }}"
+      selection: "{{ dpkg_selections_selection | default(omit, True) }}"
+      name: "{{ dpkg_selections_name | default(omit, True) }}"
   tasks:
     - name: "plugin_dpkg_selections"
       dpkg_selections: "{{ dpkg_selections }}"
+      register: r_dpkg_selections

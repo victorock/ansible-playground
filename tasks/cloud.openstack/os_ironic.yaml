@@ -1,6 +1,7 @@
 ---
 - name: "module_os_ironic"
   os_ironic: "{{ os_ironic }}"
+  register: r_os_ironic
   vars:
     os_ironic: 
       auth_type: "{{ os_ironic_auth_type | default(omit, True) }}"

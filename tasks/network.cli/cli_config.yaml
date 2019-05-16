@@ -1,6 +1,7 @@
 ---
 - name: "module_cli_config"
   cli_config: "{{ cli_config }}"
+  register: r_cli_config
   vars:
     cli_config: 
       multiline_delimiter: "{{ cli_config_multiline_delimiter | default(omit, True) }}"

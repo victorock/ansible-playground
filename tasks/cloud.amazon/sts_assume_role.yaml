@@ -1,6 +1,7 @@
 ---
 - name: "module_sts_assume_role"
   sts_assume_role: "{{ sts_assume_role }}"
+  register: r_sts_assume_role
   vars:
     sts_assume_role: 
       profile: "{{ sts_assume_role_profile | default(omit, True) }}"

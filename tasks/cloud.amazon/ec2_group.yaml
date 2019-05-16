@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_group"
   ec2_group: "{{ ec2_group }}"
+  register: r_ec2_group
   vars:
     ec2_group: 
       profile: "{{ ec2_group_profile | default(omit, True) }}"

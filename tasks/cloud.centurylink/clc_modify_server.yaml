@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_modify_server"
   clc_modify_server: "{{ clc_modify_server }}"
+  register: r_clc_modify_server
   vars:
     clc_modify_server: 
       alert_policy_name: "{{ clc_modify_server_alert_policy_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_uuid_pool"
   ucs_uuid_pool: "{{ ucs_uuid_pool }}"
+  register: r_ucs_uuid_pool
   vars:
     ucs_uuid_pool: 
       username: "{{ ucs_uuid_pool_username | default(omit, True) }}"

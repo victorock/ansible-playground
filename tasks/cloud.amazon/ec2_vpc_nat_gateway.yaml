@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_nat_gateway"
   ec2_vpc_nat_gateway: "{{ ec2_vpc_nat_gateway }}"
+  register: r_ec2_vpc_nat_gateway
   vars:
     ec2_vpc_nat_gateway: 
       profile: "{{ ec2_vpc_nat_gateway_profile | default(omit, True) }}"

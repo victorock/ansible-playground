@@ -1,6 +1,7 @@
 ---
 - name: "module_bundler"
   bundler: "{{ bundler }}"
+  register: r_bundler
   vars:
     bundler: 
       executable: "{{ bundler_executable | default(omit, True) }}"

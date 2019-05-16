@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_ntp"
   nxos_ntp: "{{ nxos_ntp }}"
+  register: r_nxos_ntp
   vars:
     nxos_ntp: 
       source_addr: "{{ nxos_ntp_source_addr | default(omit, True) }}"

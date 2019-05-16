@@ -1,6 +1,7 @@
 ---
 - name: "module_ipadm_addr"
   ipadm_addr: "{{ ipadm_addr }}"
+  register: r_ipadm_addr
   vars:
     ipadm_addr: 
       addrtype: "{{ ipadm_addr_addrtype | default(omit, True) }}"

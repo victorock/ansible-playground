@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_amg_role"
   netapp_e_amg_role: "{{ netapp_e_amg_role }}"
+  register: r_netapp_e_amg_role
   vars:
     netapp_e_amg_role: 
       force: "{{ netapp_e_amg_role_force | default(omit, True) }}"

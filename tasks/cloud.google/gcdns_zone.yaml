@@ -1,6 +1,7 @@
 ---
 - name: "module_gcdns_zone"
   gcdns_zone: "{{ gcdns_zone }}"
+  register: r_gcdns_zone
   vars:
     gcdns_zone: 
       description: "{{ gcdns_zone_description | default(omit, True) }}"

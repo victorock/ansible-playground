@@ -1,6 +1,7 @@
 ---
 - name: "module_ecs_cluster"
   ecs_cluster: "{{ ecs_cluster }}"
+  register: r_ecs_cluster
   vars:
     ecs_cluster: 
       profile: "{{ ecs_cluster_profile | default(omit, True) }}"

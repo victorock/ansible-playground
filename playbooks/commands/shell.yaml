@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     shell: 
-      warn: "{{ shell_warn | default('omit', True) }}"
-      executable: "{{ shell_executable | default('omit', True) }}"
-      chdir: "{{ shell_chdir | default('omit', True) }}"
-      stdin: "{{ shell_stdin | default('omit', True) }}"
-      removes: "{{ shell_removes | default('omit', True) }}"
-      creates: "{{ shell_creates | default('omit', True) }}"
-      free_form: "{{ shell_free_form | default('omit', True) }}"
+      warn: "{{ shell_warn | default(omit, True) }}"
+      executable: "{{ shell_executable | default(omit, True) }}"
+      chdir: "{{ shell_chdir | default(omit, True) }}"
+      stdin: "{{ shell_stdin | default(omit, True) }}"
+      removes: "{{ shell_removes | default(omit, True) }}"
+      creates: "{{ shell_creates | default(omit, True) }}"
+      free_form: "{{ shell_free_form | default(omit, True) }}"
   tasks:
     - name: "plugin_shell"
       shell: "{{ shell }}"
+      register: r_shell

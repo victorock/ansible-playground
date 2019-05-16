@@ -1,6 +1,7 @@
 ---
 - name: "module_os_nova_host_aggregate"
   os_nova_host_aggregate: "{{ os_nova_host_aggregate }}"
+  register: r_os_nova_host_aggregate
   vars:
     os_nova_host_aggregate: 
       auth_type: "{{ os_nova_host_aggregate_auth_type | default(omit, True) }}"

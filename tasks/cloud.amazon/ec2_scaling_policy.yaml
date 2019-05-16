@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_scaling_policy"
   ec2_scaling_policy: "{{ ec2_scaling_policy }}"
+  register: r_ec2_scaling_policy
   vars:
     ec2_scaling_policy: 
       profile: "{{ ec2_scaling_policy_profile | default(omit, True) }}"

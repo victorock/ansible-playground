@@ -1,6 +1,7 @@
 ---
 - name: "module_oneandone_load_balancer"
   oneandone_load_balancer: "{{ oneandone_load_balancer }}"
+  register: r_oneandone_load_balancer
   vars:
     oneandone_load_balancer: 
       add_rules: "{{ oneandone_load_balancer_add_rules | default(omit, True) }}"

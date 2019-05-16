@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_organization"
   meraki_organization: "{{ meraki_organization }}"
+  register: r_meraki_organization
   vars:
     meraki_organization: 
       org_name: "{{ meraki_organization_org_name | default(omit, True) }}"

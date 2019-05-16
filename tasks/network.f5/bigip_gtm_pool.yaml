@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_pool"
   bigip_gtm_pool: "{{ bigip_gtm_pool }}"
+  register: r_bigip_gtm_pool
   vars:
     bigip_gtm_pool: 
       monitors: "{{ bigip_gtm_pool_monitors | default(omit, True) }}"

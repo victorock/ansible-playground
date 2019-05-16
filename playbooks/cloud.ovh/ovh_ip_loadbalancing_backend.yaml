@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovh_ip_loadbalancing_backend: 
-      endpoint: "{{ ovh_ip_loadbalancing_backend_endpoint | default('omit', True) }}"
-      name: "{{ ovh_ip_loadbalancing_backend_name | default('omit', True) }}"
-      weight: "{{ ovh_ip_loadbalancing_backend_weight | default('omit', True) }}"
-      probe: "{{ ovh_ip_loadbalancing_backend_probe | default('omit', True) }}"
-      application_key: "{{ ovh_ip_loadbalancing_backend_application_key | default('omit', True) }}"
-      state: "{{ ovh_ip_loadbalancing_backend_state | default('omit', True) }}"
-      application_secret: "{{ ovh_ip_loadbalancing_backend_application_secret | default('omit', True) }}"
-      timeout: "{{ ovh_ip_loadbalancing_backend_timeout | default('omit', True) }}"
-      consumer_key: "{{ ovh_ip_loadbalancing_backend_consumer_key | default('omit', True) }}"
-      backend: "{{ ovh_ip_loadbalancing_backend_backend | default('omit', True) }}"
+      endpoint: "{{ ovh_ip_loadbalancing_backend_endpoint | default(omit, True) }}"
+      name: "{{ ovh_ip_loadbalancing_backend_name | default(omit, True) }}"
+      weight: "{{ ovh_ip_loadbalancing_backend_weight | default(omit, True) }}"
+      probe: "{{ ovh_ip_loadbalancing_backend_probe | default(omit, True) }}"
+      application_key: "{{ ovh_ip_loadbalancing_backend_application_key | default(omit, True) }}"
+      state: "{{ ovh_ip_loadbalancing_backend_state | default(omit, True) }}"
+      application_secret: "{{ ovh_ip_loadbalancing_backend_application_secret | default(omit, True) }}"
+      timeout: "{{ ovh_ip_loadbalancing_backend_timeout | default(omit, True) }}"
+      consumer_key: "{{ ovh_ip_loadbalancing_backend_consumer_key | default(omit, True) }}"
+      backend: "{{ ovh_ip_loadbalancing_backend_backend | default(omit, True) }}"
   tasks:
     - name: "plugin_ovh_ip_loadbalancing_backend"
       ovh_ip_loadbalancing_backend: "{{ ovh_ip_loadbalancing_backend }}"
+      register: r_ovh_ip_loadbalancing_backend

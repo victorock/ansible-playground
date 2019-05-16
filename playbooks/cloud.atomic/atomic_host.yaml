@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     atomic_host: 
-      revision: "{{ atomic_host_revision | default('omit', True) }}"
+      revision: "{{ atomic_host_revision | default(omit, True) }}"
   tasks:
     - name: "plugin_atomic_host"
       atomic_host: "{{ atomic_host }}"
+      register: r_atomic_host

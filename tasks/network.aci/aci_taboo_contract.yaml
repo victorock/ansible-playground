@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_taboo_contract"
   aci_taboo_contract: "{{ aci_taboo_contract }}"
+  register: r_aci_taboo_contract
   vars:
     aci_taboo_contract: 
       username: "{{ aci_taboo_contract_username | default(omit, True) }}"

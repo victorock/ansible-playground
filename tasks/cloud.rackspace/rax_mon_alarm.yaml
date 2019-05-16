@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_mon_alarm"
   rax_mon_alarm: "{{ rax_mon_alarm }}"
+  register: r_rax_mon_alarm
   vars:
     rax_mon_alarm: 
       username: "{{ rax_mon_alarm_username | default(omit, True) }}"

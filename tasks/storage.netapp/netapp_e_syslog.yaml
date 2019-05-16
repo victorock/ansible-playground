@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_syslog"
   netapp_e_syslog: "{{ netapp_e_syslog }}"
+  register: r_netapp_e_syslog
   vars:
     netapp_e_syslog: 
       protocol: "{{ netapp_e_syslog_protocol | default(omit, True) }}"

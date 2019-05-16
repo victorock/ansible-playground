@@ -1,6 +1,7 @@
 ---
 - name: "module_sf_volume_manager"
   sf_volume_manager: "{{ sf_volume_manager }}"
+  register: r_sf_volume_manager
   vars:
     sf_volume_manager: 
       username: "{{ sf_volume_manager_username | default(omit, True) }}"

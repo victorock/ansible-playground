@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_image_facts"
   gcp_compute_image_facts: "{{ gcp_compute_image_facts }}"
+  register: r_gcp_compute_image_facts
   vars:
     gcp_compute_image_facts: 
       scopes: "{{ gcp_compute_image_facts_scopes | default(omit, True) }}"

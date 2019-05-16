@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_acl_interface"
   ce_acl_interface: "{{ ce_acl_interface }}"
+  register: r_ce_acl_interface
   vars:
     ce_acl_interface: 
       interface: "{{ ce_acl_interface_interface | default(omit, True) }}"

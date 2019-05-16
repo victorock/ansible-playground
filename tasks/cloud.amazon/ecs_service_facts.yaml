@@ -1,6 +1,7 @@
 ---
 - name: "module_ecs_service_facts"
   ecs_service_facts: "{{ ecs_service_facts }}"
+  register: r_ecs_service_facts
   vars:
     ecs_service_facts: 
       profile: "{{ ecs_service_facts_profile | default(omit, True) }}"

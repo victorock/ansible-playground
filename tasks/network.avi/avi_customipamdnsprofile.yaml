@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_customipamdnsprofile"
   avi_customipamdnsprofile: "{{ avi_customipamdnsprofile }}"
+  register: r_avi_customipamdnsprofile
   vars:
     avi_customipamdnsprofile: 
       username: "{{ avi_customipamdnsprofile_username | default(omit, True) }}"

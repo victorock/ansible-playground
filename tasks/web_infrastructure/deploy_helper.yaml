@@ -1,6 +1,7 @@
 ---
 - name: "module_deploy_helper"
   deploy_helper: "{{ deploy_helper }}"
+  register: r_deploy_helper
   vars:
     deploy_helper: 
       unfinished_filename: "{{ deploy_helper_unfinished_filename | default(omit, True) }}"

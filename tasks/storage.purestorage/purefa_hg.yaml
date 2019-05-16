@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_hg"
   purefa_hg: "{{ purefa_hg }}"
+  register: r_purefa_hg
   vars:
     purefa_hg: 
       host: "{{ purefa_hg_host | default(omit, True) }}"

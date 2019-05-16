@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_node"
   na_ontap_node: "{{ na_ontap_node }}"
+  register: r_na_ontap_node
   vars:
     na_ontap_node: 
       username: "{{ na_ontap_node_username | default(omit, True) }}"

@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_log_destination: 
-      description: "{{ bigip_log_destination_description | default('omit', True) }}"
-      syslog_settings: "{{ bigip_log_destination_syslog_settings | default('omit', True) }}"
-      pool_settings: "{{ bigip_log_destination_pool_settings | default('omit', True) }}"
-      type: "{{ bigip_log_destination_type | default('omit', True) }}"
-      partition: "{{ bigip_log_destination_partition | default('omit', True) }}"
-      server: "{{ bigip_log_destination_server | default('omit', True) }}"
-      state: "{{ bigip_log_destination_state | default('omit', True) }}"
-      user: "{{ bigip_log_destination_user | default('omit', True) }}"
-      server_port: "{{ bigip_log_destination_server_port | default('omit', True) }}"
-      provider: "{{ bigip_log_destination_provider | default('omit', True) }}"
-      password: "{{ bigip_log_destination_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_log_destination_validate_certs | default('omit', True) }}"
-      name: "{{ bigip_log_destination_name | default('omit', True) }}"
+      description: "{{ bigip_log_destination_description | default(omit, True) }}"
+      syslog_settings: "{{ bigip_log_destination_syslog_settings | default(omit, True) }}"
+      pool_settings: "{{ bigip_log_destination_pool_settings | default(omit, True) }}"
+      type: "{{ bigip_log_destination_type | default(omit, True) }}"
+      partition: "{{ bigip_log_destination_partition | default(omit, True) }}"
+      server: "{{ bigip_log_destination_server | default(omit, True) }}"
+      state: "{{ bigip_log_destination_state | default(omit, True) }}"
+      user: "{{ bigip_log_destination_user | default(omit, True) }}"
+      server_port: "{{ bigip_log_destination_server_port | default(omit, True) }}"
+      provider: "{{ bigip_log_destination_provider | default(omit, True) }}"
+      password: "{{ bigip_log_destination_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_log_destination_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_log_destination_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_log_destination"
       bigip_log_destination: "{{ bigip_log_destination }}"
+      register: r_bigip_log_destination

@@ -1,6 +1,7 @@
 ---
 - name: "module_assemble"
   assemble: "{{ assemble }}"
+  register: r_assemble
   vars:
     assemble: 
       ignore_hidden: "{{ assemble_ignore_hidden | default(omit, True) }}"

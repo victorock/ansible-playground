@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_snapshot_copy"
   ec2_snapshot_copy: "{{ ec2_snapshot_copy }}"
+  register: r_ec2_snapshot_copy
   vars:
     ec2_snapshot_copy: 
       profile: "{{ ec2_snapshot_copy_profile | default(omit, True) }}"

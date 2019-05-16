@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_snmp_trap"
   bigip_snmp_trap: "{{ bigip_snmp_trap }}"
+  register: r_bigip_snmp_trap
   vars:
     bigip_snmp_trap: 
       snmp_version: "{{ bigip_snmp_trap_snmp_version | default(omit, True) }}"

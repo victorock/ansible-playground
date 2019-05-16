@@ -1,6 +1,7 @@
 ---
 - name: "module_oneandone_private_network"
   oneandone_private_network: "{{ oneandone_private_network }}"
+  register: r_oneandone_private_network
   vars:
     oneandone_private_network: 
       datacenter: "{{ oneandone_private_network_datacenter | default(omit, True) }}"

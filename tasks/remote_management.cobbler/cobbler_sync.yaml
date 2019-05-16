@@ -1,6 +1,7 @@
 ---
 - name: "module_cobbler_sync"
   cobbler_sync: "{{ cobbler_sync }}"
+  register: r_cobbler_sync
   vars:
     cobbler_sync: 
       username: "{{ cobbler_sync_username | default(omit, True) }}"

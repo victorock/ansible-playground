@@ -1,6 +1,7 @@
 ---
 - name: "module_mongodb_user"
   mongodb_user: "{{ mongodb_user }}"
+  register: r_mongodb_user
   vars:
     mongodb_user: 
       login_port: "{{ mongodb_user_login_port | default(omit, True) }}"

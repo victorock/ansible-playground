@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_monitor_snmp_dca"
   bigip_monitor_snmp_dca: "{{ bigip_monitor_snmp_dca }}"
+  register: r_bigip_monitor_snmp_dca
   vars:
     bigip_monitor_snmp_dca: 
       partition: "{{ bigip_monitor_snmp_dca_partition | default(omit, True) }}"

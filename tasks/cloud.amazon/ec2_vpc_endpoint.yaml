@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_endpoint"
   ec2_vpc_endpoint: "{{ ec2_vpc_endpoint }}"
+  register: r_ec2_vpc_endpoint
   vars:
     ec2_vpc_endpoint: 
       policy_file: "{{ ec2_vpc_endpoint_policy_file | default(omit, True) }}"

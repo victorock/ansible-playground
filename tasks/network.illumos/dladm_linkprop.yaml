@@ -1,6 +1,7 @@
 ---
 - name: "module_dladm_linkprop"
   dladm_linkprop: "{{ dladm_linkprop }}"
+  register: r_dladm_linkprop
   vars:
     dladm_linkprop: 
       temporary: "{{ dladm_linkprop_temporary | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_pool"
   bigip_pool: "{{ bigip_pool }}"
+  register: r_bigip_pool
   vars:
     bigip_pool: 
       description: "{{ bigip_pool_description | default(omit, True) }}"

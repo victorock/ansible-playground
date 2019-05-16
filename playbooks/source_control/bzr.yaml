@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bzr: 
-      dest: "{{ bzr_dest | default('omit', True) }}"
-      executable: "{{ bzr_executable | default('omit', True) }}"
-      version: "{{ bzr_version | default('omit', True) }}"
-      force: "{{ bzr_force | default('omit', True) }}"
-      name: "{{ bzr_name | default('omit', True) }}"
+      dest: "{{ bzr_dest | default(omit, True) }}"
+      executable: "{{ bzr_executable | default(omit, True) }}"
+      version: "{{ bzr_version | default(omit, True) }}"
+      force: "{{ bzr_force | default(omit, True) }}"
+      name: "{{ bzr_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bzr"
       bzr: "{{ bzr }}"
+      register: r_bzr

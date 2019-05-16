@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_api_facts"
   ovirt_api_facts: "{{ ovirt_api_facts }}"
+  register: r_ovirt_api_facts
   vars:
     ovirt_api_facts: 
       fetch_nested: "{{ ovirt_api_facts_fetch_nested | default(omit, True) }}"

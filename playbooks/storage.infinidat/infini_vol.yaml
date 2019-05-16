@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     infini_vol: 
-      name: "{{ infini_vol_name | default('omit', True) }}"
-      system: "{{ infini_vol_system | default('omit', True) }}"
-      state: "{{ infini_vol_state | default('omit', True) }}"
-      user: "{{ infini_vol_user | default('omit', True) }}"
-      password: "{{ infini_vol_password | default('omit', True) }}"
-      pool: "{{ infini_vol_pool | default('omit', True) }}"
-      size: "{{ infini_vol_size | default('omit', True) }}"
+      name: "{{ infini_vol_name | default(omit, True) }}"
+      system: "{{ infini_vol_system | default(omit, True) }}"
+      state: "{{ infini_vol_state | default(omit, True) }}"
+      user: "{{ infini_vol_user | default(omit, True) }}"
+      password: "{{ infini_vol_password | default(omit, True) }}"
+      pool: "{{ infini_vol_pool | default(omit, True) }}"
+      size: "{{ infini_vol_size | default(omit, True) }}"
   tasks:
     - name: "plugin_infini_vol"
       infini_vol: "{{ infini_vol }}"
+      register: r_infini_vol

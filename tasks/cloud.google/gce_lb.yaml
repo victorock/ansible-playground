@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_lb"
   gce_lb: "{{ gce_lb }}"
+  register: r_gce_lb
   vars:
     gce_lb: 
       httphealthcheck_host: "{{ gce_lb_httphealthcheck_host | default(omit, True) }}"

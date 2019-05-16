@@ -1,6 +1,7 @@
 ---
 - name: "module_one_image"
   one_image: "{{ one_image }}"
+  register: r_one_image
   vars:
     one_image: 
       new_name: "{{ one_image_new_name | default(omit, True) }}"

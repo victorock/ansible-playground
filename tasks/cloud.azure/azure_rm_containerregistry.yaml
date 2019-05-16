@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_containerregistry"
   azure_rm_containerregistry: "{{ azure_rm_containerregistry }}"
+  register: r_azure_rm_containerregistry
   vars:
     azure_rm_containerregistry: 
       profile: "{{ azure_rm_containerregistry_profile | default(omit, True) }}"

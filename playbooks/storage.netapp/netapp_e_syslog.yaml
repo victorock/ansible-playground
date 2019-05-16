@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_syslog: 
-      protocol: "{{ netapp_e_syslog_protocol | default('omit', True) }}"
-      ssid: "{{ netapp_e_syslog_ssid | default('omit', True) }}"
-      log_path: "{{ netapp_e_syslog_log_path | default('omit', True) }}"
-      api_username: "{{ netapp_e_syslog_api_username | default('omit', True) }}"
-      api_password: "{{ netapp_e_syslog_api_password | default('omit', True) }}"
-      state: "{{ netapp_e_syslog_state | default('omit', True) }}"
-      components: "{{ netapp_e_syslog_components | default('omit', True) }}"
-      address: "{{ netapp_e_syslog_address | default('omit', True) }}"
-      test: "{{ netapp_e_syslog_test | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_syslog_validate_certs | default('omit', True) }}"
-      port: "{{ netapp_e_syslog_port | default('omit', True) }}"
-      api_url: "{{ netapp_e_syslog_api_url | default('omit', True) }}"
+      protocol: "{{ netapp_e_syslog_protocol | default(omit, True) }}"
+      ssid: "{{ netapp_e_syslog_ssid | default(omit, True) }}"
+      log_path: "{{ netapp_e_syslog_log_path | default(omit, True) }}"
+      api_username: "{{ netapp_e_syslog_api_username | default(omit, True) }}"
+      api_password: "{{ netapp_e_syslog_api_password | default(omit, True) }}"
+      state: "{{ netapp_e_syslog_state | default(omit, True) }}"
+      components: "{{ netapp_e_syslog_components | default(omit, True) }}"
+      address: "{{ netapp_e_syslog_address | default(omit, True) }}"
+      test: "{{ netapp_e_syslog_test | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_syslog_validate_certs | default(omit, True) }}"
+      port: "{{ netapp_e_syslog_port | default(omit, True) }}"
+      api_url: "{{ netapp_e_syslog_api_url | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_syslog"
       netapp_e_syslog: "{{ netapp_e_syslog }}"
+      register: r_netapp_e_syslog

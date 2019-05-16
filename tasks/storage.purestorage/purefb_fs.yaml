@@ -1,6 +1,7 @@
 ---
 - name: "module_purefb_fs"
   purefb_fs: "{{ purefb_fs }}"
+  register: r_purefb_fs
   vars:
     purefb_fs: 
       nfs_rules: "{{ purefb_fs_nfs_rules | default(omit, True) }}"

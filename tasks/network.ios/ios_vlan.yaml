@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_vlan"
   ios_vlan: "{{ ios_vlan }}"
+  register: r_ios_vlan
   vars:
     ios_vlan: 
       authorize: "{{ ios_vlan_authorize | default(omit, True) }}"

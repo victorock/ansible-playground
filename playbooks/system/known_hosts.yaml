@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     known_hosts: 
-      path: "{{ known_hosts_path | default('omit', True) }}"
-      state: "{{ known_hosts_state | default('omit', True) }}"
-      hash_host: "{{ known_hosts_hash_host | default('omit', True) }}"
-      name: "{{ known_hosts_name | default('omit', True) }}"
-      key: "{{ known_hosts_key | default('omit', True) }}"
+      path: "{{ known_hosts_path | default(omit, True) }}"
+      state: "{{ known_hosts_state | default(omit, True) }}"
+      hash_host: "{{ known_hosts_hash_host | default(omit, True) }}"
+      name: "{{ known_hosts_name | default(omit, True) }}"
+      key: "{{ known_hosts_key | default(omit, True) }}"
   tasks:
     - name: "plugin_known_hosts"
       known_hosts: "{{ known_hosts }}"
+      register: r_known_hosts

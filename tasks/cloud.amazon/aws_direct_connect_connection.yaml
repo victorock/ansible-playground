@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_direct_connect_connection"
   aws_direct_connect_connection: "{{ aws_direct_connect_connection }}"
+  register: r_aws_direct_connect_connection
   vars:
     aws_direct_connect_connection: 
       profile: "{{ aws_direct_connect_connection_profile | default(omit, True) }}"

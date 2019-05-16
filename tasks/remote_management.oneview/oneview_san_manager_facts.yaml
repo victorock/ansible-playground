@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_san_manager_facts"
   oneview_san_manager_facts: "{{ oneview_san_manager_facts }}"
+  register: r_oneview_san_manager_facts
   vars:
     oneview_san_manager_facts: 
       params: "{{ oneview_san_manager_facts_params | default(omit, True) }}"

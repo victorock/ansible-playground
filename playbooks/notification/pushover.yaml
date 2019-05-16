@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pushover: 
-      msg: "{{ pushover_msg | default('omit', True) }}"
-      user_key: "{{ pushover_user_key | default('omit', True) }}"
-      app_token: "{{ pushover_app_token | default('omit', True) }}"
-      pri: "{{ pushover_pri | default('omit', True) }}"
+      msg: "{{ pushover_msg | default(omit, True) }}"
+      user_key: "{{ pushover_user_key | default(omit, True) }}"
+      app_token: "{{ pushover_app_token | default(omit, True) }}"
+      pri: "{{ pushover_pri | default(omit, True) }}"
   tasks:
     - name: "plugin_pushover"
       pushover: "{{ pushover }}"
+      register: r_pushover

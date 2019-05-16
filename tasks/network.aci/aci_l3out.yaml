@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_l3out"
   aci_l3out: "{{ aci_l3out }}"
+  register: r_aci_l3out
   vars:
     aci_l3out: 
       username: "{{ aci_l3out_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_gslbapplicationpersistenceprofile"
   avi_gslbapplicationpersistenceprofile: "{{ avi_gslbapplicationpersistenceprofile }}"
+  register: r_avi_gslbapplicationpersistenceprofile
   vars:
     avi_gslbapplicationpersistenceprofile: 
       username: "{{ avi_gslbapplicationpersistenceprofile_username | default(omit, True) }}"

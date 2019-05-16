@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     elasticache_subnet_group: 
-      profile: "{{ elasticache_subnet_group_profile | default('omit', True) }}"
-      subnets: "{{ elasticache_subnet_group_subnets | default('omit', True) }}"
-      aws_access_key: "{{ elasticache_subnet_group_aws_access_key | default('omit', True) }}"
-      description: "{{ elasticache_subnet_group_description | default('omit', True) }}"
-      security_token: "{{ elasticache_subnet_group_security_token | default('omit', True) }}"
-      region: "{{ elasticache_subnet_group_region | default('omit', True) }}"
-      aws_secret_key: "{{ elasticache_subnet_group_aws_secret_key | default('omit', True) }}"
-      state: "{{ elasticache_subnet_group_state | default('omit', True) }}"
-      ec2_url: "{{ elasticache_subnet_group_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ elasticache_subnet_group_validate_certs | default('omit', True) }}"
-      name: "{{ elasticache_subnet_group_name | default('omit', True) }}"
+      profile: "{{ elasticache_subnet_group_profile | default(omit, True) }}"
+      subnets: "{{ elasticache_subnet_group_subnets | default(omit, True) }}"
+      aws_access_key: "{{ elasticache_subnet_group_aws_access_key | default(omit, True) }}"
+      description: "{{ elasticache_subnet_group_description | default(omit, True) }}"
+      security_token: "{{ elasticache_subnet_group_security_token | default(omit, True) }}"
+      region: "{{ elasticache_subnet_group_region | default(omit, True) }}"
+      aws_secret_key: "{{ elasticache_subnet_group_aws_secret_key | default(omit, True) }}"
+      state: "{{ elasticache_subnet_group_state | default(omit, True) }}"
+      ec2_url: "{{ elasticache_subnet_group_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ elasticache_subnet_group_validate_certs | default(omit, True) }}"
+      name: "{{ elasticache_subnet_group_name | default(omit, True) }}"
   tasks:
     - name: "plugin_elasticache_subnet_group"
       elasticache_subnet_group: "{{ elasticache_subnet_group }}"
+      register: r_elasticache_subnet_group

@@ -1,6 +1,7 @@
 ---
 - name: "module_zabbix_proxy"
   zabbix_proxy: "{{ zabbix_proxy }}"
+  register: r_zabbix_proxy
   vars:
     zabbix_proxy: 
       status: "{{ zabbix_proxy_status | default(omit, True) }}"

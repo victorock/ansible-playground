@@ -1,6 +1,7 @@
 ---
 - name: "module_debug"
   debug: "{{ debug }}"
+  register: r_debug
   vars:
     debug: 
       msg: "{{ debug_msg | default(omit, True) }}"

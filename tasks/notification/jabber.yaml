@@ -1,6 +1,7 @@
 ---
 - name: "module_jabber"
   jabber: "{{ jabber }}"
+  register: r_jabber
   vars:
     jabber: 
       encoding: "{{ jabber_encoding | default(omit, True) }}"

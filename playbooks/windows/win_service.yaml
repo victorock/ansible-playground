@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_service: 
-      username: "{{ win_service_username | default('omit', True) }}"
-      display_name: "{{ win_service_display_name | default('omit', True) }}"
-      description: "{{ win_service_description | default('omit', True) }}"
-      force_dependent_services: "{{ win_service_force_dependent_services | default('omit', True) }}"
-      dependency_action: "{{ win_service_dependency_action | default('omit', True) }}"
-      name: "{{ win_service_name | default('omit', True) }}"
-      start_mode: "{{ win_service_start_mode | default('omit', True) }}"
-      state: "{{ win_service_state | default('omit', True) }}"
-      dependencies: "{{ win_service_dependencies | default('omit', True) }}"
-      path: "{{ win_service_path | default('omit', True) }}"
-      password: "{{ win_service_password | default('omit', True) }}"
-      desktop_interact: "{{ win_service_desktop_interact | default('omit', True) }}"
+      username: "{{ win_service_username | default(omit, True) }}"
+      display_name: "{{ win_service_display_name | default(omit, True) }}"
+      description: "{{ win_service_description | default(omit, True) }}"
+      force_dependent_services: "{{ win_service_force_dependent_services | default(omit, True) }}"
+      dependency_action: "{{ win_service_dependency_action | default(omit, True) }}"
+      name: "{{ win_service_name | default(omit, True) }}"
+      start_mode: "{{ win_service_start_mode | default(omit, True) }}"
+      state: "{{ win_service_state | default(omit, True) }}"
+      dependencies: "{{ win_service_dependencies | default(omit, True) }}"
+      path: "{{ win_service_path | default(omit, True) }}"
+      password: "{{ win_service_password | default(omit, True) }}"
+      desktop_interact: "{{ win_service_desktop_interact | default(omit, True) }}"
   tasks:
     - name: "plugin_win_service"
       win_service: "{{ win_service }}"
+      register: r_win_service

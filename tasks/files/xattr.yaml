@@ -1,6 +1,7 @@
 ---
 - name: "module_xattr"
   xattr: "{{ xattr }}"
+  register: r_xattr
   vars:
     xattr: 
       namespace: "{{ xattr_namespace | default(omit, True) }}"

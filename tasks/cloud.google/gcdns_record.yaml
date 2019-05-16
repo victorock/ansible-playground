@@ -1,6 +1,7 @@
 ---
 - name: "module_gcdns_record"
   gcdns_record: "{{ gcdns_record }}"
+  register: r_gcdns_record
   vars:
     gcdns_record: 
       zone_id: "{{ gcdns_record_zone_id | default(omit, True) }}"

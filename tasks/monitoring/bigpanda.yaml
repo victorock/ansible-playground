@@ -1,6 +1,7 @@
 ---
 - name: "module_bigpanda"
   bigpanda: "{{ bigpanda }}"
+  register: r_bigpanda
   vars:
     bigpanda: 
       description: "{{ bigpanda_description | default(omit, True) }}"

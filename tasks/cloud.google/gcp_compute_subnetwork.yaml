@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_subnetwork"
   gcp_compute_subnetwork: "{{ gcp_compute_subnetwork }}"
+  register: r_gcp_compute_subnetwork
   vars:
     gcp_compute_subnetwork: 
       scopes: "{{ gcp_compute_subnetwork_scopes | default(omit, True) }}"

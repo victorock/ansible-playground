@@ -1,6 +1,7 @@
 ---
 - name: "module_ordnance_facts"
   ordnance_facts: "{{ ordnance_facts }}"
+  register: r_ordnance_facts
   vars:
     ordnance_facts: 
       gather_subset: "{{ ordnance_facts_gather_subset | default(omit, True) }}"

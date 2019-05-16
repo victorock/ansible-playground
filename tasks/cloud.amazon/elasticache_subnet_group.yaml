@@ -1,6 +1,7 @@
 ---
 - name: "module_elasticache_subnet_group"
   elasticache_subnet_group: "{{ elasticache_subnet_group }}"
+  register: r_elasticache_subnet_group
   vars:
     elasticache_subnet_group: 
       profile: "{{ elasticache_subnet_group_profile | default(omit, True) }}"

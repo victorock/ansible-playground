@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_command"
   na_ontap_command: "{{ na_ontap_command }}"
+  register: r_na_ontap_command
   vars:
     na_ontap_command: 
       username: "{{ na_ontap_command_username | default(omit, True) }}"

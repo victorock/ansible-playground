@@ -1,6 +1,7 @@
 ---
 - name: "module_vsphere_copy"
   vsphere_copy: "{{ vsphere_copy }}"
+  register: r_vsphere_copy
   vars:
     vsphere_copy: 
       src: "{{ vsphere_copy_src | default(omit, True) }}"

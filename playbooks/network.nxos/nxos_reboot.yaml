@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_reboot: 
-      confirm: "{{ nxos_reboot_confirm | default('omit', True) }}"
-      provider: "{{ nxos_reboot_provider | default('omit', True) }}"
+      confirm: "{{ nxos_reboot_confirm | default(omit, True) }}"
+      provider: "{{ nxos_reboot_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_reboot"
       nxos_reboot: "{{ nxos_reboot }}"
+      register: r_nxos_reboot

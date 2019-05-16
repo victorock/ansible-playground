@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_gslb_site"
   netscaler_gslb_site: "{{ netscaler_gslb_site }}"
+  register: r_netscaler_gslb_site
   vars:
     netscaler_gslb_site: 
       naptrreplacementsuffix: "{{ netscaler_gslb_site_naptrreplacementsuffix | default(omit, True) }}"

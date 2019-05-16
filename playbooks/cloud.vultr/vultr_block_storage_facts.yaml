@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vultr_block_storage_facts: 
-      api_retries: "{{ vultr_block_storage_facts_api_retries | default('omit', True) }}"
-      api_timeout: "{{ vultr_block_storage_facts_api_timeout | default('omit', True) }}"
-      api_endpoint: "{{ vultr_block_storage_facts_api_endpoint | default('omit', True) }}"
-      api_account: "{{ vultr_block_storage_facts_api_account | default('omit', True) }}"
-      api_key: "{{ vultr_block_storage_facts_api_key | default('omit', True) }}"
-      validate_certs: "{{ vultr_block_storage_facts_validate_certs | default('omit', True) }}"
+      api_retries: "{{ vultr_block_storage_facts_api_retries | default(omit, True) }}"
+      api_timeout: "{{ vultr_block_storage_facts_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_block_storage_facts_api_endpoint | default(omit, True) }}"
+      api_account: "{{ vultr_block_storage_facts_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_block_storage_facts_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_block_storage_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vultr_block_storage_facts"
       vultr_block_storage_facts: "{{ vultr_block_storage_facts }}"
+      register: r_vultr_block_storage_facts

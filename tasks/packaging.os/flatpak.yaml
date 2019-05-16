@@ -1,6 +1,7 @@
 ---
 - name: "module_flatpak"
   flatpak: "{{ flatpak }}"
+  register: r_flatpak
   vars:
     flatpak: 
       executable: "{{ flatpak_executable | default(omit, True) }}"

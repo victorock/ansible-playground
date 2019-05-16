@@ -1,6 +1,7 @@
 ---
 - name: "module_win_route"
   win_route: "{{ win_route }}"
+  register: r_win_route
   vars:
     win_route: 
       metric: "{{ win_route_metric | default(omit, True) }}"

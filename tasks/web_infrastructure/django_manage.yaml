@@ -1,6 +1,7 @@
 ---
 - name: "module_django_manage"
   django_manage: "{{ django_manage }}"
+  register: r_django_manage
   vars:
     django_manage: 
       virtualenv: "{{ django_manage_virtualenv | default(omit, True) }}"

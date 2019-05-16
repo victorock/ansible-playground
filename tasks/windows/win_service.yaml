@@ -1,6 +1,7 @@
 ---
 - name: "module_win_service"
   win_service: "{{ win_service }}"
+  register: r_win_service
   vars:
     win_service: 
       username: "{{ win_service_username | default(omit, True) }}"

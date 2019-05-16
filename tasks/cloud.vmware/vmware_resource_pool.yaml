@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_resource_pool"
   vmware_resource_pool: "{{ vmware_resource_pool }}"
+  register: r_vmware_resource_pool
   vars:
     vmware_resource_pool: 
       resource_pool: "{{ vmware_resource_pool_resource_pool | default(omit, True) }}"

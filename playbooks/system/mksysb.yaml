@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     mksysb: 
-      exclude_files: "{{ mksysb_exclude_files | default('omit', True) }}"
-      exclude_wpar_files: "{{ mksysb_exclude_wpar_files | default('omit', True) }}"
-      name: "{{ mksysb_name | default('omit', True) }}"
-      software_packing: "{{ mksysb_software_packing | default('omit', True) }}"
-      use_snapshot: "{{ mksysb_use_snapshot | default('omit', True) }}"
-      create_map_files: "{{ mksysb_create_map_files | default('omit', True) }}"
-      extended_attrs: "{{ mksysb_extended_attrs | default('omit', True) }}"
-      backup_crypt_files: "{{ mksysb_backup_crypt_files | default('omit', True) }}"
-      new_image_data: "{{ mksysb_new_image_data | default('omit', True) }}"
-      backup_dmapi_fs: "{{ mksysb_backup_dmapi_fs | default('omit', True) }}"
-      storage_path: "{{ mksysb_storage_path | default('omit', True) }}"
+      exclude_files: "{{ mksysb_exclude_files | default(omit, True) }}"
+      exclude_wpar_files: "{{ mksysb_exclude_wpar_files | default(omit, True) }}"
+      name: "{{ mksysb_name | default(omit, True) }}"
+      software_packing: "{{ mksysb_software_packing | default(omit, True) }}"
+      use_snapshot: "{{ mksysb_use_snapshot | default(omit, True) }}"
+      create_map_files: "{{ mksysb_create_map_files | default(omit, True) }}"
+      extended_attrs: "{{ mksysb_extended_attrs | default(omit, True) }}"
+      backup_crypt_files: "{{ mksysb_backup_crypt_files | default(omit, True) }}"
+      new_image_data: "{{ mksysb_new_image_data | default(omit, True) }}"
+      backup_dmapi_fs: "{{ mksysb_backup_dmapi_fs | default(omit, True) }}"
+      storage_path: "{{ mksysb_storage_path | default(omit, True) }}"
   tasks:
     - name: "plugin_mksysb"
       mksysb: "{{ mksysb }}"
+      register: r_mksysb

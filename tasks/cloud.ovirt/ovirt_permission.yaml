@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_permission"
   ovirt_permission: "{{ ovirt_permission }}"
+  register: r_ovirt_permission
   vars:
     ovirt_permission: 
       authz_name: "{{ ovirt_permission_authz_name | default(omit, True) }}"

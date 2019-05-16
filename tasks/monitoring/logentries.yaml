@@ -1,6 +1,7 @@
 ---
 - name: "module_logentries"
   logentries: "{{ logentries }}"
+  register: r_logentries
   vars:
     logentries: 
       path: "{{ logentries_path | default(omit, True) }}"

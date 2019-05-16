@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_storage_bucket"
   gcp_storage_bucket: "{{ gcp_storage_bucket }}"
+  register: r_gcp_storage_bucket
   vars:
     gcp_storage_bucket: 
       website: "{{ gcp_storage_bucket_website | default(omit, True) }}"

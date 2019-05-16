@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_interface_selector_to_switch_policy_leaf_profile"
   aci_interface_selector_to_switch_policy_leaf_profile: "{{ aci_interface_selector_to_switch_policy_leaf_profile }}"
+  register: r_aci_interface_selector_to_switch_policy_leaf_profile
   vars:
     aci_interface_selector_to_switch_policy_leaf_profile: 
       username: "{{ aci_interface_selector_to_switch_policy_leaf_profile_username | default(omit, True) }}"

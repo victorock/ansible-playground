@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_host_ntp_facts: 
-      username: "{{ vmware_host_ntp_facts_username | default('omit', True) }}"
-      hostname: "{{ vmware_host_ntp_facts_hostname | default('omit', True) }}"
-      cluster_name: "{{ vmware_host_ntp_facts_cluster_name | default('omit', True) }}"
-      esxi_hostname: "{{ vmware_host_ntp_facts_esxi_hostname | default('omit', True) }}"
-      password: "{{ vmware_host_ntp_facts_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_host_ntp_facts_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_host_ntp_facts_port | default('omit', True) }}"
+      username: "{{ vmware_host_ntp_facts_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_ntp_facts_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_ntp_facts_cluster_name | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_ntp_facts_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_ntp_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_ntp_facts_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_ntp_facts_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_host_ntp_facts"
       vmware_host_ntp_facts: "{{ vmware_host_ntp_facts }}"
+      register: r_vmware_host_ntp_facts

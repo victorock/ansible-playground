@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_elasticbeanstalk_app"
   aws_elasticbeanstalk_app: "{{ aws_elasticbeanstalk_app }}"
+  register: r_aws_elasticbeanstalk_app
   vars:
     aws_elasticbeanstalk_app: 
       profile: "{{ aws_elasticbeanstalk_app_profile | default(omit, True) }}"

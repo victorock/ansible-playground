@@ -1,6 +1,7 @@
 ---
 - name: "module_command"
   command: "{{ command }}"
+  register: r_command
   vars:
     command: 
       warn: "{{ command_warn | default(omit, True) }}"

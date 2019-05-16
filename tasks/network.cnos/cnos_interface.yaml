@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_interface"
   cnos_interface: "{{ cnos_interface }}"
+  register: r_cnos_interface
   vars:
     cnos_interface: 
       username: "{{ cnos_interface_username | default(omit, True) }}"

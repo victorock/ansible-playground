@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_role_permission"
   cs_role_permission: "{{ cs_role_permission }}"
+  register: r_cs_role_permission
   vars:
     cs_role_permission: 
       parent: "{{ cs_role_permission_parent | default(omit, True) }}"

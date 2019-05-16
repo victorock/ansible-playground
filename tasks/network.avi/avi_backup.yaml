@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_backup"
   avi_backup: "{{ avi_backup }}"
+  register: r_avi_backup
   vars:
     avi_backup: 
       scheduler_ref: "{{ avi_backup_scheduler_ref | default(omit, True) }}"

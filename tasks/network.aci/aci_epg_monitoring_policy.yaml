@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_epg_monitoring_policy"
   aci_epg_monitoring_policy: "{{ aci_epg_monitoring_policy }}"
+  register: r_aci_epg_monitoring_policy
   vars:
     aci_epg_monitoring_policy: 
       username: "{{ aci_epg_monitoring_policy_username | default(omit, True) }}"

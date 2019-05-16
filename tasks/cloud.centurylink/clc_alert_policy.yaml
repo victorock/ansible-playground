@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_alert_policy"
   clc_alert_policy: "{{ clc_alert_policy }}"
+  register: r_clc_alert_policy
   vars:
     clc_alert_policy: 
       name: "{{ clc_alert_policy_name | default(omit, True) }}"

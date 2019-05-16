@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nos_command: 
-      retries: "{{ nos_command_retries | default('omit', True) }}"
-      commands: "{{ nos_command_commands | default('omit', True) }}"
-      wait_for: "{{ nos_command_wait_for | default('omit', True) }}"
-      match: "{{ nos_command_match | default('omit', True) }}"
-      interval: "{{ nos_command_interval | default('omit', True) }}"
+      retries: "{{ nos_command_retries | default(omit, True) }}"
+      commands: "{{ nos_command_commands | default(omit, True) }}"
+      wait_for: "{{ nos_command_wait_for | default(omit, True) }}"
+      match: "{{ nos_command_match | default(omit, True) }}"
+      interval: "{{ nos_command_interval | default(omit, True) }}"
   tasks:
     - name: "plugin_nos_command"
       nos_command: "{{ nos_command }}"
+      register: r_nos_command

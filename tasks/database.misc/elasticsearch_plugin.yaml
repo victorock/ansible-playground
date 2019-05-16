@@ -1,6 +1,7 @@
 ---
 - name: "module_elasticsearch_plugin"
   elasticsearch_plugin: "{{ elasticsearch_plugin }}"
+  register: r_elasticsearch_plugin
   vars:
     elasticsearch_plugin: 
       src: "{{ elasticsearch_plugin_src | default(omit, True) }}"

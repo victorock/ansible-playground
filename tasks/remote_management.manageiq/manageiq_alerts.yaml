@@ -1,6 +1,7 @@
 ---
 - name: "module_manageiq_alerts"
   manageiq_alerts: "{{ manageiq_alerts }}"
+  register: r_manageiq_alerts
   vars:
     manageiq_alerts: 
       description: "{{ manageiq_alerts_description | default(omit, True) }}"

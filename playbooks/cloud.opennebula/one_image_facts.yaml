@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     one_image_facts: 
-      ids: "{{ one_image_facts_ids | default('omit', True) }}"
-      api_password: "{{ one_image_facts_api_password | default('omit', True) }}"
-      api_url: "{{ one_image_facts_api_url | default('omit', True) }}"
-      name: "{{ one_image_facts_name | default('omit', True) }}"
-      api_username: "{{ one_image_facts_api_username | default('omit', True) }}"
+      ids: "{{ one_image_facts_ids | default(omit, True) }}"
+      api_password: "{{ one_image_facts_api_password | default(omit, True) }}"
+      api_url: "{{ one_image_facts_api_url | default(omit, True) }}"
+      name: "{{ one_image_facts_name | default(omit, True) }}"
+      api_username: "{{ one_image_facts_api_username | default(omit, True) }}"
   tasks:
     - name: "plugin_one_image_facts"
       one_image_facts: "{{ one_image_facts }}"
+      register: r_one_image_facts

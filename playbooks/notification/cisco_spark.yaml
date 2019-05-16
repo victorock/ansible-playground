@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cisco_spark: 
-      personal_token: "{{ cisco_spark_personal_token | default('omit', True) }}"
-      message: "{{ cisco_spark_message | default('omit', True) }}"
-      recipient_id: "{{ cisco_spark_recipient_id | default('omit', True) }}"
-      message_type: "{{ cisco_spark_message_type | default('omit', True) }}"
-      recipient_type: "{{ cisco_spark_recipient_type | default('omit', True) }}"
+      personal_token: "{{ cisco_spark_personal_token | default(omit, True) }}"
+      message: "{{ cisco_spark_message | default(omit, True) }}"
+      recipient_id: "{{ cisco_spark_recipient_id | default(omit, True) }}"
+      message_type: "{{ cisco_spark_message_type | default(omit, True) }}"
+      recipient_type: "{{ cisco_spark_recipient_type | default(omit, True) }}"
   tasks:
     - name: "plugin_cisco_spark"
       cisco_spark: "{{ cisco_spark }}"
+      register: r_cisco_spark

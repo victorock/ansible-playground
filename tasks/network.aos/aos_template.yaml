@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_template"
   aos_template: "{{ aos_template }}"
+  register: r_aos_template
   vars:
     aos_template: 
       content: "{{ aos_template_content | default(omit, True) }}"

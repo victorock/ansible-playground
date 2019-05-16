@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_tenant"
   aci_tenant: "{{ aci_tenant }}"
+  register: r_aci_tenant
   vars:
     aci_tenant: 
       username: "{{ aci_tenant_username | default(omit, True) }}"

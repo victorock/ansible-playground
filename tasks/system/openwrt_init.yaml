@@ -1,6 +1,7 @@
 ---
 - name: "module_openwrt_init"
   openwrt_init: "{{ openwrt_init }}"
+  register: r_openwrt_init
   vars:
     openwrt_init: 
       pattern: "{{ openwrt_init_pattern | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pacemaker_cluster: 
-      node: "{{ pacemaker_cluster_node | default('omit', True) }}"
-      state: "{{ pacemaker_cluster_state | default('omit', True) }}"
-      force: "{{ pacemaker_cluster_force | default('omit', True) }}"
-      timeout: "{{ pacemaker_cluster_timeout | default('omit', True) }}"
+      node: "{{ pacemaker_cluster_node | default(omit, True) }}"
+      state: "{{ pacemaker_cluster_state | default(omit, True) }}"
+      force: "{{ pacemaker_cluster_force | default(omit, True) }}"
+      timeout: "{{ pacemaker_cluster_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_pacemaker_cluster"
       pacemaker_cluster: "{{ pacemaker_cluster }}"
+      register: r_pacemaker_cluster

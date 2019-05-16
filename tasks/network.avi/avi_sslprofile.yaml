@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_sslprofile"
   avi_sslprofile: "{{ avi_sslprofile }}"
+  register: r_avi_sslprofile
   vars:
     avi_sslprofile: 
       prefer_client_cipher_ordering: "{{ avi_sslprofile_prefer_client_cipher_ordering | default(omit, True) }}"

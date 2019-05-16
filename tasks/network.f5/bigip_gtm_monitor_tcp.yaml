@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_monitor_tcp"
   bigip_gtm_monitor_tcp: "{{ bigip_gtm_monitor_tcp }}"
+  register: r_bigip_gtm_monitor_tcp
   vars:
     bigip_gtm_monitor_tcp: 
       probe_timeout: "{{ bigip_gtm_monitor_tcp_probe_timeout | default(omit, True) }}"

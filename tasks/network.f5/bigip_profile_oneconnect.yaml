@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_oneconnect"
   bigip_profile_oneconnect: "{{ bigip_profile_oneconnect }}"
+  register: r_bigip_profile_oneconnect
   vars:
     bigip_profile_oneconnect: 
       idle_timeout_override: "{{ bigip_profile_oneconnect_idle_timeout_override | default(omit, True) }}"

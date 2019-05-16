@@ -1,6 +1,7 @@
 ---
 - name: "module_mssql_db"
   mssql_db: "{{ mssql_db }}"
+  register: r_mssql_db
   vars:
     mssql_db: 
       autocommit: "{{ mssql_db_autocommit | default(omit, True) }}"

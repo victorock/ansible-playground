@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_healthmonitor"
   avi_healthmonitor: "{{ avi_healthmonitor }}"
+  register: r_avi_healthmonitor
   vars:
     avi_healthmonitor: 
       https_monitor: "{{ avi_healthmonitor_https_monitor | default(omit, True) }}"

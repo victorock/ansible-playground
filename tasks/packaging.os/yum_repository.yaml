@@ -1,6 +1,7 @@
 ---
 - name: "module_yum_repository"
   yum_repository: "{{ yum_repository }}"
+  register: r_yum_repository
   vars:
     yum_repository: 
       seuser: "{{ yum_repository_seuser | default(omit, True) }}"

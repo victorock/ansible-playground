@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     supervisorctl: 
-      username: "{{ supervisorctl_username | default('omit', True) }}"
-      supervisorctl_path: "{{ supervisorctl_supervisorctl_path | default('omit', True) }}"
-      name: "{{ supervisorctl_name | default('omit', True) }}"
-      server_url: "{{ supervisorctl_server_url | default('omit', True) }}"
-      state: "{{ supervisorctl_state | default('omit', True) }}"
-      password: "{{ supervisorctl_password | default('omit', True) }}"
-      config: "{{ supervisorctl_config | default('omit', True) }}"
+      username: "{{ supervisorctl_username | default(omit, True) }}"
+      supervisorctl_path: "{{ supervisorctl_supervisorctl_path | default(omit, True) }}"
+      name: "{{ supervisorctl_name | default(omit, True) }}"
+      server_url: "{{ supervisorctl_server_url | default(omit, True) }}"
+      state: "{{ supervisorctl_state | default(omit, True) }}"
+      password: "{{ supervisorctl_password | default(omit, True) }}"
+      config: "{{ supervisorctl_config | default(omit, True) }}"
   tasks:
     - name: "plugin_supervisorctl"
       supervisorctl: "{{ supervisorctl }}"
+      register: r_supervisorctl

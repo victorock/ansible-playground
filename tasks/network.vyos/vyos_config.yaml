@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_config"
   vyos_config: "{{ vyos_config }}"
+  register: r_vyos_config
   vars:
     vyos_config: 
       comment: "{{ vyos_config_comment | default(omit, True) }}"

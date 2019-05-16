@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gce_snapshot: 
-      service_account_email: "{{ gce_snapshot_service_account_email | default('omit', True) }}"
-      disks: "{{ gce_snapshot_disks | default('omit', True) }}"
-      instance_name: "{{ gce_snapshot_instance_name | default('omit', True) }}"
-      state: "{{ gce_snapshot_state | default('omit', True) }}"
-      snapshot_name: "{{ gce_snapshot_snapshot_name | default('omit', True) }}"
-      credentials_file: "{{ gce_snapshot_credentials_file | default('omit', True) }}"
-      project_id: "{{ gce_snapshot_project_id | default('omit', True) }}"
+      service_account_email: "{{ gce_snapshot_service_account_email | default(omit, True) }}"
+      disks: "{{ gce_snapshot_disks | default(omit, True) }}"
+      instance_name: "{{ gce_snapshot_instance_name | default(omit, True) }}"
+      state: "{{ gce_snapshot_state | default(omit, True) }}"
+      snapshot_name: "{{ gce_snapshot_snapshot_name | default(omit, True) }}"
+      credentials_file: "{{ gce_snapshot_credentials_file | default(omit, True) }}"
+      project_id: "{{ gce_snapshot_project_id | default(omit, True) }}"
   tasks:
     - name: "plugin_gce_snapshot"
       gce_snapshot: "{{ gce_snapshot }}"
+      register: r_gce_snapshot

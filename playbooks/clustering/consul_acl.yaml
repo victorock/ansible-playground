@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     consul_acl: 
-      name: "{{ consul_acl_name | default('omit', True) }}"
-      state: "{{ consul_acl_state | default('omit', True) }}"
-      rules: "{{ consul_acl_rules | default('omit', True) }}"
-      host: "{{ consul_acl_host | default('omit', True) }}"
-      token_type: "{{ consul_acl_token_type | default('omit', True) }}"
-      token: "{{ consul_acl_token | default('omit', True) }}"
-      mgmt_token: "{{ consul_acl_mgmt_token | default('omit', True) }}"
-      scheme: "{{ consul_acl_scheme | default('omit', True) }}"
-      validate_certs: "{{ consul_acl_validate_certs | default('omit', True) }}"
-      port: "{{ consul_acl_port | default('omit', True) }}"
+      name: "{{ consul_acl_name | default(omit, True) }}"
+      state: "{{ consul_acl_state | default(omit, True) }}"
+      rules: "{{ consul_acl_rules | default(omit, True) }}"
+      host: "{{ consul_acl_host | default(omit, True) }}"
+      token_type: "{{ consul_acl_token_type | default(omit, True) }}"
+      token: "{{ consul_acl_token | default(omit, True) }}"
+      mgmt_token: "{{ consul_acl_mgmt_token | default(omit, True) }}"
+      scheme: "{{ consul_acl_scheme | default(omit, True) }}"
+      validate_certs: "{{ consul_acl_validate_certs | default(omit, True) }}"
+      port: "{{ consul_acl_port | default(omit, True) }}"
   tasks:
     - name: "plugin_consul_acl"
       consul_acl: "{{ consul_acl }}"
+      register: r_consul_acl

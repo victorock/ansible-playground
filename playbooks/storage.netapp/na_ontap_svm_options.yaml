@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_ontap_svm_options: 
-      username: "{{ na_ontap_svm_options_username | default('omit', True) }}"
-      http_port: "{{ na_ontap_svm_options_http_port | default('omit', True) }}"
-      name: "{{ na_ontap_svm_options_name | default('omit', True) }}"
-      hostname: "{{ na_ontap_svm_options_hostname | default('omit', True) }}"
-      value: "{{ na_ontap_svm_options_value | default('omit', True) }}"
-      vserver: "{{ na_ontap_svm_options_vserver | default('omit', True) }}"
-      https: "{{ na_ontap_svm_options_https | default('omit', True) }}"
-      password: "{{ na_ontap_svm_options_password | default('omit', True) }}"
-      validate_certs: "{{ na_ontap_svm_options_validate_certs | default('omit', True) }}"
+      username: "{{ na_ontap_svm_options_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_svm_options_http_port | default(omit, True) }}"
+      name: "{{ na_ontap_svm_options_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_svm_options_hostname | default(omit, True) }}"
+      value: "{{ na_ontap_svm_options_value | default(omit, True) }}"
+      vserver: "{{ na_ontap_svm_options_vserver | default(omit, True) }}"
+      https: "{{ na_ontap_svm_options_https | default(omit, True) }}"
+      password: "{{ na_ontap_svm_options_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_svm_options_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_na_ontap_svm_options"
       na_ontap_svm_options: "{{ na_ontap_svm_options }}"
+      register: r_na_ontap_svm_options

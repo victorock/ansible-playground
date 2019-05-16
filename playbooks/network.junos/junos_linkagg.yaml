@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_linkagg: 
-      description: "{{ junos_linkagg_description | default('omit', True) }}"
-      provider: "{{ junos_linkagg_provider | default('omit', True) }}"
-      device_count: "{{ junos_linkagg_device_count | default('omit', True) }}"
-      active: "{{ junos_linkagg_active | default('omit', True) }}"
-      state: "{{ junos_linkagg_state | default('omit', True) }}"
-      mode: "{{ junos_linkagg_mode | default('omit', True) }}"
-      members: "{{ junos_linkagg_members | default('omit', True) }}"
-      min_links: "{{ junos_linkagg_min_links | default('omit', True) }}"
-      aggregate: "{{ junos_linkagg_aggregate | default('omit', True) }}"
-      name: "{{ junos_linkagg_name | default('omit', True) }}"
+      description: "{{ junos_linkagg_description | default(omit, True) }}"
+      provider: "{{ junos_linkagg_provider | default(omit, True) }}"
+      device_count: "{{ junos_linkagg_device_count | default(omit, True) }}"
+      active: "{{ junos_linkagg_active | default(omit, True) }}"
+      state: "{{ junos_linkagg_state | default(omit, True) }}"
+      mode: "{{ junos_linkagg_mode | default(omit, True) }}"
+      members: "{{ junos_linkagg_members | default(omit, True) }}"
+      min_links: "{{ junos_linkagg_min_links | default(omit, True) }}"
+      aggregate: "{{ junos_linkagg_aggregate | default(omit, True) }}"
+      name: "{{ junos_linkagg_name | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_linkagg"
       junos_linkagg: "{{ junos_linkagg }}"
+      register: r_junos_linkagg

@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_snapshot_volume"
   netapp_e_snapshot_volume: "{{ netapp_e_snapshot_volume }}"
+  register: r_netapp_e_snapshot_volume
   vars:
     netapp_e_snapshot_volume: 
       ssid: "{{ netapp_e_snapshot_volume_ssid | default(omit, True) }}"

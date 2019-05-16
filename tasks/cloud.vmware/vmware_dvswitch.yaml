@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_dvswitch"
   vmware_dvswitch: "{{ vmware_dvswitch }}"
+  register: r_vmware_dvswitch
   vars:
     vmware_dvswitch: 
       username: "{{ vmware_dvswitch_username | default(omit, True) }}"

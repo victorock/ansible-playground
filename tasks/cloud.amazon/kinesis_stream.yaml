@@ -1,6 +1,7 @@
 ---
 - name: "module_kinesis_stream"
   kinesis_stream: "{{ kinesis_stream }}"
+  register: r_kinesis_stream
   vars:
     kinesis_stream: 
       profile: "{{ kinesis_stream_profile | default(omit, True) }}"

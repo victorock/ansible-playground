@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipinfoio_facts: 
-      http_agent: "{{ ipinfoio_facts_http_agent | default('omit', True) }}"
-      timeout: "{{ ipinfoio_facts_timeout | default('omit', True) }}"
+      http_agent: "{{ ipinfoio_facts_http_agent | default(omit, True) }}"
+      timeout: "{{ ipinfoio_facts_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_ipinfoio_facts"
       ipinfoio_facts: "{{ ipinfoio_facts }}"
+      register: r_ipinfoio_facts

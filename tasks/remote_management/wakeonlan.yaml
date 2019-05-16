@@ -1,6 +1,7 @@
 ---
 - name: "module_wakeonlan"
   wakeonlan: "{{ wakeonlan }}"
+  register: r_wakeonlan
   vars:
     wakeonlan: 
       broadcast: "{{ wakeonlan_broadcast | default(omit, True) }}"

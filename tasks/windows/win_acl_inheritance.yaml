@@ -1,6 +1,7 @@
 ---
 - name: "module_win_acl_inheritance"
   win_acl_inheritance: "{{ win_acl_inheritance }}"
+  register: r_win_acl_inheritance
   vars:
     win_acl_inheritance: 
       path: "{{ win_acl_inheritance_path | default(omit, True) }}"

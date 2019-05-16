@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     redis: 
-      login_port: "{{ redis_login_port | default('omit', True) }}"
-      name: "{{ redis_name | default('omit', True) }}"
-      flush_mode: "{{ redis_flush_mode | default('omit', True) }}"
-      db: "{{ redis_db | default('omit', True) }}"
-      login_host: "{{ redis_login_host | default('omit', True) }}"
-      master_port: "{{ redis_master_port | default('omit', True) }}"
-      master_host: "{{ redis_master_host | default('omit', True) }}"
-      value: "{{ redis_value | default('omit', True) }}"
-      slave_mode: "{{ redis_slave_mode | default('omit', True) }}"
-      login_password: "{{ redis_login_password | default('omit', True) }}"
-      command: "{{ redis_command | default('omit', True) }}"
+      login_port: "{{ redis_login_port | default(omit, True) }}"
+      name: "{{ redis_name | default(omit, True) }}"
+      flush_mode: "{{ redis_flush_mode | default(omit, True) }}"
+      db: "{{ redis_db | default(omit, True) }}"
+      login_host: "{{ redis_login_host | default(omit, True) }}"
+      master_port: "{{ redis_master_port | default(omit, True) }}"
+      master_host: "{{ redis_master_host | default(omit, True) }}"
+      value: "{{ redis_value | default(omit, True) }}"
+      slave_mode: "{{ redis_slave_mode | default(omit, True) }}"
+      login_password: "{{ redis_login_password | default(omit, True) }}"
+      command: "{{ redis_command | default(omit, True) }}"
   tasks:
     - name: "plugin_redis"
       redis: "{{ redis }}"
+      register: r_redis

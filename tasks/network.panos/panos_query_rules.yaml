@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_query_rules"
   panos_query_rules: "{{ panos_query_rules }}"
+  register: r_panos_query_rules
   vars:
     panos_query_rules: 
       username: "{{ panos_query_rules_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_seproperties"
   avi_seproperties: "{{ avi_seproperties }}"
+  register: r_avi_seproperties
   vars:
     avi_seproperties: 
       username: "{{ avi_seproperties_username | default(omit, True) }}"

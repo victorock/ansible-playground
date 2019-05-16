@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     iosxr_logging: 
-      name: "{{ iosxr_logging_name | default('omit', True) }}"
-      facility: "{{ iosxr_logging_facility | default('omit', True) }}"
-      dest: "{{ iosxr_logging_dest | default('omit', True) }}"
-      level: "{{ iosxr_logging_level | default('omit', True) }}"
-      hostnameprefix: "{{ iosxr_logging_hostnameprefix | default('omit', True) }}"
-      state: "{{ iosxr_logging_state | default('omit', True) }}"
-      vrf: "{{ iosxr_logging_vrf | default('omit', True) }}"
-      provider: "{{ iosxr_logging_provider | default('omit', True) }}"
-      aggregate: "{{ iosxr_logging_aggregate | default('omit', True) }}"
-      size: "{{ iosxr_logging_size | default('omit', True) }}"
+      name: "{{ iosxr_logging_name | default(omit, True) }}"
+      facility: "{{ iosxr_logging_facility | default(omit, True) }}"
+      dest: "{{ iosxr_logging_dest | default(omit, True) }}"
+      level: "{{ iosxr_logging_level | default(omit, True) }}"
+      hostnameprefix: "{{ iosxr_logging_hostnameprefix | default(omit, True) }}"
+      state: "{{ iosxr_logging_state | default(omit, True) }}"
+      vrf: "{{ iosxr_logging_vrf | default(omit, True) }}"
+      provider: "{{ iosxr_logging_provider | default(omit, True) }}"
+      aggregate: "{{ iosxr_logging_aggregate | default(omit, True) }}"
+      size: "{{ iosxr_logging_size | default(omit, True) }}"
   tasks:
     - name: "plugin_iosxr_logging"
       iosxr_logging: "{{ iosxr_logging }}"
+      register: r_iosxr_logging

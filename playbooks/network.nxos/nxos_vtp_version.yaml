@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_vtp_version: 
-      version: "{{ nxos_vtp_version_version | default('omit', True) }}"
-      provider: "{{ nxos_vtp_version_provider | default('omit', True) }}"
+      version: "{{ nxos_vtp_version_version | default(omit, True) }}"
+      provider: "{{ nxos_vtp_version_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_vtp_version"
       nxos_vtp_version: "{{ nxos_vtp_version }}"
+      register: r_nxos_vtp_version

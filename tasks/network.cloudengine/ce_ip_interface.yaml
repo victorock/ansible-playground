@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_ip_interface"
   ce_ip_interface: "{{ ce_ip_interface }}"
+  register: r_ce_ip_interface
   vars:
     ce_ip_interface: 
       addr: "{{ ce_ip_interface_addr | default(omit, True) }}"

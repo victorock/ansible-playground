@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_conditional_template"
   cnos_conditional_template: "{{ cnos_conditional_template }}"
+  register: r_cnos_conditional_template
   vars:
     cnos_conditional_template: 
       username: "{{ cnos_conditional_template_username | default(omit, True) }}"

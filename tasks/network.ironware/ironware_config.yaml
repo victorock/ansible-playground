@@ -1,6 +1,7 @@
 ---
 - name: "module_ironware_config"
   ironware_config: "{{ ironware_config }}"
+  register: r_ironware_config
   vars:
     ironware_config: 
       authorize: "{{ ironware_config_authorize | default(omit, True) }}"

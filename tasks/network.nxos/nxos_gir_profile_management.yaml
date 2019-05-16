@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_gir_profile_management"
   nxos_gir_profile_management: "{{ nxos_gir_profile_management }}"
+  register: r_nxos_gir_profile_management
   vars:
     nxos_gir_profile_management: 
       mode: "{{ nxos_gir_profile_management_mode | default(omit, True) }}"

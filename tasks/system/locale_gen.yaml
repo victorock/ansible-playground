@@ -1,6 +1,7 @@
 ---
 - name: "module_locale_gen"
   locale_gen: "{{ locale_gen }}"
+  register: r_locale_gen
   vars:
     locale_gen: 
       state: "{{ locale_gen_state | default(omit, True) }}"

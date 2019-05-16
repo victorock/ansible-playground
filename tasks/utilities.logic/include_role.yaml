@@ -1,6 +1,7 @@
 ---
 - name: "module_include_role"
   include_role: "{{ include_role }}"
+  register: r_include_role
   vars:
     include_role: 
       name: "{{ include_role_name | default(omit, True) }}"

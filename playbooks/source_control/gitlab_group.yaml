@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gitlab_group: 
-      name: "{{ gitlab_group_name | default('omit', True) }}"
-      login_user: "{{ gitlab_group_login_user | default('omit', True) }}"
-      login_token: "{{ gitlab_group_login_token | default('omit', True) }}"
-      server_url: "{{ gitlab_group_server_url | default('omit', True) }}"
-      state: "{{ gitlab_group_state | default('omit', True) }}"
-      login_password: "{{ gitlab_group_login_password | default('omit', True) }}"
-      path: "{{ gitlab_group_path | default('omit', True) }}"
-      validate_certs: "{{ gitlab_group_validate_certs | default('omit', True) }}"
-      description: "{{ gitlab_group_description | default('omit', True) }}"
+      name: "{{ gitlab_group_name | default(omit, True) }}"
+      login_user: "{{ gitlab_group_login_user | default(omit, True) }}"
+      login_token: "{{ gitlab_group_login_token | default(omit, True) }}"
+      server_url: "{{ gitlab_group_server_url | default(omit, True) }}"
+      state: "{{ gitlab_group_state | default(omit, True) }}"
+      login_password: "{{ gitlab_group_login_password | default(omit, True) }}"
+      path: "{{ gitlab_group_path | default(omit, True) }}"
+      validate_certs: "{{ gitlab_group_validate_certs | default(omit, True) }}"
+      description: "{{ gitlab_group_description | default(omit, True) }}"
   tasks:
     - name: "plugin_gitlab_group"
       gitlab_group: "{{ gitlab_group }}"
+      register: r_gitlab_group

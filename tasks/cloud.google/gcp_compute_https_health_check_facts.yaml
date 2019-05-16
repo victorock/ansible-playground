@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_https_health_check_facts"
   gcp_compute_https_health_check_facts: "{{ gcp_compute_https_health_check_facts }}"
+  register: r_gcp_compute_https_health_check_facts
   vars:
     gcp_compute_https_health_check_facts: 
       scopes: "{{ gcp_compute_https_health_check_facts_scopes | default(omit, True) }}"

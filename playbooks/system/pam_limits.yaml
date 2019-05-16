@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pam_limits: 
-      comment: "{{ pam_limits_comment | default('omit', True) }}"
-      use_max: "{{ pam_limits_use_max | default('omit', True) }}"
-      domain: "{{ pam_limits_domain | default('omit', True) }}"
-      dest: "{{ pam_limits_dest | default('omit', True) }}"
-      limit_type: "{{ pam_limits_limit_type | default('omit', True) }}"
-      use_min: "{{ pam_limits_use_min | default('omit', True) }}"
-      limit_item: "{{ pam_limits_limit_item | default('omit', True) }}"
-      value: "{{ pam_limits_value | default('omit', True) }}"
-      backup: "{{ pam_limits_backup | default('omit', True) }}"
+      comment: "{{ pam_limits_comment | default(omit, True) }}"
+      use_max: "{{ pam_limits_use_max | default(omit, True) }}"
+      domain: "{{ pam_limits_domain | default(omit, True) }}"
+      dest: "{{ pam_limits_dest | default(omit, True) }}"
+      limit_type: "{{ pam_limits_limit_type | default(omit, True) }}"
+      use_min: "{{ pam_limits_use_min | default(omit, True) }}"
+      limit_item: "{{ pam_limits_limit_item | default(omit, True) }}"
+      value: "{{ pam_limits_value | default(omit, True) }}"
+      backup: "{{ pam_limits_backup | default(omit, True) }}"
   tasks:
     - name: "plugin_pam_limits"
       pam_limits: "{{ pam_limits }}"
+      register: r_pam_limits

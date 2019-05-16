@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_config"
   eos_config: "{{ eos_config }}"
+  register: r_eos_config
   vars:
     eos_config: 
       authorize: "{{ eos_config_authorize | default(omit, True) }}"

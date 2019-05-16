@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_cs_policy"
   netscaler_cs_policy: "{{ netscaler_cs_policy }}"
+  register: r_netscaler_cs_policy
   vars:
     netscaler_cs_policy: 
       policyname: "{{ netscaler_cs_policy_policyname | default(omit, True) }}"

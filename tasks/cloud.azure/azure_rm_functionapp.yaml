@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_functionapp"
   azure_rm_functionapp: "{{ azure_rm_functionapp }}"
+  register: r_azure_rm_functionapp
   vars:
     azure_rm_functionapp: 
       profile: "{{ azure_rm_functionapp_profile | default(omit, True) }}"

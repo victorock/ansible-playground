@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_startup: 
-      slot: "{{ ce_startup_slot | default('omit', True) }}"
-      action: "{{ ce_startup_action | default('omit', True) }}"
-      patch_file: "{{ ce_startup_patch_file | default('omit', True) }}"
-      software_file: "{{ ce_startup_software_file | default('omit', True) }}"
-      cfg_file: "{{ ce_startup_cfg_file | default('omit', True) }}"
+      slot: "{{ ce_startup_slot | default(omit, True) }}"
+      action: "{{ ce_startup_action | default(omit, True) }}"
+      patch_file: "{{ ce_startup_patch_file | default(omit, True) }}"
+      software_file: "{{ ce_startup_software_file | default(omit, True) }}"
+      cfg_file: "{{ ce_startup_cfg_file | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_startup"
       ce_startup: "{{ ce_startup }}"
+      register: r_ce_startup

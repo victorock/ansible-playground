@@ -1,6 +1,7 @@
 ---
 - name: "module_replace"
   replace: "{{ replace }}"
+  register: r_replace
   vars:
     replace: 
       seuser: "{{ replace_seuser | default(omit, True) }}"

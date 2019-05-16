@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_software_update: 
-      auto_phone_home: "{{ bigip_software_update_auto_phone_home | default('omit', True) }}"
-      auto_check: "{{ bigip_software_update_auto_check | default('omit', True) }}"
-      server: "{{ bigip_software_update_server | default('omit', True) }}"
-      frequency: "{{ bigip_software_update_frequency | default('omit', True) }}"
-      user: "{{ bigip_software_update_user | default('omit', True) }}"
-      server_port: "{{ bigip_software_update_server_port | default('omit', True) }}"
-      provider: "{{ bigip_software_update_provider | default('omit', True) }}"
-      password: "{{ bigip_software_update_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_software_update_validate_certs | default('omit', True) }}"
+      auto_phone_home: "{{ bigip_software_update_auto_phone_home | default(omit, True) }}"
+      auto_check: "{{ bigip_software_update_auto_check | default(omit, True) }}"
+      server: "{{ bigip_software_update_server | default(omit, True) }}"
+      frequency: "{{ bigip_software_update_frequency | default(omit, True) }}"
+      user: "{{ bigip_software_update_user | default(omit, True) }}"
+      server_port: "{{ bigip_software_update_server_port | default(omit, True) }}"
+      provider: "{{ bigip_software_update_provider | default(omit, True) }}"
+      password: "{{ bigip_software_update_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_software_update_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_software_update"
       bigip_software_update: "{{ bigip_software_update }}"
+      register: r_bigip_software_update

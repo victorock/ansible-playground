@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_netstream_export"
   ce_netstream_export: "{{ ce_netstream_export }}"
+  register: r_ce_netstream_export
   vars:
     ce_netstream_export: 
       bgp_nexthop: "{{ ce_netstream_export_bgp_nexthop | default(omit, True) }}"

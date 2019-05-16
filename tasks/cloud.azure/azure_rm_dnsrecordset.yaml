@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_dnsrecordset"
   azure_rm_dnsrecordset: "{{ azure_rm_dnsrecordset }}"
+  register: r_azure_rm_dnsrecordset
   vars:
     azure_rm_dnsrecordset: 
       resource_group: "{{ azure_rm_dnsrecordset_resource_group | default(omit, True) }}"

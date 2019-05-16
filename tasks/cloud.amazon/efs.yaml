@@ -1,6 +1,7 @@
 ---
 - name: "module_efs"
   efs: "{{ efs }}"
+  register: r_efs
   vars:
     efs: 
       profile: "{{ efs_profile | default(omit, True) }}"

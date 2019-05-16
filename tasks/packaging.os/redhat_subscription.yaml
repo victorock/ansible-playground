@@ -1,6 +1,7 @@
 ---
 - name: "module_redhat_subscription"
   redhat_subscription: "{{ redhat_subscription }}"
+  register: r_redhat_subscription
   vars:
     redhat_subscription: 
       username: "{{ redhat_subscription_username | default(omit, True) }}"

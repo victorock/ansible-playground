@@ -1,6 +1,7 @@
 ---
 - name: "module_linode"
   linode: "{{ linode }}"
+  register: r_linode
   vars:
     linode: 
       alert_diskio_enabled: "{{ linode_alert_diskio_enabled | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_cdot_qtree"
   na_cdot_qtree: "{{ na_cdot_qtree }}"
+  register: r_na_cdot_qtree
   vars:
     na_cdot_qtree: 
       username: "{{ na_cdot_qtree_username | default(omit, True) }}"

@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_evpn_global: 
-      evpn_overlay_enable: "{{ ce_evpn_global_evpn_overlay_enable | default('omit', True) }}"
+      evpn_overlay_enable: "{{ ce_evpn_global_evpn_overlay_enable | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_evpn_global"
       ce_evpn_global: "{{ ce_evpn_global }}"
+      register: r_ce_evpn_global

@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_lldp"
   eos_lldp: "{{ eos_lldp }}"
+  register: r_eos_lldp
   vars:
     eos_lldp: 
       authorize: "{{ eos_lldp_authorize | default(omit, True) }}"

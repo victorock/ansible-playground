@@ -1,6 +1,7 @@
 ---
 - name: "module_net_l3_interface"
   net_l3_interface: "{{ net_l3_interface }}"
+  register: r_net_l3_interface
   vars:
     net_l3_interface: 
       name: "{{ net_l3_interface_name | default(omit, True) }}"

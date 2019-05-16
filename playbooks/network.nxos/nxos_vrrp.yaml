@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_vrrp: 
-      group: "{{ nxos_vrrp_group | default('omit', True) }}"
-      vip: "{{ nxos_vrrp_vip | default('omit', True) }}"
-      interval: "{{ nxos_vrrp_interval | default('omit', True) }}"
-      preempt: "{{ nxos_vrrp_preempt | default('omit', True) }}"
-      authentication: "{{ nxos_vrrp_authentication | default('omit', True) }}"
-      priority: "{{ nxos_vrrp_priority | default('omit', True) }}"
-      state: "{{ nxos_vrrp_state | default('omit', True) }}"
-      admin_state: "{{ nxos_vrrp_admin_state | default('omit', True) }}"
-      provider: "{{ nxos_vrrp_provider | default('omit', True) }}"
-      interface: "{{ nxos_vrrp_interface | default('omit', True) }}"
+      group: "{{ nxos_vrrp_group | default(omit, True) }}"
+      vip: "{{ nxos_vrrp_vip | default(omit, True) }}"
+      interval: "{{ nxos_vrrp_interval | default(omit, True) }}"
+      preempt: "{{ nxos_vrrp_preempt | default(omit, True) }}"
+      authentication: "{{ nxos_vrrp_authentication | default(omit, True) }}"
+      priority: "{{ nxos_vrrp_priority | default(omit, True) }}"
+      state: "{{ nxos_vrrp_state | default(omit, True) }}"
+      admin_state: "{{ nxos_vrrp_admin_state | default(omit, True) }}"
+      provider: "{{ nxos_vrrp_provider | default(omit, True) }}"
+      interface: "{{ nxos_vrrp_interface | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_vrrp"
       nxos_vrrp: "{{ nxos_vrrp }}"
+      register: r_nxos_vrrp

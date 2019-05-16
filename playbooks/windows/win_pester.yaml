@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_pester: 
-      path: "{{ win_pester_path | default('omit', True) }}"
-      version: "{{ win_pester_version | default('omit', True) }}"
+      path: "{{ win_pester_path | default(omit, True) }}"
+      version: "{{ win_pester_version | default(omit, True) }}"
   tasks:
     - name: "plugin_win_pester"
       win_pester: "{{ win_pester }}"
+      register: r_win_pester

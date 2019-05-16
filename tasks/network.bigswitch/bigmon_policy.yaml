@@ -1,6 +1,7 @@
 ---
 - name: "module_bigmon_policy"
   bigmon_policy: "{{ bigmon_policy }}"
+  register: r_bigmon_policy
   vars:
     bigmon_policy: 
       policy_description: "{{ bigmon_policy_policy_description | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_slurp"
   slurp: "{{ slurp }}"
+  register: r_slurp
   vars:
     slurp: 
       src: "{{ slurp_src | default(omit, True) }}"

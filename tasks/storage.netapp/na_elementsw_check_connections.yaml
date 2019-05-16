@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_check_connections"
   na_elementsw_check_connections: "{{ na_elementsw_check_connections }}"
+  register: r_na_elementsw_check_connections
   vars:
     na_elementsw_check_connections: 
       username: "{{ na_elementsw_check_connections_username | default(omit, True) }}"

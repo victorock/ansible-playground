@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     zabbix_screen: 
-      http_login_password: "{{ zabbix_screen_http_login_password | default('omit', True) }}"
-      login_user: "{{ zabbix_screen_login_user | default('omit', True) }}"
-      http_login_user: "{{ zabbix_screen_http_login_user | default('omit', True) }}"
-      server_url: "{{ zabbix_screen_server_url | default('omit', True) }}"
-      screens: "{{ zabbix_screen_screens | default('omit', True) }}"
-      timeout: "{{ zabbix_screen_timeout | default('omit', True) }}"
-      login_password: "{{ zabbix_screen_login_password | default('omit', True) }}"
-      validate_certs: "{{ zabbix_screen_validate_certs | default('omit', True) }}"
+      http_login_password: "{{ zabbix_screen_http_login_password | default(omit, True) }}"
+      login_user: "{{ zabbix_screen_login_user | default(omit, True) }}"
+      http_login_user: "{{ zabbix_screen_http_login_user | default(omit, True) }}"
+      server_url: "{{ zabbix_screen_server_url | default(omit, True) }}"
+      screens: "{{ zabbix_screen_screens | default(omit, True) }}"
+      timeout: "{{ zabbix_screen_timeout | default(omit, True) }}"
+      login_password: "{{ zabbix_screen_login_password | default(omit, True) }}"
+      validate_certs: "{{ zabbix_screen_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_zabbix_screen"
       zabbix_screen: "{{ zabbix_screen }}"
+      register: r_zabbix_screen

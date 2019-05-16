@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_hsrp"
   nxos_hsrp: "{{ nxos_hsrp }}"
+  register: r_nxos_hsrp
   vars:
     nxos_hsrp: 
       auth_type: "{{ nxos_hsrp_auth_type | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_security_policy"
   panos_security_policy: "{{ panos_security_policy }}"
+  register: r_panos_security_policy
   vars:
     panos_security_policy: 
       wildfire_analysis: "{{ panos_security_policy_wildfire_analysis | default(omit, True) }}"

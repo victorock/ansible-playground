@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_lb_vserver"
   netscaler_lb_vserver: "{{ netscaler_lb_vserver }}"
+  register: r_netscaler_lb_vserver
   vars:
     netscaler_lb_vserver: 
       servicebindings: "{{ netscaler_lb_vserver_servicebindings | default(omit, True) }}"

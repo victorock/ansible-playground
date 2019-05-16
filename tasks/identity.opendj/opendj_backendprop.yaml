@@ -1,6 +1,7 @@
 ---
 - name: "module_opendj_backendprop"
   opendj_backendprop: "{{ opendj_backendprop }}"
+  register: r_opendj_backendprop
   vars:
     opendj_backendprop: 
       username: "{{ opendj_backendprop_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gluster_volume"
   gluster_volume: "{{ gluster_volume }}"
+  register: r_gluster_volume
   vars:
     gluster_volume: 
       arbiters: "{{ gluster_volume_arbiters | default(omit, True) }}"

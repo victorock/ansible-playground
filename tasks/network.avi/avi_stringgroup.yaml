@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_stringgroup"
   avi_stringgroup: "{{ avi_stringgroup }}"
+  register: r_avi_stringgroup
   vars:
     avi_stringgroup: 
       username: "{{ avi_stringgroup_username | default(omit, True) }}"

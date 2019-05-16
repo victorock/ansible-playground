@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_nxapi"
   nxos_nxapi: "{{ nxos_nxapi }}"
+  register: r_nxos_nxapi
   vars:
     nxos_nxapi: 
       http_port: "{{ nxos_nxapi_http_port | default(omit, True) }}"

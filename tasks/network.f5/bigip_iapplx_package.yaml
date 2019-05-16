@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_iapplx_package"
   bigip_iapplx_package: "{{ bigip_iapplx_package }}"
+  register: r_bigip_iapplx_package
   vars:
     bigip_iapplx_package: 
       package: "{{ bigip_iapplx_package_package | default(omit, True) }}"

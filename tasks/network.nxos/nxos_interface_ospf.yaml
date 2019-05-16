@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_interface_ospf"
   nxos_interface_ospf: "{{ nxos_interface_ospf }}"
+  register: r_nxos_interface_ospf
   vars:
     nxos_interface_ospf: 
       cost: "{{ nxos_interface_ospf_cost | default(omit, True) }}"

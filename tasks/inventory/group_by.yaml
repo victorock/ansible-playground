@@ -1,6 +1,7 @@
 ---
 - name: "module_group_by"
   group_by: "{{ group_by }}"
+  register: r_group_by
   vars:
     group_by: 
       parents: "{{ group_by_parents | default(omit, True) }}"

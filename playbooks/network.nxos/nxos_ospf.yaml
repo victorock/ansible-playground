@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_ospf: 
-      state: "{{ nxos_ospf_state | default('omit', True) }}"
-      ospf: "{{ nxos_ospf_ospf | default('omit', True) }}"
-      provider: "{{ nxos_ospf_provider | default('omit', True) }}"
+      state: "{{ nxos_ospf_state | default(omit, True) }}"
+      ospf: "{{ nxos_ospf_ospf | default(omit, True) }}"
+      provider: "{{ nxos_ospf_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_ospf"
       nxos_ospf: "{{ nxos_ospf }}"
+      register: r_nxos_ospf

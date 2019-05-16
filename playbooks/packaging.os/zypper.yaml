@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     zypper: 
-      extra_args_precommand: "{{ zypper_extra_args_precommand | default('omit', True) }}"
-      force: "{{ zypper_force | default('omit', True) }}"
-      name: "{{ zypper_name | default('omit', True) }}"
-      disable_gpg_check: "{{ zypper_disable_gpg_check | default('omit', True) }}"
-      extra_args: "{{ zypper_extra_args | default('omit', True) }}"
-      state: "{{ zypper_state | default('omit', True) }}"
-      oldpackage: "{{ zypper_oldpackage | default('omit', True) }}"
-      update_cache: "{{ zypper_update_cache | default('omit', True) }}"
-      disable_recommends: "{{ zypper_disable_recommends | default('omit', True) }}"
-      type: "{{ zypper_type | default('omit', True) }}"
+      extra_args_precommand: "{{ zypper_extra_args_precommand | default(omit, True) }}"
+      force: "{{ zypper_force | default(omit, True) }}"
+      name: "{{ zypper_name | default(omit, True) }}"
+      disable_gpg_check: "{{ zypper_disable_gpg_check | default(omit, True) }}"
+      extra_args: "{{ zypper_extra_args | default(omit, True) }}"
+      state: "{{ zypper_state | default(omit, True) }}"
+      oldpackage: "{{ zypper_oldpackage | default(omit, True) }}"
+      update_cache: "{{ zypper_update_cache | default(omit, True) }}"
+      disable_recommends: "{{ zypper_disable_recommends | default(omit, True) }}"
+      type: "{{ zypper_type | default(omit, True) }}"
   tasks:
     - name: "plugin_zypper"
       zypper: "{{ zypper }}"
+      register: r_zypper

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_autosupport"
   na_ontap_autosupport: "{{ na_ontap_autosupport }}"
+  register: r_na_ontap_autosupport
   vars:
     na_ontap_autosupport: 
       username: "{{ na_ontap_autosupport_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_role"
   ipa_role: "{{ ipa_role }}"
+  register: r_ipa_role
   vars:
     ipa_role: 
       ipa_port: "{{ ipa_role_ipa_port | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_edgeos_config"
   edgeos_config: "{{ edgeos_config }}"
+  register: r_edgeos_config
   vars:
     edgeos_config: 
       comment: "{{ edgeos_config_comment | default(omit, True) }}"

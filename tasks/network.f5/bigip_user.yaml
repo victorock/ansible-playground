@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_user"
   bigip_user: "{{ bigip_user }}"
+  register: r_bigip_user
   vars:
     bigip_user: 
       update_password: "{{ bigip_user_update_password | default(omit, True) }}"

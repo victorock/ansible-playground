@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_facts"
   ios_facts: "{{ ios_facts }}"
+  register: r_ios_facts
   vars:
     ios_facts: 
       authorize: "{{ ios_facts_authorize | default(omit, True) }}"

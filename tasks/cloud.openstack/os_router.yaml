@@ -1,6 +1,7 @@
 ---
 - name: "module_os_router"
   os_router: "{{ os_router }}"
+  register: r_os_router
   vars:
     os_router: 
       auth_type: "{{ os_router_auth_type | default(omit, True) }}"

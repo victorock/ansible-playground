@@ -1,6 +1,7 @@
 ---
 - name: "module_win_mapped_drive"
   win_mapped_drive: "{{ win_mapped_drive }}"
+  register: r_win_mapped_drive
   vars:
     win_mapped_drive: 
       username: "{{ win_mapped_drive_username | default(omit, True) }}"

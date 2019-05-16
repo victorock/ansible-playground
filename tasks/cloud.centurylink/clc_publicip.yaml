@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_publicip"
   clc_publicip: "{{ clc_publicip }}"
+  register: r_clc_publicip
   vars:
     clc_publicip: 
       server_ids: "{{ clc_publicip_server_ids | default(omit, True) }}"

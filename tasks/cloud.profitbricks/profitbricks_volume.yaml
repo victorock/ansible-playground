@@ -1,6 +1,7 @@
 ---
 - name: "module_profitbricks_volume"
   profitbricks_volume: "{{ profitbricks_volume }}"
+  register: r_profitbricks_volume
   vars:
     profitbricks_volume: 
       count: "{{ profitbricks_volume_count | default(omit, True) }}"

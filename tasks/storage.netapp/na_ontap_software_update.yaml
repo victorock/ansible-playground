@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_software_update"
   na_ontap_software_update: "{{ na_ontap_software_update }}"
+  register: r_na_ontap_software_update
   vars:
     na_ontap_software_update: 
       node: "{{ na_ontap_software_update_node | default(omit, True) }}"

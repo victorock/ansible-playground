@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_bd_to_l3out"
   aci_bd_to_l3out: "{{ aci_bd_to_l3out }}"
+  register: r_aci_bd_to_l3out
   vars:
     aci_bd_to_l3out: 
       bd: "{{ aci_bd_to_l3out_bd | default(omit, True) }}"

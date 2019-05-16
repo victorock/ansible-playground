@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudflare_dns"
   cloudflare_dns: "{{ cloudflare_dns }}"
+  register: r_cloudflare_dns
   vars:
     cloudflare_dns: 
       solo: "{{ cloudflare_dns_solo | default(omit, True) }}"

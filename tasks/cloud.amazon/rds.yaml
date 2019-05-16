@@ -1,6 +1,7 @@
 ---
 - name: "module_rds"
   rds: "{{ rds }}"
+  register: r_rds
   vars:
     rds: 
       profile: "{{ rds_profile | default(omit, True) }}"

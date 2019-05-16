@@ -1,6 +1,7 @@
 ---
 - name: "module_os_server_facts"
   os_server_facts: "{{ os_server_facts }}"
+  register: r_os_server_facts
   vars:
     os_server_facts: 
       detailed: "{{ os_server_facts_detailed | default(omit, True) }}"

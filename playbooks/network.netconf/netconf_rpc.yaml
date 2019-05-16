@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netconf_rpc: 
-      content: "{{ netconf_rpc_content | default('omit', True) }}"
-      rpc: "{{ netconf_rpc_rpc | default('omit', True) }}"
-      xmlns: "{{ netconf_rpc_xmlns | default('omit', True) }}"
-      display: "{{ netconf_rpc_display | default('omit', True) }}"
+      content: "{{ netconf_rpc_content | default(omit, True) }}"
+      rpc: "{{ netconf_rpc_rpc | default(omit, True) }}"
+      xmlns: "{{ netconf_rpc_xmlns | default(omit, True) }}"
+      display: "{{ netconf_rpc_display | default(omit, True) }}"
   tasks:
     - name: "plugin_netconf_rpc"
       netconf_rpc: "{{ netconf_rpc }}"
+      register: r_netconf_rpc

@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     subversion: 
-      username: "{{ subversion_username | default('omit', True) }}"
-      executable: "{{ subversion_executable | default('omit', True) }}"
-      force: "{{ subversion_force | default('omit', True) }}"
-      dest: "{{ subversion_dest | default('omit', True) }}"
-      update: "{{ subversion_update | default('omit', True) }}"
-      repo: "{{ subversion_repo | default('omit', True) }}"
-      switch: "{{ subversion_switch | default('omit', True) }}"
-      export: "{{ subversion_export | default('omit', True) }}"
-      in_place: "{{ subversion_in_place | default('omit', True) }}"
-      password: "{{ subversion_password | default('omit', True) }}"
-      checkout: "{{ subversion_checkout | default('omit', True) }}"
-      revision: "{{ subversion_revision | default('omit', True) }}"
+      username: "{{ subversion_username | default(omit, True) }}"
+      executable: "{{ subversion_executable | default(omit, True) }}"
+      force: "{{ subversion_force | default(omit, True) }}"
+      dest: "{{ subversion_dest | default(omit, True) }}"
+      update: "{{ subversion_update | default(omit, True) }}"
+      repo: "{{ subversion_repo | default(omit, True) }}"
+      switch: "{{ subversion_switch | default(omit, True) }}"
+      export: "{{ subversion_export | default(omit, True) }}"
+      in_place: "{{ subversion_in_place | default(omit, True) }}"
+      password: "{{ subversion_password | default(omit, True) }}"
+      checkout: "{{ subversion_checkout | default(omit, True) }}"
+      revision: "{{ subversion_revision | default(omit, True) }}"
   tasks:
     - name: "plugin_subversion"
       subversion: "{{ subversion }}"
+      register: r_subversion

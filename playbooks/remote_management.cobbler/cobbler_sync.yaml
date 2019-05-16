@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cobbler_sync: 
-      username: "{{ cobbler_sync_username | default('omit', True) }}"
-      host: "{{ cobbler_sync_host | default('omit', True) }}"
-      use_ssl: "{{ cobbler_sync_use_ssl | default('omit', True) }}"
-      password: "{{ cobbler_sync_password | default('omit', True) }}"
-      validate_certs: "{{ cobbler_sync_validate_certs | default('omit', True) }}"
-      port: "{{ cobbler_sync_port | default('omit', True) }}"
+      username: "{{ cobbler_sync_username | default(omit, True) }}"
+      host: "{{ cobbler_sync_host | default(omit, True) }}"
+      use_ssl: "{{ cobbler_sync_use_ssl | default(omit, True) }}"
+      password: "{{ cobbler_sync_password | default(omit, True) }}"
+      validate_certs: "{{ cobbler_sync_validate_certs | default(omit, True) }}"
+      port: "{{ cobbler_sync_port | default(omit, True) }}"
   tasks:
     - name: "plugin_cobbler_sync"
       cobbler_sync: "{{ cobbler_sync }}"
+      register: r_cobbler_sync

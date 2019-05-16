@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     zpool_facts: 
-      parsable: "{{ zpool_facts_parsable | default('omit', True) }}"
-      name: "{{ zpool_facts_name | default('omit', True) }}"
-      properties: "{{ zpool_facts_properties | default('omit', True) }}"
+      parsable: "{{ zpool_facts_parsable | default(omit, True) }}"
+      name: "{{ zpool_facts_name | default(omit, True) }}"
+      properties: "{{ zpool_facts_properties | default(omit, True) }}"
   tasks:
     - name: "plugin_zpool_facts"
       zpool_facts: "{{ zpool_facts }}"
+      register: r_zpool_facts

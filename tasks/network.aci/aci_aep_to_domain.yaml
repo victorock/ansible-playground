@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_aep_to_domain"
   aci_aep_to_domain: "{{ aci_aep_to_domain }}"
+  register: r_aci_aep_to_domain
   vars:
     aci_aep_to_domain: 
       username: "{{ aci_aep_to_domain_username | default(omit, True) }}"

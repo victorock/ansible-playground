@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_mac_pool"
   ucs_mac_pool: "{{ ucs_mac_pool }}"
+  register: r_ucs_mac_pool
   vars:
     ucs_mac_pool: 
       username: "{{ ucs_mac_pool_username | default(omit, True) }}"

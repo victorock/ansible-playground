@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_export_policy_rule"
   na_ontap_export_policy_rule: "{{ na_ontap_export_policy_rule }}"
+  register: r_na_ontap_export_policy_rule
   vars:
     na_ontap_export_policy_rule: 
       username: "{{ na_ontap_export_policy_rule_username | default(omit, True) }}"

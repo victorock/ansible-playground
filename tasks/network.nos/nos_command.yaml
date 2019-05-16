@@ -1,6 +1,7 @@
 ---
 - name: "module_nos_command"
   nos_command: "{{ nos_command }}"
+  register: r_nos_command
   vars:
     nos_command: 
       retries: "{{ nos_command_retries | default(omit, True) }}"

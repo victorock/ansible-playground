@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_logging"
   ios_logging: "{{ ios_logging }}"
+  register: r_ios_logging
   vars:
     ios_logging: 
       authorize: "{{ ios_logging_authorize | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_openshift_scale"
   openshift_scale: "{{ openshift_scale }}"
+  register: r_openshift_scale
   vars:
     openshift_scale: 
       username: "{{ openshift_scale_username | default(omit, True) }}"

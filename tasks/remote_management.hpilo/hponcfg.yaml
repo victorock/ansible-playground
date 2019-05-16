@@ -1,6 +1,7 @@
 ---
 - name: "module_hponcfg"
   hponcfg: "{{ hponcfg }}"
+  register: r_hponcfg
   vars:
     hponcfg: 
       path: "{{ hponcfg_path | default(omit, True) }}"

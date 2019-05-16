@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_gslbgeodbprofile"
   avi_gslbgeodbprofile: "{{ avi_gslbgeodbprofile }}"
+  register: r_avi_gslbgeodbprofile
   vars:
     avi_gslbgeodbprofile: 
       username: "{{ avi_gslbgeodbprofile_username | default(omit, True) }}"

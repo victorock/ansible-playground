@@ -1,6 +1,7 @@
 ---
 - name: "module_portage"
   portage: "{{ portage }}"
+  register: r_portage
   vars:
     portage: 
       nodeps: "{{ portage_nodeps | default(omit, True) }}"

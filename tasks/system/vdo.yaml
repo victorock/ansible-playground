@@ -1,6 +1,7 @@
 ---
 - name: "module_vdo"
   vdo: "{{ vdo }}"
+  register: r_vdo
   vars:
     vdo: 
       activated: "{{ vdo_activated | default(omit, True) }}"

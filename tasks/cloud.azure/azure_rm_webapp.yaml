@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_webapp"
   azure_rm_webapp: "{{ azure_rm_webapp }}"
+  register: r_azure_rm_webapp
   vars:
     azure_rm_webapp: 
       resource_group: "{{ azure_rm_webapp_resource_group | default(omit, True) }}"

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     dellos9_command: 
-      retries: "{{ dellos9_command_retries | default('omit', True) }}"
-      commands: "{{ dellos9_command_commands | default('omit', True) }}"
-      interval: "{{ dellos9_command_interval | default('omit', True) }}"
-      provider: "{{ dellos9_command_provider | default('omit', True) }}"
-      wait_for: "{{ dellos9_command_wait_for | default('omit', True) }}"
-      match: "{{ dellos9_command_match | default('omit', True) }}"
+      retries: "{{ dellos9_command_retries | default(omit, True) }}"
+      commands: "{{ dellos9_command_commands | default(omit, True) }}"
+      interval: "{{ dellos9_command_interval | default(omit, True) }}"
+      provider: "{{ dellos9_command_provider | default(omit, True) }}"
+      wait_for: "{{ dellos9_command_wait_for | default(omit, True) }}"
+      match: "{{ dellos9_command_match | default(omit, True) }}"
   tasks:
     - name: "plugin_dellos9_command"
       dellos9_command: "{{ dellos9_command }}"
+      register: r_dellos9_command

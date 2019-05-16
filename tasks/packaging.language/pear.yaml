@@ -1,6 +1,7 @@
 ---
 - name: "module_pear"
   pear: "{{ pear }}"
+  register: r_pear
   vars:
     pear: 
       state: "{{ pear_state | default(omit, True) }}"

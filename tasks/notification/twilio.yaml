@@ -1,6 +1,7 @@
 ---
 - name: "module_twilio"
   twilio: "{{ twilio }}"
+  register: r_twilio
   vars:
     twilio: 
       auth_token: "{{ twilio_auth_token | default(omit, True) }}"

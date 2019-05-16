@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     python_requirements_facts: 
-      dependencies: "{{ python_requirements_facts_dependencies | default('omit', True) }}"
+      dependencies: "{{ python_requirements_facts_dependencies | default(omit, True) }}"
   tasks:
     - name: "plugin_python_requirements_facts"
       python_requirements_facts: "{{ python_requirements_facts }}"
+      register: r_python_requirements_facts

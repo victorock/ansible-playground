@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     proxmox_template: 
-      node: "{{ proxmox_template_node | default('omit', True) }}"
-      src: "{{ proxmox_template_src | default('omit', True) }}"
-      force: "{{ proxmox_template_force | default('omit', True) }}"
-      template: "{{ proxmox_template_template | default('omit', True) }}"
-      api_user: "{{ proxmox_template_api_user | default('omit', True) }}"
-      storage: "{{ proxmox_template_storage | default('omit', True) }}"
-      api_password: "{{ proxmox_template_api_password | default('omit', True) }}"
-      timeout: "{{ proxmox_template_timeout | default('omit', True) }}"
-      state: "{{ proxmox_template_state | default('omit', True) }}"
-      content_type: "{{ proxmox_template_content_type | default('omit', True) }}"
-      validate_certs: "{{ proxmox_template_validate_certs | default('omit', True) }}"
-      api_host: "{{ proxmox_template_api_host | default('omit', True) }}"
+      node: "{{ proxmox_template_node | default(omit, True) }}"
+      src: "{{ proxmox_template_src | default(omit, True) }}"
+      force: "{{ proxmox_template_force | default(omit, True) }}"
+      template: "{{ proxmox_template_template | default(omit, True) }}"
+      api_user: "{{ proxmox_template_api_user | default(omit, True) }}"
+      storage: "{{ proxmox_template_storage | default(omit, True) }}"
+      api_password: "{{ proxmox_template_api_password | default(omit, True) }}"
+      timeout: "{{ proxmox_template_timeout | default(omit, True) }}"
+      state: "{{ proxmox_template_state | default(omit, True) }}"
+      content_type: "{{ proxmox_template_content_type | default(omit, True) }}"
+      validate_certs: "{{ proxmox_template_validate_certs | default(omit, True) }}"
+      api_host: "{{ proxmox_template_api_host | default(omit, True) }}"
   tasks:
     - name: "plugin_proxmox_template"
       proxmox_template: "{{ proxmox_template }}"
+      register: r_proxmox_template

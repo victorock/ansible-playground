@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_alerts"
   netapp_e_alerts: "{{ netapp_e_alerts }}"
+  register: r_netapp_e_alerts
   vars:
     netapp_e_alerts: 
       sender: "{{ netapp_e_alerts_sender | default(omit, True) }}"

@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cv_server_provision: 
-      username: "{{ cv_server_provision_username | default('omit', True) }}"
-      port_vlan: "{{ cv_server_provision_port_vlan | default('omit', True) }}"
-      protocol: "{{ cv_server_provision_protocol | default('omit', True) }}"
-      switch_port: "{{ cv_server_provision_switch_port | default('omit', True) }}"
-      server_name: "{{ cv_server_provision_server_name | default('omit', True) }}"
-      port: "{{ cv_server_provision_port | default('omit', True) }}"
-      host: "{{ cv_server_provision_host | default('omit', True) }}"
-      template: "{{ cv_server_provision_template | default('omit', True) }}"
-      auto_run: "{{ cv_server_provision_auto_run | default('omit', True) }}"
-      action: "{{ cv_server_provision_action | default('omit', True) }}"
-      password: "{{ cv_server_provision_password | default('omit', True) }}"
-      switch_name: "{{ cv_server_provision_switch_name | default('omit', True) }}"
+      username: "{{ cv_server_provision_username | default(omit, True) }}"
+      port_vlan: "{{ cv_server_provision_port_vlan | default(omit, True) }}"
+      protocol: "{{ cv_server_provision_protocol | default(omit, True) }}"
+      switch_port: "{{ cv_server_provision_switch_port | default(omit, True) }}"
+      server_name: "{{ cv_server_provision_server_name | default(omit, True) }}"
+      port: "{{ cv_server_provision_port | default(omit, True) }}"
+      host: "{{ cv_server_provision_host | default(omit, True) }}"
+      template: "{{ cv_server_provision_template | default(omit, True) }}"
+      auto_run: "{{ cv_server_provision_auto_run | default(omit, True) }}"
+      action: "{{ cv_server_provision_action | default(omit, True) }}"
+      password: "{{ cv_server_provision_password | default(omit, True) }}"
+      switch_name: "{{ cv_server_provision_switch_name | default(omit, True) }}"
   tasks:
     - name: "plugin_cv_server_provision"
       cv_server_provision: "{{ cv_server_provision }}"
+      register: r_cv_server_provision

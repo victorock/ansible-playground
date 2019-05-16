@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     reboot: 
-      pre_reboot_delay: "{{ reboot_pre_reboot_delay | default('omit', True) }}"
-      reboot_timeout: "{{ reboot_reboot_timeout | default('omit', True) }}"
-      post_reboot_delay: "{{ reboot_post_reboot_delay | default('omit', True) }}"
-      test_command: "{{ reboot_test_command | default('omit', True) }}"
-      msg: "{{ reboot_msg | default('omit', True) }}"
-      connect_timeout: "{{ reboot_connect_timeout | default('omit', True) }}"
+      pre_reboot_delay: "{{ reboot_pre_reboot_delay | default(omit, True) }}"
+      reboot_timeout: "{{ reboot_reboot_timeout | default(omit, True) }}"
+      post_reboot_delay: "{{ reboot_post_reboot_delay | default(omit, True) }}"
+      test_command: "{{ reboot_test_command | default(omit, True) }}"
+      msg: "{{ reboot_msg | default(omit, True) }}"
+      connect_timeout: "{{ reboot_connect_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_reboot"
       reboot: "{{ reboot }}"
+      register: r_reboot

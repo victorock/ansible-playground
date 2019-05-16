@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     group_by: 
-      parents: "{{ group_by_parents | default('omit', True) }}"
-      key: "{{ group_by_key | default('omit', True) }}"
+      parents: "{{ group_by_parents | default(omit, True) }}"
+      key: "{{ group_by_key | default(omit, True) }}"
   tasks:
     - name: "plugin_group_by"
       group_by: "{{ group_by }}"
+      register: r_group_by

@@ -1,6 +1,7 @@
 ---
 - name: "module_net_system"
   net_system: "{{ net_system }}"
+  register: r_net_system
   vars:
     net_system: 
       lookup_source: "{{ net_system_lookup_source | default(omit, True) }}"

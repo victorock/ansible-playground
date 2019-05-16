@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_application_http"
   bigiq_application_http: "{{ bigiq_application_http }}"
+  register: r_bigiq_application_http
   vars:
     bigiq_application_http: 
       service_environment: "{{ bigiq_application_http_service_environment | default(omit, True) }}"

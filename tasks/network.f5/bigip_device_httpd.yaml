@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_httpd"
   bigip_device_httpd: "{{ bigip_device_httpd }}"
+  register: r_bigip_device_httpd
   vars:
     bigip_device_httpd: 
       auth_pam_validate_ip: "{{ bigip_device_httpd_auth_pam_validate_ip | default(omit, True) }}"

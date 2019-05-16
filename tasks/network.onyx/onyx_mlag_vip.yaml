@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_mlag_vip"
   onyx_mlag_vip: "{{ onyx_mlag_vip }}"
+  register: r_onyx_mlag_vip
   vars:
     onyx_mlag_vip: 
       delay: "{{ onyx_mlag_vip_delay | default(omit, True) }}"

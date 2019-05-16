@@ -1,6 +1,7 @@
 ---
 - name: "module_aruba_command"
   aruba_command: "{{ aruba_command }}"
+  register: r_aruba_command
   vars:
     aruba_command: 
       retries: "{{ aruba_command_retries | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_logging"
   eos_logging: "{{ eos_logging }}"
+  register: r_eos_logging
   vars:
     eos_logging: 
       authorize: "{{ eos_logging_authorize | default(omit, True) }}"

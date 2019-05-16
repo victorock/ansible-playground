@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_deploy_ovf"
   vmware_deploy_ovf: "{{ vmware_deploy_ovf }}"
+  register: r_vmware_deploy_ovf
   vars:
     vmware_deploy_ovf: 
       resource_pool: "{{ vmware_deploy_ovf_resource_pool | default(omit, True) }}"

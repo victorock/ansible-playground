@@ -1,6 +1,7 @@
 ---
 - name: "module_iam_role"
   iam_role: "{{ iam_role }}"
+  register: r_iam_role
   vars:
     iam_role: 
       profile: "{{ iam_role_profile | default(omit, True) }}"

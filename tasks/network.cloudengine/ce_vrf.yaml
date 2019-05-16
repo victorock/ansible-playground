@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_vrf"
   ce_vrf: "{{ ce_vrf }}"
+  register: r_ce_vrf
   vars:
     ce_vrf: 
       state: "{{ ce_vrf_state | default(omit, True) }}"

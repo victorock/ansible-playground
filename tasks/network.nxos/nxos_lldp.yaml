@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_lldp"
   nxos_lldp: "{{ nxos_lldp }}"
+  register: r_nxos_lldp
   vars:
     nxos_lldp: 
       state: "{{ nxos_lldp_state | default(omit, True) }}"

@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pagerduty_alert: 
-      client_url: "{{ pagerduty_alert_client_url | default('omit', True) }}"
-      name: "{{ pagerduty_alert_name | default('omit', True) }}"
-      incident_key: "{{ pagerduty_alert_incident_key | default('omit', True) }}"
-      state: "{{ pagerduty_alert_state | default('omit', True) }}"
-      client: "{{ pagerduty_alert_client | default('omit', True) }}"
-      integration_key: "{{ pagerduty_alert_integration_key | default('omit', True) }}"
-      service_id: "{{ pagerduty_alert_service_id | default('omit', True) }}"
-      service_key: "{{ pagerduty_alert_service_key | default('omit', True) }}"
-      api_key: "{{ pagerduty_alert_api_key | default('omit', True) }}"
-      desc: "{{ pagerduty_alert_desc | default('omit', True) }}"
+      client_url: "{{ pagerduty_alert_client_url | default(omit, True) }}"
+      name: "{{ pagerduty_alert_name | default(omit, True) }}"
+      incident_key: "{{ pagerduty_alert_incident_key | default(omit, True) }}"
+      state: "{{ pagerduty_alert_state | default(omit, True) }}"
+      client: "{{ pagerduty_alert_client | default(omit, True) }}"
+      integration_key: "{{ pagerduty_alert_integration_key | default(omit, True) }}"
+      service_id: "{{ pagerduty_alert_service_id | default(omit, True) }}"
+      service_key: "{{ pagerduty_alert_service_key | default(omit, True) }}"
+      api_key: "{{ pagerduty_alert_api_key | default(omit, True) }}"
+      desc: "{{ pagerduty_alert_desc | default(omit, True) }}"
   tasks:
     - name: "plugin_pagerduty_alert"
       pagerduty_alert: "{{ pagerduty_alert }}"
+      register: r_pagerduty_alert

@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_manage_config"
   proxysql_manage_config: "{{ proxysql_manage_config }}"
+  register: r_proxysql_manage_config
   vars:
     proxysql_manage_config: 
       login_port: "{{ proxysql_manage_config_login_port | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_sns_topic"
   sns_topic: "{{ sns_topic }}"
+  register: r_sns_topic
   vars:
     sns_topic: 
       profile: "{{ sns_topic_profile | default(omit, True) }}"

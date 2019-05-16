@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_storage_domain_facts"
   ovirt_storage_domain_facts: "{{ ovirt_storage_domain_facts }}"
+  register: r_ovirt_storage_domain_facts
   vars:
     ovirt_storage_domain_facts: 
       pattern: "{{ ovirt_storage_domain_facts_pattern | default(omit, True) }}"

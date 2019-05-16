@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_ospf_vrf"
   nxos_ospf_vrf: "{{ nxos_ospf_vrf }}"
+  register: r_nxos_ospf_vrf
   vars:
     nxos_ospf_vrf: 
       router_id: "{{ nxos_ospf_vrf_router_id | default(omit, True) }}"

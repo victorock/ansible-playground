@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_hostname"
   bigip_hostname: "{{ bigip_hostname }}"
+  register: r_bigip_hostname
   vars:
     bigip_hostname: 
       hostname: "{{ bigip_hostname_hostname | default(omit, True) }}"

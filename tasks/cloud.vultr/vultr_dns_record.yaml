@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_dns_record"
   vultr_dns_record: "{{ vultr_dns_record }}"
+  register: r_vultr_dns_record
   vars:
     vultr_dns_record: 
       priority: "{{ vultr_dns_record_priority | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_sf_account_manager"
   sf_account_manager: "{{ sf_account_manager }}"
+  register: r_sf_account_manager
   vars:
     sf_account_manager: 
       status: "{{ sf_account_manager_status | default(omit, True) }}"

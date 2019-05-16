@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_ntp_options"
   nxos_ntp_options: "{{ nxos_ntp_options }}"
+  register: r_nxos_ntp_options
   vars:
     nxos_ntp_options: 
       logging: "{{ nxos_ntp_options_logging | default(omit, True) }}"

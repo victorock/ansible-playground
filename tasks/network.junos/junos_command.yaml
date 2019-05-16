@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_command"
   junos_command: "{{ junos_command }}"
+  register: r_junos_command
   vars:
     junos_command: 
       retries: "{{ junos_command_retries | default(omit, True) }}"

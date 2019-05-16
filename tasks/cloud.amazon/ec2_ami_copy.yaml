@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_ami_copy"
   ec2_ami_copy: "{{ ec2_ami_copy }}"
+  register: r_ec2_ami_copy
   vars:
     ec2_ami_copy: 
       profile: "{{ ec2_ami_copy_profile | default(omit, True) }}"

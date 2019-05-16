@@ -1,6 +1,7 @@
 ---
 - name: "module_jira"
   jira: "{{ jira }}"
+  register: r_jira
   vars:
     jira: 
       username: "{{ jira_username | default(omit, True) }}"

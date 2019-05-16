@@ -1,6 +1,7 @@
 ---
 - name: "module_fmgr_provisioning"
   fmgr_provisioning: "{{ fmgr_provisioning }}"
+  register: r_fmgr_provisioning
   vars:
     fmgr_provisioning: 
       username: "{{ fmgr_provisioning_username | default(omit, True) }}"

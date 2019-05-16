@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_backend_servers"
   proxysql_backend_servers: "{{ proxysql_backend_servers }}"
+  register: r_proxysql_backend_servers
   vars:
     proxysql_backend_servers: 
       status: "{{ proxysql_backend_servers_status | default(omit, True) }}"

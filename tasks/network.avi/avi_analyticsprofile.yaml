@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_analyticsprofile"
   avi_analyticsprofile: "{{ avi_analyticsprofile }}"
+  register: r_avi_analyticsprofile
   vars:
     avi_analyticsprofile: 
       hs_event_throttle_window: "{{ avi_analyticsprofile_hs_event_throttle_window | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_sslkeyandcertificate"
   avi_sslkeyandcertificate: "{{ avi_sslkeyandcertificate }}"
+  register: r_avi_sslkeyandcertificate
   vars:
     avi_sslkeyandcertificate: 
       status: "{{ avi_sslkeyandcertificate_status | default(omit, True) }}"

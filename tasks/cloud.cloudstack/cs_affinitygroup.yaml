@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_affinitygroup"
   cs_affinitygroup: "{{ cs_affinitygroup }}"
+  register: r_cs_affinitygroup
   vars:
     cs_affinitygroup: 
       domain: "{{ cs_affinitygroup_domain | default(omit, True) }}"

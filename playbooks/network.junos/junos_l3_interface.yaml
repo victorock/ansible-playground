@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_l3_interface: 
-      name: "{{ junos_l3_interface_name | default('omit', True) }}"
-      provider: "{{ junos_l3_interface_provider | default('omit', True) }}"
-      active: "{{ junos_l3_interface_active | default('omit', True) }}"
-      state: "{{ junos_l3_interface_state | default('omit', True) }}"
-      ipv4: "{{ junos_l3_interface_ipv4 | default('omit', True) }}"
-      ipv6: "{{ junos_l3_interface_ipv6 | default('omit', True) }}"
-      aggregate: "{{ junos_l3_interface_aggregate | default('omit', True) }}"
-      unit: "{{ junos_l3_interface_unit | default('omit', True) }}"
+      name: "{{ junos_l3_interface_name | default(omit, True) }}"
+      provider: "{{ junos_l3_interface_provider | default(omit, True) }}"
+      active: "{{ junos_l3_interface_active | default(omit, True) }}"
+      state: "{{ junos_l3_interface_state | default(omit, True) }}"
+      ipv4: "{{ junos_l3_interface_ipv4 | default(omit, True) }}"
+      ipv6: "{{ junos_l3_interface_ipv6 | default(omit, True) }}"
+      aggregate: "{{ junos_l3_interface_aggregate | default(omit, True) }}"
+      unit: "{{ junos_l3_interface_unit | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_l3_interface"
       junos_l3_interface: "{{ junos_l3_interface }}"
+      register: r_junos_l3_interface

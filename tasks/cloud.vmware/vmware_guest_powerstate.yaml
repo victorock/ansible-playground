@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_powerstate"
   vmware_guest_powerstate: "{{ vmware_guest_powerstate }}"
+  register: r_vmware_guest_powerstate
   vars:
     vmware_guest_powerstate: 
       username: "{{ vmware_guest_powerstate_username | default(omit, True) }}"

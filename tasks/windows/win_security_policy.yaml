@@ -1,6 +1,7 @@
 ---
 - name: "module_win_security_policy"
   win_security_policy: "{{ win_security_policy }}"
+  register: r_win_security_policy
   vars:
     win_security_policy: 
       section: "{{ win_security_policy_section | default(omit, True) }}"

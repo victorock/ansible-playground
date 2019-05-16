@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vultr_block_storage: 
-      api_retries: "{{ vultr_block_storage_api_retries | default('omit', True) }}"
-      name: "{{ vultr_block_storage_name | default('omit', True) }}"
-      region: "{{ vultr_block_storage_region | default('omit', True) }}"
-      api_timeout: "{{ vultr_block_storage_api_timeout | default('omit', True) }}"
-      api_endpoint: "{{ vultr_block_storage_api_endpoint | default('omit', True) }}"
-      state: "{{ vultr_block_storage_state | default('omit', True) }}"
-      api_account: "{{ vultr_block_storage_api_account | default('omit', True) }}"
-      api_key: "{{ vultr_block_storage_api_key | default('omit', True) }}"
-      validate_certs: "{{ vultr_block_storage_validate_certs | default('omit', True) }}"
-      size: "{{ vultr_block_storage_size | default('omit', True) }}"
+      api_retries: "{{ vultr_block_storage_api_retries | default(omit, True) }}"
+      name: "{{ vultr_block_storage_name | default(omit, True) }}"
+      region: "{{ vultr_block_storage_region | default(omit, True) }}"
+      api_timeout: "{{ vultr_block_storage_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_block_storage_api_endpoint | default(omit, True) }}"
+      state: "{{ vultr_block_storage_state | default(omit, True) }}"
+      api_account: "{{ vultr_block_storage_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_block_storage_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_block_storage_validate_certs | default(omit, True) }}"
+      size: "{{ vultr_block_storage_size | default(omit, True) }}"
   tasks:
     - name: "plugin_vultr_block_storage"
       vultr_block_storage: "{{ vultr_block_storage }}"
+      register: r_vultr_block_storage

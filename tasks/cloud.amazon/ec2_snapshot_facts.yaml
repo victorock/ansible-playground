@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_snapshot_facts"
   ec2_snapshot_facts: "{{ ec2_snapshot_facts }}"
+  register: r_ec2_snapshot_facts
   vars:
     ec2_snapshot_facts: 
       profile: "{{ ec2_snapshot_facts_profile | default(omit, True) }}"

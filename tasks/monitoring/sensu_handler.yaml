@@ -1,6 +1,7 @@
 ---
 - name: "module_sensu_handler"
   sensu_handler: "{{ sensu_handler }}"
+  register: r_sensu_handler
   vars:
     sensu_handler: 
       pipe: "{{ sensu_handler_pipe | default(omit, True) }}"

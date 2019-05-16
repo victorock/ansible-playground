@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_acs"
   azure_rm_acs: "{{ azure_rm_acs }}"
+  register: r_azure_rm_acs
   vars:
     azure_rm_acs: 
       resource_group: "{{ azure_rm_acs_resource_group | default(omit, True) }}"

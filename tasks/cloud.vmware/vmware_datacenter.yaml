@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_datacenter"
   vmware_datacenter: "{{ vmware_datacenter }}"
+  register: r_vmware_datacenter
   vars:
     vmware_datacenter: 
       username: "{{ vmware_datacenter_username | default(omit, True) }}"

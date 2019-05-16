@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     openwrt_init: 
-      pattern: "{{ openwrt_init_pattern | default('omit', True) }}"
-      state: "{{ openwrt_init_state | default('omit', True) }}"
-      enabled: "{{ openwrt_init_enabled | default('omit', True) }}"
-      name: "{{ openwrt_init_name | default('omit', True) }}"
+      pattern: "{{ openwrt_init_pattern | default(omit, True) }}"
+      state: "{{ openwrt_init_state | default(omit, True) }}"
+      enabled: "{{ openwrt_init_enabled | default(omit, True) }}"
+      name: "{{ openwrt_init_name | default(omit, True) }}"
   tasks:
     - name: "plugin_openwrt_init"
       openwrt_init: "{{ openwrt_init }}"
+      register: r_openwrt_init

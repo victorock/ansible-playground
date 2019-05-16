@@ -1,6 +1,7 @@
 ---
 - name: "module_win_domain_group"
   win_domain_group: "{{ win_domain_group }}"
+  register: r_win_domain_group
   vars:
     win_domain_group: 
       category: "{{ win_domain_group_category | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_network"
   cs_network: "{{ cs_network }}"
+  register: r_cs_network
   vars:
     cs_network: 
       domain: "{{ cs_network_domain | default(omit, True) }}"

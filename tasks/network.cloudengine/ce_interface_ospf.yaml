@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_interface_ospf"
   ce_interface_ospf: "{{ ce_interface_ospf }}"
+  register: r_ce_interface_ospf
   vars:
     ce_interface_ospf: 
       auth_text_md5: "{{ ce_interface_ospf_auth_text_md5 | default(omit, True) }}"

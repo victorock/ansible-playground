@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ec2_instance_facts: 
-      aws_secret_key: "{{ ec2_instance_facts_aws_secret_key | default('omit', True) }}"
-      profile: "{{ ec2_instance_facts_profile | default('omit', True) }}"
-      aws_access_key: "{{ ec2_instance_facts_aws_access_key | default('omit', True) }}"
-      security_token: "{{ ec2_instance_facts_security_token | default('omit', True) }}"
-      region: "{{ ec2_instance_facts_region | default('omit', True) }}"
-      instance_ids: "{{ ec2_instance_facts_instance_ids | default('omit', True) }}"
-      filters: "{{ ec2_instance_facts_filters | default('omit', True) }}"
-      ec2_url: "{{ ec2_instance_facts_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ ec2_instance_facts_validate_certs | default('omit', True) }}"
+      aws_secret_key: "{{ ec2_instance_facts_aws_secret_key | default(omit, True) }}"
+      profile: "{{ ec2_instance_facts_profile | default(omit, True) }}"
+      aws_access_key: "{{ ec2_instance_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ ec2_instance_facts_security_token | default(omit, True) }}"
+      region: "{{ ec2_instance_facts_region | default(omit, True) }}"
+      instance_ids: "{{ ec2_instance_facts_instance_ids | default(omit, True) }}"
+      filters: "{{ ec2_instance_facts_filters | default(omit, True) }}"
+      ec2_url: "{{ ec2_instance_facts_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ ec2_instance_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_ec2_instance_facts"
       ec2_instance_facts: "{{ ec2_instance_facts }}"
+      register: r_ec2_instance_facts

@@ -1,6 +1,7 @@
 ---
 - name: "module_riak"
   riak: "{{ riak }}"
+  register: r_riak
   vars:
     riak: 
       target_node: "{{ riak_target_node | default(omit, True) }}"

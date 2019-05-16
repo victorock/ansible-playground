@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_lun_mapping"
   netapp_e_lun_mapping: "{{ netapp_e_lun_mapping }}"
+  register: r_netapp_e_lun_mapping
   vars:
     netapp_e_lun_mapping: 
       api_url: "{{ netapp_e_lun_mapping_api_url | default(omit, True) }}"

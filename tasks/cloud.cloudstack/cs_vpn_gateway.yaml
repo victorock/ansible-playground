@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_vpn_gateway"
   cs_vpn_gateway: "{{ cs_vpn_gateway }}"
+  register: r_cs_vpn_gateway
   vars:
     cs_vpn_gateway: 
       account: "{{ cs_vpn_gateway_account | default(omit, True) }}"

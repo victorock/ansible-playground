@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_host_lockdown: 
-      username: "{{ vmware_host_lockdown_username | default('omit', True) }}"
-      hostname: "{{ vmware_host_lockdown_hostname | default('omit', True) }}"
-      cluster_name: "{{ vmware_host_lockdown_cluster_name | default('omit', True) }}"
-      state: "{{ vmware_host_lockdown_state | default('omit', True) }}"
-      esxi_hostname: "{{ vmware_host_lockdown_esxi_hostname | default('omit', True) }}"
-      password: "{{ vmware_host_lockdown_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_host_lockdown_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_host_lockdown_port | default('omit', True) }}"
+      username: "{{ vmware_host_lockdown_username | default(omit, True) }}"
+      hostname: "{{ vmware_host_lockdown_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_lockdown_cluster_name | default(omit, True) }}"
+      state: "{{ vmware_host_lockdown_state | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_lockdown_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_host_lockdown_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_lockdown_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_lockdown_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_host_lockdown"
       vmware_host_lockdown: "{{ vmware_host_lockdown }}"
+      register: r_vmware_host_lockdown

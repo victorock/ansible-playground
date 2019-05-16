@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_dnszone"
   azure_rm_dnszone: "{{ azure_rm_dnszone }}"
+  register: r_azure_rm_dnszone
   vars:
     azure_rm_dnszone: 
       profile: "{{ azure_rm_dnszone_profile | default(omit, True) }}"

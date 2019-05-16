@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     digital_ocean_certificate_facts: 
-      certificate_id: "{{ digital_ocean_certificate_facts_certificate_id | default('omit', True) }}"
-      oauth_token: "{{ digital_ocean_certificate_facts_oauth_token | default('omit', True) }}"
-      timeout: "{{ digital_ocean_certificate_facts_timeout | default('omit', True) }}"
-      validate_certs: "{{ digital_ocean_certificate_facts_validate_certs | default('omit', True) }}"
+      certificate_id: "{{ digital_ocean_certificate_facts_certificate_id | default(omit, True) }}"
+      oauth_token: "{{ digital_ocean_certificate_facts_oauth_token | default(omit, True) }}"
+      timeout: "{{ digital_ocean_certificate_facts_timeout | default(omit, True) }}"
+      validate_certs: "{{ digital_ocean_certificate_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_digital_ocean_certificate_facts"
       digital_ocean_certificate_facts: "{{ digital_ocean_certificate_facts }}"
+      register: r_digital_ocean_certificate_facts

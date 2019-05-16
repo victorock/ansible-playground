@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_certificate"
   digital_ocean_certificate: "{{ digital_ocean_certificate }}"
+  register: r_digital_ocean_certificate
   vars:
     digital_ocean_certificate: 
       private_key: "{{ digital_ocean_certificate_private_key | default(omit, True) }}"

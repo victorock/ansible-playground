@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_net"
   ec2_vpc_net: "{{ ec2_vpc_net }}"
+  register: r_ec2_vpc_net
   vars:
     ec2_vpc_net: 
       profile: "{{ ec2_vpc_net_profile | default(omit, True) }}"

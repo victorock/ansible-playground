@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_clusterclouddetails"
   avi_clusterclouddetails: "{{ avi_clusterclouddetails }}"
+  register: r_avi_clusterclouddetails
   vars:
     avi_clusterclouddetails: 
       username: "{{ avi_clusterclouddetails_username | default(omit, True) }}"

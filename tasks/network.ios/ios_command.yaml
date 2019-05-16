@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_command"
   ios_command: "{{ ios_command }}"
+  register: r_ios_command
   vars:
     ios_command: 
       authorize: "{{ ios_command_authorize | default(omit, True) }}"

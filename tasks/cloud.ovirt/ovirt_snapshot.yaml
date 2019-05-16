@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_snapshot"
   ovirt_snapshot: "{{ ovirt_snapshot }}"
+  register: r_ovirt_snapshot
   vars:
     ovirt_snapshot: 
       vm_name: "{{ ovirt_snapshot_vm_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_config"
   nxos_config: "{{ nxos_config }}"
+  register: r_nxos_config
   vars:
     nxos_config: 
       src: "{{ nxos_config_src | default(omit, True) }}"

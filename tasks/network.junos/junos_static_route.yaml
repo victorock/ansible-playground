@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_static_route"
   junos_static_route: "{{ junos_static_route }}"
+  register: r_junos_static_route
   vars:
     junos_static_route: 
       provider: "{{ junos_static_route_provider | default(omit, True) }}"

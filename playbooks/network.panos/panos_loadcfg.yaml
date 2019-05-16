@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     panos_loadcfg: 
-      username: "{{ panos_loadcfg_username | default('omit', True) }}"
-      commit: "{{ panos_loadcfg_commit | default('omit', True) }}"
-      password: "{{ panos_loadcfg_password | default('omit', True) }}"
-      ip_address: "{{ panos_loadcfg_ip_address | default('omit', True) }}"
-      file: "{{ panos_loadcfg_file | default('omit', True) }}"
+      username: "{{ panos_loadcfg_username | default(omit, True) }}"
+      commit: "{{ panos_loadcfg_commit | default(omit, True) }}"
+      password: "{{ panos_loadcfg_password | default(omit, True) }}"
+      ip_address: "{{ panos_loadcfg_ip_address | default(omit, True) }}"
+      file: "{{ panos_loadcfg_file | default(omit, True) }}"
   tasks:
     - name: "plugin_panos_loadcfg"
       panos_loadcfg: "{{ panos_loadcfg }}"
+      register: r_panos_loadcfg

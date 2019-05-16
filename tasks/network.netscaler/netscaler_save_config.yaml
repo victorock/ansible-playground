@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_save_config"
   netscaler_save_config: "{{ netscaler_save_config }}"
+  register: r_netscaler_save_config
   vars:
     netscaler_save_config: 
       nitro_protocol: "{{ netscaler_save_config_nitro_protocol | default(omit, True) }}"

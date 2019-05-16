@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_facts"
   bigip_gtm_facts: "{{ bigip_gtm_facts }}"
+  register: r_bigip_gtm_facts
   vars:
     bigip_gtm_facts: 
       include: "{{ bigip_gtm_facts_include | default(omit, True) }}"

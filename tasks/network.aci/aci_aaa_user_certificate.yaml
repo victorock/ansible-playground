@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_aaa_user_certificate"
   aci_aaa_user_certificate: "{{ aci_aaa_user_certificate }}"
+  register: r_aci_aaa_user_certificate
   vars:
     aci_aaa_user_certificate: 
       username: "{{ aci_aaa_user_certificate_username | default(omit, True) }}"

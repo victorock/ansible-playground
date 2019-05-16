@@ -1,3 +1,4 @@
 ---
 - name: "module_facter"
   facter:
+  register: r_facter

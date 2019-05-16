@@ -1,6 +1,7 @@
 ---
 - name: "module_rhn_channel"
   rhn_channel: "{{ rhn_channel }}"
+  register: r_rhn_channel
   vars:
     rhn_channel: 
       sysname: "{{ rhn_channel_sysname | default(omit, True) }}"

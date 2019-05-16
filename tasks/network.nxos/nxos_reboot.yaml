@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_reboot"
   nxos_reboot: "{{ nxos_reboot }}"
+  register: r_nxos_reboot
   vars:
     nxos_reboot: 
       confirm: "{{ nxos_reboot_confirm | default(omit, True) }}"

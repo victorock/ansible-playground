@@ -1,6 +1,7 @@
 ---
 - name: "module_lightsail"
   lightsail: "{{ lightsail }}"
+  register: r_lightsail
   vars:
     lightsail: 
       profile: "{{ lightsail_profile | default(omit, True) }}"

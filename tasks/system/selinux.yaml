@@ -1,6 +1,7 @@
 ---
 - name: "module_selinux"
   selinux: "{{ selinux }}"
+  register: r_selinux
   vars:
     selinux: 
       policy: "{{ selinux_policy | default(omit, True) }}"

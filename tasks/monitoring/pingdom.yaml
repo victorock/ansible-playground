@@ -1,6 +1,7 @@
 ---
 - name: "module_pingdom"
   pingdom: "{{ pingdom }}"
+  register: r_pingdom
   vars:
     pingdom: 
       checkid: "{{ pingdom_checkid | default(omit, True) }}"

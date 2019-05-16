@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_aaa_server: 
-      server_timeout: "{{ nxos_aaa_server_server_timeout | default('omit', True) }}"
-      server_type: "{{ nxos_aaa_server_server_type | default('omit', True) }}"
-      encrypt_type: "{{ nxos_aaa_server_encrypt_type | default('omit', True) }}"
-      provider: "{{ nxos_aaa_server_provider | default('omit', True) }}"
-      state: "{{ nxos_aaa_server_state | default('omit', True) }}"
-      deadtime: "{{ nxos_aaa_server_deadtime | default('omit', True) }}"
-      directed_request: "{{ nxos_aaa_server_directed_request | default('omit', True) }}"
-      global_key: "{{ nxos_aaa_server_global_key | default('omit', True) }}"
+      server_timeout: "{{ nxos_aaa_server_server_timeout | default(omit, True) }}"
+      server_type: "{{ nxos_aaa_server_server_type | default(omit, True) }}"
+      encrypt_type: "{{ nxos_aaa_server_encrypt_type | default(omit, True) }}"
+      provider: "{{ nxos_aaa_server_provider | default(omit, True) }}"
+      state: "{{ nxos_aaa_server_state | default(omit, True) }}"
+      deadtime: "{{ nxos_aaa_server_deadtime | default(omit, True) }}"
+      directed_request: "{{ nxos_aaa_server_directed_request | default(omit, True) }}"
+      global_key: "{{ nxos_aaa_server_global_key | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_aaa_server"
       nxos_aaa_server: "{{ nxos_aaa_server }}"
+      register: r_nxos_aaa_server

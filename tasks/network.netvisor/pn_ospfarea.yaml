@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_ospfarea"
   pn_ospfarea: "{{ pn_ospfarea }}"
+  register: r_pn_ospfarea
   vars:
     pn_ospfarea: 
       pn_vrouter_name: "{{ pn_ospfarea_pn_vrouter_name | default(omit, True) }}"

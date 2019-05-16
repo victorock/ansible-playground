@@ -1,6 +1,7 @@
 ---
 - name: "module_vertica_configuration"
   vertica_configuration: "{{ vertica_configuration }}"
+  register: r_vertica_configuration
   vars:
     vertica_configuration: 
       name: "{{ vertica_configuration_name | default(omit, True) }}"

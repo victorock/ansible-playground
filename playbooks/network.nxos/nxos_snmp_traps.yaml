@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_snmp_traps: 
-      state: "{{ nxos_snmp_traps_state | default('omit', True) }}"
-      group: "{{ nxos_snmp_traps_group | default('omit', True) }}"
-      provider: "{{ nxos_snmp_traps_provider | default('omit', True) }}"
+      state: "{{ nxos_snmp_traps_state | default(omit, True) }}"
+      group: "{{ nxos_snmp_traps_group | default(omit, True) }}"
+      provider: "{{ nxos_snmp_traps_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_snmp_traps"
       nxos_snmp_traps: "{{ nxos_snmp_traps }}"
+      register: r_nxos_snmp_traps

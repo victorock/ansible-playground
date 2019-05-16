@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_iapp_service"
   bigip_iapp_service: "{{ bigip_iapp_service }}"
+  register: r_bigip_iapp_service
   vars:
     bigip_iapp_service: 
       force: "{{ bigip_iapp_service_force | default(omit, True) }}"

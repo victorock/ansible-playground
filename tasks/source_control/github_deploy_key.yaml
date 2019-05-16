@@ -1,6 +1,7 @@
 ---
 - name: "module_github_deploy_key"
   github_deploy_key: "{{ github_deploy_key }}"
+  register: r_github_deploy_key
   vars:
     github_deploy_key: 
       username: "{{ github_deploy_key_username | default(omit, True) }}"

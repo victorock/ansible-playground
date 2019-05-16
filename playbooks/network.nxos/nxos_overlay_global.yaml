@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_overlay_global: 
-      anycast_gateway_mac: "{{ nxos_overlay_global_anycast_gateway_mac | default('omit', True) }}"
-      provider: "{{ nxos_overlay_global_provider | default('omit', True) }}"
+      anycast_gateway_mac: "{{ nxos_overlay_global_anycast_gateway_mac | default(omit, True) }}"
+      provider: "{{ nxos_overlay_global_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_overlay_global"
       nxos_overlay_global: "{{ nxos_overlay_global }}"
+      register: r_nxos_overlay_global

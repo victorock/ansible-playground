@@ -1,6 +1,7 @@
 ---
 - name: "module_grafana_dashboard"
   grafana_dashboard: "{{ grafana_dashboard }}"
+  register: r_grafana_dashboard
   vars:
     grafana_dashboard: 
       url_password: "{{ grafana_dashboard_url_password | default(omit, True) }}"

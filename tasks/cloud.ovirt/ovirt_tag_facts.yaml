@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_tag_facts"
   ovirt_tag_facts: "{{ ovirt_tag_facts }}"
+  register: r_ovirt_tag_facts
   vars:
     ovirt_tag_facts: 
       name: "{{ ovirt_tag_facts_name | default(omit, True) }}"

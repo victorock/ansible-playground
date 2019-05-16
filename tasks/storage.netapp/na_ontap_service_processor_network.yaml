@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_service_processor_network"
   na_ontap_service_processor_network: "{{ na_ontap_service_processor_network }}"
+  register: r_na_ontap_service_processor_network
   vars:
     na_ontap_service_processor_network: 
       is_enabled: "{{ na_ontap_service_processor_network_is_enabled | default(omit, True) }}"

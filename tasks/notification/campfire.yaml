@@ -1,6 +1,7 @@
 ---
 - name: "module_campfire"
   campfire: "{{ campfire }}"
+  register: r_campfire
   vars:
     campfire: 
       msg: "{{ campfire_msg | default(omit, True) }}"

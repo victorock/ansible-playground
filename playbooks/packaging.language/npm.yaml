@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     npm: 
-      executable: "{{ npm_executable | default('omit', True) }}"
-      name: "{{ npm_name | default('omit', True) }}"
-      global: "{{ npm_global | default('omit', True) }}"
-      ignore_scripts: "{{ npm_ignore_scripts | default('omit', True) }}"
-      state: "{{ npm_state | default('omit', True) }}"
-      production: "{{ npm_production | default('omit', True) }}"
-      registry: "{{ npm_registry | default('omit', True) }}"
-      version: "{{ npm_version | default('omit', True) }}"
-      path: "{{ npm_path | default('omit', True) }}"
+      executable: "{{ npm_executable | default(omit, True) }}"
+      name: "{{ npm_name | default(omit, True) }}"
+      global: "{{ npm_global | default(omit, True) }}"
+      ignore_scripts: "{{ npm_ignore_scripts | default(omit, True) }}"
+      state: "{{ npm_state | default(omit, True) }}"
+      production: "{{ npm_production | default(omit, True) }}"
+      registry: "{{ npm_registry | default(omit, True) }}"
+      version: "{{ npm_version | default(omit, True) }}"
+      path: "{{ npm_path | default(omit, True) }}"
   tasks:
     - name: "plugin_npm"
       npm: "{{ npm }}"
+      register: r_npm

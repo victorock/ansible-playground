@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_cloudconnectoruser"
   avi_cloudconnectoruser: "{{ avi_cloudconnectoruser }}"
+  register: r_avi_cloudconnectoruser
   vars:
     avi_cloudconnectoruser: 
       username: "{{ avi_cloudconnectoruser_username | default(omit, True) }}"

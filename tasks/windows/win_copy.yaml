@@ -1,6 +1,7 @@
 ---
 - name: "module_win_copy"
   win_copy: "{{ win_copy }}"
+  register: r_win_copy
   vars:
     win_copy: 
       src: "{{ win_copy_src | default(omit, True) }}"

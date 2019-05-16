@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     clc_server_snapshot: 
-      server_ids: "{{ clc_server_snapshot_server_ids | default('omit', True) }}"
-      expiration_days: "{{ clc_server_snapshot_expiration_days | default('omit', True) }}"
-      state: "{{ clc_server_snapshot_state | default('omit', True) }}"
-      wait: "{{ clc_server_snapshot_wait | default('omit', True) }}"
+      server_ids: "{{ clc_server_snapshot_server_ids | default(omit, True) }}"
+      expiration_days: "{{ clc_server_snapshot_expiration_days | default(omit, True) }}"
+      state: "{{ clc_server_snapshot_state | default(omit, True) }}"
+      wait: "{{ clc_server_snapshot_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_clc_server_snapshot"
       clc_server_snapshot: "{{ clc_server_snapshot }}"
+      register: r_clc_server_snapshot

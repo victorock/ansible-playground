@@ -1,6 +1,7 @@
 ---
 - name: "module_yarn"
   yarn: "{{ yarn }}"
+  register: r_yarn
   vars:
     yarn: 
       executable: "{{ yarn_executable | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_account"
   na_elementsw_account: "{{ na_elementsw_account }}"
+  register: r_na_elementsw_account
   vars:
     na_elementsw_account: 
       status: "{{ na_elementsw_account_status | default(omit, True) }}"

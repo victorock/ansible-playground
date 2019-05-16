@@ -1,6 +1,7 @@
 ---
 - name: "module_lambda"
   lambda: "{{ lambda }}"
+  register: r_lambda
   vars:
     lambda: 
       s3_key: "{{ lambda_s3_key | default(omit, True) }}"

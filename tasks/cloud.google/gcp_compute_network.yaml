@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_network"
   gcp_compute_network: "{{ gcp_compute_network }}"
+  register: r_gcp_compute_network
   vars:
     gcp_compute_network: 
       scopes: "{{ gcp_compute_network_scopes | default(omit, True) }}"

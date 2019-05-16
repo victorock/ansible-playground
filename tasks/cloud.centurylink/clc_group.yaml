@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_group"
   clc_group: "{{ clc_group }}"
+  register: r_clc_group
   vars:
     clc_group: 
       name: "{{ clc_group_name | default(omit, True) }}"

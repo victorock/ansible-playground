@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_lun_map"
   na_ontap_lun_map: "{{ na_ontap_lun_map }}"
+  register: r_na_ontap_lun_map
   vars:
     na_ontap_lun_map: 
       username: "{{ na_ontap_lun_map_username | default(omit, True) }}"

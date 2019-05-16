@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudformation"
   cloudformation: "{{ cloudformation }}"
+  register: r_cloudformation
   vars:
     cloudformation: 
       template_body: "{{ cloudformation_template_body | default(omit, True) }}"

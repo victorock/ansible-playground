@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_networksecuritypolicy"
   avi_networksecuritypolicy: "{{ avi_networksecuritypolicy }}"
+  register: r_avi_networksecuritypolicy
   vars:
     avi_networksecuritypolicy: 
       username: "{{ avi_networksecuritypolicy_username | default(omit, True) }}"

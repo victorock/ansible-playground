@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_loadcfg"
   panos_loadcfg: "{{ panos_loadcfg }}"
+  register: r_panos_loadcfg
   vars:
     panos_loadcfg: 
       username: "{{ panos_loadcfg_username | default(omit, True) }}"

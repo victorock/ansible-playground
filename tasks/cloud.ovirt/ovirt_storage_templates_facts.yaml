@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_storage_templates_facts"
   ovirt_storage_templates_facts: "{{ ovirt_storage_templates_facts }}"
+  register: r_ovirt_storage_templates_facts
   vars:
     ovirt_storage_templates_facts: 
       unregistered: "{{ ovirt_storage_templates_facts_unregistered | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_sqlfirewallrule"
   azure_rm_sqlfirewallrule: "{{ azure_rm_sqlfirewallrule }}"
+  register: r_azure_rm_sqlfirewallrule
   vars:
     azure_rm_sqlfirewallrule: 
       profile: "{{ azure_rm_sqlfirewallrule_profile | default(omit, True) }}"

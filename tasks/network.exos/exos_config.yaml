@@ -1,6 +1,7 @@
 ---
 - name: "module_exos_config"
   exos_config: "{{ exos_config }}"
+  register: r_exos_config
   vars:
     exos_config: 
       intended_config: "{{ exos_config_intended_config | default(omit, True) }}"

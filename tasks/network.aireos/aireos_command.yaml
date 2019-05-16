@@ -1,6 +1,7 @@
 ---
 - name: "module_aireos_command"
   aireos_command: "{{ aireos_command }}"
+  register: r_aireos_command
   vars:
     aireos_command: 
       retries: "{{ aireos_command_retries | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_kernel_blacklist"
   kernel_blacklist: "{{ kernel_blacklist }}"
+  register: r_kernel_blacklist
   vars:
     kernel_blacklist: 
       blacklist_file: "{{ kernel_blacklist_blacklist_file | default(omit, True) }}"

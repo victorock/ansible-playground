@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_organization"
   tower_organization: "{{ tower_organization }}"
+  register: r_tower_organization
   vars:
     tower_organization: 
       name: "{{ tower_organization_name | default(omit, True) }}"

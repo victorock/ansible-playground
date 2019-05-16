@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_switchport"
   meraki_switchport: "{{ meraki_switchport }}"
+  register: r_meraki_switchport
   vars:
     meraki_switchport: 
       enabled: "{{ meraki_switchport_enabled | default(omit, True) }}"

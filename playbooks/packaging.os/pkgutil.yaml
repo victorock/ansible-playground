@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pkgutil: 
-      state: "{{ pkgutil_state | default('omit', True) }}"
-      update_catalog: "{{ pkgutil_update_catalog | default('omit', True) }}"
-      name: "{{ pkgutil_name | default('omit', True) }}"
-      site: "{{ pkgutil_site | default('omit', True) }}"
+      state: "{{ pkgutil_state | default(omit, True) }}"
+      update_catalog: "{{ pkgutil_update_catalog | default(omit, True) }}"
+      name: "{{ pkgutil_name | default(omit, True) }}"
+      site: "{{ pkgutil_site | default(omit, True) }}"
   tasks:
     - name: "plugin_pkgutil"
       pkgutil: "{{ pkgutil }}"
+      register: r_pkgutil

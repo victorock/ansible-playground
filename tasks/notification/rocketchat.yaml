@@ -1,6 +1,7 @@
 ---
 - name: "module_rocketchat"
   rocketchat: "{{ rocketchat }}"
+  register: r_rocketchat
   vars:
     rocketchat: 
       username: "{{ rocketchat_username | default(omit, True) }}"

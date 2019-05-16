@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_lun"
   na_ontap_lun: "{{ na_ontap_lun }}"
+  register: r_na_ontap_lun
   vars:
     na_ontap_lun: 
       username: "{{ na_ontap_lun_username | default(omit, True) }}"

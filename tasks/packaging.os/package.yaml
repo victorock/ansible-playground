@@ -1,6 +1,7 @@
 ---
 - name: "module_package"
   package: "{{ package }}"
+  register: r_package
   vars:
     package: 
       state: "{{ package_state | default(omit, True) }}"

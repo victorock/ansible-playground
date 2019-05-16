@@ -1,6 +1,7 @@
 ---
 - name: "module_sns"
   sns: "{{ sns }}"
+  register: r_sns
   vars:
     sns: 
       profile: "{{ sns_profile | default(omit, True) }}"

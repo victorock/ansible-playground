@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_admin"
   meraki_admin: "{{ meraki_admin }}"
+  register: r_meraki_admin
   vars:
     meraki_admin: 
       org_name: "{{ meraki_admin_org_name | default(omit, True) }}"

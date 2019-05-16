@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     memset_dns_reload: 
-      poll: "{{ memset_dns_reload_poll | default('omit', True) }}"
-      api_key: "{{ memset_dns_reload_api_key | default('omit', True) }}"
+      poll: "{{ memset_dns_reload_poll | default(omit, True) }}"
+      api_key: "{{ memset_dns_reload_api_key | default(omit, True) }}"
   tasks:
     - name: "plugin_memset_dns_reload"
       memset_dns_reload: "{{ memset_dns_reload }}"
+      register: r_memset_dns_reload

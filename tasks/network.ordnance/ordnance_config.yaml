@@ -1,6 +1,7 @@
 ---
 - name: "module_ordnance_config"
   ordnance_config: "{{ ordnance_config }}"
+  register: r_ordnance_config
   vars:
     ordnance_config: 
       multiline_delimiter: "{{ ordnance_config_multiline_delimiter | default(omit, True) }}"

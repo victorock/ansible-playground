@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_application_https_waf"
   bigiq_application_https_waf: "{{ bigiq_application_https_waf }}"
+  register: r_bigiq_application_https_waf
   vars:
     bigiq_application_https_waf: 
       servers: "{{ bigiq_application_https_waf_servers | default(omit, True) }}"

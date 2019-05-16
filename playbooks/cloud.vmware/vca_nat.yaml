@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vca_nat: 
-      username: "{{ vca_nat_username | default('omit', True) }}"
-      nat_rules: "{{ vca_nat_nat_rules | default('omit', True) }}"
-      purge_rules: "{{ vca_nat_purge_rules | default('omit', True) }}"
-      state: "{{ vca_nat_state | default('omit', True) }}"
-      gateway_name: "{{ vca_nat_gateway_name | default('omit', True) }}"
-      instance_id: "{{ vca_nat_instance_id | default('omit', True) }}"
-      host: "{{ vca_nat_host | default('omit', True) }}"
-      service_type: "{{ vca_nat_service_type | default('omit', True) }}"
-      org: "{{ vca_nat_org | default('omit', True) }}"
-      password: "{{ vca_nat_password | default('omit', True) }}"
-      vdc_name: "{{ vca_nat_vdc_name | default('omit', True) }}"
-      api_version: "{{ vca_nat_api_version | default('omit', True) }}"
-      verify_certs: "{{ vca_nat_verify_certs | default('omit', True) }}"
+      username: "{{ vca_nat_username | default(omit, True) }}"
+      nat_rules: "{{ vca_nat_nat_rules | default(omit, True) }}"
+      purge_rules: "{{ vca_nat_purge_rules | default(omit, True) }}"
+      state: "{{ vca_nat_state | default(omit, True) }}"
+      gateway_name: "{{ vca_nat_gateway_name | default(omit, True) }}"
+      instance_id: "{{ vca_nat_instance_id | default(omit, True) }}"
+      host: "{{ vca_nat_host | default(omit, True) }}"
+      service_type: "{{ vca_nat_service_type | default(omit, True) }}"
+      org: "{{ vca_nat_org | default(omit, True) }}"
+      password: "{{ vca_nat_password | default(omit, True) }}"
+      vdc_name: "{{ vca_nat_vdc_name | default(omit, True) }}"
+      api_version: "{{ vca_nat_api_version | default(omit, True) }}"
+      verify_certs: "{{ vca_nat_verify_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vca_nat"
       vca_nat: "{{ vca_nat }}"
+      register: r_vca_nat

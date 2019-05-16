@@ -1,6 +1,7 @@
 ---
 - name: "module_dimensiondata_network"
   dimensiondata_network: "{{ dimensiondata_network }}"
+  register: r_dimensiondata_network
   vars:
     dimensiondata_network: 
       service_plan: "{{ dimensiondata_network_service_plan | default(omit, True) }}"

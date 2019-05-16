@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_virtualmachine_facts"
   azure_rm_virtualmachine_facts: "{{ azure_rm_virtualmachine_facts }}"
+  register: r_azure_rm_virtualmachine_facts
   vars:
     azure_rm_virtualmachine_facts: 
       profile: "{{ azure_rm_virtualmachine_facts_profile | default(omit, True) }}"

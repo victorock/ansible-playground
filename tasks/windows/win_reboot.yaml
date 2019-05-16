@@ -1,6 +1,7 @@
 ---
 - name: "module_win_reboot"
   win_reboot: "{{ win_reboot }}"
+  register: r_win_reboot
   vars:
     win_reboot: 
       pre_reboot_delay: "{{ win_reboot_pre_reboot_delay | default(omit, True) }}"

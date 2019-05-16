@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_vsans"
   ucs_vsans: "{{ ucs_vsans }}"
+  register: r_ucs_vsans
   vars:
     ucs_vsans: 
       username: "{{ ucs_vsans_username | default(omit, True) }}"

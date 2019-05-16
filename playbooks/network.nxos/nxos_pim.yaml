@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_pim: 
-      ssm_range: "{{ nxos_pim_ssm_range | default('omit', True) }}"
-      provider: "{{ nxos_pim_provider | default('omit', True) }}"
+      ssm_range: "{{ nxos_pim_ssm_range | default(omit, True) }}"
+      provider: "{{ nxos_pim_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_pim"
       nxos_pim: "{{ nxos_pim }}"
+      register: r_nxos_pim

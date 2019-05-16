@@ -1,6 +1,7 @@
 ---
 - name: "module_rhsm_repository"
   rhsm_repository: "{{ rhsm_repository }}"
+  register: r_rhsm_repository
   vars:
     rhsm_repository: 
       state: "{{ rhsm_repository_state | default(omit, True) }}"

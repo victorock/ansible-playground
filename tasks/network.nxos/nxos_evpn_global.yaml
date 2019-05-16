@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_evpn_global"
   nxos_evpn_global: "{{ nxos_evpn_global }}"
+  register: r_nxos_evpn_global
   vars:
     nxos_evpn_global: 
       nv_overlay_evpn: "{{ nxos_evpn_global_nv_overlay_evpn | default(omit, True) }}"

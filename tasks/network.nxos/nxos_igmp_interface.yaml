@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_igmp_interface"
   nxos_igmp_interface: "{{ nxos_igmp_interface }}"
+  register: r_nxos_igmp_interface
   vars:
     nxos_igmp_interface: 
       startup_query_interval: "{{ nxos_igmp_interface_startup_query_interval | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gconftool2"
   gconftool2: "{{ gconftool2 }}"
+  register: r_gconftool2
   vars:
     gconftool2: 
       direct: "{{ gconftool2_direct | default(omit, True) }}"

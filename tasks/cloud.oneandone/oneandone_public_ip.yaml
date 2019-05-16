@@ -1,6 +1,7 @@
 ---
 - name: "module_oneandone_public_ip"
   oneandone_public_ip: "{{ oneandone_public_ip }}"
+  register: r_oneandone_public_ip
   vars:
     oneandone_public_ip: 
       datacenter: "{{ oneandone_public_ip_datacenter | default(omit, True) }}"

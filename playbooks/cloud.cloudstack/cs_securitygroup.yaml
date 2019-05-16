@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cs_securitygroup: 
-      domain: "{{ cs_securitygroup_domain | default('omit', True) }}"
-      description: "{{ cs_securitygroup_description | default('omit', True) }}"
-      api_http_method: "{{ cs_securitygroup_api_http_method | default('omit', True) }}"
-      api_secret: "{{ cs_securitygroup_api_secret | default('omit', True) }}"
-      api_timeout: "{{ cs_securitygroup_api_timeout | default('omit', True) }}"
-      account: "{{ cs_securitygroup_account | default('omit', True) }}"
-      name: "{{ cs_securitygroup_name | default('omit', True) }}"
-      project: "{{ cs_securitygroup_project | default('omit', True) }}"
-      state: "{{ cs_securitygroup_state | default('omit', True) }}"
-      api_region: "{{ cs_securitygroup_api_region | default('omit', True) }}"
-      api_key: "{{ cs_securitygroup_api_key | default('omit', True) }}"
-      api_url: "{{ cs_securitygroup_api_url | default('omit', True) }}"
+      domain: "{{ cs_securitygroup_domain | default(omit, True) }}"
+      description: "{{ cs_securitygroup_description | default(omit, True) }}"
+      api_http_method: "{{ cs_securitygroup_api_http_method | default(omit, True) }}"
+      api_secret: "{{ cs_securitygroup_api_secret | default(omit, True) }}"
+      api_timeout: "{{ cs_securitygroup_api_timeout | default(omit, True) }}"
+      account: "{{ cs_securitygroup_account | default(omit, True) }}"
+      name: "{{ cs_securitygroup_name | default(omit, True) }}"
+      project: "{{ cs_securitygroup_project | default(omit, True) }}"
+      state: "{{ cs_securitygroup_state | default(omit, True) }}"
+      api_region: "{{ cs_securitygroup_api_region | default(omit, True) }}"
+      api_key: "{{ cs_securitygroup_api_key | default(omit, True) }}"
+      api_url: "{{ cs_securitygroup_api_url | default(omit, True) }}"
   tasks:
     - name: "plugin_cs_securitygroup"
       cs_securitygroup: "{{ cs_securitygroup }}"
+      register: r_cs_securitygroup

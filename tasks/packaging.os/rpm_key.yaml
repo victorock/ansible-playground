@@ -1,6 +1,7 @@
 ---
 - name: "module_rpm_key"
   rpm_key: "{{ rpm_key }}"
+  register: r_rpm_key
   vars:
     rpm_key: 
       state: "{{ rpm_key_state | default(omit, True) }}"

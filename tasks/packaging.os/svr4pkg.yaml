@@ -1,6 +1,7 @@
 ---
 - name: "module_svr4pkg"
   svr4pkg: "{{ svr4pkg }}"
+  register: r_svr4pkg
   vars:
     svr4pkg: 
       category: "{{ svr4pkg_category | default(omit, True) }}"

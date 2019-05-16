@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_local_role_facts"
   vmware_local_role_facts: "{{ vmware_local_role_facts }}"
+  register: r_vmware_local_role_facts
   vars:
     vmware_local_role_facts: 
       username: "{{ vmware_local_role_facts_username | default(omit, True) }}"

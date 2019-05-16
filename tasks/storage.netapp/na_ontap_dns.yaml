@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_dns"
   na_ontap_dns: "{{ na_ontap_dns }}"
+  register: r_na_ontap_dns
   vars:
     na_ontap_dns: 
       username: "{{ na_ontap_dns_username | default(omit, True) }}"

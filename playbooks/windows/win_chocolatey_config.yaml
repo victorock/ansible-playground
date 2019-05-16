@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_chocolatey_config: 
-      state: "{{ win_chocolatey_config_state | default('omit', True) }}"
-      name: "{{ win_chocolatey_config_name | default('omit', True) }}"
-      value: "{{ win_chocolatey_config_value | default('omit', True) }}"
+      state: "{{ win_chocolatey_config_state | default(omit, True) }}"
+      name: "{{ win_chocolatey_config_name | default(omit, True) }}"
+      value: "{{ win_chocolatey_config_value | default(omit, True) }}"
   tasks:
     - name: "plugin_win_chocolatey_config"
       win_chocolatey_config: "{{ win_chocolatey_config }}"
+      register: r_win_chocolatey_config

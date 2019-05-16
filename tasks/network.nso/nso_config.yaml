@@ -1,6 +1,7 @@
 ---
 - name: "module_nso_config"
   nso_config: "{{ nso_config }}"
+  register: r_nso_config
   vars:
     nso_config: 
       url: "{{ nso_config_url | default(omit, True) }}"

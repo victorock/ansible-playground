@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_block_storage"
   vultr_block_storage: "{{ vultr_block_storage }}"
+  register: r_vultr_block_storage
   vars:
     vultr_block_storage: 
       api_retries: "{{ vultr_block_storage_api_retries | default(omit, True) }}"

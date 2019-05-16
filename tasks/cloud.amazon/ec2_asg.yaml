@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_asg"
   ec2_asg: "{{ ec2_asg }}"
+  register: r_ec2_asg
   vars:
     ec2_asg: 
       suspend_processes: "{{ ec2_asg_suspend_processes | default(omit, True) }}"

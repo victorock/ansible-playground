@@ -1,6 +1,7 @@
 ---
 - name: "module_sefcontext"
   sefcontext: "{{ sefcontext }}"
+  register: r_sefcontext
   vars:
     sefcontext: 
       target: "{{ sefcontext_target | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_vlan"
   vyos_vlan: "{{ vyos_vlan }}"
+  register: r_vyos_vlan
   vars:
     vyos_vlan: 
       delay: "{{ vyos_vlan_delay | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_raw"
   raw: "{{ raw }}"
+  register: r_raw
   vars:
     raw: 
       free_form: "{{ raw_free_form | default(omit, True) }}"

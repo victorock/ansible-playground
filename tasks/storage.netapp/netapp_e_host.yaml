@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_host"
   netapp_e_host: "{{ netapp_e_host }}"
+  register: r_netapp_e_host
   vars:
     netapp_e_host: 
       group: "{{ netapp_e_host_group | default(omit, True) }}"

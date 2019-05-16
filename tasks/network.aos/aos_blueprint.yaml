@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_blueprint"
   aos_blueprint: "{{ aos_blueprint }}"
+  register: r_aos_blueprint
   vars:
     aos_blueprint: 
       name: "{{ aos_blueprint_name | default(omit, True) }}"

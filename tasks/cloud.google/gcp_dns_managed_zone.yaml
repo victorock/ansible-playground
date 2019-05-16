@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_dns_managed_zone"
   gcp_dns_managed_zone: "{{ gcp_dns_managed_zone }}"
+  register: r_gcp_dns_managed_zone
   vars:
     gcp_dns_managed_zone: 
       scopes: "{{ gcp_dns_managed_zone_scopes | default(omit, True) }}"

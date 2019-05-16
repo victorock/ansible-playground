@@ -1,6 +1,7 @@
 ---
 - name: "module_telnet"
   telnet: "{{ telnet }}"
+  register: r_telnet
   vars:
     telnet: 
       pause: "{{ telnet_pause | default(omit, True) }}"

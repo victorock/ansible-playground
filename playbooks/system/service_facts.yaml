@@ -8,4 +8,5 @@
   tasks:
     - name: "module_service_facts"
       service_facts:
-  
+      register: r_service_facts
+

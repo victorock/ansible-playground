@@ -1,6 +1,7 @@
 ---
 - name: "module_ipadm_if"
   ipadm_if: "{{ ipadm_if }}"
+  register: r_ipadm_if
   vars:
     ipadm_if: 
       state: "{{ ipadm_if_state | default(omit, True) }}"

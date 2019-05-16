@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_key"
   ec2_key: "{{ ec2_key }}"
+  register: r_ec2_key
   vars:
     ec2_key: 
       profile: "{{ ec2_key_profile | default(omit, True) }}"

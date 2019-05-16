@@ -1,6 +1,7 @@
 ---
 - name: "module_aruba_config"
   aruba_config: "{{ aruba_config }}"
+  register: r_aruba_config
   vars:
     aruba_config: 
       intended_config: "{{ aruba_config_intended_config | default(omit, True) }}"

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     panos_set: 
-      username: "{{ panos_set_username | default('omit', True) }}"
-      xpath: "{{ panos_set_xpath | default('omit', True) }}"
-      element: "{{ panos_set_element | default('omit', True) }}"
-      command: "{{ panos_set_command | default('omit', True) }}"
-      password: "{{ panos_set_password | default('omit', True) }}"
-      ip_address: "{{ panos_set_ip_address | default('omit', True) }}"
+      username: "{{ panos_set_username | default(omit, True) }}"
+      xpath: "{{ panos_set_xpath | default(omit, True) }}"
+      element: "{{ panos_set_element | default(omit, True) }}"
+      command: "{{ panos_set_command | default(omit, True) }}"
+      password: "{{ panos_set_password | default(omit, True) }}"
+      ip_address: "{{ panos_set_ip_address | default(omit, True) }}"
   tasks:
     - name: "plugin_panos_set"
       panos_set: "{{ panos_set }}"
+      register: r_panos_set

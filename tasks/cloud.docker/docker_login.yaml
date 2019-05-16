@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_login"
   docker_login: "{{ docker_login }}"
+  register: r_docker_login
   vars:
     docker_login: 
       username: "{{ docker_login_username | default(omit, True) }}"

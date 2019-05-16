@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_managed_disk"
   azure_rm_managed_disk: "{{ azure_rm_managed_disk }}"
+  register: r_azure_rm_managed_disk
   vars:
     azure_rm_managed_disk: 
       resource_group: "{{ azure_rm_managed_disk_resource_group | default(omit, True) }}"

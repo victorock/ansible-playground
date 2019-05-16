@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_system"
   eos_system: "{{ eos_system }}"
+  register: r_eos_system
   vars:
     eos_system: 
       authorize: "{{ eos_system_authorize | default(omit, True) }}"

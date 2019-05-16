@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipa_sudocmdgroup: 
-      ipa_port: "{{ ipa_sudocmdgroup_ipa_port | default('omit', True) }}"
-      ipa_user: "{{ ipa_sudocmdgroup_ipa_user | default('omit', True) }}"
-      description: "{{ ipa_sudocmdgroup_description | default('omit', True) }}"
-      ipa_prot: "{{ ipa_sudocmdgroup_ipa_prot | default('omit', True) }}"
-      state: "{{ ipa_sudocmdgroup_state | default('omit', True) }}"
-      ipa_host: "{{ ipa_sudocmdgroup_ipa_host | default('omit', True) }}"
-      sudocmd: "{{ ipa_sudocmdgroup_sudocmd | default('omit', True) }}"
-      ipa_pass: "{{ ipa_sudocmdgroup_ipa_pass | default('omit', True) }}"
-      ipa_timeout: "{{ ipa_sudocmdgroup_ipa_timeout | default('omit', True) }}"
-      validate_certs: "{{ ipa_sudocmdgroup_validate_certs | default('omit', True) }}"
-      cn: "{{ ipa_sudocmdgroup_cn | default('omit', True) }}"
+      ipa_port: "{{ ipa_sudocmdgroup_ipa_port | default(omit, True) }}"
+      ipa_user: "{{ ipa_sudocmdgroup_ipa_user | default(omit, True) }}"
+      description: "{{ ipa_sudocmdgroup_description | default(omit, True) }}"
+      ipa_prot: "{{ ipa_sudocmdgroup_ipa_prot | default(omit, True) }}"
+      state: "{{ ipa_sudocmdgroup_state | default(omit, True) }}"
+      ipa_host: "{{ ipa_sudocmdgroup_ipa_host | default(omit, True) }}"
+      sudocmd: "{{ ipa_sudocmdgroup_sudocmd | default(omit, True) }}"
+      ipa_pass: "{{ ipa_sudocmdgroup_ipa_pass | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_sudocmdgroup_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_sudocmdgroup_validate_certs | default(omit, True) }}"
+      cn: "{{ ipa_sudocmdgroup_cn | default(omit, True) }}"
   tasks:
     - name: "plugin_ipa_sudocmdgroup"
       ipa_sudocmdgroup: "{{ ipa_sudocmdgroup }}"
+      register: r_ipa_sudocmdgroup

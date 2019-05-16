@@ -1,6 +1,7 @@
 ---
 - name: "module_memset_dns_reload"
   memset_dns_reload: "{{ memset_dns_reload }}"
+  register: r_memset_dns_reload
   vars:
     memset_dns_reload: 
       poll: "{{ memset_dns_reload_poll | default(omit, True) }}"

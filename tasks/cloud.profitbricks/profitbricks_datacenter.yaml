@@ -1,6 +1,7 @@
 ---
 - name: "module_profitbricks_datacenter"
   profitbricks_datacenter: "{{ profitbricks_datacenter }}"
+  register: r_profitbricks_datacenter
   vars:
     profitbricks_datacenter: 
       name: "{{ profitbricks_datacenter_name | default(omit, True) }}"

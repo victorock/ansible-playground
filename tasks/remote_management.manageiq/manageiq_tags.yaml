@@ -1,6 +1,7 @@
 ---
 - name: "module_manageiq_tags"
   manageiq_tags: "{{ manageiq_tags }}"
+  register: r_manageiq_tags
   vars:
     manageiq_tags: 
       manageiq_connection: "{{ manageiq_tags_manageiq_connection | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_virtualmachine"
   azure_rm_virtualmachine: "{{ azure_rm_virtualmachine }}"
+  register: r_azure_rm_virtualmachine
   vars:
     azure_rm_virtualmachine: 
       virtual_network_resource_group: "{{ azure_rm_virtualmachine_virtual_network_resource_group | default(omit, True) }}"

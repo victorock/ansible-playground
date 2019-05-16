@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vyos_interface: 
-      neighbors: "{{ vyos_interface_neighbors | default('omit', True) }}"
-      description: "{{ vyos_interface_description | default('omit', True) }}"
-      duplex: "{{ vyos_interface_duplex | default('omit', True) }}"
-      enabled: "{{ vyos_interface_enabled | default('omit', True) }}"
-      mtu: "{{ vyos_interface_mtu | default('omit', True) }}"
-      delay: "{{ vyos_interface_delay | default('omit', True) }}"
-      state: "{{ vyos_interface_state | default('omit', True) }}"
-      provider: "{{ vyos_interface_provider | default('omit', True) }}"
-      aggregate: "{{ vyos_interface_aggregate | default('omit', True) }}"
-      speed: "{{ vyos_interface_speed | default('omit', True) }}"
-      name: "{{ vyos_interface_name | default('omit', True) }}"
+      neighbors: "{{ vyos_interface_neighbors | default(omit, True) }}"
+      description: "{{ vyos_interface_description | default(omit, True) }}"
+      duplex: "{{ vyos_interface_duplex | default(omit, True) }}"
+      enabled: "{{ vyos_interface_enabled | default(omit, True) }}"
+      mtu: "{{ vyos_interface_mtu | default(omit, True) }}"
+      delay: "{{ vyos_interface_delay | default(omit, True) }}"
+      state: "{{ vyos_interface_state | default(omit, True) }}"
+      provider: "{{ vyos_interface_provider | default(omit, True) }}"
+      aggregate: "{{ vyos_interface_aggregate | default(omit, True) }}"
+      speed: "{{ vyos_interface_speed | default(omit, True) }}"
+      name: "{{ vyos_interface_name | default(omit, True) }}"
   tasks:
     - name: "plugin_vyos_interface"
       vyos_interface: "{{ vyos_interface }}"
+      register: r_vyos_interface

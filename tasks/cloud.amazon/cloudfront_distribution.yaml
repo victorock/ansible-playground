@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudfront_distribution"
   cloudfront_distribution: "{{ cloudfront_distribution }}"
+  register: r_cloudfront_distribution
   vars:
     cloudfront_distribution: 
       comment: "{{ cloudfront_distribution_comment | default(omit, True) }}"

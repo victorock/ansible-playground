@@ -1,6 +1,7 @@
 ---
 - name: "module_psexec"
   psexec: "{{ psexec }}"
+  register: r_psexec
   vars:
     psexec: 
       priority: "{{ psexec_priority | default(omit, True) }}"

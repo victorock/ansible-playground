@@ -1,6 +1,7 @@
 ---
 - name: "module_infini_pool"
   infini_pool: "{{ infini_pool }}"
+  register: r_infini_pool
   vars:
     infini_pool: 
       ssd_cache: "{{ infini_pool_ssd_cache | default(omit, True) }}"

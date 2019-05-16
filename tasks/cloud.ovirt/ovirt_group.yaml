@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_group"
   ovirt_group: "{{ ovirt_group }}"
+  register: r_ovirt_group
   vars:
     ovirt_group: 
       name: "{{ ovirt_group_name | default(omit, True) }}"

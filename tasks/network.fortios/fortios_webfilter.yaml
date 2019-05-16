@@ -1,6 +1,7 @@
 ---
 - name: "module_fortios_webfilter"
   fortios_webfilter: "{{ fortios_webfilter }}"
+  register: r_fortios_webfilter
   vars:
     fortios_webfilter: 
       username: "{{ fortios_webfilter_username | default(omit, True) }}"

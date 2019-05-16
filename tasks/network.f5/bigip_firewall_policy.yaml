@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_firewall_policy"
   bigip_firewall_policy: "{{ bigip_firewall_policy }}"
+  register: r_bigip_firewall_policy
   vars:
     bigip_firewall_policy: 
       description: "{{ bigip_firewall_policy_description | default(omit, True) }}"

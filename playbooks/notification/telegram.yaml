@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     telegram: 
-      msg: "{{ telegram_msg | default('omit', True) }}"
-      msg_format: "{{ telegram_msg_format | default('omit', True) }}"
-      token: "{{ telegram_token | default('omit', True) }}"
-      chat_id: "{{ telegram_chat_id | default('omit', True) }}"
+      msg: "{{ telegram_msg | default(omit, True) }}"
+      msg_format: "{{ telegram_msg_format | default(omit, True) }}"
+      token: "{{ telegram_token | default(omit, True) }}"
+      chat_id: "{{ telegram_chat_id | default(omit, True) }}"
   tasks:
     - name: "plugin_telegram"
       telegram: "{{ telegram }}"
+      register: r_telegram

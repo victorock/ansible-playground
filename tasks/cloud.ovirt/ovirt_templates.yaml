@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_templates"
   ovirt_templates: "{{ ovirt_templates }}"
+  register: r_ovirt_templates
   vars:
     ovirt_templates: 
       exclusive: "{{ ovirt_templates_exclusive | default(omit, True) }}"

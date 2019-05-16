@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     panos_pg: 
-      username: "{{ panos_pg_username | default('omit', True) }}"
-      wildfire: "{{ panos_pg_wildfire | default('omit', True) }}"
-      data_filtering: "{{ panos_pg_data_filtering | default('omit', True) }}"
-      url_filtering: "{{ panos_pg_url_filtering | default('omit', True) }}"
-      pg_name: "{{ panos_pg_pg_name | default('omit', True) }}"
-      vulnerability: "{{ panos_pg_vulnerability | default('omit', True) }}"
-      spyware: "{{ panos_pg_spyware | default('omit', True) }}"
-      file_blocking: "{{ panos_pg_file_blocking | default('omit', True) }}"
-      virus: "{{ panos_pg_virus | default('omit', True) }}"
-      commit: "{{ panos_pg_commit | default('omit', True) }}"
-      password: "{{ panos_pg_password | default('omit', True) }}"
-      ip_address: "{{ panos_pg_ip_address | default('omit', True) }}"
+      username: "{{ panos_pg_username | default(omit, True) }}"
+      wildfire: "{{ panos_pg_wildfire | default(omit, True) }}"
+      data_filtering: "{{ panos_pg_data_filtering | default(omit, True) }}"
+      url_filtering: "{{ panos_pg_url_filtering | default(omit, True) }}"
+      pg_name: "{{ panos_pg_pg_name | default(omit, True) }}"
+      vulnerability: "{{ panos_pg_vulnerability | default(omit, True) }}"
+      spyware: "{{ panos_pg_spyware | default(omit, True) }}"
+      file_blocking: "{{ panos_pg_file_blocking | default(omit, True) }}"
+      virus: "{{ panos_pg_virus | default(omit, True) }}"
+      commit: "{{ panos_pg_commit | default(omit, True) }}"
+      password: "{{ panos_pg_password | default(omit, True) }}"
+      ip_address: "{{ panos_pg_ip_address | default(omit, True) }}"
   tasks:
     - name: "plugin_panos_pg"
       panos_pg: "{{ panos_pg }}"
+      register: r_panos_pg

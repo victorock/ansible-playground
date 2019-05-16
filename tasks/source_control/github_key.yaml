@@ -1,6 +1,7 @@
 ---
 - name: "module_github_key"
   github_key: "{{ github_key }}"
+  register: r_github_key
   vars:
     github_key: 
       force: "{{ github_key_force | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_copy"
   copy: "{{ copy }}"
+  register: r_copy
   vars:
     copy: 
       src: "{{ copy_src | default(omit, True) }}"

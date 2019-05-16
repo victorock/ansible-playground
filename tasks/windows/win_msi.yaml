@@ -1,6 +1,7 @@
 ---
 - name: "module_win_msi"
   win_msi: "{{ win_msi }}"
+  register: r_win_msi
   vars:
     win_msi: 
       creates: "{{ win_msi_creates | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_udld"
   nxos_udld: "{{ nxos_udld }}"
+  register: r_nxos_udld
   vars:
     nxos_udld: 
       reset: "{{ nxos_udld_reset | default(omit, True) }}"

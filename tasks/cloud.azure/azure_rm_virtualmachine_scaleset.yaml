@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_virtualmachine_scaleset"
   azure_rm_virtualmachine_scaleset: "{{ azure_rm_virtualmachine_scaleset }}"
+  register: r_azure_rm_virtualmachine_scaleset
   vars:
     azure_rm_virtualmachine_scaleset: 
       load_balancer: "{{ azure_rm_virtualmachine_scaleset_load_balancer | default(omit, True) }}"

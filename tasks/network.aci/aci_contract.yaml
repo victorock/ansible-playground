@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_contract"
   aci_contract: "{{ aci_contract }}"
+  register: r_aci_contract
   vars:
     aci_contract: 
       username: "{{ aci_contract_username | default(omit, True) }}"

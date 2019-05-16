@@ -1,6 +1,7 @@
 ---
 - name: "module_netcup_dns"
   netcup_dns: "{{ netcup_dns }}"
+  register: r_netcup_dns
   vars:
     netcup_dns: 
       solo: "{{ netcup_dns_solo | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_profitbricks_nic"
   profitbricks_nic: "{{ profitbricks_nic }}"
+  register: r_profitbricks_nic
   vars:
     profitbricks_nic: 
       datacenter: "{{ profitbricks_nic_datacenter | default(omit, True) }}"

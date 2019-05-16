@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_bfd_session"
   ce_bfd_session: "{{ ce_bfd_session }}"
+  register: r_ce_bfd_session
   vars:
     ce_bfd_session: 
       src_addr: "{{ ce_bfd_session_src_addr | default(omit, True) }}"

@@ -1,5 +1,6 @@
 ---
 - name: "module_lldp"
   lldp: "{{ lldp }}"
+  register: r_lldp
   vars:
     lldp: 

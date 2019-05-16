@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_sshkey"
   scaleway_sshkey: "{{ scaleway_sshkey }}"
+  register: r_scaleway_sshkey
   vars:
     scaleway_sshkey: 
       api_url: "{{ scaleway_sshkey_api_url | default(omit, True) }}"

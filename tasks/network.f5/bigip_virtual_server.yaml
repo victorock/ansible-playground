@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_virtual_server"
   bigip_virtual_server: "{{ bigip_virtual_server }}"
+  register: r_bigip_virtual_server
   vars:
     bigip_virtual_server: 
       fallback_persistence_profile: "{{ bigip_virtual_server_fallback_persistence_profile | default(omit, True) }}"

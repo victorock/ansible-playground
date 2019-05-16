@@ -1,6 +1,7 @@
 ---
 - name: "module_crypttab"
   crypttab: "{{ crypttab }}"
+  register: r_crypttab
   vars:
     crypttab: 
       name: "{{ crypttab_name | default(omit, True) }}"

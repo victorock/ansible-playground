@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_flashcache"
   netapp_e_flashcache: "{{ netapp_e_flashcache }}"
+  register: r_netapp_e_flashcache
   vars:
     netapp_e_flashcache: 
       cache_size_min: "{{ netapp_e_flashcache_cache_size_min | default(omit, True) }}"

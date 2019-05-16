@@ -1,6 +1,7 @@
 ---
 - name: "module_iam_cert"
   iam_cert: "{{ iam_cert }}"
+  register: r_iam_cert
   vars:
     iam_cert: 
       profile: "{{ iam_cert_profile | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_composer"
   composer: "{{ composer }}"
+  register: r_composer
   vars:
     composer: 
       arguments: "{{ composer_arguments | default(omit, True) }}"

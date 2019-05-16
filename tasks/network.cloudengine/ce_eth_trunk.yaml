@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_eth_trunk"
   ce_eth_trunk: "{{ ce_eth_trunk }}"
+  register: r_ce_eth_trunk
   vars:
     ce_eth_trunk: 
       force: "{{ ce_eth_trunk_force | default(omit, True) }}"

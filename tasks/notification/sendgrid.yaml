@@ -1,6 +1,7 @@
 ---
 - name: "module_sendgrid"
   sendgrid: "{{ sendgrid }}"
+  register: r_sendgrid
   vars:
     sendgrid: 
       username: "{{ sendgrid_username | default(omit, True) }}"

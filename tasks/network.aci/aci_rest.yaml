@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_rest"
   aci_rest: "{{ aci_rest }}"
+  register: r_aci_rest
   vars:
     aci_rest: 
       username: "{{ aci_rest_username | default(omit, True) }}"

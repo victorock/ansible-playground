@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vrf_af"
   nxos_vrf_af: "{{ nxos_vrf_af }}"
+  register: r_nxos_vrf_af
   vars:
     nxos_vrf_af: 
       afi: "{{ nxos_vrf_af_afi | default(omit, True) }}"

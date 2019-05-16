@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_auth"
   netapp_e_auth: "{{ netapp_e_auth }}"
+  register: r_netapp_e_auth
   vars:
     netapp_e_auth: 
       ssid: "{{ netapp_e_auth_ssid | default(omit, True) }}"

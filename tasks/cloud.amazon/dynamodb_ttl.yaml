@@ -1,6 +1,7 @@
 ---
 - name: "module_dynamodb_ttl"
   dynamodb_ttl: "{{ dynamodb_ttl }}"
+  register: r_dynamodb_ttl
   vars:
     dynamodb_ttl: 
       aws_secret_key: "{{ dynamodb_ttl_aws_secret_key | default(omit, True) }}"

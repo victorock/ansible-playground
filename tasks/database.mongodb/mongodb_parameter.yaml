@@ -1,6 +1,7 @@
 ---
 - name: "module_mongodb_parameter"
   mongodb_parameter: "{{ mongodb_parameter }}"
+  register: r_mongodb_parameter
   vars:
     mongodb_parameter: 
       login_port: "{{ mongodb_parameter_login_port | default(omit, True) }}"

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_snapshot_images: 
-      api_url: "{{ netapp_e_snapshot_images_api_url | default('omit', True) }}"
-      api_password: "{{ netapp_e_snapshot_images_api_password | default('omit', True) }}"
-      state: "{{ netapp_e_snapshot_images_state | default('omit', True) }}"
-      snapshot_group: "{{ netapp_e_snapshot_images_snapshot_group | default('omit', True) }}"
-      api_username: "{{ netapp_e_snapshot_images_api_username | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_snapshot_images_validate_certs | default('omit', True) }}"
+      api_url: "{{ netapp_e_snapshot_images_api_url | default(omit, True) }}"
+      api_password: "{{ netapp_e_snapshot_images_api_password | default(omit, True) }}"
+      state: "{{ netapp_e_snapshot_images_state | default(omit, True) }}"
+      snapshot_group: "{{ netapp_e_snapshot_images_snapshot_group | default(omit, True) }}"
+      api_username: "{{ netapp_e_snapshot_images_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_snapshot_images_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_snapshot_images"
       netapp_e_snapshot_images: "{{ netapp_e_snapshot_images }}"
+      register: r_netapp_e_snapshot_images

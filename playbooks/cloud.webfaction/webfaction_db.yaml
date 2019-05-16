@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     webfaction_db: 
-      name: "{{ webfaction_db_name | default('omit', True) }}"
-      machine: "{{ webfaction_db_machine | default('omit', True) }}"
-      state: "{{ webfaction_db_state | default('omit', True) }}"
-      login_password: "{{ webfaction_db_login_password | default('omit', True) }}"
-      password: "{{ webfaction_db_password | default('omit', True) }}"
-      type: "{{ webfaction_db_type | default('omit', True) }}"
-      login_name: "{{ webfaction_db_login_name | default('omit', True) }}"
+      name: "{{ webfaction_db_name | default(omit, True) }}"
+      machine: "{{ webfaction_db_machine | default(omit, True) }}"
+      state: "{{ webfaction_db_state | default(omit, True) }}"
+      login_password: "{{ webfaction_db_login_password | default(omit, True) }}"
+      password: "{{ webfaction_db_password | default(omit, True) }}"
+      type: "{{ webfaction_db_type | default(omit, True) }}"
+      login_name: "{{ webfaction_db_login_name | default(omit, True) }}"
   tasks:
     - name: "plugin_webfaction_db"
       webfaction_db: "{{ webfaction_db }}"
+      register: r_webfaction_db

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_monitor_tcp_echo"
   bigip_monitor_tcp_echo: "{{ bigip_monitor_tcp_echo }}"
+  register: r_bigip_monitor_tcp_echo
   vars:
     bigip_monitor_tcp_echo: 
       interval: "{{ bigip_monitor_tcp_echo_interval | default(omit, True) }}"

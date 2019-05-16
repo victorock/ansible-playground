@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_device_sshd: 
-      log_level: "{{ bigip_device_sshd_log_level | default('omit', True) }}"
-      server_port: "{{ bigip_device_sshd_server_port | default('omit', True) }}"
-      banner_text: "{{ bigip_device_sshd_banner_text | default('omit', True) }}"
-      validate_certs: "{{ bigip_device_sshd_validate_certs | default('omit', True) }}"
-      server: "{{ bigip_device_sshd_server | default('omit', True) }}"
-      user: "{{ bigip_device_sshd_user | default('omit', True) }}"
-      allow: "{{ bigip_device_sshd_allow | default('omit', True) }}"
-      provider: "{{ bigip_device_sshd_provider | default('omit', True) }}"
-      inactivity_timeout: "{{ bigip_device_sshd_inactivity_timeout | default('omit', True) }}"
-      login: "{{ bigip_device_sshd_login | default('omit', True) }}"
-      password: "{{ bigip_device_sshd_password | default('omit', True) }}"
-      banner: "{{ bigip_device_sshd_banner | default('omit', True) }}"
-      port: "{{ bigip_device_sshd_port | default('omit', True) }}"
+      log_level: "{{ bigip_device_sshd_log_level | default(omit, True) }}"
+      server_port: "{{ bigip_device_sshd_server_port | default(omit, True) }}"
+      banner_text: "{{ bigip_device_sshd_banner_text | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_sshd_validate_certs | default(omit, True) }}"
+      server: "{{ bigip_device_sshd_server | default(omit, True) }}"
+      user: "{{ bigip_device_sshd_user | default(omit, True) }}"
+      allow: "{{ bigip_device_sshd_allow | default(omit, True) }}"
+      provider: "{{ bigip_device_sshd_provider | default(omit, True) }}"
+      inactivity_timeout: "{{ bigip_device_sshd_inactivity_timeout | default(omit, True) }}"
+      login: "{{ bigip_device_sshd_login | default(omit, True) }}"
+      password: "{{ bigip_device_sshd_password | default(omit, True) }}"
+      banner: "{{ bigip_device_sshd_banner | default(omit, True) }}"
+      port: "{{ bigip_device_sshd_port | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_device_sshd"
       bigip_device_sshd: "{{ bigip_device_sshd }}"
+      register: r_bigip_device_sshd

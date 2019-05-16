@@ -1,6 +1,7 @@
 ---
 - name: "module_netconf_rpc"
   netconf_rpc: "{{ netconf_rpc }}"
+  register: r_netconf_rpc
   vars:
     netconf_rpc: 
       content: "{{ netconf_rpc_content | default(omit, True) }}"

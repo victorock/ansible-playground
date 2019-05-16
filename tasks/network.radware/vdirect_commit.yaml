@@ -1,6 +1,7 @@
 ---
 - name: "module_vdirect_commit"
   vdirect_commit: "{{ vdirect_commit }}"
+  register: r_vdirect_commit
   vars:
     vdirect_commit: 
       vdirect_user: "{{ vdirect_commit_vdirect_user | default(omit, True) }}"

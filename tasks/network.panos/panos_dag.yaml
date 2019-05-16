@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_dag"
   panos_dag: "{{ panos_dag }}"
+  register: r_panos_dag
   vars:
     panos_dag: 
       username: "{{ panos_dag_username | default(omit, True) }}"

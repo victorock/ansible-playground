@@ -1,6 +1,7 @@
 ---
 - name: "module_route53_facts"
   route53_facts: "{{ route53_facts }}"
+  register: r_route53_facts
   vars:
     route53_facts: 
       profile: "{{ route53_facts_profile | default(omit, True) }}"

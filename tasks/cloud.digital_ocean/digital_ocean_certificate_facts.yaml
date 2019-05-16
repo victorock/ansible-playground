@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_certificate_facts"
   digital_ocean_certificate_facts: "{{ digital_ocean_certificate_facts }}"
+  register: r_digital_ocean_certificate_facts
   vars:
     digital_ocean_certificate_facts: 
       certificate_id: "{{ digital_ocean_certificate_facts_certificate_id | default(omit, True) }}"

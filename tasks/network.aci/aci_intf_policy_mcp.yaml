@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_intf_policy_mcp"
   aci_intf_policy_mcp: "{{ aci_intf_policy_mcp }}"
+  register: r_aci_intf_policy_mcp
   vars:
     aci_intf_policy_mcp: 
       username: "{{ aci_intf_policy_mcp_username | default(omit, True) }}"

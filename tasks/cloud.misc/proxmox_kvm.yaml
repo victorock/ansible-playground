@@ -1,6 +1,7 @@
 ---
 - name: "module_proxmox_kvm"
   proxmox_kvm: "{{ proxmox_kvm }}"
+  register: r_proxmox_kvm
   vars:
     proxmox_kvm: 
       revert: "{{ proxmox_kvm_revert | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_zone_facts"
   cs_zone_facts: "{{ cs_zone_facts }}"
+  register: r_cs_zone_facts
   vars:
     cs_zone_facts: 
       name: "{{ cs_zone_facts_name | default(omit, True) }}"

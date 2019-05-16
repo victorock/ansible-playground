@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudfront_facts"
   cloudfront_facts: "{{ cloudfront_facts }}"
+  register: r_cloudfront_facts
   vars:
     cloudfront_facts: 
       list_origin_access_identities: "{{ cloudfront_facts_list_origin_access_identities | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_image"
   azure_rm_image: "{{ azure_rm_image }}"
+  register: r_azure_rm_image
   vars:
     azure_rm_image: 
       profile: "{{ azure_rm_image_profile | default(omit, True) }}"

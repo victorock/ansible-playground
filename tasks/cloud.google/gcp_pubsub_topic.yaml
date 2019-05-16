@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_pubsub_topic"
   gcp_pubsub_topic: "{{ gcp_pubsub_topic }}"
+  register: r_gcp_pubsub_topic
   vars:
     gcp_pubsub_topic: 
       scopes: "{{ gcp_pubsub_topic_scopes | default(omit, True) }}"

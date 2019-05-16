@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_command"
   onyx_command: "{{ onyx_command }}"
+  register: r_onyx_command
   vars:
     onyx_command: 
       retries: "{{ onyx_command_retries | default(omit, True) }}"

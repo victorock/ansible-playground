@@ -1,6 +1,7 @@
 ---
 - name: "module_os_volume_snapshot"
   os_volume_snapshot: "{{ os_volume_snapshot }}"
+  register: r_os_volume_snapshot
   vars:
     os_volume_snapshot: 
       auth_type: "{{ os_volume_snapshot_auth_type | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_rabbitmq_exchange"
   rabbitmq_exchange: "{{ rabbitmq_exchange }}"
+  register: r_rabbitmq_exchange
   vars:
     rabbitmq_exchange: 
       login_port: "{{ rabbitmq_exchange_login_port | default(omit, True) }}"

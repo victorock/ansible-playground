@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_image"
   cnos_image: "{{ cnos_image }}"
+  register: r_cnos_image
   vars:
     cnos_image: 
       username: "{{ cnos_image_username | default(omit, True) }}"

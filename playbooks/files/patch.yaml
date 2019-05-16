@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     patch: 
-      binary: "{{ patch_binary | default('omit', True) }}"
-      remote_src: "{{ patch_remote_src | default('omit', True) }}"
-      dest: "{{ patch_dest | default('omit', True) }}"
-      basedir: "{{ patch_basedir | default('omit', True) }}"
-      state: "{{ patch_state | default('omit', True) }}"
-      strip: "{{ patch_strip | default('omit', True) }}"
-      src: "{{ patch_src | default('omit', True) }}"
-      backup: "{{ patch_backup | default('omit', True) }}"
+      binary: "{{ patch_binary | default(omit, True) }}"
+      remote_src: "{{ patch_remote_src | default(omit, True) }}"
+      dest: "{{ patch_dest | default(omit, True) }}"
+      basedir: "{{ patch_basedir | default(omit, True) }}"
+      state: "{{ patch_state | default(omit, True) }}"
+      strip: "{{ patch_strip | default(omit, True) }}"
+      src: "{{ patch_src | default(omit, True) }}"
+      backup: "{{ patch_backup | default(omit, True) }}"
   tasks:
     - name: "plugin_patch"
       patch: "{{ patch }}"
+      register: r_patch

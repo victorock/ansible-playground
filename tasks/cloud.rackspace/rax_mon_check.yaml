@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_mon_check"
   rax_mon_check: "{{ rax_mon_check }}"
+  register: r_rax_mon_check
   vars:
     rax_mon_check: 
       entity_id: "{{ rax_mon_check_entity_id | default(omit, True) }}"

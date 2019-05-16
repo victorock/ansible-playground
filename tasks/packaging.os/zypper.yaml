@@ -1,6 +1,7 @@
 ---
 - name: "module_zypper"
   zypper: "{{ zypper }}"
+  register: r_zypper
   vars:
     zypper: 
       extra_args_precommand: "{{ zypper_extra_args_precommand | default(omit, True) }}"

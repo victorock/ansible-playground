@@ -1,6 +1,7 @@
 ---
 - name: "module_rabbitmq_parameter"
   rabbitmq_parameter: "{{ rabbitmq_parameter }}"
+  register: r_rabbitmq_parameter
   vars:
     rabbitmq_parameter: 
       node: "{{ rabbitmq_parameter_node | default(omit, True) }}"

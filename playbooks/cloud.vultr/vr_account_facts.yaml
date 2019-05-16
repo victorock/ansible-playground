@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vr_account_facts: 
-      api_retries: "{{ vr_account_facts_api_retries | default('omit', True) }}"
-      api_timeout: "{{ vr_account_facts_api_timeout | default('omit', True) }}"
-      api_endpoint: "{{ vr_account_facts_api_endpoint | default('omit', True) }}"
-      api_account: "{{ vr_account_facts_api_account | default('omit', True) }}"
-      api_key: "{{ vr_account_facts_api_key | default('omit', True) }}"
-      validate_certs: "{{ vr_account_facts_validate_certs | default('omit', True) }}"
+      api_retries: "{{ vr_account_facts_api_retries | default(omit, True) }}"
+      api_timeout: "{{ vr_account_facts_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vr_account_facts_api_endpoint | default(omit, True) }}"
+      api_account: "{{ vr_account_facts_api_account | default(omit, True) }}"
+      api_key: "{{ vr_account_facts_api_key | default(omit, True) }}"
+      validate_certs: "{{ vr_account_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vr_account_facts"
       vr_account_facts: "{{ vr_account_facts }}"
+      register: r_vr_account_facts

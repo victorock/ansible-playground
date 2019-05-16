@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_serviceengine"
   avi_serviceengine: "{{ avi_serviceengine }}"
+  register: r_avi_serviceengine
   vars:
     avi_serviceengine: 
       mgmt_vnic: "{{ avi_serviceengine_mgmt_vnic | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vcenter_folder"
   vcenter_folder: "{{ vcenter_folder }}"
+  register: r_vcenter_folder
   vars:
     vcenter_folder: 
       username: "{{ vcenter_folder_username | default(omit, True) }}"

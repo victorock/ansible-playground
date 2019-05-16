@@ -1,6 +1,7 @@
 ---
 - name: "module_rds_instance_facts"
   rds_instance_facts: "{{ rds_instance_facts }}"
+  register: r_rds_instance_facts
   vars:
     rds_instance_facts: 
       db_instance_identifier: "{{ rds_instance_facts_db_instance_identifier | default(omit, True) }}"

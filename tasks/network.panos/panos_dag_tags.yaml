@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_dag_tags"
   panos_dag_tags: "{{ panos_dag_tags }}"
+  register: r_panos_dag_tags
   vars:
     panos_dag_tags: 
       username: "{{ panos_dag_tags_username | default(omit, True) }}"

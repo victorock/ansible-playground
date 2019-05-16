@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_query_rules"
   proxysql_query_rules: "{{ proxysql_query_rules }}"
+  register: r_proxysql_query_rules
   vars:
     proxysql_query_rules: 
       comment: "{{ proxysql_query_rules_comment | default(omit, True) }}"

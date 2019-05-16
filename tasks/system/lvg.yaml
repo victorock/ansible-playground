@@ -1,6 +1,7 @@
 ---
 - name: "module_lvg"
   lvg: "{{ lvg }}"
+  register: r_lvg
   vars:
     lvg: 
       vg_options: "{{ lvg_vg_options | default(omit, True) }}"

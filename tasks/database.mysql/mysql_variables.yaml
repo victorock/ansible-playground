@@ -1,6 +1,7 @@
 ---
 - name: "module_mysql_variables"
   mysql_variables: "{{ mysql_variables }}"
+  register: r_mysql_variables
   vars:
     mysql_variables: 
       ssl_key: "{{ mysql_variables_ssl_key | default(omit, True) }}"

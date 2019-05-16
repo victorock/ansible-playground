@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_instance_nic_secondaryip"
   cs_instance_nic_secondaryip: "{{ cs_instance_nic_secondaryip }}"
+  register: r_cs_instance_nic_secondaryip
   vars:
     cs_instance_nic_secondaryip: 
       vm_guest_ip: "{{ cs_instance_nic_secondaryip_vm_guest_ip | default(omit, True) }}"

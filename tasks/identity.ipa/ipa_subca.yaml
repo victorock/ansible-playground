@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_subca"
   ipa_subca: "{{ ipa_subca }}"
+  register: r_ipa_subca
   vars:
     ipa_subca: 
       ipa_port: "{{ ipa_subca_ipa_port | default(omit, True) }}"

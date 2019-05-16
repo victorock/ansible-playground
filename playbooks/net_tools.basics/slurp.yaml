@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     slurp: 
-      src: "{{ slurp_src | default('omit', True) }}"
+      src: "{{ slurp_src | default(omit, True) }}"
   tasks:
     - name: "plugin_slurp"
       slurp: "{{ slurp }}"
+      register: r_slurp

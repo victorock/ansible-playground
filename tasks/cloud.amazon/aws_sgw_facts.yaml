@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_sgw_facts"
   aws_sgw_facts: "{{ aws_sgw_facts }}"
+  register: r_aws_sgw_facts
   vars:
     aws_sgw_facts: 
       profile: "{{ aws_sgw_facts_profile | default(omit, True) }}"

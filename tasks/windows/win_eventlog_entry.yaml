@@ -1,6 +1,7 @@
 ---
 - name: "module_win_eventlog_entry"
   win_eventlog_entry: "{{ win_eventlog_entry }}"
+  register: r_win_eventlog_entry
   vars:
     win_eventlog_entry: 
       category: "{{ win_eventlog_entry_category | default(omit, True) }}"

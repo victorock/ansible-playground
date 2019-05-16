@@ -1,6 +1,7 @@
 ---
 - name: "module_win_pagefile"
   win_pagefile: "{{ win_pagefile }}"
+  register: r_win_pagefile
   vars:
     win_pagefile: 
       test_path: "{{ win_pagefile_test_path | default(omit, True) }}"

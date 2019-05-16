@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_job_wait"
   tower_job_wait: "{{ tower_job_wait }}"
+  register: r_tower_job_wait
   vars:
     tower_job_wait: 
       min_interval: "{{ tower_job_wait_min_interval | default(omit, True) }}"

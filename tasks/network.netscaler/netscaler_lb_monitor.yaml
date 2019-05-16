@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_lb_monitor"
   netscaler_lb_monitor: "{{ netscaler_lb_monitor }}"
+  register: r_netscaler_lb_monitor
   vars:
     netscaler_lb_monitor: 
       lasversion: "{{ netscaler_lb_monitor_lasversion | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gem"
   gem: "{{ gem }}"
+  register: r_gem
   vars:
     gem: 
       include_dependencies: "{{ gem_include_dependencies | default(omit, True) }}"

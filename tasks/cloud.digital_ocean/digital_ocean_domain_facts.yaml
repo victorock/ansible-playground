@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_domain_facts"
   digital_ocean_domain_facts: "{{ digital_ocean_domain_facts }}"
+  register: r_digital_ocean_domain_facts
   vars:
     digital_ocean_domain_facts: 
       oauth_token: "{{ digital_ocean_domain_facts_oauth_token | default(omit, True) }}"

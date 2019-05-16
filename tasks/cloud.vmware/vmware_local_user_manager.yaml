@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_local_user_manager"
   vmware_local_user_manager: "{{ vmware_local_user_manager }}"
+  register: r_vmware_local_user_manager
   vars:
     vmware_local_user_manager: 
       username: "{{ vmware_local_user_manager_username | default(omit, True) }}"

@@ -1,0 +1,10 @@
+---
+- name: "Import self Generate playbooks in Tower"
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: "self.import_tower"
+      include_role:
+        name: "self"
+        tasks_from: "import_tower.yaml"

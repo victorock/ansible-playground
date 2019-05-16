@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_interface_policy_port_channel"
   aci_interface_policy_port_channel: "{{ aci_interface_policy_port_channel }}"
+  register: r_aci_interface_policy_port_channel
   vars:
     aci_interface_policy_port_channel: 
       min_links: "{{ aci_interface_policy_port_channel_min_links | default(omit, True) }}"

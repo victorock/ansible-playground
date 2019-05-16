@@ -1,6 +1,7 @@
 ---
 - name: "module_a10_server_axapi3"
   a10_server_axapi3: "{{ a10_server_axapi3 }}"
+  register: r_a10_server_axapi3
   vars:
     a10_server_axapi3: 
       username: "{{ a10_server_axapi3_username | default(omit, True) }}"

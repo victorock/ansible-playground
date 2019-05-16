@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_file: 
-      path: "{{ win_file_path | default('omit', True) }}"
-      state: "{{ win_file_state | default('omit', True) }}"
+      path: "{{ win_file_path | default(omit, True) }}"
+      state: "{{ win_file_state | default(omit, True) }}"
   tasks:
     - name: "plugin_win_file"
       win_file: "{{ win_file }}"
+      register: r_win_file

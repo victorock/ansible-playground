@@ -1,6 +1,7 @@
 ---
 - name: "module_win_wakeonlan"
   win_wakeonlan: "{{ win_wakeonlan }}"
+  register: r_win_wakeonlan
   vars:
     win_wakeonlan: 
       broadcast: "{{ win_wakeonlan_broadcast | default(omit, True) }}"

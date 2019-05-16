@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_epg_to_domain"
   aci_epg_to_domain: "{{ aci_epg_to_domain }}"
+  register: r_aci_epg_to_domain
   vars:
     aci_epg_to_domain: 
       domain: "{{ aci_epg_to_domain_domain | default(omit, True) }}"

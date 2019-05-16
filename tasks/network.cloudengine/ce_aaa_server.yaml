@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_aaa_server"
   ce_aaa_server: "{{ ce_aaa_server }}"
+  register: r_ce_aaa_server
   vars:
     ce_aaa_server: 
       local_user_group: "{{ ce_aaa_server_local_user_group | default(omit, True) }}"

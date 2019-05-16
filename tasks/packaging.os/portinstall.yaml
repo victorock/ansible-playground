@@ -1,6 +1,7 @@
 ---
 - name: "module_portinstall"
   portinstall: "{{ portinstall }}"
+  register: r_portinstall
   vars:
     portinstall: 
       state: "{{ portinstall_state | default(omit, True) }}"

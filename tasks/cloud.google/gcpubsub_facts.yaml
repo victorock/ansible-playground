@@ -1,6 +1,7 @@
 ---
 - name: "module_gcpubsub_facts"
   gcpubsub_facts: "{{ gcpubsub_facts }}"
+  register: r_gcpubsub_facts
   vars:
     gcpubsub_facts: 
       topic: "{{ gcpubsub_facts_topic | default(omit, True) }}"

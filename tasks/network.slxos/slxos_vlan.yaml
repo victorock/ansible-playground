@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_vlan"
   slxos_vlan: "{{ slxos_vlan }}"
+  register: r_slxos_vlan
   vars:
     slxos_vlan: 
       purge: "{{ slxos_vlan_purge | default(omit, True) }}"

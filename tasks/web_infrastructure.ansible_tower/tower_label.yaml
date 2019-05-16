@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_label"
   tower_label: "{{ tower_label }}"
+  register: r_tower_label
   vars:
     tower_label: 
       name: "{{ tower_label_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_volume"
   purefa_volume: "{{ purefa_volume }}"
+  register: r_purefa_volume
   vars:
     purefa_volume: 
       size: "{{ purefa_volume_size | default(omit, True) }}"

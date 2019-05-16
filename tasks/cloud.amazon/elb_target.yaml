@@ -1,6 +1,7 @@
 ---
 - name: "module_elb_target"
   elb_target: "{{ elb_target }}"
+  register: r_elb_target
   vars:
     elb_target: 
       profile: "{{ elb_target_profile | default(omit, True) }}"

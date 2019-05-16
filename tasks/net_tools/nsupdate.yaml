@@ -1,6 +1,7 @@
 ---
 - name: "module_nsupdate"
   nsupdate: "{{ nsupdate }}"
+  register: r_nsupdate
   vars:
     nsupdate: 
       key_algorithm: "{{ nsupdate_key_algorithm | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_project"
   tower_project: "{{ tower_project }}"
+  register: r_tower_project
   vars:
     tower_project: 
       scm_branch: "{{ tower_project_scm_branch | default(omit, True) }}"

@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     openvswitch_db: 
-      timeout: "{{ openvswitch_db_timeout | default('omit', True) }}"
-      value: "{{ openvswitch_db_value | default('omit', True) }}"
-      record: "{{ openvswitch_db_record | default('omit', True) }}"
-      state: "{{ openvswitch_db_state | default('omit', True) }}"
-      key: "{{ openvswitch_db_key | default('omit', True) }}"
-      table: "{{ openvswitch_db_table | default('omit', True) }}"
-      col: "{{ openvswitch_db_col | default('omit', True) }}"
+      timeout: "{{ openvswitch_db_timeout | default(omit, True) }}"
+      value: "{{ openvswitch_db_value | default(omit, True) }}"
+      record: "{{ openvswitch_db_record | default(omit, True) }}"
+      state: "{{ openvswitch_db_state | default(omit, True) }}"
+      key: "{{ openvswitch_db_key | default(omit, True) }}"
+      table: "{{ openvswitch_db_table | default(omit, True) }}"
+      col: "{{ openvswitch_db_col | default(omit, True) }}"
   tasks:
     - name: "plugin_openvswitch_db"
       openvswitch_db: "{{ openvswitch_db }}"
+      register: r_openvswitch_db

@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vol"
   ec2_vol: "{{ ec2_vol }}"
+  register: r_ec2_vol
   vars:
     ec2_vol: 
       profile: "{{ ec2_vol_profile | default(omit, True) }}"

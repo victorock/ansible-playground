@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_network"
   docker_network: "{{ docker_network }}"
+  register: r_docker_network
   vars:
     docker_network: 
       tls: "{{ docker_network_tls | default(omit, True) }}"

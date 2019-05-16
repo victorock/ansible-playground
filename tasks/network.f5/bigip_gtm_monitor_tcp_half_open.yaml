@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_monitor_tcp_half_open"
   bigip_gtm_monitor_tcp_half_open: "{{ bigip_gtm_monitor_tcp_half_open }}"
+  register: r_bigip_gtm_monitor_tcp_half_open
   vars:
     bigip_gtm_monitor_tcp_half_open: 
       probe_attempts: "{{ bigip_gtm_monitor_tcp_half_open_probe_attempts | default(omit, True) }}"

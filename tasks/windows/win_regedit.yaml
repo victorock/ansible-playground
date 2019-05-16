@@ -1,6 +1,7 @@
 ---
 - name: "module_win_regedit"
   win_regedit: "{{ win_regedit }}"
+  register: r_win_regedit
   vars:
     win_regedit: 
       name: "{{ win_regedit_name | default(omit, True) }}"

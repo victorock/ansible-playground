@@ -1,6 +1,7 @@
 ---
 - name: "module_statusio_maintenance"
   statusio_maintenance: "{{ statusio_maintenance }}"
+  register: r_statusio_maintenance
   vars:
     statusio_maintenance: 
       maintenance_notify_72_hr: "{{ statusio_maintenance_maintenance_notify_72_hr | default(omit, True) }}"

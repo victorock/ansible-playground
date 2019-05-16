@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_udp"
   bigip_profile_udp: "{{ bigip_profile_udp }}"
+  register: r_bigip_profile_udp
   vars:
     bigip_profile_udp: 
       partition: "{{ bigip_profile_udp_partition | default(omit, True) }}"

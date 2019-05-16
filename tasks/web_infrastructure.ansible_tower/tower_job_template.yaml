@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_job_template"
   tower_job_template: "{{ tower_job_template }}"
+  register: r_tower_job_template
   vars:
     tower_job_template: 
       ask_diff_mode: "{{ tower_job_template_ask_diff_mode | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_rabbitmq_plugin"
   win_rabbitmq_plugin: "{{ win_rabbitmq_plugin }}"
+  register: r_win_rabbitmq_plugin
   vars:
     win_rabbitmq_plugin: 
       state: "{{ win_rabbitmq_plugin_state | default(omit, True) }}"

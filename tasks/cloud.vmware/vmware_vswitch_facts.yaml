@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vswitch_facts"
   vmware_vswitch_facts: "{{ vmware_vswitch_facts }}"
+  register: r_vmware_vswitch_facts
   vars:
     vmware_vswitch_facts: 
       username: "{{ vmware_vswitch_facts_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_mysql_replication"
   mysql_replication: "{{ mysql_replication }}"
+  register: r_mysql_replication
   vars:
     mysql_replication: 
       master_ssl_cert: "{{ mysql_replication_master_ssl_cert | default(omit, True) }}"

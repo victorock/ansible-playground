@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_facts"
   cnos_facts: "{{ cnos_facts }}"
+  register: r_cnos_facts
   vars:
     cnos_facts: 
       authorize: "{{ cnos_facts_authorize | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_sensu_client"
   sensu_client: "{{ sensu_client }}"
+  register: r_sensu_client
   vars:
     sensu_client: 
       deregister: "{{ sensu_client_deregister | default(omit, True) }}"

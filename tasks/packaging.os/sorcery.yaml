@@ -1,6 +1,7 @@
 ---
 - name: "module_sorcery"
   sorcery: "{{ sorcery }}"
+  register: r_sorcery
   vars:
     sorcery: 
       name: "{{ sorcery_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_grafana_plugin"
   grafana_plugin: "{{ grafana_plugin }}"
+  register: r_grafana_plugin
   vars:
     grafana_plugin: 
       grafana_repo: "{{ grafana_plugin_grafana_repo | default(omit, True) }}"

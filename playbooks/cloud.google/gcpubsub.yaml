@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcpubsub: 
-      pull: "{{ gcpubsub_pull | default('omit', True) }}"
-      ack_deadline: "{{ gcpubsub_ack_deadline | default('omit', True) }}"
-      name: "{{ gcpubsub_name | default('omit', True) }}"
-      publish: "{{ gcpubsub_publish | default('omit', True) }}"
-      topic: "{{ gcpubsub_topic | default('omit', True) }}"
-      state: "{{ gcpubsub_state | default('omit', True) }}"
-      push_endpoint: "{{ gcpubsub_push_endpoint | default('omit', True) }}"
-      subscription: "{{ gcpubsub_subscription | default('omit', True) }}"
+      pull: "{{ gcpubsub_pull | default(omit, True) }}"
+      ack_deadline: "{{ gcpubsub_ack_deadline | default(omit, True) }}"
+      name: "{{ gcpubsub_name | default(omit, True) }}"
+      publish: "{{ gcpubsub_publish | default(omit, True) }}"
+      topic: "{{ gcpubsub_topic | default(omit, True) }}"
+      state: "{{ gcpubsub_state | default(omit, True) }}"
+      push_endpoint: "{{ gcpubsub_push_endpoint | default(omit, True) }}"
+      subscription: "{{ gcpubsub_subscription | default(omit, True) }}"
   tasks:
     - name: "plugin_gcpubsub"
       gcpubsub: "{{ gcpubsub }}"
+      register: r_gcpubsub

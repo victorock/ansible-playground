@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_domain"
   aci_domain: "{{ aci_domain }}"
+  register: r_aci_domain
   vars:
     aci_domain: 
       username: "{{ aci_domain_username | default(omit, True) }}"

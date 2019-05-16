@@ -1,6 +1,7 @@
 ---
 - name: "module_iam_managed_policy"
   iam_managed_policy: "{{ iam_managed_policy }}"
+  register: r_iam_managed_policy
   vars:
     iam_managed_policy: 
       profile: "{{ iam_managed_policy_profile | default(omit, True) }}"

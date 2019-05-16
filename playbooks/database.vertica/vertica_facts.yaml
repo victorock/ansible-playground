@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vertica_facts: 
-      cluster: "{{ vertica_facts_cluster | default('omit', True) }}"
-      login_password: "{{ vertica_facts_login_password | default('omit', True) }}"
-      db: "{{ vertica_facts_db | default('omit', True) }}"
-      port: "{{ vertica_facts_port | default('omit', True) }}"
-      login_user: "{{ vertica_facts_login_user | default('omit', True) }}"
+      cluster: "{{ vertica_facts_cluster | default(omit, True) }}"
+      login_password: "{{ vertica_facts_login_password | default(omit, True) }}"
+      db: "{{ vertica_facts_db | default(omit, True) }}"
+      port: "{{ vertica_facts_port | default(omit, True) }}"
+      login_user: "{{ vertica_facts_login_user | default(omit, True) }}"
   tasks:
     - name: "plugin_vertica_facts"
       vertica_facts: "{{ vertica_facts }}"
+      register: r_vertica_facts

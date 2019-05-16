@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_snmptrapprofile"
   avi_snmptrapprofile: "{{ avi_snmptrapprofile }}"
+  register: r_avi_snmptrapprofile
   vars:
     avi_snmptrapprofile: 
       username: "{{ avi_snmptrapprofile_username | default(omit, True) }}"

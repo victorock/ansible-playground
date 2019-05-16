@@ -1,6 +1,7 @@
 ---
 - name: "module_infinity"
   infinity: "{{ infinity }}"
+  register: r_infinity
   vars:
     infinity: 
       username: "{{ infinity_username | default(omit, True) }}"

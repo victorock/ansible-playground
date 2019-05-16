@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     at: 
-      count: "{{ at_count | default('omit', True) }}"
-      state: "{{ at_state | default('omit', True) }}"
-      command: "{{ at_command | default('omit', True) }}"
-      units: "{{ at_units | default('omit', True) }}"
-      unique: "{{ at_unique | default('omit', True) }}"
-      script_file: "{{ at_script_file | default('omit', True) }}"
+      count: "{{ at_count | default(omit, True) }}"
+      state: "{{ at_state | default(omit, True) }}"
+      command: "{{ at_command | default(omit, True) }}"
+      units: "{{ at_units | default(omit, True) }}"
+      unique: "{{ at_unique | default(omit, True) }}"
+      script_file: "{{ at_script_file | default(omit, True) }}"
   tasks:
     - name: "plugin_at"
       at: "{{ at }}"
+      register: r_at

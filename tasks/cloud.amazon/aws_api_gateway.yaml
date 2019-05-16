@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_api_gateway"
   aws_api_gateway: "{{ aws_api_gateway }}"
+  register: r_aws_api_gateway
   vars:
     aws_api_gateway: 
       profile: "{{ aws_api_gateway_profile | default(omit, True) }}"

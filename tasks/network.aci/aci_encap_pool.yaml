@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_encap_pool"
   aci_encap_pool: "{{ aci_encap_pool }}"
+  register: r_aci_encap_pool
   vars:
     aci_encap_pool: 
       username: "{{ aci_encap_pool_username | default(omit, True) }}"

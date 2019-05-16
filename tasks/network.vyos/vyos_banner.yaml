@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_banner"
   vyos_banner: "{{ vyos_banner }}"
+  register: r_vyos_banner
   vars:
     vyos_banner: 
       text: "{{ vyos_banner_text | default(omit, True) }}"

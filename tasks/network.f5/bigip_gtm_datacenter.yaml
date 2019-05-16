@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_datacenter"
   bigip_gtm_datacenter: "{{ bigip_gtm_datacenter }}"
+  register: r_bigip_gtm_datacenter
   vars:
     bigip_gtm_datacenter: 
       description: "{{ bigip_gtm_datacenter_description | default(omit, True) }}"

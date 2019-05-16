@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_storage_vm_facts"
   ovirt_storage_vm_facts: "{{ ovirt_storage_vm_facts }}"
+  register: r_ovirt_storage_vm_facts
   vars:
     ovirt_storage_vm_facts: 
       unregistered: "{{ ovirt_storage_vm_facts_unregistered | default(omit, True) }}"

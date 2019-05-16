@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_vmsnapshot"
   cs_vmsnapshot: "{{ cs_vmsnapshot }}"
+  register: r_cs_vmsnapshot
   vars:
     cs_vmsnapshot: 
       snapshot_memory: "{{ cs_vmsnapshot_snapshot_memory | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest"
   vmware_guest: "{{ vmware_guest }}"
+  register: r_vmware_guest
   vars:
     vmware_guest: 
       resource_pool: "{{ vmware_guest_resource_pool | default(omit, True) }}"

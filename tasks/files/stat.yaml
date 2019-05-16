@@ -1,6 +1,7 @@
 ---
 - name: "module_stat"
   stat: "{{ stat }}"
+  register: r_stat
   vars:
     stat: 
       checksum_algorithm: "{{ stat_checksum_algorithm | default(omit, True) }}"

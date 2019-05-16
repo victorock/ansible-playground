@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_system"
   junos_system: "{{ junos_system }}"
+  register: r_junos_system
   vars:
     junos_system: 
       domain_search: "{{ junos_system_domain_search | default(omit, True) }}"

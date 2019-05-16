@@ -1,6 +1,7 @@
 ---
 - name: "module_interfaces_file"
   interfaces_file: "{{ interfaces_file }}"
+  register: r_interfaces_file
   vars:
     interfaces_file: 
       iface: "{{ interfaces_file_iface | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_appserviceplan"
   azure_rm_appserviceplan: "{{ azure_rm_appserviceplan }}"
+  register: r_azure_rm_appserviceplan
   vars:
     azure_rm_appserviceplan: 
       profile: "{{ azure_rm_appserviceplan_profile | default(omit, True) }}"

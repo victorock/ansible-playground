@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_acl"
   nxos_acl: "{{ nxos_acl }}"
+  register: r_nxos_acl
   vars:
     nxos_acl: 
       seq: "{{ nxos_acl_seq | default(omit, True) }}"

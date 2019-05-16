@@ -1,6 +1,7 @@
 ---
 - name: "module_iso_extract"
   iso_extract: "{{ iso_extract }}"
+  register: r_iso_extract
   vars:
     iso_extract: 
       dest: "{{ iso_extract_dest | default(omit, True) }}"

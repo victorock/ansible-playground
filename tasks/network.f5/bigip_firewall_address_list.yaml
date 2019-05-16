@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_firewall_address_list"
   bigip_firewall_address_list: "{{ bigip_firewall_address_list }}"
+  register: r_bigip_firewall_address_list
   vars:
     bigip_firewall_address_list: 
       geo_locations: "{{ bigip_firewall_address_list_geo_locations | default(omit, True) }}"

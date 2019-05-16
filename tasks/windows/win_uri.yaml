@@ -1,6 +1,7 @@
 ---
 - name: "module_win_uri"
   win_uri: "{{ win_uri }}"
+  register: r_win_uri
   vars:
     win_uri: 
       body: "{{ win_uri_body | default(omit, True) }}"

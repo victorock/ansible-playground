@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cli_config: 
-      multiline_delimiter: "{{ cli_config_multiline_delimiter | default('omit', True) }}"
-      rollback: "{{ cli_config_rollback | default('omit', True) }}"
-      commit_comment: "{{ cli_config_commit_comment | default('omit', True) }}"
-      diff_replace: "{{ cli_config_diff_replace | default('omit', True) }}"
-      replace: "{{ cli_config_replace | default('omit', True) }}"
-      defaults: "{{ cli_config_defaults | default('omit', True) }}"
-      commit: "{{ cli_config_commit | default('omit', True) }}"
-      diff_match: "{{ cli_config_diff_match | default('omit', True) }}"
-      config: "{{ cli_config_config | default('omit', True) }}"
-      diff_ignore_lines: "{{ cli_config_diff_ignore_lines | default('omit', True) }}"
+      multiline_delimiter: "{{ cli_config_multiline_delimiter | default(omit, True) }}"
+      rollback: "{{ cli_config_rollback | default(omit, True) }}"
+      commit_comment: "{{ cli_config_commit_comment | default(omit, True) }}"
+      diff_replace: "{{ cli_config_diff_replace | default(omit, True) }}"
+      replace: "{{ cli_config_replace | default(omit, True) }}"
+      defaults: "{{ cli_config_defaults | default(omit, True) }}"
+      commit: "{{ cli_config_commit | default(omit, True) }}"
+      diff_match: "{{ cli_config_diff_match | default(omit, True) }}"
+      config: "{{ cli_config_config | default(omit, True) }}"
+      diff_ignore_lines: "{{ cli_config_diff_ignore_lines | default(omit, True) }}"
   tasks:
     - name: "plugin_cli_config"
       cli_config: "{{ cli_config }}"
+      register: r_cli_config

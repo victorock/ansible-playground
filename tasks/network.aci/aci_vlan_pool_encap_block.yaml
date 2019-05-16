@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_vlan_pool_encap_block"
   aci_vlan_pool_encap_block: "{{ aci_vlan_pool_encap_block }}"
+  register: r_aci_vlan_pool_encap_block
   vars:
     aci_vlan_pool_encap_block: 
       username: "{{ aci_vlan_pool_encap_block_username | default(omit, True) }}"

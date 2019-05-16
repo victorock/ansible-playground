@@ -1,6 +1,7 @@
 ---
 - name: "module_pulp_repo"
   pulp_repo: "{{ pulp_repo }}"
+  register: r_pulp_repo
   vars:
     pulp_repo: 
       feed: "{{ pulp_repo_feed | default(omit, True) }}"

@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vcenter_folder: 
-      username: "{{ vcenter_folder_username | default('omit', True) }}"
-      datacenter: "{{ vcenter_folder_datacenter | default('omit', True) }}"
-      folder_type: "{{ vcenter_folder_folder_type | default('omit', True) }}"
-      hostname: "{{ vcenter_folder_hostname | default('omit', True) }}"
-      state: "{{ vcenter_folder_state | default('omit', True) }}"
-      folder_name: "{{ vcenter_folder_folder_name | default('omit', True) }}"
-      parent_folder: "{{ vcenter_folder_parent_folder | default('omit', True) }}"
-      password: "{{ vcenter_folder_password | default('omit', True) }}"
-      validate_certs: "{{ vcenter_folder_validate_certs | default('omit', True) }}"
-      port: "{{ vcenter_folder_port | default('omit', True) }}"
+      username: "{{ vcenter_folder_username | default(omit, True) }}"
+      datacenter: "{{ vcenter_folder_datacenter | default(omit, True) }}"
+      folder_type: "{{ vcenter_folder_folder_type | default(omit, True) }}"
+      hostname: "{{ vcenter_folder_hostname | default(omit, True) }}"
+      state: "{{ vcenter_folder_state | default(omit, True) }}"
+      folder_name: "{{ vcenter_folder_folder_name | default(omit, True) }}"
+      parent_folder: "{{ vcenter_folder_parent_folder | default(omit, True) }}"
+      password: "{{ vcenter_folder_password | default(omit, True) }}"
+      validate_certs: "{{ vcenter_folder_validate_certs | default(omit, True) }}"
+      port: "{{ vcenter_folder_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vcenter_folder"
       vcenter_folder: "{{ vcenter_folder }}"
+      register: r_vcenter_folder

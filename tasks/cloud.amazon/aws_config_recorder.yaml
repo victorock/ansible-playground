@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_config_recorder"
   aws_config_recorder: "{{ aws_config_recorder }}"
+  register: r_aws_config_recorder
   vars:
     aws_config_recorder: 
       profile: "{{ aws_config_recorder_profile | default(omit, True) }}"

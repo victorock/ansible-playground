@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     fortios_config: 
-      username: "{{ fortios_config_username | default('omit', True) }}"
-      src: "{{ fortios_config_src | default('omit', True) }}"
-      config_file: "{{ fortios_config_config_file | default('omit', True) }}"
-      file_mode: "{{ fortios_config_file_mode | default('omit', True) }}"
-      backup_path: "{{ fortios_config_backup_path | default('omit', True) }}"
-      filter: "{{ fortios_config_filter | default('omit', True) }}"
-      host: "{{ fortios_config_host | default('omit', True) }}"
-      backup_filename: "{{ fortios_config_backup_filename | default('omit', True) }}"
-      timeout: "{{ fortios_config_timeout | default('omit', True) }}"
-      password: "{{ fortios_config_password | default('omit', True) }}"
-      backup: "{{ fortios_config_backup | default('omit', True) }}"
-      vdom: "{{ fortios_config_vdom | default('omit', True) }}"
+      username: "{{ fortios_config_username | default(omit, True) }}"
+      src: "{{ fortios_config_src | default(omit, True) }}"
+      config_file: "{{ fortios_config_config_file | default(omit, True) }}"
+      file_mode: "{{ fortios_config_file_mode | default(omit, True) }}"
+      backup_path: "{{ fortios_config_backup_path | default(omit, True) }}"
+      filter: "{{ fortios_config_filter | default(omit, True) }}"
+      host: "{{ fortios_config_host | default(omit, True) }}"
+      backup_filename: "{{ fortios_config_backup_filename | default(omit, True) }}"
+      timeout: "{{ fortios_config_timeout | default(omit, True) }}"
+      password: "{{ fortios_config_password | default(omit, True) }}"
+      backup: "{{ fortios_config_backup | default(omit, True) }}"
+      vdom: "{{ fortios_config_vdom | default(omit, True) }}"
   tasks:
     - name: "plugin_fortios_config"
       fortios_config: "{{ fortios_config }}"
+      register: r_fortios_config

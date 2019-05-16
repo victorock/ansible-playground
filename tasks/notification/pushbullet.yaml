@@ -1,6 +1,7 @@
 ---
 - name: "module_pushbullet"
   pushbullet: "{{ pushbullet }}"
+  register: r_pushbullet
   vars:
     pushbullet: 
       body: "{{ pushbullet_body | default(omit, True) }}"

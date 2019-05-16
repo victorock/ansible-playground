@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_filter_entry"
   aci_filter_entry: "{{ aci_filter_entry }}"
+  register: r_aci_filter_entry
   vars:
     aci_filter_entry: 
       dst_port_end: "{{ aci_filter_entry_dst_port_end | default(omit, True) }}"

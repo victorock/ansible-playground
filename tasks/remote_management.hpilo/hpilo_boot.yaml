@@ -1,6 +1,7 @@
 ---
 - name: "module_hpilo_boot"
   hpilo_boot: "{{ hpilo_boot }}"
+  register: r_hpilo_boot
   vars:
     hpilo_boot: 
       force: "{{ hpilo_boot_force | default(omit, True) }}"

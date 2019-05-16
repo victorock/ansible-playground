@@ -1,6 +1,7 @@
 ---
 - name: "module_dladm_etherstub"
   dladm_etherstub: "{{ dladm_etherstub }}"
+  register: r_dladm_etherstub
   vars:
     dladm_etherstub: 
       state: "{{ dladm_etherstub_state | default(omit, True) }}"

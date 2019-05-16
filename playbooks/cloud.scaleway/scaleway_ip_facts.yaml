@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     scaleway_ip_facts: 
-      api_timeout: "{{ scaleway_ip_facts_api_timeout | default('omit', True) }}"
-      validate_certs: "{{ scaleway_ip_facts_validate_certs | default('omit', True) }}"
-      api_url: "{{ scaleway_ip_facts_api_url | default('omit', True) }}"
-      api_token: "{{ scaleway_ip_facts_api_token | default('omit', True) }}"
+      api_timeout: "{{ scaleway_ip_facts_api_timeout | default(omit, True) }}"
+      validate_certs: "{{ scaleway_ip_facts_validate_certs | default(omit, True) }}"
+      api_url: "{{ scaleway_ip_facts_api_url | default(omit, True) }}"
+      api_token: "{{ scaleway_ip_facts_api_token | default(omit, True) }}"
   tasks:
     - name: "plugin_scaleway_ip_facts"
       scaleway_ip_facts: "{{ scaleway_ip_facts }}"
+      register: r_scaleway_ip_facts

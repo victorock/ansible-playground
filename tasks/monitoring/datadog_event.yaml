@@ -1,6 +1,7 @@
 ---
 - name: "module_datadog_event"
   datadog_event: "{{ datadog_event }}"
+  register: r_datadog_event
   vars:
     datadog_event: 
       date_happened: "{{ datadog_event_date_happened | default(omit, True) }}"

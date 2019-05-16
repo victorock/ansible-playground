@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_smtp"
   bigip_smtp: "{{ bigip_smtp }}"
+  register: r_bigip_smtp
   vars:
     bigip_smtp: 
       smtp_server_port: "{{ bigip_smtp_smtp_server_port | default(omit, True) }}"

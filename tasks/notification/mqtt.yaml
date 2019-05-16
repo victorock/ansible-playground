@@ -1,6 +1,7 @@
 ---
 - name: "module_mqtt"
   mqtt: "{{ mqtt }}"
+  register: r_mqtt
   vars:
     mqtt: 
       username: "{{ mqtt_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_staticnat"
   cs_staticnat: "{{ cs_staticnat }}"
+  register: r_cs_staticnat
   vars:
     cs_staticnat: 
       vm_guest_ip: "{{ cs_staticnat_vm_guest_ip | default(omit, True) }}"

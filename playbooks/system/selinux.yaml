@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     selinux: 
-      policy: "{{ selinux_policy | default('omit', True) }}"
-      state: "{{ selinux_state | default('omit', True) }}"
-      conf: "{{ selinux_conf | default('omit', True) }}"
+      policy: "{{ selinux_policy | default(omit, True) }}"
+      state: "{{ selinux_state | default(omit, True) }}"
+      conf: "{{ selinux_conf | default(omit, True) }}"
   tasks:
     - name: "plugin_selinux"
       selinux: "{{ selinux }}"
+      register: r_selinux

@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_vlan"
   meraki_vlan: "{{ meraki_vlan }}"
+  register: r_meraki_vlan
   vars:
     meraki_vlan: 
       org_name: "{{ meraki_vlan_org_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_errorpageprofile"
   avi_errorpageprofile: "{{ avi_errorpageprofile }}"
+  register: r_avi_errorpageprofile
   vars:
     avi_errorpageprofile: 
       username: "{{ avi_errorpageprofile_username | default(omit, True) }}"

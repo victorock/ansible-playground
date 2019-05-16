@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_systemconfiguration"
   avi_systemconfiguration: "{{ avi_systemconfiguration }}"
+  register: r_avi_systemconfiguration
   vars:
     avi_systemconfiguration: 
       docker_mode: "{{ avi_systemconfiguration_docker_mode | default(omit, True) }}"

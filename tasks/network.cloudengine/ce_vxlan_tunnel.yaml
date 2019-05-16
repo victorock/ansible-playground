@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_vxlan_tunnel"
   ce_vxlan_tunnel: "{{ ce_vxlan_tunnel }}"
+  register: r_ce_vxlan_tunnel
   vars:
     ce_vxlan_tunnel: 
       vni_id: "{{ ce_vxlan_tunnel_vni_id | default(omit, True) }}"

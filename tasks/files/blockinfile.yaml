@@ -1,6 +1,7 @@
 ---
 - name: "module_blockinfile"
   blockinfile: "{{ blockinfile }}"
+  register: r_blockinfile
   vars:
     blockinfile: 
       block: "{{ blockinfile_block | default(omit, True) }}"

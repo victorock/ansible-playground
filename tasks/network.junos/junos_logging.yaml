@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_logging"
   junos_logging: "{{ junos_logging }}"
+  register: r_junos_logging
   vars:
     junos_logging: 
       files: "{{ junos_logging_files | default(omit, True) }}"

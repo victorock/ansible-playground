@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_cli_script"
   bigip_cli_script: "{{ bigip_cli_script }}"
+  register: r_bigip_cli_script
   vars:
     bigip_cli_script: 
       description: "{{ bigip_cli_script_description | default(omit, True) }}"

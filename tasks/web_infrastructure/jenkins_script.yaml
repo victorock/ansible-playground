@@ -1,6 +1,7 @@
 ---
 - name: "module_jenkins_script"
   jenkins_script: "{{ jenkins_script }}"
+  register: r_jenkins_script
   vars:
     jenkins_script: 
       script: "{{ jenkins_script_script | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_zypper_repository"
   zypper_repository: "{{ zypper_repository }}"
+  register: r_zypper_repository
   vars:
     zypper_repository: 
       priority: "{{ zypper_repository_priority | default(omit, True) }}"

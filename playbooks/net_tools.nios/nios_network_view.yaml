@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nios_network_view: 
-      comment: "{{ nios_network_view_comment | default('omit', True) }}"
-      state: "{{ nios_network_view_state | default('omit', True) }}"
-      extattrs: "{{ nios_network_view_extattrs | default('omit', True) }}"
-      name: "{{ nios_network_view_name | default('omit', True) }}"
-      provider: "{{ nios_network_view_provider | default('omit', True) }}"
+      comment: "{{ nios_network_view_comment | default(omit, True) }}"
+      state: "{{ nios_network_view_state | default(omit, True) }}"
+      extattrs: "{{ nios_network_view_extattrs | default(omit, True) }}"
+      name: "{{ nios_network_view_name | default(omit, True) }}"
+      provider: "{{ nios_network_view_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nios_network_view"
       nios_network_view: "{{ nios_network_view }}"
+      register: r_nios_network_view

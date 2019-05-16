@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_portchannel"
   cnos_portchannel: "{{ cnos_portchannel }}"
+  register: r_cnos_portchannel
   vars:
     cnos_portchannel: 
       username: "{{ cnos_portchannel_username | default(omit, True) }}"

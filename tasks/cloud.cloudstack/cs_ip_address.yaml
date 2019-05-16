@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_ip_address"
   cs_ip_address: "{{ cs_ip_address }}"
+  register: r_cs_ip_address
   vars:
     cs_ip_address: 
       domain: "{{ cs_ip_address_domain | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ftd_configuration"
   ftd_configuration: "{{ ftd_configuration }}"
+  register: r_ftd_configuration
   vars:
     ftd_configuration: 
       query_params: "{{ ftd_configuration_query_params | default(omit, True) }}"

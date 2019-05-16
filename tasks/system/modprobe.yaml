@@ -1,6 +1,7 @@
 ---
 - name: "module_modprobe"
   modprobe: "{{ modprobe }}"
+  register: r_modprobe
   vars:
     modprobe: 
       state: "{{ modprobe_state | default(omit, True) }}"

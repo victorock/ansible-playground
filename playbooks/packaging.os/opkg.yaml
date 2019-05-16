@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     opkg: 
-      update_cache: "{{ opkg_update_cache | default('omit', True) }}"
-      state: "{{ opkg_state | default('omit', True) }}"
-      force: "{{ opkg_force | default('omit', True) }}"
-      name: "{{ opkg_name | default('omit', True) }}"
+      update_cache: "{{ opkg_update_cache | default(omit, True) }}"
+      state: "{{ opkg_state | default(omit, True) }}"
+      force: "{{ opkg_force | default(omit, True) }}"
+      name: "{{ opkg_name | default(omit, True) }}"
   tasks:
     - name: "plugin_opkg"
       opkg: "{{ opkg }}"
+      register: r_opkg

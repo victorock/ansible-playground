@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_ipaddrgroup"
   avi_ipaddrgroup: "{{ avi_ipaddrgroup }}"
+  register: r_avi_ipaddrgroup
   vars:
     avi_ipaddrgroup: 
       prefixes: "{{ avi_ipaddrgroup_prefixes | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_client_ssl"
   bigip_profile_client_ssl: "{{ bigip_profile_client_ssl }}"
+  register: r_bigip_profile_client_ssl
   vars:
     bigip_profile_client_ssl: 
       parent: "{{ bigip_profile_client_ssl_parent | default(omit, True) }}"

@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcp_compute_firewall: 
-      scopes: "{{ gcp_compute_firewall_scopes | default('omit', True) }}"
-      description: "{{ gcp_compute_firewall_description | default('omit', True) }}"
-      source_tags: "{{ gcp_compute_firewall_source_tags | default('omit', True) }}"
-      service_account_email: "{{ gcp_compute_firewall_service_account_email | default('omit', True) }}"
-      state: "{{ gcp_compute_firewall_state | default('omit', True) }}"
-      name: "{{ gcp_compute_firewall_name | default('omit', True) }}"
-      project: "{{ gcp_compute_firewall_project | default('omit', True) }}"
-      target_tags: "{{ gcp_compute_firewall_target_tags | default('omit', True) }}"
-      source_ranges: "{{ gcp_compute_firewall_source_ranges | default('omit', True) }}"
-      allowed: "{{ gcp_compute_firewall_allowed | default('omit', True) }}"
-      service_account_file: "{{ gcp_compute_firewall_service_account_file | default('omit', True) }}"
-      auth_kind: "{{ gcp_compute_firewall_auth_kind | default('omit', True) }}"
-      network: "{{ gcp_compute_firewall_network | default('omit', True) }}"
+      scopes: "{{ gcp_compute_firewall_scopes | default(omit, True) }}"
+      description: "{{ gcp_compute_firewall_description | default(omit, True) }}"
+      source_tags: "{{ gcp_compute_firewall_source_tags | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_firewall_service_account_email | default(omit, True) }}"
+      state: "{{ gcp_compute_firewall_state | default(omit, True) }}"
+      name: "{{ gcp_compute_firewall_name | default(omit, True) }}"
+      project: "{{ gcp_compute_firewall_project | default(omit, True) }}"
+      target_tags: "{{ gcp_compute_firewall_target_tags | default(omit, True) }}"
+      source_ranges: "{{ gcp_compute_firewall_source_ranges | default(omit, True) }}"
+      allowed: "{{ gcp_compute_firewall_allowed | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_firewall_service_account_file | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_firewall_auth_kind | default(omit, True) }}"
+      network: "{{ gcp_compute_firewall_network | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_compute_firewall"
       gcp_compute_firewall: "{{ gcp_compute_firewall }}"
+      register: r_gcp_compute_firewall

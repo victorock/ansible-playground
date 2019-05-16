@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_regkey_license"
   bigiq_regkey_license: "{{ bigiq_regkey_license }}"
+  register: r_bigiq_regkey_license
   vars:
     bigiq_regkey_license: 
       accept_eula: "{{ bigiq_regkey_license_accept_eula | default(omit, True) }}"

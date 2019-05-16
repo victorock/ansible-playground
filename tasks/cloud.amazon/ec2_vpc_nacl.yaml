@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_nacl"
   ec2_vpc_nacl: "{{ ec2_vpc_nacl }}"
+  register: r_ec2_vpc_nacl
   vars:
     ec2_vpc_nacl: 
       profile: "{{ ec2_vpc_nacl_profile | default(omit, True) }}"

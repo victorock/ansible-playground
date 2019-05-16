@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_queue"
   rax_queue: "{{ rax_queue }}"
+  register: r_rax_queue
   vars:
     rax_queue: 
       username: "{{ rax_queue_username | default(omit, True) }}"

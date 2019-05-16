@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_cli_alias: 
-      description: "{{ bigip_cli_alias_description | default('omit', True) }}"
-      partition: "{{ bigip_cli_alias_partition | default('omit', True) }}"
-      server: "{{ bigip_cli_alias_server | default('omit', True) }}"
-      state: "{{ bigip_cli_alias_state | default('omit', True) }}"
-      command: "{{ bigip_cli_alias_command | default('omit', True) }}"
-      user: "{{ bigip_cli_alias_user | default('omit', True) }}"
-      server_port: "{{ bigip_cli_alias_server_port | default('omit', True) }}"
-      provider: "{{ bigip_cli_alias_provider | default('omit', True) }}"
-      scope: "{{ bigip_cli_alias_scope | default('omit', True) }}"
-      password: "{{ bigip_cli_alias_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_cli_alias_validate_certs | default('omit', True) }}"
-      name: "{{ bigip_cli_alias_name | default('omit', True) }}"
+      description: "{{ bigip_cli_alias_description | default(omit, True) }}"
+      partition: "{{ bigip_cli_alias_partition | default(omit, True) }}"
+      server: "{{ bigip_cli_alias_server | default(omit, True) }}"
+      state: "{{ bigip_cli_alias_state | default(omit, True) }}"
+      command: "{{ bigip_cli_alias_command | default(omit, True) }}"
+      user: "{{ bigip_cli_alias_user | default(omit, True) }}"
+      server_port: "{{ bigip_cli_alias_server_port | default(omit, True) }}"
+      provider: "{{ bigip_cli_alias_provider | default(omit, True) }}"
+      scope: "{{ bigip_cli_alias_scope | default(omit, True) }}"
+      password: "{{ bigip_cli_alias_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_cli_alias_validate_certs | default(omit, True) }}"
+      name: "{{ bigip_cli_alias_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_cli_alias"
       bigip_cli_alias: "{{ bigip_cli_alias }}"
+      register: r_bigip_cli_alias

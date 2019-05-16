@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_interface_policy_ospf"
   aci_interface_policy_ospf: "{{ aci_interface_policy_ospf }}"
+  register: r_aci_interface_policy_ospf
   vars:
     aci_interface_policy_ospf: 
       cost: "{{ aci_interface_policy_ospf_cost | default(omit, True) }}"

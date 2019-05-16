@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_config"
   iosxr_config: "{{ iosxr_config }}"
+  register: r_iosxr_config
   vars:
     iosxr_config: 
       comment: "{{ iosxr_config_comment | default(omit, True) }}"

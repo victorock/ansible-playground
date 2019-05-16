@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_cluster_pair"
   na_elementsw_cluster_pair: "{{ na_elementsw_cluster_pair }}"
+  register: r_na_elementsw_cluster_pair
   vars:
     na_elementsw_cluster_pair: 
       username: "{{ na_elementsw_cluster_pair_username | default(omit, True) }}"

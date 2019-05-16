@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_info_center_trap: 
-      trap_time_stamp: "{{ ce_info_center_trap_trap_time_stamp | default('omit', True) }}"
-      trap_buff_size: "{{ ce_info_center_trap_trap_buff_size | default('omit', True) }}"
-      channel_id: "{{ ce_info_center_trap_channel_id | default('omit', True) }}"
-      state: "{{ ce_info_center_trap_state | default('omit', True) }}"
-      trap_level: "{{ ce_info_center_trap_trap_level | default('omit', True) }}"
-      trap_buff_enable: "{{ ce_info_center_trap_trap_buff_enable | default('omit', True) }}"
-      module_name: "{{ ce_info_center_trap_module_name | default('omit', True) }}"
-      trap_enable: "{{ ce_info_center_trap_trap_enable | default('omit', True) }}"
+      trap_time_stamp: "{{ ce_info_center_trap_trap_time_stamp | default(omit, True) }}"
+      trap_buff_size: "{{ ce_info_center_trap_trap_buff_size | default(omit, True) }}"
+      channel_id: "{{ ce_info_center_trap_channel_id | default(omit, True) }}"
+      state: "{{ ce_info_center_trap_state | default(omit, True) }}"
+      trap_level: "{{ ce_info_center_trap_trap_level | default(omit, True) }}"
+      trap_buff_enable: "{{ ce_info_center_trap_trap_buff_enable | default(omit, True) }}"
+      module_name: "{{ ce_info_center_trap_module_name | default(omit, True) }}"
+      trap_enable: "{{ ce_info_center_trap_trap_enable | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_info_center_trap"
       ce_info_center_trap: "{{ ce_info_center_trap }}"
+      register: r_ce_info_center_trap

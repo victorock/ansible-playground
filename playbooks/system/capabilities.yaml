@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     capabilities: 
-      capability: "{{ capabilities_capability | default('omit', True) }}"
-      path: "{{ capabilities_path | default('omit', True) }}"
-      state: "{{ capabilities_state | default('omit', True) }}"
+      capability: "{{ capabilities_capability | default(omit, True) }}"
+      path: "{{ capabilities_path | default(omit, True) }}"
+      state: "{{ capabilities_state | default(omit, True) }}"
   tasks:
     - name: "plugin_capabilities"
       capabilities: "{{ capabilities }}"
+      register: r_capabilities

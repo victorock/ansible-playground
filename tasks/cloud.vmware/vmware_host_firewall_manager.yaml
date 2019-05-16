@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_firewall_manager"
   vmware_host_firewall_manager: "{{ vmware_host_firewall_manager }}"
+  register: r_vmware_host_firewall_manager
   vars:
     vmware_host_firewall_manager: 
       username: "{{ vmware_host_firewall_manager_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_snmp"
   bigip_snmp: "{{ bigip_snmp }}"
+  register: r_bigip_snmp
   vars:
     bigip_snmp: 
       agent_status_traps: "{{ bigip_snmp_agent_status_traps | default(omit, True) }}"

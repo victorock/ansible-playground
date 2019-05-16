@@ -1,6 +1,7 @@
 ---
 - name: "module_openssl_certificate"
   openssl_certificate: "{{ openssl_certificate }}"
+  register: r_openssl_certificate
   vars:
     openssl_certificate: 
       privatekey_passphrase: "{{ openssl_certificate_privatekey_passphrase | default(omit, True) }}"

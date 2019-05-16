@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_routedomain"
   bigip_routedomain: "{{ bigip_routedomain }}"
+  register: r_bigip_routedomain
   vars:
     bigip_routedomain: 
       flow_eviction_policy: "{{ bigip_routedomain_flow_eviction_policy | default(omit, True) }}"

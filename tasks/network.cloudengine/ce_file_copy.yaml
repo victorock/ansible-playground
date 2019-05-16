@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_file_copy"
   ce_file_copy: "{{ ce_file_copy }}"
+  register: r_ce_file_copy
   vars:
     ce_file_copy: 
       remote_file: "{{ ce_file_copy_remote_file | default(omit, True) }}"

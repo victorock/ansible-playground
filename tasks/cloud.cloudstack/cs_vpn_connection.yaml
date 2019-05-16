@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_vpn_connection"
   cs_vpn_connection: "{{ cs_vpn_connection }}"
+  register: r_cs_vpn_connection
   vars:
     cs_vpn_connection: 
       vpn_customer_gateway: "{{ cs_vpn_connection_vpn_customer_gateway | default(omit, True) }}"

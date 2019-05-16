@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vpc"
   nxos_vpc: "{{ nxos_vpc }}"
+  register: r_nxos_vpc
   vars:
     nxos_vpc: 
       domain: "{{ nxos_vpc_domain | default(omit, True) }}"

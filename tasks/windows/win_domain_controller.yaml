@@ -1,6 +1,7 @@
 ---
 - name: "module_win_domain_controller"
   win_domain_controller: "{{ win_domain_controller }}"
+  register: r_win_domain_controller
   vars:
     win_domain_controller: 
       read_only: "{{ win_domain_controller_read_only | default(omit, True) }}"

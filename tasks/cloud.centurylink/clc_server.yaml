@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_server"
   clc_server: "{{ clc_server }}"
+  register: r_clc_server
   vars:
     clc_server: 
       anti_affinity_policy_name: "{{ clc_server_anti_affinity_policy_name | default(omit, True) }}"

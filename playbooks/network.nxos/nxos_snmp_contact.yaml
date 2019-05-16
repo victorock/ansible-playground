@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_snmp_contact: 
-      state: "{{ nxos_snmp_contact_state | default('omit', True) }}"
-      contact: "{{ nxos_snmp_contact_contact | default('omit', True) }}"
-      provider: "{{ nxos_snmp_contact_provider | default('omit', True) }}"
+      state: "{{ nxos_snmp_contact_state | default(omit, True) }}"
+      contact: "{{ nxos_snmp_contact_contact | default(omit, True) }}"
+      provider: "{{ nxos_snmp_contact_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_snmp_contact"
       nxos_snmp_contact: "{{ nxos_snmp_contact }}"
+      register: r_nxos_snmp_contact

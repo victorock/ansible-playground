@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_pgsnap"
   purefa_pgsnap: "{{ purefa_pgsnap }}"
+  register: r_purefa_pgsnap
   vars:
     purefa_pgsnap: 
       restore: "{{ purefa_pgsnap_restore | default(omit, True) }}"

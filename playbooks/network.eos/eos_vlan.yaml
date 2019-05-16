@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     eos_vlan: 
-      authorize: "{{ eos_vlan_authorize | default('omit', True) }}"
-      purge: "{{ eos_vlan_purge | default('omit', True) }}"
-      name: "{{ eos_vlan_name | default('omit', True) }}"
-      interfaces: "{{ eos_vlan_interfaces | default('omit', True) }}"
-      auth_pass: "{{ eos_vlan_auth_pass | default('omit', True) }}"
-      delay: "{{ eos_vlan_delay | default('omit', True) }}"
-      aggregate: "{{ eos_vlan_aggregate | default('omit', True) }}"
-      state: "{{ eos_vlan_state | default('omit', True) }}"
-      provider: "{{ eos_vlan_provider | default('omit', True) }}"
-      associated_interfaces: "{{ eos_vlan_associated_interfaces | default('omit', True) }}"
-      vlan_id: "{{ eos_vlan_vlan_id | default('omit', True) }}"
+      authorize: "{{ eos_vlan_authorize | default(omit, True) }}"
+      purge: "{{ eos_vlan_purge | default(omit, True) }}"
+      name: "{{ eos_vlan_name | default(omit, True) }}"
+      interfaces: "{{ eos_vlan_interfaces | default(omit, True) }}"
+      auth_pass: "{{ eos_vlan_auth_pass | default(omit, True) }}"
+      delay: "{{ eos_vlan_delay | default(omit, True) }}"
+      aggregate: "{{ eos_vlan_aggregate | default(omit, True) }}"
+      state: "{{ eos_vlan_state | default(omit, True) }}"
+      provider: "{{ eos_vlan_provider | default(omit, True) }}"
+      associated_interfaces: "{{ eos_vlan_associated_interfaces | default(omit, True) }}"
+      vlan_id: "{{ eos_vlan_vlan_id | default(omit, True) }}"
   tasks:
     - name: "plugin_eos_vlan"
       eos_vlan: "{{ eos_vlan }}"
+      register: r_eos_vlan

@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_storage_profile"
   ucs_storage_profile: "{{ ucs_storage_profile }}"
+  register: r_ucs_storage_profile
   vars:
     ucs_storage_profile: 
       username: "{{ ucs_storage_profile_username | default(omit, True) }}"

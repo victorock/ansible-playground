@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_ses_identity"
   aws_ses_identity: "{{ aws_ses_identity }}"
+  register: r_aws_ses_identity
   vars:
     aws_ses_identity: 
       profile: "{{ aws_ses_identity_profile | default(omit, True) }}"

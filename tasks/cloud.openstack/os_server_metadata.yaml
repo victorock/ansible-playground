@@ -1,6 +1,7 @@
 ---
 - name: "module_os_server_metadata"
   os_server_metadata: "{{ os_server_metadata }}"
+  register: r_os_server_metadata
   vars:
     os_server_metadata: 
       auth_type: "{{ os_server_metadata_auth_type | default(omit, True) }}"

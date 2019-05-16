@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vertica_schema: 
-      create_roles: "{{ vertica_schema_create_roles | default('omit', True) }}"
-      name: "{{ vertica_schema_name | default('omit', True) }}"
-      login_user: "{{ vertica_schema_login_user | default('omit', True) }}"
-      db: "{{ vertica_schema_db | default('omit', True) }}"
-      usage_roles: "{{ vertica_schema_usage_roles | default('omit', True) }}"
-      cluster: "{{ vertica_schema_cluster | default('omit', True) }}"
-      state: "{{ vertica_schema_state | default('omit', True) }}"
-      login_password: "{{ vertica_schema_login_password | default('omit', True) }}"
-      owner: "{{ vertica_schema_owner | default('omit', True) }}"
-      port: "{{ vertica_schema_port | default('omit', True) }}"
+      create_roles: "{{ vertica_schema_create_roles | default(omit, True) }}"
+      name: "{{ vertica_schema_name | default(omit, True) }}"
+      login_user: "{{ vertica_schema_login_user | default(omit, True) }}"
+      db: "{{ vertica_schema_db | default(omit, True) }}"
+      usage_roles: "{{ vertica_schema_usage_roles | default(omit, True) }}"
+      cluster: "{{ vertica_schema_cluster | default(omit, True) }}"
+      state: "{{ vertica_schema_state | default(omit, True) }}"
+      login_password: "{{ vertica_schema_login_password | default(omit, True) }}"
+      owner: "{{ vertica_schema_owner | default(omit, True) }}"
+      port: "{{ vertica_schema_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vertica_schema"
       vertica_schema: "{{ vertica_schema }}"
+      register: r_vertica_schema

@@ -1,6 +1,7 @@
 ---
 - name: "module_bzr"
   bzr: "{{ bzr }}"
+  register: r_bzr
   vars:
     bzr: 
       dest: "{{ bzr_dest | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_bgp"
   ce_bgp: "{{ ce_bgp }}"
+  register: r_ce_bgp
   vars:
     ce_bgp: 
       vrf_rid_auto_sel: "{{ ce_bgp_vrf_rid_auto_sel | default(omit, True) }}"

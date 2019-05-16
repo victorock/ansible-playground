@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_cert_gen_ssh"
   panos_cert_gen_ssh: "{{ panos_cert_gen_ssh }}"
+  register: r_panos_cert_gen_ssh
   vars:
     panos_cert_gen_ssh: 
       ip_address: "{{ panos_cert_gen_ssh_ip_address | default(omit, True) }}"

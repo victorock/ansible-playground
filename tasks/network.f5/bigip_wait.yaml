@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_wait"
   bigip_wait: "{{ bigip_wait }}"
+  register: r_bigip_wait
   vars:
     bigip_wait: 
       server_port: "{{ bigip_wait_server_port | default(omit, True) }}"

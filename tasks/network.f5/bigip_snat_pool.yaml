@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_snat_pool"
   bigip_snat_pool: "{{ bigip_snat_pool }}"
+  register: r_bigip_snat_pool
   vars:
     bigip_snat_pool: 
       name: "{{ bigip_snat_pool_name | default(omit, True) }}"

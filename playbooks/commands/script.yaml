@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     script: 
-      executable: "{{ script_executable | default('omit', True) }}"
-      chdir: "{{ script_chdir | default('omit', True) }}"
-      decrypt: "{{ script_decrypt | default('omit', True) }}"
-      removes: "{{ script_removes | default('omit', True) }}"
-      creates: "{{ script_creates | default('omit', True) }}"
-      free_form: "{{ script_free_form | default('omit', True) }}"
+      executable: "{{ script_executable | default(omit, True) }}"
+      chdir: "{{ script_chdir | default(omit, True) }}"
+      decrypt: "{{ script_decrypt | default(omit, True) }}"
+      removes: "{{ script_removes | default(omit, True) }}"
+      creates: "{{ script_creates | default(omit, True) }}"
+      free_form: "{{ script_free_form | default(omit, True) }}"
   tasks:
     - name: "plugin_script"
       script: "{{ script }}"
+      register: r_script

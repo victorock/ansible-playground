@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_firewall_group_facts"
   vultr_firewall_group_facts: "{{ vultr_firewall_group_facts }}"
+  register: r_vultr_firewall_group_facts
   vars:
     vultr_firewall_group_facts: 
       api_retries: "{{ vultr_firewall_group_facts_api_retries | default(omit, True) }}"

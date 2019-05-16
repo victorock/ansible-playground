@@ -1,6 +1,7 @@
 ---
 - name: "module_win_feature"
   win_feature: "{{ win_feature }}"
+  register: r_win_feature
   vars:
     win_feature: 
       source: "{{ win_feature_source | default(omit, True) }}"

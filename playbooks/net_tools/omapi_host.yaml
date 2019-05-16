@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     omapi_host: 
-      macaddr: "{{ omapi_host_macaddr | default('omit', True) }}"
-      statements: "{{ omapi_host_statements | default('omit', True) }}"
-      name: "{{ omapi_host_name | default('omit', True) }}"
-      ip: "{{ omapi_host_ip | default('omit', True) }}"
-      host: "{{ omapi_host_host | default('omit', True) }}"
-      state: "{{ omapi_host_state | default('omit', True) }}"
-      ddns: "{{ omapi_host_ddns | default('omit', True) }}"
-      key: "{{ omapi_host_key | default('omit', True) }}"
-      key_name: "{{ omapi_host_key_name | default('omit', True) }}"
-      port: "{{ omapi_host_port | default('omit', True) }}"
+      macaddr: "{{ omapi_host_macaddr | default(omit, True) }}"
+      statements: "{{ omapi_host_statements | default(omit, True) }}"
+      name: "{{ omapi_host_name | default(omit, True) }}"
+      ip: "{{ omapi_host_ip | default(omit, True) }}"
+      host: "{{ omapi_host_host | default(omit, True) }}"
+      state: "{{ omapi_host_state | default(omit, True) }}"
+      ddns: "{{ omapi_host_ddns | default(omit, True) }}"
+      key: "{{ omapi_host_key | default(omit, True) }}"
+      key_name: "{{ omapi_host_key_name | default(omit, True) }}"
+      port: "{{ omapi_host_port | default(omit, True) }}"
   tasks:
     - name: "plugin_omapi_host"
       omapi_host: "{{ omapi_host }}"
+      register: r_omapi_host

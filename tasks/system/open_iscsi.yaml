@@ -1,6 +1,7 @@
 ---
 - name: "module_open_iscsi"
   open_iscsi: "{{ open_iscsi }}"
+  register: r_open_iscsi
   vars:
     open_iscsi: 
       auto_node_startup: "{{ open_iscsi_auto_node_startup | default(omit, True) }}"

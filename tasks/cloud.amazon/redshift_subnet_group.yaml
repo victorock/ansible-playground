@@ -1,6 +1,7 @@
 ---
 - name: "module_redshift_subnet_group"
   redshift_subnet_group: "{{ redshift_subnet_group }}"
+  register: r_redshift_subnet_group
   vars:
     redshift_subnet_group: 
       profile: "{{ redshift_subnet_group_profile | default(omit, True) }}"

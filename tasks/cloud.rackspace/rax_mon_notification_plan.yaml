@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_mon_notification_plan"
   rax_mon_notification_plan: "{{ rax_mon_notification_plan }}"
+  register: r_rax_mon_notification_plan
   vars:
     rax_mon_notification_plan: 
       username: "{{ rax_mon_notification_plan_username | default(omit, True) }}"

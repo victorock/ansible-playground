@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aireos_command: 
-      retries: "{{ aireos_command_retries | default('omit', True) }}"
-      commands: "{{ aireos_command_commands | default('omit', True) }}"
-      interval: "{{ aireos_command_interval | default('omit', True) }}"
-      provider: "{{ aireos_command_provider | default('omit', True) }}"
-      wait_for: "{{ aireos_command_wait_for | default('omit', True) }}"
-      match: "{{ aireos_command_match | default('omit', True) }}"
+      retries: "{{ aireos_command_retries | default(omit, True) }}"
+      commands: "{{ aireos_command_commands | default(omit, True) }}"
+      interval: "{{ aireos_command_interval | default(omit, True) }}"
+      provider: "{{ aireos_command_provider | default(omit, True) }}"
+      wait_for: "{{ aireos_command_wait_for | default(omit, True) }}"
+      match: "{{ aireos_command_match | default(omit, True) }}"
   tasks:
     - name: "plugin_aireos_command"
       aireos_command: "{{ aireos_command }}"
+      register: r_aireos_command

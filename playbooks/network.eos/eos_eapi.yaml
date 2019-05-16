@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     eos_eapi: 
-      authorize: "{{ eos_eapi_authorize | default('omit', True) }}"
-      local_http_port: "{{ eos_eapi_local_http_port | default('omit', True) }}"
-      http_port: "{{ eos_eapi_http_port | default('omit', True) }}"
-      http: "{{ eos_eapi_http | default('omit', True) }}"
-      https_port: "{{ eos_eapi_https_port | default('omit', True) }}"
-      auth_pass: "{{ eos_eapi_auth_pass | default('omit', True) }}"
-      state: "{{ eos_eapi_state | default('omit', True) }}"
-      vrf: "{{ eos_eapi_vrf | default('omit', True) }}"
-      https: "{{ eos_eapi_https | default('omit', True) }}"
-      provider: "{{ eos_eapi_provider | default('omit', True) }}"
-      config: "{{ eos_eapi_config | default('omit', True) }}"
-      local_http: "{{ eos_eapi_local_http | default('omit', True) }}"
-      socket: "{{ eos_eapi_socket | default('omit', True) }}"
+      authorize: "{{ eos_eapi_authorize | default(omit, True) }}"
+      local_http_port: "{{ eos_eapi_local_http_port | default(omit, True) }}"
+      http_port: "{{ eos_eapi_http_port | default(omit, True) }}"
+      http: "{{ eos_eapi_http | default(omit, True) }}"
+      https_port: "{{ eos_eapi_https_port | default(omit, True) }}"
+      auth_pass: "{{ eos_eapi_auth_pass | default(omit, True) }}"
+      state: "{{ eos_eapi_state | default(omit, True) }}"
+      vrf: "{{ eos_eapi_vrf | default(omit, True) }}"
+      https: "{{ eos_eapi_https | default(omit, True) }}"
+      provider: "{{ eos_eapi_provider | default(omit, True) }}"
+      config: "{{ eos_eapi_config | default(omit, True) }}"
+      local_http: "{{ eos_eapi_local_http | default(omit, True) }}"
+      socket: "{{ eos_eapi_socket | default(omit, True) }}"
   tasks:
     - name: "plugin_eos_eapi"
       eos_eapi: "{{ eos_eapi }}"
+      register: r_eos_eapi

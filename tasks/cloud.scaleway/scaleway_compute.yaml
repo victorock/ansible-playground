@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_compute"
   scaleway_compute: "{{ scaleway_compute }}"
+  register: r_scaleway_compute
   vars:
     scaleway_compute: 
       api_url: "{{ scaleway_compute_api_url | default(omit, True) }}"

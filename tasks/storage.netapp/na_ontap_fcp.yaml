@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_fcp"
   na_ontap_fcp: "{{ na_ontap_fcp }}"
+  register: r_na_ontap_fcp
   vars:
     na_ontap_fcp: 
       status: "{{ na_ontap_fcp_status | default(omit, True) }}"

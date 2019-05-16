@@ -1,6 +1,7 @@
 ---
 - name: "module_win_xml"
   win_xml: "{{ win_xml }}"
+  register: r_win_xml
   vars:
     win_xml: 
       xpath: "{{ win_xml_xpath | default(omit, True) }}"

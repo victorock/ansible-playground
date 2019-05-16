@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_datacenters_facts"
   ovirt_datacenters_facts: "{{ ovirt_datacenters_facts }}"
+  register: r_ovirt_datacenters_facts
   vars:
     ovirt_datacenters_facts: 
       pattern: "{{ ovirt_datacenters_facts_pattern | default(omit, True) }}"

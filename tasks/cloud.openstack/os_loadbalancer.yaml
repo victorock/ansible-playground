@@ -1,6 +1,7 @@
 ---
 - name: "module_os_loadbalancer"
   os_loadbalancer: "{{ os_loadbalancer }}"
+  register: r_os_loadbalancer
   vars:
     os_loadbalancer: 
       auth_type: "{{ os_loadbalancer_auth_type | default(omit, True) }}"

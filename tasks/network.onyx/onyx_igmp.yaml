@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_igmp"
   onyx_igmp: "{{ onyx_igmp }}"
+  register: r_onyx_igmp
   vars:
     onyx_igmp: 
       default_version: "{{ onyx_igmp_default_version | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_system"
   nxos_system: "{{ nxos_system }}"
+  register: r_nxos_system
   vars:
     nxos_system: 
       domain_search: "{{ nxos_system_domain_search | default(omit, True) }}"

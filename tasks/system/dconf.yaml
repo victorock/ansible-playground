@@ -1,6 +1,7 @@
 ---
 - name: "module_dconf"
   dconf: "{{ dconf }}"
+  register: r_dconf
   vars:
     dconf: 
       state: "{{ dconf_state | default(omit, True) }}"

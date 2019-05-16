@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     circonus_annotation: 
-      category: "{{ circonus_annotation_category | default('omit', True) }}"
-      description: "{{ circonus_annotation_description | default('omit', True) }}"
-      title: "{{ circonus_annotation_title | default('omit', True) }}"
-      stop: "{{ circonus_annotation_stop | default('omit', True) }}"
-      start: "{{ circonus_annotation_start | default('omit', True) }}"
-      duration: "{{ circonus_annotation_duration | default('omit', True) }}"
-      api_key: "{{ circonus_annotation_api_key | default('omit', True) }}"
+      category: "{{ circonus_annotation_category | default(omit, True) }}"
+      description: "{{ circonus_annotation_description | default(omit, True) }}"
+      title: "{{ circonus_annotation_title | default(omit, True) }}"
+      stop: "{{ circonus_annotation_stop | default(omit, True) }}"
+      start: "{{ circonus_annotation_start | default(omit, True) }}"
+      duration: "{{ circonus_annotation_duration | default(omit, True) }}"
+      api_key: "{{ circonus_annotation_api_key | default(omit, True) }}"
   tasks:
     - name: "plugin_circonus_annotation"
       circonus_annotation: "{{ circonus_annotation }}"
+      register: r_circonus_annotation

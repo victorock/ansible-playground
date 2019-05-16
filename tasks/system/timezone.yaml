@@ -1,6 +1,7 @@
 ---
 - name: "module_timezone"
   timezone: "{{ timezone }}"
+  register: r_timezone
   vars:
     timezone: 
       hwclock: "{{ timezone_hwclock | default(omit, True) }}"

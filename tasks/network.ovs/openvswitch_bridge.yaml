@@ -1,6 +1,7 @@
 ---
 - name: "module_openvswitch_bridge"
   openvswitch_bridge: "{{ openvswitch_bridge }}"
+  register: r_openvswitch_bridge
   vars:
     openvswitch_bridge: 
       bridge: "{{ openvswitch_bridge_bridge | default(omit, True) }}"

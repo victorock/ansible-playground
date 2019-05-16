@@ -1,6 +1,7 @@
 ---
 - name: "module_beadm"
   beadm: "{{ beadm }}"
+  register: r_beadm
   vars:
     beadm: 
       force: "{{ beadm_force | default(omit, True) }}"

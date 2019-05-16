@@ -1,6 +1,7 @@
 ---
 - name: "module_gitlab_user"
   gitlab_user: "{{ gitlab_user }}"
+  register: r_gitlab_user
   vars:
     gitlab_user: 
       username: "{{ gitlab_user_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_iis_webbinding"
   win_iis_webbinding: "{{ win_iis_webbinding }}"
+  register: r_win_iis_webbinding
   vars:
     win_iis_webbinding: 
       protocol: "{{ win_iis_webbinding_protocol | default(omit, True) }}"

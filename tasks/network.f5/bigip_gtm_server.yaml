@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_server"
   bigip_gtm_server: "{{ bigip_gtm_server }}"
+  register: r_bigip_gtm_server
   vars:
     bigip_gtm_server: 
       link_discovery: "{{ bigip_gtm_server_link_discovery | default(omit, True) }}"

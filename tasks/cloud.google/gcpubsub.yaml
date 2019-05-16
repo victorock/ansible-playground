@@ -1,6 +1,7 @@
 ---
 - name: "module_gcpubsub"
   gcpubsub: "{{ gcpubsub }}"
+  register: r_gcpubsub
   vars:
     gcpubsub: 
       pull: "{{ gcpubsub_pull | default(omit, True) }}"

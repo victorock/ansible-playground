@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_tenant_action_rule_profile"
   aci_tenant_action_rule_profile: "{{ aci_tenant_action_rule_profile }}"
+  register: r_aci_tenant_action_rule_profile
   vars:
     aci_tenant_action_rule_profile: 
       username: "{{ aci_tenant_action_rule_profile_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_monitor_http"
   bigip_monitor_http: "{{ bigip_monitor_http }}"
+  register: r_bigip_monitor_http
   vars:
     bigip_monitor_http: 
       receive_disable: "{{ bigip_monitor_http_receive_disable | default(omit, True) }}"

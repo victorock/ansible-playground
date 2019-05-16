@@ -1,6 +1,7 @@
 ---
 - name: "module_lambda_policy"
   lambda_policy: "{{ lambda_policy }}"
+  register: r_lambda_policy
   vars:
     lambda_policy: 
       profile: "{{ lambda_policy_profile | default(omit, True) }}"

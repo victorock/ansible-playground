@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_storageaccount"
   azure_rm_storageaccount: "{{ azure_rm_storageaccount }}"
+  register: r_azure_rm_storageaccount
   vars:
     azure_rm_storageaccount: 
       force: "{{ azure_rm_storageaccount_force | default(omit, True) }}"

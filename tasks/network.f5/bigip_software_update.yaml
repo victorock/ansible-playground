@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_software_update"
   bigip_software_update: "{{ bigip_software_update }}"
+  register: r_bigip_software_update
   vars:
     bigip_software_update: 
       auto_phone_home: "{{ bigip_software_update_auto_phone_home | default(omit, True) }}"

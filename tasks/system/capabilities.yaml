@@ -1,6 +1,7 @@
 ---
 - name: "module_capabilities"
   capabilities: "{{ capabilities }}"
+  register: r_capabilities
   vars:
     capabilities: 
       capability: "{{ capabilities_capability | default(omit, True) }}"

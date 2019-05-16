@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_appgateway"
   azure_rm_appgateway: "{{ azure_rm_appgateway }}"
+  register: r_azure_rm_appgateway
   vars:
     azure_rm_appgateway: 
       backend_http_settings_collection: "{{ azure_rm_appgateway_backend_http_settings_collection | default(omit, True) }}"

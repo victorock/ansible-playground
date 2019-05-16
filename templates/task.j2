@@ -2,6 +2,7 @@
 - name: "module_{{ plugin.key }}"
 {% if plugin.value.spec.options is defined %}
   {{ plugin.key }}: {{ '"{{ ' + plugin.key + ' }}"' }}
+  register: r_{{ plugin.key }}
   vars:
     {{ plugin.key }}: 
 {% for k,v in plugin.value.spec.options.iteritems() %}
@@ -9,4 +10,5 @@
 {% endfor -%}
 {% else %}
   {{ plugin.key }}:
+  register: r_{{ plugin.key }}
 {% endif %}

@@ -1,6 +1,7 @@
 ---
 - name: "module_snmp_facts"
   snmp_facts: "{{ snmp_facts }}"
+  register: r_snmp_facts
   vars:
     snmp_facts: 
       username: "{{ snmp_facts_username | default(omit, True) }}"

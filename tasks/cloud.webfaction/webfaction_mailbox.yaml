@@ -1,6 +1,7 @@
 ---
 - name: "module_webfaction_mailbox"
   webfaction_mailbox: "{{ webfaction_mailbox }}"
+  register: r_webfaction_mailbox
   vars:
     webfaction_mailbox: 
       mailbox_password: "{{ webfaction_mailbox_mailbox_password | default(omit, True) }}"

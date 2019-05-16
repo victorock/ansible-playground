@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipmi_boot: 
-      bootdev: "{{ ipmi_boot_bootdev | default('omit', True) }}"
-      name: "{{ ipmi_boot_name | default('omit', True) }}"
-      persistent: "{{ ipmi_boot_persistent | default('omit', True) }}"
-      uefiboot: "{{ ipmi_boot_uefiboot | default('omit', True) }}"
-      state: "{{ ipmi_boot_state | default('omit', True) }}"
-      user: "{{ ipmi_boot_user | default('omit', True) }}"
-      password: "{{ ipmi_boot_password | default('omit', True) }}"
-      port: "{{ ipmi_boot_port | default('omit', True) }}"
+      bootdev: "{{ ipmi_boot_bootdev | default(omit, True) }}"
+      name: "{{ ipmi_boot_name | default(omit, True) }}"
+      persistent: "{{ ipmi_boot_persistent | default(omit, True) }}"
+      uefiboot: "{{ ipmi_boot_uefiboot | default(omit, True) }}"
+      state: "{{ ipmi_boot_state | default(omit, True) }}"
+      user: "{{ ipmi_boot_user | default(omit, True) }}"
+      password: "{{ ipmi_boot_password | default(omit, True) }}"
+      port: "{{ ipmi_boot_port | default(omit, True) }}"
   tasks:
     - name: "plugin_ipmi_boot"
       ipmi_boot: "{{ ipmi_boot }}"
+      register: r_ipmi_boot

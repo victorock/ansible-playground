@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_subnet"
   ec2_vpc_subnet: "{{ ec2_vpc_subnet }}"
+  register: r_ec2_vpc_subnet
   vars:
     ec2_vpc_subnet: 
       profile: "{{ ec2_vpc_subnet_profile | default(omit, True) }}"

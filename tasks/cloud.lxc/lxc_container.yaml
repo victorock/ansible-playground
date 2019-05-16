@@ -1,6 +1,7 @@
 ---
 - name: "module_lxc_container"
   lxc_container: "{{ lxc_container }}"
+  register: r_lxc_container
   vars:
     lxc_container: 
       zfs_root: "{{ lxc_container_zfs_root | default(omit, True) }}"

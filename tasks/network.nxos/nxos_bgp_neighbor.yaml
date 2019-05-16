@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_bgp_neighbor"
   nxos_bgp_neighbor: "{{ nxos_bgp_neighbor }}"
+  register: r_nxos_bgp_neighbor
   vars:
     nxos_bgp_neighbor: 
       pwd_type: "{{ nxos_bgp_neighbor_pwd_type | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_manageiq_policies"
   manageiq_policies: "{{ manageiq_policies }}"
+  register: r_manageiq_policies
   vars:
     manageiq_policies: 
       manageiq_connection: "{{ manageiq_policies_manageiq_connection | default(omit, True) }}"

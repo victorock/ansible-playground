@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     rds_instance_facts: 
-      db_instance_identifier: "{{ rds_instance_facts_db_instance_identifier | default('omit', True) }}"
-      aws_secret_key: "{{ rds_instance_facts_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ rds_instance_facts_aws_access_key | default('omit', True) }}"
-      security_token: "{{ rds_instance_facts_security_token | default('omit', True) }}"
-      region: "{{ rds_instance_facts_region | default('omit', True) }}"
-      profile: "{{ rds_instance_facts_profile | default('omit', True) }}"
-      filters: "{{ rds_instance_facts_filters | default('omit', True) }}"
-      ec2_url: "{{ rds_instance_facts_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ rds_instance_facts_validate_certs | default('omit', True) }}"
+      db_instance_identifier: "{{ rds_instance_facts_db_instance_identifier | default(omit, True) }}"
+      aws_secret_key: "{{ rds_instance_facts_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ rds_instance_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ rds_instance_facts_security_token | default(omit, True) }}"
+      region: "{{ rds_instance_facts_region | default(omit, True) }}"
+      profile: "{{ rds_instance_facts_profile | default(omit, True) }}"
+      filters: "{{ rds_instance_facts_filters | default(omit, True) }}"
+      ec2_url: "{{ rds_instance_facts_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ rds_instance_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_rds_instance_facts"
       rds_instance_facts: "{{ rds_instance_facts }}"
+      register: r_rds_instance_facts

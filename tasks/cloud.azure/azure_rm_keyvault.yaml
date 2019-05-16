@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_keyvault"
   azure_rm_keyvault: "{{ azure_rm_keyvault }}"
+  register: r_azure_rm_keyvault
   vars:
     azure_rm_keyvault: 
       resource_group: "{{ azure_rm_keyvault_resource_group | default(omit, True) }}"

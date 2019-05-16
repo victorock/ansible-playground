@@ -1,6 +1,7 @@
 ---
 - name: "module_oneandone_server"
   oneandone_server: "{{ oneandone_server }}"
+  register: r_oneandone_server
   vars:
     oneandone_server: 
       vcore: "{{ oneandone_server_vcore | default(omit, True) }}"

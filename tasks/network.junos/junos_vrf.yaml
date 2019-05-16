@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_vrf"
   junos_vrf: "{{ junos_vrf }}"
+  register: r_junos_vrf
   vars:
     junos_vrf: 
       target: "{{ junos_vrf_target | default(omit, True) }}"

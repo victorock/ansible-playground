@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_package"
   junos_package: "{{ junos_package }}"
+  register: r_junos_package
   vars:
     junos_package: 
       src: "{{ junos_package_src | default(omit, True) }}"

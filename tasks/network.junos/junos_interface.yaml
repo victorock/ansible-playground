@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_interface"
   junos_interface: "{{ junos_interface }}"
+  register: r_junos_interface
   vars:
     junos_interface: 
       neighbors: "{{ junos_interface_neighbors | default(omit, True) }}"

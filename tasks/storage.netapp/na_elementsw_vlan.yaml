@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_vlan"
   na_elementsw_vlan: "{{ na_elementsw_vlan }}"
+  register: r_na_elementsw_vlan
   vars:
     na_elementsw_vlan: 
       username: "{{ na_elementsw_vlan_username | default(omit, True) }}"

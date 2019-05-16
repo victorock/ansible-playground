@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_facts"
   onyx_facts: "{{ onyx_facts }}"
+  register: r_onyx_facts
   vars:
     onyx_facts: 
       gather_subset: "{{ onyx_facts_gather_subset | default(omit, True) }}"

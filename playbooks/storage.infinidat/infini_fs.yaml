@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     infini_fs: 
-      name: "{{ infini_fs_name | default('omit', True) }}"
-      system: "{{ infini_fs_system | default('omit', True) }}"
-      state: "{{ infini_fs_state | default('omit', True) }}"
-      user: "{{ infini_fs_user | default('omit', True) }}"
-      password: "{{ infini_fs_password | default('omit', True) }}"
-      pool: "{{ infini_fs_pool | default('omit', True) }}"
-      size: "{{ infini_fs_size | default('omit', True) }}"
+      name: "{{ infini_fs_name | default(omit, True) }}"
+      system: "{{ infini_fs_system | default(omit, True) }}"
+      state: "{{ infini_fs_state | default(omit, True) }}"
+      user: "{{ infini_fs_user | default(omit, True) }}"
+      password: "{{ infini_fs_password | default(omit, True) }}"
+      pool: "{{ infini_fs_pool | default(omit, True) }}"
+      size: "{{ infini_fs_size | default(omit, True) }}"
   tasks:
     - name: "plugin_infini_fs"
       infini_fs: "{{ infini_fs }}"
+      register: r_infini_fs

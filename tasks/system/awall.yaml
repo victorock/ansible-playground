@@ -1,6 +1,7 @@
 ---
 - name: "module_awall"
   awall: "{{ awall }}"
+  register: r_awall
   vars:
     awall: 
       state: "{{ awall_state | default(omit, True) }}"

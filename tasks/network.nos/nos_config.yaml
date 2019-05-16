@@ -1,6 +1,7 @@
 ---
 - name: "module_nos_config"
   nos_config: "{{ nos_config }}"
+  register: r_nos_config
   vars:
     nos_config: 
       multiline_delimiter: "{{ nos_config_multiline_delimiter | default(omit, True) }}"

@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     udm_dns_record: 
-      data: "{{ udm_dns_record_data | default('omit', True) }}"
-      state: "{{ udm_dns_record_state | default('omit', True) }}"
-      type: "{{ udm_dns_record_type | default('omit', True) }}"
-      name: "{{ udm_dns_record_name | default('omit', True) }}"
-      zone: "{{ udm_dns_record_zone | default('omit', True) }}"
+      data: "{{ udm_dns_record_data | default(omit, True) }}"
+      state: "{{ udm_dns_record_state | default(omit, True) }}"
+      type: "{{ udm_dns_record_type | default(omit, True) }}"
+      name: "{{ udm_dns_record_name | default(omit, True) }}"
+      zone: "{{ udm_dns_record_zone | default(omit, True) }}"
   tasks:
     - name: "plugin_udm_dns_record"
       udm_dns_record: "{{ udm_dns_record }}"
+      register: r_udm_dns_record

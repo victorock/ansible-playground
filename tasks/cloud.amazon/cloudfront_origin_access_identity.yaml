@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudfront_origin_access_identity"
   cloudfront_origin_access_identity: "{{ cloudfront_origin_access_identity }}"
+  register: r_cloudfront_origin_access_identity
   vars:
     cloudfront_origin_access_identity: 
       comment: "{{ cloudfront_origin_access_identity_comment | default(omit, True) }}"

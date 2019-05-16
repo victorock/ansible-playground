@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_img"
   gce_img: "{{ gce_img }}"
+  register: r_gce_img
   vars:
     gce_img: 
       name: "{{ gce_img_name | default(omit, True) }}"

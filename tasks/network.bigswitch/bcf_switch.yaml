@@ -1,6 +1,7 @@
 ---
 - name: "module_bcf_switch"
   bcf_switch: "{{ bcf_switch }}"
+  register: r_bcf_switch
   vars:
     bcf_switch: 
       name: "{{ bcf_switch_name | default(omit, True) }}"

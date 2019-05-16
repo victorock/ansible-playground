@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_service"
   docker_service: "{{ docker_service }}"
+  register: r_docker_service
   vars:
     docker_service: 
       project_src: "{{ docker_service_project_src | default(omit, True) }}"

@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_iis_webapppool: 
-      attributes: "{{ win_iis_webapppool_attributes | default('omit', True) }}"
-      state: "{{ win_iis_webapppool_state | default('omit', True) }}"
-      name: "{{ win_iis_webapppool_name | default('omit', True) }}"
+      attributes: "{{ win_iis_webapppool_attributes | default(omit, True) }}"
+      state: "{{ win_iis_webapppool_state | default(omit, True) }}"
+      name: "{{ win_iis_webapppool_name | default(omit, True) }}"
   tasks:
     - name: "plugin_win_iis_webapppool"
       win_iis_webapppool: "{{ win_iis_webapppool }}"
+      register: r_win_iis_webapppool

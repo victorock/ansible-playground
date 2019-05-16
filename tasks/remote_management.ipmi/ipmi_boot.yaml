@@ -1,6 +1,7 @@
 ---
 - name: "module_ipmi_boot"
   ipmi_boot: "{{ ipmi_boot }}"
+  register: r_ipmi_boot
   vars:
     ipmi_boot: 
       bootdev: "{{ ipmi_boot_bootdev | default(omit, True) }}"

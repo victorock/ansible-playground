@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_nat_rule"
   panos_nat_rule: "{{ panos_nat_rule }}"
+  register: r_panos_nat_rule
   vars:
     panos_nat_rule: 
       username: "{{ panos_nat_rule_username | default(omit, True) }}"

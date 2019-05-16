@@ -1,6 +1,7 @@
 ---
 - name: "module_openssl_publickey"
   openssl_publickey: "{{ openssl_publickey }}"
+  register: r_openssl_publickey
   vars:
     openssl_publickey: 
       privatekey_passphrase: "{{ openssl_publickey_privatekey_passphrase | default(omit, True) }}"

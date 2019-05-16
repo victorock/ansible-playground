@@ -1,6 +1,7 @@
 ---
 - name: "module_hostname"
   hostname: "{{ hostname }}"
+  register: r_hostname
   vars:
     hostname: 
       name: "{{ hostname_name | default(omit, True) }}"

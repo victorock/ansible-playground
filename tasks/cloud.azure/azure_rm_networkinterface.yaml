@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_networkinterface"
   azure_rm_networkinterface: "{{ azure_rm_networkinterface }}"
+  register: r_azure_rm_networkinterface
   vars:
     azure_rm_networkinterface: 
       dns_servers: "{{ azure_rm_networkinterface_dns_servers | default(omit, True) }}"

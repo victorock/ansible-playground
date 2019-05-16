@@ -1,6 +1,7 @@
 ---
 - name: "module_win_region"
   win_region: "{{ win_region }}"
+  register: r_win_region
   vars:
     win_region: 
       unicode_language: "{{ win_region_unicode_language | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_dns"
   bigip_profile_dns: "{{ bigip_profile_dns }}"
+  register: r_bigip_profile_dns
   vars:
     bigip_profile_dns: 
       enable_dns_firewall: "{{ bigip_profile_dns_enable_dns_firewall | default(omit, True) }}"

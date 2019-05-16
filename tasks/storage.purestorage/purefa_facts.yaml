@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_facts"
   purefa_facts: "{{ purefa_facts }}"
+  register: r_purefa_facts
   vars:
     purefa_facts: 
       gather_subset: "{{ purefa_facts_gather_subset | default(omit, True) }}"

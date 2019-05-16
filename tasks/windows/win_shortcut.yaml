@@ -1,6 +1,7 @@
 ---
 - name: "module_win_shortcut"
   win_shortcut: "{{ win_shortcut }}"
+  register: r_win_shortcut
   vars:
     win_shortcut: 
       windowstyle: "{{ win_shortcut_windowstyle | default(omit, True) }}"

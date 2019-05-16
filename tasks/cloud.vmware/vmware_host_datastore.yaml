@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_datastore"
   vmware_host_datastore: "{{ vmware_host_datastore }}"
+  register: r_vmware_host_datastore
   vars:
     vmware_host_datastore: 
       username: "{{ vmware_host_datastore_username | default(omit, True) }}"

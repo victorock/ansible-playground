@@ -1,6 +1,7 @@
 ---
 - name: "module_win_environment"
   win_environment: "{{ win_environment }}"
+  register: r_win_environment
   vars:
     win_environment: 
       state: "{{ win_environment_state | default(omit, True) }}"

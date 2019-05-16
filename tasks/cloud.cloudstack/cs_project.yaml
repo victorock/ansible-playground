@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_project"
   cs_project: "{{ cs_project }}"
+  register: r_cs_project
   vars:
     cs_project: 
       display_text: "{{ cs_project_display_text | default(omit, True) }}"

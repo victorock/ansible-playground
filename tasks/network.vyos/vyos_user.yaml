@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_user"
   vyos_user: "{{ vyos_user }}"
+  register: r_vyos_user
   vars:
     vyos_user: 
       update_password: "{{ vyos_user_update_password | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_command"
   cnos_command: "{{ cnos_command }}"
+  register: r_cnos_command
   vars:
     cnos_command: 
       retries: "{{ cnos_command_retries | default(omit, True) }}"

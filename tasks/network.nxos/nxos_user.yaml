@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_user"
   nxos_user: "{{ nxos_user }}"
+  register: r_nxos_user
   vars:
     nxos_user: 
       update_password: "{{ nxos_user_update_password | default(omit, True) }}"

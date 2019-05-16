@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_loadbalancer"
   azure_rm_loadbalancer: "{{ azure_rm_loadbalancer }}"
+  register: r_azure_rm_loadbalancer
   vars:
     azure_rm_loadbalancer: 
       probe_port: "{{ azure_rm_loadbalancer_probe_port | default(omit, True) }}"

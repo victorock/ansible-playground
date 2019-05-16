@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_scheduled_task_stat: 
-      path: "{{ win_scheduled_task_stat_path | default('omit', True) }}"
-      name: "{{ win_scheduled_task_stat_name | default('omit', True) }}"
+      path: "{{ win_scheduled_task_stat_path | default(omit, True) }}"
+      name: "{{ win_scheduled_task_stat_name | default(omit, True) }}"
   tasks:
     - name: "plugin_win_scheduled_task_stat"
       win_scheduled_task_stat: "{{ win_scheduled_task_stat }}"
+      register: r_win_scheduled_task_stat

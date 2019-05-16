@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     dconf: 
-      state: "{{ dconf_state | default('omit', True) }}"
-      value: "{{ dconf_value | default('omit', True) }}"
-      key: "{{ dconf_key | default('omit', True) }}"
+      state: "{{ dconf_state | default(omit, True) }}"
+      value: "{{ dconf_value | default(omit, True) }}"
+      key: "{{ dconf_key | default(omit, True) }}"
   tasks:
     - name: "plugin_dconf"
       dconf: "{{ dconf }}"
+      register: r_dconf

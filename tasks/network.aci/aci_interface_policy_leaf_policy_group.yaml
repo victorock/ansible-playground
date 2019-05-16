@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_interface_policy_leaf_policy_group"
   aci_interface_policy_leaf_policy_group: "{{ aci_interface_policy_leaf_policy_group }}"
+  register: r_aci_interface_policy_leaf_policy_group
   vars:
     aci_interface_policy_leaf_policy_group: 
       stp_interface_policy: "{{ aci_interface_policy_leaf_policy_group_stp_interface_policy | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_nic"
   cs_nic: "{{ cs_nic }}"
+  register: r_cs_nic
   vars:
     cs_nic: 
       vm_guest_ip: "{{ cs_nic_vm_guest_ip | default(omit, True) }}"

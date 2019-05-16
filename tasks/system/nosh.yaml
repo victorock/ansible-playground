@@ -1,6 +1,7 @@
 ---
 - name: "module_nosh"
   nosh: "{{ nosh }}"
+  register: r_nosh
   vars:
     nosh: 
       state: "{{ nosh_state | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_match_rule"
   panos_match_rule: "{{ panos_match_rule }}"
+  register: r_panos_match_rule
   vars:
     panos_match_rule: 
       username: "{{ panos_match_rule_username | default(omit, True) }}"

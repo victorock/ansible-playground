@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_waf_web_acl: 
-      profile: "{{ aws_waf_web_acl_profile | default('omit', True) }}"
-      aws_secret_key: "{{ aws_waf_web_acl_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ aws_waf_web_acl_aws_access_key | default('omit', True) }}"
-      metric_name: "{{ aws_waf_web_acl_metric_name | default('omit', True) }}"
-      purge_rules: "{{ aws_waf_web_acl_purge_rules | default('omit', True) }}"
-      rules: "{{ aws_waf_web_acl_rules | default('omit', True) }}"
-      region: "{{ aws_waf_web_acl_region | default('omit', True) }}"
-      state: "{{ aws_waf_web_acl_state | default('omit', True) }}"
-      ec2_url: "{{ aws_waf_web_acl_ec2_url | default('omit', True) }}"
-      security_token: "{{ aws_waf_web_acl_security_token | default('omit', True) }}"
-      validate_certs: "{{ aws_waf_web_acl_validate_certs | default('omit', True) }}"
-      default_action: "{{ aws_waf_web_acl_default_action | default('omit', True) }}"
-      name: "{{ aws_waf_web_acl_name | default('omit', True) }}"
+      profile: "{{ aws_waf_web_acl_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_waf_web_acl_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_waf_web_acl_aws_access_key | default(omit, True) }}"
+      metric_name: "{{ aws_waf_web_acl_metric_name | default(omit, True) }}"
+      purge_rules: "{{ aws_waf_web_acl_purge_rules | default(omit, True) }}"
+      rules: "{{ aws_waf_web_acl_rules | default(omit, True) }}"
+      region: "{{ aws_waf_web_acl_region | default(omit, True) }}"
+      state: "{{ aws_waf_web_acl_state | default(omit, True) }}"
+      ec2_url: "{{ aws_waf_web_acl_ec2_url | default(omit, True) }}"
+      security_token: "{{ aws_waf_web_acl_security_token | default(omit, True) }}"
+      validate_certs: "{{ aws_waf_web_acl_validate_certs | default(omit, True) }}"
+      default_action: "{{ aws_waf_web_acl_default_action | default(omit, True) }}"
+      name: "{{ aws_waf_web_acl_name | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_waf_web_acl"
       aws_waf_web_acl: "{{ aws_waf_web_acl }}"
+      register: r_aws_waf_web_acl

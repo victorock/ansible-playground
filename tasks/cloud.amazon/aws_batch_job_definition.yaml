@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_batch_job_definition"
   aws_batch_job_definition: "{{ aws_batch_job_definition }}"
+  register: r_aws_batch_job_definition
   vars:
     aws_batch_job_definition: 
       mount_points: "{{ aws_batch_job_definition_mount_points | default(omit, True) }}"

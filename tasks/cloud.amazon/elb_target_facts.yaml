@@ -1,6 +1,7 @@
 ---
 - name: "module_elb_target_facts"
   elb_target_facts: "{{ elb_target_facts }}"
+  register: r_elb_target_facts
   vars:
     elb_target_facts: 
       aws_secret_key: "{{ elb_target_facts_aws_secret_key | default(omit, True) }}"

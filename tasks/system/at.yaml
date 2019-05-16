@@ -1,6 +1,7 @@
 ---
 - name: "module_at"
   at: "{{ at }}"
+  register: r_at
   vars:
     at: 
       count: "{{ at_count | default(omit, True) }}"

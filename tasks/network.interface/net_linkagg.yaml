@@ -1,6 +1,7 @@
 ---
 - name: "module_net_linkagg"
   net_linkagg: "{{ net_linkagg }}"
+  register: r_net_linkagg
   vars:
     net_linkagg: 
       name: "{{ net_linkagg_name | default(omit, True) }}"

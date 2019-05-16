@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_smu: 
-      pkg: "{{ nxos_smu_pkg | default('omit', True) }}"
-      file_system: "{{ nxos_smu_file_system | default('omit', True) }}"
-      provider: "{{ nxos_smu_provider | default('omit', True) }}"
+      pkg: "{{ nxos_smu_pkg | default(omit, True) }}"
+      file_system: "{{ nxos_smu_file_system | default(omit, True) }}"
+      provider: "{{ nxos_smu_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_smu"
       nxos_smu: "{{ nxos_smu }}"
+      register: r_nxos_smu

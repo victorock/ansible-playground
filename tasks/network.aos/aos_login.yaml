@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_login"
   aos_login: "{{ aos_login }}"
+  register: r_aos_login
   vars:
     aos_login: 
       passwd: "{{ aos_login_passwd | default(omit, True) }}"

@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_igmp_snooping: 
-      link_local_grp_supp: "{{ nxos_igmp_snooping_link_local_grp_supp | default('omit', True) }}"
-      report_supp: "{{ nxos_igmp_snooping_report_supp | default('omit', True) }}"
-      snooping: "{{ nxos_igmp_snooping_snooping | default('omit', True) }}"
-      group_timeout: "{{ nxos_igmp_snooping_group_timeout | default('omit', True) }}"
-      v3_report_supp: "{{ nxos_igmp_snooping_v3_report_supp | default('omit', True) }}"
-      state: "{{ nxos_igmp_snooping_state | default('omit', True) }}"
-      provider: "{{ nxos_igmp_snooping_provider | default('omit', True) }}"
+      link_local_grp_supp: "{{ nxos_igmp_snooping_link_local_grp_supp | default(omit, True) }}"
+      report_supp: "{{ nxos_igmp_snooping_report_supp | default(omit, True) }}"
+      snooping: "{{ nxos_igmp_snooping_snooping | default(omit, True) }}"
+      group_timeout: "{{ nxos_igmp_snooping_group_timeout | default(omit, True) }}"
+      v3_report_supp: "{{ nxos_igmp_snooping_v3_report_supp | default(omit, True) }}"
+      state: "{{ nxos_igmp_snooping_state | default(omit, True) }}"
+      provider: "{{ nxos_igmp_snooping_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_igmp_snooping"
       nxos_igmp_snooping: "{{ nxos_igmp_snooping }}"
+      register: r_nxos_igmp_snooping

@@ -1,6 +1,7 @@
 ---
 - name: "module_slack"
   slack: "{{ slack }}"
+  register: r_slack
   vars:
     slack: 
       username: "{{ slack_username | default(omit, True) }}"

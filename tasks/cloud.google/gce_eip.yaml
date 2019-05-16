@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_eip"
   gce_eip: "{{ gce_eip }}"
+  register: r_gce_eip
   vars:
     gce_eip: 
       region: "{{ gce_eip_region | default(omit, True) }}"

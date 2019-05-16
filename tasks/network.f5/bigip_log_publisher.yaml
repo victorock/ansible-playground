@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_log_publisher"
   bigip_log_publisher: "{{ bigip_log_publisher }}"
+  register: r_bigip_log_publisher
   vars:
     bigip_log_publisher: 
       description: "{{ bigip_log_publisher_description | default(omit, True) }}"

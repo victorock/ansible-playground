@@ -1,6 +1,7 @@
 ---
 - name: "module_make"
   make: "{{ make }}"
+  register: r_make
   vars:
     make: 
       chdir: "{{ make_chdir | default(omit, True) }}"

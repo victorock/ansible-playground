@@ -1,6 +1,7 @@
 ---
 - name: "module_os_port"
   os_port: "{{ os_port }}"
+  register: r_os_port
   vars:
     os_port: 
       auth_type: "{{ os_port_auth_type | default(omit, True) }}"

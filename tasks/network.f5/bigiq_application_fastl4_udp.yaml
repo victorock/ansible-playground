@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_application_fastl4_udp"
   bigiq_application_fastl4_udp: "{{ bigiq_application_fastl4_udp }}"
+  register: r_bigiq_application_fastl4_udp
   vars:
     bigiq_application_fastl4_udp: 
       service_environment: "{{ bigiq_application_fastl4_udp_service_environment | default(omit, True) }}"

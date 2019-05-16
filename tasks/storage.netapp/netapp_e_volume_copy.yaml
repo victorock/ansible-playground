@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_volume_copy"
   netapp_e_volume_copy: "{{ netapp_e_volume_copy }}"
+  register: r_netapp_e_volume_copy
   vars:
     netapp_e_volume_copy: 
       create_copy_pair_if_does_not_exist: "{{ netapp_e_volume_copy_create_copy_pair_if_does_not_exist | default(omit, True) }}"

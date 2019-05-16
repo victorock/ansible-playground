@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_vcmp_guest"
   bigip_vcmp_guest: "{{ bigip_vcmp_guest }}"
+  register: r_bigip_vcmp_guest
   vars:
     bigip_vcmp_guest: 
       mgmt_address: "{{ bigip_vcmp_guest_mgmt_address | default(omit, True) }}"

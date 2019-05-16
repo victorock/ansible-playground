@@ -1,6 +1,7 @@
 ---
 - name: "module_win_path"
   win_path: "{{ win_path }}"
+  register: r_win_path
   vars:
     win_path: 
       scope: "{{ win_path_scope | default(omit, True) }}"

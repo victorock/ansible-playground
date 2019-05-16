@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vxlan_vtep"
   nxos_vxlan_vtep: "{{ nxos_vxlan_vtep }}"
+  register: r_nxos_vxlan_vtep
   vars:
     nxos_vxlan_vtep: 
       description: "{{ nxos_vxlan_vtep_description | default(omit, True) }}"

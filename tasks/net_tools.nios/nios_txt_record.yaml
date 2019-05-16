@@ -1,6 +1,7 @@
 ---
 - name: "module_nios_txt_record"
   nios_txt_record: "{{ nios_txt_record }}"
+  register: r_nios_txt_record
   vars:
     nios_txt_record: 
       comment: "{{ nios_txt_record_comment | default(omit, True) }}"

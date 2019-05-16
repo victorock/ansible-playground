@@ -1,6 +1,7 @@
 ---
 - name: "module_os_recordset"
   os_recordset: "{{ os_recordset }}"
+  register: r_os_recordset
   vars:
     os_recordset: 
       auth_type: "{{ os_recordset_auth_type | default(omit, True) }}"

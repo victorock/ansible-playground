@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     add_host: 
-      name: "{{ add_host_name | default('omit', True) }}"
-      groups: "{{ add_host_groups | default('omit', True) }}"
+      name: "{{ add_host_name | default(omit, True) }}"
+      groups: "{{ add_host_groups | default(omit, True) }}"
   tasks:
     - name: "plugin_add_host"
       add_host: "{{ add_host }}"
+      register: r_add_host

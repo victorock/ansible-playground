@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_dns"
   bigip_device_dns: "{{ bigip_device_dns }}"
+  register: r_bigip_device_dns
   vars:
     bigip_device_dns: 
       search: "{{ bigip_device_dns_search | default(omit, True) }}"

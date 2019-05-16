@@ -1,6 +1,7 @@
 ---
 - name: "module_fortios_ipv4_policy"
   fortios_ipv4_policy: "{{ fortios_ipv4_policy }}"
+  register: r_fortios_ipv4_policy
   vars:
     fortios_ipv4_policy: 
       comment: "{{ fortios_ipv4_policy_comment | default(omit, True) }}"

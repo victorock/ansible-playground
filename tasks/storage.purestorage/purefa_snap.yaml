@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_snap"
   purefa_snap: "{{ purefa_snap }}"
+  register: r_purefa_snap
   vars:
     purefa_snap: 
       target: "{{ purefa_snap_target | default(omit, True) }}"

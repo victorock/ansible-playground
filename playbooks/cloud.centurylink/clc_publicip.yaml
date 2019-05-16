@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     clc_publicip: 
-      server_ids: "{{ clc_publicip_server_ids | default('omit', True) }}"
-      state: "{{ clc_publicip_state | default('omit', True) }}"
-      protocol: "{{ clc_publicip_protocol | default('omit', True) }}"
-      ports: "{{ clc_publicip_ports | default('omit', True) }}"
-      wait: "{{ clc_publicip_wait | default('omit', True) }}"
+      server_ids: "{{ clc_publicip_server_ids | default(omit, True) }}"
+      state: "{{ clc_publicip_state | default(omit, True) }}"
+      protocol: "{{ clc_publicip_protocol | default(omit, True) }}"
+      ports: "{{ clc_publicip_ports | default(omit, True) }}"
+      wait: "{{ clc_publicip_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_clc_publicip"
       clc_publicip: "{{ clc_publicip }}"
+      register: r_clc_publicip

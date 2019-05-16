@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_startup_script"
   vultr_startup_script: "{{ vultr_startup_script }}"
+  register: r_vultr_startup_script
   vars:
     vultr_startup_script: 
       api_retries: "{{ vultr_startup_script_api_retries | default(omit, True) }}"

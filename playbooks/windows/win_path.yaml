@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_path: 
-      scope: "{{ win_path_scope | default('omit', True) }}"
-      state: "{{ win_path_state | default('omit', True) }}"
-      elements: "{{ win_path_elements | default('omit', True) }}"
-      name: "{{ win_path_name | default('omit', True) }}"
+      scope: "{{ win_path_scope | default(omit, True) }}"
+      state: "{{ win_path_state | default(omit, True) }}"
+      elements: "{{ win_path_elements | default(omit, True) }}"
+      name: "{{ win_path_name | default(omit, True) }}"
   tasks:
     - name: "plugin_win_path"
       win_path: "{{ win_path }}"
+      register: r_win_path

@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     awall: 
-      state: "{{ awall_state | default('omit', True) }}"
-      activate: "{{ awall_activate | default('omit', True) }}"
-      name: "{{ awall_name | default('omit', True) }}"
+      state: "{{ awall_state | default(omit, True) }}"
+      activate: "{{ awall_activate | default(omit, True) }}"
+      name: "{{ awall_name | default(omit, True) }}"
   tasks:
     - name: "plugin_awall"
       awall: "{{ awall }}"
+      register: r_awall

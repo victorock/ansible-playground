@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_glue_job"
   aws_glue_job: "{{ aws_glue_job }}"
+  register: r_aws_glue_job
   vars:
     aws_glue_job: 
       profile: "{{ aws_glue_job_profile | default(omit, True) }}"

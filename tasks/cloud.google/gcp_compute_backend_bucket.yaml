@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_backend_bucket"
   gcp_compute_backend_bucket: "{{ gcp_compute_backend_bucket }}"
+  register: r_gcp_compute_backend_bucket
   vars:
     gcp_compute_backend_bucket: 
       scopes: "{{ gcp_compute_backend_bucket_scopes | default(omit, True) }}"

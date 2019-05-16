@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_rpm: 
-      aggregate: "{{ nxos_rpm_aggregate | default('omit', True) }}"
-      state: "{{ nxos_rpm_state | default('omit', True) }}"
-      pkg: "{{ nxos_rpm_pkg | default('omit', True) }}"
-      file_system: "{{ nxos_rpm_file_system | default('omit', True) }}"
-      provider: "{{ nxos_rpm_provider | default('omit', True) }}"
+      aggregate: "{{ nxos_rpm_aggregate | default(omit, True) }}"
+      state: "{{ nxos_rpm_state | default(omit, True) }}"
+      pkg: "{{ nxos_rpm_pkg | default(omit, True) }}"
+      file_system: "{{ nxos_rpm_file_system | default(omit, True) }}"
+      provider: "{{ nxos_rpm_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_rpm"
       nxos_rpm: "{{ nxos_rpm }}"
+      register: r_nxos_rpm

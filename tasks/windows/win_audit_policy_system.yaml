@@ -1,6 +1,7 @@
 ---
 - name: "module_win_audit_policy_system"
   win_audit_policy_system: "{{ win_audit_policy_system }}"
+  register: r_win_audit_policy_system
   vars:
     win_audit_policy_system: 
       category: "{{ win_audit_policy_system_category | default(omit, True) }}"

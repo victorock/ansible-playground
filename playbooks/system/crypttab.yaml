@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     crypttab: 
-      name: "{{ crypttab_name | default('omit', True) }}"
-      backing_device: "{{ crypttab_backing_device | default('omit', True) }}"
-      state: "{{ crypttab_state | default('omit', True) }}"
-      path: "{{ crypttab_path | default('omit', True) }}"
-      password: "{{ crypttab_password | default('omit', True) }}"
-      opts: "{{ crypttab_opts | default('omit', True) }}"
+      name: "{{ crypttab_name | default(omit, True) }}"
+      backing_device: "{{ crypttab_backing_device | default(omit, True) }}"
+      state: "{{ crypttab_state | default(omit, True) }}"
+      path: "{{ crypttab_path | default(omit, True) }}"
+      password: "{{ crypttab_password | default(omit, True) }}"
+      opts: "{{ crypttab_opts | default(omit, True) }}"
   tasks:
     - name: "plugin_crypttab"
       crypttab: "{{ crypttab }}"
+      register: r_crypttab

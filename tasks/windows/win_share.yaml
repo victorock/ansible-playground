@@ -1,6 +1,7 @@
 ---
 - name: "module_win_share"
   win_share: "{{ win_share }}"
+  register: r_win_share
   vars:
     win_share: 
       deny: "{{ win_share_deny | default(omit, True) }}"

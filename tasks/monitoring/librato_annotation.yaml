@@ -1,6 +1,7 @@
 ---
 - name: "module_librato_annotation"
   librato_annotation: "{{ librato_annotation }}"
+  register: r_librato_annotation
   vars:
     librato_annotation: 
       description: "{{ librato_annotation_description | default(omit, True) }}"

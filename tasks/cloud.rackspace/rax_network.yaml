@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_network"
   rax_network: "{{ rax_network }}"
+  register: r_rax_network
   vars:
     rax_network: 
       username: "{{ rax_network_username | default(omit, True) }}"

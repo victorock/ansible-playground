@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_quotas_facts"
   ovirt_quotas_facts: "{{ ovirt_quotas_facts }}"
+  register: r_ovirt_quotas_facts
   vars:
     ovirt_quotas_facts: 
       nested_attributes: "{{ ovirt_quotas_facts_nested_attributes | default(omit, True) }}"

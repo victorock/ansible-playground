@@ -1,6 +1,7 @@
 ---
 - name: "module_infini_vol"
   infini_vol: "{{ infini_vol }}"
+  register: r_infini_vol
   vars:
     infini_vol: 
       name: "{{ infini_vol_name | default(omit, True) }}"

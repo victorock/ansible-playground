@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_cloud"
   avi_cloud: "{{ avi_cloud }}"
+  register: r_avi_cloud
   vars:
     avi_cloud: 
       vca_configuration: "{{ avi_cloud_vca_configuration | default(omit, True) }}"

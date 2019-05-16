@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_vlan_pool"
   aci_vlan_pool: "{{ aci_vlan_pool }}"
+  register: r_aci_vlan_pool
   vars:
     aci_vlan_pool: 
       username: "{{ aci_vlan_pool_username | default(omit, True) }}"

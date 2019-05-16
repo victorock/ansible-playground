@@ -1,6 +1,7 @@
 ---
 - name: "module_cv_server_provision"
   cv_server_provision: "{{ cv_server_provision }}"
+  register: r_cv_server_provision
   vars:
     cv_server_provision: 
       username: "{{ cv_server_provision_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_service_offering"
   cs_service_offering: "{{ cs_service_offering }}"
+  register: r_cs_service_offering
   vars:
     cs_service_offering: 
       offer_ha: "{{ cs_service_offering_offer_ha | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_fetch"
   fetch: "{{ fetch }}"
+  register: r_fetch
   vars:
     fetch: 
       dest: "{{ fetch_dest | default(omit, True) }}"

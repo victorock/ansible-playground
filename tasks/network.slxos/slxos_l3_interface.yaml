@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_l3_interface"
   slxos_l3_interface: "{{ slxos_l3_interface }}"
+  register: r_slxos_l3_interface
   vars:
     slxos_l3_interface: 
       aggregate: "{{ slxos_l3_interface_aggregate | default(omit, True) }}"

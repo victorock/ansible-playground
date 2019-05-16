@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_l3_interface"
   nxos_l3_interface: "{{ nxos_l3_interface }}"
+  register: r_nxos_l3_interface
   vars:
     nxos_l3_interface: 
       name: "{{ nxos_l3_interface_name | default(omit, True) }}"

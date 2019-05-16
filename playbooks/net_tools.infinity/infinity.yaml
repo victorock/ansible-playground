@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     infinity: 
-      username: "{{ infinity_username | default('omit', True) }}"
-      network_size: "{{ infinity_network_size | default('omit', True) }}"
-      network_location: "{{ infinity_network_location | default('omit', True) }}"
-      network_family: "{{ infinity_network_family | default('omit', True) }}"
-      network_id: "{{ infinity_network_id | default('omit', True) }}"
-      ip_address: "{{ infinity_ip_address | default('omit', True) }}"
-      network_address: "{{ infinity_network_address | default('omit', True) }}"
-      server_ip: "{{ infinity_server_ip | default('omit', True) }}"
-      action: "{{ infinity_action | default('omit', True) }}"
-      password: "{{ infinity_password | default('omit', True) }}"
-      network_name: "{{ infinity_network_name | default('omit', True) }}"
-      network_type: "{{ infinity_network_type | default('omit', True) }}"
+      username: "{{ infinity_username | default(omit, True) }}"
+      network_size: "{{ infinity_network_size | default(omit, True) }}"
+      network_location: "{{ infinity_network_location | default(omit, True) }}"
+      network_family: "{{ infinity_network_family | default(omit, True) }}"
+      network_id: "{{ infinity_network_id | default(omit, True) }}"
+      ip_address: "{{ infinity_ip_address | default(omit, True) }}"
+      network_address: "{{ infinity_network_address | default(omit, True) }}"
+      server_ip: "{{ infinity_server_ip | default(omit, True) }}"
+      action: "{{ infinity_action | default(omit, True) }}"
+      password: "{{ infinity_password | default(omit, True) }}"
+      network_name: "{{ infinity_network_name | default(omit, True) }}"
+      network_type: "{{ infinity_network_type | default(omit, True) }}"
   tasks:
     - name: "plugin_infinity"
       infinity: "{{ infinity }}"
+      register: r_infinity

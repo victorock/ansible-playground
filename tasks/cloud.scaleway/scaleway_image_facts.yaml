@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_image_facts"
   scaleway_image_facts: "{{ scaleway_image_facts }}"
+  register: r_scaleway_image_facts
   vars:
     scaleway_image_facts: 
       region: "{{ scaleway_image_facts_region | default(omit, True) }}"

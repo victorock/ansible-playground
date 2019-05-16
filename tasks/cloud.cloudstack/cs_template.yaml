@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_template"
   cs_template: "{{ cs_template }}"
+  register: r_cs_template
   vars:
     cs_template: 
       domain: "{{ cs_template_domain | default(omit, True) }}"

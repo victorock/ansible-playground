@@ -1,6 +1,7 @@
 ---
 - name: "module_apt_repository"
   apt_repository: "{{ apt_repository }}"
+  register: r_apt_repository
   vars:
     apt_repository: 
       filename: "{{ apt_repository_filename | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_tag"
   digital_ocean_tag: "{{ digital_ocean_tag }}"
+  register: r_digital_ocean_tag
   vars:
     digital_ocean_tag: 
       name: "{{ digital_ocean_tag_name | default(omit, True) }}"

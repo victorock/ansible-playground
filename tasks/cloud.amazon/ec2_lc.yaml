@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_lc"
   ec2_lc: "{{ ec2_lc }}"
+  register: r_ec2_lc
   vars:
     ec2_lc: 
       ramdisk_id: "{{ ec2_lc_ramdisk_id | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_scheduler"
   proxysql_scheduler: "{{ proxysql_scheduler }}"
+  register: r_proxysql_scheduler
   vars:
     proxysql_scheduler: 
       comment: "{{ proxysql_scheduler_comment | default(omit, True) }}"

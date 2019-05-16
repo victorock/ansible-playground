@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_asg_lifecycle_hook"
   ec2_asg_lifecycle_hook: "{{ ec2_asg_lifecycle_hook }}"
+  register: r_ec2_asg_lifecycle_hook
   vars:
     ec2_asg_lifecycle_hook: 
       profile: "{{ ec2_asg_lifecycle_hook_profile | default(omit, True) }}"

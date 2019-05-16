@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_acceptance"
   vmware_host_acceptance: "{{ vmware_host_acceptance }}"
+  register: r_vmware_host_acceptance
   vars:
     vmware_host_acceptance: 
       username: "{{ vmware_host_acceptance_username | default(omit, True) }}"

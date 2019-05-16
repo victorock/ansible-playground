@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_snmp_host: 
-      vrf_filter: "{{ nxos_snmp_host_vrf_filter | default('omit', True) }}"
-      udp: "{{ nxos_snmp_host_udp | default('omit', True) }}"
-      version: "{{ nxos_snmp_host_version | default('omit', True) }}"
-      src_intf: "{{ nxos_snmp_host_src_intf | default('omit', True) }}"
-      snmp_host: "{{ nxos_snmp_host_snmp_host | default('omit', True) }}"
-      community: "{{ nxos_snmp_host_community | default('omit', True) }}"
-      state: "{{ nxos_snmp_host_state | default('omit', True) }}"
-      v3: "{{ nxos_snmp_host_v3 | default('omit', True) }}"
-      vrf: "{{ nxos_snmp_host_vrf | default('omit', True) }}"
-      snmp_type: "{{ nxos_snmp_host_snmp_type | default('omit', True) }}"
-      provider: "{{ nxos_snmp_host_provider | default('omit', True) }}"
+      vrf_filter: "{{ nxos_snmp_host_vrf_filter | default(omit, True) }}"
+      udp: "{{ nxos_snmp_host_udp | default(omit, True) }}"
+      version: "{{ nxos_snmp_host_version | default(omit, True) }}"
+      src_intf: "{{ nxos_snmp_host_src_intf | default(omit, True) }}"
+      snmp_host: "{{ nxos_snmp_host_snmp_host | default(omit, True) }}"
+      community: "{{ nxos_snmp_host_community | default(omit, True) }}"
+      state: "{{ nxos_snmp_host_state | default(omit, True) }}"
+      v3: "{{ nxos_snmp_host_v3 | default(omit, True) }}"
+      vrf: "{{ nxos_snmp_host_vrf | default(omit, True) }}"
+      snmp_type: "{{ nxos_snmp_host_snmp_type | default(omit, True) }}"
+      provider: "{{ nxos_snmp_host_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_snmp_host"
       nxos_snmp_host: "{{ nxos_snmp_host }}"
+      register: r_nxos_snmp_host

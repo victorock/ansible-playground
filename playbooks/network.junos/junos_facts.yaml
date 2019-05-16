@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_facts: 
-      config_format: "{{ junos_facts_config_format | default('omit', True) }}"
-      gather_subset: "{{ junos_facts_gather_subset | default('omit', True) }}"
-      provider: "{{ junos_facts_provider | default('omit', True) }}"
+      config_format: "{{ junos_facts_config_format | default(omit, True) }}"
+      gather_subset: "{{ junos_facts_gather_subset | default(omit, True) }}"
+      provider: "{{ junos_facts_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_facts"
       junos_facts: "{{ junos_facts }}"
+      register: r_junos_facts

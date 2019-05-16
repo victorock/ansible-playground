@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_snmp_host"
   nxos_snmp_host: "{{ nxos_snmp_host }}"
+  register: r_nxos_snmp_host
   vars:
     nxos_snmp_host: 
       vrf_filter: "{{ nxos_snmp_host_vrf_filter | default(omit, True) }}"

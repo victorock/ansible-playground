@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_backup"
   na_elementsw_backup: "{{ na_elementsw_backup }}"
+  register: r_na_elementsw_backup
   vars:
     na_elementsw_backup: 
       username: "{{ na_elementsw_backup_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_influxdb_query"
   influxdb_query: "{{ influxdb_query }}"
+  register: r_influxdb_query
   vars:
     influxdb_query: 
       username: "{{ influxdb_query_username | default(omit, True) }}"

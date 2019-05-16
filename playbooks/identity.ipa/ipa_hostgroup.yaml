@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipa_hostgroup: 
-      ipa_port: "{{ ipa_hostgroup_ipa_port | default('omit', True) }}"
-      cn: "{{ ipa_hostgroup_cn | default('omit', True) }}"
-      ipa_prot: "{{ ipa_hostgroup_ipa_prot | default('omit', True) }}"
-      state: "{{ ipa_hostgroup_state | default('omit', True) }}"
-      hostgroup: "{{ ipa_hostgroup_hostgroup | default('omit', True) }}"
-      host: "{{ ipa_hostgroup_host | default('omit', True) }}"
-      ipa_host: "{{ ipa_hostgroup_ipa_host | default('omit', True) }}"
-      ipa_user: "{{ ipa_hostgroup_ipa_user | default('omit', True) }}"
-      ipa_pass: "{{ ipa_hostgroup_ipa_pass | default('omit', True) }}"
-      ipa_timeout: "{{ ipa_hostgroup_ipa_timeout | default('omit', True) }}"
-      validate_certs: "{{ ipa_hostgroup_validate_certs | default('omit', True) }}"
-      description: "{{ ipa_hostgroup_description | default('omit', True) }}"
+      ipa_port: "{{ ipa_hostgroup_ipa_port | default(omit, True) }}"
+      cn: "{{ ipa_hostgroup_cn | default(omit, True) }}"
+      ipa_prot: "{{ ipa_hostgroup_ipa_prot | default(omit, True) }}"
+      state: "{{ ipa_hostgroup_state | default(omit, True) }}"
+      hostgroup: "{{ ipa_hostgroup_hostgroup | default(omit, True) }}"
+      host: "{{ ipa_hostgroup_host | default(omit, True) }}"
+      ipa_host: "{{ ipa_hostgroup_ipa_host | default(omit, True) }}"
+      ipa_user: "{{ ipa_hostgroup_ipa_user | default(omit, True) }}"
+      ipa_pass: "{{ ipa_hostgroup_ipa_pass | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_hostgroup_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_hostgroup_validate_certs | default(omit, True) }}"
+      description: "{{ ipa_hostgroup_description | default(omit, True) }}"
   tasks:
     - name: "plugin_ipa_hostgroup"
       ipa_hostgroup: "{{ ipa_hostgroup }}"
+      register: r_ipa_hostgroup

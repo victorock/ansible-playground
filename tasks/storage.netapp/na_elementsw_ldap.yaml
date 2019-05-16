@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_ldap"
   na_elementsw_ldap: "{{ na_elementsw_ldap }}"
+  register: r_na_elementsw_ldap
   vars:
     na_elementsw_ldap: 
       username: "{{ na_elementsw_ldap_username | default(omit, True) }}"

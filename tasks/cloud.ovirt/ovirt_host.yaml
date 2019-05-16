@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_host"
   ovirt_host: "{{ ovirt_host }}"
+  register: r_ovirt_host
   vars:
     ovirt_host: 
       comment: "{{ ovirt_host_comment | default(omit, True) }}"

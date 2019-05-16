@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_network_facts"
   gcp_compute_network_facts: "{{ gcp_compute_network_facts }}"
+  register: r_gcp_compute_network_facts
   vars:
     gcp_compute_network_facts: 
       scopes: "{{ gcp_compute_network_facts_scopes | default(omit, True) }}"

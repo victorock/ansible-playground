@@ -1,6 +1,7 @@
 ---
 - name: "module_nios_naptr_record"
   nios_naptr_record: "{{ nios_naptr_record }}"
+  register: r_nios_naptr_record
   vars:
     nios_naptr_record: 
       comment: "{{ nios_naptr_record_comment | default(omit, True) }}"

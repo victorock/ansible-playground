@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_clb_nodes"
   rax_clb_nodes: "{{ rax_clb_nodes }}"
+  register: r_rax_clb_nodes
   vars:
     rax_clb_nodes: 
       username: "{{ rax_clb_nodes_username | default(omit, True) }}"

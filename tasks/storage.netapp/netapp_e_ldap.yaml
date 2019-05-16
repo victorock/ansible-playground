@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_ldap"
   netapp_e_ldap: "{{ netapp_e_ldap }}"
+  register: r_netapp_e_ldap
   vars:
     netapp_e_ldap: 
       username: "{{ netapp_e_ldap_username | default(omit, True) }}"

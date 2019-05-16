@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_access_group"
   na_elementsw_access_group: "{{ na_elementsw_access_group }}"
+  register: r_na_elementsw_access_group
   vars:
     na_elementsw_access_group: 
       username: "{{ na_elementsw_access_group_username | default(omit, True) }}"

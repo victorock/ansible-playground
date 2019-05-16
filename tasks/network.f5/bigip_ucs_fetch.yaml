@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_ucs_fetch"
   bigip_ucs_fetch: "{{ bigip_ucs_fetch }}"
+  register: r_bigip_ucs_fetch
   vars:
     bigip_ucs_fetch: 
       src: "{{ bigip_ucs_fetch_src | default(omit, True) }}"

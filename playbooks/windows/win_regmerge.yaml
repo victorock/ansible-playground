@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_regmerge: 
-      path: "{{ win_regmerge_path | default('omit', True) }}"
-      compare_key: "{{ win_regmerge_compare_key | default('omit', True) }}"
+      path: "{{ win_regmerge_path | default(omit, True) }}"
+      compare_key: "{{ win_regmerge_compare_key | default(omit, True) }}"
   tasks:
     - name: "plugin_win_regmerge"
       win_regmerge: "{{ win_regmerge }}"
+      register: r_win_regmerge

@@ -1,6 +1,7 @@
 ---
 - name: "module_pacman"
   pacman: "{{ pacman }}"
+  register: r_pacman
   vars:
     pacman: 
       upgrade: "{{ pacman_upgrade | default(omit, True) }}"

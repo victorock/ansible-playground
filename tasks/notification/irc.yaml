@@ -1,6 +1,7 @@
 ---
 - name: "module_irc"
   irc: "{{ irc }}"
+  register: r_irc
   vars:
     irc: 
       style: "{{ irc_style | default(omit, True) }}"

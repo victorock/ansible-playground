@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_management_route"
   bigip_management_route: "{{ bigip_management_route }}"
+  register: r_bigip_management_route
   vars:
     bigip_management_route: 
       network: "{{ bigip_management_route_network | default(omit, True) }}"

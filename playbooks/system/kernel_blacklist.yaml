@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     kernel_blacklist: 
-      blacklist_file: "{{ kernel_blacklist_blacklist_file | default('omit', True) }}"
-      state: "{{ kernel_blacklist_state | default('omit', True) }}"
-      name: "{{ kernel_blacklist_name | default('omit', True) }}"
+      blacklist_file: "{{ kernel_blacklist_blacklist_file | default(omit, True) }}"
+      state: "{{ kernel_blacklist_state | default(omit, True) }}"
+      name: "{{ kernel_blacklist_name | default(omit, True) }}"
   tasks:
     - name: "plugin_kernel_blacklist"
       kernel_blacklist: "{{ kernel_blacklist }}"
+      register: r_kernel_blacklist

@@ -1,6 +1,7 @@
 ---
 - name: "module_letsencrypt"
   letsencrypt: "{{ letsencrypt }}"
+  register: r_letsencrypt
   vars:
     letsencrypt: 
       acme_directory: "{{ letsencrypt_acme_directory | default(omit, True) }}"

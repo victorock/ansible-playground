@@ -1,6 +1,7 @@
 ---
 - name: "module_gce"
   gce: "{{ gce }}"
+  register: r_gce
   vars:
     gce: 
       num_instances: "{{ gce_num_instances | default(omit, True) }}"

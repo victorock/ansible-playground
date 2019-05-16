@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nosh: 
-      state: "{{ nosh_state | default('omit', True) }}"
-      preset: "{{ nosh_preset | default('omit', True) }}"
-      enabled: "{{ nosh_enabled | default('omit', True) }}"
-      name: "{{ nosh_name | default('omit', True) }}"
-      user: "{{ nosh_user | default('omit', True) }}"
+      state: "{{ nosh_state | default(omit, True) }}"
+      preset: "{{ nosh_preset | default(omit, True) }}"
+      enabled: "{{ nosh_enabled | default(omit, True) }}"
+      name: "{{ nosh_name | default(omit, True) }}"
+      user: "{{ nosh_user | default(omit, True) }}"
   tasks:
     - name: "plugin_nosh"
       nosh: "{{ nosh }}"
+      register: r_nosh

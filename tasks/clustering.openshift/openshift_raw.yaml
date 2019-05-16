@@ -1,6 +1,7 @@
 ---
 - name: "module_openshift_raw"
   openshift_raw: "{{ openshift_raw }}"
+  register: r_openshift_raw
   vars:
     openshift_raw: 
       username: "{{ openshift_raw_username | default(omit, True) }}"

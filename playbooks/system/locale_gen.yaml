@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     locale_gen: 
-      state: "{{ locale_gen_state | default('omit', True) }}"
-      name: "{{ locale_gen_name | default('omit', True) }}"
+      state: "{{ locale_gen_state | default(omit, True) }}"
+      name: "{{ locale_gen_name | default(omit, True) }}"
   tasks:
     - name: "plugin_locale_gen"
       locale_gen: "{{ locale_gen }}"
+      register: r_locale_gen

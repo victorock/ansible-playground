@@ -1,6 +1,7 @@
 ---
 - name: "module_git_config"
   git_config: "{{ git_config }}"
+  register: r_git_config
   vars:
     git_config: 
       repo: "{{ git_config_repo | default(omit, True) }}"

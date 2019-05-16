@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     virt_net: 
-      xml: "{{ virt_net_xml | default('omit', True) }}"
-      name: "{{ virt_net_name | default('omit', True) }}"
-      uri: "{{ virt_net_uri | default('omit', True) }}"
-      state: "{{ virt_net_state | default('omit', True) }}"
-      command: "{{ virt_net_command | default('omit', True) }}"
-      autostart: "{{ virt_net_autostart | default('omit', True) }}"
+      xml: "{{ virt_net_xml | default(omit, True) }}"
+      name: "{{ virt_net_name | default(omit, True) }}"
+      uri: "{{ virt_net_uri | default(omit, True) }}"
+      state: "{{ virt_net_state | default(omit, True) }}"
+      command: "{{ virt_net_command | default(omit, True) }}"
+      autostart: "{{ virt_net_autostart | default(omit, True) }}"
   tasks:
     - name: "plugin_virt_net"
       virt_net: "{{ virt_net }}"
+      register: r_virt_net

@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_region_facts"
   vultr_region_facts: "{{ vultr_region_facts }}"
+  register: r_vultr_region_facts
   vars:
     vultr_region_facts: 
       api_retries: "{{ vultr_region_facts_api_retries | default(omit, True) }}"

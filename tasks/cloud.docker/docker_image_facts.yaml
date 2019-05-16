@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_image_facts"
   docker_image_facts: "{{ docker_image_facts }}"
+  register: r_docker_image_facts
   vars:
     docker_image_facts: 
       tls: "{{ docker_image_facts_tls | default(omit, True) }}"

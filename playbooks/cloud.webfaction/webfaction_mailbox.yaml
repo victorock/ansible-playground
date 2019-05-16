@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     webfaction_mailbox: 
-      mailbox_password: "{{ webfaction_mailbox_mailbox_password | default('omit', True) }}"
-      state: "{{ webfaction_mailbox_state | default('omit', True) }}"
-      login_name: "{{ webfaction_mailbox_login_name | default('omit', True) }}"
-      mailbox_name: "{{ webfaction_mailbox_mailbox_name | default('omit', True) }}"
-      login_password: "{{ webfaction_mailbox_login_password | default('omit', True) }}"
+      mailbox_password: "{{ webfaction_mailbox_mailbox_password | default(omit, True) }}"
+      state: "{{ webfaction_mailbox_state | default(omit, True) }}"
+      login_name: "{{ webfaction_mailbox_login_name | default(omit, True) }}"
+      mailbox_name: "{{ webfaction_mailbox_mailbox_name | default(omit, True) }}"
+      login_password: "{{ webfaction_mailbox_login_password | default(omit, True) }}"
   tasks:
     - name: "plugin_webfaction_mailbox"
       webfaction_mailbox: "{{ webfaction_mailbox }}"
+      register: r_webfaction_mailbox

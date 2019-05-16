@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_spanner_database"
   gcp_spanner_database: "{{ gcp_spanner_database }}"
+  register: r_gcp_spanner_database
   vars:
     gcp_spanner_database: 
       scopes: "{{ gcp_spanner_database_scopes | default(omit, True) }}"

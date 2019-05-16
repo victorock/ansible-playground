@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     smartos_image_facts: 
-      filters: "{{ smartos_image_facts_filters | default('omit', True) }}"
+      filters: "{{ smartos_image_facts_filters | default(omit, True) }}"
   tasks:
     - name: "plugin_smartos_image_facts"
       smartos_image_facts: "{{ smartos_image_facts }}"
+      register: r_smartos_image_facts

@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudscale_floating_ip"
   cloudscale_floating_ip: "{{ cloudscale_floating_ip }}"
+  register: r_cloudscale_floating_ip
   vars:
     cloudscale_floating_ip: 
       reverse_ptr: "{{ cloudscale_floating_ip_reverse_ptr | default(omit, True) }}"

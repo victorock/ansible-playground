@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vertica_user: 
-      profile: "{{ vertica_user_profile | default('omit', True) }}"
-      resource_pool: "{{ vertica_user_resource_pool | default('omit', True) }}"
-      name: "{{ vertica_user_name | default('omit', True) }}"
-      roles: "{{ vertica_user_roles | default('omit', True) }}"
-      login_user: "{{ vertica_user_login_user | default('omit', True) }}"
-      ldap: "{{ vertica_user_ldap | default('omit', True) }}"
-      db: "{{ vertica_user_db | default('omit', True) }}"
-      cluster: "{{ vertica_user_cluster | default('omit', True) }}"
-      state: "{{ vertica_user_state | default('omit', True) }}"
-      login_password: "{{ vertica_user_login_password | default('omit', True) }}"
-      password: "{{ vertica_user_password | default('omit', True) }}"
-      expired: "{{ vertica_user_expired | default('omit', True) }}"
-      port: "{{ vertica_user_port | default('omit', True) }}"
+      profile: "{{ vertica_user_profile | default(omit, True) }}"
+      resource_pool: "{{ vertica_user_resource_pool | default(omit, True) }}"
+      name: "{{ vertica_user_name | default(omit, True) }}"
+      roles: "{{ vertica_user_roles | default(omit, True) }}"
+      login_user: "{{ vertica_user_login_user | default(omit, True) }}"
+      ldap: "{{ vertica_user_ldap | default(omit, True) }}"
+      db: "{{ vertica_user_db | default(omit, True) }}"
+      cluster: "{{ vertica_user_cluster | default(omit, True) }}"
+      state: "{{ vertica_user_state | default(omit, True) }}"
+      login_password: "{{ vertica_user_login_password | default(omit, True) }}"
+      password: "{{ vertica_user_password | default(omit, True) }}"
+      expired: "{{ vertica_user_expired | default(omit, True) }}"
+      port: "{{ vertica_user_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vertica_user"
       vertica_user: "{{ vertica_user }}"
+      register: r_vertica_user

@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_servicegroup"
   netscaler_servicegroup: "{{ netscaler_servicegroup }}"
+  register: r_netscaler_servicegroup
   vars:
     netscaler_servicegroup: 
       comment: "{{ netscaler_servicegroup_comment | default(omit, True) }}"

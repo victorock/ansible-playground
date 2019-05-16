@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudtrail"
   cloudtrail: "{{ cloudtrail }}"
+  register: r_cloudtrail
   vars:
     cloudtrail: 
       profile: "{{ cloudtrail_profile | default(omit, True) }}"

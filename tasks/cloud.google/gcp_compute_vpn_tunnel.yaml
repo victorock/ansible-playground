@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_vpn_tunnel"
   gcp_compute_vpn_tunnel: "{{ gcp_compute_vpn_tunnel }}"
+  register: r_gcp_compute_vpn_tunnel
   vars:
     gcp_compute_vpn_tunnel: 
       ike_version: "{{ gcp_compute_vpn_tunnel_ike_version | default(omit, True) }}"

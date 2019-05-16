@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_partition"
   bigip_partition: "{{ bigip_partition }}"
+  register: r_bigip_partition
   vars:
     bigip_partition: 
       name: "{{ bigip_partition_name | default(omit, True) }}"

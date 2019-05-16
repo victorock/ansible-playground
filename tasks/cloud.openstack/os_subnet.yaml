@@ -1,6 +1,7 @@
 ---
 - name: "module_os_subnet"
   os_subnet: "{{ os_subnet }}"
+  register: r_os_subnet
   vars:
     os_subnet: 
       auth_type: "{{ os_subnet_auth_type | default(omit, True) }}"

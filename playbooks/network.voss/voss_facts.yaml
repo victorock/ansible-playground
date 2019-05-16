@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     voss_facts: 
-      gather_subset: "{{ voss_facts_gather_subset | default('omit', True) }}"
+      gather_subset: "{{ voss_facts_gather_subset | default(omit, True) }}"
   tasks:
     - name: "plugin_voss_facts"
       voss_facts: "{{ voss_facts }}"
+      register: r_voss_facts

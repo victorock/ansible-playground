@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     svr4pkg: 
-      category: "{{ svr4pkg_category | default('omit', True) }}"
-      src: "{{ svr4pkg_src | default('omit', True) }}"
-      name: "{{ svr4pkg_name | default('omit', True) }}"
-      zone: "{{ svr4pkg_zone | default('omit', True) }}"
-      state: "{{ svr4pkg_state | default('omit', True) }}"
-      proxy: "{{ svr4pkg_proxy | default('omit', True) }}"
-      response_file: "{{ svr4pkg_response_file | default('omit', True) }}"
+      category: "{{ svr4pkg_category | default(omit, True) }}"
+      src: "{{ svr4pkg_src | default(omit, True) }}"
+      name: "{{ svr4pkg_name | default(omit, True) }}"
+      zone: "{{ svr4pkg_zone | default(omit, True) }}"
+      state: "{{ svr4pkg_state | default(omit, True) }}"
+      proxy: "{{ svr4pkg_proxy | default(omit, True) }}"
+      response_file: "{{ svr4pkg_response_file | default(omit, True) }}"
   tasks:
     - name: "plugin_svr4pkg"
       svr4pkg: "{{ svr4pkg }}"
+      register: r_svr4pkg

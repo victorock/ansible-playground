@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_snapshot_policy"
   cs_snapshot_policy: "{{ cs_snapshot_policy }}"
+  register: r_cs_snapshot_policy
   vars:
     cs_snapshot_policy: 
       project: "{{ cs_snapshot_policy_project | default(omit, True) }}"

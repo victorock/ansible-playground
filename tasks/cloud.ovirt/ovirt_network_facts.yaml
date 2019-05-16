@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_network_facts"
   ovirt_network_facts: "{{ ovirt_network_facts }}"
+  register: r_ovirt_network_facts
   vars:
     ovirt_network_facts: 
       pattern: "{{ ovirt_network_facts_pattern | default(omit, True) }}"

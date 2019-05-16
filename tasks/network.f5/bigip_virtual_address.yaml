@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_virtual_address"
   bigip_virtual_address: "{{ bigip_virtual_address }}"
+  register: r_bigip_virtual_address
   vars:
     bigip_virtual_address: 
       arp: "{{ bigip_virtual_address_arp | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     hponcfg: 
-      path: "{{ hponcfg_path | default('omit', True) }}"
-      executable: "{{ hponcfg_executable | default('omit', True) }}"
-      minfw: "{{ hponcfg_minfw | default('omit', True) }}"
-      verbose: "{{ hponcfg_verbose | default('omit', True) }}"
+      path: "{{ hponcfg_path | default(omit, True) }}"
+      executable: "{{ hponcfg_executable | default(omit, True) }}"
+      minfw: "{{ hponcfg_minfw | default(omit, True) }}"
+      verbose: "{{ hponcfg_verbose | default(omit, True) }}"
   tasks:
     - name: "plugin_hponcfg"
       hponcfg: "{{ hponcfg }}"
+      register: r_hponcfg

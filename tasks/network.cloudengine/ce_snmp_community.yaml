@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_snmp_community"
   ce_snmp_community: "{{ ce_snmp_community }}"
+  register: r_ce_snmp_community
   vars:
     ce_snmp_community: 
       notify_view: "{{ ce_snmp_community_notify_view | default(omit, True) }}"

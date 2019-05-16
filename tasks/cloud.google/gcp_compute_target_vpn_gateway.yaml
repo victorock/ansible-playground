@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_target_vpn_gateway"
   gcp_compute_target_vpn_gateway: "{{ gcp_compute_target_vpn_gateway }}"
+  register: r_gcp_compute_target_vpn_gateway
   vars:
     gcp_compute_target_vpn_gateway: 
       scopes: "{{ gcp_compute_target_vpn_gateway_scopes | default(omit, True) }}"

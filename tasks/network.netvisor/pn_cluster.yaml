@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_cluster"
   pn_cluster: "{{ pn_cluster }}"
+  register: r_pn_cluster
   vars:
     pn_cluster: 
       pn_name: "{{ pn_cluster_pn_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_lxd_profile"
   lxd_profile: "{{ lxd_profile }}"
+  register: r_lxd_profile
   vars:
     lxd_profile: 
       new_name: "{{ lxd_profile_new_name | default(omit, True) }}"

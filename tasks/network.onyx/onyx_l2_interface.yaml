@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_l2_interface"
   onyx_l2_interface: "{{ onyx_l2_interface }}"
+  register: r_onyx_l2_interface
   vars:
     onyx_l2_interface: 
       access_vlan: "{{ onyx_l2_interface_access_vlan | default(omit, True) }}"

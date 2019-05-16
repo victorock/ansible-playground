@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_vsdatascriptset"
   avi_vsdatascriptset: "{{ avi_vsdatascriptset }}"
+  register: r_avi_vsdatascriptset
   vars:
     avi_vsdatascriptset: 
       pool_refs: "{{ avi_vsdatascriptset_pool_refs | default(omit, True) }}"

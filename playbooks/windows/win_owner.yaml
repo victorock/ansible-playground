@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_owner: 
-      path: "{{ win_owner_path | default('omit', True) }}"
-      recurse: "{{ win_owner_recurse | default('omit', True) }}"
-      user: "{{ win_owner_user | default('omit', True) }}"
+      path: "{{ win_owner_path | default(omit, True) }}"
+      recurse: "{{ win_owner_recurse | default(omit, True) }}"
+      user: "{{ win_owner_user | default(omit, True) }}"
   tasks:
     - name: "plugin_win_owner"
       win_owner: "{{ win_owner }}"
+      register: r_win_owner

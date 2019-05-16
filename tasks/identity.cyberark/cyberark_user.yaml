@@ -1,6 +1,7 @@
 ---
 - name: "module_cyberark_user"
   cyberark_user: "{{ cyberark_user }}"
+  register: r_cyberark_user
   vars:
     cyberark_user: 
       username: "{{ cyberark_user_username | default(omit, True) }}"

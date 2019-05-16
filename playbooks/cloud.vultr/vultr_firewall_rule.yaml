@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vultr_firewall_rule: 
-      api_timeout: "{{ vultr_firewall_rule_api_timeout | default('omit', True) }}"
-      start_port: "{{ vultr_firewall_rule_start_port | default('omit', True) }}"
-      end_port: "{{ vultr_firewall_rule_end_port | default('omit', True) }}"
-      protocol: "{{ vultr_firewall_rule_protocol | default('omit', True) }}"
-      group: "{{ vultr_firewall_rule_group | default('omit', True) }}"
-      api_endpoint: "{{ vultr_firewall_rule_api_endpoint | default('omit', True) }}"
-      state: "{{ vultr_firewall_rule_state | default('omit', True) }}"
-      api_account: "{{ vultr_firewall_rule_api_account | default('omit', True) }}"
-      ip_version: "{{ vultr_firewall_rule_ip_version | default('omit', True) }}"
-      api_retries: "{{ vultr_firewall_rule_api_retries | default('omit', True) }}"
-      cidr: "{{ vultr_firewall_rule_cidr | default('omit', True) }}"
-      api_key: "{{ vultr_firewall_rule_api_key | default('omit', True) }}"
-      validate_certs: "{{ vultr_firewall_rule_validate_certs | default('omit', True) }}"
+      api_timeout: "{{ vultr_firewall_rule_api_timeout | default(omit, True) }}"
+      start_port: "{{ vultr_firewall_rule_start_port | default(omit, True) }}"
+      end_port: "{{ vultr_firewall_rule_end_port | default(omit, True) }}"
+      protocol: "{{ vultr_firewall_rule_protocol | default(omit, True) }}"
+      group: "{{ vultr_firewall_rule_group | default(omit, True) }}"
+      api_endpoint: "{{ vultr_firewall_rule_api_endpoint | default(omit, True) }}"
+      state: "{{ vultr_firewall_rule_state | default(omit, True) }}"
+      api_account: "{{ vultr_firewall_rule_api_account | default(omit, True) }}"
+      ip_version: "{{ vultr_firewall_rule_ip_version | default(omit, True) }}"
+      api_retries: "{{ vultr_firewall_rule_api_retries | default(omit, True) }}"
+      cidr: "{{ vultr_firewall_rule_cidr | default(omit, True) }}"
+      api_key: "{{ vultr_firewall_rule_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_firewall_rule_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vultr_firewall_rule"
       vultr_firewall_rule: "{{ vultr_firewall_rule }}"
+      register: r_vultr_firewall_rule

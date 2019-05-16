@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_container_cluster"
   gcp_container_cluster: "{{ gcp_container_cluster }}"
+  register: r_gcp_container_cluster
   vars:
     gcp_container_cluster: 
       initial_node_count: "{{ gcp_container_cluster_initial_node_count | default(omit, True) }}"

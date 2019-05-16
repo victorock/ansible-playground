@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ios_system: 
-      authorize: "{{ ios_system_authorize | default('omit', True) }}"
-      hostname: "{{ ios_system_hostname | default('omit', True) }}"
-      lookup_source: "{{ ios_system_lookup_source | default('omit', True) }}"
-      domain_search: "{{ ios_system_domain_search | default('omit', True) }}"
-      auth_pass: "{{ ios_system_auth_pass | default('omit', True) }}"
-      domain_name: "{{ ios_system_domain_name | default('omit', True) }}"
-      state: "{{ ios_system_state | default('omit', True) }}"
-      provider: "{{ ios_system_provider | default('omit', True) }}"
-      name_servers: "{{ ios_system_name_servers | default('omit', True) }}"
-      lookup_enabled: "{{ ios_system_lookup_enabled | default('omit', True) }}"
+      authorize: "{{ ios_system_authorize | default(omit, True) }}"
+      hostname: "{{ ios_system_hostname | default(omit, True) }}"
+      lookup_source: "{{ ios_system_lookup_source | default(omit, True) }}"
+      domain_search: "{{ ios_system_domain_search | default(omit, True) }}"
+      auth_pass: "{{ ios_system_auth_pass | default(omit, True) }}"
+      domain_name: "{{ ios_system_domain_name | default(omit, True) }}"
+      state: "{{ ios_system_state | default(omit, True) }}"
+      provider: "{{ ios_system_provider | default(omit, True) }}"
+      name_servers: "{{ ios_system_name_servers | default(omit, True) }}"
+      lookup_enabled: "{{ ios_system_lookup_enabled | default(omit, True) }}"
   tasks:
     - name: "plugin_ios_system"
       ios_system: "{{ ios_system }}"
+      register: r_ios_system

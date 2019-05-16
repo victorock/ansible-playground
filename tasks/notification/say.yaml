@@ -1,6 +1,7 @@
 ---
 - name: "module_say"
   say: "{{ say }}"
+  register: r_say
   vars:
     say: 
       msg: "{{ say_msg | default(omit, True) }}"

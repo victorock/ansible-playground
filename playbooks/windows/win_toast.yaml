@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_toast: 
-      popup: "{{ win_toast_popup | default('omit', True) }}"
-      group: "{{ win_toast_group | default('omit', True) }}"
-      title: "{{ win_toast_title | default('omit', True) }}"
-      tag: "{{ win_toast_tag | default('omit', True) }}"
-      expire: "{{ win_toast_expire | default('omit', True) }}"
-      msg: "{{ win_toast_msg | default('omit', True) }}"
+      popup: "{{ win_toast_popup | default(omit, True) }}"
+      group: "{{ win_toast_group | default(omit, True) }}"
+      title: "{{ win_toast_title | default(omit, True) }}"
+      tag: "{{ win_toast_tag | default(omit, True) }}"
+      expire: "{{ win_toast_expire | default(omit, True) }}"
+      msg: "{{ win_toast_msg | default(omit, True) }}"
   tasks:
     - name: "plugin_win_toast"
       win_toast: "{{ win_toast }}"
+      register: r_win_toast

@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     oneview_logical_interconnect_group_facts: 
-      config: "{{ oneview_logical_interconnect_group_facts_config | default('omit', True) }}"
-      params: "{{ oneview_logical_interconnect_group_facts_params | default('omit', True) }}"
-      name: "{{ oneview_logical_interconnect_group_facts_name | default('omit', True) }}"
+      config: "{{ oneview_logical_interconnect_group_facts_config | default(omit, True) }}"
+      params: "{{ oneview_logical_interconnect_group_facts_params | default(omit, True) }}"
+      name: "{{ oneview_logical_interconnect_group_facts_name | default(omit, True) }}"
   tasks:
     - name: "plugin_oneview_logical_interconnect_group_facts"
       oneview_logical_interconnect_group_facts: "{{ oneview_logical_interconnect_group_facts }}"
+      register: r_oneview_logical_interconnect_group_facts

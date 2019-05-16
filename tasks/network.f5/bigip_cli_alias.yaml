@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_cli_alias"
   bigip_cli_alias: "{{ bigip_cli_alias }}"
+  register: r_bigip_cli_alias
   vars:
     bigip_cli_alias: 
       description: "{{ bigip_cli_alias_description | default(omit, True) }}"

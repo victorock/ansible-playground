@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_rollback"
   nxos_rollback: "{{ nxos_rollback }}"
+  register: r_nxos_rollback
   vars:
     nxos_rollback: 
       checkpoint_file: "{{ nxos_rollback_checkpoint_file | default(omit, True) }}"

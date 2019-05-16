@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_instance_group_manager"
   gcp_compute_instance_group_manager: "{{ gcp_compute_instance_group_manager }}"
+  register: r_gcp_compute_instance_group_manager
   vars:
     gcp_compute_instance_group_manager: 
       scopes: "{{ gcp_compute_instance_group_manager_scopes | default(omit, True) }}"

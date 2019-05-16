@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_gslb"
   avi_gslb: "{{ avi_gslb }}"
+  register: r_avi_gslb
   vars:
     avi_gslb: 
       maintenance_mode: "{{ avi_gslb_maintenance_mode | default(omit, True) }}"

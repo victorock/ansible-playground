@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gce_img: 
-      name: "{{ gce_img_name | default('omit', True) }}"
-      family: "{{ gce_img_family | default('omit', True) }}"
-      service_account_email: "{{ gce_img_service_account_email | default('omit', True) }}"
-      pem_file: "{{ gce_img_pem_file | default('omit', True) }}"
-      source: "{{ gce_img_source | default('omit', True) }}"
-      state: "{{ gce_img_state | default('omit', True) }}"
-      zone: "{{ gce_img_zone | default('omit', True) }}"
-      timeout: "{{ gce_img_timeout | default('omit', True) }}"
-      project_id: "{{ gce_img_project_id | default('omit', True) }}"
-      description: "{{ gce_img_description | default('omit', True) }}"
+      name: "{{ gce_img_name | default(omit, True) }}"
+      family: "{{ gce_img_family | default(omit, True) }}"
+      service_account_email: "{{ gce_img_service_account_email | default(omit, True) }}"
+      pem_file: "{{ gce_img_pem_file | default(omit, True) }}"
+      source: "{{ gce_img_source | default(omit, True) }}"
+      state: "{{ gce_img_state | default(omit, True) }}"
+      zone: "{{ gce_img_zone | default(omit, True) }}"
+      timeout: "{{ gce_img_timeout | default(omit, True) }}"
+      project_id: "{{ gce_img_project_id | default(omit, True) }}"
+      description: "{{ gce_img_description | default(omit, True) }}"
   tasks:
     - name: "plugin_gce_img"
       gce_img: "{{ gce_img }}"
+      register: r_gce_img

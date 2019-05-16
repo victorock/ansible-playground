@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_dsc: 
-      free_form: "{{ win_dsc_free_form | default('omit', True) }}"
-      module_version: "{{ win_dsc_module_version | default('omit', True) }}"
-      resource_name: "{{ win_dsc_resource_name | default('omit', True) }}"
+      free_form: "{{ win_dsc_free_form | default(omit, True) }}"
+      module_version: "{{ win_dsc_module_version | default(omit, True) }}"
+      resource_name: "{{ win_dsc_resource_name | default(omit, True) }}"
   tasks:
     - name: "plugin_win_dsc"
       win_dsc: "{{ win_dsc }}"
+      register: r_win_dsc

@@ -1,6 +1,7 @@
 ---
 - name: "module_gluster_peer"
   gluster_peer: "{{ gluster_peer }}"
+  register: r_gluster_peer
   vars:
     gluster_peer: 
       state: "{{ gluster_peer_state | default(omit, True) }}"

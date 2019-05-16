@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_role"
   cs_role: "{{ cs_role }}"
+  register: r_cs_role
   vars:
     cs_role: 
       description: "{{ cs_role_description | default(omit, True) }}"

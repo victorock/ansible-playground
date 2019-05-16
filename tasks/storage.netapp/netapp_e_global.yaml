@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_global"
   netapp_e_global: "{{ netapp_e_global }}"
+  register: r_netapp_e_global
   vars:
     netapp_e_global: 
       ssid: "{{ netapp_e_global_ssid | default(omit, True) }}"

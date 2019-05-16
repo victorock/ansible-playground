@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_gslbservice_patch_member"
   avi_gslbservice_patch_member: "{{ avi_gslbservice_patch_member }}"
+  register: r_avi_gslbservice_patch_member
   vars:
     avi_gslbservice_patch_member: 
       username: "{{ avi_gslbservice_patch_member_username | default(omit, True) }}"

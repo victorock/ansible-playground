@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_dnspolicy"
   avi_dnspolicy: "{{ avi_dnspolicy }}"
+  register: r_avi_dnspolicy
   vars:
     avi_dnspolicy: 
       username: "{{ avi_dnspolicy_username | default(omit, True) }}"

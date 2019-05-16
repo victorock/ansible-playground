@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_snapshot_group"
   netapp_e_snapshot_group: "{{ netapp_e_snapshot_group }}"
+  register: r_netapp_e_snapshot_group
   vars:
     netapp_e_snapshot_group: 
       repo_pct: "{{ netapp_e_snapshot_group_repo_pct | default(omit, True) }}"

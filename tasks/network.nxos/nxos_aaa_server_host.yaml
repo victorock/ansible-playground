@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_aaa_server_host"
   nxos_aaa_server_host: "{{ nxos_aaa_server_host }}"
+  register: r_nxos_aaa_server_host
   vars:
     nxos_aaa_server_host: 
       server_type: "{{ nxos_aaa_server_host_server_type | default(omit, True) }}"

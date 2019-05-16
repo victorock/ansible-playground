@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_netconf"
   junos_netconf: "{{ junos_netconf }}"
+  register: r_junos_netconf
   vars:
     junos_netconf: 
       state: "{{ junos_netconf_state | default(omit, True) }}"

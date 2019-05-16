@@ -1,6 +1,7 @@
 ---
 - name: "module_alternatives"
   alternatives: "{{ alternatives }}"
+  register: r_alternatives
   vars:
     alternatives: 
       priority: "{{ alternatives_priority | default(omit, True) }}"

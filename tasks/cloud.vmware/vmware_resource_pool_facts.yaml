@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_resource_pool_facts"
   vmware_resource_pool_facts: "{{ vmware_resource_pool_facts }}"
+  register: r_vmware_resource_pool_facts
   vars:
     vmware_resource_pool_facts: 
       username: "{{ vmware_resource_pool_facts_username | default(omit, True) }}"

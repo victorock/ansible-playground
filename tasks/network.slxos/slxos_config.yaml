@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_config"
   slxos_config: "{{ slxos_config }}"
+  register: r_slxos_config
   vars:
     slxos_config: 
       multiline_delimiter: "{{ slxos_config_multiline_delimiter | default(omit, True) }}"

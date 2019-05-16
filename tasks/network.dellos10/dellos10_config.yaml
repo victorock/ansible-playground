@@ -1,6 +1,7 @@
 ---
 - name: "module_dellos10_config"
   dellos10_config: "{{ dellos10_config }}"
+  register: r_dellos10_config
   vars:
     dellos10_config: 
       src: "{{ dellos10_config_src | default(omit, True) }}"

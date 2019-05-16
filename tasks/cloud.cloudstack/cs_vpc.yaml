@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_vpc"
   cs_vpc: "{{ cs_vpc }}"
+  register: r_cs_vpc
   vars:
     cs_vpc: 
       display_text: "{{ cs_vpc_display_text | default(omit, True) }}"

@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     elb_instance: 
-      profile: "{{ elb_instance_profile | default('omit', True) }}"
-      aws_secret_key: "{{ elb_instance_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ elb_instance_aws_access_key | default('omit', True) }}"
-      security_token: "{{ elb_instance_security_token | default('omit', True) }}"
-      region: "{{ elb_instance_region | default('omit', True) }}"
-      instance_id: "{{ elb_instance_instance_id | default('omit', True) }}"
-      state: "{{ elb_instance_state | default('omit', True) }}"
-      wait_timeout: "{{ elb_instance_wait_timeout | default('omit', True) }}"
-      ec2_url: "{{ elb_instance_ec2_url | default('omit', True) }}"
-      wait: "{{ elb_instance_wait | default('omit', True) }}"
-      validate_certs: "{{ elb_instance_validate_certs | default('omit', True) }}"
-      enable_availability_zone: "{{ elb_instance_enable_availability_zone | default('omit', True) }}"
-      ec2_elbs: "{{ elb_instance_ec2_elbs | default('omit', True) }}"
+      profile: "{{ elb_instance_profile | default(omit, True) }}"
+      aws_secret_key: "{{ elb_instance_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ elb_instance_aws_access_key | default(omit, True) }}"
+      security_token: "{{ elb_instance_security_token | default(omit, True) }}"
+      region: "{{ elb_instance_region | default(omit, True) }}"
+      instance_id: "{{ elb_instance_instance_id | default(omit, True) }}"
+      state: "{{ elb_instance_state | default(omit, True) }}"
+      wait_timeout: "{{ elb_instance_wait_timeout | default(omit, True) }}"
+      ec2_url: "{{ elb_instance_ec2_url | default(omit, True) }}"
+      wait: "{{ elb_instance_wait | default(omit, True) }}"
+      validate_certs: "{{ elb_instance_validate_certs | default(omit, True) }}"
+      enable_availability_zone: "{{ elb_instance_enable_availability_zone | default(omit, True) }}"
+      ec2_elbs: "{{ elb_instance_ec2_elbs | default(omit, True) }}"
   tasks:
     - name: "plugin_elb_instance"
       elb_instance: "{{ elb_instance }}"
+      register: r_elb_instance

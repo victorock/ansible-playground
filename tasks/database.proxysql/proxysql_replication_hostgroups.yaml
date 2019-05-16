@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_replication_hostgroups"
   proxysql_replication_hostgroups: "{{ proxysql_replication_hostgroups }}"
+  register: r_proxysql_replication_hostgroups
   vars:
     proxysql_replication_hostgroups: 
       comment: "{{ proxysql_replication_hostgroups_comment | default(omit, True) }}"

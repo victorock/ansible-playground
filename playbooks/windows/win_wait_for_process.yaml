@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_wait_for_process: 
-      process_name_pattern: "{{ win_wait_for_process_process_name_pattern | default('omit', True) }}"
-      process_name_exact: "{{ win_wait_for_process_process_name_exact | default('omit', True) }}"
-      post_wait_delay: "{{ win_wait_for_process_post_wait_delay | default('omit', True) }}"
-      process_min_count: "{{ win_wait_for_process_process_min_count | default('omit', True) }}"
-      pid: "{{ win_wait_for_process_pid | default('omit', True) }}"
-      state: "{{ win_wait_for_process_state | default('omit', True) }}"
-      pre_wait_delay: "{{ win_wait_for_process_pre_wait_delay | default('omit', True) }}"
-      sleep: "{{ win_wait_for_process_sleep | default('omit', True) }}"
-      timeout: "{{ win_wait_for_process_timeout | default('omit', True) }}"
-      owner: "{{ win_wait_for_process_owner | default('omit', True) }}"
+      process_name_pattern: "{{ win_wait_for_process_process_name_pattern | default(omit, True) }}"
+      process_name_exact: "{{ win_wait_for_process_process_name_exact | default(omit, True) }}"
+      post_wait_delay: "{{ win_wait_for_process_post_wait_delay | default(omit, True) }}"
+      process_min_count: "{{ win_wait_for_process_process_min_count | default(omit, True) }}"
+      pid: "{{ win_wait_for_process_pid | default(omit, True) }}"
+      state: "{{ win_wait_for_process_state | default(omit, True) }}"
+      pre_wait_delay: "{{ win_wait_for_process_pre_wait_delay | default(omit, True) }}"
+      sleep: "{{ win_wait_for_process_sleep | default(omit, True) }}"
+      timeout: "{{ win_wait_for_process_timeout | default(omit, True) }}"
+      owner: "{{ win_wait_for_process_owner | default(omit, True) }}"
   tasks:
     - name: "plugin_win_wait_for_process"
       win_wait_for_process: "{{ win_wait_for_process }}"
+      register: r_win_wait_for_process

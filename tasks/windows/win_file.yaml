@@ -1,6 +1,7 @@
 ---
 - name: "module_win_file"
   win_file: "{{ win_file }}"
+  register: r_win_file
   vars:
     win_file: 
       path: "{{ win_file_path | default(omit, True) }}"

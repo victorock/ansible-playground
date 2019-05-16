@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_fc_network"
   oneview_fc_network: "{{ oneview_fc_network }}"
+  register: r_oneview_fc_network
   vars:
     oneview_fc_network: 
       data: "{{ oneview_fc_network_data | default(omit, True) }}"

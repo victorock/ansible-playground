@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipa_dnsrecord: 
-      ipa_port: "{{ ipa_dnsrecord_ipa_port | default('omit', True) }}"
-      record_name: "{{ ipa_dnsrecord_record_name | default('omit', True) }}"
-      record_ttl: "{{ ipa_dnsrecord_record_ttl | default('omit', True) }}"
-      ipa_prot: "{{ ipa_dnsrecord_ipa_prot | default('omit', True) }}"
-      record_type: "{{ ipa_dnsrecord_record_type | default('omit', True) }}"
-      state: "{{ ipa_dnsrecord_state | default('omit', True) }}"
-      ipa_host: "{{ ipa_dnsrecord_ipa_host | default('omit', True) }}"
-      ipa_user: "{{ ipa_dnsrecord_ipa_user | default('omit', True) }}"
-      record_value: "{{ ipa_dnsrecord_record_value | default('omit', True) }}"
-      ipa_pass: "{{ ipa_dnsrecord_ipa_pass | default('omit', True) }}"
-      zone_name: "{{ ipa_dnsrecord_zone_name | default('omit', True) }}"
-      ipa_timeout: "{{ ipa_dnsrecord_ipa_timeout | default('omit', True) }}"
-      validate_certs: "{{ ipa_dnsrecord_validate_certs | default('omit', True) }}"
+      ipa_port: "{{ ipa_dnsrecord_ipa_port | default(omit, True) }}"
+      record_name: "{{ ipa_dnsrecord_record_name | default(omit, True) }}"
+      record_ttl: "{{ ipa_dnsrecord_record_ttl | default(omit, True) }}"
+      ipa_prot: "{{ ipa_dnsrecord_ipa_prot | default(omit, True) }}"
+      record_type: "{{ ipa_dnsrecord_record_type | default(omit, True) }}"
+      state: "{{ ipa_dnsrecord_state | default(omit, True) }}"
+      ipa_host: "{{ ipa_dnsrecord_ipa_host | default(omit, True) }}"
+      ipa_user: "{{ ipa_dnsrecord_ipa_user | default(omit, True) }}"
+      record_value: "{{ ipa_dnsrecord_record_value | default(omit, True) }}"
+      ipa_pass: "{{ ipa_dnsrecord_ipa_pass | default(omit, True) }}"
+      zone_name: "{{ ipa_dnsrecord_zone_name | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_dnsrecord_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_dnsrecord_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_ipa_dnsrecord"
       ipa_dnsrecord: "{{ ipa_dnsrecord }}"
+      register: r_ipa_dnsrecord

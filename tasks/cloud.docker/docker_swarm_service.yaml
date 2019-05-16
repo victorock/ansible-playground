@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_swarm_service"
   docker_swarm_service: "{{ docker_swarm_service }}"
+  register: r_docker_swarm_service
   vars:
     docker_swarm_service: 
       user: "{{ docker_swarm_service_user | default(omit, True) }}"

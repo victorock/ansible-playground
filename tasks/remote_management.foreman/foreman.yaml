@@ -1,6 +1,7 @@
 ---
 - name: "module_foreman"
   foreman: "{{ foreman }}"
+  register: r_foreman
   vars:
     foreman: 
       username: "{{ foreman_username | default(omit, True) }}"

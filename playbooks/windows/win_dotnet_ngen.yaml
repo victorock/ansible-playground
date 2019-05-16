@@ -10,3 +10,4 @@
   tasks:
     - name: "plugin_win_dotnet_ngen"
       win_dotnet_ngen: "{{ win_dotnet_ngen }}"
+      register: r_win_dotnet_ngen

@@ -1,6 +1,7 @@
 ---
 - name: "module_lambda_alias"
   lambda_alias: "{{ lambda_alias }}"
+  register: r_lambda_alias
   vars:
     lambda_alias: 
       profile: "{{ lambda_alias_profile | default(omit, True) }}"

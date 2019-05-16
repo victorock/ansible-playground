@@ -1,6 +1,7 @@
 ---
 - name: "module_os_zone"
   os_zone: "{{ os_zone }}"
+  register: r_os_zone
   vars:
     os_zone: 
       auth_type: "{{ os_zone_auth_type | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     syslogger: 
-      msg: "{{ syslogger_msg | default('omit', True) }}"
-      priority: "{{ syslogger_priority | default('omit', True) }}"
-      log_pid: "{{ syslogger_log_pid | default('omit', True) }}"
-      facility: "{{ syslogger_facility | default('omit', True) }}"
+      msg: "{{ syslogger_msg | default(omit, True) }}"
+      priority: "{{ syslogger_priority | default(omit, True) }}"
+      log_pid: "{{ syslogger_log_pid | default(omit, True) }}"
+      facility: "{{ syslogger_facility | default(omit, True) }}"
   tasks:
     - name: "plugin_syslogger"
       syslogger: "{{ syslogger }}"
+      register: r_syslogger

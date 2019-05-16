@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_tcp"
   bigip_profile_tcp: "{{ bigip_profile_tcp }}"
+  register: r_bigip_profile_tcp
   vars:
     bigip_profile_tcp: 
       parent: "{{ bigip_profile_tcp_parent | default(omit, True) }}"

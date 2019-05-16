@@ -1,6 +1,7 @@
 ---
 - name: "module_setup"
   setup: "{{ setup }}"
+  register: r_setup
   vars:
     setup: 
       filter: "{{ setup_filter | default(omit, True) }}"

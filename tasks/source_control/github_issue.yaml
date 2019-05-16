@@ -1,6 +1,7 @@
 ---
 - name: "module_github_issue"
   github_issue: "{{ github_issue }}"
+  register: r_github_issue
   vars:
     github_issue: 
       repo: "{{ github_issue_repo | default(omit, True) }}"

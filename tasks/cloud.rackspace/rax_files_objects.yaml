@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_files_objects"
   rax_files_objects: "{{ rax_files_objects }}"
+  register: r_rax_files_objects
   vars:
     rax_files_objects: 
       username: "{{ rax_files_objects_username | default(omit, True) }}"

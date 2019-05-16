@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_snmp_user: 
-      encrypt: "{{ nxos_snmp_user_encrypt | default('omit', True) }}"
-      privacy: "{{ nxos_snmp_user_privacy | default('omit', True) }}"
-      pwd: "{{ nxos_snmp_user_pwd | default('omit', True) }}"
-      authentication: "{{ nxos_snmp_user_authentication | default('omit', True) }}"
-      state: "{{ nxos_snmp_user_state | default('omit', True) }}"
-      user: "{{ nxos_snmp_user_user | default('omit', True) }}"
-      provider: "{{ nxos_snmp_user_provider | default('omit', True) }}"
-      group: "{{ nxos_snmp_user_group | default('omit', True) }}"
+      encrypt: "{{ nxos_snmp_user_encrypt | default(omit, True) }}"
+      privacy: "{{ nxos_snmp_user_privacy | default(omit, True) }}"
+      pwd: "{{ nxos_snmp_user_pwd | default(omit, True) }}"
+      authentication: "{{ nxos_snmp_user_authentication | default(omit, True) }}"
+      state: "{{ nxos_snmp_user_state | default(omit, True) }}"
+      user: "{{ nxos_snmp_user_user | default(omit, True) }}"
+      provider: "{{ nxos_snmp_user_provider | default(omit, True) }}"
+      group: "{{ nxos_snmp_user_group | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_snmp_user"
       nxos_snmp_user: "{{ nxos_snmp_user }}"
+      register: r_nxos_snmp_user

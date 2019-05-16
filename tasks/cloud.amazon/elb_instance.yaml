@@ -1,6 +1,7 @@
 ---
 - name: "module_elb_instance"
   elb_instance: "{{ elb_instance }}"
+  register: r_elb_instance
   vars:
     elb_instance: 
       profile: "{{ elb_instance_profile | default(omit, True) }}"

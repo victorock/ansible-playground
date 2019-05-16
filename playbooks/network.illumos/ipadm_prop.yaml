@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipadm_prop: 
-      temporary: "{{ ipadm_prop_temporary | default('omit', True) }}"
-      state: "{{ ipadm_prop_state | default('omit', True) }}"
-      property: "{{ ipadm_prop_property | default('omit', True) }}"
-      protocol: "{{ ipadm_prop_protocol | default('omit', True) }}"
-      value: "{{ ipadm_prop_value | default('omit', True) }}"
+      temporary: "{{ ipadm_prop_temporary | default(omit, True) }}"
+      state: "{{ ipadm_prop_state | default(omit, True) }}"
+      property: "{{ ipadm_prop_property | default(omit, True) }}"
+      protocol: "{{ ipadm_prop_protocol | default(omit, True) }}"
+      value: "{{ ipadm_prop_value | default(omit, True) }}"
   tasks:
     - name: "plugin_ipadm_prop"
       ipadm_prop: "{{ ipadm_prop }}"
+      register: r_ipadm_prop

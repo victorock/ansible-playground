@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_group_member"
   bigip_device_group_member: "{{ bigip_device_group_member }}"
+  register: r_bigip_device_group_member
   vars:
     bigip_device_group_member: 
       name: "{{ bigip_device_group_member_name | default(omit, True) }}"

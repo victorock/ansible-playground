@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_swarm"
   docker_swarm: "{{ docker_swarm }}"
+  register: r_docker_swarm
   vars:
     docker_swarm: 
       rotate_worker_token: "{{ docker_swarm_rotate_worker_token | default(omit, True) }}"

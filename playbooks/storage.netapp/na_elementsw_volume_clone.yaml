@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_elementsw_volume_clone: 
-      username: "{{ na_elementsw_volume_clone_username | default('omit', True) }}"
-      hostname: "{{ na_elementsw_volume_clone_hostname | default('omit', True) }}"
-      src_snapshot_id: "{{ na_elementsw_volume_clone_src_snapshot_id | default('omit', True) }}"
-      account_id: "{{ na_elementsw_volume_clone_account_id | default('omit', True) }}"
-      size: "{{ na_elementsw_volume_clone_size | default('omit', True) }}"
-      size_unit: "{{ na_elementsw_volume_clone_size_unit | default('omit', True) }}"
-      access: "{{ na_elementsw_volume_clone_access | default('omit', True) }}"
-      attributes: "{{ na_elementsw_volume_clone_attributes | default('omit', True) }}"
-      password: "{{ na_elementsw_volume_clone_password | default('omit', True) }}"
-      src_volume_id: "{{ na_elementsw_volume_clone_src_volume_id | default('omit', True) }}"
-      name: "{{ na_elementsw_volume_clone_name | default('omit', True) }}"
+      username: "{{ na_elementsw_volume_clone_username | default(omit, True) }}"
+      hostname: "{{ na_elementsw_volume_clone_hostname | default(omit, True) }}"
+      src_snapshot_id: "{{ na_elementsw_volume_clone_src_snapshot_id | default(omit, True) }}"
+      account_id: "{{ na_elementsw_volume_clone_account_id | default(omit, True) }}"
+      size: "{{ na_elementsw_volume_clone_size | default(omit, True) }}"
+      size_unit: "{{ na_elementsw_volume_clone_size_unit | default(omit, True) }}"
+      access: "{{ na_elementsw_volume_clone_access | default(omit, True) }}"
+      attributes: "{{ na_elementsw_volume_clone_attributes | default(omit, True) }}"
+      password: "{{ na_elementsw_volume_clone_password | default(omit, True) }}"
+      src_volume_id: "{{ na_elementsw_volume_clone_src_volume_id | default(omit, True) }}"
+      name: "{{ na_elementsw_volume_clone_name | default(omit, True) }}"
   tasks:
     - name: "plugin_na_elementsw_volume_clone"
       na_elementsw_volume_clone: "{{ na_elementsw_volume_clone }}"
+      register: r_na_elementsw_volume_clone

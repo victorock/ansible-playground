@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipmi_power: 
-      name: "{{ ipmi_power_name | default('omit', True) }}"
-      state: "{{ ipmi_power_state | default('omit', True) }}"
-      user: "{{ ipmi_power_user | default('omit', True) }}"
-      timeout: "{{ ipmi_power_timeout | default('omit', True) }}"
-      password: "{{ ipmi_power_password | default('omit', True) }}"
-      port: "{{ ipmi_power_port | default('omit', True) }}"
+      name: "{{ ipmi_power_name | default(omit, True) }}"
+      state: "{{ ipmi_power_state | default(omit, True) }}"
+      user: "{{ ipmi_power_user | default(omit, True) }}"
+      timeout: "{{ ipmi_power_timeout | default(omit, True) }}"
+      password: "{{ ipmi_power_password | default(omit, True) }}"
+      port: "{{ ipmi_power_port | default(omit, True) }}"
   tasks:
     - name: "plugin_ipmi_power"
       ipmi_power: "{{ ipmi_power }}"
+      register: r_ipmi_power

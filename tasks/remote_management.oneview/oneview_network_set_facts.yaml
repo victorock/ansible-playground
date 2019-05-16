@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_network_set_facts"
   oneview_network_set_facts: "{{ oneview_network_set_facts }}"
+  register: r_oneview_network_set_facts
   vars:
     oneview_network_set_facts: 
       config: "{{ oneview_network_set_facts_config | default(omit, True) }}"

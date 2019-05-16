@@ -1,6 +1,7 @@
 ---
 - name: "module_sensu_silence"
   sensu_silence: "{{ sensu_silence }}"
+  register: r_sensu_silence
   vars:
     sensu_silence: 
       expire_on_resolve: "{{ sensu_silence_expire_on_resolve | default(omit, True) }}"

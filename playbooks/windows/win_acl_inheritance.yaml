@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_acl_inheritance: 
-      path: "{{ win_acl_inheritance_path | default('omit', True) }}"
-      state: "{{ win_acl_inheritance_state | default('omit', True) }}"
-      reorganize: "{{ win_acl_inheritance_reorganize | default('omit', True) }}"
+      path: "{{ win_acl_inheritance_path | default(omit, True) }}"
+      state: "{{ win_acl_inheritance_state | default(omit, True) }}"
+      reorganize: "{{ win_acl_inheritance_reorganize | default(omit, True) }}"
   tasks:
     - name: "plugin_win_acl_inheritance"
       win_acl_inheritance: "{{ win_acl_inheritance }}"
+      register: r_win_acl_inheritance

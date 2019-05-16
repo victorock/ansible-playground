@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_instance_group_facts"
   gcp_compute_instance_group_facts: "{{ gcp_compute_instance_group_facts }}"
+  register: r_gcp_compute_instance_group_facts
   vars:
     gcp_compute_instance_group_facts: 
       scopes: "{{ gcp_compute_instance_group_facts_scopes | default(omit, True) }}"

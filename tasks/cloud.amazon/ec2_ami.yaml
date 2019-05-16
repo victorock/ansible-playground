@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_ami"
   ec2_ami: "{{ ec2_ami }}"
+  register: r_ec2_ami
   vars:
     ec2_ami: 
       enhanced_networking: "{{ ec2_ami_enhanced_networking | default(omit, True) }}"

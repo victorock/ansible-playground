@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_encap_pool_range"
   aci_encap_pool_range: "{{ aci_encap_pool_range }}"
+  register: r_aci_encap_pool_range
   vars:
     aci_encap_pool_range: 
       range_end: "{{ aci_encap_pool_range_range_end | default(omit, True) }}"

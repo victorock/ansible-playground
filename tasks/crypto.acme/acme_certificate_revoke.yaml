@@ -1,6 +1,7 @@
 ---
 - name: "module_acme_certificate_revoke"
   acme_certificate_revoke: "{{ acme_certificate_revoke }}"
+  register: r_acme_certificate_revoke
   vars:
     acme_certificate_revoke: 
       private_key_content: "{{ acme_certificate_revoke_private_key_content | default(omit, True) }}"

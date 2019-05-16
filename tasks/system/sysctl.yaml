@@ -1,6 +1,7 @@
 ---
 - name: "module_sysctl"
   sysctl: "{{ sysctl }}"
+  register: r_sysctl
   vars:
     sysctl: 
       name: "{{ sysctl_name | default(omit, True) }}"

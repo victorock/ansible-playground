@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_license"
   na_ontap_license: "{{ na_ontap_license }}"
+  register: r_na_ontap_license
   vars:
     na_ontap_license: 
       username: "{{ na_ontap_license_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_dns_domain_facts"
   vultr_dns_domain_facts: "{{ vultr_dns_domain_facts }}"
+  register: r_vultr_dns_domain_facts
   vars:
     vultr_dns_domain_facts: 
       api_retries: "{{ vultr_dns_domain_facts_api_retries | default(omit, True) }}"

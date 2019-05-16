@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_snapshot"
   gce_snapshot: "{{ gce_snapshot }}"
+  register: r_gce_snapshot
   vars:
     gce_snapshot: 
       service_account_email: "{{ gce_snapshot_service_account_email | default(omit, True) }}"

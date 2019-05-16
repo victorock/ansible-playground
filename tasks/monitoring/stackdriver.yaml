@@ -1,6 +1,7 @@
 ---
 - name: "module_stackdriver"
   stackdriver: "{{ stackdriver }}"
+  register: r_stackdriver
   vars:
     stackdriver: 
       repository: "{{ stackdriver_repository | default(omit, True) }}"

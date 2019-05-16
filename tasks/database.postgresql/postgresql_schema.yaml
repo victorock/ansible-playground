@@ -1,6 +1,7 @@
 ---
 - name: "module_postgresql_schema"
   postgresql_schema: "{{ postgresql_schema }}"
+  register: r_postgresql_schema
   vars:
     postgresql_schema: 
       name: "{{ postgresql_schema_name | default(omit, True) }}"

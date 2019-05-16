@@ -1,6 +1,7 @@
 ---
 - name: "module_postgresql_db"
   postgresql_db: "{{ postgresql_db }}"
+  register: r_postgresql_db
   vars:
     postgresql_db: 
       ssl_rootcert: "{{ postgresql_db_ssl_rootcert | default(omit, True) }}"

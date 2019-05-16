@@ -1,6 +1,7 @@
 ---
 - name: "module_os_network"
   os_network: "{{ os_network }}"
+  register: r_os_network
   vars:
     os_network: 
       auth_type: "{{ os_network_auth_type | default(omit, True) }}"

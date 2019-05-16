@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_alertscriptconfig"
   avi_alertscriptconfig: "{{ avi_alertscriptconfig }}"
+  register: r_avi_alertscriptconfig
   vars:
     avi_alertscriptconfig: 
       username: "{{ avi_alertscriptconfig_username | default(omit, True) }}"

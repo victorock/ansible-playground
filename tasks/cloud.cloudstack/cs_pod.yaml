@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_pod"
   cs_pod: "{{ cs_pod }}"
+  register: r_cs_pod
   vars:
     cs_pod: 
       api_key: "{{ cs_pod_api_key | default(omit, True) }}"

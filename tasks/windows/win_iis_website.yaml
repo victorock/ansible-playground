@@ -1,6 +1,7 @@
 ---
 - name: "module_win_iis_website"
   win_iis_website: "{{ win_iis_website }}"
+  register: r_win_iis_website
   vars:
     win_iis_website: 
       hostname: "{{ win_iis_website_hostname | default(omit, True) }}"

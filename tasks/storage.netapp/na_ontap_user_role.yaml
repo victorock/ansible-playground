@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_user_role"
   na_ontap_user_role: "{{ na_ontap_user_role }}"
+  register: r_na_ontap_user_role
   vars:
     na_ontap_user_role: 
       username: "{{ na_ontap_user_role_username | default(omit, True) }}"

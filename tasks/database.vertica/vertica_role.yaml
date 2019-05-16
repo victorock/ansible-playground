@@ -1,6 +1,7 @@
 ---
 - name: "module_vertica_role"
   vertica_role: "{{ vertica_role }}"
+  register: r_vertica_role
   vars:
     vertica_role: 
       assigned_roles: "{{ vertica_role_assigned_roles | default(omit, True) }}"

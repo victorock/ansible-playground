@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_config"
   ios_config: "{{ ios_config }}"
+  register: r_ios_config
   vars:
     ios_config: 
       multiline_delimiter: "{{ ios_config_multiline_delimiter | default(omit, True) }}"

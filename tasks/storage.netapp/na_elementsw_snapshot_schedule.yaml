@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_snapshot_schedule"
   na_elementsw_snapshot_schedule: "{{ na_elementsw_snapshot_schedule }}"
+  register: r_na_elementsw_snapshot_schedule
   vars:
     na_elementsw_snapshot_schedule: 
       time_interval_days: "{{ na_elementsw_snapshot_schedule_time_interval_days | default(omit, True) }}"

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nso_query: 
-      xpath: "{{ nso_query_xpath | default('omit', True) }}"
-      username: "{{ nso_query_username | default('omit', True) }}"
-      url: "{{ nso_query_url | default('omit', True) }}"
-      fields: "{{ nso_query_fields | default('omit', True) }}"
-      timeout: "{{ nso_query_timeout | default('omit', True) }}"
-      password: "{{ nso_query_password | default('omit', True) }}"
+      xpath: "{{ nso_query_xpath | default(omit, True) }}"
+      username: "{{ nso_query_username | default(omit, True) }}"
+      url: "{{ nso_query_url | default(omit, True) }}"
+      fields: "{{ nso_query_fields | default(omit, True) }}"
+      timeout: "{{ nso_query_timeout | default(omit, True) }}"
+      password: "{{ nso_query_password | default(omit, True) }}"
   tasks:
     - name: "plugin_nso_query"
       nso_query: "{{ nso_query }}"
+      register: r_nso_query

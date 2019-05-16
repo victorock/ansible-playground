@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_host_storage_facts"
   ovirt_host_storage_facts: "{{ ovirt_host_storage_facts }}"
+  register: r_ovirt_host_storage_facts
   vars:
     ovirt_host_storage_facts: 
       fcp: "{{ ovirt_host_storage_facts_fcp | default(omit, True) }}"

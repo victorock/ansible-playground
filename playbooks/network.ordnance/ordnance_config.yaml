@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ordnance_config: 
-      multiline_delimiter: "{{ ordnance_config_multiline_delimiter | default('omit', True) }}"
-      src: "{{ ordnance_config_src | default('omit', True) }}"
-      backup: "{{ ordnance_config_backup | default('omit', True) }}"
-      after: "{{ ordnance_config_after | default('omit', True) }}"
-      lines: "{{ ordnance_config_lines | default('omit', True) }}"
-      replace: "{{ ordnance_config_replace | default('omit', True) }}"
-      parents: "{{ ordnance_config_parents | default('omit', True) }}"
-      defaults: "{{ ordnance_config_defaults | default('omit', True) }}"
-      save: "{{ ordnance_config_save | default('omit', True) }}"
-      config: "{{ ordnance_config_config | default('omit', True) }}"
-      match: "{{ ordnance_config_match | default('omit', True) }}"
-      before: "{{ ordnance_config_before | default('omit', True) }}"
+      multiline_delimiter: "{{ ordnance_config_multiline_delimiter | default(omit, True) }}"
+      src: "{{ ordnance_config_src | default(omit, True) }}"
+      backup: "{{ ordnance_config_backup | default(omit, True) }}"
+      after: "{{ ordnance_config_after | default(omit, True) }}"
+      lines: "{{ ordnance_config_lines | default(omit, True) }}"
+      replace: "{{ ordnance_config_replace | default(omit, True) }}"
+      parents: "{{ ordnance_config_parents | default(omit, True) }}"
+      defaults: "{{ ordnance_config_defaults | default(omit, True) }}"
+      save: "{{ ordnance_config_save | default(omit, True) }}"
+      config: "{{ ordnance_config_config | default(omit, True) }}"
+      match: "{{ ordnance_config_match | default(omit, True) }}"
+      before: "{{ ordnance_config_before | default(omit, True) }}"
   tasks:
     - name: "plugin_ordnance_config"
       ordnance_config: "{{ ordnance_config }}"
+      register: r_ordnance_config

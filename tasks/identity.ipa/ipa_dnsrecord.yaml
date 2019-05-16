@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_dnsrecord"
   ipa_dnsrecord: "{{ ipa_dnsrecord }}"
+  register: r_ipa_dnsrecord
   vars:
     ipa_dnsrecord: 
       ipa_port: "{{ ipa_dnsrecord_ipa_port | default(omit, True) }}"

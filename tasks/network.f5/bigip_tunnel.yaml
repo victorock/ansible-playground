@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_tunnel"
   bigip_tunnel: "{{ bigip_tunnel }}"
+  register: r_bigip_tunnel
   vars:
     bigip_tunnel: 
       mtu: "{{ bigip_tunnel_mtu | default(omit, True) }}"

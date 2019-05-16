@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_ping"
   ios_ping: "{{ ios_ping }}"
+  register: r_ios_ping
   vars:
     ios_ping: 
       count: "{{ ios_ping_count | default(omit, True) }}"

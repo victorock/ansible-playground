@@ -1,6 +1,7 @@
 ---
 - name: "module_apt_rpm"
   apt_rpm: "{{ apt_rpm }}"
+  register: r_apt_rpm
   vars:
     apt_rpm: 
       state: "{{ apt_rpm_state | default(omit, True) }}"

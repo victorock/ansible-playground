@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_info_center_debug"
   ce_info_center_debug: "{{ ce_info_center_debug }}"
+  register: r_ce_info_center_debug
   vars:
     ce_info_center_debug: 
       debug_enable: "{{ ce_info_center_debug_debug_enable | default(omit, True) }}"

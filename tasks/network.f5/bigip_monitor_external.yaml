@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_monitor_external"
   bigip_monitor_external: "{{ bigip_monitor_external }}"
+  register: r_bigip_monitor_external
   vars:
     bigip_monitor_external: 
       user: "{{ bigip_monitor_external_user | default(omit, True) }}"

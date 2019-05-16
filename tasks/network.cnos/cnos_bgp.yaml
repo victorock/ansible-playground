@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_bgp"
   cnos_bgp: "{{ cnos_bgp }}"
+  register: r_cnos_bgp
   vars:
     cnos_bgp: 
       username: "{{ cnos_bgp_username | default(omit, True) }}"

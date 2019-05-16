@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_commit"
   panos_commit: "{{ panos_commit }}"
+  register: r_panos_commit
   vars:
     panos_commit: 
       username: "{{ panos_commit_username | default(omit, True) }}"

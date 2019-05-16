@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_scheduler"
   avi_scheduler: "{{ avi_scheduler }}"
+  register: r_avi_scheduler
   vars:
     avi_scheduler: 
       tenant_ref: "{{ avi_scheduler_tenant_ref | default(omit, True) }}"

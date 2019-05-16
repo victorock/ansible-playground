@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_storage_bucket_access_control"
   gcp_storage_bucket_access_control: "{{ gcp_storage_bucket_access_control }}"
+  register: r_gcp_storage_bucket_access_control
   vars:
     gcp_storage_bucket_access_control: 
       project_team: "{{ gcp_storage_bucket_access_control_project_team | default(omit, True) }}"

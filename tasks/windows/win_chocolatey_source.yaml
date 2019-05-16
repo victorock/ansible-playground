@@ -1,6 +1,7 @@
 ---
 - name: "module_win_chocolatey_source"
   win_chocolatey_source: "{{ win_chocolatey_source }}"
+  register: r_win_chocolatey_source
   vars:
     win_chocolatey_source: 
       source_username: "{{ win_chocolatey_source_source_username | default(omit, True) }}"

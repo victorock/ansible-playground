@@ -1,6 +1,7 @@
 ---
 - name: "module_execute_lambda"
   execute_lambda: "{{ execute_lambda }}"
+  register: r_execute_lambda
   vars:
     execute_lambda: 
       profile: "{{ execute_lambda_profile | default(omit, True) }}"

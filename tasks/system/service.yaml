@@ -1,6 +1,7 @@
 ---
 - name: "module_service"
   service: "{{ service }}"
+  register: r_service
   vars:
     service: 
       use: "{{ service_use | default(omit, True) }}"

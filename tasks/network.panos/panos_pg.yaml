@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_pg"
   panos_pg: "{{ panos_pg }}"
+  register: r_panos_pg
   vars:
     panos_pg: 
       username: "{{ panos_pg_username | default(omit, True) }}"

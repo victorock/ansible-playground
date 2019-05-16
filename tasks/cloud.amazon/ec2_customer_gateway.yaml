@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_customer_gateway"
   ec2_customer_gateway: "{{ ec2_customer_gateway }}"
+  register: r_ec2_customer_gateway
   vars:
     ec2_customer_gateway: 
       profile: "{{ ec2_customer_gateway_profile | default(omit, True) }}"

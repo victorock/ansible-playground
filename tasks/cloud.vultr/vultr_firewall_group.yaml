@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_firewall_group"
   vultr_firewall_group: "{{ vultr_firewall_group }}"
+  register: r_vultr_firewall_group
   vars:
     vultr_firewall_group: 
       api_retries: "{{ vultr_firewall_group_api_retries | default(omit, True) }}"

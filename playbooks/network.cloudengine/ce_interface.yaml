@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_interface: 
-      description: "{{ ce_interface_description | default('omit', True) }}"
-      interface_type: "{{ ce_interface_interface_type | default('omit', True) }}"
-      state: "{{ ce_interface_state | default('omit', True) }}"
-      admin_state: "{{ ce_interface_admin_state | default('omit', True) }}"
-      l2sub: "{{ ce_interface_l2sub | default('omit', True) }}"
-      interface: "{{ ce_interface_interface | default('omit', True) }}"
-      mode: "{{ ce_interface_mode | default('omit', True) }}"
+      description: "{{ ce_interface_description | default(omit, True) }}"
+      interface_type: "{{ ce_interface_interface_type | default(omit, True) }}"
+      state: "{{ ce_interface_state | default(omit, True) }}"
+      admin_state: "{{ ce_interface_admin_state | default(omit, True) }}"
+      l2sub: "{{ ce_interface_l2sub | default(omit, True) }}"
+      interface: "{{ ce_interface_interface | default(omit, True) }}"
+      mode: "{{ ce_interface_mode | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_interface"
       ce_interface: "{{ ce_interface }}"
+      register: r_ce_interface

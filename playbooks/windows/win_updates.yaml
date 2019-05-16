@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_updates: 
-      reboot_timeout: "{{ win_updates_reboot_timeout | default('omit', True) }}"
-      log_path: "{{ win_updates_log_path | default('omit', True) }}"
-      whitelist: "{{ win_updates_whitelist | default('omit', True) }}"
-      category_names: "{{ win_updates_category_names | default('omit', True) }}"
-      reboot: "{{ win_updates_reboot | default('omit', True) }}"
-      use_scheduled_task: "{{ win_updates_use_scheduled_task | default('omit', True) }}"
-      blacklist: "{{ win_updates_blacklist | default('omit', True) }}"
-      state: "{{ win_updates_state | default('omit', True) }}"
+      reboot_timeout: "{{ win_updates_reboot_timeout | default(omit, True) }}"
+      log_path: "{{ win_updates_log_path | default(omit, True) }}"
+      whitelist: "{{ win_updates_whitelist | default(omit, True) }}"
+      category_names: "{{ win_updates_category_names | default(omit, True) }}"
+      reboot: "{{ win_updates_reboot | default(omit, True) }}"
+      use_scheduled_task: "{{ win_updates_use_scheduled_task | default(omit, True) }}"
+      blacklist: "{{ win_updates_blacklist | default(omit, True) }}"
+      state: "{{ win_updates_state | default(omit, True) }}"
   tasks:
     - name: "plugin_win_updates"
       win_updates: "{{ win_updates }}"
+      register: r_win_updates

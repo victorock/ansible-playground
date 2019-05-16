@@ -1,6 +1,7 @@
 ---
 - name: "module_pkg5_publisher"
   pkg5_publisher: "{{ pkg5_publisher }}"
+  register: r_pkg5_publisher
   vars:
     pkg5_publisher: 
       origin: "{{ pkg5_publisher_origin | default(omit, True) }}"

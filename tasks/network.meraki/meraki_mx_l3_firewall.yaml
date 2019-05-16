@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_mx_l3_firewall"
   meraki_mx_l3_firewall: "{{ meraki_mx_l3_firewall }}"
+  register: r_meraki_mx_l3_firewall
   vars:
     meraki_mx_l3_firewall: 
       org_name: "{{ meraki_mx_l3_firewall_org_name | default(omit, True) }}"

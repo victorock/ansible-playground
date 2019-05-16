@@ -1,6 +1,7 @@
 ---
 - name: "module_kubernetes"
   kubernetes: "{{ kubernetes }}"
+  register: r_kubernetes
   vars:
     kubernetes: 
       url_password: "{{ kubernetes_url_password | default(omit, True) }}"

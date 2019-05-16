@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_host_powerstate: 
-      username: "{{ vmware_host_powerstate_username | default('omit', True) }}"
-      force: "{{ vmware_host_powerstate_force | default('omit', True) }}"
-      esxi_hostname: "{{ vmware_host_powerstate_esxi_hostname | default('omit', True) }}"
-      hostname: "{{ vmware_host_powerstate_hostname | default('omit', True) }}"
-      cluster_name: "{{ vmware_host_powerstate_cluster_name | default('omit', True) }}"
-      state: "{{ vmware_host_powerstate_state | default('omit', True) }}"
-      timeout: "{{ vmware_host_powerstate_timeout | default('omit', True) }}"
-      password: "{{ vmware_host_powerstate_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_host_powerstate_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_host_powerstate_port | default('omit', True) }}"
+      username: "{{ vmware_host_powerstate_username | default(omit, True) }}"
+      force: "{{ vmware_host_powerstate_force | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_host_powerstate_esxi_hostname | default(omit, True) }}"
+      hostname: "{{ vmware_host_powerstate_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_host_powerstate_cluster_name | default(omit, True) }}"
+      state: "{{ vmware_host_powerstate_state | default(omit, True) }}"
+      timeout: "{{ vmware_host_powerstate_timeout | default(omit, True) }}"
+      password: "{{ vmware_host_powerstate_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_host_powerstate_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_host_powerstate_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_host_powerstate"
       vmware_host_powerstate: "{{ vmware_host_powerstate }}"
+      register: r_vmware_host_powerstate

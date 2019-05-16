@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     debconf: 
-      unseen: "{{ debconf_unseen | default('omit', True) }}"
-      vtype: "{{ debconf_vtype | default('omit', True) }}"
-      question: "{{ debconf_question | default('omit', True) }}"
-      name: "{{ debconf_name | default('omit', True) }}"
-      value: "{{ debconf_value | default('omit', True) }}"
+      unseen: "{{ debconf_unseen | default(omit, True) }}"
+      vtype: "{{ debconf_vtype | default(omit, True) }}"
+      question: "{{ debconf_question | default(omit, True) }}"
+      name: "{{ debconf_name | default(omit, True) }}"
+      value: "{{ debconf_value | default(omit, True) }}"
   tasks:
     - name: "plugin_debconf"
       debconf: "{{ debconf }}"
+      register: r_debconf

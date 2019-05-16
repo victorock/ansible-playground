@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_application_fasthttp"
   bigiq_application_fasthttp: "{{ bigiq_application_fasthttp }}"
+  register: r_bigiq_application_fasthttp
   vars:
     bigiq_application_fasthttp: 
       service_environment: "{{ bigiq_application_fasthttp_service_environment | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gunicorn"
   gunicorn: "{{ gunicorn }}"
+  register: r_gunicorn
   vars:
     gunicorn: 
       venv: "{{ gunicorn_venv | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_config_aggregator"
   aws_config_aggregator: "{{ aws_config_aggregator }}"
+  register: r_aws_config_aggregator
   vars:
     aws_config_aggregator: 
       profile: "{{ aws_config_aggregator_profile | default(omit, True) }}"

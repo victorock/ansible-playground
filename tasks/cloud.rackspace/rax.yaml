@@ -1,6 +1,7 @@
 ---
 - name: "module_rax"
   rax: "{{ rax }}"
+  register: r_rax
   vars:
     rax: 
       files: "{{ rax_files | default(omit, True) }}"

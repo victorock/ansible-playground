@@ -1,6 +1,7 @@
 ---
 - name: "module_haproxy"
   haproxy: "{{ haproxy }}"
+  register: r_haproxy
   vars:
     haproxy: 
       drain: "{{ haproxy_drain | default(omit, True) }}"

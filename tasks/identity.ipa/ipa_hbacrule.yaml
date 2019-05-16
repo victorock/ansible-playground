@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_hbacrule"
   ipa_hbacrule: "{{ ipa_hbacrule }}"
+  register: r_ipa_hbacrule
   vars:
     ipa_hbacrule: 
       cn: "{{ ipa_hbacrule_cn | default(omit, True) }}"

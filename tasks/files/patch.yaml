@@ -1,6 +1,7 @@
 ---
 - name: "module_patch"
   patch: "{{ patch }}"
+  register: r_patch
   vars:
     patch: 
       binary: "{{ patch_binary | default(omit, True) }}"

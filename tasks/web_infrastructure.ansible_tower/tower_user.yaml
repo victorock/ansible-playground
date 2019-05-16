@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_user"
   tower_user: "{{ tower_user }}"
+  register: r_tower_user
   vars:
     tower_user: 
       username: "{{ tower_user_username | default(omit, True) }}"

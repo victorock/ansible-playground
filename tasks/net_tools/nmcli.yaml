@@ -1,6 +1,7 @@
 ---
 - name: "module_nmcli"
   nmcli: "{{ nmcli }}"
+  register: r_nmcli
   vars:
     nmcli: 
       conn_name: "{{ nmcli_conn_name | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     getent: 
-      fail_key: "{{ getent_fail_key | default('omit', True) }}"
-      split: "{{ getent_split | default('omit', True) }}"
-      key: "{{ getent_key | default('omit', True) }}"
-      database: "{{ getent_database | default('omit', True) }}"
+      fail_key: "{{ getent_fail_key | default(omit, True) }}"
+      split: "{{ getent_split | default(omit, True) }}"
+      key: "{{ getent_key | default(omit, True) }}"
+      database: "{{ getent_database | default(omit, True) }}"
   tasks:
     - name: "plugin_getent"
       getent: "{{ getent }}"
+      register: r_getent

@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_firewall: 
-      state: "{{ win_firewall_state | default('omit', True) }}"
-      profiles: "{{ win_firewall_profiles | default('omit', True) }}"
+      state: "{{ win_firewall_state | default(omit, True) }}"
+      profiles: "{{ win_firewall_profiles | default(omit, True) }}"
   tasks:
     - name: "plugin_win_firewall"
       win_firewall: "{{ win_firewall }}"
+      register: r_win_firewall

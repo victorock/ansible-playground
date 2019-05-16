@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_cluster"
   ovirt_cluster: "{{ ovirt_cluster }}"
+  register: r_ovirt_cluster
   vars:
     ovirt_cluster: 
       comment: "{{ ovirt_cluster_comment | default(omit, True) }}"

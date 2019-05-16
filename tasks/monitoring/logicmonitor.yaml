@@ -1,6 +1,7 @@
 ---
 - name: "module_logicmonitor"
   logicmonitor: "{{ logicmonitor }}"
+  register: r_logicmonitor
   vars:
     logicmonitor: 
       displayname: "{{ logicmonitor_displayname | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_edgeos_command"
   edgeos_command: "{{ edgeos_command }}"
+  register: r_edgeos_command
   vars:
     edgeos_command: 
       retries: "{{ edgeos_command_retries | default(omit, True) }}"

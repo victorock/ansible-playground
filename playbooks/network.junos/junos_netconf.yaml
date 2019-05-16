@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_netconf: 
-      state: "{{ junos_netconf_state | default('omit', True) }}"
-      netconf_port: "{{ junos_netconf_netconf_port | default('omit', True) }}"
-      provider: "{{ junos_netconf_provider | default('omit', True) }}"
+      state: "{{ junos_netconf_state | default(omit, True) }}"
+      netconf_port: "{{ junos_netconf_netconf_port | default(omit, True) }}"
+      provider: "{{ junos_netconf_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_netconf"
       junos_netconf: "{{ junos_netconf }}"
+      register: r_junos_netconf

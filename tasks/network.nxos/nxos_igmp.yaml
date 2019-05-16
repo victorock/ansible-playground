@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_igmp"
   nxos_igmp: "{{ nxos_igmp }}"
+  register: r_nxos_igmp
   vars:
     nxos_igmp: 
       state: "{{ nxos_igmp_state | default(omit, True) }}"

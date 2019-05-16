@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_bgp"
   onyx_bgp: "{{ onyx_bgp }}"
+  register: r_onyx_bgp
   vars:
     onyx_bgp: 
       router_id: "{{ onyx_bgp_router_id | default(omit, True) }}"

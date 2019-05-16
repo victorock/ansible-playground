@@ -1,6 +1,7 @@
 ---
 - name: "module_keycloak_client"
   keycloak_client: "{{ keycloak_client }}"
+  register: r_keycloak_client
   vars:
     keycloak_client: 
       default_roles: "{{ keycloak_client_default_roles | default(omit, True) }}"

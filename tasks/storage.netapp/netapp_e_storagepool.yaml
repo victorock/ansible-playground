@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_storagepool"
   netapp_e_storagepool: "{{ netapp_e_storagepool }}"
+  register: r_netapp_e_storagepool
   vars:
     netapp_e_storagepool: 
       criteria_size_unit: "{{ netapp_e_storagepool_criteria_size_unit | default(omit, True) }}"

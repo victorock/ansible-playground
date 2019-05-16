@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_mac_pools"
   ovirt_mac_pools: "{{ ovirt_mac_pools }}"
+  register: r_ovirt_mac_pools
   vars:
     ovirt_mac_pools: 
       allow_duplicates: "{{ ovirt_mac_pools_allow_duplicates | default(omit, True) }}"

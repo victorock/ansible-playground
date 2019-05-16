@@ -1,6 +1,7 @@
 ---
 - name: "module_cronvar"
   cronvar: "{{ cronvar }}"
+  register: r_cronvar
   vars:
     cronvar: 
       name: "{{ cronvar_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_template"
   win_template: "{{ win_template }}"
+  register: r_win_template
   vars:
     win_template: 
       src: "{{ win_template_src | default(omit, True) }}"

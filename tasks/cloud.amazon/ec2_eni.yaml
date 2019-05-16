@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_eni"
   ec2_eni: "{{ ec2_eni }}"
+  register: r_ec2_eni
   vars:
     ec2_eni: 
       allow_reassignment: "{{ ec2_eni_allow_reassignment | default(omit, True) }}"

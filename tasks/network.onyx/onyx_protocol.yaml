@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_protocol"
   onyx_protocol: "{{ onyx_protocol }}"
+  register: r_onyx_protocol
   vars:
     onyx_protocol: 
       spanning_tree: "{{ onyx_protocol_spanning_tree | default(omit, True) }}"

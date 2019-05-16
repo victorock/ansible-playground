@@ -1,6 +1,7 @@
 ---
 - name: "module_s3_sync"
   s3_sync: "{{ s3_sync }}"
+  register: r_s3_sync
   vars:
     s3_sync: 
       profile: "{{ s3_sync_profile | default(omit, True) }}"

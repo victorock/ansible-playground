@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_monitor_https"
   bigip_gtm_monitor_https: "{{ bigip_gtm_monitor_https }}"
+  register: r_bigip_gtm_monitor_https
   vars:
     bigip_gtm_monitor_https: 
       update_password: "{{ bigip_gtm_monitor_https_update_password | default(omit, True) }}"

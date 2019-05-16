@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_flashcache: 
-      cache_size_min: "{{ netapp_e_flashcache_cache_size_min | default('omit', True) }}"
-      ssid: "{{ netapp_e_flashcache_ssid | default('omit', True) }}"
-      name: "{{ netapp_e_flashcache_name | default('omit', True) }}"
-      api_password: "{{ netapp_e_flashcache_api_password | default('omit', True) }}"
-      io_type: "{{ netapp_e_flashcache_io_type | default('omit', True) }}"
-      size_unit: "{{ netapp_e_flashcache_size_unit | default('omit', True) }}"
-      disk_count: "{{ netapp_e_flashcache_disk_count | default('omit', True) }}"
-      state: "{{ netapp_e_flashcache_state | default('omit', True) }}"
-      api_username: "{{ netapp_e_flashcache_api_username | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_flashcache_validate_certs | default('omit', True) }}"
-      api_url: "{{ netapp_e_flashcache_api_url | default('omit', True) }}"
+      cache_size_min: "{{ netapp_e_flashcache_cache_size_min | default(omit, True) }}"
+      ssid: "{{ netapp_e_flashcache_ssid | default(omit, True) }}"
+      name: "{{ netapp_e_flashcache_name | default(omit, True) }}"
+      api_password: "{{ netapp_e_flashcache_api_password | default(omit, True) }}"
+      io_type: "{{ netapp_e_flashcache_io_type | default(omit, True) }}"
+      size_unit: "{{ netapp_e_flashcache_size_unit | default(omit, True) }}"
+      disk_count: "{{ netapp_e_flashcache_disk_count | default(omit, True) }}"
+      state: "{{ netapp_e_flashcache_state | default(omit, True) }}"
+      api_username: "{{ netapp_e_flashcache_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_flashcache_validate_certs | default(omit, True) }}"
+      api_url: "{{ netapp_e_flashcache_api_url | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_flashcache"
       netapp_e_flashcache: "{{ netapp_e_flashcache }}"
+      register: r_netapp_e_flashcache

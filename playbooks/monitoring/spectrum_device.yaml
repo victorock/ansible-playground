@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     spectrum_device: 
-      url_password: "{{ spectrum_device_url_password | default('omit', True) }}"
-      use_proxy: "{{ spectrum_device_use_proxy | default('omit', True) }}"
-      url: "{{ spectrum_device_url | default('omit', True) }}"
-      community: "{{ spectrum_device_community | default('omit', True) }}"
-      agentport: "{{ spectrum_device_agentport | default('omit', True) }}"
-      state: "{{ spectrum_device_state | default('omit', True) }}"
-      url_username: "{{ spectrum_device_url_username | default('omit', True) }}"
-      device: "{{ spectrum_device_device | default('omit', True) }}"
-      validate_certs: "{{ spectrum_device_validate_certs | default('omit', True) }}"
-      landscape: "{{ spectrum_device_landscape | default('omit', True) }}"
+      url_password: "{{ spectrum_device_url_password | default(omit, True) }}"
+      use_proxy: "{{ spectrum_device_use_proxy | default(omit, True) }}"
+      url: "{{ spectrum_device_url | default(omit, True) }}"
+      community: "{{ spectrum_device_community | default(omit, True) }}"
+      agentport: "{{ spectrum_device_agentport | default(omit, True) }}"
+      state: "{{ spectrum_device_state | default(omit, True) }}"
+      url_username: "{{ spectrum_device_url_username | default(omit, True) }}"
+      device: "{{ spectrum_device_device | default(omit, True) }}"
+      validate_certs: "{{ spectrum_device_validate_certs | default(omit, True) }}"
+      landscape: "{{ spectrum_device_landscape | default(omit, True) }}"
   tasks:
     - name: "plugin_spectrum_device"
       spectrum_device: "{{ spectrum_device }}"
+      register: r_spectrum_device

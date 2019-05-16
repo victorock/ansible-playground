@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     tempfile: 
-      path: "{{ tempfile_path | default('omit', True) }}"
-      state: "{{ tempfile_state | default('omit', True) }}"
-      prefix: "{{ tempfile_prefix | default('omit', True) }}"
-      suffix: "{{ tempfile_suffix | default('omit', True) }}"
+      path: "{{ tempfile_path | default(omit, True) }}"
+      state: "{{ tempfile_state | default(omit, True) }}"
+      prefix: "{{ tempfile_prefix | default(omit, True) }}"
+      suffix: "{{ tempfile_suffix | default(omit, True) }}"
   tasks:
     - name: "plugin_tempfile"
       tempfile: "{{ tempfile }}"
+      register: r_tempfile

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_l4policyset"
   avi_l4policyset: "{{ avi_l4policyset }}"
+  register: r_avi_l4policyset
   vars:
     avi_l4policyset: 
       l4_connection_policy: "{{ avi_l4policyset_l4_connection_policy | default(omit, True) }}"

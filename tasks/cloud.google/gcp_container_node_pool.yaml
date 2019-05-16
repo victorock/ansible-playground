@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_container_node_pool"
   gcp_container_node_pool: "{{ gcp_container_node_pool }}"
+  register: r_gcp_container_node_pool
   vars:
     gcp_container_node_pool: 
       initial_node_count: "{{ gcp_container_node_pool_initial_node_count | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_slxos_l2_interface"
   slxos_l2_interface: "{{ slxos_l2_interface }}"
+  register: r_slxos_l2_interface
   vars:
     slxos_l2_interface: 
       native_vlan: "{{ slxos_l2_interface_native_vlan | default(omit, True) }}"

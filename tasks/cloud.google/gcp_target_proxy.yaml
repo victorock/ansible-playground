@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_target_proxy"
   gcp_target_proxy: "{{ gcp_target_proxy }}"
+  register: r_gcp_target_proxy
   vars:
     gcp_target_proxy: 
       target_proxy_type: "{{ gcp_target_proxy_target_proxy_type | default(omit, True) }}"

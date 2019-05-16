@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_qkview"
   bigip_qkview: "{{ bigip_qkview }}"
+  register: r_bigip_qkview
   vars:
     bigip_qkview: 
       max_file_size: "{{ bigip_qkview_max_file_size | default(omit, True) }}"

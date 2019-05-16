@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_region_facts: 
-      aws_secret_key: "{{ aws_region_facts_aws_secret_key | default('omit', True) }}"
-      profile: "{{ aws_region_facts_profile | default('omit', True) }}"
-      aws_access_key: "{{ aws_region_facts_aws_access_key | default('omit', True) }}"
-      security_token: "{{ aws_region_facts_security_token | default('omit', True) }}"
-      region: "{{ aws_region_facts_region | default('omit', True) }}"
-      filters: "{{ aws_region_facts_filters | default('omit', True) }}"
-      ec2_url: "{{ aws_region_facts_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ aws_region_facts_validate_certs | default('omit', True) }}"
+      aws_secret_key: "{{ aws_region_facts_aws_secret_key | default(omit, True) }}"
+      profile: "{{ aws_region_facts_profile | default(omit, True) }}"
+      aws_access_key: "{{ aws_region_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ aws_region_facts_security_token | default(omit, True) }}"
+      region: "{{ aws_region_facts_region | default(omit, True) }}"
+      filters: "{{ aws_region_facts_filters | default(omit, True) }}"
+      ec2_url: "{{ aws_region_facts_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ aws_region_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_region_facts"
       aws_region_facts: "{{ aws_region_facts }}"
+      register: r_aws_region_facts

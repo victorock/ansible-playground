@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_package: 
-      src: "{{ junos_package_src | default('omit', True) }}"
-      force: "{{ junos_package_force | default('omit', True) }}"
-      no_copy: "{{ junos_package_no_copy | default('omit', True) }}"
-      reboot: "{{ junos_package_reboot | default('omit', True) }}"
-      version: "{{ junos_package_version | default('omit', True) }}"
-      provider: "{{ junos_package_provider | default('omit', True) }}"
-      validate: "{{ junos_package_validate | default('omit', True) }}"
+      src: "{{ junos_package_src | default(omit, True) }}"
+      force: "{{ junos_package_force | default(omit, True) }}"
+      no_copy: "{{ junos_package_no_copy | default(omit, True) }}"
+      reboot: "{{ junos_package_reboot | default(omit, True) }}"
+      version: "{{ junos_package_version | default(omit, True) }}"
+      provider: "{{ junos_package_provider | default(omit, True) }}"
+      validate: "{{ junos_package_validate | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_package"
       junos_package: "{{ junos_package }}"
+      register: r_junos_package

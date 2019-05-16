@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_inventory"
   tower_inventory: "{{ tower_inventory }}"
+  register: r_tower_inventory
   vars:
     tower_inventory: 
       host_filter: "{{ tower_inventory_host_filter | default(omit, True) }}"

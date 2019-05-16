@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_storage_pool"
   cs_storage_pool: "{{ cs_storage_pool }}"
+  register: r_cs_storage_pool
   vars:
     cs_storage_pool: 
       api_key: "{{ cs_storage_pool_api_key | default(omit, True) }}"

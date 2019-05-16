@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_dvs_portgroup"
   vmware_dvs_portgroup: "{{ vmware_dvs_portgroup }}"
+  register: r_vmware_dvs_portgroup
   vars:
     vmware_dvs_portgroup: 
       username: "{{ vmware_dvs_portgroup_username | default(omit, True) }}"

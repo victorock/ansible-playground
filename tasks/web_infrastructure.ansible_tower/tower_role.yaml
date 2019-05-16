@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_role"
   tower_role: "{{ tower_role }}"
+  register: r_tower_role
   vars:
     tower_role: 
       credential: "{{ tower_role_credential | default(omit, True) }}"

@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigiq_regkey_pool: 
-      description: "{{ bigiq_regkey_pool_description | default('omit', True) }}"
-      server: "{{ bigiq_regkey_pool_server | default('omit', True) }}"
-      state: "{{ bigiq_regkey_pool_state | default('omit', True) }}"
-      user: "{{ bigiq_regkey_pool_user | default('omit', True) }}"
-      server_port: "{{ bigiq_regkey_pool_server_port | default('omit', True) }}"
-      provider: "{{ bigiq_regkey_pool_provider | default('omit', True) }}"
-      password: "{{ bigiq_regkey_pool_password | default('omit', True) }}"
-      validate_certs: "{{ bigiq_regkey_pool_validate_certs | default('omit', True) }}"
-      name: "{{ bigiq_regkey_pool_name | default('omit', True) }}"
+      description: "{{ bigiq_regkey_pool_description | default(omit, True) }}"
+      server: "{{ bigiq_regkey_pool_server | default(omit, True) }}"
+      state: "{{ bigiq_regkey_pool_state | default(omit, True) }}"
+      user: "{{ bigiq_regkey_pool_user | default(omit, True) }}"
+      server_port: "{{ bigiq_regkey_pool_server_port | default(omit, True) }}"
+      provider: "{{ bigiq_regkey_pool_provider | default(omit, True) }}"
+      password: "{{ bigiq_regkey_pool_password | default(omit, True) }}"
+      validate_certs: "{{ bigiq_regkey_pool_validate_certs | default(omit, True) }}"
+      name: "{{ bigiq_regkey_pool_name | default(omit, True) }}"
   tasks:
     - name: "plugin_bigiq_regkey_pool"
       bigiq_regkey_pool: "{{ bigiq_regkey_pool }}"
+      register: r_bigiq_regkey_pool

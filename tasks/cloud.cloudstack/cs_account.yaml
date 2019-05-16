@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_account"
   cs_account: "{{ cs_account }}"
+  register: r_cs_account
   vars:
     cs_account: 
       username: "{{ cs_account_username | default(omit, True) }}"

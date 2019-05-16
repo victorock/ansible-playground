@@ -1,6 +1,7 @@
 ---
 - name: "module_archive"
   archive: "{{ archive }}"
+  register: r_archive
   vars:
     archive: 
       exclude_path: "{{ archive_exclude_path | default(omit, True) }}"

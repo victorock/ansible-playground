@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_bd_subnet"
   aci_bd_subnet: "{{ aci_bd_subnet }}"
+  register: r_aci_bd_subnet
   vars:
     aci_bd_subnet: 
       username: "{{ aci_bd_subnet_username | default(omit, True) }}"

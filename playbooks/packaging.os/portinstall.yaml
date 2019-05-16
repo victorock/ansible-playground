@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     portinstall: 
-      state: "{{ portinstall_state | default('omit', True) }}"
-      use_packages: "{{ portinstall_use_packages | default('omit', True) }}"
-      name: "{{ portinstall_name | default('omit', True) }}"
+      state: "{{ portinstall_state | default(omit, True) }}"
+      use_packages: "{{ portinstall_use_packages | default(omit, True) }}"
+      name: "{{ portinstall_name | default(omit, True) }}"
   tasks:
     - name: "plugin_portinstall"
       portinstall: "{{ portinstall }}"
+      register: r_portinstall

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_storage_connection"
   ovirt_storage_connection: "{{ ovirt_storage_connection }}"
+  register: r_ovirt_storage_connection
   vars:
     ovirt_storage_connection: 
       force: "{{ ovirt_storage_connection_force | default(omit, True) }}"

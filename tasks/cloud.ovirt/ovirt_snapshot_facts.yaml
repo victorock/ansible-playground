@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_snapshot_facts"
   ovirt_snapshot_facts: "{{ ovirt_snapshot_facts }}"
+  register: r_ovirt_snapshot_facts
   vars:
     ovirt_snapshot_facts: 
       description: "{{ ovirt_snapshot_facts_description | default(omit, True) }}"

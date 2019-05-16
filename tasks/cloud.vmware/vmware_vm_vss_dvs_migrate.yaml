@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vm_vss_dvs_migrate"
   vmware_vm_vss_dvs_migrate: "{{ vmware_vm_vss_dvs_migrate }}"
+  register: r_vmware_vm_vss_dvs_migrate
   vars:
     vmware_vm_vss_dvs_migrate: 
       vm_name: "{{ vmware_vm_vss_dvs_migrate_vm_name | default(omit, True) }}"

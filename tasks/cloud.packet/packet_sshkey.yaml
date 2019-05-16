@@ -1,6 +1,7 @@
 ---
 - name: "module_packet_sshkey"
   packet_sshkey: "{{ packet_sshkey }}"
+  register: r_packet_sshkey
   vars:
     packet_sshkey: 
       auth_token: "{{ packet_sshkey_auth_token | default(omit, True) }}"

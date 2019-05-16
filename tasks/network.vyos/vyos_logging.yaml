@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_logging"
   vyos_logging: "{{ vyos_logging }}"
+  register: r_vyos_logging
   vars:
     vyos_logging: 
       name: "{{ vyos_logging_name | default(omit, True) }}"

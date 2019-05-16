@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_snmp_user"
   ce_snmp_user: "{{ ce_snmp_user }}"
+  register: r_ce_snmp_user
   vars:
     ce_snmp_user: 
       priv_key: "{{ ce_snmp_user_priv_key | default(omit, True) }}"

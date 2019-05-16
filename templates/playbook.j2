@@ -9,14 +9,16 @@
   vars:
     {{ plugin.key }}: 
 {% for k,v in plugin.value.spec.options.iteritems() %}
-      {{ k }}: {{ '"{{' }} {{ plugin.key }}_{{ k }} | default('omit', True) {{ '}}"' }}
+      {{ k }}: {{ '"{{' }} {{ plugin.key }}_{{ k }} | default(omit, True) {{ '}}"' }}
 {% endfor %}
   tasks:
     - name: "plugin_{{ plugin.key }}"
       {{ plugin.key }}: {{ '"{{ ' + plugin.key + ' }}"' }}
+      register: r_{{ plugin.key }}
 {% else %}
   tasks:
     - name: "module_{{ plugin.key }}"
       {{ plugin.key }}:
-  
+      register: r_{{ plugin.key }}
+
 {% endif %}

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_user_right"
   win_user_right: "{{ win_user_right }}"
+  register: r_win_user_right
   vars:
     win_user_right: 
       action: "{{ win_user_right_action | default(omit, True) }}"

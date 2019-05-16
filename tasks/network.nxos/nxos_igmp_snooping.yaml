@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_igmp_snooping"
   nxos_igmp_snooping: "{{ nxos_igmp_snooping }}"
+  register: r_nxos_igmp_snooping
   vars:
     nxos_igmp_snooping: 
       link_local_grp_supp: "{{ nxos_igmp_snooping_link_local_grp_supp | default(omit, True) }}"

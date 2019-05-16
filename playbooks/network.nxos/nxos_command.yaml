@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_command: 
-      retries: "{{ nxos_command_retries | default('omit', True) }}"
-      commands: "{{ nxos_command_commands | default('omit', True) }}"
-      interval: "{{ nxos_command_interval | default('omit', True) }}"
-      provider: "{{ nxos_command_provider | default('omit', True) }}"
-      wait_for: "{{ nxos_command_wait_for | default('omit', True) }}"
-      match: "{{ nxos_command_match | default('omit', True) }}"
+      retries: "{{ nxos_command_retries | default(omit, True) }}"
+      commands: "{{ nxos_command_commands | default(omit, True) }}"
+      interval: "{{ nxos_command_interval | default(omit, True) }}"
+      provider: "{{ nxos_command_provider | default(omit, True) }}"
+      wait_for: "{{ nxos_command_wait_for | default(omit, True) }}"
+      match: "{{ nxos_command_match | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_command"
       nxos_command: "{{ nxos_command }}"
+      register: r_nxos_command

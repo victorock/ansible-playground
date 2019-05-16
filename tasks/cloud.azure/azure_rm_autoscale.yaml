@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_autoscale"
   azure_rm_autoscale: "{{ azure_rm_autoscale }}"
+  register: r_azure_rm_autoscale
   vars:
     azure_rm_autoscale: 
       resource_group: "{{ azure_rm_autoscale_resource_group | default(omit, True) }}"

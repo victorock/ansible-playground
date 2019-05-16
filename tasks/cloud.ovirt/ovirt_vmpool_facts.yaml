@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_vmpool_facts"
   ovirt_vmpool_facts: "{{ ovirt_vmpool_facts }}"
+  register: r_ovirt_vmpool_facts
   vars:
     ovirt_vmpool_facts: 
       pattern: "{{ ovirt_vmpool_facts_pattern | default(omit, True) }}"

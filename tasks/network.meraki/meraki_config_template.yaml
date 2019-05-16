@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_config_template"
   meraki_config_template: "{{ meraki_config_template }}"
+  register: r_meraki_config_template
   vars:
     meraki_config_template: 
       org_name: "{{ meraki_config_template_org_name | default(omit, True) }}"

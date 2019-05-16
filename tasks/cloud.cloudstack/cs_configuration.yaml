@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_configuration"
   cs_configuration: "{{ cs_configuration }}"
+  register: r_cs_configuration
   vars:
     cs_configuration: 
       domain: "{{ cs_configuration_domain | default(omit, True) }}"

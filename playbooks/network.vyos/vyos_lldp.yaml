@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vyos_lldp: 
-      state: "{{ vyos_lldp_state | default('omit', True) }}"
-      provider: "{{ vyos_lldp_provider | default('omit', True) }}"
+      state: "{{ vyos_lldp_state | default(omit, True) }}"
+      provider: "{{ vyos_lldp_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_vyos_lldp"
       vyos_lldp: "{{ vyos_lldp }}"
+      register: r_vyos_lldp

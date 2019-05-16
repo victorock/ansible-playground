@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_banner"
   eos_banner: "{{ eos_banner }}"
+  register: r_eos_banner
   vars:
     eos_banner: 
       authorize: "{{ eos_banner_authorize | default(omit, True) }}"

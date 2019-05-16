@@ -1,6 +1,7 @@
 ---
 - name: "module_asa_config"
   asa_config: "{{ asa_config }}"
+  register: r_asa_config
   vars:
     asa_config: 
       authorize: "{{ asa_config_authorize | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_katello"
   katello: "{{ katello }}"
+  register: r_katello
   vars:
     katello: 
       username: "{{ katello_username | default(omit, True) }}"

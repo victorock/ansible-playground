@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_vmotion: 
-      vm_name: "{{ vmware_vmotion_vm_name | default('omit', True) }}"
-      username: "{{ vmware_vmotion_username | default('omit', True) }}"
-      hostname: "{{ vmware_vmotion_hostname | default('omit', True) }}"
-      destination_host: "{{ vmware_vmotion_destination_host | default('omit', True) }}"
-      vm_uuid: "{{ vmware_vmotion_vm_uuid | default('omit', True) }}"
-      destination_datastore: "{{ vmware_vmotion_destination_datastore | default('omit', True) }}"
-      password: "{{ vmware_vmotion_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_vmotion_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_vmotion_port | default('omit', True) }}"
+      vm_name: "{{ vmware_vmotion_vm_name | default(omit, True) }}"
+      username: "{{ vmware_vmotion_username | default(omit, True) }}"
+      hostname: "{{ vmware_vmotion_hostname | default(omit, True) }}"
+      destination_host: "{{ vmware_vmotion_destination_host | default(omit, True) }}"
+      vm_uuid: "{{ vmware_vmotion_vm_uuid | default(omit, True) }}"
+      destination_datastore: "{{ vmware_vmotion_destination_datastore | default(omit, True) }}"
+      password: "{{ vmware_vmotion_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vmotion_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vmotion_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_vmotion"
       vmware_vmotion: "{{ vmware_vmotion }}"
+      register: r_vmware_vmotion

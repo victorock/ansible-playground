@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_defrag: 
-      priority: "{{ win_defrag_priority | default('omit', True) }}"
-      freespace_consolidation: "{{ win_defrag_freespace_consolidation | default('omit', True) }}"
-      parallel: "{{ win_defrag_parallel | default('omit', True) }}"
-      exclude_volumes: "{{ win_defrag_exclude_volumes | default('omit', True) }}"
-      include_volumes: "{{ win_defrag_include_volumes | default('omit', True) }}"
+      priority: "{{ win_defrag_priority | default(omit, True) }}"
+      freespace_consolidation: "{{ win_defrag_freespace_consolidation | default(omit, True) }}"
+      parallel: "{{ win_defrag_parallel | default(omit, True) }}"
+      exclude_volumes: "{{ win_defrag_exclude_volumes | default(omit, True) }}"
+      include_volumes: "{{ win_defrag_include_volumes | default(omit, True) }}"
   tasks:
     - name: "plugin_win_defrag"
       win_defrag: "{{ win_defrag }}"
+      register: r_win_defrag

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_disks"
   ovirt_disks: "{{ ovirt_disks }}"
+  register: r_ovirt_disks
   vars:
     ovirt_disks: 
       profile: "{{ ovirt_disks_profile | default(omit, True) }}"

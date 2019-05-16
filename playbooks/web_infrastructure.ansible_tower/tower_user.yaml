@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     tower_user: 
-      username: "{{ tower_user_username | default('omit', True) }}"
-      superuser: "{{ tower_user_superuser | default('omit', True) }}"
-      first_name: "{{ tower_user_first_name | default('omit', True) }}"
-      last_name: "{{ tower_user_last_name | default('omit', True) }}"
-      tower_host: "{{ tower_user_tower_host | default('omit', True) }}"
-      email: "{{ tower_user_email | default('omit', True) }}"
-      tower_config_file: "{{ tower_user_tower_config_file | default('omit', True) }}"
-      state: "{{ tower_user_state | default('omit', True) }}"
-      auditor: "{{ tower_user_auditor | default('omit', True) }}"
-      tower_password: "{{ tower_user_tower_password | default('omit', True) }}"
-      tower_username: "{{ tower_user_tower_username | default('omit', True) }}"
-      password: "{{ tower_user_password | default('omit', True) }}"
-      tower_verify_ssl: "{{ tower_user_tower_verify_ssl | default('omit', True) }}"
+      username: "{{ tower_user_username | default(omit, True) }}"
+      superuser: "{{ tower_user_superuser | default(omit, True) }}"
+      first_name: "{{ tower_user_first_name | default(omit, True) }}"
+      last_name: "{{ tower_user_last_name | default(omit, True) }}"
+      tower_host: "{{ tower_user_tower_host | default(omit, True) }}"
+      email: "{{ tower_user_email | default(omit, True) }}"
+      tower_config_file: "{{ tower_user_tower_config_file | default(omit, True) }}"
+      state: "{{ tower_user_state | default(omit, True) }}"
+      auditor: "{{ tower_user_auditor | default(omit, True) }}"
+      tower_password: "{{ tower_user_tower_password | default(omit, True) }}"
+      tower_username: "{{ tower_user_tower_username | default(omit, True) }}"
+      password: "{{ tower_user_password | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_user_tower_verify_ssl | default(omit, True) }}"
   tasks:
     - name: "plugin_tower_user"
       tower_user: "{{ tower_user }}"
+      register: r_tower_user

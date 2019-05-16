@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_rollback"
   ce_rollback: "{{ ce_rollback }}"
+  register: r_ce_rollback
   vars:
     ce_rollback: 
       commit_id: "{{ ce_rollback_commit_id | default(omit, True) }}"

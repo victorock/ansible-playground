@@ -1,6 +1,7 @@
 ---
 - name: "module_a10_service_group"
   a10_service_group: "{{ a10_service_group }}"
+  register: r_a10_service_group
   vars:
     a10_service_group: 
       username: "{{ a10_service_group_username | default(omit, True) }}"

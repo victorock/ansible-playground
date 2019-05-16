@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     tower_organization: 
-      name: "{{ tower_organization_name | default('omit', True) }}"
-      tower_host: "{{ tower_organization_tower_host | default('omit', True) }}"
-      tower_username: "{{ tower_organization_tower_username | default('omit', True) }}"
-      state: "{{ tower_organization_state | default('omit', True) }}"
-      tower_password: "{{ tower_organization_tower_password | default('omit', True) }}"
-      tower_config_file: "{{ tower_organization_tower_config_file | default('omit', True) }}"
-      tower_verify_ssl: "{{ tower_organization_tower_verify_ssl | default('omit', True) }}"
-      description: "{{ tower_organization_description | default('omit', True) }}"
+      name: "{{ tower_organization_name | default(omit, True) }}"
+      tower_host: "{{ tower_organization_tower_host | default(omit, True) }}"
+      tower_username: "{{ tower_organization_tower_username | default(omit, True) }}"
+      state: "{{ tower_organization_state | default(omit, True) }}"
+      tower_password: "{{ tower_organization_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_organization_tower_config_file | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_organization_tower_verify_ssl | default(omit, True) }}"
+      description: "{{ tower_organization_description | default(omit, True) }}"
   tasks:
     - name: "plugin_tower_organization"
       tower_organization: "{{ tower_organization }}"
+      register: r_tower_organization

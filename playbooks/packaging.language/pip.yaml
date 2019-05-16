@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pip: 
-      virtualenv: "{{ pip_virtualenv | default('omit', True) }}"
-      extra_args: "{{ pip_extra_args | default('omit', True) }}"
-      virtualenv_command: "{{ pip_virtualenv_command | default('omit', True) }}"
-      chdir: "{{ pip_chdir | default('omit', True) }}"
-      requirements: "{{ pip_requirements | default('omit', True) }}"
-      name: "{{ pip_name | default('omit', True) }}"
-      virtualenv_python: "{{ pip_virtualenv_python | default('omit', True) }}"
-      umask: "{{ pip_umask | default('omit', True) }}"
-      editable: "{{ pip_editable | default('omit', True) }}"
-      executable: "{{ pip_executable | default('omit', True) }}"
-      virtualenv_site_packages: "{{ pip_virtualenv_site_packages | default('omit', True) }}"
-      state: "{{ pip_state | default('omit', True) }}"
-      version: "{{ pip_version | default('omit', True) }}"
+      virtualenv: "{{ pip_virtualenv | default(omit, True) }}"
+      extra_args: "{{ pip_extra_args | default(omit, True) }}"
+      virtualenv_command: "{{ pip_virtualenv_command | default(omit, True) }}"
+      chdir: "{{ pip_chdir | default(omit, True) }}"
+      requirements: "{{ pip_requirements | default(omit, True) }}"
+      name: "{{ pip_name | default(omit, True) }}"
+      virtualenv_python: "{{ pip_virtualenv_python | default(omit, True) }}"
+      umask: "{{ pip_umask | default(omit, True) }}"
+      editable: "{{ pip_editable | default(omit, True) }}"
+      executable: "{{ pip_executable | default(omit, True) }}"
+      virtualenv_site_packages: "{{ pip_virtualenv_site_packages | default(omit, True) }}"
+      state: "{{ pip_state | default(omit, True) }}"
+      version: "{{ pip_version | default(omit, True) }}"
   tasks:
     - name: "plugin_pip"
       pip: "{{ pip }}"
+      register: r_pip

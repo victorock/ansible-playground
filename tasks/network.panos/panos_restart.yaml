@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_restart"
   panos_restart: "{{ panos_restart }}"
+  register: r_panos_restart
   vars:
     panos_restart: 
       username: "{{ panos_restart_username | default(omit, True) }}"

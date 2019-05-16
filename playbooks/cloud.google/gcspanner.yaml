@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcspanner: 
-      instance_display_name: "{{ gcspanner_instance_display_name | default('omit', True) }}"
-      database_name: "{{ gcspanner_database_name | default('omit', True) }}"
-      force_instance_delete: "{{ gcspanner_force_instance_delete | default('omit', True) }}"
-      instance_id: "{{ gcspanner_instance_id | default('omit', True) }}"
-      state: "{{ gcspanner_state | default('omit', True) }}"
-      node_count: "{{ gcspanner_node_count | default('omit', True) }}"
-      configuration: "{{ gcspanner_configuration | default('omit', True) }}"
+      instance_display_name: "{{ gcspanner_instance_display_name | default(omit, True) }}"
+      database_name: "{{ gcspanner_database_name | default(omit, True) }}"
+      force_instance_delete: "{{ gcspanner_force_instance_delete | default(omit, True) }}"
+      instance_id: "{{ gcspanner_instance_id | default(omit, True) }}"
+      state: "{{ gcspanner_state | default(omit, True) }}"
+      node_count: "{{ gcspanner_node_count | default(omit, True) }}"
+      configuration: "{{ gcspanner_configuration | default(omit, True) }}"
   tasks:
     - name: "plugin_gcspanner"
       gcspanner: "{{ gcspanner }}"
+      register: r_gcspanner

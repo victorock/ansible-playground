@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_volume_clone"
   na_ontap_volume_clone: "{{ na_ontap_volume_clone }}"
+  register: r_na_ontap_volume_clone
   vars:
     na_ontap_volume_clone: 
       parent_volume: "{{ na_ontap_volume_clone_parent_volume | default(omit, True) }}"

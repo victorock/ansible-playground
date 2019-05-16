@@ -1,6 +1,7 @@
 ---
 - name: "module_nclu"
   nclu: "{{ nclu }}"
+  register: r_nclu
   vars:
     nclu: 
       commands: "{{ nclu_commands | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_os_nova_flavor"
   os_nova_flavor: "{{ os_nova_flavor }}"
+  register: r_os_nova_flavor
   vars:
     os_nova_flavor: 
       auth_type: "{{ os_nova_flavor_auth_type | default(omit, True) }}"

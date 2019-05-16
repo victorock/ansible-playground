@@ -1,6 +1,7 @@
 ---
 - name: "module_slackpkg"
   slackpkg: "{{ slackpkg }}"
+  register: r_slackpkg
   vars:
     slackpkg: 
       state: "{{ slackpkg_state | default(omit, True) }}"

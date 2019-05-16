@@ -1,6 +1,7 @@
 ---
 - name: "module_grove"
   grove: "{{ grove }}"
+  register: r_grove
   vars:
     grove: 
       service: "{{ grove_service | default(omit, True) }}"

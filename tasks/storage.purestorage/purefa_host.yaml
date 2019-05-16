@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_host"
   purefa_host: "{{ purefa_host }}"
+  register: r_purefa_host
   vars:
     purefa_host: 
       protocol: "{{ purefa_host_protocol | default(omit, True) }}"

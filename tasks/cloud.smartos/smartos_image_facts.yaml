@@ -1,6 +1,7 @@
 ---
 - name: "module_smartos_image_facts"
   smartos_image_facts: "{{ smartos_image_facts }}"
+  register: r_smartos_image_facts
   vars:
     smartos_image_facts: 
       filters: "{{ smartos_image_facts_filters | default(omit, True) }}"

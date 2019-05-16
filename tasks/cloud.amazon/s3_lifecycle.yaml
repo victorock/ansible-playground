@@ -1,6 +1,7 @@
 ---
 - name: "module_s3_lifecycle"
   s3_lifecycle: "{{ s3_lifecycle }}"
+  register: r_s3_lifecycle
   vars:
     s3_lifecycle: 
       status: "{{ s3_lifecycle_status | default(omit, True) }}"

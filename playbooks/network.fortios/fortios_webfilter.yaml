@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     fortios_webfilter: 
-      username: "{{ fortios_webfilter_username | default('omit', True) }}"
-      webfilter_content: "{{ fortios_webfilter_webfilter_content | default('omit', True) }}"
-      webfilter_url: "{{ fortios_webfilter_webfilter_url | default('omit', True) }}"
-      host: "{{ fortios_webfilter_host | default('omit', True) }}"
-      password: "{{ fortios_webfilter_password | default('omit', True) }}"
-      vdom: "{{ fortios_webfilter_vdom | default('omit', True) }}"
+      username: "{{ fortios_webfilter_username | default(omit, True) }}"
+      webfilter_content: "{{ fortios_webfilter_webfilter_content | default(omit, True) }}"
+      webfilter_url: "{{ fortios_webfilter_webfilter_url | default(omit, True) }}"
+      host: "{{ fortios_webfilter_host | default(omit, True) }}"
+      password: "{{ fortios_webfilter_password | default(omit, True) }}"
+      vdom: "{{ fortios_webfilter_vdom | default(omit, True) }}"
   tasks:
     - name: "plugin_fortios_webfilter"
       fortios_webfilter: "{{ fortios_webfilter }}"
+      register: r_fortios_webfilter

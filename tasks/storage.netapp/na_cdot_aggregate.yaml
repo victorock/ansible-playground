@@ -1,6 +1,7 @@
 ---
 - name: "module_na_cdot_aggregate"
   na_cdot_aggregate: "{{ na_cdot_aggregate }}"
+  register: r_na_cdot_aggregate
   vars:
     na_cdot_aggregate: 
       username: "{{ na_cdot_aggregate_username | default(omit, True) }}"

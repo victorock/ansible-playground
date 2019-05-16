@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_portforward"
   cs_portforward: "{{ cs_portforward }}"
+  register: r_cs_portforward
   vars:
     cs_portforward: 
       domain: "{{ cs_portforward_domain | default(omit, True) }}"

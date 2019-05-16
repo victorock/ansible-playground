@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     memset_zone_domain: 
-      state: "{{ memset_zone_domain_state | default('omit', True) }}"
-      api_key: "{{ memset_zone_domain_api_key | default('omit', True) }}"
-      domain: "{{ memset_zone_domain_domain | default('omit', True) }}"
-      zone: "{{ memset_zone_domain_zone | default('omit', True) }}"
+      state: "{{ memset_zone_domain_state | default(omit, True) }}"
+      api_key: "{{ memset_zone_domain_api_key | default(omit, True) }}"
+      domain: "{{ memset_zone_domain_domain | default(omit, True) }}"
+      zone: "{{ memset_zone_domain_zone | default(omit, True) }}"
   tasks:
     - name: "plugin_memset_zone_domain"
       memset_zone_domain: "{{ memset_zone_domain }}"
+      register: r_memset_zone_domain

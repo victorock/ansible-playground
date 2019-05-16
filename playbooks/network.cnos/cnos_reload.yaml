@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cnos_reload: 
-      username: "{{ cnos_reload_username | default('omit', True) }}"
-      outputfile: "{{ cnos_reload_outputfile | default('omit', True) }}"
-      host: "{{ cnos_reload_host | default('omit', True) }}"
-      deviceType: "{{ cnos_reload_deviceType | default('omit', True) }}"
-      password: "{{ cnos_reload_password | default('omit', True) }}"
-      enablePassword: "{{ cnos_reload_enablePassword | default('omit', True) }}"
+      username: "{{ cnos_reload_username | default(omit, True) }}"
+      outputfile: "{{ cnos_reload_outputfile | default(omit, True) }}"
+      host: "{{ cnos_reload_host | default(omit, True) }}"
+      deviceType: "{{ cnos_reload_deviceType | default(omit, True) }}"
+      password: "{{ cnos_reload_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_reload_enablePassword | default(omit, True) }}"
   tasks:
     - name: "plugin_cnos_reload"
       cnos_reload: "{{ cnos_reload }}"
+      register: r_cnos_reload

@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_mgmt_interface"
   netapp_e_mgmt_interface: "{{ netapp_e_mgmt_interface }}"
+  register: r_netapp_e_mgmt_interface
   vars:
     netapp_e_mgmt_interface: 
       dns_config_method: "{{ netapp_e_mgmt_interface_dns_config_method | default(omit, True) }}"

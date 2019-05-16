@@ -1,6 +1,7 @@
 ---
 - name: "module_proxysql_global_variables"
   proxysql_global_variables: "{{ proxysql_global_variables }}"
+  register: r_proxysql_global_variables
   vars:
     proxysql_global_variables: 
       login_port: "{{ proxysql_global_variables_login_port | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_ospf"
   onyx_ospf: "{{ onyx_ospf }}"
+  register: r_onyx_ospf
   vars:
     onyx_ospf: 
       router_id: "{{ onyx_ospf_router_id | default(omit, True) }}"

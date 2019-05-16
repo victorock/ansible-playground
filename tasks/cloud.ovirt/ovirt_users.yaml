@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_users"
   ovirt_users: "{{ ovirt_users }}"
+  register: r_ovirt_users
   vars:
     ovirt_users: 
       name: "{{ ovirt_users_name | default(omit, True) }}"

@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     yarn: 
-      executable: "{{ yarn_executable | default('omit', True) }}"
-      name: "{{ yarn_name | default('omit', True) }}"
-      global: "{{ yarn_global | default('omit', True) }}"
-      ignore_scripts: "{{ yarn_ignore_scripts | default('omit', True) }}"
-      state: "{{ yarn_state | default('omit', True) }}"
-      production: "{{ yarn_production | default('omit', True) }}"
-      registry: "{{ yarn_registry | default('omit', True) }}"
-      version: "{{ yarn_version | default('omit', True) }}"
-      path: "{{ yarn_path | default('omit', True) }}"
+      executable: "{{ yarn_executable | default(omit, True) }}"
+      name: "{{ yarn_name | default(omit, True) }}"
+      global: "{{ yarn_global | default(omit, True) }}"
+      ignore_scripts: "{{ yarn_ignore_scripts | default(omit, True) }}"
+      state: "{{ yarn_state | default(omit, True) }}"
+      production: "{{ yarn_production | default(omit, True) }}"
+      registry: "{{ yarn_registry | default(omit, True) }}"
+      version: "{{ yarn_version | default(omit, True) }}"
+      path: "{{ yarn_path | default(omit, True) }}"
   tasks:
     - name: "plugin_yarn"
       yarn: "{{ yarn }}"
+      register: r_yarn

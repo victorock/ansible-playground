@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     timezone: 
-      hwclock: "{{ timezone_hwclock | default('omit', True) }}"
-      name: "{{ timezone_name | default('omit', True) }}"
+      hwclock: "{{ timezone_hwclock | default(omit, True) }}"
+      name: "{{ timezone_name | default(omit, True) }}"
   tasks:
     - name: "plugin_timezone"
       timezone: "{{ timezone }}"
+      register: r_timezone

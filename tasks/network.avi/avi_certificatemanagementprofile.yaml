@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_certificatemanagementprofile"
   avi_certificatemanagementprofile: "{{ avi_certificatemanagementprofile }}"
+  register: r_avi_certificatemanagementprofile
   vars:
     avi_certificatemanagementprofile: 
       username: "{{ avi_certificatemanagementprofile_username | default(omit, True) }}"

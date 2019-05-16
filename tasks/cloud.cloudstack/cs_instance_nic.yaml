@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_instance_nic"
   cs_instance_nic: "{{ cs_instance_nic }}"
+  register: r_cs_instance_nic
   vars:
     cs_instance_nic: 
       domain: "{{ cs_instance_nic_domain | default(omit, True) }}"

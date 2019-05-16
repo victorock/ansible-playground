@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     elasticsearch_plugin: 
-      src: "{{ elasticsearch_plugin_src | default('omit', True) }}"
-      force: "{{ elasticsearch_plugin_force | default('omit', True) }}"
-      plugin_bin: "{{ elasticsearch_plugin_plugin_bin | default('omit', True) }}"
-      proxy_host: "{{ elasticsearch_plugin_proxy_host | default('omit', True) }}"
-      url: "{{ elasticsearch_plugin_url | default('omit', True) }}"
-      proxy_port: "{{ elasticsearch_plugin_proxy_port | default('omit', True) }}"
-      state: "{{ elasticsearch_plugin_state | default('omit', True) }}"
-      version: "{{ elasticsearch_plugin_version | default('omit', True) }}"
-      timeout: "{{ elasticsearch_plugin_timeout | default('omit', True) }}"
-      plugin_dir: "{{ elasticsearch_plugin_plugin_dir | default('omit', True) }}"
-      name: "{{ elasticsearch_plugin_name | default('omit', True) }}"
+      src: "{{ elasticsearch_plugin_src | default(omit, True) }}"
+      force: "{{ elasticsearch_plugin_force | default(omit, True) }}"
+      plugin_bin: "{{ elasticsearch_plugin_plugin_bin | default(omit, True) }}"
+      proxy_host: "{{ elasticsearch_plugin_proxy_host | default(omit, True) }}"
+      url: "{{ elasticsearch_plugin_url | default(omit, True) }}"
+      proxy_port: "{{ elasticsearch_plugin_proxy_port | default(omit, True) }}"
+      state: "{{ elasticsearch_plugin_state | default(omit, True) }}"
+      version: "{{ elasticsearch_plugin_version | default(omit, True) }}"
+      timeout: "{{ elasticsearch_plugin_timeout | default(omit, True) }}"
+      plugin_dir: "{{ elasticsearch_plugin_plugin_dir | default(omit, True) }}"
+      name: "{{ elasticsearch_plugin_name | default(omit, True) }}"
   tasks:
     - name: "plugin_elasticsearch_plugin"
       elasticsearch_plugin: "{{ elasticsearch_plugin }}"
+      register: r_elasticsearch_plugin

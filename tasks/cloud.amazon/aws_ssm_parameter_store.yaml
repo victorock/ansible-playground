@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_ssm_parameter_store"
   aws_ssm_parameter_store: "{{ aws_ssm_parameter_store }}"
+  register: r_aws_ssm_parameter_store
   vars:
     aws_ssm_parameter_store: 
       profile: "{{ aws_ssm_parameter_store_profile | default(omit, True) }}"

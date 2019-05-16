@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_config"
   cnos_config: "{{ cnos_config }}"
+  register: r_cnos_config
   vars:
     cnos_config: 
       comment: "{{ cnos_config_comment | default(omit, True) }}"

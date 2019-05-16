@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     uptimerobot: 
-      monitorid: "{{ uptimerobot_monitorid | default('omit', True) }}"
-      state: "{{ uptimerobot_state | default('omit', True) }}"
-      apikey: "{{ uptimerobot_apikey | default('omit', True) }}"
+      monitorid: "{{ uptimerobot_monitorid | default(omit, True) }}"
+      state: "{{ uptimerobot_state | default(omit, True) }}"
+      apikey: "{{ uptimerobot_apikey | default(omit, True) }}"
   tasks:
     - name: "plugin_uptimerobot"
       uptimerobot: "{{ uptimerobot }}"
+      register: r_uptimerobot

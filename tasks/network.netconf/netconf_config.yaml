@@ -1,6 +1,7 @@
 ---
 - name: "module_netconf_config"
   netconf_config: "{{ netconf_config }}"
+  register: r_netconf_config
   vars:
     netconf_config: 
       lock: "{{ netconf_config_lock | default(omit, True) }}"

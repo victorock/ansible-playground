@@ -1,6 +1,7 @@
 ---
 - name: "module_win_updates"
   win_updates: "{{ win_updates }}"
+  register: r_win_updates
   vars:
     win_updates: 
       reboot_timeout: "{{ win_updates_reboot_timeout | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_vrrp"
   ce_vrrp: "{{ ce_vrrp }}"
+  register: r_ce_vrrp
   vars:
     ce_vrrp: 
       gratuitous_arp_interval: "{{ ce_vrrp_gratuitous_arp_interval | default(omit, True) }}"

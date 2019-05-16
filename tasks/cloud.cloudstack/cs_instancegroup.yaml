@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_instancegroup"
   cs_instancegroup: "{{ cs_instancegroup }}"
+  register: r_cs_instancegroup
   vars:
     cs_instancegroup: 
       account: "{{ cs_instancegroup_account | default(omit, True) }}"

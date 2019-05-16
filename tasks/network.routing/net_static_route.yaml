@@ -1,6 +1,7 @@
 ---
 - name: "module_net_static_route"
   net_static_route: "{{ net_static_route }}"
+  register: r_net_static_route
   vars:
     net_static_route: 
       mask: "{{ net_static_route_mask | default(omit, True) }}"

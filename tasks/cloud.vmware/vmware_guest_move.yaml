@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_guest_move"
   vmware_guest_move: "{{ vmware_guest_move }}"
+  register: r_vmware_guest_move
   vars:
     vmware_guest_move: 
       dest_folder: "{{ vmware_guest_move_dest_folder | default(omit, True) }}"

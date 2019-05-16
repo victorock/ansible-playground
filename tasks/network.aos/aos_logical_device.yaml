@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_logical_device"
   aos_logical_device: "{{ aos_logical_device }}"
+  register: r_aos_logical_device
   vars:
     aos_logical_device: 
       content: "{{ aos_logical_device_content | default(omit, True) }}"

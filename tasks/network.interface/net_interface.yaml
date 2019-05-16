@@ -1,6 +1,7 @@
 ---
 - name: "module_net_interface"
   net_interface: "{{ net_interface }}"
+  register: r_net_interface
   vars:
     net_interface: 
       purge: "{{ net_interface_purge | default(omit, True) }}"

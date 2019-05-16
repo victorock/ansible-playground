@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_info_center_log"
   ce_info_center_log: "{{ ce_info_center_log }}"
+  register: r_ce_info_center_log
   vars:
     ce_info_center_log: 
       log_level: "{{ ce_info_center_log_log_level | default(omit, True) }}"

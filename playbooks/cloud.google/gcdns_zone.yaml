@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcdns_zone: 
-      description: "{{ gcdns_zone_description | default('omit', True) }}"
-      zone: "{{ gcdns_zone_zone | default('omit', True) }}"
-      service_account_email: "{{ gcdns_zone_service_account_email | default('omit', True) }}"
-      pem_file: "{{ gcdns_zone_pem_file | default('omit', True) }}"
-      state: "{{ gcdns_zone_state | default('omit', True) }}"
-      credentials_file: "{{ gcdns_zone_credentials_file | default('omit', True) }}"
-      project_id: "{{ gcdns_zone_project_id | default('omit', True) }}"
+      description: "{{ gcdns_zone_description | default(omit, True) }}"
+      zone: "{{ gcdns_zone_zone | default(omit, True) }}"
+      service_account_email: "{{ gcdns_zone_service_account_email | default(omit, True) }}"
+      pem_file: "{{ gcdns_zone_pem_file | default(omit, True) }}"
+      state: "{{ gcdns_zone_state | default(omit, True) }}"
+      credentials_file: "{{ gcdns_zone_credentials_file | default(omit, True) }}"
+      project_id: "{{ gcdns_zone_project_id | default(omit, True) }}"
   tasks:
     - name: "plugin_gcdns_zone"
       gcdns_zone: "{{ gcdns_zone }}"
+      register: r_gcdns_zone

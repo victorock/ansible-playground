@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_l3_interface"
   ios_l3_interface: "{{ ios_l3_interface }}"
+  register: r_ios_l3_interface
   vars:
     ios_l3_interface: 
       authorize: "{{ ios_l3_interface_authorize | default(omit, True) }}"

@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     fail: 
-      msg: "{{ fail_msg | default('omit', True) }}"
+      msg: "{{ fail_msg | default(omit, True) }}"
   tasks:
     - name: "plugin_fail"
       fail: "{{ fail }}"
+      register: r_fail

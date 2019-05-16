@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     os_client_config: 
-      clouds: "{{ os_client_config_clouds | default('omit', True) }}"
+      clouds: "{{ os_client_config_clouds | default(omit, True) }}"
   tasks:
     - name: "plugin_os_client_config"
       os_client_config: "{{ os_client_config }}"
+      register: r_os_client_config

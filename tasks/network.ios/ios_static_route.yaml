@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_static_route"
   ios_static_route: "{{ ios_static_route }}"
+  register: r_ios_static_route
   vars:
     ios_static_route: 
       authorize: "{{ ios_static_route_authorize | default(omit, True) }}"

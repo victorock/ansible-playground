@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     kibana_plugin: 
-      force: "{{ kibana_plugin_force | default('omit', True) }}"
-      name: "{{ kibana_plugin_name | default('omit', True) }}"
-      url: "{{ kibana_plugin_url | default('omit', True) }}"
-      state: "{{ kibana_plugin_state | default('omit', True) }}"
-      version: "{{ kibana_plugin_version | default('omit', True) }}"
-      timeout: "{{ kibana_plugin_timeout | default('omit', True) }}"
-      plugin_dir: "{{ kibana_plugin_plugin_dir | default('omit', True) }}"
-      plugin_bin: "{{ kibana_plugin_plugin_bin | default('omit', True) }}"
+      force: "{{ kibana_plugin_force | default(omit, True) }}"
+      name: "{{ kibana_plugin_name | default(omit, True) }}"
+      url: "{{ kibana_plugin_url | default(omit, True) }}"
+      state: "{{ kibana_plugin_state | default(omit, True) }}"
+      version: "{{ kibana_plugin_version | default(omit, True) }}"
+      timeout: "{{ kibana_plugin_timeout | default(omit, True) }}"
+      plugin_dir: "{{ kibana_plugin_plugin_dir | default(omit, True) }}"
+      plugin_bin: "{{ kibana_plugin_plugin_bin | default(omit, True) }}"
   tasks:
     - name: "plugin_kibana_plugin"
       kibana_plugin: "{{ kibana_plugin }}"
+      register: r_kibana_plugin

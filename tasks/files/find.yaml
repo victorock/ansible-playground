@@ -1,6 +1,7 @@
 ---
 - name: "module_find"
   find: "{{ find }}"
+  register: r_find
   vars:
     find: 
       excludes: "{{ find_excludes | default(omit, True) }}"

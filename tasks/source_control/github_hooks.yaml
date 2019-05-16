@@ -1,6 +1,7 @@
 ---
 - name: "module_github_hooks"
   github_hooks: "{{ github_hooks }}"
+  register: r_github_hooks
   vars:
     github_hooks: 
       oauthkey: "{{ github_hooks_oauthkey | default(omit, True) }}"

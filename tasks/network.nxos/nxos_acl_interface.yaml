@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_acl_interface"
   nxos_acl_interface: "{{ nxos_acl_interface }}"
+  register: r_nxos_acl_interface
   vars:
     nxos_acl_interface: 
       interface: "{{ nxos_acl_interface_interface | default(omit, True) }}"

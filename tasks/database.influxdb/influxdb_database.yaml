@@ -1,6 +1,7 @@
 ---
 - name: "module_influxdb_database"
   influxdb_database: "{{ influxdb_database }}"
+  register: r_influxdb_database
   vars:
     influxdb_database: 
       username: "{{ influxdb_database_username | default(omit, True) }}"

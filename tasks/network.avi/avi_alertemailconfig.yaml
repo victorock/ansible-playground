@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_alertemailconfig"
   avi_alertemailconfig: "{{ avi_alertemailconfig }}"
+  register: r_avi_alertemailconfig
   vars:
     avi_alertemailconfig: 
       username: "{{ avi_alertemailconfig_username | default(omit, True) }}"

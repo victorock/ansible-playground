@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_gslb_vserver"
   netscaler_gslb_vserver: "{{ netscaler_gslb_vserver }}"
+  register: r_netscaler_gslb_vserver
   vars:
     netscaler_gslb_vserver: 
       comment: "{{ netscaler_gslb_vserver_comment | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_apt_key"
   apt_key: "{{ apt_key }}"
+  register: r_apt_key
   vars:
     apt_key: 
       keyserver: "{{ apt_key_keyserver | default(omit, True) }}"

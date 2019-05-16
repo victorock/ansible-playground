@@ -1,6 +1,7 @@
 ---
 - name: "module_win_domain_membership"
   win_domain_membership: "{{ win_domain_membership }}"
+  register: r_win_domain_membership
   vars:
     win_domain_membership: 
       workgroup_name: "{{ win_domain_membership_workgroup_name | default(omit, True) }}"

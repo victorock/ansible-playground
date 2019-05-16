@@ -1,6 +1,7 @@
 ---
 - name: "module_redfish_config"
   redfish_config: "{{ redfish_config }}"
+  register: r_redfish_config
   vars:
     redfish_config: 
       category: "{{ redfish_config_category | default(omit, True) }}"

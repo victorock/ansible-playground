@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_vlan"
   nxos_vlan: "{{ nxos_vlan }}"
+  register: r_nxos_vlan
   vars:
     nxos_vlan: 
       delay: "{{ nxos_vlan_delay | default(omit, True) }}"

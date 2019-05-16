@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_affinity_label_facts: 
-      name: "{{ ovirt_affinity_label_facts_name | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_affinity_label_facts_fetch_nested | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_affinity_label_facts_nested_attributes | default('omit', True) }}"
-      vm: "{{ ovirt_affinity_label_facts_vm | default('omit', True) }}"
-      host: "{{ ovirt_affinity_label_facts_host | default('omit', True) }}"
-      auth: "{{ ovirt_affinity_label_facts_auth | default('omit', True) }}"
+      name: "{{ ovirt_affinity_label_facts_name | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_affinity_label_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_affinity_label_facts_nested_attributes | default(omit, True) }}"
+      vm: "{{ ovirt_affinity_label_facts_vm | default(omit, True) }}"
+      host: "{{ ovirt_affinity_label_facts_host | default(omit, True) }}"
+      auth: "{{ ovirt_affinity_label_facts_auth | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_affinity_label_facts"
       ovirt_affinity_label_facts: "{{ ovirt_affinity_label_facts }}"
+      register: r_ovirt_affinity_label_facts

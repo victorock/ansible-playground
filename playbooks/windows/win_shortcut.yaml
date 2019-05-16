@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_shortcut: 
-      windowstyle: "{{ win_shortcut_windowstyle | default('omit', True) }}"
-      src: "{{ win_shortcut_src | default('omit', True) }}"
-      description: "{{ win_shortcut_description | default('omit', True) }}"
-      dest: "{{ win_shortcut_dest | default('omit', True) }}"
-      args: "{{ win_shortcut_args | default('omit', True) }}"
-      hotkey: "{{ win_shortcut_hotkey | default('omit', True) }}"
-      state: "{{ win_shortcut_state | default('omit', True) }}"
-      directory: "{{ win_shortcut_directory | default('omit', True) }}"
-      icon: "{{ win_shortcut_icon | default('omit', True) }}"
+      windowstyle: "{{ win_shortcut_windowstyle | default(omit, True) }}"
+      src: "{{ win_shortcut_src | default(omit, True) }}"
+      description: "{{ win_shortcut_description | default(omit, True) }}"
+      dest: "{{ win_shortcut_dest | default(omit, True) }}"
+      args: "{{ win_shortcut_args | default(omit, True) }}"
+      hotkey: "{{ win_shortcut_hotkey | default(omit, True) }}"
+      state: "{{ win_shortcut_state | default(omit, True) }}"
+      directory: "{{ win_shortcut_directory | default(omit, True) }}"
+      icon: "{{ win_shortcut_icon | default(omit, True) }}"
   tasks:
     - name: "plugin_win_shortcut"
       win_shortcut: "{{ win_shortcut }}"
+      register: r_win_shortcut

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_quota"
   ovirt_quota: "{{ ovirt_quota }}"
+  register: r_ovirt_quota
   vars:
     ovirt_quota: 
       timeout: "{{ ovirt_quota_timeout | default(omit, True) }}"

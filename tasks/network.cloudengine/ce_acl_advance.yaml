@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_acl_advance"
   ce_acl_advance: "{{ ce_acl_advance }}"
+  register: r_ce_acl_advance
   vars:
     ce_acl_advance: 
       acl_step: "{{ ce_acl_advance_acl_step | default(omit, True) }}"

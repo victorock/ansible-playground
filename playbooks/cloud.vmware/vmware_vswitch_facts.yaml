@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_vswitch_facts: 
-      username: "{{ vmware_vswitch_facts_username | default('omit', True) }}"
-      hostname: "{{ vmware_vswitch_facts_hostname | default('omit', True) }}"
-      cluster_name: "{{ vmware_vswitch_facts_cluster_name | default('omit', True) }}"
-      esxi_hostname: "{{ vmware_vswitch_facts_esxi_hostname | default('omit', True) }}"
-      password: "{{ vmware_vswitch_facts_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_vswitch_facts_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_vswitch_facts_port | default('omit', True) }}"
+      username: "{{ vmware_vswitch_facts_username | default(omit, True) }}"
+      hostname: "{{ vmware_vswitch_facts_hostname | default(omit, True) }}"
+      cluster_name: "{{ vmware_vswitch_facts_cluster_name | default(omit, True) }}"
+      esxi_hostname: "{{ vmware_vswitch_facts_esxi_hostname | default(omit, True) }}"
+      password: "{{ vmware_vswitch_facts_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vswitch_facts_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vswitch_facts_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_vswitch_facts"
       vmware_vswitch_facts: "{{ vmware_vswitch_facts }}"
+      register: r_vmware_vswitch_facts

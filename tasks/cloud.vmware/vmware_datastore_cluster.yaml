@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_datastore_cluster"
   vmware_datastore_cluster: "{{ vmware_datastore_cluster }}"
+  register: r_vmware_datastore_cluster
   vars:
     vmware_datastore_cluster: 
       username: "{{ vmware_datastore_cluster_username | default(omit, True) }}"

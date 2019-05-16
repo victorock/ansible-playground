@@ -1,6 +1,7 @@
 ---
 - name: "module_expect"
   expect: "{{ expect }}"
+  register: r_expect
   vars:
     expect: 
       chdir: "{{ expect_chdir | default(omit, True) }}"

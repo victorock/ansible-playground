@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_sudorule"
   ipa_sudorule: "{{ ipa_sudorule }}"
+  register: r_ipa_sudorule
   vars:
     ipa_sudorule: 
       ipa_port: "{{ ipa_sudorule_ipa_port | default(omit, True) }}"

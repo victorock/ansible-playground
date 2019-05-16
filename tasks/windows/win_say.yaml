@@ -1,6 +1,7 @@
 ---
 - name: "module_win_say"
   win_say: "{{ win_say }}"
+  register: r_win_say
   vars:
     win_say: 
       start_sound_path: "{{ win_say_start_sound_path | default(omit, True) }}"

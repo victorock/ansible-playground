@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_dldp_interface"
   ce_dldp_interface: "{{ ce_dldp_interface }}"
+  register: r_ce_dldp_interface
   vars:
     ce_dldp_interface: 
       reset: "{{ ce_dldp_interface_reset | default(omit, True) }}"

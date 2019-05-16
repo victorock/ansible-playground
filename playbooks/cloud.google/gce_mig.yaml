@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gce_mig: 
-      name: "{{ gce_mig_name | default('omit', True) }}"
-      zone: "{{ gce_mig_zone | default('omit', True) }}"
-      service_account_email: "{{ gce_mig_service_account_email | default('omit', True) }}"
-      autoscaling: "{{ gce_mig_autoscaling | default('omit', True) }}"
-      named_ports: "{{ gce_mig_named_ports | default('omit', True) }}"
-      state: "{{ gce_mig_state | default('omit', True) }}"
-      template: "{{ gce_mig_template | default('omit', True) }}"
-      credentials_file: "{{ gce_mig_credentials_file | default('omit', True) }}"
-      project_id: "{{ gce_mig_project_id | default('omit', True) }}"
-      size: "{{ gce_mig_size | default('omit', True) }}"
+      name: "{{ gce_mig_name | default(omit, True) }}"
+      zone: "{{ gce_mig_zone | default(omit, True) }}"
+      service_account_email: "{{ gce_mig_service_account_email | default(omit, True) }}"
+      autoscaling: "{{ gce_mig_autoscaling | default(omit, True) }}"
+      named_ports: "{{ gce_mig_named_ports | default(omit, True) }}"
+      state: "{{ gce_mig_state | default(omit, True) }}"
+      template: "{{ gce_mig_template | default(omit, True) }}"
+      credentials_file: "{{ gce_mig_credentials_file | default(omit, True) }}"
+      project_id: "{{ gce_mig_project_id | default(omit, True) }}"
+      size: "{{ gce_mig_size | default(omit, True) }}"
   tasks:
     - name: "plugin_gce_mig"
       gce_mig: "{{ gce_mig }}"
+      register: r_gce_mig

@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     github_hooks: 
-      oauthkey: "{{ github_hooks_oauthkey | default('omit', True) }}"
-      hookurl: "{{ github_hooks_hookurl | default('omit', True) }}"
-      repo: "{{ github_hooks_repo | default('omit', True) }}"
-      user: "{{ github_hooks_user | default('omit', True) }}"
-      content_type: "{{ github_hooks_content_type | default('omit', True) }}"
-      action: "{{ github_hooks_action | default('omit', True) }}"
-      validate_certs: "{{ github_hooks_validate_certs | default('omit', True) }}"
+      oauthkey: "{{ github_hooks_oauthkey | default(omit, True) }}"
+      hookurl: "{{ github_hooks_hookurl | default(omit, True) }}"
+      repo: "{{ github_hooks_repo | default(omit, True) }}"
+      user: "{{ github_hooks_user | default(omit, True) }}"
+      content_type: "{{ github_hooks_content_type | default(omit, True) }}"
+      action: "{{ github_hooks_action | default(omit, True) }}"
+      validate_certs: "{{ github_hooks_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_github_hooks"
       github_hooks: "{{ github_hooks }}"
+      register: r_github_hooks

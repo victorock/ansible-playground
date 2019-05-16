@@ -1,6 +1,7 @@
 ---
 - name: "module_os_flavor_facts"
   os_flavor_facts: "{{ os_flavor_facts }}"
+  register: r_os_flavor_facts
   vars:
     os_flavor_facts: 
       auth_type: "{{ os_flavor_facts_auth_type | default(omit, True) }}"

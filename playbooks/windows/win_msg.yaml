@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_msg: 
-      msg: "{{ win_msg_msg | default('omit', True) }}"
-      to: "{{ win_msg_to | default('omit', True) }}"
-      wait: "{{ win_msg_wait | default('omit', True) }}"
-      display_seconds: "{{ win_msg_display_seconds | default('omit', True) }}"
+      msg: "{{ win_msg_msg | default(omit, True) }}"
+      to: "{{ win_msg_to | default(omit, True) }}"
+      wait: "{{ win_msg_wait | default(omit, True) }}"
+      display_seconds: "{{ win_msg_display_seconds | default(omit, True) }}"
   tasks:
     - name: "plugin_win_msg"
       win_msg: "{{ win_msg }}"
+      register: r_win_msg

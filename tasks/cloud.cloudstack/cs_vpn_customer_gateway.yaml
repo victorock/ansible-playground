@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_vpn_customer_gateway"
   cs_vpn_customer_gateway: "{{ cs_vpn_customer_gateway }}"
+  register: r_cs_vpn_customer_gateway
   vars:
     cs_vpn_customer_gateway: 
       cidrs: "{{ cs_vpn_customer_gateway_cidrs | default(omit, True) }}"

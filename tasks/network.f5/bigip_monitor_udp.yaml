@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_monitor_udp"
   bigip_monitor_udp: "{{ bigip_monitor_udp }}"
+  register: r_bigip_monitor_udp
   vars:
     bigip_monitor_udp: 
       partition: "{{ bigip_monitor_udp_partition | default(omit, True) }}"

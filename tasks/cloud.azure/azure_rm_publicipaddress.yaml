@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_publicipaddress"
   azure_rm_publicipaddress: "{{ azure_rm_publicipaddress }}"
+  register: r_azure_rm_publicipaddress
   vars:
     azure_rm_publicipaddress: 
       profile: "{{ azure_rm_publicipaddress_profile | default(omit, True) }}"

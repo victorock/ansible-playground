@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_tag_facts"
   vmware_tag_facts: "{{ vmware_tag_facts }}"
+  register: r_vmware_tag_facts
   vars:
     vmware_tag_facts: 
       username: "{{ vmware_tag_facts_username | default(omit, True) }}"

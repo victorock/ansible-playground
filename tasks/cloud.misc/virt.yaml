@@ -1,6 +1,7 @@
 ---
 - name: "module_virt"
   virt: "{{ virt }}"
+  register: r_virt
   vars:
     virt: 
       xml: "{{ virt_xml | default(omit, True) }}"

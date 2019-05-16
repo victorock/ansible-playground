@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_config"
   bigip_config: "{{ bigip_config }}"
+  register: r_bigip_config
   vars:
     bigip_config: 
       reset: "{{ bigip_config_reset | default(omit, True) }}"

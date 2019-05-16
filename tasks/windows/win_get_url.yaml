@@ -1,6 +1,7 @@
 ---
 - name: "module_win_get_url"
   win_get_url: "{{ win_get_url }}"
+  register: r_win_get_url
   vars:
     win_get_url: 
       url_password: "{{ win_get_url_url_password | default(omit, True) }}"

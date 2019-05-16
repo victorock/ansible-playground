@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_udld: 
-      reset: "{{ nxos_udld_reset | default('omit', True) }}"
-      msg_time: "{{ nxos_udld_msg_time | default('omit', True) }}"
-      aggressive: "{{ nxos_udld_aggressive | default('omit', True) }}"
-      state: "{{ nxos_udld_state | default('omit', True) }}"
-      provider: "{{ nxos_udld_provider | default('omit', True) }}"
+      reset: "{{ nxos_udld_reset | default(omit, True) }}"
+      msg_time: "{{ nxos_udld_msg_time | default(omit, True) }}"
+      aggressive: "{{ nxos_udld_aggressive | default(omit, True) }}"
+      state: "{{ nxos_udld_state | default(omit, True) }}"
+      provider: "{{ nxos_udld_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_udld"
       nxos_udld: "{{ nxos_udld }}"
+      register: r_nxos_udld

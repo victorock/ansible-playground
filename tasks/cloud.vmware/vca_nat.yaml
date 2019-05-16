@@ -1,6 +1,7 @@
 ---
 - name: "module_vca_nat"
   vca_nat: "{{ vca_nat }}"
+  register: r_vca_nat
   vars:
     vca_nat: 
       username: "{{ vca_nat_username | default(omit, True) }}"

@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_vtp_domain: 
-      domain: "{{ nxos_vtp_domain_domain | default('omit', True) }}"
-      provider: "{{ nxos_vtp_domain_provider | default('omit', True) }}"
+      domain: "{{ nxos_vtp_domain_domain | default(omit, True) }}"
+      provider: "{{ nxos_vtp_domain_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_vtp_domain"
       nxos_vtp_domain: "{{ nxos_vtp_domain }}"
+      register: r_nxos_vtp_domain

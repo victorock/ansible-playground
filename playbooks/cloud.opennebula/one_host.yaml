@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     one_host: 
-      vmm_mad_name: "{{ one_host_vmm_mad_name | default('omit', True) }}"
-      api_url: "{{ one_host_api_url | default('omit', True) }}"
-      im_mad_name: "{{ one_host_im_mad_name | default('omit', True) }}"
-      labels: "{{ one_host_labels | default('omit', True) }}"
-      api_password: "{{ one_host_api_password | default('omit', True) }}"
-      cluster_name: "{{ one_host_cluster_name | default('omit', True) }}"
-      state: "{{ one_host_state | default('omit', True) }}"
-      wait_timeout: "{{ one_host_wait_timeout | default('omit', True) }}"
-      cluster_id: "{{ one_host_cluster_id | default('omit', True) }}"
-      template: "{{ one_host_template | default('omit', True) }}"
-      api_username: "{{ one_host_api_username | default('omit', True) }}"
-      validate_certs: "{{ one_host_validate_certs | default('omit', True) }}"
-      name: "{{ one_host_name | default('omit', True) }}"
+      vmm_mad_name: "{{ one_host_vmm_mad_name | default(omit, True) }}"
+      api_url: "{{ one_host_api_url | default(omit, True) }}"
+      im_mad_name: "{{ one_host_im_mad_name | default(omit, True) }}"
+      labels: "{{ one_host_labels | default(omit, True) }}"
+      api_password: "{{ one_host_api_password | default(omit, True) }}"
+      cluster_name: "{{ one_host_cluster_name | default(omit, True) }}"
+      state: "{{ one_host_state | default(omit, True) }}"
+      wait_timeout: "{{ one_host_wait_timeout | default(omit, True) }}"
+      cluster_id: "{{ one_host_cluster_id | default(omit, True) }}"
+      template: "{{ one_host_template | default(omit, True) }}"
+      api_username: "{{ one_host_api_username | default(omit, True) }}"
+      validate_certs: "{{ one_host_validate_certs | default(omit, True) }}"
+      name: "{{ one_host_name | default(omit, True) }}"
   tasks:
     - name: "plugin_one_host"
       one_host: "{{ one_host }}"
+      register: r_one_host

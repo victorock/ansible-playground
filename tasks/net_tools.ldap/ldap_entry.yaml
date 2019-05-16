@@ -1,6 +1,7 @@
 ---
 - name: "module_ldap_entry"
   ldap_entry: "{{ ldap_entry }}"
+  register: r_ldap_entry
   vars:
     ldap_entry: 
       dn: "{{ ldap_entry_dn | default(omit, True) }}"

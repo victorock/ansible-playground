@@ -1,6 +1,7 @@
 ---
 - name: "module_git"
   git: "{{ git }}"
+  register: r_git
   vars:
     git: 
       executable: "{{ git_executable | default(omit, True) }}"

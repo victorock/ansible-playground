@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_host_pm"
   ovirt_host_pm: "{{ ovirt_host_pm }}"
+  register: r_ovirt_host_pm
   vars:
     ovirt_host_pm: 
       username: "{{ ovirt_host_pm_username | default(omit, True) }}"

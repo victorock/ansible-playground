@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_interface"
   nxos_interface: "{{ nxos_interface }}"
+  register: r_nxos_interface
   vars:
     nxos_interface: 
       neighbors: "{{ nxos_interface_neighbors | default(omit, True) }}"

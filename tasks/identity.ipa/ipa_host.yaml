@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_host"
   ipa_host: "{{ ipa_host }}"
+  register: r_ipa_host
   vars:
     ipa_host: 
       ns_host_location: "{{ ipa_host_ns_host_location | default(omit, True) }}"

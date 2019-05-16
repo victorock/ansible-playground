@@ -1,6 +1,7 @@
 ---
 - name: "module_shell"
   shell: "{{ shell }}"
+  register: r_shell
   vars:
     shell: 
       warn: "{{ shell_warn | default(omit, True) }}"

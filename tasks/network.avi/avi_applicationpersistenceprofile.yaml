@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_applicationpersistenceprofile"
   avi_applicationpersistenceprofile: "{{ avi_applicationpersistenceprofile }}"
+  register: r_avi_applicationpersistenceprofile
   vars:
     avi_applicationpersistenceprofile: 
       uuid: "{{ avi_applicationpersistenceprofile_uuid | default(omit, True) }}"

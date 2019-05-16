@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_loadbalancer_rule"
   cs_loadbalancer_rule: "{{ cs_loadbalancer_rule }}"
+  register: r_cs_loadbalancer_rule
   vars:
     cs_loadbalancer_rule: 
       domain: "{{ cs_loadbalancer_rule_domain | default(omit, True) }}"

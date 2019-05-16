@@ -1,6 +1,7 @@
 ---
 - name: "module_add_host"
   add_host: "{{ add_host }}"
+  register: r_add_host
   vars:
     add_host: 
       name: "{{ add_host_name | default(omit, True) }}"

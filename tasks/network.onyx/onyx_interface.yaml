@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_interface"
   onyx_interface: "{{ onyx_interface }}"
+  register: r_onyx_interface
   vars:
     onyx_interface: 
       purge: "{{ onyx_interface_purge | default(omit, True) }}"

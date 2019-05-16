@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_instance"
   gcp_compute_instance: "{{ gcp_compute_instance }}"
+  register: r_gcp_compute_instance
   vars:
     gcp_compute_instance: 
       scopes: "{{ gcp_compute_instance_scopes | default(omit, True) }}"

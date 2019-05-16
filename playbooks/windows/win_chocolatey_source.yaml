@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_chocolatey_source: 
-      source_username: "{{ win_chocolatey_source_source_username | default('omit', True) }}"
-      allow_self_service: "{{ win_chocolatey_source_allow_self_service | default('omit', True) }}"
-      admin_only: "{{ win_chocolatey_source_admin_only | default('omit', True) }}"
-      name: "{{ win_chocolatey_source_name | default('omit', True) }}"
-      certificate: "{{ win_chocolatey_source_certificate | default('omit', True) }}"
-      update_password: "{{ win_chocolatey_source_update_password | default('omit', True) }}"
-      source_password: "{{ win_chocolatey_source_source_password | default('omit', True) }}"
-      certificate_password: "{{ win_chocolatey_source_certificate_password | default('omit', True) }}"
-      priority: "{{ win_chocolatey_source_priority | default('omit', True) }}"
-      source: "{{ win_chocolatey_source_source | default('omit', True) }}"
-      state: "{{ win_chocolatey_source_state | default('omit', True) }}"
-      bypass_proxy: "{{ win_chocolatey_source_bypass_proxy | default('omit', True) }}"
+      source_username: "{{ win_chocolatey_source_source_username | default(omit, True) }}"
+      allow_self_service: "{{ win_chocolatey_source_allow_self_service | default(omit, True) }}"
+      admin_only: "{{ win_chocolatey_source_admin_only | default(omit, True) }}"
+      name: "{{ win_chocolatey_source_name | default(omit, True) }}"
+      certificate: "{{ win_chocolatey_source_certificate | default(omit, True) }}"
+      update_password: "{{ win_chocolatey_source_update_password | default(omit, True) }}"
+      source_password: "{{ win_chocolatey_source_source_password | default(omit, True) }}"
+      certificate_password: "{{ win_chocolatey_source_certificate_password | default(omit, True) }}"
+      priority: "{{ win_chocolatey_source_priority | default(omit, True) }}"
+      source: "{{ win_chocolatey_source_source | default(omit, True) }}"
+      state: "{{ win_chocolatey_source_state | default(omit, True) }}"
+      bypass_proxy: "{{ win_chocolatey_source_bypass_proxy | default(omit, True) }}"
   tasks:
     - name: "plugin_win_chocolatey_source"
       win_chocolatey_source: "{{ win_chocolatey_source }}"
+      register: r_win_chocolatey_source

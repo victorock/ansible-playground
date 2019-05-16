@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     openvswitch_bridge: 
-      bridge: "{{ openvswitch_bridge_bridge | default('omit', True) }}"
-      fail_mode: "{{ openvswitch_bridge_fail_mode | default('omit', True) }}"
-      parent: "{{ openvswitch_bridge_parent | default('omit', True) }}"
-      vlan: "{{ openvswitch_bridge_vlan | default('omit', True) }}"
-      state: "{{ openvswitch_bridge_state | default('omit', True) }}"
-      set: "{{ openvswitch_bridge_set | default('omit', True) }}"
-      timeout: "{{ openvswitch_bridge_timeout | default('omit', True) }}"
-      external_ids: "{{ openvswitch_bridge_external_ids | default('omit', True) }}"
+      bridge: "{{ openvswitch_bridge_bridge | default(omit, True) }}"
+      fail_mode: "{{ openvswitch_bridge_fail_mode | default(omit, True) }}"
+      parent: "{{ openvswitch_bridge_parent | default(omit, True) }}"
+      vlan: "{{ openvswitch_bridge_vlan | default(omit, True) }}"
+      state: "{{ openvswitch_bridge_state | default(omit, True) }}"
+      set: "{{ openvswitch_bridge_set | default(omit, True) }}"
+      timeout: "{{ openvswitch_bridge_timeout | default(omit, True) }}"
+      external_ids: "{{ openvswitch_bridge_external_ids | default(omit, True) }}"
   tasks:
     - name: "plugin_openvswitch_bridge"
       openvswitch_bridge: "{{ openvswitch_bridge }}"
+      register: r_openvswitch_bridge

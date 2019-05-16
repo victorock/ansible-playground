@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     runit: 
-      state: "{{ runit_state | default('omit', True) }}"
-      enabled: "{{ runit_enabled | default('omit', True) }}"
-      name: "{{ runit_name | default('omit', True) }}"
-      service_src: "{{ runit_service_src | default('omit', True) }}"
-      service_dir: "{{ runit_service_dir | default('omit', True) }}"
+      state: "{{ runit_state | default(omit, True) }}"
+      enabled: "{{ runit_enabled | default(omit, True) }}"
+      name: "{{ runit_name | default(omit, True) }}"
+      service_src: "{{ runit_service_src | default(omit, True) }}"
+      service_dir: "{{ runit_service_dir | default(omit, True) }}"
   tasks:
     - name: "plugin_runit"
       runit: "{{ runit }}"
+      register: r_runit

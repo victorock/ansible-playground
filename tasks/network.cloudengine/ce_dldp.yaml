@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_dldp"
   ce_dldp: "{{ ce_dldp }}"
+  register: r_ce_dldp
   vars:
     ce_dldp: 
       reset: "{{ ce_dldp_reset | default(omit, True) }}"

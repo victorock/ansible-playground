@@ -1,6 +1,7 @@
 ---
 - name: "module_openbsd_pkg"
   openbsd_pkg: "{{ openbsd_pkg }}"
+  register: r_openbsd_pkg
   vars:
     openbsd_pkg: 
       ports_dir: "{{ openbsd_pkg_ports_dir | default(omit, True) }}"

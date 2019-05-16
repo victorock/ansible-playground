@@ -1,6 +1,7 @@
 ---
 - name: "module_udm_user"
   udm_user: "{{ udm_user }}"
+  register: r_udm_user
   vars:
     udm_user: 
       update_password: "{{ udm_user_update_password | default(omit, True) }}"

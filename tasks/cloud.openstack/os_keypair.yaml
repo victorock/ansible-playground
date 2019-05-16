@@ -1,6 +1,7 @@
 ---
 - name: "module_os_keypair"
   os_keypair: "{{ os_keypair }}"
+  register: r_os_keypair
   vars:
     os_keypair: 
       auth_type: "{{ os_keypair_auth_type | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_hpilo_facts"
   hpilo_facts: "{{ hpilo_facts }}"
+  register: r_hpilo_facts
   vars:
     hpilo_facts: 
       host: "{{ hpilo_facts_host | default(omit, True) }}"

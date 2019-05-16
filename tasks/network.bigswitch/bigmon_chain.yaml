@@ -1,6 +1,7 @@
 ---
 - name: "module_bigmon_chain"
   bigmon_chain: "{{ bigmon_chain }}"
+  register: r_bigmon_chain
   vars:
     bigmon_chain: 
       access_token: "{{ bigmon_chain_access_token | default(omit, True) }}"

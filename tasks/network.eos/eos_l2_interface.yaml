@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_l2_interface"
   eos_l2_interface: "{{ eos_l2_interface }}"
+  register: r_eos_l2_interface
   vars:
     eos_l2_interface: 
       native_vlan: "{{ eos_l2_interface_native_vlan | default(omit, True) }}"

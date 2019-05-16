@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     sensu_subscription: 
-      path: "{{ sensu_subscription_path | default('omit', True) }}"
-      state: "{{ sensu_subscription_state | default('omit', True) }}"
-      backup: "{{ sensu_subscription_backup | default('omit', True) }}"
-      name: "{{ sensu_subscription_name | default('omit', True) }}"
+      path: "{{ sensu_subscription_path | default(omit, True) }}"
+      state: "{{ sensu_subscription_state | default(omit, True) }}"
+      backup: "{{ sensu_subscription_backup | default(omit, True) }}"
+      name: "{{ sensu_subscription_name | default(omit, True) }}"
   tasks:
     - name: "plugin_sensu_subscription"
       sensu_subscription: "{{ sensu_subscription }}"
+      register: r_sensu_subscription

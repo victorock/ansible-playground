@@ -1,6 +1,7 @@
 ---
 - name: "module_os_coe_cluster_template"
   os_coe_cluster_template: "{{ os_coe_cluster_template }}"
+  register: r_os_coe_cluster_template
   vars:
     os_coe_cluster_template: 
       auth_type: "{{ os_coe_cluster_template_auth_type | default(omit, True) }}"

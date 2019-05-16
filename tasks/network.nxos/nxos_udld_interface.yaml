@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_udld_interface"
   nxos_udld_interface: "{{ nxos_udld_interface }}"
+  register: r_nxos_udld_interface
   vars:
     nxos_udld_interface: 
       interface: "{{ nxos_udld_interface_interface | default(omit, True) }}"

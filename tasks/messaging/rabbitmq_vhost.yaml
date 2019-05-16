@@ -1,6 +1,7 @@
 ---
 - name: "module_rabbitmq_vhost"
   rabbitmq_vhost: "{{ rabbitmq_vhost }}"
+  register: r_rabbitmq_vhost
   vars:
     rabbitmq_vhost: 
       node: "{{ rabbitmq_vhost_node | default(omit, True) }}"

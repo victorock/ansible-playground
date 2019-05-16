@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_interface"
   ios_interface: "{{ ios_interface }}"
+  register: r_ios_interface
   vars:
     ios_interface: 
       neighbors: "{{ ios_interface_neighbors | default(omit, True) }}"

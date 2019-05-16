@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_cdot_aggregate: 
-      username: "{{ na_cdot_aggregate_username | default('omit', True) }}"
-      name: "{{ na_cdot_aggregate_name | default('omit', True) }}"
-      hostname: "{{ na_cdot_aggregate_hostname | default('omit', True) }}"
-      disk_count: "{{ na_cdot_aggregate_disk_count | default('omit', True) }}"
-      state: "{{ na_cdot_aggregate_state | default('omit', True) }}"
-      password: "{{ na_cdot_aggregate_password | default('omit', True) }}"
+      username: "{{ na_cdot_aggregate_username | default(omit, True) }}"
+      name: "{{ na_cdot_aggregate_name | default(omit, True) }}"
+      hostname: "{{ na_cdot_aggregate_hostname | default(omit, True) }}"
+      disk_count: "{{ na_cdot_aggregate_disk_count | default(omit, True) }}"
+      state: "{{ na_cdot_aggregate_state | default(omit, True) }}"
+      password: "{{ na_cdot_aggregate_password | default(omit, True) }}"
   tasks:
     - name: "plugin_na_cdot_aggregate"
       na_cdot_aggregate: "{{ na_cdot_aggregate }}"
+      register: r_na_cdot_aggregate

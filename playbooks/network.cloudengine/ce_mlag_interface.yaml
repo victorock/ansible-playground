@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_mlag_interface: 
-      eth_trunk_id: "{{ ce_mlag_interface_eth_trunk_id | default('omit', True) }}"
-      mlag_id: "{{ ce_mlag_interface_mlag_id | default('omit', True) }}"
-      mlag_error_down: "{{ ce_mlag_interface_mlag_error_down | default('omit', True) }}"
-      mlag_system_id: "{{ ce_mlag_interface_mlag_system_id | default('omit', True) }}"
-      state: "{{ ce_mlag_interface_state | default('omit', True) }}"
-      dfs_group_id: "{{ ce_mlag_interface_dfs_group_id | default('omit', True) }}"
-      interface: "{{ ce_mlag_interface_interface | default('omit', True) }}"
-      mlag_priority_id: "{{ ce_mlag_interface_mlag_priority_id | default('omit', True) }}"
+      eth_trunk_id: "{{ ce_mlag_interface_eth_trunk_id | default(omit, True) }}"
+      mlag_id: "{{ ce_mlag_interface_mlag_id | default(omit, True) }}"
+      mlag_error_down: "{{ ce_mlag_interface_mlag_error_down | default(omit, True) }}"
+      mlag_system_id: "{{ ce_mlag_interface_mlag_system_id | default(omit, True) }}"
+      state: "{{ ce_mlag_interface_state | default(omit, True) }}"
+      dfs_group_id: "{{ ce_mlag_interface_dfs_group_id | default(omit, True) }}"
+      interface: "{{ ce_mlag_interface_interface | default(omit, True) }}"
+      mlag_priority_id: "{{ ce_mlag_interface_mlag_priority_id | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_mlag_interface"
       ce_mlag_interface: "{{ ce_mlag_interface }}"
+      register: r_ce_mlag_interface

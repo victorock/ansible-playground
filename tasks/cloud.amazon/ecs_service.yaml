@@ -1,6 +1,7 @@
 ---
 - name: "module_ecs_service"
   ecs_service: "{{ ecs_service }}"
+  register: r_ecs_service
   vars:
     ecs_service: 
       network_configuration: "{{ ecs_service_network_configuration | default(omit, True) }}"

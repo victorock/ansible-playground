@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_loadbalancer"
   clc_loadbalancer: "{{ clc_loadbalancer }}"
+  register: r_clc_loadbalancer
   vars:
     clc_loadbalancer: 
       status: "{{ clc_loadbalancer_status | default(omit, True) }}"

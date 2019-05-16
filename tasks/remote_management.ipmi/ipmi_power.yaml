@@ -1,6 +1,7 @@
 ---
 - name: "module_ipmi_power"
   ipmi_power: "{{ ipmi_power }}"
+  register: r_ipmi_power
   vars:
     ipmi_power: 
       name: "{{ ipmi_power_name | default(omit, True) }}"

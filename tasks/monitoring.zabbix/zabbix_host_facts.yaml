@@ -1,6 +1,7 @@
 ---
 - name: "module_zabbix_host_facts"
   zabbix_host_facts: "{{ zabbix_host_facts }}"
+  register: r_zabbix_host_facts
   vars:
     zabbix_host_facts: 
       http_login_password: "{{ zabbix_host_facts_http_login_password | default(omit, True) }}"

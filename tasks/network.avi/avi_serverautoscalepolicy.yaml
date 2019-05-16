@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_serverautoscalepolicy"
   avi_serverautoscalepolicy: "{{ avi_serverautoscalepolicy }}"
+  register: r_avi_serverautoscalepolicy
   vars:
     avi_serverautoscalepolicy: 
       intelligent_autoscale: "{{ avi_serverautoscalepolicy_intelligent_autoscale | default(omit, True) }}"

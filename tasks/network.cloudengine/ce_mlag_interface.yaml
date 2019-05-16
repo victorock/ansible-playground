@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_mlag_interface"
   ce_mlag_interface: "{{ ce_mlag_interface }}"
+  register: r_ce_mlag_interface
   vars:
     ce_mlag_interface: 
       eth_trunk_id: "{{ ce_mlag_interface_eth_trunk_id | default(omit, True) }}"

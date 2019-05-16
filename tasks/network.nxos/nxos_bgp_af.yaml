@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_bgp_af"
   nxos_bgp_af: "{{ nxos_bgp_af }}"
+  register: r_nxos_bgp_af
   vars:
     nxos_bgp_af: 
       dampening_max_suppress_time: "{{ nxos_bgp_af_dampening_max_suppress_time | default(omit, True) }}"

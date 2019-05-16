@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_trafficcloneprofile"
   avi_trafficcloneprofile: "{{ avi_trafficcloneprofile }}"
+  register: r_avi_trafficcloneprofile
   vars:
     avi_trafficcloneprofile: 
       username: "{{ avi_trafficcloneprofile_username | default(omit, True) }}"

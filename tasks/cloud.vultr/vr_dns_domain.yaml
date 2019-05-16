@@ -1,6 +1,7 @@
 ---
 - name: "module_vr_dns_domain"
   vr_dns_domain: "{{ vr_dns_domain }}"
+  register: r_vr_dns_domain
   vars:
     vr_dns_domain: 
       api_retries: "{{ vr_dns_domain_api_retries | default(omit, True) }}"

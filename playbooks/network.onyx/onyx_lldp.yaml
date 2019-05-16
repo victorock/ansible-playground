@@ -7,7 +7,8 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     onyx_lldp: 
-      state: "{{ onyx_lldp_state | default('omit', True) }}"
+      state: "{{ onyx_lldp_state | default(omit, True) }}"
   tasks:
     - name: "plugin_onyx_lldp"
       onyx_lldp: "{{ onyx_lldp }}"
+      register: r_onyx_lldp

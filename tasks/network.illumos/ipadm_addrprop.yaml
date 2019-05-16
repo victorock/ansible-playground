@@ -1,6 +1,7 @@
 ---
 - name: "module_ipadm_addrprop"
   ipadm_addrprop: "{{ ipadm_addrprop }}"
+  register: r_ipadm_addrprop
   vars:
     ipadm_addrprop: 
       state: "{{ ipadm_addrprop_state | default(omit, True) }}"

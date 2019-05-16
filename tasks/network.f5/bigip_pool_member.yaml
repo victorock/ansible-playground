@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_pool_member"
   bigip_pool_member: "{{ bigip_pool_member }}"
+  register: r_bigip_pool_member
   vars:
     bigip_pool_member: 
       ratio: "{{ bigip_pool_member_ratio | default(omit, True) }}"

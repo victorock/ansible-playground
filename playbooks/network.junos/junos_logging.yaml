@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_logging: 
-      files: "{{ junos_logging_files | default('omit', True) }}"
-      name: "{{ junos_logging_name | default('omit', True) }}"
-      facility: "{{ junos_logging_facility | default('omit', True) }}"
-      dest: "{{ junos_logging_dest | default('omit', True) }}"
-      level: "{{ junos_logging_level | default('omit', True) }}"
-      active: "{{ junos_logging_active | default('omit', True) }}"
-      state: "{{ junos_logging_state | default('omit', True) }}"
-      provider: "{{ junos_logging_provider | default('omit', True) }}"
-      aggregate: "{{ junos_logging_aggregate | default('omit', True) }}"
-      rotate_frequency: "{{ junos_logging_rotate_frequency | default('omit', True) }}"
-      size: "{{ junos_logging_size | default('omit', True) }}"
+      files: "{{ junos_logging_files | default(omit, True) }}"
+      name: "{{ junos_logging_name | default(omit, True) }}"
+      facility: "{{ junos_logging_facility | default(omit, True) }}"
+      dest: "{{ junos_logging_dest | default(omit, True) }}"
+      level: "{{ junos_logging_level | default(omit, True) }}"
+      active: "{{ junos_logging_active | default(omit, True) }}"
+      state: "{{ junos_logging_state | default(omit, True) }}"
+      provider: "{{ junos_logging_provider | default(omit, True) }}"
+      aggregate: "{{ junos_logging_aggregate | default(omit, True) }}"
+      rotate_frequency: "{{ junos_logging_rotate_frequency | default(omit, True) }}"
+      size: "{{ junos_logging_size | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_logging"
       junos_logging: "{{ junos_logging }}"
+      register: r_junos_logging

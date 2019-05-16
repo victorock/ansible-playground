@@ -1,6 +1,7 @@
 ---
 - name: "module_s3_website"
   s3_website: "{{ s3_website }}"
+  register: r_s3_website
   vars:
     s3_website: 
       redirect_all_requests: "{{ s3_website_redirect_all_requests | default(omit, True) }}"

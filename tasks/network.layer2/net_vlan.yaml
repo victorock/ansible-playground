@@ -1,6 +1,7 @@
 ---
 - name: "module_net_vlan"
   net_vlan: "{{ net_vlan }}"
+  register: r_net_vlan
   vars:
     net_vlan: 
       name: "{{ net_vlan_name | default(omit, True) }}"

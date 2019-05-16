@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_cs_vserver"
   netscaler_cs_vserver: "{{ netscaler_cs_vserver }}"
+  register: r_netscaler_cs_vserver
   vars:
     netscaler_cs_vserver: 
       comment: "{{ netscaler_cs_vserver_comment | default(omit, True) }}"

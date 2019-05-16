@@ -1,6 +1,7 @@
 ---
 - name: "module_udm_group"
   udm_group: "{{ udm_group }}"
+  register: r_udm_group
   vars:
     udm_group: 
       description: "{{ udm_group_description | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_os_listener"
   os_listener: "{{ os_listener }}"
+  register: r_os_listener
   vars:
     os_listener: 
       auth_type: "{{ os_listener_auth_type | default(omit, True) }}"

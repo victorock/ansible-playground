@@ -1,6 +1,7 @@
 ---
 - name: "module_acme_challenge_cert_helper"
   acme_challenge_cert_helper: "{{ acme_challenge_cert_helper }}"
+  register: r_acme_challenge_cert_helper
   vars:
     acme_challenge_cert_helper: 
       challenge_data: "{{ acme_challenge_cert_helper_challenge_data | default(omit, True) }}"

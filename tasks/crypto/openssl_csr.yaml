@@ -1,6 +1,7 @@
 ---
 - name: "module_openssl_csr"
   openssl_csr: "{{ openssl_csr }}"
+  register: r_openssl_csr
   vars:
     openssl_csr: 
       privatekey_passphrase: "{{ openssl_csr_privatekey_passphrase | default(omit, True) }}"

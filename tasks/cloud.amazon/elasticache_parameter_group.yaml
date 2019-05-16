@@ -1,6 +1,7 @@
 ---
 - name: "module_elasticache_parameter_group"
   elasticache_parameter_group: "{{ elasticache_parameter_group }}"
+  register: r_elasticache_parameter_group
   vars:
     elasticache_parameter_group: 
       profile: "{{ elasticache_parameter_group_profile | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_nics"
   ovirt_nics: "{{ ovirt_nics }}"
+  register: r_ovirt_nics
   vars:
     ovirt_nics: 
       profile: "{{ ovirt_nics_profile | default(omit, True) }}"

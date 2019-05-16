@@ -1,6 +1,7 @@
 ---
 - name: "module_cpanm"
   cpanm: "{{ cpanm }}"
+  register: r_cpanm
   vars:
     cpanm: 
       executable: "{{ cpanm_executable | default(omit, True) }}"

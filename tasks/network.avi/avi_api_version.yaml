@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_api_version"
   avi_api_version: "{{ avi_api_version }}"
+  register: r_avi_api_version
   vars:
     avi_api_version: 
       username: "{{ avi_api_version_username | default(omit, True) }}"

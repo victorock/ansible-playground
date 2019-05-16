@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_command"
   iosxr_command: "{{ iosxr_command }}"
+  register: r_iosxr_command
   vars:
     iosxr_command: 
       retries: "{{ iosxr_command_retries | default(omit, True) }}"

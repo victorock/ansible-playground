@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_iscsi"
   na_ontap_iscsi: "{{ na_ontap_iscsi }}"
+  register: r_na_ontap_iscsi
   vars:
     na_ontap_iscsi: 
       username: "{{ na_ontap_iscsi_username | default(omit, True) }}"

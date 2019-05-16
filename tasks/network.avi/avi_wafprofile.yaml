@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_wafprofile"
   avi_wafprofile: "{{ avi_wafprofile }}"
+  register: r_avi_wafprofile
   vars:
     avi_wafprofile: 
       files: "{{ avi_wafprofile_files | default(omit, True) }}"

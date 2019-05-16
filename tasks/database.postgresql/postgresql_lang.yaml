@@ -1,6 +1,7 @@
 ---
 - name: "module_postgresql_lang"
   postgresql_lang: "{{ postgresql_lang }}"
+  register: r_postgresql_lang
   vars:
     postgresql_lang: 
       lang: "{{ postgresql_lang_lang | default(omit, True) }}"

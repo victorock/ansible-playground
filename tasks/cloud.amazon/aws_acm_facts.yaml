@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_acm_facts"
   aws_acm_facts: "{{ aws_acm_facts }}"
+  register: r_aws_acm_facts
   vars:
     aws_acm_facts: 
       status: "{{ aws_acm_facts_status | default(omit, True) }}"

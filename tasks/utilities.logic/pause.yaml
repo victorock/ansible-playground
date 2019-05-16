@@ -1,6 +1,7 @@
 ---
 - name: "module_pause"
   pause: "{{ pause }}"
+  register: r_pause
   vars:
     pause: 
       seconds: "{{ pause_seconds | default(omit, True) }}"

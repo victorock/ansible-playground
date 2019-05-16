@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_caller_facts"
   aws_caller_facts: "{{ aws_caller_facts }}"
+  register: r_aws_caller_facts
   vars:
     aws_caller_facts: 
       aws_secret_key: "{{ aws_caller_facts_aws_secret_key | default(omit, True) }}"

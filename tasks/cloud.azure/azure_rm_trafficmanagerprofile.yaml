@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_trafficmanagerprofile"
   azure_rm_trafficmanagerprofile: "{{ azure_rm_trafficmanagerprofile }}"
+  register: r_azure_rm_trafficmanagerprofile
   vars:
     azure_rm_trafficmanagerprofile: 
       routing_method: "{{ azure_rm_trafficmanagerprofile_routing_method | default(omit, True) }}"

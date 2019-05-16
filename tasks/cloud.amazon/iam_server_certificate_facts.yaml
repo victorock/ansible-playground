@@ -1,6 +1,7 @@
 ---
 - name: "module_iam_server_certificate_facts"
   iam_server_certificate_facts: "{{ iam_server_certificate_facts }}"
+  register: r_iam_server_certificate_facts
   vars:
     iam_server_certificate_facts: 
       aws_secret_key: "{{ iam_server_certificate_facts_aws_secret_key | default(omit, True) }}"

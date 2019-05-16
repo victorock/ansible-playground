@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_gather_facts"
   na_ontap_gather_facts: "{{ na_ontap_gather_facts }}"
+  register: r_na_ontap_gather_facts
   vars:
     na_ontap_gather_facts: 
       username: "{{ na_ontap_gather_facts_username | default(omit, True) }}"

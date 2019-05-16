@@ -1,6 +1,7 @@
 ---
 - name: "module_atomic_container"
   atomic_container: "{{ atomic_container }}"
+  register: r_atomic_container
   vars:
     atomic_container: 
       name: "{{ atomic_container_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_portchannel"
   nxos_portchannel: "{{ nxos_portchannel }}"
+  register: r_nxos_portchannel
   vars:
     nxos_portchannel: 
       force: "{{ nxos_portchannel_force | default(omit, True) }}"

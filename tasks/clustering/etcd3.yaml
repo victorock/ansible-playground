@@ -1,6 +1,7 @@
 ---
 - name: "module_etcd3"
   etcd3: "{{ etcd3 }}"
+  register: r_etcd3
   vars:
     etcd3: 
       value: "{{ etcd3_value | default(omit, True) }}"

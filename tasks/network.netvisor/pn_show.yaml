@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_show"
   pn_show: "{{ pn_show }}"
+  register: r_pn_show
   vars:
     pn_show: 
       pn_clipassword: "{{ pn_show_pn_clipassword | default(omit, True) }}"

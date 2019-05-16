@@ -10,3 +10,4 @@
   tasks:
     - name: "plugin_xenserver_facts"
       xenserver_facts: "{{ xenserver_facts }}"
+      register: r_xenserver_facts

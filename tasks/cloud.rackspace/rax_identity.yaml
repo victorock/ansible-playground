@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_identity"
   rax_identity: "{{ rax_identity }}"
+  register: r_rax_identity
   vars:
     rax_identity: 
       username: "{{ rax_identity_username | default(omit, True) }}"

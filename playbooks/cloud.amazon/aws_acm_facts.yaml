@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_acm_facts: 
-      status: "{{ aws_acm_facts_status | default('omit', True) }}"
-      aws_secret_key: "{{ aws_acm_facts_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ aws_acm_facts_aws_access_key | default('omit', True) }}"
-      security_token: "{{ aws_acm_facts_security_token | default('omit', True) }}"
-      region: "{{ aws_acm_facts_region | default('omit', True) }}"
-      domain_name: "{{ aws_acm_facts_domain_name | default('omit', True) }}"
-      profile: "{{ aws_acm_facts_profile | default('omit', True) }}"
-      ec2_url: "{{ aws_acm_facts_ec2_url | default('omit', True) }}"
-      validate_certs: "{{ aws_acm_facts_validate_certs | default('omit', True) }}"
+      status: "{{ aws_acm_facts_status | default(omit, True) }}"
+      aws_secret_key: "{{ aws_acm_facts_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_acm_facts_aws_access_key | default(omit, True) }}"
+      security_token: "{{ aws_acm_facts_security_token | default(omit, True) }}"
+      region: "{{ aws_acm_facts_region | default(omit, True) }}"
+      domain_name: "{{ aws_acm_facts_domain_name | default(omit, True) }}"
+      profile: "{{ aws_acm_facts_profile | default(omit, True) }}"
+      ec2_url: "{{ aws_acm_facts_ec2_url | default(omit, True) }}"
+      validate_certs: "{{ aws_acm_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_acm_facts"
       aws_acm_facts: "{{ aws_acm_facts }}"
+      register: r_aws_acm_facts

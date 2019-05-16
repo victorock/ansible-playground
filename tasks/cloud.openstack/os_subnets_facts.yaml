@@ -1,6 +1,7 @@
 ---
 - name: "module_os_subnets_facts"
   os_subnets_facts: "{{ os_subnets_facts }}"
+  register: r_os_subnets_facts
   vars:
     os_subnets_facts: 
       auth_type: "{{ os_subnets_facts_auth_type | default(omit, True) }}"

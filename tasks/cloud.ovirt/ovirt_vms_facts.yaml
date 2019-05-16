@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_vms_facts"
   ovirt_vms_facts: "{{ ovirt_vms_facts }}"
+  register: r_ovirt_vms_facts
   vars:
     ovirt_vms_facts: 
       all_content: "{{ ovirt_vms_facts_all_content | default(omit, True) }}"

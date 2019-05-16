@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_maintenancemode"
   vmware_maintenancemode: "{{ vmware_maintenancemode }}"
+  register: r_vmware_maintenancemode
   vars:
     vmware_maintenancemode: 
       username: "{{ vmware_maintenancemode_username | default(omit, True) }}"

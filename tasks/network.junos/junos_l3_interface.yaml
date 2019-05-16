@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_l3_interface"
   junos_l3_interface: "{{ junos_l3_interface }}"
+  register: r_junos_l3_interface
   vars:
     junos_l3_interface: 
       name: "{{ junos_l3_interface_name | default(omit, True) }}"

@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_rabbitmq_plugin: 
-      state: "{{ win_rabbitmq_plugin_state | default('omit', True) }}"
-      names: "{{ win_rabbitmq_plugin_names | default('omit', True) }}"
-      prefix: "{{ win_rabbitmq_plugin_prefix | default('omit', True) }}"
-      new_only: "{{ win_rabbitmq_plugin_new_only | default('omit', True) }}"
+      state: "{{ win_rabbitmq_plugin_state | default(omit, True) }}"
+      names: "{{ win_rabbitmq_plugin_names | default(omit, True) }}"
+      prefix: "{{ win_rabbitmq_plugin_prefix | default(omit, True) }}"
+      new_only: "{{ win_rabbitmq_plugin_new_only | default(omit, True) }}"
   tasks:
     - name: "plugin_win_rabbitmq_plugin"
       win_rabbitmq_plugin: "{{ win_rabbitmq_plugin }}"
+      register: r_win_rabbitmq_plugin

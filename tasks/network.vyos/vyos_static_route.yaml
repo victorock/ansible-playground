@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_static_route"
   vyos_static_route: "{{ vyos_static_route }}"
+  register: r_vyos_static_route
   vars:
     vyos_static_route: 
       mask: "{{ vyos_static_route_mask | default(omit, True) }}"

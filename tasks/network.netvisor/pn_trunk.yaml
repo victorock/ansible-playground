@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_trunk"
   pn_trunk: "{{ pn_trunk }}"
+  register: r_pn_trunk
   vars:
     pn_trunk: 
       pn_name: "{{ pn_trunk_pn_name | default(omit, True) }}"

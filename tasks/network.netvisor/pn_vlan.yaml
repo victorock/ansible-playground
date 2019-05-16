@@ -1,6 +1,7 @@
 ---
 - name: "module_pn_vlan"
   pn_vlan: "{{ pn_vlan }}"
+  register: r_pn_vlan
   vars:
     pn_vlan: 
       pn_scope: "{{ pn_vlan_pn_scope | default(omit, True) }}"

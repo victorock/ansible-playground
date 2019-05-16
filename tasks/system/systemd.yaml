@@ -1,6 +1,7 @@
 ---
 - name: "module_systemd"
   systemd: "{{ systemd }}"
+  register: r_systemd
   vars:
     systemd: 
       no_block: "{{ systemd_no_block | default(omit, True) }}"

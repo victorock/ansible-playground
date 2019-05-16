@@ -1,6 +1,7 @@
 ---
 - name: "module_wait_for"
   wait_for: "{{ wait_for }}"
+  register: r_wait_for
   vars:
     wait_for: 
       active_connection_states: "{{ wait_for_active_connection_states | default(omit, True) }}"

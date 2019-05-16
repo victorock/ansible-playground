@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vyos_banner: 
-      text: "{{ vyos_banner_text | default('omit', True) }}"
-      state: "{{ vyos_banner_state | default('omit', True) }}"
-      banner: "{{ vyos_banner_banner | default('omit', True) }}"
-      provider: "{{ vyos_banner_provider | default('omit', True) }}"
+      text: "{{ vyos_banner_text | default(omit, True) }}"
+      state: "{{ vyos_banner_state | default(omit, True) }}"
+      banner: "{{ vyos_banner_banner | default(omit, True) }}"
+      provider: "{{ vyos_banner_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_vyos_banner"
       vyos_banner: "{{ vyos_banner }}"
+      register: r_vyos_banner

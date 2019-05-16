@@ -1,6 +1,7 @@
 ---
 - name: "module_kibana_plugin"
   kibana_plugin: "{{ kibana_plugin }}"
+  register: r_kibana_plugin
   vars:
     kibana_plugin: 
       force: "{{ kibana_plugin_force | default(omit, True) }}"

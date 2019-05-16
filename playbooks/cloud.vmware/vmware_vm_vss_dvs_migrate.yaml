@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_vm_vss_dvs_migrate: 
-      vm_name: "{{ vmware_vm_vss_dvs_migrate_vm_name | default('omit', True) }}"
-      username: "{{ vmware_vm_vss_dvs_migrate_username | default('omit', True) }}"
-      hostname: "{{ vmware_vm_vss_dvs_migrate_hostname | default('omit', True) }}"
-      dvportgroup_name: "{{ vmware_vm_vss_dvs_migrate_dvportgroup_name | default('omit', True) }}"
-      password: "{{ vmware_vm_vss_dvs_migrate_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_vm_vss_dvs_migrate_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_vm_vss_dvs_migrate_port | default('omit', True) }}"
+      vm_name: "{{ vmware_vm_vss_dvs_migrate_vm_name | default(omit, True) }}"
+      username: "{{ vmware_vm_vss_dvs_migrate_username | default(omit, True) }}"
+      hostname: "{{ vmware_vm_vss_dvs_migrate_hostname | default(omit, True) }}"
+      dvportgroup_name: "{{ vmware_vm_vss_dvs_migrate_dvportgroup_name | default(omit, True) }}"
+      password: "{{ vmware_vm_vss_dvs_migrate_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_vm_vss_dvs_migrate_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_vm_vss_dvs_migrate_port | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_vm_vss_dvs_migrate"
       vmware_vm_vss_dvs_migrate: "{{ vmware_vm_vss_dvs_migrate }}"
+      register: r_vmware_vm_vss_dvs_migrate

@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_lun_mapping: 
-      api_url: "{{ netapp_e_lun_mapping_api_url | default('omit', True) }}"
-      volume_name: "{{ netapp_e_lun_mapping_volume_name | default('omit', True) }}"
-      api_password: "{{ netapp_e_lun_mapping_api_password | default('omit', True) }}"
-      target_type: "{{ netapp_e_lun_mapping_target_type | default('omit', True) }}"
-      state: "{{ netapp_e_lun_mapping_state | default('omit', True) }}"
-      target: "{{ netapp_e_lun_mapping_target | default('omit', True) }}"
-      api_username: "{{ netapp_e_lun_mapping_api_username | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_lun_mapping_validate_certs | default('omit', True) }}"
-      lun: "{{ netapp_e_lun_mapping_lun | default('omit', True) }}"
-      ssid: "{{ netapp_e_lun_mapping_ssid | default('omit', True) }}"
+      api_url: "{{ netapp_e_lun_mapping_api_url | default(omit, True) }}"
+      volume_name: "{{ netapp_e_lun_mapping_volume_name | default(omit, True) }}"
+      api_password: "{{ netapp_e_lun_mapping_api_password | default(omit, True) }}"
+      target_type: "{{ netapp_e_lun_mapping_target_type | default(omit, True) }}"
+      state: "{{ netapp_e_lun_mapping_state | default(omit, True) }}"
+      target: "{{ netapp_e_lun_mapping_target | default(omit, True) }}"
+      api_username: "{{ netapp_e_lun_mapping_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_lun_mapping_validate_certs | default(omit, True) }}"
+      lun: "{{ netapp_e_lun_mapping_lun | default(omit, True) }}"
+      ssid: "{{ netapp_e_lun_mapping_ssid | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_lun_mapping"
       netapp_e_lun_mapping: "{{ netapp_e_lun_mapping }}"
+      register: r_netapp_e_lun_mapping

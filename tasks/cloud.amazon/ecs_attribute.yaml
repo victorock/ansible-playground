@@ -1,6 +1,7 @@
 ---
 - name: "module_ecs_attribute"
   ecs_attribute: "{{ ecs_attribute }}"
+  register: r_ecs_attribute
   vars:
     ecs_attribute: 
       profile: "{{ ecs_attribute_profile | default(omit, True) }}"

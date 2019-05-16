@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_static_route"
   eos_static_route: "{{ eos_static_route }}"
+  register: r_eos_static_route
   vars:
     eos_static_route: 
       authorize: "{{ eos_static_route_authorize | default(omit, True) }}"

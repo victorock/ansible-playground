@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_pim_rp_address"
   nxos_pim_rp_address: "{{ nxos_pim_rp_address }}"
+  register: r_nxos_pim_rp_address
   vars:
     nxos_pim_rp_address: 
       bidir: "{{ nxos_pim_rp_address_bidir | default(omit, True) }}"

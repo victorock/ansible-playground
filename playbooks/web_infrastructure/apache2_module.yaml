@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     apache2_module: 
-      state: "{{ apache2_module_state | default('omit', True) }}"
-      identifier: "{{ apache2_module_identifier | default('omit', True) }}"
-      force: "{{ apache2_module_force | default('omit', True) }}"
-      name: "{{ apache2_module_name | default('omit', True) }}"
-      ignore_configcheck: "{{ apache2_module_ignore_configcheck | default('omit', True) }}"
+      state: "{{ apache2_module_state | default(omit, True) }}"
+      identifier: "{{ apache2_module_identifier | default(omit, True) }}"
+      force: "{{ apache2_module_force | default(omit, True) }}"
+      name: "{{ apache2_module_name | default(omit, True) }}"
+      ignore_configcheck: "{{ apache2_module_ignore_configcheck | default(omit, True) }}"
   tasks:
     - name: "plugin_apache2_module"
       apache2_module: "{{ apache2_module }}"
+      register: r_apache2_module

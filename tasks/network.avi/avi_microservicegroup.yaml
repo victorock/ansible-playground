@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_microservicegroup"
   avi_microservicegroup: "{{ avi_microservicegroup }}"
+  register: r_avi_microservicegroup
   vars:
     avi_microservicegroup: 
       username: "{{ avi_microservicegroup_username | default(omit, True) }}"

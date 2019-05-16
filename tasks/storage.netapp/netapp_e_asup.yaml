@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_asup"
   netapp_e_asup: "{{ netapp_e_asup }}"
+  register: r_netapp_e_asup
   vars:
     netapp_e_asup: 
       ssid: "{{ netapp_e_asup_ssid | default(omit, True) }}"

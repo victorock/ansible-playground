@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_subnet"
   azure_rm_subnet: "{{ azure_rm_subnet }}"
+  register: r_azure_rm_subnet
   vars:
     azure_rm_subnet: 
       profile: "{{ azure_rm_subnet_profile | default(omit, True) }}"

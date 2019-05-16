@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_pd"
   gce_pd: "{{ gce_pd }}"
+  register: r_gce_pd
   vars:
     gce_pd: 
       size_gb: "{{ gce_pd_size_gb | default(omit, True) }}"

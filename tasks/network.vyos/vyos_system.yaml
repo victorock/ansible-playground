@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_system"
   vyos_system: "{{ vyos_system }}"
+  register: r_vyos_system
   vars:
     vyos_system: 
       domain_search: "{{ vyos_system_domain_search | default(omit, True) }}"

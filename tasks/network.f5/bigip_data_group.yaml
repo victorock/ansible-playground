@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_data_group"
   bigip_data_group: "{{ bigip_data_group }}"
+  register: r_bigip_data_group
   vars:
     bigip_data_group: 
       name: "{{ bigip_data_group_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_networkprofile"
   avi_networkprofile: "{{ avi_networkprofile }}"
+  register: r_avi_networkprofile
   vars:
     avi_networkprofile: 
       profile: "{{ avi_networkprofile_profile | default(omit, True) }}"

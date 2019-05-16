@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_xml: 
-      xpath: "{{ win_xml_xpath | default('omit', True) }}"
-      fragment: "{{ win_xml_fragment | default('omit', True) }}"
-      backup: "{{ win_xml_backup | default('omit', True) }}"
-      attribute: "{{ win_xml_attribute | default('omit', True) }}"
-      path: "{{ win_xml_path | default('omit', True) }}"
-      type: "{{ win_xml_type | default('omit', True) }}"
+      xpath: "{{ win_xml_xpath | default(omit, True) }}"
+      fragment: "{{ win_xml_fragment | default(omit, True) }}"
+      backup: "{{ win_xml_backup | default(omit, True) }}"
+      attribute: "{{ win_xml_attribute | default(omit, True) }}"
+      path: "{{ win_xml_path | default(omit, True) }}"
+      type: "{{ win_xml_type | default(omit, True) }}"
   tasks:
     - name: "plugin_win_xml"
       win_xml: "{{ win_xml }}"
+      register: r_win_xml

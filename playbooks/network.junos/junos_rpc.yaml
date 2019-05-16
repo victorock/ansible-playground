@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     junos_rpc: 
-      output: "{{ junos_rpc_output | default('omit', True) }}"
-      rpc: "{{ junos_rpc_rpc | default('omit', True) }}"
-      args: "{{ junos_rpc_args | default('omit', True) }}"
-      attrs: "{{ junos_rpc_attrs | default('omit', True) }}"
-      provider: "{{ junos_rpc_provider | default('omit', True) }}"
+      output: "{{ junos_rpc_output | default(omit, True) }}"
+      rpc: "{{ junos_rpc_rpc | default(omit, True) }}"
+      args: "{{ junos_rpc_args | default(omit, True) }}"
+      attrs: "{{ junos_rpc_attrs | default(omit, True) }}"
+      provider: "{{ junos_rpc_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_junos_rpc"
       junos_rpc: "{{ junos_rpc }}"
+      register: r_junos_rpc

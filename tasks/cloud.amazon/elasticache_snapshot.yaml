@@ -1,6 +1,7 @@
 ---
 - name: "module_elasticache_snapshot"
   elasticache_snapshot: "{{ elasticache_snapshot }}"
+  register: r_elasticache_snapshot
   vars:
     elasticache_snapshot: 
       profile: "{{ elasticache_snapshot_profile | default(omit, True) }}"

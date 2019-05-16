@@ -1,6 +1,7 @@
 ---
 - name: "module_flatpak_remote"
   flatpak_remote: "{{ flatpak_remote }}"
+  register: r_flatpak_remote
   vars:
     flatpak_remote: 
       name: "{{ flatpak_remote_name | default(omit, True) }}"

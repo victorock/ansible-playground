@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_ssid"
   meraki_ssid: "{{ meraki_ssid }}"
+  register: r_meraki_ssid
   vars:
     meraki_ssid: 
       org_id: "{{ meraki_ssid_org_id | default(omit, True) }}"

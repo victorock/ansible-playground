@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_config_rollback"
   aci_config_rollback: "{{ aci_config_rollback }}"
+  register: r_aci_config_rollback
   vars:
     aci_config_rollback: 
       username: "{{ aci_config_rollback_username | default(omit, True) }}"

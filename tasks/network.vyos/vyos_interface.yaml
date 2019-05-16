@@ -1,6 +1,7 @@
 ---
 - name: "module_vyos_interface"
   vyos_interface: "{{ vyos_interface }}"
+  register: r_vyos_interface
   vars:
     vyos_interface: 
       neighbors: "{{ vyos_interface_neighbors | default(omit, True) }}"

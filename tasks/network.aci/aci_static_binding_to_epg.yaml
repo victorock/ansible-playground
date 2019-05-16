@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_static_binding_to_epg"
   aci_static_binding_to_epg: "{{ aci_static_binding_to_epg }}"
+  register: r_aci_static_binding_to_epg
   vars:
     aci_static_binding_to_epg: 
       interface_type: "{{ aci_static_binding_to_epg_interface_type | default(omit, True) }}"

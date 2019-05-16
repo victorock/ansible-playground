@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_interface"
   panos_interface: "{{ panos_interface }}"
+  register: r_panos_interface
   vars:
     panos_interface: 
       username: "{{ panos_interface_username | default(omit, True) }}"

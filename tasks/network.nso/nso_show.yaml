@@ -1,6 +1,7 @@
 ---
 - name: "module_nso_show"
   nso_show: "{{ nso_show }}"
+  register: r_nso_show
   vars:
     nso_show: 
       username: "{{ nso_show_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_peer"
   ec2_vpc_peer: "{{ ec2_vpc_peer }}"
+  register: r_ec2_vpc_peer
   vars:
     ec2_vpc_peer: 
       profile: "{{ ec2_vpc_peer_profile | default(omit, True) }}"

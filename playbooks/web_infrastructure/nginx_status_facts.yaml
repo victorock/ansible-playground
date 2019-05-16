@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nginx_status_facts: 
-      url: "{{ nginx_status_facts_url | default('omit', True) }}"
-      timeout: "{{ nginx_status_facts_timeout | default('omit', True) }}"
+      url: "{{ nginx_status_facts_url | default(omit, True) }}"
+      timeout: "{{ nginx_status_facts_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_nginx_status_facts"
       nginx_status_facts: "{{ nginx_status_facts }}"
+      register: r_nginx_status_facts

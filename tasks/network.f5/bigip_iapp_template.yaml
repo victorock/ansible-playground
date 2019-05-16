@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_iapp_template"
   bigip_iapp_template: "{{ bigip_iapp_template }}"
+  register: r_bigip_iapp_template
   vars:
     bigip_iapp_template: 
       force: "{{ bigip_iapp_template_force | default(omit, True) }}"

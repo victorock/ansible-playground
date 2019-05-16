@@ -1,6 +1,7 @@
 ---
 - name: "module_swdepot"
   swdepot: "{{ swdepot }}"
+  register: r_swdepot
   vars:
     swdepot: 
       state: "{{ swdepot_state | default(omit, True) }}"

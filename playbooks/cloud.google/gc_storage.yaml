@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gc_storage: 
-      src: "{{ gc_storage_src | default('omit', True) }}"
-      force: "{{ gc_storage_force | default('omit', True) }}"
-      permission: "{{ gc_storage_permission | default('omit', True) }}"
-      dest: "{{ gc_storage_dest | default('omit', True) }}"
-      gs_access_key: "{{ gc_storage_gs_access_key | default('omit', True) }}"
-      object: "{{ gc_storage_object | default('omit', True) }}"
-      bucket: "{{ gc_storage_bucket | default('omit', True) }}"
-      mode: "{{ gc_storage_mode | default('omit', True) }}"
-      gs_secret_key: "{{ gc_storage_gs_secret_key | default('omit', True) }}"
-      expiration: "{{ gc_storage_expiration | default('omit', True) }}"
-      region: "{{ gc_storage_region | default('omit', True) }}"
-      versioning: "{{ gc_storage_versioning | default('omit', True) }}"
-      headers: "{{ gc_storage_headers | default('omit', True) }}"
+      src: "{{ gc_storage_src | default(omit, True) }}"
+      force: "{{ gc_storage_force | default(omit, True) }}"
+      permission: "{{ gc_storage_permission | default(omit, True) }}"
+      dest: "{{ gc_storage_dest | default(omit, True) }}"
+      gs_access_key: "{{ gc_storage_gs_access_key | default(omit, True) }}"
+      object: "{{ gc_storage_object | default(omit, True) }}"
+      bucket: "{{ gc_storage_bucket | default(omit, True) }}"
+      mode: "{{ gc_storage_mode | default(omit, True) }}"
+      gs_secret_key: "{{ gc_storage_gs_secret_key | default(omit, True) }}"
+      expiration: "{{ gc_storage_expiration | default(omit, True) }}"
+      region: "{{ gc_storage_region | default(omit, True) }}"
+      versioning: "{{ gc_storage_versioning | default(omit, True) }}"
+      headers: "{{ gc_storage_headers | default(omit, True) }}"
   tasks:
     - name: "plugin_gc_storage"
       gc_storage: "{{ gc_storage }}"
+      register: r_gc_storage

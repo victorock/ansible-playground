@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_cloudproperties"
   avi_cloudproperties: "{{ avi_cloudproperties }}"
+  register: r_avi_cloudproperties
   vars:
     avi_cloudproperties: 
       username: "{{ avi_cloudproperties_username | default(omit, True) }}"

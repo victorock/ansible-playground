@@ -1,6 +1,7 @@
 ---
 - name: "module_cisco_spark"
   cisco_spark: "{{ cisco_spark }}"
+  register: r_cisco_spark
   vars:
     cisco_spark: 
       personal_token: "{{ cisco_spark_personal_token | default(omit, True) }}"

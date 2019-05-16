@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_scaling_policy"
   rax_scaling_policy: "{{ rax_scaling_policy }}"
+  register: r_rax_scaling_policy
   vars:
     rax_scaling_policy: 
       username: "{{ rax_scaling_policy_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_logical_device_map"
   aos_logical_device_map: "{{ aos_logical_device_map }}"
+  register: r_aos_logical_device_map
   vars:
     aos_logical_device_map: 
       content: "{{ aos_logical_device_map_content | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_templates_facts"
   ovirt_templates_facts: "{{ ovirt_templates_facts }}"
+  register: r_ovirt_templates_facts
   vars:
     ovirt_templates_facts: 
       pattern: "{{ ovirt_templates_facts_pattern | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_lc_facts"
   ec2_lc_facts: "{{ ec2_lc_facts }}"
+  register: r_ec2_lc_facts
   vars:
     ec2_lc_facts: 
       sort: "{{ ec2_lc_facts_sort | default(omit, True) }}"

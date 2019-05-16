@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_aaa_server_host"
   ce_aaa_server_host: "{{ ce_aaa_server_host }}"
+  register: r_ce_aaa_server_host
   vars:
     ce_aaa_server_host: 
       radius_server_port: "{{ ce_aaa_server_host_radius_server_port | default(omit, True) }}"

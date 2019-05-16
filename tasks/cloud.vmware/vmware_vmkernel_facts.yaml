@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vmkernel_facts"
   vmware_vmkernel_facts: "{{ vmware_vmkernel_facts }}"
+  register: r_vmware_vmkernel_facts
   vars:
     vmware_vmkernel_facts: 
       username: "{{ vmware_vmkernel_facts_username | default(omit, True) }}"

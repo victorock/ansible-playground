@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_firmware_source"
   aci_firmware_source: "{{ aci_firmware_source }}"
+  register: r_aci_firmware_source
   vars:
     aci_firmware_source: 
       username: "{{ aci_firmware_source_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_lan_connectivity"
   ucs_lan_connectivity: "{{ ucs_lan_connectivity }}"
+  register: r_ucs_lan_connectivity
   vars:
     ucs_lan_connectivity: 
       username: "{{ ucs_lan_connectivity_username | default(omit, True) }}"

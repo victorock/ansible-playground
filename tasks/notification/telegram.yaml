@@ -1,6 +1,7 @@
 ---
 - name: "module_telegram"
   telegram: "{{ telegram }}"
+  register: r_telegram
   vars:
     telegram: 
       msg: "{{ telegram_msg | default(omit, True) }}"

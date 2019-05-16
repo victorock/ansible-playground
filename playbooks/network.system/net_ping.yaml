@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     net_ping: 
-      count: "{{ net_ping_count | default('omit', True) }}"
-      dest: "{{ net_ping_dest | default('omit', True) }}"
-      state: "{{ net_ping_state | default('omit', True) }}"
-      vrf: "{{ net_ping_vrf | default('omit', True) }}"
-      source: "{{ net_ping_source | default('omit', True) }}"
+      count: "{{ net_ping_count | default(omit, True) }}"
+      dest: "{{ net_ping_dest | default(omit, True) }}"
+      state: "{{ net_ping_state | default(omit, True) }}"
+      vrf: "{{ net_ping_vrf | default(omit, True) }}"
+      source: "{{ net_ping_source | default(omit, True) }}"
   tasks:
     - name: "plugin_net_ping"
       net_ping: "{{ net_ping }}"
+      register: r_net_ping

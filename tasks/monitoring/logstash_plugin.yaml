@@ -1,6 +1,7 @@
 ---
 - name: "module_logstash_plugin"
   logstash_plugin: "{{ logstash_plugin }}"
+  register: r_logstash_plugin
   vars:
     logstash_plugin: 
       name: "{{ logstash_plugin_name | default(omit, True) }}"

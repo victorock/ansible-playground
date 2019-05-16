@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_vnic_template"
   ucs_vnic_template: "{{ ucs_vnic_template }}"
+  register: r_ucs_vnic_template
   vars:
     ucs_vnic_template: 
       redundancy_type: "{{ ucs_vnic_template_redundancy_type | default(omit, True) }}"

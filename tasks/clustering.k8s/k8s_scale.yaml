@@ -1,6 +1,7 @@
 ---
 - name: "module_k8s_scale"
   k8s_scale: "{{ k8s_scale }}"
+  register: r_k8s_scale
   vars:
     k8s_scale: 
       username: "{{ k8s_scale_username | default(omit, True) }}"

@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     fetch: 
-      dest: "{{ fetch_dest | default('omit', True) }}"
-      src: "{{ fetch_src | default('omit', True) }}"
-      flat: "{{ fetch_flat | default('omit', True) }}"
-      fail_on_missing: "{{ fetch_fail_on_missing | default('omit', True) }}"
-      validate_checksum: "{{ fetch_validate_checksum | default('omit', True) }}"
+      dest: "{{ fetch_dest | default(omit, True) }}"
+      src: "{{ fetch_src | default(omit, True) }}"
+      flat: "{{ fetch_flat | default(omit, True) }}"
+      fail_on_missing: "{{ fetch_fail_on_missing | default(omit, True) }}"
+      validate_checksum: "{{ fetch_validate_checksum | default(omit, True) }}"
   tasks:
     - name: "plugin_fetch"
       fetch: "{{ fetch }}"
+      register: r_fetch

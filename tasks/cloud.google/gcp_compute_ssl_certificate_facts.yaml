@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_ssl_certificate_facts"
   gcp_compute_ssl_certificate_facts: "{{ gcp_compute_ssl_certificate_facts }}"
+  register: r_gcp_compute_ssl_certificate_facts
   vars:
     gcp_compute_ssl_certificate_facts: 
       scopes: "{{ gcp_compute_ssl_certificate_facts_scopes | default(omit, True) }}"

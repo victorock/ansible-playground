@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_nics_facts: 
-      nested_attributes: "{{ ovirt_nics_facts_nested_attributes | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_nics_facts_fetch_nested | default('omit', True) }}"
-      vm: "{{ ovirt_nics_facts_vm | default('omit', True) }}"
-      auth: "{{ ovirt_nics_facts_auth | default('omit', True) }}"
-      name: "{{ ovirt_nics_facts_name | default('omit', True) }}"
+      nested_attributes: "{{ ovirt_nics_facts_nested_attributes | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_nics_facts_fetch_nested | default(omit, True) }}"
+      vm: "{{ ovirt_nics_facts_vm | default(omit, True) }}"
+      auth: "{{ ovirt_nics_facts_auth | default(omit, True) }}"
+      name: "{{ ovirt_nics_facts_name | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_nics_facts"
       ovirt_nics_facts: "{{ ovirt_nics_facts }}"
+      register: r_ovirt_nics_facts

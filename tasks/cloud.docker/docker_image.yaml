@@ -1,6 +1,7 @@
 ---
 - name: "module_docker_image"
   docker_image: "{{ docker_image }}"
+  register: r_docker_image
   vars:
     docker_image: 
       force: "{{ docker_image_force | default(omit, True) }}"

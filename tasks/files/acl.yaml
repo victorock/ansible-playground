@@ -1,6 +1,7 @@
 ---
 - name: "module_acl"
   acl: "{{ acl }}"
+  register: r_acl
   vars:
     acl: 
       entry: "{{ acl_entry | default(omit, True) }}"

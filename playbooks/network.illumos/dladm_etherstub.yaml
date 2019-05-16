@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     dladm_etherstub: 
-      state: "{{ dladm_etherstub_state | default('omit', True) }}"
-      temporary: "{{ dladm_etherstub_temporary | default('omit', True) }}"
-      name: "{{ dladm_etherstub_name | default('omit', True) }}"
+      state: "{{ dladm_etherstub_state | default(omit, True) }}"
+      temporary: "{{ dladm_etherstub_temporary | default(omit, True) }}"
+      name: "{{ dladm_etherstub_name | default(omit, True) }}"
   tasks:
     - name: "plugin_dladm_etherstub"
       dladm_etherstub: "{{ dladm_etherstub }}"
+      register: r_dladm_etherstub

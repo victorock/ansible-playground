@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_sudocmd"
   ipa_sudocmd: "{{ ipa_sudocmd }}"
+  register: r_ipa_sudocmd
   vars:
     ipa_sudocmd: 
       ipa_port: "{{ ipa_sudocmd_ipa_port | default(omit, True) }}"

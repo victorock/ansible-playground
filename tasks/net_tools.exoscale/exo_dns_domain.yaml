@@ -1,6 +1,7 @@
 ---
 - name: "module_exo_dns_domain"
   exo_dns_domain: "{{ exo_dns_domain }}"
+  register: r_exo_dns_domain
   vars:
     exo_dns_domain: 
       name: "{{ exo_dns_domain_name | default(omit, True) }}"

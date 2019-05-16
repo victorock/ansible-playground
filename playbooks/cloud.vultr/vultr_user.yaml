@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vultr_user: 
-      api_key: "{{ vultr_user_api_key | default('omit', True) }}"
-      force: "{{ vultr_user_force | default('omit', True) }}"
-      name: "{{ vultr_user_name | default('omit', True) }}"
-      api_enabled: "{{ vultr_user_api_enabled | default('omit', True) }}"
-      api_timeout: "{{ vultr_user_api_timeout | default('omit', True) }}"
-      api_endpoint: "{{ vultr_user_api_endpoint | default('omit', True) }}"
-      state: "{{ vultr_user_state | default('omit', True) }}"
-      acls: "{{ vultr_user_acls | default('omit', True) }}"
-      api_account: "{{ vultr_user_api_account | default('omit', True) }}"
-      api_retries: "{{ vultr_user_api_retries | default('omit', True) }}"
-      password: "{{ vultr_user_password | default('omit', True) }}"
-      validate_certs: "{{ vultr_user_validate_certs | default('omit', True) }}"
-      email: "{{ vultr_user_email | default('omit', True) }}"
+      api_key: "{{ vultr_user_api_key | default(omit, True) }}"
+      force: "{{ vultr_user_force | default(omit, True) }}"
+      name: "{{ vultr_user_name | default(omit, True) }}"
+      api_enabled: "{{ vultr_user_api_enabled | default(omit, True) }}"
+      api_timeout: "{{ vultr_user_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_user_api_endpoint | default(omit, True) }}"
+      state: "{{ vultr_user_state | default(omit, True) }}"
+      acls: "{{ vultr_user_acls | default(omit, True) }}"
+      api_account: "{{ vultr_user_api_account | default(omit, True) }}"
+      api_retries: "{{ vultr_user_api_retries | default(omit, True) }}"
+      password: "{{ vultr_user_password | default(omit, True) }}"
+      validate_certs: "{{ vultr_user_validate_certs | default(omit, True) }}"
+      email: "{{ vultr_user_email | default(omit, True) }}"
   tasks:
     - name: "plugin_vultr_user"
       vultr_user: "{{ vultr_user }}"
+      register: r_vultr_user

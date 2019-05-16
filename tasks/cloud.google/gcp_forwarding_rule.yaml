@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_forwarding_rule"
   gcp_forwarding_rule: "{{ gcp_forwarding_rule }}"
+  register: r_gcp_forwarding_rule
   vars:
     gcp_forwarding_rule: 
       protocol: "{{ gcp_forwarding_rule_protocol | default(omit, True) }}"

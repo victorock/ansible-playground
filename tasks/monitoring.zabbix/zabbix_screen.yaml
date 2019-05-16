@@ -1,6 +1,7 @@
 ---
 - name: "module_zabbix_screen"
   zabbix_screen: "{{ zabbix_screen }}"
+  register: r_zabbix_screen
   vars:
     zabbix_screen: 
       http_login_password: "{{ zabbix_screen_http_login_password | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_os_keystone_role"
   os_keystone_role: "{{ os_keystone_role }}"
+  register: r_os_keystone_role
   vars:
     os_keystone_role: 
       auth_type: "{{ os_keystone_role_auth_type | default(omit, True) }}"

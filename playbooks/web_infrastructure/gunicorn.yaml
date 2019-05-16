@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gunicorn: 
-      venv: "{{ gunicorn_venv | default('omit', True) }}"
-      pid: "{{ gunicorn_pid | default('omit', True) }}"
-      app: "{{ gunicorn_app | default('omit', True) }}"
-      worker: "{{ gunicorn_worker | default('omit', True) }}"
-      chdir: "{{ gunicorn_chdir | default('omit', True) }}"
-      user: "{{ gunicorn_user | default('omit', True) }}"
-      config: "{{ gunicorn_config | default('omit', True) }}"
+      venv: "{{ gunicorn_venv | default(omit, True) }}"
+      pid: "{{ gunicorn_pid | default(omit, True) }}"
+      app: "{{ gunicorn_app | default(omit, True) }}"
+      worker: "{{ gunicorn_worker | default(omit, True) }}"
+      chdir: "{{ gunicorn_chdir | default(omit, True) }}"
+      user: "{{ gunicorn_user | default(omit, True) }}"
+      config: "{{ gunicorn_config | default(omit, True) }}"
   tasks:
     - name: "plugin_gunicorn"
       gunicorn: "{{ gunicorn }}"
+      register: r_gunicorn

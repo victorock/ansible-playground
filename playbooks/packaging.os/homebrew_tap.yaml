@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     homebrew_tap: 
-      url: "{{ homebrew_tap_url | default('omit', True) }}"
-      state: "{{ homebrew_tap_state | default('omit', True) }}"
-      name: "{{ homebrew_tap_name | default('omit', True) }}"
+      url: "{{ homebrew_tap_url | default(omit, True) }}"
+      state: "{{ homebrew_tap_state | default(omit, True) }}"
+      name: "{{ homebrew_tap_name | default(omit, True) }}"
   tasks:
     - name: "plugin_homebrew_tap"
       homebrew_tap: "{{ homebrew_tap }}"
+      register: r_homebrew_tap

@@ -1,6 +1,7 @@
 ---
 - name: "module_debconf"
   debconf: "{{ debconf }}"
+  register: r_debconf
   vars:
     debconf: 
       unseen: "{{ debconf_unseen | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_rhevm"
   rhevm: "{{ rhevm }}"
+  register: r_rhevm
   vars:
     rhevm: 
       vmmem: "{{ rhevm_vmmem | default(omit, True) }}"

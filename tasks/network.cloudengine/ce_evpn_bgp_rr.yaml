@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_evpn_bgp_rr"
   ce_evpn_bgp_rr: "{{ ce_evpn_bgp_rr }}"
+  register: r_ce_evpn_bgp_rr
   vars:
     ce_evpn_bgp_rr: 
       as_number: "{{ ce_evpn_bgp_rr_as_number | default(omit, True) }}"

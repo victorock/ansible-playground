@@ -1,6 +1,7 @@
 ---
 - name: "module_netscaler_cs_action"
   netscaler_cs_action: "{{ netscaler_cs_action }}"
+  register: r_netscaler_cs_action
   vars:
     netscaler_cs_action: 
       comment: "{{ netscaler_cs_action_comment | default(omit, True) }}"

@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     acl: 
-      entry: "{{ acl_entry | default('omit', True) }}"
-      use_nfsv4_acls: "{{ acl_use_nfsv4_acls | default('omit', True) }}"
-      default: "{{ acl_default | default('omit', True) }}"
-      recursive: "{{ acl_recursive | default('omit', True) }}"
-      recalculate_mask: "{{ acl_recalculate_mask | default('omit', True) }}"
-      entity: "{{ acl_entity | default('omit', True) }}"
-      state: "{{ acl_state | default('omit', True) }}"
-      follow: "{{ acl_follow | default('omit', True) }}"
-      etype: "{{ acl_etype | default('omit', True) }}"
-      path: "{{ acl_path | default('omit', True) }}"
-      permissions: "{{ acl_permissions | default('omit', True) }}"
+      entry: "{{ acl_entry | default(omit, True) }}"
+      use_nfsv4_acls: "{{ acl_use_nfsv4_acls | default(omit, True) }}"
+      default: "{{ acl_default | default(omit, True) }}"
+      recursive: "{{ acl_recursive | default(omit, True) }}"
+      recalculate_mask: "{{ acl_recalculate_mask | default(omit, True) }}"
+      entity: "{{ acl_entity | default(omit, True) }}"
+      state: "{{ acl_state | default(omit, True) }}"
+      follow: "{{ acl_follow | default(omit, True) }}"
+      etype: "{{ acl_etype | default(omit, True) }}"
+      path: "{{ acl_path | default(omit, True) }}"
+      permissions: "{{ acl_permissions | default(omit, True) }}"
   tasks:
     - name: "plugin_acl"
       acl: "{{ acl }}"
+      register: r_acl

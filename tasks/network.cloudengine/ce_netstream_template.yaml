@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_netstream_template"
   ce_netstream_template: "{{ ce_netstream_template }}"
+  register: r_ce_netstream_template
   vars:
     ce_netstream_template: 
       record_name: "{{ ce_netstream_template_record_name | default(omit, True) }}"

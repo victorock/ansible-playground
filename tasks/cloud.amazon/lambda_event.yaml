@@ -1,6 +1,7 @@
 ---
 - name: "module_lambda_event"
   lambda_event: "{{ lambda_event }}"
+  register: r_lambda_event
   vars:
     lambda_event: 
       profile: "{{ lambda_event_profile | default(omit, True) }}"

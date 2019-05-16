@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_vxlan_global"
   ce_vxlan_global: "{{ ce_vxlan_global }}"
+  register: r_ce_vxlan_global
   vars:
     ce_vxlan_global: 
       tunnel_mode_vxlan: "{{ ce_vxlan_global_tunnel_mode_vxlan | default(omit, True) }}"

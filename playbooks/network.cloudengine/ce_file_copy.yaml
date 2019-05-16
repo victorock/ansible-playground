@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_file_copy: 
-      remote_file: "{{ ce_file_copy_remote_file | default('omit', True) }}"
-      local_file: "{{ ce_file_copy_local_file | default('omit', True) }}"
-      file_system: "{{ ce_file_copy_file_system | default('omit', True) }}"
+      remote_file: "{{ ce_file_copy_remote_file | default(omit, True) }}"
+      local_file: "{{ ce_file_copy_local_file | default(omit, True) }}"
+      file_system: "{{ ce_file_copy_file_system | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_file_copy"
       ce_file_copy: "{{ ce_file_copy }}"
+      register: r_ce_file_copy

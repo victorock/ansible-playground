@@ -1,6 +1,7 @@
 ---
 - name: "module_enos_config"
   enos_config: "{{ enos_config }}"
+  register: r_enos_config
   vars:
     enos_config: 
       comment: "{{ enos_config_comment | default(omit, True) }}"

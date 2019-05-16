@@ -1,6 +1,7 @@
 ---
 - name: "module_lvol"
   lvol: "{{ lvol }}"
+  register: r_lvol
   vars:
     lvol: 
       pvs: "{{ lvol_pvs | default(omit, True) }}"

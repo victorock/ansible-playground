@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_banner"
   ios_banner: "{{ ios_banner }}"
+  register: r_ios_banner
   vars:
     ios_banner: 
       authorize: "{{ ios_banner_authorize | default(omit, True) }}"

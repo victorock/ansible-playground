@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_organization_facts"
   scaleway_organization_facts: "{{ scaleway_organization_facts }}"
+  register: r_scaleway_organization_facts
   vars:
     scaleway_organization_facts: 
       api_timeout: "{{ scaleway_organization_facts_api_timeout | default(omit, True) }}"

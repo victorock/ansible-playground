@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     digital_ocean_snapshot_facts: 
-      oauth_token: "{{ digital_ocean_snapshot_facts_oauth_token | default('omit', True) }}"
-      validate_certs: "{{ digital_ocean_snapshot_facts_validate_certs | default('omit', True) }}"
-      snapshot_type: "{{ digital_ocean_snapshot_facts_snapshot_type | default('omit', True) }}"
-      timeout: "{{ digital_ocean_snapshot_facts_timeout | default('omit', True) }}"
-      snapshot_id: "{{ digital_ocean_snapshot_facts_snapshot_id | default('omit', True) }}"
+      oauth_token: "{{ digital_ocean_snapshot_facts_oauth_token | default(omit, True) }}"
+      validate_certs: "{{ digital_ocean_snapshot_facts_validate_certs | default(omit, True) }}"
+      snapshot_type: "{{ digital_ocean_snapshot_facts_snapshot_type | default(omit, True) }}"
+      timeout: "{{ digital_ocean_snapshot_facts_timeout | default(omit, True) }}"
+      snapshot_id: "{{ digital_ocean_snapshot_facts_snapshot_id | default(omit, True) }}"
   tasks:
     - name: "plugin_digital_ocean_snapshot_facts"
       digital_ocean_snapshot_facts: "{{ digital_ocean_snapshot_facts }}"
+      register: r_digital_ocean_snapshot_facts

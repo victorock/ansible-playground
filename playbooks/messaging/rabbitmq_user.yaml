@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     rabbitmq_user: 
-      node: "{{ rabbitmq_user_node | default('omit', True) }}"
-      update_password: "{{ rabbitmq_user_update_password | default('omit', True) }}"
-      force: "{{ rabbitmq_user_force | default('omit', True) }}"
-      tags: "{{ rabbitmq_user_tags | default('omit', True) }}"
-      read_priv: "{{ rabbitmq_user_read_priv | default('omit', True) }}"
-      write_priv: "{{ rabbitmq_user_write_priv | default('omit', True) }}"
-      state: "{{ rabbitmq_user_state | default('omit', True) }}"
-      user: "{{ rabbitmq_user_user | default('omit', True) }}"
-      configure_priv: "{{ rabbitmq_user_configure_priv | default('omit', True) }}"
-      vhost: "{{ rabbitmq_user_vhost | default('omit', True) }}"
-      password: "{{ rabbitmq_user_password | default('omit', True) }}"
-      permissions: "{{ rabbitmq_user_permissions | default('omit', True) }}"
+      node: "{{ rabbitmq_user_node | default(omit, True) }}"
+      update_password: "{{ rabbitmq_user_update_password | default(omit, True) }}"
+      force: "{{ rabbitmq_user_force | default(omit, True) }}"
+      tags: "{{ rabbitmq_user_tags | default(omit, True) }}"
+      read_priv: "{{ rabbitmq_user_read_priv | default(omit, True) }}"
+      write_priv: "{{ rabbitmq_user_write_priv | default(omit, True) }}"
+      state: "{{ rabbitmq_user_state | default(omit, True) }}"
+      user: "{{ rabbitmq_user_user | default(omit, True) }}"
+      configure_priv: "{{ rabbitmq_user_configure_priv | default(omit, True) }}"
+      vhost: "{{ rabbitmq_user_vhost | default(omit, True) }}"
+      password: "{{ rabbitmq_user_password | default(omit, True) }}"
+      permissions: "{{ rabbitmq_user_permissions | default(omit, True) }}"
   tasks:
     - name: "plugin_rabbitmq_user"
       rabbitmq_user: "{{ rabbitmq_user }}"
+      register: r_rabbitmq_user

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_group"
   win_group: "{{ win_group }}"
+  register: r_win_group
   vars:
     win_group: 
       state: "{{ win_group_state | default(omit, True) }}"

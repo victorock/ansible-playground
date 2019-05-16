@@ -1,6 +1,7 @@
 ---
 - name: "module_os_ironic_node"
   os_ironic_node: "{{ os_ironic_node }}"
+  register: r_os_ironic_node
   vars:
     os_ironic_node: 
       auth_type: "{{ os_ironic_node_auth_type | default(omit, True) }}"

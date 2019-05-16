@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vmkernel"
   vmware_vmkernel: "{{ vmware_vmkernel }}"
+  register: r_vmware_vmkernel
   vars:
     vmware_vmkernel: 
       username: "{{ vmware_vmkernel_username | default(omit, True) }}"

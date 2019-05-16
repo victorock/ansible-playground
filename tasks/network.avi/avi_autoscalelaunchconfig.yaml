@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_autoscalelaunchconfig"
   avi_autoscalelaunchconfig: "{{ avi_autoscalelaunchconfig }}"
+  register: r_avi_autoscalelaunchconfig
   vars:
     avi_autoscalelaunchconfig: 
       username: "{{ avi_autoscalelaunchconfig_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nios_network_view"
   nios_network_view: "{{ nios_network_view }}"
+  register: r_nios_network_view
   vars:
     nios_network_view: 
       comment: "{{ nios_network_view_comment | default(omit, True) }}"

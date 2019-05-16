@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_user_facts"
   ovirt_user_facts: "{{ ovirt_user_facts }}"
+  register: r_ovirt_user_facts
   vars:
     ovirt_user_facts: 
       pattern: "{{ ovirt_user_facts_pattern | default(omit, True) }}"

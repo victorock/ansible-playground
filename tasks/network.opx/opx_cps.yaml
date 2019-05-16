@@ -1,6 +1,7 @@
 ---
 - name: "module_opx_cps"
   opx_cps: "{{ opx_cps }}"
+  register: r_opx_cps
   vars:
     opx_cps: 
       qualifier: "{{ opx_cps_qualifier | default(omit, True) }}"

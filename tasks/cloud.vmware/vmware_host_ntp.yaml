@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_ntp"
   vmware_host_ntp: "{{ vmware_host_ntp }}"
+  register: r_vmware_host_ntp
   vars:
     vmware_host_ntp: 
       username: "{{ vmware_host_ntp_username | default(omit, True) }}"

@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_device_license: 
-      license_server: "{{ bigip_device_license_license_server | default('omit', True) }}"
-      server: "{{ bigip_device_license_server | default('omit', True) }}"
-      state: "{{ bigip_device_license_state | default('omit', True) }}"
-      accept_eula: "{{ bigip_device_license_accept_eula | default('omit', True) }}"
-      user: "{{ bigip_device_license_user | default('omit', True) }}"
-      server_port: "{{ bigip_device_license_server_port | default('omit', True) }}"
-      provider: "{{ bigip_device_license_provider | default('omit', True) }}"
-      license_key: "{{ bigip_device_license_license_key | default('omit', True) }}"
-      password: "{{ bigip_device_license_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_device_license_validate_certs | default('omit', True) }}"
+      license_server: "{{ bigip_device_license_license_server | default(omit, True) }}"
+      server: "{{ bigip_device_license_server | default(omit, True) }}"
+      state: "{{ bigip_device_license_state | default(omit, True) }}"
+      accept_eula: "{{ bigip_device_license_accept_eula | default(omit, True) }}"
+      user: "{{ bigip_device_license_user | default(omit, True) }}"
+      server_port: "{{ bigip_device_license_server_port | default(omit, True) }}"
+      provider: "{{ bigip_device_license_provider | default(omit, True) }}"
+      license_key: "{{ bigip_device_license_license_key | default(omit, True) }}"
+      password: "{{ bigip_device_license_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_device_license_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_device_license"
       bigip_device_license: "{{ bigip_device_license }}"
+      register: r_bigip_device_license

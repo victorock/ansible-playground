@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_network"
   avi_network: "{{ avi_network }}"
+  register: r_avi_network
   vars:
     avi_network: 
       vimgrnw_ref: "{{ avi_network_vimgrnw_ref | default(omit, True) }}"

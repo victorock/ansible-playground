@@ -1,6 +1,7 @@
 ---
 - name: "module_one_image_facts"
   one_image_facts: "{{ one_image_facts }}"
+  register: r_one_image_facts
   vars:
     one_image_facts: 
       ids: "{{ one_image_facts_ids | default(omit, True) }}"

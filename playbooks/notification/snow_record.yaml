@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     snow_record: 
-      username: "{{ snow_record_username | default('omit', True) }}"
-      lookup_field: "{{ snow_record_lookup_field | default('omit', True) }}"
-      number: "{{ snow_record_number | default('omit', True) }}"
-      instance: "{{ snow_record_instance | default('omit', True) }}"
-      state: "{{ snow_record_state | default('omit', True) }}"
-      attachment: "{{ snow_record_attachment | default('omit', True) }}"
-      table: "{{ snow_record_table | default('omit', True) }}"
-      password: "{{ snow_record_password | default('omit', True) }}"
-      data: "{{ snow_record_data | default('omit', True) }}"
+      username: "{{ snow_record_username | default(omit, True) }}"
+      lookup_field: "{{ snow_record_lookup_field | default(omit, True) }}"
+      number: "{{ snow_record_number | default(omit, True) }}"
+      instance: "{{ snow_record_instance | default(omit, True) }}"
+      state: "{{ snow_record_state | default(omit, True) }}"
+      attachment: "{{ snow_record_attachment | default(omit, True) }}"
+      table: "{{ snow_record_table | default(omit, True) }}"
+      password: "{{ snow_record_password | default(omit, True) }}"
+      data: "{{ snow_record_data | default(omit, True) }}"
   tasks:
     - name: "plugin_snow_record"
       snow_record: "{{ snow_record }}"
+      register: r_snow_record

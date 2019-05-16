@@ -1,6 +1,7 @@
 ---
 - name: "module_win_package"
   win_package: "{{ win_package }}"
+  register: r_win_package
   vars:
     win_package: 
       username: "{{ win_package_username | default(omit, True) }}"

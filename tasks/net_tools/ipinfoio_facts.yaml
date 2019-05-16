@@ -1,6 +1,7 @@
 ---
 - name: "module_ipinfoio_facts"
   ipinfoio_facts: "{{ ipinfoio_facts }}"
+  register: r_ipinfoio_facts
   vars:
     ipinfoio_facts: 
       http_agent: "{{ ipinfoio_facts_http_agent | default(omit, True) }}"

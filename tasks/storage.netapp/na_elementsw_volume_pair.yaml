@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_volume_pair"
   na_elementsw_volume_pair: "{{ na_elementsw_volume_pair }}"
+  register: r_na_elementsw_volume_pair
   vars:
     na_elementsw_volume_pair: 
       username: "{{ na_elementsw_volume_pair_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_pim_interface"
   nxos_pim_interface: "{{ nxos_pim_interface }}"
+  register: r_nxos_pim_interface
   vars:
     nxos_pim_interface: 
       jp_policy_in: "{{ nxos_pim_interface_jp_policy_in | default(omit, True) }}"

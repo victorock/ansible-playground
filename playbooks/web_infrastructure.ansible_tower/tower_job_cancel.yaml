@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     tower_job_cancel: 
-      job_id: "{{ tower_job_cancel_job_id | default('omit', True) }}"
-      tower_host: "{{ tower_job_cancel_tower_host | default('omit', True) }}"
-      fail_if_not_running: "{{ tower_job_cancel_fail_if_not_running | default('omit', True) }}"
-      tower_username: "{{ tower_job_cancel_tower_username | default('omit', True) }}"
-      tower_password: "{{ tower_job_cancel_tower_password | default('omit', True) }}"
-      tower_config_file: "{{ tower_job_cancel_tower_config_file | default('omit', True) }}"
-      tower_verify_ssl: "{{ tower_job_cancel_tower_verify_ssl | default('omit', True) }}"
+      job_id: "{{ tower_job_cancel_job_id | default(omit, True) }}"
+      tower_host: "{{ tower_job_cancel_tower_host | default(omit, True) }}"
+      fail_if_not_running: "{{ tower_job_cancel_fail_if_not_running | default(omit, True) }}"
+      tower_username: "{{ tower_job_cancel_tower_username | default(omit, True) }}"
+      tower_password: "{{ tower_job_cancel_tower_password | default(omit, True) }}"
+      tower_config_file: "{{ tower_job_cancel_tower_config_file | default(omit, True) }}"
+      tower_verify_ssl: "{{ tower_job_cancel_tower_verify_ssl | default(omit, True) }}"
   tasks:
     - name: "plugin_tower_job_cancel"
       tower_job_cancel: "{{ tower_job_cancel }}"
+      register: r_tower_job_cancel

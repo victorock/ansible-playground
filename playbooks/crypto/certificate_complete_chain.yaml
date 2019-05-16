@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     certificate_complete_chain: 
-      root_certificates: "{{ certificate_complete_chain_root_certificates | default('omit', True) }}"
-      intermediate_certificates: "{{ certificate_complete_chain_intermediate_certificates | default('omit', True) }}"
-      input_chain: "{{ certificate_complete_chain_input_chain | default('omit', True) }}"
+      root_certificates: "{{ certificate_complete_chain_root_certificates | default(omit, True) }}"
+      intermediate_certificates: "{{ certificate_complete_chain_intermediate_certificates | default(omit, True) }}"
+      input_chain: "{{ certificate_complete_chain_input_chain | default(omit, True) }}"
   tasks:
     - name: "plugin_certificate_complete_chain"
       certificate_complete_chain: "{{ certificate_complete_chain }}"
+      register: r_certificate_complete_chain

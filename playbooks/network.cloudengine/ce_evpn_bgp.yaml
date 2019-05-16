@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_evpn_bgp: 
-      as_number: "{{ ce_evpn_bgp_as_number | default('omit', True) }}"
-      advertise_l2vpn_evpn: "{{ ce_evpn_bgp_advertise_l2vpn_evpn | default('omit', True) }}"
-      advertise_router_type: "{{ ce_evpn_bgp_advertise_router_type | default('omit', True) }}"
-      vpn_name: "{{ ce_evpn_bgp_vpn_name | default('omit', True) }}"
-      peer_group_name: "{{ ce_evpn_bgp_peer_group_name | default('omit', True) }}"
-      state: "{{ ce_evpn_bgp_state | default('omit', True) }}"
-      bgp_instance: "{{ ce_evpn_bgp_bgp_instance | default('omit', True) }}"
-      peer_enable: "{{ ce_evpn_bgp_peer_enable | default('omit', True) }}"
-      peer_address: "{{ ce_evpn_bgp_peer_address | default('omit', True) }}"
+      as_number: "{{ ce_evpn_bgp_as_number | default(omit, True) }}"
+      advertise_l2vpn_evpn: "{{ ce_evpn_bgp_advertise_l2vpn_evpn | default(omit, True) }}"
+      advertise_router_type: "{{ ce_evpn_bgp_advertise_router_type | default(omit, True) }}"
+      vpn_name: "{{ ce_evpn_bgp_vpn_name | default(omit, True) }}"
+      peer_group_name: "{{ ce_evpn_bgp_peer_group_name | default(omit, True) }}"
+      state: "{{ ce_evpn_bgp_state | default(omit, True) }}"
+      bgp_instance: "{{ ce_evpn_bgp_bgp_instance | default(omit, True) }}"
+      peer_enable: "{{ ce_evpn_bgp_peer_enable | default(omit, True) }}"
+      peer_address: "{{ ce_evpn_bgp_peer_address | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_evpn_bgp"
       ce_evpn_bgp: "{{ ce_evpn_bgp }}"
+      register: r_ce_evpn_bgp

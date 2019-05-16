@@ -1,6 +1,7 @@
 ---
 - name: "module_consul_acl"
   consul_acl: "{{ consul_acl }}"
+  register: r_consul_acl
   vars:
     consul_acl: 
       name: "{{ consul_acl_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_disks"
   na_ontap_disks: "{{ na_ontap_disks }}"
+  register: r_na_ontap_disks
   vars:
     na_ontap_disks: 
       node: "{{ na_ontap_disks_node | default(omit, True) }}"

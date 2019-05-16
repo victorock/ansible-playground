@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_disk_facts: 
-      pattern: "{{ ovirt_disk_facts_pattern | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_disk_facts_fetch_nested | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_disk_facts_nested_attributes | default('omit', True) }}"
-      auth: "{{ ovirt_disk_facts_auth | default('omit', True) }}"
+      pattern: "{{ ovirt_disk_facts_pattern | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_disk_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_disk_facts_nested_attributes | default(omit, True) }}"
+      auth: "{{ ovirt_disk_facts_auth | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_disk_facts"
       ovirt_disk_facts: "{{ ovirt_disk_facts }}"
+      register: r_ovirt_disk_facts

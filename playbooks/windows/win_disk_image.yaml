@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_disk_image: 
-      state: "{{ win_disk_image_state | default('omit', True) }}"
-      image_path: "{{ win_disk_image_image_path | default('omit', True) }}"
+      state: "{{ win_disk_image_state | default(omit, True) }}"
+      image_path: "{{ win_disk_image_image_path | default(omit, True) }}"
   tasks:
     - name: "plugin_win_disk_image"
       win_disk_image: "{{ win_disk_image }}"
+      register: r_win_disk_image

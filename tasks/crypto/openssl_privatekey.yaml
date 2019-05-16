@@ -1,6 +1,7 @@
 ---
 - name: "module_openssl_privatekey"
   openssl_privatekey: "{{ openssl_privatekey }}"
+  register: r_openssl_privatekey
   vars:
     openssl_privatekey: 
       force: "{{ openssl_privatekey_force | default(omit, True) }}"

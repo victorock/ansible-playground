@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_epg"
   aci_epg: "{{ aci_epg }}"
+  register: r_aci_epg
   vars:
     aci_epg: 
       bd: "{{ aci_epg_bd | default(omit, True) }}"

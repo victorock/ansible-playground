@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_ap"
   aci_ap: "{{ aci_ap }}"
+  register: r_aci_ap
   vars:
     aci_ap: 
       username: "{{ aci_ap_username | default(omit, True) }}"

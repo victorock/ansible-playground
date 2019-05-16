@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_lic"
   panos_lic: "{{ panos_lic }}"
+  register: r_panos_lic
   vars:
     panos_lic: 
       username: "{{ panos_lic_username | default(omit, True) }}"

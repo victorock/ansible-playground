@@ -1,6 +1,7 @@
 ---
 - name: "module_pip"
   pip: "{{ pip }}"
+  register: r_pip
   vars:
     pip: 
       virtualenv: "{{ pip_virtualenv | default(omit, True) }}"

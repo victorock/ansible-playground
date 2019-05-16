@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     assert: 
-      fail_msg: "{{ assert_fail_msg | default('omit', True) }}"
-      success_msg: "{{ assert_success_msg | default('omit', True) }}"
-      that: "{{ assert_that | default('omit', True) }}"
+      fail_msg: "{{ assert_fail_msg | default(omit, True) }}"
+      success_msg: "{{ assert_success_msg | default(omit, True) }}"
+      that: "{{ assert_that | default(omit, True) }}"
   tasks:
     - name: "plugin_assert"
       assert: "{{ assert }}"
+      register: r_assert

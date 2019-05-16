@@ -1,6 +1,7 @@
 ---
 - name: "module_oneandone_firewall_policy"
   oneandone_firewall_policy: "{{ oneandone_firewall_policy }}"
+  register: r_oneandone_firewall_policy
   vars:
     oneandone_firewall_policy: 
       add_rules: "{{ oneandone_firewall_policy_add_rules | default(omit, True) }}"

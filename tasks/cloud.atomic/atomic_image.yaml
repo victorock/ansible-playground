@@ -1,6 +1,7 @@
 ---
 - name: "module_atomic_image"
   atomic_image: "{{ atomic_image }}"
+  register: r_atomic_image
   vars:
     atomic_image: 
       started: "{{ atomic_image_started | default(omit, True) }}"

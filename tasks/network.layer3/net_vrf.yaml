@@ -1,6 +1,7 @@
 ---
 - name: "module_net_vrf"
   net_vrf: "{{ net_vrf }}"
+  register: r_net_vrf
   vars:
     net_vrf: 
       aggregate: "{{ net_vrf_aggregate | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_command"
   win_command: "{{ win_command }}"
+  register: r_win_command
   vars:
     win_command: 
       creates: "{{ win_command_creates | default(omit, True) }}"

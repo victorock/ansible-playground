@@ -1,6 +1,7 @@
 ---
 - name: "module_group"
   group: "{{ group }}"
+  register: r_group
   vars:
     group: 
       state: "{{ group_state | default(omit, True) }}"

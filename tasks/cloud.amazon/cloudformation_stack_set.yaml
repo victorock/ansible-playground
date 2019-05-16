@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudformation_stack_set"
   cloudformation_stack_set: "{{ cloudformation_stack_set }}"
+  register: r_cloudformation_stack_set
   vars:
     cloudformation_stack_set: 
       template_body: "{{ cloudformation_stack_set_template_body | default(omit, True) }}"

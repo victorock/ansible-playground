@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_sshkey"
   digital_ocean_sshkey: "{{ digital_ocean_sshkey }}"
+  register: r_digital_ocean_sshkey
   vars:
     digital_ocean_sshkey: 
       state: "{{ digital_ocean_sshkey_state | default(omit, True) }}"

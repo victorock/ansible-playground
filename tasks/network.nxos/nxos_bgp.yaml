@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_bgp"
   nxos_bgp: "{{ nxos_bgp }}"
+  register: r_nxos_bgp
   vars:
     nxos_bgp: 
       neighbor_down_fib_accelerate: "{{ nxos_bgp_neighbor_down_fib_accelerate | default(omit, True) }}"

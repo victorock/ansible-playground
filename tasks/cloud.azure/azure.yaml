@@ -1,6 +1,7 @@
 ---
 - name: "module_azure"
   azure: "{{ azure }}"
+  register: r_azure
   vars:
     azure: 
       endpoints: "{{ azure_endpoints | default(omit, True) }}"

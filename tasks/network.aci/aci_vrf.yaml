@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_vrf"
   aci_vrf: "{{ aci_vrf }}"
+  register: r_aci_vrf
   vars:
     aci_vrf: 
       username: "{{ aci_vrf_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vdirect_runnable"
   vdirect_runnable: "{{ vdirect_runnable }}"
+  register: r_vdirect_runnable
   vars:
     vdirect_runnable: 
       vdirect_user: "{{ vdirect_runnable_vdirect_user | default(omit, True) }}"

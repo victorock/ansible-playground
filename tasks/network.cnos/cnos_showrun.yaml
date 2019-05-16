@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_showrun"
   cnos_showrun: "{{ cnos_showrun }}"
+  register: r_cnos_showrun
   vars:
     cnos_showrun: 
       username: "{{ cnos_showrun_username | default(omit, True) }}"

@@ -10,3 +10,4 @@
   tasks:
     - name: "plugin_ohai"
       ohai: "{{ ohai }}"
+      register: r_ohai

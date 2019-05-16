@@ -1,6 +1,7 @@
 ---
 - name: "module_apk"
   apk: "{{ apk }}"
+  register: r_apk
   vars:
     apk: 
       available: "{{ apk_available | default(omit, True) }}"

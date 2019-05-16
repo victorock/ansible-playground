@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     oneview_network_set: 
-      data: "{{ oneview_network_set_data | default('omit', True) }}"
-      state: "{{ oneview_network_set_state | default('omit', True) }}"
-      validate_etag: "{{ oneview_network_set_validate_etag | default('omit', True) }}"
-      config: "{{ oneview_network_set_config | default('omit', True) }}"
+      data: "{{ oneview_network_set_data | default(omit, True) }}"
+      state: "{{ oneview_network_set_state | default(omit, True) }}"
+      validate_etag: "{{ oneview_network_set_validate_etag | default(omit, True) }}"
+      config: "{{ oneview_network_set_config | default(omit, True) }}"
   tasks:
     - name: "plugin_oneview_network_set"
       oneview_network_set: "{{ oneview_network_set }}"
+      register: r_oneview_network_set

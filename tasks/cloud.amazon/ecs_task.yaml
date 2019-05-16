@@ -1,6 +1,7 @@
 ---
 - name: "module_ecs_task"
   ecs_task: "{{ ecs_task }}"
+  register: r_ecs_task
   vars:
     ecs_task: 
       profile: "{{ ecs_task_profile | default(omit, True) }}"

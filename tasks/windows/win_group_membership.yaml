@@ -1,6 +1,7 @@
 ---
 - name: "module_win_group_membership"
   win_group_membership: "{{ win_group_membership }}"
+  register: r_win_group_membership
   vars:
     win_group_membership: 
       state: "{{ win_group_membership_state | default(omit, True) }}"

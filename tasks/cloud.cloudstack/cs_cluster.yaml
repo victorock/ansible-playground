@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_cluster"
   cs_cluster: "{{ cs_cluster }}"
+  register: r_cs_cluster
   vars:
     cs_cluster: 
       username: "{{ cs_cluster_username | default(omit, True) }}"

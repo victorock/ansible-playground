@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_vrf"
   ios_vrf: "{{ ios_vrf }}"
+  register: r_ios_vrf
   vars:
     ios_vrf: 
       authorize: "{{ ios_vrf_authorize | default(omit, True) }}"

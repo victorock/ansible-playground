@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     asa_acl: 
-      authorize: "{{ asa_acl_authorize | default('omit', True) }}"
-      force: "{{ asa_acl_force | default('omit', True) }}"
-      after: "{{ asa_acl_after | default('omit', True) }}"
-      lines: "{{ asa_acl_lines | default('omit', True) }}"
-      replace: "{{ asa_acl_replace | default('omit', True) }}"
-      context: "{{ asa_acl_context | default('omit', True) }}"
-      provider: "{{ asa_acl_provider | default('omit', True) }}"
-      config: "{{ asa_acl_config | default('omit', True) }}"
-      match: "{{ asa_acl_match | default('omit', True) }}"
-      before: "{{ asa_acl_before | default('omit', True) }}"
+      authorize: "{{ asa_acl_authorize | default(omit, True) }}"
+      force: "{{ asa_acl_force | default(omit, True) }}"
+      after: "{{ asa_acl_after | default(omit, True) }}"
+      lines: "{{ asa_acl_lines | default(omit, True) }}"
+      replace: "{{ asa_acl_replace | default(omit, True) }}"
+      context: "{{ asa_acl_context | default(omit, True) }}"
+      provider: "{{ asa_acl_provider | default(omit, True) }}"
+      config: "{{ asa_acl_config | default(omit, True) }}"
+      match: "{{ asa_acl_match | default(omit, True) }}"
+      before: "{{ asa_acl_before | default(omit, True) }}"
   tasks:
     - name: "plugin_asa_acl"
       asa_acl: "{{ asa_acl }}"
+      register: r_asa_acl

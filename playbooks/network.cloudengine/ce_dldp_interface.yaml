@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_dldp_interface: 
-      reset: "{{ ce_dldp_interface_reset | default('omit', True) }}"
-      enable: "{{ ce_dldp_interface_enable | default('omit', True) }}"
-      state: "{{ ce_dldp_interface_state | default('omit', True) }}"
-      interface: "{{ ce_dldp_interface_interface | default('omit', True) }}"
-      mode_enable: "{{ ce_dldp_interface_mode_enable | default('omit', True) }}"
-      local_mac: "{{ ce_dldp_interface_local_mac | default('omit', True) }}"
+      reset: "{{ ce_dldp_interface_reset | default(omit, True) }}"
+      enable: "{{ ce_dldp_interface_enable | default(omit, True) }}"
+      state: "{{ ce_dldp_interface_state | default(omit, True) }}"
+      interface: "{{ ce_dldp_interface_interface | default(omit, True) }}"
+      mode_enable: "{{ ce_dldp_interface_mode_enable | default(omit, True) }}"
+      local_mac: "{{ ce_dldp_interface_local_mac | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_dldp_interface"
       ce_dldp_interface: "{{ ce_dldp_interface }}"
+      register: r_ce_dldp_interface

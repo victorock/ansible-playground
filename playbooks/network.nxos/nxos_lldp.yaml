@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_lldp: 
-      state: "{{ nxos_lldp_state | default('omit', True) }}"
-      provider: "{{ nxos_lldp_provider | default('omit', True) }}"
+      state: "{{ nxos_lldp_state | default(omit, True) }}"
+      provider: "{{ nxos_lldp_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_lldp"
       nxos_lldp: "{{ nxos_lldp }}"
+      register: r_nxos_lldp

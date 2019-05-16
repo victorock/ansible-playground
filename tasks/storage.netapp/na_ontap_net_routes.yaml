@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_net_routes"
   na_ontap_net_routes: "{{ na_ontap_net_routes }}"
+  register: r_na_ontap_net_routes
   vars:
     na_ontap_net_routes: 
       username: "{{ na_ontap_net_routes_username | default(omit, True) }}"

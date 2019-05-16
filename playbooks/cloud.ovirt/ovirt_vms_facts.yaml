@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_vms_facts: 
-      all_content: "{{ ovirt_vms_facts_all_content | default('omit', True) }}"
-      max: "{{ ovirt_vms_facts_max | default('omit', True) }}"
-      auth: "{{ ovirt_vms_facts_auth | default('omit', True) }}"
-      case_sensitive: "{{ ovirt_vms_facts_case_sensitive | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_vms_facts_fetch_nested | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_vms_facts_nested_attributes | default('omit', True) }}"
-      pattern: "{{ ovirt_vms_facts_pattern | default('omit', True) }}"
+      all_content: "{{ ovirt_vms_facts_all_content | default(omit, True) }}"
+      max: "{{ ovirt_vms_facts_max | default(omit, True) }}"
+      auth: "{{ ovirt_vms_facts_auth | default(omit, True) }}"
+      case_sensitive: "{{ ovirt_vms_facts_case_sensitive | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_vms_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_vms_facts_nested_attributes | default(omit, True) }}"
+      pattern: "{{ ovirt_vms_facts_pattern | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_vms_facts"
       ovirt_vms_facts: "{{ ovirt_vms_facts }}"
+      register: r_ovirt_vms_facts

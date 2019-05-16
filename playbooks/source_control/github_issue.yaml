@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     github_issue: 
-      repo: "{{ github_issue_repo | default('omit', True) }}"
-      organization: "{{ github_issue_organization | default('omit', True) }}"
-      issue: "{{ github_issue_issue | default('omit', True) }}"
-      action: "{{ github_issue_action | default('omit', True) }}"
+      repo: "{{ github_issue_repo | default(omit, True) }}"
+      organization: "{{ github_issue_organization | default(omit, True) }}"
+      issue: "{{ github_issue_issue | default(omit, True) }}"
+      action: "{{ github_issue_action | default(omit, True) }}"
   tasks:
     - name: "plugin_github_issue"
       github_issue: "{{ github_issue }}"
+      register: r_github_issue

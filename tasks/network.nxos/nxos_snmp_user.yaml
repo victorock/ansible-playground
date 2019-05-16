@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_snmp_user"
   nxos_snmp_user: "{{ nxos_snmp_user }}"
+  register: r_nxos_snmp_user
   vars:
     nxos_snmp_user: 
       encrypt: "{{ nxos_snmp_user_encrypt | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_file"
   file: "{{ file }}"
+  register: r_file
   vars:
     file: 
       src: "{{ file_src | default(omit, True) }}"

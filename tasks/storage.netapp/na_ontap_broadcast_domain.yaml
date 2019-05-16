@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_broadcast_domain"
   na_ontap_broadcast_domain: "{{ na_ontap_broadcast_domain }}"
+  register: r_na_ontap_broadcast_domain
   vars:
     na_ontap_broadcast_domain: 
       username: "{{ na_ontap_broadcast_domain_username | default(omit, True) }}"

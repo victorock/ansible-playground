@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_ontap_software_update: 
-      node: "{{ na_ontap_software_update_node | default('omit', True) }}"
-      username: "{{ na_ontap_software_update_username | default('omit', True) }}"
-      http_port: "{{ na_ontap_software_update_http_port | default('omit', True) }}"
-      validate_certs: "{{ na_ontap_software_update_validate_certs | default('omit', True) }}"
-      package_version: "{{ na_ontap_software_update_package_version | default('omit', True) }}"
-      hostname: "{{ na_ontap_software_update_hostname | default('omit', True) }}"
-      state: "{{ na_ontap_software_update_state | default('omit', True) }}"
-      https: "{{ na_ontap_software_update_https | default('omit', True) }}"
-      package_url: "{{ na_ontap_software_update_package_url | default('omit', True) }}"
-      password: "{{ na_ontap_software_update_password | default('omit', True) }}"
-      ignore_validation_warning: "{{ na_ontap_software_update_ignore_validation_warning | default('omit', True) }}"
+      node: "{{ na_ontap_software_update_node | default(omit, True) }}"
+      username: "{{ na_ontap_software_update_username | default(omit, True) }}"
+      http_port: "{{ na_ontap_software_update_http_port | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_software_update_validate_certs | default(omit, True) }}"
+      package_version: "{{ na_ontap_software_update_package_version | default(omit, True) }}"
+      hostname: "{{ na_ontap_software_update_hostname | default(omit, True) }}"
+      state: "{{ na_ontap_software_update_state | default(omit, True) }}"
+      https: "{{ na_ontap_software_update_https | default(omit, True) }}"
+      package_url: "{{ na_ontap_software_update_package_url | default(omit, True) }}"
+      password: "{{ na_ontap_software_update_password | default(omit, True) }}"
+      ignore_validation_warning: "{{ na_ontap_software_update_ignore_validation_warning | default(omit, True) }}"
   tasks:
     - name: "plugin_na_ontap_software_update"
       na_ontap_software_update: "{{ na_ontap_software_update }}"
+      register: r_na_ontap_software_update

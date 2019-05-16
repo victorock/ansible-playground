@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_hostgroup"
   netapp_e_hostgroup: "{{ netapp_e_hostgroup }}"
+  register: r_netapp_e_hostgroup
   vars:
     netapp_e_hostgroup: 
       new_name: "{{ netapp_e_hostgroup_new_name | default(omit, True) }}"

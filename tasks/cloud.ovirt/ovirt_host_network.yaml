@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_host_network"
   ovirt_host_network: "{{ ovirt_host_network }}"
+  register: r_ovirt_host_network
   vars:
     ovirt_host_network: 
       bond: "{{ ovirt_host_network_bond | default(omit, True) }}"

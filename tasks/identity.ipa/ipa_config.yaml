@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_config"
   ipa_config: "{{ ipa_config }}"
+  register: r_ipa_config
   vars:
     ipa_config: 
       ipadefaultloginshell: "{{ ipa_config_ipadefaultloginshell | default(omit, True) }}"

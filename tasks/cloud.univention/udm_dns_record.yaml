@@ -1,6 +1,7 @@
 ---
 - name: "module_udm_dns_record"
   udm_dns_record: "{{ udm_dns_record }}"
+  register: r_udm_dns_record
   vars:
     udm_dns_record: 
       data: "{{ udm_dns_record_data | default(omit, True) }}"

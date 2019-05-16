@@ -1,6 +1,7 @@
 ---
 - name: "module_win_hotfix"
   win_hotfix: "{{ win_hotfix }}"
+  register: r_win_hotfix
   vars:
     win_hotfix: 
       hotfix_identifier: "{{ win_hotfix_hotfix_identifier | default(omit, True) }}"

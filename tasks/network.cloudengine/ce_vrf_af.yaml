@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_vrf_af"
   ce_vrf_af: "{{ ce_vrf_af }}"
+  register: r_ce_vrf_af
   vars:
     ce_vrf_af: 
       vpn_target_type: "{{ ce_vrf_af_vpn_target_type | default(omit, True) }}"

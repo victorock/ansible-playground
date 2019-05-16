@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_target_canonical_facts"
   vmware_target_canonical_facts: "{{ vmware_target_canonical_facts }}"
+  register: r_vmware_target_canonical_facts
   vars:
     vmware_target_canonical_facts: 
       username: "{{ vmware_target_canonical_facts_username | default(omit, True) }}"

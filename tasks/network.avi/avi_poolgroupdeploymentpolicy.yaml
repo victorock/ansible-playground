@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_poolgroupdeploymentpolicy"
   avi_poolgroupdeploymentpolicy: "{{ avi_poolgroupdeploymentpolicy }}"
+  register: r_avi_poolgroupdeploymentpolicy
   vars:
     avi_poolgroupdeploymentpolicy: 
       test_traffic_ratio_rampup: "{{ avi_poolgroupdeploymentpolicy_test_traffic_ratio_rampup | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_svc"
   svc: "{{ svc }}"
+  register: r_svc
   vars:
     svc: 
       name: "{{ svc_name | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_lineinfile"
   win_lineinfile: "{{ win_lineinfile }}"
+  register: r_win_lineinfile
   vars:
     win_lineinfile: 
       insertbefore: "{{ win_lineinfile_insertbefore | default(omit, True) }}"

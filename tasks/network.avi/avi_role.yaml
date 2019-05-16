@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_role"
   avi_role: "{{ avi_role }}"
+  register: r_avi_role
   vars:
     avi_role: 
       username: "{{ avi_role_username | default(omit, True) }}"

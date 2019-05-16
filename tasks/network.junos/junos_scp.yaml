@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_scp"
   junos_scp: "{{ junos_scp }}"
+  register: r_junos_scp
   vars:
     junos_scp: 
       dest: "{{ junos_scp_dest | default(omit, True) }}"

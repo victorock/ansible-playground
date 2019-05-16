@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_group_membership: 
-      state: "{{ win_group_membership_state | default('omit', True) }}"
-      name: "{{ win_group_membership_name | default('omit', True) }}"
-      members: "{{ win_group_membership_members | default('omit', True) }}"
+      state: "{{ win_group_membership_state | default(omit, True) }}"
+      name: "{{ win_group_membership_name | default(omit, True) }}"
+      members: "{{ win_group_membership_members | default(omit, True) }}"
   tasks:
     - name: "plugin_win_group_membership"
       win_group_membership: "{{ win_group_membership }}"
+      register: r_win_group_membership

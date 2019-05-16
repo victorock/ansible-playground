@@ -1,6 +1,7 @@
 ---
 - name: "module_consul"
   consul: "{{ consul }}"
+  register: r_consul
   vars:
     consul: 
       service_address: "{{ consul_service_address | default(omit, True) }}"

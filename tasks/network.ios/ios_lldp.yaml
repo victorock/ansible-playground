@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_lldp"
   ios_lldp: "{{ ios_lldp }}"
+  register: r_ios_lldp
   vars:
     ios_lldp: 
       authorize: "{{ ios_lldp_authorize | default(omit, True) }}"

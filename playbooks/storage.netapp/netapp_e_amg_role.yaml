@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_amg_role: 
-      force: "{{ netapp_e_amg_role_force | default('omit', True) }}"
-      ssid: "{{ netapp_e_amg_role_ssid | default('omit', True) }}"
-      api_password: "{{ netapp_e_amg_role_api_password | default('omit', True) }}"
-      role: "{{ netapp_e_amg_role_role | default('omit', True) }}"
-      api_username: "{{ netapp_e_amg_role_api_username | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_amg_role_validate_certs | default('omit', True) }}"
-      noSync: "{{ netapp_e_amg_role_noSync | default('omit', True) }}"
-      api_url: "{{ netapp_e_amg_role_api_url | default('omit', True) }}"
+      force: "{{ netapp_e_amg_role_force | default(omit, True) }}"
+      ssid: "{{ netapp_e_amg_role_ssid | default(omit, True) }}"
+      api_password: "{{ netapp_e_amg_role_api_password | default(omit, True) }}"
+      role: "{{ netapp_e_amg_role_role | default(omit, True) }}"
+      api_username: "{{ netapp_e_amg_role_api_username | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_amg_role_validate_certs | default(omit, True) }}"
+      noSync: "{{ netapp_e_amg_role_noSync | default(omit, True) }}"
+      api_url: "{{ netapp_e_amg_role_api_url | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_amg_role"
       netapp_e_amg_role: "{{ netapp_e_amg_role }}"
+      register: r_netapp_e_amg_role

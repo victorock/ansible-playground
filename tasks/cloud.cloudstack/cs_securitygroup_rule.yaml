@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_securitygroup_rule"
   cs_securitygroup_rule: "{{ cs_securitygroup_rule }}"
+  register: r_cs_securitygroup_rule
   vars:
     cs_securitygroup_rule: 
       icmp_code: "{{ cs_securitygroup_rule_icmp_code | default(omit, True) }}"

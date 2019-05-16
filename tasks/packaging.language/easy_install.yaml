@@ -1,6 +1,7 @@
 ---
 - name: "module_easy_install"
   easy_install: "{{ easy_install }}"
+  register: r_easy_install
   vars:
     easy_install: 
       virtualenv: "{{ easy_install_virtualenv | default(omit, True) }}"

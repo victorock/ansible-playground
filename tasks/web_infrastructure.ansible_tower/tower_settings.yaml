@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_settings"
   tower_settings: "{{ tower_settings }}"
+  register: r_tower_settings
   vars:
     tower_settings: 
       name: "{{ tower_settings_name | default(omit, True) }}"

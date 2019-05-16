@@ -1,6 +1,7 @@
 ---
 - name: "module_scaleway_ip_facts"
   scaleway_ip_facts: "{{ scaleway_ip_facts }}"
+  register: r_scaleway_ip_facts
   vars:
     scaleway_ip_facts: 
       api_timeout: "{{ scaleway_ip_facts_api_timeout | default(omit, True) }}"

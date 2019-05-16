@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_device_facts"
   bigip_device_facts: "{{ bigip_device_facts }}"
+  register: r_bigip_device_facts
   vars:
     bigip_device_facts: 
       server: "{{ bigip_device_facts_server | default(omit, True) }}"

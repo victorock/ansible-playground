@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vultr_dns_domain: 
-      api_retries: "{{ vultr_dns_domain_api_retries | default('omit', True) }}"
-      name: "{{ vultr_dns_domain_name | default('omit', True) }}"
-      api_timeout: "{{ vultr_dns_domain_api_timeout | default('omit', True) }}"
-      api_endpoint: "{{ vultr_dns_domain_api_endpoint | default('omit', True) }}"
-      state: "{{ vultr_dns_domain_state | default('omit', True) }}"
-      server_ip: "{{ vultr_dns_domain_server_ip | default('omit', True) }}"
-      api_account: "{{ vultr_dns_domain_api_account | default('omit', True) }}"
-      api_key: "{{ vultr_dns_domain_api_key | default('omit', True) }}"
-      validate_certs: "{{ vultr_dns_domain_validate_certs | default('omit', True) }}"
+      api_retries: "{{ vultr_dns_domain_api_retries | default(omit, True) }}"
+      name: "{{ vultr_dns_domain_name | default(omit, True) }}"
+      api_timeout: "{{ vultr_dns_domain_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_dns_domain_api_endpoint | default(omit, True) }}"
+      state: "{{ vultr_dns_domain_state | default(omit, True) }}"
+      server_ip: "{{ vultr_dns_domain_server_ip | default(omit, True) }}"
+      api_account: "{{ vultr_dns_domain_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_dns_domain_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_dns_domain_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vultr_dns_domain"
       vultr_dns_domain: "{{ vultr_dns_domain }}"
+      register: r_vultr_dns_domain

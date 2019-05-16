@@ -1,6 +1,7 @@
 ---
 - name: "module_java_cert"
   java_cert: "{{ java_cert }}"
+  register: r_java_cert
   vars:
     java_cert: 
       keystore_create: "{{ java_cert_keystore_create | default(omit, True) }}"

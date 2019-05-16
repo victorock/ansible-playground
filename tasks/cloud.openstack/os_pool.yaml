@@ -1,6 +1,7 @@
 ---
 - name: "module_os_pool"
   os_pool: "{{ os_pool }}"
+  register: r_os_pool
   vars:
     os_pool: 
       lb_algorithm: "{{ os_pool_lb_algorithm | default(omit, True) }}"

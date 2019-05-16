@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_floating_ip"
   digital_ocean_floating_ip: "{{ digital_ocean_floating_ip }}"
+  register: r_digital_ocean_floating_ip
   vars:
     digital_ocean_floating_ip: 
       ip: "{{ digital_ocean_floating_ip_ip | default(omit, True) }}"

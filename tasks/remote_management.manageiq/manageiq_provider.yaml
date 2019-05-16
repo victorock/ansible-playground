@@ -1,6 +1,7 @@
 ---
 - name: "module_manageiq_provider"
   manageiq_provider: "{{ manageiq_provider }}"
+  register: r_manageiq_provider
   vars:
     manageiq_provider: 
       ssh_keypair: "{{ manageiq_provider_ssh_keypair | default(omit, True) }}"

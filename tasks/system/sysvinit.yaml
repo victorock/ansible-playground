@@ -1,6 +1,7 @@
 ---
 - name: "module_sysvinit"
   sysvinit: "{{ sysvinit }}"
+  register: r_sysvinit
   vars:
     sysvinit: 
       name: "{{ sysvinit_name | default(omit, True) }}"

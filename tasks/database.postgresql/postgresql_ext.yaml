@@ -1,6 +1,7 @@
 ---
 - name: "module_postgresql_ext"
   postgresql_ext: "{{ postgresql_ext }}"
+  register: r_postgresql_ext
   vars:
     postgresql_ext: 
       name: "{{ postgresql_ext_name | default(omit, True) }}"

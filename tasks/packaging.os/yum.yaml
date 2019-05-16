@@ -1,6 +1,7 @@
 ---
 - name: "module_yum"
   yum: "{{ yum }}"
+  register: r_yum
   vars:
     yum: 
       update_cache: "{{ yum_update_cache | default(omit, True) }}"

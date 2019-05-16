@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_config_snapshot"
   aci_config_snapshot: "{{ aci_config_snapshot }}"
+  register: r_aci_config_snapshot
   vars:
     aci_config_snapshot: 
       username: "{{ aci_config_snapshot_username | default(omit, True) }}"

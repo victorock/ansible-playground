@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_waf_rule: 
-      profile: "{{ aws_waf_rule_profile | default('omit', True) }}"
-      aws_secret_key: "{{ aws_waf_rule_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ aws_waf_rule_aws_access_key | default('omit', True) }}"
-      metric_name: "{{ aws_waf_rule_metric_name | default('omit', True) }}"
-      security_token: "{{ aws_waf_rule_security_token | default('omit', True) }}"
-      purge_conditions: "{{ aws_waf_rule_purge_conditions | default('omit', True) }}"
-      region: "{{ aws_waf_rule_region | default('omit', True) }}"
-      validate_certs: "{{ aws_waf_rule_validate_certs | default('omit', True) }}"
-      state: "{{ aws_waf_rule_state | default('omit', True) }}"
-      ec2_url: "{{ aws_waf_rule_ec2_url | default('omit', True) }}"
-      conditions: "{{ aws_waf_rule_conditions | default('omit', True) }}"
-      name: "{{ aws_waf_rule_name | default('omit', True) }}"
+      profile: "{{ aws_waf_rule_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_waf_rule_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_waf_rule_aws_access_key | default(omit, True) }}"
+      metric_name: "{{ aws_waf_rule_metric_name | default(omit, True) }}"
+      security_token: "{{ aws_waf_rule_security_token | default(omit, True) }}"
+      purge_conditions: "{{ aws_waf_rule_purge_conditions | default(omit, True) }}"
+      region: "{{ aws_waf_rule_region | default(omit, True) }}"
+      validate_certs: "{{ aws_waf_rule_validate_certs | default(omit, True) }}"
+      state: "{{ aws_waf_rule_state | default(omit, True) }}"
+      ec2_url: "{{ aws_waf_rule_ec2_url | default(omit, True) }}"
+      conditions: "{{ aws_waf_rule_conditions | default(omit, True) }}"
+      name: "{{ aws_waf_rule_name | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_waf_rule"
       aws_waf_rule: "{{ aws_waf_rule }}"
+      register: r_aws_waf_rule

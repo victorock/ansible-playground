@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_vlans"
   ucs_vlans: "{{ ucs_vlans }}"
+  register: r_ucs_vlans
   vars:
     ucs_vlans: 
       username: "{{ ucs_vlans_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_clc_blueprint_package"
   clc_blueprint_package: "{{ clc_blueprint_package }}"
+  register: r_clc_blueprint_package
   vars:
     clc_blueprint_package: 
       server_ids: "{{ clc_blueprint_package_server_ids | default(omit, True) }}"

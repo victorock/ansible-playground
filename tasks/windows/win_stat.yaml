@@ -1,6 +1,7 @@
 ---
 - name: "module_win_stat"
   win_stat: "{{ win_stat }}"
+  register: r_win_stat
   vars:
     win_stat: 
       path: "{{ win_stat_path | default(omit, True) }}"

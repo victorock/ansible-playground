@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_cluster_ha"
   na_ontap_cluster_ha: "{{ na_ontap_cluster_ha }}"
+  register: r_na_ontap_cluster_ha
   vars:
     na_ontap_cluster_ha: 
       username: "{{ na_ontap_cluster_ha_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_l2_interface"
   nxos_l2_interface: "{{ nxos_l2_interface }}"
+  register: r_nxos_l2_interface
   vars:
     nxos_l2_interface: 
       native_vlan: "{{ nxos_l2_interface_native_vlan | default(omit, True) }}"

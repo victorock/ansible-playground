@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_containerinstance"
   azure_rm_containerinstance: "{{ azure_rm_containerinstance }}"
+  register: r_azure_rm_containerinstance
   vars:
     azure_rm_containerinstance: 
       resource_group: "{{ azure_rm_containerinstance_resource_group | default(omit, True) }}"

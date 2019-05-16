@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_switchport"
   nxos_switchport: "{{ nxos_switchport }}"
+  register: r_nxos_switchport
   vars:
     nxos_switchport: 
       native_vlan: "{{ nxos_switchport_native_vlan | default(omit, True) }}"

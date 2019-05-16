@@ -1,6 +1,7 @@
 ---
 - name: "module_memset_zone"
   memset_zone: "{{ memset_zone }}"
+  register: r_memset_zone
   vars:
     memset_zone: 
       state: "{{ memset_zone_state | default(omit, True) }}"

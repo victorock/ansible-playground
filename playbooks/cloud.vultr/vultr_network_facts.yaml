@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vultr_network_facts: 
-      api_retries: "{{ vultr_network_facts_api_retries | default('omit', True) }}"
-      api_timeout: "{{ vultr_network_facts_api_timeout | default('omit', True) }}"
-      api_endpoint: "{{ vultr_network_facts_api_endpoint | default('omit', True) }}"
-      api_account: "{{ vultr_network_facts_api_account | default('omit', True) }}"
-      api_key: "{{ vultr_network_facts_api_key | default('omit', True) }}"
-      validate_certs: "{{ vultr_network_facts_validate_certs | default('omit', True) }}"
+      api_retries: "{{ vultr_network_facts_api_retries | default(omit, True) }}"
+      api_timeout: "{{ vultr_network_facts_api_timeout | default(omit, True) }}"
+      api_endpoint: "{{ vultr_network_facts_api_endpoint | default(omit, True) }}"
+      api_account: "{{ vultr_network_facts_api_account | default(omit, True) }}"
+      api_key: "{{ vultr_network_facts_api_key | default(omit, True) }}"
+      validate_certs: "{{ vultr_network_facts_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_vultr_network_facts"
       vultr_network_facts: "{{ vultr_network_facts }}"
+      register: r_vultr_network_facts

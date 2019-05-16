@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_netstream_global: 
-      index_switch: "{{ ce_netstream_global_index_switch | default('omit', True) }}"
-      statistics_direction: "{{ ce_netstream_global_statistics_direction | default('omit', True) }}"
-      state: "{{ ce_netstream_global_state | default('omit', True) }}"
-      sampler_interval: "{{ ce_netstream_global_sampler_interval | default('omit', True) }}"
-      statistics_record: "{{ ce_netstream_global_statistics_record | default('omit', True) }}"
-      sampler_direction: "{{ ce_netstream_global_sampler_direction | default('omit', True) }}"
-      interface: "{{ ce_netstream_global_interface | default('omit', True) }}"
-      type: "{{ ce_netstream_global_type | default('omit', True) }}"
+      index_switch: "{{ ce_netstream_global_index_switch | default(omit, True) }}"
+      statistics_direction: "{{ ce_netstream_global_statistics_direction | default(omit, True) }}"
+      state: "{{ ce_netstream_global_state | default(omit, True) }}"
+      sampler_interval: "{{ ce_netstream_global_sampler_interval | default(omit, True) }}"
+      statistics_record: "{{ ce_netstream_global_statistics_record | default(omit, True) }}"
+      sampler_direction: "{{ ce_netstream_global_sampler_direction | default(omit, True) }}"
+      interface: "{{ ce_netstream_global_interface | default(omit, True) }}"
+      type: "{{ ce_netstream_global_type | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_netstream_global"
       ce_netstream_global: "{{ ce_netstream_global }}"
+      register: r_ce_netstream_global

@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_iscsi_target"
   netapp_e_iscsi_target: "{{ netapp_e_iscsi_target }}"
+  register: r_netapp_e_iscsi_target
   vars:
     netapp_e_iscsi_target: 
       unnamed_discovery: "{{ netapp_e_iscsi_target_unnamed_discovery | default(omit, True) }}"

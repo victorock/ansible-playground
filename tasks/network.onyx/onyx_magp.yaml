@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_magp"
   onyx_magp: "{{ onyx_magp }}"
+  register: r_onyx_magp
   vars:
     onyx_magp: 
       interface: "{{ onyx_magp_interface | default(omit, True) }}"

@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     seboolean: 
-      state: "{{ seboolean_state | default('omit', True) }}"
-      name: "{{ seboolean_name | default('omit', True) }}"
-      persistent: "{{ seboolean_persistent | default('omit', True) }}"
+      state: "{{ seboolean_state | default(omit, True) }}"
+      name: "{{ seboolean_name | default(omit, True) }}"
+      persistent: "{{ seboolean_persistent | default(omit, True) }}"
   tasks:
     - name: "plugin_seboolean"
       seboolean: "{{ seboolean }}"
+      register: r_seboolean

@@ -1,6 +1,7 @@
 ---
 - name: "module_supervisorctl"
   supervisorctl: "{{ supervisorctl }}"
+  register: r_supervisorctl
   vars:
     supervisorctl: 
       username: "{{ supervisorctl_username | default(omit, True) }}"

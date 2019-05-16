@@ -1,6 +1,7 @@
 ---
 - name: "module_one_service"
   one_service: "{{ one_service }}"
+  register: r_one_service
   vars:
     one_service: 
       custom_attrs: "{{ one_service_custom_attrs | default(omit, True) }}"

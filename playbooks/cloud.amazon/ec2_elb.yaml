@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ec2_elb: 
-      profile: "{{ ec2_elb_profile | default('omit', True) }}"
-      aws_secret_key: "{{ ec2_elb_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ ec2_elb_aws_access_key | default('omit', True) }}"
-      security_token: "{{ ec2_elb_security_token | default('omit', True) }}"
-      region: "{{ ec2_elb_region | default('omit', True) }}"
-      instance_id: "{{ ec2_elb_instance_id | default('omit', True) }}"
-      state: "{{ ec2_elb_state | default('omit', True) }}"
-      wait_timeout: "{{ ec2_elb_wait_timeout | default('omit', True) }}"
-      ec2_url: "{{ ec2_elb_ec2_url | default('omit', True) }}"
-      wait: "{{ ec2_elb_wait | default('omit', True) }}"
-      validate_certs: "{{ ec2_elb_validate_certs | default('omit', True) }}"
-      enable_availability_zone: "{{ ec2_elb_enable_availability_zone | default('omit', True) }}"
-      ec2_elbs: "{{ ec2_elb_ec2_elbs | default('omit', True) }}"
+      profile: "{{ ec2_elb_profile | default(omit, True) }}"
+      aws_secret_key: "{{ ec2_elb_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ ec2_elb_aws_access_key | default(omit, True) }}"
+      security_token: "{{ ec2_elb_security_token | default(omit, True) }}"
+      region: "{{ ec2_elb_region | default(omit, True) }}"
+      instance_id: "{{ ec2_elb_instance_id | default(omit, True) }}"
+      state: "{{ ec2_elb_state | default(omit, True) }}"
+      wait_timeout: "{{ ec2_elb_wait_timeout | default(omit, True) }}"
+      ec2_url: "{{ ec2_elb_ec2_url | default(omit, True) }}"
+      wait: "{{ ec2_elb_wait | default(omit, True) }}"
+      validate_certs: "{{ ec2_elb_validate_certs | default(omit, True) }}"
+      enable_availability_zone: "{{ ec2_elb_enable_availability_zone | default(omit, True) }}"
+      ec2_elbs: "{{ ec2_elb_ec2_elbs | default(omit, True) }}"
   tasks:
     - name: "plugin_ec2_elb"
       ec2_elb: "{{ ec2_elb }}"
+      register: r_ec2_elb

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_networks"
   ovirt_networks: "{{ ovirt_networks }}"
+  register: r_ovirt_networks
   vars:
     ovirt_networks: 
       comment: "{{ ovirt_networks_comment | default(omit, True) }}"

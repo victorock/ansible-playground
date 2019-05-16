@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_region_facts"
   digital_ocean_region_facts: "{{ digital_ocean_region_facts }}"
+  register: r_digital_ocean_region_facts
   vars:
     digital_ocean_region_facts: 
       validate_certs: "{{ digital_ocean_region_facts_validate_certs | default(omit, True) }}"

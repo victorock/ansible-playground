@@ -1,6 +1,7 @@
 ---
 - name: "module_include_vars"
   include_vars: "{{ include_vars }}"
+  register: r_include_vars
   vars:
     include_vars: 
       ignore_files: "{{ include_vars_ignore_files | default(omit, True) }}"

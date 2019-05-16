@@ -1,6 +1,7 @@
 ---
 - name: "module_meraki_snmp"
   meraki_snmp: "{{ meraki_snmp }}"
+  register: r_meraki_snmp
   vars:
     meraki_snmp: 
       org_name: "{{ meraki_snmp_org_name | default(omit, True) }}"

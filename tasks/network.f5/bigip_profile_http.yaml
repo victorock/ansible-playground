@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_profile_http"
   bigip_profile_http: "{{ bigip_profile_http }}"
+  register: r_bigip_profile_http
   vars:
     bigip_profile_http: 
       parent: "{{ bigip_profile_http_parent | default(omit, True) }}"

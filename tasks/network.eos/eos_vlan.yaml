@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_vlan"
   eos_vlan: "{{ eos_vlan }}"
+  register: r_eos_vlan
   vars:
     eos_vlan: 
       authorize: "{{ eos_vlan_authorize | default(omit, True) }}"

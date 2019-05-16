@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_asm_policy"
   bigip_asm_policy: "{{ bigip_asm_policy }}"
+  register: r_bigip_asm_policy
   vars:
     bigip_asm_policy: 
       template: "{{ bigip_asm_policy_template | default(omit, True) }}"

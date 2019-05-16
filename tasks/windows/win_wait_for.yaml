@@ -1,6 +1,7 @@
 ---
 - name: "module_win_wait_for"
   win_wait_for: "{{ win_wait_for }}"
+  register: r_win_wait_for
   vars:
     win_wait_for: 
       host: "{{ win_wait_for_host | default(omit, True) }}"

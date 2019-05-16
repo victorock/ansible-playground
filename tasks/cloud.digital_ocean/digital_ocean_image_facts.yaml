@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_image_facts"
   digital_ocean_image_facts: "{{ digital_ocean_image_facts }}"
+  register: r_digital_ocean_image_facts
   vars:
     digital_ocean_image_facts: 
       image_type: "{{ digital_ocean_image_facts_image_type | default(omit, True) }}"

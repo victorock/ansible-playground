@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     win_hotfix: 
-      hotfix_identifier: "{{ win_hotfix_hotfix_identifier | default('omit', True) }}"
-      state: "{{ win_hotfix_state | default('omit', True) }}"
-      hotfix_kb: "{{ win_hotfix_hotfix_kb | default('omit', True) }}"
-      source: "{{ win_hotfix_source | default('omit', True) }}"
+      hotfix_identifier: "{{ win_hotfix_hotfix_identifier | default(omit, True) }}"
+      state: "{{ win_hotfix_state | default(omit, True) }}"
+      hotfix_kb: "{{ win_hotfix_hotfix_kb | default(omit, True) }}"
+      source: "{{ win_hotfix_source | default(omit, True) }}"
   tasks:
     - name: "plugin_win_hotfix"
       win_hotfix: "{{ win_hotfix }}"
+      register: r_win_hotfix

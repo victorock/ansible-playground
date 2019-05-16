@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     flatpak: 
-      executable: "{{ flatpak_executable | default('omit', True) }}"
-      state: "{{ flatpak_state | default('omit', True) }}"
-      remote: "{{ flatpak_remote | default('omit', True) }}"
-      method: "{{ flatpak_method | default('omit', True) }}"
-      name: "{{ flatpak_name | default('omit', True) }}"
+      executable: "{{ flatpak_executable | default(omit, True) }}"
+      state: "{{ flatpak_state | default(omit, True) }}"
+      remote: "{{ flatpak_remote | default(omit, True) }}"
+      method: "{{ flatpak_method | default(omit, True) }}"
+      name: "{{ flatpak_name | default(omit, True) }}"
   tasks:
     - name: "plugin_flatpak"
       flatpak: "{{ flatpak }}"
+      register: r_flatpak

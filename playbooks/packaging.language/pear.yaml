@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     pear: 
-      state: "{{ pear_state | default('omit', True) }}"
-      executable: "{{ pear_executable | default('omit', True) }}"
-      name: "{{ pear_name | default('omit', True) }}"
+      state: "{{ pear_state | default(omit, True) }}"
+      executable: "{{ pear_executable | default(omit, True) }}"
+      name: "{{ pear_name | default(omit, True) }}"
   tasks:
     - name: "plugin_pear"
       pear: "{{ pear }}"
+      register: r_pear

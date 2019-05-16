@@ -1,6 +1,7 @@
 ---
 - name: "module_iosxr_system"
   iosxr_system: "{{ iosxr_system }}"
+  register: r_iosxr_system
   vars:
     iosxr_system: 
       lookup_source: "{{ iosxr_system_lookup_source | default(omit, True) }}"

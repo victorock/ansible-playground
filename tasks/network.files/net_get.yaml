@@ -1,6 +1,7 @@
 ---
 - name: "module_net_get"
   net_get: "{{ net_get }}"
+  register: r_net_get
   vars:
     net_get: 
       dest: "{{ net_get_dest | default(omit, True) }}"

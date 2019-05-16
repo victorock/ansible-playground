@@ -1,6 +1,7 @@
 ---
 - name: "module_ibm_sa_host"
   ibm_sa_host: "{{ ibm_sa_host }}"
+  register: r_ibm_sa_host
   vars:
     ibm_sa_host: 
       username: "{{ ibm_sa_host_username | default(omit, True) }}"

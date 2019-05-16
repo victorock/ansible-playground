@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_tag_facts: 
-      name: "{{ ovirt_tag_facts_name | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_tag_facts_fetch_nested | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_tag_facts_nested_attributes | default('omit', True) }}"
-      vm: "{{ ovirt_tag_facts_vm | default('omit', True) }}"
-      host: "{{ ovirt_tag_facts_host | default('omit', True) }}"
-      auth: "{{ ovirt_tag_facts_auth | default('omit', True) }}"
+      name: "{{ ovirt_tag_facts_name | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_tag_facts_fetch_nested | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_tag_facts_nested_attributes | default(omit, True) }}"
+      vm: "{{ ovirt_tag_facts_vm | default(omit, True) }}"
+      host: "{{ ovirt_tag_facts_host | default(omit, True) }}"
+      auth: "{{ ovirt_tag_facts_auth | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_tag_facts"
       ovirt_tag_facts: "{{ ovirt_tag_facts }}"
+      register: r_ovirt_tag_facts

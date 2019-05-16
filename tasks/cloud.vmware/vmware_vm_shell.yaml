@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vm_shell"
   vmware_vm_shell: "{{ vmware_vm_shell }}"
+  register: r_vmware_vm_shell
   vars:
     vmware_vm_shell: 
       username: "{{ vmware_vm_shell_username | default(omit, True) }}"

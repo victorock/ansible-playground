@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_factory"
   cnos_factory: "{{ cnos_factory }}"
+  register: r_cnos_factory
   vars:
     cnos_factory: 
       username: "{{ cnos_factory_username | default(omit, True) }}"

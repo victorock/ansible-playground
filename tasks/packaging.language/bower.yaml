@@ -1,6 +1,7 @@
 ---
 - name: "module_bower"
   bower: "{{ bower }}"
+  register: r_bower
   vars:
     bower: 
       name: "{{ bower_name | default(omit, True) }}"

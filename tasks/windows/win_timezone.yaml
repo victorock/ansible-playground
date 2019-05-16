@@ -1,6 +1,7 @@
 ---
 - name: "module_win_timezone"
   win_timezone: "{{ win_timezone }}"
+  register: r_win_timezone
   vars:
     win_timezone: 
       timezone: "{{ win_timezone_timezone | default(omit, True) }}"

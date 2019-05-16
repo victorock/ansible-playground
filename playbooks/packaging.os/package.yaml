@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     package: 
-      state: "{{ package_state | default('omit', True) }}"
-      use: "{{ package_use | default('omit', True) }}"
-      name: "{{ package_name | default('omit', True) }}"
+      state: "{{ package_state | default(omit, True) }}"
+      use: "{{ package_use | default(omit, True) }}"
+      name: "{{ package_name | default(omit, True) }}"
   tasks:
     - name: "plugin_package"
       package: "{{ package }}"
+      register: r_package

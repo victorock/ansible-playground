@@ -1,6 +1,7 @@
 ---
 - name: "module_proxmox"
   proxmox: "{{ proxmox }}"
+  register: r_proxmox
   vars:
     proxmox: 
       force: "{{ proxmox_force | default(omit, True) }}"

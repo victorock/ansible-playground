@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_ntp_auth"
   nxos_ntp_auth: "{{ nxos_ntp_auth }}"
+  register: r_nxos_ntp_auth
   vars:
     nxos_ntp_auth: 
       auth_type: "{{ nxos_ntp_auth_auth_type | default(omit, True) }}"

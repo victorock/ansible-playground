@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean"
   digital_ocean: "{{ digital_ocean }}"
+  register: r_digital_ocean
   vars:
     digital_ocean: 
       unique_name: "{{ digital_ocean_unique_name | default(omit, True) }}"

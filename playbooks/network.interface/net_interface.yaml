@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     net_interface: 
-      purge: "{{ net_interface_purge | default('omit', True) }}"
-      description: "{{ net_interface_description | default('omit', True) }}"
-      duplex: "{{ net_interface_duplex | default('omit', True) }}"
-      enabled: "{{ net_interface_enabled | default('omit', True) }}"
-      mtu: "{{ net_interface_mtu | default('omit', True) }}"
-      rx_rate: "{{ net_interface_rx_rate | default('omit', True) }}"
-      state: "{{ net_interface_state | default('omit', True) }}"
-      delay: "{{ net_interface_delay | default('omit', True) }}"
-      aggregate: "{{ net_interface_aggregate | default('omit', True) }}"
-      speed: "{{ net_interface_speed | default('omit', True) }}"
-      tx_rate: "{{ net_interface_tx_rate | default('omit', True) }}"
-      name: "{{ net_interface_name | default('omit', True) }}"
+      purge: "{{ net_interface_purge | default(omit, True) }}"
+      description: "{{ net_interface_description | default(omit, True) }}"
+      duplex: "{{ net_interface_duplex | default(omit, True) }}"
+      enabled: "{{ net_interface_enabled | default(omit, True) }}"
+      mtu: "{{ net_interface_mtu | default(omit, True) }}"
+      rx_rate: "{{ net_interface_rx_rate | default(omit, True) }}"
+      state: "{{ net_interface_state | default(omit, True) }}"
+      delay: "{{ net_interface_delay | default(omit, True) }}"
+      aggregate: "{{ net_interface_aggregate | default(omit, True) }}"
+      speed: "{{ net_interface_speed | default(omit, True) }}"
+      tx_rate: "{{ net_interface_tx_rate | default(omit, True) }}"
+      name: "{{ net_interface_name | default(omit, True) }}"
   tasks:
     - name: "plugin_net_interface"
       net_interface: "{{ net_interface }}"
+      register: r_net_interface

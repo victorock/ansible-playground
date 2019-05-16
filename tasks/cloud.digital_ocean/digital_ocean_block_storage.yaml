@@ -1,6 +1,7 @@
 ---
 - name: "module_digital_ocean_block_storage"
   digital_ocean_block_storage: "{{ digital_ocean_block_storage }}"
+  register: r_digital_ocean_block_storage
   vars:
     digital_ocean_block_storage: 
       droplet_id: "{{ digital_ocean_block_storage_droplet_id | default(omit, True) }}"

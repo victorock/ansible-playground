@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_conditional_command"
   cnos_conditional_command: "{{ cnos_conditional_command }}"
+  register: r_cnos_conditional_command
   vars:
     cnos_conditional_command: 
       username: "{{ cnos_conditional_command_username | default(omit, True) }}"

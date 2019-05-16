@@ -1,6 +1,7 @@
 ---
 - name: "module_edgeos_facts"
   edgeos_facts: "{{ edgeos_facts }}"
+  register: r_edgeos_facts
   vars:
     edgeos_facts: 
       gather_subset: "{{ edgeos_facts_gather_subset | default(omit, True) }}"

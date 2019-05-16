@@ -1,6 +1,7 @@
 ---
 - name: "module_github_release"
   github_release: "{{ github_release }}"
+  register: r_github_release
   vars:
     github_release: 
       body: "{{ github_release_body | default(omit, True) }}"

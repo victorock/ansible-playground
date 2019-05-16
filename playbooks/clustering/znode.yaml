@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     znode: 
-      name: "{{ znode_name | default('omit', True) }}"
-      recursive: "{{ znode_recursive | default('omit', True) }}"
-      value: "{{ znode_value | default('omit', True) }}"
-      state: "{{ znode_state | default('omit', True) }}"
-      hosts: "{{ znode_hosts | default('omit', True) }}"
-      timeout: "{{ znode_timeout | default('omit', True) }}"
-      op: "{{ znode_op | default('omit', True) }}"
+      name: "{{ znode_name | default(omit, True) }}"
+      recursive: "{{ znode_recursive | default(omit, True) }}"
+      value: "{{ znode_value | default(omit, True) }}"
+      state: "{{ znode_state | default(omit, True) }}"
+      hosts: "{{ znode_hosts | default(omit, True) }}"
+      timeout: "{{ znode_timeout | default(omit, True) }}"
+      op: "{{ znode_op | default(omit, True) }}"
   tasks:
     - name: "plugin_znode"
       znode: "{{ znode }}"
+      register: r_znode

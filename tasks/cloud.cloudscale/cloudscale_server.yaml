@@ -1,6 +1,7 @@
 ---
 - name: "module_cloudscale_server"
   cloudscale_server: "{{ cloudscale_server }}"
+  register: r_cloudscale_server
   vars:
     cloudscale_server: 
       volume_size_gb: "{{ cloudscale_server_volume_size_gb | default(omit, True) }}"

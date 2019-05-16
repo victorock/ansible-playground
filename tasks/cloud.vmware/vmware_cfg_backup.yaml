@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_cfg_backup"
   vmware_cfg_backup: "{{ vmware_cfg_backup }}"
+  register: r_vmware_cfg_backup
   vars:
     vmware_cfg_backup: 
       username: "{{ vmware_cfg_backup_username | default(omit, True) }}"

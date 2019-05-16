@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_route"
   gcp_compute_route: "{{ gcp_compute_route }}"
+  register: r_gcp_compute_route
   vars:
     gcp_compute_route: 
       dest_range: "{{ gcp_compute_route_dest_range | default(omit, True) }}"

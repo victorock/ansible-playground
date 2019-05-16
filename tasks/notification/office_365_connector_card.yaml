@@ -1,6 +1,7 @@
 ---
 - name: "module_office_365_connector_card"
   office_365_connector_card: "{{ office_365_connector_card }}"
+  register: r_office_365_connector_card
   vars:
     office_365_connector_card: 
       title: "{{ office_365_connector_card_title | default(omit, True) }}"

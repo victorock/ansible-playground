@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_vsvip"
   avi_vsvip: "{{ avi_vsvip }}"
+  register: r_avi_vsvip
   vars:
     avi_vsvip: 
       username: "{{ avi_vsvip_username | default(omit, True) }}"

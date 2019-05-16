@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     purefb_snap: 
-      fb_url: "{{ purefb_snap_fb_url | default('omit', True) }}"
-      suffix: "{{ purefb_snap_suffix | default('omit', True) }}"
-      name: "{{ purefb_snap_name | default('omit', True) }}"
-      state: "{{ purefb_snap_state | default('omit', True) }}"
-      api_token: "{{ purefb_snap_api_token | default('omit', True) }}"
-      eradicate: "{{ purefb_snap_eradicate | default('omit', True) }}"
+      fb_url: "{{ purefb_snap_fb_url | default(omit, True) }}"
+      suffix: "{{ purefb_snap_suffix | default(omit, True) }}"
+      name: "{{ purefb_snap_name | default(omit, True) }}"
+      state: "{{ purefb_snap_state | default(omit, True) }}"
+      api_token: "{{ purefb_snap_api_token | default(omit, True) }}"
+      eradicate: "{{ purefb_snap_eradicate | default(omit, True) }}"
   tasks:
     - name: "plugin_purefb_snap"
       purefb_snap: "{{ purefb_snap }}"
+      register: r_purefb_snap

@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_health_check"
   gcp_compute_health_check: "{{ gcp_compute_health_check }}"
+  register: r_gcp_compute_health_check
   vars:
     gcp_compute_health_check: 
       scopes: "{{ gcp_compute_health_check_scopes | default(omit, True) }}"

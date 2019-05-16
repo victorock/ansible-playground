@@ -10,3 +10,4 @@
   tasks:
     - name: "plugin_lldp"
       lldp: "{{ lldp }}"
+      register: r_lldp

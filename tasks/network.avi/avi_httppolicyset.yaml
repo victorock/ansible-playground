@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_httppolicyset"
   avi_httppolicyset: "{{ avi_httppolicyset }}"
+  register: r_avi_httppolicyset
   vars:
     avi_httppolicyset: 
       http_security_policy: "{{ avi_httppolicyset_http_security_policy | default(omit, True) }}"

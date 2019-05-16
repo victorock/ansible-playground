@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigip_policy_rule: 
-      name: "{{ bigip_policy_rule_name | default('omit', True) }}"
-      conditions: "{{ bigip_policy_rule_conditions | default('omit', True) }}"
-      partition: "{{ bigip_policy_rule_partition | default('omit', True) }}"
-      actions: "{{ bigip_policy_rule_actions | default('omit', True) }}"
-      server: "{{ bigip_policy_rule_server | default('omit', True) }}"
-      state: "{{ bigip_policy_rule_state | default('omit', True) }}"
-      user: "{{ bigip_policy_rule_user | default('omit', True) }}"
-      server_port: "{{ bigip_policy_rule_server_port | default('omit', True) }}"
-      provider: "{{ bigip_policy_rule_provider | default('omit', True) }}"
-      policy: "{{ bigip_policy_rule_policy | default('omit', True) }}"
-      password: "{{ bigip_policy_rule_password | default('omit', True) }}"
-      validate_certs: "{{ bigip_policy_rule_validate_certs | default('omit', True) }}"
-      description: "{{ bigip_policy_rule_description | default('omit', True) }}"
+      name: "{{ bigip_policy_rule_name | default(omit, True) }}"
+      conditions: "{{ bigip_policy_rule_conditions | default(omit, True) }}"
+      partition: "{{ bigip_policy_rule_partition | default(omit, True) }}"
+      actions: "{{ bigip_policy_rule_actions | default(omit, True) }}"
+      server: "{{ bigip_policy_rule_server | default(omit, True) }}"
+      state: "{{ bigip_policy_rule_state | default(omit, True) }}"
+      user: "{{ bigip_policy_rule_user | default(omit, True) }}"
+      server_port: "{{ bigip_policy_rule_server_port | default(omit, True) }}"
+      provider: "{{ bigip_policy_rule_provider | default(omit, True) }}"
+      policy: "{{ bigip_policy_rule_policy | default(omit, True) }}"
+      password: "{{ bigip_policy_rule_password | default(omit, True) }}"
+      validate_certs: "{{ bigip_policy_rule_validate_certs | default(omit, True) }}"
+      description: "{{ bigip_policy_rule_description | default(omit, True) }}"
   tasks:
     - name: "plugin_bigip_policy_rule"
       bigip_policy_rule: "{{ bigip_policy_rule }}"
+      register: r_bigip_policy_rule

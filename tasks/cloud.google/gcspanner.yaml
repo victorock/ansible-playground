@@ -1,6 +1,7 @@
 ---
 - name: "module_gcspanner"
   gcspanner: "{{ gcspanner }}"
+  register: r_gcspanner
   vars:
     gcspanner: 
       instance_display_name: "{{ gcspanner_instance_display_name | default(omit, True) }}"

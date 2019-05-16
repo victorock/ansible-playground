@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_netconf: 
-      rpc: "{{ ce_netconf_rpc | default('omit', True) }}"
-      cfg_xml: "{{ ce_netconf_cfg_xml | default('omit', True) }}"
+      rpc: "{{ ce_netconf_rpc | default(omit, True) }}"
+      cfg_xml: "{{ ce_netconf_cfg_xml | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_netconf"
       ce_netconf: "{{ ce_netconf }}"
+      register: r_ce_netconf

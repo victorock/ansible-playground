@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ipa_service: 
-      ipa_port: "{{ ipa_service_ipa_port | default('omit', True) }}"
-      force: "{{ ipa_service_force | default('omit', True) }}"
-      krbcanonicalname: "{{ ipa_service_krbcanonicalname | default('omit', True) }}"
-      ipa_prot: "{{ ipa_service_ipa_prot | default('omit', True) }}"
-      state: "{{ ipa_service_state | default('omit', True) }}"
-      hosts: "{{ ipa_service_hosts | default('omit', True) }}"
-      ipa_host: "{{ ipa_service_ipa_host | default('omit', True) }}"
-      ipa_user: "{{ ipa_service_ipa_user | default('omit', True) }}"
-      ipa_pass: "{{ ipa_service_ipa_pass | default('omit', True) }}"
-      ipa_timeout: "{{ ipa_service_ipa_timeout | default('omit', True) }}"
-      validate_certs: "{{ ipa_service_validate_certs | default('omit', True) }}"
+      ipa_port: "{{ ipa_service_ipa_port | default(omit, True) }}"
+      force: "{{ ipa_service_force | default(omit, True) }}"
+      krbcanonicalname: "{{ ipa_service_krbcanonicalname | default(omit, True) }}"
+      ipa_prot: "{{ ipa_service_ipa_prot | default(omit, True) }}"
+      state: "{{ ipa_service_state | default(omit, True) }}"
+      hosts: "{{ ipa_service_hosts | default(omit, True) }}"
+      ipa_host: "{{ ipa_service_ipa_host | default(omit, True) }}"
+      ipa_user: "{{ ipa_service_ipa_user | default(omit, True) }}"
+      ipa_pass: "{{ ipa_service_ipa_pass | default(omit, True) }}"
+      ipa_timeout: "{{ ipa_service_ipa_timeout | default(omit, True) }}"
+      validate_certs: "{{ ipa_service_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_ipa_service"
       ipa_service: "{{ ipa_service }}"
+      register: r_ipa_service

@@ -1,6 +1,7 @@
 ---
 - name: "module_webfaction_db"
   webfaction_db: "{{ webfaction_db }}"
+  register: r_webfaction_db
   vars:
     webfaction_db: 
       name: "{{ webfaction_db_name | default(omit, True) }}"

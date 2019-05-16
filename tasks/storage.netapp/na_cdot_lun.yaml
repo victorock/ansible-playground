@@ -1,6 +1,7 @@
 ---
 - name: "module_na_cdot_lun"
   na_cdot_lun: "{{ na_cdot_lun }}"
+  register: r_na_cdot_lun
   vars:
     na_cdot_lun: 
       username: "{{ na_cdot_lun_username | default(omit, True) }}"

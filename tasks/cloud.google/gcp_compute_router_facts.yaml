@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_router_facts"
   gcp_compute_router_facts: "{{ gcp_compute_router_facts }}"
+  register: r_gcp_compute_router_facts
   vars:
     gcp_compute_router_facts: 
       scopes: "{{ gcp_compute_router_facts_scopes | default(omit, True) }}"

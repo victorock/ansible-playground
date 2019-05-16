@@ -8,4 +8,5 @@
   tasks:
     - name: "module_ec2_metadata_facts"
       ec2_metadata_facts:
-  
+      register: r_ec2_metadata_facts
+

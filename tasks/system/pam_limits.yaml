@@ -1,6 +1,7 @@
 ---
 - name: "module_pam_limits"
   pam_limits: "{{ pam_limits }}"
+  register: r_pam_limits
   vars:
     pam_limits: 
       comment: "{{ pam_limits_comment | default(omit, True) }}"

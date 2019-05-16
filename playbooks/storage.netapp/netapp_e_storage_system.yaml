@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_storage_system: 
-      ssid: "{{ netapp_e_storage_system_ssid | default('omit', True) }}"
-      meta_tags: "{{ netapp_e_storage_system_meta_tags | default('omit', True) }}"
-      api_url: "{{ netapp_e_storage_system_api_url | default('omit', True) }}"
-      array_wwn: "{{ netapp_e_storage_system_array_wwn | default('omit', True) }}"
-      api_password: "{{ netapp_e_storage_system_api_password | default('omit', True) }}"
-      api_username: "{{ netapp_e_storage_system_api_username | default('omit', True) }}"
-      state: "{{ netapp_e_storage_system_state | default('omit', True) }}"
-      array_password: "{{ netapp_e_storage_system_array_password | default('omit', True) }}"
-      enable_trace: "{{ netapp_e_storage_system_enable_trace | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_storage_system_validate_certs | default('omit', True) }}"
-      controller_addresses: "{{ netapp_e_storage_system_controller_addresses | default('omit', True) }}"
+      ssid: "{{ netapp_e_storage_system_ssid | default(omit, True) }}"
+      meta_tags: "{{ netapp_e_storage_system_meta_tags | default(omit, True) }}"
+      api_url: "{{ netapp_e_storage_system_api_url | default(omit, True) }}"
+      array_wwn: "{{ netapp_e_storage_system_array_wwn | default(omit, True) }}"
+      api_password: "{{ netapp_e_storage_system_api_password | default(omit, True) }}"
+      api_username: "{{ netapp_e_storage_system_api_username | default(omit, True) }}"
+      state: "{{ netapp_e_storage_system_state | default(omit, True) }}"
+      array_password: "{{ netapp_e_storage_system_array_password | default(omit, True) }}"
+      enable_trace: "{{ netapp_e_storage_system_enable_trace | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_storage_system_validate_certs | default(omit, True) }}"
+      controller_addresses: "{{ netapp_e_storage_system_controller_addresses | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_storage_system"
       netapp_e_storage_system: "{{ netapp_e_storage_system }}"
+      register: r_netapp_e_storage_system

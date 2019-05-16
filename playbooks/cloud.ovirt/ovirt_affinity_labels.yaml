@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ovirt_affinity_labels: 
-      name: "{{ ovirt_affinity_labels_name | default('omit', True) }}"
-      poll_interval: "{{ ovirt_affinity_labels_poll_interval | default('omit', True) }}"
-      state: "{{ ovirt_affinity_labels_state | default('omit', True) }}"
-      nested_attributes: "{{ ovirt_affinity_labels_nested_attributes | default('omit', True) }}"
-      cluster: "{{ ovirt_affinity_labels_cluster | default('omit', True) }}"
-      fetch_nested: "{{ ovirt_affinity_labels_fetch_nested | default('omit', True) }}"
-      hosts: "{{ ovirt_affinity_labels_hosts | default('omit', True) }}"
-      auth: "{{ ovirt_affinity_labels_auth | default('omit', True) }}"
-      timeout: "{{ ovirt_affinity_labels_timeout | default('omit', True) }}"
-      vms: "{{ ovirt_affinity_labels_vms | default('omit', True) }}"
-      wait: "{{ ovirt_affinity_labels_wait | default('omit', True) }}"
+      name: "{{ ovirt_affinity_labels_name | default(omit, True) }}"
+      poll_interval: "{{ ovirt_affinity_labels_poll_interval | default(omit, True) }}"
+      state: "{{ ovirt_affinity_labels_state | default(omit, True) }}"
+      nested_attributes: "{{ ovirt_affinity_labels_nested_attributes | default(omit, True) }}"
+      cluster: "{{ ovirt_affinity_labels_cluster | default(omit, True) }}"
+      fetch_nested: "{{ ovirt_affinity_labels_fetch_nested | default(omit, True) }}"
+      hosts: "{{ ovirt_affinity_labels_hosts | default(omit, True) }}"
+      auth: "{{ ovirt_affinity_labels_auth | default(omit, True) }}"
+      timeout: "{{ ovirt_affinity_labels_timeout | default(omit, True) }}"
+      vms: "{{ ovirt_affinity_labels_vms | default(omit, True) }}"
+      wait: "{{ ovirt_affinity_labels_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_ovirt_affinity_labels"
       ovirt_affinity_labels: "{{ ovirt_affinity_labels }}"
+      register: r_ovirt_affinity_labels

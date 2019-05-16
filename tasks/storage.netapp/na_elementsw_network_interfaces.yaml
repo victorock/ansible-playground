@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_network_interfaces"
   na_elementsw_network_interfaces: "{{ na_elementsw_network_interfaces }}"
+  register: r_na_elementsw_network_interfaces
   vars:
     na_elementsw_network_interfaces: 
       username: "{{ na_elementsw_network_interfaces_username | default(omit, True) }}"

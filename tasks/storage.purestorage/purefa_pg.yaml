@@ -1,6 +1,7 @@
 ---
 - name: "module_purefa_pg"
   purefa_pg: "{{ purefa_pg }}"
+  register: r_purefa_pg
   vars:
     purefa_pg: 
       pgroup: "{{ purefa_pg_pgroup | default(omit, True) }}"

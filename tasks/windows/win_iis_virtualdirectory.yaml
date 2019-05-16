@@ -1,6 +1,7 @@
 ---
 - name: "module_win_iis_virtualdirectory"
   win_iis_virtualdirectory: "{{ win_iis_virtualdirectory }}"
+  register: r_win_iis_virtualdirectory
   vars:
     win_iis_virtualdirectory: 
       application: "{{ win_iis_virtualdirectory_application | default(omit, True) }}"

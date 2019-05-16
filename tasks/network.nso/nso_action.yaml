@@ -1,6 +1,7 @@
 ---
 - name: "module_nso_action"
   nso_action: "{{ nso_action }}"
+  register: r_nso_action
   vars:
     nso_action: 
       username: "{{ nso_action_username | default(omit, True) }}"

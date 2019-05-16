@@ -1,6 +1,7 @@
 ---
 - name: "module_os_ironic_inspect"
   os_ironic_inspect: "{{ os_ironic_inspect }}"
+  register: r_os_ironic_inspect
   vars:
     os_ironic_inspect: 
       auth_type: "{{ os_ironic_inspect_auth_type | default(omit, True) }}"

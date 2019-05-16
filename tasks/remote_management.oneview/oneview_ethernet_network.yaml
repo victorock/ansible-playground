@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_ethernet_network"
   oneview_ethernet_network: "{{ oneview_ethernet_network }}"
+  register: r_oneview_ethernet_network
   vars:
     oneview_ethernet_network: 
       data: "{{ oneview_ethernet_network_data | default(omit, True) }}"

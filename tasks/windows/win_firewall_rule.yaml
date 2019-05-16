@@ -1,6 +1,7 @@
 ---
 - name: "module_win_firewall_rule"
   win_firewall_rule: "{{ win_firewall_rule }}"
+  register: r_win_firewall_rule
   vars:
     win_firewall_rule: 
       remoteport: "{{ win_firewall_rule_remoteport | default(omit, True) }}"

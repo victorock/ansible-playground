@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_ami_facts"
   ec2_ami_facts: "{{ ec2_ami_facts }}"
+  register: r_ec2_ami_facts
   vars:
     ec2_ami_facts: 
       profile: "{{ ec2_ami_facts_profile | default(omit, True) }}"

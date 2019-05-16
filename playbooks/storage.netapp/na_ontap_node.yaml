@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_ontap_node: 
-      username: "{{ na_ontap_node_username | default('omit', True) }}"
-      from_name: "{{ na_ontap_node_from_name | default('omit', True) }}"
-      name: "{{ na_ontap_node_name | default('omit', True) }}"
-      hostname: "{{ na_ontap_node_hostname | default('omit', True) }}"
-      http_port: "{{ na_ontap_node_http_port | default('omit', True) }}"
-      https: "{{ na_ontap_node_https | default('omit', True) }}"
-      password: "{{ na_ontap_node_password | default('omit', True) }}"
-      validate_certs: "{{ na_ontap_node_validate_certs | default('omit', True) }}"
+      username: "{{ na_ontap_node_username | default(omit, True) }}"
+      from_name: "{{ na_ontap_node_from_name | default(omit, True) }}"
+      name: "{{ na_ontap_node_name | default(omit, True) }}"
+      hostname: "{{ na_ontap_node_hostname | default(omit, True) }}"
+      http_port: "{{ na_ontap_node_http_port | default(omit, True) }}"
+      https: "{{ na_ontap_node_https | default(omit, True) }}"
+      password: "{{ na_ontap_node_password | default(omit, True) }}"
+      validate_certs: "{{ na_ontap_node_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_na_ontap_node"
       na_ontap_node: "{{ na_ontap_node }}"
+      register: r_na_ontap_node

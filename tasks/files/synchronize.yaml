@@ -1,6 +1,7 @@
 ---
 - name: "module_synchronize"
   synchronize: "{{ synchronize }}"
+  register: r_synchronize
   vars:
     synchronize: 
       partial: "{{ synchronize_partial | default(omit, True) }}"

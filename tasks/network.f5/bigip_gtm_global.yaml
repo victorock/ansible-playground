@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_gtm_global"
   bigip_gtm_global: "{{ bigip_gtm_global }}"
+  register: r_bigip_gtm_global
   vars:
     bigip_gtm_global: 
       server: "{{ bigip_gtm_global_server | default(omit, True) }}"

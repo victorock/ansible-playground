@@ -1,6 +1,7 @@
 ---
 - name: "module_postgresql_privs"
   postgresql_privs: "{{ postgresql_privs }}"
+  register: r_postgresql_privs
   vars:
     postgresql_privs: 
       unix_socket: "{{ postgresql_privs_unix_socket | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_k8s_facts"
   k8s_facts: "{{ k8s_facts }}"
+  register: r_k8s_facts
   vars:
     k8s_facts: 
       username: "{{ k8s_facts_username | default(omit, True) }}"

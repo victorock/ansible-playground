@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vmotion"
   vmware_vmotion: "{{ vmware_vmotion }}"
+  register: r_vmware_vmotion
   vars:
     vmware_vmotion: 
       vm_name: "{{ vmware_vmotion_vm_name | default(omit, True) }}"

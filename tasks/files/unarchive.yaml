@@ -1,6 +1,7 @@
 ---
 - name: "module_unarchive"
   unarchive: "{{ unarchive }}"
+  register: r_unarchive
   vars:
     unarchive: 
       src: "{{ unarchive_src | default(omit, True) }}"

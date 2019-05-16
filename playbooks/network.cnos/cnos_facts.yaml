@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cnos_facts: 
-      authorize: "{{ cnos_facts_authorize | default('omit', True) }}"
-      auth_pass: "{{ cnos_facts_auth_pass | default('omit', True) }}"
-      provider: "{{ cnos_facts_provider | default('omit', True) }}"
-      gather_subset: "{{ cnos_facts_gather_subset | default('omit', True) }}"
+      authorize: "{{ cnos_facts_authorize | default(omit, True) }}"
+      auth_pass: "{{ cnos_facts_auth_pass | default(omit, True) }}"
+      provider: "{{ cnos_facts_provider | default(omit, True) }}"
+      gather_subset: "{{ cnos_facts_gather_subset | default(omit, True) }}"
   tasks:
     - name: "plugin_cnos_facts"
       cnos_facts: "{{ cnos_facts }}"
+      register: r_cnos_facts

@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_affinity_group"
   ovirt_affinity_group: "{{ ovirt_affinity_group }}"
+  register: r_ovirt_affinity_group
   vars:
     ovirt_affinity_group: 
       vm_enforcing: "{{ ovirt_affinity_group_vm_enforcing | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_instance_template"
   gce_instance_template: "{{ gce_instance_template }}"
+  register: r_gce_instance_template
   vars:
     gce_instance_template: 
       automatic_restart: "{{ gce_instance_template_automatic_restart | default(omit, True) }}"

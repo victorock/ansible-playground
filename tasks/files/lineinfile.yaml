@@ -1,6 +1,7 @@
 ---
 - name: "module_lineinfile"
   lineinfile: "{{ lineinfile }}"
+  register: r_lineinfile
   vars:
     lineinfile: 
       group: "{{ lineinfile_group | default(omit, True) }}"

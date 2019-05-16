@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     oneandone_public_ip: 
-      datacenter: "{{ oneandone_public_ip_datacenter | default('omit', True) }}"
-      api_url: "{{ oneandone_public_ip_api_url | default('omit', True) }}"
-      wait_interval: "{{ oneandone_public_ip_wait_interval | default('omit', True) }}"
-      auth_token: "{{ oneandone_public_ip_auth_token | default('omit', True) }}"
-      reverse_dns: "{{ oneandone_public_ip_reverse_dns | default('omit', True) }}"
-      state: "{{ oneandone_public_ip_state | default('omit', True) }}"
-      wait_timeout: "{{ oneandone_public_ip_wait_timeout | default('omit', True) }}"
-      public_ip_id: "{{ oneandone_public_ip_public_ip_id | default('omit', True) }}"
-      type: "{{ oneandone_public_ip_type | default('omit', True) }}"
-      wait: "{{ oneandone_public_ip_wait | default('omit', True) }}"
+      datacenter: "{{ oneandone_public_ip_datacenter | default(omit, True) }}"
+      api_url: "{{ oneandone_public_ip_api_url | default(omit, True) }}"
+      wait_interval: "{{ oneandone_public_ip_wait_interval | default(omit, True) }}"
+      auth_token: "{{ oneandone_public_ip_auth_token | default(omit, True) }}"
+      reverse_dns: "{{ oneandone_public_ip_reverse_dns | default(omit, True) }}"
+      state: "{{ oneandone_public_ip_state | default(omit, True) }}"
+      wait_timeout: "{{ oneandone_public_ip_wait_timeout | default(omit, True) }}"
+      public_ip_id: "{{ oneandone_public_ip_public_ip_id | default(omit, True) }}"
+      type: "{{ oneandone_public_ip_type | default(omit, True) }}"
+      wait: "{{ oneandone_public_ip_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_oneandone_public_ip"
       oneandone_public_ip: "{{ oneandone_public_ip }}"
+      register: r_oneandone_public_ip

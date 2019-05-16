@@ -1,6 +1,7 @@
 ---
 - name: "module_syslogger"
   syslogger: "{{ syslogger }}"
+  register: r_syslogger
   vars:
     syslogger: 
       msg: "{{ syslogger_msg | default(omit, True) }}"

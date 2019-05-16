@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_linkagg"
   eos_linkagg: "{{ eos_linkagg }}"
+  register: r_eos_linkagg
   vars:
     eos_linkagg: 
       authorize: "{{ eos_linkagg_authorize | default(omit, True) }}"

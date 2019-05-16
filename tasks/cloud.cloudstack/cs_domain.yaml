@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_domain"
   cs_domain: "{{ cs_domain }}"
+  register: r_cs_domain
   vars:
     cs_domain: 
       api_key: "{{ cs_domain_api_key | default(omit, True) }}"

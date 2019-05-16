@@ -1,6 +1,7 @@
 ---
 - name: "module_memset_zone_record"
   memset_zone_record: "{{ memset_zone_record }}"
+  register: r_memset_zone_record
   vars:
     memset_zone_record: 
       priority: "{{ memset_zone_record_priority | default(omit, True) }}"

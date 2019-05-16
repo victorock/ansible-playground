@@ -1,6 +1,7 @@
 ---
 - name: "module_ce_vxlan_gateway"
   ce_vxlan_gateway: "{{ ce_vxlan_gateway }}"
+  register: r_ce_vxlan_gateway
   vars:
     ce_vxlan_gateway: 
       dfs_source_vpn: "{{ ce_vxlan_gateway_dfs_source_vpn | default(omit, True) }}"

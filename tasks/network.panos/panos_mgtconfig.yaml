@@ -1,6 +1,7 @@
 ---
 - name: "module_panos_mgtconfig"
   panos_mgtconfig: "{{ panos_mgtconfig }}"
+  register: r_panos_mgtconfig
   vars:
     panos_mgtconfig: 
       username: "{{ panos_mgtconfig_username | default(omit, True) }}"

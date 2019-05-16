@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gluster_peer: 
-      state: "{{ gluster_peer_state | default('omit', True) }}"
-      force: "{{ gluster_peer_force | default('omit', True) }}"
-      nodes: "{{ gluster_peer_nodes | default('omit', True) }}"
+      state: "{{ gluster_peer_state | default(omit, True) }}"
+      force: "{{ gluster_peer_force | default(omit, True) }}"
+      nodes: "{{ gluster_peer_nodes | default(omit, True) }}"
   tasks:
     - name: "plugin_gluster_peer"
       gluster_peer: "{{ gluster_peer }}"
+      register: r_gluster_peer

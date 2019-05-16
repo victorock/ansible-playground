@@ -1,6 +1,7 @@
 ---
 - name: "module_vr_server"
   vr_server: "{{ vr_server }}"
+  register: r_vr_server
   vars:
     vr_server: 
       api_retries: "{{ vr_server_api_retries | default(omit, True) }}"

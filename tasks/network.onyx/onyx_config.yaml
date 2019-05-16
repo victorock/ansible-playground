@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_config"
   onyx_config: "{{ onyx_config }}"
+  register: r_onyx_config
   vars:
     onyx_config: 
       src: "{{ onyx_config_src | default(omit, True) }}"

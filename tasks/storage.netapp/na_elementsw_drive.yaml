@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_drive"
   na_elementsw_drive: "{{ na_elementsw_drive }}"
+  register: r_na_elementsw_drive
   vars:
     na_elementsw_drive: 
       username: "{{ na_elementsw_drive_username | default(omit, True) }}"

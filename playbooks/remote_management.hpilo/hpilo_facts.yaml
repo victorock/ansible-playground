@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     hpilo_facts: 
-      host: "{{ hpilo_facts_host | default('omit', True) }}"
-      password: "{{ hpilo_facts_password | default('omit', True) }}"
-      ssl_version: "{{ hpilo_facts_ssl_version | default('omit', True) }}"
-      login: "{{ hpilo_facts_login | default('omit', True) }}"
+      host: "{{ hpilo_facts_host | default(omit, True) }}"
+      password: "{{ hpilo_facts_password | default(omit, True) }}"
+      ssl_version: "{{ hpilo_facts_ssl_version | default(omit, True) }}"
+      login: "{{ hpilo_facts_login | default(omit, True) }}"
   tasks:
     - name: "plugin_hpilo_facts"
       hpilo_facts: "{{ hpilo_facts }}"
+      register: r_hpilo_facts

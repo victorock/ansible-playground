@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_command"
   nxos_command: "{{ nxos_command }}"
+  register: r_nxos_command
   vars:
     nxos_command: 
       retries: "{{ nxos_command_retries | default(omit, True) }}"

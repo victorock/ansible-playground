@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_provision"
   bigip_provision: "{{ bigip_provision }}"
+  register: r_bigip_provision
   vars:
     bigip_provision: 
       level: "{{ bigip_provision_level | default(omit, True) }}"

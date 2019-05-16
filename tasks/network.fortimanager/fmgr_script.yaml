@@ -1,6 +1,7 @@
 ---
 - name: "module_fmgr_script"
   fmgr_script: "{{ fmgr_script }}"
+  register: r_fmgr_script
   vars:
     fmgr_script: 
       username: "{{ fmgr_script_username | default(omit, True) }}"

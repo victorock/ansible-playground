@@ -1,6 +1,7 @@
 ---
 - name: "module_profitbricks_volume_attachments"
   profitbricks_volume_attachments: "{{ profitbricks_volume_attachments }}"
+  register: r_profitbricks_volume_attachments
   vars:
     profitbricks_volume_attachments: 
       datacenter: "{{ profitbricks_volume_attachments_datacenter | default(omit, True) }}"

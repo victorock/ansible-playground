@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     purefa_pgsnap: 
-      restore: "{{ purefa_pgsnap_restore | default('omit', True) }}"
-      suffix: "{{ purefa_pgsnap_suffix | default('omit', True) }}"
-      name: "{{ purefa_pgsnap_name | default('omit', True) }}"
-      state: "{{ purefa_pgsnap_state | default('omit', True) }}"
-      api_token: "{{ purefa_pgsnap_api_token | default('omit', True) }}"
-      eradicate: "{{ purefa_pgsnap_eradicate | default('omit', True) }}"
-      fa_url: "{{ purefa_pgsnap_fa_url | default('omit', True) }}"
+      restore: "{{ purefa_pgsnap_restore | default(omit, True) }}"
+      suffix: "{{ purefa_pgsnap_suffix | default(omit, True) }}"
+      name: "{{ purefa_pgsnap_name | default(omit, True) }}"
+      state: "{{ purefa_pgsnap_state | default(omit, True) }}"
+      api_token: "{{ purefa_pgsnap_api_token | default(omit, True) }}"
+      eradicate: "{{ purefa_pgsnap_eradicate | default(omit, True) }}"
+      fa_url: "{{ purefa_pgsnap_fa_url | default(omit, True) }}"
   tasks:
     - name: "plugin_purefa_pgsnap"
       purefa_pgsnap: "{{ purefa_pgsnap }}"
+      register: r_purefa_pgsnap

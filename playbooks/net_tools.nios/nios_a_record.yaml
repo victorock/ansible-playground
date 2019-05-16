@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nios_a_record: 
-      comment: "{{ nios_a_record_comment | default('omit', True) }}"
-      name: "{{ nios_a_record_name | default('omit', True) }}"
-      extattrs: "{{ nios_a_record_extattrs | default('omit', True) }}"
-      ipv4addr: "{{ nios_a_record_ipv4addr | default('omit', True) }}"
-      provider: "{{ nios_a_record_provider | default('omit', True) }}"
-      state: "{{ nios_a_record_state | default('omit', True) }}"
-      ttl: "{{ nios_a_record_ttl | default('omit', True) }}"
-      view: "{{ nios_a_record_view | default('omit', True) }}"
+      comment: "{{ nios_a_record_comment | default(omit, True) }}"
+      name: "{{ nios_a_record_name | default(omit, True) }}"
+      extattrs: "{{ nios_a_record_extattrs | default(omit, True) }}"
+      ipv4addr: "{{ nios_a_record_ipv4addr | default(omit, True) }}"
+      provider: "{{ nios_a_record_provider | default(omit, True) }}"
+      state: "{{ nios_a_record_state | default(omit, True) }}"
+      ttl: "{{ nios_a_record_ttl | default(omit, True) }}"
+      view: "{{ nios_a_record_view | default(omit, True) }}"
   tasks:
     - name: "plugin_nios_a_record"
       nios_a_record: "{{ nios_a_record }}"
+      register: r_nios_a_record

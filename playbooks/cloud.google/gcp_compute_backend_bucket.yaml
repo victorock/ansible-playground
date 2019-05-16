@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcp_compute_backend_bucket: 
-      scopes: "{{ gcp_compute_backend_bucket_scopes | default('omit', True) }}"
-      description: "{{ gcp_compute_backend_bucket_description | default('omit', True) }}"
-      service_account_email: "{{ gcp_compute_backend_bucket_service_account_email | default('omit', True) }}"
-      project: "{{ gcp_compute_backend_bucket_project | default('omit', True) }}"
-      state: "{{ gcp_compute_backend_bucket_state | default('omit', True) }}"
-      bucket_name: "{{ gcp_compute_backend_bucket_bucket_name | default('omit', True) }}"
-      enable_cdn: "{{ gcp_compute_backend_bucket_enable_cdn | default('omit', True) }}"
-      auth_kind: "{{ gcp_compute_backend_bucket_auth_kind | default('omit', True) }}"
-      service_account_file: "{{ gcp_compute_backend_bucket_service_account_file | default('omit', True) }}"
-      name: "{{ gcp_compute_backend_bucket_name | default('omit', True) }}"
+      scopes: "{{ gcp_compute_backend_bucket_scopes | default(omit, True) }}"
+      description: "{{ gcp_compute_backend_bucket_description | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_backend_bucket_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_compute_backend_bucket_project | default(omit, True) }}"
+      state: "{{ gcp_compute_backend_bucket_state | default(omit, True) }}"
+      bucket_name: "{{ gcp_compute_backend_bucket_bucket_name | default(omit, True) }}"
+      enable_cdn: "{{ gcp_compute_backend_bucket_enable_cdn | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_backend_bucket_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_backend_bucket_service_account_file | default(omit, True) }}"
+      name: "{{ gcp_compute_backend_bucket_name | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_compute_backend_bucket"
       gcp_compute_backend_bucket: "{{ gcp_compute_backend_bucket }}"
+      register: r_gcp_compute_backend_bucket

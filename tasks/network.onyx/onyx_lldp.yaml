@@ -1,6 +1,7 @@
 ---
 - name: "module_onyx_lldp"
   onyx_lldp: "{{ onyx_lldp }}"
+  register: r_onyx_lldp
   vars:
     onyx_lldp: 
       state: "{{ onyx_lldp_state | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_dns_resource_record_set"
   gcp_dns_resource_record_set: "{{ gcp_dns_resource_record_set }}"
+  register: r_gcp_dns_resource_record_set
   vars:
     gcp_dns_resource_record_set: 
       scopes: "{{ gcp_dns_resource_record_set_scopes | default(omit, True) }}"

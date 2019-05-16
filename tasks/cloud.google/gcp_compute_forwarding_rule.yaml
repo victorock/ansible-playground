@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_forwarding_rule"
   gcp_compute_forwarding_rule: "{{ gcp_compute_forwarding_rule }}"
+  register: r_gcp_compute_forwarding_rule
   vars:
     gcp_compute_forwarding_rule: 
       scopes: "{{ gcp_compute_forwarding_rule_scopes | default(omit, True) }}"

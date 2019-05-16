@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_vlan"
   junos_vlan: "{{ junos_vlan }}"
+  register: r_junos_vlan
   vars:
     junos_vlan: 
       name: "{{ junos_vlan_name | default(omit, True) }}"

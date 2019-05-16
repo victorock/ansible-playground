@@ -1,6 +1,7 @@
 ---
 - name: "module_aws_inspector_target"
   aws_inspector_target: "{{ aws_inspector_target }}"
+  register: r_aws_inspector_target
   vars:
     aws_inspector_target: 
       aws_secret_key: "{{ aws_inspector_target_aws_secret_key | default(omit, True) }}"

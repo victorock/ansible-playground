@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     purefa_volume: 
-      size: "{{ purefa_volume_size | default('omit', True) }}"
-      target: "{{ purefa_volume_target | default('omit', True) }}"
-      name: "{{ purefa_volume_name | default('omit', True) }}"
-      state: "{{ purefa_volume_state | default('omit', True) }}"
-      api_token: "{{ purefa_volume_api_token | default('omit', True) }}"
-      eradicate: "{{ purefa_volume_eradicate | default('omit', True) }}"
-      overwrite: "{{ purefa_volume_overwrite | default('omit', True) }}"
-      fa_url: "{{ purefa_volume_fa_url | default('omit', True) }}"
+      size: "{{ purefa_volume_size | default(omit, True) }}"
+      target: "{{ purefa_volume_target | default(omit, True) }}"
+      name: "{{ purefa_volume_name | default(omit, True) }}"
+      state: "{{ purefa_volume_state | default(omit, True) }}"
+      api_token: "{{ purefa_volume_api_token | default(omit, True) }}"
+      eradicate: "{{ purefa_volume_eradicate | default(omit, True) }}"
+      overwrite: "{{ purefa_volume_overwrite | default(omit, True) }}"
+      fa_url: "{{ purefa_volume_fa_url | default(omit, True) }}"
   tasks:
     - name: "plugin_purefa_volume"
       purefa_volume: "{{ purefa_volume }}"
+      register: r_purefa_volume

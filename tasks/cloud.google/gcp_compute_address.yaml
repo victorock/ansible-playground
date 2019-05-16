@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_compute_address"
   gcp_compute_address: "{{ gcp_compute_address }}"
+  register: r_gcp_compute_address
   vars:
     gcp_compute_address: 
       scopes: "{{ gcp_compute_address_scopes | default(omit, True) }}"

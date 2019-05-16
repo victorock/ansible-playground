@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_service"
   ipa_service: "{{ ipa_service }}"
+  register: r_ipa_service
   vars:
     ipa_service: 
       ipa_port: "{{ ipa_service_ipa_port | default(omit, True) }}"

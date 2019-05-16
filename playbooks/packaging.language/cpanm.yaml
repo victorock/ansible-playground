@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cpanm: 
-      executable: "{{ cpanm_executable | default('omit', True) }}"
-      name: "{{ cpanm_name | default('omit', True) }}"
-      installdeps: "{{ cpanm_installdeps | default('omit', True) }}"
-      system_lib: "{{ cpanm_system_lib | default('omit', True) }}"
-      mirror_only: "{{ cpanm_mirror_only | default('omit', True) }}"
-      from_path: "{{ cpanm_from_path | default('omit', True) }}"
-      version: "{{ cpanm_version | default('omit', True) }}"
-      mirror: "{{ cpanm_mirror | default('omit', True) }}"
-      locallib: "{{ cpanm_locallib | default('omit', True) }}"
-      notest: "{{ cpanm_notest | default('omit', True) }}"
+      executable: "{{ cpanm_executable | default(omit, True) }}"
+      name: "{{ cpanm_name | default(omit, True) }}"
+      installdeps: "{{ cpanm_installdeps | default(omit, True) }}"
+      system_lib: "{{ cpanm_system_lib | default(omit, True) }}"
+      mirror_only: "{{ cpanm_mirror_only | default(omit, True) }}"
+      from_path: "{{ cpanm_from_path | default(omit, True) }}"
+      version: "{{ cpanm_version | default(omit, True) }}"
+      mirror: "{{ cpanm_mirror | default(omit, True) }}"
+      locallib: "{{ cpanm_locallib | default(omit, True) }}"
+      notest: "{{ cpanm_notest | default(omit, True) }}"
   tasks:
     - name: "plugin_cpanm"
       cpanm: "{{ cpanm }}"
+      register: r_cpanm

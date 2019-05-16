@@ -1,6 +1,7 @@
 ---
 - name: "module_macports"
   macports: "{{ macports }}"
+  register: r_macports
   vars:
     macports: 
       update_ports: "{{ macports_update_ports | default(omit, True) }}"

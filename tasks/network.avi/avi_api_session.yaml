@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_api_session"
   avi_api_session: "{{ avi_api_session }}"
+  register: r_avi_api_session
   vars:
     avi_api_session: 
       username: "{{ avi_api_session_username | default(omit, True) }}"

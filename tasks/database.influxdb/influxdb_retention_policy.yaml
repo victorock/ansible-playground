@@ -1,6 +1,7 @@
 ---
 - name: "module_influxdb_retention_policy"
   influxdb_retention_policy: "{{ influxdb_retention_policy }}"
+  register: r_influxdb_retention_policy
   vars:
     influxdb_retention_policy: 
       username: "{{ influxdb_retention_policy_username | default(omit, True) }}"

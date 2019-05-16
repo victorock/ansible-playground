@@ -1,6 +1,7 @@
 ---
 - name: "module_gitlab_project"
   gitlab_project: "{{ gitlab_project }}"
+  register: r_gitlab_project
   vars:
     gitlab_project: 
       snippets_enabled: "{{ gitlab_project_snippets_enabled | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vsphere_guest"
   vsphere_guest: "{{ vsphere_guest }}"
+  register: r_vsphere_guest
   vars:
     vsphere_guest: 
       username: "{{ vsphere_guest_username | default(omit, True) }}"

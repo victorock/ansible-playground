@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_vrf_interface: 
-      interface: "{{ nxos_vrf_interface_interface | default('omit', True) }}"
-      state: "{{ nxos_vrf_interface_state | default('omit', True) }}"
-      vrf: "{{ nxos_vrf_interface_vrf | default('omit', True) }}"
-      provider: "{{ nxos_vrf_interface_provider | default('omit', True) }}"
+      interface: "{{ nxos_vrf_interface_interface | default(omit, True) }}"
+      state: "{{ nxos_vrf_interface_state | default(omit, True) }}"
+      vrf: "{{ nxos_vrf_interface_vrf | default(omit, True) }}"
+      provider: "{{ nxos_vrf_interface_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_vrf_interface"
       nxos_vrf_interface: "{{ nxos_vrf_interface }}"
+      register: r_nxos_vrf_interface

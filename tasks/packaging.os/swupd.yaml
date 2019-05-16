@@ -1,6 +1,7 @@
 ---
 - name: "module_swupd"
   swupd: "{{ swupd }}"
+  register: r_swupd
   vars:
     swupd: 
       contenturl: "{{ swupd_contenturl | default(omit, True) }}"

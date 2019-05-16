@@ -1,6 +1,7 @@
 ---
 - name: "module_os_user_group"
   os_user_group: "{{ os_user_group }}"
+  register: r_os_user_group
   vars:
     os_user_group: 
       auth_type: "{{ os_user_group_auth_type | default(omit, True) }}"

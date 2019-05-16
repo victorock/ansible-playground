@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     net_lldp_interface: 
-      aggregate: "{{ net_lldp_interface_aggregate | default('omit', True) }}"
-      purge: "{{ net_lldp_interface_purge | default('omit', True) }}"
-      state: "{{ net_lldp_interface_state | default('omit', True) }}"
-      name: "{{ net_lldp_interface_name | default('omit', True) }}"
+      aggregate: "{{ net_lldp_interface_aggregate | default(omit, True) }}"
+      purge: "{{ net_lldp_interface_purge | default(omit, True) }}"
+      state: "{{ net_lldp_interface_state | default(omit, True) }}"
+      name: "{{ net_lldp_interface_name | default(omit, True) }}"
   tasks:
     - name: "plugin_net_lldp_interface"
       net_lldp_interface: "{{ net_lldp_interface }}"
+      register: r_net_lldp_interface

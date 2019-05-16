@@ -1,6 +1,7 @@
 ---
 - name: "module_win_toast"
   win_toast: "{{ win_toast }}"
+  register: r_win_toast
   vars:
     win_toast: 
       popup: "{{ win_toast_popup | default(omit, True) }}"

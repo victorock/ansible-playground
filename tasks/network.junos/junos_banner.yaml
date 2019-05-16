@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_banner"
   junos_banner: "{{ junos_banner }}"
+  register: r_junos_banner
   vars:
     junos_banner: 
       active: "{{ junos_banner_active | default(omit, True) }}"

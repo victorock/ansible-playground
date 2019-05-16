@@ -1,6 +1,7 @@
 ---
 - name: "module_mail"
   mail: "{{ mail }}"
+  register: r_mail
   vars:
     mail: 
       body: "{{ mail_body | default(omit, True) }}"

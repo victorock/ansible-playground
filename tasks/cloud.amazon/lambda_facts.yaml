@@ -1,6 +1,7 @@
 ---
 - name: "module_lambda_facts"
   lambda_facts: "{{ lambda_facts }}"
+  register: r_lambda_facts
   vars:
     lambda_facts: 
       aws_secret_key: "{{ lambda_facts_aws_secret_key | default(omit, True) }}"

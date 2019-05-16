@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     cnos_backup: 
-      username: "{{ cnos_backup_username | default('omit', True) }}"
-      serverpassword: "{{ cnos_backup_serverpassword | default('omit', True) }}"
-      outputfile: "{{ cnos_backup_outputfile | default('omit', True) }}"
-      protocol: "{{ cnos_backup_protocol | default('omit', True) }}"
-      configType: "{{ cnos_backup_configType | default('omit', True) }}"
-      host: "{{ cnos_backup_host | default('omit', True) }}"
-      deviceType: "{{ cnos_backup_deviceType | default('omit', True) }}"
-      serverusername: "{{ cnos_backup_serverusername | default('omit', True) }}"
-      password: "{{ cnos_backup_password | default('omit', True) }}"
-      enablePassword: "{{ cnos_backup_enablePassword | default('omit', True) }}"
-      rcserverip: "{{ cnos_backup_rcserverip | default('omit', True) }}"
-      rcpath: "{{ cnos_backup_rcpath | default('omit', True) }}"
+      username: "{{ cnos_backup_username | default(omit, True) }}"
+      serverpassword: "{{ cnos_backup_serverpassword | default(omit, True) }}"
+      outputfile: "{{ cnos_backup_outputfile | default(omit, True) }}"
+      protocol: "{{ cnos_backup_protocol | default(omit, True) }}"
+      configType: "{{ cnos_backup_configType | default(omit, True) }}"
+      host: "{{ cnos_backup_host | default(omit, True) }}"
+      deviceType: "{{ cnos_backup_deviceType | default(omit, True) }}"
+      serverusername: "{{ cnos_backup_serverusername | default(omit, True) }}"
+      password: "{{ cnos_backup_password | default(omit, True) }}"
+      enablePassword: "{{ cnos_backup_enablePassword | default(omit, True) }}"
+      rcserverip: "{{ cnos_backup_rcserverip | default(omit, True) }}"
+      rcpath: "{{ cnos_backup_rcpath | default(omit, True) }}"
   tasks:
     - name: "plugin_cnos_backup"
       cnos_backup: "{{ cnos_backup }}"
+      register: r_cnos_backup

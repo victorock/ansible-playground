@@ -1,6 +1,7 @@
 ---
 - name: "module_pagerduty"
   pagerduty: "{{ pagerduty }}"
+  register: r_pagerduty
   vars:
     pagerduty: 
       name: "{{ pagerduty_name | default(omit, True) }}"

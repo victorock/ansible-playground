@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_enclosure_facts"
   oneview_enclosure_facts: "{{ oneview_enclosure_facts }}"
+  register: r_oneview_enclosure_facts
   vars:
     oneview_enclosure_facts: 
       config: "{{ oneview_enclosure_facts_config | default(omit, True) }}"

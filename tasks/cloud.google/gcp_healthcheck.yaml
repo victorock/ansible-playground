@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_healthcheck"
   gcp_healthcheck: "{{ gcp_healthcheck }}"
+  register: r_gcp_healthcheck
   vars:
     gcp_healthcheck: 
       healthcheck_name: "{{ gcp_healthcheck_healthcheck_name | default(omit, True) }}"

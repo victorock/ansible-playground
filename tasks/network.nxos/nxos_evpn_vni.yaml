@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_evpn_vni"
   nxos_evpn_vni: "{{ nxos_evpn_vni }}"
+  register: r_nxos_evpn_vni
   vars:
     nxos_evpn_vni: 
       route_target_both: "{{ nxos_evpn_vni_route_target_both | default(omit, True) }}"

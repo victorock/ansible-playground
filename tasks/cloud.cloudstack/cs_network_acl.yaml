@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_network_acl"
   cs_network_acl: "{{ cs_network_acl }}"
+  register: r_cs_network_acl
   vars:
     cs_network_acl: 
       domain: "{{ cs_network_acl_domain | default(omit, True) }}"

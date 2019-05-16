@@ -1,6 +1,7 @@
 ---
 - name: "module_efs_facts"
   efs_facts: "{{ efs_facts }}"
+  register: r_efs_facts
   vars:
     efs_facts: 
       profile: "{{ efs_facts_profile | default(omit, True) }}"

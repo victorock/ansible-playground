@@ -1,5 +1,6 @@
 ---
 - name: "module_win_product_facts"
   win_product_facts: "{{ win_product_facts }}"
+  register: r_win_product_facts
   vars:
     win_product_facts: 

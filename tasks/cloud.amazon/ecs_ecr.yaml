@@ -1,6 +1,7 @@
 ---
 - name: "module_ecs_ecr"
   ecs_ecr: "{{ ecs_ecr }}"
+  register: r_ecs_ecr
   vars:
     ecs_ecr: 
       profile: "{{ ecs_ecr_profile | default(omit, True) }}"

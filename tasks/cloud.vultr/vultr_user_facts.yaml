@@ -1,6 +1,7 @@
 ---
 - name: "module_vultr_user_facts"
   vultr_user_facts: "{{ vultr_user_facts }}"
+  register: r_vultr_user_facts
   vars:
     vultr_user_facts: 
       api_retries: "{{ vultr_user_facts_api_retries | default(omit, True) }}"

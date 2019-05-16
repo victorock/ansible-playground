@@ -1,6 +1,7 @@
 ---
 - name: "module_gce_labels"
   gce_labels: "{{ gce_labels }}"
+  register: r_gce_labels
   vars:
     gce_labels: 
       resource_name: "{{ gce_labels_resource_name | default(omit, True) }}"

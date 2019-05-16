@@ -1,6 +1,7 @@
 ---
 - name: "module_netapp_e_volume"
   netapp_e_volume: "{{ netapp_e_volume }}"
+  register: r_netapp_e_volume
   vars:
     netapp_e_volume: 
       segment_size_kb: "{{ netapp_e_volume_segment_size_kb | default(omit, True) }}"

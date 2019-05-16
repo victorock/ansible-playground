@@ -1,6 +1,7 @@
 ---
 - name: "module_udm_share"
   udm_share: "{{ udm_share }}"
+  register: r_udm_share
   vars:
     udm_share: 
       samba_name: "{{ udm_share_samba_name | default(omit, True) }}"

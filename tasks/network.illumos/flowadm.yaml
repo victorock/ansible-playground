@@ -1,6 +1,7 @@
 ---
 - name: "module_flowadm"
   flowadm: "{{ flowadm }}"
+  register: r_flowadm
   vars:
     flowadm: 
       dsfield: "{{ flowadm_dsfield | default(omit, True) }}"

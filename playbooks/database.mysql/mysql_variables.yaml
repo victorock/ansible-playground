@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     mysql_variables: 
-      ssl_key: "{{ mysql_variables_ssl_key | default('omit', True) }}"
-      ssl_cert: "{{ mysql_variables_ssl_cert | default('omit', True) }}"
-      config_file: "{{ mysql_variables_config_file | default('omit', True) }}"
-      login_port: "{{ mysql_variables_login_port | default('omit', True) }}"
-      login_user: "{{ mysql_variables_login_user | default('omit', True) }}"
-      login_host: "{{ mysql_variables_login_host | default('omit', True) }}"
-      value: "{{ mysql_variables_value | default('omit', True) }}"
-      ssl_ca: "{{ mysql_variables_ssl_ca | default('omit', True) }}"
-      login_unix_socket: "{{ mysql_variables_login_unix_socket | default('omit', True) }}"
-      login_password: "{{ mysql_variables_login_password | default('omit', True) }}"
-      variable: "{{ mysql_variables_variable | default('omit', True) }}"
-      connect_timeout: "{{ mysql_variables_connect_timeout | default('omit', True) }}"
+      ssl_key: "{{ mysql_variables_ssl_key | default(omit, True) }}"
+      ssl_cert: "{{ mysql_variables_ssl_cert | default(omit, True) }}"
+      config_file: "{{ mysql_variables_config_file | default(omit, True) }}"
+      login_port: "{{ mysql_variables_login_port | default(omit, True) }}"
+      login_user: "{{ mysql_variables_login_user | default(omit, True) }}"
+      login_host: "{{ mysql_variables_login_host | default(omit, True) }}"
+      value: "{{ mysql_variables_value | default(omit, True) }}"
+      ssl_ca: "{{ mysql_variables_ssl_ca | default(omit, True) }}"
+      login_unix_socket: "{{ mysql_variables_login_unix_socket | default(omit, True) }}"
+      login_password: "{{ mysql_variables_login_password | default(omit, True) }}"
+      variable: "{{ mysql_variables_variable | default(omit, True) }}"
+      connect_timeout: "{{ mysql_variables_connect_timeout | default(omit, True) }}"
   tasks:
     - name: "plugin_mysql_variables"
       mysql_variables: "{{ mysql_variables }}"
+      register: r_mysql_variables

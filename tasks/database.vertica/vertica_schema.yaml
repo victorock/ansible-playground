@@ -1,6 +1,7 @@
 ---
 - name: "module_vertica_schema"
   vertica_schema: "{{ vertica_schema }}"
+  register: r_vertica_schema
   vars:
     vertica_schema: 
       create_roles: "{{ vertica_schema_create_roles | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_job_list"
   tower_job_list: "{{ tower_job_list }}"
+  register: r_tower_job_list
   vars:
     tower_job_list: 
       status: "{{ tower_job_list_status | default(omit, True) }}"

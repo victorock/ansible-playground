@@ -1,6 +1,7 @@
 ---
 - name: "module_ipa_hostgroup"
   ipa_hostgroup: "{{ ipa_hostgroup }}"
+  register: r_ipa_hostgroup
   vars:
     ipa_hostgroup: 
       ipa_port: "{{ ipa_hostgroup_ipa_port | default(omit, True) }}"

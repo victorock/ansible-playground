@@ -1,6 +1,7 @@
 ---
 - name: "module_include_tasks"
   include_tasks: "{{ include_tasks }}"
+  register: r_include_tasks
   vars:
     include_tasks: 
       free-form: "{{ include_tasks_free-form | default(omit, True) }}"

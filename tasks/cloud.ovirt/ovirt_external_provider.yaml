@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_external_provider"
   ovirt_external_provider: "{{ ovirt_external_provider }}"
+  register: r_ovirt_external_provider
   vars:
     ovirt_external_provider: 
       username: "{{ ovirt_external_provider_username | default(omit, True) }}"

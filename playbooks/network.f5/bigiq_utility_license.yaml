@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     bigiq_utility_license: 
-      accept_eula: "{{ bigiq_utility_license_accept_eula | default('omit', True) }}"
-      server: "{{ bigiq_utility_license_server | default('omit', True) }}"
-      state: "{{ bigiq_utility_license_state | default('omit', True) }}"
-      user: "{{ bigiq_utility_license_user | default('omit', True) }}"
-      server_port: "{{ bigiq_utility_license_server_port | default('omit', True) }}"
-      provider: "{{ bigiq_utility_license_provider | default('omit', True) }}"
-      license_key: "{{ bigiq_utility_license_license_key | default('omit', True) }}"
-      password: "{{ bigiq_utility_license_password | default('omit', True) }}"
-      validate_certs: "{{ bigiq_utility_license_validate_certs | default('omit', True) }}"
+      accept_eula: "{{ bigiq_utility_license_accept_eula | default(omit, True) }}"
+      server: "{{ bigiq_utility_license_server | default(omit, True) }}"
+      state: "{{ bigiq_utility_license_state | default(omit, True) }}"
+      user: "{{ bigiq_utility_license_user | default(omit, True) }}"
+      server_port: "{{ bigiq_utility_license_server_port | default(omit, True) }}"
+      provider: "{{ bigiq_utility_license_provider | default(omit, True) }}"
+      license_key: "{{ bigiq_utility_license_license_key | default(omit, True) }}"
+      password: "{{ bigiq_utility_license_password | default(omit, True) }}"
+      validate_certs: "{{ bigiq_utility_license_validate_certs | default(omit, True) }}"
   tasks:
     - name: "plugin_bigiq_utility_license"
       bigiq_utility_license: "{{ bigiq_utility_license }}"
+      register: r_bigiq_utility_license

@@ -1,6 +1,7 @@
 ---
 - name: "module_hall"
   hall: "{{ hall }}"
+  register: r_hall
   vars:
     hall: 
       msg: "{{ hall_msg | default(omit, True) }}"

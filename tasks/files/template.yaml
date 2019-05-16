@@ -1,6 +1,7 @@
 ---
 - name: "module_template"
   template: "{{ template }}"
+  register: r_template
   vars:
     template: 
       force: "{{ template_force | default(omit, True) }}"

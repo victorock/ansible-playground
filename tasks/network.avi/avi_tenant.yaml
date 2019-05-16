@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_tenant"
   avi_tenant: "{{ avi_tenant }}"
+  register: r_avi_tenant
   vars:
     avi_tenant: 
       username: "{{ avi_tenant_username | default(omit, True) }}"

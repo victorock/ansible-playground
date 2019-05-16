@@ -1,6 +1,7 @@
 ---
 - name: "module_apt"
   apt: "{{ apt }}"
+  register: r_apt
   vars:
     apt: 
       dpkg_options: "{{ apt_dpkg_options | default(omit, True) }}"

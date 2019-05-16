@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_sqlserver_facts"
   azure_rm_sqlserver_facts: "{{ azure_rm_sqlserver_facts }}"
+  register: r_azure_rm_sqlserver_facts
   vars:
     azure_rm_sqlserver_facts: 
       profile: "{{ azure_rm_sqlserver_facts_profile | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_win_domain_computer"
   win_domain_computer: "{{ win_domain_computer }}"
+  register: r_win_domain_computer
   vars:
     win_domain_computer: 
       description: "{{ win_domain_computer_description | default(omit, True) }}"

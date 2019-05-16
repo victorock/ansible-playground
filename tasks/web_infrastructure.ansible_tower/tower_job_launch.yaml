@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_job_launch"
   tower_job_launch: "{{ tower_job_launch }}"
+  register: r_tower_job_launch
   vars:
     tower_job_launch: 
       credential: "{{ tower_job_launch_credential | default(omit, True) }}"

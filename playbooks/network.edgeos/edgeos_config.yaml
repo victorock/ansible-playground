@@ -7,13 +7,14 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     edgeos_config: 
-      comment: "{{ edgeos_config_comment | default('omit', True) }}"
-      src: "{{ edgeos_config_src | default('omit', True) }}"
-      config: "{{ edgeos_config_config | default('omit', True) }}"
-      lines: "{{ edgeos_config_lines | default('omit', True) }}"
-      save: "{{ edgeos_config_save | default('omit', True) }}"
-      backup: "{{ edgeos_config_backup | default('omit', True) }}"
-      match: "{{ edgeos_config_match | default('omit', True) }}"
+      comment: "{{ edgeos_config_comment | default(omit, True) }}"
+      src: "{{ edgeos_config_src | default(omit, True) }}"
+      config: "{{ edgeos_config_config | default(omit, True) }}"
+      lines: "{{ edgeos_config_lines | default(omit, True) }}"
+      save: "{{ edgeos_config_save | default(omit, True) }}"
+      backup: "{{ edgeos_config_backup | default(omit, True) }}"
+      match: "{{ edgeos_config_match | default(omit, True) }}"
   tasks:
     - name: "plugin_edgeos_config"
       edgeos_config: "{{ edgeos_config }}"
+      register: r_edgeos_config

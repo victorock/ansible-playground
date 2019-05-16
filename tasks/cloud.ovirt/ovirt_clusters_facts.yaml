@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_clusters_facts"
   ovirt_clusters_facts: "{{ ovirt_clusters_facts }}"
+  register: r_ovirt_clusters_facts
   vars:
     ovirt_clusters_facts: 
       pattern: "{{ ovirt_clusters_facts_pattern | default(omit, True) }}"

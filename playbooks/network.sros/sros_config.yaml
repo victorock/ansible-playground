@@ -7,19 +7,20 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     sros_config: 
-      src: "{{ sros_config_src | default('omit', True) }}"
-      force: "{{ sros_config_force | default('omit', True) }}"
-      backup: "{{ sros_config_backup | default('omit', True) }}"
-      after: "{{ sros_config_after | default('omit', True) }}"
-      lines: "{{ sros_config_lines | default('omit', True) }}"
-      replace: "{{ sros_config_replace | default('omit', True) }}"
-      parents: "{{ sros_config_parents | default('omit', True) }}"
-      defaults: "{{ sros_config_defaults | default('omit', True) }}"
-      provider: "{{ sros_config_provider | default('omit', True) }}"
-      save: "{{ sros_config_save | default('omit', True) }}"
-      config: "{{ sros_config_config | default('omit', True) }}"
-      match: "{{ sros_config_match | default('omit', True) }}"
-      before: "{{ sros_config_before | default('omit', True) }}"
+      src: "{{ sros_config_src | default(omit, True) }}"
+      force: "{{ sros_config_force | default(omit, True) }}"
+      backup: "{{ sros_config_backup | default(omit, True) }}"
+      after: "{{ sros_config_after | default(omit, True) }}"
+      lines: "{{ sros_config_lines | default(omit, True) }}"
+      replace: "{{ sros_config_replace | default(omit, True) }}"
+      parents: "{{ sros_config_parents | default(omit, True) }}"
+      defaults: "{{ sros_config_defaults | default(omit, True) }}"
+      provider: "{{ sros_config_provider | default(omit, True) }}"
+      save: "{{ sros_config_save | default(omit, True) }}"
+      config: "{{ sros_config_config | default(omit, True) }}"
+      match: "{{ sros_config_match | default(omit, True) }}"
+      before: "{{ sros_config_before | default(omit, True) }}"
   tasks:
     - name: "plugin_sros_config"
       sros_config: "{{ sros_config }}"
+      register: r_sros_config

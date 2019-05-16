@@ -1,6 +1,7 @@
 ---
 - name: "module_win_msg"
   win_msg: "{{ win_msg }}"
+  register: r_win_msg
   vars:
     win_msg: 
       msg: "{{ win_msg_msg | default(omit, True) }}"

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     clc_group: 
-      name: "{{ clc_group_name | default('omit', True) }}"
-      parent: "{{ clc_group_parent | default('omit', True) }}"
-      description: "{{ clc_group_description | default('omit', True) }}"
-      state: "{{ clc_group_state | default('omit', True) }}"
-      location: "{{ clc_group_location | default('omit', True) }}"
-      wait: "{{ clc_group_wait | default('omit', True) }}"
+      name: "{{ clc_group_name | default(omit, True) }}"
+      parent: "{{ clc_group_parent | default(omit, True) }}"
+      description: "{{ clc_group_description | default(omit, True) }}"
+      state: "{{ clc_group_state | default(omit, True) }}"
+      location: "{{ clc_group_location | default(omit, True) }}"
+      wait: "{{ clc_group_wait | default(omit, True) }}"
   tasks:
     - name: "plugin_clc_group"
       clc_group: "{{ clc_group }}"
+      register: r_clc_group

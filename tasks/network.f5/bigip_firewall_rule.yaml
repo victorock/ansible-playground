@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_firewall_rule"
   bigip_firewall_rule: "{{ bigip_firewall_rule }}"
+  register: r_bigip_firewall_rule
   vars:
     bigip_firewall_rule: 
       status: "{{ bigip_firewall_rule_status | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_cluster"
   vmware_cluster: "{{ vmware_cluster }}"
+  register: r_vmware_cluster
   vars:
     vmware_cluster: 
       username: "{{ vmware_cluster_username | default(omit, True) }}"

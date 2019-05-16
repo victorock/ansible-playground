@@ -1,6 +1,7 @@
 ---
 - name: "module_aos_ip_pool"
   aos_ip_pool: "{{ aos_ip_pool }}"
+  register: r_aos_ip_pool
   vars:
     aos_ip_pool: 
       subnets: "{{ aos_ip_pool_subnets | default(omit, True) }}"

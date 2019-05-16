@@ -1,6 +1,7 @@
 ---
 - name: "module_ovirt_auth"
   ovirt_auth: "{{ ovirt_auth }}"
+  register: r_ovirt_auth
   vars:
     ovirt_auth: 
       username: "{{ ovirt_auth_username | default(omit, True) }}"

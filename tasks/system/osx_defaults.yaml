@@ -1,6 +1,7 @@
 ---
 - name: "module_osx_defaults"
   osx_defaults: "{{ osx_defaults }}"
+  register: r_osx_defaults
   vars:
     osx_defaults: 
       domain: "{{ osx_defaults_domain | default(omit, True) }}"

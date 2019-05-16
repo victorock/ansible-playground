@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_udld_interface: 
-      interface: "{{ nxos_udld_interface_interface | default('omit', True) }}"
-      state: "{{ nxos_udld_interface_state | default('omit', True) }}"
-      mode: "{{ nxos_udld_interface_mode | default('omit', True) }}"
-      provider: "{{ nxos_udld_interface_provider | default('omit', True) }}"
+      interface: "{{ nxos_udld_interface_interface | default(omit, True) }}"
+      state: "{{ nxos_udld_interface_state | default(omit, True) }}"
+      mode: "{{ nxos_udld_interface_mode | default(omit, True) }}"
+      provider: "{{ nxos_udld_interface_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_udld_interface"
       nxos_udld_interface: "{{ nxos_udld_interface }}"
+      register: r_nxos_udld_interface

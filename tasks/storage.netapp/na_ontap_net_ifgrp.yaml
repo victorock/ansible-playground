@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_net_ifgrp"
   na_ontap_net_ifgrp: "{{ na_ontap_net_ifgrp }}"
+  register: r_na_ontap_net_ifgrp
   vars:
     na_ontap_net_ifgrp: 
       node: "{{ na_ontap_net_ifgrp_node | default(omit, True) }}"

@@ -7,8 +7,9 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     osx_say: 
-      msg: "{{ osx_say_msg | default('omit', True) }}"
-      voice: "{{ osx_say_voice | default('omit', True) }}"
+      msg: "{{ osx_say_msg | default(omit, True) }}"
+      voice: "{{ osx_say_voice | default(omit, True) }}"
   tasks:
     - name: "plugin_osx_say"
       osx_say: "{{ osx_say }}"
+      register: r_osx_say

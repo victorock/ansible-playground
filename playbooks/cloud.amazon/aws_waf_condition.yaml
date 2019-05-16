@@ -7,18 +7,19 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     aws_waf_condition: 
-      profile: "{{ aws_waf_condition_profile | default('omit', True) }}"
-      aws_secret_key: "{{ aws_waf_condition_aws_secret_key | default('omit', True) }}"
-      aws_access_key: "{{ aws_waf_condition_aws_access_key | default('omit', True) }}"
-      name: "{{ aws_waf_condition_name | default('omit', True) }}"
-      security_token: "{{ aws_waf_condition_security_token | default('omit', True) }}"
-      type: "{{ aws_waf_condition_type | default('omit', True) }}"
-      region: "{{ aws_waf_condition_region | default('omit', True) }}"
-      validate_certs: "{{ aws_waf_condition_validate_certs | default('omit', True) }}"
-      state: "{{ aws_waf_condition_state | default('omit', True) }}"
-      filters: "{{ aws_waf_condition_filters | default('omit', True) }}"
-      ec2_url: "{{ aws_waf_condition_ec2_url | default('omit', True) }}"
-      purge_filters: "{{ aws_waf_condition_purge_filters | default('omit', True) }}"
+      profile: "{{ aws_waf_condition_profile | default(omit, True) }}"
+      aws_secret_key: "{{ aws_waf_condition_aws_secret_key | default(omit, True) }}"
+      aws_access_key: "{{ aws_waf_condition_aws_access_key | default(omit, True) }}"
+      name: "{{ aws_waf_condition_name | default(omit, True) }}"
+      security_token: "{{ aws_waf_condition_security_token | default(omit, True) }}"
+      type: "{{ aws_waf_condition_type | default(omit, True) }}"
+      region: "{{ aws_waf_condition_region | default(omit, True) }}"
+      validate_certs: "{{ aws_waf_condition_validate_certs | default(omit, True) }}"
+      state: "{{ aws_waf_condition_state | default(omit, True) }}"
+      filters: "{{ aws_waf_condition_filters | default(omit, True) }}"
+      ec2_url: "{{ aws_waf_condition_ec2_url | default(omit, True) }}"
+      purge_filters: "{{ aws_waf_condition_purge_filters | default(omit, True) }}"
   tasks:
     - name: "plugin_aws_waf_condition"
       aws_waf_condition: "{{ aws_waf_condition }}"
+      register: r_aws_waf_condition

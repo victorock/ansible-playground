@@ -7,9 +7,10 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     slackpkg: 
-      state: "{{ slackpkg_state | default('omit', True) }}"
-      update_cache: "{{ slackpkg_update_cache | default('omit', True) }}"
-      name: "{{ slackpkg_name | default('omit', True) }}"
+      state: "{{ slackpkg_state | default(omit, True) }}"
+      update_cache: "{{ slackpkg_update_cache | default(omit, True) }}"
+      name: "{{ slackpkg_name | default(omit, True) }}"
   tasks:
     - name: "plugin_slackpkg"
       slackpkg: "{{ slackpkg }}"
+      register: r_slackpkg

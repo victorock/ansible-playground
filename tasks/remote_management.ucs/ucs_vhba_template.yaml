@@ -1,6 +1,7 @@
 ---
 - name: "module_ucs_vhba_template"
   ucs_vhba_template: "{{ ucs_vhba_template }}"
+  register: r_ucs_vhba_template
   vars:
     ucs_vhba_template: 
       username: "{{ ucs_vhba_template_username | default(omit, True) }}"

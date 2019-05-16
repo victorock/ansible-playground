@@ -1,6 +1,7 @@
 ---
 - name: "module_oneview_logical_interconnect_group"
   oneview_logical_interconnect_group: "{{ oneview_logical_interconnect_group }}"
+  register: r_oneview_logical_interconnect_group
   vars:
     oneview_logical_interconnect_group: 
       data: "{{ oneview_logical_interconnect_group_data | default(omit, True) }}"

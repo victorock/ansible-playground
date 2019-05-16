@@ -1,6 +1,7 @@
 ---
 - name: "module_jenkins_plugin"
   jenkins_plugin: "{{ jenkins_plugin }}"
+  register: r_jenkins_plugin
   vars:
     jenkins_plugin: 
       jenkins_home: "{{ jenkins_plugin_jenkins_home | default(omit, True) }}"

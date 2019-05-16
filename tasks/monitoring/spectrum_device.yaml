@@ -1,6 +1,7 @@
 ---
 - name: "module_spectrum_device"
   spectrum_device: "{{ spectrum_device }}"
+  register: r_spectrum_device
   vars:
     spectrum_device: 
       url_password: "{{ spectrum_device_url_password | default(omit, True) }}"

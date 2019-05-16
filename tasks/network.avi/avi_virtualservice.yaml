@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_virtualservice"
   avi_virtualservice: "{{ avi_virtualservice }}"
+  register: r_avi_virtualservice
   vars:
     avi_virtualservice: 
       port_uuid: "{{ avi_virtualservice_port_uuid | default(omit, True) }}"

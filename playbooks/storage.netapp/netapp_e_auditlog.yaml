@@ -7,17 +7,18 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netapp_e_auditlog: 
-      log_level: "{{ netapp_e_auditlog_log_level | default('omit', True) }}"
-      ssid: "{{ netapp_e_auditlog_ssid | default('omit', True) }}"
-      log_path: "{{ netapp_e_auditlog_log_path | default('omit', True) }}"
-      max_records: "{{ netapp_e_auditlog_max_records | default('omit', True) }}"
-      api_password: "{{ netapp_e_auditlog_api_password | default('omit', True) }}"
-      api_username: "{{ netapp_e_auditlog_api_username | default('omit', True) }}"
-      threshold: "{{ netapp_e_auditlog_threshold | default('omit', True) }}"
-      force: "{{ netapp_e_auditlog_force | default('omit', True) }}"
-      full_policy: "{{ netapp_e_auditlog_full_policy | default('omit', True) }}"
-      validate_certs: "{{ netapp_e_auditlog_validate_certs | default('omit', True) }}"
-      api_url: "{{ netapp_e_auditlog_api_url | default('omit', True) }}"
+      log_level: "{{ netapp_e_auditlog_log_level | default(omit, True) }}"
+      ssid: "{{ netapp_e_auditlog_ssid | default(omit, True) }}"
+      log_path: "{{ netapp_e_auditlog_log_path | default(omit, True) }}"
+      max_records: "{{ netapp_e_auditlog_max_records | default(omit, True) }}"
+      api_password: "{{ netapp_e_auditlog_api_password | default(omit, True) }}"
+      api_username: "{{ netapp_e_auditlog_api_username | default(omit, True) }}"
+      threshold: "{{ netapp_e_auditlog_threshold | default(omit, True) }}"
+      force: "{{ netapp_e_auditlog_force | default(omit, True) }}"
+      full_policy: "{{ netapp_e_auditlog_full_policy | default(omit, True) }}"
+      validate_certs: "{{ netapp_e_auditlog_validate_certs | default(omit, True) }}"
+      api_url: "{{ netapp_e_auditlog_api_url | default(omit, True) }}"
   tasks:
     - name: "plugin_netapp_e_auditlog"
       netapp_e_auditlog: "{{ netapp_e_auditlog }}"
+      register: r_netapp_e_auditlog

@@ -7,16 +7,17 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     kubernetes: 
-      url_password: "{{ kubernetes_url_password | default('omit', True) }}"
-      certificate_authority_data: "{{ kubernetes_certificate_authority_data | default('omit', True) }}"
-      inline_data: "{{ kubernetes_inline_data | default('omit', True) }}"
-      insecure: "{{ kubernetes_insecure | default('omit', True) }}"
-      file_reference: "{{ kubernetes_file_reference | default('omit', True) }}"
-      api_endpoint: "{{ kubernetes_api_endpoint | default('omit', True) }}"
-      state: "{{ kubernetes_state | default('omit', True) }}"
-      url_username: "{{ kubernetes_url_username | default('omit', True) }}"
-      validate_certs: "{{ kubernetes_validate_certs | default('omit', True) }}"
-      patch_operation: "{{ kubernetes_patch_operation | default('omit', True) }}"
+      url_password: "{{ kubernetes_url_password | default(omit, True) }}"
+      certificate_authority_data: "{{ kubernetes_certificate_authority_data | default(omit, True) }}"
+      inline_data: "{{ kubernetes_inline_data | default(omit, True) }}"
+      insecure: "{{ kubernetes_insecure | default(omit, True) }}"
+      file_reference: "{{ kubernetes_file_reference | default(omit, True) }}"
+      api_endpoint: "{{ kubernetes_api_endpoint | default(omit, True) }}"
+      state: "{{ kubernetes_state | default(omit, True) }}"
+      url_username: "{{ kubernetes_url_username | default(omit, True) }}"
+      validate_certs: "{{ kubernetes_validate_certs | default(omit, True) }}"
+      patch_operation: "{{ kubernetes_patch_operation | default(omit, True) }}"
   tasks:
     - name: "plugin_kubernetes"
       kubernetes: "{{ kubernetes }}"
+      register: r_kubernetes

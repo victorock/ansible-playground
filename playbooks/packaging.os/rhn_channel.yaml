@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     rhn_channel: 
-      sysname: "{{ rhn_channel_sysname | default('omit', True) }}"
-      name: "{{ rhn_channel_name | default('omit', True) }}"
-      url: "{{ rhn_channel_url | default('omit', True) }}"
-      state: "{{ rhn_channel_state | default('omit', True) }}"
-      user: "{{ rhn_channel_user | default('omit', True) }}"
-      password: "{{ rhn_channel_password | default('omit', True) }}"
+      sysname: "{{ rhn_channel_sysname | default(omit, True) }}"
+      name: "{{ rhn_channel_name | default(omit, True) }}"
+      url: "{{ rhn_channel_url | default(omit, True) }}"
+      state: "{{ rhn_channel_state | default(omit, True) }}"
+      user: "{{ rhn_channel_user | default(omit, True) }}"
+      password: "{{ rhn_channel_password | default(omit, True) }}"
   tasks:
     - name: "plugin_rhn_channel"
       rhn_channel: "{{ rhn_channel }}"
+      register: r_rhn_channel

@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     gcp_compute_health_check_facts: 
-      scopes: "{{ gcp_compute_health_check_facts_scopes | default('omit', True) }}"
-      service_account_email: "{{ gcp_compute_health_check_facts_service_account_email | default('omit', True) }}"
-      project: "{{ gcp_compute_health_check_facts_project | default('omit', True) }}"
-      filters: "{{ gcp_compute_health_check_facts_filters | default('omit', True) }}"
-      auth_kind: "{{ gcp_compute_health_check_facts_auth_kind | default('omit', True) }}"
-      service_account_file: "{{ gcp_compute_health_check_facts_service_account_file | default('omit', True) }}"
+      scopes: "{{ gcp_compute_health_check_facts_scopes | default(omit, True) }}"
+      service_account_email: "{{ gcp_compute_health_check_facts_service_account_email | default(omit, True) }}"
+      project: "{{ gcp_compute_health_check_facts_project | default(omit, True) }}"
+      filters: "{{ gcp_compute_health_check_facts_filters | default(omit, True) }}"
+      auth_kind: "{{ gcp_compute_health_check_facts_auth_kind | default(omit, True) }}"
+      service_account_file: "{{ gcp_compute_health_check_facts_service_account_file | default(omit, True) }}"
   tasks:
     - name: "plugin_gcp_compute_health_check_facts"
       gcp_compute_health_check_facts: "{{ gcp_compute_health_check_facts }}"
+      register: r_gcp_compute_health_check_facts

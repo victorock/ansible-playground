@@ -1,6 +1,7 @@
 ---
 - name: "module_known_hosts"
   known_hosts: "{{ known_hosts }}"
+  register: r_known_hosts
   vars:
     known_hosts: 
       path: "{{ known_hosts_path | default(omit, True) }}"

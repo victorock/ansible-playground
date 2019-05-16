@@ -7,12 +7,13 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     ce_rollback: 
-      commit_id: "{{ ce_rollback_commit_id | default('omit', True) }}"
-      last: "{{ ce_rollback_last | default('omit', True) }}"
-      label: "{{ ce_rollback_label | default('omit', True) }}"
-      filename: "{{ ce_rollback_filename | default('omit', True) }}"
-      action: "{{ ce_rollback_action | default('omit', True) }}"
-      oldest: "{{ ce_rollback_oldest | default('omit', True) }}"
+      commit_id: "{{ ce_rollback_commit_id | default(omit, True) }}"
+      last: "{{ ce_rollback_last | default(omit, True) }}"
+      label: "{{ ce_rollback_label | default(omit, True) }}"
+      filename: "{{ ce_rollback_filename | default(omit, True) }}"
+      action: "{{ ce_rollback_action | default(omit, True) }}"
+      oldest: "{{ ce_rollback_oldest | default(omit, True) }}"
   tasks:
     - name: "plugin_ce_rollback"
       ce_rollback: "{{ ce_rollback }}"
+      register: r_ce_rollback

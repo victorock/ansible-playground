@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_sys_global"
   bigip_sys_global: "{{ bigip_sys_global }}"
+  register: r_bigip_sys_global
   vars:
     bigip_sys_global: 
       security_banner: "{{ bigip_sys_global_security_banner | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_cnos_template"
   cnos_template: "{{ cnos_template }}"
+  register: r_cnos_template
   vars:
     cnos_template: 
       username: "{{ cnos_template_username | default(omit, True) }}"

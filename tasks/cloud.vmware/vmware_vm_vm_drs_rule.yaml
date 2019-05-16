@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_vm_vm_drs_rule"
   vmware_vm_vm_drs_rule: "{{ vmware_vm_vm_drs_rule }}"
+  register: r_vmware_vm_vm_drs_rule
   vars:
     vmware_vm_vm_drs_rule: 
       username: "{{ vmware_vm_vm_drs_rule_username | default(omit, True) }}"

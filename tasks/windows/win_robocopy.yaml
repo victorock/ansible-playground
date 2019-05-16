@@ -1,6 +1,7 @@
 ---
 - name: "module_win_robocopy"
   win_robocopy: "{{ win_robocopy }}"
+  register: r_win_robocopy
   vars:
     win_robocopy: 
       dest: "{{ win_robocopy_dest | default(omit, True) }}"

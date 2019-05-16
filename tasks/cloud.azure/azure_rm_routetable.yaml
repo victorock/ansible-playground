@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_routetable"
   azure_rm_routetable: "{{ azure_rm_routetable }}"
+  register: r_azure_rm_routetable
   vars:
     azure_rm_routetable: 
       profile: "{{ azure_rm_routetable_profile | default(omit, True) }}"

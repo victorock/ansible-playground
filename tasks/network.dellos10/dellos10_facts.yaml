@@ -1,6 +1,7 @@
 ---
 - name: "module_dellos10_facts"
   dellos10_facts: "{{ dellos10_facts }}"
+  register: r_dellos10_facts
   vars:
     dellos10_facts: 
       gather_subset: "{{ dellos10_facts_gather_subset | default(omit, True) }}"

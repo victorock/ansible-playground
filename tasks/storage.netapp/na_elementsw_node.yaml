@@ -1,6 +1,7 @@
 ---
 - name: "module_na_elementsw_node"
   na_elementsw_node: "{{ na_elementsw_node }}"
+  register: r_na_elementsw_node
   vars:
     na_elementsw_node: 
       username: "{{ na_elementsw_node_username | default(omit, True) }}"

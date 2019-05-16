@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_ntp_options: 
-      logging: "{{ nxos_ntp_options_logging | default('omit', True) }}"
-      state: "{{ nxos_ntp_options_state | default('omit', True) }}"
-      stratum: "{{ nxos_ntp_options_stratum | default('omit', True) }}"
-      master: "{{ nxos_ntp_options_master | default('omit', True) }}"
-      provider: "{{ nxos_ntp_options_provider | default('omit', True) }}"
+      logging: "{{ nxos_ntp_options_logging | default(omit, True) }}"
+      state: "{{ nxos_ntp_options_state | default(omit, True) }}"
+      stratum: "{{ nxos_ntp_options_stratum | default(omit, True) }}"
+      master: "{{ nxos_ntp_options_master | default(omit, True) }}"
+      provider: "{{ nxos_ntp_options_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_ntp_options"
       nxos_ntp_options: "{{ nxos_ntp_options }}"
+      register: r_nxos_ntp_options

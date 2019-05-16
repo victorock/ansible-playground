@@ -1,6 +1,7 @@
 ---
 - name: "module_virt_net"
   virt_net: "{{ virt_net }}"
+  register: r_virt_net
   vars:
     virt_net: 
       xml: "{{ virt_net_xml | default(omit, True) }}"

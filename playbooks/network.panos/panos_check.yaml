@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     panos_check: 
-      username: "{{ panos_check_username | default('omit', True) }}"
-      password: "{{ panos_check_password | default('omit', True) }}"
-      ip_address: "{{ panos_check_ip_address | default('omit', True) }}"
-      timeout: "{{ panos_check_timeout | default('omit', True) }}"
-      interval: "{{ panos_check_interval | default('omit', True) }}"
+      username: "{{ panos_check_username | default(omit, True) }}"
+      password: "{{ panos_check_password | default(omit, True) }}"
+      ip_address: "{{ panos_check_ip_address | default(omit, True) }}"
+      timeout: "{{ panos_check_timeout | default(omit, True) }}"
+      interval: "{{ panos_check_interval | default(omit, True) }}"
   tasks:
     - name: "plugin_panos_check"
       panos_check: "{{ panos_check }}"
+      register: r_panos_check

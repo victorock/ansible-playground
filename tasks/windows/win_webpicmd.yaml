@@ -1,6 +1,7 @@
 ---
 - name: "module_win_webpicmd"
   win_webpicmd: "{{ win_webpicmd }}"
+  register: r_win_webpicmd
   vars:
     win_webpicmd: 
       name: "{{ win_webpicmd_name | default(omit, True) }}"

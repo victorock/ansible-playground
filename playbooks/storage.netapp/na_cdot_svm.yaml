@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     na_cdot_svm: 
-      username: "{{ na_cdot_svm_username | default('omit', True) }}"
-      root_volume_aggregate: "{{ na_cdot_svm_root_volume_aggregate | default('omit', True) }}"
-      name: "{{ na_cdot_svm_name | default('omit', True) }}"
-      hostname: "{{ na_cdot_svm_hostname | default('omit', True) }}"
-      root_volume_security_style: "{{ na_cdot_svm_root_volume_security_style | default('omit', True) }}"
-      state: "{{ na_cdot_svm_state | default('omit', True) }}"
-      password: "{{ na_cdot_svm_password | default('omit', True) }}"
-      root_volume: "{{ na_cdot_svm_root_volume | default('omit', True) }}"
+      username: "{{ na_cdot_svm_username | default(omit, True) }}"
+      root_volume_aggregate: "{{ na_cdot_svm_root_volume_aggregate | default(omit, True) }}"
+      name: "{{ na_cdot_svm_name | default(omit, True) }}"
+      hostname: "{{ na_cdot_svm_hostname | default(omit, True) }}"
+      root_volume_security_style: "{{ na_cdot_svm_root_volume_security_style | default(omit, True) }}"
+      state: "{{ na_cdot_svm_state | default(omit, True) }}"
+      password: "{{ na_cdot_svm_password | default(omit, True) }}"
+      root_volume: "{{ na_cdot_svm_root_volume | default(omit, True) }}"
   tasks:
     - name: "plugin_na_cdot_svm"
       na_cdot_svm: "{{ na_cdot_svm }}"
+      register: r_na_cdot_svm

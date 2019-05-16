@@ -1,6 +1,7 @@
 ---
 - name: "module_voss_command"
   voss_command: "{{ voss_command }}"
+  register: r_voss_command
   vars:
     voss_command: 
       retries: "{{ voss_command_retries | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_log_destination"
   bigip_log_destination: "{{ bigip_log_destination }}"
+  register: r_bigip_log_destination
   vars:
     bigip_log_destination: 
       description: "{{ bigip_log_destination_description | default(omit, True) }}"

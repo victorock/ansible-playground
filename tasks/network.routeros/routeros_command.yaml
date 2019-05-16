@@ -1,6 +1,7 @@
 ---
 - name: "module_routeros_command"
   routeros_command: "{{ routeros_command }}"
+  register: r_routeros_command
   vars:
     routeros_command: 
       retries: "{{ routeros_command_retries | default(omit, True) }}"

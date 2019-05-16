@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_policy_rule"
   bigip_policy_rule: "{{ bigip_policy_rule }}"
+  register: r_bigip_policy_rule
   vars:
     bigip_policy_rule: 
       name: "{{ bigip_policy_rule_name | default(omit, True) }}"

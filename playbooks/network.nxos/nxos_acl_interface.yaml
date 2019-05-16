@@ -7,11 +7,12 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     nxos_acl_interface: 
-      interface: "{{ nxos_acl_interface_interface | default('omit', True) }}"
-      direction: "{{ nxos_acl_interface_direction | default('omit', True) }}"
-      state: "{{ nxos_acl_interface_state | default('omit', True) }}"
-      name: "{{ nxos_acl_interface_name | default('omit', True) }}"
-      provider: "{{ nxos_acl_interface_provider | default('omit', True) }}"
+      interface: "{{ nxos_acl_interface_interface | default(omit, True) }}"
+      direction: "{{ nxos_acl_interface_direction | default(omit, True) }}"
+      state: "{{ nxos_acl_interface_state | default(omit, True) }}"
+      name: "{{ nxos_acl_interface_name | default(omit, True) }}"
+      provider: "{{ nxos_acl_interface_provider | default(omit, True) }}"
   tasks:
     - name: "plugin_nxos_acl_interface"
       nxos_acl_interface: "{{ nxos_acl_interface }}"
+      register: r_nxos_acl_interface

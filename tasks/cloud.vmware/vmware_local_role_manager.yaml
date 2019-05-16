@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_local_role_manager"
   vmware_local_role_manager: "{{ vmware_local_role_manager }}"
+  register: r_vmware_local_role_manager
   vars:
     vmware_local_role_manager: 
       username: "{{ vmware_local_role_manager_username | default(omit, True) }}"

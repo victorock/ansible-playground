@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_epg_to_contract"
   aci_epg_to_contract: "{{ aci_epg_to_contract }}"
+  register: r_aci_epg_to_contract
   vars:
     aci_epg_to_contract: 
       username: "{{ aci_epg_to_contract_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_route53_health_check"
   route53_health_check: "{{ route53_health_check }}"
+  register: r_route53_health_check
   vars:
     route53_health_check: 
       profile: "{{ route53_health_check_profile | default(omit, True) }}"

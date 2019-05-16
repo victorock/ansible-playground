@@ -7,10 +7,11 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     netconf_get: 
-      filter: "{{ netconf_get_filter | default('omit', True) }}"
-      source: "{{ netconf_get_source | default('omit', True) }}"
-      display: "{{ netconf_get_display | default('omit', True) }}"
-      lock: "{{ netconf_get_lock | default('omit', True) }}"
+      filter: "{{ netconf_get_filter | default(omit, True) }}"
+      source: "{{ netconf_get_source | default(omit, True) }}"
+      display: "{{ netconf_get_display | default(omit, True) }}"
+      lock: "{{ netconf_get_lock | default(omit, True) }}"
   tasks:
     - name: "plugin_netconf_get"
       netconf_get: "{{ netconf_get }}"
+      register: r_netconf_get

@@ -1,6 +1,7 @@
 ---
 - name: "module_eos_eapi"
   eos_eapi: "{{ eos_eapi }}"
+  register: r_eos_eapi
   vars:
     eos_eapi: 
       authorize: "{{ eos_eapi_authorize | default(omit, True) }}"

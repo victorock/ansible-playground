@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_sys_db"
   bigip_sys_db: "{{ bigip_sys_db }}"
+  register: r_bigip_sys_db
   vars:
     bigip_sys_db: 
       server_port: "{{ bigip_sys_db_server_port | default(omit, True) }}"

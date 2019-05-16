@@ -1,6 +1,7 @@
 ---
 - name: "module_bigiq_application_https_offload"
   bigiq_application_https_offload: "{{ bigiq_application_https_offload }}"
+  register: r_bigiq_application_https_offload
   vars:
     bigiq_application_https_offload: 
       servers: "{{ bigiq_application_https_offload_servers | default(omit, True) }}"

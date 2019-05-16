@@ -1,6 +1,7 @@
 ---
 - name: "module_na_ontap_nfs"
   na_ontap_nfs: "{{ na_ontap_nfs }}"
+  register: r_na_ontap_nfs
   vars:
     na_ontap_nfs: 
       nfsv4: "{{ na_ontap_nfs_nfsv4 | default(omit, True) }}"

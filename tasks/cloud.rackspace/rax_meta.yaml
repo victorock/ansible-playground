@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_meta"
   rax_meta: "{{ rax_meta }}"
+  register: r_rax_meta
   vars:
     rax_meta: 
       username: "{{ rax_meta_username | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_dnsimple"
   dnsimple: "{{ dnsimple }}"
+  register: r_dnsimple
   vars:
     dnsimple: 
       solo: "{{ dnsimple_solo | default(omit, True) }}"

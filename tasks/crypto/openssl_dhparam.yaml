@@ -1,6 +1,7 @@
 ---
 - name: "module_openssl_dhparam"
   openssl_dhparam: "{{ openssl_dhparam }}"
+  register: r_openssl_dhparam
   vars:
     openssl_dhparam: 
       force: "{{ openssl_dhparam_force | default(omit, True) }}"

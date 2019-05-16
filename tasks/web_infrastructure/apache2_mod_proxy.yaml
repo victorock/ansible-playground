@@ -1,6 +1,7 @@
 ---
 - name: "module_apache2_mod_proxy"
   apache2_mod_proxy: "{{ apache2_mod_proxy }}"
+  register: r_apache2_mod_proxy
   vars:
     apache2_mod_proxy: 
       tls: "{{ apache2_mod_proxy_tls | default(omit, True) }}"

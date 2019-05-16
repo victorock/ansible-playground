@@ -1,6 +1,7 @@
 ---
 - name: "module_vmware_host_service_manager"
   vmware_host_service_manager: "{{ vmware_host_service_manager }}"
+  register: r_vmware_host_service_manager
   vars:
     vmware_host_service_manager: 
       username: "{{ vmware_host_service_manager_username | default(omit, True) }}"

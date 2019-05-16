@@ -1,6 +1,7 @@
 ---
 - name: "module_logentries_msg"
   logentries_msg: "{{ logentries_msg }}"
+  register: r_logentries_msg
   vars:
     logentries_msg: 
       msg: "{{ logentries_msg_msg | default(omit, True) }}"

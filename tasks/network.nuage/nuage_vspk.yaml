@@ -1,6 +1,7 @@
 ---
 - name: "module_nuage_vspk"
   nuage_vspk: "{{ nuage_vspk }}"
+  register: r_nuage_vspk
   vars:
     nuage_vspk: 
       parent_type: "{{ nuage_vspk_parent_type | default(omit, True) }}"

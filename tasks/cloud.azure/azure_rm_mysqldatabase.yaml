@@ -1,6 +1,7 @@
 ---
 - name: "module_azure_rm_mysqldatabase"
   azure_rm_mysqldatabase: "{{ azure_rm_mysqldatabase }}"
+  register: r_azure_rm_mysqldatabase
   vars:
     azure_rm_mysqldatabase: 
       profile: "{{ azure_rm_mysqldatabase_profile | default(omit, True) }}"

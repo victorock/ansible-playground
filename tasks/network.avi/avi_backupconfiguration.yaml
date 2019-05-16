@@ -1,6 +1,7 @@
 ---
 - name: "module_avi_backupconfiguration"
   avi_backupconfiguration: "{{ avi_backupconfiguration }}"
+  register: r_avi_backupconfiguration
   vars:
     avi_backupconfiguration: 
       remote_directory: "{{ avi_backupconfiguration_remote_directory | default(omit, True) }}"

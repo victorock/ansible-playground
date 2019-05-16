@@ -7,15 +7,16 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     vmware_local_user_manager: 
-      username: "{{ vmware_local_user_manager_username | default('omit', True) }}"
-      local_user_description: "{{ vmware_local_user_manager_local_user_description | default('omit', True) }}"
-      hostname: "{{ vmware_local_user_manager_hostname | default('omit', True) }}"
-      local_user_password: "{{ vmware_local_user_manager_local_user_password | default('omit', True) }}"
-      state: "{{ vmware_local_user_manager_state | default('omit', True) }}"
-      password: "{{ vmware_local_user_manager_password | default('omit', True) }}"
-      validate_certs: "{{ vmware_local_user_manager_validate_certs | default('omit', True) }}"
-      port: "{{ vmware_local_user_manager_port | default('omit', True) }}"
-      local_user_name: "{{ vmware_local_user_manager_local_user_name | default('omit', True) }}"
+      username: "{{ vmware_local_user_manager_username | default(omit, True) }}"
+      local_user_description: "{{ vmware_local_user_manager_local_user_description | default(omit, True) }}"
+      hostname: "{{ vmware_local_user_manager_hostname | default(omit, True) }}"
+      local_user_password: "{{ vmware_local_user_manager_local_user_password | default(omit, True) }}"
+      state: "{{ vmware_local_user_manager_state | default(omit, True) }}"
+      password: "{{ vmware_local_user_manager_password | default(omit, True) }}"
+      validate_certs: "{{ vmware_local_user_manager_validate_certs | default(omit, True) }}"
+      port: "{{ vmware_local_user_manager_port | default(omit, True) }}"
+      local_user_name: "{{ vmware_local_user_manager_local_user_name | default(omit, True) }}"
   tasks:
     - name: "plugin_vmware_local_user_manager"
       vmware_local_user_manager: "{{ vmware_local_user_manager }}"
+      register: r_vmware_local_user_manager

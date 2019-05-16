@@ -1,6 +1,7 @@
 ---
 - name: "module_gcp_backend_service"
   gcp_backend_service: "{{ gcp_backend_service }}"
+  register: r_gcp_backend_service
   vars:
     gcp_backend_service: 
       protocol: "{{ gcp_backend_service_protocol | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_ios_linkagg"
   ios_linkagg: "{{ ios_linkagg }}"
+  register: r_ios_linkagg
   vars:
     ios_linkagg: 
       authorize: "{{ ios_linkagg_authorize | default(omit, True) }}"

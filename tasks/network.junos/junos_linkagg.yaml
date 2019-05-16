@@ -1,6 +1,7 @@
 ---
 - name: "module_junos_linkagg"
   junos_linkagg: "{{ junos_linkagg }}"
+  register: r_junos_linkagg
   vars:
     junos_linkagg: 
       description: "{{ junos_linkagg_description | default(omit, True) }}"

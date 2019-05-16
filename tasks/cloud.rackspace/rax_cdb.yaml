@@ -1,6 +1,7 @@
 ---
 - name: "module_rax_cdb"
   rax_cdb: "{{ rax_cdb }}"
+  register: r_rax_cdb
   vars:
     rax_cdb: 
       username: "{{ rax_cdb_username | default(omit, True) }}"

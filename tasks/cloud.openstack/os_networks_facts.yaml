@@ -1,6 +1,7 @@
 ---
 - name: "module_os_networks_facts"
   os_networks_facts: "{{ os_networks_facts }}"
+  register: r_os_networks_facts
   vars:
     os_networks_facts: 
       auth_type: "{{ os_networks_facts_auth_type | default(omit, True) }}"

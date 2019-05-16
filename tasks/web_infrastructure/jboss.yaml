@@ -1,6 +1,7 @@
 ---
 - name: "module_jboss"
   jboss: "{{ jboss }}"
+  register: r_jboss
   vars:
     jboss: 
       src: "{{ jboss_src | default(omit, True) }}"

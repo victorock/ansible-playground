@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_volume"
   cs_volume: "{{ cs_volume }}"
+  register: r_cs_volume
   vars:
     cs_volume: 
       domain: "{{ cs_volume_domain | default(omit, True) }}"

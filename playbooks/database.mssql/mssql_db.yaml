@@ -7,14 +7,15 @@
   # gather_facts: Define the variable ansible_gather_facts in the inventory
   vars:
     mssql_db: 
-      autocommit: "{{ mssql_db_autocommit | default('omit', True) }}"
-      login_port: "{{ mssql_db_login_port | default('omit', True) }}"
-      name: "{{ mssql_db_name | default('omit', True) }}"
-      login_user: "{{ mssql_db_login_user | default('omit', True) }}"
-      login_host: "{{ mssql_db_login_host | default('omit', True) }}"
-      state: "{{ mssql_db_state | default('omit', True) }}"
-      login_password: "{{ mssql_db_login_password | default('omit', True) }}"
-      target: "{{ mssql_db_target | default('omit', True) }}"
+      autocommit: "{{ mssql_db_autocommit | default(omit, True) }}"
+      login_port: "{{ mssql_db_login_port | default(omit, True) }}"
+      name: "{{ mssql_db_name | default(omit, True) }}"
+      login_user: "{{ mssql_db_login_user | default(omit, True) }}"
+      login_host: "{{ mssql_db_login_host | default(omit, True) }}"
+      state: "{{ mssql_db_state | default(omit, True) }}"
+      login_password: "{{ mssql_db_login_password | default(omit, True) }}"
+      target: "{{ mssql_db_target | default(omit, True) }}"
   tasks:
     - name: "plugin_mssql_db"
       mssql_db: "{{ mssql_db }}"
+      register: r_mssql_db

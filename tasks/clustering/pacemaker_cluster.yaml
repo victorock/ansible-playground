@@ -1,6 +1,7 @@
 ---
 - name: "module_pacemaker_cluster"
   pacemaker_cluster: "{{ pacemaker_cluster }}"
+  register: r_pacemaker_cluster
   vars:
     pacemaker_cluster: 
       node: "{{ pacemaker_cluster_node | default(omit, True) }}"

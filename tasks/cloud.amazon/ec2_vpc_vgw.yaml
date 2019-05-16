@@ -1,6 +1,7 @@
 ---
 - name: "module_ec2_vpc_vgw"
   ec2_vpc_vgw: "{{ ec2_vpc_vgw }}"
+  register: r_ec2_vpc_vgw
   vars:
     ec2_vpc_vgw: 
       name: "{{ ec2_vpc_vgw_name | default(omit, True) }}"

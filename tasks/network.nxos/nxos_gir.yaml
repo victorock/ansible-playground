@@ -1,6 +1,7 @@
 ---
 - name: "module_nxos_gir"
   nxos_gir: "{{ nxos_gir }}"
+  register: r_nxos_gir
   vars:
     nxos_gir: 
       system_mode_maintenance_dont_generate_profile: "{{ nxos_gir_system_mode_maintenance_dont_generate_profile | default(omit, True) }}"

@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_static_route"
   bigip_static_route: "{{ bigip_static_route }}"
+  register: r_bigip_static_route
   vars:
     bigip_static_route: 
       partition: "{{ bigip_static_route_partition | default(omit, True) }}"

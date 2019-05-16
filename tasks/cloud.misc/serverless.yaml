@@ -1,6 +1,7 @@
 ---
 - name: "module_serverless"
   serverless: "{{ serverless }}"
+  register: r_serverless
   vars:
     serverless: 
       functions: "{{ serverless_functions | default(omit, True) }}"

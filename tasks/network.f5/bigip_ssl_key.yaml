@@ -1,6 +1,7 @@
 ---
 - name: "module_bigip_ssl_key"
   bigip_ssl_key: "{{ bigip_ssl_key }}"
+  register: r_bigip_ssl_key
   vars:
     bigip_ssl_key: 
       name: "{{ bigip_ssl_key_name | default(omit, True) }}"

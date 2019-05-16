@@ -1,6 +1,7 @@
 ---
 - name: "module_aci_intf_policy_port_security"
   aci_intf_policy_port_security: "{{ aci_intf_policy_port_security }}"
+  register: r_aci_intf_policy_port_security
   vars:
     aci_intf_policy_port_security: 
       username: "{{ aci_intf_policy_port_security_username | default(omit, True) }}"

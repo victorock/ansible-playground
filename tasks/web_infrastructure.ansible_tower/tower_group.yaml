@@ -1,6 +1,7 @@
 ---
 - name: "module_tower_group"
   tower_group: "{{ tower_group }}"
+  register: r_tower_group
   vars:
     tower_group: 
       credential: "{{ tower_group_credential | default(omit, True) }}"

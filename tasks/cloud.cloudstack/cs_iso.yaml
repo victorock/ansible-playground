@@ -1,6 +1,7 @@
 ---
 - name: "module_cs_iso"
   cs_iso: "{{ cs_iso }}"
+  register: r_cs_iso
   vars:
     cs_iso: 
       domain: "{{ cs_iso_domain | default(omit, True) }}"
