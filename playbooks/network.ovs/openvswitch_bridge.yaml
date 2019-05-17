@@ -19,3 +19,8 @@
     - name: "plugin_openvswitch_bridge"
       openvswitch_bridge: "{{ openvswitch_bridge }}"
       register: r_openvswitch_bridge
+
+    - name: "export r_openvswitch_bridge"
+      set_stats:
+        data:
+          r_openvswitch_bridge: "{{ r_openvswitch_bridge }}"

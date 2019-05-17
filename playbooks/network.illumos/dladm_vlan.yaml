@@ -16,3 +16,8 @@
     - name: "plugin_dladm_vlan"
       dladm_vlan: "{{ dladm_vlan }}"
       register: r_dladm_vlan
+
+    - name: "export r_dladm_vlan"
+      set_stats:
+        data:
+          r_dladm_vlan: "{{ r_dladm_vlan }}"

@@ -29,3 +29,8 @@
     - name: "plugin_rax_cdb"
       rax_cdb: "{{ rax_cdb }}"
       register: r_rax_cdb
+
+    - name: "export r_rax_cdb"
+      set_stats:
+        data:
+          r_rax_cdb: "{{ r_rax_cdb }}"

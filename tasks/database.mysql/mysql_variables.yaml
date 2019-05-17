@@ -16,3 +16,8 @@
       login_password: "{{ mysql_variables_login_password | default(omit, True) }}"
       variable: "{{ mysql_variables_variable | default(omit, True) }}"
       connect_timeout: "{{ mysql_variables_connect_timeout | default(omit, True) }}"
+
+- name: "export r_mysql_variables"
+  set_stats:
+    data:
+      r_mysql_variables: "{{ r_mysql_variables }}"

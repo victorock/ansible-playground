@@ -22,3 +22,8 @@
     - name: "plugin_nios_host_record"
       nios_host_record: "{{ nios_host_record }}"
       register: r_nios_host_record
+
+    - name: "export r_nios_host_record"
+      set_stats:
+        data:
+          r_nios_host_record: "{{ r_nios_host_record }}"

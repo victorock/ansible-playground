@@ -20,3 +20,8 @@
     - name: "plugin_ec2_vpc_egress_igw"
       ec2_vpc_egress_igw: "{{ ec2_vpc_egress_igw }}"
       register: r_ec2_vpc_egress_igw
+
+    - name: "export r_ec2_vpc_egress_igw"
+      set_stats:
+        data:
+          r_ec2_vpc_egress_igw: "{{ r_ec2_vpc_egress_igw }}"

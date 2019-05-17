@@ -23,3 +23,8 @@
       cacert: "{{ os_pool_cacert | default(omit, True) }}"
       cloud: "{{ os_pool_cloud | default(omit, True) }}"
       wait: "{{ os_pool_wait | default(omit, True) }}"
+
+- name: "export r_os_pool"
+  set_stats:
+    data:
+      r_os_pool: "{{ r_os_pool }}"

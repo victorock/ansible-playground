@@ -24,3 +24,8 @@
     - name: "plugin_ucs_san_connectivity"
       ucs_san_connectivity: "{{ ucs_san_connectivity }}"
       register: r_ucs_san_connectivity
+
+    - name: "export r_ucs_san_connectivity"
+      set_stats:
+        data:
+          r_ucs_san_connectivity: "{{ r_ucs_san_connectivity }}"

@@ -10,3 +10,8 @@
       password: "{{ vmware_vsan_cluster_password | default(omit, True) }}"
       validate_certs: "{{ vmware_vsan_cluster_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vsan_cluster_port | default(omit, True) }}"
+
+- name: "export r_vmware_vsan_cluster"
+  set_stats:
+    data:
+      r_vmware_vsan_cluster: "{{ r_vmware_vsan_cluster }}"

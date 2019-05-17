@@ -14,3 +14,8 @@
     - name: "plugin_seboolean"
       seboolean: "{{ seboolean }}"
       register: r_seboolean
+
+    - name: "export r_seboolean"
+      set_stats:
+        data:
+          r_seboolean: "{{ r_seboolean }}"

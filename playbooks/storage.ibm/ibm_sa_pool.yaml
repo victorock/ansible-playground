@@ -20,3 +20,8 @@
     - name: "plugin_ibm_sa_pool"
       ibm_sa_pool: "{{ ibm_sa_pool }}"
       register: r_ibm_sa_pool
+
+    - name: "export r_ibm_sa_pool"
+      set_stats:
+        data:
+          r_ibm_sa_pool: "{{ r_ibm_sa_pool }}"

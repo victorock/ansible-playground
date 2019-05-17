@@ -29,3 +29,8 @@
     - name: "plugin_aci_domain_to_encap_pool"
       aci_domain_to_encap_pool: "{{ aci_domain_to_encap_pool }}"
       register: r_aci_domain_to_encap_pool
+
+    - name: "export r_aci_domain_to_encap_pool"
+      set_stats:
+        data:
+          r_aci_domain_to_encap_pool: "{{ r_aci_domain_to_encap_pool }}"

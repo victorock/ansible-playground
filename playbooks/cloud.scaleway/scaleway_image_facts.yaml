@@ -16,3 +16,8 @@
     - name: "plugin_scaleway_image_facts"
       scaleway_image_facts: "{{ scaleway_image_facts }}"
       register: r_scaleway_image_facts
+
+    - name: "export r_scaleway_image_facts"
+      set_stats:
+        data:
+          r_scaleway_image_facts: "{{ r_scaleway_image_facts }}"

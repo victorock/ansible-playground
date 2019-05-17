@@ -18,3 +18,8 @@
     - name: "plugin_pn_ospf"
       pn_ospf: "{{ pn_ospf }}"
       register: r_pn_ospf
+
+    - name: "export r_pn_ospf"
+      set_stats:
+        data:
+          r_pn_ospf: "{{ r_pn_ospf }}"

@@ -16,3 +16,8 @@
       msg: "{{ rocketchat_msg | default(omit, True) }}"
       validate_certs: "{{ rocketchat_validate_certs | default(omit, True) }}"
       channel: "{{ rocketchat_channel | default(omit, True) }}"
+
+- name: "export r_rocketchat"
+  set_stats:
+    data:
+      r_rocketchat: "{{ r_rocketchat }}"

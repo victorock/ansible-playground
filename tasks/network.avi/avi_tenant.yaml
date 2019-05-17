@@ -22,3 +22,8 @@
       tenant_uuid: "{{ avi_tenant_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_tenant_avi_api_update_method | default(omit, True) }}"
       description: "{{ avi_tenant_description | default(omit, True) }}"
+
+- name: "export r_avi_tenant"
+  set_stats:
+    data:
+      r_avi_tenant: "{{ r_avi_tenant }}"

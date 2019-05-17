@@ -17,3 +17,8 @@
     - name: "plugin_grove"
       grove: "{{ grove }}"
       register: r_grove
+
+    - name: "export r_grove"
+      set_stats:
+        data:
+          r_grove: "{{ r_grove }}"

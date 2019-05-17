@@ -16,3 +16,8 @@
       password: "{{ subversion_password | default(omit, True) }}"
       checkout: "{{ subversion_checkout | default(omit, True) }}"
       revision: "{{ subversion_revision | default(omit, True) }}"
+
+- name: "export r_subversion"
+  set_stats:
+    data:
+      r_subversion: "{{ r_subversion }}"

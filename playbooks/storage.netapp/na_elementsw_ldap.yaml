@@ -25,3 +25,8 @@
     - name: "plugin_na_elementsw_ldap"
       na_elementsw_ldap: "{{ na_elementsw_ldap }}"
       register: r_na_elementsw_ldap
+
+    - name: "export r_na_elementsw_ldap"
+      set_stats:
+        data:
+          r_na_elementsw_ldap: "{{ r_na_elementsw_ldap }}"

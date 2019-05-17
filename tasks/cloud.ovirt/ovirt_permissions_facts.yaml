@@ -11,3 +11,8 @@
       fetch_nested: "{{ ovirt_permissions_facts_fetch_nested | default(omit, True) }}"
       nested_attributes: "{{ ovirt_permissions_facts_nested_attributes | default(omit, True) }}"
       user_name: "{{ ovirt_permissions_facts_user_name | default(omit, True) }}"
+
+- name: "export r_ovirt_permissions_facts"
+  set_stats:
+    data:
+      r_ovirt_permissions_facts: "{{ r_ovirt_permissions_facts }}"

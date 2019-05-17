@@ -24,3 +24,8 @@
     - name: "plugin_cs_project"
       cs_project: "{{ cs_project }}"
       register: r_cs_project
+
+    - name: "export r_cs_project"
+      set_stats:
+        data:
+          r_cs_project: "{{ r_cs_project }}"

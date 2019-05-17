@@ -50,3 +50,8 @@
     - name: "plugin_ce_acl_advance"
       ce_acl_advance: "{{ ce_acl_advance }}"
       register: r_ce_acl_advance
+
+    - name: "export r_ce_acl_advance"
+      set_stats:
+        data:
+          r_ce_acl_advance: "{{ r_ce_acl_advance }}"

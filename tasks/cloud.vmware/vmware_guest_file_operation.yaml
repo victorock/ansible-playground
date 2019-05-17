@@ -19,3 +19,8 @@
       copy: "{{ vmware_guest_file_operation_copy | default(omit, True) }}"
       vm_id: "{{ vmware_guest_file_operation_vm_id | default(omit, True) }}"
       port: "{{ vmware_guest_file_operation_port | default(omit, True) }}"
+
+- name: "export r_vmware_guest_file_operation"
+  set_stats:
+    data:
+      r_vmware_guest_file_operation: "{{ r_vmware_guest_file_operation }}"

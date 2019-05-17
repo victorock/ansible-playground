@@ -13,3 +13,8 @@
       load_to_runtime: "{{ proxysql_global_variables_load_to_runtime | default(omit, True) }}"
       save_to_disk: "{{ proxysql_global_variables_save_to_disk | default(omit, True) }}"
       variable: "{{ proxysql_global_variables_variable | default(omit, True) }}"
+
+- name: "export r_proxysql_global_variables"
+  set_stats:
+    data:
+      r_proxysql_global_variables: "{{ r_proxysql_global_variables }}"

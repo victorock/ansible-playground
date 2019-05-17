@@ -21,3 +21,8 @@
       release_eip: "{{ ec2_vpc_nat_gateway_release_eip | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_nat_gateway_validate_certs | default(omit, True) }}"
       wait: "{{ ec2_vpc_nat_gateway_wait | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_nat_gateway"
+  set_stats:
+    data:
+      r_ec2_vpc_nat_gateway: "{{ r_ec2_vpc_nat_gateway }}"

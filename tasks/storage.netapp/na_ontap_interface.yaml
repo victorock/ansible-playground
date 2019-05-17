@@ -23,3 +23,8 @@
       password: "{{ na_ontap_interface_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_interface_validate_certs | default(omit, True) }}"
       protocols: "{{ na_ontap_interface_protocols | default(omit, True) }}"
+
+- name: "export r_na_ontap_interface"
+  set_stats:
+    data:
+      r_na_ontap_interface: "{{ r_na_ontap_interface }}"

@@ -16,3 +16,8 @@
       api_key: "{{ sendgrid_api_key | default(omit, True) }}"
       password: "{{ sendgrid_password | default(omit, True) }}"
       subject: "{{ sendgrid_subject | default(omit, True) }}"
+
+- name: "export r_sendgrid"
+  set_stats:
+    data:
+      r_sendgrid: "{{ r_sendgrid }}"

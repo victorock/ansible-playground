@@ -23,3 +23,8 @@
       password: "{{ k8s_password | default(omit, True) }}"
       api_version: "{{ k8s_api_version | default(omit, True) }}"
       merge_type: "{{ k8s_merge_type | default(omit, True) }}"
+
+- name: "export r_k8s"
+  set_stats:
+    data:
+      r_k8s: "{{ r_k8s }}"

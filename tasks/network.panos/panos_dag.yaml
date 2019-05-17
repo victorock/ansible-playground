@@ -10,3 +10,8 @@
       password: "{{ panos_dag_password | default(omit, True) }}"
       ip_address: "{{ panos_dag_ip_address | default(omit, True) }}"
       dag_filter: "{{ panos_dag_dag_filter | default(omit, True) }}"
+
+- name: "export r_panos_dag"
+  set_stats:
+    data:
+      r_panos_dag: "{{ r_panos_dag }}"

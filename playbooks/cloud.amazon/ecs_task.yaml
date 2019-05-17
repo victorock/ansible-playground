@@ -27,3 +27,8 @@
     - name: "plugin_ecs_task"
       ecs_task: "{{ ecs_task }}"
       register: r_ecs_task
+
+    - name: "export r_ecs_task"
+      set_stats:
+        data:
+          r_ecs_task: "{{ r_ecs_task }}"

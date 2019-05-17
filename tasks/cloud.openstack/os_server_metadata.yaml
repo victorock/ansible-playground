@@ -20,3 +20,8 @@
       interface: "{{ os_server_metadata_interface | default(omit, True) }}"
       cloud: "{{ os_server_metadata_cloud | default(omit, True) }}"
       wait: "{{ os_server_metadata_wait | default(omit, True) }}"
+
+- name: "export r_os_server_metadata"
+  set_stats:
+    data:
+      r_os_server_metadata: "{{ r_os_server_metadata }}"

@@ -22,3 +22,8 @@
     - name: "plugin_proxysql_replication_hostgroups"
       proxysql_replication_hostgroups: "{{ proxysql_replication_hostgroups }}"
       register: r_proxysql_replication_hostgroups
+
+    - name: "export r_proxysql_replication_hostgroups"
+      set_stats:
+        data:
+          r_proxysql_replication_hostgroups: "{{ r_proxysql_replication_hostgroups }}"

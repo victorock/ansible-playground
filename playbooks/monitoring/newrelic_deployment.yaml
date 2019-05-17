@@ -21,3 +21,8 @@
     - name: "plugin_newrelic_deployment"
       newrelic_deployment: "{{ newrelic_deployment }}"
       register: r_newrelic_deployment
+
+    - name: "export r_newrelic_deployment"
+      set_stats:
+        data:
+          r_newrelic_deployment: "{{ r_newrelic_deployment }}"

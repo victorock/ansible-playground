@@ -23,3 +23,8 @@
       port: "{{ postgresql_privs_port | default(omit, True) }}"
       grant_option: "{{ postgresql_privs_grant_option | default(omit, True) }}"
       schema: "{{ postgresql_privs_schema | default(omit, True) }}"
+
+- name: "export r_postgresql_privs"
+  set_stats:
+    data:
+      r_postgresql_privs: "{{ r_postgresql_privs }}"

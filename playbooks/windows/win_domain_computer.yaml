@@ -18,3 +18,8 @@
     - name: "plugin_win_domain_computer"
       win_domain_computer: "{{ win_domain_computer }}"
       register: r_win_domain_computer
+
+    - name: "export r_win_domain_computer"
+      set_stats:
+        data:
+          r_win_domain_computer: "{{ r_win_domain_computer }}"

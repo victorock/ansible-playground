@@ -7,3 +7,8 @@
       aggregate: "{{ set_stats_aggregate | default(omit, True) }}"
       data: "{{ set_stats_data | default(omit, True) }}"
       per_host: "{{ set_stats_per_host | default(omit, True) }}"
+
+- name: "export r_set_stats"
+  set_stats:
+    data:
+      r_set_stats: "{{ r_set_stats }}"

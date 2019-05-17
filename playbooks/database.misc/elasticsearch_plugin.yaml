@@ -22,3 +22,8 @@
     - name: "plugin_elasticsearch_plugin"
       elasticsearch_plugin: "{{ elasticsearch_plugin }}"
       register: r_elasticsearch_plugin
+
+    - name: "export r_elasticsearch_plugin"
+      set_stats:
+        data:
+          r_elasticsearch_plugin: "{{ r_elasticsearch_plugin }}"

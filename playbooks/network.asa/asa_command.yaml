@@ -19,3 +19,8 @@
     - name: "plugin_asa_command"
       asa_command: "{{ asa_command }}"
       register: r_asa_command
+
+    - name: "export r_asa_command"
+      set_stats:
+        data:
+          r_asa_command: "{{ r_asa_command }}"

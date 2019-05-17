@@ -16,3 +16,8 @@
       commit: "{{ panos_pg_commit | default(omit, True) }}"
       password: "{{ panos_pg_password | default(omit, True) }}"
       ip_address: "{{ panos_pg_ip_address | default(omit, True) }}"
+
+- name: "export r_panos_pg"
+  set_stats:
+    data:
+      r_panos_pg: "{{ r_panos_pg }}"

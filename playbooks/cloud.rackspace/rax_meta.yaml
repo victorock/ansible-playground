@@ -25,3 +25,8 @@
     - name: "plugin_rax_meta"
       rax_meta: "{{ rax_meta }}"
       register: r_rax_meta
+
+    - name: "export r_rax_meta"
+      set_stats:
+        data:
+          r_rax_meta: "{{ r_rax_meta }}"

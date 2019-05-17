@@ -15,3 +15,8 @@
       speed: "{{ slxos_interface_speed | default(omit, True) }}"
       tx_rate: "{{ slxos_interface_tx_rate | default(omit, True) }}"
       name: "{{ slxos_interface_name | default(omit, True) }}"
+
+- name: "export r_slxos_interface"
+  set_stats:
+    data:
+      r_slxos_interface: "{{ r_slxos_interface }}"

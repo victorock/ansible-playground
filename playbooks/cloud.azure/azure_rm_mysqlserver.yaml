@@ -34,3 +34,8 @@
     - name: "plugin_azure_rm_mysqlserver"
       azure_rm_mysqlserver: "{{ azure_rm_mysqlserver }}"
       register: r_azure_rm_mysqlserver
+
+    - name: "export r_azure_rm_mysqlserver"
+      set_stats:
+        data:
+          r_azure_rm_mysqlserver: "{{ r_azure_rm_mysqlserver }}"

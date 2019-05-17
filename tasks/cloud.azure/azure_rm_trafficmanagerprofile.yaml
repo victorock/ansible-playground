@@ -26,3 +26,8 @@
       tenant: "{{ azure_rm_trafficmanagerprofile_tenant | default(omit, True) }}"
       name: "{{ azure_rm_trafficmanagerprofile_name | default(omit, True) }}"
       api_profile: "{{ azure_rm_trafficmanagerprofile_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_trafficmanagerprofile"
+  set_stats:
+    data:
+      r_azure_rm_trafficmanagerprofile: "{{ r_azure_rm_trafficmanagerprofile }}"

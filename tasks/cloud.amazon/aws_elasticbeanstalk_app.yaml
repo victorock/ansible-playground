@@ -15,3 +15,8 @@
       validate_certs: "{{ aws_elasticbeanstalk_app_validate_certs | default(omit, True) }}"
       terminate_by_force: "{{ aws_elasticbeanstalk_app_terminate_by_force | default(omit, True) }}"
       description: "{{ aws_elasticbeanstalk_app_description | default(omit, True) }}"
+
+- name: "export r_aws_elasticbeanstalk_app"
+  set_stats:
+    data:
+      r_aws_elasticbeanstalk_app: "{{ r_aws_elasticbeanstalk_app }}"

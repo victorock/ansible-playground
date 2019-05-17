@@ -7,3 +7,8 @@
       parsable: "{{ zpool_facts_parsable | default(omit, True) }}"
       name: "{{ zpool_facts_name | default(omit, True) }}"
       properties: "{{ zpool_facts_properties | default(omit, True) }}"
+
+- name: "export r_zpool_facts"
+  set_stats:
+    data:
+      r_zpool_facts: "{{ r_zpool_facts }}"

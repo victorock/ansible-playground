@@ -19,3 +19,8 @@
     - name: "plugin_ec2_remote_facts"
       ec2_remote_facts: "{{ ec2_remote_facts }}"
       register: r_ec2_remote_facts
+
+    - name: "export r_ec2_remote_facts"
+      set_stats:
+        data:
+          r_ec2_remote_facts: "{{ r_ec2_remote_facts }}"

@@ -27,3 +27,8 @@
     - name: "plugin_ovirt_permission"
       ovirt_permission: "{{ ovirt_permission }}"
       register: r_ovirt_permission
+
+    - name: "export r_ovirt_permission"
+      set_stats:
+        data:
+          r_ovirt_permission: "{{ r_ovirt_permission }}"

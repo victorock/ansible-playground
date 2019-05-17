@@ -8,3 +8,8 @@
       tracing: "{{ rabbitmq_vhost_tracing | default(omit, True) }}"
       state: "{{ rabbitmq_vhost_state | default(omit, True) }}"
       name: "{{ rabbitmq_vhost_name | default(omit, True) }}"
+
+- name: "export r_rabbitmq_vhost"
+  set_stats:
+    data:
+      r_rabbitmq_vhost: "{{ r_rabbitmq_vhost }}"

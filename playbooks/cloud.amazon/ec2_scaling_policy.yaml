@@ -25,3 +25,8 @@
     - name: "plugin_ec2_scaling_policy"
       ec2_scaling_policy: "{{ ec2_scaling_policy }}"
       register: r_ec2_scaling_policy
+
+    - name: "export r_ec2_scaling_policy"
+      set_stats:
+        data:
+          r_ec2_scaling_policy: "{{ r_ec2_scaling_policy }}"

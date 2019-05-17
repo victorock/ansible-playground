@@ -31,3 +31,8 @@
     - name: "plugin_azure_rm_containerregistry"
       azure_rm_containerregistry: "{{ azure_rm_containerregistry }}"
       register: r_azure_rm_containerregistry
+
+    - name: "export r_azure_rm_containerregistry"
+      set_stats:
+        data:
+          r_azure_rm_containerregistry: "{{ r_azure_rm_containerregistry }}"

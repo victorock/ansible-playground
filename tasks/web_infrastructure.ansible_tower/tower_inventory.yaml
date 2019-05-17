@@ -16,3 +16,8 @@
       variables: "{{ tower_inventory_variables | default(omit, True) }}"
       tower_verify_ssl: "{{ tower_inventory_tower_verify_ssl | default(omit, True) }}"
       name: "{{ tower_inventory_name | default(omit, True) }}"
+
+- name: "export r_tower_inventory"
+  set_stats:
+    data:
+      r_tower_inventory: "{{ r_tower_inventory }}"

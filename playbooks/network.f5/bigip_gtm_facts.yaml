@@ -19,3 +19,8 @@
     - name: "plugin_bigip_gtm_facts"
       bigip_gtm_facts: "{{ bigip_gtm_facts }}"
       register: r_bigip_gtm_facts
+
+    - name: "export r_bigip_gtm_facts"
+      set_stats:
+        data:
+          r_bigip_gtm_facts: "{{ r_bigip_gtm_facts }}"

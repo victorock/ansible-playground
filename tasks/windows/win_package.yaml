@@ -15,3 +15,8 @@
       path: "{{ win_package_path | default(omit, True) }}"
       password: "{{ win_package_password | default(omit, True) }}"
       validate_certs: "{{ win_package_validate_certs | default(omit, True) }}"
+
+- name: "export r_win_package"
+  set_stats:
+    data:
+      r_win_package: "{{ r_win_package }}"

@@ -20,3 +20,8 @@
       vlan_tag: "{{ ovirt_network_vlan_tag | default(omit, True) }}"
       mtu: "{{ ovirt_network_mtu | default(omit, True) }}"
       wait: "{{ ovirt_network_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_network"
+  set_stats:
+    data:
+      r_ovirt_network: "{{ r_ovirt_network }}"

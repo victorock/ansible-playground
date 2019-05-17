@@ -23,3 +23,8 @@
       password: "{{ azure_rm_resource_facts_password | default(omit, True) }}"
       tenant: "{{ azure_rm_resource_facts_tenant | default(omit, True) }}"
       api_profile: "{{ azure_rm_resource_facts_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_resource_facts"
+  set_stats:
+    data:
+      r_azure_rm_resource_facts: "{{ r_azure_rm_resource_facts }}"

@@ -21,3 +21,8 @@
       rebalance: "{{ gluster_volume_rebalance | default(omit, True) }}"
       options: "{{ gluster_volume_options | default(omit, True) }}"
       transport: "{{ gluster_volume_transport | default(omit, True) }}"
+
+- name: "export r_gluster_volume"
+  set_stats:
+    data:
+      r_gluster_volume: "{{ r_gluster_volume }}"

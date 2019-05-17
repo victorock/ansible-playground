@@ -16,3 +16,8 @@
     - name: "plugin_fetch"
       fetch: "{{ fetch }}"
       register: r_fetch
+
+    - name: "export r_fetch"
+      set_stats:
+        data:
+          r_fetch: "{{ r_fetch }}"

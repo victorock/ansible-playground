@@ -18,3 +18,8 @@
     - name: "plugin_tower_settings"
       tower_settings: "{{ tower_settings }}"
       register: r_tower_settings
+
+    - name: "export r_tower_settings"
+      set_stats:
+        data:
+          r_tower_settings: "{{ r_tower_settings }}"

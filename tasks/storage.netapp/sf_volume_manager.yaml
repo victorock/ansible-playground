@@ -17,3 +17,8 @@
       attributes: "{{ sf_volume_manager_attributes | default(omit, True) }}"
       password: "{{ sf_volume_manager_password | default(omit, True) }}"
       size: "{{ sf_volume_manager_size | default(omit, True) }}"
+
+- name: "export r_sf_volume_manager"
+  set_stats:
+    data:
+      r_sf_volume_manager: "{{ r_sf_volume_manager }}"

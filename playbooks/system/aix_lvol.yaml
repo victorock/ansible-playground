@@ -20,3 +20,8 @@
     - name: "plugin_aix_lvol"
       aix_lvol: "{{ aix_lvol }}"
       register: r_aix_lvol
+
+    - name: "export r_aix_lvol"
+      set_stats:
+        data:
+          r_aix_lvol: "{{ r_aix_lvol }}"

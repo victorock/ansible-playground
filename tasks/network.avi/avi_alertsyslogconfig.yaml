@@ -21,3 +21,8 @@
       tenant_uuid: "{{ avi_alertsyslogconfig_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_alertsyslogconfig_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_alertsyslogconfig_name | default(omit, True) }}"
+
+- name: "export r_avi_alertsyslogconfig"
+  set_stats:
+    data:
+      r_avi_alertsyslogconfig: "{{ r_avi_alertsyslogconfig }}"

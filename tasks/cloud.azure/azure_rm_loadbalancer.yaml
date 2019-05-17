@@ -43,3 +43,8 @@
       natpool_frontend_port_start: "{{ azure_rm_loadbalancer_natpool_frontend_port_start | default(omit, True) }}"
       probe_request_path: "{{ azure_rm_loadbalancer_probe_request_path | default(omit, True) }}"
       auth_source: "{{ azure_rm_loadbalancer_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_loadbalancer"
+  set_stats:
+    data:
+      r_azure_rm_loadbalancer: "{{ r_azure_rm_loadbalancer }}"

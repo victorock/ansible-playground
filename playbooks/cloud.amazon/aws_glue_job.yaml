@@ -30,3 +30,8 @@
     - name: "plugin_aws_glue_job"
       aws_glue_job: "{{ aws_glue_job }}"
       register: r_aws_glue_job
+
+    - name: "export r_aws_glue_job"
+      set_stats:
+        data:
+          r_aws_glue_job: "{{ r_aws_glue_job }}"

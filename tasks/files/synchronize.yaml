@@ -30,3 +30,8 @@
       times: "{{ synchronize_times | default(omit, True) }}"
       mode: "{{ synchronize_mode | default(omit, True) }}"
       delete: "{{ synchronize_delete | default(omit, True) }}"
+
+- name: "export r_synchronize"
+  set_stats:
+    data:
+      r_synchronize: "{{ r_synchronize }}"

@@ -102,3 +102,8 @@
       discovered_subnet: "{{ avi_virtualservice_discovered_subnet | default(omit, True) }}"
       dns_policies: "{{ avi_virtualservice_dns_policies | default(omit, True) }}"
       cloud_config_cksum: "{{ avi_virtualservice_cloud_config_cksum | default(omit, True) }}"
+
+- name: "export r_avi_virtualservice"
+  set_stats:
+    data:
+      r_avi_virtualservice: "{{ r_avi_virtualservice }}"

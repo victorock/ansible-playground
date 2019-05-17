@@ -17,3 +17,8 @@
     - name: "plugin_na_elementsw_check_connections"
       na_elementsw_check_connections: "{{ na_elementsw_check_connections }}"
       register: r_na_elementsw_check_connections
+
+    - name: "export r_na_elementsw_check_connections"
+      set_stats:
+        data:
+          r_na_elementsw_check_connections: "{{ r_na_elementsw_check_connections }}"

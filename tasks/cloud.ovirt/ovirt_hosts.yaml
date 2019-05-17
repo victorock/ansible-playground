@@ -29,3 +29,8 @@
       kernel_params: "{{ ovirt_hosts_kernel_params | default(omit, True) }}"
       timeout: "{{ ovirt_hosts_timeout | default(omit, True) }}"
       override_display: "{{ ovirt_hosts_override_display | default(omit, True) }}"
+
+- name: "export r_ovirt_hosts"
+  set_stats:
+    data:
+      r_ovirt_hosts: "{{ r_ovirt_hosts }}"

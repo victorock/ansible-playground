@@ -17,3 +17,8 @@
     - name: "plugin_vultr_plan_facts"
       vultr_plan_facts: "{{ vultr_plan_facts }}"
       register: r_vultr_plan_facts
+
+    - name: "export r_vultr_plan_facts"
+      set_stats:
+        data:
+          r_vultr_plan_facts: "{{ r_vultr_plan_facts }}"

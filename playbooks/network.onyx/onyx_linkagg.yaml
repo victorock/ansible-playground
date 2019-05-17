@@ -17,3 +17,8 @@
     - name: "plugin_onyx_linkagg"
       onyx_linkagg: "{{ onyx_linkagg }}"
       register: r_onyx_linkagg
+
+    - name: "export r_onyx_linkagg"
+      set_stats:
+        data:
+          r_onyx_linkagg: "{{ r_onyx_linkagg }}"

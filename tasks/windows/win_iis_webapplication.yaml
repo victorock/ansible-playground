@@ -9,3 +9,8 @@
       name: "{{ win_iis_webapplication_name | default(omit, True) }}"
       physical_path: "{{ win_iis_webapplication_physical_path | default(omit, True) }}"
       site: "{{ win_iis_webapplication_site | default(omit, True) }}"
+
+- name: "export r_win_iis_webapplication"
+  set_stats:
+    data:
+      r_win_iis_webapplication: "{{ r_win_iis_webapplication }}"

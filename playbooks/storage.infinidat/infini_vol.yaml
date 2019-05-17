@@ -18,3 +18,8 @@
     - name: "plugin_infini_vol"
       infini_vol: "{{ infini_vol }}"
       register: r_infini_vol
+
+    - name: "export r_infini_vol"
+      set_stats:
+        data:
+          r_infini_vol: "{{ r_infini_vol }}"

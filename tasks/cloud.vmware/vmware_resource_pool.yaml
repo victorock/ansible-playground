@@ -21,3 +21,8 @@
       validate_certs: "{{ vmware_resource_pool_validate_certs | default(omit, True) }}"
       port: "{{ vmware_resource_pool_port | default(omit, True) }}"
       cpu_shares: "{{ vmware_resource_pool_cpu_shares | default(omit, True) }}"
+
+- name: "export r_vmware_resource_pool"
+  set_stats:
+    data:
+      r_vmware_resource_pool: "{{ r_vmware_resource_pool }}"

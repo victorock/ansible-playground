@@ -19,3 +19,8 @@
       password: "{{ vmware_host_datastore_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_datastore_validate_certs | default(omit, True) }}"
       port: "{{ vmware_host_datastore_port | default(omit, True) }}"
+
+- name: "export r_vmware_host_datastore"
+  set_stats:
+    data:
+      r_vmware_host_datastore: "{{ r_vmware_host_datastore }}"

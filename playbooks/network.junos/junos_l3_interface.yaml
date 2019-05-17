@@ -19,3 +19,8 @@
     - name: "plugin_junos_l3_interface"
       junos_l3_interface: "{{ junos_l3_interface }}"
       register: r_junos_l3_interface
+
+    - name: "export r_junos_l3_interface"
+      set_stats:
+        data:
+          r_junos_l3_interface: "{{ r_junos_l3_interface }}"

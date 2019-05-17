@@ -21,3 +21,8 @@
     - name: "plugin_vmware_host_service_manager"
       vmware_host_service_manager: "{{ vmware_host_service_manager }}"
       register: r_vmware_host_service_manager
+
+    - name: "export r_vmware_host_service_manager"
+      set_stats:
+        data:
+          r_vmware_host_service_manager: "{{ r_vmware_host_service_manager }}"

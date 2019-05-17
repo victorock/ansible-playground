@@ -10,3 +10,8 @@
       value: "{{ rabbitmq_parameter_value | default(omit, True) }}"
       vhost: "{{ rabbitmq_parameter_vhost | default(omit, True) }}"
       state: "{{ rabbitmq_parameter_state | default(omit, True) }}"
+
+- name: "export r_rabbitmq_parameter"
+  set_stats:
+    data:
+      r_rabbitmq_parameter: "{{ r_rabbitmq_parameter }}"

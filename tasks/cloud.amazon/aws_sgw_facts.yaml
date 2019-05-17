@@ -15,3 +15,8 @@
       gather_local_disks: "{{ aws_sgw_facts_gather_local_disks | default(omit, True) }}"
       gather_file_shares: "{{ aws_sgw_facts_gather_file_shares | default(omit, True) }}"
       validate_certs: "{{ aws_sgw_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_sgw_facts"
+  set_stats:
+    data:
+      r_aws_sgw_facts: "{{ r_aws_sgw_facts }}"

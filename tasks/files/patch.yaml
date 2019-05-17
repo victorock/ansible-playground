@@ -12,3 +12,8 @@
       strip: "{{ patch_strip | default(omit, True) }}"
       src: "{{ patch_src | default(omit, True) }}"
       backup: "{{ patch_backup | default(omit, True) }}"
+
+- name: "export r_patch"
+  set_stats:
+    data:
+      r_patch: "{{ r_patch }}"

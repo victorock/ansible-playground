@@ -19,3 +19,8 @@
     - name: "plugin_ipmi_boot"
       ipmi_boot: "{{ ipmi_boot }}"
       register: r_ipmi_boot
+
+    - name: "export r_ipmi_boot"
+      set_stats:
+        data:
+          r_ipmi_boot: "{{ r_ipmi_boot }}"

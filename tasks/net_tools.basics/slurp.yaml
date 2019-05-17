@@ -5,3 +5,8 @@
   vars:
     slurp: 
       src: "{{ slurp_src | default(omit, True) }}"
+
+- name: "export r_slurp"
+  set_stats:
+    data:
+      r_slurp: "{{ r_slurp }}"

@@ -12,3 +12,8 @@
     - name: "plugin_win_hostname"
       win_hostname: "{{ win_hostname }}"
       register: r_win_hostname
+
+    - name: "export r_win_hostname"
+      set_stats:
+        data:
+          r_win_hostname: "{{ r_win_hostname }}"

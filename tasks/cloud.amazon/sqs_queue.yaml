@@ -20,3 +20,8 @@
       policy: "{{ sqs_queue_policy | default(omit, True) }}"
       validate_certs: "{{ sqs_queue_validate_certs | default(omit, True) }}"
       receive_message_wait_time: "{{ sqs_queue_receive_message_wait_time | default(omit, True) }}"
+
+- name: "export r_sqs_queue"
+  set_stats:
+    data:
+      r_sqs_queue: "{{ r_sqs_queue }}"

@@ -35,3 +35,8 @@
     - name: "plugin_azure_rm_containerinstance"
       azure_rm_containerinstance: "{{ azure_rm_containerinstance }}"
       register: r_azure_rm_containerinstance
+
+    - name: "export r_azure_rm_containerinstance"
+      set_stats:
+        data:
+          r_azure_rm_containerinstance: "{{ r_azure_rm_containerinstance }}"

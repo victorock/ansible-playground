@@ -15,3 +15,8 @@
       attributes: "{{ na_elementsw_account_attributes | default(omit, True) }}"
       new_element_username: "{{ na_elementsw_account_new_element_username | default(omit, True) }}"
       password: "{{ na_elementsw_account_password | default(omit, True) }}"
+
+- name: "export r_na_elementsw_account"
+  set_stats:
+    data:
+      r_na_elementsw_account: "{{ r_na_elementsw_account }}"

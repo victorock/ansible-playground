@@ -30,3 +30,8 @@
     - name: "plugin_bigip_monitor_udp"
       bigip_monitor_udp: "{{ bigip_monitor_udp }}"
       register: r_bigip_monitor_udp
+
+    - name: "export r_bigip_monitor_udp"
+      set_stats:
+        data:
+          r_bigip_monitor_udp: "{{ r_bigip_monitor_udp }}"

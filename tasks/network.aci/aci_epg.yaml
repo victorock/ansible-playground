@@ -25,3 +25,8 @@
       intra_epg_isolation: "{{ aci_epg_intra_epg_isolation | default(omit, True) }}"
       tenant: "{{ aci_epg_tenant | default(omit, True) }}"
       description: "{{ aci_epg_description | default(omit, True) }}"
+
+- name: "export r_aci_epg"
+  set_stats:
+    data:
+      r_aci_epg: "{{ r_aci_epg }}"

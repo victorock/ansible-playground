@@ -9,3 +9,8 @@
       password: "{{ redfish_facts_password | default(omit, True) }}"
       command: "{{ redfish_facts_command | default(omit, True) }}"
       user: "{{ redfish_facts_user | default(omit, True) }}"
+
+- name: "export r_redfish_facts"
+  set_stats:
+    data:
+      r_redfish_facts: "{{ r_redfish_facts }}"

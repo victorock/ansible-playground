@@ -14,3 +14,8 @@
       admin_state: "{{ nxos_vrrp_admin_state | default(omit, True) }}"
       provider: "{{ nxos_vrrp_provider | default(omit, True) }}"
       interface: "{{ nxos_vrrp_interface | default(omit, True) }}"
+
+- name: "export r_nxos_vrrp"
+  set_stats:
+    data:
+      r_nxos_vrrp: "{{ r_nxos_vrrp }}"

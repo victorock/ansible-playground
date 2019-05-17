@@ -19,3 +19,8 @@
     - name: "plugin_apt_key"
       apt_key: "{{ apt_key }}"
       register: r_apt_key
+
+    - name: "export r_apt_key"
+      set_stats:
+        data:
+          r_apt_key: "{{ r_apt_key }}"

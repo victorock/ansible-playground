@@ -18,3 +18,8 @@
     - name: "plugin_github_hooks"
       github_hooks: "{{ github_hooks }}"
       register: r_github_hooks
+
+    - name: "export r_github_hooks"
+      set_stats:
+        data:
+          r_github_hooks: "{{ r_github_hooks }}"

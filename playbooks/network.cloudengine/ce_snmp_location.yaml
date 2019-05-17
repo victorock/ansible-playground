@@ -13,3 +13,8 @@
     - name: "plugin_ce_snmp_location"
       ce_snmp_location: "{{ ce_snmp_location }}"
       register: r_ce_snmp_location
+
+    - name: "export r_ce_snmp_location"
+      set_stats:
+        data:
+          r_ce_snmp_location: "{{ r_ce_snmp_location }}"

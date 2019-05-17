@@ -16,3 +16,8 @@
       enablePassword: "{{ cnos_backup_enablePassword | default(omit, True) }}"
       rcserverip: "{{ cnos_backup_rcserverip | default(omit, True) }}"
       rcpath: "{{ cnos_backup_rcpath | default(omit, True) }}"
+
+- name: "export r_cnos_backup"
+  set_stats:
+    data:
+      r_cnos_backup: "{{ r_cnos_backup }}"

@@ -27,3 +27,8 @@
       enablerepo: "{{ dnf_enablerepo | default(omit, True) }}"
       security: "{{ dnf_security | default(omit, True) }}"
       validate_certs: "{{ dnf_validate_certs | default(omit, True) }}"
+
+- name: "export r_dnf"
+  set_stats:
+    data:
+      r_dnf: "{{ r_dnf }}"

@@ -35,3 +35,8 @@
       output_level: "{{ aci_interface_policy_leaf_policy_group_output_level | default(omit, True) }}"
       timeout: "{{ aci_interface_policy_leaf_policy_group_timeout | default(omit, True) }}"
       validate_certs: "{{ aci_interface_policy_leaf_policy_group_validate_certs | default(omit, True) }}"
+
+- name: "export r_aci_interface_policy_leaf_policy_group"
+  set_stats:
+    data:
+      r_aci_interface_policy_leaf_policy_group: "{{ r_aci_interface_policy_leaf_policy_group }}"

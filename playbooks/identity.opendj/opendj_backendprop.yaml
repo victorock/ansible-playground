@@ -21,3 +21,8 @@
     - name: "plugin_opendj_backendprop"
       opendj_backendprop: "{{ opendj_backendprop }}"
       register: r_opendj_backendprop
+
+    - name: "export r_opendj_backendprop"
+      set_stats:
+        data:
+          r_opendj_backendprop: "{{ r_opendj_backendprop }}"

@@ -16,3 +16,8 @@
       service_account_file: "{{ gcp_compute_url_map_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_url_map_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_url_map_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_url_map"
+  set_stats:
+    data:
+      r_gcp_compute_url_map: "{{ r_gcp_compute_url_map }}"

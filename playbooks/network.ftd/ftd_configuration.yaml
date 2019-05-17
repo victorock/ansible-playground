@@ -17,3 +17,8 @@
     - name: "plugin_ftd_configuration"
       ftd_configuration: "{{ ftd_configuration }}"
       register: r_ftd_configuration
+
+    - name: "export r_ftd_configuration"
+      set_stats:
+        data:
+          r_ftd_configuration: "{{ r_ftd_configuration }}"

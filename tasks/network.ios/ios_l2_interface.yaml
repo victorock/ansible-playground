@@ -15,3 +15,8 @@
       mode: "{{ ios_l2_interface_mode | default(omit, True) }}"
       provider: "{{ ios_l2_interface_provider | default(omit, True) }}"
       aggregate: "{{ ios_l2_interface_aggregate | default(omit, True) }}"
+
+- name: "export r_ios_l2_interface"
+  set_stats:
+    data:
+      r_ios_l2_interface: "{{ r_ios_l2_interface }}"

@@ -30,3 +30,8 @@
       default_af_type: "{{ ce_bgp_default_af_type | default(omit, True) }}"
       keepalive_time: "{{ ce_bgp_keepalive_time | default(omit, True) }}"
       confed_nonstanded: "{{ ce_bgp_confed_nonstanded | default(omit, True) }}"
+
+- name: "export r_ce_bgp"
+  set_stats:
+    data:
+      r_ce_bgp: "{{ r_ce_bgp }}"

@@ -23,3 +23,8 @@
     - name: "plugin_taiga_issue"
       taiga_issue: "{{ taiga_issue }}"
       register: r_taiga_issue
+
+    - name: "export r_taiga_issue"
+      set_stats:
+        data:
+          r_taiga_issue: "{{ r_taiga_issue }}"

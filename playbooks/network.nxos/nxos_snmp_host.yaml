@@ -22,3 +22,8 @@
     - name: "plugin_nxos_snmp_host"
       nxos_snmp_host: "{{ nxos_snmp_host }}"
       register: r_nxos_snmp_host
+
+    - name: "export r_nxos_snmp_host"
+      set_stats:
+        data:
+          r_nxos_snmp_host: "{{ r_nxos_snmp_host }}"

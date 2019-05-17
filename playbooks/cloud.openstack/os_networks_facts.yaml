@@ -26,3 +26,8 @@
     - name: "plugin_os_networks_facts"
       os_networks_facts: "{{ os_networks_facts }}"
       register: r_os_networks_facts
+
+    - name: "export r_os_networks_facts"
+      set_stats:
+        data:
+          r_os_networks_facts: "{{ r_os_networks_facts }}"

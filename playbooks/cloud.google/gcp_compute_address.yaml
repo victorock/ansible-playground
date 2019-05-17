@@ -23,3 +23,8 @@
     - name: "plugin_gcp_compute_address"
       gcp_compute_address: "{{ gcp_compute_address }}"
       register: r_gcp_compute_address
+
+    - name: "export r_gcp_compute_address"
+      set_stats:
+        data:
+          r_gcp_compute_address: "{{ r_gcp_compute_address }}"

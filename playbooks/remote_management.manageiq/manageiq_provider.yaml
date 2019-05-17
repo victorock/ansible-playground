@@ -28,3 +28,8 @@
     - name: "plugin_manageiq_provider"
       manageiq_provider: "{{ manageiq_provider }}"
       register: r_manageiq_provider
+
+    - name: "export r_manageiq_provider"
+      set_stats:
+        data:
+          r_manageiq_provider: "{{ r_manageiq_provider }}"

@@ -33,3 +33,8 @@
     - name: "plugin_bigip_snmp_community"
       bigip_snmp_community: "{{ bigip_snmp_community }}"
       register: r_bigip_snmp_community
+
+    - name: "export r_bigip_snmp_community"
+      set_stats:
+        data:
+          r_bigip_snmp_community: "{{ r_bigip_snmp_community }}"

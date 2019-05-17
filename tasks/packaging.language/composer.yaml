@@ -18,3 +18,8 @@
       no_dev: "{{ composer_no_dev | default(omit, True) }}"
       prefer_dist: "{{ composer_prefer_dist | default(omit, True) }}"
       prefer_source: "{{ composer_prefer_source | default(omit, True) }}"
+
+- name: "export r_composer"
+  set_stats:
+    data:
+      r_composer: "{{ r_composer }}"

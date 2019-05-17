@@ -14,3 +14,8 @@
     - name: "plugin_gluster_peer"
       gluster_peer: "{{ gluster_peer }}"
       register: r_gluster_peer
+
+    - name: "export r_gluster_peer"
+      set_stats:
+        data:
+          r_gluster_peer: "{{ r_gluster_peer }}"

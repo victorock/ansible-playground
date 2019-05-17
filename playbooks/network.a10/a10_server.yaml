@@ -31,3 +31,8 @@
     - name: "plugin_a10_server"
       a10_server: "{{ a10_server }}"
       register: r_a10_server
+
+    - name: "export r_a10_server"
+      set_stats:
+        data:
+          r_a10_server: "{{ r_a10_server }}"

@@ -14,3 +14,8 @@
       query: "{{ lambda_facts_query | default(omit, True) }}"
       validate_certs: "{{ lambda_facts_validate_certs | default(omit, True) }}"
       function_name: "{{ lambda_facts_function_name | default(omit, True) }}"
+
+- name: "export r_lambda_facts"
+  set_stats:
+    data:
+      r_lambda_facts: "{{ r_lambda_facts }}"

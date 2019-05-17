@@ -14,3 +14,8 @@
       min_links: "{{ junos_linkagg_min_links | default(omit, True) }}"
       aggregate: "{{ junos_linkagg_aggregate | default(omit, True) }}"
       name: "{{ junos_linkagg_name | default(omit, True) }}"
+
+- name: "export r_junos_linkagg"
+  set_stats:
+    data:
+      r_junos_linkagg: "{{ r_junos_linkagg }}"

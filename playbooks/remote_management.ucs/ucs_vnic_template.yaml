@@ -36,3 +36,8 @@
     - name: "plugin_ucs_vnic_template"
       ucs_vnic_template: "{{ ucs_vnic_template }}"
       register: r_ucs_vnic_template
+
+    - name: "export r_ucs_vnic_template"
+      set_stats:
+        data:
+          r_ucs_vnic_template: "{{ r_ucs_vnic_template }}"

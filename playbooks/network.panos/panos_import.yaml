@@ -18,3 +18,8 @@
     - name: "plugin_panos_import"
       panos_import: "{{ panos_import }}"
       register: r_panos_import
+
+    - name: "export r_panos_import"
+      set_stats:
+        data:
+          r_panos_import: "{{ r_panos_import }}"

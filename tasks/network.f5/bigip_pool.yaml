@@ -23,3 +23,8 @@
       validate_certs: "{{ bigip_pool_validate_certs | default(omit, True) }}"
       monitors: "{{ bigip_pool_monitors | default(omit, True) }}"
       quorum: "{{ bigip_pool_quorum | default(omit, True) }}"
+
+- name: "export r_bigip_pool"
+  set_stats:
+    data:
+      r_bigip_pool: "{{ r_bigip_pool }}"

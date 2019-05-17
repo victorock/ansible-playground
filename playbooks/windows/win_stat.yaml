@@ -15,3 +15,8 @@
     - name: "plugin_win_stat"
       win_stat: "{{ win_stat }}"
       register: r_win_stat
+
+    - name: "export r_win_stat"
+      set_stats:
+        data:
+          r_win_stat: "{{ r_win_stat }}"

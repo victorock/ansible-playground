@@ -21,3 +21,8 @@
       key_id: "{{ kinesis_stream_key_id | default(omit, True) }}"
       validate_certs: "{{ kinesis_stream_validate_certs | default(omit, True) }}"
       wait: "{{ kinesis_stream_wait | default(omit, True) }}"
+
+- name: "export r_kinesis_stream"
+  set_stats:
+    data:
+      r_kinesis_stream: "{{ r_kinesis_stream }}"

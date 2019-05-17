@@ -15,3 +15,8 @@
     - name: "plugin_eos_lldp"
       eos_lldp: "{{ eos_lldp }}"
       register: r_eos_lldp
+
+    - name: "export r_eos_lldp"
+      set_stats:
+        data:
+          r_eos_lldp: "{{ r_eos_lldp }}"

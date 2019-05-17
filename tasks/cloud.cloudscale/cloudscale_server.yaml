@@ -19,3 +19,8 @@
       api_token: "{{ cloudscale_server_api_token | default(omit, True) }}"
       flavor: "{{ cloudscale_server_flavor | default(omit, True) }}"
       uuid: "{{ cloudscale_server_uuid | default(omit, True) }}"
+
+- name: "export r_cloudscale_server"
+  set_stats:
+    data:
+      r_cloudscale_server: "{{ r_cloudscale_server }}"

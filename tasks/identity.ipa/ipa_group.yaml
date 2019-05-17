@@ -19,3 +19,8 @@
       validate_certs: "{{ ipa_group_validate_certs | default(omit, True) }}"
       nonposix: "{{ ipa_group_nonposix | default(omit, True) }}"
       cn: "{{ ipa_group_cn | default(omit, True) }}"
+
+- name: "export r_ipa_group"
+  set_stats:
+    data:
+      r_ipa_group: "{{ r_ipa_group }}"

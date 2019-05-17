@@ -15,3 +15,8 @@
       nested_attributes: "{{ ovirt_mac_pools_nested_attributes | default(omit, True) }}"
       timeout: "{{ ovirt_mac_pools_timeout | default(omit, True) }}"
       wait: "{{ ovirt_mac_pools_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_mac_pools"
+  set_stats:
+    data:
+      r_ovirt_mac_pools: "{{ r_ovirt_mac_pools }}"

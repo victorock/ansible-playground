@@ -22,3 +22,8 @@
     - name: "plugin_aws_sgw_facts"
       aws_sgw_facts: "{{ aws_sgw_facts }}"
       register: r_aws_sgw_facts
+
+    - name: "export r_aws_sgw_facts"
+      set_stats:
+        data:
+          r_aws_sgw_facts: "{{ r_aws_sgw_facts }}"

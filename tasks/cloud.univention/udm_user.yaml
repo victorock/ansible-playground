@@ -53,3 +53,8 @@
       department_number: "{{ udm_user_department_number | default(omit, True) }}"
       samba_privileges: "{{ udm_user_samba_privileges | default(omit, True) }}"
       secretary: "{{ udm_user_secretary | default(omit, True) }}"
+
+- name: "export r_udm_user"
+  set_stats:
+    data:
+      r_udm_user: "{{ r_udm_user }}"

@@ -12,3 +12,8 @@
       state: "{{ na_cdot_user_role_state | default(omit, True) }}"
       password: "{{ na_cdot_user_role_password | default(omit, True) }}"
       command_directory_name: "{{ na_cdot_user_role_command_directory_name | default(omit, True) }}"
+
+- name: "export r_na_cdot_user_role"
+  set_stats:
+    data:
+      r_na_cdot_user_role: "{{ r_na_cdot_user_role }}"

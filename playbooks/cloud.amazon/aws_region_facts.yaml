@@ -19,3 +19,8 @@
     - name: "plugin_aws_region_facts"
       aws_region_facts: "{{ aws_region_facts }}"
       register: r_aws_region_facts
+
+    - name: "export r_aws_region_facts"
+      set_stats:
+        data:
+          r_aws_region_facts: "{{ r_aws_region_facts }}"

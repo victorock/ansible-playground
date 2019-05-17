@@ -29,3 +29,8 @@
       api_key: "{{ cs_network_offering_api_key | default(omit, True) }}"
       name: "{{ cs_network_offering_name | default(omit, True) }}"
       persistent: "{{ cs_network_offering_persistent | default(omit, True) }}"
+
+- name: "export r_cs_network_offering"
+  set_stats:
+    data:
+      r_cs_network_offering: "{{ r_cs_network_offering }}"

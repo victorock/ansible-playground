@@ -21,3 +21,8 @@
       password: "{{ bigip_iapp_service_password | default(omit, True) }}"
       validate_certs: "{{ bigip_iapp_service_validate_certs | default(omit, True) }}"
       name: "{{ bigip_iapp_service_name | default(omit, True) }}"
+
+- name: "export r_bigip_iapp_service"
+  set_stats:
+    data:
+      r_bigip_iapp_service: "{{ r_bigip_iapp_service }}"

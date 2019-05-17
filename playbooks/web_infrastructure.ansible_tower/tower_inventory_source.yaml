@@ -35,3 +35,8 @@
     - name: "plugin_tower_inventory_source"
       tower_inventory_source: "{{ tower_inventory_source }}"
       register: r_tower_inventory_source
+
+    - name: "export r_tower_inventory_source"
+      set_stats:
+        data:
+          r_tower_inventory_source: "{{ r_tower_inventory_source }}"

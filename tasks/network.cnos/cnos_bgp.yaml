@@ -19,3 +19,8 @@
       deviceType: "{{ cnos_bgp_deviceType | default(omit, True) }}"
       password: "{{ cnos_bgp_password | default(omit, True) }}"
       enablePassword: "{{ cnos_bgp_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_bgp"
+  set_stats:
+    data:
+      r_cnos_bgp: "{{ r_cnos_bgp }}"

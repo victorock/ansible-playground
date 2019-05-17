@@ -26,3 +26,8 @@
     - name: "plugin_aws_eks_cluster"
       aws_eks_cluster: "{{ aws_eks_cluster }}"
       register: r_aws_eks_cluster
+
+    - name: "export r_aws_eks_cluster"
+      set_stats:
+        data:
+          r_aws_eks_cluster: "{{ r_aws_eks_cluster }}"

@@ -20,3 +20,8 @@
       validate_certs: "{{ aci_interface_policy_lldp_validate_certs | default(omit, True) }}"
       port: "{{ aci_interface_policy_lldp_port | default(omit, True) }}"
       use_proxy: "{{ aci_interface_policy_lldp_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_interface_policy_lldp"
+  set_stats:
+    data:
+      r_aci_interface_policy_lldp: "{{ r_aci_interface_policy_lldp }}"

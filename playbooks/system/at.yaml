@@ -17,3 +17,8 @@
     - name: "plugin_at"
       at: "{{ at }}"
       register: r_at
+
+    - name: "export r_at"
+      set_stats:
+        data:
+          r_at: "{{ r_at }}"

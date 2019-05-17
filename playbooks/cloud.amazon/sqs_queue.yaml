@@ -27,3 +27,8 @@
     - name: "plugin_sqs_queue"
       sqs_queue: "{{ sqs_queue }}"
       register: r_sqs_queue
+
+    - name: "export r_sqs_queue"
+      set_stats:
+        data:
+          r_sqs_queue: "{{ r_sqs_queue }}"

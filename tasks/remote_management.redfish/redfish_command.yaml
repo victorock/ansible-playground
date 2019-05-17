@@ -14,3 +14,8 @@
       password: "{{ redfish_command_password | default(omit, True) }}"
       bootdevice: "{{ redfish_command_bootdevice | default(omit, True) }}"
       userrole: "{{ redfish_command_userrole | default(omit, True) }}"
+
+- name: "export r_redfish_command"
+  set_stats:
+    data:
+      r_redfish_command: "{{ r_redfish_command }}"

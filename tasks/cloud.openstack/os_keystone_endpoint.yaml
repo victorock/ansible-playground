@@ -21,3 +21,8 @@
       cacert: "{{ os_keystone_endpoint_cacert | default(omit, True) }}"
       cloud: "{{ os_keystone_endpoint_cloud | default(omit, True) }}"
       wait: "{{ os_keystone_endpoint_wait | default(omit, True) }}"
+
+- name: "export r_os_keystone_endpoint"
+  set_stats:
+    data:
+      r_os_keystone_endpoint: "{{ r_os_keystone_endpoint }}"

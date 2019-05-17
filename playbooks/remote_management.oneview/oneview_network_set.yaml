@@ -15,3 +15,8 @@
     - name: "plugin_oneview_network_set"
       oneview_network_set: "{{ oneview_network_set }}"
       register: r_oneview_network_set
+
+    - name: "export r_oneview_network_set"
+      set_stats:
+        data:
+          r_oneview_network_set: "{{ r_oneview_network_set }}"

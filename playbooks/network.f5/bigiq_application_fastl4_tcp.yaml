@@ -25,3 +25,8 @@
     - name: "plugin_bigiq_application_fastl4_tcp"
       bigiq_application_fastl4_tcp: "{{ bigiq_application_fastl4_tcp }}"
       register: r_bigiq_application_fastl4_tcp
+
+    - name: "export r_bigiq_application_fastl4_tcp"
+      set_stats:
+        data:
+          r_bigiq_application_fastl4_tcp: "{{ r_bigiq_application_fastl4_tcp }}"

@@ -38,3 +38,8 @@
       debug: "{{ docker_swarm_debug | default(omit, True) }}"
       signing_ca_key: "{{ docker_swarm_signing_ca_key | default(omit, True) }}"
       remote_addrs: "{{ docker_swarm_remote_addrs | default(omit, True) }}"
+
+- name: "export r_docker_swarm"
+  set_stats:
+    data:
+      r_docker_swarm: "{{ r_docker_swarm }}"

@@ -15,3 +15,8 @@
       provider: "{{ bigip_iapp_template_provider | default(omit, True) }}"
       password: "{{ bigip_iapp_template_password | default(omit, True) }}"
       validate_certs: "{{ bigip_iapp_template_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_iapp_template"
+  set_stats:
+    data:
+      r_bigip_iapp_template: "{{ r_bigip_iapp_template }}"

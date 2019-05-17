@@ -16,3 +16,8 @@
     - name: "plugin_clc_blueprint_package"
       clc_blueprint_package: "{{ clc_blueprint_package }}"
       register: r_clc_blueprint_package
+
+    - name: "export r_clc_blueprint_package"
+      set_stats:
+        data:
+          r_clc_blueprint_package: "{{ r_clc_blueprint_package }}"

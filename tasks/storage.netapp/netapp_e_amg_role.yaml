@@ -12,3 +12,8 @@
       validate_certs: "{{ netapp_e_amg_role_validate_certs | default(omit, True) }}"
       noSync: "{{ netapp_e_amg_role_noSync | default(omit, True) }}"
       api_url: "{{ netapp_e_amg_role_api_url | default(omit, True) }}"
+
+- name: "export r_netapp_e_amg_role"
+  set_stats:
+    data:
+      r_netapp_e_amg_role: "{{ r_netapp_e_amg_role }}"

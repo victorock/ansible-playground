@@ -33,3 +33,8 @@
       poll_interval: "{{ ovirt_disks_poll_interval | default(omit, True) }}"
       shareable: "{{ ovirt_disks_shareable | default(omit, True) }}"
       timeout: "{{ ovirt_disks_timeout | default(omit, True) }}"
+
+- name: "export r_ovirt_disks"
+  set_stats:
+    data:
+      r_ovirt_disks: "{{ r_ovirt_disks }}"

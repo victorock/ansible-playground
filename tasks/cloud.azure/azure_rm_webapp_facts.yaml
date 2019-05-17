@@ -20,3 +20,8 @@
       password: "{{ azure_rm_webapp_facts_password | default(omit, True) }}"
       tenant: "{{ azure_rm_webapp_facts_tenant | default(omit, True) }}"
       name: "{{ azure_rm_webapp_facts_name | default(omit, True) }}"
+
+- name: "export r_azure_rm_webapp_facts"
+  set_stats:
+    data:
+      r_azure_rm_webapp_facts: "{{ r_azure_rm_webapp_facts }}"

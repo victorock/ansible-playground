@@ -17,3 +17,8 @@
     - name: "plugin_iosxr_command"
       iosxr_command: "{{ iosxr_command }}"
       register: r_iosxr_command
+
+    - name: "export r_iosxr_command"
+      set_stats:
+        data:
+          r_iosxr_command: "{{ r_iosxr_command }}"

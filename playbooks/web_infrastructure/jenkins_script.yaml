@@ -18,3 +18,8 @@
     - name: "plugin_jenkins_script"
       jenkins_script: "{{ jenkins_script }}"
       register: r_jenkins_script
+
+    - name: "export r_jenkins_script"
+      set_stats:
+        data:
+          r_jenkins_script: "{{ r_jenkins_script }}"

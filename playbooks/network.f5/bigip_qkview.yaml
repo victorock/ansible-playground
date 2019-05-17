@@ -25,3 +25,8 @@
     - name: "plugin_bigip_qkview"
       bigip_qkview: "{{ bigip_qkview }}"
       register: r_bigip_qkview
+
+    - name: "export r_bigip_qkview"
+      set_stats:
+        data:
+          r_bigip_qkview: "{{ r_bigip_qkview }}"

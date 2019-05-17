@@ -25,3 +25,8 @@
     - name: "plugin_iam_policy"
       iam_policy: "{{ iam_policy }}"
       register: r_iam_policy
+
+    - name: "export r_iam_policy"
+      set_stats:
+        data:
+          r_iam_policy: "{{ r_iam_policy }}"

@@ -24,3 +24,8 @@
     - name: "plugin_vr_user"
       vr_user: "{{ vr_user }}"
       register: r_vr_user
+
+    - name: "export r_vr_user"
+      set_stats:
+        data:
+          r_vr_user: "{{ r_vr_user }}"

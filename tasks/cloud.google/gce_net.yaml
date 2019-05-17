@@ -20,3 +20,8 @@
       project_id: "{{ gce_net_project_id | default(omit, True) }}"
       target_tags: "{{ gce_net_target_tags | default(omit, True) }}"
       subnet_desc: "{{ gce_net_subnet_desc | default(omit, True) }}"
+
+- name: "export r_gce_net"
+  set_stats:
+    data:
+      r_gce_net: "{{ r_gce_net }}"

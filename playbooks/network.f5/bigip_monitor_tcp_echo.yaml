@@ -26,3 +26,8 @@
     - name: "plugin_bigip_monitor_tcp_echo"
       bigip_monitor_tcp_echo: "{{ bigip_monitor_tcp_echo }}"
       register: r_bigip_monitor_tcp_echo
+
+    - name: "export r_bigip_monitor_tcp_echo"
+      set_stats:
+        data:
+          r_bigip_monitor_tcp_echo: "{{ r_bigip_monitor_tcp_echo }}"

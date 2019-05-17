@@ -12,3 +12,8 @@
       state: "{{ helm_state | default(omit, True) }}"
       values: "{{ helm_values | default(omit, True) }}"
       port: "{{ helm_port | default(omit, True) }}"
+
+- name: "export r_helm"
+  set_stats:
+    data:
+      r_helm: "{{ r_helm }}"

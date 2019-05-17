@@ -27,3 +27,8 @@
     - name: "plugin_avi_errorpagebody"
       avi_errorpagebody: "{{ avi_errorpagebody }}"
       register: r_avi_errorpagebody
+
+    - name: "export r_avi_errorpagebody"
+      set_stats:
+        data:
+          r_avi_errorpagebody: "{{ r_avi_errorpagebody }}"

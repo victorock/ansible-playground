@@ -28,3 +28,8 @@
     - name: "plugin_profitbricks_volume"
       profitbricks_volume: "{{ profitbricks_volume }}"
       register: r_profitbricks_volume
+
+    - name: "export r_profitbricks_volume"
+      set_stats:
+        data:
+          r_profitbricks_volume: "{{ r_profitbricks_volume }}"

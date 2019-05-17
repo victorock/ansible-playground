@@ -14,3 +14,8 @@
       password: "{{ na_ontap_motd_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_motd_validate_certs | default(omit, True) }}"
       show_cluster_motd: "{{ na_ontap_motd_show_cluster_motd | default(omit, True) }}"
+
+- name: "export r_na_ontap_motd"
+  set_stats:
+    data:
+      r_na_ontap_motd: "{{ r_na_ontap_motd }}"

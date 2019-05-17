@@ -29,3 +29,8 @@
     - name: "plugin_ec2_vpc_dhcp_options"
       ec2_vpc_dhcp_options: "{{ ec2_vpc_dhcp_options }}"
       register: r_ec2_vpc_dhcp_options
+
+    - name: "export r_ec2_vpc_dhcp_options"
+      set_stats:
+        data:
+          r_ec2_vpc_dhcp_options: "{{ r_ec2_vpc_dhcp_options }}"

@@ -15,3 +15,8 @@
       ec2_url: "{{ elasticache_subnet_group_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elasticache_subnet_group_validate_certs | default(omit, True) }}"
       name: "{{ elasticache_subnet_group_name | default(omit, True) }}"
+
+- name: "export r_elasticache_subnet_group"
+  set_stats:
+    data:
+      r_elasticache_subnet_group: "{{ r_elasticache_subnet_group }}"

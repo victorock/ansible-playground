@@ -15,3 +15,8 @@
       slave_mode: "{{ redis_slave_mode | default(omit, True) }}"
       login_password: "{{ redis_login_password | default(omit, True) }}"
       command: "{{ redis_command | default(omit, True) }}"
+
+- name: "export r_redis"
+  set_stats:
+    data:
+      r_redis: "{{ r_redis }}"

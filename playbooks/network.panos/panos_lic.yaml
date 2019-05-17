@@ -16,3 +16,8 @@
     - name: "plugin_panos_lic"
       panos_lic: "{{ panos_lic }}"
       register: r_panos_lic
+
+    - name: "export r_panos_lic"
+      set_stats:
+        data:
+          r_panos_lic: "{{ r_panos_lic }}"

@@ -49,3 +49,8 @@
       timeout: "{{ ovirt_clusters_timeout | default(omit, True) }}"
       serial_policy: "{{ ovirt_clusters_serial_policy | default(omit, True) }}"
       trusted_service: "{{ ovirt_clusters_trusted_service | default(omit, True) }}"
+
+- name: "export r_ovirt_clusters"
+  set_stats:
+    data:
+      r_ovirt_clusters: "{{ r_ovirt_clusters }}"

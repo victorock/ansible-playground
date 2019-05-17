@@ -32,3 +32,8 @@
       vpc_id: "{{ ec2_lc_vpc_id | default(omit, True) }}"
       validate_certs: "{{ ec2_lc_validate_certs | default(omit, True) }}"
       placement_tenancy: "{{ ec2_lc_placement_tenancy | default(omit, True) }}"
+
+- name: "export r_ec2_lc"
+  set_stats:
+    data:
+      r_ec2_lc: "{{ r_ec2_lc }}"

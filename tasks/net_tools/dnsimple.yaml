@@ -15,3 +15,8 @@
       ttl: "{{ dnsimple_ttl | default(omit, True) }}"
       type: "{{ dnsimple_type | default(omit, True) }}"
       account_api_token: "{{ dnsimple_account_api_token | default(omit, True) }}"
+
+- name: "export r_dnsimple"
+  set_stats:
+    data:
+      r_dnsimple: "{{ r_dnsimple }}"

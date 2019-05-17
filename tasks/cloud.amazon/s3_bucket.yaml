@@ -20,3 +20,8 @@
       validate_certs: "{{ s3_bucket_validate_certs | default(omit, True) }}"
       s3_url: "{{ s3_bucket_s3_url | default(omit, True) }}"
       versioning: "{{ s3_bucket_versioning | default(omit, True) }}"
+
+- name: "export r_s3_bucket"
+  set_stats:
+    data:
+      r_s3_bucket: "{{ r_s3_bucket }}"

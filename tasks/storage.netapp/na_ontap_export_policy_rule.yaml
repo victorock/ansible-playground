@@ -20,3 +20,8 @@
       password: "{{ na_ontap_export_policy_rule_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_export_policy_rule_validate_certs | default(omit, True) }}"
       allow_suid: "{{ na_ontap_export_policy_rule_allow_suid | default(omit, True) }}"
+
+- name: "export r_na_ontap_export_policy_rule"
+  set_stats:
+    data:
+      r_na_ontap_export_policy_rule: "{{ r_na_ontap_export_policy_rule }}"

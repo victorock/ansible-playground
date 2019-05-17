@@ -11,3 +11,8 @@
       state: "{{ vyos_logging_state | default(omit, True) }}"
       provider: "{{ vyos_logging_provider | default(omit, True) }}"
       aggregate: "{{ vyos_logging_aggregate | default(omit, True) }}"
+
+- name: "export r_vyos_logging"
+  set_stats:
+    data:
+      r_vyos_logging: "{{ r_vyos_logging }}"

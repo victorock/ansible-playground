@@ -29,3 +29,8 @@
     - name: "plugin_proxysql_scheduler"
       proxysql_scheduler: "{{ proxysql_scheduler }}"
       register: r_proxysql_scheduler
+
+    - name: "export r_proxysql_scheduler"
+      set_stats:
+        data:
+          r_proxysql_scheduler: "{{ r_proxysql_scheduler }}"

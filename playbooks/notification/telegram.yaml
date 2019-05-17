@@ -15,3 +15,8 @@
     - name: "plugin_telegram"
       telegram: "{{ telegram }}"
       register: r_telegram
+
+    - name: "export r_telegram"
+      set_stats:
+        data:
+          r_telegram: "{{ r_telegram }}"

@@ -27,3 +27,8 @@
       model: "{{ meraki_device_model | default(omit, True) }}"
       validate_certs: "{{ meraki_device_validate_certs | default(omit, True) }}"
       net_id: "{{ meraki_device_net_id | default(omit, True) }}"
+
+- name: "export r_meraki_device"
+  set_stats:
+    data:
+      r_meraki_device: "{{ r_meraki_device }}"

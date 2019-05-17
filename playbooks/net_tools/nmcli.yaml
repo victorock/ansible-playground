@@ -49,3 +49,8 @@
     - name: "plugin_nmcli"
       nmcli: "{{ nmcli }}"
       register: r_nmcli
+
+    - name: "export r_nmcli"
+      set_stats:
+        data:
+          r_nmcli: "{{ r_nmcli }}"

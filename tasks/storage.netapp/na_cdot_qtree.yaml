@@ -11,3 +11,8 @@
       vserver: "{{ na_cdot_qtree_vserver | default(omit, True) }}"
       state: "{{ na_cdot_qtree_state | default(omit, True) }}"
       password: "{{ na_cdot_qtree_password | default(omit, True) }}"
+
+- name: "export r_na_cdot_qtree"
+  set_stats:
+    data:
+      r_na_cdot_qtree: "{{ r_na_cdot_qtree }}"

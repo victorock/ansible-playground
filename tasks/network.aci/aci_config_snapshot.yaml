@@ -22,3 +22,8 @@
       validate_certs: "{{ aci_config_snapshot_validate_certs | default(omit, True) }}"
       port: "{{ aci_config_snapshot_port | default(omit, True) }}"
       use_proxy: "{{ aci_config_snapshot_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_config_snapshot"
+  set_stats:
+    data:
+      r_aci_config_snapshot: "{{ r_aci_config_snapshot }}"

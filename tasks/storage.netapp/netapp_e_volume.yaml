@@ -20,3 +20,8 @@
       size: "{{ netapp_e_volume_size | default(omit, True) }}"
       validate_certs: "{{ netapp_e_volume_validate_certs | default(omit, True) }}"
       api_url: "{{ netapp_e_volume_api_url | default(omit, True) }}"
+
+- name: "export r_netapp_e_volume"
+  set_stats:
+    data:
+      r_netapp_e_volume: "{{ r_netapp_e_volume }}"

@@ -19,3 +19,8 @@
     - name: "plugin_ios_command"
       ios_command: "{{ ios_command }}"
       register: r_ios_command
+
+    - name: "export r_ios_command"
+      set_stats:
+        data:
+          r_ios_command: "{{ r_ios_command }}"

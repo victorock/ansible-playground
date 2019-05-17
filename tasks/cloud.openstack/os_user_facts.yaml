@@ -20,3 +20,8 @@
       interface: "{{ os_user_facts_interface | default(omit, True) }}"
       cloud: "{{ os_user_facts_cloud | default(omit, True) }}"
       wait: "{{ os_user_facts_wait | default(omit, True) }}"
+
+- name: "export r_os_user_facts"
+  set_stats:
+    data:
+      r_os_user_facts: "{{ r_os_user_facts }}"

@@ -22,3 +22,8 @@
       single_transaction: "{{ mysql_db_single_transaction | default(omit, True) }}"
       connect_timeout: "{{ mysql_db_connect_timeout | default(omit, True) }}"
       target: "{{ mysql_db_target | default(omit, True) }}"
+
+- name: "export r_mysql_db"
+  set_stats:
+    data:
+      r_mysql_db: "{{ r_mysql_db }}"

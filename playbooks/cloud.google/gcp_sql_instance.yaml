@@ -29,3 +29,8 @@
     - name: "plugin_gcp_sql_instance"
       gcp_sql_instance: "{{ gcp_sql_instance }}"
       register: r_gcp_sql_instance
+
+    - name: "export r_gcp_sql_instance"
+      set_stats:
+        data:
+          r_gcp_sql_instance: "{{ r_gcp_sql_instance }}"

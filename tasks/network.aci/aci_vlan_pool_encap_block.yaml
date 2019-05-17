@@ -23,3 +23,8 @@
       port: "{{ aci_vlan_pool_encap_block_port | default(omit, True) }}"
       pool: "{{ aci_vlan_pool_encap_block_pool | default(omit, True) }}"
       use_proxy: "{{ aci_vlan_pool_encap_block_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_vlan_pool_encap_block"
+  set_stats:
+    data:
+      r_aci_vlan_pool_encap_block: "{{ r_aci_vlan_pool_encap_block }}"

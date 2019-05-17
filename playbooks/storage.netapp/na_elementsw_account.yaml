@@ -22,3 +22,8 @@
     - name: "plugin_na_elementsw_account"
       na_elementsw_account: "{{ na_elementsw_account }}"
       register: r_na_elementsw_account
+
+    - name: "export r_na_elementsw_account"
+      set_stats:
+        data:
+          r_na_elementsw_account: "{{ r_na_elementsw_account }}"

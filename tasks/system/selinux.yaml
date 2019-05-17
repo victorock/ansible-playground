@@ -7,3 +7,8 @@
       policy: "{{ selinux_policy | default(omit, True) }}"
       state: "{{ selinux_state | default(omit, True) }}"
       conf: "{{ selinux_conf | default(omit, True) }}"
+
+- name: "export r_selinux"
+  set_stats:
+    data:
+      r_selinux: "{{ r_selinux }}"

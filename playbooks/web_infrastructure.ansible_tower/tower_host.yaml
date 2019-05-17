@@ -22,3 +22,8 @@
     - name: "plugin_tower_host"
       tower_host: "{{ tower_host }}"
       register: r_tower_host
+
+    - name: "export r_tower_host"
+      set_stats:
+        data:
+          r_tower_host: "{{ r_tower_host }}"

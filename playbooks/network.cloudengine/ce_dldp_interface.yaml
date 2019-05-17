@@ -17,3 +17,8 @@
     - name: "plugin_ce_dldp_interface"
       ce_dldp_interface: "{{ ce_dldp_interface }}"
       register: r_ce_dldp_interface
+
+    - name: "export r_ce_dldp_interface"
+      set_stats:
+        data:
+          r_ce_dldp_interface: "{{ r_ce_dldp_interface }}"

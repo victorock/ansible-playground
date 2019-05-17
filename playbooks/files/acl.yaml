@@ -22,3 +22,8 @@
     - name: "plugin_acl"
       acl: "{{ acl }}"
       register: r_acl
+
+    - name: "export r_acl"
+      set_stats:
+        data:
+          r_acl: "{{ r_acl }}"

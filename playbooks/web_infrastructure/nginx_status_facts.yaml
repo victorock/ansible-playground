@@ -13,3 +13,8 @@
     - name: "plugin_nginx_status_facts"
       nginx_status_facts: "{{ nginx_status_facts }}"
       register: r_nginx_status_facts
+
+    - name: "export r_nginx_status_facts"
+      set_stats:
+        data:
+          r_nginx_status_facts: "{{ r_nginx_status_facts }}"

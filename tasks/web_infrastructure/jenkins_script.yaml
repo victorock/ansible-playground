@@ -11,3 +11,8 @@
       timeout: "{{ jenkins_script_timeout | default(omit, True) }}"
       password: "{{ jenkins_script_password | default(omit, True) }}"
       validate_certs: "{{ jenkins_script_validate_certs | default(omit, True) }}"
+
+- name: "export r_jenkins_script"
+  set_stats:
+    data:
+      r_jenkins_script: "{{ r_jenkins_script }}"

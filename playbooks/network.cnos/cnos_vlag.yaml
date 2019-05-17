@@ -21,3 +21,8 @@
     - name: "plugin_cnos_vlag"
       cnos_vlag: "{{ cnos_vlag }}"
       register: r_cnos_vlag
+
+    - name: "export r_cnos_vlag"
+      set_stats:
+        data:
+          r_cnos_vlag: "{{ r_cnos_vlag }}"

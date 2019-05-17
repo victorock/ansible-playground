@@ -30,3 +30,8 @@
     - name: "plugin_avi_networksecuritypolicy"
       avi_networksecuritypolicy: "{{ avi_networksecuritypolicy }}"
       register: r_avi_networksecuritypolicy
+
+    - name: "export r_avi_networksecuritypolicy"
+      set_stats:
+        data:
+          r_avi_networksecuritypolicy: "{{ r_avi_networksecuritypolicy }}"

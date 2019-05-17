@@ -27,3 +27,8 @@
       cert: "{{ os_ironic_cert | default(omit, True) }}"
       timeout: "{{ os_ironic_timeout | default(omit, True) }}"
       verify: "{{ os_ironic_verify | default(omit, True) }}"
+
+- name: "export r_os_ironic"
+  set_stats:
+    data:
+      r_os_ironic: "{{ r_os_ironic }}"

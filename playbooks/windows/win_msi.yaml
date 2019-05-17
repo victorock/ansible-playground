@@ -17,3 +17,8 @@
     - name: "plugin_win_msi"
       win_msi: "{{ win_msi }}"
       register: r_win_msi
+
+    - name: "export r_win_msi"
+      set_stats:
+        data:
+          r_win_msi: "{{ r_win_msi }}"

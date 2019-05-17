@@ -16,3 +16,8 @@
       password: "{{ vmware_vm_vm_drs_rule_password | default(omit, True) }}"
       validate_certs: "{{ vmware_vm_vm_drs_rule_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vm_vm_drs_rule_port | default(omit, True) }}"
+
+- name: "export r_vmware_vm_vm_drs_rule"
+  set_stats:
+    data:
+      r_vmware_vm_vm_drs_rule: "{{ r_vmware_vm_vm_drs_rule }}"

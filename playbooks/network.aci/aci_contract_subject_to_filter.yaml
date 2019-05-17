@@ -28,3 +28,8 @@
     - name: "plugin_aci_contract_subject_to_filter"
       aci_contract_subject_to_filter: "{{ aci_contract_subject_to_filter }}"
       register: r_aci_contract_subject_to_filter
+
+    - name: "export r_aci_contract_subject_to_filter"
+      set_stats:
+        data:
+          r_aci_contract_subject_to_filter: "{{ r_aci_contract_subject_to_filter }}"

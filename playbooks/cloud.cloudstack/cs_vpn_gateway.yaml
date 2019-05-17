@@ -24,3 +24,8 @@
     - name: "plugin_cs_vpn_gateway"
       cs_vpn_gateway: "{{ cs_vpn_gateway }}"
       register: r_cs_vpn_gateway
+
+    - name: "export r_cs_vpn_gateway"
+      set_stats:
+        data:
+          r_cs_vpn_gateway: "{{ r_cs_vpn_gateway }}"

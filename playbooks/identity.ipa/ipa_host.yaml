@@ -30,3 +30,8 @@
     - name: "plugin_ipa_host"
       ipa_host: "{{ ipa_host }}"
       register: r_ipa_host
+
+    - name: "export r_ipa_host"
+      set_stats:
+        data:
+          r_ipa_host: "{{ r_ipa_host }}"

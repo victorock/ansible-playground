@@ -18,3 +18,8 @@
     - name: "plugin_bigip_hostname"
       bigip_hostname: "{{ bigip_hostname }}"
       register: r_bigip_hostname
+
+    - name: "export r_bigip_hostname"
+      set_stats:
+        data:
+          r_bigip_hostname: "{{ r_bigip_hostname }}"

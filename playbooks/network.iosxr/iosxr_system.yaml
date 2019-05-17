@@ -20,3 +20,8 @@
     - name: "plugin_iosxr_system"
       iosxr_system: "{{ iosxr_system }}"
       register: r_iosxr_system
+
+    - name: "export r_iosxr_system"
+      set_stats:
+        data:
+          r_iosxr_system: "{{ r_iosxr_system }}"

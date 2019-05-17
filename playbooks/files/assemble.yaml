@@ -29,3 +29,8 @@
     - name: "plugin_assemble"
       assemble: "{{ assemble }}"
       register: r_assemble
+
+    - name: "export r_assemble"
+      set_stats:
+        data:
+          r_assemble: "{{ r_assemble }}"

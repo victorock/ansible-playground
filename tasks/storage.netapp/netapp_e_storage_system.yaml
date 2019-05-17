@@ -15,3 +15,8 @@
       enable_trace: "{{ netapp_e_storage_system_enable_trace | default(omit, True) }}"
       validate_certs: "{{ netapp_e_storage_system_validate_certs | default(omit, True) }}"
       controller_addresses: "{{ netapp_e_storage_system_controller_addresses | default(omit, True) }}"
+
+- name: "export r_netapp_e_storage_system"
+  set_stats:
+    data:
+      r_netapp_e_storage_system: "{{ r_netapp_e_storage_system }}"

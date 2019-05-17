@@ -21,3 +21,8 @@
     - name: "plugin_cs_instance_facts"
       cs_instance_facts: "{{ cs_instance_facts }}"
       register: r_cs_instance_facts
+
+    - name: "export r_cs_instance_facts"
+      set_stats:
+        data:
+          r_cs_instance_facts: "{{ r_cs_instance_facts }}"

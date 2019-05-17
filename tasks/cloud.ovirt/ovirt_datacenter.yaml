@@ -19,3 +19,8 @@
       timeout: "{{ ovirt_datacenter_timeout | default(omit, True) }}"
       local: "{{ ovirt_datacenter_local | default(omit, True) }}"
       wait: "{{ ovirt_datacenter_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_datacenter"
+  set_stats:
+    data:
+      r_ovirt_datacenter: "{{ r_ovirt_datacenter }}"

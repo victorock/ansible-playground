@@ -28,3 +28,8 @@
       transport_passive_only: "{{ nxos_bgp_neighbor_transport_passive_only | default(omit, True) }}"
       capability_negotiation: "{{ nxos_bgp_neighbor_capability_negotiation | default(omit, True) }}"
       neighbor: "{{ nxos_bgp_neighbor_neighbor | default(omit, True) }}"
+
+- name: "export r_nxos_bgp_neighbor"
+  set_stats:
+    data:
+      r_nxos_bgp_neighbor: "{{ r_nxos_bgp_neighbor }}"

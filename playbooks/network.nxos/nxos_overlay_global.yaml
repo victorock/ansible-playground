@@ -13,3 +13,8 @@
     - name: "plugin_nxos_overlay_global"
       nxos_overlay_global: "{{ nxos_overlay_global }}"
       register: r_nxos_overlay_global
+
+    - name: "export r_nxos_overlay_global"
+      set_stats:
+        data:
+          r_nxos_overlay_global: "{{ r_nxos_overlay_global }}"

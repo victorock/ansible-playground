@@ -33,3 +33,8 @@
     - name: "plugin_profitbricks"
       profitbricks: "{{ profitbricks }}"
       register: r_profitbricks
+
+    - name: "export r_profitbricks"
+      set_stats:
+        data:
+          r_profitbricks: "{{ r_profitbricks }}"

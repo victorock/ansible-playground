@@ -14,3 +14,8 @@
       key_file: "{{ lxd_profile_key_file | default(omit, True) }}"
       config: "{{ lxd_profile_config | default(omit, True) }}"
       description: "{{ lxd_profile_description | default(omit, True) }}"
+
+- name: "export r_lxd_profile"
+  set_stats:
+    data:
+      r_lxd_profile: "{{ r_lxd_profile }}"

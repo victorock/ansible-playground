@@ -15,3 +15,8 @@
       provider: "{{ ios_vlan_provider | default(omit, True) }}"
       associated_interfaces: "{{ ios_vlan_associated_interfaces | default(omit, True) }}"
       vlan_id: "{{ ios_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_ios_vlan"
+  set_stats:
+    data:
+      r_ios_vlan: "{{ r_ios_vlan }}"

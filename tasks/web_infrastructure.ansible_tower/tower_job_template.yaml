@@ -40,3 +40,8 @@
       limit: "{{ tower_job_template_limit | default(omit, True) }}"
       ask_tags: "{{ tower_job_template_ask_tags | default(omit, True) }}"
       tower_verify_ssl: "{{ tower_job_template_tower_verify_ssl | default(omit, True) }}"
+
+- name: "export r_tower_job_template"
+  set_stats:
+    data:
+      r_tower_job_template: "{{ r_tower_job_template }}"

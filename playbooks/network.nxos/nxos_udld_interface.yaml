@@ -15,3 +15,8 @@
     - name: "plugin_nxos_udld_interface"
       nxos_udld_interface: "{{ nxos_udld_interface }}"
       register: r_nxos_udld_interface
+
+    - name: "export r_nxos_udld_interface"
+      set_stats:
+        data:
+          r_nxos_udld_interface: "{{ r_nxos_udld_interface }}"

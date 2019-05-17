@@ -13,3 +13,8 @@
     - name: "plugin_nxos_pim"
       nxos_pim: "{{ nxos_pim }}"
       register: r_nxos_pim
+
+    - name: "export r_nxos_pim"
+      set_stats:
+        data:
+          r_nxos_pim: "{{ r_nxos_pim }}"

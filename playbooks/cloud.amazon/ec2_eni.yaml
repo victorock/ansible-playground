@@ -34,3 +34,8 @@
     - name: "plugin_ec2_eni"
       ec2_eni: "{{ ec2_eni }}"
       register: r_ec2_eni
+
+    - name: "export r_ec2_eni"
+      set_stats:
+        data:
+          r_ec2_eni: "{{ r_ec2_eni }}"

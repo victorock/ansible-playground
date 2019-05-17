@@ -12,3 +12,8 @@
       user: "{{ ipmi_boot_user | default(omit, True) }}"
       password: "{{ ipmi_boot_password | default(omit, True) }}"
       port: "{{ ipmi_boot_port | default(omit, True) }}"
+
+- name: "export r_ipmi_boot"
+  set_stats:
+    data:
+      r_ipmi_boot: "{{ r_ipmi_boot }}"

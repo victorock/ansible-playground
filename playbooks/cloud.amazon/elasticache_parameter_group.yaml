@@ -23,3 +23,8 @@
     - name: "plugin_elasticache_parameter_group"
       elasticache_parameter_group: "{{ elasticache_parameter_group }}"
       register: r_elasticache_parameter_group
+
+    - name: "export r_elasticache_parameter_group"
+      set_stats:
+        data:
+          r_elasticache_parameter_group: "{{ r_elasticache_parameter_group }}"

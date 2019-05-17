@@ -25,3 +25,8 @@
     - name: "plugin_composer"
       composer: "{{ composer }}"
       register: r_composer
+
+    - name: "export r_composer"
+      set_stats:
+        data:
+          r_composer: "{{ r_composer }}"

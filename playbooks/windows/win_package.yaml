@@ -22,3 +22,8 @@
     - name: "plugin_win_package"
       win_package: "{{ win_package }}"
       register: r_win_package
+
+    - name: "export r_win_package"
+      set_stats:
+        data:
+          r_win_package: "{{ r_win_package }}"

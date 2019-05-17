@@ -19,3 +19,8 @@
       password: "{{ sf_snapshot_schedule_manager_password | default(omit, True) }}"
       recurring: "{{ sf_snapshot_schedule_manager_recurring | default(omit, True) }}"
       retention: "{{ sf_snapshot_schedule_manager_retention | default(omit, True) }}"
+
+- name: "export r_sf_snapshot_schedule_manager"
+  set_stats:
+    data:
+      r_sf_snapshot_schedule_manager: "{{ r_sf_snapshot_schedule_manager }}"

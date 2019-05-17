@@ -27,3 +27,8 @@
     - name: "plugin_cs_instance_nic_secondaryip"
       cs_instance_nic_secondaryip: "{{ cs_instance_nic_secondaryip }}"
       register: r_cs_instance_nic_secondaryip
+
+    - name: "export r_cs_instance_nic_secondaryip"
+      set_stats:
+        data:
+          r_cs_instance_nic_secondaryip: "{{ r_cs_instance_nic_secondaryip }}"

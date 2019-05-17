@@ -17,3 +17,8 @@
       validate_certs: "{{ aws_waf_web_acl_validate_certs | default(omit, True) }}"
       default_action: "{{ aws_waf_web_acl_default_action | default(omit, True) }}"
       name: "{{ aws_waf_web_acl_name | default(omit, True) }}"
+
+- name: "export r_aws_waf_web_acl"
+  set_stats:
+    data:
+      r_aws_waf_web_acl: "{{ r_aws_waf_web_acl }}"

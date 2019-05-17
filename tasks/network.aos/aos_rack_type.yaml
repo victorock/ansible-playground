@@ -9,3 +9,8 @@
       session: "{{ aos_rack_type_session | default(omit, True) }}"
       name: "{{ aos_rack_type_name | default(omit, True) }}"
       id: "{{ aos_rack_type_id | default(omit, True) }}"
+
+- name: "export r_aos_rack_type"
+  set_stats:
+    data:
+      r_aos_rack_type: "{{ r_aos_rack_type }}"

@@ -31,3 +31,8 @@
       tenant_ref: "{{ avi_sslkeyandcertificate_tenant_ref | default(omit, True) }}"
       ca_certs: "{{ avi_sslkeyandcertificate_ca_certs | default(omit, True) }}"
       tenant_uuid: "{{ avi_sslkeyandcertificate_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_sslkeyandcertificate"
+  set_stats:
+    data:
+      r_avi_sslkeyandcertificate: "{{ r_avi_sslkeyandcertificate }}"

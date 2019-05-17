@@ -20,3 +20,8 @@
     - name: "plugin_na_ontap_snmp"
       na_ontap_snmp: "{{ na_ontap_snmp }}"
       register: r_na_ontap_snmp
+
+    - name: "export r_na_ontap_snmp"
+      set_stats:
+        data:
+          r_na_ontap_snmp: "{{ r_na_ontap_snmp }}"

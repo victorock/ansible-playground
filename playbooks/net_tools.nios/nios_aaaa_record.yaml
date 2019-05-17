@@ -19,3 +19,8 @@
     - name: "plugin_nios_aaaa_record"
       nios_aaaa_record: "{{ nios_aaaa_record }}"
       register: r_nios_aaaa_record
+
+    - name: "export r_nios_aaaa_record"
+      set_stats:
+        data:
+          r_nios_aaaa_record: "{{ r_nios_aaaa_record }}"

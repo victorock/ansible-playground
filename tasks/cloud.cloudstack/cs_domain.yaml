@@ -15,3 +15,8 @@
       state: "{{ cs_domain_state | default(omit, True) }}"
       path: "{{ cs_domain_path | default(omit, True) }}"
       network_domain: "{{ cs_domain_network_domain | default(omit, True) }}"
+
+- name: "export r_cs_domain"
+  set_stats:
+    data:
+      r_cs_domain: "{{ r_cs_domain }}"

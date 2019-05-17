@@ -21,3 +21,8 @@
     - name: "plugin_bigip_configsync_action"
       bigip_configsync_action: "{{ bigip_configsync_action }}"
       register: r_bigip_configsync_action
+
+    - name: "export r_bigip_configsync_action"
+      set_stats:
+        data:
+          r_bigip_configsync_action: "{{ r_bigip_configsync_action }}"

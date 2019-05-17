@@ -25,3 +25,8 @@
     - name: "plugin_ec2_vpc_peer"
       ec2_vpc_peer: "{{ ec2_vpc_peer }}"
       register: r_ec2_vpc_peer
+
+    - name: "export r_ec2_vpc_peer"
+      set_stats:
+        data:
+          r_ec2_vpc_peer: "{{ r_ec2_vpc_peer }}"

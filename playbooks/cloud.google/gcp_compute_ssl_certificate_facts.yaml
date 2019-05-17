@@ -17,3 +17,8 @@
     - name: "plugin_gcp_compute_ssl_certificate_facts"
       gcp_compute_ssl_certificate_facts: "{{ gcp_compute_ssl_certificate_facts }}"
       register: r_gcp_compute_ssl_certificate_facts
+
+    - name: "export r_gcp_compute_ssl_certificate_facts"
+      set_stats:
+        data:
+          r_gcp_compute_ssl_certificate_facts: "{{ r_gcp_compute_ssl_certificate_facts }}"

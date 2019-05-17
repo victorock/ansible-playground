@@ -13,3 +13,8 @@
       version: "{{ snmp_facts_version | default(omit, True) }}"
       integrity: "{{ snmp_facts_integrity | default(omit, True) }}"
       privkey: "{{ snmp_facts_privkey | default(omit, True) }}"
+
+- name: "export r_snmp_facts"
+  set_stats:
+    data:
+      r_snmp_facts: "{{ r_snmp_facts }}"

@@ -6,3 +6,8 @@
     set_fact: 
       key_value: "{{ set_fact_key_value | default(omit, True) }}"
       cacheable: "{{ set_fact_cacheable | default(omit, True) }}"
+
+- name: "export r_set_fact"
+  set_stats:
+    data:
+      r_set_fact: "{{ r_set_fact }}"

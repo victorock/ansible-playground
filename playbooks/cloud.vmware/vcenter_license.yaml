@@ -19,3 +19,8 @@
     - name: "plugin_vcenter_license"
       vcenter_license: "{{ vcenter_license }}"
       register: r_vcenter_license
+
+    - name: "export r_vcenter_license"
+      set_stats:
+        data:
+          r_vcenter_license: "{{ r_vcenter_license }}"

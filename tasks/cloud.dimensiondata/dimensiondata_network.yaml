@@ -16,3 +16,8 @@
       wait: "{{ dimensiondata_network_wait | default(omit, True) }}"
       validate_certs: "{{ dimensiondata_network_validate_certs | default(omit, True) }}"
       name: "{{ dimensiondata_network_name | default(omit, True) }}"
+
+- name: "export r_dimensiondata_network"
+  set_stats:
+    data:
+      r_dimensiondata_network: "{{ r_dimensiondata_network }}"

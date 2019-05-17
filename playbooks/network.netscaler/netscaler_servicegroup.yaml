@@ -53,3 +53,8 @@
     - name: "plugin_netscaler_servicegroup"
       netscaler_servicegroup: "{{ netscaler_servicegroup }}"
       register: r_netscaler_servicegroup
+
+    - name: "export r_netscaler_servicegroup"
+      set_stats:
+        data:
+          r_netscaler_servicegroup: "{{ r_netscaler_servicegroup }}"

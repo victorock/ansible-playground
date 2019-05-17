@@ -25,3 +25,8 @@
       validate_certs: "{{ bigip_monitor_http_validate_certs | default(omit, True) }}"
       target_username: "{{ bigip_monitor_http_target_username | default(omit, True) }}"
       name: "{{ bigip_monitor_http_name | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_http"
+  set_stats:
+    data:
+      r_bigip_monitor_http: "{{ r_bigip_monitor_http }}"

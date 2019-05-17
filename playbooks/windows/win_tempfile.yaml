@@ -15,3 +15,8 @@
     - name: "plugin_win_tempfile"
       win_tempfile: "{{ win_tempfile }}"
       register: r_win_tempfile
+
+    - name: "export r_win_tempfile"
+      set_stats:
+        data:
+          r_win_tempfile: "{{ r_win_tempfile }}"

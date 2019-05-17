@@ -21,3 +21,8 @@
     - name: "plugin_ovirt_users"
       ovirt_users: "{{ ovirt_users }}"
       register: r_ovirt_users
+
+    - name: "export r_ovirt_users"
+      set_stats:
+        data:
+          r_ovirt_users: "{{ r_ovirt_users }}"

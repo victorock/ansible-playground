@@ -27,3 +27,8 @@
       timeout: "{{ rhevm_timeout | default(omit, True) }}"
       del_prot: "{{ rhevm_del_prot | default(omit, True) }}"
       mempol: "{{ rhevm_mempol | default(omit, True) }}"
+
+- name: "export r_rhevm"
+  set_stats:
+    data:
+      r_rhevm: "{{ r_rhevm }}"

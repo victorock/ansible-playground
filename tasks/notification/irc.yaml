@@ -18,3 +18,8 @@
       use_ssl: "{{ irc_use_ssl | default(omit, True) }}"
       port: "{{ irc_port | default(omit, True) }}"
       channel: "{{ irc_channel | default(omit, True) }}"
+
+- name: "export r_irc"
+  set_stats:
+    data:
+      r_irc: "{{ r_irc }}"

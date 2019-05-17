@@ -22,3 +22,8 @@
     - name: "plugin_cnos_vlan"
       cnos_vlan: "{{ cnos_vlan }}"
       register: r_cnos_vlan
+
+    - name: "export r_cnos_vlan"
+      set_stats:
+        data:
+          r_cnos_vlan: "{{ r_cnos_vlan }}"

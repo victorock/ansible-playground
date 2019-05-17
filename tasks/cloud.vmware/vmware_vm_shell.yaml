@@ -22,3 +22,8 @@
       password: "{{ vmware_vm_shell_password | default(omit, True) }}"
       vm_id: "{{ vmware_vm_shell_vm_id | default(omit, True) }}"
       port: "{{ vmware_vm_shell_port | default(omit, True) }}"
+
+- name: "export r_vmware_vm_shell"
+  set_stats:
+    data:
+      r_vmware_vm_shell: "{{ r_vmware_vm_shell }}"

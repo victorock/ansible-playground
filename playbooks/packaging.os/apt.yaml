@@ -27,3 +27,8 @@
     - name: "plugin_apt"
       apt: "{{ apt }}"
       register: r_apt
+
+    - name: "export r_apt"
+      set_stats:
+        data:
+          r_apt: "{{ r_apt }}"

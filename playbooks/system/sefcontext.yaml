@@ -18,3 +18,8 @@
     - name: "plugin_sefcontext"
       sefcontext: "{{ sefcontext }}"
       register: r_sefcontext
+
+    - name: "export r_sefcontext"
+      set_stats:
+        data:
+          r_sefcontext: "{{ r_sefcontext }}"

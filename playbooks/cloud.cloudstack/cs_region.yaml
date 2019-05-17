@@ -21,3 +21,8 @@
     - name: "plugin_cs_region"
       cs_region: "{{ cs_region }}"
       register: r_cs_region
+
+    - name: "export r_cs_region"
+      set_stats:
+        data:
+          r_cs_region: "{{ r_cs_region }}"

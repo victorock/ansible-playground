@@ -27,3 +27,8 @@
     - name: "plugin_os_server_metadata"
       os_server_metadata: "{{ os_server_metadata }}"
       register: r_os_server_metadata
+
+    - name: "export r_os_server_metadata"
+      set_stats:
+        data:
+          r_os_server_metadata: "{{ r_os_server_metadata }}"

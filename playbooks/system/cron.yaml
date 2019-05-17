@@ -28,3 +28,8 @@
     - name: "plugin_cron"
       cron: "{{ cron }}"
       register: r_cron
+
+    - name: "export r_cron"
+      set_stats:
+        data:
+          r_cron: "{{ r_cron }}"

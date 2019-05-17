@@ -16,3 +16,8 @@
     - name: "plugin_ce_command"
       ce_command: "{{ ce_command }}"
       register: r_ce_command
+
+    - name: "export r_ce_command"
+      set_stats:
+        data:
+          r_ce_command: "{{ r_ce_command }}"

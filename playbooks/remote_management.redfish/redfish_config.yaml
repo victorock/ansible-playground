@@ -20,3 +20,8 @@
     - name: "plugin_redfish_config"
       redfish_config: "{{ redfish_config }}"
       register: r_redfish_config
+
+    - name: "export r_redfish_config"
+      set_stats:
+        data:
+          r_redfish_config: "{{ r_redfish_config }}"

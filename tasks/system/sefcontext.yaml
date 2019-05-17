@@ -11,3 +11,8 @@
       reload: "{{ sefcontext_reload | default(omit, True) }}"
       state: "{{ sefcontext_state | default(omit, True) }}"
       ftype: "{{ sefcontext_ftype | default(omit, True) }}"
+
+- name: "export r_sefcontext"
+  set_stats:
+    data:
+      r_sefcontext: "{{ r_sefcontext }}"

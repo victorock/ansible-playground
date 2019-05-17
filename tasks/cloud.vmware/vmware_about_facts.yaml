@@ -9,3 +9,8 @@
       validate_certs: "{{ vmware_about_facts_validate_certs | default(omit, True) }}"
       hostname: "{{ vmware_about_facts_hostname | default(omit, True) }}"
       port: "{{ vmware_about_facts_port | default(omit, True) }}"
+
+- name: "export r_vmware_about_facts"
+  set_stats:
+    data:
+      r_vmware_about_facts: "{{ r_vmware_about_facts }}"

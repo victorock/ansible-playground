@@ -15,3 +15,8 @@
       state: "{{ s3_logging_state | default(omit, True) }}"
       ec2_url: "{{ s3_logging_ec2_url | default(omit, True) }}"
       validate_certs: "{{ s3_logging_validate_certs | default(omit, True) }}"
+
+- name: "export r_s3_logging"
+  set_stats:
+    data:
+      r_s3_logging: "{{ r_s3_logging }}"

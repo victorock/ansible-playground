@@ -5,3 +5,8 @@
   vars:
     win_timezone: 
       timezone: "{{ win_timezone_timezone | default(omit, True) }}"
+
+- name: "export r_win_timezone"
+  set_stats:
+    data:
+      r_win_timezone: "{{ r_win_timezone }}"

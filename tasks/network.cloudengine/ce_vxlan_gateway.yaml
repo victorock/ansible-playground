@@ -19,3 +19,8 @@
       dfs_all_active: "{{ ce_vxlan_gateway_dfs_all_active | default(omit, True) }}"
       vpn_instance: "{{ ce_vxlan_gateway_vpn_instance | default(omit, True) }}"
       dfs_peer_ip: "{{ ce_vxlan_gateway_dfs_peer_ip | default(omit, True) }}"
+
+- name: "export r_ce_vxlan_gateway"
+  set_stats:
+    data:
+      r_ce_vxlan_gateway: "{{ r_ce_vxlan_gateway }}"

@@ -13,3 +13,8 @@
       password: "{{ cnos_conditional_command_password | default(omit, True) }}"
       enablePassword: "{{ cnos_conditional_command_enablePassword | default(omit, True) }}"
       condition: "{{ cnos_conditional_command_condition | default(omit, True) }}"
+
+- name: "export r_cnos_conditional_command"
+  set_stats:
+    data:
+      r_cnos_conditional_command: "{{ r_cnos_conditional_command }}"

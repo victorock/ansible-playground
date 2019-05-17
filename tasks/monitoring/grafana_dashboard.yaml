@@ -19,3 +19,8 @@
       slug: "{{ grafana_dashboard_slug | default(omit, True) }}"
       overwrite: "{{ grafana_dashboard_overwrite | default(omit, True) }}"
       client_key: "{{ grafana_dashboard_client_key | default(omit, True) }}"
+
+- name: "export r_grafana_dashboard"
+  set_stats:
+    data:
+      r_grafana_dashboard: "{{ r_grafana_dashboard }}"

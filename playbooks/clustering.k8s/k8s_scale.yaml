@@ -32,3 +32,8 @@
     - name: "plugin_k8s_scale"
       k8s_scale: "{{ k8s_scale }}"
       register: r_k8s_scale
+
+    - name: "export r_k8s_scale"
+      set_stats:
+        data:
+          r_k8s_scale: "{{ r_k8s_scale }}"

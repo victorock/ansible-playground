@@ -26,3 +26,8 @@
     - name: "plugin_rax_cdb_database"
       rax_cdb_database: "{{ rax_cdb_database }}"
       register: r_rax_cdb_database
+
+    - name: "export r_rax_cdb_database"
+      set_stats:
+        data:
+          r_rax_cdb_database: "{{ r_rax_cdb_database }}"

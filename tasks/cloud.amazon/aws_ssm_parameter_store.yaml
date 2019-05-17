@@ -19,3 +19,8 @@
       overwrite_value: "{{ aws_ssm_parameter_store_overwrite_value | default(omit, True) }}"
       validate_certs: "{{ aws_ssm_parameter_store_validate_certs | default(omit, True) }}"
       name: "{{ aws_ssm_parameter_store_name | default(omit, True) }}"
+
+- name: "export r_aws_ssm_parameter_store"
+  set_stats:
+    data:
+      r_aws_ssm_parameter_store: "{{ r_aws_ssm_parameter_store }}"

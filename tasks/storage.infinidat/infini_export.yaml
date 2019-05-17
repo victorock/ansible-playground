@@ -12,3 +12,8 @@
       user: "{{ infini_export_user | default(omit, True) }}"
       filesystem: "{{ infini_export_filesystem | default(omit, True) }}"
       password: "{{ infini_export_password | default(omit, True) }}"
+
+- name: "export r_infini_export"
+  set_stats:
+    data:
+      r_infini_export: "{{ r_infini_export }}"

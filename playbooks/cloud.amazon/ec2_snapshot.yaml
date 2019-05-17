@@ -28,3 +28,8 @@
     - name: "plugin_ec2_snapshot"
       ec2_snapshot: "{{ ec2_snapshot }}"
       register: r_ec2_snapshot
+
+    - name: "export r_ec2_snapshot"
+      set_stats:
+        data:
+          r_ec2_snapshot: "{{ r_ec2_snapshot }}"

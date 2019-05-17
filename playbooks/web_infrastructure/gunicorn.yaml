@@ -18,3 +18,8 @@
     - name: "plugin_gunicorn"
       gunicorn: "{{ gunicorn }}"
       register: r_gunicorn
+
+    - name: "export r_gunicorn"
+      set_stats:
+        data:
+          r_gunicorn: "{{ r_gunicorn }}"

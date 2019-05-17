@@ -24,3 +24,8 @@
     - name: "plugin_influxdb_query"
       influxdb_query: "{{ influxdb_query }}"
       register: r_influxdb_query
+
+    - name: "export r_influxdb_query"
+      set_stats:
+        data:
+          r_influxdb_query: "{{ r_influxdb_query }}"

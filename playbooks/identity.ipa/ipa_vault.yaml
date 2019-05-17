@@ -27,3 +27,8 @@
     - name: "plugin_ipa_vault"
       ipa_vault: "{{ ipa_vault }}"
       register: r_ipa_vault
+
+    - name: "export r_ipa_vault"
+      set_stats:
+        data:
+          r_ipa_vault: "{{ r_ipa_vault }}"

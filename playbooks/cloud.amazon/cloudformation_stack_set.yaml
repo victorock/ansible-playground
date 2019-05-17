@@ -35,3 +35,8 @@
     - name: "plugin_cloudformation_stack_set"
       cloudformation_stack_set: "{{ cloudformation_stack_set }}"
       register: r_cloudformation_stack_set
+
+    - name: "export r_cloudformation_stack_set"
+      set_stats:
+        data:
+          r_cloudformation_stack_set: "{{ r_cloudformation_stack_set }}"

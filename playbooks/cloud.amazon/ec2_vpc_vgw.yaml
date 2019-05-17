@@ -20,3 +20,8 @@
     - name: "plugin_ec2_vpc_vgw"
       ec2_vpc_vgw: "{{ ec2_vpc_vgw }}"
       register: r_ec2_vpc_vgw
+
+    - name: "export r_ec2_vpc_vgw"
+      set_stats:
+        data:
+          r_ec2_vpc_vgw: "{{ r_ec2_vpc_vgw }}"

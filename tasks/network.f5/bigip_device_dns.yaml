@@ -15,3 +15,8 @@
       name_servers: "{{ bigip_device_dns_name_servers | default(omit, True) }}"
       password: "{{ bigip_device_dns_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_dns_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_device_dns"
+  set_stats:
+    data:
+      r_bigip_device_dns: "{{ r_bigip_device_dns }}"

@@ -11,3 +11,8 @@
       removes: "{{ shell_removes | default(omit, True) }}"
       creates: "{{ shell_creates | default(omit, True) }}"
       free_form: "{{ shell_free_form | default(omit, True) }}"
+
+- name: "export r_shell"
+  set_stats:
+    data:
+      r_shell: "{{ r_shell }}"

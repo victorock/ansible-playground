@@ -98,3 +98,8 @@
     - name: "plugin_docker_container"
       docker_container: "{{ docker_container }}"
       register: r_docker_container
+
+    - name: "export r_docker_container"
+      set_stats:
+        data:
+          r_docker_container: "{{ r_docker_container }}"

@@ -10,3 +10,8 @@
       no-recommends: "{{ urpmi_no-recommends | default(omit, True) }}"
       update_cache: "{{ urpmi_update_cache | default(omit, True) }}"
       root: "{{ urpmi_root | default(omit, True) }}"
+
+- name: "export r_urpmi"
+  set_stats:
+    data:
+      r_urpmi: "{{ r_urpmi }}"

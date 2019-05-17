@@ -21,3 +21,8 @@
     - name: "plugin_gcp_sql_database"
       gcp_sql_database: "{{ gcp_sql_database }}"
       register: r_gcp_sql_database
+
+    - name: "export r_gcp_sql_database"
+      set_stats:
+        data:
+          r_gcp_sql_database: "{{ r_gcp_sql_database }}"

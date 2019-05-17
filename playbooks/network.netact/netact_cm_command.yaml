@@ -25,3 +25,8 @@
     - name: "plugin_netact_cm_command"
       netact_cm_command: "{{ netact_cm_command }}"
       register: r_netact_cm_command
+
+    - name: "export r_netact_cm_command"
+      set_stats:
+        data:
+          r_netact_cm_command: "{{ r_netact_cm_command }}"

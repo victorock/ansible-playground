@@ -24,3 +24,8 @@
     - name: "plugin_ecs_ecr"
       ecs_ecr: "{{ ecs_ecr }}"
       register: r_ecs_ecr
+
+    - name: "export r_ecs_ecr"
+      set_stats:
+        data:
+          r_ecs_ecr: "{{ r_ecs_ecr }}"

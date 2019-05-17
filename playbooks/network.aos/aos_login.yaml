@@ -15,3 +15,8 @@
     - name: "plugin_aos_login"
       aos_login: "{{ aos_login }}"
       register: r_aos_login
+
+    - name: "export r_aos_login"
+      set_stats:
+        data:
+          r_aos_login: "{{ r_aos_login }}"

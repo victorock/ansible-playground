@@ -25,3 +25,8 @@
     - name: "plugin_oneandone_firewall_policy"
       oneandone_firewall_policy: "{{ oneandone_firewall_policy }}"
       register: r_oneandone_firewall_policy
+
+    - name: "export r_oneandone_firewall_policy"
+      set_stats:
+        data:
+          r_oneandone_firewall_policy: "{{ r_oneandone_firewall_policy }}"

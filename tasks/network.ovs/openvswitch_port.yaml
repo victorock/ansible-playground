@@ -11,3 +11,8 @@
       timeout: "{{ openvswitch_port_timeout | default(omit, True) }}"
       external_ids: "{{ openvswitch_port_external_ids | default(omit, True) }}"
       port: "{{ openvswitch_port_port | default(omit, True) }}"
+
+- name: "export r_openvswitch_port"
+  set_stats:
+    data:
+      r_openvswitch_port: "{{ r_openvswitch_port }}"

@@ -16,3 +16,8 @@
       function_name: "{{ lambda_alias_function_name | default(omit, True) }}"
       validate_certs: "{{ lambda_alias_validate_certs | default(omit, True) }}"
       name: "{{ lambda_alias_name | default(omit, True) }}"
+
+- name: "export r_lambda_alias"
+  set_stats:
+    data:
+      r_lambda_alias: "{{ r_lambda_alias }}"

@@ -14,3 +14,8 @@
       address: "{{ vyos_vlan_address | default(omit, True) }}"
       aggregate: "{{ vyos_vlan_aggregate | default(omit, True) }}"
       vlan_id: "{{ vyos_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_vyos_vlan"
+  set_stats:
+    data:
+      r_vyos_vlan: "{{ r_vyos_vlan }}"

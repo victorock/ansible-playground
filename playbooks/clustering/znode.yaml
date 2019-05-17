@@ -18,3 +18,8 @@
     - name: "plugin_znode"
       znode: "{{ znode }}"
       register: r_znode
+
+    - name: "export r_znode"
+      set_stats:
+        data:
+          r_znode: "{{ r_znode }}"

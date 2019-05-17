@@ -18,3 +18,8 @@
       backup: "{{ ironware_config_backup | default(omit, True) }}"
       match: "{{ ironware_config_match | default(omit, True) }}"
       before: "{{ ironware_config_before | default(omit, True) }}"
+
+- name: "export r_ironware_config"
+  set_stats:
+    data:
+      r_ironware_config: "{{ r_ironware_config }}"

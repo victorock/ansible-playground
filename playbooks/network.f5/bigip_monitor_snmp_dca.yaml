@@ -34,3 +34,8 @@
     - name: "plugin_bigip_monitor_snmp_dca"
       bigip_monitor_snmp_dca: "{{ bigip_monitor_snmp_dca }}"
       register: r_bigip_monitor_snmp_dca
+
+    - name: "export r_bigip_monitor_snmp_dca"
+      set_stats:
+        data:
+          r_bigip_monitor_snmp_dca: "{{ r_bigip_monitor_snmp_dca }}"

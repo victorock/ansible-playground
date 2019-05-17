@@ -25,3 +25,8 @@
     - name: "plugin_pn_vlag"
       pn_vlag: "{{ pn_vlag }}"
       register: r_pn_vlag
+
+    - name: "export r_pn_vlag"
+      set_stats:
+        data:
+          r_pn_vlag: "{{ r_pn_vlag }}"

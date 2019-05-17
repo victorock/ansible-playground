@@ -20,3 +20,8 @@
       password: "{{ azure_rm_trafficmanagerendpoint_facts_password | default(omit, True) }}"
       type: "{{ azure_rm_trafficmanagerendpoint_facts_type | default(omit, True) }}"
       tenant: "{{ azure_rm_trafficmanagerendpoint_facts_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_trafficmanagerendpoint_facts"
+  set_stats:
+    data:
+      r_azure_rm_trafficmanagerendpoint_facts: "{{ r_azure_rm_trafficmanagerendpoint_facts }}"

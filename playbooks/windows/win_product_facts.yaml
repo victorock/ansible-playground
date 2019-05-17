@@ -11,3 +11,8 @@
     - name: "plugin_win_product_facts"
       win_product_facts: "{{ win_product_facts }}"
       register: r_win_product_facts
+
+    - name: "export r_win_product_facts"
+      set_stats:
+        data:
+          r_win_product_facts: "{{ r_win_product_facts }}"

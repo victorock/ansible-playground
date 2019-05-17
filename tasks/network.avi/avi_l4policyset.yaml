@@ -23,3 +23,8 @@
       tenant_uuid: "{{ avi_l4policyset_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_l4policyset_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_l4policyset_name | default(omit, True) }}"
+
+- name: "export r_avi_l4policyset"
+  set_stats:
+    data:
+      r_avi_l4policyset: "{{ r_avi_l4policyset }}"

@@ -24,3 +24,8 @@
     - name: "plugin_nos_config"
       nos_config: "{{ nos_config }}"
       register: r_nos_config
+
+    - name: "export r_nos_config"
+      set_stats:
+        data:
+          r_nos_config: "{{ r_nos_config }}"

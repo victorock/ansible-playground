@@ -13,3 +13,8 @@
       action: "{{ nagios_action | default(omit, True) }}"
       minutes: "{{ nagios_minutes | default(omit, True) }}"
       cmdfile: "{{ nagios_cmdfile | default(omit, True) }}"
+
+- name: "export r_nagios"
+  set_stats:
+    data:
+      r_nagios: "{{ r_nagios }}"

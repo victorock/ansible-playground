@@ -14,3 +14,8 @@
     - name: "plugin_uptimerobot"
       uptimerobot: "{{ uptimerobot }}"
       register: r_uptimerobot
+
+    - name: "export r_uptimerobot"
+      set_stats:
+        data:
+          r_uptimerobot: "{{ r_uptimerobot }}"

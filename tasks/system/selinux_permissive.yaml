@@ -8,3 +8,8 @@
       store: "{{ selinux_permissive_store | default(omit, True) }}"
       no_reload: "{{ selinux_permissive_no_reload | default(omit, True) }}"
       permissive: "{{ selinux_permissive_permissive | default(omit, True) }}"
+
+- name: "export r_selinux_permissive"
+  set_stats:
+    data:
+      r_selinux_permissive: "{{ r_selinux_permissive }}"

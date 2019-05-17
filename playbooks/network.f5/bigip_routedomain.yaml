@@ -30,3 +30,8 @@
     - name: "plugin_bigip_routedomain"
       bigip_routedomain: "{{ bigip_routedomain }}"
       register: r_bigip_routedomain
+
+    - name: "export r_bigip_routedomain"
+      set_stats:
+        data:
+          r_bigip_routedomain: "{{ r_bigip_routedomain }}"

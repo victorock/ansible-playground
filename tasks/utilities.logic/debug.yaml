@@ -7,3 +7,8 @@
       msg: "{{ debug_msg | default(omit, True) }}"
       var: "{{ debug_var | default(omit, True) }}"
       verbosity: "{{ debug_verbosity | default(omit, True) }}"
+
+- name: "export r_debug"
+  set_stats:
+    data:
+      r_debug: "{{ r_debug }}"

@@ -30,3 +30,8 @@
     - name: "plugin_file"
       file: "{{ file }}"
       register: r_file
+
+    - name: "export r_file"
+      set_stats:
+        data:
+          r_file: "{{ r_file }}"

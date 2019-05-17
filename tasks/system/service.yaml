@@ -12,3 +12,8 @@
       sleep: "{{ service_sleep | default(omit, True) }}"
       arguments: "{{ service_arguments | default(omit, True) }}"
       runlevel: "{{ service_runlevel | default(omit, True) }}"
+
+- name: "export r_service"
+  set_stats:
+    data:
+      r_service: "{{ r_service }}"

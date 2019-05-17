@@ -11,3 +11,8 @@
       mode: "{{ atomic_container_mode | default(omit, True) }}"
       backend: "{{ atomic_container_backend | default(omit, True) }}"
       rootfs: "{{ atomic_container_rootfs | default(omit, True) }}"
+
+- name: "export r_atomic_container"
+  set_stats:
+    data:
+      r_atomic_container: "{{ r_atomic_container }}"

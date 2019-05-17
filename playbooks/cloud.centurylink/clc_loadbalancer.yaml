@@ -21,3 +21,8 @@
     - name: "plugin_clc_loadbalancer"
       clc_loadbalancer: "{{ clc_loadbalancer }}"
       register: r_clc_loadbalancer
+
+    - name: "export r_clc_loadbalancer"
+      set_stats:
+        data:
+          r_clc_loadbalancer: "{{ r_clc_loadbalancer }}"

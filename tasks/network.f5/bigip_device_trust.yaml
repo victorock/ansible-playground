@@ -16,3 +16,8 @@
       password: "{{ bigip_device_trust_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_trust_validate_certs | default(omit, True) }}"
       peer_hostname: "{{ bigip_device_trust_peer_hostname | default(omit, True) }}"
+
+- name: "export r_bigip_device_trust"
+  set_stats:
+    data:
+      r_bigip_device_trust: "{{ r_bigip_device_trust }}"

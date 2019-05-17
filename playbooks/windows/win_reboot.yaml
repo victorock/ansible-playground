@@ -18,3 +18,8 @@
     - name: "plugin_win_reboot"
       win_reboot: "{{ win_reboot }}"
       register: r_win_reboot
+
+    - name: "export r_win_reboot"
+      set_stats:
+        data:
+          r_win_reboot: "{{ r_win_reboot }}"

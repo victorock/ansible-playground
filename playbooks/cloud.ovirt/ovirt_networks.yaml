@@ -27,3 +27,8 @@
     - name: "plugin_ovirt_networks"
       ovirt_networks: "{{ ovirt_networks }}"
       register: r_ovirt_networks
+
+    - name: "export r_ovirt_networks"
+      set_stats:
+        data:
+          r_ovirt_networks: "{{ r_ovirt_networks }}"

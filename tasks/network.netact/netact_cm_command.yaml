@@ -18,3 +18,8 @@
       backupPlanName: "{{ netact_cm_command_backupPlanName | default(omit, True) }}"
       fileFormat: "{{ netact_cm_command_fileFormat | default(omit, True) }}"
       inputFile: "{{ netact_cm_command_inputFile | default(omit, True) }}"
+
+- name: "export r_netact_cm_command"
+  set_stats:
+    data:
+      r_netact_cm_command: "{{ r_netact_cm_command }}"

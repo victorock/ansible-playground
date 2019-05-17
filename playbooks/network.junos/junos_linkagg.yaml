@@ -21,3 +21,8 @@
     - name: "plugin_junos_linkagg"
       junos_linkagg: "{{ junos_linkagg }}"
       register: r_junos_linkagg
+
+    - name: "export r_junos_linkagg"
+      set_stats:
+        data:
+          r_junos_linkagg: "{{ r_junos_linkagg }}"

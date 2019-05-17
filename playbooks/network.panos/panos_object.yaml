@@ -32,3 +32,8 @@
     - name: "plugin_panos_object"
       panos_object: "{{ panos_object }}"
       register: r_panos_object
+
+    - name: "export r_panos_object"
+      set_stats:
+        data:
+          r_panos_object: "{{ r_panos_object }}"

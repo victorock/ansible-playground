@@ -24,3 +24,8 @@
     - name: "plugin_bigip_ucs_fetch"
       bigip_ucs_fetch: "{{ bigip_ucs_fetch }}"
       register: r_bigip_ucs_fetch
+
+    - name: "export r_bigip_ucs_fetch"
+      set_stats:
+        data:
+          r_bigip_ucs_fetch: "{{ r_bigip_ucs_fetch }}"

@@ -9,3 +9,8 @@
       id: "{{ ovirt_scheduling_policy_facts_id | default(omit, True) }}"
       auth: "{{ ovirt_scheduling_policy_facts_auth | default(omit, True) }}"
       name: "{{ ovirt_scheduling_policy_facts_name | default(omit, True) }}"
+
+- name: "export r_ovirt_scheduling_policy_facts"
+  set_stats:
+    data:
+      r_ovirt_scheduling_policy_facts: "{{ r_ovirt_scheduling_policy_facts }}"

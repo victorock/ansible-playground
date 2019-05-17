@@ -20,3 +20,8 @@
     - name: "plugin_ec2_asg_facts"
       ec2_asg_facts: "{{ ec2_asg_facts }}"
       register: r_ec2_asg_facts
+
+    - name: "export r_ec2_asg_facts"
+      set_stats:
+        data:
+          r_ec2_asg_facts: "{{ r_ec2_asg_facts }}"

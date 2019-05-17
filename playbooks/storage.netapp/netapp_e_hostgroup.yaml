@@ -21,3 +21,8 @@
     - name: "plugin_netapp_e_hostgroup"
       netapp_e_hostgroup: "{{ netapp_e_hostgroup }}"
       register: r_netapp_e_hostgroup
+
+    - name: "export r_netapp_e_hostgroup"
+      set_stats:
+        data:
+          r_netapp_e_hostgroup: "{{ r_netapp_e_hostgroup }}"

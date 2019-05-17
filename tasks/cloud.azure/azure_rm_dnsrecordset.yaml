@@ -26,3 +26,8 @@
       password: "{{ azure_rm_dnsrecordset_password | default(omit, True) }}"
       tenant: "{{ azure_rm_dnsrecordset_tenant | default(omit, True) }}"
       auth_source: "{{ azure_rm_dnsrecordset_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_dnsrecordset"
+  set_stats:
+    data:
+      r_azure_rm_dnsrecordset: "{{ r_azure_rm_dnsrecordset }}"

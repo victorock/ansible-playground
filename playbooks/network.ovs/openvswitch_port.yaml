@@ -18,3 +18,8 @@
     - name: "plugin_openvswitch_port"
       openvswitch_port: "{{ openvswitch_port }}"
       register: r_openvswitch_port
+
+    - name: "export r_openvswitch_port"
+      set_stats:
+        data:
+          r_openvswitch_port: "{{ r_openvswitch_port }}"

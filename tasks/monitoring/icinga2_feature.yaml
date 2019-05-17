@@ -6,3 +6,8 @@
     icinga2_feature: 
       state: "{{ icinga2_feature_state | default(omit, True) }}"
       name: "{{ icinga2_feature_name | default(omit, True) }}"
+
+- name: "export r_icinga2_feature"
+  set_stats:
+    data:
+      r_icinga2_feature: "{{ r_icinga2_feature }}"

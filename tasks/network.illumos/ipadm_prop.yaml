@@ -9,3 +9,8 @@
       property: "{{ ipadm_prop_property | default(omit, True) }}"
       protocol: "{{ ipadm_prop_protocol | default(omit, True) }}"
       value: "{{ ipadm_prop_value | default(omit, True) }}"
+
+- name: "export r_ipadm_prop"
+  set_stats:
+    data:
+      r_ipadm_prop: "{{ r_ipadm_prop }}"

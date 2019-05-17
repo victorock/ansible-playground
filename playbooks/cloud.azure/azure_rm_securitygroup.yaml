@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_securitygroup"
       azure_rm_securitygroup: "{{ azure_rm_securitygroup }}"
       register: r_azure_rm_securitygroup
+
+    - name: "export r_azure_rm_securitygroup"
+      set_stats:
+        data:
+          r_azure_rm_securitygroup: "{{ r_azure_rm_securitygroup }}"

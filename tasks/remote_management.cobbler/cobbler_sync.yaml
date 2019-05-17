@@ -10,3 +10,8 @@
       password: "{{ cobbler_sync_password | default(omit, True) }}"
       validate_certs: "{{ cobbler_sync_validate_certs | default(omit, True) }}"
       port: "{{ cobbler_sync_port | default(omit, True) }}"
+
+- name: "export r_cobbler_sync"
+  set_stats:
+    data:
+      r_cobbler_sync: "{{ r_cobbler_sync }}"

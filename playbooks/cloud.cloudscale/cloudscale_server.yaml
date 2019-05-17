@@ -26,3 +26,8 @@
     - name: "plugin_cloudscale_server"
       cloudscale_server: "{{ cloudscale_server }}"
       register: r_cloudscale_server
+
+    - name: "export r_cloudscale_server"
+      set_stats:
+        data:
+          r_cloudscale_server: "{{ r_cloudscale_server }}"

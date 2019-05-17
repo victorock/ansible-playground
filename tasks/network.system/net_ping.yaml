@@ -9,3 +9,8 @@
       state: "{{ net_ping_state | default(omit, True) }}"
       vrf: "{{ net_ping_vrf | default(omit, True) }}"
       source: "{{ net_ping_source | default(omit, True) }}"
+
+- name: "export r_net_ping"
+  set_stats:
+    data:
+      r_net_ping: "{{ r_net_ping }}"

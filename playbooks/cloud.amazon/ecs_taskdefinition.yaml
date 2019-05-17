@@ -31,3 +31,8 @@
     - name: "plugin_ecs_taskdefinition"
       ecs_taskdefinition: "{{ ecs_taskdefinition }}"
       register: r_ecs_taskdefinition
+
+    - name: "export r_ecs_taskdefinition"
+      set_stats:
+        data:
+          r_ecs_taskdefinition: "{{ r_ecs_taskdefinition }}"

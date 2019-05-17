@@ -23,3 +23,8 @@
     - name: "plugin_wait_for"
       wait_for: "{{ wait_for }}"
       register: r_wait_for
+
+    - name: "export r_wait_for"
+      set_stats:
+        data:
+          r_wait_for: "{{ r_wait_for }}"

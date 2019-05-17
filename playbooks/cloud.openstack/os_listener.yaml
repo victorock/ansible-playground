@@ -29,3 +29,8 @@
     - name: "plugin_os_listener"
       os_listener: "{{ os_listener }}"
       register: r_os_listener
+
+    - name: "export r_os_listener"
+      set_stats:
+        data:
+          r_os_listener: "{{ r_os_listener }}"

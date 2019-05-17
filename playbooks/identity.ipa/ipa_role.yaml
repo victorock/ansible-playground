@@ -27,3 +27,8 @@
     - name: "plugin_ipa_role"
       ipa_role: "{{ ipa_role }}"
       register: r_ipa_role
+
+    - name: "export r_ipa_role"
+      set_stats:
+        data:
+          r_ipa_role: "{{ r_ipa_role }}"

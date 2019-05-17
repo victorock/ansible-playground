@@ -13,3 +13,8 @@
       next_hop: "{{ ios_static_route_next_hop | default(omit, True) }}"
       provider: "{{ ios_static_route_provider | default(omit, True) }}"
       aggregate: "{{ ios_static_route_aggregate | default(omit, True) }}"
+
+- name: "export r_ios_static_route"
+  set_stats:
+    data:
+      r_ios_static_route: "{{ r_ios_static_route }}"

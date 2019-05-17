@@ -9,3 +9,8 @@
       recipient_id: "{{ cisco_spark_recipient_id | default(omit, True) }}"
       message_type: "{{ cisco_spark_message_type | default(omit, True) }}"
       recipient_type: "{{ cisco_spark_recipient_type | default(omit, True) }}"
+
+- name: "export r_cisco_spark"
+  set_stats:
+    data:
+      r_cisco_spark: "{{ r_cisco_spark }}"

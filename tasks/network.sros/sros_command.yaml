@@ -10,3 +10,8 @@
       provider: "{{ sros_command_provider | default(omit, True) }}"
       wait_for: "{{ sros_command_wait_for | default(omit, True) }}"
       match: "{{ sros_command_match | default(omit, True) }}"
+
+- name: "export r_sros_command"
+  set_stats:
+    data:
+      r_sros_command: "{{ r_sros_command }}"

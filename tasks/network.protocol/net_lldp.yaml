@@ -5,3 +5,8 @@
   vars:
     net_lldp: 
       state: "{{ net_lldp_state | default(omit, True) }}"
+
+- name: "export r_net_lldp"
+  set_stats:
+    data:
+      r_net_lldp: "{{ r_net_lldp }}"

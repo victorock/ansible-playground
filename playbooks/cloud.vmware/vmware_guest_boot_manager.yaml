@@ -25,3 +25,8 @@
     - name: "plugin_vmware_guest_boot_manager"
       vmware_guest_boot_manager: "{{ vmware_guest_boot_manager }}"
       register: r_vmware_guest_boot_manager
+
+    - name: "export r_vmware_guest_boot_manager"
+      set_stats:
+        data:
+          r_vmware_guest_boot_manager: "{{ r_vmware_guest_boot_manager }}"

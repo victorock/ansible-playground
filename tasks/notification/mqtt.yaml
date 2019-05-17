@@ -16,3 +16,8 @@
       password: "{{ mqtt_password | default(omit, True) }}"
       keyfile: "{{ mqtt_keyfile | default(omit, True) }}"
       payload: "{{ mqtt_payload | default(omit, True) }}"
+
+- name: "export r_mqtt"
+  set_stats:
+    data:
+      r_mqtt: "{{ r_mqtt }}"

@@ -22,3 +22,8 @@
     - name: "plugin_ce_vxlan_arp"
       ce_vxlan_arp: "{{ ce_vxlan_arp }}"
       register: r_ce_vxlan_arp
+
+    - name: "export r_ce_vxlan_arp"
+      set_stats:
+        data:
+          r_ce_vxlan_arp: "{{ r_ce_vxlan_arp }}"

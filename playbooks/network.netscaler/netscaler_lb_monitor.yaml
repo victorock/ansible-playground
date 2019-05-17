@@ -116,3 +116,8 @@
     - name: "plugin_netscaler_lb_monitor"
       netscaler_lb_monitor: "{{ netscaler_lb_monitor }}"
       register: r_netscaler_lb_monitor
+
+    - name: "export r_netscaler_lb_monitor"
+      set_stats:
+        data:
+          r_netscaler_lb_monitor: "{{ r_netscaler_lb_monitor }}"

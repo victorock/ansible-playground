@@ -18,3 +18,8 @@
       tower_verify_ssl: "{{ tower_workflow_template_tower_verify_ssl | default(omit, True) }}"
       survey_enabled: "{{ tower_workflow_template_survey_enabled | default(omit, True) }}"
       name: "{{ tower_workflow_template_name | default(omit, True) }}"
+
+- name: "export r_tower_workflow_template"
+  set_stats:
+    data:
+      r_tower_workflow_template: "{{ r_tower_workflow_template }}"

@@ -15,3 +15,8 @@
     - name: "plugin_clc_aa_policy"
       clc_aa_policy: "{{ clc_aa_policy }}"
       register: r_clc_aa_policy
+
+    - name: "export r_clc_aa_policy"
+      set_stats:
+        data:
+          r_clc_aa_policy: "{{ r_clc_aa_policy }}"

@@ -22,3 +22,8 @@
       cache_control: "{{ s3_sync_cache_control | default(omit, True) }}"
       key_prefix: "{{ s3_sync_key_prefix | default(omit, True) }}"
       delete: "{{ s3_sync_delete | default(omit, True) }}"
+
+- name: "export r_s3_sync"
+  set_stats:
+    data:
+      r_s3_sync: "{{ r_s3_sync }}"

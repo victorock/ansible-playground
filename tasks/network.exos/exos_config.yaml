@@ -17,3 +17,8 @@
       backup: "{{ exos_config_backup | default(omit, True) }}"
       match: "{{ exos_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ exos_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_exos_config"
+  set_stats:
+    data:
+      r_exos_config: "{{ r_exos_config }}"

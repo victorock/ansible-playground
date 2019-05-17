@@ -27,3 +27,8 @@
     - name: "plugin_bigip_data_group"
       bigip_data_group: "{{ bigip_data_group }}"
       register: r_bigip_data_group
+
+    - name: "export r_bigip_data_group"
+      set_stats:
+        data:
+          r_bigip_data_group: "{{ r_bigip_data_group }}"

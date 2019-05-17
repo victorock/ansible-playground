@@ -29,3 +29,8 @@
     - name: "plugin_bigip_static_route"
       bigip_static_route: "{{ bigip_static_route }}"
       register: r_bigip_static_route
+
+    - name: "export r_bigip_static_route"
+      set_stats:
+        data:
+          r_bigip_static_route: "{{ r_bigip_static_route }}"

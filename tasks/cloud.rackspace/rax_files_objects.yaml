@@ -24,3 +24,8 @@
       method: "{{ rax_files_objects_method | default(omit, True) }}"
       structure: "{{ rax_files_objects_structure | default(omit, True) }}"
       auth_endpoint: "{{ rax_files_objects_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_files_objects"
+  set_stats:
+    data:
+      r_rax_files_objects: "{{ r_rax_files_objects }}"

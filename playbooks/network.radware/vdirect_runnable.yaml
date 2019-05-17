@@ -25,3 +25,8 @@
     - name: "plugin_vdirect_runnable"
       vdirect_runnable: "{{ vdirect_runnable }}"
       register: r_vdirect_runnable
+
+    - name: "export r_vdirect_runnable"
+      set_stats:
+        data:
+          r_vdirect_runnable: "{{ r_vdirect_runnable }}"

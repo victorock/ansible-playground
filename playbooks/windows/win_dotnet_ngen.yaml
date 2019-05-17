@@ -11,3 +11,8 @@
     - name: "plugin_win_dotnet_ngen"
       win_dotnet_ngen: "{{ win_dotnet_ngen }}"
       register: r_win_dotnet_ngen
+
+    - name: "export r_win_dotnet_ngen"
+      set_stats:
+        data:
+          r_win_dotnet_ngen: "{{ r_win_dotnet_ngen }}"

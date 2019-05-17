@@ -14,3 +14,8 @@
       opendj_bindir: "{{ opendj_backendprop_opendj_bindir | default(omit, True) }}"
       port: "{{ opendj_backendprop_port | default(omit, True) }}"
       backend: "{{ opendj_backendprop_backend | default(omit, True) }}"
+
+- name: "export r_opendj_backendprop"
+  set_stats:
+    data:
+      r_opendj_backendprop: "{{ r_opendj_backendprop }}"

@@ -27,3 +27,8 @@
     - name: "plugin_lightsail"
       lightsail: "{{ lightsail }}"
       register: r_lightsail
+
+    - name: "export r_lightsail"
+      set_stats:
+        data:
+          r_lightsail: "{{ r_lightsail }}"

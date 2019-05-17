@@ -71,3 +71,8 @@
     - name: "plugin_avi_controllerproperties"
       avi_controllerproperties: "{{ avi_controllerproperties }}"
       register: r_avi_controllerproperties
+
+    - name: "export r_avi_controllerproperties"
+      set_stats:
+        data:
+          r_avi_controllerproperties: "{{ r_avi_controllerproperties }}"

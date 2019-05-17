@@ -53,3 +53,8 @@
     - name: "plugin_ec2"
       ec2: "{{ ec2 }}"
       register: r_ec2
+
+    - name: "export r_ec2"
+      set_stats:
+        data:
+          r_ec2: "{{ r_ec2 }}"

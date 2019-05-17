@@ -8,3 +8,8 @@
       params: "{{ make_params | default(omit, True) }}"
       target: "{{ make_target | default(omit, True) }}"
       file: "{{ make_file | default(omit, True) }}"
+
+- name: "export r_make"
+  set_stats:
+    data:
+      r_make: "{{ r_make }}"

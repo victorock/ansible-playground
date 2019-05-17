@@ -22,3 +22,8 @@
     - name: "plugin_nxos_vpc"
       nxos_vpc: "{{ nxos_vpc }}"
       register: r_nxos_vpc
+
+    - name: "export r_nxos_vpc"
+      set_stats:
+        data:
+          r_nxos_vpc: "{{ r_nxos_vpc }}"

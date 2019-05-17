@@ -24,3 +24,8 @@
     - name: "plugin_vca_nat"
       vca_nat: "{{ vca_nat }}"
       register: r_vca_nat
+
+    - name: "export r_vca_nat"
+      set_stats:
+        data:
+          r_vca_nat: "{{ r_vca_nat }}"

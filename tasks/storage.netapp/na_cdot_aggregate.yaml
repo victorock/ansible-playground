@@ -10,3 +10,8 @@
       disk_count: "{{ na_cdot_aggregate_disk_count | default(omit, True) }}"
       state: "{{ na_cdot_aggregate_state | default(omit, True) }}"
       password: "{{ na_cdot_aggregate_password | default(omit, True) }}"
+
+- name: "export r_na_cdot_aggregate"
+  set_stats:
+    data:
+      r_na_cdot_aggregate: "{{ r_na_cdot_aggregate }}"

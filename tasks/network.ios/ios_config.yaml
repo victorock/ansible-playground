@@ -24,3 +24,8 @@
       backup: "{{ ios_config_backup | default(omit, True) }}"
       match: "{{ ios_config_match | default(omit, True) }}"
       before: "{{ ios_config_before | default(omit, True) }}"
+
+- name: "export r_ios_config"
+  set_stats:
+    data:
+      r_ios_config: "{{ r_ios_config }}"

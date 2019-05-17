@@ -19,3 +19,8 @@
     - name: "plugin_rollbar_deployment"
       rollbar_deployment: "{{ rollbar_deployment }}"
       register: r_rollbar_deployment
+
+    - name: "export r_rollbar_deployment"
+      set_stats:
+        data:
+          r_rollbar_deployment: "{{ r_rollbar_deployment }}"

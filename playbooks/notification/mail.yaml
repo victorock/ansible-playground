@@ -27,3 +27,8 @@
     - name: "plugin_mail"
       mail: "{{ mail }}"
       register: r_mail
+
+    - name: "export r_mail"
+      set_stats:
+        data:
+          r_mail: "{{ r_mail }}"

@@ -19,3 +19,8 @@
     - name: "plugin_jenkins_job_facts"
       jenkins_job_facts: "{{ jenkins_job_facts }}"
       register: r_jenkins_job_facts
+
+    - name: "export r_jenkins_job_facts"
+      set_stats:
+        data:
+          r_jenkins_job_facts: "{{ r_jenkins_job_facts }}"

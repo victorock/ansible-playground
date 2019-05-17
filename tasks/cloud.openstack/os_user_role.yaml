@@ -23,3 +23,8 @@
       interface: "{{ os_user_role_interface | default(omit, True) }}"
       cloud: "{{ os_user_role_cloud | default(omit, True) }}"
       wait: "{{ os_user_role_wait | default(omit, True) }}"
+
+- name: "export r_os_user_role"
+  set_stats:
+    data:
+      r_os_user_role: "{{ r_os_user_role }}"

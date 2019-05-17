@@ -7,3 +7,8 @@
       config: "{{ oneview_logical_interconnect_group_facts_config | default(omit, True) }}"
       params: "{{ oneview_logical_interconnect_group_facts_params | default(omit, True) }}"
       name: "{{ oneview_logical_interconnect_group_facts_name | default(omit, True) }}"
+
+- name: "export r_oneview_logical_interconnect_group_facts"
+  set_stats:
+    data:
+      r_oneview_logical_interconnect_group_facts: "{{ r_oneview_logical_interconnect_group_facts }}"

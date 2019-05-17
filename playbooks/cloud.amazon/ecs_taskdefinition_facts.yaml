@@ -19,3 +19,8 @@
     - name: "plugin_ecs_taskdefinition_facts"
       ecs_taskdefinition_facts: "{{ ecs_taskdefinition_facts }}"
       register: r_ecs_taskdefinition_facts
+
+    - name: "export r_ecs_taskdefinition_facts"
+      set_stats:
+        data:
+          r_ecs_taskdefinition_facts: "{{ r_ecs_taskdefinition_facts }}"

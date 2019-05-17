@@ -11,3 +11,8 @@
     - name: "plugin_ohai"
       ohai: "{{ ohai }}"
       register: r_ohai
+
+    - name: "export r_ohai"
+      set_stats:
+        data:
+          r_ohai: "{{ r_ohai }}"

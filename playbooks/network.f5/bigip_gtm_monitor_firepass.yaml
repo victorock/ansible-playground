@@ -33,3 +33,8 @@
     - name: "plugin_bigip_gtm_monitor_firepass"
       bigip_gtm_monitor_firepass: "{{ bigip_gtm_monitor_firepass }}"
       register: r_bigip_gtm_monitor_firepass
+
+    - name: "export r_bigip_gtm_monitor_firepass"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_firepass: "{{ r_bigip_gtm_monitor_firepass }}"

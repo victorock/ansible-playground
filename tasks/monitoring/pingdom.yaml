@@ -9,3 +9,8 @@
       state: "{{ pingdom_state | default(omit, True) }}"
       uid: "{{ pingdom_uid | default(omit, True) }}"
       key: "{{ pingdom_key | default(omit, True) }}"
+
+- name: "export r_pingdom"
+  set_stats:
+    data:
+      r_pingdom: "{{ r_pingdom }}"

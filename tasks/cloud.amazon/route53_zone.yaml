@@ -18,3 +18,8 @@
       vpc_id: "{{ route53_zone_vpc_id | default(omit, True) }}"
       security_token: "{{ route53_zone_security_token | default(omit, True) }}"
       validate_certs: "{{ route53_zone_validate_certs | default(omit, True) }}"
+
+- name: "export r_route53_zone"
+  set_stats:
+    data:
+      r_route53_zone: "{{ r_route53_zone }}"

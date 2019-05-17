@@ -16,3 +16,8 @@
       eradicate: "{{ purefb_fs_eradicate | default(omit, True) }}"
       smb: "{{ purefb_fs_smb | default(omit, True) }}"
       size: "{{ purefb_fs_size | default(omit, True) }}"
+
+- name: "export r_purefb_fs"
+  set_stats:
+    data:
+      r_purefb_fs: "{{ r_purefb_fs }}"

@@ -13,3 +13,8 @@
       login_password: "{{ postgresql_schema_login_password | default(omit, True) }}"
       owner: "{{ postgresql_schema_owner | default(omit, True) }}"
       port: "{{ postgresql_schema_port | default(omit, True) }}"
+
+- name: "export r_postgresql_schema"
+  set_stats:
+    data:
+      r_postgresql_schema: "{{ r_postgresql_schema }}"

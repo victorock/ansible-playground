@@ -22,3 +22,8 @@
     - name: "plugin_rabbitmq_binding"
       rabbitmq_binding: "{{ rabbitmq_binding }}"
       register: r_rabbitmq_binding
+
+    - name: "export r_rabbitmq_binding"
+      set_stats:
+        data:
+          r_rabbitmq_binding: "{{ r_rabbitmq_binding }}"

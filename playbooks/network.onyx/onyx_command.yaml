@@ -17,3 +17,8 @@
     - name: "plugin_onyx_command"
       onyx_command: "{{ onyx_command }}"
       register: r_onyx_command
+
+    - name: "export r_onyx_command"
+      set_stats:
+        data:
+          r_onyx_command: "{{ r_onyx_command }}"

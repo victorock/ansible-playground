@@ -12,3 +12,8 @@
       password: "{{ vmware_vmkernel_ip_config_password | default(omit, True) }}"
       validate_certs: "{{ vmware_vmkernel_ip_config_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vmkernel_ip_config_port | default(omit, True) }}"
+
+- name: "export r_vmware_vmkernel_ip_config"
+  set_stats:
+    data:
+      r_vmware_vmkernel_ip_config: "{{ r_vmware_vmkernel_ip_config }}"

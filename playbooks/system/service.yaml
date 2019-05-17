@@ -19,3 +19,8 @@
     - name: "plugin_service"
       service: "{{ service }}"
       register: r_service
+
+    - name: "export r_service"
+      set_stats:
+        data:
+          r_service: "{{ r_service }}"

@@ -15,3 +15,8 @@
     - name: "plugin_cnos_facts"
       cnos_facts: "{{ cnos_facts }}"
       register: r_cnos_facts
+
+    - name: "export r_cnos_facts"
+      set_stats:
+        data:
+          r_cnos_facts: "{{ r_cnos_facts }}"

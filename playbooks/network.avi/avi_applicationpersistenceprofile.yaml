@@ -34,3 +34,8 @@
     - name: "plugin_avi_applicationpersistenceprofile"
       avi_applicationpersistenceprofile: "{{ avi_applicationpersistenceprofile }}"
       register: r_avi_applicationpersistenceprofile
+
+    - name: "export r_avi_applicationpersistenceprofile"
+      set_stats:
+        data:
+          r_avi_applicationpersistenceprofile: "{{ r_avi_applicationpersistenceprofile }}"

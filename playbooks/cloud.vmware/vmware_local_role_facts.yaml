@@ -16,3 +16,8 @@
     - name: "plugin_vmware_local_role_facts"
       vmware_local_role_facts: "{{ vmware_local_role_facts }}"
       register: r_vmware_local_role_facts
+
+    - name: "export r_vmware_local_role_facts"
+      set_stats:
+        data:
+          r_vmware_local_role_facts: "{{ r_vmware_local_role_facts }}"

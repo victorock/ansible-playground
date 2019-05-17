@@ -17,3 +17,8 @@
     - name: "plugin_emc_vnx_sg_member"
       emc_vnx_sg_member: "{{ emc_vnx_sg_member }}"
       register: r_emc_vnx_sg_member
+
+    - name: "export r_emc_vnx_sg_member"
+      set_stats:
+        data:
+          r_emc_vnx_sg_member: "{{ r_emc_vnx_sg_member }}"

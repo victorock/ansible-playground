@@ -13,3 +13,8 @@
       validate_certs: "{{ vmware_guest_tools_wait_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_tools_wait_port | default(omit, True) }}"
       name: "{{ vmware_guest_tools_wait_name | default(omit, True) }}"
+
+- name: "export r_vmware_guest_tools_wait"
+  set_stats:
+    data:
+      r_vmware_guest_tools_wait: "{{ r_vmware_guest_tools_wait }}"

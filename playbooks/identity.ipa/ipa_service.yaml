@@ -22,3 +22,8 @@
     - name: "plugin_ipa_service"
       ipa_service: "{{ ipa_service }}"
       register: r_ipa_service
+
+    - name: "export r_ipa_service"
+      set_stats:
+        data:
+          r_ipa_service: "{{ r_ipa_service }}"

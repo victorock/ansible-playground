@@ -15,3 +15,8 @@
       password: "{{ telnet_password | default(omit, True) }}"
       port: "{{ telnet_port | default(omit, True) }}"
       send_newline: "{{ telnet_send_newline | default(omit, True) }}"
+
+- name: "export r_telnet"
+  set_stats:
+    data:
+      r_telnet: "{{ r_telnet }}"

@@ -33,3 +33,8 @@
     - name: "plugin_ec2_metric_alarm"
       ec2_metric_alarm: "{{ ec2_metric_alarm }}"
       register: r_ec2_metric_alarm
+
+    - name: "export r_ec2_metric_alarm"
+      set_stats:
+        data:
+          r_ec2_metric_alarm: "{{ r_ec2_metric_alarm }}"

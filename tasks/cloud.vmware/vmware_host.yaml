@@ -18,3 +18,8 @@
       password: "{{ vmware_host_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_validate_certs | default(omit, True) }}"
       port: "{{ vmware_host_port | default(omit, True) }}"
+
+- name: "export r_vmware_host"
+  set_stats:
+    data:
+      r_vmware_host: "{{ r_vmware_host }}"

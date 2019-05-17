@@ -23,3 +23,8 @@
     - name: "plugin_bigip_snmp"
       bigip_snmp: "{{ bigip_snmp }}"
       register: r_bigip_snmp
+
+    - name: "export r_bigip_snmp"
+      set_stats:
+        data:
+          r_bigip_snmp: "{{ r_bigip_snmp }}"

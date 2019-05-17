@@ -31,3 +31,8 @@
     - name: "plugin_aci_l3out"
       aci_l3out: "{{ aci_l3out }}"
       register: r_aci_l3out
+
+    - name: "export r_aci_l3out"
+      set_stats:
+        data:
+          r_aci_l3out: "{{ r_aci_l3out }}"

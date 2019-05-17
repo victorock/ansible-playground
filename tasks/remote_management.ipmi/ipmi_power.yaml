@@ -10,3 +10,8 @@
       timeout: "{{ ipmi_power_timeout | default(omit, True) }}"
       password: "{{ ipmi_power_password | default(omit, True) }}"
       port: "{{ ipmi_power_port | default(omit, True) }}"
+
+- name: "export r_ipmi_power"
+  set_stats:
+    data:
+      r_ipmi_power: "{{ r_ipmi_power }}"

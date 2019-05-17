@@ -21,3 +21,8 @@
     - name: "plugin_nios_ptr_record"
       nios_ptr_record: "{{ nios_ptr_record }}"
       register: r_nios_ptr_record
+
+    - name: "export r_nios_ptr_record"
+      set_stats:
+        data:
+          r_nios_ptr_record: "{{ r_nios_ptr_record }}"

@@ -23,3 +23,8 @@
     - name: "plugin_nxos_vrf"
       nxos_vrf: "{{ nxos_vrf }}"
       register: r_nxos_vrf
+
+    - name: "export r_nxos_vrf"
+      set_stats:
+        data:
+          r_nxos_vrf: "{{ r_nxos_vrf }}"

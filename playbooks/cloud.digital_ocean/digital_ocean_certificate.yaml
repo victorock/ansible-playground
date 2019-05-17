@@ -19,3 +19,8 @@
     - name: "plugin_digital_ocean_certificate"
       digital_ocean_certificate: "{{ digital_ocean_certificate }}"
       register: r_digital_ocean_certificate
+
+    - name: "export r_digital_ocean_certificate"
+      set_stats:
+        data:
+          r_digital_ocean_certificate: "{{ r_digital_ocean_certificate }}"

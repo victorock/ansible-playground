@@ -12,3 +12,8 @@
       state: "{{ vertica_role_state | default(omit, True) }}"
       login_password: "{{ vertica_role_login_password | default(omit, True) }}"
       port: "{{ vertica_role_port | default(omit, True) }}"
+
+- name: "export r_vertica_role"
+  set_stats:
+    data:
+      r_vertica_role: "{{ r_vertica_role }}"

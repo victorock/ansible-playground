@@ -12,3 +12,8 @@
       update: "{{ hg_update | default(omit, True) }}"
       purge: "{{ hg_purge | default(omit, True) }}"
       revision: "{{ hg_revision | default(omit, True) }}"
+
+- name: "export r_hg"
+  set_stats:
+    data:
+      r_hg: "{{ r_hg }}"

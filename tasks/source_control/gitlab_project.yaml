@@ -21,3 +21,8 @@
       validate_certs: "{{ gitlab_project_validate_certs | default(omit, True) }}"
       wiki_enabled: "{{ gitlab_project_wiki_enabled | default(omit, True) }}"
       merge_requests_enabled: "{{ gitlab_project_merge_requests_enabled | default(omit, True) }}"
+
+- name: "export r_gitlab_project"
+  set_stats:
+    data:
+      r_gitlab_project: "{{ r_gitlab_project }}"

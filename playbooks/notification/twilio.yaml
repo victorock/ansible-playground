@@ -17,3 +17,8 @@
     - name: "plugin_twilio"
       twilio: "{{ twilio }}"
       register: r_twilio
+
+    - name: "export r_twilio"
+      set_stats:
+        data:
+          r_twilio: "{{ r_twilio }}"

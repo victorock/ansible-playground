@@ -12,3 +12,8 @@
     - name: "plugin_win_webpicmd"
       win_webpicmd: "{{ win_webpicmd }}"
       register: r_win_webpicmd
+
+    - name: "export r_win_webpicmd"
+      set_stats:
+        data:
+          r_win_webpicmd: "{{ r_win_webpicmd }}"

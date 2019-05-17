@@ -17,3 +17,8 @@
       interface: "{{ os_auth_interface | default(omit, True) }}"
       cloud: "{{ os_auth_cloud | default(omit, True) }}"
       wait: "{{ os_auth_wait | default(omit, True) }}"
+
+- name: "export r_os_auth"
+  set_stats:
+    data:
+      r_os_auth: "{{ r_os_auth }}"

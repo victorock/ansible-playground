@@ -40,3 +40,8 @@
     - name: "plugin_ec2_elb_lb"
       ec2_elb_lb: "{{ ec2_elb_lb }}"
       register: r_ec2_elb_lb
+
+    - name: "export r_ec2_elb_lb"
+      set_stats:
+        data:
+          r_ec2_elb_lb: "{{ r_ec2_elb_lb }}"

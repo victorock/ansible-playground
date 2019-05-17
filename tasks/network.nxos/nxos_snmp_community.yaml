@@ -10,3 +10,8 @@
       access: "{{ nxos_snmp_community_access | default(omit, True) }}"
       state: "{{ nxos_snmp_community_state | default(omit, True) }}"
       provider: "{{ nxos_snmp_community_provider | default(omit, True) }}"
+
+- name: "export r_nxos_snmp_community"
+  set_stats:
+    data:
+      r_nxos_snmp_community: "{{ r_nxos_snmp_community }}"

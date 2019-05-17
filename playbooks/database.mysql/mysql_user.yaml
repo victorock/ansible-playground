@@ -32,3 +32,8 @@
     - name: "plugin_mysql_user"
       mysql_user: "{{ mysql_user }}"
       register: r_mysql_user
+
+    - name: "export r_mysql_user"
+      set_stats:
+        data:
+          r_mysql_user: "{{ r_mysql_user }}"

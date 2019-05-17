@@ -21,3 +21,8 @@
     - name: "plugin_lambda_facts"
       lambda_facts: "{{ lambda_facts }}"
       register: r_lambda_facts
+
+    - name: "export r_lambda_facts"
+      set_stats:
+        data:
+          r_lambda_facts: "{{ r_lambda_facts }}"

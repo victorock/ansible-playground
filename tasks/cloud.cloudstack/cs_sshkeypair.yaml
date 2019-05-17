@@ -16,3 +16,8 @@
       state: "{{ cs_sshkeypair_state | default(omit, True) }}"
       api_key: "{{ cs_sshkeypair_api_key | default(omit, True) }}"
       api_url: "{{ cs_sshkeypair_api_url | default(omit, True) }}"
+
+- name: "export r_cs_sshkeypair"
+  set_stats:
+    data:
+      r_cs_sshkeypair: "{{ r_cs_sshkeypair }}"

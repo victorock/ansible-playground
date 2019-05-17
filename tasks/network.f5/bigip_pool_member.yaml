@@ -25,3 +25,8 @@
       reuse_nodes: "{{ bigip_pool_member_reuse_nodes | default(omit, True) }}"
       pool: "{{ bigip_pool_member_pool | default(omit, True) }}"
       name: "{{ bigip_pool_member_name | default(omit, True) }}"
+
+- name: "export r_bigip_pool_member"
+  set_stats:
+    data:
+      r_bigip_pool_member: "{{ r_bigip_pool_member }}"

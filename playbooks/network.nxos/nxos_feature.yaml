@@ -14,3 +14,8 @@
     - name: "plugin_nxos_feature"
       nxos_feature: "{{ nxos_feature }}"
       register: r_nxos_feature
+
+    - name: "export r_nxos_feature"
+      set_stats:
+        data:
+          r_nxos_feature: "{{ r_nxos_feature }}"

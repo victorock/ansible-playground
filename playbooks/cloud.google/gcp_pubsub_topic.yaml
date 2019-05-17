@@ -18,3 +18,8 @@
     - name: "plugin_gcp_pubsub_topic"
       gcp_pubsub_topic: "{{ gcp_pubsub_topic }}"
       register: r_gcp_pubsub_topic
+
+    - name: "export r_gcp_pubsub_topic"
+      set_stats:
+        data:
+          r_gcp_pubsub_topic: "{{ r_gcp_pubsub_topic }}"

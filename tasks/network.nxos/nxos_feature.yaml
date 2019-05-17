@@ -7,3 +7,8 @@
       state: "{{ nxos_feature_state | default(omit, True) }}"
       feature: "{{ nxos_feature_feature | default(omit, True) }}"
       provider: "{{ nxos_feature_provider | default(omit, True) }}"
+
+- name: "export r_nxos_feature"
+  set_stats:
+    data:
+      r_nxos_feature: "{{ r_nxos_feature }}"

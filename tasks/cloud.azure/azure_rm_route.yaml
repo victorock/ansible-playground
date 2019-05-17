@@ -25,3 +25,8 @@
       password: "{{ azure_rm_route_password | default(omit, True) }}"
       next_hop_ip_address: "{{ azure_rm_route_next_hop_ip_address | default(omit, True) }}"
       tenant: "{{ azure_rm_route_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_route"
+  set_stats:
+    data:
+      r_azure_rm_route: "{{ r_azure_rm_route }}"

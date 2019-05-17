@@ -22,3 +22,8 @@
     - name: "plugin_aws_config_aggregator"
       aws_config_aggregator: "{{ aws_config_aggregator }}"
       register: r_aws_config_aggregator
+
+    - name: "export r_aws_config_aggregator"
+      set_stats:
+        data:
+          r_aws_config_aggregator: "{{ r_aws_config_aggregator }}"

@@ -38,3 +38,8 @@
     - name: "plugin_avi_sslkeyandcertificate"
       avi_sslkeyandcertificate: "{{ avi_sslkeyandcertificate }}"
       register: r_avi_sslkeyandcertificate
+
+    - name: "export r_avi_sslkeyandcertificate"
+      set_stats:
+        data:
+          r_avi_sslkeyandcertificate: "{{ r_avi_sslkeyandcertificate }}"

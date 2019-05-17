@@ -23,3 +23,8 @@
     - name: "plugin_cnos_config"
       cnos_config: "{{ cnos_config }}"
       register: r_cnos_config
+
+    - name: "export r_cnos_config"
+      set_stats:
+        data:
+          r_cnos_config: "{{ r_cnos_config }}"

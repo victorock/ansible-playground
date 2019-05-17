@@ -10,3 +10,8 @@
       deviceType: "{{ cnos_reload_deviceType | default(omit, True) }}"
       password: "{{ cnos_reload_password | default(omit, True) }}"
       enablePassword: "{{ cnos_reload_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_reload"
+  set_stats:
+    data:
+      r_cnos_reload: "{{ r_cnos_reload }}"

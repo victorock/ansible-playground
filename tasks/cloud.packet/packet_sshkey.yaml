@@ -11,3 +11,8 @@
       fingerprint: "{{ packet_sshkey_fingerprint | default(omit, True) }}"
       key_file: "{{ packet_sshkey_key_file | default(omit, True) }}"
       id: "{{ packet_sshkey_id | default(omit, True) }}"
+
+- name: "export r_packet_sshkey"
+  set_stats:
+    data:
+      r_packet_sshkey: "{{ r_packet_sshkey }}"

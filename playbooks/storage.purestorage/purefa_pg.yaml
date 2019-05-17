@@ -20,3 +20,8 @@
     - name: "plugin_purefa_pg"
       purefa_pg: "{{ purefa_pg }}"
       register: r_purefa_pg
+
+    - name: "export r_purefa_pg"
+      set_stats:
+        data:
+          r_purefa_pg: "{{ r_purefa_pg }}"

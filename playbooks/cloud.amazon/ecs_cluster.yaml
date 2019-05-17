@@ -22,3 +22,8 @@
     - name: "plugin_ecs_cluster"
       ecs_cluster: "{{ ecs_cluster }}"
       register: r_ecs_cluster
+
+    - name: "export r_ecs_cluster"
+      set_stats:
+        data:
+          r_ecs_cluster: "{{ r_ecs_cluster }}"

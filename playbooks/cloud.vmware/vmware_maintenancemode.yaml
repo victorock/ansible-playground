@@ -21,3 +21,8 @@
     - name: "plugin_vmware_maintenancemode"
       vmware_maintenancemode: "{{ vmware_maintenancemode }}"
       register: r_vmware_maintenancemode
+
+    - name: "export r_vmware_maintenancemode"
+      set_stats:
+        data:
+          r_vmware_maintenancemode: "{{ r_vmware_maintenancemode }}"

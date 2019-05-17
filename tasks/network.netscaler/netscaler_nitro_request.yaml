@@ -21,3 +21,8 @@
       validate_certs: "{{ netscaler_nitro_request_validate_certs | default(omit, True) }}"
       operation: "{{ netscaler_nitro_request_operation | default(omit, True) }}"
       nitro_auth_token: "{{ netscaler_nitro_request_nitro_auth_token | default(omit, True) }}"
+
+- name: "export r_netscaler_nitro_request"
+  set_stats:
+    data:
+      r_netscaler_nitro_request: "{{ r_netscaler_nitro_request }}"

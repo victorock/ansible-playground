@@ -11,3 +11,8 @@
       state: "{{ win_domain_computer_state | default(omit, True) }}"
       ou: "{{ win_domain_computer_ou | default(omit, True) }}"
       name: "{{ win_domain_computer_name | default(omit, True) }}"
+
+- name: "export r_win_domain_computer"
+  set_stats:
+    data:
+      r_win_domain_computer: "{{ r_win_domain_computer }}"

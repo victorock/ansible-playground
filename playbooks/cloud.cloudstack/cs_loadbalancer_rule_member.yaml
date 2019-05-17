@@ -25,3 +25,8 @@
     - name: "plugin_cs_loadbalancer_rule_member"
       cs_loadbalancer_rule_member: "{{ cs_loadbalancer_rule_member }}"
       register: r_cs_loadbalancer_rule_member
+
+    - name: "export r_cs_loadbalancer_rule_member"
+      set_stats:
+        data:
+          r_cs_loadbalancer_rule_member: "{{ r_cs_loadbalancer_rule_member }}"

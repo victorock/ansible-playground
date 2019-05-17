@@ -9,3 +9,8 @@
       stratum: "{{ nxos_ntp_options_stratum | default(omit, True) }}"
       master: "{{ nxos_ntp_options_master | default(omit, True) }}"
       provider: "{{ nxos_ntp_options_provider | default(omit, True) }}"
+
+- name: "export r_nxos_ntp_options"
+  set_stats:
+    data:
+      r_nxos_ntp_options: "{{ r_nxos_ntp_options }}"

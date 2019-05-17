@@ -24,3 +24,8 @@
     - name: "plugin_acme_account"
       acme_account: "{{ acme_account }}"
       register: r_acme_account
+
+    - name: "export r_acme_account"
+      set_stats:
+        data:
+          r_acme_account: "{{ r_acme_account }}"

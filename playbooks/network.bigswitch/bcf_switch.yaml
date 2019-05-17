@@ -19,3 +19,8 @@
     - name: "plugin_bcf_switch"
       bcf_switch: "{{ bcf_switch }}"
       register: r_bcf_switch
+
+    - name: "export r_bcf_switch"
+      set_stats:
+        data:
+          r_bcf_switch: "{{ r_bcf_switch }}"

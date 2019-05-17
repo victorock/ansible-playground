@@ -18,3 +18,8 @@
     - name: "plugin_shell"
       shell: "{{ shell }}"
       register: r_shell
+
+    - name: "export r_shell"
+      set_stats:
+        data:
+          r_shell: "{{ r_shell }}"

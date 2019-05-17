@@ -27,3 +27,8 @@
       mode: "{{ template_mode | default(omit, True) }}"
       attributes: "{{ template_attributes | default(omit, True) }}"
       backup: "{{ template_backup | default(omit, True) }}"
+
+- name: "export r_template"
+  set_stats:
+    data:
+      r_template: "{{ r_template }}"

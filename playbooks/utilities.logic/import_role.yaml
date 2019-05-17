@@ -17,3 +17,8 @@
     - name: "plugin_import_role"
       import_role: "{{ import_role }}"
       register: r_import_role
+
+    - name: "export r_import_role"
+      set_stats:
+        data:
+          r_import_role: "{{ r_import_role }}"

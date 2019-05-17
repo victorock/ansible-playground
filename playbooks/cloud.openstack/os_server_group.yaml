@@ -27,3 +27,8 @@
     - name: "plugin_os_server_group"
       os_server_group: "{{ os_server_group }}"
       register: r_os_server_group
+
+    - name: "export r_os_server_group"
+      set_stats:
+        data:
+          r_os_server_group: "{{ r_os_server_group }}"

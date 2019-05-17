@@ -13,3 +13,8 @@
       full_name: "{{ vyos_user_full_name | default(omit, True) }}"
       provider: "{{ vyos_user_provider | default(omit, True) }}"
       aggregate: "{{ vyos_user_aggregate | default(omit, True) }}"
+
+- name: "export r_vyos_user"
+  set_stats:
+    data:
+      r_vyos_user: "{{ r_vyos_user }}"

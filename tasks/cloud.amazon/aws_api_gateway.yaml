@@ -18,3 +18,8 @@
       swagger_text: "{{ aws_api_gateway_swagger_text | default(omit, True) }}"
       validate_certs: "{{ aws_api_gateway_validate_certs | default(omit, True) }}"
       stage: "{{ aws_api_gateway_stage | default(omit, True) }}"
+
+- name: "export r_aws_api_gateway"
+  set_stats:
+    data:
+      r_aws_api_gateway: "{{ r_aws_api_gateway }}"

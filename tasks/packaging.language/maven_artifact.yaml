@@ -27,3 +27,8 @@
       group_id: "{{ maven_artifact_group_id | default(omit, True) }}"
       verify_checksum: "{{ maven_artifact_verify_checksum | default(omit, True) }}"
       classifier: "{{ maven_artifact_classifier | default(omit, True) }}"
+
+- name: "export r_maven_artifact"
+  set_stats:
+    data:
+      r_maven_artifact: "{{ r_maven_artifact }}"

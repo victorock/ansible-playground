@@ -30,3 +30,8 @@
     - name: "plugin_bigip_device_httpd"
       bigip_device_httpd: "{{ bigip_device_httpd }}"
       register: r_bigip_device_httpd
+
+    - name: "export r_bigip_device_httpd"
+      set_stats:
+        data:
+          r_bigip_device_httpd: "{{ r_bigip_device_httpd }}"

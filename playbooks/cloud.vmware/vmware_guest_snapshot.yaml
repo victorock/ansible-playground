@@ -29,3 +29,8 @@
     - name: "plugin_vmware_guest_snapshot"
       vmware_guest_snapshot: "{{ vmware_guest_snapshot }}"
       register: r_vmware_guest_snapshot
+
+    - name: "export r_vmware_guest_snapshot"
+      set_stats:
+        data:
+          r_vmware_guest_snapshot: "{{ r_vmware_guest_snapshot }}"

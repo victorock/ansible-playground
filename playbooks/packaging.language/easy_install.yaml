@@ -17,3 +17,8 @@
     - name: "plugin_easy_install"
       easy_install: "{{ easy_install }}"
       register: r_easy_install
+
+    - name: "export r_easy_install"
+      set_stats:
+        data:
+          r_easy_install: "{{ r_easy_install }}"

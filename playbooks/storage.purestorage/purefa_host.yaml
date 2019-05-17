@@ -20,3 +20,8 @@
     - name: "plugin_purefa_host"
       purefa_host: "{{ purefa_host }}"
       register: r_purefa_host
+
+    - name: "export r_purefa_host"
+      set_stats:
+        data:
+          r_purefa_host: "{{ r_purefa_host }}"

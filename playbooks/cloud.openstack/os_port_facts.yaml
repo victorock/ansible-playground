@@ -26,3 +26,8 @@
     - name: "plugin_os_port_facts"
       os_port_facts: "{{ os_port_facts }}"
       register: r_os_port_facts
+
+    - name: "export r_os_port_facts"
+      set_stats:
+        data:
+          r_os_port_facts: "{{ r_os_port_facts }}"

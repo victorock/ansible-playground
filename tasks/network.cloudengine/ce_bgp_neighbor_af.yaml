@@ -56,3 +56,8 @@
       default_rt_adv_policy: "{{ ce_bgp_neighbor_af_default_rt_adv_policy | default(omit, True) }}"
       preferred_value: "{{ ce_bgp_neighbor_af_preferred_value | default(omit, True) }}"
       rt_updt_interval: "{{ ce_bgp_neighbor_af_rt_updt_interval | default(omit, True) }}"
+
+- name: "export r_ce_bgp_neighbor_af"
+  set_stats:
+    data:
+      r_ce_bgp_neighbor_af: "{{ r_ce_bgp_neighbor_af }}"

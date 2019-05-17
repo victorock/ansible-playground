@@ -22,3 +22,8 @@
     - name: "plugin_ce_static_route"
       ce_static_route: "{{ ce_static_route }}"
       register: r_ce_static_route
+
+    - name: "export r_ce_static_route"
+      set_stats:
+        data:
+          r_ce_static_route: "{{ r_ce_static_route }}"

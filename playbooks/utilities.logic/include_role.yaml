@@ -19,3 +19,8 @@
     - name: "plugin_include_role"
       include_role: "{{ include_role }}"
       register: r_include_role
+
+    - name: "export r_include_role"
+      set_stats:
+        data:
+          r_include_role: "{{ r_include_role }}"

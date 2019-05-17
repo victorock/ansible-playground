@@ -17,3 +17,8 @@
       view: "{{ ios_user_view | default(omit, True) }}"
       privilege: "{{ ios_user_privilege | default(omit, True) }}"
       name: "{{ ios_user_name | default(omit, True) }}"
+
+- name: "export r_ios_user"
+  set_stats:
+    data:
+      r_ios_user: "{{ r_ios_user }}"

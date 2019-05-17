@@ -12,3 +12,8 @@
       dfs_group_id: "{{ ce_mlag_interface_dfs_group_id | default(omit, True) }}"
       interface: "{{ ce_mlag_interface_interface | default(omit, True) }}"
       mlag_priority_id: "{{ ce_mlag_interface_mlag_priority_id | default(omit, True) }}"
+
+- name: "export r_ce_mlag_interface"
+  set_stats:
+    data:
+      r_ce_mlag_interface: "{{ r_ce_mlag_interface }}"

@@ -60,3 +60,8 @@
     - name: "plugin_udm_user"
       udm_user: "{{ udm_user }}"
       register: r_udm_user
+
+    - name: "export r_udm_user"
+      set_stats:
+        data:
+          r_udm_user: "{{ r_udm_user }}"

@@ -31,3 +31,8 @@
     - name: "plugin_blockinfile"
       blockinfile: "{{ blockinfile }}"
       register: r_blockinfile
+
+    - name: "export r_blockinfile"
+      set_stats:
+        data:
+          r_blockinfile: "{{ r_blockinfile }}"

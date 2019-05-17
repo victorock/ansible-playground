@@ -33,3 +33,8 @@
     - name: "plugin_uri"
       uri: "{{ uri }}"
       register: r_uri
+
+    - name: "export r_uri"
+      set_stats:
+        data:
+          r_uri: "{{ r_uri }}"

@@ -17,3 +17,8 @@
     - name: "plugin_nios_dns_view"
       nios_dns_view: "{{ nios_dns_view }}"
       register: r_nios_dns_view
+
+    - name: "export r_nios_dns_view"
+      set_stats:
+        data:
+          r_nios_dns_view: "{{ r_nios_dns_view }}"

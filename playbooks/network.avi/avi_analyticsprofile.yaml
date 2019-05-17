@@ -91,3 +91,8 @@
     - name: "plugin_avi_analyticsprofile"
       avi_analyticsprofile: "{{ avi_analyticsprofile }}"
       register: r_avi_analyticsprofile
+
+    - name: "export r_avi_analyticsprofile"
+      set_stats:
+        data:
+          r_avi_analyticsprofile: "{{ r_avi_analyticsprofile }}"

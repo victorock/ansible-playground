@@ -25,3 +25,8 @@
       port: "{{ vmware_deploy_ovf_port | default(omit, True) }}"
       datastore: "{{ vmware_deploy_ovf_datastore | default(omit, True) }}"
       wait_for_ip_address: "{{ vmware_deploy_ovf_wait_for_ip_address | default(omit, True) }}"
+
+- name: "export r_vmware_deploy_ovf"
+  set_stats:
+    data:
+      r_vmware_deploy_ovf: "{{ r_vmware_deploy_ovf }}"

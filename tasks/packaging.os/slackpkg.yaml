@@ -7,3 +7,8 @@
       state: "{{ slackpkg_state | default(omit, True) }}"
       update_cache: "{{ slackpkg_update_cache | default(omit, True) }}"
       name: "{{ slackpkg_name | default(omit, True) }}"
+
+- name: "export r_slackpkg"
+  set_stats:
+    data:
+      r_slackpkg: "{{ r_slackpkg }}"

@@ -30,3 +30,8 @@
     - name: "plugin_cs_vpc"
       cs_vpc: "{{ cs_vpc }}"
       register: r_cs_vpc
+
+    - name: "export r_cs_vpc"
+      set_stats:
+        data:
+          r_cs_vpc: "{{ r_cs_vpc }}"

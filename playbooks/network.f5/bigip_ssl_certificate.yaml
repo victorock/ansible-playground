@@ -22,3 +22,8 @@
     - name: "plugin_bigip_ssl_certificate"
       bigip_ssl_certificate: "{{ bigip_ssl_certificate }}"
       register: r_bigip_ssl_certificate
+
+    - name: "export r_bigip_ssl_certificate"
+      set_stats:
+        data:
+          r_bigip_ssl_certificate: "{{ r_bigip_ssl_certificate }}"

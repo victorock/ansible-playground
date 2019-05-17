@@ -19,3 +19,8 @@
       password: "{{ na_ontap_net_port_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_net_port_validate_certs | default(omit, True) }}"
       port: "{{ na_ontap_net_port_port | default(omit, True) }}"
+
+- name: "export r_na_ontap_net_port"
+  set_stats:
+    data:
+      r_na_ontap_net_port: "{{ r_na_ontap_net_port }}"

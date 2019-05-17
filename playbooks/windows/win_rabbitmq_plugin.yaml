@@ -15,3 +15,8 @@
     - name: "plugin_win_rabbitmq_plugin"
       win_rabbitmq_plugin: "{{ win_rabbitmq_plugin }}"
       register: r_win_rabbitmq_plugin
+
+    - name: "export r_win_rabbitmq_plugin"
+      set_stats:
+        data:
+          r_win_rabbitmq_plugin: "{{ r_win_rabbitmq_plugin }}"

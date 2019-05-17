@@ -28,3 +28,8 @@
     - name: "plugin_aci_vrf"
       aci_vrf: "{{ aci_vrf }}"
       register: r_aci_vrf
+
+    - name: "export r_aci_vrf"
+      set_stats:
+        data:
+          r_aci_vrf: "{{ r_aci_vrf }}"

@@ -18,3 +18,8 @@
     - name: "plugin_vmware_guest_custom_attribute_defs"
       vmware_guest_custom_attribute_defs: "{{ vmware_guest_custom_attribute_defs }}"
       register: r_vmware_guest_custom_attribute_defs
+
+    - name: "export r_vmware_guest_custom_attribute_defs"
+      set_stats:
+        data:
+          r_vmware_guest_custom_attribute_defs: "{{ r_vmware_guest_custom_attribute_defs }}"

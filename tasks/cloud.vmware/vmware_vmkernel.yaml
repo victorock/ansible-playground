@@ -22,3 +22,8 @@
       port: "{{ vmware_vmkernel_port | default(omit, True) }}"
       vlan_id: "{{ vmware_vmkernel_vlan_id | default(omit, True) }}"
       enable_ft: "{{ vmware_vmkernel_enable_ft | default(omit, True) }}"
+
+- name: "export r_vmware_vmkernel"
+  set_stats:
+    data:
+      r_vmware_vmkernel: "{{ r_vmware_vmkernel }}"

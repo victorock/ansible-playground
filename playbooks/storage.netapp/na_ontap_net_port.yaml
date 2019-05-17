@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_net_port"
       na_ontap_net_port: "{{ na_ontap_net_port }}"
       register: r_na_ontap_net_port
+
+    - name: "export r_na_ontap_net_port"
+      set_stats:
+        data:
+          r_na_ontap_net_port: "{{ r_na_ontap_net_port }}"

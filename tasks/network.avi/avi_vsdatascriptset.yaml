@@ -26,3 +26,8 @@
       avi_credentials: "{{ avi_vsdatascriptset_avi_credentials | default(omit, True) }}"
       tenant_ref: "{{ avi_vsdatascriptset_tenant_ref | default(omit, True) }}"
       tenant_uuid: "{{ avi_vsdatascriptset_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_vsdatascriptset"
+  set_stats:
+    data:
+      r_avi_vsdatascriptset: "{{ r_avi_vsdatascriptset }}"

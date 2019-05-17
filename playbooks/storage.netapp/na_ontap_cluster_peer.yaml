@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_cluster_peer"
       na_ontap_cluster_peer: "{{ na_ontap_cluster_peer }}"
       register: r_na_ontap_cluster_peer
+
+    - name: "export r_na_ontap_cluster_peer"
+      set_stats:
+        data:
+          r_na_ontap_cluster_peer: "{{ r_na_ontap_cluster_peer }}"

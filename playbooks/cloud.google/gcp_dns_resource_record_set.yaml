@@ -22,3 +22,8 @@
     - name: "plugin_gcp_dns_resource_record_set"
       gcp_dns_resource_record_set: "{{ gcp_dns_resource_record_set }}"
       register: r_gcp_dns_resource_record_set
+
+    - name: "export r_gcp_dns_resource_record_set"
+      set_stats:
+        data:
+          r_gcp_dns_resource_record_set: "{{ r_gcp_dns_resource_record_set }}"

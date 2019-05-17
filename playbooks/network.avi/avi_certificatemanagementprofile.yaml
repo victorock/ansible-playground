@@ -28,3 +28,8 @@
     - name: "plugin_avi_certificatemanagementprofile"
       avi_certificatemanagementprofile: "{{ avi_certificatemanagementprofile }}"
       register: r_avi_certificatemanagementprofile
+
+    - name: "export r_avi_certificatemanagementprofile"
+      set_stats:
+        data:
+          r_avi_certificatemanagementprofile: "{{ r_avi_certificatemanagementprofile }}"

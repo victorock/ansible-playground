@@ -22,3 +22,8 @@
       validate_certs: "{{ ec2_vpc_dhcp_options_validate_certs | default(omit, True) }}"
       dhcp_options_id: "{{ ec2_vpc_dhcp_options_dhcp_options_id | default(omit, True) }}"
       netbios_name_servers: "{{ ec2_vpc_dhcp_options_netbios_name_servers | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_dhcp_options"
+  set_stats:
+    data:
+      r_ec2_vpc_dhcp_options: "{{ r_ec2_vpc_dhcp_options }}"

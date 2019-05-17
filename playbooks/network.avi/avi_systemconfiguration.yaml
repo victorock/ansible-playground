@@ -39,3 +39,8 @@
     - name: "plugin_avi_systemconfiguration"
       avi_systemconfiguration: "{{ avi_systemconfiguration }}"
       register: r_avi_systemconfiguration
+
+    - name: "export r_avi_systemconfiguration"
+      set_stats:
+        data:
+          r_avi_systemconfiguration: "{{ r_avi_systemconfiguration }}"

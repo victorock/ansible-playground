@@ -6,3 +6,8 @@
     timezone: 
       hwclock: "{{ timezone_hwclock | default(omit, True) }}"
       name: "{{ timezone_name | default(omit, True) }}"
+
+- name: "export r_timezone"
+  set_stats:
+    data:
+      r_timezone: "{{ r_timezone }}"

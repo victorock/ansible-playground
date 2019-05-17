@@ -36,3 +36,8 @@
     - name: "plugin_cs_iso"
       cs_iso: "{{ cs_iso }}"
       register: r_cs_iso
+
+    - name: "export r_cs_iso"
+      set_stats:
+        data:
+          r_cs_iso: "{{ r_cs_iso }}"

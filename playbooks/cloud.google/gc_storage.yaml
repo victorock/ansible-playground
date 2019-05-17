@@ -24,3 +24,8 @@
     - name: "plugin_gc_storage"
       gc_storage: "{{ gc_storage }}"
       register: r_gc_storage
+
+    - name: "export r_gc_storage"
+      set_stats:
+        data:
+          r_gc_storage: "{{ r_gc_storage }}"

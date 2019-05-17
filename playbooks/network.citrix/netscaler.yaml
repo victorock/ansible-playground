@@ -19,3 +19,8 @@
     - name: "plugin_netscaler"
       netscaler: "{{ netscaler }}"
       register: r_netscaler
+
+    - name: "export r_netscaler"
+      set_stats:
+        data:
+          r_netscaler: "{{ r_netscaler }}"

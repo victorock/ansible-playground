@@ -29,3 +29,8 @@
     - name: "plugin_docker_login"
       docker_login: "{{ docker_login }}"
       register: r_docker_login
+
+    - name: "export r_docker_login"
+      set_stats:
+        data:
+          r_docker_login: "{{ r_docker_login }}"

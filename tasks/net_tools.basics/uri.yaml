@@ -26,3 +26,8 @@
       headers: "{{ uri_headers | default(omit, True) }}"
       timeout: "{{ uri_timeout | default(omit, True) }}"
       validate_certs: "{{ uri_validate_certs | default(omit, True) }}"
+
+- name: "export r_uri"
+  set_stats:
+    data:
+      r_uri: "{{ r_uri }}"

@@ -21,3 +21,8 @@
       validate_certs: "{{ ec2_vpc_endpoint_validate_certs | default(omit, True) }}"
       route_table_ids: "{{ ec2_vpc_endpoint_route_table_ids | default(omit, True) }}"
       wait: "{{ ec2_vpc_endpoint_wait | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_endpoint"
+  set_stats:
+    data:
+      r_ec2_vpc_endpoint: "{{ r_ec2_vpc_endpoint }}"

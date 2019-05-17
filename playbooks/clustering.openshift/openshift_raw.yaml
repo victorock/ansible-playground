@@ -30,3 +30,8 @@
     - name: "plugin_openshift_raw"
       openshift_raw: "{{ openshift_raw }}"
       register: r_openshift_raw
+
+    - name: "export r_openshift_raw"
+      set_stats:
+        data:
+          r_openshift_raw: "{{ r_openshift_raw }}"

@@ -16,3 +16,8 @@
     - name: "plugin_aos_rack_type"
       aos_rack_type: "{{ aos_rack_type }}"
       register: r_aos_rack_type
+
+    - name: "export r_aos_rack_type"
+      set_stats:
+        data:
+          r_aos_rack_type: "{{ r_aos_rack_type }}"

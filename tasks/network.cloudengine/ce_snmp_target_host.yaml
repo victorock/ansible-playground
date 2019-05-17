@@ -17,3 +17,8 @@
       address: "{{ ce_snmp_target_host_address | default(omit, True) }}"
       recv_port: "{{ ce_snmp_target_host_recv_port | default(omit, True) }}"
       is_public_net: "{{ ce_snmp_target_host_is_public_net | default(omit, True) }}"
+
+- name: "export r_ce_snmp_target_host"
+  set_stats:
+    data:
+      r_ce_snmp_target_host: "{{ r_ce_snmp_target_host }}"

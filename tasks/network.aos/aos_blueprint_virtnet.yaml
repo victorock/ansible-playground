@@ -9,3 +9,8 @@
       state: "{{ aos_blueprint_virtnet_state | default(omit, True) }}"
       session: "{{ aos_blueprint_virtnet_session | default(omit, True) }}"
       name: "{{ aos_blueprint_virtnet_name | default(omit, True) }}"
+
+- name: "export r_aos_blueprint_virtnet"
+  set_stats:
+    data:
+      r_aos_blueprint_virtnet: "{{ r_aos_blueprint_virtnet }}"

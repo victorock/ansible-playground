@@ -19,3 +19,8 @@
       password: "{{ na_ontap_cluster_peer_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_cluster_peer_validate_certs | default(omit, True) }}"
       source_intercluster_lif: "{{ na_ontap_cluster_peer_source_intercluster_lif | default(omit, True) }}"
+
+- name: "export r_na_ontap_cluster_peer"
+  set_stats:
+    data:
+      r_na_ontap_cluster_peer: "{{ r_na_ontap_cluster_peer }}"

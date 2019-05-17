@@ -13,3 +13,8 @@
     - name: "plugin_memset_dns_reload"
       memset_dns_reload: "{{ memset_dns_reload }}"
       register: r_memset_dns_reload
+
+    - name: "export r_memset_dns_reload"
+      set_stats:
+        data:
+          r_memset_dns_reload: "{{ r_memset_dns_reload }}"

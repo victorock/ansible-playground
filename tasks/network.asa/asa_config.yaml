@@ -19,3 +19,8 @@
       backup: "{{ asa_config_backup | default(omit, True) }}"
       match: "{{ asa_config_match | default(omit, True) }}"
       before: "{{ asa_config_before | default(omit, True) }}"
+
+- name: "export r_asa_config"
+  set_stats:
+    data:
+      r_asa_config: "{{ r_asa_config }}"

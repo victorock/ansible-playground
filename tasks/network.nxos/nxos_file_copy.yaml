@@ -15,3 +15,8 @@
       remote_file: "{{ nxos_file_copy_remote_file | default(omit, True) }}"
       file_system: "{{ nxos_file_copy_file_system | default(omit, True) }}"
       file_pull_timeout: "{{ nxos_file_copy_file_pull_timeout | default(omit, True) }}"
+
+- name: "export r_nxos_file_copy"
+  set_stats:
+    data:
+      r_nxos_file_copy: "{{ r_nxos_file_copy }}"

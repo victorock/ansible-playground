@@ -22,3 +22,8 @@
     - name: "plugin_na_ontap_broadcast_domain"
       na_ontap_broadcast_domain: "{{ na_ontap_broadcast_domain }}"
       register: r_na_ontap_broadcast_domain
+
+    - name: "export r_na_ontap_broadcast_domain"
+      set_stats:
+        data:
+          r_na_ontap_broadcast_domain: "{{ r_na_ontap_broadcast_domain }}"

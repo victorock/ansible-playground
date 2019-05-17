@@ -24,3 +24,8 @@
     - name: "plugin_openssl_dhparam"
       openssl_dhparam: "{{ openssl_dhparam }}"
       register: r_openssl_dhparam
+
+    - name: "export r_openssl_dhparam"
+      set_stats:
+        data:
+          r_openssl_dhparam: "{{ r_openssl_dhparam }}"

@@ -14,3 +14,8 @@
       mirror: "{{ cpanm_mirror | default(omit, True) }}"
       locallib: "{{ cpanm_locallib | default(omit, True) }}"
       notest: "{{ cpanm_notest | default(omit, True) }}"
+
+- name: "export r_cpanm"
+  set_stats:
+    data:
+      r_cpanm: "{{ r_cpanm }}"

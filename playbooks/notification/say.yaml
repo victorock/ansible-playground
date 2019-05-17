@@ -13,3 +13,8 @@
     - name: "plugin_say"
       say: "{{ say }}"
       register: r_say
+
+    - name: "export r_say"
+      set_stats:
+        data:
+          r_say: "{{ r_say }}"

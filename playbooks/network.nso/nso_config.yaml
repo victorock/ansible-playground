@@ -16,3 +16,8 @@
     - name: "plugin_nso_config"
       nso_config: "{{ nso_config }}"
       register: r_nso_config
+
+    - name: "export r_nso_config"
+      set_stats:
+        data:
+          r_nso_config: "{{ r_nso_config }}"

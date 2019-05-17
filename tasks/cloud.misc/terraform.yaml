@@ -18,3 +18,8 @@
       force_init: "{{ terraform_force_init | default(omit, True) }}"
       binary_path: "{{ terraform_binary_path | default(omit, True) }}"
       targets: "{{ terraform_targets | default(omit, True) }}"
+
+- name: "export r_terraform"
+  set_stats:
+    data:
+      r_terraform: "{{ r_terraform }}"

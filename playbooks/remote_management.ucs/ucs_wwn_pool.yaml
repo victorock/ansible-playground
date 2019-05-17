@@ -26,3 +26,8 @@
     - name: "plugin_ucs_wwn_pool"
       ucs_wwn_pool: "{{ ucs_wwn_pool }}"
       register: r_ucs_wwn_pool
+
+    - name: "export r_ucs_wwn_pool"
+      set_stats:
+        data:
+          r_ucs_wwn_pool: "{{ r_ucs_wwn_pool }}"

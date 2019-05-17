@@ -25,3 +25,8 @@
     - name: "plugin_ucs_mac_pool"
       ucs_mac_pool: "{{ ucs_mac_pool }}"
       register: r_ucs_mac_pool
+
+    - name: "export r_ucs_mac_pool"
+      set_stats:
+        data:
+          r_ucs_mac_pool: "{{ r_ucs_mac_pool }}"

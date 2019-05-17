@@ -14,3 +14,8 @@
     - name: "plugin_pear"
       pear: "{{ pear }}"
       register: r_pear
+
+    - name: "export r_pear"
+      set_stats:
+        data:
+          r_pear: "{{ r_pear }}"

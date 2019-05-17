@@ -56,3 +56,8 @@
     - name: "plugin_keycloak_client"
       keycloak_client: "{{ keycloak_client }}"
       register: r_keycloak_client
+
+    - name: "export r_keycloak_client"
+      set_stats:
+        data:
+          r_keycloak_client: "{{ r_keycloak_client }}"

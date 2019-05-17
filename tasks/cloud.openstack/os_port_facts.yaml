@@ -19,3 +19,8 @@
       port: "{{ os_port_facts_port | default(omit, True) }}"
       cloud: "{{ os_port_facts_cloud | default(omit, True) }}"
       wait: "{{ os_port_facts_wait | default(omit, True) }}"
+
+- name: "export r_os_port_facts"
+  set_stats:
+    data:
+      r_os_port_facts: "{{ r_os_port_facts }}"

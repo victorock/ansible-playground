@@ -11,3 +11,8 @@
       provider: "{{ nxos_gir_provider | default(omit, True) }}"
       system_mode_maintenance: "{{ nxos_gir_system_mode_maintenance | default(omit, True) }}"
       system_mode_maintenance_on_reload_reset_reason: "{{ nxos_gir_system_mode_maintenance_on_reload_reset_reason | default(omit, True) }}"
+
+- name: "export r_nxos_gir"
+  set_stats:
+    data:
+      r_nxos_gir: "{{ r_nxos_gir }}"

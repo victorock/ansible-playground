@@ -22,3 +22,8 @@
     - name: "plugin_ios_l2_interface"
       ios_l2_interface: "{{ ios_l2_interface }}"
       register: r_ios_l2_interface
+
+    - name: "export r_ios_l2_interface"
+      set_stats:
+        data:
+          r_ios_l2_interface: "{{ r_ios_l2_interface }}"

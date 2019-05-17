@@ -6,3 +6,8 @@
     ce_reboot: 
       save_config: "{{ ce_reboot_save_config | default(omit, True) }}"
       confirm: "{{ ce_reboot_confirm | default(omit, True) }}"
+
+- name: "export r_ce_reboot"
+  set_stats:
+    data:
+      r_ce_reboot: "{{ r_ce_reboot }}"

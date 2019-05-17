@@ -19,3 +19,8 @@
       private_ip_address: "{{ ec2_eip_private_ip_address | default(omit, True) }}"
       validate_certs: "{{ ec2_eip_validate_certs | default(omit, True) }}"
       device_id: "{{ ec2_eip_device_id | default(omit, True) }}"
+
+- name: "export r_ec2_eip"
+  set_stats:
+    data:
+      r_ec2_eip: "{{ r_ec2_eip }}"

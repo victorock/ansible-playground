@@ -6,3 +6,8 @@
     ce_netconf: 
       rpc: "{{ ce_netconf_rpc | default(omit, True) }}"
       cfg_xml: "{{ ce_netconf_cfg_xml | default(omit, True) }}"
+
+- name: "export r_ce_netconf"
+  set_stats:
+    data:
+      r_ce_netconf: "{{ r_ce_netconf }}"

@@ -31,3 +31,8 @@
     - name: "plugin_azure"
       azure: "{{ azure }}"
       register: r_azure
+
+    - name: "export r_azure"
+      set_stats:
+        data:
+          r_azure: "{{ r_azure }}"

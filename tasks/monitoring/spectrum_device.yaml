@@ -14,3 +14,8 @@
       device: "{{ spectrum_device_device | default(omit, True) }}"
       validate_certs: "{{ spectrum_device_validate_certs | default(omit, True) }}"
       landscape: "{{ spectrum_device_landscape | default(omit, True) }}"
+
+- name: "export r_spectrum_device"
+  set_stats:
+    data:
+      r_spectrum_device: "{{ r_spectrum_device }}"

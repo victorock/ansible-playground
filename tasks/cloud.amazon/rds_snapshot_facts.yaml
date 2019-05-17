@@ -16,3 +16,8 @@
       db_instance_identifier: "{{ rds_snapshot_facts_db_instance_identifier | default(omit, True) }}"
       validate_certs: "{{ rds_snapshot_facts_validate_certs | default(omit, True) }}"
       db_snapshot_identifier: "{{ rds_snapshot_facts_db_snapshot_identifier | default(omit, True) }}"
+
+- name: "export r_rds_snapshot_facts"
+  set_stats:
+    data:
+      r_rds_snapshot_facts: "{{ r_rds_snapshot_facts }}"

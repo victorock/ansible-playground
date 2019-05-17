@@ -22,3 +22,8 @@
     - name: "plugin_cloudfront_invalidation"
       cloudfront_invalidation: "{{ cloudfront_invalidation }}"
       register: r_cloudfront_invalidation
+
+    - name: "export r_cloudfront_invalidation"
+      set_stats:
+        data:
+          r_cloudfront_invalidation: "{{ r_cloudfront_invalidation }}"

@@ -11,3 +11,8 @@
       authentication: "{{ ce_ntp_auth_authentication | default(omit, True) }}"
       trusted_key: "{{ ce_ntp_auth_trusted_key | default(omit, True) }}"
       key_id: "{{ ce_ntp_auth_key_id | default(omit, True) }}"
+
+- name: "export r_ce_ntp_auth"
+  set_stats:
+    data:
+      r_ce_ntp_auth: "{{ r_ce_ntp_auth }}"

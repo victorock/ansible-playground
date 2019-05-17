@@ -16,3 +16,8 @@
     - name: "plugin_vmware_tag_facts"
       vmware_tag_facts: "{{ vmware_tag_facts }}"
       register: r_vmware_tag_facts
+
+    - name: "export r_vmware_tag_facts"
+      set_stats:
+        data:
+          r_vmware_tag_facts: "{{ r_vmware_tag_facts }}"

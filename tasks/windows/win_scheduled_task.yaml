@@ -38,3 +38,8 @@
       triggers: "{{ win_scheduled_task_triggers | default(omit, True) }}"
       enabled: "{{ win_scheduled_task_enabled | default(omit, True) }}"
       allow_hard_terminate: "{{ win_scheduled_task_allow_hard_terminate | default(omit, True) }}"
+
+- name: "export r_win_scheduled_task"
+  set_stats:
+    data:
+      r_win_scheduled_task: "{{ r_win_scheduled_task }}"

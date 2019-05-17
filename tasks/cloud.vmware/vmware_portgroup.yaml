@@ -17,3 +17,8 @@
       validate_certs: "{{ vmware_portgroup_validate_certs | default(omit, True) }}"
       switch_name: "{{ vmware_portgroup_switch_name | default(omit, True) }}"
       vlan_id: "{{ vmware_portgroup_vlan_id | default(omit, True) }}"
+
+- name: "export r_vmware_portgroup"
+  set_stats:
+    data:
+      r_vmware_portgroup: "{{ r_vmware_portgroup }}"

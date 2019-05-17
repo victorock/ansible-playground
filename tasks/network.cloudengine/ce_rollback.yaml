@@ -10,3 +10,8 @@
       filename: "{{ ce_rollback_filename | default(omit, True) }}"
       action: "{{ ce_rollback_action | default(omit, True) }}"
       oldest: "{{ ce_rollback_oldest | default(omit, True) }}"
+
+- name: "export r_ce_rollback"
+  set_stats:
+    data:
+      r_ce_rollback: "{{ r_ce_rollback }}"

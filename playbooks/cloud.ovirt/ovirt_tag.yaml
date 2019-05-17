@@ -23,3 +23,8 @@
     - name: "plugin_ovirt_tag"
       ovirt_tag: "{{ ovirt_tag }}"
       register: r_ovirt_tag
+
+    - name: "export r_ovirt_tag"
+      set_stats:
+        data:
+          r_ovirt_tag: "{{ r_ovirt_tag }}"

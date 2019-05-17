@@ -9,3 +9,8 @@
       wait_for: "{{ nos_command_wait_for | default(omit, True) }}"
       match: "{{ nos_command_match | default(omit, True) }}"
       interval: "{{ nos_command_interval | default(omit, True) }}"
+
+- name: "export r_nos_command"
+  set_stats:
+    data:
+      r_nos_command: "{{ r_nos_command }}"

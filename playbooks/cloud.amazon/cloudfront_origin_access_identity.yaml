@@ -22,3 +22,8 @@
     - name: "plugin_cloudfront_origin_access_identity"
       cloudfront_origin_access_identity: "{{ cloudfront_origin_access_identity }}"
       register: r_cloudfront_origin_access_identity
+
+    - name: "export r_cloudfront_origin_access_identity"
+      set_stats:
+        data:
+          r_cloudfront_origin_access_identity: "{{ r_cloudfront_origin_access_identity }}"

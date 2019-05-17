@@ -11,3 +11,8 @@
       pn_cliusername: "{{ pn_ospf_pn_cliusername | default(omit, True) }}"
       state: "{{ pn_ospf_state | default(omit, True) }}"
       pn_cliswitch: "{{ pn_ospf_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_ospf"
+  set_stats:
+    data:
+      r_pn_ospf: "{{ r_pn_ospf }}"

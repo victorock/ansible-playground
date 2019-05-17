@@ -17,3 +17,8 @@
     - name: "plugin_vultr_startup_script_facts"
       vultr_startup_script_facts: "{{ vultr_startup_script_facts }}"
       register: r_vultr_startup_script_facts
+
+    - name: "export r_vultr_startup_script_facts"
+      set_stats:
+        data:
+          r_vultr_startup_script_facts: "{{ r_vultr_startup_script_facts }}"

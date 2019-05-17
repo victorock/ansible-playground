@@ -12,3 +12,8 @@
     - name: "plugin_onyx_lldp"
       onyx_lldp: "{{ onyx_lldp }}"
       register: r_onyx_lldp
+
+    - name: "export r_onyx_lldp"
+      set_stats:
+        data:
+          r_onyx_lldp: "{{ r_onyx_lldp }}"

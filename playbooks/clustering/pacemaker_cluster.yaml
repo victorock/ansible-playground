@@ -15,3 +15,8 @@
     - name: "plugin_pacemaker_cluster"
       pacemaker_cluster: "{{ pacemaker_cluster }}"
       register: r_pacemaker_cluster
+
+    - name: "export r_pacemaker_cluster"
+      set_stats:
+        data:
+          r_pacemaker_cluster: "{{ r_pacemaker_cluster }}"

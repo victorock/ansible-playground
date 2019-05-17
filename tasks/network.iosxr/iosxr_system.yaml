@@ -13,3 +13,8 @@
       provider: "{{ iosxr_system_provider | default(omit, True) }}"
       name_servers: "{{ iosxr_system_name_servers | default(omit, True) }}"
       lookup_enabled: "{{ iosxr_system_lookup_enabled | default(omit, True) }}"
+
+- name: "export r_iosxr_system"
+  set_stats:
+    data:
+      r_iosxr_system: "{{ r_iosxr_system }}"

@@ -22,3 +22,8 @@
       validate_certs: "{{ bigip_monitor_external_validate_certs | default(omit, True) }}"
       port: "{{ bigip_monitor_external_port | default(omit, True) }}"
       name: "{{ bigip_monitor_external_name | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_external"
+  set_stats:
+    data:
+      r_bigip_monitor_external: "{{ r_bigip_monitor_external }}"

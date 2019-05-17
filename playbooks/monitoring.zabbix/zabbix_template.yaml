@@ -25,3 +25,8 @@
     - name: "plugin_zabbix_template"
       zabbix_template: "{{ zabbix_template }}"
       register: r_zabbix_template
+
+    - name: "export r_zabbix_template"
+      set_stats:
+        data:
+          r_zabbix_template: "{{ r_zabbix_template }}"

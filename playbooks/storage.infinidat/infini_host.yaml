@@ -18,3 +18,8 @@
     - name: "plugin_infini_host"
       infini_host: "{{ infini_host }}"
       register: r_infini_host
+
+    - name: "export r_infini_host"
+      set_stats:
+        data:
+          r_infini_host: "{{ r_infini_host }}"

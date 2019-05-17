@@ -29,3 +29,8 @@
     - name: "plugin_os_volume_snapshot"
       os_volume_snapshot: "{{ os_volume_snapshot }}"
       register: r_os_volume_snapshot
+
+    - name: "export r_os_volume_snapshot"
+      set_stats:
+        data:
+          r_os_volume_snapshot: "{{ r_os_volume_snapshot }}"

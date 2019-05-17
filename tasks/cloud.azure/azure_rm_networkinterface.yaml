@@ -37,3 +37,8 @@
       private_ip_allocation_method: "{{ azure_rm_networkinterface_private_ip_allocation_method | default(omit, True) }}"
       virtual_network: "{{ azure_rm_networkinterface_virtual_network | default(omit, True) }}"
       os_type: "{{ azure_rm_networkinterface_os_type | default(omit, True) }}"
+
+- name: "export r_azure_rm_networkinterface"
+  set_stats:
+    data:
+      r_azure_rm_networkinterface: "{{ r_azure_rm_networkinterface }}"

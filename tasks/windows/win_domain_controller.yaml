@@ -14,3 +14,8 @@
       state: "{{ win_domain_controller_state | default(omit, True) }}"
       local_admin_password: "{{ win_domain_controller_local_admin_password | default(omit, True) }}"
       sysvol_path: "{{ win_domain_controller_sysvol_path | default(omit, True) }}"
+
+- name: "export r_win_domain_controller"
+  set_stats:
+    data:
+      r_win_domain_controller: "{{ r_win_domain_controller }}"

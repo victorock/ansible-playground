@@ -15,3 +15,8 @@
       operation: "{{ panos_sag_operation | default(omit, True) }}"
       password: "{{ panos_sag_password | default(omit, True) }}"
       ip_address: "{{ panos_sag_ip_address | default(omit, True) }}"
+
+- name: "export r_panos_sag"
+  set_stats:
+    data:
+      r_panos_sag: "{{ r_panos_sag }}"

@@ -23,3 +23,8 @@
     - name: "plugin_avi_gslbservice_patch_member"
       avi_gslbservice_patch_member: "{{ avi_gslbservice_patch_member }}"
       register: r_avi_gslbservice_patch_member
+
+    - name: "export r_avi_gslbservice_patch_member"
+      set_stats:
+        data:
+          r_avi_gslbservice_patch_member: "{{ r_avi_gslbservice_patch_member }}"

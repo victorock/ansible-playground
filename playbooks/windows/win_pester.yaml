@@ -13,3 +13,8 @@
     - name: "plugin_win_pester"
       win_pester: "{{ win_pester }}"
       register: r_win_pester
+
+    - name: "export r_win_pester"
+      set_stats:
+        data:
+          r_win_pester: "{{ r_win_pester }}"

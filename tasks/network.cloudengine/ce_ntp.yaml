@@ -11,3 +11,8 @@
       peer: "{{ ce_ntp_peer | default(omit, True) }}"
       key_id: "{{ ce_ntp_key_id | default(omit, True) }}"
       server: "{{ ce_ntp_server | default(omit, True) }}"
+
+- name: "export r_ce_ntp"
+  set_stats:
+    data:
+      r_ce_ntp: "{{ r_ce_ntp }}"

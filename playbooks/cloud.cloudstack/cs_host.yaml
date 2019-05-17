@@ -28,3 +28,8 @@
     - name: "plugin_cs_host"
       cs_host: "{{ cs_host }}"
       register: r_cs_host
+
+    - name: "export r_cs_host"
+      set_stats:
+        data:
+          r_cs_host: "{{ r_cs_host }}"

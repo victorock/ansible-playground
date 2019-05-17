@@ -16,3 +16,8 @@
       password: "{{ bigip_gtm_datacenter_password | default(omit, True) }}"
       validate_certs: "{{ bigip_gtm_datacenter_validate_certs | default(omit, True) }}"
       name: "{{ bigip_gtm_datacenter_name | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_datacenter"
+  set_stats:
+    data:
+      r_bigip_gtm_datacenter: "{{ r_bigip_gtm_datacenter }}"

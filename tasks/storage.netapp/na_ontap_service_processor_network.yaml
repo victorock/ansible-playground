@@ -19,3 +19,8 @@
       password: "{{ na_ontap_service_processor_network_password | default(omit, True) }}"
       ip_address: "{{ na_ontap_service_processor_network_ip_address | default(omit, True) }}"
       gateway_ip_address: "{{ na_ontap_service_processor_network_gateway_ip_address | default(omit, True) }}"
+
+- name: "export r_na_ontap_service_processor_network"
+  set_stats:
+    data:
+      r_na_ontap_service_processor_network: "{{ r_na_ontap_service_processor_network }}"

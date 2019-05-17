@@ -19,3 +19,8 @@
       iquery_options: "{{ bigip_gtm_server_iquery_options | default(omit, True) }}"
       password: "{{ bigip_gtm_server_password | default(omit, True) }}"
       validate_certs: "{{ bigip_gtm_server_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_server"
+  set_stats:
+    data:
+      r_bigip_gtm_server: "{{ r_bigip_gtm_server }}"

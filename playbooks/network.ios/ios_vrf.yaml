@@ -32,3 +32,8 @@
     - name: "plugin_ios_vrf"
       ios_vrf: "{{ ios_vrf }}"
       register: r_ios_vrf
+
+    - name: "export r_ios_vrf"
+      set_stats:
+        data:
+          r_ios_vrf: "{{ r_ios_vrf }}"

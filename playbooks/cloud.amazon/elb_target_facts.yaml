@@ -20,3 +20,8 @@
     - name: "plugin_elb_target_facts"
       elb_target_facts: "{{ elb_target_facts }}"
       register: r_elb_target_facts
+
+    - name: "export r_elb_target_facts"
+      set_stats:
+        data:
+          r_elb_target_facts: "{{ r_elb_target_facts }}"

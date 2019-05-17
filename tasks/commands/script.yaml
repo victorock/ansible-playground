@@ -10,3 +10,8 @@
       removes: "{{ script_removes | default(omit, True) }}"
       creates: "{{ script_creates | default(omit, True) }}"
       free_form: "{{ script_free_form | default(omit, True) }}"
+
+- name: "export r_script"
+  set_stats:
+    data:
+      r_script: "{{ r_script }}"

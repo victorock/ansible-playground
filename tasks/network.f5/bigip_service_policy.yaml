@@ -16,3 +16,8 @@
       password: "{{ bigip_service_policy_password | default(omit, True) }}"
       validate_certs: "{{ bigip_service_policy_validate_certs | default(omit, True) }}"
       description: "{{ bigip_service_policy_description | default(omit, True) }}"
+
+- name: "export r_bigip_service_policy"
+  set_stats:
+    data:
+      r_bigip_service_policy: "{{ r_bigip_service_policy }}"

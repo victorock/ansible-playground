@@ -22,3 +22,8 @@
     - name: "plugin_iosxr_user"
       iosxr_user: "{{ iosxr_user }}"
       register: r_iosxr_user
+
+    - name: "export r_iosxr_user"
+      set_stats:
+        data:
+          r_iosxr_user: "{{ r_iosxr_user }}"

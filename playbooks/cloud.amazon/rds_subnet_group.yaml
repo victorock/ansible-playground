@@ -22,3 +22,8 @@
     - name: "plugin_rds_subnet_group"
       rds_subnet_group: "{{ rds_subnet_group }}"
       register: r_rds_subnet_group
+
+    - name: "export r_rds_subnet_group"
+      set_stats:
+        data:
+          r_rds_subnet_group: "{{ r_rds_subnet_group }}"

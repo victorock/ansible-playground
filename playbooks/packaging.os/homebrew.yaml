@@ -17,3 +17,8 @@
     - name: "plugin_homebrew"
       homebrew: "{{ homebrew }}"
       register: r_homebrew
+
+    - name: "export r_homebrew"
+      set_stats:
+        data:
+          r_homebrew: "{{ r_homebrew }}"

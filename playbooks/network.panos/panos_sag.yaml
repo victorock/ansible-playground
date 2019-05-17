@@ -22,3 +22,8 @@
     - name: "plugin_panos_sag"
       panos_sag: "{{ panos_sag }}"
       register: r_panos_sag
+
+    - name: "export r_panos_sag"
+      set_stats:
+        data:
+          r_panos_sag: "{{ r_panos_sag }}"

@@ -36,3 +36,8 @@
     - name: "plugin_gce"
       gce: "{{ gce }}"
       register: r_gce
+
+    - name: "export r_gce"
+      set_stats:
+        data:
+          r_gce: "{{ r_gce }}"

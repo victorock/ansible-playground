@@ -45,3 +45,8 @@
       reconnect_interval: "{{ nxos_bgp_reconnect_interval | default(omit, True) }}"
       bestpath_med_confed: "{{ nxos_bgp_bestpath_med_confed | default(omit, True) }}"
       bestpath_compare_routerid: "{{ nxos_bgp_bestpath_compare_routerid | default(omit, True) }}"
+
+- name: "export r_nxos_bgp"
+  set_stats:
+    data:
+      r_nxos_bgp: "{{ r_nxos_bgp }}"

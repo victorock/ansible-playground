@@ -32,3 +32,8 @@
     - name: "plugin_ce_sflow"
       ce_sflow: "{{ ce_sflow }}"
       register: r_ce_sflow
+
+    - name: "export r_ce_sflow"
+      set_stats:
+        data:
+          r_ce_sflow: "{{ r_ce_sflow }}"

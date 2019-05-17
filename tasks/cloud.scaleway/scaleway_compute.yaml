@@ -19,3 +19,8 @@
       validate_certs: "{{ scaleway_compute_validate_certs | default(omit, True) }}"
       wait_sleep_time: "{{ scaleway_compute_wait_sleep_time | default(omit, True) }}"
       wait: "{{ scaleway_compute_wait | default(omit, True) }}"
+
+- name: "export r_scaleway_compute"
+  set_stats:
+    data:
+      r_scaleway_compute: "{{ r_scaleway_compute }}"

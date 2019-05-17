@@ -11,3 +11,8 @@
       domain_admin_password: "{{ win_domain_membership_domain_admin_password | default(omit, True) }}"
       state: "{{ win_domain_membership_state | default(omit, True) }}"
       domain_ou_path: "{{ win_domain_membership_domain_ou_path | default(omit, True) }}"
+
+- name: "export r_win_domain_membership"
+  set_stats:
+    data:
+      r_win_domain_membership: "{{ r_win_domain_membership }}"

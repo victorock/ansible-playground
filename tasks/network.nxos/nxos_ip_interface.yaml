@@ -13,3 +13,8 @@
       provider: "{{ nxos_ip_interface_provider | default(omit, True) }}"
       interface: "{{ nxos_ip_interface_interface | default(omit, True) }}"
       allow_secondary: "{{ nxos_ip_interface_allow_secondary | default(omit, True) }}"
+
+- name: "export r_nxos_ip_interface"
+  set_stats:
+    data:
+      r_nxos_ip_interface: "{{ r_nxos_ip_interface }}"

@@ -22,3 +22,8 @@
       credentials: "{{ rax_mon_alarm_credentials | default(omit, True) }}"
       api_key: "{{ rax_mon_alarm_api_key | default(omit, True) }}"
       auth_endpoint: "{{ rax_mon_alarm_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_mon_alarm"
+  set_stats:
+    data:
+      r_rax_mon_alarm: "{{ r_rax_mon_alarm }}"

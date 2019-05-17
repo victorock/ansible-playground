@@ -18,3 +18,8 @@
     - name: "plugin_slxos_vlan"
       slxos_vlan: "{{ slxos_vlan }}"
       register: r_slxos_vlan
+
+    - name: "export r_slxos_vlan"
+      set_stats:
+        data:
+          r_slxos_vlan: "{{ r_slxos_vlan }}"

@@ -21,3 +21,8 @@
     - name: "plugin_vmware_category"
       vmware_category: "{{ vmware_category }}"
       register: r_vmware_category
+
+    - name: "export r_vmware_category"
+      set_stats:
+        data:
+          r_vmware_category: "{{ r_vmware_category }}"

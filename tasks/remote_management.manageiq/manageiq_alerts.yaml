@@ -12,3 +12,8 @@
       expression: "{{ manageiq_alerts_expression | default(omit, True) }}"
       options: "{{ manageiq_alerts_options | default(omit, True) }}"
       resource_type: "{{ manageiq_alerts_resource_type | default(omit, True) }}"
+
+- name: "export r_manageiq_alerts"
+  set_stats:
+    data:
+      r_manageiq_alerts: "{{ r_manageiq_alerts }}"

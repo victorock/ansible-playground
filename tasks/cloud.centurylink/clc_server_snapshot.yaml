@@ -8,3 +8,8 @@
       expiration_days: "{{ clc_server_snapshot_expiration_days | default(omit, True) }}"
       state: "{{ clc_server_snapshot_state | default(omit, True) }}"
       wait: "{{ clc_server_snapshot_wait | default(omit, True) }}"
+
+- name: "export r_clc_server_snapshot"
+  set_stats:
+    data:
+      r_clc_server_snapshot: "{{ r_clc_server_snapshot }}"

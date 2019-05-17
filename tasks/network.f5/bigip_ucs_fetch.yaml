@@ -17,3 +17,8 @@
       create_on_missing: "{{ bigip_ucs_fetch_create_on_missing | default(omit, True) }}"
       password: "{{ bigip_ucs_fetch_password | default(omit, True) }}"
       validate_certs: "{{ bigip_ucs_fetch_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_ucs_fetch"
+  set_stats:
+    data:
+      r_bigip_ucs_fetch: "{{ r_bigip_ucs_fetch }}"

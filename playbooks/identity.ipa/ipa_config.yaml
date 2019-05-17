@@ -20,3 +20,8 @@
     - name: "plugin_ipa_config"
       ipa_config: "{{ ipa_config }}"
       register: r_ipa_config
+
+    - name: "export r_ipa_config"
+      set_stats:
+        data:
+          r_ipa_config: "{{ r_ipa_config }}"

@@ -28,3 +28,8 @@
       security_token: "{{ cloudformation_stack_set_security_token | default(omit, True) }}"
       region: "{{ cloudformation_stack_set_region | default(omit, True) }}"
       validate_certs: "{{ cloudformation_stack_set_validate_certs | default(omit, True) }}"
+
+- name: "export r_cloudformation_stack_set"
+  set_stats:
+    data:
+      r_cloudformation_stack_set: "{{ r_cloudformation_stack_set }}"

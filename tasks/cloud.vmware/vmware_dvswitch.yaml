@@ -17,3 +17,8 @@
       port: "{{ vmware_dvswitch_port | default(omit, True) }}"
       uplink_quantity: "{{ vmware_dvswitch_uplink_quantity | default(omit, True) }}"
       switch_version: "{{ vmware_dvswitch_switch_version | default(omit, True) }}"
+
+- name: "export r_vmware_dvswitch"
+  set_stats:
+    data:
+      r_vmware_dvswitch: "{{ r_vmware_dvswitch }}"

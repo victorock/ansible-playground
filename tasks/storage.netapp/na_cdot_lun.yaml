@@ -16,3 +16,8 @@
       password: "{{ na_cdot_lun_password | default(omit, True) }}"
       force_remove_fenced: "{{ na_cdot_lun_force_remove_fenced | default(omit, True) }}"
       size: "{{ na_cdot_lun_size | default(omit, True) }}"
+
+- name: "export r_na_cdot_lun"
+  set_stats:
+    data:
+      r_na_cdot_lun: "{{ r_na_cdot_lun }}"

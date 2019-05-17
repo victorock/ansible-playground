@@ -17,3 +17,8 @@
     - name: "plugin_reboot"
       reboot: "{{ reboot }}"
       register: r_reboot
+
+    - name: "export r_reboot"
+      set_stats:
+        data:
+          r_reboot: "{{ r_reboot }}"

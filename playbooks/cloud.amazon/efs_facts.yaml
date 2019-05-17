@@ -22,3 +22,8 @@
     - name: "plugin_efs_facts"
       efs_facts: "{{ efs_facts }}"
       register: r_efs_facts
+
+    - name: "export r_efs_facts"
+      set_stats:
+        data:
+          r_efs_facts: "{{ r_efs_facts }}"

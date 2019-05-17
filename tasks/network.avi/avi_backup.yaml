@@ -24,3 +24,8 @@
       controller: "{{ avi_backup_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_backup_avi_api_update_method | default(omit, True) }}"
       tenant_uuid: "{{ avi_backup_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_backup"
+  set_stats:
+    data:
+      r_avi_backup: "{{ r_avi_backup }}"

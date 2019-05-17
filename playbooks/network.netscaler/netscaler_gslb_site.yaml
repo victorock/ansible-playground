@@ -31,3 +31,8 @@
     - name: "plugin_netscaler_gslb_site"
       netscaler_gslb_site: "{{ netscaler_gslb_site }}"
       register: r_netscaler_gslb_site
+
+    - name: "export r_netscaler_gslb_site"
+      set_stats:
+        data:
+          r_netscaler_gslb_site: "{{ r_netscaler_gslb_site }}"

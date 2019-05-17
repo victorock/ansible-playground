@@ -15,3 +15,8 @@
       config: "{{ ce_config_config | default(omit, True) }}"
       match: "{{ ce_config_match | default(omit, True) }}"
       before: "{{ ce_config_before | default(omit, True) }}"
+
+- name: "export r_ce_config"
+  set_stats:
+    data:
+      r_ce_config: "{{ r_ce_config }}"

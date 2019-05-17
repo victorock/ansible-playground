@@ -29,3 +29,8 @@
     - name: "plugin_avi_cluster"
       avi_cluster: "{{ avi_cluster }}"
       register: r_avi_cluster
+
+    - name: "export r_avi_cluster"
+      set_stats:
+        data:
+          r_avi_cluster: "{{ r_avi_cluster }}"

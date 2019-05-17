@@ -26,3 +26,8 @@
     - name: "plugin_dimensiondata_vlan"
       dimensiondata_vlan: "{{ dimensiondata_vlan }}"
       register: r_dimensiondata_vlan
+
+    - name: "export r_dimensiondata_vlan"
+      set_stats:
+        data:
+          r_dimensiondata_vlan: "{{ r_dimensiondata_vlan }}"

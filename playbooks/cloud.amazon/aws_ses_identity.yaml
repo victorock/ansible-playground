@@ -24,3 +24,8 @@
     - name: "plugin_aws_ses_identity"
       aws_ses_identity: "{{ aws_ses_identity }}"
       register: r_aws_ses_identity
+
+    - name: "export r_aws_ses_identity"
+      set_stats:
+        data:
+          r_aws_ses_identity: "{{ r_aws_ses_identity }}"

@@ -15,3 +15,8 @@
       provider: "{{ eos_vlan_provider | default(omit, True) }}"
       associated_interfaces: "{{ eos_vlan_associated_interfaces | default(omit, True) }}"
       vlan_id: "{{ eos_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_eos_vlan"
+  set_stats:
+    data:
+      r_eos_vlan: "{{ r_eos_vlan }}"

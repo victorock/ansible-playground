@@ -20,3 +20,8 @@
     - name: "plugin_systemd"
       systemd: "{{ systemd }}"
       register: r_systemd
+
+    - name: "export r_systemd"
+      set_stats:
+        data:
+          r_systemd: "{{ r_systemd }}"

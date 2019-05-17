@@ -8,3 +8,8 @@
       update_catalog: "{{ pkgutil_update_catalog | default(omit, True) }}"
       name: "{{ pkgutil_name | default(omit, True) }}"
       site: "{{ pkgutil_site | default(omit, True) }}"
+
+- name: "export r_pkgutil"
+  set_stats:
+    data:
+      r_pkgutil: "{{ r_pkgutil }}"

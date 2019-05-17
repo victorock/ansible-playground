@@ -16,3 +16,8 @@
     - name: "plugin_panos_check"
       panos_check: "{{ panos_check }}"
       register: r_panos_check
+
+    - name: "export r_panos_check"
+      set_stats:
+        data:
+          r_panos_check: "{{ r_panos_check }}"

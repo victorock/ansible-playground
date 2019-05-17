@@ -12,3 +12,8 @@
     - name: "plugin_slurp"
       slurp: "{{ slurp }}"
       register: r_slurp
+
+    - name: "export r_slurp"
+      set_stats:
+        data:
+          r_slurp: "{{ r_slurp }}"

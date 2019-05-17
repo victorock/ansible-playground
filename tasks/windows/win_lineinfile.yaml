@@ -16,3 +16,8 @@
       line: "{{ win_lineinfile_line | default(omit, True) }}"
       backup: "{{ win_lineinfile_backup | default(omit, True) }}"
       validate: "{{ win_lineinfile_validate | default(omit, True) }}"
+
+- name: "export r_win_lineinfile"
+  set_stats:
+    data:
+      r_win_lineinfile: "{{ r_win_lineinfile }}"

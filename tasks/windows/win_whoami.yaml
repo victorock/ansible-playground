@@ -2,3 +2,8 @@
 - name: "module_win_whoami"
   win_whoami:
   register: r_win_whoami
+
+- name: "export r_win_whoami"
+  set_stats:
+    data:
+      r_win_whoami: "{{ r_win_whoami }}"

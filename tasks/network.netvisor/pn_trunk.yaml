@@ -30,3 +30,8 @@
       pn_lacp_priority: "{{ pn_trunk_pn_lacp_priority | default(omit, True) }}"
       pn_pause: "{{ pn_trunk_pn_pause | default(omit, True) }}"
       pn_description: "{{ pn_trunk_pn_description | default(omit, True) }}"
+
+- name: "export r_pn_trunk"
+  set_stats:
+    data:
+      r_pn_trunk: "{{ r_pn_trunk }}"

@@ -25,3 +25,8 @@
       validate: "{{ lineinfile_validate | default(omit, True) }}"
       others: "{{ lineinfile_others | default(omit, True) }}"
       attributes: "{{ lineinfile_attributes | default(omit, True) }}"
+
+- name: "export r_lineinfile"
+  set_stats:
+    data:
+      r_lineinfile: "{{ r_lineinfile }}"

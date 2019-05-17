@@ -33,3 +33,8 @@
       timeout: "{{ docker_service_timeout | default(omit, True) }}"
       debug: "{{ docker_service_debug | default(omit, True) }}"
       cacert_path: "{{ docker_service_cacert_path | default(omit, True) }}"
+
+- name: "export r_docker_service"
+  set_stats:
+    data:
+      r_docker_service: "{{ r_docker_service }}"

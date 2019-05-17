@@ -18,3 +18,8 @@
     - name: "plugin_atomic_container"
       atomic_container: "{{ atomic_container }}"
       register: r_atomic_container
+
+    - name: "export r_atomic_container"
+      set_stats:
+        data:
+          r_atomic_container: "{{ r_atomic_container }}"

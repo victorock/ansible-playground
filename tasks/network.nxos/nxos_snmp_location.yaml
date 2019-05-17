@@ -7,3 +7,8 @@
       state: "{{ nxos_snmp_location_state | default(omit, True) }}"
       location: "{{ nxos_snmp_location_location | default(omit, True) }}"
       provider: "{{ nxos_snmp_location_provider | default(omit, True) }}"
+
+- name: "export r_nxos_snmp_location"
+  set_stats:
+    data:
+      r_nxos_snmp_location: "{{ r_nxos_snmp_location }}"

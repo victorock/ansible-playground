@@ -12,3 +12,8 @@
       timeout: "{{ zabbix_group_facts_timeout | default(omit, True) }}"
       login_password: "{{ zabbix_group_facts_login_password | default(omit, True) }}"
       validate_certs: "{{ zabbix_group_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_zabbix_group_facts"
+  set_stats:
+    data:
+      r_zabbix_group_facts: "{{ r_zabbix_group_facts }}"

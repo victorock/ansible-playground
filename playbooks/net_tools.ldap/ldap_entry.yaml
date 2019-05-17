@@ -21,3 +21,8 @@
     - name: "plugin_ldap_entry"
       ldap_entry: "{{ ldap_entry }}"
       register: r_ldap_entry
+
+    - name: "export r_ldap_entry"
+      set_stats:
+        data:
+          r_ldap_entry: "{{ r_ldap_entry }}"

@@ -16,3 +16,8 @@
     - name: "plugin_dladm_linkprop"
       dladm_linkprop: "{{ dladm_linkprop }}"
       register: r_dladm_linkprop
+
+    - name: "export r_dladm_linkprop"
+      set_stats:
+        data:
+          r_dladm_linkprop: "{{ r_dladm_linkprop }}"

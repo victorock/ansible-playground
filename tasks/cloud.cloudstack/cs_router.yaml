@@ -18,3 +18,8 @@
       service_offering: "{{ cs_router_service_offering | default(omit, True) }}"
       zone: "{{ cs_router_zone | default(omit, True) }}"
       name: "{{ cs_router_name | default(omit, True) }}"
+
+- name: "export r_cs_router"
+  set_stats:
+    data:
+      r_cs_router: "{{ r_cs_router }}"

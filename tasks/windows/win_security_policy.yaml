@@ -7,3 +7,8 @@
       section: "{{ win_security_policy_section | default(omit, True) }}"
       value: "{{ win_security_policy_value | default(omit, True) }}"
       key: "{{ win_security_policy_key | default(omit, True) }}"
+
+- name: "export r_win_security_policy"
+  set_stats:
+    data:
+      r_win_security_policy: "{{ r_win_security_policy }}"

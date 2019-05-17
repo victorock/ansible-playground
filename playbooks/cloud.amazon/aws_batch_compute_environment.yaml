@@ -36,3 +36,8 @@
     - name: "plugin_aws_batch_compute_environment"
       aws_batch_compute_environment: "{{ aws_batch_compute_environment }}"
       register: r_aws_batch_compute_environment
+
+    - name: "export r_aws_batch_compute_environment"
+      set_stats:
+        data:
+          r_aws_batch_compute_environment: "{{ r_aws_batch_compute_environment }}"

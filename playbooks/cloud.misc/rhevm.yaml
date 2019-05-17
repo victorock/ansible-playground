@@ -34,3 +34,8 @@
     - name: "plugin_rhevm"
       rhevm: "{{ rhevm }}"
       register: r_rhevm
+
+    - name: "export r_rhevm"
+      set_stats:
+        data:
+          r_rhevm: "{{ r_rhevm }}"

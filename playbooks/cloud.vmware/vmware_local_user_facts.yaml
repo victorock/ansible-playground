@@ -16,3 +16,8 @@
     - name: "plugin_vmware_local_user_facts"
       vmware_local_user_facts: "{{ vmware_local_user_facts }}"
       register: r_vmware_local_user_facts
+
+    - name: "export r_vmware_local_user_facts"
+      set_stats:
+        data:
+          r_vmware_local_user_facts: "{{ r_vmware_local_user_facts }}"

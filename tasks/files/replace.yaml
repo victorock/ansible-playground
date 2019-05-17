@@ -22,3 +22,8 @@
       backup: "{{ replace_backup | default(omit, True) }}"
       others: "{{ replace_others | default(omit, True) }}"
       before: "{{ replace_before | default(omit, True) }}"
+
+- name: "export r_replace"
+  set_stats:
+    data:
+      r_replace: "{{ r_replace }}"

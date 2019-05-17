@@ -21,3 +21,8 @@
     - name: "plugin_bigip_snat_pool"
       bigip_snat_pool: "{{ bigip_snat_pool }}"
       register: r_bigip_snat_pool
+
+    - name: "export r_bigip_snat_pool"
+      set_stats:
+        data:
+          r_bigip_snat_pool: "{{ r_bigip_snat_pool }}"

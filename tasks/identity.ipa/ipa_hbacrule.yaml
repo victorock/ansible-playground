@@ -26,3 +26,8 @@
       validate_certs: "{{ ipa_hbacrule_validate_certs | default(omit, True) }}"
       sourcehostgroup: "{{ ipa_hbacrule_sourcehostgroup | default(omit, True) }}"
       sourcehost: "{{ ipa_hbacrule_sourcehost | default(omit, True) }}"
+
+- name: "export r_ipa_hbacrule"
+  set_stats:
+    data:
+      r_ipa_hbacrule: "{{ r_ipa_hbacrule }}"

@@ -13,3 +13,8 @@
       table: "{{ snow_record_table | default(omit, True) }}"
       password: "{{ snow_record_password | default(omit, True) }}"
       data: "{{ snow_record_data | default(omit, True) }}"
+
+- name: "export r_snow_record"
+  set_stats:
+    data:
+      r_snow_record: "{{ r_snow_record }}"

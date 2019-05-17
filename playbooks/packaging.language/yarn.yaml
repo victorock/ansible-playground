@@ -20,3 +20,8 @@
     - name: "plugin_yarn"
       yarn: "{{ yarn }}"
       register: r_yarn
+
+    - name: "export r_yarn"
+      set_stats:
+        data:
+          r_yarn: "{{ r_yarn }}"

@@ -19,3 +19,8 @@
     - name: "plugin_gitlab_deploy_key"
       gitlab_deploy_key: "{{ gitlab_deploy_key }}"
       register: r_gitlab_deploy_key
+
+    - name: "export r_gitlab_deploy_key"
+      set_stats:
+        data:
+          r_gitlab_deploy_key: "{{ r_gitlab_deploy_key }}"

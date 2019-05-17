@@ -14,3 +14,8 @@
       state: "{{ ce_snmp_community_state | default(omit, True) }}"
       security_level: "{{ ce_snmp_community_security_level | default(omit, True) }}"
       access_right: "{{ ce_snmp_community_access_right | default(omit, True) }}"
+
+- name: "export r_ce_snmp_community"
+  set_stats:
+    data:
+      r_ce_snmp_community: "{{ r_ce_snmp_community }}"

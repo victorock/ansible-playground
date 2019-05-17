@@ -14,3 +14,8 @@
       url_username: "{{ kubernetes_url_username | default(omit, True) }}"
       validate_certs: "{{ kubernetes_validate_certs | default(omit, True) }}"
       patch_operation: "{{ kubernetes_patch_operation | default(omit, True) }}"
+
+- name: "export r_kubernetes"
+  set_stats:
+    data:
+      r_kubernetes: "{{ r_kubernetes }}"

@@ -26,3 +26,8 @@
     - name: "plugin_aci_aaa_user_certificate"
       aci_aaa_user_certificate: "{{ aci_aaa_user_certificate }}"
       register: r_aci_aaa_user_certificate
+
+    - name: "export r_aci_aaa_user_certificate"
+      set_stats:
+        data:
+          r_aci_aaa_user_certificate: "{{ r_aci_aaa_user_certificate }}"

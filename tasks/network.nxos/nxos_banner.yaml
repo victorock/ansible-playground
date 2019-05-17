@@ -8,3 +8,8 @@
       state: "{{ nxos_banner_state | default(omit, True) }}"
       banner: "{{ nxos_banner_banner | default(omit, True) }}"
       provider: "{{ nxos_banner_provider | default(omit, True) }}"
+
+- name: "export r_nxos_banner"
+  set_stats:
+    data:
+      r_nxos_banner: "{{ r_nxos_banner }}"

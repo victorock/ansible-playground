@@ -9,3 +9,8 @@
       state: "{{ nxos_acl_interface_state | default(omit, True) }}"
       name: "{{ nxos_acl_interface_name | default(omit, True) }}"
       provider: "{{ nxos_acl_interface_provider | default(omit, True) }}"
+
+- name: "export r_nxos_acl_interface"
+  set_stats:
+    data:
+      r_nxos_acl_interface: "{{ r_nxos_acl_interface }}"

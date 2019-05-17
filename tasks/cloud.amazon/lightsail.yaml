@@ -20,3 +20,8 @@
       validate_certs: "{{ lightsail_validate_certs | default(omit, True) }}"
       wait_timeout: "{{ lightsail_wait_timeout | default(omit, True) }}"
       wait: "{{ lightsail_wait | default(omit, True) }}"
+
+- name: "export r_lightsail"
+  set_stats:
+    data:
+      r_lightsail: "{{ r_lightsail }}"

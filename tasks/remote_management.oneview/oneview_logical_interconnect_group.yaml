@@ -8,3 +8,8 @@
       state: "{{ oneview_logical_interconnect_group_state | default(omit, True) }}"
       validate_etag: "{{ oneview_logical_interconnect_group_validate_etag | default(omit, True) }}"
       config: "{{ oneview_logical_interconnect_group_config | default(omit, True) }}"
+
+- name: "export r_oneview_logical_interconnect_group"
+  set_stats:
+    data:
+      r_oneview_logical_interconnect_group: "{{ r_oneview_logical_interconnect_group }}"

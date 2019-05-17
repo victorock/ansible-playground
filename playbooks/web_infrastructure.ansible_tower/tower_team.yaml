@@ -19,3 +19,8 @@
     - name: "plugin_tower_team"
       tower_team: "{{ tower_team }}"
       register: r_tower_team
+
+    - name: "export r_tower_team"
+      set_stats:
+        data:
+          r_tower_team: "{{ r_tower_team }}"

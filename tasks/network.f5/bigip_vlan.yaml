@@ -21,3 +21,8 @@
       validate_certs: "{{ bigip_vlan_validate_certs | default(omit, True) }}"
       cmp_hash: "{{ bigip_vlan_cmp_hash | default(omit, True) }}"
       name: "{{ bigip_vlan_name | default(omit, True) }}"
+
+- name: "export r_bigip_vlan"
+  set_stats:
+    data:
+      r_bigip_vlan: "{{ r_bigip_vlan }}"

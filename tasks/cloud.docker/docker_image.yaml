@@ -32,3 +32,8 @@
       tls_verify: "{{ docker_image_tls_verify | default(omit, True) }}"
       timeout: "{{ docker_image_timeout | default(omit, True) }}"
       debug: "{{ docker_image_debug | default(omit, True) }}"
+
+- name: "export r_docker_image"
+  set_stats:
+    data:
+      r_docker_image: "{{ r_docker_image }}"

@@ -22,3 +22,8 @@
       cidr: "{{ cs_securitygroup_rule_cidr | default(omit, True) }}"
       icmp_type: "{{ cs_securitygroup_rule_icmp_type | default(omit, True) }}"
       type: "{{ cs_securitygroup_rule_type | default(omit, True) }}"
+
+- name: "export r_cs_securitygroup_rule"
+  set_stats:
+    data:
+      r_cs_securitygroup_rule: "{{ r_cs_securitygroup_rule }}"

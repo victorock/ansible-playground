@@ -20,3 +20,8 @@
     - name: "plugin_librato_annotation"
       librato_annotation: "{{ librato_annotation }}"
       register: r_librato_annotation
+
+    - name: "export r_librato_annotation"
+      set_stats:
+        data:
+          r_librato_annotation: "{{ r_librato_annotation }}"

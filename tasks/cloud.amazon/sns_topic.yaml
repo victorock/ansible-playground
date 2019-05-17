@@ -18,3 +18,8 @@
       purge_subscriptions: "{{ sns_topic_purge_subscriptions | default(omit, True) }}"
       validate_certs: "{{ sns_topic_validate_certs | default(omit, True) }}"
       region: "{{ sns_topic_region | default(omit, True) }}"
+
+- name: "export r_sns_topic"
+  set_stats:
+    data:
+      r_sns_topic: "{{ r_sns_topic }}"

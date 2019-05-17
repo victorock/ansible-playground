@@ -21,3 +21,8 @@
       owner: "{{ postgresql_db_owner | default(omit, True) }}"
       port: "{{ postgresql_db_port | default(omit, True) }}"
       name: "{{ postgresql_db_name | default(omit, True) }}"
+
+- name: "export r_postgresql_db"
+  set_stats:
+    data:
+      r_postgresql_db: "{{ r_postgresql_db }}"

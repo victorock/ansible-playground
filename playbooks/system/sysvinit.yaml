@@ -19,3 +19,8 @@
     - name: "plugin_sysvinit"
       sysvinit: "{{ sysvinit }}"
       register: r_sysvinit
+
+    - name: "export r_sysvinit"
+      set_stats:
+        data:
+          r_sysvinit: "{{ r_sysvinit }}"

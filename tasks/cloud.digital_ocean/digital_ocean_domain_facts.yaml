@@ -8,3 +8,8 @@
       validate_certs: "{{ digital_ocean_domain_facts_validate_certs | default(omit, True) }}"
       domain_name: "{{ digital_ocean_domain_facts_domain_name | default(omit, True) }}"
       timeout: "{{ digital_ocean_domain_facts_timeout | default(omit, True) }}"
+
+- name: "export r_digital_ocean_domain_facts"
+  set_stats:
+    data:
+      r_digital_ocean_domain_facts: "{{ r_digital_ocean_domain_facts }}"

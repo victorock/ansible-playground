@@ -15,3 +15,8 @@
     - name: "plugin_nxos_install_os"
       nxos_install_os: "{{ nxos_install_os }}"
       register: r_nxos_install_os
+
+    - name: "export r_nxos_install_os"
+      set_stats:
+        data:
+          r_nxos_install_os: "{{ r_nxos_install_os }}"

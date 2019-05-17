@@ -24,3 +24,8 @@
     - name: "plugin_exos_config"
       exos_config: "{{ exos_config }}"
       register: r_exos_config
+
+    - name: "export r_exos_config"
+      set_stats:
+        data:
+          r_exos_config: "{{ r_exos_config }}"

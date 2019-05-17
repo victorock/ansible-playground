@@ -40,3 +40,8 @@
     - name: "plugin_avi_serviceengine"
       avi_serviceengine: "{{ avi_serviceengine }}"
       register: r_avi_serviceengine
+
+    - name: "export r_avi_serviceengine"
+      set_stats:
+        data:
+          r_avi_serviceengine: "{{ r_avi_serviceengine }}"

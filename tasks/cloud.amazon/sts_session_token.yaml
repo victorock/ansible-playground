@@ -14,3 +14,8 @@
       ec2_url: "{{ sts_session_token_ec2_url | default(omit, True) }}"
       validate_certs: "{{ sts_session_token_validate_certs | default(omit, True) }}"
       region: "{{ sts_session_token_region | default(omit, True) }}"
+
+- name: "export r_sts_session_token"
+  set_stats:
+    data:
+      r_sts_session_token: "{{ r_sts_session_token }}"

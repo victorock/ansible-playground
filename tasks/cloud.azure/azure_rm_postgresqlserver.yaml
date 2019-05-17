@@ -27,3 +27,8 @@
       name: "{{ azure_rm_postgresqlserver_name | default(omit, True) }}"
       admin_username: "{{ azure_rm_postgresqlserver_admin_username | default(omit, True) }}"
       api_profile: "{{ azure_rm_postgresqlserver_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_postgresqlserver"
+  set_stats:
+    data:
+      r_azure_rm_postgresqlserver: "{{ r_azure_rm_postgresqlserver }}"

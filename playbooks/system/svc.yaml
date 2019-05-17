@@ -17,3 +17,8 @@
     - name: "plugin_svc"
       svc: "{{ svc }}"
       register: r_svc
+
+    - name: "export r_svc"
+      set_stats:
+        data:
+          r_svc: "{{ r_svc }}"

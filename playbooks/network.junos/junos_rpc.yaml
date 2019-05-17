@@ -16,3 +16,8 @@
     - name: "plugin_junos_rpc"
       junos_rpc: "{{ junos_rpc }}"
       register: r_junos_rpc
+
+    - name: "export r_junos_rpc"
+      set_stats:
+        data:
+          r_junos_rpc: "{{ r_junos_rpc }}"

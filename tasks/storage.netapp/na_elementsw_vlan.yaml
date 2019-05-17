@@ -16,3 +16,8 @@
       vlan_tag: "{{ na_elementsw_vlan_vlan_tag | default(omit, True) }}"
       password: "{{ na_elementsw_vlan_password | default(omit, True) }}"
       gateway: "{{ na_elementsw_vlan_gateway | default(omit, True) }}"
+
+- name: "export r_na_elementsw_vlan"
+  set_stats:
+    data:
+      r_na_elementsw_vlan: "{{ r_na_elementsw_vlan }}"

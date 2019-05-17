@@ -13,3 +13,8 @@
     - name: "plugin_async_status"
       async_status: "{{ async_status }}"
       register: r_async_status
+
+    - name: "export r_async_status"
+      set_stats:
+        data:
+          r_async_status: "{{ r_async_status }}"

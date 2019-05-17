@@ -20,3 +20,8 @@
     - name: "plugin_pkgng"
       pkgng: "{{ pkgng }}"
       register: r_pkgng
+
+    - name: "export r_pkgng"
+      set_stats:
+        data:
+          r_pkgng: "{{ r_pkgng }}"

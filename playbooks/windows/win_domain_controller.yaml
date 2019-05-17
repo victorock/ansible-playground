@@ -21,3 +21,8 @@
     - name: "plugin_win_domain_controller"
       win_domain_controller: "{{ win_domain_controller }}"
       register: r_win_domain_controller
+
+    - name: "export r_win_domain_controller"
+      set_stats:
+        data:
+          r_win_domain_controller: "{{ r_win_domain_controller }}"

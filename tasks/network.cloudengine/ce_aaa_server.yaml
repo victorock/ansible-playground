@@ -15,3 +15,8 @@
       state: "{{ ce_aaa_server_state | default(omit, True) }}"
       hwtacas_template: "{{ ce_aaa_server_hwtacas_template | default(omit, True) }}"
       accounting_mode: "{{ ce_aaa_server_accounting_mode | default(omit, True) }}"
+
+- name: "export r_ce_aaa_server"
+  set_stats:
+    data:
+      r_ce_aaa_server: "{{ r_ce_aaa_server }}"

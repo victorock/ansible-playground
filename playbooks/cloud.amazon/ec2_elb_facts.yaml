@@ -19,3 +19,8 @@
     - name: "plugin_ec2_elb_facts"
       ec2_elb_facts: "{{ ec2_elb_facts }}"
       register: r_ec2_elb_facts
+
+    - name: "export r_ec2_elb_facts"
+      set_stats:
+        data:
+          r_ec2_elb_facts: "{{ r_ec2_elb_facts }}"

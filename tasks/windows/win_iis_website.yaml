@@ -14,3 +14,8 @@
       ssl: "{{ win_iis_website_ssl | default(omit, True) }}"
       state: "{{ win_iis_website_state | default(omit, True) }}"
       port: "{{ win_iis_website_port | default(omit, True) }}"
+
+- name: "export r_win_iis_website"
+  set_stats:
+    data:
+      r_win_iis_website: "{{ r_win_iis_website }}"

@@ -27,3 +27,8 @@
       tenant_ref: "{{ avi_backupconfiguration_tenant_ref | default(omit, True) }}"
       maximum_backups_stored: "{{ avi_backupconfiguration_maximum_backups_stored | default(omit, True) }}"
       tenant_uuid: "{{ avi_backupconfiguration_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_backupconfiguration"
+  set_stats:
+    data:
+      r_avi_backupconfiguration: "{{ r_avi_backupconfiguration }}"

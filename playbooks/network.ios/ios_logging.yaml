@@ -21,3 +21,8 @@
     - name: "plugin_ios_logging"
       ios_logging: "{{ ios_logging }}"
       register: r_ios_logging
+
+    - name: "export r_ios_logging"
+      set_stats:
+        data:
+          r_ios_logging: "{{ r_ios_logging }}"

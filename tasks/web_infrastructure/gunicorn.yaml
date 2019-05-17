@@ -11,3 +11,8 @@
       chdir: "{{ gunicorn_chdir | default(omit, True) }}"
       user: "{{ gunicorn_user | default(omit, True) }}"
       config: "{{ gunicorn_config | default(omit, True) }}"
+
+- name: "export r_gunicorn"
+  set_stats:
+    data:
+      r_gunicorn: "{{ r_gunicorn }}"

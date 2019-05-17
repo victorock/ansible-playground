@@ -16,3 +16,8 @@
     - name: "plugin_known_hosts"
       known_hosts: "{{ known_hosts }}"
       register: r_known_hosts
+
+    - name: "export r_known_hosts"
+      set_stats:
+        data:
+          r_known_hosts: "{{ r_known_hosts }}"

@@ -13,3 +13,8 @@
       https: "{{ na_ontap_snmp_https | default(omit, True) }}"
       password: "{{ na_ontap_snmp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_snmp_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_snmp"
+  set_stats:
+    data:
+      r_na_ontap_snmp: "{{ r_na_ontap_snmp }}"

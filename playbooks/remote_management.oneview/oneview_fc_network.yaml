@@ -15,3 +15,8 @@
     - name: "plugin_oneview_fc_network"
       oneview_fc_network: "{{ oneview_fc_network }}"
       register: r_oneview_fc_network
+
+    - name: "export r_oneview_fc_network"
+      set_stats:
+        data:
+          r_oneview_fc_network: "{{ r_oneview_fc_network }}"

@@ -17,3 +17,8 @@
     - name: "plugin_ovirt_affinity_labels_facts"
       ovirt_affinity_labels_facts: "{{ ovirt_affinity_labels_facts }}"
       register: r_ovirt_affinity_labels_facts
+
+    - name: "export r_ovirt_affinity_labels_facts"
+      set_stats:
+        data:
+          r_ovirt_affinity_labels_facts: "{{ r_ovirt_affinity_labels_facts }}"

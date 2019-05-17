@@ -18,3 +18,8 @@
     - name: "plugin_aws_s3_bucket_facts"
       aws_s3_bucket_facts: "{{ aws_s3_bucket_facts }}"
       register: r_aws_s3_bucket_facts
+
+    - name: "export r_aws_s3_bucket_facts"
+      set_stats:
+        data:
+          r_aws_s3_bucket_facts: "{{ r_aws_s3_bucket_facts }}"

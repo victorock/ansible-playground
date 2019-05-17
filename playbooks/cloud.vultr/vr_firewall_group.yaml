@@ -19,3 +19,8 @@
     - name: "plugin_vr_firewall_group"
       vr_firewall_group: "{{ vr_firewall_group }}"
       register: r_vr_firewall_group
+
+    - name: "export r_vr_firewall_group"
+      set_stats:
+        data:
+          r_vr_firewall_group: "{{ r_vr_firewall_group }}"

@@ -18,3 +18,8 @@
     - name: "plugin_cnos_template"
       cnos_template: "{{ cnos_template }}"
       register: r_cnos_template
+
+    - name: "export r_cnos_template"
+      set_stats:
+        data:
+          r_cnos_template: "{{ r_cnos_template }}"

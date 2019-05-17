@@ -14,3 +14,8 @@
     - name: "plugin_apt_rpm"
       apt_rpm: "{{ apt_rpm }}"
       register: r_apt_rpm
+
+    - name: "export r_apt_rpm"
+      set_stats:
+        data:
+          r_apt_rpm: "{{ r_apt_rpm }}"

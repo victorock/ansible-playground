@@ -20,3 +20,8 @@
       deregistration: "{{ sensu_client_deregistration | default(omit, True) }}"
       servicenow: "{{ sensu_client_servicenow | default(omit, True) }}"
       socket: "{{ sensu_client_socket | default(omit, True) }}"
+
+- name: "export r_sensu_client"
+  set_stats:
+    data:
+      r_sensu_client: "{{ r_sensu_client }}"

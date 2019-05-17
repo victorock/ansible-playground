@@ -14,3 +14,8 @@
       bind_pw: "{{ ldap_entry_bind_pw | default(omit, True) }}"
       attributes: "{{ ldap_entry_attributes | default(omit, True) }}"
       validate_certs: "{{ ldap_entry_validate_certs | default(omit, True) }}"
+
+- name: "export r_ldap_entry"
+  set_stats:
+    data:
+      r_ldap_entry: "{{ r_ldap_entry }}"

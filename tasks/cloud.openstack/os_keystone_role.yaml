@@ -19,3 +19,8 @@
       interface: "{{ os_keystone_role_interface | default(omit, True) }}"
       cloud: "{{ os_keystone_role_cloud | default(omit, True) }}"
       wait: "{{ os_keystone_role_wait | default(omit, True) }}"
+
+- name: "export r_os_keystone_role"
+  set_stats:
+    data:
+      r_os_keystone_role: "{{ r_os_keystone_role }}"

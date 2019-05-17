@@ -9,3 +9,8 @@
       type: "{{ ovirt_external_providers_facts_type | default(omit, True) }}"
       name: "{{ ovirt_external_providers_facts_name | default(omit, True) }}"
       auth: "{{ ovirt_external_providers_facts_auth | default(omit, True) }}"
+
+- name: "export r_ovirt_external_providers_facts"
+  set_stats:
+    data:
+      r_ovirt_external_providers_facts: "{{ r_ovirt_external_providers_facts }}"

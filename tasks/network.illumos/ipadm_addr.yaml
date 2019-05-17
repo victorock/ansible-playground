@@ -10,3 +10,8 @@
       address: "{{ ipadm_addr_address | default(omit, True) }}"
       wait: "{{ ipadm_addr_wait | default(omit, True) }}"
       addrobj: "{{ ipadm_addr_addrobj | default(omit, True) }}"
+
+- name: "export r_ipadm_addr"
+  set_stats:
+    data:
+      r_ipadm_addr: "{{ r_ipadm_addr }}"

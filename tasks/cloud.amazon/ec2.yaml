@@ -46,3 +46,8 @@
       instance_tags: "{{ ec2_instance_tags | default(omit, True) }}"
       group_id: "{{ ec2_group_id | default(omit, True) }}"
       validate_certs: "{{ ec2_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2"
+  set_stats:
+    data:
+      r_ec2: "{{ r_ec2 }}"

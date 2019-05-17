@@ -24,3 +24,8 @@
     - name: "plugin_elb_instance"
       elb_instance: "{{ elb_instance }}"
       register: r_elb_instance
+
+    - name: "export r_elb_instance"
+      set_stats:
+        data:
+          r_elb_instance: "{{ r_elb_instance }}"

@@ -19,3 +19,8 @@
       vpc: "{{ cs_vpn_connection_vpc | default(omit, True) }}"
       poll_async: "{{ cs_vpn_connection_poll_async | default(omit, True) }}"
       api_key: "{{ cs_vpn_connection_api_key | default(omit, True) }}"
+
+- name: "export r_cs_vpn_connection"
+  set_stats:
+    data:
+      r_cs_vpn_connection: "{{ r_cs_vpn_connection }}"

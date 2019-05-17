@@ -14,3 +14,8 @@
       provider: "{{ iosxr_logging_provider | default(omit, True) }}"
       aggregate: "{{ iosxr_logging_aggregate | default(omit, True) }}"
       size: "{{ iosxr_logging_size | default(omit, True) }}"
+
+- name: "export r_iosxr_logging"
+  set_stats:
+    data:
+      r_iosxr_logging: "{{ r_iosxr_logging }}"

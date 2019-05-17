@@ -20,3 +20,8 @@
     - name: "plugin_snow_record"
       snow_record: "{{ snow_record }}"
       register: r_snow_record
+
+    - name: "export r_snow_record"
+      set_stats:
+        data:
+          r_snow_record: "{{ r_snow_record }}"

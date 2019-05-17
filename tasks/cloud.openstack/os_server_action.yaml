@@ -20,3 +20,8 @@
       action: "{{ os_server_action_action | default(omit, True) }}"
       cloud: "{{ os_server_action_cloud | default(omit, True) }}"
       wait: "{{ os_server_action_wait | default(omit, True) }}"
+
+- name: "export r_os_server_action"
+  set_stats:
+    data:
+      r_os_server_action: "{{ r_os_server_action }}"

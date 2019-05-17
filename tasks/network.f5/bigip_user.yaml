@@ -18,3 +18,8 @@
       provider: "{{ bigip_user_provider | default(omit, True) }}"
       username_credential: "{{ bigip_user_username_credential | default(omit, True) }}"
       validate_certs: "{{ bigip_user_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_user"
+  set_stats:
+    data:
+      r_bigip_user: "{{ r_bigip_user }}"

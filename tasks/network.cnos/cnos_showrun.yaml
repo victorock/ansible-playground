@@ -10,3 +10,8 @@
       deviceType: "{{ cnos_showrun_deviceType | default(omit, True) }}"
       password: "{{ cnos_showrun_password | default(omit, True) }}"
       enablePassword: "{{ cnos_showrun_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_showrun"
+  set_stats:
+    data:
+      r_cnos_showrun: "{{ r_cnos_showrun }}"

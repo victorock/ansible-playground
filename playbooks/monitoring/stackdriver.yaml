@@ -22,3 +22,8 @@
     - name: "plugin_stackdriver"
       stackdriver: "{{ stackdriver }}"
       register: r_stackdriver
+
+    - name: "export r_stackdriver"
+      set_stats:
+        data:
+          r_stackdriver: "{{ r_stackdriver }}"

@@ -5,3 +5,8 @@
   vars:
     win_file_version: 
       path: "{{ win_file_version_path | default(omit, True) }}"
+
+- name: "export r_win_file_version"
+  set_stats:
+    data:
+      r_win_file_version: "{{ r_win_file_version }}"

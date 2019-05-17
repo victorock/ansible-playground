@@ -30,3 +30,8 @@
     - name: "plugin_gcp_storage_bucket"
       gcp_storage_bucket: "{{ gcp_storage_bucket }}"
       register: r_gcp_storage_bucket
+
+    - name: "export r_gcp_storage_bucket"
+      set_stats:
+        data:
+          r_gcp_storage_bucket: "{{ r_gcp_storage_bucket }}"

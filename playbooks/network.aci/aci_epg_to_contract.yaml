@@ -30,3 +30,8 @@
     - name: "plugin_aci_epg_to_contract"
       aci_epg_to_contract: "{{ aci_epg_to_contract }}"
       register: r_aci_epg_to_contract
+
+    - name: "export r_aci_epg_to_contract"
+      set_stats:
+        data:
+          r_aci_epg_to_contract: "{{ r_aci_epg_to_contract }}"

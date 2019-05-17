@@ -23,3 +23,8 @@
       auth_kind: "{{ gcp_compute_instance_auth_kind | default(omit, True) }}"
       label_fingerprint: "{{ gcp_compute_instance_label_fingerprint | default(omit, True) }}"
       metadata: "{{ gcp_compute_instance_metadata | default(omit, True) }}"
+
+- name: "export r_gcp_compute_instance"
+  set_stats:
+    data:
+      r_gcp_compute_instance: "{{ r_gcp_compute_instance }}"

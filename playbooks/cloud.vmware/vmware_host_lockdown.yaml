@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_lockdown"
       vmware_host_lockdown: "{{ vmware_host_lockdown }}"
       register: r_vmware_host_lockdown
+
+    - name: "export r_vmware_host_lockdown"
+      set_stats:
+        data:
+          r_vmware_host_lockdown: "{{ r_vmware_host_lockdown }}"

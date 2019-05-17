@@ -17,3 +17,8 @@
       password: "{{ fmgr_script_password | default(omit, True) }}"
       vdom: "{{ fmgr_script_vdom | default(omit, True) }}"
       script_type: "{{ fmgr_script_script_type | default(omit, True) }}"
+
+- name: "export r_fmgr_script"
+  set_stats:
+    data:
+      r_fmgr_script: "{{ r_fmgr_script }}"

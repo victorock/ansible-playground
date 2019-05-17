@@ -44,3 +44,8 @@
       snapshot: "{{ rds_snapshot | default(omit, True) }}"
       backup_window: "{{ rds_backup_window | default(omit, True) }}"
       validate_certs: "{{ rds_validate_certs | default(omit, True) }}"
+
+- name: "export r_rds"
+  set_stats:
+    data:
+      r_rds: "{{ r_rds }}"

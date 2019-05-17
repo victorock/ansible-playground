@@ -22,3 +22,8 @@
     - name: "plugin_nxos_logging"
       nxos_logging: "{{ nxos_logging }}"
       register: r_nxos_logging
+
+    - name: "export r_nxos_logging"
+      set_stats:
+        data:
+          r_nxos_logging: "{{ r_nxos_logging }}"

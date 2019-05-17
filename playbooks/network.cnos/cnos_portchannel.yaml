@@ -25,3 +25,8 @@
     - name: "plugin_cnos_portchannel"
       cnos_portchannel: "{{ cnos_portchannel }}"
       register: r_cnos_portchannel
+
+    - name: "export r_cnos_portchannel"
+      set_stats:
+        data:
+          r_cnos_portchannel: "{{ r_cnos_portchannel }}"

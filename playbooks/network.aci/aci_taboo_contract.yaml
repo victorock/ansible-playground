@@ -27,3 +27,8 @@
     - name: "plugin_aci_taboo_contract"
       aci_taboo_contract: "{{ aci_taboo_contract }}"
       register: r_aci_taboo_contract
+
+    - name: "export r_aci_taboo_contract"
+      set_stats:
+        data:
+          r_aci_taboo_contract: "{{ r_aci_taboo_contract }}"

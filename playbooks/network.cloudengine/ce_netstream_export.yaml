@@ -20,3 +20,8 @@
     - name: "plugin_ce_netstream_export"
       ce_netstream_export: "{{ ce_netstream_export }}"
       register: r_ce_netstream_export
+
+    - name: "export r_ce_netstream_export"
+      set_stats:
+        data:
+          r_ce_netstream_export: "{{ r_ce_netstream_export }}"

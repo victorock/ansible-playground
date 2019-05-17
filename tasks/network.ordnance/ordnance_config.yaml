@@ -16,3 +16,8 @@
       config: "{{ ordnance_config_config | default(omit, True) }}"
       match: "{{ ordnance_config_match | default(omit, True) }}"
       before: "{{ ordnance_config_before | default(omit, True) }}"
+
+- name: "export r_ordnance_config"
+  set_stats:
+    data:
+      r_ordnance_config: "{{ r_ordnance_config }}"

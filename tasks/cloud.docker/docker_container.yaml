@@ -91,3 +91,8 @@
       etc_hosts: "{{ docker_container_etc_hosts | default(omit, True) }}"
       command: "{{ docker_container_command | default(omit, True) }}"
       volumes: "{{ docker_container_volumes | default(omit, True) }}"
+
+- name: "export r_docker_container"
+  set_stats:
+    data:
+      r_docker_container: "{{ r_docker_container }}"

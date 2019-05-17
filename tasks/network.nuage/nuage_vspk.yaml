@@ -14,3 +14,8 @@
       id: "{{ nuage_vspk_id | default(omit, True) }}"
       type: "{{ nuage_vspk_type | default(omit, True) }}"
       properties: "{{ nuage_vspk_properties | default(omit, True) }}"
+
+- name: "export r_nuage_vspk"
+  set_stats:
+    data:
+      r_nuage_vspk: "{{ r_nuage_vspk }}"

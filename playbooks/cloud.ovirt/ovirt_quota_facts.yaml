@@ -16,3 +16,8 @@
     - name: "plugin_ovirt_quota_facts"
       ovirt_quota_facts: "{{ ovirt_quota_facts }}"
       register: r_ovirt_quota_facts
+
+    - name: "export r_ovirt_quota_facts"
+      set_stats:
+        data:
+          r_ovirt_quota_facts: "{{ r_ovirt_quota_facts }}"

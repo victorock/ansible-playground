@@ -23,3 +23,8 @@
     - name: "plugin_ucs_lan_connectivity"
       ucs_lan_connectivity: "{{ ucs_lan_connectivity }}"
       register: r_ucs_lan_connectivity
+
+    - name: "export r_ucs_lan_connectivity"
+      set_stats:
+        data:
+          r_ucs_lan_connectivity: "{{ r_ucs_lan_connectivity }}"

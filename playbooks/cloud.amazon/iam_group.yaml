@@ -24,3 +24,8 @@
     - name: "plugin_iam_group"
       iam_group: "{{ iam_group }}"
       register: r_iam_group
+
+    - name: "export r_iam_group"
+      set_stats:
+        data:
+          r_iam_group: "{{ r_iam_group }}"

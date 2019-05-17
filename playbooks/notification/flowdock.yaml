@@ -24,3 +24,8 @@
     - name: "plugin_flowdock"
       flowdock: "{{ flowdock }}"
       register: r_flowdock
+
+    - name: "export r_flowdock"
+      set_stats:
+        data:
+          r_flowdock: "{{ r_flowdock }}"

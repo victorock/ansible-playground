@@ -18,3 +18,8 @@
       speed: "{{ eos_interface_speed | default(omit, True) }}"
       tx_rate: "{{ eos_interface_tx_rate | default(omit, True) }}"
       name: "{{ eos_interface_name | default(omit, True) }}"
+
+- name: "export r_eos_interface"
+  set_stats:
+    data:
+      r_eos_interface: "{{ r_eos_interface }}"

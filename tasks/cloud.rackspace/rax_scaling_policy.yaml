@@ -24,3 +24,8 @@
       api_key: "{{ rax_scaling_policy_api_key | default(omit, True) }}"
       change: "{{ rax_scaling_policy_change | default(omit, True) }}"
       auth_endpoint: "{{ rax_scaling_policy_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_scaling_policy"
+  set_stats:
+    data:
+      r_rax_scaling_policy: "{{ r_rax_scaling_policy }}"

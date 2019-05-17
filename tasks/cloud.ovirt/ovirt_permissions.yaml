@@ -20,3 +20,8 @@
       group_name: "{{ ovirt_permissions_group_name | default(omit, True) }}"
       user_name: "{{ ovirt_permissions_user_name | default(omit, True) }}"
       wait: "{{ ovirt_permissions_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_permissions"
+  set_stats:
+    data:
+      r_ovirt_permissions: "{{ r_ovirt_permissions }}"

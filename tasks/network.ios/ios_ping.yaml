@@ -12,3 +12,8 @@
       state: "{{ ios_ping_state | default(omit, True) }}"
       vrf: "{{ ios_ping_vrf | default(omit, True) }}"
       provider: "{{ ios_ping_provider | default(omit, True) }}"
+
+- name: "export r_ios_ping"
+  set_stats:
+    data:
+      r_ios_ping: "{{ r_ios_ping }}"

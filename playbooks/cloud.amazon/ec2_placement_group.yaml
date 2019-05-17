@@ -21,3 +21,8 @@
     - name: "plugin_ec2_placement_group"
       ec2_placement_group: "{{ ec2_placement_group }}"
       register: r_ec2_placement_group
+
+    - name: "export r_ec2_placement_group"
+      set_stats:
+        data:
+          r_ec2_placement_group: "{{ r_ec2_placement_group }}"

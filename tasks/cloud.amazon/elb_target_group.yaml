@@ -35,3 +35,8 @@
       vpc_id: "{{ elb_target_group_vpc_id | default(omit, True) }}"
       validate_certs: "{{ elb_target_group_validate_certs | default(omit, True) }}"
       health_check_timeout: "{{ elb_target_group_health_check_timeout | default(omit, True) }}"
+
+- name: "export r_elb_target_group"
+  set_stats:
+    data:
+      r_elb_target_group: "{{ r_elb_target_group }}"

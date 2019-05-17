@@ -26,3 +26,8 @@
       security_token: "{{ ec2_metric_alarm_security_token | default(omit, True) }}"
       region: "{{ ec2_metric_alarm_region | default(omit, True) }}"
       validate_certs: "{{ ec2_metric_alarm_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_metric_alarm"
+  set_stats:
+    data:
+      r_ec2_metric_alarm: "{{ r_ec2_metric_alarm }}"

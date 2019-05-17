@@ -14,3 +14,8 @@
     - name: "plugin_swdepot"
       swdepot: "{{ swdepot }}"
       register: r_swdepot
+
+    - name: "export r_swdepot"
+      set_stats:
+        data:
+          r_swdepot: "{{ r_swdepot }}"

@@ -24,3 +24,8 @@
     - name: "plugin_ipa_dnsrecord"
       ipa_dnsrecord: "{{ ipa_dnsrecord }}"
       register: r_ipa_dnsrecord
+
+    - name: "export r_ipa_dnsrecord"
+      set_stats:
+        data:
+          r_ipa_dnsrecord: "{{ r_ipa_dnsrecord }}"

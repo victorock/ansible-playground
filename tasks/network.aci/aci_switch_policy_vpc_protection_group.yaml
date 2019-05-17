@@ -21,3 +21,8 @@
       password: "{{ aci_switch_policy_vpc_protection_group_password | default(omit, True) }}"
       validate_certs: "{{ aci_switch_policy_vpc_protection_group_validate_certs | default(omit, True) }}"
       port: "{{ aci_switch_policy_vpc_protection_group_port | default(omit, True) }}"
+
+- name: "export r_aci_switch_policy_vpc_protection_group"
+  set_stats:
+    data:
+      r_aci_switch_policy_vpc_protection_group: "{{ r_aci_switch_policy_vpc_protection_group }}"

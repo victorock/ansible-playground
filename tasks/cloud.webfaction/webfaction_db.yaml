@@ -11,3 +11,8 @@
       password: "{{ webfaction_db_password | default(omit, True) }}"
       type: "{{ webfaction_db_type | default(omit, True) }}"
       login_name: "{{ webfaction_db_login_name | default(omit, True) }}"
+
+- name: "export r_webfaction_db"
+  set_stats:
+    data:
+      r_webfaction_db: "{{ r_webfaction_db }}"

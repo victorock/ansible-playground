@@ -8,3 +8,8 @@
       validate_certs: "{{ scaleway_ip_facts_validate_certs | default(omit, True) }}"
       api_url: "{{ scaleway_ip_facts_api_url | default(omit, True) }}"
       api_token: "{{ scaleway_ip_facts_api_token | default(omit, True) }}"
+
+- name: "export r_scaleway_ip_facts"
+  set_stats:
+    data:
+      r_scaleway_ip_facts: "{{ r_scaleway_ip_facts }}"

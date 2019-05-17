@@ -32,3 +32,8 @@
     - name: "plugin_copy"
       copy: "{{ copy }}"
       register: r_copy
+
+    - name: "export r_copy"
+      set_stats:
+        data:
+          r_copy: "{{ r_copy }}"

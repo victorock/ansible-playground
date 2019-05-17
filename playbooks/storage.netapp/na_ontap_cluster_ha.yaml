@@ -18,3 +18,8 @@
     - name: "plugin_na_ontap_cluster_ha"
       na_ontap_cluster_ha: "{{ na_ontap_cluster_ha }}"
       register: r_na_ontap_cluster_ha
+
+    - name: "export r_na_ontap_cluster_ha"
+      set_stats:
+        data:
+          r_na_ontap_cluster_ha: "{{ r_na_ontap_cluster_ha }}"

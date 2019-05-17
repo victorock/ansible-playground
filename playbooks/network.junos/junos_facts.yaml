@@ -14,3 +14,8 @@
     - name: "plugin_junos_facts"
       junos_facts: "{{ junos_facts }}"
       register: r_junos_facts
+
+    - name: "export r_junos_facts"
+      set_stats:
+        data:
+          r_junos_facts: "{{ r_junos_facts }}"

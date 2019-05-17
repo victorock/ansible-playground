@@ -17,3 +17,8 @@
     - name: "plugin_na_cdot_aggregate"
       na_cdot_aggregate: "{{ na_cdot_aggregate }}"
       register: r_na_cdot_aggregate
+
+    - name: "export r_na_cdot_aggregate"
+      set_stats:
+        data:
+          r_na_cdot_aggregate: "{{ r_na_cdot_aggregate }}"

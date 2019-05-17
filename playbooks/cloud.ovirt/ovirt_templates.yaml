@@ -42,3 +42,8 @@
     - name: "plugin_ovirt_templates"
       ovirt_templates: "{{ ovirt_templates }}"
       register: r_ovirt_templates
+
+    - name: "export r_ovirt_templates"
+      set_stats:
+        data:
+          r_ovirt_templates: "{{ r_ovirt_templates }}"

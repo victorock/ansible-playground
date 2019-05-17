@@ -16,3 +16,8 @@
       base_dn: "{{ purefa_ds_base_dn | default(omit, True) }}"
       sa_group: "{{ purefa_ds_sa_group | default(omit, True) }}"
       fa_url: "{{ purefa_ds_fa_url | default(omit, True) }}"
+
+- name: "export r_purefa_ds"
+  set_stats:
+    data:
+      r_purefa_ds: "{{ r_purefa_ds }}"

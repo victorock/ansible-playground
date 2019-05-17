@@ -25,3 +25,8 @@
       type: "{{ rax_clb_type | default(omit, True) }}"
       port: "{{ rax_clb_port | default(omit, True) }}"
       auth_endpoint: "{{ rax_clb_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_clb"
+  set_stats:
+    data:
+      r_rax_clb: "{{ r_rax_clb }}"

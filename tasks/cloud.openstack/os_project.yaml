@@ -22,3 +22,8 @@
       domain_id: "{{ os_project_domain_id | default(omit, True) }}"
       cloud: "{{ os_project_cloud | default(omit, True) }}"
       name: "{{ os_project_name | default(omit, True) }}"
+
+- name: "export r_os_project"
+  set_stats:
+    data:
+      r_os_project: "{{ r_os_project }}"

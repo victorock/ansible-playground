@@ -22,3 +22,8 @@
     - name: "plugin_na_ontap_cifs_acl"
       na_ontap_cifs_acl: "{{ na_ontap_cifs_acl }}"
       register: r_na_ontap_cifs_acl
+
+    - name: "export r_na_ontap_cifs_acl"
+      set_stats:
+        data:
+          r_na_ontap_cifs_acl: "{{ r_na_ontap_cifs_acl }}"

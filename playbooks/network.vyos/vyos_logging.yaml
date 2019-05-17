@@ -18,3 +18,8 @@
     - name: "plugin_vyos_logging"
       vyos_logging: "{{ vyos_logging }}"
       register: r_vyos_logging
+
+    - name: "export r_vyos_logging"
+      set_stats:
+        data:
+          r_vyos_logging: "{{ r_vyos_logging }}"

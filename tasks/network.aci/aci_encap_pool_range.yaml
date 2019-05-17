@@ -24,3 +24,8 @@
       port: "{{ aci_encap_pool_range_port | default(omit, True) }}"
       pool: "{{ aci_encap_pool_range_pool | default(omit, True) }}"
       range_name: "{{ aci_encap_pool_range_range_name | default(omit, True) }}"
+
+- name: "export r_aci_encap_pool_range"
+  set_stats:
+    data:
+      r_aci_encap_pool_range: "{{ r_aci_encap_pool_range }}"

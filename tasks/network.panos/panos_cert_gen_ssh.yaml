@@ -11,3 +11,8 @@
       password: "{{ panos_cert_gen_ssh_password | default(omit, True) }}"
       cert_friendly_name: "{{ panos_cert_gen_ssh_cert_friendly_name | default(omit, True) }}"
       signed_by: "{{ panos_cert_gen_ssh_signed_by | default(omit, True) }}"
+
+- name: "export r_panos_cert_gen_ssh"
+  set_stats:
+    data:
+      r_panos_cert_gen_ssh: "{{ r_panos_cert_gen_ssh }}"

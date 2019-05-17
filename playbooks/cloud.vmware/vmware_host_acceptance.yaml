@@ -20,3 +20,8 @@
     - name: "plugin_vmware_host_acceptance"
       vmware_host_acceptance: "{{ vmware_host_acceptance }}"
       register: r_vmware_host_acceptance
+
+    - name: "export r_vmware_host_acceptance"
+      set_stats:
+        data:
+          r_vmware_host_acceptance: "{{ r_vmware_host_acceptance }}"

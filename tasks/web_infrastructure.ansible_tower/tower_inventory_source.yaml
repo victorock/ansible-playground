@@ -28,3 +28,8 @@
       source_project: "{{ tower_inventory_source_source_project | default(omit, True) }}"
       source_path: "{{ tower_inventory_source_source_path | default(omit, True) }}"
       timeout: "{{ tower_inventory_source_timeout | default(omit, True) }}"
+
+- name: "export r_tower_inventory_source"
+  set_stats:
+    data:
+      r_tower_inventory_source: "{{ r_tower_inventory_source }}"

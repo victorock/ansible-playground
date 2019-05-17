@@ -10,3 +10,8 @@
       state: "{{ virt_state | default(omit, True) }}"
       command: "{{ virt_command | default(omit, True) }}"
       autostart: "{{ virt_autostart | default(omit, True) }}"
+
+- name: "export r_virt"
+  set_stats:
+    data:
+      r_virt: "{{ r_virt }}"

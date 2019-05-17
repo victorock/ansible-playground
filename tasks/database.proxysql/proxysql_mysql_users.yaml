@@ -23,3 +23,8 @@
       config_file: "{{ proxysql_mysql_users_config_file | default(omit, True) }}"
       use_ssl: "{{ proxysql_mysql_users_use_ssl | default(omit, True) }}"
       max_connections: "{{ proxysql_mysql_users_max_connections | default(omit, True) }}"
+
+- name: "export r_proxysql_mysql_users"
+  set_stats:
+    data:
+      r_proxysql_mysql_users: "{{ r_proxysql_mysql_users }}"

@@ -24,3 +24,8 @@
       s3_key_prefix: "{{ cloudtrail_s3_key_prefix | default(omit, True) }}"
       enable_logging: "{{ cloudtrail_enable_logging | default(omit, True) }}"
       tags: "{{ cloudtrail_tags | default(omit, True) }}"
+
+- name: "export r_cloudtrail"
+  set_stats:
+    data:
+      r_cloudtrail: "{{ r_cloudtrail }}"

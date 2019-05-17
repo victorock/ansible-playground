@@ -17,3 +17,8 @@
     - name: "plugin_vr_account_facts"
       vr_account_facts: "{{ vr_account_facts }}"
       register: r_vr_account_facts
+
+    - name: "export r_vr_account_facts"
+      set_stats:
+        data:
+          r_vr_account_facts: "{{ r_vr_account_facts }}"

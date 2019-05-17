@@ -21,3 +21,8 @@
     - name: "plugin_ios_system"
       ios_system: "{{ ios_system }}"
       register: r_ios_system
+
+    - name: "export r_ios_system"
+      set_stats:
+        data:
+          r_ios_system: "{{ r_ios_system }}"

@@ -17,3 +17,8 @@
     - name: "plugin_ce_dldp"
       ce_dldp: "{{ ce_dldp }}"
       register: r_ce_dldp
+
+    - name: "export r_ce_dldp"
+      set_stats:
+        data:
+          r_ce_dldp: "{{ r_ce_dldp }}"

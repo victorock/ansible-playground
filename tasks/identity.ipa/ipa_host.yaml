@@ -23,3 +23,8 @@
       ip_address: "{{ ipa_host_ip_address | default(omit, True) }}"
       ns_hardware_platform: "{{ ipa_host_ns_hardware_platform | default(omit, True) }}"
       description: "{{ ipa_host_description | default(omit, True) }}"
+
+- name: "export r_ipa_host"
+  set_stats:
+    data:
+      r_ipa_host: "{{ r_ipa_host }}"

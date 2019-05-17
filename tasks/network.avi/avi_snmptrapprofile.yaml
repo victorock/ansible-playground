@@ -20,3 +20,8 @@
       controller: "{{ avi_snmptrapprofile_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_snmptrapprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_snmptrapprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_snmptrapprofile"
+  set_stats:
+    data:
+      r_avi_snmptrapprofile: "{{ r_avi_snmptrapprofile }}"

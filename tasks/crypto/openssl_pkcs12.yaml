@@ -26,3 +26,8 @@
       action: "{{ openssl_pkcs12_action | default(omit, True) }}"
       attributes: "{{ openssl_pkcs12_attributes | default(omit, True) }}"
       iter_size: "{{ openssl_pkcs12_iter_size | default(omit, True) }}"
+
+- name: "export r_openssl_pkcs12"
+  set_stats:
+    data:
+      r_openssl_pkcs12: "{{ r_openssl_pkcs12 }}"

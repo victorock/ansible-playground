@@ -9,3 +9,8 @@
       list_all: "{{ git_config_list_all | default(omit, True) }}"
       name: "{{ git_config_name | default(omit, True) }}"
       value: "{{ git_config_value | default(omit, True) }}"
+
+- name: "export r_git_config"
+  set_stats:
+    data:
+      r_git_config: "{{ r_git_config }}"

@@ -17,3 +17,8 @@
       ec2_url: "{{ cloudformation_facts_ec2_url | default(omit, True) }}"
       stack_resources: "{{ cloudformation_facts_stack_resources | default(omit, True) }}"
       validate_certs: "{{ cloudformation_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_cloudformation_facts"
+  set_stats:
+    data:
+      r_cloudformation_facts: "{{ r_cloudformation_facts }}"

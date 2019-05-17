@@ -19,3 +19,8 @@
     - name: "plugin_profitbricks_volume_attachments"
       profitbricks_volume_attachments: "{{ profitbricks_volume_attachments }}"
       register: r_profitbricks_volume_attachments
+
+    - name: "export r_profitbricks_volume_attachments"
+      set_stats:
+        data:
+          r_profitbricks_volume_attachments: "{{ r_profitbricks_volume_attachments }}"

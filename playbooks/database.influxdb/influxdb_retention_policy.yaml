@@ -27,3 +27,8 @@
     - name: "plugin_influxdb_retention_policy"
       influxdb_retention_policy: "{{ influxdb_retention_policy }}"
       register: r_influxdb_retention_policy
+
+    - name: "export r_influxdb_retention_policy"
+      set_stats:
+        data:
+          r_influxdb_retention_policy: "{{ r_influxdb_retention_policy }}"

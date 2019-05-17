@@ -9,3 +9,8 @@
       password: "{{ nso_verify_password | default(omit, True) }}"
       data: "{{ nso_verify_data | default(omit, True) }}"
       timeout: "{{ nso_verify_timeout | default(omit, True) }}"
+
+- name: "export r_nso_verify"
+  set_stats:
+    data:
+      r_nso_verify: "{{ r_nso_verify }}"

@@ -18,3 +18,8 @@
       attributes: "{{ archive_attributes | default(omit, True) }}"
       owner: "{{ archive_owner | default(omit, True) }}"
       path: "{{ archive_path | default(omit, True) }}"
+
+- name: "export r_archive"
+  set_stats:
+    data:
+      r_archive: "{{ r_archive }}"

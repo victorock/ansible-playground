@@ -16,3 +16,8 @@
     - name: "plugin_iso_extract"
       iso_extract: "{{ iso_extract }}"
       register: r_iso_extract
+
+    - name: "export r_iso_extract"
+      set_stats:
+        data:
+          r_iso_extract: "{{ r_iso_extract }}"

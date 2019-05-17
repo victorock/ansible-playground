@@ -15,3 +15,8 @@
     - name: "plugin_scaleway_server_facts"
       scaleway_server_facts: "{{ scaleway_server_facts }}"
       register: r_scaleway_server_facts
+
+    - name: "export r_scaleway_server_facts"
+      set_stats:
+        data:
+          r_scaleway_server_facts: "{{ r_scaleway_server_facts }}"

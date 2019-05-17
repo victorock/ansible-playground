@@ -10,3 +10,8 @@
       provider: "{{ cnos_command_provider | default(omit, True) }}"
       wait_for: "{{ cnos_command_wait_for | default(omit, True) }}"
       match: "{{ cnos_command_match | default(omit, True) }}"
+
+- name: "export r_cnos_command"
+  set_stats:
+    data:
+      r_cnos_command: "{{ r_cnos_command }}"

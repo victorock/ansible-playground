@@ -24,3 +24,8 @@
     - name: "plugin_netscaler_cs_policy"
       netscaler_cs_policy: "{{ netscaler_cs_policy }}"
       register: r_netscaler_cs_policy
+
+    - name: "export r_netscaler_cs_policy"
+      set_stats:
+        data:
+          r_netscaler_cs_policy: "{{ r_netscaler_cs_policy }}"

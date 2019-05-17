@@ -22,3 +22,8 @@
       provider: "{{ bigip_static_route_provider | default(omit, True) }}"
       vlan: "{{ bigip_static_route_vlan | default(omit, True) }}"
       name: "{{ bigip_static_route_name | default(omit, True) }}"
+
+- name: "export r_bigip_static_route"
+  set_stats:
+    data:
+      r_bigip_static_route: "{{ r_bigip_static_route }}"

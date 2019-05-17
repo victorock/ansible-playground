@@ -15,3 +15,8 @@
     - name: "plugin_win_route"
       win_route: "{{ win_route }}"
       register: r_win_route
+
+    - name: "export r_win_route"
+      set_stats:
+        data:
+          r_win_route: "{{ r_win_route }}"

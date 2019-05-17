@@ -32,3 +32,8 @@
       scalein_alertconfig_refs: "{{ avi_serverautoscalepolicy_scalein_alertconfig_refs | default(omit, True) }}"
       max_size: "{{ avi_serverautoscalepolicy_max_size | default(omit, True) }}"
       tenant_uuid: "{{ avi_serverautoscalepolicy_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_serverautoscalepolicy"
+  set_stats:
+    data:
+      r_avi_serverautoscalepolicy: "{{ r_avi_serverautoscalepolicy }}"

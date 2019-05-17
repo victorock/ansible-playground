@@ -16,3 +16,8 @@
     - name: "plugin_nxos_acl_interface"
       nxos_acl_interface: "{{ nxos_acl_interface }}"
       register: r_nxos_acl_interface
+
+    - name: "export r_nxos_acl_interface"
+      set_stats:
+        data:
+          r_nxos_acl_interface: "{{ r_nxos_acl_interface }}"

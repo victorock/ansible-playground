@@ -32,3 +32,8 @@
     - name: "plugin_azure_rm_availabilityset"
       azure_rm_availabilityset: "{{ azure_rm_availabilityset }}"
       register: r_azure_rm_availabilityset
+
+    - name: "export r_azure_rm_availabilityset"
+      set_stats:
+        data:
+          r_azure_rm_availabilityset: "{{ r_azure_rm_availabilityset }}"

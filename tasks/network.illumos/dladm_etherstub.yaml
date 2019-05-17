@@ -7,3 +7,8 @@
       state: "{{ dladm_etherstub_state | default(omit, True) }}"
       temporary: "{{ dladm_etherstub_temporary | default(omit, True) }}"
       name: "{{ dladm_etherstub_name | default(omit, True) }}"
+
+- name: "export r_dladm_etherstub"
+  set_stats:
+    data:
+      r_dladm_etherstub: "{{ r_dladm_etherstub }}"

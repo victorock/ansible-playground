@@ -21,3 +21,8 @@
     - name: "plugin_gce_img"
       gce_img: "{{ gce_img }}"
       register: r_gce_img
+
+    - name: "export r_gce_img"
+      set_stats:
+        data:
+          r_gce_img: "{{ r_gce_img }}"

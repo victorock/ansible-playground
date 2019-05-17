@@ -21,3 +21,8 @@
       principal: "{{ lambda_policy_principal | default(omit, True) }}"
       validate_certs: "{{ lambda_policy_validate_certs | default(omit, True) }}"
       source_account: "{{ lambda_policy_source_account | default(omit, True) }}"
+
+- name: "export r_lambda_policy"
+  set_stats:
+    data:
+      r_lambda_policy: "{{ r_lambda_policy }}"

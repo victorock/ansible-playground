@@ -9,3 +9,8 @@
       wait_for: "{{ exos_command_wait_for | default(omit, True) }}"
       match: "{{ exos_command_match | default(omit, True) }}"
       interval: "{{ exos_command_interval | default(omit, True) }}"
+
+- name: "export r_exos_command"
+  set_stats:
+    data:
+      r_exos_command: "{{ r_exos_command }}"

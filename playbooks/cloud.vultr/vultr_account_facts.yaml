@@ -17,3 +17,8 @@
     - name: "plugin_vultr_account_facts"
       vultr_account_facts: "{{ vultr_account_facts }}"
       register: r_vultr_account_facts
+
+    - name: "export r_vultr_account_facts"
+      set_stats:
+        data:
+          r_vultr_account_facts: "{{ r_vultr_account_facts }}"

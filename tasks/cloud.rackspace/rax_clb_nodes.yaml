@@ -24,3 +24,8 @@
       port: "{{ rax_clb_nodes_port | default(omit, True) }}"
       condition: "{{ rax_clb_nodes_condition | default(omit, True) }}"
       wait: "{{ rax_clb_nodes_wait | default(omit, True) }}"
+
+- name: "export r_rax_clb_nodes"
+  set_stats:
+    data:
+      r_rax_clb_nodes: "{{ r_rax_clb_nodes }}"

@@ -19,3 +19,8 @@
     - name: "plugin_panos_mgtconfig"
       panos_mgtconfig: "{{ panos_mgtconfig }}"
       register: r_panos_mgtconfig
+
+    - name: "export r_panos_mgtconfig"
+      set_stats:
+        data:
+          r_panos_mgtconfig: "{{ r_panos_mgtconfig }}"

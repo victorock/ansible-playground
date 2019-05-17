@@ -22,3 +22,8 @@
     - name: "plugin_gcp_storage_bucket_access_control"
       gcp_storage_bucket_access_control: "{{ gcp_storage_bucket_access_control }}"
       register: r_gcp_storage_bucket_access_control
+
+    - name: "export r_gcp_storage_bucket_access_control"
+      set_stats:
+        data:
+          r_gcp_storage_bucket_access_control: "{{ r_gcp_storage_bucket_access_control }}"

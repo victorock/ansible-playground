@@ -9,3 +9,8 @@
       upgrade: "{{ xbps_upgrade | default(omit, True) }}"
       recurse: "{{ xbps_recurse | default(omit, True) }}"
       name: "{{ xbps_name | default(omit, True) }}"
+
+- name: "export r_xbps"
+  set_stats:
+    data:
+      r_xbps: "{{ r_xbps }}"

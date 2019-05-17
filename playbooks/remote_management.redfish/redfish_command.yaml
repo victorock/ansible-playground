@@ -21,3 +21,8 @@
     - name: "plugin_redfish_command"
       redfish_command: "{{ redfish_command }}"
       register: r_redfish_command
+
+    - name: "export r_redfish_command"
+      set_stats:
+        data:
+          r_redfish_command: "{{ r_redfish_command }}"

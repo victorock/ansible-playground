@@ -29,3 +29,8 @@
     - name: "plugin_digital_ocean"
       digital_ocean: "{{ digital_ocean }}"
       register: r_digital_ocean
+
+    - name: "export r_digital_ocean"
+      set_stats:
+        data:
+          r_digital_ocean: "{{ r_digital_ocean }}"

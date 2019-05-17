@@ -13,3 +13,8 @@
       members: "{{ ios_linkagg_members | default(omit, True) }}"
       provider: "{{ ios_linkagg_provider | default(omit, True) }}"
       aggregate: "{{ ios_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_ios_linkagg"
+  set_stats:
+    data:
+      r_ios_linkagg: "{{ r_ios_linkagg }}"

@@ -8,3 +8,8 @@
       token: "{{ logentries_msg_token | default(omit, True) }}"
       api: "{{ logentries_msg_api | default(omit, True) }}"
       port: "{{ logentries_msg_port | default(omit, True) }}"
+
+- name: "export r_logentries_msg"
+  set_stats:
+    data:
+      r_logentries_msg: "{{ r_logentries_msg }}"

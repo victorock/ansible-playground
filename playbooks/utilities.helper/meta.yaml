@@ -12,3 +12,8 @@
     - name: "plugin_meta"
       meta: "{{ meta }}"
       register: r_meta
+
+    - name: "export r_meta"
+      set_stats:
+        data:
+          r_meta: "{{ r_meta }}"

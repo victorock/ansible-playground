@@ -22,3 +22,8 @@
     - name: "plugin_iam_user"
       iam_user: "{{ iam_user }}"
       register: r_iam_user
+
+    - name: "export r_iam_user"
+      set_stats:
+        data:
+          r_iam_user: "{{ r_iam_user }}"

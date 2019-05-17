@@ -10,3 +10,8 @@
       api_token: "{{ scaleway_sshkey_api_token | default(omit, True) }}"
       validate_certs: "{{ scaleway_sshkey_validate_certs | default(omit, True) }}"
       ssh_pub_key: "{{ scaleway_sshkey_ssh_pub_key | default(omit, True) }}"
+
+- name: "export r_scaleway_sshkey"
+  set_stats:
+    data:
+      r_scaleway_sshkey: "{{ r_scaleway_sshkey }}"

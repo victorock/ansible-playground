@@ -8,3 +8,8 @@
       state: "{{ pacemaker_cluster_state | default(omit, True) }}"
       force: "{{ pacemaker_cluster_force | default(omit, True) }}"
       timeout: "{{ pacemaker_cluster_timeout | default(omit, True) }}"
+
+- name: "export r_pacemaker_cluster"
+  set_stats:
+    data:
+      r_pacemaker_cluster: "{{ r_pacemaker_cluster }}"

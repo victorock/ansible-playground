@@ -6,3 +6,8 @@
     vyos_facts: 
       gather_subset: "{{ vyos_facts_gather_subset | default(omit, True) }}"
       provider: "{{ vyos_facts_provider | default(omit, True) }}"
+
+- name: "export r_vyos_facts"
+  set_stats:
+    data:
+      r_vyos_facts: "{{ r_vyos_facts }}"

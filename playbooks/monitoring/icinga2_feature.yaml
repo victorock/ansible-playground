@@ -13,3 +13,8 @@
     - name: "plugin_icinga2_feature"
       icinga2_feature: "{{ icinga2_feature }}"
       register: r_icinga2_feature
+
+    - name: "export r_icinga2_feature"
+      set_stats:
+        data:
+          r_icinga2_feature: "{{ r_icinga2_feature }}"

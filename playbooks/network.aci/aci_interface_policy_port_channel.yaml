@@ -33,3 +33,8 @@
     - name: "plugin_aci_interface_policy_port_channel"
       aci_interface_policy_port_channel: "{{ aci_interface_policy_port_channel }}"
       register: r_aci_interface_policy_port_channel
+
+    - name: "export r_aci_interface_policy_port_channel"
+      set_stats:
+        data:
+          r_aci_interface_policy_port_channel: "{{ r_aci_interface_policy_port_channel }}"

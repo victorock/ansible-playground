@@ -24,3 +24,8 @@
     - name: "plugin_iosxr_interface"
       iosxr_interface: "{{ iosxr_interface }}"
       register: r_iosxr_interface
+
+    - name: "export r_iosxr_interface"
+      set_stats:
+        data:
+          r_iosxr_interface: "{{ r_iosxr_interface }}"

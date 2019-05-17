@@ -16,3 +16,8 @@
       timeout: "{{ ovirt_tags_timeout | default(omit, True) }}"
       vms: "{{ ovirt_tags_vms | default(omit, True) }}"
       wait: "{{ ovirt_tags_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_tags"
+  set_stats:
+    data:
+      r_ovirt_tags: "{{ r_ovirt_tags }}"

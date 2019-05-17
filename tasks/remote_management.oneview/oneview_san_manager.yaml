@@ -8,3 +8,8 @@
       state: "{{ oneview_san_manager_state | default(omit, True) }}"
       validate_etag: "{{ oneview_san_manager_validate_etag | default(omit, True) }}"
       config: "{{ oneview_san_manager_config | default(omit, True) }}"
+
+- name: "export r_oneview_san_manager"
+  set_stats:
+    data:
+      r_oneview_san_manager: "{{ r_oneview_san_manager }}"

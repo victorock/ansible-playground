@@ -15,3 +15,8 @@
     - name: "plugin_eos_facts"
       eos_facts: "{{ eos_facts }}"
       register: r_eos_facts
+
+    - name: "export r_eos_facts"
+      set_stats:
+        data:
+          r_eos_facts: "{{ r_eos_facts }}"

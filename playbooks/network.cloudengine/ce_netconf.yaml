@@ -13,3 +13,8 @@
     - name: "plugin_ce_netconf"
       ce_netconf: "{{ ce_netconf }}"
       register: r_ce_netconf
+
+    - name: "export r_ce_netconf"
+      set_stats:
+        data:
+          r_ce_netconf: "{{ r_ce_netconf }}"

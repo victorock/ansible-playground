@@ -24,3 +24,8 @@
       cpu: "{{ ecs_taskdefinition_cpu | default(omit, True) }}"
       arn: "{{ ecs_taskdefinition_arn | default(omit, True) }}"
       revision: "{{ ecs_taskdefinition_revision | default(omit, True) }}"
+
+- name: "export r_ecs_taskdefinition"
+  set_stats:
+    data:
+      r_ecs_taskdefinition: "{{ r_ecs_taskdefinition }}"

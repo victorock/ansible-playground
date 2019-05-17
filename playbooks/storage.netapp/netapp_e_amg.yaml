@@ -25,3 +25,8 @@
     - name: "plugin_netapp_e_amg"
       netapp_e_amg: "{{ netapp_e_amg }}"
       register: r_netapp_e_amg
+
+    - name: "export r_netapp_e_amg"
+      set_stats:
+        data:
+          r_netapp_e_amg: "{{ r_netapp_e_amg }}"

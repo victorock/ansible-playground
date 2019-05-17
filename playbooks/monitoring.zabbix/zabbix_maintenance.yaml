@@ -25,3 +25,8 @@
     - name: "plugin_zabbix_maintenance"
       zabbix_maintenance: "{{ zabbix_maintenance }}"
       register: r_zabbix_maintenance
+
+    - name: "export r_zabbix_maintenance"
+      set_stats:
+        data:
+          r_zabbix_maintenance: "{{ r_zabbix_maintenance }}"

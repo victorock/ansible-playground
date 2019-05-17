@@ -27,3 +27,8 @@
     - name: "plugin_ovirt_vmpools"
       ovirt_vmpools: "{{ ovirt_vmpools }}"
       register: r_ovirt_vmpools
+
+    - name: "export r_ovirt_vmpools"
+      set_stats:
+        data:
+          r_ovirt_vmpools: "{{ r_ovirt_vmpools }}"

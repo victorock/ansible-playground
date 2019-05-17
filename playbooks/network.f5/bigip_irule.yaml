@@ -23,3 +23,8 @@
     - name: "plugin_bigip_irule"
       bigip_irule: "{{ bigip_irule }}"
       register: r_bigip_irule
+
+    - name: "export r_bigip_irule"
+      set_stats:
+        data:
+          r_bigip_irule: "{{ r_bigip_irule }}"

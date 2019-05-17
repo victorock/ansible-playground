@@ -7,3 +7,8 @@
       path_params: "{{ ftd_file_download_path_params | default(omit, True) }}"
       operation: "{{ ftd_file_download_operation | default(omit, True) }}"
       destination: "{{ ftd_file_download_destination | default(omit, True) }}"
+
+- name: "export r_ftd_file_download"
+  set_stats:
+    data:
+      r_ftd_file_download: "{{ r_ftd_file_download }}"

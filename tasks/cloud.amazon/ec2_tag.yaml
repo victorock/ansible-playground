@@ -15,3 +15,8 @@
       state: "{{ ec2_tag_state | default(omit, True) }}"
       ec2_url: "{{ ec2_tag_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_tag_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_tag"
+  set_stats:
+    data:
+      r_ec2_tag: "{{ r_ec2_tag }}"

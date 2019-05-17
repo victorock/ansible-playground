@@ -18,3 +18,8 @@
       key_file: "{{ lxd_container_key_file | default(omit, True) }}"
       config: "{{ lxd_container_config | default(omit, True) }}"
       force_stop: "{{ lxd_container_force_stop | default(omit, True) }}"
+
+- name: "export r_lxd_container"
+  set_stats:
+    data:
+      r_lxd_container: "{{ r_lxd_container }}"

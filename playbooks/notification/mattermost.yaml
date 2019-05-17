@@ -18,3 +18,8 @@
     - name: "plugin_mattermost"
       mattermost: "{{ mattermost }}"
       register: r_mattermost
+
+    - name: "export r_mattermost"
+      set_stats:
+        data:
+          r_mattermost: "{{ r_mattermost }}"

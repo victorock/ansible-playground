@@ -19,3 +19,8 @@
     - name: "plugin_patch"
       patch: "{{ patch }}"
       register: r_patch
+
+    - name: "export r_patch"
+      set_stats:
+        data:
+          r_patch: "{{ r_patch }}"

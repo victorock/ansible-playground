@@ -18,3 +18,8 @@
       credentials: "{{ rax_mon_notification_credentials | default(omit, True) }}"
       api_key: "{{ rax_mon_notification_api_key | default(omit, True) }}"
       auth_endpoint: "{{ rax_mon_notification_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_mon_notification"
+  set_stats:
+    data:
+      r_rax_mon_notification: "{{ r_rax_mon_notification }}"

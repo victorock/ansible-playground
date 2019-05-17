@@ -13,3 +13,8 @@
       override: "{{ win_pagefile_override | default(omit, True) }}"
       maximum_size: "{{ win_pagefile_maximum_size | default(omit, True) }}"
       automatic: "{{ win_pagefile_automatic | default(omit, True) }}"
+
+- name: "export r_win_pagefile"
+  set_stats:
+    data:
+      r_win_pagefile: "{{ r_win_pagefile }}"

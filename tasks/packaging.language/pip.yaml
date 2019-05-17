@@ -17,3 +17,8 @@
       virtualenv_site_packages: "{{ pip_virtualenv_site_packages | default(omit, True) }}"
       state: "{{ pip_state | default(omit, True) }}"
       version: "{{ pip_version | default(omit, True) }}"
+
+- name: "export r_pip"
+  set_stats:
+    data:
+      r_pip: "{{ r_pip }}"

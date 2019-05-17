@@ -10,3 +10,8 @@
       executable: "{{ easy_install_executable | default(omit, True) }}"
       virtualenv_site_packages: "{{ easy_install_virtualenv_site_packages | default(omit, True) }}"
       state: "{{ easy_install_state | default(omit, True) }}"
+
+- name: "export r_easy_install"
+  set_stats:
+    data:
+      r_easy_install: "{{ r_easy_install }}"

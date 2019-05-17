@@ -14,3 +14,8 @@
       mode: "{{ eos_l2_interface_mode | default(omit, True) }}"
       provider: "{{ eos_l2_interface_provider | default(omit, True) }}"
       aggregate: "{{ eos_l2_interface_aggregate | default(omit, True) }}"
+
+- name: "export r_eos_l2_interface"
+  set_stats:
+    data:
+      r_eos_l2_interface: "{{ r_eos_l2_interface }}"

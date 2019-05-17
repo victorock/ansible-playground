@@ -25,3 +25,8 @@
       ip_address: "{{ panos_nat_rule_ip_address | default(omit, True) }}"
       snat_interface: "{{ panos_nat_rule_snat_interface | default(omit, True) }}"
       snat_address_type: "{{ panos_nat_rule_snat_address_type | default(omit, True) }}"
+
+- name: "export r_panos_nat_rule"
+  set_stats:
+    data:
+      r_panos_nat_rule: "{{ r_panos_nat_rule }}"

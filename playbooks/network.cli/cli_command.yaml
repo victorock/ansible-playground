@@ -16,3 +16,8 @@
     - name: "plugin_cli_command"
       cli_command: "{{ cli_command }}"
       register: r_cli_command
+
+    - name: "export r_cli_command"
+      set_stats:
+        data:
+          r_cli_command: "{{ r_cli_command }}"

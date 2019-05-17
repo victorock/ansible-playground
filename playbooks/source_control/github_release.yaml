@@ -22,3 +22,8 @@
     - name: "plugin_github_release"
       github_release: "{{ github_release }}"
       register: r_github_release
+
+    - name: "export r_github_release"
+      set_stats:
+        data:
+          r_github_release: "{{ r_github_release }}"

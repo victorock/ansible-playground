@@ -23,3 +23,8 @@
     - name: "plugin_rabbitmq_exchange"
       rabbitmq_exchange: "{{ rabbitmq_exchange }}"
       register: r_rabbitmq_exchange
+
+    - name: "export r_rabbitmq_exchange"
+      set_stats:
+        data:
+          r_rabbitmq_exchange: "{{ r_rabbitmq_exchange }}"

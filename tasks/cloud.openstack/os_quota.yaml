@@ -51,3 +51,8 @@
       cores: "{{ os_quota_cores | default(omit, True) }}"
       interface: "{{ os_quota_interface | default(omit, True) }}"
       loadbalancer: "{{ os_quota_loadbalancer | default(omit, True) }}"
+
+- name: "export r_os_quota"
+  set_stats:
+    data:
+      r_os_quota: "{{ r_os_quota }}"

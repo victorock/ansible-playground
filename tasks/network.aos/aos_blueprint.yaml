@@ -11,3 +11,8 @@
       timeout: "{{ aos_blueprint_timeout | default(omit, True) }}"
       id: "{{ aos_blueprint_id | default(omit, True) }}"
       template: "{{ aos_blueprint_template | default(omit, True) }}"
+
+- name: "export r_aos_blueprint"
+  set_stats:
+    data:
+      r_aos_blueprint: "{{ r_aos_blueprint }}"

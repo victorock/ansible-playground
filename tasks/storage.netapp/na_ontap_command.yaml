@@ -11,3 +11,8 @@
       https: "{{ na_ontap_command_https | default(omit, True) }}"
       password: "{{ na_ontap_command_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_command_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_command"
+  set_stats:
+    data:
+      r_na_ontap_command: "{{ r_na_ontap_command }}"

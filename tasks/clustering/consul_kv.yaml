@@ -16,3 +16,8 @@
       scheme: "{{ consul_kv_scheme | default(omit, True) }}"
       validate_certs: "{{ consul_kv_validate_certs | default(omit, True) }}"
       port: "{{ consul_kv_port | default(omit, True) }}"
+
+- name: "export r_consul_kv"
+  set_stats:
+    data:
+      r_consul_kv: "{{ r_consul_kv }}"

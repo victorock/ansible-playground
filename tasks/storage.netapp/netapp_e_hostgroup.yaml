@@ -14,3 +14,8 @@
       validate_certs: "{{ netapp_e_hostgroup_validate_certs | default(omit, True) }}"
       id: "{{ netapp_e_hostgroup_id | default(omit, True) }}"
       ssid: "{{ netapp_e_hostgroup_ssid | default(omit, True) }}"
+
+- name: "export r_netapp_e_hostgroup"
+  set_stats:
+    data:
+      r_netapp_e_hostgroup: "{{ r_netapp_e_hostgroup }}"

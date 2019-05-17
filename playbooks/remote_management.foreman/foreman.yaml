@@ -16,3 +16,8 @@
     - name: "plugin_foreman"
       foreman: "{{ foreman }}"
       register: r_foreman
+
+    - name: "export r_foreman"
+      set_stats:
+        data:
+          r_foreman: "{{ r_foreman }}"

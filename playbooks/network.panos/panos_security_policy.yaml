@@ -40,3 +40,8 @@
     - name: "plugin_panos_security_policy"
       panos_security_policy: "{{ panos_security_policy }}"
       register: r_panos_security_policy
+
+    - name: "export r_panos_security_policy"
+      set_stats:
+        data:
+          r_panos_security_policy: "{{ r_panos_security_policy }}"

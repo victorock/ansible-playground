@@ -10,3 +10,8 @@
       recurse: "{{ pacman_recurse | default(omit, True) }}"
       state: "{{ pacman_state | default(omit, True) }}"
       update_cache: "{{ pacman_update_cache | default(omit, True) }}"
+
+- name: "export r_pacman"
+  set_stats:
+    data:
+      r_pacman: "{{ r_pacman }}"

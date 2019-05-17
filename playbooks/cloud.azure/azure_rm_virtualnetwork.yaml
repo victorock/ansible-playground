@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_virtualnetwork"
       azure_rm_virtualnetwork: "{{ azure_rm_virtualnetwork }}"
       register: r_azure_rm_virtualnetwork
+
+    - name: "export r_azure_rm_virtualnetwork"
+      set_stats:
+        data:
+          r_azure_rm_virtualnetwork: "{{ r_azure_rm_virtualnetwork }}"

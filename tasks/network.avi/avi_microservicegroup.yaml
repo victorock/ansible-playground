@@ -22,3 +22,8 @@
       tenant_uuid: "{{ avi_microservicegroup_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_microservicegroup_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_microservicegroup_name | default(omit, True) }}"
+
+- name: "export r_avi_microservicegroup"
+  set_stats:
+    data:
+      r_avi_microservicegroup: "{{ r_avi_microservicegroup }}"

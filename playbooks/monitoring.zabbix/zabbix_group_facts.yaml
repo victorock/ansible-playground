@@ -19,3 +19,8 @@
     - name: "plugin_zabbix_group_facts"
       zabbix_group_facts: "{{ zabbix_group_facts }}"
       register: r_zabbix_group_facts
+
+    - name: "export r_zabbix_group_facts"
+      set_stats:
+        data:
+          r_zabbix_group_facts: "{{ r_zabbix_group_facts }}"

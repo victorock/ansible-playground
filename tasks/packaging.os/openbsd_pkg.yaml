@@ -10,3 +10,8 @@
       clean: "{{ openbsd_pkg_clean | default(omit, True) }}"
       quick: "{{ openbsd_pkg_quick | default(omit, True) }}"
       name: "{{ openbsd_pkg_name | default(omit, True) }}"
+
+- name: "export r_openbsd_pkg"
+  set_stats:
+    data:
+      r_openbsd_pkg: "{{ r_openbsd_pkg }}"

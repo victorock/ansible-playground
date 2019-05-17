@@ -11,3 +11,8 @@
       route_target_import: "{{ nxos_evpn_vni_route_target_import | default(omit, True) }}"
       provider: "{{ nxos_evpn_vni_provider | default(omit, True) }}"
       route_target_export: "{{ nxos_evpn_vni_route_target_export | default(omit, True) }}"
+
+- name: "export r_nxos_evpn_vni"
+  set_stats:
+    data:
+      r_nxos_evpn_vni: "{{ r_nxos_evpn_vni }}"

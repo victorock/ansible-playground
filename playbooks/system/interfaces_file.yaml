@@ -26,3 +26,8 @@
     - name: "plugin_interfaces_file"
       interfaces_file: "{{ interfaces_file }}"
       register: r_interfaces_file
+
+    - name: "export r_interfaces_file"
+      set_stats:
+        data:
+          r_interfaces_file: "{{ r_interfaces_file }}"

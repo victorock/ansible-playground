@@ -22,3 +22,8 @@
       validate_certs: "{{ aci_domain_to_encap_pool_validate_certs | default(omit, True) }}"
       port: "{{ aci_domain_to_encap_pool_port | default(omit, True) }}"
       pool: "{{ aci_domain_to_encap_pool_pool | default(omit, True) }}"
+
+- name: "export r_aci_domain_to_encap_pool"
+  set_stats:
+    data:
+      r_aci_domain_to_encap_pool: "{{ r_aci_domain_to_encap_pool }}"

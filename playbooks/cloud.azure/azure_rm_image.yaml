@@ -32,3 +32,8 @@
     - name: "plugin_azure_rm_image"
       azure_rm_image: "{{ azure_rm_image }}"
       register: r_azure_rm_image
+
+    - name: "export r_azure_rm_image"
+      set_stats:
+        data:
+          r_azure_rm_image: "{{ r_azure_rm_image }}"

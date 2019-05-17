@@ -11,3 +11,8 @@
       state: "{{ nios_network_state | default(omit, True) }}"
       provider: "{{ nios_network_provider | default(omit, True) }}"
       options: "{{ nios_network_options | default(omit, True) }}"
+
+- name: "export r_nios_network"
+  set_stats:
+    data:
+      r_nios_network: "{{ r_nios_network }}"

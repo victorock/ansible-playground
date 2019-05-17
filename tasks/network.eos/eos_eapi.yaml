@@ -17,3 +17,8 @@
       config: "{{ eos_eapi_config | default(omit, True) }}"
       local_http: "{{ eos_eapi_local_http | default(omit, True) }}"
       socket: "{{ eos_eapi_socket | default(omit, True) }}"
+
+- name: "export r_eos_eapi"
+  set_stats:
+    data:
+      r_eos_eapi: "{{ r_eos_eapi }}"

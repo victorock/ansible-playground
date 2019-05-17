@@ -9,3 +9,8 @@
       protocol: "{{ clc_publicip_protocol | default(omit, True) }}"
       ports: "{{ clc_publicip_ports | default(omit, True) }}"
       wait: "{{ clc_publicip_wait | default(omit, True) }}"
+
+- name: "export r_clc_publicip"
+  set_stats:
+    data:
+      r_clc_publicip: "{{ r_clc_publicip }}"

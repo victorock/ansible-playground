@@ -16,3 +16,8 @@
       exclude_groups: "{{ bundler_exclude_groups | default(omit, True) }}"
       local: "{{ bundler_local | default(omit, True) }}"
       gem_path: "{{ bundler_gem_path | default(omit, True) }}"
+
+- name: "export r_bundler"
+  set_stats:
+    data:
+      r_bundler: "{{ r_bundler }}"

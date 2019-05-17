@@ -36,3 +36,8 @@
     - name: "plugin_avi_ipamdnsproviderprofile"
       avi_ipamdnsproviderprofile: "{{ avi_ipamdnsproviderprofile }}"
       register: r_avi_ipamdnsproviderprofile
+
+    - name: "export r_avi_ipamdnsproviderprofile"
+      set_stats:
+        data:
+          r_avi_ipamdnsproviderprofile: "{{ r_avi_ipamdnsproviderprofile }}"

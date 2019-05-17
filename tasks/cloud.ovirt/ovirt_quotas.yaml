@@ -20,3 +20,8 @@
       clusters: "{{ ovirt_quotas_clusters | default(omit, True) }}"
       storages: "{{ ovirt_quotas_storages | default(omit, True) }}"
       wait: "{{ ovirt_quotas_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_quotas"
+  set_stats:
+    data:
+      r_ovirt_quotas: "{{ r_ovirt_quotas }}"

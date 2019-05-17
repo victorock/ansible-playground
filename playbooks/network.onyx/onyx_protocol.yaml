@@ -22,3 +22,8 @@
     - name: "plugin_onyx_protocol"
       onyx_protocol: "{{ onyx_protocol }}"
       register: r_onyx_protocol
+
+    - name: "export r_onyx_protocol"
+      set_stats:
+        data:
+          r_onyx_protocol: "{{ r_onyx_protocol }}"

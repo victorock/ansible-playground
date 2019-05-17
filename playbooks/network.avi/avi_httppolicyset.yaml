@@ -33,3 +33,8 @@
     - name: "plugin_avi_httppolicyset"
       avi_httppolicyset: "{{ avi_httppolicyset }}"
       register: r_avi_httppolicyset
+
+    - name: "export r_avi_httppolicyset"
+      set_stats:
+        data:
+          r_avi_httppolicyset: "{{ r_avi_httppolicyset }}"

@@ -22,3 +22,8 @@
     - name: "plugin_netapp_e_auditlog"
       netapp_e_auditlog: "{{ netapp_e_auditlog }}"
       register: r_netapp_e_auditlog
+
+    - name: "export r_netapp_e_auditlog"
+      set_stats:
+        data:
+          r_netapp_e_auditlog: "{{ r_netapp_e_auditlog }}"

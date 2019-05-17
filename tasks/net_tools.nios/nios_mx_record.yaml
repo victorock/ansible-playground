@@ -13,3 +13,8 @@
       preference: "{{ nios_mx_record_preference | default(omit, True) }}"
       ttl: "{{ nios_mx_record_ttl | default(omit, True) }}"
       view: "{{ nios_mx_record_view | default(omit, True) }}"
+
+- name: "export r_nios_mx_record"
+  set_stats:
+    data:
+      r_nios_mx_record: "{{ r_nios_mx_record }}"

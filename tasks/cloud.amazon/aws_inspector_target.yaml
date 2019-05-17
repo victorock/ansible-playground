@@ -14,3 +14,8 @@
       state: "{{ aws_inspector_target_state | default(omit, True) }}"
       ec2_url: "{{ aws_inspector_target_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_inspector_target_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_inspector_target"
+  set_stats:
+    data:
+      r_aws_inspector_target: "{{ r_aws_inspector_target }}"

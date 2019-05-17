@@ -16,3 +16,8 @@
     - name: "plugin_win_feature"
       win_feature: "{{ win_feature }}"
       register: r_win_feature
+
+    - name: "export r_win_feature"
+      set_stats:
+        data:
+          r_win_feature: "{{ r_win_feature }}"

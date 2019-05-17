@@ -41,3 +41,8 @@
       public_ip_protocol: "{{ clc_server_public_ip_protocol | default(omit, True) }}"
       configuration_id: "{{ clc_server_configuration_id | default(omit, True) }}"
       cpu: "{{ clc_server_cpu | default(omit, True) }}"
+
+- name: "export r_clc_server"
+  set_stats:
+    data:
+      r_clc_server: "{{ r_clc_server }}"

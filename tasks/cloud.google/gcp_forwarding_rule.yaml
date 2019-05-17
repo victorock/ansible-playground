@@ -11,3 +11,8 @@
       port_range: "{{ gcp_forwarding_rule_port_range | default(omit, True) }}"
       state: "{{ gcp_forwarding_rule_state | default(omit, True) }}"
       address: "{{ gcp_forwarding_rule_address | default(omit, True) }}"
+
+- name: "export r_gcp_forwarding_rule"
+  set_stats:
+    data:
+      r_gcp_forwarding_rule: "{{ r_gcp_forwarding_rule }}"

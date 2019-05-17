@@ -7,3 +7,8 @@
       gather_subset: "{{ purefa_facts_gather_subset | default(omit, True) }}"
       fa_url: "{{ purefa_facts_fa_url | default(omit, True) }}"
       api_token: "{{ purefa_facts_api_token | default(omit, True) }}"
+
+- name: "export r_purefa_facts"
+  set_stats:
+    data:
+      r_purefa_facts: "{{ r_purefa_facts }}"

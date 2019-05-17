@@ -15,3 +15,8 @@
     - name: "plugin_github_issue"
       github_issue: "{{ github_issue }}"
       register: r_github_issue
+
+    - name: "export r_github_issue"
+      set_stats:
+        data:
+          r_github_issue: "{{ r_github_issue }}"

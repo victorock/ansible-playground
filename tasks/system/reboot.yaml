@@ -10,3 +10,8 @@
       test_command: "{{ reboot_test_command | default(omit, True) }}"
       msg: "{{ reboot_msg | default(omit, True) }}"
       connect_timeout: "{{ reboot_connect_timeout | default(omit, True) }}"
+
+- name: "export r_reboot"
+  set_stats:
+    data:
+      r_reboot: "{{ r_reboot }}"

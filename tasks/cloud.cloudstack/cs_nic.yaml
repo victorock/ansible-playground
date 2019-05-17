@@ -20,3 +20,8 @@
       account: "{{ cs_nic_account | default(omit, True) }}"
       zone: "{{ cs_nic_zone | default(omit, True) }}"
       network: "{{ cs_nic_network | default(omit, True) }}"
+
+- name: "export r_cs_nic"
+  set_stats:
+    data:
+      r_cs_nic: "{{ r_cs_nic }}"

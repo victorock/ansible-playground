@@ -18,3 +18,8 @@
       validate_certs: "{{ bigip_command_validate_certs | default(omit, True) }}"
       transport: "{{ bigip_command_transport | default(omit, True) }}"
       match: "{{ bigip_command_match | default(omit, True) }}"
+
+- name: "export r_bigip_command"
+  set_stats:
+    data:
+      r_bigip_command: "{{ r_bigip_command }}"

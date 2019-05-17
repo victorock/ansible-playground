@@ -14,3 +14,8 @@
       login_password: "{{ vertica_schema_login_password | default(omit, True) }}"
       owner: "{{ vertica_schema_owner | default(omit, True) }}"
       port: "{{ vertica_schema_port | default(omit, True) }}"
+
+- name: "export r_vertica_schema"
+  set_stats:
+    data:
+      r_vertica_schema: "{{ r_vertica_schema }}"

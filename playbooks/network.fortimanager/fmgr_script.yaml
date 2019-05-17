@@ -24,3 +24,8 @@
     - name: "plugin_fmgr_script"
       fmgr_script: "{{ fmgr_script }}"
       register: r_fmgr_script
+
+    - name: "export r_fmgr_script"
+      set_stats:
+        data:
+          r_fmgr_script: "{{ r_fmgr_script }}"

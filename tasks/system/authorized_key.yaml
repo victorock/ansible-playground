@@ -14,3 +14,8 @@
       follow: "{{ authorized_key_follow | default(omit, True) }}"
       validate_certs: "{{ authorized_key_validate_certs | default(omit, True) }}"
       manage_dir: "{{ authorized_key_manage_dir | default(omit, True) }}"
+
+- name: "export r_authorized_key"
+  set_stats:
+    data:
+      r_authorized_key: "{{ r_authorized_key }}"

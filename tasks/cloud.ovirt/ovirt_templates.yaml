@@ -35,3 +35,8 @@
       timeout: "{{ ovirt_templates_timeout | default(omit, True) }}"
       allow_partial_import: "{{ ovirt_templates_allow_partial_import | default(omit, True) }}"
       cluster_mappings: "{{ ovirt_templates_cluster_mappings | default(omit, True) }}"
+
+- name: "export r_ovirt_templates"
+  set_stats:
+    data:
+      r_ovirt_templates: "{{ r_ovirt_templates }}"

@@ -18,3 +18,8 @@
     - name: "plugin_ironware_command"
       ironware_command: "{{ ironware_command }}"
       register: r_ironware_command
+
+    - name: "export r_ironware_command"
+      set_stats:
+        data:
+          r_ironware_command: "{{ r_ironware_command }}"

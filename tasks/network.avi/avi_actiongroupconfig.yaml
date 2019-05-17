@@ -27,3 +27,8 @@
       tenant_ref: "{{ avi_actiongroupconfig_tenant_ref | default(omit, True) }}"
       action_script_config_ref: "{{ avi_actiongroupconfig_action_script_config_ref | default(omit, True) }}"
       tenant_uuid: "{{ avi_actiongroupconfig_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_actiongroupconfig"
+  set_stats:
+    data:
+      r_avi_actiongroupconfig: "{{ r_avi_actiongroupconfig }}"

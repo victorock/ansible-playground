@@ -22,3 +22,8 @@
     - name: "plugin_gcp_backend_service"
       gcp_backend_service: "{{ gcp_backend_service }}"
       register: r_gcp_backend_service
+
+    - name: "export r_gcp_backend_service"
+      set_stats:
+        data:
+          r_gcp_backend_service: "{{ r_gcp_backend_service }}"

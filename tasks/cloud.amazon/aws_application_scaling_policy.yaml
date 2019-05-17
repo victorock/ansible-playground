@@ -21,3 +21,8 @@
       override_task_capacity: "{{ aws_application_scaling_policy_override_task_capacity | default(omit, True) }}"
       policy_name: "{{ aws_application_scaling_policy_policy_name | default(omit, True) }}"
       maximum_tasks: "{{ aws_application_scaling_policy_maximum_tasks | default(omit, True) }}"
+
+- name: "export r_aws_application_scaling_policy"
+  set_stats:
+    data:
+      r_aws_application_scaling_policy: "{{ r_aws_application_scaling_policy }}"

@@ -7,3 +7,8 @@
       attributes: "{{ win_iis_webapppool_attributes | default(omit, True) }}"
       state: "{{ win_iis_webapppool_state | default(omit, True) }}"
       name: "{{ win_iis_webapppool_name | default(omit, True) }}"
+
+- name: "export r_win_iis_webapppool"
+  set_stats:
+    data:
+      r_win_iis_webapppool: "{{ r_win_iis_webapppool }}"

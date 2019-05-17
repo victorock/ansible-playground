@@ -27,3 +27,8 @@
       synced_from_se: "{{ avi_network_synced_from_se | default(omit, True) }}"
       dhcp_enabled: "{{ avi_network_dhcp_enabled | default(omit, True) }}"
       tenant_uuid: "{{ avi_network_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_network"
+  set_stats:
+    data:
+      r_avi_network: "{{ r_avi_network }}"

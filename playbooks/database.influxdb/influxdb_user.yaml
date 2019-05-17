@@ -26,3 +26,8 @@
     - name: "plugin_influxdb_user"
       influxdb_user: "{{ influxdb_user }}"
       register: r_influxdb_user
+
+    - name: "export r_influxdb_user"
+      set_stats:
+        data:
+          r_influxdb_user: "{{ r_influxdb_user }}"

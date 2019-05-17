@@ -20,3 +20,8 @@
       operation: "{{ ecs_task_operation | default(omit, True) }}"
       validate_certs: "{{ ecs_task_validate_certs | default(omit, True) }}"
       region: "{{ ecs_task_region | default(omit, True) }}"
+
+- name: "export r_ecs_task"
+  set_stats:
+    data:
+      r_ecs_task: "{{ r_ecs_task }}"

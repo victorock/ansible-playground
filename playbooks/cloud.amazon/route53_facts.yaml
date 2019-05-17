@@ -31,3 +31,8 @@
     - name: "plugin_route53_facts"
       route53_facts: "{{ route53_facts }}"
       register: r_route53_facts
+
+    - name: "export r_route53_facts"
+      set_stats:
+        data:
+          r_route53_facts: "{{ r_route53_facts }}"

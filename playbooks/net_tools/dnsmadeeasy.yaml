@@ -38,3 +38,8 @@
     - name: "plugin_dnsmadeeasy"
       dnsmadeeasy: "{{ dnsmadeeasy }}"
       register: r_dnsmadeeasy
+
+    - name: "export r_dnsmadeeasy"
+      set_stats:
+        data:
+          r_dnsmadeeasy: "{{ r_dnsmadeeasy }}"

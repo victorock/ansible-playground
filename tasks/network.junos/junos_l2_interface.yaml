@@ -16,3 +16,8 @@
       active: "{{ junos_l2_interface_active | default(omit, True) }}"
       unit: "{{ junos_l2_interface_unit | default(omit, True) }}"
       name: "{{ junos_l2_interface_name | default(omit, True) }}"
+
+- name: "export r_junos_l2_interface"
+  set_stats:
+    data:
+      r_junos_l2_interface: "{{ r_junos_l2_interface }}"

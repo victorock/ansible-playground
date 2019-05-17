@@ -10,3 +10,8 @@
       provider: "{{ aruba_command_provider | default(omit, True) }}"
       wait_for: "{{ aruba_command_wait_for | default(omit, True) }}"
       match: "{{ aruba_command_match | default(omit, True) }}"
+
+- name: "export r_aruba_command"
+  set_stats:
+    data:
+      r_aruba_command: "{{ r_aruba_command }}"

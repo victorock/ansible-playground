@@ -20,3 +20,8 @@
     - name: "plugin_win_certificate_store"
       win_certificate_store: "{{ win_certificate_store }}"
       register: r_win_certificate_store
+
+    - name: "export r_win_certificate_store"
+      set_stats:
+        data:
+          r_win_certificate_store: "{{ r_win_certificate_store }}"

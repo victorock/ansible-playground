@@ -19,3 +19,8 @@
     - name: "plugin_nxos_switchport"
       nxos_switchport: "{{ nxos_switchport }}"
       register: r_nxos_switchport
+
+    - name: "export r_nxos_switchport"
+      set_stats:
+        data:
+          r_nxos_switchport: "{{ r_nxos_switchport }}"

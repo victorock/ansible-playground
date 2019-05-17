@@ -11,3 +11,8 @@
       password: "{{ infini_vol_password | default(omit, True) }}"
       pool: "{{ infini_vol_pool | default(omit, True) }}"
       size: "{{ infini_vol_size | default(omit, True) }}"
+
+- name: "export r_infini_vol"
+  set_stats:
+    data:
+      r_infini_vol: "{{ r_infini_vol }}"

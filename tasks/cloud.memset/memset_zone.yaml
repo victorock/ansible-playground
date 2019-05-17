@@ -9,3 +9,8 @@
       force: "{{ memset_zone_force | default(omit, True) }}"
       name: "{{ memset_zone_name | default(omit, True) }}"
       ttl: "{{ memset_zone_ttl | default(omit, True) }}"
+
+- name: "export r_memset_zone"
+  set_stats:
+    data:
+      r_memset_zone: "{{ r_memset_zone }}"

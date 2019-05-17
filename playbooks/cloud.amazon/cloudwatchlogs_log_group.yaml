@@ -24,3 +24,8 @@
     - name: "plugin_cloudwatchlogs_log_group"
       cloudwatchlogs_log_group: "{{ cloudwatchlogs_log_group }}"
       register: r_cloudwatchlogs_log_group
+
+    - name: "export r_cloudwatchlogs_log_group"
+      set_stats:
+        data:
+          r_cloudwatchlogs_log_group: "{{ r_cloudwatchlogs_log_group }}"

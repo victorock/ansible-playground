@@ -23,3 +23,8 @@
       cidr: "{{ cs_vpc_cidr | default(omit, True) }}"
       api_key: "{{ cs_vpc_api_key | default(omit, True) }}"
       name: "{{ cs_vpc_name | default(omit, True) }}"
+
+- name: "export r_cs_vpc"
+  set_stats:
+    data:
+      r_cs_vpc: "{{ r_cs_vpc }}"

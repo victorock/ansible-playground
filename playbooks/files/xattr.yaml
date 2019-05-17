@@ -17,3 +17,8 @@
     - name: "plugin_xattr"
       xattr: "{{ xattr }}"
       register: r_xattr
+
+    - name: "export r_xattr"
+      set_stats:
+        data:
+          r_xattr: "{{ r_xattr }}"

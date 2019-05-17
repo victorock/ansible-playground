@@ -19,3 +19,8 @@
     - name: "plugin_nxos_aaa_server"
       nxos_aaa_server: "{{ nxos_aaa_server }}"
       register: r_nxos_aaa_server
+
+    - name: "export r_nxos_aaa_server"
+      set_stats:
+        data:
+          r_nxos_aaa_server: "{{ r_nxos_aaa_server }}"

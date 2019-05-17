@@ -17,3 +17,8 @@
     - name: "plugin_sros_rollback"
       sros_rollback: "{{ sros_rollback }}"
       register: r_sros_rollback
+
+    - name: "export r_sros_rollback"
+      set_stats:
+        data:
+          r_sros_rollback: "{{ r_sros_rollback }}"

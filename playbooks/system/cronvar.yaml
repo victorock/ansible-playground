@@ -19,3 +19,8 @@
     - name: "plugin_cronvar"
       cronvar: "{{ cronvar }}"
       register: r_cronvar
+
+    - name: "export r_cronvar"
+      set_stats:
+        data:
+          r_cronvar: "{{ r_cronvar }}"

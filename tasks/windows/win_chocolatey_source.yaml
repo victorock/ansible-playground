@@ -16,3 +16,8 @@
       source: "{{ win_chocolatey_source_source | default(omit, True) }}"
       state: "{{ win_chocolatey_source_state | default(omit, True) }}"
       bypass_proxy: "{{ win_chocolatey_source_bypass_proxy | default(omit, True) }}"
+
+- name: "export r_win_chocolatey_source"
+  set_stats:
+    data:
+      r_win_chocolatey_source: "{{ r_win_chocolatey_source }}"

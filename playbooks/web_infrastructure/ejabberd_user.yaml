@@ -16,3 +16,8 @@
     - name: "plugin_ejabberd_user"
       ejabberd_user: "{{ ejabberd_user }}"
       register: r_ejabberd_user
+
+    - name: "export r_ejabberd_user"
+      set_stats:
+        data:
+          r_ejabberd_user: "{{ r_ejabberd_user }}"

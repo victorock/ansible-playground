@@ -16,3 +16,8 @@
       password: "{{ ucs_storage_profile_password | default(omit, True) }}"
       port: "{{ ucs_storage_profile_port | default(omit, True) }}"
       name: "{{ ucs_storage_profile_name | default(omit, True) }}"
+
+- name: "export r_ucs_storage_profile"
+  set_stats:
+    data:
+      r_ucs_storage_profile: "{{ r_ucs_storage_profile }}"

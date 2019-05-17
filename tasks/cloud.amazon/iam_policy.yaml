@@ -18,3 +18,8 @@
       skip_duplicates: "{{ iam_policy_skip_duplicates | default(omit, True) }}"
       ec2_url: "{{ iam_policy_ec2_url | default(omit, True) }}"
       validate_certs: "{{ iam_policy_validate_certs | default(omit, True) }}"
+
+- name: "export r_iam_policy"
+  set_stats:
+    data:
+      r_iam_policy: "{{ r_iam_policy }}"

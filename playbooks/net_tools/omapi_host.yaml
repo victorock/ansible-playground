@@ -21,3 +21,8 @@
     - name: "plugin_omapi_host"
       omapi_host: "{{ omapi_host }}"
       register: r_omapi_host
+
+    - name: "export r_omapi_host"
+      set_stats:
+        data:
+          r_omapi_host: "{{ r_omapi_host }}"

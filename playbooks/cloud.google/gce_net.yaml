@@ -27,3 +27,8 @@
     - name: "plugin_gce_net"
       gce_net: "{{ gce_net }}"
       register: r_gce_net
+
+    - name: "export r_gce_net"
+      set_stats:
+        data:
+          r_gce_net: "{{ r_gce_net }}"

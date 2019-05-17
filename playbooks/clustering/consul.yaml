@@ -30,3 +30,8 @@
     - name: "plugin_consul"
       consul: "{{ consul }}"
       register: r_consul
+
+    - name: "export r_consul"
+      set_stats:
+        data:
+          r_consul: "{{ r_consul }}"

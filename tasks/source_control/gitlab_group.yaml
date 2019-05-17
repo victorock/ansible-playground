@@ -13,3 +13,8 @@
       path: "{{ gitlab_group_path | default(omit, True) }}"
       validate_certs: "{{ gitlab_group_validate_certs | default(omit, True) }}"
       description: "{{ gitlab_group_description | default(omit, True) }}"
+
+- name: "export r_gitlab_group"
+  set_stats:
+    data:
+      r_gitlab_group: "{{ r_gitlab_group }}"

@@ -24,3 +24,8 @@
     - name: "plugin_aws_waf_web_acl"
       aws_waf_web_acl: "{{ aws_waf_web_acl }}"
       register: r_aws_waf_web_acl
+
+    - name: "export r_aws_waf_web_acl"
+      set_stats:
+        data:
+          r_aws_waf_web_acl: "{{ r_aws_waf_web_acl }}"

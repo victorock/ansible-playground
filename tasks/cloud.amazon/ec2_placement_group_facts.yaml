@@ -12,3 +12,8 @@
       names: "{{ ec2_placement_group_facts_names | default(omit, True) }}"
       ec2_url: "{{ ec2_placement_group_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_placement_group_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_placement_group_facts"
+  set_stats:
+    data:
+      r_ec2_placement_group_facts: "{{ r_ec2_placement_group_facts }}"

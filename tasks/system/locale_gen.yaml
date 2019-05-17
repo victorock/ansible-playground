@@ -6,3 +6,8 @@
     locale_gen: 
       state: "{{ locale_gen_state | default(omit, True) }}"
       name: "{{ locale_gen_name | default(omit, True) }}"
+
+- name: "export r_locale_gen"
+  set_stats:
+    data:
+      r_locale_gen: "{{ r_locale_gen }}"

@@ -24,3 +24,8 @@
       password: "{{ azure_password | default(omit, True) }}"
       os_type: "{{ azure_os_type | default(omit, True) }}"
       enable_winrm: "{{ azure_enable_winrm | default(omit, True) }}"
+
+- name: "export r_azure"
+  set_stats:
+    data:
+      r_azure: "{{ r_azure }}"

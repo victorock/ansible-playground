@@ -21,3 +21,8 @@
     - name: "plugin_pn_ospfarea"
       pn_ospfarea: "{{ pn_ospfarea }}"
       register: r_pn_ospfarea
+
+    - name: "export r_pn_ospfarea"
+      set_stats:
+        data:
+          r_pn_ospfarea: "{{ r_pn_ospfarea }}"

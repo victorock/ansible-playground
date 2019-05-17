@@ -17,3 +17,8 @@
       backup: "{{ aireos_config_backup | default(omit, True) }}"
       match: "{{ aireos_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ aireos_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_aireos_config"
+  set_stats:
+    data:
+      r_aireos_config: "{{ r_aireos_config }}"

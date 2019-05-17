@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_igroup"
       na_ontap_igroup: "{{ na_ontap_igroup }}"
       register: r_na_ontap_igroup
+
+    - name: "export r_na_ontap_igroup"
+      set_stats:
+        data:
+          r_na_ontap_igroup: "{{ r_na_ontap_igroup }}"

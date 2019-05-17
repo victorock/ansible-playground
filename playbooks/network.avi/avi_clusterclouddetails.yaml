@@ -27,3 +27,8 @@
     - name: "plugin_avi_clusterclouddetails"
       avi_clusterclouddetails: "{{ avi_clusterclouddetails }}"
       register: r_avi_clusterclouddetails
+
+    - name: "export r_avi_clusterclouddetails"
+      set_stats:
+        data:
+          r_avi_clusterclouddetails: "{{ r_avi_clusterclouddetails }}"

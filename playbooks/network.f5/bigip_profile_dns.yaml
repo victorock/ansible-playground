@@ -31,3 +31,8 @@
     - name: "plugin_bigip_profile_dns"
       bigip_profile_dns: "{{ bigip_profile_dns }}"
       register: r_bigip_profile_dns
+
+    - name: "export r_bigip_profile_dns"
+      set_stats:
+        data:
+          r_bigip_profile_dns: "{{ r_bigip_profile_dns }}"

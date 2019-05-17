@@ -12,3 +12,8 @@
       sampler_direction: "{{ ce_netstream_global_sampler_direction | default(omit, True) }}"
       interface: "{{ ce_netstream_global_interface | default(omit, True) }}"
       type: "{{ ce_netstream_global_type | default(omit, True) }}"
+
+- name: "export r_ce_netstream_global"
+  set_stats:
+    data:
+      r_ce_netstream_global: "{{ r_ce_netstream_global }}"

@@ -23,3 +23,8 @@
     - name: "plugin_ce_interface_ospf"
       ce_interface_ospf: "{{ ce_interface_ospf }}"
       register: r_ce_interface_ospf
+
+    - name: "export r_ce_interface_ospf"
+      set_stats:
+        data:
+          r_ce_interface_ospf: "{{ r_ce_interface_ospf }}"

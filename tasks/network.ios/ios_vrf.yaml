@@ -25,3 +25,8 @@
       route_both_ipv6: "{{ ios_vrf_route_both_ipv6 | default(omit, True) }}"
       route_import: "{{ ios_vrf_route_import | default(omit, True) }}"
       route_both: "{{ ios_vrf_route_both | default(omit, True) }}"
+
+- name: "export r_ios_vrf"
+  set_stats:
+    data:
+      r_ios_vrf: "{{ r_ios_vrf }}"

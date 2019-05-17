@@ -28,3 +28,8 @@
     - name: "plugin_postgresql_db"
       postgresql_db: "{{ postgresql_db }}"
       register: r_postgresql_db
+
+    - name: "export r_postgresql_db"
+      set_stats:
+        data:
+          r_postgresql_db: "{{ r_postgresql_db }}"

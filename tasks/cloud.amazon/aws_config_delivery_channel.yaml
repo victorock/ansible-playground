@@ -17,3 +17,8 @@
       sns_topic_arn: "{{ aws_config_delivery_channel_sns_topic_arn | default(omit, True) }}"
       validate_certs: "{{ aws_config_delivery_channel_validate_certs | default(omit, True) }}"
       region: "{{ aws_config_delivery_channel_region | default(omit, True) }}"
+
+- name: "export r_aws_config_delivery_channel"
+  set_stats:
+    data:
+      r_aws_config_delivery_channel: "{{ r_aws_config_delivery_channel }}"

@@ -8,3 +8,8 @@
       commands: "{{ nxos_gir_profile_management_commands | default(omit, True) }}"
       state: "{{ nxos_gir_profile_management_state | default(omit, True) }}"
       provider: "{{ nxos_gir_profile_management_provider | default(omit, True) }}"
+
+- name: "export r_nxos_gir_profile_management"
+  set_stats:
+    data:
+      r_nxos_gir_profile_management: "{{ r_nxos_gir_profile_management }}"

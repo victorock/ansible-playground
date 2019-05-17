@@ -15,3 +15,8 @@
       groups: "{{ iosxr_user_groups | default(omit, True) }}"
       provider: "{{ iosxr_user_provider | default(omit, True) }}"
       aggregate: "{{ iosxr_user_aggregate | default(omit, True) }}"
+
+- name: "export r_iosxr_user"
+  set_stats:
+    data:
+      r_iosxr_user: "{{ r_iosxr_user }}"

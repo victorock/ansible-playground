@@ -16,3 +16,8 @@
       provider: "{{ bigip_profile_udp_provider | default(omit, True) }}"
       password: "{{ bigip_profile_udp_password | default(omit, True) }}"
       validate_certs: "{{ bigip_profile_udp_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_profile_udp"
+  set_stats:
+    data:
+      r_bigip_profile_udp: "{{ r_bigip_profile_udp }}"

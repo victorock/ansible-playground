@@ -9,3 +9,8 @@
       wait_for: "{{ ce_command_wait_for | default(omit, True) }}"
       match: "{{ ce_command_match | default(omit, True) }}"
       interval: "{{ ce_command_interval | default(omit, True) }}"
+
+- name: "export r_ce_command"
+  set_stats:
+    data:
+      r_ce_command: "{{ r_ce_command }}"

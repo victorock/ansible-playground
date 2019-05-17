@@ -17,3 +17,8 @@
     - name: "plugin_aos_device"
       aos_device: "{{ aos_device }}"
       register: r_aos_device
+
+    - name: "export r_aos_device"
+      set_stats:
+        data:
+          r_aos_device: "{{ r_aos_device }}"

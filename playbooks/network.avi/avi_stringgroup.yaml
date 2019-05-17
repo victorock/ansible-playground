@@ -29,3 +29,8 @@
     - name: "plugin_avi_stringgroup"
       avi_stringgroup: "{{ avi_stringgroup }}"
       register: r_avi_stringgroup
+
+    - name: "export r_avi_stringgroup"
+      set_stats:
+        data:
+          r_avi_stringgroup: "{{ r_avi_stringgroup }}"

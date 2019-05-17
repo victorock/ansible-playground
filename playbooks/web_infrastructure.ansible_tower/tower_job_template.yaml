@@ -47,3 +47,8 @@
     - name: "plugin_tower_job_template"
       tower_job_template: "{{ tower_job_template }}"
       register: r_tower_job_template
+
+    - name: "export r_tower_job_template"
+      set_stats:
+        data:
+          r_tower_job_template: "{{ r_tower_job_template }}"

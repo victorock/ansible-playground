@@ -18,3 +18,8 @@
       destination_port: "{{ panos_query_rules_destination_port | default(omit, True) }}"
       password: "{{ panos_query_rules_password | default(omit, True) }}"
       ip_address: "{{ panos_query_rules_ip_address | default(omit, True) }}"
+
+- name: "export r_panos_query_rules"
+  set_stats:
+    data:
+      r_panos_query_rules: "{{ r_panos_query_rules }}"

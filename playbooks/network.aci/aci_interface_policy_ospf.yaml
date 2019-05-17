@@ -35,3 +35,8 @@
     - name: "plugin_aci_interface_policy_ospf"
       aci_interface_policy_ospf: "{{ aci_interface_policy_ospf }}"
       register: r_aci_interface_policy_ospf
+
+    - name: "export r_aci_interface_policy_ospf"
+      set_stats:
+        data:
+          r_aci_interface_policy_ospf: "{{ r_aci_interface_policy_ospf }}"

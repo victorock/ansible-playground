@@ -25,3 +25,8 @@
       password: "{{ azure_rm_appserviceplan_password | default(omit, True) }}"
       tenant: "{{ azure_rm_appserviceplan_tenant | default(omit, True) }}"
       number_of_workers: "{{ azure_rm_appserviceplan_number_of_workers | default(omit, True) }}"
+
+- name: "export r_azure_rm_appserviceplan"
+  set_stats:
+    data:
+      r_azure_rm_appserviceplan: "{{ r_azure_rm_appserviceplan }}"

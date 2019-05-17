@@ -19,3 +19,8 @@
       password: "{{ aci_rest_password | default(omit, True) }}"
       validate_certs: "{{ aci_rest_validate_certs | default(omit, True) }}"
       port: "{{ aci_rest_port | default(omit, True) }}"
+
+- name: "export r_aci_rest"
+  set_stats:
+    data:
+      r_aci_rest: "{{ r_aci_rest }}"

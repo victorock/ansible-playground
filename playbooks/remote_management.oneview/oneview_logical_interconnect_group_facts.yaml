@@ -14,3 +14,8 @@
     - name: "plugin_oneview_logical_interconnect_group_facts"
       oneview_logical_interconnect_group_facts: "{{ oneview_logical_interconnect_group_facts }}"
       register: r_oneview_logical_interconnect_group_facts
+
+    - name: "export r_oneview_logical_interconnect_group_facts"
+      set_stats:
+        data:
+          r_oneview_logical_interconnect_group_facts: "{{ r_oneview_logical_interconnect_group_facts }}"

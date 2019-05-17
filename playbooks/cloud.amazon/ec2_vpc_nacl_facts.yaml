@@ -20,3 +20,8 @@
     - name: "plugin_ec2_vpc_nacl_facts"
       ec2_vpc_nacl_facts: "{{ ec2_vpc_nacl_facts }}"
       register: r_ec2_vpc_nacl_facts
+
+    - name: "export r_ec2_vpc_nacl_facts"
+      set_stats:
+        data:
+          r_ec2_vpc_nacl_facts: "{{ r_ec2_vpc_nacl_facts }}"

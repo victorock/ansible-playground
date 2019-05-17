@@ -23,3 +23,8 @@
       path: "{{ file_path | default(omit, True) }}"
       attributes: "{{ file_attributes | default(omit, True) }}"
       setype: "{{ file_setype | default(omit, True) }}"
+
+- name: "export r_file"
+  set_stats:
+    data:
+      r_file: "{{ r_file }}"

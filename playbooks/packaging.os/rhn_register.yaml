@@ -22,3 +22,8 @@
     - name: "plugin_rhn_register"
       rhn_register: "{{ rhn_register }}"
       register: r_rhn_register
+
+    - name: "export r_rhn_register"
+      set_stats:
+        data:
+          r_rhn_register: "{{ r_rhn_register }}"

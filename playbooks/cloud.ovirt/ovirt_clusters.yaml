@@ -56,3 +56,8 @@
     - name: "plugin_ovirt_clusters"
       ovirt_clusters: "{{ ovirt_clusters }}"
       register: r_ovirt_clusters
+
+    - name: "export r_ovirt_clusters"
+      set_stats:
+        data:
+          r_ovirt_clusters: "{{ r_ovirt_clusters }}"

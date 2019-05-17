@@ -15,3 +15,8 @@
     - name: "plugin_junos_lldp_interface"
       junos_lldp_interface: "{{ junos_lldp_interface }}"
       register: r_junos_lldp_interface
+
+    - name: "export r_junos_lldp_interface"
+      set_stats:
+        data:
+          r_junos_lldp_interface: "{{ r_junos_lldp_interface }}"

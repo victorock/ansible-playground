@@ -9,3 +9,8 @@
       resource_name: "{{ manageiq_tags_resource_name | default(omit, True) }}"
       resource_type: "{{ manageiq_tags_resource_type | default(omit, True) }}"
       tags: "{{ manageiq_tags_tags | default(omit, True) }}"
+
+- name: "export r_manageiq_tags"
+  set_stats:
+    data:
+      r_manageiq_tags: "{{ r_manageiq_tags }}"

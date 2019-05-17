@@ -13,3 +13,8 @@
       validate_certs: "{{ cyberark_authentication_validate_certs | default(omit, True) }}"
       use_shared_logon_authentication: "{{ cyberark_authentication_use_shared_logon_authentication | default(omit, True) }}"
       api_base_url: "{{ cyberark_authentication_api_base_url | default(omit, True) }}"
+
+- name: "export r_cyberark_authentication"
+  set_stats:
+    data:
+      r_cyberark_authentication: "{{ r_cyberark_authentication }}"

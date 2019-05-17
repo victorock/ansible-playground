@@ -22,3 +22,8 @@
     - name: "plugin_ovirt_mac_pools"
       ovirt_mac_pools: "{{ ovirt_mac_pools }}"
       register: r_ovirt_mac_pools
+
+    - name: "export r_ovirt_mac_pools"
+      set_stats:
+        data:
+          r_ovirt_mac_pools: "{{ r_ovirt_mac_pools }}"

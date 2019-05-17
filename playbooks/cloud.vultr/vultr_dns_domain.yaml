@@ -20,3 +20,8 @@
     - name: "plugin_vultr_dns_domain"
       vultr_dns_domain: "{{ vultr_dns_domain }}"
       register: r_vultr_dns_domain
+
+    - name: "export r_vultr_dns_domain"
+      set_stats:
+        data:
+          r_vultr_dns_domain: "{{ r_vultr_dns_domain }}"

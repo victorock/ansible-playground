@@ -34,3 +34,8 @@
     - name: "plugin_avi_network"
       avi_network: "{{ avi_network }}"
       register: r_avi_network
+
+    - name: "export r_avi_network"
+      set_stats:
+        data:
+          r_avi_network: "{{ r_avi_network }}"

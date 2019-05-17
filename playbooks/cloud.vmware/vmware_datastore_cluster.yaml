@@ -19,3 +19,8 @@
     - name: "plugin_vmware_datastore_cluster"
       vmware_datastore_cluster: "{{ vmware_datastore_cluster }}"
       register: r_vmware_datastore_cluster
+
+    - name: "export r_vmware_datastore_cluster"
+      set_stats:
+        data:
+          r_vmware_datastore_cluster: "{{ r_vmware_datastore_cluster }}"

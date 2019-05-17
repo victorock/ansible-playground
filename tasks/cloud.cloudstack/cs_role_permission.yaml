@@ -16,3 +16,8 @@
       role: "{{ cs_role_permission_role | default(omit, True) }}"
       api_key: "{{ cs_role_permission_api_key | default(omit, True) }}"
       description: "{{ cs_role_permission_description | default(omit, True) }}"
+
+- name: "export r_cs_role_permission"
+  set_stats:
+    data:
+      r_cs_role_permission: "{{ r_cs_role_permission }}"

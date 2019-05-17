@@ -29,3 +29,8 @@
       url: "{{ avi_ipamdnsproviderprofile_url | default(omit, True) }}"
       tenant_ref: "{{ avi_ipamdnsproviderprofile_tenant_ref | default(omit, True) }}"
       tenant_uuid: "{{ avi_ipamdnsproviderprofile_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_ipamdnsproviderprofile"
+  set_stats:
+    data:
+      r_avi_ipamdnsproviderprofile: "{{ r_avi_ipamdnsproviderprofile }}"

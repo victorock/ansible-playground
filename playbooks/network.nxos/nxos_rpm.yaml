@@ -16,3 +16,8 @@
     - name: "plugin_nxos_rpm"
       nxos_rpm: "{{ nxos_rpm }}"
       register: r_nxos_rpm
+
+    - name: "export r_nxos_rpm"
+      set_stats:
+        data:
+          r_nxos_rpm: "{{ r_nxos_rpm }}"

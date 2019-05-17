@@ -21,3 +21,8 @@
     - name: "plugin_bigip_traffic_group"
       bigip_traffic_group: "{{ bigip_traffic_group }}"
       register: r_bigip_traffic_group
+
+    - name: "export r_bigip_traffic_group"
+      set_stats:
+        data:
+          r_bigip_traffic_group: "{{ r_bigip_traffic_group }}"

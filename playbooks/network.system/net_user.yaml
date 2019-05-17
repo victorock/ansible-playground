@@ -21,3 +21,8 @@
     - name: "plugin_net_user"
       net_user: "{{ net_user }}"
       register: r_net_user
+
+    - name: "export r_net_user"
+      set_stats:
+        data:
+          r_net_user: "{{ r_net_user }}"

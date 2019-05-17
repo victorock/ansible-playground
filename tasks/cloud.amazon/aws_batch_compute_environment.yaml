@@ -29,3 +29,8 @@
       region: "{{ aws_batch_compute_environment_region | default(omit, True) }}"
       compute_environment_state: "{{ aws_batch_compute_environment_compute_environment_state | default(omit, True) }}"
       validate_certs: "{{ aws_batch_compute_environment_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_batch_compute_environment"
+  set_stats:
+    data:
+      r_aws_batch_compute_environment: "{{ r_aws_batch_compute_environment }}"

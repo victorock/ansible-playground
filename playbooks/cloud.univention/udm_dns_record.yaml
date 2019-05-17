@@ -16,3 +16,8 @@
     - name: "plugin_udm_dns_record"
       udm_dns_record: "{{ udm_dns_record }}"
       register: r_udm_dns_record
+
+    - name: "export r_udm_dns_record"
+      set_stats:
+        data:
+          r_udm_dns_record: "{{ r_udm_dns_record }}"

@@ -9,3 +9,8 @@
       state: "{{ onyx_magp_state | default(omit, True) }}"
       router_ip: "{{ onyx_magp_router_ip | default(omit, True) }}"
       magp_id: "{{ onyx_magp_magp_id | default(omit, True) }}"
+
+- name: "export r_onyx_magp"
+  set_stats:
+    data:
+      r_onyx_magp: "{{ r_onyx_magp }}"

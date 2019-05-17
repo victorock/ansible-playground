@@ -42,3 +42,8 @@
     - name: "plugin_cs_network"
       cs_network: "{{ cs_network }}"
       register: r_cs_network
+
+    - name: "export r_cs_network"
+      set_stats:
+        data:
+          r_cs_network: "{{ r_cs_network }}"

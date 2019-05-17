@@ -20,3 +20,8 @@
     - name: "plugin_ec2_vpc_dhcp_options_facts"
       ec2_vpc_dhcp_options_facts: "{{ ec2_vpc_dhcp_options_facts }}"
       register: r_ec2_vpc_dhcp_options_facts
+
+    - name: "export r_ec2_vpc_dhcp_options_facts"
+      set_stats:
+        data:
+          r_ec2_vpc_dhcp_options_facts: "{{ r_ec2_vpc_dhcp_options_facts }}"

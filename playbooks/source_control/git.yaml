@@ -32,3 +32,8 @@
     - name: "plugin_git"
       git: "{{ git }}"
       register: r_git
+
+    - name: "export r_git"
+      set_stats:
+        data:
+          r_git: "{{ r_git }}"

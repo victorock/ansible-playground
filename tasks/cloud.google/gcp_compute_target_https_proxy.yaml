@@ -15,3 +15,8 @@
       url_map: "{{ gcp_compute_target_https_proxy_url_map | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_target_https_proxy_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_target_https_proxy_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_target_https_proxy"
+  set_stats:
+    data:
+      r_gcp_compute_target_https_proxy: "{{ r_gcp_compute_target_https_proxy }}"

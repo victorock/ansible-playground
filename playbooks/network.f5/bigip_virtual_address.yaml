@@ -33,3 +33,8 @@
     - name: "plugin_bigip_virtual_address"
       bigip_virtual_address: "{{ bigip_virtual_address }}"
       register: r_bigip_virtual_address
+
+    - name: "export r_bigip_virtual_address"
+      set_stats:
+        data:
+          r_bigip_virtual_address: "{{ r_bigip_virtual_address }}"

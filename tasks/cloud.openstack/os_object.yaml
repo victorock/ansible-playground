@@ -22,3 +22,8 @@
       interface: "{{ os_object_interface | default(omit, True) }}"
       cloud: "{{ os_object_cloud | default(omit, True) }}"
       wait: "{{ os_object_wait | default(omit, True) }}"
+
+- name: "export r_os_object"
+  set_stats:
+    data:
+      r_os_object: "{{ r_os_object }}"

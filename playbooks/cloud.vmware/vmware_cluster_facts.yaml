@@ -18,3 +18,8 @@
     - name: "plugin_vmware_cluster_facts"
       vmware_cluster_facts: "{{ vmware_cluster_facts }}"
       register: r_vmware_cluster_facts
+
+    - name: "export r_vmware_cluster_facts"
+      set_stats:
+        data:
+          r_vmware_cluster_facts: "{{ r_vmware_cluster_facts }}"

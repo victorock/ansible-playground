@@ -21,3 +21,8 @@
     - name: "plugin_nuage_vspk"
       nuage_vspk: "{{ nuage_vspk }}"
       register: r_nuage_vspk
+
+    - name: "export r_nuage_vspk"
+      set_stats:
+        data:
+          r_nuage_vspk: "{{ r_nuage_vspk }}"

@@ -17,3 +17,8 @@
     - name: "plugin_pushbullet"
       pushbullet: "{{ pushbullet }}"
       register: r_pushbullet
+
+    - name: "export r_pushbullet"
+      set_stats:
+        data:
+          r_pushbullet: "{{ r_pushbullet }}"

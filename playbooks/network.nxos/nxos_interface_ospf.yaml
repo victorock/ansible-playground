@@ -25,3 +25,8 @@
     - name: "plugin_nxos_interface_ospf"
       nxos_interface_ospf: "{{ nxos_interface_ospf }}"
       register: r_nxos_interface_ospf
+
+    - name: "export r_nxos_interface_ospf"
+      set_stats:
+        data:
+          r_nxos_interface_ospf: "{{ r_nxos_interface_ospf }}"

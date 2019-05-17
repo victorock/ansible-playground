@@ -21,3 +21,8 @@
       wait: "{{ os_security_group_wait | default(omit, True) }}"
       cloud: "{{ os_security_group_cloud | default(omit, True) }}"
       name: "{{ os_security_group_name | default(omit, True) }}"
+
+- name: "export r_os_security_group"
+  set_stats:
+    data:
+      r_os_security_group: "{{ r_os_security_group }}"

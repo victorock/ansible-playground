@@ -9,3 +9,8 @@
       safe_mode_password: "{{ win_domain_safe_mode_password | default(omit, True) }}"
       domain_netbios_name: "{{ win_domain_domain_netbios_name | default(omit, True) }}"
       sysvol_path: "{{ win_domain_sysvol_path | default(omit, True) }}"
+
+- name: "export r_win_domain"
+  set_stats:
+    data:
+      r_win_domain: "{{ r_win_domain }}"

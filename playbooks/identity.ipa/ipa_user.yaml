@@ -32,3 +32,8 @@
     - name: "plugin_ipa_user"
       ipa_user: "{{ ipa_user }}"
       register: r_ipa_user
+
+    - name: "export r_ipa_user"
+      set_stats:
+        data:
+          r_ipa_user: "{{ r_ipa_user }}"

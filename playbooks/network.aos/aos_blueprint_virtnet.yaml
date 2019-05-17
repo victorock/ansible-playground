@@ -16,3 +16,8 @@
     - name: "plugin_aos_blueprint_virtnet"
       aos_blueprint_virtnet: "{{ aos_blueprint_virtnet }}"
       register: r_aos_blueprint_virtnet
+
+    - name: "export r_aos_blueprint_virtnet"
+      set_stats:
+        data:
+          r_aos_blueprint_virtnet: "{{ r_aos_blueprint_virtnet }}"

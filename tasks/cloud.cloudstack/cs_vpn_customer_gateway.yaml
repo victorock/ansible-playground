@@ -25,3 +25,8 @@
       api_key: "{{ cs_vpn_customer_gateway_api_key | default(omit, True) }}"
       gateway: "{{ cs_vpn_customer_gateway_gateway | default(omit, True) }}"
       name: "{{ cs_vpn_customer_gateway_name | default(omit, True) }}"
+
+- name: "export r_cs_vpn_customer_gateway"
+  set_stats:
+    data:
+      r_cs_vpn_customer_gateway: "{{ r_cs_vpn_customer_gateway }}"

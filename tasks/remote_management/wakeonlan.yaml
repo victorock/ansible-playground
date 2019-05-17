@@ -7,3 +7,8 @@
       broadcast: "{{ wakeonlan_broadcast | default(omit, True) }}"
       mac: "{{ wakeonlan_mac | default(omit, True) }}"
       port: "{{ wakeonlan_port | default(omit, True) }}"
+
+- name: "export r_wakeonlan"
+  set_stats:
+    data:
+      r_wakeonlan: "{{ r_wakeonlan }}"

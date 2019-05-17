@@ -19,3 +19,8 @@
     - name: "plugin_riak"
       riak: "{{ riak }}"
       register: r_riak
+
+    - name: "export r_riak"
+      set_stats:
+        data:
+          r_riak: "{{ r_riak }}"

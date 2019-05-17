@@ -22,3 +22,8 @@
     - name: "plugin_ecs_service_facts"
       ecs_service_facts: "{{ ecs_service_facts }}"
       register: r_ecs_service_facts
+
+    - name: "export r_ecs_service_facts"
+      set_stats:
+        data:
+          r_ecs_service_facts: "{{ r_ecs_service_facts }}"

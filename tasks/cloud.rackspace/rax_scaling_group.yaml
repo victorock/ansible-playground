@@ -32,3 +32,8 @@
       tenant_id: "{{ rax_scaling_group_tenant_id | default(omit, True) }}"
       region: "{{ rax_scaling_group_region | default(omit, True) }}"
       meta: "{{ rax_scaling_group_meta | default(omit, True) }}"
+
+- name: "export r_rax_scaling_group"
+  set_stats:
+    data:
+      r_rax_scaling_group: "{{ r_rax_scaling_group }}"

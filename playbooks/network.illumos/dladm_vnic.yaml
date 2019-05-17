@@ -17,3 +17,8 @@
     - name: "plugin_dladm_vnic"
       dladm_vnic: "{{ dladm_vnic }}"
       register: r_dladm_vnic
+
+    - name: "export r_dladm_vnic"
+      set_stats:
+        data:
+          r_dladm_vnic: "{{ r_dladm_vnic }}"

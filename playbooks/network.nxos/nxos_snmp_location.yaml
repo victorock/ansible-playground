@@ -14,3 +14,8 @@
     - name: "plugin_nxos_snmp_location"
       nxos_snmp_location: "{{ nxos_snmp_location }}"
       register: r_nxos_snmp_location
+
+    - name: "export r_nxos_snmp_location"
+      set_stats:
+        data:
+          r_nxos_snmp_location: "{{ r_nxos_snmp_location }}"

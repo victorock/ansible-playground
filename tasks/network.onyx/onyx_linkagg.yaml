@@ -10,3 +10,8 @@
       mode: "{{ onyx_linkagg_mode | default(omit, True) }}"
       members: "{{ onyx_linkagg_members | default(omit, True) }}"
       aggregate: "{{ onyx_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_onyx_linkagg"
+  set_stats:
+    data:
+      r_onyx_linkagg: "{{ r_onyx_linkagg }}"

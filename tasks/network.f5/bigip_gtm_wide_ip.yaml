@@ -18,3 +18,8 @@
       password: "{{ bigip_gtm_wide_ip_password | default(omit, True) }}"
       validate_certs: "{{ bigip_gtm_wide_ip_validate_certs | default(omit, True) }}"
       aliases: "{{ bigip_gtm_wide_ip_aliases | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_wide_ip"
+  set_stats:
+    data:
+      r_bigip_gtm_wide_ip: "{{ r_bigip_gtm_wide_ip }}"

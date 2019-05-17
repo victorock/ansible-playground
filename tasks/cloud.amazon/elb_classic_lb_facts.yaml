@@ -12,3 +12,8 @@
       names: "{{ elb_classic_lb_facts_names | default(omit, True) }}"
       ec2_url: "{{ elb_classic_lb_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elb_classic_lb_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_elb_classic_lb_facts"
+  set_stats:
+    data:
+      r_elb_classic_lb_facts: "{{ r_elb_classic_lb_facts }}"

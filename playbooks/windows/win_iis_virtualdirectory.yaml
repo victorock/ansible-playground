@@ -16,3 +16,8 @@
     - name: "plugin_win_iis_virtualdirectory"
       win_iis_virtualdirectory: "{{ win_iis_virtualdirectory }}"
       register: r_win_iis_virtualdirectory
+
+    - name: "export r_win_iis_virtualdirectory"
+      set_stats:
+        data:
+          r_win_iis_virtualdirectory: "{{ r_win_iis_virtualdirectory }}"

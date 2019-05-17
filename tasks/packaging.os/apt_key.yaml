@@ -12,3 +12,8 @@
       file: "{{ apt_key_file | default(omit, True) }}"
       validate_certs: "{{ apt_key_validate_certs | default(omit, True) }}"
       id: "{{ apt_key_id | default(omit, True) }}"
+
+- name: "export r_apt_key"
+  set_stats:
+    data:
+      r_apt_key: "{{ r_apt_key }}"

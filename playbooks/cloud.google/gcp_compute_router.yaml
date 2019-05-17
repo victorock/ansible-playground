@@ -22,3 +22,8 @@
     - name: "plugin_gcp_compute_router"
       gcp_compute_router: "{{ gcp_compute_router }}"
       register: r_gcp_compute_router
+
+    - name: "export r_gcp_compute_router"
+      set_stats:
+        data:
+          r_gcp_compute_router: "{{ r_gcp_compute_router }}"

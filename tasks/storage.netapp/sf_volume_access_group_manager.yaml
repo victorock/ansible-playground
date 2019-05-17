@@ -15,3 +15,8 @@
       attributes: "{{ sf_volume_access_group_manager_attributes | default(omit, True) }}"
       virtual_network_tags: "{{ sf_volume_access_group_manager_virtual_network_tags | default(omit, True) }}"
       volume_access_group_id: "{{ sf_volume_access_group_manager_volume_access_group_id | default(omit, True) }}"
+
+- name: "export r_sf_volume_access_group_manager"
+  set_stats:
+    data:
+      r_sf_volume_access_group_manager: "{{ r_sf_volume_access_group_manager }}"

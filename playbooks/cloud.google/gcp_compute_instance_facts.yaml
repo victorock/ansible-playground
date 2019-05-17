@@ -18,3 +18,8 @@
     - name: "plugin_gcp_compute_instance_facts"
       gcp_compute_instance_facts: "{{ gcp_compute_instance_facts }}"
       register: r_gcp_compute_instance_facts
+
+    - name: "export r_gcp_compute_instance_facts"
+      set_stats:
+        data:
+          r_gcp_compute_instance_facts: "{{ r_gcp_compute_instance_facts }}"

@@ -11,3 +11,8 @@
       decrypt: "{{ win_copy_decrypt | default(omit, True) }}"
       content: "{{ win_copy_content | default(omit, True) }}"
       local_follow: "{{ win_copy_local_follow | default(omit, True) }}"
+
+- name: "export r_win_copy"
+  set_stats:
+    data:
+      r_win_copy: "{{ r_win_copy }}"

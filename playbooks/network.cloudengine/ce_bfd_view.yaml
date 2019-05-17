@@ -23,3 +23,8 @@
     - name: "plugin_ce_bfd_view"
       ce_bfd_view: "{{ ce_bfd_view }}"
       register: r_ce_bfd_view
+
+    - name: "export r_ce_bfd_view"
+      set_stats:
+        data:
+          r_ce_bfd_view: "{{ r_ce_bfd_view }}"

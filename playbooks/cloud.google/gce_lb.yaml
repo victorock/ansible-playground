@@ -30,3 +30,8 @@
     - name: "plugin_gce_lb"
       gce_lb: "{{ gce_lb }}"
       register: r_gce_lb
+
+    - name: "export r_gce_lb"
+      set_stats:
+        data:
+          r_gce_lb: "{{ r_gce_lb }}"

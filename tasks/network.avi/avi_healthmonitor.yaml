@@ -33,3 +33,8 @@
       is_federated: "{{ avi_healthmonitor_is_federated | default(omit, True) }}"
       send_interval: "{{ avi_healthmonitor_send_interval | default(omit, True) }}"
       tenant_uuid: "{{ avi_healthmonitor_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_healthmonitor"
+  set_stats:
+    data:
+      r_avi_healthmonitor: "{{ r_avi_healthmonitor }}"

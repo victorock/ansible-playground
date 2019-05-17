@@ -22,3 +22,8 @@
     - name: "plugin_postgresql_lang"
       postgresql_lang: "{{ postgresql_lang }}"
       register: r_postgresql_lang
+
+    - name: "export r_postgresql_lang"
+      set_stats:
+        data:
+          r_postgresql_lang: "{{ r_postgresql_lang }}"

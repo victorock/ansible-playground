@@ -21,3 +21,8 @@
     - name: "plugin_sts_session_token"
       sts_session_token: "{{ sts_session_token }}"
       register: r_sts_session_token
+
+    - name: "export r_sts_session_token"
+      set_stats:
+        data:
+          r_sts_session_token: "{{ r_sts_session_token }}"

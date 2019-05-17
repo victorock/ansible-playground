@@ -18,3 +18,8 @@
     - name: "plugin_panos_cert_gen_ssh"
       panos_cert_gen_ssh: "{{ panos_cert_gen_ssh }}"
       register: r_panos_cert_gen_ssh
+
+    - name: "export r_panos_cert_gen_ssh"
+      set_stats:
+        data:
+          r_panos_cert_gen_ssh: "{{ r_panos_cert_gen_ssh }}"

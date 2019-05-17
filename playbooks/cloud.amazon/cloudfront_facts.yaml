@@ -37,3 +37,8 @@
     - name: "plugin_cloudfront_facts"
       cloudfront_facts: "{{ cloudfront_facts }}"
       register: r_cloudfront_facts
+
+    - name: "export r_cloudfront_facts"
+      set_stats:
+        data:
+          r_cloudfront_facts: "{{ r_cloudfront_facts }}"

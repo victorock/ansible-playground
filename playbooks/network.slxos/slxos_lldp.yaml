@@ -12,3 +12,8 @@
     - name: "plugin_slxos_lldp"
       slxos_lldp: "{{ slxos_lldp }}"
       register: r_slxos_lldp
+
+    - name: "export r_slxos_lldp"
+      set_stats:
+        data:
+          r_slxos_lldp: "{{ r_slxos_lldp }}"

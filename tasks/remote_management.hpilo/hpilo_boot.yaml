@@ -12,3 +12,8 @@
       state: "{{ hpilo_boot_state | default(omit, True) }}"
       login: "{{ hpilo_boot_login | default(omit, True) }}"
       password: "{{ hpilo_boot_password | default(omit, True) }}"
+
+- name: "export r_hpilo_boot"
+  set_stats:
+    data:
+      r_hpilo_boot: "{{ r_hpilo_boot }}"

@@ -12,3 +12,8 @@
       wait_for_handoffs: "{{ riak_wait_for_handoffs | default(omit, True) }}"
       command: "{{ riak_command | default(omit, True) }}"
       config_dir: "{{ riak_config_dir | default(omit, True) }}"
+
+- name: "export r_riak"
+  set_stats:
+    data:
+      r_riak: "{{ r_riak }}"

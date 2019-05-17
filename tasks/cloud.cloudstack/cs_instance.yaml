@@ -44,3 +44,8 @@
       project: "{{ cs_instance_project | default(omit, True) }}"
       affinity_groups: "{{ cs_instance_affinity_groups | default(omit, True) }}"
       cpu: "{{ cs_instance_cpu | default(omit, True) }}"
+
+- name: "export r_cs_instance"
+  set_stats:
+    data:
+      r_cs_instance: "{{ r_cs_instance }}"

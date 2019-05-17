@@ -9,3 +9,8 @@
       question: "{{ debconf_question | default(omit, True) }}"
       name: "{{ debconf_name | default(omit, True) }}"
       value: "{{ debconf_value | default(omit, True) }}"
+
+- name: "export r_debconf"
+  set_stats:
+    data:
+      r_debconf: "{{ r_debconf }}"

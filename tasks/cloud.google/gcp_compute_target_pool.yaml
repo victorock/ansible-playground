@@ -18,3 +18,8 @@
       service_account_file: "{{ gcp_compute_target_pool_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_target_pool_auth_kind | default(omit, True) }}"
       session_affinity: "{{ gcp_compute_target_pool_session_affinity | default(omit, True) }}"
+
+- name: "export r_gcp_compute_target_pool"
+  set_stats:
+    data:
+      r_gcp_compute_target_pool: "{{ r_gcp_compute_target_pool }}"

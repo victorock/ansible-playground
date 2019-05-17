@@ -21,3 +21,8 @@
     - name: "plugin_gcp_compute_target_vpn_gateway"
       gcp_compute_target_vpn_gateway: "{{ gcp_compute_target_vpn_gateway }}"
       register: r_gcp_compute_target_vpn_gateway
+
+    - name: "export r_gcp_compute_target_vpn_gateway"
+      set_stats:
+        data:
+          r_gcp_compute_target_vpn_gateway: "{{ r_gcp_compute_target_vpn_gateway }}"

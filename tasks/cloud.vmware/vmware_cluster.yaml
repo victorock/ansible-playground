@@ -15,3 +15,8 @@
       password: "{{ vmware_cluster_password | default(omit, True) }}"
       validate_certs: "{{ vmware_cluster_validate_certs | default(omit, True) }}"
       port: "{{ vmware_cluster_port | default(omit, True) }}"
+
+- name: "export r_vmware_cluster"
+  set_stats:
+    data:
+      r_vmware_cluster: "{{ r_vmware_cluster }}"

@@ -12,3 +12,8 @@
       stacki_password: "{{ stacki_host_stacki_password | default(omit, True) }}"
       force_install: "{{ stacki_host_force_install | default(omit, True) }}"
       prim_intf_mac: "{{ stacki_host_prim_intf_mac | default(omit, True) }}"
+
+- name: "export r_stacki_host"
+  set_stats:
+    data:
+      r_stacki_host: "{{ r_stacki_host }}"

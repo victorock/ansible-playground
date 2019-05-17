@@ -22,3 +22,8 @@
       protocol_port: "{{ os_listener_protocol_port | default(omit, True) }}"
       cloud: "{{ os_listener_cloud | default(omit, True) }}"
       wait: "{{ os_listener_wait | default(omit, True) }}"
+
+- name: "export r_os_listener"
+  set_stats:
+    data:
+      r_os_listener: "{{ r_os_listener }}"

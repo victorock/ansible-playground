@@ -25,3 +25,8 @@
       gateway: "{{ netapp_e_mgmt_interface_gateway | default(omit, True) }}"
       channel: "{{ netapp_e_mgmt_interface_channel | default(omit, True) }}"
       name: "{{ netapp_e_mgmt_interface_name | default(omit, True) }}"
+
+- name: "export r_netapp_e_mgmt_interface"
+  set_stats:
+    data:
+      r_netapp_e_mgmt_interface: "{{ r_netapp_e_mgmt_interface }}"

@@ -23,3 +23,8 @@
       vip_port: "{{ os_loadbalancer_vip_port | default(omit, True) }}"
       cloud: "{{ os_loadbalancer_cloud | default(omit, True) }}"
       wait: "{{ os_loadbalancer_wait | default(omit, True) }}"
+
+- name: "export r_os_loadbalancer"
+  set_stats:
+    data:
+      r_os_loadbalancer: "{{ r_os_loadbalancer }}"

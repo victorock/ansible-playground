@@ -13,3 +13,8 @@
     - name: "plugin_ce_snmp_contact"
       ce_snmp_contact: "{{ ce_snmp_contact }}"
       register: r_ce_snmp_contact
+
+    - name: "export r_ce_snmp_contact"
+      set_stats:
+        data:
+          r_ce_snmp_contact: "{{ r_ce_snmp_contact }}"

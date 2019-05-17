@@ -29,3 +29,8 @@
     - name: "plugin_na_ontap_svm"
       na_ontap_svm: "{{ na_ontap_svm }}"
       register: r_na_ontap_svm
+
+    - name: "export r_na_ontap_svm"
+      set_stats:
+        data:
+          r_na_ontap_svm: "{{ r_na_ontap_svm }}"

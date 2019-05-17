@@ -11,3 +11,8 @@
       state: "{{ pkgin_state | default(omit, True) }}"
       update_cache: "{{ pkgin_update_cache | default(omit, True) }}"
       clean: "{{ pkgin_clean | default(omit, True) }}"
+
+- name: "export r_pkgin"
+  set_stats:
+    data:
+      r_pkgin: "{{ r_pkgin }}"

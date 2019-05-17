@@ -18,3 +18,8 @@
       runnable_type: "{{ vdirect_runnable_runnable_type | default(omit, True) }}"
       vdirect_secondary_ip: "{{ vdirect_runnable_vdirect_secondary_ip | default(omit, True) }}"
       vdirect_use_ssl: "{{ vdirect_runnable_vdirect_use_ssl | default(omit, True) }}"
+
+- name: "export r_vdirect_runnable"
+  set_stats:
+    data:
+      r_vdirect_runnable: "{{ r_vdirect_runnable }}"

@@ -22,3 +22,8 @@
     - name: "plugin_junos_logging"
       junos_logging: "{{ junos_logging }}"
       register: r_junos_logging
+
+    - name: "export r_junos_logging"
+      set_stats:
+        data:
+          r_junos_logging: "{{ r_junos_logging }}"

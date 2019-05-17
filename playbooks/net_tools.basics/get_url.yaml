@@ -37,3 +37,8 @@
     - name: "plugin_get_url"
       get_url: "{{ get_url }}"
       register: r_get_url
+
+    - name: "export r_get_url"
+      set_stats:
+        data:
+          r_get_url: "{{ r_get_url }}"

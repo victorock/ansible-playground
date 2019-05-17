@@ -18,3 +18,8 @@
       password: "{{ aci_interface_selector_to_switch_policy_leaf_profile_password | default(omit, True) }}"
       validate_certs: "{{ aci_interface_selector_to_switch_policy_leaf_profile_validate_certs | default(omit, True) }}"
       port: "{{ aci_interface_selector_to_switch_policy_leaf_profile_port | default(omit, True) }}"
+
+- name: "export r_aci_interface_selector_to_switch_policy_leaf_profile"
+  set_stats:
+    data:
+      r_aci_interface_selector_to_switch_policy_leaf_profile: "{{ r_aci_interface_selector_to_switch_policy_leaf_profile }}"

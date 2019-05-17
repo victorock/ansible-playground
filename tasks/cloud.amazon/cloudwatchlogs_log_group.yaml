@@ -17,3 +17,8 @@
       validate_certs: "{{ cloudwatchlogs_log_group_validate_certs | default(omit, True) }}"
       overwrite: "{{ cloudwatchlogs_log_group_overwrite | default(omit, True) }}"
       retention: "{{ cloudwatchlogs_log_group_retention | default(omit, True) }}"
+
+- name: "export r_cloudwatchlogs_log_group"
+  set_stats:
+    data:
+      r_cloudwatchlogs_log_group: "{{ r_cloudwatchlogs_log_group }}"

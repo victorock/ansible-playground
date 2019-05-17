@@ -40,3 +40,8 @@
     - name: "plugin_zabbix_host"
       zabbix_host: "{{ zabbix_host }}"
       register: r_zabbix_host
+
+    - name: "export r_zabbix_host"
+      set_stats:
+        data:
+          r_zabbix_host: "{{ r_zabbix_host }}"

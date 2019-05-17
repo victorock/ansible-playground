@@ -18,3 +18,8 @@
       interfaceArg1: "{{ cnos_portchannel_interfaceArg1 | default(omit, True) }}"
       interfaceArg2: "{{ cnos_portchannel_interfaceArg2 | default(omit, True) }}"
       interfaceArg3: "{{ cnos_portchannel_interfaceArg3 | default(omit, True) }}"
+
+- name: "export r_cnos_portchannel"
+  set_stats:
+    data:
+      r_cnos_portchannel: "{{ r_cnos_portchannel }}"

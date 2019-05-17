@@ -27,3 +27,8 @@
     - name: "plugin_iam_role"
       iam_role: "{{ iam_role }}"
       register: r_iam_role
+
+    - name: "export r_iam_role"
+      set_stats:
+        data:
+          r_iam_role: "{{ r_iam_role }}"

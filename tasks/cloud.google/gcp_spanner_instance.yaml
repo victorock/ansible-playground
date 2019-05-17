@@ -15,3 +15,8 @@
       service_account_file: "{{ gcp_spanner_instance_service_account_file | default(omit, True) }}"
       config: "{{ gcp_spanner_instance_config | default(omit, True) }}"
       node_count: "{{ gcp_spanner_instance_node_count | default(omit, True) }}"
+
+- name: "export r_gcp_spanner_instance"
+  set_stats:
+    data:
+      r_gcp_spanner_instance: "{{ r_gcp_spanner_instance }}"

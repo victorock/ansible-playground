@@ -19,3 +19,8 @@
       disk_type: "{{ gce_pd_disk_type | default(omit, True) }}"
       delete_on_termination: "{{ gce_pd_delete_on_termination | default(omit, True) }}"
       mode: "{{ gce_pd_mode | default(omit, True) }}"
+
+- name: "export r_gce_pd"
+  set_stats:
+    data:
+      r_gce_pd: "{{ r_gce_pd }}"

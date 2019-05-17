@@ -26,3 +26,8 @@
     - name: "plugin_ce_vxlan_gateway"
       ce_vxlan_gateway: "{{ ce_vxlan_gateway }}"
       register: r_ce_vxlan_gateway
+
+    - name: "export r_ce_vxlan_gateway"
+      set_stats:
+        data:
+          r_ce_vxlan_gateway: "{{ r_ce_vxlan_gateway }}"

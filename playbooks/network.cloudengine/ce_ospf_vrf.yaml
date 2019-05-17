@@ -33,3 +33,8 @@
     - name: "plugin_ce_ospf_vrf"
       ce_ospf_vrf: "{{ ce_ospf_vrf }}"
       register: r_ce_ospf_vrf
+
+    - name: "export r_ce_ospf_vrf"
+      set_stats:
+        data:
+          r_ce_ospf_vrf: "{{ r_ce_ospf_vrf }}"

@@ -94,3 +94,8 @@
     - name: "plugin_ovirt_vm"
       ovirt_vm: "{{ ovirt_vm }}"
       register: r_ovirt_vm
+
+    - name: "export r_ovirt_vm"
+      set_stats:
+        data:
+          r_ovirt_vm: "{{ r_ovirt_vm }}"

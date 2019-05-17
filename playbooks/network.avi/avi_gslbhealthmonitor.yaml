@@ -37,3 +37,8 @@
     - name: "plugin_avi_gslbhealthmonitor"
       avi_gslbhealthmonitor: "{{ avi_gslbhealthmonitor }}"
       register: r_avi_gslbhealthmonitor
+
+    - name: "export r_avi_gslbhealthmonitor"
+      set_stats:
+        data:
+          r_avi_gslbhealthmonitor: "{{ r_avi_gslbhealthmonitor }}"

@@ -16,3 +16,8 @@
       ec2_url: "{{ s3_website_ec2_url | default(omit, True) }}"
       validate_certs: "{{ s3_website_validate_certs | default(omit, True) }}"
       name: "{{ s3_website_name | default(omit, True) }}"
+
+- name: "export r_s3_website"
+  set_stats:
+    data:
+      r_s3_website: "{{ r_s3_website }}"

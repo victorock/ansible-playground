@@ -19,3 +19,8 @@
     - name: "plugin_onyx_igmp"
       onyx_igmp: "{{ onyx_igmp }}"
       register: r_onyx_igmp
+
+    - name: "export r_onyx_igmp"
+      set_stats:
+        data:
+          r_onyx_igmp: "{{ r_onyx_igmp }}"

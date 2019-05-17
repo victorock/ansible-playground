@@ -14,3 +14,8 @@
     - name: "plugin_monit"
       monit: "{{ monit }}"
       register: r_monit
+
+    - name: "export r_monit"
+      set_stats:
+        data:
+          r_monit: "{{ r_monit }}"

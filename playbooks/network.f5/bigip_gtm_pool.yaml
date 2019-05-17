@@ -28,3 +28,8 @@
     - name: "plugin_bigip_gtm_pool"
       bigip_gtm_pool: "{{ bigip_gtm_pool }}"
       register: r_bigip_gtm_pool
+
+    - name: "export r_bigip_gtm_pool"
+      set_stats:
+        data:
+          r_bigip_gtm_pool: "{{ r_bigip_gtm_pool }}"

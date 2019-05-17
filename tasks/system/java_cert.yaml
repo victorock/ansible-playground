@@ -16,3 +16,8 @@
       cert_url: "{{ java_cert_cert_url | default(omit, True) }}"
       cert_path: "{{ java_cert_cert_path | default(omit, True) }}"
       keystore_path: "{{ java_cert_keystore_path | default(omit, True) }}"
+
+- name: "export r_java_cert"
+  set_stats:
+    data:
+      r_java_cert: "{{ r_java_cert }}"

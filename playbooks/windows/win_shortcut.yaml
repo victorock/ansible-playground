@@ -20,3 +20,8 @@
     - name: "plugin_win_shortcut"
       win_shortcut: "{{ win_shortcut }}"
       register: r_win_shortcut
+
+    - name: "export r_win_shortcut"
+      set_stats:
+        data:
+          r_win_shortcut: "{{ r_win_shortcut }}"

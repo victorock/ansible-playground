@@ -20,3 +20,8 @@
     - name: "plugin_include_vars"
       include_vars: "{{ include_vars }}"
       register: r_include_vars
+
+    - name: "export r_include_vars"
+      set_stats:
+        data:
+          r_include_vars: "{{ r_include_vars }}"

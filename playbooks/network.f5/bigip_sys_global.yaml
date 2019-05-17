@@ -26,3 +26,8 @@
     - name: "plugin_bigip_sys_global"
       bigip_sys_global: "{{ bigip_sys_global }}"
       register: r_bigip_sys_global
+
+    - name: "export r_bigip_sys_global"
+      set_stats:
+        data:
+          r_bigip_sys_global: "{{ r_bigip_sys_global }}"

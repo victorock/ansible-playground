@@ -25,3 +25,8 @@
     - name: "plugin_find"
       find: "{{ find }}"
       register: r_find
+
+    - name: "export r_find"
+      set_stats:
+        data:
+          r_find: "{{ r_find }}"

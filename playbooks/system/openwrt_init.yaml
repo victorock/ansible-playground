@@ -15,3 +15,8 @@
     - name: "plugin_openwrt_init"
       openwrt_init: "{{ openwrt_init }}"
       register: r_openwrt_init
+
+    - name: "export r_openwrt_init"
+      set_stats:
+        data:
+          r_openwrt_init: "{{ r_openwrt_init }}"

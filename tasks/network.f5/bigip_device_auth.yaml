@@ -19,3 +19,8 @@
       password: "{{ bigip_device_auth_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_auth_validate_certs | default(omit, True) }}"
       authentication: "{{ bigip_device_auth_authentication | default(omit, True) }}"
+
+- name: "export r_bigip_device_auth"
+  set_stats:
+    data:
+      r_bigip_device_auth: "{{ r_bigip_device_auth }}"

@@ -26,3 +26,8 @@
     - name: "plugin_aruba_config"
       aruba_config: "{{ aruba_config }}"
       register: r_aruba_config
+
+    - name: "export r_aruba_config"
+      set_stats:
+        data:
+          r_aruba_config: "{{ r_aruba_config }}"

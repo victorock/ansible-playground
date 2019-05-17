@@ -18,3 +18,8 @@
     - name: "plugin_na_cdot_license"
       na_cdot_license: "{{ na_cdot_license }}"
       register: r_na_cdot_license
+
+    - name: "export r_na_cdot_license"
+      set_stats:
+        data:
+          r_na_cdot_license: "{{ r_na_cdot_license }}"

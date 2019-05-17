@@ -43,3 +43,8 @@
     - name: "plugin_vmware_guest"
       vmware_guest: "{{ vmware_guest }}"
       register: r_vmware_guest
+
+    - name: "export r_vmware_guest"
+      set_stats:
+        data:
+          r_vmware_guest: "{{ r_vmware_guest }}"

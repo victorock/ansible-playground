@@ -40,3 +40,8 @@
     - name: "plugin_avi_healthmonitor"
       avi_healthmonitor: "{{ avi_healthmonitor }}"
       register: r_avi_healthmonitor
+
+    - name: "export r_avi_healthmonitor"
+      set_stats:
+        data:
+          r_avi_healthmonitor: "{{ r_avi_healthmonitor }}"

@@ -39,3 +39,8 @@
     - name: "plugin_avi_serverautoscalepolicy"
       avi_serverautoscalepolicy: "{{ avi_serverautoscalepolicy }}"
       register: r_avi_serverautoscalepolicy
+
+    - name: "export r_avi_serverautoscalepolicy"
+      set_stats:
+        data:
+          r_avi_serverautoscalepolicy: "{{ r_avi_serverautoscalepolicy }}"

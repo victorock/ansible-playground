@@ -29,3 +29,8 @@
     - name: "plugin_vmware_vmkernel"
       vmware_vmkernel: "{{ vmware_vmkernel }}"
       register: r_vmware_vmkernel
+
+    - name: "export r_vmware_vmkernel"
+      set_stats:
+        data:
+          r_vmware_vmkernel: "{{ r_vmware_vmkernel }}"

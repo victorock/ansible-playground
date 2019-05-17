@@ -36,3 +36,8 @@
     - name: "plugin_pn_vrouterbgp"
       pn_vrouterbgp: "{{ pn_vrouterbgp }}"
       register: r_pn_vrouterbgp
+
+    - name: "export r_pn_vrouterbgp"
+      set_stats:
+        data:
+          r_pn_vrouterbgp: "{{ r_pn_vrouterbgp }}"

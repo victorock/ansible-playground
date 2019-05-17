@@ -21,3 +21,8 @@
       validate_certs: "{{ meraki_snmp_validate_certs | default(omit, True) }}"
       v3_enabled: "{{ meraki_snmp_v3_enabled | default(omit, True) }}"
       use_https: "{{ meraki_snmp_use_https | default(omit, True) }}"
+
+- name: "export r_meraki_snmp"
+  set_stats:
+    data:
+      r_meraki_snmp: "{{ r_meraki_snmp }}"

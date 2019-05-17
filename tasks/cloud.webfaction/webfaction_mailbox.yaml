@@ -9,3 +9,8 @@
       login_name: "{{ webfaction_mailbox_login_name | default(omit, True) }}"
       mailbox_name: "{{ webfaction_mailbox_mailbox_name | default(omit, True) }}"
       login_password: "{{ webfaction_mailbox_login_password | default(omit, True) }}"
+
+- name: "export r_webfaction_mailbox"
+  set_stats:
+    data:
+      r_webfaction_mailbox: "{{ r_webfaction_mailbox }}"

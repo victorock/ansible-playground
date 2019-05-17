@@ -26,3 +26,8 @@
     - name: "plugin_bigiq_utility_license_assignment"
       bigiq_utility_license_assignment: "{{ bigiq_utility_license_assignment }}"
       register: r_bigiq_utility_license_assignment
+
+    - name: "export r_bigiq_utility_license_assignment"
+      set_stats:
+        data:
+          r_bigiq_utility_license_assignment: "{{ r_bigiq_utility_license_assignment }}"

@@ -8,3 +8,8 @@
       state: "{{ vyos_lldp_interface_state | default(omit, True) }}"
       name: "{{ vyos_lldp_interface_name | default(omit, True) }}"
       provider: "{{ vyos_lldp_interface_provider | default(omit, True) }}"
+
+- name: "export r_vyos_lldp_interface"
+  set_stats:
+    data:
+      r_vyos_lldp_interface: "{{ r_vyos_lldp_interface }}"

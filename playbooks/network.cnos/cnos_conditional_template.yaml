@@ -20,3 +20,8 @@
     - name: "plugin_cnos_conditional_template"
       cnos_conditional_template: "{{ cnos_conditional_template }}"
       register: r_cnos_conditional_template
+
+    - name: "export r_cnos_conditional_template"
+      set_stats:
+        data:
+          r_cnos_conditional_template: "{{ r_cnos_conditional_template }}"

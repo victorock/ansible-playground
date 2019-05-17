@@ -15,3 +15,8 @@
     - name: "plugin_ovirt_template_facts"
       ovirt_template_facts: "{{ ovirt_template_facts }}"
       register: r_ovirt_template_facts
+
+    - name: "export r_ovirt_template_facts"
+      set_stats:
+        data:
+          r_ovirt_template_facts: "{{ r_ovirt_template_facts }}"

@@ -22,3 +22,8 @@
     - name: "plugin_sf_account_manager"
       sf_account_manager: "{{ sf_account_manager }}"
       register: r_sf_account_manager
+
+    - name: "export r_sf_account_manager"
+      set_stats:
+        data:
+          r_sf_account_manager: "{{ r_sf_account_manager }}"

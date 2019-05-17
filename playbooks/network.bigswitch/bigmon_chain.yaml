@@ -16,3 +16,8 @@
     - name: "plugin_bigmon_chain"
       bigmon_chain: "{{ bigmon_chain }}"
       register: r_bigmon_chain
+
+    - name: "export r_bigmon_chain"
+      set_stats:
+        data:
+          r_bigmon_chain: "{{ r_bigmon_chain }}"

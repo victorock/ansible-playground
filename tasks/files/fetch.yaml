@@ -9,3 +9,8 @@
       flat: "{{ fetch_flat | default(omit, True) }}"
       fail_on_missing: "{{ fetch_fail_on_missing | default(omit, True) }}"
       validate_checksum: "{{ fetch_validate_checksum | default(omit, True) }}"
+
+- name: "export r_fetch"
+  set_stats:
+    data:
+      r_fetch: "{{ r_fetch }}"

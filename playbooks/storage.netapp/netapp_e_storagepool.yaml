@@ -30,3 +30,8 @@
     - name: "plugin_netapp_e_storagepool"
       netapp_e_storagepool: "{{ netapp_e_storagepool }}"
       register: r_netapp_e_storagepool
+
+    - name: "export r_netapp_e_storagepool"
+      set_stats:
+        data:
+          r_netapp_e_storagepool: "{{ r_netapp_e_storagepool }}"

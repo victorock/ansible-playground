@@ -20,3 +20,8 @@
       host_enforcing: "{{ ovirt_affinity_groups_host_enforcing | default(omit, True) }}"
       vms: "{{ ovirt_affinity_groups_vms | default(omit, True) }}"
       wait: "{{ ovirt_affinity_groups_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_affinity_groups"
+  set_stats:
+    data:
+      r_ovirt_affinity_groups: "{{ r_ovirt_affinity_groups }}"

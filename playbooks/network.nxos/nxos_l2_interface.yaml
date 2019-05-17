@@ -20,3 +20,8 @@
     - name: "plugin_nxos_l2_interface"
       nxos_l2_interface: "{{ nxos_l2_interface }}"
       register: r_nxos_l2_interface
+
+    - name: "export r_nxos_l2_interface"
+      set_stats:
+        data:
+          r_nxos_l2_interface: "{{ r_nxos_l2_interface }}"

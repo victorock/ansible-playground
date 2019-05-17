@@ -22,3 +22,8 @@
       assign_instances_ipv6: "{{ ec2_vpc_subnet_assign_instances_ipv6 | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_subnet_validate_certs | default(omit, True) }}"
       wait: "{{ ec2_vpc_subnet_wait | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_subnet"
+  set_stats:
+    data:
+      r_ec2_vpc_subnet: "{{ r_ec2_vpc_subnet }}"

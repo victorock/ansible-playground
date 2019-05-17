@@ -34,3 +34,8 @@
     - name: "plugin_azure_rm_storageaccount"
       azure_rm_storageaccount: "{{ azure_rm_storageaccount }}"
       register: r_azure_rm_storageaccount
+
+    - name: "export r_azure_rm_storageaccount"
+      set_stats:
+        data:
+          r_azure_rm_storageaccount: "{{ r_azure_rm_storageaccount }}"

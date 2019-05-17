@@ -19,3 +19,8 @@
     - name: "plugin_infini_export_client"
       infini_export_client: "{{ infini_export_client }}"
       register: r_infini_export_client
+
+    - name: "export r_infini_export_client"
+      set_stats:
+        data:
+          r_infini_export_client: "{{ r_infini_export_client }}"

@@ -27,3 +27,8 @@
     - name: "plugin_iam_cert"
       iam_cert: "{{ iam_cert }}"
       register: r_iam_cert
+
+    - name: "export r_iam_cert"
+      set_stats:
+        data:
+          r_iam_cert: "{{ r_iam_cert }}"

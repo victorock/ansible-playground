@@ -29,3 +29,8 @@
     - name: "plugin_avi_webhook"
       avi_webhook: "{{ avi_webhook }}"
       register: r_avi_webhook
+
+    - name: "export r_avi_webhook"
+      set_stats:
+        data:
+          r_avi_webhook: "{{ r_avi_webhook }}"

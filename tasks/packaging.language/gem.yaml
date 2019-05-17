@@ -17,3 +17,8 @@
       state: "{{ gem_state | default(omit, True) }}"
       version: "{{ gem_version | default(omit, True) }}"
       name: "{{ gem_name | default(omit, True) }}"
+
+- name: "export r_gem"
+  set_stats:
+    data:
+      r_gem: "{{ r_gem }}"

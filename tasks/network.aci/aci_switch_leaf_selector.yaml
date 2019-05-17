@@ -24,3 +24,8 @@
       port: "{{ aci_switch_leaf_selector_port | default(omit, True) }}"
       leaf_node_blk: "{{ aci_switch_leaf_selector_leaf_node_blk | default(omit, True) }}"
       leaf_node_blk_description: "{{ aci_switch_leaf_selector_leaf_node_blk_description | default(omit, True) }}"
+
+- name: "export r_aci_switch_leaf_selector"
+  set_stats:
+    data:
+      r_aci_switch_leaf_selector: "{{ r_aci_switch_leaf_selector }}"

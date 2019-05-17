@@ -21,3 +21,8 @@
     - name: "plugin_nxos_aaa_server_host"
       nxos_aaa_server_host: "{{ nxos_aaa_server_host }}"
       register: r_nxos_aaa_server_host
+
+    - name: "export r_nxos_aaa_server_host"
+      set_stats:
+        data:
+          r_nxos_aaa_server_host: "{{ r_nxos_aaa_server_host }}"

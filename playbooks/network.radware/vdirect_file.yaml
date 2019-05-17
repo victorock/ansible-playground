@@ -22,3 +22,8 @@
     - name: "plugin_vdirect_file"
       vdirect_file: "{{ vdirect_file }}"
       register: r_vdirect_file
+
+    - name: "export r_vdirect_file"
+      set_stats:
+        data:
+          r_vdirect_file: "{{ r_vdirect_file }}"

@@ -14,3 +14,8 @@
       search_regex: "{{ win_wait_for_search_regex | default(omit, True) }}"
       path: "{{ win_wait_for_path | default(omit, True) }}"
       connect_timeout: "{{ win_wait_for_connect_timeout | default(omit, True) }}"
+
+- name: "export r_win_wait_for"
+  set_stats:
+    data:
+      r_win_wait_for: "{{ r_win_wait_for }}"

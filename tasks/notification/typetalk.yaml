@@ -8,3 +8,8 @@
       client_secret: "{{ typetalk_client_secret | default(omit, True) }}"
       client_id: "{{ typetalk_client_id | default(omit, True) }}"
       msg: "{{ typetalk_msg | default(omit, True) }}"
+
+- name: "export r_typetalk"
+  set_stats:
+    data:
+      r_typetalk: "{{ r_typetalk }}"

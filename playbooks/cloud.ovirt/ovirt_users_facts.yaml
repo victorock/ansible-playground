@@ -15,3 +15,8 @@
     - name: "plugin_ovirt_users_facts"
       ovirt_users_facts: "{{ ovirt_users_facts }}"
       register: r_ovirt_users_facts
+
+    - name: "export r_ovirt_users_facts"
+      set_stats:
+        data:
+          r_ovirt_users_facts: "{{ r_ovirt_users_facts }}"

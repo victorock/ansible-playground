@@ -19,3 +19,8 @@
     - name: "plugin_iam_server_certificate_facts"
       iam_server_certificate_facts: "{{ iam_server_certificate_facts }}"
       register: r_iam_server_certificate_facts
+
+    - name: "export r_iam_server_certificate_facts"
+      set_stats:
+        data:
+          r_iam_server_certificate_facts: "{{ r_iam_server_certificate_facts }}"

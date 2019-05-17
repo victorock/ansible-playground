@@ -20,3 +20,8 @@
     - name: "plugin_deploy_helper"
       deploy_helper: "{{ deploy_helper }}"
       register: r_deploy_helper
+
+    - name: "export r_deploy_helper"
+      set_stats:
+        data:
+          r_deploy_helper: "{{ r_deploy_helper }}"

@@ -15,3 +15,8 @@
     - name: "plugin_layman"
       layman: "{{ layman }}"
       register: r_layman
+
+    - name: "export r_layman"
+      set_stats:
+        data:
+          r_layman: "{{ r_layman }}"

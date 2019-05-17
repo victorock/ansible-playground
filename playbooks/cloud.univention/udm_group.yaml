@@ -17,3 +17,8 @@
     - name: "plugin_udm_group"
       udm_group: "{{ udm_group }}"
       register: r_udm_group
+
+    - name: "export r_udm_group"
+      set_stats:
+        data:
+          r_udm_group: "{{ r_udm_group }}"

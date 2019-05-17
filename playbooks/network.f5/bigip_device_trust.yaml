@@ -23,3 +23,8 @@
     - name: "plugin_bigip_device_trust"
       bigip_device_trust: "{{ bigip_device_trust }}"
       register: r_bigip_device_trust
+
+    - name: "export r_bigip_device_trust"
+      set_stats:
+        data:
+          r_bigip_device_trust: "{{ r_bigip_device_trust }}"

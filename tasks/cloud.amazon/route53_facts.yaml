@@ -24,3 +24,8 @@
       next_marker: "{{ route53_facts_next_marker | default(omit, True) }}"
       validate_certs: "{{ route53_facts_validate_certs | default(omit, True) }}"
       change_id: "{{ route53_facts_change_id | default(omit, True) }}"
+
+- name: "export r_route53_facts"
+  set_stats:
+    data:
+      r_route53_facts: "{{ r_route53_facts }}"

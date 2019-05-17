@@ -15,3 +15,8 @@
     - name: "plugin_gcp_url_map"
       gcp_url_map: "{{ gcp_url_map }}"
       register: r_gcp_url_map
+
+    - name: "export r_gcp_url_map"
+      set_stats:
+        data:
+          r_gcp_url_map: "{{ r_gcp_url_map }}"

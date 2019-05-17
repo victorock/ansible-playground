@@ -34,3 +34,8 @@
     - name: "plugin_avi_vrfcontext"
       avi_vrfcontext: "{{ avi_vrfcontext }}"
       register: r_avi_vrfcontext
+
+    - name: "export r_avi_vrfcontext"
+      set_stats:
+        data:
+          r_avi_vrfcontext: "{{ r_avi_vrfcontext }}"

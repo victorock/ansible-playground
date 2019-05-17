@@ -43,3 +43,8 @@
     - name: "plugin_azure_rm_webapp"
       azure_rm_webapp: "{{ azure_rm_webapp }}"
       register: r_azure_rm_webapp
+
+    - name: "export r_azure_rm_webapp"
+      set_stats:
+        data:
+          r_azure_rm_webapp: "{{ r_azure_rm_webapp }}"

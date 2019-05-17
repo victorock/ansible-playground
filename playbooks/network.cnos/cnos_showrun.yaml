@@ -17,3 +17,8 @@
     - name: "plugin_cnos_showrun"
       cnos_showrun: "{{ cnos_showrun }}"
       register: r_cnos_showrun
+
+    - name: "export r_cnos_showrun"
+      set_stats:
+        data:
+          r_cnos_showrun: "{{ r_cnos_showrun }}"

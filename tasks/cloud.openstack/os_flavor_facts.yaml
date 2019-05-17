@@ -22,3 +22,8 @@
       interface: "{{ os_flavor_facts_interface | default(omit, True) }}"
       cloud: "{{ os_flavor_facts_cloud | default(omit, True) }}"
       wait: "{{ os_flavor_facts_wait | default(omit, True) }}"
+
+- name: "export r_os_flavor_facts"
+  set_stats:
+    data:
+      r_os_flavor_facts: "{{ r_os_flavor_facts }}"

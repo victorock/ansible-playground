@@ -21,3 +21,8 @@
     - name: "plugin_pagerduty_alert"
       pagerduty_alert: "{{ pagerduty_alert }}"
       register: r_pagerduty_alert
+
+    - name: "export r_pagerduty_alert"
+      set_stats:
+        data:
+          r_pagerduty_alert: "{{ r_pagerduty_alert }}"

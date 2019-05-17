@@ -8,3 +8,8 @@
       params: "{{ oneview_network_set_facts_params | default(omit, True) }}"
       name: "{{ oneview_network_set_facts_name | default(omit, True) }}"
       options: "{{ oneview_network_set_facts_options | default(omit, True) }}"
+
+- name: "export r_oneview_network_set_facts"
+  set_stats:
+    data:
+      r_oneview_network_set_facts: "{{ r_oneview_network_set_facts }}"

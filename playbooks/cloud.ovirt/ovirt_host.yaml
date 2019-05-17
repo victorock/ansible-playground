@@ -36,3 +36,8 @@
     - name: "plugin_ovirt_host"
       ovirt_host: "{{ ovirt_host }}"
       register: r_ovirt_host
+
+    - name: "export r_ovirt_host"
+      set_stats:
+        data:
+          r_ovirt_host: "{{ r_ovirt_host }}"

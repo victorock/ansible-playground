@@ -25,3 +25,8 @@
     - name: "plugin_ucs_vlans"
       ucs_vlans: "{{ ucs_vlans }}"
       register: r_ucs_vlans
+
+    - name: "export r_ucs_vlans"
+      set_stats:
+        data:
+          r_ucs_vlans: "{{ r_ucs_vlans }}"

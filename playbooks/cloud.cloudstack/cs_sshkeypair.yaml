@@ -23,3 +23,8 @@
     - name: "plugin_cs_sshkeypair"
       cs_sshkeypair: "{{ cs_sshkeypair }}"
       register: r_cs_sshkeypair
+
+    - name: "export r_cs_sshkeypair"
+      set_stats:
+        data:
+          r_cs_sshkeypair: "{{ r_cs_sshkeypair }}"

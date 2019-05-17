@@ -19,3 +19,8 @@
     - name: "plugin_mssql_db"
       mssql_db: "{{ mssql_db }}"
       register: r_mssql_db
+
+    - name: "export r_mssql_db"
+      set_stats:
+        data:
+          r_mssql_db: "{{ r_mssql_db }}"

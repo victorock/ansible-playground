@@ -25,3 +25,8 @@
     - name: "plugin_bigip_user"
       bigip_user: "{{ bigip_user }}"
       register: r_bigip_user
+
+    - name: "export r_bigip_user"
+      set_stats:
+        data:
+          r_bigip_user: "{{ r_bigip_user }}"

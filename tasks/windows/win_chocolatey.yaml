@@ -24,3 +24,8 @@
       architecture: "{{ win_chocolatey_architecture | default(omit, True) }}"
       validate_certs: "{{ win_chocolatey_validate_certs | default(omit, True) }}"
       ignore_dependencies: "{{ win_chocolatey_ignore_dependencies | default(omit, True) }}"
+
+- name: "export r_win_chocolatey"
+  set_stats:
+    data:
+      r_win_chocolatey: "{{ r_win_chocolatey }}"

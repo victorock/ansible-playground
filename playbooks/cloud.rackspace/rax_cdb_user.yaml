@@ -27,3 +27,8 @@
     - name: "plugin_rax_cdb_user"
       rax_cdb_user: "{{ rax_cdb_user }}"
       register: r_rax_cdb_user
+
+    - name: "export r_rax_cdb_user"
+      set_stats:
+        data:
+          r_rax_cdb_user: "{{ r_rax_cdb_user }}"

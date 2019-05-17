@@ -31,3 +31,8 @@
     - name: "plugin_docker_network"
       docker_network: "{{ docker_network }}"
       register: r_docker_network
+
+    - name: "export r_docker_network"
+      set_stats:
+        data:
+          r_docker_network: "{{ r_docker_network }}"

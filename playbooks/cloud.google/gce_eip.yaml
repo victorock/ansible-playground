@@ -14,3 +14,8 @@
     - name: "plugin_gce_eip"
       gce_eip: "{{ gce_eip }}"
       register: r_gce_eip
+
+    - name: "export r_gce_eip"
+      set_stats:
+        data:
+          r_gce_eip: "{{ r_gce_eip }}"

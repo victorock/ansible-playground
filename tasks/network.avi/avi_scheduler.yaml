@@ -28,3 +28,8 @@
       enabled: "{{ avi_scheduler_enabled | default(omit, True) }}"
       frequency_unit: "{{ avi_scheduler_frequency_unit | default(omit, True) }}"
       tenant_uuid: "{{ avi_scheduler_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_scheduler"
+  set_stats:
+    data:
+      r_avi_scheduler: "{{ r_avi_scheduler }}"

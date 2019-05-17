@@ -25,3 +25,8 @@
       key_file: "{{ openshift_scale_key_file | default(omit, True) }}"
       api_version: "{{ openshift_scale_api_version | default(omit, True) }}"
       wait: "{{ openshift_scale_wait | default(omit, True) }}"
+
+- name: "export r_openshift_scale"
+  set_stats:
+    data:
+      r_openshift_scale: "{{ r_openshift_scale }}"

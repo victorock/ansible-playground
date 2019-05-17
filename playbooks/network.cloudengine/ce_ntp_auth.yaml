@@ -18,3 +18,8 @@
     - name: "plugin_ce_ntp_auth"
       ce_ntp_auth: "{{ ce_ntp_auth }}"
       register: r_ce_ntp_auth
+
+    - name: "export r_ce_ntp_auth"
+      set_stats:
+        data:
+          r_ce_ntp_auth: "{{ r_ce_ntp_auth }}"

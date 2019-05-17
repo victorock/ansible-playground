@@ -14,3 +14,8 @@
       dfs_group_id: "{{ ce_mlag_config_dfs_group_id | default(omit, True) }}"
       ip_address: "{{ ce_mlag_config_ip_address | default(omit, True) }}"
       pseudo_nickname: "{{ ce_mlag_config_pseudo_nickname | default(omit, True) }}"
+
+- name: "export r_ce_mlag_config"
+  set_stats:
+    data:
+      r_ce_mlag_config: "{{ r_ce_mlag_config }}"

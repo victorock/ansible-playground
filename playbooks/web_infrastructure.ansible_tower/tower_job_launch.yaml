@@ -25,3 +25,8 @@
     - name: "plugin_tower_job_launch"
       tower_job_launch: "{{ tower_job_launch }}"
       register: r_tower_job_launch
+
+    - name: "export r_tower_job_launch"
+      set_stats:
+        data:
+          r_tower_job_launch: "{{ r_tower_job_launch }}"

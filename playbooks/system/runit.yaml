@@ -16,3 +16,8 @@
     - name: "plugin_runit"
       runit: "{{ runit }}"
       register: r_runit
+
+    - name: "export r_runit"
+      set_stats:
+        data:
+          r_runit: "{{ r_runit }}"

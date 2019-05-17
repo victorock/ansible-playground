@@ -23,3 +23,8 @@
     - name: "plugin_rocketchat"
       rocketchat: "{{ rocketchat }}"
       register: r_rocketchat
+
+    - name: "export r_rocketchat"
+      set_stats:
+        data:
+          r_rocketchat: "{{ r_rocketchat }}"

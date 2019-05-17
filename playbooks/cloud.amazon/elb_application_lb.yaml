@@ -36,3 +36,8 @@
     - name: "plugin_elb_application_lb"
       elb_application_lb: "{{ elb_application_lb }}"
       register: r_elb_application_lb
+
+    - name: "export r_elb_application_lb"
+      set_stats:
+        data:
+          r_elb_application_lb: "{{ r_elb_application_lb }}"

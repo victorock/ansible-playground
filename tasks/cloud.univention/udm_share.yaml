@@ -57,3 +57,8 @@
       directorymode: "{{ udm_share_directorymode | default(omit, True) }}"
       ou: "{{ udm_share_ou | default(omit, True) }}"
       samba_hosts_deny: "{{ udm_share_samba_hosts_deny | default(omit, True) }}"
+
+- name: "export r_udm_share"
+  set_stats:
+    data:
+      r_udm_share: "{{ r_udm_share }}"

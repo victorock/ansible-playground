@@ -14,3 +14,8 @@
       table_name: "{{ dynamodb_ttl_table_name | default(omit, True) }}"
       ec2_url: "{{ dynamodb_ttl_ec2_url | default(omit, True) }}"
       validate_certs: "{{ dynamodb_ttl_validate_certs | default(omit, True) }}"
+
+- name: "export r_dynamodb_ttl"
+  set_stats:
+    data:
+      r_dynamodb_ttl: "{{ r_dynamodb_ttl }}"

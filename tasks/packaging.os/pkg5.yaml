@@ -7,3 +7,8 @@
       accept_licenses: "{{ pkg5_accept_licenses | default(omit, True) }}"
       state: "{{ pkg5_state | default(omit, True) }}"
       name: "{{ pkg5_name | default(omit, True) }}"
+
+- name: "export r_pkg5"
+  set_stats:
+    data:
+      r_pkg5: "{{ r_pkg5 }}"

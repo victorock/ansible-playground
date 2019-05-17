@@ -15,3 +15,8 @@
       timeout: "{{ ovirt_snapshot_timeout | default(omit, True) }}"
       snapshot_id: "{{ ovirt_snapshot_snapshot_id | default(omit, True) }}"
       wait: "{{ ovirt_snapshot_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_snapshot"
+  set_stats:
+    data:
+      r_ovirt_snapshot: "{{ r_ovirt_snapshot }}"

@@ -11,3 +11,8 @@
       purge: "{{ net_logging_purge | default(omit, True) }}"
       state: "{{ net_logging_state | default(omit, True) }}"
       aggregate: "{{ net_logging_aggregate | default(omit, True) }}"
+
+- name: "export r_net_logging"
+  set_stats:
+    data:
+      r_net_logging: "{{ r_net_logging }}"

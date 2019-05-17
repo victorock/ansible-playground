@@ -28,3 +28,8 @@
     - name: "plugin_os_keystone_endpoint"
       os_keystone_endpoint: "{{ os_keystone_endpoint }}"
       register: r_os_keystone_endpoint
+
+    - name: "export r_os_keystone_endpoint"
+      set_stats:
+        data:
+          r_os_keystone_endpoint: "{{ r_os_keystone_endpoint }}"

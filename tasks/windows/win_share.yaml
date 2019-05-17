@@ -15,3 +15,8 @@
       path: "{{ win_share_path | default(omit, True) }}"
       change: "{{ win_share_change | default(omit, True) }}"
       name: "{{ win_share_name | default(omit, True) }}"
+
+- name: "export r_win_share"
+  set_stats:
+    data:
+      r_win_share: "{{ r_win_share }}"

@@ -33,3 +33,8 @@
     - name: "plugin_avi_pkiprofile"
       avi_pkiprofile: "{{ avi_pkiprofile }}"
       register: r_avi_pkiprofile
+
+    - name: "export r_avi_pkiprofile"
+      set_stats:
+        data:
+          r_avi_pkiprofile: "{{ r_avi_pkiprofile }}"

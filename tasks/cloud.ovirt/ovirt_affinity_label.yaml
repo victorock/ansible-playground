@@ -15,3 +15,8 @@
       timeout: "{{ ovirt_affinity_label_timeout | default(omit, True) }}"
       vms: "{{ ovirt_affinity_label_vms | default(omit, True) }}"
       wait: "{{ ovirt_affinity_label_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_affinity_label"
+  set_stats:
+    data:
+      r_ovirt_affinity_label: "{{ r_ovirt_affinity_label }}"

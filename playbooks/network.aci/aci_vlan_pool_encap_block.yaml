@@ -30,3 +30,8 @@
     - name: "plugin_aci_vlan_pool_encap_block"
       aci_vlan_pool_encap_block: "{{ aci_vlan_pool_encap_block }}"
       register: r_aci_vlan_pool_encap_block
+
+    - name: "export r_aci_vlan_pool_encap_block"
+      set_stats:
+        data:
+          r_aci_vlan_pool_encap_block: "{{ r_aci_vlan_pool_encap_block }}"

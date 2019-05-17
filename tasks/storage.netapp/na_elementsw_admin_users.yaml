@@ -12,3 +12,8 @@
       acceptEula: "{{ na_elementsw_admin_users_acceptEula | default(omit, True) }}"
       element_password: "{{ na_elementsw_admin_users_element_password | default(omit, True) }}"
       password: "{{ na_elementsw_admin_users_password | default(omit, True) }}"
+
+- name: "export r_na_elementsw_admin_users"
+  set_stats:
+    data:
+      r_na_elementsw_admin_users: "{{ r_na_elementsw_admin_users }}"

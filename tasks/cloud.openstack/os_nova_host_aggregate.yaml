@@ -21,3 +21,8 @@
       metadata: "{{ os_nova_host_aggregate_metadata | default(omit, True) }}"
       cloud: "{{ os_nova_host_aggregate_cloud | default(omit, True) }}"
       wait: "{{ os_nova_host_aggregate_wait | default(omit, True) }}"
+
+- name: "export r_os_nova_host_aggregate"
+  set_stats:
+    data:
+      r_os_nova_host_aggregate: "{{ r_os_nova_host_aggregate }}"

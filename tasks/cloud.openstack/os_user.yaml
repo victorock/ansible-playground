@@ -26,3 +26,8 @@
       enabled: "{{ os_user_enabled | default(omit, True) }}"
       cert: "{{ os_user_cert | default(omit, True) }}"
       timeout: "{{ os_user_timeout | default(omit, True) }}"
+
+- name: "export r_os_user"
+  set_stats:
+    data:
+      r_os_user: "{{ r_os_user }}"

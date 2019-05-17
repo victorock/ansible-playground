@@ -11,3 +11,8 @@
       hosts: "{{ znode_hosts | default(omit, True) }}"
       timeout: "{{ znode_timeout | default(omit, True) }}"
       op: "{{ znode_op | default(omit, True) }}"
+
+- name: "export r_znode"
+  set_stats:
+    data:
+      r_znode: "{{ r_znode }}"

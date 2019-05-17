@@ -6,3 +6,8 @@
     nxos_overlay_global: 
       anycast_gateway_mac: "{{ nxos_overlay_global_anycast_gateway_mac | default(omit, True) }}"
       provider: "{{ nxos_overlay_global_provider | default(omit, True) }}"
+
+- name: "export r_nxos_overlay_global"
+  set_stats:
+    data:
+      r_nxos_overlay_global: "{{ r_nxos_overlay_global }}"

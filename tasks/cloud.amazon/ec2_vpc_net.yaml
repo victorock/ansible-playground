@@ -21,3 +21,8 @@
       cidr_block: "{{ ec2_vpc_net_cidr_block | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_net_validate_certs | default(omit, True) }}"
       dhcp_opts_id: "{{ ec2_vpc_net_dhcp_opts_id | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_net"
+  set_stats:
+    data:
+      r_ec2_vpc_net: "{{ r_ec2_vpc_net }}"

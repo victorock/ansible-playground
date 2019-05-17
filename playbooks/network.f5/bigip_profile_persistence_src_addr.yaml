@@ -27,3 +27,8 @@
     - name: "plugin_bigip_profile_persistence_src_addr"
       bigip_profile_persistence_src_addr: "{{ bigip_profile_persistence_src_addr }}"
       register: r_bigip_profile_persistence_src_addr
+
+    - name: "export r_bigip_profile_persistence_src_addr"
+      set_stats:
+        data:
+          r_bigip_profile_persistence_src_addr: "{{ r_bigip_profile_persistence_src_addr }}"

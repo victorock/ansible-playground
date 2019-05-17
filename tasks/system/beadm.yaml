@@ -11,3 +11,8 @@
       mountpoint: "{{ beadm_mountpoint | default(omit, True) }}"
       options: "{{ beadm_options | default(omit, True) }}"
       description: "{{ beadm_description | default(omit, True) }}"
+
+- name: "export r_beadm"
+  set_stats:
+    data:
+      r_beadm: "{{ r_beadm }}"

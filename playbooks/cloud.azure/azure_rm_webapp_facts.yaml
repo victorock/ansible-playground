@@ -27,3 +27,8 @@
     - name: "plugin_azure_rm_webapp_facts"
       azure_rm_webapp_facts: "{{ azure_rm_webapp_facts }}"
       register: r_azure_rm_webapp_facts
+
+    - name: "export r_azure_rm_webapp_facts"
+      set_stats:
+        data:
+          r_azure_rm_webapp_facts: "{{ r_azure_rm_webapp_facts }}"

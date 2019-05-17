@@ -19,3 +19,8 @@
       timer_throttle_spf_start: "{{ nxos_ospf_vrf_timer_throttle_spf_start | default(omit, True) }}"
       ospf: "{{ nxos_ospf_vrf_ospf | default(omit, True) }}"
       timer_throttle_spf_hold: "{{ nxos_ospf_vrf_timer_throttle_spf_hold | default(omit, True) }}"
+
+- name: "export r_nxos_ospf_vrf"
+  set_stats:
+    data:
+      r_nxos_ospf_vrf: "{{ r_nxos_ospf_vrf }}"

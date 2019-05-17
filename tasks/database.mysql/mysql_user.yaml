@@ -25,3 +25,8 @@
       password: "{{ mysql_user_password | default(omit, True) }}"
       connect_timeout: "{{ mysql_user_connect_timeout | default(omit, True) }}"
       priv: "{{ mysql_user_priv | default(omit, True) }}"
+
+- name: "export r_mysql_user"
+  set_stats:
+    data:
+      r_mysql_user: "{{ r_mysql_user }}"

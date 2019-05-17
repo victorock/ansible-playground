@@ -21,3 +21,8 @@
     - name: "plugin_pn_vlan"
       pn_vlan: "{{ pn_vlan }}"
       register: r_pn_vlan
+
+    - name: "export r_pn_vlan"
+      set_stats:
+        data:
+          r_pn_vlan: "{{ r_pn_vlan }}"

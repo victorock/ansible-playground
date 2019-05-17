@@ -24,3 +24,8 @@
       interface: "{{ os_recordset_interface | default(omit, True) }}"
       cloud: "{{ os_recordset_cloud | default(omit, True) }}"
       region_name: "{{ os_recordset_region_name | default(omit, True) }}"
+
+- name: "export r_os_recordset"
+  set_stats:
+    data:
+      r_os_recordset: "{{ r_os_recordset }}"

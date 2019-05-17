@@ -17,3 +17,8 @@
     - name: "plugin_pkg5_publisher"
       pkg5_publisher: "{{ pkg5_publisher }}"
       register: r_pkg5_publisher
+
+    - name: "export r_pkg5_publisher"
+      set_stats:
+        data:
+          r_pkg5_publisher: "{{ r_pkg5_publisher }}"

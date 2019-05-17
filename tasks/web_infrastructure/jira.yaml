@@ -22,3 +22,8 @@
       operation: "{{ jira_operation | default(omit, True) }}"
       password: "{{ jira_password | default(omit, True) }}"
       issue: "{{ jira_issue | default(omit, True) }}"
+
+- name: "export r_jira"
+  set_stats:
+    data:
+      r_jira: "{{ r_jira }}"

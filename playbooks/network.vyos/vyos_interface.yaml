@@ -22,3 +22,8 @@
     - name: "plugin_vyos_interface"
       vyos_interface: "{{ vyos_interface }}"
       register: r_vyos_interface
+
+    - name: "export r_vyos_interface"
+      set_stats:
+        data:
+          r_vyos_interface: "{{ r_vyos_interface }}"

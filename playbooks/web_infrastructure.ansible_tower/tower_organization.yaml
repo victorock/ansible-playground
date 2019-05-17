@@ -19,3 +19,8 @@
     - name: "plugin_tower_organization"
       tower_organization: "{{ tower_organization }}"
       register: r_tower_organization
+
+    - name: "export r_tower_organization"
+      set_stats:
+        data:
+          r_tower_organization: "{{ r_tower_organization }}"

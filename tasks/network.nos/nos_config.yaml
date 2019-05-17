@@ -17,3 +17,8 @@
       backup: "{{ nos_config_backup | default(omit, True) }}"
       match: "{{ nos_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ nos_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_nos_config"
+  set_stats:
+    data:
+      r_nos_config: "{{ r_nos_config }}"

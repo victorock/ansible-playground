@@ -26,3 +26,8 @@
       region: "{{ rax_mon_check_region | default(omit, True) }}"
       timeout: "{{ rax_mon_check_timeout | default(omit, True) }}"
       monitoring_zones_poll: "{{ rax_mon_check_monitoring_zones_poll | default(omit, True) }}"
+
+- name: "export r_rax_mon_check"
+  set_stats:
+    data:
+      r_rax_mon_check: "{{ r_rax_mon_check }}"

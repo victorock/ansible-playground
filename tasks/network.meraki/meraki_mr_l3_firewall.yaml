@@ -20,3 +20,8 @@
       validate_certs: "{{ meraki_mr_l3_firewall_validate_certs | default(omit, True) }}"
       net_id: "{{ meraki_mr_l3_firewall_net_id | default(omit, True) }}"
       use_https: "{{ meraki_mr_l3_firewall_use_https | default(omit, True) }}"
+
+- name: "export r_meraki_mr_l3_firewall"
+  set_stats:
+    data:
+      r_meraki_mr_l3_firewall: "{{ r_meraki_mr_l3_firewall }}"

@@ -8,3 +8,8 @@
       copy_settings: "{{ win_region_copy_settings | default(omit, True) }}"
       location: "{{ win_region_location | default(omit, True) }}"
       format: "{{ win_region_format | default(omit, True) }}"
+
+- name: "export r_win_region"
+  set_stats:
+    data:
+      r_win_region: "{{ r_win_region }}"

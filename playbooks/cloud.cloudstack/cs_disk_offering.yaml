@@ -34,3 +34,8 @@
     - name: "plugin_cs_disk_offering"
       cs_disk_offering: "{{ cs_disk_offering }}"
       register: r_cs_disk_offering
+
+    - name: "export r_cs_disk_offering"
+      set_stats:
+        data:
+          r_cs_disk_offering: "{{ r_cs_disk_offering }}"

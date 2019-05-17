@@ -37,3 +37,8 @@
     - name: "plugin_gce_instance_template"
       gce_instance_template: "{{ gce_instance_template }}"
       register: r_gce_instance_template
+
+    - name: "export r_gce_instance_template"
+      set_stats:
+        data:
+          r_gce_instance_template: "{{ r_gce_instance_template }}"

@@ -8,3 +8,8 @@
       src: "{{ net_put_src | default(omit, True) }}"
       protocol: "{{ net_put_protocol | default(omit, True) }}"
       mode: "{{ net_put_mode | default(omit, True) }}"
+
+- name: "export r_net_put"
+  set_stats:
+    data:
+      r_net_put: "{{ r_net_put }}"

@@ -18,3 +18,8 @@
     - name: "plugin_purefa_pgsnap"
       purefa_pgsnap: "{{ purefa_pgsnap }}"
       register: r_purefa_pgsnap
+
+    - name: "export r_purefa_pgsnap"
+      set_stats:
+        data:
+          r_purefa_pgsnap: "{{ r_purefa_pgsnap }}"

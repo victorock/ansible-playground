@@ -15,3 +15,8 @@
       timeout: "{{ meraki_organization_timeout | default(omit, True) }}"
       validate_certs: "{{ meraki_organization_validate_certs | default(omit, True) }}"
       use_https: "{{ meraki_organization_use_https | default(omit, True) }}"
+
+- name: "export r_meraki_organization"
+  set_stats:
+    data:
+      r_meraki_organization: "{{ r_meraki_organization }}"

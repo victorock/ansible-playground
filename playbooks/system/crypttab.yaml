@@ -17,3 +17,8 @@
     - name: "plugin_crypttab"
       crypttab: "{{ crypttab }}"
       register: r_crypttab
+
+    - name: "export r_crypttab"
+      set_stats:
+        data:
+          r_crypttab: "{{ r_crypttab }}"

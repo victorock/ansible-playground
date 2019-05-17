@@ -50,3 +50,8 @@
     - name: "plugin_azure_rm_virtualmachine_scaleset"
       azure_rm_virtualmachine_scaleset: "{{ azure_rm_virtualmachine_scaleset }}"
       register: r_azure_rm_virtualmachine_scaleset
+
+    - name: "export r_azure_rm_virtualmachine_scaleset"
+      set_stats:
+        data:
+          r_azure_rm_virtualmachine_scaleset: "{{ r_azure_rm_virtualmachine_scaleset }}"

@@ -6,3 +6,8 @@
     win_firewall: 
       state: "{{ win_firewall_state | default(omit, True) }}"
       profiles: "{{ win_firewall_profiles | default(omit, True) }}"
+
+- name: "export r_win_firewall"
+  set_stats:
+    data:
+      r_win_firewall: "{{ r_win_firewall }}"

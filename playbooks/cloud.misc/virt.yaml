@@ -17,3 +17,8 @@
     - name: "plugin_virt"
       virt: "{{ virt }}"
       register: r_virt
+
+    - name: "export r_virt"
+      set_stats:
+        data:
+          r_virt: "{{ r_virt }}"

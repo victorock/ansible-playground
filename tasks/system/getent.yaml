@@ -8,3 +8,8 @@
       split: "{{ getent_split | default(omit, True) }}"
       key: "{{ getent_key | default(omit, True) }}"
       database: "{{ getent_database | default(omit, True) }}"
+
+- name: "export r_getent"
+  set_stats:
+    data:
+      r_getent: "{{ r_getent }}"

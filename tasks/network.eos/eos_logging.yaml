@@ -14,3 +14,8 @@
       aggregate: "{{ eos_logging_aggregate | default(omit, True) }}"
       level: "{{ eos_logging_level | default(omit, True) }}"
       size: "{{ eos_logging_size | default(omit, True) }}"
+
+- name: "export r_eos_logging"
+  set_stats:
+    data:
+      r_eos_logging: "{{ r_eos_logging }}"

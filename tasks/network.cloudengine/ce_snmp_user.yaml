@@ -13,3 +13,8 @@
       remote_engine_id: "{{ ce_snmp_user_remote_engine_id | default(omit, True) }}"
       priv_protocol: "{{ ce_snmp_user_priv_protocol | default(omit, True) }}"
       user_group: "{{ ce_snmp_user_user_group | default(omit, True) }}"
+
+- name: "export r_ce_snmp_user"
+  set_stats:
+    data:
+      r_ce_snmp_user: "{{ r_ce_snmp_user }}"

@@ -14,3 +14,8 @@
       state: "{{ aws_s3_cors_state | default(omit, True) }}"
       ec2_url: "{{ aws_s3_cors_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_s3_cors_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_s3_cors"
+  set_stats:
+    data:
+      r_aws_s3_cors: "{{ r_aws_s3_cors }}"

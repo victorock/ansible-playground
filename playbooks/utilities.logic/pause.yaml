@@ -15,3 +15,8 @@
     - name: "plugin_pause"
       pause: "{{ pause }}"
       register: r_pause
+
+    - name: "export r_pause"
+      set_stats:
+        data:
+          r_pause: "{{ r_pause }}"

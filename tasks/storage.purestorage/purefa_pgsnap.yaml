@@ -11,3 +11,8 @@
       api_token: "{{ purefa_pgsnap_api_token | default(omit, True) }}"
       eradicate: "{{ purefa_pgsnap_eradicate | default(omit, True) }}"
       fa_url: "{{ purefa_pgsnap_fa_url | default(omit, True) }}"
+
+- name: "export r_purefa_pgsnap"
+  set_stats:
+    data:
+      r_purefa_pgsnap: "{{ r_purefa_pgsnap }}"

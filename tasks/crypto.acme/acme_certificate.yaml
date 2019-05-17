@@ -24,3 +24,8 @@
       account_key_src: "{{ acme_certificate_account_key_src | default(omit, True) }}"
       remaining_days: "{{ acme_certificate_remaining_days | default(omit, True) }}"
       csr: "{{ acme_certificate_csr | default(omit, True) }}"
+
+- name: "export r_acme_certificate"
+  set_stats:
+    data:
+      r_acme_certificate: "{{ r_acme_certificate }}"

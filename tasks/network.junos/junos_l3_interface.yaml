@@ -12,3 +12,8 @@
       ipv6: "{{ junos_l3_interface_ipv6 | default(omit, True) }}"
       aggregate: "{{ junos_l3_interface_aggregate | default(omit, True) }}"
       unit: "{{ junos_l3_interface_unit | default(omit, True) }}"
+
+- name: "export r_junos_l3_interface"
+  set_stats:
+    data:
+      r_junos_l3_interface: "{{ r_junos_l3_interface }}"

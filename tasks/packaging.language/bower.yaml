@@ -11,3 +11,8 @@
       relative_execpath: "{{ bower_relative_execpath | default(omit, True) }}"
       path: "{{ bower_path | default(omit, True) }}"
       offline: "{{ bower_offline | default(omit, True) }}"
+
+- name: "export r_bower"
+  set_stats:
+    data:
+      r_bower: "{{ r_bower }}"

@@ -32,3 +32,8 @@
     - name: "plugin_rax_clb_ssl"
       rax_clb_ssl: "{{ rax_clb_ssl }}"
       register: r_rax_clb_ssl
+
+    - name: "export r_rax_clb_ssl"
+      set_stats:
+        data:
+          r_rax_clb_ssl: "{{ r_rax_clb_ssl }}"

@@ -22,3 +22,8 @@
       group_id: "{{ ec2_group_group_id | default(omit, True) }}"
       validate_certs: "{{ ec2_group_validate_certs | default(omit, True) }}"
       purge_rules_egress: "{{ ec2_group_purge_rules_egress | default(omit, True) }}"
+
+- name: "export r_ec2_group"
+  set_stats:
+    data:
+      r_ec2_group: "{{ r_ec2_group }}"

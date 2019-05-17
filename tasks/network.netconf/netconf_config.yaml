@@ -27,3 +27,8 @@
       commit: "{{ netconf_config_commit | default(omit, True) }}"
       backup: "{{ netconf_config_backup | default(omit, True) }}"
       delete: "{{ netconf_config_delete | default(omit, True) }}"
+
+- name: "export r_netconf_config"
+  set_stats:
+    data:
+      r_netconf_config: "{{ r_netconf_config }}"

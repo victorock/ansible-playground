@@ -28,3 +28,8 @@
     - name: "plugin_bigiq_application_https_waf"
       bigiq_application_https_waf: "{{ bigiq_application_https_waf }}"
       register: r_bigiq_application_https_waf
+
+    - name: "export r_bigiq_application_https_waf"
+      set_stats:
+        data:
+          r_bigiq_application_https_waf: "{{ r_bigiq_application_https_waf }}"

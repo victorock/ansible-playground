@@ -11,3 +11,8 @@
       mode: "{{ apt_repository_mode | default(omit, True) }}"
       codename: "{{ apt_repository_codename | default(omit, True) }}"
       validate_certs: "{{ apt_repository_validate_certs | default(omit, True) }}"
+
+- name: "export r_apt_repository"
+  set_stats:
+    data:
+      r_apt_repository: "{{ r_apt_repository }}"

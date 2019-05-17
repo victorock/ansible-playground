@@ -40,3 +40,8 @@
     - name: "plugin_ec2_ami"
       ec2_ami: "{{ ec2_ami }}"
       register: r_ec2_ami
+
+    - name: "export r_ec2_ami"
+      set_stats:
+        data:
+          r_ec2_ami: "{{ r_ec2_ami }}"

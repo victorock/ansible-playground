@@ -18,3 +18,8 @@
       password: "{{ bigiq_application_fasthttp_password | default(omit, True) }}"
       validate_certs: "{{ bigiq_application_fasthttp_validate_certs | default(omit, True) }}"
       wait: "{{ bigiq_application_fasthttp_wait | default(omit, True) }}"
+
+- name: "export r_bigiq_application_fasthttp"
+  set_stats:
+    data:
+      r_bigiq_application_fasthttp: "{{ r_bigiq_application_fasthttp }}"

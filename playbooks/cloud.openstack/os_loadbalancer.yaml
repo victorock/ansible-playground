@@ -30,3 +30,8 @@
     - name: "plugin_os_loadbalancer"
       os_loadbalancer: "{{ os_loadbalancer }}"
       register: r_os_loadbalancer
+
+    - name: "export r_os_loadbalancer"
+      set_stats:
+        data:
+          r_os_loadbalancer: "{{ r_os_loadbalancer }}"

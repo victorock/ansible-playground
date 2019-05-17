@@ -8,3 +8,8 @@
       auth_pass: "{{ ios_facts_auth_pass | default(omit, True) }}"
       provider: "{{ ios_facts_provider | default(omit, True) }}"
       gather_subset: "{{ ios_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_ios_facts"
+  set_stats:
+    data:
+      r_ios_facts: "{{ r_ios_facts }}"

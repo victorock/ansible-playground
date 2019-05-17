@@ -36,3 +36,8 @@
     - name: "plugin_ec2_ami_find"
       ec2_ami_find: "{{ ec2_ami_find }}"
       register: r_ec2_ami_find
+
+    - name: "export r_ec2_ami_find"
+      set_stats:
+        data:
+          r_ec2_ami_find: "{{ r_ec2_ami_find }}"

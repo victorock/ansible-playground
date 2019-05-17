@@ -17,3 +17,8 @@
     - name: "plugin_scaleway_sshkey"
       scaleway_sshkey: "{{ scaleway_sshkey }}"
       register: r_scaleway_sshkey
+
+    - name: "export r_scaleway_sshkey"
+      set_stats:
+        data:
+          r_scaleway_sshkey: "{{ r_scaleway_sshkey }}"

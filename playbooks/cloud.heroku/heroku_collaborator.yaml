@@ -16,3 +16,8 @@
     - name: "plugin_heroku_collaborator"
       heroku_collaborator: "{{ heroku_collaborator }}"
       register: r_heroku_collaborator
+
+    - name: "export r_heroku_collaborator"
+      set_stats:
+        data:
+          r_heroku_collaborator: "{{ r_heroku_collaborator }}"

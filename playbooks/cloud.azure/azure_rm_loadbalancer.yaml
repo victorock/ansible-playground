@@ -50,3 +50,8 @@
     - name: "plugin_azure_rm_loadbalancer"
       azure_rm_loadbalancer: "{{ azure_rm_loadbalancer }}"
       register: r_azure_rm_loadbalancer
+
+    - name: "export r_azure_rm_loadbalancer"
+      set_stats:
+        data:
+          r_azure_rm_loadbalancer: "{{ r_azure_rm_loadbalancer }}"

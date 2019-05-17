@@ -29,3 +29,8 @@
     - name: "plugin_bigip_smtp"
       bigip_smtp: "{{ bigip_smtp }}"
       register: r_bigip_smtp
+
+    - name: "export r_bigip_smtp"
+      set_stats:
+        data:
+          r_bigip_smtp: "{{ r_bigip_smtp }}"

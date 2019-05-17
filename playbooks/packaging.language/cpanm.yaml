@@ -21,3 +21,8 @@
     - name: "plugin_cpanm"
       cpanm: "{{ cpanm }}"
       register: r_cpanm
+
+    - name: "export r_cpanm"
+      set_stats:
+        data:
+          r_cpanm: "{{ r_cpanm }}"

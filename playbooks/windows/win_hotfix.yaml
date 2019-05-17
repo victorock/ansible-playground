@@ -15,3 +15,8 @@
     - name: "plugin_win_hotfix"
       win_hotfix: "{{ win_hotfix }}"
       register: r_win_hotfix
+
+    - name: "export r_win_hotfix"
+      set_stats:
+        data:
+          r_win_hotfix: "{{ r_win_hotfix }}"

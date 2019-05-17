@@ -17,3 +17,8 @@
     - name: "plugin_urpmi"
       urpmi: "{{ urpmi }}"
       register: r_urpmi
+
+    - name: "export r_urpmi"
+      set_stats:
+        data:
+          r_urpmi: "{{ r_urpmi }}"

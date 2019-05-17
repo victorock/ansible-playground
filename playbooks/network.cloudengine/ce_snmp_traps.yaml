@@ -16,3 +16,8 @@
     - name: "plugin_ce_snmp_traps"
       ce_snmp_traps: "{{ ce_snmp_traps }}"
       register: r_ce_snmp_traps
+
+    - name: "export r_ce_snmp_traps"
+      set_stats:
+        data:
+          r_ce_snmp_traps: "{{ r_ce_snmp_traps }}"

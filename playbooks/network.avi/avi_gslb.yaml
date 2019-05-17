@@ -37,3 +37,8 @@
     - name: "plugin_avi_gslb"
       avi_gslb: "{{ avi_gslb }}"
       register: r_avi_gslb
+
+    - name: "export r_avi_gslb"
+      set_stats:
+        data:
+          r_avi_gslb: "{{ r_avi_gslb }}"

@@ -22,3 +22,8 @@
     - name: "plugin_cs_resourcelimit"
       cs_resourcelimit: "{{ cs_resourcelimit }}"
       register: r_cs_resourcelimit
+
+    - name: "export r_cs_resourcelimit"
+      set_stats:
+        data:
+          r_cs_resourcelimit: "{{ r_cs_resourcelimit }}"

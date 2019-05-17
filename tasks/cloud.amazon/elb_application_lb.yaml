@@ -29,3 +29,8 @@
       listeners: "{{ elb_application_lb_listeners | default(omit, True) }}"
       http2: "{{ elb_application_lb_http2 | default(omit, True) }}"
       validate_certs: "{{ elb_application_lb_validate_certs | default(omit, True) }}"
+
+- name: "export r_elb_application_lb"
+  set_stats:
+    data:
+      r_elb_application_lb: "{{ r_elb_application_lb }}"

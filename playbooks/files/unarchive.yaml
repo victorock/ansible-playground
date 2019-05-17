@@ -31,3 +31,8 @@
     - name: "plugin_unarchive"
       unarchive: "{{ unarchive }}"
       register: r_unarchive
+
+    - name: "export r_unarchive"
+      set_stats:
+        data:
+          r_unarchive: "{{ r_unarchive }}"

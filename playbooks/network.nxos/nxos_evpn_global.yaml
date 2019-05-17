@@ -13,3 +13,8 @@
     - name: "plugin_nxos_evpn_global"
       nxos_evpn_global: "{{ nxos_evpn_global }}"
       register: r_nxos_evpn_global
+
+    - name: "export r_nxos_evpn_global"
+      set_stats:
+        data:
+          r_nxos_evpn_global: "{{ r_nxos_evpn_global }}"

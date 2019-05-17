@@ -15,3 +15,8 @@
       healthchecks: "{{ gcp_backend_service_healthchecks | default(omit, True) }}"
       backend_service_name: "{{ gcp_backend_service_backend_service_name | default(omit, True) }}"
       project_id: "{{ gcp_backend_service_project_id | default(omit, True) }}"
+
+- name: "export r_gcp_backend_service"
+  set_stats:
+    data:
+      r_gcp_backend_service: "{{ r_gcp_backend_service }}"

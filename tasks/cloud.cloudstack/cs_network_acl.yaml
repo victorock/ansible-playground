@@ -19,3 +19,8 @@
       vpc: "{{ cs_network_acl_vpc | default(omit, True) }}"
       zone: "{{ cs_network_acl_zone | default(omit, True) }}"
       api_url: "{{ cs_network_acl_api_url | default(omit, True) }}"
+
+- name: "export r_cs_network_acl"
+  set_stats:
+    data:
+      r_cs_network_acl: "{{ r_cs_network_acl }}"

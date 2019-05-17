@@ -17,3 +17,8 @@
     - name: "plugin_cobbler_sync"
       cobbler_sync: "{{ cobbler_sync }}"
       register: r_cobbler_sync
+
+    - name: "export r_cobbler_sync"
+      set_stats:
+        data:
+          r_cobbler_sync: "{{ r_cobbler_sync }}"

@@ -24,3 +24,8 @@
     - name: "plugin_aireos_config"
       aireos_config: "{{ aireos_config }}"
       register: r_aireos_config
+
+    - name: "export r_aireos_config"
+      set_stats:
+        data:
+          r_aireos_config: "{{ r_aireos_config }}"

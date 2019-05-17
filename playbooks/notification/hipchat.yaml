@@ -20,3 +20,8 @@
     - name: "plugin_hipchat"
       hipchat: "{{ hipchat }}"
       register: r_hipchat
+
+    - name: "export r_hipchat"
+      set_stats:
+        data:
+          r_hipchat: "{{ r_hipchat }}"

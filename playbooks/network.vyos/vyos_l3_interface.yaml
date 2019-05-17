@@ -17,3 +17,8 @@
     - name: "plugin_vyos_l3_interface"
       vyos_l3_interface: "{{ vyos_l3_interface }}"
       register: r_vyos_l3_interface
+
+    - name: "export r_vyos_l3_interface"
+      set_stats:
+        data:
+          r_vyos_l3_interface: "{{ r_vyos_l3_interface }}"

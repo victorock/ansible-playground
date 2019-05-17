@@ -20,3 +20,8 @@
       notification_target_arn: "{{ ec2_asg_lifecycle_hook_notification_target_arn | default(omit, True) }}"
       default_result: "{{ ec2_asg_lifecycle_hook_default_result | default(omit, True) }}"
       notification_meta_data: "{{ ec2_asg_lifecycle_hook_notification_meta_data | default(omit, True) }}"
+
+- name: "export r_ec2_asg_lifecycle_hook"
+  set_stats:
+    data:
+      r_ec2_asg_lifecycle_hook: "{{ r_ec2_asg_lifecycle_hook }}"

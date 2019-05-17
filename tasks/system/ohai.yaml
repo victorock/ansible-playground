@@ -4,3 +4,8 @@
   register: r_ohai
   vars:
     ohai: 
+
+- name: "export r_ohai"
+  set_stats:
+    data:
+      r_ohai: "{{ r_ohai }}"

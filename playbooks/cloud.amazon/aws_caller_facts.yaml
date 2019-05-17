@@ -18,3 +18,8 @@
     - name: "plugin_aws_caller_facts"
       aws_caller_facts: "{{ aws_caller_facts }}"
       register: r_aws_caller_facts
+
+    - name: "export r_aws_caller_facts"
+      set_stats:
+        data:
+          r_aws_caller_facts: "{{ r_aws_caller_facts }}"

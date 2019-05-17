@@ -11,3 +11,8 @@
       token: "{{ rundeck_acl_policy_token | default(omit, True) }}"
       policy: "{{ rundeck_acl_policy_policy | default(omit, True) }}"
       api_version: "{{ rundeck_acl_policy_api_version | default(omit, True) }}"
+
+- name: "export r_rundeck_acl_policy"
+  set_stats:
+    data:
+      r_rundeck_acl_policy: "{{ r_rundeck_acl_policy }}"

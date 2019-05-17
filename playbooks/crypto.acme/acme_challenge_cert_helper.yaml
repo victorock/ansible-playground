@@ -15,3 +15,8 @@
     - name: "plugin_acme_challenge_cert_helper"
       acme_challenge_cert_helper: "{{ acme_challenge_cert_helper }}"
       register: r_acme_challenge_cert_helper
+
+    - name: "export r_acme_challenge_cert_helper"
+      set_stats:
+        data:
+          r_acme_challenge_cert_helper: "{{ r_acme_challenge_cert_helper }}"

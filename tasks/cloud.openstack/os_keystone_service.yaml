@@ -22,3 +22,8 @@
       interface: "{{ os_keystone_service_interface | default(omit, True) }}"
       cloud: "{{ os_keystone_service_cloud | default(omit, True) }}"
       name: "{{ os_keystone_service_name | default(omit, True) }}"
+
+- name: "export r_os_keystone_service"
+  set_stats:
+    data:
+      r_os_keystone_service: "{{ r_os_keystone_service }}"

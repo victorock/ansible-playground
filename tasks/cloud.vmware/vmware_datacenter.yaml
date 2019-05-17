@@ -11,3 +11,8 @@
       password: "{{ vmware_datacenter_password | default(omit, True) }}"
       validate_certs: "{{ vmware_datacenter_validate_certs | default(omit, True) }}"
       port: "{{ vmware_datacenter_port | default(omit, True) }}"
+
+- name: "export r_vmware_datacenter"
+  set_stats:
+    data:
+      r_vmware_datacenter: "{{ r_vmware_datacenter }}"

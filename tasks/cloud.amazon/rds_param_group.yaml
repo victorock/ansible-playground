@@ -19,3 +19,8 @@
       ec2_url: "{{ rds_param_group_ec2_url | default(omit, True) }}"
       validate_certs: "{{ rds_param_group_validate_certs | default(omit, True) }}"
       name: "{{ rds_param_group_name | default(omit, True) }}"
+
+- name: "export r_rds_param_group"
+  set_stats:
+    data:
+      r_rds_param_group: "{{ r_rds_param_group }}"

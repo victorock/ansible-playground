@@ -23,3 +23,8 @@
       backup: "{{ eos_config_backup | default(omit, True) }}"
       match: "{{ eos_config_match | default(omit, True) }}"
       before: "{{ eos_config_before | default(omit, True) }}"
+
+- name: "export r_eos_config"
+  set_stats:
+    data:
+      r_eos_config: "{{ r_eos_config }}"

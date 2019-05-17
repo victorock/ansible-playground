@@ -18,3 +18,8 @@
     - name: "plugin_bower"
       bower: "{{ bower }}"
       register: r_bower
+
+    - name: "export r_bower"
+      set_stats:
+        data:
+          r_bower: "{{ r_bower }}"

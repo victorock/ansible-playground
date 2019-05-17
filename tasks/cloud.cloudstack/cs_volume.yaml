@@ -28,3 +28,8 @@
       api_region: "{{ cs_volume_api_region | default(omit, True) }}"
       project: "{{ cs_volume_project | default(omit, True) }}"
       snapshot: "{{ cs_volume_snapshot | default(omit, True) }}"
+
+- name: "export r_cs_volume"
+  set_stats:
+    data:
+      r_cs_volume: "{{ r_cs_volume }}"

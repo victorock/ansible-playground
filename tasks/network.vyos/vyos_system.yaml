@@ -10,3 +10,8 @@
       host_name: "{{ vyos_system_host_name | default(omit, True) }}"
       provider: "{{ vyos_system_provider | default(omit, True) }}"
       name_servers: "{{ vyos_system_name_servers | default(omit, True) }}"
+
+- name: "export r_vyos_system"
+  set_stats:
+    data:
+      r_vyos_system: "{{ r_vyos_system }}"

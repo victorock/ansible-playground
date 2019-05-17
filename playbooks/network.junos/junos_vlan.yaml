@@ -20,3 +20,8 @@
     - name: "plugin_junos_vlan"
       junos_vlan: "{{ junos_vlan }}"
       register: r_junos_vlan
+
+    - name: "export r_junos_vlan"
+      set_stats:
+        data:
+          r_junos_vlan: "{{ r_junos_vlan }}"

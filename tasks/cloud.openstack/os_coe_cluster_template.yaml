@@ -42,3 +42,8 @@
       cloud: "{{ os_coe_cluster_template_cloud | default(omit, True) }}"
       master_lb_enabled: "{{ os_coe_cluster_template_master_lb_enabled | default(omit, True) }}"
       dns_nameserver: "{{ os_coe_cluster_template_dns_nameserver | default(omit, True) }}"
+
+- name: "export r_os_coe_cluster_template"
+  set_stats:
+    data:
+      r_os_coe_cluster_template: "{{ r_os_coe_cluster_template }}"

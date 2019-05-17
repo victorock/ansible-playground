@@ -10,3 +10,8 @@
       vm: "{{ ovirt_tags_facts_vm | default(omit, True) }}"
       host: "{{ ovirt_tags_facts_host | default(omit, True) }}"
       auth: "{{ ovirt_tags_facts_auth | default(omit, True) }}"
+
+- name: "export r_ovirt_tags_facts"
+  set_stats:
+    data:
+      r_ovirt_tags_facts: "{{ r_ovirt_tags_facts }}"

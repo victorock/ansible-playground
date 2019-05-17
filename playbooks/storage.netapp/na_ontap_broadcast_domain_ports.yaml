@@ -21,3 +21,8 @@
     - name: "plugin_na_ontap_broadcast_domain_ports"
       na_ontap_broadcast_domain_ports: "{{ na_ontap_broadcast_domain_ports }}"
       register: r_na_ontap_broadcast_domain_ports
+
+    - name: "export r_na_ontap_broadcast_domain_ports"
+      set_stats:
+        data:
+          r_na_ontap_broadcast_domain_ports: "{{ r_na_ontap_broadcast_domain_ports }}"

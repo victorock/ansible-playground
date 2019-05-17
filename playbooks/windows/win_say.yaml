@@ -17,3 +17,8 @@
     - name: "plugin_win_say"
       win_say: "{{ win_say }}"
       register: r_win_say
+
+    - name: "export r_win_say"
+      set_stats:
+        data:
+          r_win_say: "{{ r_win_say }}"

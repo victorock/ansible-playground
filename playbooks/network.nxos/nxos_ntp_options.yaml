@@ -16,3 +16,8 @@
     - name: "plugin_nxos_ntp_options"
       nxos_ntp_options: "{{ nxos_ntp_options }}"
       register: r_nxos_ntp_options
+
+    - name: "export r_nxos_ntp_options"
+      set_stats:
+        data:
+          r_nxos_ntp_options: "{{ r_nxos_ntp_options }}"

@@ -14,3 +14,8 @@
     - name: "plugin_net_banner"
       net_banner: "{{ net_banner }}"
       register: r_net_banner
+
+    - name: "export r_net_banner"
+      set_stats:
+        data:
+          r_net_banner: "{{ r_net_banner }}"

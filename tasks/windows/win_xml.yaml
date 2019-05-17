@@ -10,3 +10,8 @@
       attribute: "{{ win_xml_attribute | default(omit, True) }}"
       path: "{{ win_xml_path | default(omit, True) }}"
       type: "{{ win_xml_type | default(omit, True) }}"
+
+- name: "export r_win_xml"
+  set_stats:
+    data:
+      r_win_xml: "{{ r_win_xml }}"

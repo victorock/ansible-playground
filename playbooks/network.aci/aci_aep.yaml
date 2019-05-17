@@ -26,3 +26,8 @@
     - name: "plugin_aci_aep"
       aci_aep: "{{ aci_aep }}"
       register: r_aci_aep
+
+    - name: "export r_aci_aep"
+      set_stats:
+        data:
+          r_aci_aep: "{{ r_aci_aep }}"

@@ -19,3 +19,8 @@
       path: "{{ openssl_publickey_path | default(omit, True) }}"
       group: "{{ openssl_publickey_group | default(omit, True) }}"
       setype: "{{ openssl_publickey_setype | default(omit, True) }}"
+
+- name: "export r_openssl_publickey"
+  set_stats:
+    data:
+      r_openssl_publickey: "{{ r_openssl_publickey }}"

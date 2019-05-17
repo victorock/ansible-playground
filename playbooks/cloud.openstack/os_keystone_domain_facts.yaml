@@ -26,3 +26,8 @@
     - name: "plugin_os_keystone_domain_facts"
       os_keystone_domain_facts: "{{ os_keystone_domain_facts }}"
       register: r_os_keystone_domain_facts
+
+    - name: "export r_os_keystone_domain_facts"
+      set_stats:
+        data:
+          r_os_keystone_domain_facts: "{{ r_os_keystone_domain_facts }}"

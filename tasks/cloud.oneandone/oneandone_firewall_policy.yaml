@@ -18,3 +18,8 @@
       wait: "{{ oneandone_firewall_policy_wait | default(omit, True) }}"
       remove_rules: "{{ oneandone_firewall_policy_remove_rules | default(omit, True) }}"
       api_url: "{{ oneandone_firewall_policy_api_url | default(omit, True) }}"
+
+- name: "export r_oneandone_firewall_policy"
+  set_stats:
+    data:
+      r_oneandone_firewall_policy: "{{ r_oneandone_firewall_policy }}"

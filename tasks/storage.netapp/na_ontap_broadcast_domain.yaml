@@ -15,3 +15,8 @@
       password: "{{ na_ontap_broadcast_domain_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_broadcast_domain_validate_certs | default(omit, True) }}"
       ports: "{{ na_ontap_broadcast_domain_ports | default(omit, True) }}"
+
+- name: "export r_na_ontap_broadcast_domain"
+  set_stats:
+    data:
+      r_na_ontap_broadcast_domain: "{{ r_na_ontap_broadcast_domain }}"

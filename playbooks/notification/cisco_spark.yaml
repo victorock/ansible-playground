@@ -16,3 +16,8 @@
     - name: "plugin_cisco_spark"
       cisco_spark: "{{ cisco_spark }}"
       register: r_cisco_spark
+
+    - name: "export r_cisco_spark"
+      set_stats:
+        data:
+          r_cisco_spark: "{{ r_cisco_spark }}"

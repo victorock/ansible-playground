@@ -15,3 +15,8 @@
     - name: "plugin_onyx_lldp_interface"
       onyx_lldp_interface: "{{ onyx_lldp_interface }}"
       register: r_onyx_lldp_interface
+
+    - name: "export r_onyx_lldp_interface"
+      set_stats:
+        data:
+          r_onyx_lldp_interface: "{{ r_onyx_lldp_interface }}"

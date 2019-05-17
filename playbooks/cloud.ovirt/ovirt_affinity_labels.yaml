@@ -22,3 +22,8 @@
     - name: "plugin_ovirt_affinity_labels"
       ovirt_affinity_labels: "{{ ovirt_affinity_labels }}"
       register: r_ovirt_affinity_labels
+
+    - name: "export r_ovirt_affinity_labels"
+      set_stats:
+        data:
+          r_ovirt_affinity_labels: "{{ r_ovirt_affinity_labels }}"

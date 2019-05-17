@@ -30,3 +30,8 @@
     - name: "plugin_win_uri"
       win_uri: "{{ win_uri }}"
       register: r_win_uri
+
+    - name: "export r_win_uri"
+      set_stats:
+        data:
+          r_win_uri: "{{ r_win_uri }}"

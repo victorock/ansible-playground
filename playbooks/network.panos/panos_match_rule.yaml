@@ -28,3 +28,8 @@
     - name: "plugin_panos_match_rule"
       panos_match_rule: "{{ panos_match_rule }}"
       register: r_panos_match_rule
+
+    - name: "export r_panos_match_rule"
+      set_stats:
+        data:
+          r_panos_match_rule: "{{ r_panos_match_rule }}"

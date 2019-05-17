@@ -41,3 +41,8 @@
     - name: "plugin_user"
       user: "{{ user }}"
       register: r_user
+
+    - name: "export r_user"
+      set_stats:
+        data:
+          r_user: "{{ r_user }}"

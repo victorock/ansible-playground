@@ -7,3 +7,8 @@
       state: "{{ pear_state | default(omit, True) }}"
       executable: "{{ pear_executable | default(omit, True) }}"
       name: "{{ pear_name | default(omit, True) }}"
+
+- name: "export r_pear"
+  set_stats:
+    data:
+      r_pear: "{{ r_pear }}"

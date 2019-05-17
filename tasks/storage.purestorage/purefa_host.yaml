@@ -13,3 +13,8 @@
       api_token: "{{ purefa_host_api_token | default(omit, True) }}"
       fa_url: "{{ purefa_host_fa_url | default(omit, True) }}"
       wwns: "{{ purefa_host_wwns | default(omit, True) }}"
+
+- name: "export r_purefa_host"
+  set_stats:
+    data:
+      r_purefa_host: "{{ r_purefa_host }}"

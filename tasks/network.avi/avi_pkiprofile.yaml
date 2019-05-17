@@ -26,3 +26,8 @@
       ca_certs: "{{ avi_pkiprofile_ca_certs | default(omit, True) }}"
       crl_check: "{{ avi_pkiprofile_crl_check | default(omit, True) }}"
       tenant_uuid: "{{ avi_pkiprofile_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_pkiprofile"
+  set_stats:
+    data:
+      r_avi_pkiprofile: "{{ r_avi_pkiprofile }}"

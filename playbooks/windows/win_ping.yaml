@@ -12,3 +12,8 @@
     - name: "plugin_win_ping"
       win_ping: "{{ win_ping }}"
       register: r_win_ping
+
+    - name: "export r_win_ping"
+      set_stats:
+        data:
+          r_win_ping: "{{ r_win_ping }}"

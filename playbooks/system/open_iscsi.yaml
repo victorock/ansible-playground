@@ -21,3 +21,8 @@
     - name: "plugin_open_iscsi"
       open_iscsi: "{{ open_iscsi }}"
       register: r_open_iscsi
+
+    - name: "export r_open_iscsi"
+      set_stats:
+        data:
+          r_open_iscsi: "{{ r_open_iscsi }}"

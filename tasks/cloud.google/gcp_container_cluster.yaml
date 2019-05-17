@@ -23,3 +23,8 @@
       service_account_file: "{{ gcp_container_cluster_service_account_file | default(omit, True) }}"
       subnetwork: "{{ gcp_container_cluster_subnetwork | default(omit, True) }}"
       network: "{{ gcp_container_cluster_network | default(omit, True) }}"
+
+- name: "export r_gcp_container_cluster"
+  set_stats:
+    data:
+      r_gcp_container_cluster: "{{ r_gcp_container_cluster }}"

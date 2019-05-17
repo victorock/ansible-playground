@@ -11,3 +11,8 @@
       trusted_key: "{{ nxos_ntp_auth_trusted_key | default(omit, True) }}"
       provider: "{{ nxos_ntp_auth_provider | default(omit, True) }}"
       key_id: "{{ nxos_ntp_auth_key_id | default(omit, True) }}"
+
+- name: "export r_nxos_ntp_auth"
+  set_stats:
+    data:
+      r_nxos_ntp_auth: "{{ r_nxos_ntp_auth }}"

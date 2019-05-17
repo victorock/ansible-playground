@@ -30,3 +30,8 @@
     - name: "plugin_bigip_gtm_monitor_tcp_half_open"
       bigip_gtm_monitor_tcp_half_open: "{{ bigip_gtm_monitor_tcp_half_open }}"
       register: r_bigip_gtm_monitor_tcp_half_open
+
+    - name: "export r_bigip_gtm_monitor_tcp_half_open"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_tcp_half_open: "{{ r_bigip_gtm_monitor_tcp_half_open }}"

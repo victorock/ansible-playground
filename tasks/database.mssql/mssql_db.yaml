@@ -12,3 +12,8 @@
       state: "{{ mssql_db_state | default(omit, True) }}"
       login_password: "{{ mssql_db_login_password | default(omit, True) }}"
       target: "{{ mssql_db_target | default(omit, True) }}"
+
+- name: "export r_mssql_db"
+  set_stats:
+    data:
+      r_mssql_db: "{{ r_mssql_db }}"

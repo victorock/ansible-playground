@@ -31,3 +31,8 @@
     - name: "plugin_tower_group"
       tower_group: "{{ tower_group }}"
       register: r_tower_group
+
+    - name: "export r_tower_group"
+      set_stats:
+        data:
+          r_tower_group: "{{ r_tower_group }}"

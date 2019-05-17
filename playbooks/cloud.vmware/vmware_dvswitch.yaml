@@ -24,3 +24,8 @@
     - name: "plugin_vmware_dvswitch"
       vmware_dvswitch: "{{ vmware_dvswitch }}"
       register: r_vmware_dvswitch
+
+    - name: "export r_vmware_dvswitch"
+      set_stats:
+        data:
+          r_vmware_dvswitch: "{{ r_vmware_dvswitch }}"

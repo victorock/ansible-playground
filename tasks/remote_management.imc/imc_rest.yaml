@@ -12,3 +12,8 @@
       path: "{{ imc_rest_path | default(omit, True) }}"
       password: "{{ imc_rest_password | default(omit, True) }}"
       validate_certs: "{{ imc_rest_validate_certs | default(omit, True) }}"
+
+- name: "export r_imc_rest"
+  set_stats:
+    data:
+      r_imc_rest: "{{ r_imc_rest }}"

@@ -10,3 +10,8 @@
       mode: "{{ slxos_linkagg_mode | default(omit, True) }}"
       members: "{{ slxos_linkagg_members | default(omit, True) }}"
       aggregate: "{{ slxos_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_slxos_linkagg"
+  set_stats:
+    data:
+      r_slxos_linkagg: "{{ r_slxos_linkagg }}"

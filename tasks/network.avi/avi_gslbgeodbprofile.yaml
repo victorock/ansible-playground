@@ -22,3 +22,8 @@
       tenant_uuid: "{{ avi_gslbgeodbprofile_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_gslbgeodbprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_gslbgeodbprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_gslbgeodbprofile"
+  set_stats:
+    data:
+      r_avi_gslbgeodbprofile: "{{ r_avi_gslbgeodbprofile }}"

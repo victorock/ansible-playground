@@ -22,3 +22,8 @@
     - name: "plugin_bigip_ssl_key"
       bigip_ssl_key: "{{ bigip_ssl_key }}"
       register: r_bigip_ssl_key
+
+    - name: "export r_bigip_ssl_key"
+      set_stats:
+        data:
+          r_bigip_ssl_key: "{{ r_bigip_ssl_key }}"

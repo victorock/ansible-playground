@@ -10,3 +10,8 @@
       filters: "{{ ftd_configuration_filters | default(omit, True) }}"
       operation: "{{ ftd_configuration_operation | default(omit, True) }}"
       data: "{{ ftd_configuration_data | default(omit, True) }}"
+
+- name: "export r_ftd_configuration"
+  set_stats:
+    data:
+      r_ftd_configuration: "{{ r_ftd_configuration }}"

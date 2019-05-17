@@ -13,3 +13,8 @@
       values: "{{ ldap_attr_values | default(omit, True) }}"
       bind_pw: "{{ ldap_attr_bind_pw | default(omit, True) }}"
       validate_certs: "{{ ldap_attr_validate_certs | default(omit, True) }}"
+
+- name: "export r_ldap_attr"
+  set_stats:
+    data:
+      r_ldap_attr: "{{ r_ldap_attr }}"

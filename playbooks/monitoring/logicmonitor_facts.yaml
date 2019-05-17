@@ -19,3 +19,8 @@
     - name: "plugin_logicmonitor_facts"
       logicmonitor_facts: "{{ logicmonitor_facts }}"
       register: r_logicmonitor_facts
+
+    - name: "export r_logicmonitor_facts"
+      set_stats:
+        data:
+          r_logicmonitor_facts: "{{ r_logicmonitor_facts }}"

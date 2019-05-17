@@ -24,3 +24,8 @@
       port: "{{ aci_l3out_port | default(omit, True) }}"
       tenant: "{{ aci_l3out_tenant | default(omit, True) }}"
       use_proxy: "{{ aci_l3out_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_l3out"
+  set_stats:
+    data:
+      r_aci_l3out: "{{ r_aci_l3out }}"

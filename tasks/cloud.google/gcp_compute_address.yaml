@@ -16,3 +16,8 @@
       address_type: "{{ gcp_compute_address_address_type | default(omit, True) }}"
       subnetwork: "{{ gcp_compute_address_subnetwork | default(omit, True) }}"
       description: "{{ gcp_compute_address_description | default(omit, True) }}"
+
+- name: "export r_gcp_compute_address"
+  set_stats:
+    data:
+      r_gcp_compute_address: "{{ r_gcp_compute_address }}"

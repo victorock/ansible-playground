@@ -10,3 +10,8 @@
       state: "{{ dladm_iptun_state | default(omit, True) }}"
       local_address: "{{ dladm_iptun_local_address | default(omit, True) }}"
       type: "{{ dladm_iptun_type | default(omit, True) }}"
+
+- name: "export r_dladm_iptun"
+  set_stats:
+    data:
+      r_dladm_iptun: "{{ r_dladm_iptun }}"

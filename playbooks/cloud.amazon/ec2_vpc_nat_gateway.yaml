@@ -28,3 +28,8 @@
     - name: "plugin_ec2_vpc_nat_gateway"
       ec2_vpc_nat_gateway: "{{ ec2_vpc_nat_gateway }}"
       register: r_ec2_vpc_nat_gateway
+
+    - name: "export r_ec2_vpc_nat_gateway"
+      set_stats:
+        data:
+          r_ec2_vpc_nat_gateway: "{{ r_ec2_vpc_nat_gateway }}"

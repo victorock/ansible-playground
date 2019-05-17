@@ -25,3 +25,8 @@
       attributes: "{{ copy_attributes | default(omit, True) }}"
       backup: "{{ copy_backup | default(omit, True) }}"
       local_follow: "{{ copy_local_follow | default(omit, True) }}"
+
+- name: "export r_copy"
+  set_stats:
+    data:
+      r_copy: "{{ r_copy }}"

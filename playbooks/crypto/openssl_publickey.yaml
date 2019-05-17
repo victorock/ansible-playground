@@ -26,3 +26,8 @@
     - name: "plugin_openssl_publickey"
       openssl_publickey: "{{ openssl_publickey }}"
       register: r_openssl_publickey
+
+    - name: "export r_openssl_publickey"
+      set_stats:
+        data:
+          r_openssl_publickey: "{{ r_openssl_publickey }}"

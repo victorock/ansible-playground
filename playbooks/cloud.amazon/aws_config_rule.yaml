@@ -25,3 +25,8 @@
     - name: "plugin_aws_config_rule"
       aws_config_rule: "{{ aws_config_rule }}"
       register: r_aws_config_rule
+
+    - name: "export r_aws_config_rule"
+      set_stats:
+        data:
+          r_aws_config_rule: "{{ r_aws_config_rule }}"

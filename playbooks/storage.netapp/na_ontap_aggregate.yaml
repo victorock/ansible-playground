@@ -28,3 +28,8 @@
     - name: "plugin_na_ontap_aggregate"
       na_ontap_aggregate: "{{ na_ontap_aggregate }}"
       register: r_na_ontap_aggregate
+
+    - name: "export r_na_ontap_aggregate"
+      set_stats:
+        data:
+          r_na_ontap_aggregate: "{{ r_na_ontap_aggregate }}"

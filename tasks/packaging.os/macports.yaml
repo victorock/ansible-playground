@@ -8,3 +8,8 @@
       variant: "{{ macports_variant | default(omit, True) }}"
       state: "{{ macports_state | default(omit, True) }}"
       name: "{{ macports_name | default(omit, True) }}"
+
+- name: "export r_macports"
+  set_stats:
+    data:
+      r_macports: "{{ r_macports }}"

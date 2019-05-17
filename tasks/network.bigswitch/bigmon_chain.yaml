@@ -9,3 +9,8 @@
       validate_certs: "{{ bigmon_chain_validate_certs | default(omit, True) }}"
       controller: "{{ bigmon_chain_controller | default(omit, True) }}"
       name: "{{ bigmon_chain_name | default(omit, True) }}"
+
+- name: "export r_bigmon_chain"
+  set_stats:
+    data:
+      r_bigmon_chain: "{{ r_bigmon_chain }}"

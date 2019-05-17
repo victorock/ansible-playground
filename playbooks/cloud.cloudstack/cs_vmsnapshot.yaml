@@ -28,3 +28,8 @@
     - name: "plugin_cs_vmsnapshot"
       cs_vmsnapshot: "{{ cs_vmsnapshot }}"
       register: r_cs_vmsnapshot
+
+    - name: "export r_cs_vmsnapshot"
+      set_stats:
+        data:
+          r_cs_vmsnapshot: "{{ r_cs_vmsnapshot }}"

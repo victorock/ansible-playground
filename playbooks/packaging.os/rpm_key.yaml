@@ -14,3 +14,8 @@
     - name: "plugin_rpm_key"
       rpm_key: "{{ rpm_key }}"
       register: r_rpm_key
+
+    - name: "export r_rpm_key"
+      set_stats:
+        data:
+          r_rpm_key: "{{ r_rpm_key }}"

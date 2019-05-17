@@ -10,3 +10,8 @@
       time_internal: "{{ ce_dldp_time_internal | default(omit, True) }}"
       auth_mode: "{{ ce_dldp_auth_mode | default(omit, True) }}"
       work_mode: "{{ ce_dldp_work_mode | default(omit, True) }}"
+
+- name: "export r_ce_dldp"
+  set_stats:
+    data:
+      r_ce_dldp: "{{ r_ce_dldp }}"

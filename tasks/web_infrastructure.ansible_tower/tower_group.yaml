@@ -24,3 +24,8 @@
       tower_verify_ssl: "{{ tower_group_tower_verify_ssl | default(omit, True) }}"
       overwrite: "{{ tower_group_overwrite | default(omit, True) }}"
       name: "{{ tower_group_name | default(omit, True) }}"
+
+- name: "export r_tower_group"
+  set_stats:
+    data:
+      r_tower_group: "{{ r_tower_group }}"

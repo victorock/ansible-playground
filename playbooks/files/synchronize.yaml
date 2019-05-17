@@ -37,3 +37,8 @@
     - name: "plugin_synchronize"
       synchronize: "{{ synchronize }}"
       register: r_synchronize
+
+    - name: "export r_synchronize"
+      set_stats:
+        data:
+          r_synchronize: "{{ r_synchronize }}"

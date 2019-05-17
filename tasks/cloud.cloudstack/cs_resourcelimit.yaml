@@ -15,3 +15,8 @@
       limit: "{{ cs_resourcelimit_limit | default(omit, True) }}"
       api_key: "{{ cs_resourcelimit_api_key | default(omit, True) }}"
       resource_type: "{{ cs_resourcelimit_resource_type | default(omit, True) }}"
+
+- name: "export r_cs_resourcelimit"
+  set_stats:
+    data:
+      r_cs_resourcelimit: "{{ r_cs_resourcelimit }}"

@@ -22,3 +22,8 @@
       port: "{{ postgresql_user_port | default(omit, True) }}"
       fail_on_user: "{{ postgresql_user_fail_on_user | default(omit, True) }}"
       priv: "{{ postgresql_user_priv | default(omit, True) }}"
+
+- name: "export r_postgresql_user"
+  set_stats:
+    data:
+      r_postgresql_user: "{{ r_postgresql_user }}"

@@ -12,3 +12,8 @@
       api_username: "{{ one_image_api_username | default(omit, True) }}"
       id: "{{ one_image_id | default(omit, True) }}"
       name: "{{ one_image_name | default(omit, True) }}"
+
+- name: "export r_one_image"
+  set_stats:
+    data:
+      r_one_image: "{{ r_one_image }}"

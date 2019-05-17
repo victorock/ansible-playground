@@ -9,3 +9,8 @@
       aggressive: "{{ nxos_udld_aggressive | default(omit, True) }}"
       state: "{{ nxos_udld_state | default(omit, True) }}"
       provider: "{{ nxos_udld_provider | default(omit, True) }}"
+
+- name: "export r_nxos_udld"
+  set_stats:
+    data:
+      r_nxos_udld: "{{ r_nxos_udld }}"

@@ -16,3 +16,8 @@
     - name: "plugin_ovirt_external_provider_facts"
       ovirt_external_provider_facts: "{{ ovirt_external_provider_facts }}"
       register: r_ovirt_external_provider_facts
+
+    - name: "export r_ovirt_external_provider_facts"
+      set_stats:
+        data:
+          r_ovirt_external_provider_facts: "{{ r_ovirt_external_provider_facts }}"

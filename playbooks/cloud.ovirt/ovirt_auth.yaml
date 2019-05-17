@@ -23,3 +23,8 @@
     - name: "plugin_ovirt_auth"
       ovirt_auth: "{{ ovirt_auth }}"
       register: r_ovirt_auth
+
+    - name: "export r_ovirt_auth"
+      set_stats:
+        data:
+          r_ovirt_auth: "{{ r_ovirt_auth }}"

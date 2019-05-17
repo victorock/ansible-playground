@@ -11,3 +11,8 @@
       state: "{{ gcspanner_state | default(omit, True) }}"
       node_count: "{{ gcspanner_node_count | default(omit, True) }}"
       configuration: "{{ gcspanner_configuration | default(omit, True) }}"
+
+- name: "export r_gcspanner"
+  set_stats:
+    data:
+      r_gcspanner: "{{ r_gcspanner }}"

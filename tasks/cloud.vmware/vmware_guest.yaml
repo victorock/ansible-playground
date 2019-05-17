@@ -36,3 +36,8 @@
       is_template: "{{ vmware_guest_is_template | default(omit, True) }}"
       esxi_hostname: "{{ vmware_guest_esxi_hostname | default(omit, True) }}"
       validate_certs: "{{ vmware_guest_validate_certs | default(omit, True) }}"
+
+- name: "export r_vmware_guest"
+  set_stats:
+    data:
+      r_vmware_guest: "{{ r_vmware_guest }}"

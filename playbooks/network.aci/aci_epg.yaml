@@ -32,3 +32,8 @@
     - name: "plugin_aci_epg"
       aci_epg: "{{ aci_epg }}"
       register: r_aci_epg
+
+    - name: "export r_aci_epg"
+      set_stats:
+        data:
+          r_aci_epg: "{{ r_aci_epg }}"

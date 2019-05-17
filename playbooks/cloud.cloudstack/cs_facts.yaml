@@ -13,3 +13,8 @@
     - name: "plugin_cs_facts"
       cs_facts: "{{ cs_facts }}"
       register: r_cs_facts
+
+    - name: "export r_cs_facts"
+      set_stats:
+        data:
+          r_cs_facts: "{{ r_cs_facts }}"

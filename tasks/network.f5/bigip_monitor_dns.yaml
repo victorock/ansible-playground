@@ -34,3 +34,8 @@
       timeout: "{{ bigip_monitor_dns_timeout | default(omit, True) }}"
       validate_certs: "{{ bigip_monitor_dns_validate_certs | default(omit, True) }}"
       user: "{{ bigip_monitor_dns_user | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_dns"
+  set_stats:
+    data:
+      r_bigip_monitor_dns: "{{ r_bigip_monitor_dns }}"

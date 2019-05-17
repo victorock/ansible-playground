@@ -16,3 +16,8 @@
     - name: "plugin_ipadm_prop"
       ipadm_prop: "{{ ipadm_prop }}"
       register: r_ipadm_prop
+
+    - name: "export r_ipadm_prop"
+      set_stats:
+        data:
+          r_ipadm_prop: "{{ r_ipadm_prop }}"

@@ -27,3 +27,8 @@
     - name: "plugin_rax_cbs_attachments"
       rax_cbs_attachments: "{{ rax_cbs_attachments }}"
       register: r_rax_cbs_attachments
+
+    - name: "export r_rax_cbs_attachments"
+      set_stats:
+        data:
+          r_rax_cbs_attachments: "{{ r_rax_cbs_attachments }}"

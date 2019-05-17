@@ -11,3 +11,8 @@
       state: "{{ ce_evpn_bd_vni_state | default(omit, True) }}"
       route_distinguisher: "{{ ce_evpn_bd_vni_route_distinguisher | default(omit, True) }}"
       evpn: "{{ ce_evpn_bd_vni_evpn | default(omit, True) }}"
+
+- name: "export r_ce_evpn_bd_vni"
+  set_stats:
+    data:
+      r_ce_evpn_bd_vni: "{{ r_ce_evpn_bd_vni }}"

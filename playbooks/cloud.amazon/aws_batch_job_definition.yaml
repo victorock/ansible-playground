@@ -36,3 +36,8 @@
     - name: "plugin_aws_batch_job_definition"
       aws_batch_job_definition: "{{ aws_batch_job_definition }}"
       register: r_aws_batch_job_definition
+
+    - name: "export r_aws_batch_job_definition"
+      set_stats:
+        data:
+          r_aws_batch_job_definition: "{{ r_aws_batch_job_definition }}"

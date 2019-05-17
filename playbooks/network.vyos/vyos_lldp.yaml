@@ -13,3 +13,8 @@
     - name: "plugin_vyos_lldp"
       vyos_lldp: "{{ vyos_lldp }}"
       register: r_vyos_lldp
+
+    - name: "export r_vyos_lldp"
+      set_stats:
+        data:
+          r_vyos_lldp: "{{ r_vyos_lldp }}"

@@ -15,3 +15,8 @@
       gateway_ipv4: "{{ gcp_compute_network_gateway_ipv4 | default(omit, True) }}"
       auto_create_subnetworks: "{{ gcp_compute_network_auto_create_subnetworks | default(omit, True) }}"
       name: "{{ gcp_compute_network_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_network"
+  set_stats:
+    data:
+      r_gcp_compute_network: "{{ r_gcp_compute_network }}"

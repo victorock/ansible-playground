@@ -14,3 +14,8 @@
     - name: "plugin_wakeonlan"
       wakeonlan: "{{ wakeonlan }}"
       register: r_wakeonlan
+
+    - name: "export r_wakeonlan"
+      set_stats:
+        data:
+          r_wakeonlan: "{{ r_wakeonlan }}"

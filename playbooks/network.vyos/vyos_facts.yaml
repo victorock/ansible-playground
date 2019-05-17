@@ -13,3 +13,8 @@
     - name: "plugin_vyos_facts"
       vyos_facts: "{{ vyos_facts }}"
       register: r_vyos_facts
+
+    - name: "export r_vyos_facts"
+      set_stats:
+        data:
+          r_vyos_facts: "{{ r_vyos_facts }}"

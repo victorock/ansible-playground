@@ -12,3 +12,8 @@
     - name: "plugin_atomic_host"
       atomic_host: "{{ atomic_host }}"
       register: r_atomic_host
+
+    - name: "export r_atomic_host"
+      set_stats:
+        data:
+          r_atomic_host: "{{ r_atomic_host }}"

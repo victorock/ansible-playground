@@ -18,3 +18,8 @@
     - name: "plugin_panos_admin"
       panos_admin: "{{ panos_admin }}"
       register: r_panos_admin
+
+    - name: "export r_panos_admin"
+      set_stats:
+        data:
+          r_panos_admin: "{{ r_panos_admin }}"

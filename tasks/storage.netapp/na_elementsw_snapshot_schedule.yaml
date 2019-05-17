@@ -26,3 +26,8 @@
       volumes: "{{ na_elementsw_snapshot_schedule_volumes | default(omit, True) }}"
       days_of_week_minutes: "{{ na_elementsw_snapshot_schedule_days_of_week_minutes | default(omit, True) }}"
       starting_date: "{{ na_elementsw_snapshot_schedule_starting_date | default(omit, True) }}"
+
+- name: "export r_na_elementsw_snapshot_schedule"
+  set_stats:
+    data:
+      r_na_elementsw_snapshot_schedule: "{{ r_na_elementsw_snapshot_schedule }}"

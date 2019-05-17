@@ -26,3 +26,8 @@
     - name: "plugin_ec2_vpc_nacl"
       ec2_vpc_nacl: "{{ ec2_vpc_nacl }}"
       register: r_ec2_vpc_nacl
+
+    - name: "export r_ec2_vpc_nacl"
+      set_stats:
+        data:
+          r_ec2_vpc_nacl: "{{ r_ec2_vpc_nacl }}"

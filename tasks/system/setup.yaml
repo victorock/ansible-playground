@@ -8,3 +8,8 @@
       gather_subset: "{{ setup_gather_subset | default(omit, True) }}"
       fact_path: "{{ setup_fact_path | default(omit, True) }}"
       gather_timeout: "{{ setup_gather_timeout | default(omit, True) }}"
+
+- name: "export r_setup"
+  set_stats:
+    data:
+      r_setup: "{{ r_setup }}"

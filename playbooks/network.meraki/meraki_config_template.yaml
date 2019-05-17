@@ -25,3 +25,8 @@
     - name: "plugin_meraki_config_template"
       meraki_config_template: "{{ meraki_config_template }}"
       register: r_meraki_config_template
+
+    - name: "export r_meraki_config_template"
+      set_stats:
+        data:
+          r_meraki_config_template: "{{ r_meraki_config_template }}"

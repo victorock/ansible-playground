@@ -25,3 +25,8 @@
     - name: "plugin_bigip_remote_role"
       bigip_remote_role: "{{ bigip_remote_role }}"
       register: r_bigip_remote_role
+
+    - name: "export r_bigip_remote_role"
+      set_stats:
+        data:
+          r_bigip_remote_role: "{{ r_bigip_remote_role }}"

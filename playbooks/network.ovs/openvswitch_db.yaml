@@ -18,3 +18,8 @@
     - name: "plugin_openvswitch_db"
       openvswitch_db: "{{ openvswitch_db }}"
       register: r_openvswitch_db
+
+    - name: "export r_openvswitch_db"
+      set_stats:
+        data:
+          r_openvswitch_db: "{{ r_openvswitch_db }}"

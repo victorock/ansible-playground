@@ -9,3 +9,8 @@
       mac_address: "{{ onyx_mlag_vip_mac_address | default(omit, True) }}"
       ipaddress: "{{ onyx_mlag_vip_ipaddress | default(omit, True) }}"
       group_name: "{{ onyx_mlag_vip_group_name | default(omit, True) }}"
+
+- name: "export r_onyx_mlag_vip"
+  set_stats:
+    data:
+      r_onyx_mlag_vip: "{{ r_onyx_mlag_vip }}"

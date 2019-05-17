@@ -21,3 +21,8 @@
     - name: "plugin_bigip_config"
       bigip_config: "{{ bigip_config }}"
       register: r_bigip_config
+
+    - name: "export r_bigip_config"
+      set_stats:
+        data:
+          r_bigip_config: "{{ r_bigip_config }}"

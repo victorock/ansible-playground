@@ -12,3 +12,8 @@
     - name: "plugin_ping"
       ping: "{{ ping }}"
       register: r_ping
+
+    - name: "export r_ping"
+      set_stats:
+        data:
+          r_ping: "{{ r_ping }}"

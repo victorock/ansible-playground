@@ -26,3 +26,8 @@
     - name: "plugin_os_keystone_role"
       os_keystone_role: "{{ os_keystone_role }}"
       register: r_os_keystone_role
+
+    - name: "export r_os_keystone_role"
+      set_stats:
+        data:
+          r_os_keystone_role: "{{ r_os_keystone_role }}"

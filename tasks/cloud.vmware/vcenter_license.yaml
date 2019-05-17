@@ -12,3 +12,8 @@
       password: "{{ vcenter_license_password | default(omit, True) }}"
       validate_certs: "{{ vcenter_license_validate_certs | default(omit, True) }}"
       port: "{{ vcenter_license_port | default(omit, True) }}"
+
+- name: "export r_vcenter_license"
+  set_stats:
+    data:
+      r_vcenter_license: "{{ r_vcenter_license }}"

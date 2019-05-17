@@ -49,3 +49,8 @@
     - name: "plugin_os_coe_cluster_template"
       os_coe_cluster_template: "{{ os_coe_cluster_template }}"
       register: r_os_coe_cluster_template
+
+    - name: "export r_os_coe_cluster_template"
+      set_stats:
+        data:
+          r_os_coe_cluster_template: "{{ r_os_coe_cluster_template }}"

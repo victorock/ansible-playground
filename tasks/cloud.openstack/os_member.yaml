@@ -23,3 +23,8 @@
       protocol_port: "{{ os_member_protocol_port | default(omit, True) }}"
       pool: "{{ os_member_pool | default(omit, True) }}"
       wait: "{{ os_member_wait | default(omit, True) }}"
+
+- name: "export r_os_member"
+  set_stats:
+    data:
+      r_os_member: "{{ r_os_member }}"

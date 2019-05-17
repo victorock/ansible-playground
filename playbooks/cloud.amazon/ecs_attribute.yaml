@@ -22,3 +22,8 @@
     - name: "plugin_ecs_attribute"
       ecs_attribute: "{{ ecs_attribute }}"
       register: r_ecs_attribute
+
+    - name: "export r_ecs_attribute"
+      set_stats:
+        data:
+          r_ecs_attribute: "{{ r_ecs_attribute }}"

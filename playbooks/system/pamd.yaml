@@ -22,3 +22,8 @@
     - name: "plugin_pamd"
       pamd: "{{ pamd }}"
       register: r_pamd
+
+    - name: "export r_pamd"
+      set_stats:
+        data:
+          r_pamd: "{{ r_pamd }}"

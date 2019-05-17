@@ -22,3 +22,8 @@
     - name: "plugin_na_ontap_lun_map"
       na_ontap_lun_map: "{{ na_ontap_lun_map }}"
       register: r_na_ontap_lun_map
+
+    - name: "export r_na_ontap_lun_map"
+      set_stats:
+        data:
+          r_na_ontap_lun_map: "{{ r_na_ontap_lun_map }}"

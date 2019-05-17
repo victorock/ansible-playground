@@ -6,3 +6,8 @@
     vyos_lldp: 
       state: "{{ vyos_lldp_state | default(omit, True) }}"
       provider: "{{ vyos_lldp_provider | default(omit, True) }}"
+
+- name: "export r_vyos_lldp"
+  set_stats:
+    data:
+      r_vyos_lldp: "{{ r_vyos_lldp }}"

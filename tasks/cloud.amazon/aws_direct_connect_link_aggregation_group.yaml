@@ -23,3 +23,8 @@
       link_aggregation_group_id: "{{ aws_direct_connect_link_aggregation_group_link_aggregation_group_id | default(omit, True) }}"
       validate_certs: "{{ aws_direct_connect_link_aggregation_group_validate_certs | default(omit, True) }}"
       wait: "{{ aws_direct_connect_link_aggregation_group_wait | default(omit, True) }}"
+
+- name: "export r_aws_direct_connect_link_aggregation_group"
+  set_stats:
+    data:
+      r_aws_direct_connect_link_aggregation_group: "{{ r_aws_direct_connect_link_aggregation_group }}"

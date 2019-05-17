@@ -21,3 +21,8 @@
     - name: "plugin_ce_snmp_community"
       ce_snmp_community: "{{ ce_snmp_community }}"
       register: r_ce_snmp_community
+
+    - name: "export r_ce_snmp_community"
+      set_stats:
+        data:
+          r_ce_snmp_community: "{{ r_ce_snmp_community }}"

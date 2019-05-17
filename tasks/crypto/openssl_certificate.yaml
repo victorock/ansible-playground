@@ -52,3 +52,8 @@
       attributes: "{{ openssl_certificate_attributes | default(omit, True) }}"
       valid_in: "{{ openssl_certificate_valid_in | default(omit, True) }}"
       valid_at: "{{ openssl_certificate_valid_at | default(omit, True) }}"
+
+- name: "export r_openssl_certificate"
+  set_stats:
+    data:
+      r_openssl_certificate: "{{ r_openssl_certificate }}"

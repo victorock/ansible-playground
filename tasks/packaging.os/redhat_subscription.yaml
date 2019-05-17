@@ -25,3 +25,8 @@
       rhsm_baseurl: "{{ redhat_subscription_rhsm_baseurl | default(omit, True) }}"
       pool: "{{ redhat_subscription_pool | default(omit, True) }}"
       server_proxy_hostname: "{{ redhat_subscription_server_proxy_hostname | default(omit, True) }}"
+
+- name: "export r_redhat_subscription"
+  set_stats:
+    data:
+      r_redhat_subscription: "{{ r_redhat_subscription }}"

@@ -34,3 +34,8 @@
     - name: "plugin_azure_rm_aks"
       azure_rm_aks: "{{ azure_rm_aks }}"
       register: r_azure_rm_aks
+
+    - name: "export r_azure_rm_aks"
+      set_stats:
+        data:
+          r_azure_rm_aks: "{{ r_azure_rm_aks }}"

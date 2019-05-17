@@ -14,3 +14,8 @@
       table_label: "{{ junos_vrf_table_label | default(omit, True) }}"
       active: "{{ junos_vrf_active | default(omit, True) }}"
       name: "{{ junos_vrf_name | default(omit, True) }}"
+
+- name: "export r_junos_vrf"
+  set_stats:
+    data:
+      r_junos_vrf: "{{ r_junos_vrf }}"

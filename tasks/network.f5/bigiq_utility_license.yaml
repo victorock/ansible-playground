@@ -13,3 +13,8 @@
       license_key: "{{ bigiq_utility_license_license_key | default(omit, True) }}"
       password: "{{ bigiq_utility_license_password | default(omit, True) }}"
       validate_certs: "{{ bigiq_utility_license_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigiq_utility_license"
+  set_stats:
+    data:
+      r_bigiq_utility_license: "{{ r_bigiq_utility_license }}"

@@ -29,3 +29,8 @@
     - name: "plugin_nxos_config"
       nxos_config: "{{ nxos_config }}"
       register: r_nxos_config
+
+    - name: "export r_nxos_config"
+      set_stats:
+        data:
+          r_nxos_config: "{{ r_nxos_config }}"

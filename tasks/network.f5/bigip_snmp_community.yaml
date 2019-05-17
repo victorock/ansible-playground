@@ -26,3 +26,8 @@
       ip_version: "{{ bigip_snmp_community_ip_version | default(omit, True) }}"
       validate_certs: "{{ bigip_snmp_community_validate_certs | default(omit, True) }}"
       user: "{{ bigip_snmp_community_user | default(omit, True) }}"
+
+- name: "export r_bigip_snmp_community"
+  set_stats:
+    data:
+      r_bigip_snmp_community: "{{ r_bigip_snmp_community }}"

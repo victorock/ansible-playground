@@ -13,3 +13,8 @@
       ec2_url: "{{ elb_application_lb_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elb_application_lb_facts_validate_certs | default(omit, True) }}"
       load_balancer_arns: "{{ elb_application_lb_facts_load_balancer_arns | default(omit, True) }}"
+
+- name: "export r_elb_application_lb_facts"
+  set_stats:
+    data:
+      r_elb_application_lb_facts: "{{ r_elb_application_lb_facts }}"

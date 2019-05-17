@@ -17,3 +17,8 @@
       validate_certs: "{{ aws_ses_identity_validate_certs | default(omit, True) }}"
       complaint_notifications: "{{ aws_ses_identity_complaint_notifications | default(omit, True) }}"
       identity: "{{ aws_ses_identity_identity | default(omit, True) }}"
+
+- name: "export r_aws_ses_identity"
+  set_stats:
+    data:
+      r_aws_ses_identity: "{{ r_aws_ses_identity }}"

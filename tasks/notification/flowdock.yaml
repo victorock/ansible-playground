@@ -17,3 +17,8 @@
       reply_to: "{{ flowdock_reply_to | default(omit, True) }}"
       type: "{{ flowdock_type | default(omit, True) }}"
       subject: "{{ flowdock_subject | default(omit, True) }}"
+
+- name: "export r_flowdock"
+  set_stats:
+    data:
+      r_flowdock: "{{ r_flowdock }}"

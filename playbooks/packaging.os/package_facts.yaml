@@ -12,3 +12,8 @@
     - name: "plugin_package_facts"
       package_facts: "{{ package_facts }}"
       register: r_package_facts
+
+    - name: "export r_package_facts"
+      set_stats:
+        data:
+          r_package_facts: "{{ r_package_facts }}"

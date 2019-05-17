@@ -16,3 +16,8 @@
       vdc_name: "{{ vca_fw_vdc_name | default(omit, True) }}"
       api_version: "{{ vca_fw_api_version | default(omit, True) }}"
       verify_certs: "{{ vca_fw_verify_certs | default(omit, True) }}"
+
+- name: "export r_vca_fw"
+  set_stats:
+    data:
+      r_vca_fw: "{{ r_vca_fw }}"

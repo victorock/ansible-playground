@@ -35,3 +35,8 @@
     - name: "plugin_azure_rm_acs"
       azure_rm_acs: "{{ azure_rm_acs }}"
       register: r_azure_rm_acs
+
+    - name: "export r_azure_rm_acs"
+      set_stats:
+        data:
+          r_azure_rm_acs: "{{ r_azure_rm_acs }}"

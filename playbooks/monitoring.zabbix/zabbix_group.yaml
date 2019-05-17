@@ -20,3 +20,8 @@
     - name: "plugin_zabbix_group"
       zabbix_group: "{{ zabbix_group }}"
       register: r_zabbix_group
+
+    - name: "export r_zabbix_group"
+      set_stats:
+        data:
+          r_zabbix_group: "{{ r_zabbix_group }}"

@@ -29,3 +29,8 @@
     - name: "plugin_avi_wafprofile"
       avi_wafprofile: "{{ avi_wafprofile }}"
       register: r_avi_wafprofile
+
+    - name: "export r_avi_wafprofile"
+      set_stats:
+        data:
+          r_avi_wafprofile: "{{ r_avi_wafprofile }}"

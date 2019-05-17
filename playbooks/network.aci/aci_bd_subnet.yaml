@@ -36,3 +36,8 @@
     - name: "plugin_aci_bd_subnet"
       aci_bd_subnet: "{{ aci_bd_subnet }}"
       register: r_aci_bd_subnet
+
+    - name: "export r_aci_bd_subnet"
+      set_stats:
+        data:
+          r_aci_bd_subnet: "{{ r_aci_bd_subnet }}"

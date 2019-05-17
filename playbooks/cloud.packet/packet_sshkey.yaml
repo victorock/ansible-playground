@@ -18,3 +18,8 @@
     - name: "plugin_packet_sshkey"
       packet_sshkey: "{{ packet_sshkey }}"
       register: r_packet_sshkey
+
+    - name: "export r_packet_sshkey"
+      set_stats:
+        data:
+          r_packet_sshkey: "{{ r_packet_sshkey }}"

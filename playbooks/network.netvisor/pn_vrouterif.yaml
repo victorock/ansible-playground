@@ -30,3 +30,8 @@
     - name: "plugin_pn_vrouterif"
       pn_vrouterif: "{{ pn_vrouterif }}"
       register: r_pn_vrouterif
+
+    - name: "export r_pn_vrouterif"
+      set_stats:
+        data:
+          r_pn_vrouterif: "{{ r_pn_vrouterif }}"

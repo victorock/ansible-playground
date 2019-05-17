@@ -22,3 +22,8 @@
     - name: "plugin_ovirt_snapshot"
       ovirt_snapshot: "{{ ovirt_snapshot }}"
       register: r_ovirt_snapshot
+
+    - name: "export r_ovirt_snapshot"
+      set_stats:
+        data:
+          r_ovirt_snapshot: "{{ r_ovirt_snapshot }}"

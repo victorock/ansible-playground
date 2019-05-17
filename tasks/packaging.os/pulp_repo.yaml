@@ -30,3 +30,8 @@
       importer_ssl_ca_cert: "{{ pulp_repo_importer_ssl_ca_cert | default(omit, True) }}"
       url_username: "{{ pulp_repo_url_username | default(omit, True) }}"
       validate_certs: "{{ pulp_repo_validate_certs | default(omit, True) }}"
+
+- name: "export r_pulp_repo"
+  set_stats:
+    data:
+      r_pulp_repo: "{{ r_pulp_repo }}"

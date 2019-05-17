@@ -16,3 +16,8 @@
     - name: "plugin_aos_template"
       aos_template: "{{ aos_template }}"
       register: r_aos_template
+
+    - name: "export r_aos_template"
+      set_stats:
+        data:
+          r_aos_template: "{{ r_aos_template }}"

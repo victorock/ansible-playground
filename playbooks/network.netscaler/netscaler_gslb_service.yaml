@@ -43,3 +43,8 @@
     - name: "plugin_netscaler_gslb_service"
       netscaler_gslb_service: "{{ netscaler_gslb_service }}"
       register: r_netscaler_gslb_service
+
+    - name: "export r_netscaler_gslb_service"
+      set_stats:
+        data:
+          r_netscaler_gslb_service: "{{ r_netscaler_gslb_service }}"

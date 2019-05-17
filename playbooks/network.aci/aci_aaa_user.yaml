@@ -36,3 +36,8 @@
     - name: "plugin_aci_aaa_user"
       aci_aaa_user: "{{ aci_aaa_user }}"
       register: r_aci_aaa_user
+
+    - name: "export r_aci_aaa_user"
+      set_stats:
+        data:
+          r_aci_aaa_user: "{{ r_aci_aaa_user }}"

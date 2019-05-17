@@ -28,3 +28,8 @@
     - name: "plugin_bigip_gtm_monitor_external"
       bigip_gtm_monitor_external: "{{ bigip_gtm_monitor_external }}"
       register: r_bigip_gtm_monitor_external
+
+    - name: "export r_bigip_gtm_monitor_external"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_external: "{{ r_bigip_gtm_monitor_external }}"

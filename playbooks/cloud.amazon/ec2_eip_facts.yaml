@@ -19,3 +19,8 @@
     - name: "plugin_ec2_eip_facts"
       ec2_eip_facts: "{{ ec2_eip_facts }}"
       register: r_ec2_eip_facts
+
+    - name: "export r_ec2_eip_facts"
+      set_stats:
+        data:
+          r_ec2_eip_facts: "{{ r_ec2_eip_facts }}"

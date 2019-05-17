@@ -15,3 +15,8 @@
       service_account_file: "{{ gcp_compute_router_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_router_auth_kind | default(omit, True) }}"
       network: "{{ gcp_compute_router_network | default(omit, True) }}"
+
+- name: "export r_gcp_compute_router"
+  set_stats:
+    data:
+      r_gcp_compute_router: "{{ r_gcp_compute_router }}"

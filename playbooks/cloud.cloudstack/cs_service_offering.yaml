@@ -44,3 +44,8 @@
     - name: "plugin_cs_service_offering"
       cs_service_offering: "{{ cs_service_offering }}"
       register: r_cs_service_offering
+
+    - name: "export r_cs_service_offering"
+      set_stats:
+        data:
+          r_cs_service_offering: "{{ r_cs_service_offering }}"

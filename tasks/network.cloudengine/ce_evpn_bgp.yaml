@@ -13,3 +13,8 @@
       bgp_instance: "{{ ce_evpn_bgp_bgp_instance | default(omit, True) }}"
       peer_enable: "{{ ce_evpn_bgp_peer_enable | default(omit, True) }}"
       peer_address: "{{ ce_evpn_bgp_peer_address | default(omit, True) }}"
+
+- name: "export r_ce_evpn_bgp"
+  set_stats:
+    data:
+      r_ce_evpn_bgp: "{{ r_ce_evpn_bgp }}"

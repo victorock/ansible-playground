@@ -15,3 +15,8 @@
       password: "{{ bigip_log_publisher_password | default(omit, True) }}"
       validate_certs: "{{ bigip_log_publisher_validate_certs | default(omit, True) }}"
       destinations: "{{ bigip_log_publisher_destinations | default(omit, True) }}"
+
+- name: "export r_bigip_log_publisher"
+  set_stats:
+    data:
+      r_bigip_log_publisher: "{{ r_bigip_log_publisher }}"

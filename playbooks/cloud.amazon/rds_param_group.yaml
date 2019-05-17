@@ -26,3 +26,8 @@
     - name: "plugin_rds_param_group"
       rds_param_group: "{{ rds_param_group }}"
       register: r_rds_param_group
+
+    - name: "export r_rds_param_group"
+      set_stats:
+        data:
+          r_rds_param_group: "{{ r_rds_param_group }}"

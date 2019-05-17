@@ -29,3 +29,8 @@
     - name: "plugin_rax_mon_alarm"
       rax_mon_alarm: "{{ rax_mon_alarm }}"
       register: r_rax_mon_alarm
+
+    - name: "export r_rax_mon_alarm"
+      set_stats:
+        data:
+          r_rax_mon_alarm: "{{ r_rax_mon_alarm }}"

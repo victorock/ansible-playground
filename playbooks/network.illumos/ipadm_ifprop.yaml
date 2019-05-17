@@ -17,3 +17,8 @@
     - name: "plugin_ipadm_ifprop"
       ipadm_ifprop: "{{ ipadm_ifprop }}"
       register: r_ipadm_ifprop
+
+    - name: "export r_ipadm_ifprop"
+      set_stats:
+        data:
+          r_ipadm_ifprop: "{{ r_ipadm_ifprop }}"

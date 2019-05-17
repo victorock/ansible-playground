@@ -16,3 +16,8 @@
     - name: "plugin_nxos_igmp"
       nxos_igmp: "{{ nxos_igmp }}"
       register: r_nxos_igmp
+
+    - name: "export r_nxos_igmp"
+      set_stats:
+        data:
+          r_nxos_igmp: "{{ r_nxos_igmp }}"

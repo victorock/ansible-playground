@@ -22,3 +22,8 @@
       display_name: "{{ os_volume_snapshot_display_name | default(omit, True) }}"
       cloud: "{{ os_volume_snapshot_cloud | default(omit, True) }}"
       wait: "{{ os_volume_snapshot_wait | default(omit, True) }}"
+
+- name: "export r_os_volume_snapshot"
+  set_stats:
+    data:
+      r_os_volume_snapshot: "{{ r_os_volume_snapshot }}"

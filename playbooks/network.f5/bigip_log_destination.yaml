@@ -24,3 +24,8 @@
     - name: "plugin_bigip_log_destination"
       bigip_log_destination: "{{ bigip_log_destination }}"
       register: r_bigip_log_destination
+
+    - name: "export r_bigip_log_destination"
+      set_stats:
+        data:
+          r_bigip_log_destination: "{{ r_bigip_log_destination }}"

@@ -26,3 +26,8 @@
     - name: "plugin_aci_ap"
       aci_ap: "{{ aci_ap }}"
       register: r_aci_ap
+
+    - name: "export r_aci_ap"
+      set_stats:
+        data:
+          r_aci_ap: "{{ r_aci_ap }}"

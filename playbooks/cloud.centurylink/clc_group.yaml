@@ -17,3 +17,8 @@
     - name: "plugin_clc_group"
       clc_group: "{{ clc_group }}"
       register: r_clc_group
+
+    - name: "export r_clc_group"
+      set_stats:
+        data:
+          r_clc_group: "{{ r_clc_group }}"

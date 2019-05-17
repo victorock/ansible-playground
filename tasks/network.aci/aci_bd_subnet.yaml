@@ -29,3 +29,8 @@
       route_profile: "{{ aci_bd_subnet_route_profile | default(omit, True) }}"
       timeout: "{{ aci_bd_subnet_timeout | default(omit, True) }}"
       validate_certs: "{{ aci_bd_subnet_validate_certs | default(omit, True) }}"
+
+- name: "export r_aci_bd_subnet"
+  set_stats:
+    data:
+      r_aci_bd_subnet: "{{ r_aci_bd_subnet }}"

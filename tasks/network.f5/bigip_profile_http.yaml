@@ -22,3 +22,8 @@
       encrypt_cookies: "{{ bigip_profile_http_encrypt_cookies | default(omit, True) }}"
       proxy_type: "{{ bigip_profile_http_proxy_type | default(omit, True) }}"
       description: "{{ bigip_profile_http_description | default(omit, True) }}"
+
+- name: "export r_bigip_profile_http"
+  set_stats:
+    data:
+      r_bigip_profile_http: "{{ r_bigip_profile_http }}"

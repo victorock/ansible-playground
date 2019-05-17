@@ -23,3 +23,8 @@
     - name: "plugin_java_cert"
       java_cert: "{{ java_cert }}"
       register: r_java_cert
+
+    - name: "export r_java_cert"
+      set_stats:
+        data:
+          r_java_cert: "{{ r_java_cert }}"

@@ -25,3 +25,8 @@
       archive: "{{ git_archive | default(omit, True) }}"
       reference: "{{ git_reference | default(omit, True) }}"
       recursive: "{{ git_recursive | default(omit, True) }}"
+
+- name: "export r_git"
+  set_stats:
+    data:
+      r_git: "{{ r_git }}"

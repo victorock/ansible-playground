@@ -20,3 +20,8 @@
       validate_certs: "{{ bigip_trunk_validate_certs | default(omit, True) }}"
       lacp_enabled: "{{ bigip_trunk_lacp_enabled | default(omit, True) }}"
       name: "{{ bigip_trunk_name | default(omit, True) }}"
+
+- name: "export r_bigip_trunk"
+  set_stats:
+    data:
+      r_bigip_trunk: "{{ r_bigip_trunk }}"

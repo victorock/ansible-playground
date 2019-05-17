@@ -17,3 +17,8 @@
     - name: "plugin_sf_check_connections"
       sf_check_connections: "{{ sf_check_connections }}"
       register: r_sf_check_connections
+
+    - name: "export r_sf_check_connections"
+      set_stats:
+        data:
+          r_sf_check_connections: "{{ r_sf_check_connections }}"

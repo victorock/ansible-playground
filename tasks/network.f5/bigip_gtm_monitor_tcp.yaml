@@ -24,3 +24,8 @@
       port: "{{ bigip_gtm_monitor_tcp_port | default(omit, True) }}"
       transparent: "{{ bigip_gtm_monitor_tcp_transparent | default(omit, True) }}"
       name: "{{ bigip_gtm_monitor_tcp_name | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_monitor_tcp"
+  set_stats:
+    data:
+      r_bigip_gtm_monitor_tcp: "{{ r_bigip_gtm_monitor_tcp }}"

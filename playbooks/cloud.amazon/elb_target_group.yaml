@@ -42,3 +42,8 @@
     - name: "plugin_elb_target_group"
       elb_target_group: "{{ elb_target_group }}"
       register: r_elb_target_group
+
+    - name: "export r_elb_target_group"
+      set_stats:
+        data:
+          r_elb_target_group: "{{ r_elb_target_group }}"

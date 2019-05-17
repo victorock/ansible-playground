@@ -9,3 +9,8 @@
       link: "{{ dladm_vlan_link | default(omit, True) }}"
       name: "{{ dladm_vlan_name | default(omit, True) }}"
       vlan_id: "{{ dladm_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_dladm_vlan"
+  set_stats:
+    data:
+      r_dladm_vlan: "{{ r_dladm_vlan }}"

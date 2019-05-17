@@ -15,3 +15,8 @@
     - name: "plugin_selinux_permissive"
       selinux_permissive: "{{ selinux_permissive }}"
       register: r_selinux_permissive
+
+    - name: "export r_selinux_permissive"
+      set_stats:
+        data:
+          r_selinux_permissive: "{{ r_selinux_permissive }}"

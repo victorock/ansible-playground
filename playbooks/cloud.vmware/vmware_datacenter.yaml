@@ -18,3 +18,8 @@
     - name: "plugin_vmware_datacenter"
       vmware_datacenter: "{{ vmware_datacenter }}"
       register: r_vmware_datacenter
+
+    - name: "export r_vmware_datacenter"
+      set_stats:
+        data:
+          r_vmware_datacenter: "{{ r_vmware_datacenter }}"

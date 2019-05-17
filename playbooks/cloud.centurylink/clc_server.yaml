@@ -48,3 +48,8 @@
     - name: "plugin_clc_server"
       clc_server: "{{ clc_server }}"
       register: r_clc_server
+
+    - name: "export r_clc_server"
+      set_stats:
+        data:
+          r_clc_server: "{{ r_clc_server }}"

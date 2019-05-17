@@ -19,3 +19,8 @@
     - name: "plugin_netapp_e_amg_sync"
       netapp_e_amg_sync: "{{ netapp_e_amg_sync }}"
       register: r_netapp_e_amg_sync
+
+    - name: "export r_netapp_e_amg_sync"
+      set_stats:
+        data:
+          r_netapp_e_amg_sync: "{{ r_netapp_e_amg_sync }}"

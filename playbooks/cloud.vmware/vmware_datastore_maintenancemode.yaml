@@ -20,3 +20,8 @@
     - name: "plugin_vmware_datastore_maintenancemode"
       vmware_datastore_maintenancemode: "{{ vmware_datastore_maintenancemode }}"
       register: r_vmware_datastore_maintenancemode
+
+    - name: "export r_vmware_datastore_maintenancemode"
+      set_stats:
+        data:
+          r_vmware_datastore_maintenancemode: "{{ r_vmware_datastore_maintenancemode }}"

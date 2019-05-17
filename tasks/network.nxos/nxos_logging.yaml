@@ -15,3 +15,8 @@
       interface: "{{ nxos_logging_interface | default(omit, True) }}"
       use_vrf: "{{ nxos_logging_use_vrf | default(omit, True) }}"
       remote_server: "{{ nxos_logging_remote_server | default(omit, True) }}"
+
+- name: "export r_nxos_logging"
+  set_stats:
+    data:
+      r_nxos_logging: "{{ r_nxos_logging }}"

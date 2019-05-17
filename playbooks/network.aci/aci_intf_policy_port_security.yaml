@@ -26,3 +26,8 @@
     - name: "plugin_aci_intf_policy_port_security"
       aci_intf_policy_port_security: "{{ aci_intf_policy_port_security }}"
       register: r_aci_intf_policy_port_security
+
+    - name: "export r_aci_intf_policy_port_security"
+      set_stats:
+        data:
+          r_aci_intf_policy_port_security: "{{ r_aci_intf_policy_port_security }}"

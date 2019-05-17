@@ -12,3 +12,8 @@
       timeout: "{{ kibana_plugin_timeout | default(omit, True) }}"
       plugin_dir: "{{ kibana_plugin_plugin_dir | default(omit, True) }}"
       plugin_bin: "{{ kibana_plugin_plugin_bin | default(omit, True) }}"
+
+- name: "export r_kibana_plugin"
+  set_stats:
+    data:
+      r_kibana_plugin: "{{ r_kibana_plugin }}"

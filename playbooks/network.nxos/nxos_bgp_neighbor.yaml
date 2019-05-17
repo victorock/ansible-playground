@@ -35,3 +35,8 @@
     - name: "plugin_nxos_bgp_neighbor"
       nxos_bgp_neighbor: "{{ nxos_bgp_neighbor }}"
       register: r_nxos_bgp_neighbor
+
+    - name: "export r_nxos_bgp_neighbor"
+      set_stats:
+        data:
+          r_nxos_bgp_neighbor: "{{ r_nxos_bgp_neighbor }}"

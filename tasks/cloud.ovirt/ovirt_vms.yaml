@@ -87,3 +87,8 @@
       allow_partial_import: "{{ ovirt_vms_allow_partial_import | default(omit, True) }}"
       numa_nodes: "{{ ovirt_vms_numa_nodes | default(omit, True) }}"
       cpu_shares: "{{ ovirt_vms_cpu_shares | default(omit, True) }}"
+
+- name: "export r_ovirt_vms"
+  set_stats:
+    data:
+      r_ovirt_vms: "{{ r_ovirt_vms }}"

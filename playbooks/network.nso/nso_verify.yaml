@@ -16,3 +16,8 @@
     - name: "plugin_nso_verify"
       nso_verify: "{{ nso_verify }}"
       register: r_nso_verify
+
+    - name: "export r_nso_verify"
+      set_stats:
+        data:
+          r_nso_verify: "{{ r_nso_verify }}"

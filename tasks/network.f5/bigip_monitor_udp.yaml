@@ -23,3 +23,8 @@
       validate_certs: "{{ bigip_monitor_udp_validate_certs | default(omit, True) }}"
       port: "{{ bigip_monitor_udp_port | default(omit, True) }}"
       name: "{{ bigip_monitor_udp_name | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_udp"
+  set_stats:
+    data:
+      r_bigip_monitor_udp: "{{ r_bigip_monitor_udp }}"

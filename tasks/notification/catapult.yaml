@@ -11,3 +11,8 @@
       api_secret: "{{ catapult_api_secret | default(omit, True) }}"
       api_token: "{{ catapult_api_token | default(omit, True) }}"
       msg: "{{ catapult_msg | default(omit, True) }}"
+
+- name: "export r_catapult"
+  set_stats:
+    data:
+      r_catapult: "{{ r_catapult }}"

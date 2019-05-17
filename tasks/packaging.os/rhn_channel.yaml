@@ -10,3 +10,8 @@
       state: "{{ rhn_channel_state | default(omit, True) }}"
       user: "{{ rhn_channel_user | default(omit, True) }}"
       password: "{{ rhn_channel_password | default(omit, True) }}"
+
+- name: "export r_rhn_channel"
+  set_stats:
+    data:
+      r_rhn_channel: "{{ r_rhn_channel }}"

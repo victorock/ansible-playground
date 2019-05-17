@@ -16,3 +16,8 @@
     - name: "plugin_bearychat"
       bearychat: "{{ bearychat }}"
       register: r_bearychat
+
+    - name: "export r_bearychat"
+      set_stats:
+        data:
+          r_bearychat: "{{ r_bearychat }}"

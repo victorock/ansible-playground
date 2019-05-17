@@ -19,3 +19,8 @@
     - name: "plugin_vmware_target_canonical_facts"
       vmware_target_canonical_facts: "{{ vmware_target_canonical_facts }}"
       register: r_vmware_target_canonical_facts
+
+    - name: "export r_vmware_target_canonical_facts"
+      set_stats:
+        data:
+          r_vmware_target_canonical_facts: "{{ r_vmware_target_canonical_facts }}"

@@ -18,3 +18,8 @@
       force: "{{ bigip_ucs_force | default(omit, True) }}"
       no_license: "{{ bigip_ucs_no_license | default(omit, True) }}"
       validate_certs: "{{ bigip_ucs_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_ucs"
+  set_stats:
+    data:
+      r_bigip_ucs: "{{ r_bigip_ucs }}"

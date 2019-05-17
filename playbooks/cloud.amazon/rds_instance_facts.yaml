@@ -20,3 +20,8 @@
     - name: "plugin_rds_instance_facts"
       rds_instance_facts: "{{ rds_instance_facts }}"
       register: r_rds_instance_facts
+
+    - name: "export r_rds_instance_facts"
+      set_stats:
+        data:
+          r_rds_instance_facts: "{{ r_rds_instance_facts }}"

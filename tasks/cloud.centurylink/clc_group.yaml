@@ -10,3 +10,8 @@
       state: "{{ clc_group_state | default(omit, True) }}"
       location: "{{ clc_group_location | default(omit, True) }}"
       wait: "{{ clc_group_wait | default(omit, True) }}"
+
+- name: "export r_clc_group"
+  set_stats:
+    data:
+      r_clc_group: "{{ r_clc_group }}"

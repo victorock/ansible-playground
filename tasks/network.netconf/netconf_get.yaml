@@ -8,3 +8,8 @@
       source: "{{ netconf_get_source | default(omit, True) }}"
       display: "{{ netconf_get_display | default(omit, True) }}"
       lock: "{{ netconf_get_lock | default(omit, True) }}"
+
+- name: "export r_netconf_get"
+  set_stats:
+    data:
+      r_netconf_get: "{{ r_netconf_get }}"

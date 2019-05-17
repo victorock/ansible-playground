@@ -51,3 +51,8 @@
     - name: "plugin_cs_instance"
       cs_instance: "{{ cs_instance }}"
       register: r_cs_instance
+
+    - name: "export r_cs_instance"
+      set_stats:
+        data:
+          r_cs_instance: "{{ r_cs_instance }}"

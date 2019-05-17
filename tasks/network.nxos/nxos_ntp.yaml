@@ -13,3 +13,8 @@
       peer: "{{ nxos_ntp_peer | default(omit, True) }}"
       key_id: "{{ nxos_ntp_key_id | default(omit, True) }}"
       server: "{{ nxos_ntp_server | default(omit, True) }}"
+
+- name: "export r_nxos_ntp"
+  set_stats:
+    data:
+      r_nxos_ntp: "{{ r_nxos_ntp }}"

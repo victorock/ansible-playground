@@ -18,3 +18,8 @@
     - name: "plugin_vmware_vswitch_facts"
       vmware_vswitch_facts: "{{ vmware_vswitch_facts }}"
       register: r_vmware_vswitch_facts
+
+    - name: "export r_vmware_vswitch_facts"
+      set_stats:
+        data:
+          r_vmware_vswitch_facts: "{{ r_vmware_vswitch_facts }}"

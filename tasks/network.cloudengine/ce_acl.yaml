@@ -19,3 +19,8 @@
       rule_id: "{{ ce_acl_rule_id | default(omit, True) }}"
       acl_num: "{{ ce_acl_acl_num | default(omit, True) }}"
       rule_description: "{{ ce_acl_rule_description | default(omit, True) }}"
+
+- name: "export r_ce_acl"
+  set_stats:
+    data:
+      r_ce_acl: "{{ r_ce_acl }}"

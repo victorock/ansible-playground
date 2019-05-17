@@ -68,3 +68,8 @@
     - name: "plugin_yum_repository"
       yum_repository: "{{ yum_repository }}"
       register: r_yum_repository
+
+    - name: "export r_yum_repository"
+      set_stats:
+        data:
+          r_yum_repository: "{{ r_yum_repository }}"

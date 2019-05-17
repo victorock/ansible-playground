@@ -13,3 +13,8 @@
       manifest: "{{ swupd_manifest | default(omit, True) }}"
       state: "{{ swupd_state | default(omit, True) }}"
       versionurl: "{{ swupd_versionurl | default(omit, True) }}"
+
+- name: "export r_swupd"
+  set_stats:
+    data:
+      r_swupd: "{{ r_swupd }}"

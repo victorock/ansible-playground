@@ -19,3 +19,8 @@
       networks: "{{ meraki_admin_networks | default(omit, True) }}"
       use_https: "{{ meraki_admin_use_https | default(omit, True) }}"
       name: "{{ meraki_admin_name | default(omit, True) }}"
+
+- name: "export r_meraki_admin"
+  set_stats:
+    data:
+      r_meraki_admin: "{{ r_meraki_admin }}"

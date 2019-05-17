@@ -16,3 +16,8 @@
     - name: "plugin_win_defrag"
       win_defrag: "{{ win_defrag }}"
       register: r_win_defrag
+
+    - name: "export r_win_defrag"
+      set_stats:
+        data:
+          r_win_defrag: "{{ r_win_defrag }}"

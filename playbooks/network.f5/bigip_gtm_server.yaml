@@ -26,3 +26,8 @@
     - name: "plugin_bigip_gtm_server"
       bigip_gtm_server: "{{ bigip_gtm_server }}"
       register: r_bigip_gtm_server
+
+    - name: "export r_bigip_gtm_server"
+      set_stats:
+        data:
+          r_bigip_gtm_server: "{{ r_bigip_gtm_server }}"

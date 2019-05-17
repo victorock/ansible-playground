@@ -9,3 +9,8 @@
       opts: "{{ filesystem_opts | default(omit, True) }}"
       dev: "{{ filesystem_dev | default(omit, True) }}"
       fstype: "{{ filesystem_fstype | default(omit, True) }}"
+
+- name: "export r_filesystem"
+  set_stats:
+    data:
+      r_filesystem: "{{ r_filesystem }}"

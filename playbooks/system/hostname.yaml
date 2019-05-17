@@ -12,3 +12,8 @@
     - name: "plugin_hostname"
       hostname: "{{ hostname }}"
       register: r_hostname
+
+    - name: "export r_hostname"
+      set_stats:
+        data:
+          r_hostname: "{{ r_hostname }}"

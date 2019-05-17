@@ -9,3 +9,8 @@
       password: "{{ panos_lic_password | default(omit, True) }}"
       ip_address: "{{ panos_lic_ip_address | default(omit, True) }}"
       auth_code: "{{ panos_lic_auth_code | default(omit, True) }}"
+
+- name: "export r_panos_lic"
+  set_stats:
+    data:
+      r_panos_lic: "{{ r_panos_lic }}"

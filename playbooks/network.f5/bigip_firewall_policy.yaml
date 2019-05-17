@@ -22,3 +22,8 @@
     - name: "plugin_bigip_firewall_policy"
       bigip_firewall_policy: "{{ bigip_firewall_policy }}"
       register: r_bigip_firewall_policy
+
+    - name: "export r_bigip_firewall_policy"
+      set_stats:
+        data:
+          r_bigip_firewall_policy: "{{ r_bigip_firewall_policy }}"

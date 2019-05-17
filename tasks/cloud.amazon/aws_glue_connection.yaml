@@ -20,3 +20,8 @@
       validate_certs: "{{ aws_glue_connection_validate_certs | default(omit, True) }}"
       security_groups: "{{ aws_glue_connection_security_groups | default(omit, True) }}"
       name: "{{ aws_glue_connection_name | default(omit, True) }}"
+
+- name: "export r_aws_glue_connection"
+  set_stats:
+    data:
+      r_aws_glue_connection: "{{ r_aws_glue_connection }}"

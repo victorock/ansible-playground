@@ -22,3 +22,8 @@
     - name: "plugin_bigip_device_dns"
       bigip_device_dns: "{{ bigip_device_dns }}"
       register: r_bigip_device_dns
+
+    - name: "export r_bigip_device_dns"
+      set_stats:
+        data:
+          r_bigip_device_dns: "{{ r_bigip_device_dns }}"

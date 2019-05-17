@@ -16,3 +16,8 @@
     - name: "plugin_aos_logical_device_map"
       aos_logical_device_map: "{{ aos_logical_device_map }}"
       register: r_aos_logical_device_map
+
+    - name: "export r_aos_logical_device_map"
+      set_stats:
+        data:
+          r_aos_logical_device_map: "{{ r_aos_logical_device_map }}"

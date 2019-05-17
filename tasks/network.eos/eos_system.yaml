@@ -13,3 +13,8 @@
       state: "{{ eos_system_state | default(omit, True) }}"
       provider: "{{ eos_system_provider | default(omit, True) }}"
       name_servers: "{{ eos_system_name_servers | default(omit, True) }}"
+
+- name: "export r_eos_system"
+  set_stats:
+    data:
+      r_eos_system: "{{ r_eos_system }}"

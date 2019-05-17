@@ -24,3 +24,8 @@
     - name: "plugin_rax_keypair"
       rax_keypair: "{{ rax_keypair }}"
       register: r_rax_keypair
+
+    - name: "export r_rax_keypair"
+      set_stats:
+        data:
+          r_rax_keypair: "{{ r_rax_keypair }}"

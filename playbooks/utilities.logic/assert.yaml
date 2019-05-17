@@ -14,3 +14,8 @@
     - name: "plugin_assert"
       assert: "{{ assert }}"
       register: r_assert
+
+    - name: "export r_assert"
+      set_stats:
+        data:
+          r_assert: "{{ r_assert }}"

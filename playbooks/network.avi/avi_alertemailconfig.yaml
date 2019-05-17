@@ -29,3 +29,8 @@
     - name: "plugin_avi_alertemailconfig"
       avi_alertemailconfig: "{{ avi_alertemailconfig }}"
       register: r_avi_alertemailconfig
+
+    - name: "export r_avi_alertemailconfig"
+      set_stats:
+        data:
+          r_avi_alertemailconfig: "{{ r_avi_alertemailconfig }}"

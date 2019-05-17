@@ -20,3 +20,8 @@
     - name: "plugin_ce_snmp_user"
       ce_snmp_user: "{{ ce_snmp_user }}"
       register: r_ce_snmp_user
+
+    - name: "export r_ce_snmp_user"
+      set_stats:
+        data:
+          r_ce_snmp_user: "{{ r_ce_snmp_user }}"

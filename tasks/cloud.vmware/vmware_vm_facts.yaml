@@ -10,3 +10,8 @@
       password: "{{ vmware_vm_facts_password | default(omit, True) }}"
       validate_certs: "{{ vmware_vm_facts_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vm_facts_port | default(omit, True) }}"
+
+- name: "export r_vmware_vm_facts"
+  set_stats:
+    data:
+      r_vmware_vm_facts: "{{ r_vmware_vm_facts }}"

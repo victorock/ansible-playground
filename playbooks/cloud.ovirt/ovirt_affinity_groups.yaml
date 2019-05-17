@@ -27,3 +27,8 @@
     - name: "plugin_ovirt_affinity_groups"
       ovirt_affinity_groups: "{{ ovirt_affinity_groups }}"
       register: r_ovirt_affinity_groups
+
+    - name: "export r_ovirt_affinity_groups"
+      set_stats:
+        data:
+          r_ovirt_affinity_groups: "{{ r_ovirt_affinity_groups }}"

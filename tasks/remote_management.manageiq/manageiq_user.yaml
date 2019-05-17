@@ -12,3 +12,8 @@
       manageiq_connection: "{{ manageiq_user_manageiq_connection | default(omit, True) }}"
       password: "{{ manageiq_user_password | default(omit, True) }}"
       email: "{{ manageiq_user_email | default(omit, True) }}"
+
+- name: "export r_manageiq_user"
+  set_stats:
+    data:
+      r_manageiq_user: "{{ r_manageiq_user }}"

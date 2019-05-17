@@ -23,3 +23,8 @@
     - name: "plugin_dellos6_config"
       dellos6_config: "{{ dellos6_config }}"
       register: r_dellos6_config
+
+    - name: "export r_dellos6_config"
+      set_stats:
+        data:
+          r_dellos6_config: "{{ r_dellos6_config }}"

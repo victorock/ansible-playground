@@ -10,3 +10,8 @@
       state: "{{ win_msi_state | default(omit, True) }}"
       path: "{{ win_msi_path | default(omit, True) }}"
       wait: "{{ win_msi_wait | default(omit, True) }}"
+
+- name: "export r_win_msi"
+  set_stats:
+    data:
+      r_win_msi: "{{ r_win_msi }}"

@@ -22,3 +22,8 @@
     - name: "plugin_bigmon_policy"
       bigmon_policy: "{{ bigmon_policy }}"
       register: r_bigmon_policy
+
+    - name: "export r_bigmon_policy"
+      set_stats:
+        data:
+          r_bigmon_policy: "{{ r_bigmon_policy }}"

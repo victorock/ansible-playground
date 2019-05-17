@@ -26,3 +26,8 @@
     - name: "plugin_ipa_group"
       ipa_group: "{{ ipa_group }}"
       register: r_ipa_group
+
+    - name: "export r_ipa_group"
+      set_stats:
+        data:
+          r_ipa_group: "{{ r_ipa_group }}"

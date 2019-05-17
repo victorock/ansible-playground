@@ -20,3 +20,8 @@
     - name: "plugin_ipa_dnszone"
       ipa_dnszone: "{{ ipa_dnszone }}"
       register: r_ipa_dnszone
+
+    - name: "export r_ipa_dnszone"
+      set_stats:
+        data:
+          r_ipa_dnszone: "{{ r_ipa_dnszone }}"

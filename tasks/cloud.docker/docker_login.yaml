@@ -22,3 +22,8 @@
       email: "{{ docker_login_email | default(omit, True) }}"
       api_version: "{{ docker_login_api_version | default(omit, True) }}"
       registry_url: "{{ docker_login_registry_url | default(omit, True) }}"
+
+- name: "export r_docker_login"
+  set_stats:
+    data:
+      r_docker_login: "{{ r_docker_login }}"

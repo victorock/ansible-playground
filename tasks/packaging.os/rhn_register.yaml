@@ -15,3 +15,8 @@
       profilename: "{{ rhn_register_profilename | default(omit, True) }}"
       password: "{{ rhn_register_password | default(omit, True) }}"
       nopackages: "{{ rhn_register_nopackages | default(omit, True) }}"
+
+- name: "export r_rhn_register"
+  set_stats:
+    data:
+      r_rhn_register: "{{ r_rhn_register }}"

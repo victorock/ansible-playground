@@ -15,3 +15,8 @@
       arguments: "{{ rabbitmq_binding_arguments | default(omit, True) }}"
       login_password: "{{ rabbitmq_binding_login_password | default(omit, True) }}"
       destination_type: "{{ rabbitmq_binding_destination_type | default(omit, True) }}"
+
+- name: "export r_rabbitmq_binding"
+  set_stats:
+    data:
+      r_rabbitmq_binding: "{{ r_rabbitmq_binding }}"

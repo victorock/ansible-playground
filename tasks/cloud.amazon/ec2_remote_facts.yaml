@@ -12,3 +12,8 @@
       filters: "{{ ec2_remote_facts_filters | default(omit, True) }}"
       ec2_url: "{{ ec2_remote_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ec2_remote_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_remote_facts"
+  set_stats:
+    data:
+      r_ec2_remote_facts: "{{ r_ec2_remote_facts }}"

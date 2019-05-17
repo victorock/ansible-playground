@@ -22,3 +22,8 @@
     - name: "plugin_bigip_iapp_template"
       bigip_iapp_template: "{{ bigip_iapp_template }}"
       register: r_bigip_iapp_template
+
+    - name: "export r_bigip_iapp_template"
+      set_stats:
+        data:
+          r_bigip_iapp_template: "{{ r_bigip_iapp_template }}"

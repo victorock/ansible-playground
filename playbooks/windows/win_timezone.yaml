@@ -12,3 +12,8 @@
     - name: "plugin_win_timezone"
       win_timezone: "{{ win_timezone }}"
       register: r_win_timezone
+
+    - name: "export r_win_timezone"
+      set_stats:
+        data:
+          r_win_timezone: "{{ r_win_timezone }}"

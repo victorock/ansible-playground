@@ -13,3 +13,8 @@
     - name: "plugin_win_dns_client"
       win_dns_client: "{{ win_dns_client }}"
       register: r_win_dns_client
+
+    - name: "export r_win_dns_client"
+      set_stats:
+        data:
+          r_win_dns_client: "{{ r_win_dns_client }}"

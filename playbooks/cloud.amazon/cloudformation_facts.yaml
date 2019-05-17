@@ -24,3 +24,8 @@
     - name: "plugin_cloudformation_facts"
       cloudformation_facts: "{{ cloudformation_facts }}"
       register: r_cloudformation_facts
+
+    - name: "export r_cloudformation_facts"
+      set_stats:
+        data:
+          r_cloudformation_facts: "{{ r_cloudformation_facts }}"

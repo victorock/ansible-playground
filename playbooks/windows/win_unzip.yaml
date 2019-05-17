@@ -16,3 +16,8 @@
     - name: "plugin_win_unzip"
       win_unzip: "{{ win_unzip }}"
       register: r_win_unzip
+
+    - name: "export r_win_unzip"
+      set_stats:
+        data:
+          r_win_unzip: "{{ r_win_unzip }}"

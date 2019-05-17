@@ -14,3 +14,8 @@
       ttl: "{{ nios_ptr_record_ttl | default(omit, True) }}"
       ipv6addr: "{{ nios_ptr_record_ipv6addr | default(omit, True) }}"
       view: "{{ nios_ptr_record_view | default(omit, True) }}"
+
+- name: "export r_nios_ptr_record"
+  set_stats:
+    data:
+      r_nios_ptr_record: "{{ r_nios_ptr_record }}"

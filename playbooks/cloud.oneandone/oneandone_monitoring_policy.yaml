@@ -33,3 +33,8 @@
     - name: "plugin_oneandone_monitoring_policy"
       oneandone_monitoring_policy: "{{ oneandone_monitoring_policy }}"
       register: r_oneandone_monitoring_policy
+
+    - name: "export r_oneandone_monitoring_policy"
+      set_stats:
+        data:
+          r_oneandone_monitoring_policy: "{{ r_oneandone_monitoring_policy }}"

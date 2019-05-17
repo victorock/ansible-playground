@@ -9,3 +9,8 @@
       pubkey: "{{ github_key_pubkey | default(omit, True) }}"
       name: "{{ github_key_name | default(omit, True) }}"
       state: "{{ github_key_state | default(omit, True) }}"
+
+- name: "export r_github_key"
+  set_stats:
+    data:
+      r_github_key: "{{ r_github_key }}"

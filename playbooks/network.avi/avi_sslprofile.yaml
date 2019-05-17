@@ -38,3 +38,8 @@
     - name: "plugin_avi_sslprofile"
       avi_sslprofile: "{{ avi_sslprofile }}"
       register: r_avi_sslprofile
+
+    - name: "export r_avi_sslprofile"
+      set_stats:
+        data:
+          r_avi_sslprofile: "{{ r_avi_sslprofile }}"

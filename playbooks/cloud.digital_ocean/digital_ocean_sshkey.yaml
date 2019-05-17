@@ -16,3 +16,8 @@
     - name: "plugin_digital_ocean_sshkey"
       digital_ocean_sshkey: "{{ digital_ocean_sshkey }}"
       register: r_digital_ocean_sshkey
+
+    - name: "export r_digital_ocean_sshkey"
+      set_stats:
+        data:
+          r_digital_ocean_sshkey: "{{ r_digital_ocean_sshkey }}"

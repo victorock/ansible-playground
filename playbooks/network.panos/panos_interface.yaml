@@ -18,3 +18,8 @@
     - name: "plugin_panos_interface"
       panos_interface: "{{ panos_interface }}"
       register: r_panos_interface
+
+    - name: "export r_panos_interface"
+      set_stats:
+        data:
+          r_panos_interface: "{{ r_panos_interface }}"

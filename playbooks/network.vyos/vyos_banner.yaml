@@ -15,3 +15,8 @@
     - name: "plugin_vyos_banner"
       vyos_banner: "{{ vyos_banner }}"
       register: r_vyos_banner
+
+    - name: "export r_vyos_banner"
+      set_stats:
+        data:
+          r_vyos_banner: "{{ r_vyos_banner }}"

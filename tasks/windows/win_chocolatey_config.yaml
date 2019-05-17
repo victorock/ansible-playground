@@ -7,3 +7,8 @@
       state: "{{ win_chocolatey_config_state | default(omit, True) }}"
       name: "{{ win_chocolatey_config_name | default(omit, True) }}"
       value: "{{ win_chocolatey_config_value | default(omit, True) }}"
+
+- name: "export r_win_chocolatey_config"
+  set_stats:
+    data:
+      r_win_chocolatey_config: "{{ r_win_chocolatey_config }}"

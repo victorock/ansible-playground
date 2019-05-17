@@ -25,3 +25,8 @@
     - name: "plugin_aci_tenant"
       aci_tenant: "{{ aci_tenant }}"
       register: r_aci_tenant
+
+    - name: "export r_aci_tenant"
+      set_stats:
+        data:
+          r_aci_tenant: "{{ r_aci_tenant }}"

@@ -29,3 +29,8 @@
     - name: "plugin_bigip_profile_http"
       bigip_profile_http: "{{ bigip_profile_http }}"
       register: r_bigip_profile_http
+
+    - name: "export r_bigip_profile_http"
+      set_stats:
+        data:
+          r_bigip_profile_http: "{{ r_bigip_profile_http }}"

@@ -23,3 +23,8 @@
     - name: "plugin_bigip_profile_udp"
       bigip_profile_udp: "{{ bigip_profile_udp }}"
       register: r_bigip_profile_udp
+
+    - name: "export r_bigip_profile_udp"
+      set_stats:
+        data:
+          r_bigip_profile_udp: "{{ r_bigip_profile_udp }}"

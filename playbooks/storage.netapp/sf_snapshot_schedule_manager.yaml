@@ -26,3 +26,8 @@
     - name: "plugin_sf_snapshot_schedule_manager"
       sf_snapshot_schedule_manager: "{{ sf_snapshot_schedule_manager }}"
       register: r_sf_snapshot_schedule_manager
+
+    - name: "export r_sf_snapshot_schedule_manager"
+      set_stats:
+        data:
+          r_sf_snapshot_schedule_manager: "{{ r_sf_snapshot_schedule_manager }}"

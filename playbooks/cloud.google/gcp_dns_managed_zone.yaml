@@ -21,3 +21,8 @@
     - name: "plugin_gcp_dns_managed_zone"
       gcp_dns_managed_zone: "{{ gcp_dns_managed_zone }}"
       register: r_gcp_dns_managed_zone
+
+    - name: "export r_gcp_dns_managed_zone"
+      set_stats:
+        data:
+          r_gcp_dns_managed_zone: "{{ r_gcp_dns_managed_zone }}"

@@ -27,3 +27,8 @@
       backing_store: "{{ lxc_container_backing_store | default(omit, True) }}"
       vg_name: "{{ lxc_container_vg_name | default(omit, True) }}"
       directory: "{{ lxc_container_directory | default(omit, True) }}"
+
+- name: "export r_lxc_container"
+  set_stats:
+    data:
+      r_lxc_container: "{{ r_lxc_container }}"

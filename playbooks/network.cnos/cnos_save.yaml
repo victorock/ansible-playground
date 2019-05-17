@@ -17,3 +17,8 @@
     - name: "plugin_cnos_save"
       cnos_save: "{{ cnos_save }}"
       register: r_cnos_save
+
+    - name: "export r_cnos_save"
+      set_stats:
+        data:
+          r_cnos_save: "{{ r_cnos_save }}"

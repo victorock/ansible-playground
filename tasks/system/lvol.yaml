@@ -16,3 +16,8 @@
       shrink: "{{ lvol_shrink | default(omit, True) }}"
       opts: "{{ lvol_opts | default(omit, True) }}"
       size: "{{ lvol_size | default(omit, True) }}"
+
+- name: "export r_lvol"
+  set_stats:
+    data:
+      r_lvol: "{{ r_lvol }}"

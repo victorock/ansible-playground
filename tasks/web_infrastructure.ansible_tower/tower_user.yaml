@@ -17,3 +17,8 @@
       tower_username: "{{ tower_user_tower_username | default(omit, True) }}"
       password: "{{ tower_user_password | default(omit, True) }}"
       tower_verify_ssl: "{{ tower_user_tower_verify_ssl | default(omit, True) }}"
+
+- name: "export r_tower_user"
+  set_stats:
+    data:
+      r_tower_user: "{{ r_tower_user }}"

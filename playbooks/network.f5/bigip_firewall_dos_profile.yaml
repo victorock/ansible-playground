@@ -23,3 +23,8 @@
     - name: "plugin_bigip_firewall_dos_profile"
       bigip_firewall_dos_profile: "{{ bigip_firewall_dos_profile }}"
       register: r_bigip_firewall_dos_profile
+
+    - name: "export r_bigip_firewall_dos_profile"
+      set_stats:
+        data:
+          r_bigip_firewall_dos_profile: "{{ r_bigip_firewall_dos_profile }}"

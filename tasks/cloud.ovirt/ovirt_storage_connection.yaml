@@ -26,3 +26,8 @@
       nfs_retrans: "{{ ovirt_storage_connection_nfs_retrans | default(omit, True) }}"
       timeout: "{{ ovirt_storage_connection_timeout | default(omit, True) }}"
       vfs_type: "{{ ovirt_storage_connection_vfs_type | default(omit, True) }}"
+
+- name: "export r_ovirt_storage_connection"
+  set_stats:
+    data:
+      r_ovirt_storage_connection: "{{ r_ovirt_storage_connection }}"

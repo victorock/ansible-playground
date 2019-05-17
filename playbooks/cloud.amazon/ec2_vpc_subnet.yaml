@@ -29,3 +29,8 @@
     - name: "plugin_ec2_vpc_subnet"
       ec2_vpc_subnet: "{{ ec2_vpc_subnet }}"
       register: r_ec2_vpc_subnet
+
+    - name: "export r_ec2_vpc_subnet"
+      set_stats:
+        data:
+          r_ec2_vpc_subnet: "{{ r_ec2_vpc_subnet }}"

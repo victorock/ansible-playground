@@ -25,3 +25,8 @@
       network: "{{ os_floating_ip_network | default(omit, True) }}"
       cloud: "{{ os_floating_ip_cloud | default(omit, True) }}"
       wait: "{{ os_floating_ip_wait | default(omit, True) }}"
+
+- name: "export r_os_floating_ip"
+  set_stats:
+    data:
+      r_os_floating_ip: "{{ r_os_floating_ip }}"

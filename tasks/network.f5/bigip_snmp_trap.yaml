@@ -18,3 +18,8 @@
       validate_certs: "{{ bigip_snmp_trap_validate_certs | default(omit, True) }}"
       port: "{{ bigip_snmp_trap_port | default(omit, True) }}"
       network: "{{ bigip_snmp_trap_network | default(omit, True) }}"
+
+- name: "export r_bigip_snmp_trap"
+  set_stats:
+    data:
+      r_bigip_snmp_trap: "{{ r_bigip_snmp_trap }}"

@@ -20,3 +20,8 @@
     - name: "plugin_homebrew_cask"
       homebrew_cask: "{{ homebrew_cask }}"
       register: r_homebrew_cask
+
+    - name: "export r_homebrew_cask"
+      set_stats:
+        data:
+          r_homebrew_cask: "{{ r_homebrew_cask }}"

@@ -18,3 +18,8 @@
       tc_protection: "{{ ce_stp_tc_protection | default(omit, True) }}"
       stp_mode: "{{ ce_stp_stp_mode | default(omit, True) }}"
       tc_protection_interval: "{{ ce_stp_tc_protection_interval | default(omit, True) }}"
+
+- name: "export r_ce_stp"
+  set_stats:
+    data:
+      r_ce_stp: "{{ r_ce_stp }}"

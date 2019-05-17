@@ -15,3 +15,8 @@
     - name: "plugin_scaleway_volume_facts"
       scaleway_volume_facts: "{{ scaleway_volume_facts }}"
       register: r_scaleway_volume_facts
+
+    - name: "export r_scaleway_volume_facts"
+      set_stats:
+        data:
+          r_scaleway_volume_facts: "{{ r_scaleway_volume_facts }}"

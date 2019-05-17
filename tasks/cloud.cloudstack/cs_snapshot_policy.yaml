@@ -23,3 +23,8 @@
       max_snaps: "{{ cs_snapshot_policy_max_snaps | default(omit, True) }}"
       api_key: "{{ cs_snapshot_policy_api_key | default(omit, True) }}"
       device_id: "{{ cs_snapshot_policy_device_id | default(omit, True) }}"
+
+- name: "export r_cs_snapshot_policy"
+  set_stats:
+    data:
+      r_cs_snapshot_policy: "{{ r_cs_snapshot_policy }}"

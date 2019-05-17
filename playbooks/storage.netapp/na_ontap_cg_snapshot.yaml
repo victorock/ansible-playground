@@ -23,3 +23,8 @@
     - name: "plugin_na_ontap_cg_snapshot"
       na_ontap_cg_snapshot: "{{ na_ontap_cg_snapshot }}"
       register: r_na_ontap_cg_snapshot
+
+    - name: "export r_na_ontap_cg_snapshot"
+      set_stats:
+        data:
+          r_na_ontap_cg_snapshot: "{{ r_na_ontap_cg_snapshot }}"

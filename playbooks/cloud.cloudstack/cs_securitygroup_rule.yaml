@@ -29,3 +29,8 @@
     - name: "plugin_cs_securitygroup_rule"
       cs_securitygroup_rule: "{{ cs_securitygroup_rule }}"
       register: r_cs_securitygroup_rule
+
+    - name: "export r_cs_securitygroup_rule"
+      set_stats:
+        data:
+          r_cs_securitygroup_rule: "{{ r_cs_securitygroup_rule }}"

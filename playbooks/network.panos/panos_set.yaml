@@ -17,3 +17,8 @@
     - name: "plugin_panos_set"
       panos_set: "{{ panos_set }}"
       register: r_panos_set
+
+    - name: "export r_panos_set"
+      set_stats:
+        data:
+          r_panos_set: "{{ r_panos_set }}"

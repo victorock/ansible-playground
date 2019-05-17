@@ -12,3 +12,8 @@
     - name: "plugin_include"
       include: "{{ include }}"
       register: r_include
+
+    - name: "export r_include"
+      set_stats:
+        data:
+          r_include: "{{ r_include }}"

@@ -47,3 +47,8 @@
     - name: "plugin_nxos_bgp_neighbor_af"
       nxos_bgp_neighbor_af: "{{ nxos_bgp_neighbor_af }}"
       register: r_nxos_bgp_neighbor_af
+
+    - name: "export r_nxos_bgp_neighbor_af"
+      set_stats:
+        data:
+          r_nxos_bgp_neighbor_af: "{{ r_nxos_bgp_neighbor_af }}"

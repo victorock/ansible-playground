@@ -16,3 +16,8 @@
       password: "{{ bigip_asm_policy_password | default(omit, True) }}"
       validate_certs: "{{ bigip_asm_policy_validate_certs | default(omit, True) }}"
       name: "{{ bigip_asm_policy_name | default(omit, True) }}"
+
+- name: "export r_bigip_asm_policy"
+  set_stats:
+    data:
+      r_bigip_asm_policy: "{{ r_bigip_asm_policy }}"

@@ -9,3 +9,8 @@
       state: "{{ seport_state | default(omit, True) }}"
       ports: "{{ seport_ports | default(omit, True) }}"
       proto: "{{ seport_proto | default(omit, True) }}"
+
+- name: "export r_seport"
+  set_stats:
+    data:
+      r_seport: "{{ r_seport }}"

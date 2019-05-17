@@ -28,3 +28,8 @@
       url: "{{ azure_rm_resource_url | default(omit, True) }}"
       auth_source: "{{ azure_rm_resource_auth_source | default(omit, True) }}"
       resource_type: "{{ azure_rm_resource_resource_type | default(omit, True) }}"
+
+- name: "export r_azure_rm_resource"
+  set_stats:
+    data:
+      r_azure_rm_resource: "{{ r_azure_rm_resource }}"

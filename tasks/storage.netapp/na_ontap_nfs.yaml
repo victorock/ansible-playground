@@ -28,3 +28,8 @@
       validate_certs: "{{ na_ontap_nfs_validate_certs | default(omit, True) }}"
       nfsv40_read_delegation: "{{ na_ontap_nfs_nfsv40_read_delegation | default(omit, True) }}"
       service_state: "{{ na_ontap_nfs_service_state | default(omit, True) }}"
+
+- name: "export r_na_ontap_nfs"
+  set_stats:
+    data:
+      r_na_ontap_nfs: "{{ r_na_ontap_nfs }}"

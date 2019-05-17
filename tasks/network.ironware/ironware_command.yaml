@@ -11,3 +11,8 @@
       provider: "{{ ironware_command_provider | default(omit, True) }}"
       wait_for: "{{ ironware_command_wait_for | default(omit, True) }}"
       match: "{{ ironware_command_match | default(omit, True) }}"
+
+- name: "export r_ironware_command"
+  set_stats:
+    data:
+      r_ironware_command: "{{ r_ironware_command }}"

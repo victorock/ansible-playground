@@ -25,3 +25,8 @@
       subscription_id: "{{ azure_rm_image_subscription_id | default(omit, True) }}"
       tenant: "{{ azure_rm_image_tenant | default(omit, True) }}"
       secret: "{{ azure_rm_image_secret | default(omit, True) }}"
+
+- name: "export r_azure_rm_image"
+  set_stats:
+    data:
+      r_azure_rm_image: "{{ r_azure_rm_image }}"

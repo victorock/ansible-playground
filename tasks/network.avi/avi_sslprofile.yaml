@@ -31,3 +31,8 @@
       tenant_ref: "{{ avi_sslprofile_tenant_ref | default(omit, True) }}"
       state: "{{ avi_sslprofile_state | default(omit, True) }}"
       tenant_uuid: "{{ avi_sslprofile_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_sslprofile"
+  set_stats:
+    data:
+      r_avi_sslprofile: "{{ r_avi_sslprofile }}"

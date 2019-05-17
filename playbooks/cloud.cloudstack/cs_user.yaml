@@ -28,3 +28,8 @@
     - name: "plugin_cs_user"
       cs_user: "{{ cs_user }}"
       register: r_cs_user
+
+    - name: "export r_cs_user"
+      set_stats:
+        data:
+          r_cs_user: "{{ r_cs_user }}"

@@ -22,3 +22,8 @@
     - name: "plugin_mksysb"
       mksysb: "{{ mksysb }}"
       register: r_mksysb
+
+    - name: "export r_mksysb"
+      set_stats:
+        data:
+          r_mksysb: "{{ r_mksysb }}"

@@ -20,3 +20,8 @@
     - name: "plugin_nios_mx_record"
       nios_mx_record: "{{ nios_mx_record }}"
       register: r_nios_mx_record
+
+    - name: "export r_nios_mx_record"
+      set_stats:
+        data:
+          r_nios_mx_record: "{{ r_nios_mx_record }}"

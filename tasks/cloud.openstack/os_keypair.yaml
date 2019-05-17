@@ -21,3 +21,8 @@
       public_key_file: "{{ os_keypair_public_key_file | default(omit, True) }}"
       cloud: "{{ os_keypair_cloud | default(omit, True) }}"
       wait: "{{ os_keypair_wait | default(omit, True) }}"
+
+- name: "export r_os_keypair"
+  set_stats:
+    data:
+      r_os_keypair: "{{ r_os_keypair }}"

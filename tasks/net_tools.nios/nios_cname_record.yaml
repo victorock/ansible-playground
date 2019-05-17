@@ -12,3 +12,8 @@
       provider: "{{ nios_cname_record_provider | default(omit, True) }}"
       view: "{{ nios_cname_record_view | default(omit, True) }}"
       canonical: "{{ nios_cname_record_canonical | default(omit, True) }}"
+
+- name: "export r_nios_cname_record"
+  set_stats:
+    data:
+      r_nios_cname_record: "{{ r_nios_cname_record }}"

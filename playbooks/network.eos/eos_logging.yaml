@@ -21,3 +21,8 @@
     - name: "plugin_eos_logging"
       eos_logging: "{{ eos_logging }}"
       register: r_eos_logging
+
+    - name: "export r_eos_logging"
+      set_stats:
+        data:
+          r_eos_logging: "{{ r_eos_logging }}"

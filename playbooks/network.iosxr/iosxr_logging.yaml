@@ -21,3 +21,8 @@
     - name: "plugin_iosxr_logging"
       iosxr_logging: "{{ iosxr_logging }}"
       register: r_iosxr_logging
+
+    - name: "export r_iosxr_logging"
+      set_stats:
+        data:
+          r_iosxr_logging: "{{ r_iosxr_logging }}"

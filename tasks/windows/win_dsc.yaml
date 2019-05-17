@@ -7,3 +7,8 @@
       free_form: "{{ win_dsc_free_form | default(omit, True) }}"
       module_version: "{{ win_dsc_module_version | default(omit, True) }}"
       resource_name: "{{ win_dsc_resource_name | default(omit, True) }}"
+
+- name: "export r_win_dsc"
+  set_stats:
+    data:
+      r_win_dsc: "{{ r_win_dsc }}"

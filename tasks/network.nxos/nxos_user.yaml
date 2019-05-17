@@ -13,3 +13,8 @@
       provider: "{{ nxos_user_provider | default(omit, True) }}"
       aggregate: "{{ nxos_user_aggregate | default(omit, True) }}"
       sshkey: "{{ nxos_user_sshkey | default(omit, True) }}"
+
+- name: "export r_nxos_user"
+  set_stats:
+    data:
+      r_nxos_user: "{{ r_nxos_user }}"

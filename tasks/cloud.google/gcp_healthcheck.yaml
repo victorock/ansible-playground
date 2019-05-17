@@ -18,3 +18,8 @@
       project_id: "{{ gcp_healthcheck_project_id | default(omit, True) }}"
       port: "{{ gcp_healthcheck_port | default(omit, True) }}"
       request_path: "{{ gcp_healthcheck_request_path | default(omit, True) }}"
+
+- name: "export r_gcp_healthcheck"
+  set_stats:
+    data:
+      r_gcp_healthcheck: "{{ r_gcp_healthcheck }}"

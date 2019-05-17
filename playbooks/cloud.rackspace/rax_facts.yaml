@@ -24,3 +24,8 @@
     - name: "plugin_rax_facts"
       rax_facts: "{{ rax_facts }}"
       register: r_rax_facts
+
+    - name: "export r_rax_facts"
+      set_stats:
+        data:
+          r_rax_facts: "{{ r_rax_facts }}"

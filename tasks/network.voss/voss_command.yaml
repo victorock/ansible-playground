@@ -9,3 +9,8 @@
       wait_for: "{{ voss_command_wait_for | default(omit, True) }}"
       match: "{{ voss_command_match | default(omit, True) }}"
       interval: "{{ voss_command_interval | default(omit, True) }}"
+
+- name: "export r_voss_command"
+  set_stats:
+    data:
+      r_voss_command: "{{ r_voss_command }}"

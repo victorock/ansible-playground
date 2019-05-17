@@ -12,3 +12,8 @@
     - name: "plugin_python_requirements_facts"
       python_requirements_facts: "{{ python_requirements_facts }}"
       register: r_python_requirements_facts
+
+    - name: "export r_python_requirements_facts"
+      set_stats:
+        data:
+          r_python_requirements_facts: "{{ r_python_requirements_facts }}"

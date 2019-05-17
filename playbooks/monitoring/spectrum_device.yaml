@@ -21,3 +21,8 @@
     - name: "plugin_spectrum_device"
       spectrum_device: "{{ spectrum_device }}"
       register: r_spectrum_device
+
+    - name: "export r_spectrum_device"
+      set_stats:
+        data:
+          r_spectrum_device: "{{ r_spectrum_device }}"

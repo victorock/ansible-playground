@@ -34,3 +34,8 @@
     - name: "plugin_avi_actiongroupconfig"
       avi_actiongroupconfig: "{{ avi_actiongroupconfig }}"
       register: r_avi_actiongroupconfig
+
+    - name: "export r_avi_actiongroupconfig"
+      set_stats:
+        data:
+          r_avi_actiongroupconfig: "{{ r_avi_actiongroupconfig }}"

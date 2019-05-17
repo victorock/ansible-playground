@@ -20,3 +20,8 @@
     - name: "plugin_swupd"
       swupd: "{{ swupd }}"
       register: r_swupd
+
+    - name: "export r_swupd"
+      set_stats:
+        data:
+          r_swupd: "{{ r_swupd }}"

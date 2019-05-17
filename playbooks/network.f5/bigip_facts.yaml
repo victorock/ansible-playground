@@ -20,3 +20,8 @@
     - name: "plugin_bigip_facts"
       bigip_facts: "{{ bigip_facts }}"
       register: r_bigip_facts
+
+    - name: "export r_bigip_facts"
+      set_stats:
+        data:
+          r_bigip_facts: "{{ r_bigip_facts }}"

@@ -20,3 +20,8 @@
       controller: "{{ avi_hardwaresecuritymodulegroup_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_hardwaresecuritymodulegroup_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_hardwaresecuritymodulegroup_name | default(omit, True) }}"
+
+- name: "export r_avi_hardwaresecuritymodulegroup"
+  set_stats:
+    data:
+      r_avi_hardwaresecuritymodulegroup: "{{ r_avi_hardwaresecuritymodulegroup }}"

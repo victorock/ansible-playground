@@ -18,3 +18,8 @@
     - name: "plugin_junos_system"
       junos_system: "{{ junos_system }}"
       register: r_junos_system
+
+    - name: "export r_junos_system"
+      set_stats:
+        data:
+          r_junos_system: "{{ r_junos_system }}"

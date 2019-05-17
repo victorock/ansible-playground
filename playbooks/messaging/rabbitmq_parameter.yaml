@@ -17,3 +17,8 @@
     - name: "plugin_rabbitmq_parameter"
       rabbitmq_parameter: "{{ rabbitmq_parameter }}"
       register: r_rabbitmq_parameter
+
+    - name: "export r_rabbitmq_parameter"
+      set_stats:
+        data:
+          r_rabbitmq_parameter: "{{ r_rabbitmq_parameter }}"

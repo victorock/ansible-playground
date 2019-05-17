@@ -8,3 +8,8 @@
       password: "{{ hpilo_facts_password | default(omit, True) }}"
       ssl_version: "{{ hpilo_facts_ssl_version | default(omit, True) }}"
       login: "{{ hpilo_facts_login | default(omit, True) }}"
+
+- name: "export r_hpilo_facts"
+  set_stats:
+    data:
+      r_hpilo_facts: "{{ r_hpilo_facts }}"

@@ -7,3 +7,8 @@
       fail_msg: "{{ assert_fail_msg | default(omit, True) }}"
       success_msg: "{{ assert_success_msg | default(omit, True) }}"
       that: "{{ assert_that | default(omit, True) }}"
+
+- name: "export r_assert"
+  set_stats:
+    data:
+      r_assert: "{{ r_assert }}"

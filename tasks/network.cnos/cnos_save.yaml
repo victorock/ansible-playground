@@ -10,3 +10,8 @@
       deviceType: "{{ cnos_save_deviceType | default(omit, True) }}"
       password: "{{ cnos_save_password | default(omit, True) }}"
       enablePassword: "{{ cnos_save_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_save"
+  set_stats:
+    data:
+      r_cnos_save: "{{ r_cnos_save }}"

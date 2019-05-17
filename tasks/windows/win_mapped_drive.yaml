@@ -9,3 +9,8 @@
       state: "{{ win_mapped_drive_state | default(omit, True) }}"
       password: "{{ win_mapped_drive_password | default(omit, True) }}"
       letter: "{{ win_mapped_drive_letter | default(omit, True) }}"
+
+- name: "export r_win_mapped_drive"
+  set_stats:
+    data:
+      r_win_mapped_drive: "{{ r_win_mapped_drive }}"

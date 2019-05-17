@@ -9,3 +9,8 @@
       resource_name: "{{ manageiq_policies_resource_name | default(omit, True) }}"
       policy_profiles: "{{ manageiq_policies_policy_profiles | default(omit, True) }}"
       resource_type: "{{ manageiq_policies_resource_type | default(omit, True) }}"
+
+- name: "export r_manageiq_policies"
+  set_stats:
+    data:
+      r_manageiq_policies: "{{ r_manageiq_policies }}"

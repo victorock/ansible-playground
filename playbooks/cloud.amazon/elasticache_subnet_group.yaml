@@ -22,3 +22,8 @@
     - name: "plugin_elasticache_subnet_group"
       elasticache_subnet_group: "{{ elasticache_subnet_group }}"
       register: r_elasticache_subnet_group
+
+    - name: "export r_elasticache_subnet_group"
+      set_stats:
+        data:
+          r_elasticache_subnet_group: "{{ r_elasticache_subnet_group }}"

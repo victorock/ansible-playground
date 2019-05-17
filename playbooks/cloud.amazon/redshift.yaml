@@ -44,3 +44,8 @@
     - name: "plugin_redshift"
       redshift: "{{ redshift }}"
       register: r_redshift
+
+    - name: "export r_redshift"
+      set_stats:
+        data:
+          r_redshift: "{{ r_redshift }}"

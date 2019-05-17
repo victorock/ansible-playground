@@ -9,3 +9,8 @@
       name: "{{ win_psmodule_name | default(omit, True) }}"
       repository: "{{ win_psmodule_repository | default(omit, True) }}"
       state: "{{ win_psmodule_state | default(omit, True) }}"
+
+- name: "export r_win_psmodule"
+  set_stats:
+    data:
+      r_win_psmodule: "{{ r_win_psmodule }}"

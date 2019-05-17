@@ -19,3 +19,8 @@
     - name: "plugin_pn_cluster"
       pn_cluster: "{{ pn_cluster }}"
       register: r_pn_cluster
+
+    - name: "export r_pn_cluster"
+      set_stats:
+        data:
+          r_pn_cluster: "{{ r_pn_cluster }}"

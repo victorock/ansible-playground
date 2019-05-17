@@ -24,3 +24,8 @@
     - name: "plugin_os_auth"
       os_auth: "{{ os_auth }}"
       register: r_os_auth
+
+    - name: "export r_os_auth"
+      set_stats:
+        data:
+          r_os_auth: "{{ r_os_auth }}"

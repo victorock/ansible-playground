@@ -20,3 +20,8 @@
     - name: "plugin_ce_vxlan_global"
       ce_vxlan_global: "{{ ce_vxlan_global }}"
       register: r_ce_vxlan_global
+
+    - name: "export r_ce_vxlan_global"
+      set_stats:
+        data:
+          r_ce_vxlan_global: "{{ r_ce_vxlan_global }}"

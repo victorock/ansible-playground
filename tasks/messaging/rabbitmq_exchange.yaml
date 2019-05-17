@@ -16,3 +16,8 @@
       auto_delete: "{{ rabbitmq_exchange_auto_delete | default(omit, True) }}"
       login_password: "{{ rabbitmq_exchange_login_password | default(omit, True) }}"
       durable: "{{ rabbitmq_exchange_durable | default(omit, True) }}"
+
+- name: "export r_rabbitmq_exchange"
+  set_stats:
+    data:
+      r_rabbitmq_exchange: "{{ r_rabbitmq_exchange }}"

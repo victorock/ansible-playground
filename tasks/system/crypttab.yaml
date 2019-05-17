@@ -10,3 +10,8 @@
       path: "{{ crypttab_path | default(omit, True) }}"
       password: "{{ crypttab_password | default(omit, True) }}"
       opts: "{{ crypttab_opts | default(omit, True) }}"
+
+- name: "export r_crypttab"
+  set_stats:
+    data:
+      r_crypttab: "{{ r_crypttab }}"

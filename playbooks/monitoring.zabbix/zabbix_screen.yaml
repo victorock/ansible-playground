@@ -19,3 +19,8 @@
     - name: "plugin_zabbix_screen"
       zabbix_screen: "{{ zabbix_screen }}"
       register: r_zabbix_screen
+
+    - name: "export r_zabbix_screen"
+      set_stats:
+        data:
+          r_zabbix_screen: "{{ r_zabbix_screen }}"

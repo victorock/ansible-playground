@@ -19,3 +19,8 @@
     - name: "plugin_iam_mfa_device_facts"
       iam_mfa_device_facts: "{{ iam_mfa_device_facts }}"
       register: r_iam_mfa_device_facts
+
+    - name: "export r_iam_mfa_device_facts"
+      set_stats:
+        data:
+          r_iam_mfa_device_facts: "{{ r_iam_mfa_device_facts }}"

@@ -13,3 +13,8 @@
       state: "{{ profitbricks_nic_state | default(omit, True) }}"
       wait_timeout: "{{ profitbricks_nic_wait_timeout | default(omit, True) }}"
       wait: "{{ profitbricks_nic_wait | default(omit, True) }}"
+
+- name: "export r_profitbricks_nic"
+  set_stats:
+    data:
+      r_profitbricks_nic: "{{ r_profitbricks_nic }}"

@@ -32,3 +32,8 @@
     - name: "plugin_cloudflare_dns"
       cloudflare_dns: "{{ cloudflare_dns }}"
       register: r_cloudflare_dns
+
+    - name: "export r_cloudflare_dns"
+      set_stats:
+        data:
+          r_cloudflare_dns: "{{ r_cloudflare_dns }}"

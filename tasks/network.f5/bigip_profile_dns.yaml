@@ -24,3 +24,8 @@
       server: "{{ bigip_profile_dns_server | default(omit, True) }}"
       cache_name: "{{ bigip_profile_dns_cache_name | default(omit, True) }}"
       enable_dnssec: "{{ bigip_profile_dns_enable_dnssec | default(omit, True) }}"
+
+- name: "export r_bigip_profile_dns"
+  set_stats:
+    data:
+      r_bigip_profile_dns: "{{ r_bigip_profile_dns }}"

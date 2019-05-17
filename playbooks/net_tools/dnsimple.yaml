@@ -22,3 +22,8 @@
     - name: "plugin_dnsimple"
       dnsimple: "{{ dnsimple }}"
       register: r_dnsimple
+
+    - name: "export r_dnsimple"
+      set_stats:
+        data:
+          r_dnsimple: "{{ r_dnsimple }}"

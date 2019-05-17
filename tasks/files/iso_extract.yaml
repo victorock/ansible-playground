@@ -9,3 +9,8 @@
       image: "{{ iso_extract_image | default(omit, True) }}"
       force: "{{ iso_extract_force | default(omit, True) }}"
       executable: "{{ iso_extract_executable | default(omit, True) }}"
+
+- name: "export r_iso_extract"
+  set_stats:
+    data:
+      r_iso_extract: "{{ r_iso_extract }}"

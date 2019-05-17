@@ -18,3 +18,8 @@
     - name: "plugin_vmware_host_service_facts"
       vmware_host_service_facts: "{{ vmware_host_service_facts }}"
       register: r_vmware_host_service_facts
+
+    - name: "export r_vmware_host_service_facts"
+      set_stats:
+        data:
+          r_vmware_host_service_facts: "{{ r_vmware_host_service_facts }}"

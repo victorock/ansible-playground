@@ -34,3 +34,8 @@
     - name: "plugin_vultr_server"
       vultr_server: "{{ vultr_server }}"
       register: r_vultr_server
+
+    - name: "export r_vultr_server"
+      set_stats:
+        data:
+          r_vultr_server: "{{ r_vultr_server }}"

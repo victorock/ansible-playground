@@ -23,3 +23,8 @@
       backup: "{{ ini_file_backup | default(omit, True) }}"
       create: "{{ ini_file_create | default(omit, True) }}"
       setype: "{{ ini_file_setype | default(omit, True) }}"
+
+- name: "export r_ini_file"
+  set_stats:
+    data:
+      r_ini_file: "{{ r_ini_file }}"

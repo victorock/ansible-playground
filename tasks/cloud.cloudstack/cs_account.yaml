@@ -22,3 +22,8 @@
       api_key: "{{ cs_account_api_key | default(omit, True) }}"
       email: "{{ cs_account_email | default(omit, True) }}"
       name: "{{ cs_account_name | default(omit, True) }}"
+
+- name: "export r_cs_account"
+  set_stats:
+    data:
+      r_cs_account: "{{ r_cs_account }}"

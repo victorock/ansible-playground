@@ -5,3 +5,8 @@
   vars:
     slxos_lldp: 
       state: "{{ slxos_lldp_state | default(omit, True) }}"
+
+- name: "export r_slxos_lldp"
+  set_stats:
+    data:
+      r_slxos_lldp: "{{ r_slxos_lldp }}"

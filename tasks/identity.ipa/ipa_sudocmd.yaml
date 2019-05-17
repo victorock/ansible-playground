@@ -14,3 +14,8 @@
       ipa_timeout: "{{ ipa_sudocmd_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_sudocmd_validate_certs | default(omit, True) }}"
       ipa_host: "{{ ipa_sudocmd_ipa_host | default(omit, True) }}"
+
+- name: "export r_ipa_sudocmd"
+  set_stats:
+    data:
+      r_ipa_sudocmd: "{{ r_ipa_sudocmd }}"

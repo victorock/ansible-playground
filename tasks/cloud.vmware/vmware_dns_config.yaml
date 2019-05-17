@@ -12,3 +12,8 @@
       password: "{{ vmware_dns_config_password | default(omit, True) }}"
       validate_certs: "{{ vmware_dns_config_validate_certs | default(omit, True) }}"
       port: "{{ vmware_dns_config_port | default(omit, True) }}"
+
+- name: "export r_vmware_dns_config"
+  set_stats:
+    data:
+      r_vmware_dns_config: "{{ r_vmware_dns_config }}"

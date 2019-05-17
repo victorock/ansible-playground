@@ -18,3 +18,8 @@
       vdirect_secondary_ip: "{{ vdirect_commit_vdirect_secondary_ip | default(omit, True) }}"
       save: "{{ vdirect_commit_save | default(omit, True) }}"
       vdirect_use_ssl: "{{ vdirect_commit_vdirect_use_ssl | default(omit, True) }}"
+
+- name: "export r_vdirect_commit"
+  set_stats:
+    data:
+      r_vdirect_commit: "{{ r_vdirect_commit }}"

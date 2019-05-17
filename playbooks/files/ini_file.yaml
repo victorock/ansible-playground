@@ -30,3 +30,8 @@
     - name: "plugin_ini_file"
       ini_file: "{{ ini_file }}"
       register: r_ini_file
+
+    - name: "export r_ini_file"
+      set_stats:
+        data:
+          r_ini_file: "{{ r_ini_file }}"

@@ -17,3 +17,8 @@
     - name: "plugin_junos_lldp"
       junos_lldp: "{{ junos_lldp }}"
       register: r_junos_lldp
+
+    - name: "export r_junos_lldp"
+      set_stats:
+        data:
+          r_junos_lldp: "{{ r_junos_lldp }}"

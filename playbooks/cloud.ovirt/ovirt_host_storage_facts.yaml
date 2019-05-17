@@ -17,3 +17,8 @@
     - name: "plugin_ovirt_host_storage_facts"
       ovirt_host_storage_facts: "{{ ovirt_host_storage_facts }}"
       register: r_ovirt_host_storage_facts
+
+    - name: "export r_ovirt_host_storage_facts"
+      set_stats:
+        data:
+          r_ovirt_host_storage_facts: "{{ r_ovirt_host_storage_facts }}"

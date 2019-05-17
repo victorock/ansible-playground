@@ -29,3 +29,8 @@
     - name: "plugin_aci_firmware_source"
       aci_firmware_source: "{{ aci_firmware_source }}"
       register: r_aci_firmware_source
+
+    - name: "export r_aci_firmware_source"
+      set_stats:
+        data:
+          r_aci_firmware_source: "{{ r_aci_firmware_source }}"

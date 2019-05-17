@@ -10,3 +10,8 @@
       depth: "{{ zfs_facts_depth | default(omit, True) }}"
       type: "{{ zfs_facts_type | default(omit, True) }}"
       properties: "{{ zfs_facts_properties | default(omit, True) }}"
+
+- name: "export r_zfs_facts"
+  set_stats:
+    data:
+      r_zfs_facts: "{{ r_zfs_facts }}"

@@ -22,3 +22,8 @@
       validate_certs: "{{ na_ontap_lun_validate_certs | default(omit, True) }}"
       force_remove_fenced: "{{ na_ontap_lun_force_remove_fenced | default(omit, True) }}"
       space_allocation: "{{ na_ontap_lun_space_allocation | default(omit, True) }}"
+
+- name: "export r_na_ontap_lun"
+  set_stats:
+    data:
+      r_na_ontap_lun: "{{ r_na_ontap_lun }}"

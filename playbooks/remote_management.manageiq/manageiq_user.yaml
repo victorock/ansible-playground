@@ -19,3 +19,8 @@
     - name: "plugin_manageiq_user"
       manageiq_user: "{{ manageiq_user }}"
       register: r_manageiq_user
+
+    - name: "export r_manageiq_user"
+      set_stats:
+        data:
+          r_manageiq_user: "{{ r_manageiq_user }}"

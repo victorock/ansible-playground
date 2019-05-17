@@ -21,3 +21,8 @@
     - name: "plugin_netapp_e_lun_mapping"
       netapp_e_lun_mapping: "{{ netapp_e_lun_mapping }}"
       register: r_netapp_e_lun_mapping
+
+    - name: "export r_netapp_e_lun_mapping"
+      set_stats:
+        data:
+          r_netapp_e_lun_mapping: "{{ r_netapp_e_lun_mapping }}"

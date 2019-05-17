@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_firewall_manager"
       vmware_host_firewall_manager: "{{ vmware_host_firewall_manager }}"
       register: r_vmware_host_firewall_manager
+
+    - name: "export r_vmware_host_firewall_manager"
+      set_stats:
+        data:
+          r_vmware_host_firewall_manager: "{{ r_vmware_host_firewall_manager }}"

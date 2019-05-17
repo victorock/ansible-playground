@@ -24,3 +24,8 @@
       ip_address: "{{ cs_loadbalancer_rule_ip_address | default(omit, True) }}"
       name: "{{ cs_loadbalancer_rule_name | default(omit, True) }}"
       api_url: "{{ cs_loadbalancer_rule_api_url | default(omit, True) }}"
+
+- name: "export r_cs_loadbalancer_rule"
+  set_stats:
+    data:
+      r_cs_loadbalancer_rule: "{{ r_cs_loadbalancer_rule }}"

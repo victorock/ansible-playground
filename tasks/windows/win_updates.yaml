@@ -12,3 +12,8 @@
       use_scheduled_task: "{{ win_updates_use_scheduled_task | default(omit, True) }}"
       blacklist: "{{ win_updates_blacklist | default(omit, True) }}"
       state: "{{ win_updates_state | default(omit, True) }}"
+
+- name: "export r_win_updates"
+  set_stats:
+    data:
+      r_win_updates: "{{ r_win_updates }}"

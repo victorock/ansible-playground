@@ -10,3 +10,8 @@
       state: "{{ grafana_plugin_state | default(omit, True) }}"
       grafana_plugins_dir: "{{ grafana_plugin_grafana_plugins_dir | default(omit, True) }}"
       version: "{{ grafana_plugin_version | default(omit, True) }}"
+
+- name: "export r_grafana_plugin"
+  set_stats:
+    data:
+      r_grafana_plugin: "{{ r_grafana_plugin }}"

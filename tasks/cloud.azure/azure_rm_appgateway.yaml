@@ -33,3 +33,8 @@
       backend_address_pools: "{{ azure_rm_appgateway_backend_address_pools | default(omit, True) }}"
       api_profile: "{{ azure_rm_appgateway_api_profile | default(omit, True) }}"
       frontend_ports: "{{ azure_rm_appgateway_frontend_ports | default(omit, True) }}"
+
+- name: "export r_azure_rm_appgateway"
+  set_stats:
+    data:
+      r_azure_rm_appgateway: "{{ r_azure_rm_appgateway }}"

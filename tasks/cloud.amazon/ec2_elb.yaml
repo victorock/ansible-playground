@@ -17,3 +17,8 @@
       validate_certs: "{{ ec2_elb_validate_certs | default(omit, True) }}"
       enable_availability_zone: "{{ ec2_elb_enable_availability_zone | default(omit, True) }}"
       ec2_elbs: "{{ ec2_elb_ec2_elbs | default(omit, True) }}"
+
+- name: "export r_ec2_elb"
+  set_stats:
+    data:
+      r_ec2_elb: "{{ r_ec2_elb }}"

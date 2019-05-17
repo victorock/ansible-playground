@@ -28,3 +28,8 @@
       name: "{{ os_nova_flavor_name | default(omit, True) }}"
       cert: "{{ os_nova_flavor_cert | default(omit, True) }}"
       timeout: "{{ os_nova_flavor_timeout | default(omit, True) }}"
+
+- name: "export r_os_nova_flavor"
+  set_stats:
+    data:
+      r_os_nova_flavor: "{{ r_os_nova_flavor }}"

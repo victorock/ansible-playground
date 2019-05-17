@@ -24,3 +24,8 @@
     - name: "plugin_rax_network"
       rax_network: "{{ rax_network }}"
       register: r_rax_network
+
+    - name: "export r_rax_network"
+      set_stats:
+        data:
+          r_rax_network: "{{ r_rax_network }}"

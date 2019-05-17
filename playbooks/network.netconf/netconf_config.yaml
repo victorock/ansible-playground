@@ -34,3 +34,8 @@
     - name: "plugin_netconf_config"
       netconf_config: "{{ netconf_config }}"
       register: r_netconf_config
+
+    - name: "export r_netconf_config"
+      set_stats:
+        data:
+          r_netconf_config: "{{ r_netconf_config }}"

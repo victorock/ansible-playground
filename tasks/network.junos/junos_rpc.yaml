@@ -9,3 +9,8 @@
       args: "{{ junos_rpc_args | default(omit, True) }}"
       attrs: "{{ junos_rpc_attrs | default(omit, True) }}"
       provider: "{{ junos_rpc_provider | default(omit, True) }}"
+
+- name: "export r_junos_rpc"
+  set_stats:
+    data:
+      r_junos_rpc: "{{ r_junos_rpc }}"

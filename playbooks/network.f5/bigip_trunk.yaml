@@ -27,3 +27,8 @@
     - name: "plugin_bigip_trunk"
       bigip_trunk: "{{ bigip_trunk }}"
       register: r_bigip_trunk
+
+    - name: "export r_bigip_trunk"
+      set_stats:
+        data:
+          r_bigip_trunk: "{{ r_bigip_trunk }}"

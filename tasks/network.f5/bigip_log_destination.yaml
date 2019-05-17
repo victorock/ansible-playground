@@ -17,3 +17,8 @@
       password: "{{ bigip_log_destination_password | default(omit, True) }}"
       validate_certs: "{{ bigip_log_destination_validate_certs | default(omit, True) }}"
       name: "{{ bigip_log_destination_name | default(omit, True) }}"
+
+- name: "export r_bigip_log_destination"
+  set_stats:
+    data:
+      r_bigip_log_destination: "{{ r_bigip_log_destination }}"

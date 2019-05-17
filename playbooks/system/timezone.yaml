@@ -13,3 +13,8 @@
     - name: "plugin_timezone"
       timezone: "{{ timezone }}"
       register: r_timezone
+
+    - name: "export r_timezone"
+      set_stats:
+        data:
+          r_timezone: "{{ r_timezone }}"

@@ -21,3 +21,8 @@
       disk_type: "{{ profitbricks_volume_disk_type | default(omit, True) }}"
       ssh_keys: "{{ profitbricks_volume_ssh_keys | default(omit, True) }}"
       size: "{{ profitbricks_volume_size | default(omit, True) }}"
+
+- name: "export r_profitbricks_volume"
+  set_stats:
+    data:
+      r_profitbricks_volume: "{{ r_profitbricks_volume }}"

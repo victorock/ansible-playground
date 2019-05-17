@@ -23,3 +23,8 @@
     - name: "plugin_cnos_image"
       cnos_image: "{{ cnos_image }}"
       register: r_cnos_image
+
+    - name: "export r_cnos_image"
+      set_stats:
+        data:
+          r_cnos_image: "{{ r_cnos_image }}"

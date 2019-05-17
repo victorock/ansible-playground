@@ -13,3 +13,8 @@
     - name: "plugin_raw"
       raw: "{{ raw }}"
       register: r_raw
+
+    - name: "export r_raw"
+      set_stats:
+        data:
+          r_raw: "{{ r_raw }}"

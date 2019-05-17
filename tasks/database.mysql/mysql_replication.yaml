@@ -31,3 +31,8 @@
       ssl_ca: "{{ mysql_replication_ssl_ca | default(omit, True) }}"
       master_ssl_key: "{{ mysql_replication_master_ssl_key | default(omit, True) }}"
       mode: "{{ mysql_replication_mode | default(omit, True) }}"
+
+- name: "export r_mysql_replication"
+  set_stats:
+    data:
+      r_mysql_replication: "{{ r_mysql_replication }}"

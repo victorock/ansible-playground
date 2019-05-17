@@ -20,3 +20,8 @@
       key_file: "{{ k8s_facts_key_file | default(omit, True) }}"
       password: "{{ k8s_facts_password | default(omit, True) }}"
       api_version: "{{ k8s_facts_api_version | default(omit, True) }}"
+
+- name: "export r_k8s_facts"
+  set_stats:
+    data:
+      r_k8s_facts: "{{ r_k8s_facts }}"

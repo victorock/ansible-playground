@@ -24,3 +24,8 @@
     - name: "plugin_aws_config_delivery_channel"
       aws_config_delivery_channel: "{{ aws_config_delivery_channel }}"
       register: r_aws_config_delivery_channel
+
+    - name: "export r_aws_config_delivery_channel"
+      set_stats:
+        data:
+          r_aws_config_delivery_channel: "{{ r_aws_config_delivery_channel }}"

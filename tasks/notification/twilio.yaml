@@ -10,3 +10,8 @@
       from_number: "{{ twilio_from_number | default(omit, True) }}"
       msg: "{{ twilio_msg | default(omit, True) }}"
       media_url: "{{ twilio_media_url | default(omit, True) }}"
+
+- name: "export r_twilio"
+  set_stats:
+    data:
+      r_twilio: "{{ r_twilio }}"

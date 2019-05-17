@@ -7,3 +7,8 @@
       state: "{{ package_state | default(omit, True) }}"
       use: "{{ package_use | default(omit, True) }}"
       name: "{{ package_name | default(omit, True) }}"
+
+- name: "export r_package"
+  set_stats:
+    data:
+      r_package: "{{ r_package }}"

@@ -18,3 +18,8 @@
       ip_address: "{{ cs_loadbalancer_rule_member_ip_address | default(omit, True) }}"
       vms: "{{ cs_loadbalancer_rule_member_vms | default(omit, True) }}"
       name: "{{ cs_loadbalancer_rule_member_name | default(omit, True) }}"
+
+- name: "export r_cs_loadbalancer_rule_member"
+  set_stats:
+    data:
+      r_cs_loadbalancer_rule_member: "{{ r_cs_loadbalancer_rule_member }}"

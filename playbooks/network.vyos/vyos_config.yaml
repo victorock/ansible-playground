@@ -19,3 +19,8 @@
     - name: "plugin_vyos_config"
       vyos_config: "{{ vyos_config }}"
       register: r_vyos_config
+
+    - name: "export r_vyos_config"
+      set_stats:
+        data:
+          r_vyos_config: "{{ r_vyos_config }}"

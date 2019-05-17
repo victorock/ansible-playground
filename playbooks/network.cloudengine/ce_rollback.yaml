@@ -17,3 +17,8 @@
     - name: "plugin_ce_rollback"
       ce_rollback: "{{ ce_rollback }}"
       register: r_ce_rollback
+
+    - name: "export r_ce_rollback"
+      set_stats:
+        data:
+          r_ce_rollback: "{{ r_ce_rollback }}"

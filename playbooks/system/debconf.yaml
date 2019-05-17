@@ -16,3 +16,8 @@
     - name: "plugin_debconf"
       debconf: "{{ debconf }}"
       register: r_debconf
+
+    - name: "export r_debconf"
+      set_stats:
+        data:
+          r_debconf: "{{ r_debconf }}"

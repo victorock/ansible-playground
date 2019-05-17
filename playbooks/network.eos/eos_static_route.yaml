@@ -19,3 +19,8 @@
     - name: "plugin_eos_static_route"
       eos_static_route: "{{ eos_static_route }}"
       register: r_eos_static_route
+
+    - name: "export r_eos_static_route"
+      set_stats:
+        data:
+          r_eos_static_route: "{{ r_eos_static_route }}"

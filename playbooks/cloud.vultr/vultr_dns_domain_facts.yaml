@@ -17,3 +17,8 @@
     - name: "plugin_vultr_dns_domain_facts"
       vultr_dns_domain_facts: "{{ vultr_dns_domain_facts }}"
       register: r_vultr_dns_domain_facts
+
+    - name: "export r_vultr_dns_domain_facts"
+      set_stats:
+        data:
+          r_vultr_dns_domain_facts: "{{ r_vultr_dns_domain_facts }}"

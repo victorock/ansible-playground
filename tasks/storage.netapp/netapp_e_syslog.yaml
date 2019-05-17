@@ -16,3 +16,8 @@
       validate_certs: "{{ netapp_e_syslog_validate_certs | default(omit, True) }}"
       port: "{{ netapp_e_syslog_port | default(omit, True) }}"
       api_url: "{{ netapp_e_syslog_api_url | default(omit, True) }}"
+
+- name: "export r_netapp_e_syslog"
+  set_stats:
+    data:
+      r_netapp_e_syslog: "{{ r_netapp_e_syslog }}"

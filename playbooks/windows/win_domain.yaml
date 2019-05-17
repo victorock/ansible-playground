@@ -16,3 +16,8 @@
     - name: "plugin_win_domain"
       win_domain: "{{ win_domain }}"
       register: r_win_domain
+
+    - name: "export r_win_domain"
+      set_stats:
+        data:
+          r_win_domain: "{{ r_win_domain }}"

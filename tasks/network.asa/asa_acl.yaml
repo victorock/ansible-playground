@@ -14,3 +14,8 @@
       config: "{{ asa_acl_config | default(omit, True) }}"
       match: "{{ asa_acl_match | default(omit, True) }}"
       before: "{{ asa_acl_before | default(omit, True) }}"
+
+- name: "export r_asa_acl"
+  set_stats:
+    data:
+      r_asa_acl: "{{ r_asa_acl }}"

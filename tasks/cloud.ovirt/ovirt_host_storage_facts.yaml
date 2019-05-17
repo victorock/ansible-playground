@@ -10,3 +10,8 @@
       auth: "{{ ovirt_host_storage_facts_auth | default(omit, True) }}"
       host: "{{ ovirt_host_storage_facts_host | default(omit, True) }}"
       nested_attributes: "{{ ovirt_host_storage_facts_nested_attributes | default(omit, True) }}"
+
+- name: "export r_ovirt_host_storage_facts"
+  set_stats:
+    data:
+      r_ovirt_host_storage_facts: "{{ r_ovirt_host_storage_facts }}"

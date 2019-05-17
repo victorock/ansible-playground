@@ -5,3 +5,8 @@
   vars:
     win_ping: 
       data: "{{ win_ping_data | default(omit, True) }}"
+
+- name: "export r_win_ping"
+  set_stats:
+    data:
+      r_win_ping: "{{ r_win_ping }}"

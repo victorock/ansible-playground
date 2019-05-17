@@ -22,3 +22,8 @@
     - name: "plugin_aws_config_recorder"
       aws_config_recorder: "{{ aws_config_recorder }}"
       register: r_aws_config_recorder
+
+    - name: "export r_aws_config_recorder"
+      set_stats:
+        data:
+          r_aws_config_recorder: "{{ r_aws_config_recorder }}"

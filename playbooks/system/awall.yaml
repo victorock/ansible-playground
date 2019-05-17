@@ -14,3 +14,8 @@
     - name: "plugin_awall"
       awall: "{{ awall }}"
       register: r_awall
+
+    - name: "export r_awall"
+      set_stats:
+        data:
+          r_awall: "{{ r_awall }}"

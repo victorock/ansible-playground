@@ -14,3 +14,8 @@
       path: "{{ na_ontap_cifs_path | default(omit, True) }}"
       password: "{{ na_ontap_cifs_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_cifs_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_cifs"
+  set_stats:
+    data:
+      r_na_ontap_cifs: "{{ r_na_ontap_cifs }}"

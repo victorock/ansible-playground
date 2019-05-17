@@ -15,3 +15,8 @@
     - name: "plugin_atomic_image"
       atomic_image: "{{ atomic_image }}"
       register: r_atomic_image
+
+    - name: "export r_atomic_image"
+      set_stats:
+        data:
+          r_atomic_image: "{{ r_atomic_image }}"

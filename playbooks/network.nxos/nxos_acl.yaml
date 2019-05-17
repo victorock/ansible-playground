@@ -38,3 +38,8 @@
     - name: "plugin_nxos_acl"
       nxos_acl: "{{ nxos_acl }}"
       register: r_nxos_acl
+
+    - name: "export r_nxos_acl"
+      set_stats:
+        data:
+          r_nxos_acl: "{{ r_nxos_acl }}"

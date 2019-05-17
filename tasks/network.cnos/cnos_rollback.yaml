@@ -16,3 +16,8 @@
       enablePassword: "{{ cnos_rollback_enablePassword | default(omit, True) }}"
       rcserverip: "{{ cnos_rollback_rcserverip | default(omit, True) }}"
       rcpath: "{{ cnos_rollback_rcpath | default(omit, True) }}"
+
+- name: "export r_cnos_rollback"
+  set_stats:
+    data:
+      r_cnos_rollback: "{{ r_cnos_rollback }}"

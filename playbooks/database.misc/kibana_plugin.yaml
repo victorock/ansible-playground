@@ -19,3 +19,8 @@
     - name: "plugin_kibana_plugin"
       kibana_plugin: "{{ kibana_plugin }}"
       register: r_kibana_plugin
+
+    - name: "export r_kibana_plugin"
+      set_stats:
+        data:
+          r_kibana_plugin: "{{ r_kibana_plugin }}"

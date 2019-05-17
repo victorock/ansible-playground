@@ -24,3 +24,8 @@
       id: "{{ cs_zone_id | default(omit, True) }}"
       network_type: "{{ cs_zone_network_type | default(omit, True) }}"
       dns1_ipv6: "{{ cs_zone_dns1_ipv6 | default(omit, True) }}"
+
+- name: "export r_cs_zone"
+  set_stats:
+    data:
+      r_cs_zone: "{{ r_cs_zone }}"

@@ -20,3 +20,8 @@
     - name: "plugin_profitbricks_nic"
       profitbricks_nic: "{{ profitbricks_nic }}"
       register: r_profitbricks_nic
+
+    - name: "export r_profitbricks_nic"
+      set_stats:
+        data:
+          r_profitbricks_nic: "{{ r_profitbricks_nic }}"

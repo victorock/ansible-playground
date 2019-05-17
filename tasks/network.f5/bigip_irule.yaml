@@ -16,3 +16,8 @@
       provider: "{{ bigip_irule_provider | default(omit, True) }}"
       password: "{{ bigip_irule_password | default(omit, True) }}"
       validate_certs: "{{ bigip_irule_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_irule"
+  set_stats:
+    data:
+      r_bigip_irule: "{{ r_bigip_irule }}"

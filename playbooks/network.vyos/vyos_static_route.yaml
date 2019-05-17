@@ -18,3 +18,8 @@
     - name: "plugin_vyos_static_route"
       vyos_static_route: "{{ vyos_static_route }}"
       register: r_vyos_static_route
+
+    - name: "export r_vyos_static_route"
+      set_stats:
+        data:
+          r_vyos_static_route: "{{ r_vyos_static_route }}"

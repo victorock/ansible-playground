@@ -13,3 +13,8 @@
       clean: "{{ deploy_helper_clean | default(omit, True) }}"
       release: "{{ deploy_helper_release | default(omit, True) }}"
       path: "{{ deploy_helper_path | default(omit, True) }}"
+
+- name: "export r_deploy_helper"
+  set_stats:
+    data:
+      r_deploy_helper: "{{ r_deploy_helper }}"

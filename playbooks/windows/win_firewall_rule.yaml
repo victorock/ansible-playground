@@ -26,3 +26,8 @@
     - name: "plugin_win_firewall_rule"
       win_firewall_rule: "{{ win_firewall_rule }}"
       register: r_win_firewall_rule
+
+    - name: "export r_win_firewall_rule"
+      set_stats:
+        data:
+          r_win_firewall_rule: "{{ r_win_firewall_rule }}"

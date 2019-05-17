@@ -10,3 +10,8 @@
       deviceType: "{{ cnos_factory_deviceType | default(omit, True) }}"
       password: "{{ cnos_factory_password | default(omit, True) }}"
       enablePassword: "{{ cnos_factory_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_factory"
+  set_stats:
+    data:
+      r_cnos_factory: "{{ r_cnos_factory }}"

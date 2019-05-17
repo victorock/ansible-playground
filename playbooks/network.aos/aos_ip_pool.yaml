@@ -17,3 +17,8 @@
     - name: "plugin_aos_ip_pool"
       aos_ip_pool: "{{ aos_ip_pool }}"
       register: r_aos_ip_pool
+
+    - name: "export r_aos_ip_pool"
+      set_stats:
+        data:
+          r_aos_ip_pool: "{{ r_aos_ip_pool }}"

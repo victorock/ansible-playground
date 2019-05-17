@@ -17,3 +17,8 @@
     - name: "plugin_nso_show"
       nso_show: "{{ nso_show }}"
       register: r_nso_show
+
+    - name: "export r_nso_show"
+      set_stats:
+        data:
+          r_nso_show: "{{ r_nso_show }}"

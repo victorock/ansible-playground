@@ -18,3 +18,8 @@
     - name: "plugin_win_acl"
       win_acl: "{{ win_acl }}"
       register: r_win_acl
+
+    - name: "export r_win_acl"
+      set_stats:
+        data:
+          r_win_acl: "{{ r_win_acl }}"

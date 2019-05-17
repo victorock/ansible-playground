@@ -18,3 +18,8 @@
     - name: "plugin_nxos_igmp_snooping"
       nxos_igmp_snooping: "{{ nxos_igmp_snooping }}"
       register: r_nxos_igmp_snooping
+
+    - name: "export r_nxos_igmp_snooping"
+      set_stats:
+        data:
+          r_nxos_igmp_snooping: "{{ r_nxos_igmp_snooping }}"

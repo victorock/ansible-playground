@@ -33,3 +33,8 @@
     - name: "plugin_ipa_hbacrule"
       ipa_hbacrule: "{{ ipa_hbacrule }}"
       register: r_ipa_hbacrule
+
+    - name: "export r_ipa_hbacrule"
+      set_stats:
+        data:
+          r_ipa_hbacrule: "{{ r_ipa_hbacrule }}"

@@ -20,3 +20,8 @@
       password: "{{ influxdb_retention_policy_password | default(omit, True) }}"
       validate_certs: "{{ influxdb_retention_policy_validate_certs | default(omit, True) }}"
       port: "{{ influxdb_retention_policy_port | default(omit, True) }}"
+
+- name: "export r_influxdb_retention_policy"
+  set_stats:
+    data:
+      r_influxdb_retention_policy: "{{ r_influxdb_retention_policy }}"

@@ -76,3 +76,8 @@
       validate_certs: "{{ proxmox_kvm_validate_certs | default(omit, True) }}"
       onboot: "{{ proxmox_kvm_onboot | default(omit, True) }}"
       delete: "{{ proxmox_kvm_delete | default(omit, True) }}"
+
+- name: "export r_proxmox_kvm"
+  set_stats:
+    data:
+      r_proxmox_kvm: "{{ r_proxmox_kvm }}"

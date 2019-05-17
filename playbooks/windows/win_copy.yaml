@@ -18,3 +18,8 @@
     - name: "plugin_win_copy"
       win_copy: "{{ win_copy }}"
       register: r_win_copy
+
+    - name: "export r_win_copy"
+      set_stats:
+        data:
+          r_win_copy: "{{ r_win_copy }}"

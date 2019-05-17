@@ -16,3 +16,8 @@
     - name: "plugin_win_psmodule"
       win_psmodule: "{{ win_psmodule }}"
       register: r_win_psmodule
+
+    - name: "export r_win_psmodule"
+      set_stats:
+        data:
+          r_win_psmodule: "{{ r_win_psmodule }}"

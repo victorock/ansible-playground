@@ -49,3 +49,8 @@
     - name: "plugin_meraki_ssid"
       meraki_ssid: "{{ meraki_ssid }}"
       register: r_meraki_ssid
+
+    - name: "export r_meraki_ssid"
+      set_stats:
+        data:
+          r_meraki_ssid: "{{ r_meraki_ssid }}"

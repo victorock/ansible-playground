@@ -25,3 +25,8 @@
     - name: "plugin_ce_stp"
       ce_stp: "{{ ce_stp }}"
       register: r_ce_stp
+
+    - name: "export r_ce_stp"
+      set_stats:
+        data:
+          r_ce_stp: "{{ r_ce_stp }}"

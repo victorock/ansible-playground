@@ -22,3 +22,8 @@
     - name: "plugin_onyx_config"
       onyx_config: "{{ onyx_config }}"
       register: r_onyx_config
+
+    - name: "export r_onyx_config"
+      set_stats:
+        data:
+          r_onyx_config: "{{ r_onyx_config }}"

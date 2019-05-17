@@ -19,3 +19,8 @@
     - name: "plugin_jenkins_job"
       jenkins_job: "{{ jenkins_job }}"
       register: r_jenkins_job
+
+    - name: "export r_jenkins_job"
+      set_stats:
+        data:
+          r_jenkins_job: "{{ r_jenkins_job }}"

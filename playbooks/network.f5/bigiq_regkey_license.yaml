@@ -22,3 +22,8 @@
     - name: "plugin_bigiq_regkey_license"
       bigiq_regkey_license: "{{ bigiq_regkey_license }}"
       register: r_bigiq_regkey_license
+
+    - name: "export r_bigiq_regkey_license"
+      set_stats:
+        data:
+          r_bigiq_regkey_license: "{{ r_bigiq_regkey_license }}"

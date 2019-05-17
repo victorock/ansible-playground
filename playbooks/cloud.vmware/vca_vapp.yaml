@@ -30,3 +30,8 @@
     - name: "plugin_vca_vapp"
       vca_vapp: "{{ vca_vapp }}"
       register: r_vca_vapp
+
+    - name: "export r_vca_vapp"
+      set_stats:
+        data:
+          r_vca_vapp: "{{ r_vca_vapp }}"

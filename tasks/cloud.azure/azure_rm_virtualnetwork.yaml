@@ -26,3 +26,8 @@
       tenant: "{{ azure_rm_virtualnetwork_tenant | default(omit, True) }}"
       name: "{{ azure_rm_virtualnetwork_name | default(omit, True) }}"
       auth_source: "{{ azure_rm_virtualnetwork_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualnetwork"
+  set_stats:
+    data:
+      r_azure_rm_virtualnetwork: "{{ r_azure_rm_virtualnetwork }}"

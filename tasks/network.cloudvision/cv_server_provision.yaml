@@ -16,3 +16,8 @@
       action: "{{ cv_server_provision_action | default(omit, True) }}"
       password: "{{ cv_server_provision_password | default(omit, True) }}"
       switch_name: "{{ cv_server_provision_switch_name | default(omit, True) }}"
+
+- name: "export r_cv_server_provision"
+  set_stats:
+    data:
+      r_cv_server_provision: "{{ r_cv_server_provision }}"

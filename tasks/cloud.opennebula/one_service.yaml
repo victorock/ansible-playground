@@ -22,3 +22,8 @@
       unique: "{{ one_service_unique | default(omit, True) }}"
       template_id: "{{ one_service_template_id | default(omit, True) }}"
       wait: "{{ one_service_wait | default(omit, True) }}"
+
+- name: "export r_one_service"
+  set_stats:
+    data:
+      r_one_service: "{{ r_one_service }}"

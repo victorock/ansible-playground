@@ -24,3 +24,8 @@
     - name: "plugin_sros_config"
       sros_config: "{{ sros_config }}"
       register: r_sros_config
+
+    - name: "export r_sros_config"
+      set_stats:
+        data:
+          r_sros_config: "{{ r_sros_config }}"

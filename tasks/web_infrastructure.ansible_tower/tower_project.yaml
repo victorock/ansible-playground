@@ -21,3 +21,8 @@
       scm_update_on_launch: "{{ tower_project_scm_update_on_launch | default(omit, True) }}"
       tower_verify_ssl: "{{ tower_project_tower_verify_ssl | default(omit, True) }}"
       name: "{{ tower_project_name | default(omit, True) }}"
+
+- name: "export r_tower_project"
+  set_stats:
+    data:
+      r_tower_project: "{{ r_tower_project }}"

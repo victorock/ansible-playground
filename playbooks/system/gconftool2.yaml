@@ -17,3 +17,8 @@
     - name: "plugin_gconftool2"
       gconftool2: "{{ gconftool2 }}"
       register: r_gconftool2
+
+    - name: "export r_gconftool2"
+      set_stats:
+        data:
+          r_gconftool2: "{{ r_gconftool2 }}"

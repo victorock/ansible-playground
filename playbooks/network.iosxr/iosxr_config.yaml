@@ -25,3 +25,8 @@
     - name: "plugin_iosxr_config"
       iosxr_config: "{{ iosxr_config }}"
       register: r_iosxr_config
+
+    - name: "export r_iosxr_config"
+      set_stats:
+        data:
+          r_iosxr_config: "{{ r_iosxr_config }}"

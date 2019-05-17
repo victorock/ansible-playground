@@ -20,3 +20,8 @@
       password: "{{ win_psexec_password | default(omit, True) }}"
       hostnames: "{{ win_psexec_hostnames | default(omit, True) }}"
       wait: "{{ win_psexec_wait | default(omit, True) }}"
+
+- name: "export r_win_psexec"
+  set_stats:
+    data:
+      r_win_psexec: "{{ r_win_psexec }}"

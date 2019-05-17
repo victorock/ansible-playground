@@ -26,3 +26,8 @@
     - name: "plugin_aci_rest"
       aci_rest: "{{ aci_rest }}"
       register: r_aci_rest
+
+    - name: "export r_aci_rest"
+      set_stats:
+        data:
+          r_aci_rest: "{{ r_aci_rest }}"

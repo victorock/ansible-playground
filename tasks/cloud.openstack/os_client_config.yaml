@@ -5,3 +5,8 @@
   vars:
     os_client_config: 
       clouds: "{{ os_client_config_clouds | default(omit, True) }}"
+
+- name: "export r_os_client_config"
+  set_stats:
+    data:
+      r_os_client_config: "{{ r_os_client_config }}"

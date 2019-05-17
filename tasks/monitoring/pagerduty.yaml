@@ -15,3 +15,8 @@
       requester_id: "{{ pagerduty_requester_id | default(omit, True) }}"
       validate_certs: "{{ pagerduty_validate_certs | default(omit, True) }}"
       desc: "{{ pagerduty_desc | default(omit, True) }}"
+
+- name: "export r_pagerduty"
+  set_stats:
+    data:
+      r_pagerduty: "{{ r_pagerduty }}"

@@ -23,3 +23,8 @@
     - name: "plugin_gcdns_record"
       gcdns_record: "{{ gcdns_record }}"
       register: r_gcdns_record
+
+    - name: "export r_gcdns_record"
+      set_stats:
+        data:
+          r_gcdns_record: "{{ r_gcdns_record }}"

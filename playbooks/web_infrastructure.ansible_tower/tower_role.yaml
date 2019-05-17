@@ -26,3 +26,8 @@
     - name: "plugin_tower_role"
       tower_role: "{{ tower_role }}"
       register: r_tower_role
+
+    - name: "export r_tower_role"
+      set_stats:
+        data:
+          r_tower_role: "{{ r_tower_role }}"

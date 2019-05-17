@@ -22,3 +22,8 @@
       tls_psk_identity: "{{ zabbix_proxy_tls_psk_identity | default(omit, True) }}"
       tls_issuer: "{{ zabbix_proxy_tls_issuer | default(omit, True) }}"
       tls_connect: "{{ zabbix_proxy_tls_connect | default(omit, True) }}"
+
+- name: "export r_zabbix_proxy"
+  set_stats:
+    data:
+      r_zabbix_proxy: "{{ r_zabbix_proxy }}"

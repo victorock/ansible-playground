@@ -42,3 +42,8 @@
       verify: "{{ os_server_verify | default(omit, True) }}"
       config_drive: "{{ os_server_config_drive | default(omit, True) }}"
       reuse_ips: "{{ os_server_reuse_ips | default(omit, True) }}"
+
+- name: "export r_os_server"
+  set_stats:
+    data:
+      r_os_server: "{{ r_os_server }}"

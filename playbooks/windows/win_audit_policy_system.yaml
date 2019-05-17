@@ -14,3 +14,8 @@
     - name: "plugin_win_audit_policy_system"
       win_audit_policy_system: "{{ win_audit_policy_system }}"
       register: r_win_audit_policy_system
+
+    - name: "export r_win_audit_policy_system"
+      set_stats:
+        data:
+          r_win_audit_policy_system: "{{ r_win_audit_policy_system }}"

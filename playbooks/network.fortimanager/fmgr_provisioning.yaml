@@ -26,3 +26,8 @@
     - name: "plugin_fmgr_provisioning"
       fmgr_provisioning: "{{ fmgr_provisioning }}"
       register: r_fmgr_provisioning
+
+    - name: "export r_fmgr_provisioning"
+      set_stats:
+        data:
+          r_fmgr_provisioning: "{{ r_fmgr_provisioning }}"

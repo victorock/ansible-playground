@@ -18,3 +18,8 @@
       interface: "{{ ovirt_nics_interface | default(omit, True) }}"
       wait: "{{ ovirt_nics_wait | default(omit, True) }}"
       network: "{{ ovirt_nics_network | default(omit, True) }}"
+
+- name: "export r_ovirt_nics"
+  set_stats:
+    data:
+      r_ovirt_nics: "{{ r_ovirt_nics }}"

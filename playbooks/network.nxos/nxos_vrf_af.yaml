@@ -17,3 +17,8 @@
     - name: "plugin_nxos_vrf_af"
       nxos_vrf_af: "{{ nxos_vrf_af }}"
       register: r_nxos_vrf_af
+
+    - name: "export r_nxos_vrf_af"
+      set_stats:
+        data:
+          r_nxos_vrf_af: "{{ r_nxos_vrf_af }}"

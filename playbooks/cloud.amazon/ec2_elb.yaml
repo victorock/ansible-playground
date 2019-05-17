@@ -24,3 +24,8 @@
     - name: "plugin_ec2_elb"
       ec2_elb: "{{ ec2_elb }}"
       register: r_ec2_elb
+
+    - name: "export r_ec2_elb"
+      set_stats:
+        data:
+          r_ec2_elb: "{{ r_ec2_elb }}"

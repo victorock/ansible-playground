@@ -15,3 +15,8 @@
     - name: "plugin_ce_acl_interface"
       ce_acl_interface: "{{ ce_acl_interface }}"
       register: r_ce_acl_interface
+
+    - name: "export r_ce_acl_interface"
+      set_stats:
+        data:
+          r_ce_acl_interface: "{{ r_ce_acl_interface }}"

@@ -15,3 +15,8 @@
       scheme: "{{ consul_session_scheme | default(omit, True) }}"
       validate_certs: "{{ consul_session_validate_certs | default(omit, True) }}"
       port: "{{ consul_session_port | default(omit, True) }}"
+
+- name: "export r_consul_session"
+  set_stats:
+    data:
+      r_consul_session: "{{ r_consul_session }}"

@@ -30,3 +30,8 @@
     - name: "plugin_proxysql_backend_servers"
       proxysql_backend_servers: "{{ proxysql_backend_servers }}"
       register: r_proxysql_backend_servers
+
+    - name: "export r_proxysql_backend_servers"
+      set_stats:
+        data:
+          r_proxysql_backend_servers: "{{ r_proxysql_backend_servers }}"

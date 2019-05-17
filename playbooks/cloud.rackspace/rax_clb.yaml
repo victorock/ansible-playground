@@ -32,3 +32,8 @@
     - name: "plugin_rax_clb"
       rax_clb: "{{ rax_clb }}"
       register: r_rax_clb
+
+    - name: "export r_rax_clb"
+      set_stats:
+        data:
+          r_rax_clb: "{{ r_rax_clb }}"

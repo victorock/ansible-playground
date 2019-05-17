@@ -31,3 +31,8 @@
       timeout: "{{ ovirt_storage_domains_timeout | default(omit, True) }}"
       backup: "{{ ovirt_storage_domains_backup | default(omit, True) }}"
       discard_after_delete: "{{ ovirt_storage_domains_discard_after_delete | default(omit, True) }}"
+
+- name: "export r_ovirt_storage_domains"
+  set_stats:
+    data:
+      r_ovirt_storage_domains: "{{ r_ovirt_storage_domains }}"

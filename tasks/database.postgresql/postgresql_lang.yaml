@@ -15,3 +15,8 @@
       trust: "{{ postgresql_lang_trust | default(omit, True) }}"
       fail_on_drop: "{{ postgresql_lang_fail_on_drop | default(omit, True) }}"
       port: "{{ postgresql_lang_port | default(omit, True) }}"
+
+- name: "export r_postgresql_lang"
+  set_stats:
+    data:
+      r_postgresql_lang: "{{ r_postgresql_lang }}"

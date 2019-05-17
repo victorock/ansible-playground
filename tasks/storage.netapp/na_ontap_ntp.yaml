@@ -13,3 +13,8 @@
       https: "{{ na_ontap_ntp_https | default(omit, True) }}"
       password: "{{ na_ontap_ntp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_ntp_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_ntp"
+  set_stats:
+    data:
+      r_na_ontap_ntp: "{{ r_na_ontap_ntp }}"

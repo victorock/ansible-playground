@@ -13,3 +13,8 @@
       registry: "{{ npm_registry | default(omit, True) }}"
       version: "{{ npm_version | default(omit, True) }}"
       path: "{{ npm_path | default(omit, True) }}"
+
+- name: "export r_npm"
+  set_stats:
+    data:
+      r_npm: "{{ r_npm }}"

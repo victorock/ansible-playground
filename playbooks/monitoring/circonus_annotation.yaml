@@ -18,3 +18,8 @@
     - name: "plugin_circonus_annotation"
       circonus_annotation: "{{ circonus_annotation }}"
       register: r_circonus_annotation
+
+    - name: "export r_circonus_annotation"
+      set_stats:
+        data:
+          r_circonus_annotation: "{{ r_circonus_annotation }}"

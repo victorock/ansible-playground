@@ -19,3 +19,8 @@
       service_account_file: "{{ gcp_compute_http_health_check_service_account_file | default(omit, True) }}"
       port: "{{ gcp_compute_http_health_check_port | default(omit, True) }}"
       request_path: "{{ gcp_compute_http_health_check_request_path | default(omit, True) }}"
+
+- name: "export r_gcp_compute_http_health_check"
+  set_stats:
+    data:
+      r_gcp_compute_http_health_check: "{{ r_gcp_compute_http_health_check }}"

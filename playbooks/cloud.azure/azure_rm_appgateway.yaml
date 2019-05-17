@@ -40,3 +40,8 @@
     - name: "plugin_azure_rm_appgateway"
       azure_rm_appgateway: "{{ azure_rm_appgateway }}"
       register: r_azure_rm_appgateway
+
+    - name: "export r_azure_rm_appgateway"
+      set_stats:
+        data:
+          r_azure_rm_appgateway: "{{ r_azure_rm_appgateway }}"

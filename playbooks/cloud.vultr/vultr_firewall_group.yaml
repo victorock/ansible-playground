@@ -19,3 +19,8 @@
     - name: "plugin_vultr_firewall_group"
       vultr_firewall_group: "{{ vultr_firewall_group }}"
       register: r_vultr_firewall_group
+
+    - name: "export r_vultr_firewall_group"
+      set_stats:
+        data:
+          r_vultr_firewall_group: "{{ r_vultr_firewall_group }}"

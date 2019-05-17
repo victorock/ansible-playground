@@ -10,3 +10,8 @@
       fetch_nested: "{{ ovirt_snapshots_facts_fetch_nested | default(omit, True) }}"
       auth: "{{ ovirt_snapshots_facts_auth | default(omit, True) }}"
       snapshot_id: "{{ ovirt_snapshots_facts_snapshot_id | default(omit, True) }}"
+
+- name: "export r_ovirt_snapshots_facts"
+  set_stats:
+    data:
+      r_ovirt_snapshots_facts: "{{ r_ovirt_snapshots_facts }}"

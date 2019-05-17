@@ -10,3 +10,8 @@
       tasks_from: "{{ import_role_tasks_from | default(omit, True) }}"
       vars_from: "{{ import_role_vars_from | default(omit, True) }}"
       defaults_from: "{{ import_role_defaults_from | default(omit, True) }}"
+
+- name: "export r_import_role"
+  set_stats:
+    data:
+      r_import_role: "{{ r_import_role }}"

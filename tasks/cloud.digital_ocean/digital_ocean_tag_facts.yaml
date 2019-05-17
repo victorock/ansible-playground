@@ -8,3 +8,8 @@
       tag_name: "{{ digital_ocean_tag_facts_tag_name | default(omit, True) }}"
       validate_certs: "{{ digital_ocean_tag_facts_validate_certs | default(omit, True) }}"
       timeout: "{{ digital_ocean_tag_facts_timeout | default(omit, True) }}"
+
+- name: "export r_digital_ocean_tag_facts"
+  set_stats:
+    data:
+      r_digital_ocean_tag_facts: "{{ r_digital_ocean_tag_facts }}"

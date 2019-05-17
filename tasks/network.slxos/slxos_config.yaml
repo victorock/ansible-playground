@@ -19,3 +19,8 @@
       backup: "{{ slxos_config_backup | default(omit, True) }}"
       match: "{{ slxos_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ slxos_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_slxos_config"
+  set_stats:
+    data:
+      r_slxos_config: "{{ r_slxos_config }}"

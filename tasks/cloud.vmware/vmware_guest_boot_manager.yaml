@@ -18,3 +18,8 @@
       validate_certs: "{{ vmware_guest_boot_manager_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_boot_manager_port | default(omit, True) }}"
       name: "{{ vmware_guest_boot_manager_name | default(omit, True) }}"
+
+- name: "export r_vmware_guest_boot_manager"
+  set_stats:
+    data:
+      r_vmware_guest_boot_manager: "{{ r_vmware_guest_boot_manager }}"

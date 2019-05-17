@@ -19,3 +19,8 @@
       os_type: "{{ fmgr_provisioning_os_type | default(omit, True) }}"
       vdom: "{{ fmgr_provisioning_vdom | default(omit, True) }}"
       name: "{{ fmgr_provisioning_name | default(omit, True) }}"
+
+- name: "export r_fmgr_provisioning"
+  set_stats:
+    data:
+      r_fmgr_provisioning: "{{ r_fmgr_provisioning }}"

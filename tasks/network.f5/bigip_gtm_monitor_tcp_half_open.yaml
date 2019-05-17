@@ -23,3 +23,8 @@
       port: "{{ bigip_gtm_monitor_tcp_half_open_port | default(omit, True) }}"
       transparent: "{{ bigip_gtm_monitor_tcp_half_open_transparent | default(omit, True) }}"
       ignore_down_response: "{{ bigip_gtm_monitor_tcp_half_open_ignore_down_response | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_monitor_tcp_half_open"
+  set_stats:
+    data:
+      r_bigip_gtm_monitor_tcp_half_open: "{{ r_bigip_gtm_monitor_tcp_half_open }}"

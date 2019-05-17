@@ -28,3 +28,8 @@
     - name: "plugin_lambda_policy"
       lambda_policy: "{{ lambda_policy }}"
       register: r_lambda_policy
+
+    - name: "export r_lambda_policy"
+      set_stats:
+        data:
+          r_lambda_policy: "{{ r_lambda_policy }}"

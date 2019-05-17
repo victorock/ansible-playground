@@ -22,3 +22,8 @@
     - name: "plugin_bigip_timer_policy"
       bigip_timer_policy: "{{ bigip_timer_policy }}"
       register: r_bigip_timer_policy
+
+    - name: "export r_bigip_timer_policy"
+      set_stats:
+        data:
+          r_bigip_timer_policy: "{{ r_bigip_timer_policy }}"

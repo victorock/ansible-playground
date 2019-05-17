@@ -10,3 +10,8 @@
       vm: "{{ ovirt_affinity_labels_facts_vm | default(omit, True) }}"
       host: "{{ ovirt_affinity_labels_facts_host | default(omit, True) }}"
       auth: "{{ ovirt_affinity_labels_facts_auth | default(omit, True) }}"
+
+- name: "export r_ovirt_affinity_labels_facts"
+  set_stats:
+    data:
+      r_ovirt_affinity_labels_facts: "{{ r_ovirt_affinity_labels_facts }}"

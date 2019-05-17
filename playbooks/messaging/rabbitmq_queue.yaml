@@ -27,3 +27,8 @@
     - name: "plugin_rabbitmq_queue"
       rabbitmq_queue: "{{ rabbitmq_queue }}"
       register: r_rabbitmq_queue
+
+    - name: "export r_rabbitmq_queue"
+      set_stats:
+        data:
+          r_rabbitmq_queue: "{{ r_rabbitmq_queue }}"

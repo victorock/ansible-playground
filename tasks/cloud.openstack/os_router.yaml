@@ -25,3 +25,8 @@
       network: "{{ os_router_network | default(omit, True) }}"
       cloud: "{{ os_router_cloud | default(omit, True) }}"
       name: "{{ os_router_name | default(omit, True) }}"
+
+- name: "export r_os_router"
+  set_stats:
+    data:
+      r_os_router: "{{ r_os_router }}"

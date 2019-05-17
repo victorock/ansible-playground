@@ -32,3 +32,8 @@
     - name: "plugin_portage"
       portage: "{{ portage }}"
       register: r_portage
+
+    - name: "export r_portage"
+      set_stats:
+        data:
+          r_portage: "{{ r_portage }}"

@@ -11,3 +11,8 @@
       user: "{{ win_audit_rule_user | default(omit, True) }}"
       path: "{{ win_audit_rule_path | default(omit, True) }}"
       inheritance_flags: "{{ win_audit_rule_inheritance_flags | default(omit, True) }}"
+
+- name: "export r_win_audit_rule"
+  set_stats:
+    data:
+      r_win_audit_rule: "{{ r_win_audit_rule }}"

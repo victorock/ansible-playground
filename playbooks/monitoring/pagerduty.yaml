@@ -22,3 +22,8 @@
     - name: "plugin_pagerduty"
       pagerduty: "{{ pagerduty }}"
       register: r_pagerduty
+
+    - name: "export r_pagerduty"
+      set_stats:
+        data:
+          r_pagerduty: "{{ r_pagerduty }}"

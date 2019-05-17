@@ -31,3 +31,8 @@
     - name: "plugin_cloudtrail"
       cloudtrail: "{{ cloudtrail }}"
       register: r_cloudtrail
+
+    - name: "export r_cloudtrail"
+      set_stats:
+        data:
+          r_cloudtrail: "{{ r_cloudtrail }}"

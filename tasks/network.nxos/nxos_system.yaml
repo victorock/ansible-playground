@@ -12,3 +12,8 @@
       state: "{{ nxos_system_state | default(omit, True) }}"
       provider: "{{ nxos_system_provider | default(omit, True) }}"
       domain_lookup: "{{ nxos_system_domain_lookup | default(omit, True) }}"
+
+- name: "export r_nxos_system"
+  set_stats:
+    data:
+      r_nxos_system: "{{ r_nxos_system }}"

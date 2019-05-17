@@ -20,3 +20,8 @@
       zone: "{{ cs_ip_address_zone | default(omit, True) }}"
       ip_address: "{{ cs_ip_address_ip_address | default(omit, True) }}"
       network: "{{ cs_ip_address_network | default(omit, True) }}"
+
+- name: "export r_cs_ip_address"
+  set_stats:
+    data:
+      r_cs_ip_address: "{{ r_cs_ip_address }}"

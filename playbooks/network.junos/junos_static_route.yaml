@@ -20,3 +20,8 @@
     - name: "plugin_junos_static_route"
       junos_static_route: "{{ junos_static_route }}"
       register: r_junos_static_route
+
+    - name: "export r_junos_static_route"
+      set_stats:
+        data:
+          r_junos_static_route: "{{ r_junos_static_route }}"

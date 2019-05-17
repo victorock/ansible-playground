@@ -9,3 +9,8 @@
       state: "{{ rundeck_project_state | default(omit, True) }}"
       api_version: "{{ rundeck_project_api_version | default(omit, True) }}"
       name: "{{ rundeck_project_name | default(omit, True) }}"
+
+- name: "export r_rundeck_project"
+  set_stats:
+    data:
+      r_rundeck_project: "{{ r_rundeck_project }}"

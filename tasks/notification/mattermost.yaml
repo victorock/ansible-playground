@@ -11,3 +11,8 @@
       api_key: "{{ mattermost_api_key | default(omit, True) }}"
       validate_certs: "{{ mattermost_validate_certs | default(omit, True) }}"
       channel: "{{ mattermost_channel | default(omit, True) }}"
+
+- name: "export r_mattermost"
+  set_stats:
+    data:
+      r_mattermost: "{{ r_mattermost }}"

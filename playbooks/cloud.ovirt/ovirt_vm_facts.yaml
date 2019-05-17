@@ -18,3 +18,8 @@
     - name: "plugin_ovirt_vm_facts"
       ovirt_vm_facts: "{{ ovirt_vm_facts }}"
       register: r_ovirt_vm_facts
+
+    - name: "export r_ovirt_vm_facts"
+      set_stats:
+        data:
+          r_ovirt_vm_facts: "{{ r_ovirt_vm_facts }}"

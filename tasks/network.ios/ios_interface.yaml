@@ -19,3 +19,8 @@
       speed: "{{ ios_interface_speed | default(omit, True) }}"
       tx_rate: "{{ ios_interface_tx_rate | default(omit, True) }}"
       name: "{{ ios_interface_name | default(omit, True) }}"
+
+- name: "export r_ios_interface"
+  set_stats:
+    data:
+      r_ios_interface: "{{ r_ios_interface }}"

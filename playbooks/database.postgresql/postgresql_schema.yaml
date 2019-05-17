@@ -20,3 +20,8 @@
     - name: "plugin_postgresql_schema"
       postgresql_schema: "{{ postgresql_schema }}"
       register: r_postgresql_schema
+
+    - name: "export r_postgresql_schema"
+      set_stats:
+        data:
+          r_postgresql_schema: "{{ r_postgresql_schema }}"

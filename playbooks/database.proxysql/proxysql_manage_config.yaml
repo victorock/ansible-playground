@@ -20,3 +20,8 @@
     - name: "plugin_proxysql_manage_config"
       proxysql_manage_config: "{{ proxysql_manage_config }}"
       register: r_proxysql_manage_config
+
+    - name: "export r_proxysql_manage_config"
+      set_stats:
+        data:
+          r_proxysql_manage_config: "{{ r_proxysql_manage_config }}"

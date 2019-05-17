@@ -31,3 +31,8 @@
     - name: "plugin_letsencrypt"
       letsencrypt: "{{ letsencrypt }}"
       register: r_letsencrypt
+
+    - name: "export r_letsencrypt"
+      set_stats:
+        data:
+          r_letsencrypt: "{{ r_letsencrypt }}"

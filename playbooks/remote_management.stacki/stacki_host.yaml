@@ -19,3 +19,8 @@
     - name: "plugin_stacki_host"
       stacki_host: "{{ stacki_host }}"
       register: r_stacki_host
+
+    - name: "export r_stacki_host"
+      set_stats:
+        data:
+          r_stacki_host: "{{ r_stacki_host }}"

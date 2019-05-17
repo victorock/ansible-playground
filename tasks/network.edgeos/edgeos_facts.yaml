@@ -5,3 +5,8 @@
   vars:
     edgeos_facts: 
       gather_subset: "{{ edgeos_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_edgeos_facts"
+  set_stats:
+    data:
+      r_edgeos_facts: "{{ r_edgeos_facts }}"

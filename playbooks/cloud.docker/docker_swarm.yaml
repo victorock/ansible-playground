@@ -45,3 +45,8 @@
     - name: "plugin_docker_swarm"
       docker_swarm: "{{ docker_swarm }}"
       register: r_docker_swarm
+
+    - name: "export r_docker_swarm"
+      set_stats:
+        data:
+          r_docker_swarm: "{{ r_docker_swarm }}"

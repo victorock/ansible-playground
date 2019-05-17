@@ -21,3 +21,8 @@
     - name: "plugin_ovirt_groups"
       ovirt_groups: "{{ ovirt_groups }}"
       register: r_ovirt_groups
+
+    - name: "export r_ovirt_groups"
+      set_stats:
+        data:
+          r_ovirt_groups: "{{ r_ovirt_groups }}"

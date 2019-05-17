@@ -22,3 +22,8 @@
       provider: "{{ bigip_smtp_provider | default(omit, True) }}"
       smtp_server_password: "{{ bigip_smtp_smtp_server_password | default(omit, True) }}"
       authentication: "{{ bigip_smtp_authentication | default(omit, True) }}"
+
+- name: "export r_bigip_smtp"
+  set_stats:
+    data:
+      r_bigip_smtp: "{{ r_bigip_smtp }}"

@@ -24,3 +24,8 @@
       template: "{{ os_stack_template | default(omit, True) }}"
       cloud: "{{ os_stack_cloud | default(omit, True) }}"
       wait: "{{ os_stack_wait | default(omit, True) }}"
+
+- name: "export r_os_stack"
+  set_stats:
+    data:
+      r_os_stack: "{{ r_os_stack }}"

@@ -17,3 +17,8 @@
     - name: "plugin_dellos6_command"
       dellos6_command: "{{ dellos6_command }}"
       register: r_dellos6_command
+
+    - name: "export r_dellos6_command"
+      set_stats:
+        data:
+          r_dellos6_command: "{{ r_dellos6_command }}"

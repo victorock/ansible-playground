@@ -31,3 +31,8 @@
     - name: "plugin_aci_switch_leaf_selector"
       aci_switch_leaf_selector: "{{ aci_switch_leaf_selector }}"
       register: r_aci_switch_leaf_selector
+
+    - name: "export r_aci_switch_leaf_selector"
+      set_stats:
+        data:
+          r_aci_switch_leaf_selector: "{{ r_aci_switch_leaf_selector }}"

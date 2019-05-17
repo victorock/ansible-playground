@@ -12,3 +12,8 @@
       provider: "{{ eos_command_provider | default(omit, True) }}"
       wait_for: "{{ eos_command_wait_for | default(omit, True) }}"
       match: "{{ eos_command_match | default(omit, True) }}"
+
+- name: "export r_eos_command"
+  set_stats:
+    data:
+      r_eos_command: "{{ r_eos_command }}"

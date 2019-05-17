@@ -29,3 +29,8 @@
     - name: "plugin_avi_trafficcloneprofile"
       avi_trafficcloneprofile: "{{ avi_trafficcloneprofile }}"
       register: r_avi_trafficcloneprofile
+
+    - name: "export r_avi_trafficcloneprofile"
+      set_stats:
+        data:
+          r_avi_trafficcloneprofile: "{{ r_avi_trafficcloneprofile }}"

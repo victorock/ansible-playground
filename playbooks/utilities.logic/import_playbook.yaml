@@ -12,3 +12,8 @@
     - name: "plugin_import_playbook"
       import_playbook: "{{ import_playbook }}"
       register: r_import_playbook
+
+    - name: "export r_import_playbook"
+      set_stats:
+        data:
+          r_import_playbook: "{{ r_import_playbook }}"

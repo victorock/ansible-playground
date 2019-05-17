@@ -21,3 +21,8 @@
     - name: "plugin_zypper"
       zypper: "{{ zypper }}"
       register: r_zypper
+
+    - name: "export r_zypper"
+      set_stats:
+        data:
+          r_zypper: "{{ r_zypper }}"

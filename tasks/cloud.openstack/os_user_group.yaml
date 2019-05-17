@@ -20,3 +20,8 @@
       interface: "{{ os_user_group_interface | default(omit, True) }}"
       cloud: "{{ os_user_group_cloud | default(omit, True) }}"
       wait: "{{ os_user_group_wait | default(omit, True) }}"
+
+- name: "export r_os_user_group"
+  set_stats:
+    data:
+      r_os_user_group: "{{ r_os_user_group }}"

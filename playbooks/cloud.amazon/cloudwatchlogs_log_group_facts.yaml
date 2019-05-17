@@ -19,3 +19,8 @@
     - name: "plugin_cloudwatchlogs_log_group_facts"
       cloudwatchlogs_log_group_facts: "{{ cloudwatchlogs_log_group_facts }}"
       register: r_cloudwatchlogs_log_group_facts
+
+    - name: "export r_cloudwatchlogs_log_group_facts"
+      set_stats:
+        data:
+          r_cloudwatchlogs_log_group_facts: "{{ r_cloudwatchlogs_log_group_facts }}"

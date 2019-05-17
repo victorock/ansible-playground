@@ -10,3 +10,8 @@
       position: "{{ udm_group_position | default(omit, True) }}"
       ou: "{{ udm_group_ou | default(omit, True) }}"
       name: "{{ udm_group_name | default(omit, True) }}"
+
+- name: "export r_udm_group"
+  set_stats:
+    data:
+      r_udm_group: "{{ r_udm_group }}"

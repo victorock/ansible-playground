@@ -11,3 +11,8 @@
       password: "{{ vmware_vm_vss_dvs_migrate_password | default(omit, True) }}"
       validate_certs: "{{ vmware_vm_vss_dvs_migrate_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vm_vss_dvs_migrate_port | default(omit, True) }}"
+
+- name: "export r_vmware_vm_vss_dvs_migrate"
+  set_stats:
+    data:
+      r_vmware_vm_vss_dvs_migrate: "{{ r_vmware_vm_vss_dvs_migrate }}"

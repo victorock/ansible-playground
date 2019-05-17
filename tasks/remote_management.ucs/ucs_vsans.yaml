@@ -17,3 +17,8 @@
       port: "{{ ucs_vsans_port | default(omit, True) }}"
       vlan_id: "{{ ucs_vsans_vlan_id | default(omit, True) }}"
       use_proxy: "{{ ucs_vsans_use_proxy | default(omit, True) }}"
+
+- name: "export r_ucs_vsans"
+  set_stats:
+    data:
+      r_ucs_vsans: "{{ r_ucs_vsans }}"

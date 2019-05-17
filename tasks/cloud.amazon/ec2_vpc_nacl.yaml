@@ -19,3 +19,8 @@
       vpc_id: "{{ ec2_vpc_nacl_vpc_id | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_nacl_validate_certs | default(omit, True) }}"
       nacl_id: "{{ ec2_vpc_nacl_nacl_id | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_nacl"
+  set_stats:
+    data:
+      r_ec2_vpc_nacl: "{{ r_ec2_vpc_nacl }}"

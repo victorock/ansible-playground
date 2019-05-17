@@ -58,3 +58,8 @@
     - name: "plugin_os_quota"
       os_quota: "{{ os_quota }}"
       register: r_os_quota
+
+    - name: "export r_os_quota"
+      set_stats:
+        data:
+          r_os_quota: "{{ r_os_quota }}"

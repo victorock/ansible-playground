@@ -29,3 +29,8 @@
     - name: "plugin_os_project"
       os_project: "{{ os_project }}"
       register: r_os_project
+
+    - name: "export r_os_project"
+      set_stats:
+        data:
+          r_os_project: "{{ r_os_project }}"

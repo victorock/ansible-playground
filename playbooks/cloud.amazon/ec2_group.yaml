@@ -29,3 +29,8 @@
     - name: "plugin_ec2_group"
       ec2_group: "{{ ec2_group }}"
       register: r_ec2_group
+
+    - name: "export r_ec2_group"
+      set_stats:
+        data:
+          r_ec2_group: "{{ r_ec2_group }}"

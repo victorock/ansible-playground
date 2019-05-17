@@ -37,3 +37,8 @@
     - name: "plugin_pn_trunk"
       pn_trunk: "{{ pn_trunk }}"
       register: r_pn_trunk
+
+    - name: "export r_pn_trunk"
+      set_stats:
+        data:
+          r_pn_trunk: "{{ r_pn_trunk }}"

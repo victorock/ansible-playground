@@ -20,3 +20,8 @@
       interface: "{{ os_project_facts_interface | default(omit, True) }}"
       cloud: "{{ os_project_facts_cloud | default(omit, True) }}"
       wait: "{{ os_project_facts_wait | default(omit, True) }}"
+
+- name: "export r_os_project_facts"
+  set_stats:
+    data:
+      r_os_project_facts: "{{ r_os_project_facts }}"

@@ -12,3 +12,8 @@
       password: "{{ infini_pool_password | default(omit, True) }}"
       vsize: "{{ infini_pool_vsize | default(omit, True) }}"
       size: "{{ infini_pool_size | default(omit, True) }}"
+
+- name: "export r_infini_pool"
+  set_stats:
+    data:
+      r_infini_pool: "{{ r_infini_pool }}"

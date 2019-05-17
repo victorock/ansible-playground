@@ -22,3 +22,8 @@
       backup: "{{ nxos_config_backup | default(omit, True) }}"
       match: "{{ nxos_config_match | default(omit, True) }}"
       before: "{{ nxos_config_before | default(omit, True) }}"
+
+- name: "export r_nxos_config"
+  set_stats:
+    data:
+      r_nxos_config: "{{ r_nxos_config }}"

@@ -27,3 +27,8 @@
     - name: "plugin_os_server_actions"
       os_server_actions: "{{ os_server_actions }}"
       register: r_os_server_actions
+
+    - name: "export r_os_server_actions"
+      set_stats:
+        data:
+          r_os_server_actions: "{{ r_os_server_actions }}"

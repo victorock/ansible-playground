@@ -31,3 +31,8 @@
     - name: "plugin_cpm_user"
       cpm_user: "{{ cpm_user }}"
       register: r_cpm_user
+
+    - name: "export r_cpm_user"
+      set_stats:
+        data:
+          r_cpm_user: "{{ r_cpm_user }}"

@@ -17,3 +17,8 @@
     - name: "plugin_nxos_command"
       nxos_command: "{{ nxos_command }}"
       register: r_nxos_command
+
+    - name: "export r_nxos_command"
+      set_stats:
+        data:
+          r_nxos_command: "{{ r_nxos_command }}"

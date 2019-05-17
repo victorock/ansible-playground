@@ -18,3 +18,8 @@
       save: "{{ ovirt_host_networks_save | default(omit, True) }}"
       check: "{{ ovirt_host_networks_check | default(omit, True) }}"
       wait: "{{ ovirt_host_networks_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_host_networks"
+  set_stats:
+    data:
+      r_ovirt_host_networks: "{{ r_ovirt_host_networks }}"

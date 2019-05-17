@@ -21,3 +21,8 @@
       interface: "{{ os_server_volume_interface | default(omit, True) }}"
       cloud: "{{ os_server_volume_cloud | default(omit, True) }}"
       wait: "{{ os_server_volume_wait | default(omit, True) }}"
+
+- name: "export r_os_server_volume"
+  set_stats:
+    data:
+      r_os_server_volume: "{{ r_os_server_volume }}"

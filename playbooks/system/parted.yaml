@@ -22,3 +22,8 @@
     - name: "plugin_parted"
       parted: "{{ parted }}"
       register: r_parted
+
+    - name: "export r_parted"
+      set_stats:
+        data:
+          r_parted: "{{ r_parted }}"

@@ -22,3 +22,8 @@
     - name: "plugin_mongodb_parameter"
       mongodb_parameter: "{{ mongodb_parameter }}"
       register: r_mongodb_parameter
+
+    - name: "export r_mongodb_parameter"
+      set_stats:
+        data:
+          r_mongodb_parameter: "{{ r_mongodb_parameter }}"

@@ -18,3 +18,8 @@
       follow: "{{ find_follow | default(omit, True) }}"
       hidden: "{{ find_hidden | default(omit, True) }}"
       size: "{{ find_size | default(omit, True) }}"
+
+- name: "export r_find"
+  set_stats:
+    data:
+      r_find: "{{ r_find }}"

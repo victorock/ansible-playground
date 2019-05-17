@@ -64,3 +64,8 @@
       se_failover_attempt_interval: "{{ avi_controllerproperties_se_failover_attempt_interval | default(omit, True) }}"
       dead_se_detection_timer: "{{ avi_controllerproperties_dead_se_detection_timer | default(omit, True) }}"
       tenant_uuid: "{{ avi_controllerproperties_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_controllerproperties"
+  set_stats:
+    data:
+      r_avi_controllerproperties: "{{ r_avi_controllerproperties }}"

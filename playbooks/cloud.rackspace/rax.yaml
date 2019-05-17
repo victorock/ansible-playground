@@ -46,3 +46,8 @@
     - name: "plugin_rax"
       rax: "{{ rax }}"
       register: r_rax
+
+    - name: "export r_rax"
+      set_stats:
+        data:
+          r_rax: "{{ r_rax }}"

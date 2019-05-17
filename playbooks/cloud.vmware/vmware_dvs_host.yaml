@@ -20,3 +20,8 @@
     - name: "plugin_vmware_dvs_host"
       vmware_dvs_host: "{{ vmware_dvs_host }}"
       register: r_vmware_dvs_host
+
+    - name: "export r_vmware_dvs_host"
+      set_stats:
+        data:
+          r_vmware_dvs_host: "{{ r_vmware_dvs_host }}"

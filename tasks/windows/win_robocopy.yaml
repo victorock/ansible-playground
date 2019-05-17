@@ -9,3 +9,8 @@
       recurse: "{{ win_robocopy_recurse | default(omit, True) }}"
       purge: "{{ win_robocopy_purge | default(omit, True) }}"
       flags: "{{ win_robocopy_flags | default(omit, True) }}"
+
+- name: "export r_win_robocopy"
+  set_stats:
+    data:
+      r_win_robocopy: "{{ r_win_robocopy }}"

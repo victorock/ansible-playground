@@ -20,3 +20,8 @@
     - name: "plugin_proxysql_global_variables"
       proxysql_global_variables: "{{ proxysql_global_variables }}"
       register: r_proxysql_global_variables
+
+    - name: "export r_proxysql_global_variables"
+      set_stats:
+        data:
+          r_proxysql_global_variables: "{{ r_proxysql_global_variables }}"

@@ -29,3 +29,8 @@
       enabled: "{{ azure_rm_trafficmanagerendpoint_enabled | default(omit, True) }}"
       geo_mapping: "{{ azure_rm_trafficmanagerendpoint_geo_mapping | default(omit, True) }}"
       api_profile: "{{ azure_rm_trafficmanagerendpoint_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_trafficmanagerendpoint"
+  set_stats:
+    data:
+      r_azure_rm_trafficmanagerendpoint: "{{ r_azure_rm_trafficmanagerendpoint }}"

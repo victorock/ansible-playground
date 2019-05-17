@@ -16,3 +16,8 @@
     - name: "plugin_ce_netstream_aging"
       ce_netstream_aging: "{{ ce_netstream_aging }}"
       register: r_ce_netstream_aging
+
+    - name: "export r_ce_netstream_aging"
+      set_stats:
+        data:
+          r_ce_netstream_aging: "{{ r_ce_netstream_aging }}"

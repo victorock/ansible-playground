@@ -22,3 +22,8 @@
       write_capacity: "{{ dynamodb_table_write_capacity | default(omit, True) }}"
       validate_certs: "{{ dynamodb_table_validate_certs | default(omit, True) }}"
       hash_key_type: "{{ dynamodb_table_hash_key_type | default(omit, True) }}"
+
+- name: "export r_dynamodb_table"
+  set_stats:
+    data:
+      r_dynamodb_table: "{{ r_dynamodb_table }}"

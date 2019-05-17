@@ -24,3 +24,8 @@
       email: "{{ os_zone_email | default(omit, True) }}"
       cloud: "{{ os_zone_cloud | default(omit, True) }}"
       name: "{{ os_zone_name | default(omit, True) }}"
+
+- name: "export r_os_zone"
+  set_stats:
+    data:
+      r_os_zone: "{{ r_os_zone }}"

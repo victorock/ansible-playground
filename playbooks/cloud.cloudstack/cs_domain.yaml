@@ -22,3 +22,8 @@
     - name: "plugin_cs_domain"
       cs_domain: "{{ cs_domain }}"
       register: r_cs_domain
+
+    - name: "export r_cs_domain"
+      set_stats:
+        data:
+          r_cs_domain: "{{ r_cs_domain }}"

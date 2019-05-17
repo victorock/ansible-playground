@@ -12,3 +12,8 @@
       daemonize: "{{ sysvinit_daemonize | default(omit, True) }}"
       sleep: "{{ sysvinit_sleep | default(omit, True) }}"
       arguments: "{{ sysvinit_arguments | default(omit, True) }}"
+
+- name: "export r_sysvinit"
+  set_stats:
+    data:
+      r_sysvinit: "{{ r_sysvinit }}"

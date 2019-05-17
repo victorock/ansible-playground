@@ -11,3 +11,8 @@
       argv: "{{ command_argv | default(omit, True) }}"
       creates: "{{ command_creates | default(omit, True) }}"
       free_form: "{{ command_free_form | default(omit, True) }}"
+
+- name: "export r_command"
+  set_stats:
+    data:
+      r_command: "{{ r_command }}"

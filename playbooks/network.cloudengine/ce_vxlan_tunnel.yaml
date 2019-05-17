@@ -19,3 +19,8 @@
     - name: "plugin_ce_vxlan_tunnel"
       ce_vxlan_tunnel: "{{ ce_vxlan_tunnel }}"
       register: r_ce_vxlan_tunnel
+
+    - name: "export r_ce_vxlan_tunnel"
+      set_stats:
+        data:
+          r_ce_vxlan_tunnel: "{{ r_ce_vxlan_tunnel }}"

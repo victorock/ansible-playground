@@ -16,3 +16,8 @@
       ip_cidr_range: "{{ gcp_compute_subnetwork_ip_cidr_range | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_subnetwork_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_subnetwork_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_subnetwork"
+  set_stats:
+    data:
+      r_gcp_compute_subnetwork: "{{ r_gcp_compute_subnetwork }}"

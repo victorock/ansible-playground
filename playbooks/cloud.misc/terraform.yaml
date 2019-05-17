@@ -25,3 +25,8 @@
     - name: "plugin_terraform"
       terraform: "{{ terraform }}"
       register: r_terraform
+
+    - name: "export r_terraform"
+      set_stats:
+        data:
+          r_terraform: "{{ r_terraform }}"

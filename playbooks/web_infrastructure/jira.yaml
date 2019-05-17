@@ -29,3 +29,8 @@
     - name: "plugin_jira"
       jira: "{{ jira }}"
       register: r_jira
+
+    - name: "export r_jira"
+      set_stats:
+        data:
+          r_jira: "{{ r_jira }}"

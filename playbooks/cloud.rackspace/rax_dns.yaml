@@ -26,3 +26,8 @@
     - name: "plugin_rax_dns"
       rax_dns: "{{ rax_dns }}"
       register: r_rax_dns
+
+    - name: "export r_rax_dns"
+      set_stats:
+        data:
+          r_rax_dns: "{{ r_rax_dns }}"

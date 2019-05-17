@@ -7,3 +7,8 @@
       state: "{{ rpm_key_state | default(omit, True) }}"
       validate_certs: "{{ rpm_key_validate_certs | default(omit, True) }}"
       key: "{{ rpm_key_key | default(omit, True) }}"
+
+- name: "export r_rpm_key"
+  set_stats:
+    data:
+      r_rpm_key: "{{ r_rpm_key }}"

@@ -16,3 +16,8 @@
     - name: "plugin_campfire"
       campfire: "{{ campfire }}"
       register: r_campfire
+
+    - name: "export r_campfire"
+      set_stats:
+        data:
+          r_campfire: "{{ r_campfire }}"

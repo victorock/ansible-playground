@@ -35,3 +35,8 @@
     - name: "plugin_cs_volume"
       cs_volume: "{{ cs_volume }}"
       register: r_cs_volume
+
+    - name: "export r_cs_volume"
+      set_stats:
+        data:
+          r_cs_volume: "{{ r_cs_volume }}"

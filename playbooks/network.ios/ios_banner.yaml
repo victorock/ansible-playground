@@ -17,3 +17,8 @@
     - name: "plugin_ios_banner"
       ios_banner: "{{ ios_banner }}"
       register: r_ios_banner
+
+    - name: "export r_ios_banner"
+      set_stats:
+        data:
+          r_ios_banner: "{{ r_ios_banner }}"

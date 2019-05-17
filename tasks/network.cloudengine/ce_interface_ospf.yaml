@@ -16,3 +16,8 @@
       dead_interval: "{{ ce_interface_ospf_dead_interval | default(omit, True) }}"
       hello_interval: "{{ ce_interface_ospf_hello_interval | default(omit, True) }}"
       interface: "{{ ce_interface_ospf_interface | default(omit, True) }}"
+
+- name: "export r_ce_interface_ospf"
+  set_stats:
+    data:
+      r_ce_interface_ospf: "{{ r_ce_interface_ospf }}"

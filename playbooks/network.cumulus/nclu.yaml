@@ -17,3 +17,8 @@
     - name: "plugin_nclu"
       nclu: "{{ nclu }}"
       register: r_nclu
+
+    - name: "export r_nclu"
+      set_stats:
+        data:
+          r_nclu: "{{ r_nclu }}"

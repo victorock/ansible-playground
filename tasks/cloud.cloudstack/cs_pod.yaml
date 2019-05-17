@@ -18,3 +18,8 @@
       zone: "{{ cs_pod_zone | default(omit, True) }}"
       id: "{{ cs_pod_id | default(omit, True) }}"
       name: "{{ cs_pod_name | default(omit, True) }}"
+
+- name: "export r_cs_pod"
+  set_stats:
+    data:
+      r_cs_pod: "{{ r_cs_pod }}"

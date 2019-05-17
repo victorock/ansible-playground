@@ -25,3 +25,8 @@
     - name: "plugin_bigiq_application_fasthttp"
       bigiq_application_fasthttp: "{{ bigiq_application_fasthttp }}"
       register: r_bigiq_application_fasthttp
+
+    - name: "export r_bigiq_application_fasthttp"
+      set_stats:
+        data:
+          r_bigiq_application_fasthttp: "{{ r_bigiq_application_fasthttp }}"

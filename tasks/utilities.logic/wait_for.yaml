@@ -16,3 +16,8 @@
       msg: "{{ wait_for_msg | default(omit, True) }}"
       path: "{{ wait_for_path | default(omit, True) }}"
       port: "{{ wait_for_port | default(omit, True) }}"
+
+- name: "export r_wait_for"
+  set_stats:
+    data:
+      r_wait_for: "{{ r_wait_for }}"

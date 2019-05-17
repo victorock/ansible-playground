@@ -33,3 +33,8 @@
       action: "{{ panos_security_policy_action | default(omit, True) }}"
       commit: "{{ panos_security_policy_commit | default(omit, True) }}"
       log_end: "{{ panos_security_policy_log_end | default(omit, True) }}"
+
+- name: "export r_panos_security_policy"
+  set_stats:
+    data:
+      r_panos_security_policy: "{{ r_panos_security_policy }}"

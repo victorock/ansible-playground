@@ -8,3 +8,8 @@
       state: "{{ opkg_state | default(omit, True) }}"
       force: "{{ opkg_force | default(omit, True) }}"
       name: "{{ opkg_name | default(omit, True) }}"
+
+- name: "export r_opkg"
+  set_stats:
+    data:
+      r_opkg: "{{ r_opkg }}"

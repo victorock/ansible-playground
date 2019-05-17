@@ -23,3 +23,8 @@
       type: "{{ ovirt_external_provider_type | default(omit, True) }}"
       network_type: "{{ ovirt_external_provider_network_type | default(omit, True) }}"
       wait: "{{ ovirt_external_provider_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_external_provider"
+  set_stats:
+    data:
+      r_ovirt_external_provider: "{{ r_ovirt_external_provider }}"

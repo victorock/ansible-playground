@@ -14,3 +14,8 @@
       ec2_url: "{{ aws_config_aggregation_authorization_ec2_url | default(omit, True) }}"
       authorized_aws_region: "{{ aws_config_aggregation_authorization_authorized_aws_region | default(omit, True) }}"
       validate_certs: "{{ aws_config_aggregation_authorization_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_config_aggregation_authorization"
+  set_stats:
+    data:
+      r_aws_config_aggregation_authorization: "{{ r_aws_config_aggregation_authorization }}"

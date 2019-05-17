@@ -6,3 +6,8 @@
     nxos_reboot: 
       confirm: "{{ nxos_reboot_confirm | default(omit, True) }}"
       provider: "{{ nxos_reboot_provider | default(omit, True) }}"
+
+- name: "export r_nxos_reboot"
+  set_stats:
+    data:
+      r_nxos_reboot: "{{ r_nxos_reboot }}"

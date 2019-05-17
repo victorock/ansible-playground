@@ -23,3 +23,8 @@
       auth_kind: "{{ gcp_storage_bucket_auth_kind | default(omit, True) }}"
       lifecycle: "{{ gcp_storage_bucket_lifecycle | default(omit, True) }}"
       versioning: "{{ gcp_storage_bucket_versioning | default(omit, True) }}"
+
+- name: "export r_gcp_storage_bucket"
+  set_stats:
+    data:
+      r_gcp_storage_bucket: "{{ r_gcp_storage_bucket }}"

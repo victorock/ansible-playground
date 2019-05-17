@@ -16,3 +16,8 @@
       debug: "{{ docker_image_facts_debug | default(omit, True) }}"
       cert_path: "{{ docker_image_facts_cert_path | default(omit, True) }}"
       api_version: "{{ docker_image_facts_api_version | default(omit, True) }}"
+
+- name: "export r_docker_image_facts"
+  set_stats:
+    data:
+      r_docker_image_facts: "{{ r_docker_image_facts }}"

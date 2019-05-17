@@ -13,3 +13,8 @@
       user: "{{ redfish_config_user | default(omit, True) }}"
       mgr_attr_value: "{{ redfish_config_mgr_attr_value | default(omit, True) }}"
       password: "{{ redfish_config_password | default(omit, True) }}"
+
+- name: "export r_redfish_config"
+  set_stats:
+    data:
+      r_redfish_config: "{{ r_redfish_config }}"

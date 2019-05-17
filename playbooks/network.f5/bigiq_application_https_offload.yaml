@@ -27,3 +27,8 @@
     - name: "plugin_bigiq_application_https_offload"
       bigiq_application_https_offload: "{{ bigiq_application_https_offload }}"
       register: r_bigiq_application_https_offload
+
+    - name: "export r_bigiq_application_https_offload"
+      set_stats:
+        data:
+          r_bigiq_application_https_offload: "{{ r_bigiq_application_https_offload }}"

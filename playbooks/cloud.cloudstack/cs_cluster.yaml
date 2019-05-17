@@ -36,3 +36,8 @@
     - name: "plugin_cs_cluster"
       cs_cluster: "{{ cs_cluster }}"
       register: r_cs_cluster
+
+    - name: "export r_cs_cluster"
+      set_stats:
+        data:
+          r_cs_cluster: "{{ r_cs_cluster }}"

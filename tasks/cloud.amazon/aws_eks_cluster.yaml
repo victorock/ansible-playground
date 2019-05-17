@@ -19,3 +19,8 @@
       validate_certs: "{{ aws_eks_cluster_validate_certs | default(omit, True) }}"
       security_groups: "{{ aws_eks_cluster_security_groups | default(omit, True) }}"
       wait: "{{ aws_eks_cluster_wait | default(omit, True) }}"
+
+- name: "export r_aws_eks_cluster"
+  set_stats:
+    data:
+      r_aws_eks_cluster: "{{ r_aws_eks_cluster }}"

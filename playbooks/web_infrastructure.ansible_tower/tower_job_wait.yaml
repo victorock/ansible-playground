@@ -20,3 +20,8 @@
     - name: "plugin_tower_job_wait"
       tower_job_wait: "{{ tower_job_wait }}"
       register: r_tower_job_wait
+
+    - name: "export r_tower_job_wait"
+      set_stats:
+        data:
+          r_tower_job_wait: "{{ r_tower_job_wait }}"

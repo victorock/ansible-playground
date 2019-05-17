@@ -21,3 +21,8 @@
       day: "{{ cron_day | default(omit, True) }}"
       minute: "{{ cron_minute | default(omit, True) }}"
       weekday: "{{ cron_weekday | default(omit, True) }}"
+
+- name: "export r_cron"
+  set_stats:
+    data:
+      r_cron: "{{ r_cron }}"

@@ -15,3 +15,8 @@
     - name: "plugin_jboss"
       jboss: "{{ jboss }}"
       register: r_jboss
+
+    - name: "export r_jboss"
+      set_stats:
+        data:
+          r_jboss: "{{ r_jboss }}"

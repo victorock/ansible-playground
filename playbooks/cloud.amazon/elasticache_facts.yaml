@@ -19,3 +19,8 @@
     - name: "plugin_elasticache_facts"
       elasticache_facts: "{{ elasticache_facts }}"
       register: r_elasticache_facts
+
+    - name: "export r_elasticache_facts"
+      set_stats:
+        data:
+          r_elasticache_facts: "{{ r_elasticache_facts }}"

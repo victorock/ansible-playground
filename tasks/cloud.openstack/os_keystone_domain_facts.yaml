@@ -19,3 +19,8 @@
       interface: "{{ os_keystone_domain_facts_interface | default(omit, True) }}"
       cloud: "{{ os_keystone_domain_facts_cloud | default(omit, True) }}"
       wait: "{{ os_keystone_domain_facts_wait | default(omit, True) }}"
+
+- name: "export r_os_keystone_domain_facts"
+  set_stats:
+    data:
+      r_os_keystone_domain_facts: "{{ r_os_keystone_domain_facts }}"

@@ -16,3 +16,8 @@
     - name: "plugin_panos_loadcfg"
       panos_loadcfg: "{{ panos_loadcfg }}"
       register: r_panos_loadcfg
+
+    - name: "export r_panos_loadcfg"
+      set_stats:
+        data:
+          r_panos_loadcfg: "{{ r_panos_loadcfg }}"

@@ -19,3 +19,8 @@
     - name: "plugin_nxos_system"
       nxos_system: "{{ nxos_system }}"
       register: r_nxos_system
+
+    - name: "export r_nxos_system"
+      set_stats:
+        data:
+          r_nxos_system: "{{ r_nxos_system }}"

@@ -5,3 +5,8 @@
   vars:
     include: 
       free-form: "{{ include_free-form | default(omit, True) }}"
+
+- name: "export r_include"
+  set_stats:
+    data:
+      r_include: "{{ r_include }}"

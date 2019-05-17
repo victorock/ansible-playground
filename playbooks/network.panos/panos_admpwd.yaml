@@ -15,3 +15,8 @@
     - name: "plugin_panos_admpwd"
       panos_admpwd: "{{ panos_admpwd }}"
       register: r_panos_admpwd
+
+    - name: "export r_panos_admpwd"
+      set_stats:
+        data:
+          r_panos_admpwd: "{{ r_panos_admpwd }}"

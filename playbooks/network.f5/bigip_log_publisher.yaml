@@ -22,3 +22,8 @@
     - name: "plugin_bigip_log_publisher"
       bigip_log_publisher: "{{ bigip_log_publisher }}"
       register: r_bigip_log_publisher
+
+    - name: "export r_bigip_log_publisher"
+      set_stats:
+        data:
+          r_bigip_log_publisher: "{{ r_bigip_log_publisher }}"

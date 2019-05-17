@@ -15,3 +15,8 @@
     - name: "plugin_pushover"
       pushover: "{{ pushover }}"
       register: r_pushover
+
+    - name: "export r_pushover"
+      set_stats:
+        data:
+          r_pushover: "{{ r_pushover }}"

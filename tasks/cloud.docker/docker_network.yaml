@@ -24,3 +24,8 @@
       appends: "{{ docker_network_appends | default(omit, True) }}"
       cert_path: "{{ docker_network_cert_path | default(omit, True) }}"
       api_version: "{{ docker_network_api_version | default(omit, True) }}"
+
+- name: "export r_docker_network"
+  set_stats:
+    data:
+      r_docker_network: "{{ r_docker_network }}"

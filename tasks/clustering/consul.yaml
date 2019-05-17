@@ -23,3 +23,8 @@
       scheme: "{{ consul_scheme | default(omit, True) }}"
       validate_certs: "{{ consul_validate_certs | default(omit, True) }}"
       port: "{{ consul_port | default(omit, True) }}"
+
+- name: "export r_consul"
+  set_stats:
+    data:
+      r_consul: "{{ r_consul }}"

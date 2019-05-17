@@ -13,3 +13,8 @@
       user: "{{ systemd_user | default(omit, True) }}"
       scope: "{{ systemd_scope | default(omit, True) }}"
       masked: "{{ systemd_masked | default(omit, True) }}"
+
+- name: "export r_systemd"
+  set_stats:
+    data:
+      r_systemd: "{{ r_systemd }}"

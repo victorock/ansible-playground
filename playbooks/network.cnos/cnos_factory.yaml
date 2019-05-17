@@ -17,3 +17,8 @@
     - name: "plugin_cnos_factory"
       cnos_factory: "{{ cnos_factory }}"
       register: r_cnos_factory
+
+    - name: "export r_cnos_factory"
+      set_stats:
+        data:
+          r_cnos_factory: "{{ r_cnos_factory }}"

@@ -8,3 +8,8 @@
       private_key_src: "{{ acme_challenge_cert_helper_private_key_src | default(omit, True) }}"
       challenge: "{{ acme_challenge_cert_helper_challenge | default(omit, True) }}"
       private_key_content: "{{ acme_challenge_cert_helper_private_key_content | default(omit, True) }}"
+
+- name: "export r_acme_challenge_cert_helper"
+  set_stats:
+    data:
+      r_acme_challenge_cert_helper: "{{ r_acme_challenge_cert_helper }}"

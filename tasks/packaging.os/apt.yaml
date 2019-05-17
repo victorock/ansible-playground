@@ -20,3 +20,8 @@
       cache_valid_time: "{{ apt_cache_valid_time | default(omit, True) }}"
       deb: "{{ apt_deb | default(omit, True) }}"
       name: "{{ apt_name | default(omit, True) }}"
+
+- name: "export r_apt"
+  set_stats:
+    data:
+      r_apt: "{{ r_apt }}"

@@ -16,3 +16,8 @@
       follow: "{{ win_find_follow | default(omit, True) }}"
       hidden: "{{ win_find_hidden | default(omit, True) }}"
       size: "{{ win_find_size | default(omit, True) }}"
+
+- name: "export r_win_find"
+  set_stats:
+    data:
+      r_win_find: "{{ r_win_find }}"

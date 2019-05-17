@@ -27,3 +27,8 @@
     - name: "plugin_bigip_gtm_monitor_bigip"
       bigip_gtm_monitor_bigip: "{{ bigip_gtm_monitor_bigip }}"
       register: r_bigip_gtm_monitor_bigip
+
+    - name: "export r_bigip_gtm_monitor_bigip"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_bigip: "{{ r_bigip_gtm_monitor_bigip }}"

@@ -21,3 +21,8 @@
       wait: "{{ os_ironic_inspect_wait | default(omit, True) }}"
       cloud: "{{ os_ironic_inspect_cloud | default(omit, True) }}"
       name: "{{ os_ironic_inspect_name | default(omit, True) }}"
+
+- name: "export r_os_ironic_inspect"
+  set_stats:
+    data:
+      r_os_ironic_inspect: "{{ r_os_ironic_inspect }}"

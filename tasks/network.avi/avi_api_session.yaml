@@ -17,3 +17,8 @@
       data: "{{ avi_api_session_data | default(omit, True) }}"
       tenant_uuid: "{{ avi_api_session_tenant_uuid | default(omit, True) }}"
       tenant: "{{ avi_api_session_tenant | default(omit, True) }}"
+
+- name: "export r_avi_api_session"
+  set_stats:
+    data:
+      r_avi_api_session: "{{ r_avi_api_session }}"

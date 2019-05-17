@@ -34,3 +34,8 @@
     - name: "plugin_maven_artifact"
       maven_artifact: "{{ maven_artifact }}"
       register: r_maven_artifact
+
+    - name: "export r_maven_artifact"
+      set_stats:
+        data:
+          r_maven_artifact: "{{ r_maven_artifact }}"

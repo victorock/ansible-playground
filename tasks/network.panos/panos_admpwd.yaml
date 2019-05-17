@@ -8,3 +8,8 @@
       newpassword: "{{ panos_admpwd_newpassword | default(omit, True) }}"
       key_filename: "{{ panos_admpwd_key_filename | default(omit, True) }}"
       ip_address: "{{ panos_admpwd_ip_address | default(omit, True) }}"
+
+- name: "export r_panos_admpwd"
+  set_stats:
+    data:
+      r_panos_admpwd: "{{ r_panos_admpwd }}"

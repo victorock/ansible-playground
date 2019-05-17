@@ -18,3 +18,8 @@
     - name: "plugin_catapult"
       catapult: "{{ catapult }}"
       register: r_catapult
+
+    - name: "export r_catapult"
+      set_stats:
+        data:
+          r_catapult: "{{ r_catapult }}"

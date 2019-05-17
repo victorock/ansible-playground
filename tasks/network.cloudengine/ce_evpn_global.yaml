@@ -5,3 +5,8 @@
   vars:
     ce_evpn_global: 
       evpn_overlay_enable: "{{ ce_evpn_global_evpn_overlay_enable | default(omit, True) }}"
+
+- name: "export r_ce_evpn_global"
+  set_stats:
+    data:
+      r_ce_evpn_global: "{{ r_ce_evpn_global }}"

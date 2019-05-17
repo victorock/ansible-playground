@@ -22,3 +22,8 @@
     - name: "plugin_redis"
       redis: "{{ redis }}"
       register: r_redis
+
+    - name: "export r_redis"
+      set_stats:
+        data:
+          r_redis: "{{ r_redis }}"

@@ -13,3 +13,8 @@
       timeout: "{{ zabbix_group_timeout | default(omit, True) }}"
       login_password: "{{ zabbix_group_login_password | default(omit, True) }}"
       validate_certs: "{{ zabbix_group_validate_certs | default(omit, True) }}"
+
+- name: "export r_zabbix_group"
+  set_stats:
+    data:
+      r_zabbix_group: "{{ r_zabbix_group }}"

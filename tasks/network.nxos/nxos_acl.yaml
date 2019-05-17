@@ -31,3 +31,8 @@
       action: "{{ nxos_acl_action | default(omit, True) }}"
       dest_port1: "{{ nxos_acl_dest_port1 | default(omit, True) }}"
       dest_port2: "{{ nxos_acl_dest_port2 | default(omit, True) }}"
+
+- name: "export r_nxos_acl"
+  set_stats:
+    data:
+      r_nxos_acl: "{{ r_nxos_acl }}"

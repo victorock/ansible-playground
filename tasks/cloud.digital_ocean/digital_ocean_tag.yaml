@@ -11,3 +11,8 @@
       timeout: "{{ digital_ocean_tag_timeout | default(omit, True) }}"
       validate_certs: "{{ digital_ocean_tag_validate_certs | default(omit, True) }}"
       resource_type: "{{ digital_ocean_tag_resource_type | default(omit, True) }}"
+
+- name: "export r_digital_ocean_tag"
+  set_stats:
+    data:
+      r_digital_ocean_tag: "{{ r_digital_ocean_tag }}"

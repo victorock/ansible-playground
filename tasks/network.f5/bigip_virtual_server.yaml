@@ -35,3 +35,8 @@
       policies: "{{ bigip_virtual_server_policies | default(omit, True) }}"
       validate_certs: "{{ bigip_virtual_server_validate_certs | default(omit, True) }}"
       port_translation: "{{ bigip_virtual_server_port_translation | default(omit, True) }}"
+
+- name: "export r_bigip_virtual_server"
+  set_stats:
+    data:
+      r_bigip_virtual_server: "{{ r_bigip_virtual_server }}"

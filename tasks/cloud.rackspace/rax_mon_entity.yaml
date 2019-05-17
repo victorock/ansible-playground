@@ -19,3 +19,8 @@
       api_key: "{{ rax_mon_entity_api_key | default(omit, True) }}"
       named_ip_addresses: "{{ rax_mon_entity_named_ip_addresses | default(omit, True) }}"
       auth_endpoint: "{{ rax_mon_entity_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_mon_entity"
+  set_stats:
+    data:
+      r_rax_mon_entity: "{{ r_rax_mon_entity }}"

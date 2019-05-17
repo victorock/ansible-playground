@@ -13,3 +13,8 @@
     - name: "plugin_win_regmerge"
       win_regmerge: "{{ win_regmerge }}"
       register: r_win_regmerge
+
+    - name: "export r_win_regmerge"
+      set_stats:
+        data:
+          r_win_regmerge: "{{ r_win_regmerge }}"

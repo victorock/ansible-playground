@@ -12,3 +12,8 @@
     - name: "plugin_slxos_facts"
       slxos_facts: "{{ slxos_facts }}"
       register: r_slxos_facts
+
+    - name: "export r_slxos_facts"
+      set_stats:
+        data:
+          r_slxos_facts: "{{ r_slxos_facts }}"

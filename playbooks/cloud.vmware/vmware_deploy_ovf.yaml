@@ -32,3 +32,8 @@
     - name: "plugin_vmware_deploy_ovf"
       vmware_deploy_ovf: "{{ vmware_deploy_ovf }}"
       register: r_vmware_deploy_ovf
+
+    - name: "export r_vmware_deploy_ovf"
+      set_stats:
+        data:
+          r_vmware_deploy_ovf: "{{ r_vmware_deploy_ovf }}"

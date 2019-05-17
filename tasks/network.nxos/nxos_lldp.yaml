@@ -6,3 +6,8 @@
     nxos_lldp: 
       state: "{{ nxos_lldp_state | default(omit, True) }}"
       provider: "{{ nxos_lldp_provider | default(omit, True) }}"
+
+- name: "export r_nxos_lldp"
+  set_stats:
+    data:
+      r_nxos_lldp: "{{ r_nxos_lldp }}"

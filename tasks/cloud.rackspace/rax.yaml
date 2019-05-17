@@ -39,3 +39,8 @@
       username: "{{ rax_username | default(omit, True) }}"
       tenant_id: "{{ rax_tenant_id | default(omit, True) }}"
       extra_create_args: "{{ rax_extra_create_args | default(omit, True) }}"
+
+- name: "export r_rax"
+  set_stats:
+    data:
+      r_rax: "{{ r_rax }}"

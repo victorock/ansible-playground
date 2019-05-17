@@ -8,3 +8,8 @@
       destination: "{{ win_route_destination | default(omit, True) }}"
       gateway: "{{ win_route_gateway | default(omit, True) }}"
       state: "{{ win_route_state | default(omit, True) }}"
+
+- name: "export r_win_route"
+  set_stats:
+    data:
+      r_win_route: "{{ r_win_route }}"

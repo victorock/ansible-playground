@@ -21,3 +21,8 @@
       validate_certs: "{{ bigip_gtm_pool_member_validate_certs | default(omit, True) }}"
       pool: "{{ bigip_gtm_pool_member_pool | default(omit, True) }}"
       monitor: "{{ bigip_gtm_pool_member_monitor | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_pool_member"
+  set_stats:
+    data:
+      r_bigip_gtm_pool_member: "{{ r_bigip_gtm_pool_member }}"

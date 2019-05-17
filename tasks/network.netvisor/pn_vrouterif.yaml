@@ -23,3 +23,8 @@
       pn_vxlan: "{{ pn_vrouterif_pn_vxlan | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vrouterif_pn_cliswitch | default(omit, True) }}"
       pn_assignment: "{{ pn_vrouterif_pn_assignment | default(omit, True) }}"
+
+- name: "export r_pn_vrouterif"
+  set_stats:
+    data:
+      r_pn_vrouterif: "{{ r_pn_vrouterif }}"

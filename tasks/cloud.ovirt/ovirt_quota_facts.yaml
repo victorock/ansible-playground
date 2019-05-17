@@ -9,3 +9,8 @@
       name: "{{ ovirt_quota_facts_name | default(omit, True) }}"
       auth: "{{ ovirt_quota_facts_auth | default(omit, True) }}"
       data_center: "{{ ovirt_quota_facts_data_center | default(omit, True) }}"
+
+- name: "export r_ovirt_quota_facts"
+  set_stats:
+    data:
+      r_ovirt_quota_facts: "{{ r_ovirt_quota_facts }}"

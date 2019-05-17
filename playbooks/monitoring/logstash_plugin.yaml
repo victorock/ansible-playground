@@ -17,3 +17,8 @@
     - name: "plugin_logstash_plugin"
       logstash_plugin: "{{ logstash_plugin }}"
       register: r_logstash_plugin
+
+    - name: "export r_logstash_plugin"
+      set_stats:
+        data:
+          r_logstash_plugin: "{{ r_logstash_plugin }}"

@@ -28,3 +28,8 @@
       open_firewall: "{{ cs_portforward_open_firewall | default(omit, True) }}"
       api_region: "{{ cs_portforward_api_region | default(omit, True) }}"
       project: "{{ cs_portforward_project | default(omit, True) }}"
+
+- name: "export r_cs_portforward"
+  set_stats:
+    data:
+      r_cs_portforward: "{{ r_cs_portforward }}"

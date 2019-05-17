@@ -27,3 +27,8 @@
     - name: "plugin_ovirt_host_pm"
       ovirt_host_pm: "{{ ovirt_host_pm }}"
       register: r_ovirt_host_pm
+
+    - name: "export r_ovirt_host_pm"
+      set_stats:
+        data:
+          r_ovirt_host_pm: "{{ r_ovirt_host_pm }}"

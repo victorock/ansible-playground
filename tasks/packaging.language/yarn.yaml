@@ -13,3 +13,8 @@
       registry: "{{ yarn_registry | default(omit, True) }}"
       version: "{{ yarn_version | default(omit, True) }}"
       path: "{{ yarn_path | default(omit, True) }}"
+
+- name: "export r_yarn"
+  set_stats:
+    data:
+      r_yarn: "{{ r_yarn }}"

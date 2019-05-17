@@ -18,3 +18,8 @@
     - name: "plugin_beadm"
       beadm: "{{ beadm }}"
       register: r_beadm
+
+    - name: "export r_beadm"
+      set_stats:
+        data:
+          r_beadm: "{{ r_beadm }}"

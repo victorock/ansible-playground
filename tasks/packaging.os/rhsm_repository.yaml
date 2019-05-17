@@ -6,3 +6,8 @@
     rhsm_repository: 
       state: "{{ rhsm_repository_state | default(omit, True) }}"
       name: "{{ rhsm_repository_name | default(omit, True) }}"
+
+- name: "export r_rhsm_repository"
+  set_stats:
+    data:
+      r_rhsm_repository: "{{ r_rhsm_repository }}"

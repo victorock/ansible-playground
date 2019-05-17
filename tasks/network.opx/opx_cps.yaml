@@ -11,3 +11,8 @@
       module_name: "{{ opx_cps_module_name | default(omit, True) }}"
       operation: "{{ opx_cps_operation | default(omit, True) }}"
       attr_type: "{{ opx_cps_attr_type | default(omit, True) }}"
+
+- name: "export r_opx_cps"
+  set_stats:
+    data:
+      r_opx_cps: "{{ r_opx_cps }}"

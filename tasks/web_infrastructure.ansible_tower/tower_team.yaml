@@ -12,3 +12,8 @@
       tower_config_file: "{{ tower_team_tower_config_file | default(omit, True) }}"
       organization: "{{ tower_team_organization | default(omit, True) }}"
       tower_verify_ssl: "{{ tower_team_tower_verify_ssl | default(omit, True) }}"
+
+- name: "export r_tower_team"
+  set_stats:
+    data:
+      r_tower_team: "{{ r_tower_team }}"

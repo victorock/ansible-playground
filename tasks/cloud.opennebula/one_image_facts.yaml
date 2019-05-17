@@ -9,3 +9,8 @@
       api_url: "{{ one_image_facts_api_url | default(omit, True) }}"
       name: "{{ one_image_facts_name | default(omit, True) }}"
       api_username: "{{ one_image_facts_api_username | default(omit, True) }}"
+
+- name: "export r_one_image_facts"
+  set_stats:
+    data:
+      r_one_image_facts: "{{ r_one_image_facts }}"

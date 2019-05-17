@@ -24,3 +24,8 @@
       account_key_src: "{{ letsencrypt_account_key_src | default(omit, True) }}"
       remaining_days: "{{ letsencrypt_remaining_days | default(omit, True) }}"
       csr: "{{ letsencrypt_csr | default(omit, True) }}"
+
+- name: "export r_letsencrypt"
+  set_stats:
+    data:
+      r_letsencrypt: "{{ r_letsencrypt }}"

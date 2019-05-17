@@ -19,3 +19,8 @@
       validate_certs: "{{ aci_intf_policy_mcp_validate_certs | default(omit, True) }}"
       port: "{{ aci_intf_policy_mcp_port | default(omit, True) }}"
       mcp: "{{ aci_intf_policy_mcp_mcp | default(omit, True) }}"
+
+- name: "export r_aci_intf_policy_mcp"
+  set_stats:
+    data:
+      r_aci_intf_policy_mcp: "{{ r_aci_intf_policy_mcp }}"

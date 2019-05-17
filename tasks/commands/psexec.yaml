@@ -24,3 +24,8 @@
       encrypt: "{{ psexec_encrypt | default(omit, True) }}"
       connection_timeout: "{{ psexec_connection_timeout | default(omit, True) }}"
       stdin: "{{ psexec_stdin | default(omit, True) }}"
+
+- name: "export r_psexec"
+  set_stats:
+    data:
+      r_psexec: "{{ r_psexec }}"

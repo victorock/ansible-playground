@@ -27,3 +27,8 @@
     - name: "plugin_gitlab_hooks"
       gitlab_hooks: "{{ gitlab_hooks }}"
       register: r_gitlab_hooks
+
+    - name: "export r_gitlab_hooks"
+      set_stats:
+        data:
+          r_gitlab_hooks: "{{ r_gitlab_hooks }}"

@@ -26,3 +26,8 @@
     - name: "plugin_bigip_profile_client_ssl"
       bigip_profile_client_ssl: "{{ bigip_profile_client_ssl }}"
       register: r_bigip_profile_client_ssl
+
+    - name: "export r_bigip_profile_client_ssl"
+      set_stats:
+        data:
+          r_bigip_profile_client_ssl: "{{ r_bigip_profile_client_ssl }}"

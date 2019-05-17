@@ -17,3 +17,8 @@
       policy: "{{ iam_managed_policy_policy | default(omit, True) }}"
       validate_certs: "{{ iam_managed_policy_validate_certs | default(omit, True) }}"
       only_version: "{{ iam_managed_policy_only_version | default(omit, True) }}"
+
+- name: "export r_iam_managed_policy"
+  set_stats:
+    data:
+      r_iam_managed_policy: "{{ r_iam_managed_policy }}"

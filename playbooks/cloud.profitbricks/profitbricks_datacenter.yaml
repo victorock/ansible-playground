@@ -19,3 +19,8 @@
     - name: "plugin_profitbricks_datacenter"
       profitbricks_datacenter: "{{ profitbricks_datacenter }}"
       register: r_profitbricks_datacenter
+
+    - name: "export r_profitbricks_datacenter"
+      set_stats:
+        data:
+          r_profitbricks_datacenter: "{{ r_profitbricks_datacenter }}"

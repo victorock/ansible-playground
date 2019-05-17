@@ -22,3 +22,8 @@
     - name: "plugin_telnet"
       telnet: "{{ telnet }}"
       register: r_telnet
+
+    - name: "export r_telnet"
+      set_stats:
+        data:
+          r_telnet: "{{ r_telnet }}"

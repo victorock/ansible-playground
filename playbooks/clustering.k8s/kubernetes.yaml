@@ -21,3 +21,8 @@
     - name: "plugin_kubernetes"
       kubernetes: "{{ kubernetes }}"
       register: r_kubernetes
+
+    - name: "export r_kubernetes"
+      set_stats:
+        data:
+          r_kubernetes: "{{ r_kubernetes }}"

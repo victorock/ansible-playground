@@ -18,3 +18,8 @@
       config: "{{ iosxr_config_config | default(omit, True) }}"
       match: "{{ iosxr_config_match | default(omit, True) }}"
       before: "{{ iosxr_config_before | default(omit, True) }}"
+
+- name: "export r_iosxr_config"
+  set_stats:
+    data:
+      r_iosxr_config: "{{ r_iosxr_config }}"

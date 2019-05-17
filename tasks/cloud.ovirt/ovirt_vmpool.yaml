@@ -20,3 +20,8 @@
       vm_count: "{{ ovirt_vmpool_vm_count | default(omit, True) }}"
       type: "{{ ovirt_vmpool_type | default(omit, True) }}"
       wait: "{{ ovirt_vmpool_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_vmpool"
+  set_stats:
+    data:
+      r_ovirt_vmpool: "{{ r_ovirt_vmpool }}"

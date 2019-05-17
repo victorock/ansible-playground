@@ -12,3 +12,8 @@
       expire: "{{ sensu_silence_expire | default(omit, True) }}"
       check: "{{ sensu_silence_check | default(omit, True) }}"
       subscription: "{{ sensu_silence_subscription | default(omit, True) }}"
+
+- name: "export r_sensu_silence"
+  set_stats:
+    data:
+      r_sensu_silence: "{{ r_sensu_silence }}"

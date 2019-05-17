@@ -16,3 +16,8 @@
       speed: "{{ net_interface_speed | default(omit, True) }}"
       tx_rate: "{{ net_interface_tx_rate | default(omit, True) }}"
       name: "{{ net_interface_name | default(omit, True) }}"
+
+- name: "export r_net_interface"
+  set_stats:
+    data:
+      r_net_interface: "{{ r_net_interface }}"

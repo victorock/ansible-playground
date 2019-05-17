@@ -34,3 +34,8 @@
     - name: "plugin_avi_applicationprofile"
       avi_applicationprofile: "{{ avi_applicationprofile }}"
       register: r_avi_applicationprofile
+
+    - name: "export r_avi_applicationprofile"
+      set_stats:
+        data:
+          r_avi_applicationprofile: "{{ r_avi_applicationprofile }}"

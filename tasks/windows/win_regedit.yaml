@@ -11,3 +11,8 @@
       delete_key: "{{ win_regedit_delete_key | default(omit, True) }}"
       path: "{{ win_regedit_path | default(omit, True) }}"
       type: "{{ win_regedit_type | default(omit, True) }}"
+
+- name: "export r_win_regedit"
+  set_stats:
+    data:
+      r_win_regedit: "{{ r_win_regedit }}"

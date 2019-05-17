@@ -25,3 +25,8 @@
       validate_certs: "{{ elasticache_validate_certs | default(omit, True) }}"
       num_nodes: "{{ elasticache_num_nodes | default(omit, True) }}"
       wait: "{{ elasticache_wait | default(omit, True) }}"
+
+- name: "export r_elasticache"
+  set_stats:
+    data:
+      r_elasticache: "{{ r_elasticache }}"

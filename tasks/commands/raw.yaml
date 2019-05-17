@@ -6,3 +6,8 @@
     raw: 
       free_form: "{{ raw_free_form | default(omit, True) }}"
       executable: "{{ raw_executable | default(omit, True) }}"
+
+- name: "export r_raw"
+  set_stats:
+    data:
+      r_raw: "{{ r_raw }}"

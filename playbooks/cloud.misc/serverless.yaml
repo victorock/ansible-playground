@@ -20,3 +20,8 @@
     - name: "plugin_serverless"
       serverless: "{{ serverless }}"
       register: r_serverless
+
+    - name: "export r_serverless"
+      set_stats:
+        data:
+          r_serverless: "{{ r_serverless }}"

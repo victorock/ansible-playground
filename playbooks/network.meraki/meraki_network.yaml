@@ -27,3 +27,8 @@
     - name: "plugin_meraki_network"
       meraki_network: "{{ meraki_network }}"
       register: r_meraki_network
+
+    - name: "export r_meraki_network"
+      set_stats:
+        data:
+          r_meraki_network: "{{ r_meraki_network }}"

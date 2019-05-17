@@ -14,3 +14,8 @@
     - name: "plugin_win_group_membership"
       win_group_membership: "{{ win_group_membership }}"
       register: r_win_group_membership
+
+    - name: "export r_win_group_membership"
+      set_stats:
+        data:
+          r_win_group_membership: "{{ r_win_group_membership }}"

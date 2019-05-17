@@ -27,3 +27,8 @@
     - name: "plugin_cs_nic"
       cs_nic: "{{ cs_nic }}"
       register: r_cs_nic
+
+    - name: "export r_cs_nic"
+      set_stats:
+        data:
+          r_cs_nic: "{{ r_cs_nic }}"

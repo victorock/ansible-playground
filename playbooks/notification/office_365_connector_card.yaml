@@ -18,3 +18,8 @@
     - name: "plugin_office_365_connector_card"
       office_365_connector_card: "{{ office_365_connector_card }}"
       register: r_office_365_connector_card
+
+    - name: "export r_office_365_connector_card"
+      set_stats:
+        data:
+          r_office_365_connector_card: "{{ r_office_365_connector_card }}"

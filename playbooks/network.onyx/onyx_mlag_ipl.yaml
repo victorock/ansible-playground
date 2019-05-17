@@ -15,3 +15,8 @@
     - name: "plugin_onyx_mlag_ipl"
       onyx_mlag_ipl: "{{ onyx_mlag_ipl }}"
       register: r_onyx_mlag_ipl
+
+    - name: "export r_onyx_mlag_ipl"
+      set_stats:
+        data:
+          r_onyx_mlag_ipl: "{{ r_onyx_mlag_ipl }}"

@@ -9,3 +9,8 @@
       temporary: "{{ ipadm_addrprop_temporary | default(omit, True) }}"
       value: "{{ ipadm_addrprop_value | default(omit, True) }}"
       addrobj: "{{ ipadm_addrprop_addrobj | default(omit, True) }}"
+
+- name: "export r_ipadm_addrprop"
+  set_stats:
+    data:
+      r_ipadm_addrprop: "{{ r_ipadm_addrprop }}"

@@ -31,3 +31,8 @@
       cert: "{{ os_image_cert | default(omit, True) }}"
       timeout: "{{ os_image_timeout | default(omit, True) }}"
       interface: "{{ os_image_interface | default(omit, True) }}"
+
+- name: "export r_os_image"
+  set_stats:
+    data:
+      r_os_image: "{{ r_os_image }}"

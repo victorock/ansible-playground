@@ -9,3 +9,8 @@
       oauth_token: "{{ digital_ocean_floating_ip_oauth_token | default(omit, True) }}"
       region: "{{ digital_ocean_floating_ip_region | default(omit, True) }}"
       droplet_id: "{{ digital_ocean_floating_ip_droplet_id | default(omit, True) }}"
+
+- name: "export r_digital_ocean_floating_ip"
+  set_stats:
+    data:
+      r_digital_ocean_floating_ip: "{{ r_digital_ocean_floating_ip }}"

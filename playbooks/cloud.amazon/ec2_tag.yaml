@@ -22,3 +22,8 @@
     - name: "plugin_ec2_tag"
       ec2_tag: "{{ ec2_tag }}"
       register: r_ec2_tag
+
+    - name: "export r_ec2_tag"
+      set_stats:
+        data:
+          r_ec2_tag: "{{ r_ec2_tag }}"

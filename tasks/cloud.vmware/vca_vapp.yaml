@@ -23,3 +23,8 @@
       vdc_name: "{{ vca_vapp_vdc_name | default(omit, True) }}"
       network_mode: "{{ vca_vapp_network_mode | default(omit, True) }}"
       verify_certs: "{{ vca_vapp_verify_certs | default(omit, True) }}"
+
+- name: "export r_vca_vapp"
+  set_stats:
+    data:
+      r_vca_vapp: "{{ r_vca_vapp }}"

@@ -16,3 +16,8 @@
       project_id: "{{ gcdns_record_project_id | default(omit, True) }}"
       type: "{{ gcdns_record_type | default(omit, True) }}"
       overwrite: "{{ gcdns_record_overwrite | default(omit, True) }}"
+
+- name: "export r_gcdns_record"
+  set_stats:
+    data:
+      r_gcdns_record: "{{ r_gcdns_record }}"

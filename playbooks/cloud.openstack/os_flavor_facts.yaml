@@ -29,3 +29,8 @@
     - name: "plugin_os_flavor_facts"
       os_flavor_facts: "{{ os_flavor_facts }}"
       register: r_os_flavor_facts
+
+    - name: "export r_os_flavor_facts"
+      set_stats:
+        data:
+          r_os_flavor_facts: "{{ r_os_flavor_facts }}"

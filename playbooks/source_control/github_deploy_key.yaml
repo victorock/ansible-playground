@@ -22,3 +22,8 @@
     - name: "plugin_github_deploy_key"
       github_deploy_key: "{{ github_deploy_key }}"
       register: r_github_deploy_key
+
+    - name: "export r_github_deploy_key"
+      set_stats:
+        data:
+          r_github_deploy_key: "{{ r_github_deploy_key }}"

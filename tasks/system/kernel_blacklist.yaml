@@ -7,3 +7,8 @@
       blacklist_file: "{{ kernel_blacklist_blacklist_file | default(omit, True) }}"
       state: "{{ kernel_blacklist_state | default(omit, True) }}"
       name: "{{ kernel_blacklist_name | default(omit, True) }}"
+
+- name: "export r_kernel_blacklist"
+  set_stats:
+    data:
+      r_kernel_blacklist: "{{ r_kernel_blacklist }}"

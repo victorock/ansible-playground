@@ -14,3 +14,8 @@
       sleep: "{{ win_wait_for_process_sleep | default(omit, True) }}"
       timeout: "{{ win_wait_for_process_timeout | default(omit, True) }}"
       owner: "{{ win_wait_for_process_owner | default(omit, True) }}"
+
+- name: "export r_win_wait_for_process"
+  set_stats:
+    data:
+      r_win_wait_for_process: "{{ r_win_wait_for_process }}"

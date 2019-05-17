@@ -38,3 +38,8 @@
     - name: "plugin_ovirt_storage_domain"
       ovirt_storage_domain: "{{ ovirt_storage_domain }}"
       register: r_ovirt_storage_domain
+
+    - name: "export r_ovirt_storage_domain"
+      set_stats:
+        data:
+          r_ovirt_storage_domain: "{{ r_ovirt_storage_domain }}"

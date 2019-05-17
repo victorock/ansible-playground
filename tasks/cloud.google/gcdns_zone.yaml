@@ -11,3 +11,8 @@
       state: "{{ gcdns_zone_state | default(omit, True) }}"
       credentials_file: "{{ gcdns_zone_credentials_file | default(omit, True) }}"
       project_id: "{{ gcdns_zone_project_id | default(omit, True) }}"
+
+- name: "export r_gcdns_zone"
+  set_stats:
+    data:
+      r_gcdns_zone: "{{ r_gcdns_zone }}"

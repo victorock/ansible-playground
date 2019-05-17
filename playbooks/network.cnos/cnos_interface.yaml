@@ -26,3 +26,8 @@
     - name: "plugin_cnos_interface"
       cnos_interface: "{{ cnos_interface }}"
       register: r_cnos_interface
+
+    - name: "export r_cnos_interface"
+      set_stats:
+        data:
+          r_cnos_interface: "{{ r_cnos_interface }}"

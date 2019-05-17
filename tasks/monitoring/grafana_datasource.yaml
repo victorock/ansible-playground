@@ -35,3 +35,8 @@
       es_version: "{{ grafana_datasource_es_version | default(omit, True) }}"
       validate_certs: "{{ grafana_datasource_validate_certs | default(omit, True) }}"
       ds_type: "{{ grafana_datasource_ds_type | default(omit, True) }}"
+
+- name: "export r_grafana_datasource"
+  set_stats:
+    data:
+      r_grafana_datasource: "{{ r_grafana_datasource }}"

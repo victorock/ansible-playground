@@ -15,3 +15,8 @@
       ttl: "{{ nios_host_record_ttl | default(omit, True) }}"
       view: "{{ nios_host_record_view | default(omit, True) }}"
       aliases: "{{ nios_host_record_aliases | default(omit, True) }}"
+
+- name: "export r_nios_host_record"
+  set_stats:
+    data:
+      r_nios_host_record: "{{ r_nios_host_record }}"

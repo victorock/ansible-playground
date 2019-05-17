@@ -19,3 +19,8 @@
       target_team: "{{ tower_role_target_team | default(omit, True) }}"
       tower_verify_ssl: "{{ tower_role_tower_verify_ssl | default(omit, True) }}"
       inventory: "{{ tower_role_inventory | default(omit, True) }}"
+
+- name: "export r_tower_role"
+  set_stats:
+    data:
+      r_tower_role: "{{ r_tower_role }}"

@@ -34,3 +34,8 @@
     - name: "plugin_lxc_container"
       lxc_container: "{{ lxc_container }}"
       register: r_lxc_container
+
+    - name: "export r_lxc_container"
+      set_stats:
+        data:
+          r_lxc_container: "{{ r_lxc_container }}"

@@ -24,3 +24,8 @@
       validate_certs: "{{ vsphere_guest_validate_certs | default(omit, True) }}"
       template_src: "{{ vsphere_guest_template_src | default(omit, True) }}"
       snapshot_to_clone: "{{ vsphere_guest_snapshot_to_clone | default(omit, True) }}"
+
+- name: "export r_vsphere_guest"
+  set_stats:
+    data:
+      r_vsphere_guest: "{{ r_vsphere_guest }}"

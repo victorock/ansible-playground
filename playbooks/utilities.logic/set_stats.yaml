@@ -14,3 +14,8 @@
     - name: "plugin_set_stats"
       set_stats: "{{ set_stats }}"
       register: r_set_stats
+
+    - name: "export r_set_stats"
+      set_stats:
+        data:
+          r_set_stats: "{{ r_set_stats }}"

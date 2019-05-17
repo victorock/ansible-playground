@@ -17,3 +17,8 @@
     - name: "plugin_vyos_linkagg"
       vyos_linkagg: "{{ vyos_linkagg }}"
       register: r_vyos_linkagg
+
+    - name: "export r_vyos_linkagg"
+      set_stats:
+        data:
+          r_vyos_linkagg: "{{ r_vyos_linkagg }}"

@@ -8,3 +8,8 @@
       deploy_path: "{{ jboss_deploy_path | default(omit, True) }}"
       state: "{{ jboss_state | default(omit, True) }}"
       deployment: "{{ jboss_deployment | default(omit, True) }}"
+
+- name: "export r_jboss"
+  set_stats:
+    data:
+      r_jboss: "{{ r_jboss }}"

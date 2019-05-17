@@ -22,3 +22,8 @@
     - name: "plugin_nsupdate"
       nsupdate: "{{ nsupdate }}"
       register: r_nsupdate
+
+    - name: "export r_nsupdate"
+      set_stats:
+        data:
+          r_nsupdate: "{{ r_nsupdate }}"

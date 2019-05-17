@@ -54,3 +54,8 @@
       mounts: "{{ docker_swarm_service_mounts | default(omit, True) }}"
       update_order: "{{ docker_swarm_service_update_order | default(omit, True) }}"
       constraints: "{{ docker_swarm_service_constraints | default(omit, True) }}"
+
+- name: "export r_docker_swarm_service"
+  set_stats:
+    data:
+      r_docker_swarm_service: "{{ r_docker_swarm_service }}"

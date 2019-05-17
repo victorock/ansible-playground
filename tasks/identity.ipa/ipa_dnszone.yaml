@@ -13,3 +13,8 @@
       zone_name: "{{ ipa_dnszone_zone_name | default(omit, True) }}"
       ipa_timeout: "{{ ipa_dnszone_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_dnszone_validate_certs | default(omit, True) }}"
+
+- name: "export r_ipa_dnszone"
+  set_stats:
+    data:
+      r_ipa_dnszone: "{{ r_ipa_dnszone }}"

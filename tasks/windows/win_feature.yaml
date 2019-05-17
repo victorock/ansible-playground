@@ -9,3 +9,8 @@
       include_sub_features: "{{ win_feature_include_sub_features | default(omit, True) }}"
       state: "{{ win_feature_state | default(omit, True) }}"
       name: "{{ win_feature_name | default(omit, True) }}"
+
+- name: "export r_win_feature"
+  set_stats:
+    data:
+      r_win_feature: "{{ r_win_feature }}"

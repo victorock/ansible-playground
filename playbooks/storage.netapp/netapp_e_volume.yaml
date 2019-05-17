@@ -27,3 +27,8 @@
     - name: "plugin_netapp_e_volume"
       netapp_e_volume: "{{ netapp_e_volume }}"
       register: r_netapp_e_volume
+
+    - name: "export r_netapp_e_volume"
+      set_stats:
+        data:
+          r_netapp_e_volume: "{{ r_netapp_e_volume }}"

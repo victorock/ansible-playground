@@ -20,3 +20,8 @@
     - name: "plugin_vr_dns_domain"
       vr_dns_domain: "{{ vr_dns_domain }}"
       register: r_vr_dns_domain
+
+    - name: "export r_vr_dns_domain"
+      set_stats:
+        data:
+          r_vr_dns_domain: "{{ r_vr_dns_domain }}"

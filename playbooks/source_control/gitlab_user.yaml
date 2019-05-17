@@ -26,3 +26,8 @@
     - name: "plugin_gitlab_user"
       gitlab_user: "{{ gitlab_user }}"
       register: r_gitlab_user
+
+    - name: "export r_gitlab_user"
+      set_stats:
+        data:
+          r_gitlab_user: "{{ r_gitlab_user }}"

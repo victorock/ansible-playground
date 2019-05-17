@@ -14,3 +14,8 @@
       diff_match: "{{ cli_config_diff_match | default(omit, True) }}"
       config: "{{ cli_config_config | default(omit, True) }}"
       diff_ignore_lines: "{{ cli_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_cli_config"
+  set_stats:
+    data:
+      r_cli_config: "{{ r_cli_config }}"

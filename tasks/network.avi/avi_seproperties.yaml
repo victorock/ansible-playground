@@ -20,3 +20,8 @@
       password: "{{ avi_seproperties_password | default(omit, True) }}"
       tenant_uuid: "{{ avi_seproperties_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_seproperties_avi_api_update_method | default(omit, True) }}"
+
+- name: "export r_avi_seproperties"
+  set_stats:
+    data:
+      r_avi_seproperties: "{{ r_avi_seproperties }}"

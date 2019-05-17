@@ -23,3 +23,8 @@
       validate_certs: "{{ bigip_vcmp_guest_validate_certs | default(omit, True) }}"
       cores_per_slot: "{{ bigip_vcmp_guest_cores_per_slot | default(omit, True) }}"
       min_number_of_slots: "{{ bigip_vcmp_guest_min_number_of_slots | default(omit, True) }}"
+
+- name: "export r_bigip_vcmp_guest"
+  set_stats:
+    data:
+      r_bigip_vcmp_guest: "{{ r_bigip_vcmp_guest }}"

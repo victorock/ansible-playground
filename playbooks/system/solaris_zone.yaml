@@ -21,3 +21,8 @@
     - name: "plugin_solaris_zone"
       solaris_zone: "{{ solaris_zone }}"
       register: r_solaris_zone
+
+    - name: "export r_solaris_zone"
+      set_stats:
+        data:
+          r_solaris_zone: "{{ r_solaris_zone }}"

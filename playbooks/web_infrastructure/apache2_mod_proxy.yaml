@@ -17,3 +17,8 @@
     - name: "plugin_apache2_mod_proxy"
       apache2_mod_proxy: "{{ apache2_mod_proxy }}"
       register: r_apache2_mod_proxy
+
+    - name: "export r_apache2_mod_proxy"
+      set_stats:
+        data:
+          r_apache2_mod_proxy: "{{ r_apache2_mod_proxy }}"

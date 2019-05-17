@@ -14,3 +14,8 @@
       deviceType: "{{ cnos_vlag_deviceType | default(omit, True) }}"
       password: "{{ cnos_vlag_password | default(omit, True) }}"
       enablePassword: "{{ cnos_vlag_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_vlag"
+  set_stats:
+    data:
+      r_cnos_vlag: "{{ r_cnos_vlag }}"

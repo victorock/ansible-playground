@@ -18,3 +18,8 @@
     - name: "plugin_nios_network"
       nios_network: "{{ nios_network }}"
       register: r_nios_network
+
+    - name: "export r_nios_network"
+      set_stats:
+        data:
+          r_nios_network: "{{ r_nios_network }}"
