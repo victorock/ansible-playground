@@ -5,7 +5,7 @@
     scm_type: "git"
     organization: "Default"
     scm_update_on_launch: "false"
-    branch: "ansible-{{ ansible_version.string }}"
+    scm_branch: "ansible-{{ ansible_version.string }}"
     scm_url: "https://github.com/victorock/ansible-playground"
     tower_verify_ssl: "false"
 
