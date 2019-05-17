@@ -18,3 +18,8 @@
       offline: "{{ firewalld_offline | default(omit, True) }}"
       port: "{{ firewalld_port | default(omit, True) }}"
       rich_rule: "{{ firewalld_rich_rule | default(omit, True) }}"
+
+- name: "export r_firewalld"
+  set_stats:
+    data:
+      r_firewalld: "{{ r_firewalld }}"

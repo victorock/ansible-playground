@@ -31,3 +31,8 @@
     - name: "plugin_a10_virtual_server"
       a10_virtual_server: "{{ a10_virtual_server }}"
       register: r_a10_virtual_server
+
+    - name: "export r_a10_virtual_server"
+      set_stats:
+        data:
+          r_a10_virtual_server: "{{ r_a10_virtual_server }}"

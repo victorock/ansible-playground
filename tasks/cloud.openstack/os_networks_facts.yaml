@@ -19,3 +19,8 @@
       client_cert: "{{ os_networks_facts_client_cert | default(omit, True) }}"
       cloud: "{{ os_networks_facts_cloud | default(omit, True) }}"
       wait: "{{ os_networks_facts_wait | default(omit, True) }}"
+
+- name: "export r_os_networks_facts"
+  set_stats:
+    data:
+      r_os_networks_facts: "{{ r_os_networks_facts }}"

@@ -16,3 +16,8 @@
     - name: "plugin_onyx_magp"
       onyx_magp: "{{ onyx_magp }}"
       register: r_onyx_magp
+
+    - name: "export r_onyx_magp"
+      set_stats:
+        data:
+          r_onyx_magp: "{{ r_onyx_magp }}"

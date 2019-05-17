@@ -13,3 +13,8 @@
       policy: "{{ aix_lvol_policy | default(omit, True) }}"
       opts: "{{ aix_lvol_opts | default(omit, True) }}"
       size: "{{ aix_lvol_size | default(omit, True) }}"
+
+- name: "export r_aix_lvol"
+  set_stats:
+    data:
+      r_aix_lvol: "{{ r_aix_lvol }}"

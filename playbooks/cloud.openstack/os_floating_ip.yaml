@@ -32,3 +32,8 @@
     - name: "plugin_os_floating_ip"
       os_floating_ip: "{{ os_floating_ip }}"
       register: r_os_floating_ip
+
+    - name: "export r_os_floating_ip"
+      set_stats:
+        data:
+          r_os_floating_ip: "{{ r_os_floating_ip }}"

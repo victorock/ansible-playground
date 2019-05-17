@@ -25,3 +25,8 @@
     - name: "plugin_win_domain_group"
       win_domain_group: "{{ win_domain_group }}"
       register: r_win_domain_group
+
+    - name: "export r_win_domain_group"
+      set_stats:
+        data:
+          r_win_domain_group: "{{ r_win_domain_group }}"

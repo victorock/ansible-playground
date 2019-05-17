@@ -18,3 +18,8 @@
       gateway: "{{ netapp_e_iscsi_interface_gateway | default(omit, True) }}"
       api_username: "{{ netapp_e_iscsi_interface_api_username | default(omit, True) }}"
       name: "{{ netapp_e_iscsi_interface_name | default(omit, True) }}"
+
+- name: "export r_netapp_e_iscsi_interface"
+  set_stats:
+    data:
+      r_netapp_e_iscsi_interface: "{{ r_netapp_e_iscsi_interface }}"

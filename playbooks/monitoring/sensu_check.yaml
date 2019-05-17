@@ -35,3 +35,8 @@
     - name: "plugin_sensu_check"
       sensu_check: "{{ sensu_check }}"
       register: r_sensu_check
+
+    - name: "export r_sensu_check"
+      set_stats:
+        data:
+          r_sensu_check: "{{ r_sensu_check }}"

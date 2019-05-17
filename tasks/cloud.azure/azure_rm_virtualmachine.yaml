@@ -57,3 +57,8 @@
       storage_account_name: "{{ azure_rm_virtualmachine_storage_account_name | default(omit, True) }}"
       data_disks: "{{ azure_rm_virtualmachine_data_disks | default(omit, True) }}"
       os_disk_caching: "{{ azure_rm_virtualmachine_os_disk_caching | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualmachine"
+  set_stats:
+    data:
+      r_azure_rm_virtualmachine: "{{ r_azure_rm_virtualmachine }}"

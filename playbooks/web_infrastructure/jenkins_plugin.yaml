@@ -32,3 +32,8 @@
     - name: "plugin_jenkins_plugin"
       jenkins_plugin: "{{ jenkins_plugin }}"
       register: r_jenkins_plugin
+
+    - name: "export r_jenkins_plugin"
+      set_stats:
+        data:
+          r_jenkins_plugin: "{{ r_jenkins_plugin }}"

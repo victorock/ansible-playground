@@ -18,3 +18,8 @@
     - name: "plugin_gcp_dns_resource_record_set_facts"
       gcp_dns_resource_record_set_facts: "{{ gcp_dns_resource_record_set_facts }}"
       register: r_gcp_dns_resource_record_set_facts
+
+    - name: "export r_gcp_dns_resource_record_set_facts"
+      set_stats:
+        data:
+          r_gcp_dns_resource_record_set_facts: "{{ r_gcp_dns_resource_record_set_facts }}"

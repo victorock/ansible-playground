@@ -17,3 +17,8 @@
       password: "{{ ucs_san_connectivity_password | default(omit, True) }}"
       port: "{{ ucs_san_connectivity_port | default(omit, True) }}"
       use_proxy: "{{ ucs_san_connectivity_use_proxy | default(omit, True) }}"
+
+- name: "export r_ucs_san_connectivity"
+  set_stats:
+    data:
+      r_ucs_san_connectivity: "{{ r_ucs_san_connectivity }}"

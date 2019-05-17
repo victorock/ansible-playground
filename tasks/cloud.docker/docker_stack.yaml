@@ -12,3 +12,8 @@
       with_registry_auth: "{{ docker_stack_with_registry_auth | default(omit, True) }}"
       absent_retries: "{{ docker_stack_absent_retries | default(omit, True) }}"
       prune: "{{ docker_stack_prune | default(omit, True) }}"
+
+- name: "export r_docker_stack"
+  set_stats:
+    data:
+      r_docker_stack: "{{ r_docker_stack }}"

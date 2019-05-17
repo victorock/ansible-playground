@@ -15,3 +15,8 @@
     - name: "plugin_win_user_profile"
       win_user_profile: "{{ win_user_profile }}"
       register: r_win_user_profile
+
+    - name: "export r_win_user_profile"
+      set_stats:
+        data:
+          r_win_user_profile: "{{ r_win_user_profile }}"

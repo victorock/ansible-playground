@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ipv6_eh_filter"
       fortios_firewall_ipv6_eh_filter: "{{ fortios_firewall_ipv6_eh_filter }}"
       register: r_fortios_firewall_ipv6_eh_filter
+
+    - name: "export r_fortios_firewall_ipv6_eh_filter"
+      set_stats:
+        data:
+          r_fortios_firewall_ipv6_eh_filter: "{{ r_fortios_firewall_ipv6_eh_filter }}"

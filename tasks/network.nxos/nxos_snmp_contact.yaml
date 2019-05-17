@@ -7,3 +7,8 @@
       state: "{{ nxos_snmp_contact_state | default(omit, True) }}"
       contact: "{{ nxos_snmp_contact_contact | default(omit, True) }}"
       provider: "{{ nxos_snmp_contact_provider | default(omit, True) }}"
+
+- name: "export r_nxos_snmp_contact"
+  set_stats:
+    data:
+      r_nxos_snmp_contact: "{{ r_nxos_snmp_contact }}"

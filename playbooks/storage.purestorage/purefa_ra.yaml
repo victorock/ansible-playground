@@ -14,3 +14,8 @@
     - name: "plugin_purefa_ra"
       purefa_ra: "{{ purefa_ra }}"
       register: r_purefa_ra
+
+    - name: "export r_purefa_ra"
+      set_stats:
+        data:
+          r_purefa_ra: "{{ r_purefa_ra }}"

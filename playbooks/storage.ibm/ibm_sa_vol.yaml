@@ -18,3 +18,8 @@
     - name: "plugin_ibm_sa_vol"
       ibm_sa_vol: "{{ ibm_sa_vol }}"
       register: r_ibm_sa_vol
+
+    - name: "export r_ibm_sa_vol"
+      set_stats:
+        data:
+          r_ibm_sa_vol: "{{ r_ibm_sa_vol }}"

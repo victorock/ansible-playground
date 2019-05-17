@@ -29,3 +29,8 @@
     - name: "plugin_aws_application_scaling_policy"
       aws_application_scaling_policy: "{{ aws_application_scaling_policy }}"
       register: r_aws_application_scaling_policy
+
+    - name: "export r_aws_application_scaling_policy"
+      set_stats:
+        data:
+          r_aws_application_scaling_policy: "{{ r_aws_application_scaling_policy }}"

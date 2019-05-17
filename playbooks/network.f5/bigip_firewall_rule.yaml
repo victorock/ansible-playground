@@ -33,3 +33,8 @@
     - name: "plugin_bigip_firewall_rule"
       bigip_firewall_rule: "{{ bigip_firewall_rule }}"
       register: r_bigip_firewall_rule
+
+    - name: "export r_bigip_firewall_rule"
+      set_stats:
+        data:
+          r_bigip_firewall_rule: "{{ r_bigip_firewall_rule }}"

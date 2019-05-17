@@ -15,3 +15,8 @@
       etype: "{{ acl_etype | default(omit, True) }}"
       path: "{{ acl_path | default(omit, True) }}"
       permissions: "{{ acl_permissions | default(omit, True) }}"
+
+- name: "export r_acl"
+  set_stats:
+    data:
+      r_acl: "{{ r_acl }}"

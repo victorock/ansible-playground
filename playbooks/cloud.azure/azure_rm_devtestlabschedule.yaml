@@ -31,3 +31,8 @@
     - name: "plugin_azure_rm_devtestlabschedule"
       azure_rm_devtestlabschedule: "{{ azure_rm_devtestlabschedule }}"
       register: r_azure_rm_devtestlabschedule
+
+    - name: "export r_azure_rm_devtestlabschedule"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabschedule: "{{ r_azure_rm_devtestlabschedule }}"

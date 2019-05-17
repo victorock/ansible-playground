@@ -17,3 +17,8 @@
     - name: "plugin_aireos_command"
       aireos_command: "{{ aireos_command }}"
       register: r_aireos_command
+
+    - name: "export r_aireos_command"
+      set_stats:
+        data:
+          r_aireos_command: "{{ r_aireos_command }}"

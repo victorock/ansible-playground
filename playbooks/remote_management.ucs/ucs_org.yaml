@@ -23,3 +23,8 @@
     - name: "plugin_ucs_org"
       ucs_org: "{{ ucs_org }}"
       register: r_ucs_org
+
+    - name: "export r_ucs_org"
+      set_stats:
+        data:
+          r_ucs_org: "{{ r_ucs_org }}"

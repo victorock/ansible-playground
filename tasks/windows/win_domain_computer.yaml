@@ -14,3 +14,8 @@
       domain_server: "{{ win_domain_computer_domain_server | default(omit, True) }}"
       ou: "{{ win_domain_computer_ou | default(omit, True) }}"
       description: "{{ win_domain_computer_description | default(omit, True) }}"
+
+- name: "export r_win_domain_computer"
+  set_stats:
+    data:
+      r_win_domain_computer: "{{ r_win_domain_computer }}"

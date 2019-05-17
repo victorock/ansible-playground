@@ -5,3 +5,8 @@
   vars:
     gather_facts: 
       parallel: "{{ gather_facts_parallel | default(omit, True) }}"
+
+- name: "export r_gather_facts"
+  set_stats:
+    data:
+      r_gather_facts: "{{ r_gather_facts }}"

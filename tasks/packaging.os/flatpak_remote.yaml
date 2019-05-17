@@ -9,3 +9,8 @@
       method: "{{ flatpak_remote_method | default(omit, True) }}"
       flatpakrepo_url: "{{ flatpak_remote_flatpakrepo_url | default(omit, True) }}"
       state: "{{ flatpak_remote_state | default(omit, True) }}"
+
+- name: "export r_flatpak_remote"
+  set_stats:
+    data:
+      r_flatpak_remote: "{{ r_flatpak_remote }}"

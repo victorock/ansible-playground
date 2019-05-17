@@ -30,3 +30,8 @@
       clear_on_max_retries: "{{ avi_gslb_clear_on_max_retries | default(omit, True) }}"
       send_interval: "{{ avi_gslb_send_interval | default(omit, True) }}"
       tenant_uuid: "{{ avi_gslb_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_gslb"
+  set_stats:
+    data:
+      r_avi_gslb: "{{ r_avi_gslb }}"

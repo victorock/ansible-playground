@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_service_group"
       fortios_firewall_service_group: "{{ fortios_firewall_service_group }}"
       register: r_fortios_firewall_service_group
+
+    - name: "export r_fortios_firewall_service_group"
+      set_stats:
+        data:
+          r_fortios_firewall_service_group: "{{ r_fortios_firewall_service_group }}"

@@ -22,3 +22,8 @@
     - name: "plugin_ios_vlan"
       ios_vlan: "{{ ios_vlan }}"
       register: r_ios_vlan
+
+    - name: "export r_ios_vlan"
+      set_stats:
+        data:
+          r_ios_vlan: "{{ r_ios_vlan }}"

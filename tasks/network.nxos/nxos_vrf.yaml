@@ -16,3 +16,8 @@
       provider: "{{ nxos_vrf_provider | default(omit, True) }}"
       associated_interfaces: "{{ nxos_vrf_associated_interfaces | default(omit, True) }}"
       name: "{{ nxos_vrf_name | default(omit, True) }}"
+
+- name: "export r_nxos_vrf"
+  set_stats:
+    data:
+      r_nxos_vrf: "{{ r_nxos_vrf }}"

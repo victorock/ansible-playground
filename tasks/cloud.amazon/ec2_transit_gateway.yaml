@@ -25,3 +25,8 @@
       validate_certs: "{{ ec2_transit_gateway_validate_certs | default(omit, True) }}"
       asn: "{{ ec2_transit_gateway_asn | default(omit, True) }}"
       wait: "{{ ec2_transit_gateway_wait | default(omit, True) }}"
+
+- name: "export r_ec2_transit_gateway"
+  set_stats:
+    data:
+      r_ec2_transit_gateway: "{{ r_ec2_transit_gateway }}"

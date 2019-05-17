@@ -14,3 +14,8 @@
       app_name: "{{ newrelic_deployment_app_name | default(omit, True) }}"
       validate_certs: "{{ newrelic_deployment_validate_certs | default(omit, True) }}"
       revision: "{{ newrelic_deployment_revision | default(omit, True) }}"
+
+- name: "export r_newrelic_deployment"
+  set_stats:
+    data:
+      r_newrelic_deployment: "{{ r_newrelic_deployment }}"

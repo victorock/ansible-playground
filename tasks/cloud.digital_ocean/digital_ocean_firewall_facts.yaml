@@ -8,3 +8,8 @@
       validate_certs: "{{ digital_ocean_firewall_facts_validate_certs | default(omit, True) }}"
       name: "{{ digital_ocean_firewall_facts_name | default(omit, True) }}"
       timeout: "{{ digital_ocean_firewall_facts_timeout | default(omit, True) }}"
+
+- name: "export r_digital_ocean_firewall_facts"
+  set_stats:
+    data:
+      r_digital_ocean_firewall_facts: "{{ r_digital_ocean_firewall_facts }}"

@@ -33,3 +33,8 @@
     - name: "plugin_mso_schema_site_anp_epg_staticport"
       mso_schema_site_anp_epg_staticport: "{{ mso_schema_site_anp_epg_staticport }}"
       register: r_mso_schema_site_anp_epg_staticport
+
+    - name: "export r_mso_schema_site_anp_epg_staticport"
+      set_stats:
+        data:
+          r_mso_schema_site_anp_epg_staticport: "{{ r_mso_schema_site_anp_epg_staticport }}"

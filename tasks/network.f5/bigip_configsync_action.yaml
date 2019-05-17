@@ -14,3 +14,8 @@
       overwrite_config: "{{ bigip_configsync_action_overwrite_config | default(omit, True) }}"
       password: "{{ bigip_configsync_action_password | default(omit, True) }}"
       validate_certs: "{{ bigip_configsync_action_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_configsync_action"
+  set_stats:
+    data:
+      r_bigip_configsync_action: "{{ r_bigip_configsync_action }}"

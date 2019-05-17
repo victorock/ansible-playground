@@ -18,3 +18,8 @@
       pn_mode: "{{ pn_vlag_pn_mode | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vlag_pn_cliswitch | default(omit, True) }}"
       pn_port: "{{ pn_vlag_pn_port | default(omit, True) }}"
+
+- name: "export r_pn_vlag"
+  set_stats:
+    data:
+      r_pn_vlag: "{{ r_pn_vlag }}"

@@ -30,3 +30,8 @@
     - name: "plugin_docker_swarm_info"
       docker_swarm_info: "{{ docker_swarm_info }}"
       register: r_docker_swarm_info
+
+    - name: "export r_docker_swarm_info"
+      set_stats:
+        data:
+          r_docker_swarm_info: "{{ r_docker_swarm_info }}"

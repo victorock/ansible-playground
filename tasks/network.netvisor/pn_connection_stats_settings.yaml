@@ -22,3 +22,8 @@
       pn_connection_stats_log_disk_space: "{{ pn_connection_stats_settings_pn_connection_stats_log_disk_space | default(omit, True) }}"
       pn_client_server_stats_log_enable: "{{ pn_connection_stats_settings_pn_client_server_stats_log_enable | default(omit, True) }}"
       pn_cliswitch: "{{ pn_connection_stats_settings_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_connection_stats_settings"
+  set_stats:
+    data:
+      r_pn_connection_stats_settings: "{{ r_pn_connection_stats_settings }}"

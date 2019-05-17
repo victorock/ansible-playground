@@ -28,3 +28,8 @@
     - name: "plugin_docker_config"
       docker_config: "{{ docker_config }}"
       register: r_docker_config
+
+    - name: "export r_docker_config"
+      set_stats:
+        data:
+          r_docker_config: "{{ r_docker_config }}"

@@ -16,3 +16,8 @@
     - name: "plugin_junos_scp"
       junos_scp: "{{ junos_scp }}"
       register: r_junos_scp
+
+    - name: "export r_junos_scp"
+      set_stats:
+        data:
+          r_junos_scp: "{{ r_junos_scp }}"

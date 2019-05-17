@@ -24,3 +24,8 @@
     - name: "plugin_win_user"
       win_user: "{{ win_user }}"
       register: r_win_user
+
+    - name: "export r_win_user"
+      set_stats:
+        data:
+          r_win_user: "{{ r_win_user }}"

@@ -12,3 +12,8 @@
     - name: "plugin_edgeos_facts"
       edgeos_facts: "{{ edgeos_facts }}"
       register: r_edgeos_facts
+
+    - name: "export r_edgeos_facts"
+      set_stats:
+        data:
+          r_edgeos_facts: "{{ r_edgeos_facts }}"

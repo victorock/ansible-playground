@@ -11,3 +11,8 @@
       members: "{{ nxos_portchannel_members | default(omit, True) }}"
       provider: "{{ nxos_portchannel_provider | default(omit, True) }}"
       group: "{{ nxos_portchannel_group | default(omit, True) }}"
+
+- name: "export r_nxos_portchannel"
+  set_stats:
+    data:
+      r_nxos_portchannel: "{{ r_nxos_portchannel }}"

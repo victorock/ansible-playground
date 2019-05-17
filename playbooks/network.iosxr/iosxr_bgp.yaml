@@ -13,3 +13,8 @@
     - name: "plugin_iosxr_bgp"
       iosxr_bgp: "{{ iosxr_bgp }}"
       register: r_iosxr_bgp
+
+    - name: "export r_iosxr_bgp"
+      set_stats:
+        data:
+          r_iosxr_bgp: "{{ r_iosxr_bgp }}"

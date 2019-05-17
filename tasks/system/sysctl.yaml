@@ -11,3 +11,8 @@
       state: "{{ sysctl_state | default(omit, True) }}"
       sysctl_set: "{{ sysctl_sysctl_set | default(omit, True) }}"
       sysctl_file: "{{ sysctl_sysctl_file | default(omit, True) }}"
+
+- name: "export r_sysctl"
+  set_stats:
+    data:
+      r_sysctl: "{{ r_sysctl }}"

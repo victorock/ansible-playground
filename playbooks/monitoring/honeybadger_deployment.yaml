@@ -18,3 +18,8 @@
     - name: "plugin_honeybadger_deployment"
       honeybadger_deployment: "{{ honeybadger_deployment }}"
       register: r_honeybadger_deployment
+
+    - name: "export r_honeybadger_deployment"
+      set_stats:
+        data:
+          r_honeybadger_deployment: "{{ r_honeybadger_deployment }}"

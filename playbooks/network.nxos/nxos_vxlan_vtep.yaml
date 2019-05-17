@@ -23,3 +23,8 @@
     - name: "plugin_nxos_vxlan_vtep"
       nxos_vxlan_vtep: "{{ nxos_vxlan_vtep }}"
       register: r_nxos_vxlan_vtep
+
+    - name: "export r_nxos_vxlan_vtep"
+      set_stats:
+        data:
+          r_nxos_vxlan_vtep: "{{ r_nxos_vxlan_vtep }}"

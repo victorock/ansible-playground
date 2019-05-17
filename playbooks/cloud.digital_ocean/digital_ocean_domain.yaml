@@ -18,3 +18,8 @@
     - name: "plugin_digital_ocean_domain"
       digital_ocean_domain: "{{ digital_ocean_domain }}"
       register: r_digital_ocean_domain
+
+    - name: "export r_digital_ocean_domain"
+      set_stats:
+        data:
+          r_digital_ocean_domain: "{{ r_digital_ocean_domain }}"

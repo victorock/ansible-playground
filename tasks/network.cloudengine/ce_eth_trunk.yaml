@@ -11,3 +11,8 @@
       members: "{{ ce_eth_trunk_members | default(omit, True) }}"
       min_links: "{{ ce_eth_trunk_min_links | default(omit, True) }}"
       trunk_id: "{{ ce_eth_trunk_trunk_id | default(omit, True) }}"
+
+- name: "export r_ce_eth_trunk"
+  set_stats:
+    data:
+      r_ce_eth_trunk: "{{ r_ce_eth_trunk }}"

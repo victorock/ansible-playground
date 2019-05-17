@@ -18,3 +18,8 @@
     - name: "plugin_luks_device"
       luks_device: "{{ luks_device }}"
       register: r_luks_device
+
+    - name: "export r_luks_device"
+      set_stats:
+        data:
+          r_luks_device: "{{ r_luks_device }}"

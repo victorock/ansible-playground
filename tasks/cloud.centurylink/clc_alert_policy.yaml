@@ -12,3 +12,8 @@
       threshold: "{{ clc_alert_policy_threshold | default(omit, True) }}"
       id: "{{ clc_alert_policy_id | default(omit, True) }}"
       duration: "{{ clc_alert_policy_duration | default(omit, True) }}"
+
+- name: "export r_clc_alert_policy"
+  set_stats:
+    data:
+      r_clc_alert_policy: "{{ r_clc_alert_policy }}"

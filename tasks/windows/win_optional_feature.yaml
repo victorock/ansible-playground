@@ -8,3 +8,8 @@
       state: "{{ win_optional_feature_state | default(omit, True) }}"
       name: "{{ win_optional_feature_name | default(omit, True) }}"
       include_parent: "{{ win_optional_feature_include_parent | default(omit, True) }}"
+
+- name: "export r_win_optional_feature"
+  set_stats:
+    data:
+      r_win_optional_feature: "{{ r_win_optional_feature }}"

@@ -30,3 +30,8 @@
     - name: "plugin_ftd_install"
       ftd_install: "{{ ftd_install }}"
       register: r_ftd_install
+
+    - name: "export r_ftd_install"
+      set_stats:
+        data:
+          r_ftd_install: "{{ r_ftd_install }}"

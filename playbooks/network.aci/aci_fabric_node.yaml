@@ -29,3 +29,8 @@
     - name: "plugin_aci_fabric_node"
       aci_fabric_node: "{{ aci_fabric_node }}"
       register: r_aci_fabric_node
+
+    - name: "export r_aci_fabric_node"
+      set_stats:
+        data:
+          r_aci_fabric_node: "{{ r_aci_fabric_node }}"

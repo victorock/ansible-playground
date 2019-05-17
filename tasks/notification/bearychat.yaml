@@ -9,3 +9,8 @@
       markdown: "{{ bearychat_markdown | default(omit, True) }}"
       attachments: "{{ bearychat_attachments | default(omit, True) }}"
       channel: "{{ bearychat_channel | default(omit, True) }}"
+
+- name: "export r_bearychat"
+  set_stats:
+    data:
+      r_bearychat: "{{ r_bearychat }}"

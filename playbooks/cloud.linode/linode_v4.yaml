@@ -21,3 +21,8 @@
     - name: "plugin_linode_v4"
       linode_v4: "{{ linode_v4 }}"
       register: r_linode_v4
+
+    - name: "export r_linode_v4"
+      set_stats:
+        data:
+          r_linode_v4: "{{ r_linode_v4 }}"

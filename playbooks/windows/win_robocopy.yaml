@@ -16,3 +16,8 @@
     - name: "plugin_win_robocopy"
       win_robocopy: "{{ win_robocopy }}"
       register: r_win_robocopy
+
+    - name: "export r_win_robocopy"
+      set_stats:
+        data:
+          r_win_robocopy: "{{ r_win_robocopy }}"

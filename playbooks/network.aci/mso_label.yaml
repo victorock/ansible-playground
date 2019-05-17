@@ -23,3 +23,8 @@
     - name: "plugin_mso_label"
       mso_label: "{{ mso_label }}"
       register: r_mso_label
+
+    - name: "export r_mso_label"
+      set_stats:
+        data:
+          r_mso_label: "{{ r_mso_label }}"

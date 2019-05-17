@@ -22,3 +22,8 @@
       validate_certs: "{{ bigip_profile_oneconnect_validate_certs | default(omit, True) }}"
       maximum_size: "{{ bigip_profile_oneconnect_maximum_size | default(omit, True) }}"
       name: "{{ bigip_profile_oneconnect_name | default(omit, True) }}"
+
+- name: "export r_bigip_profile_oneconnect"
+  set_stats:
+    data:
+      r_bigip_profile_oneconnect: "{{ r_bigip_profile_oneconnect }}"

@@ -23,3 +23,8 @@
       tenant_uuid: "{{ avi_errorpageprofile_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_errorpageprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_errorpageprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_errorpageprofile"
+  set_stats:
+    data:
+      r_avi_errorpageprofile: "{{ r_avi_errorpageprofile }}"

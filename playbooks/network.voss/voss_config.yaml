@@ -26,3 +26,8 @@
     - name: "plugin_voss_config"
       voss_config: "{{ voss_config }}"
       register: r_voss_config
+
+    - name: "export r_voss_config"
+      set_stats:
+        data:
+          r_voss_config: "{{ r_voss_config }}"

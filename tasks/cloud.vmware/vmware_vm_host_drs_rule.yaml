@@ -18,3 +18,8 @@
       validate_certs: "{{ vmware_vm_host_drs_rule_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vm_host_drs_rule_port | default(omit, True) }}"
       cluster_name: "{{ vmware_vm_host_drs_rule_cluster_name | default(omit, True) }}"
+
+- name: "export r_vmware_vm_host_drs_rule"
+  set_stats:
+    data:
+      r_vmware_vm_host_drs_rule: "{{ r_vmware_vm_host_drs_rule }}"

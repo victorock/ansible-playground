@@ -16,3 +16,8 @@
     - name: "plugin_ce_startup"
       ce_startup: "{{ ce_startup }}"
       register: r_ce_startup
+
+    - name: "export r_ce_startup"
+      set_stats:
+        data:
+          r_ce_startup: "{{ r_ce_startup }}"

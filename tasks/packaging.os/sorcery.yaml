@@ -10,3 +10,8 @@
       state: "{{ sorcery_state | default(omit, True) }}"
       update_cache: "{{ sorcery_update_cache | default(omit, True) }}"
       cache_valid_time: "{{ sorcery_cache_valid_time | default(omit, True) }}"
+
+- name: "export r_sorcery"
+  set_stats:
+    data:
+      r_sorcery: "{{ r_sorcery }}"

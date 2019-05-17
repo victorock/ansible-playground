@@ -23,3 +23,8 @@
     - name: "plugin_docker_swarm_service_info"
       docker_swarm_service_info: "{{ docker_swarm_service_info }}"
       register: r_docker_swarm_service_info
+
+    - name: "export r_docker_swarm_service_info"
+      set_stats:
+        data:
+          r_docker_swarm_service_info: "{{ r_docker_swarm_service_info }}"

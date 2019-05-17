@@ -16,3 +16,8 @@
       api_username: "{{ netapp_e_snapshot_volume_api_username | default(omit, True) }}"
       validate_certs: "{{ netapp_e_snapshot_volume_validate_certs | default(omit, True) }}"
       name: "{{ netapp_e_snapshot_volume_name | default(omit, True) }}"
+
+- name: "export r_netapp_e_snapshot_volume"
+  set_stats:
+    data:
+      r_netapp_e_snapshot_volume: "{{ r_netapp_e_snapshot_volume }}"

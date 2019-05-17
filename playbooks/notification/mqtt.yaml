@@ -23,3 +23,8 @@
     - name: "plugin_mqtt"
       mqtt: "{{ mqtt }}"
       register: r_mqtt
+
+    - name: "export r_mqtt"
+      set_stats:
+        data:
+          r_mqtt: "{{ r_mqtt }}"

@@ -28,3 +28,8 @@
       api_profile: "{{ azure_rm_hdinsightcluster_api_profile | default(omit, True) }}"
       os_type: "{{ azure_rm_hdinsightcluster_os_type | default(omit, True) }}"
       cluster_version: "{{ azure_rm_hdinsightcluster_cluster_version | default(omit, True) }}"
+
+- name: "export r_azure_rm_hdinsightcluster"
+  set_stats:
+    data:
+      r_azure_rm_hdinsightcluster: "{{ r_azure_rm_hdinsightcluster }}"

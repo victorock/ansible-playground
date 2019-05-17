@@ -29,3 +29,8 @@
     - name: "plugin_gcp_compute_health_check"
       gcp_compute_health_check: "{{ gcp_compute_health_check }}"
       register: r_gcp_compute_health_check
+
+    - name: "export r_gcp_compute_health_check"
+      set_stats:
+        data:
+          r_gcp_compute_health_check: "{{ r_gcp_compute_health_check }}"

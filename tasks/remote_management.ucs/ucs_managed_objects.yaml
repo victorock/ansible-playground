@@ -13,3 +13,8 @@
       use_ssl: "{{ ucs_managed_objects_use_ssl | default(omit, True) }}"
       password: "{{ ucs_managed_objects_password | default(omit, True) }}"
       port: "{{ ucs_managed_objects_port | default(omit, True) }}"
+
+- name: "export r_ucs_managed_objects"
+  set_stats:
+    data:
+      r_ucs_managed_objects: "{{ r_ucs_managed_objects }}"

@@ -10,3 +10,8 @@
       device: "{{ pushbullet_device | default(omit, True) }}"
       api_key: "{{ pushbullet_api_key | default(omit, True) }}"
       channel: "{{ pushbullet_channel | default(omit, True) }}"
+
+- name: "export r_pushbullet"
+  set_stats:
+    data:
+      r_pushbullet: "{{ r_pushbullet }}"

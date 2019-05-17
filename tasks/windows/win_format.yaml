@@ -15,3 +15,8 @@
       path: "{{ win_format_path | default(omit, True) }}"
       large_frs: "{{ win_format_large_frs | default(omit, True) }}"
       file_system: "{{ win_format_file_system | default(omit, True) }}"
+
+- name: "export r_win_format"
+  set_stats:
+    data:
+      r_win_format: "{{ r_win_format }}"

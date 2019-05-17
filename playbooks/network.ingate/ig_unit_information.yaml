@@ -12,3 +12,8 @@
     - name: "plugin_ig_unit_information"
       ig_unit_information: "{{ ig_unit_information }}"
       register: r_ig_unit_information
+
+    - name: "export r_ig_unit_information"
+      set_stats:
+        data:
+          r_ig_unit_information: "{{ r_ig_unit_information }}"

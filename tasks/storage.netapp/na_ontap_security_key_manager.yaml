@@ -15,3 +15,8 @@
       ontapi: "{{ na_ontap_security_key_manager_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_security_key_manager_password | default(omit, True) }}"
       ip_address: "{{ na_ontap_security_key_manager_ip_address | default(omit, True) }}"
+
+- name: "export r_na_ontap_security_key_manager"
+  set_stats:
+    data:
+      r_na_ontap_security_key_manager: "{{ r_na_ontap_security_key_manager }}"

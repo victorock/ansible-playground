@@ -40,3 +40,8 @@
       context: "{{ kubevirt_preset_context | default(omit, True) }}"
       validate_certs: "{{ kubevirt_preset_validate_certs | default(omit, True) }}"
       cpu_shares: "{{ kubevirt_preset_cpu_shares | default(omit, True) }}"
+
+- name: "export r_kubevirt_preset"
+  set_stats:
+    data:
+      r_kubevirt_preset: "{{ r_kubevirt_preset }}"

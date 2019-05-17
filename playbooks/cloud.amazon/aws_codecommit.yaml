@@ -22,3 +22,8 @@
     - name: "plugin_aws_codecommit"
       aws_codecommit: "{{ aws_codecommit }}"
       register: r_aws_codecommit
+
+    - name: "export r_aws_codecommit"
+      set_stats:
+        data:
+          r_aws_codecommit: "{{ r_aws_codecommit }}"

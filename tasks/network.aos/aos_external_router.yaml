@@ -11,3 +11,8 @@
       state: "{{ aos_external_router_state | default(omit, True) }}"
       session: "{{ aos_external_router_session | default(omit, True) }}"
       id: "{{ aos_external_router_id | default(omit, True) }}"
+
+- name: "export r_aos_external_router"
+  set_stats:
+    data:
+      r_aos_external_router: "{{ r_aos_external_router }}"

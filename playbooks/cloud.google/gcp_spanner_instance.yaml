@@ -23,3 +23,8 @@
     - name: "plugin_gcp_spanner_instance"
       gcp_spanner_instance: "{{ gcp_spanner_instance }}"
       register: r_gcp_spanner_instance
+
+    - name: "export r_gcp_spanner_instance"
+      set_stats:
+        data:
+          r_gcp_spanner_instance: "{{ r_gcp_spanner_instance }}"

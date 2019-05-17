@@ -25,3 +25,8 @@
     - name: "plugin_lambda_event"
       lambda_event: "{{ lambda_event }}"
       register: r_lambda_event
+
+    - name: "export r_lambda_event"
+      set_stats:
+        data:
+          r_lambda_event: "{{ r_lambda_event }}"

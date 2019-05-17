@@ -21,3 +21,8 @@
     - name: "plugin_ldap_attr"
       ldap_attr: "{{ ldap_attr }}"
       register: r_ldap_attr
+
+    - name: "export r_ldap_attr"
+      set_stats:
+        data:
+          r_ldap_attr: "{{ r_ldap_attr }}"

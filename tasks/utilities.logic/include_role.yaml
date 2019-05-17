@@ -12,3 +12,8 @@
       handlers_from: "{{ include_role_handlers_from | default(omit, True) }}"
       defaults_from: "{{ include_role_defaults_from | default(omit, True) }}"
       public: "{{ include_role_public | default(omit, True) }}"
+
+- name: "export r_include_role"
+  set_stats:
+    data:
+      r_include_role: "{{ r_include_role }}"

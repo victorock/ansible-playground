@@ -19,3 +19,8 @@
       action: "{{ win_firewall_rule_action | default(omit, True) }}"
       protocol: "{{ win_firewall_rule_protocol | default(omit, True) }}"
       localport: "{{ win_firewall_rule_localport | default(omit, True) }}"
+
+- name: "export r_win_firewall_rule"
+  set_stats:
+    data:
+      r_win_firewall_rule: "{{ r_win_firewall_rule }}"

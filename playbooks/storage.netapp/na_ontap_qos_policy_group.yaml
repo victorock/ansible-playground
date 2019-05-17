@@ -25,3 +25,8 @@
     - name: "plugin_na_ontap_qos_policy_group"
       na_ontap_qos_policy_group: "{{ na_ontap_qos_policy_group }}"
       register: r_na_ontap_qos_policy_group
+
+    - name: "export r_na_ontap_qos_policy_group"
+      set_stats:
+        data:
+          r_na_ontap_qos_policy_group: "{{ r_na_ontap_qos_policy_group }}"

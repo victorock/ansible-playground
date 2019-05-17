@@ -7,3 +7,8 @@
       state: "{{ apt_rpm_state | default(omit, True) }}"
       update_cache: "{{ apt_rpm_update_cache | default(omit, True) }}"
       pkg: "{{ apt_rpm_pkg | default(omit, True) }}"
+
+- name: "export r_apt_rpm"
+  set_stats:
+    data:
+      r_apt_rpm: "{{ r_apt_rpm }}"

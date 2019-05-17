@@ -19,3 +19,8 @@
     - name: "plugin_gcpubsub"
       gcpubsub: "{{ gcpubsub }}"
       register: r_gcpubsub
+
+    - name: "export r_gcpubsub"
+      set_stats:
+        data:
+          r_gcpubsub: "{{ r_gcpubsub }}"

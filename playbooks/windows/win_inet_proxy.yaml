@@ -16,3 +16,8 @@
     - name: "plugin_win_inet_proxy"
       win_inet_proxy: "{{ win_inet_proxy }}"
       register: r_win_inet_proxy
+
+    - name: "export r_win_inet_proxy"
+      set_stats:
+        data:
+          r_win_inet_proxy: "{{ r_win_inet_proxy }}"

@@ -28,3 +28,8 @@
     - name: "plugin_azure_rm_devtestlabenvironment_facts"
       azure_rm_devtestlabenvironment_facts: "{{ azure_rm_devtestlabenvironment_facts }}"
       register: r_azure_rm_devtestlabenvironment_facts
+
+    - name: "export r_azure_rm_devtestlabenvironment_facts"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabenvironment_facts: "{{ r_azure_rm_devtestlabenvironment_facts }}"

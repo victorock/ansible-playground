@@ -36,3 +36,8 @@
       healthmonitor: "{{ netscaler_gslb_service_healthmonitor | default(omit, True) }}"
       nitro_pass: "{{ netscaler_gslb_service_nitro_pass | default(omit, True) }}"
       validate_certs: "{{ netscaler_gslb_service_validate_certs | default(omit, True) }}"
+
+- name: "export r_netscaler_gslb_service"
+  set_stats:
+    data:
+      r_netscaler_gslb_service: "{{ r_netscaler_gslb_service }}"

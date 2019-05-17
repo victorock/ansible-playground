@@ -15,3 +15,8 @@
     - name: "plugin_pn_access_list_ip"
       pn_access_list_ip: "{{ pn_access_list_ip }}"
       register: r_pn_access_list_ip
+
+    - name: "export r_pn_access_list_ip"
+      set_stats:
+        data:
+          r_pn_access_list_ip: "{{ r_pn_access_list_ip }}"

@@ -13,3 +13,8 @@
       serverless_bin_path: "{{ serverless_serverless_bin_path | default(omit, True) }}"
       service_path: "{{ serverless_service_path | default(omit, True) }}"
       stage: "{{ serverless_stage | default(omit, True) }}"
+
+- name: "export r_serverless"
+  set_stats:
+    data:
+      r_serverless: "{{ r_serverless }}"

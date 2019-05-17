@@ -20,3 +20,8 @@
       type: "{{ gcp_compute_interconnect_attachment_type | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_interconnect_attachment_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_interconnect_attachment_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_interconnect_attachment"
+  set_stats:
+    data:
+      r_gcp_compute_interconnect_attachment: "{{ r_gcp_compute_interconnect_attachment }}"

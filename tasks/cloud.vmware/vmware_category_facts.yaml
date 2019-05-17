@@ -9,3 +9,8 @@
       password: "{{ vmware_category_facts_password | default(omit, True) }}"
       validate_certs: "{{ vmware_category_facts_validate_certs | default(omit, True) }}"
       hostname: "{{ vmware_category_facts_hostname | default(omit, True) }}"
+
+- name: "export r_vmware_category_facts"
+  set_stats:
+    data:
+      r_vmware_category_facts: "{{ r_vmware_category_facts }}"

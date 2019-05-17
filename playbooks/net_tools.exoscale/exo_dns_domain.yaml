@@ -18,3 +18,8 @@
     - name: "plugin_exo_dns_domain"
       exo_dns_domain: "{{ exo_dns_domain }}"
       register: r_exo_dns_domain
+
+    - name: "export r_exo_dns_domain"
+      set_stats:
+        data:
+          r_exo_dns_domain: "{{ r_exo_dns_domain }}"

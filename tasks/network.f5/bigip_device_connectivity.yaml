@@ -19,3 +19,8 @@
       password: "{{ bigip_device_connectivity_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_connectivity_validate_certs | default(omit, True) }}"
       multicast_port: "{{ bigip_device_connectivity_multicast_port | default(omit, True) }}"
+
+- name: "export r_bigip_device_connectivity"
+  set_stats:
+    data:
+      r_bigip_device_connectivity: "{{ r_bigip_device_connectivity }}"

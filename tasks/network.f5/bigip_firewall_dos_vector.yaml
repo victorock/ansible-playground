@@ -28,3 +28,8 @@
       detection_threshold_percent: "{{ bigip_firewall_dos_vector_detection_threshold_percent | default(omit, True) }}"
       validate_certs: "{{ bigip_firewall_dos_vector_validate_certs | default(omit, True) }}"
       blacklist_duration: "{{ bigip_firewall_dos_vector_blacklist_duration | default(omit, True) }}"
+
+- name: "export r_bigip_firewall_dos_vector"
+  set_stats:
+    data:
+      r_bigip_firewall_dos_vector: "{{ r_bigip_firewall_dos_vector }}"

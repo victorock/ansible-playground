@@ -10,3 +10,8 @@
       querier: "{{ onyx_igmp_vlan_querier | default(omit, True) }}"
       static_groups: "{{ onyx_igmp_vlan_static_groups | default(omit, True) }}"
       vlan_id: "{{ onyx_igmp_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_onyx_igmp_vlan"
+  set_stats:
+    data:
+      r_onyx_igmp_vlan: "{{ r_onyx_igmp_vlan }}"

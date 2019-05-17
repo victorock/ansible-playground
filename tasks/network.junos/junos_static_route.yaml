@@ -13,3 +13,8 @@
       qualified_preference: "{{ junos_static_route_qualified_preference | default(omit, True) }}"
       address: "{{ junos_static_route_address | default(omit, True) }}"
       aggregate: "{{ junos_static_route_aggregate | default(omit, True) }}"
+
+- name: "export r_junos_static_route"
+  set_stats:
+    data:
+      r_junos_static_route: "{{ r_junos_static_route }}"

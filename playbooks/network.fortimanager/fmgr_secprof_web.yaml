@@ -95,3 +95,8 @@
     - name: "plugin_fmgr_secprof_web"
       fmgr_secprof_web: "{{ fmgr_secprof_web }}"
       register: r_fmgr_secprof_web
+
+    - name: "export r_fmgr_secprof_web"
+      set_stats:
+        data:
+          r_fmgr_secprof_web: "{{ r_fmgr_secprof_web }}"

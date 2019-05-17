@@ -29,3 +29,8 @@
     - name: "plugin_aci_contract"
       aci_contract: "{{ aci_contract }}"
       register: r_aci_contract
+
+    - name: "export r_aci_contract"
+      set_stats:
+        data:
+          r_aci_contract: "{{ r_aci_contract }}"

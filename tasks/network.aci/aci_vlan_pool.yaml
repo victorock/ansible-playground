@@ -19,3 +19,8 @@
       port: "{{ aci_vlan_pool_port | default(omit, True) }}"
       pool: "{{ aci_vlan_pool_pool | default(omit, True) }}"
       use_proxy: "{{ aci_vlan_pool_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_vlan_pool"
+  set_stats:
+    data:
+      r_aci_vlan_pool: "{{ r_aci_vlan_pool }}"

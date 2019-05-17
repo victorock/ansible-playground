@@ -26,3 +26,8 @@
       timeout: "{{ win_chocolatey_timeout | default(omit, True) }}"
       package_params: "{{ win_chocolatey_package_params | default(omit, True) }}"
       validate_certs: "{{ win_chocolatey_validate_certs | default(omit, True) }}"
+
+- name: "export r_win_chocolatey"
+  set_stats:
+    data:
+      r_win_chocolatey: "{{ r_win_chocolatey }}"

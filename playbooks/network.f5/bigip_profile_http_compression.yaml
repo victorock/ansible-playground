@@ -26,3 +26,8 @@
     - name: "plugin_bigip_profile_http_compression"
       bigip_profile_http_compression: "{{ bigip_profile_http_compression }}"
       register: r_bigip_profile_http_compression
+
+    - name: "export r_bigip_profile_http_compression"
+      set_stats:
+        data:
+          r_bigip_profile_http_compression: "{{ r_bigip_profile_http_compression }}"

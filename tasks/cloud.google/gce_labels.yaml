@@ -9,3 +9,8 @@
       labels: "{{ gce_labels_labels | default(omit, True) }}"
       resource_type: "{{ gce_labels_resource_type | default(omit, True) }}"
       resource_location: "{{ gce_labels_resource_location | default(omit, True) }}"
+
+- name: "export r_gce_labels"
+  set_stats:
+    data:
+      r_gce_labels: "{{ r_gce_labels }}"

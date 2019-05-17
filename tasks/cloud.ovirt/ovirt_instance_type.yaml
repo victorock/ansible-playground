@@ -41,3 +41,8 @@
       memory_guaranteed: "{{ ovirt_instance_type_memory_guaranteed | default(omit, True) }}"
       poll_interval: "{{ ovirt_instance_type_poll_interval | default(omit, True) }}"
       timeout: "{{ ovirt_instance_type_timeout | default(omit, True) }}"
+
+- name: "export r_ovirt_instance_type"
+  set_stats:
+    data:
+      r_ovirt_instance_type: "{{ r_ovirt_instance_type }}"

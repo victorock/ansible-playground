@@ -19,3 +19,8 @@
     - name: "plugin_na_elementsw_drive"
       na_elementsw_drive: "{{ na_elementsw_drive }}"
       register: r_na_elementsw_drive
+
+    - name: "export r_na_elementsw_drive"
+      set_stats:
+        data:
+          r_na_elementsw_drive: "{{ r_na_elementsw_drive }}"

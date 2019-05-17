@@ -33,3 +33,8 @@
     - name: "plugin_cs_loadbalancer_rule"
       cs_loadbalancer_rule: "{{ cs_loadbalancer_rule }}"
       register: r_cs_loadbalancer_rule
+
+    - name: "export r_cs_loadbalancer_rule"
+      set_stats:
+        data:
+          r_cs_loadbalancer_rule: "{{ r_cs_loadbalancer_rule }}"

@@ -33,3 +33,8 @@
     - name: "plugin_bigip_profile_server_ssl"
       bigip_profile_server_ssl: "{{ bigip_profile_server_ssl }}"
       register: r_bigip_profile_server_ssl
+
+    - name: "export r_bigip_profile_server_ssl"
+      set_stats:
+        data:
+          r_bigip_profile_server_ssl: "{{ r_bigip_profile_server_ssl }}"

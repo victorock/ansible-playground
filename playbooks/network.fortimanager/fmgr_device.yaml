@@ -19,3 +19,8 @@
     - name: "plugin_fmgr_device"
       fmgr_device: "{{ fmgr_device }}"
       register: r_fmgr_device
+
+    - name: "export r_fmgr_device"
+      set_stats:
+        data:
+          r_fmgr_device: "{{ r_fmgr_device }}"

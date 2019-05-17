@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_urlfilter"
       fortios_webfilter_urlfilter: "{{ fortios_webfilter_urlfilter }}"
       register: r_fortios_webfilter_urlfilter
+
+    - name: "export r_fortios_webfilter_urlfilter"
+      set_stats:
+        data:
+          r_fortios_webfilter_urlfilter: "{{ r_fortios_webfilter_urlfilter }}"

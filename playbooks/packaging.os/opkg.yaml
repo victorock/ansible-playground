@@ -15,3 +15,8 @@
     - name: "plugin_opkg"
       opkg: "{{ opkg }}"
       register: r_opkg
+
+    - name: "export r_opkg"
+      set_stats:
+        data:
+          r_opkg: "{{ r_opkg }}"

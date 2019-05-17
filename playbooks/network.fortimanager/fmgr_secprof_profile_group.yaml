@@ -28,3 +28,8 @@
     - name: "plugin_fmgr_secprof_profile_group"
       fmgr_secprof_profile_group: "{{ fmgr_secprof_profile_group }}"
       register: r_fmgr_secprof_profile_group
+
+    - name: "export r_fmgr_secprof_profile_group"
+      set_stats:
+        data:
+          r_fmgr_secprof_profile_group: "{{ r_fmgr_secprof_profile_group }}"

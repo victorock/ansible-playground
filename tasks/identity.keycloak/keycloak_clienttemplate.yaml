@@ -20,3 +20,8 @@
       auth_username: "{{ keycloak_clienttemplate_auth_username | default(omit, True) }}"
       id: "{{ keycloak_clienttemplate_id | default(omit, True) }}"
       description: "{{ keycloak_clienttemplate_description | default(omit, True) }}"
+
+- name: "export r_keycloak_clienttemplate"
+  set_stats:
+    data:
+      r_keycloak_clienttemplate: "{{ r_keycloak_clienttemplate }}"

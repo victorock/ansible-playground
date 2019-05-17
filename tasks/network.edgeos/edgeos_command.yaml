@@ -9,3 +9,8 @@
       wait_for: "{{ edgeos_command_wait_for | default(omit, True) }}"
       match: "{{ edgeos_command_match | default(omit, True) }}"
       interval: "{{ edgeos_command_interval | default(omit, True) }}"
+
+- name: "export r_edgeos_command"
+  set_stats:
+    data:
+      r_edgeos_command: "{{ r_edgeos_command }}"

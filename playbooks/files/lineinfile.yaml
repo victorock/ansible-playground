@@ -32,3 +32,8 @@
     - name: "plugin_lineinfile"
       lineinfile: "{{ lineinfile }}"
       register: r_lineinfile
+
+    - name: "export r_lineinfile"
+      set_stats:
+        data:
+          r_lineinfile: "{{ r_lineinfile }}"

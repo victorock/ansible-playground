@@ -23,3 +23,8 @@
     - name: "plugin_gcp_compute_ssl_policy"
       gcp_compute_ssl_policy: "{{ gcp_compute_ssl_policy }}"
       register: r_gcp_compute_ssl_policy
+
+    - name: "export r_gcp_compute_ssl_policy"
+      set_stats:
+        data:
+          r_gcp_compute_ssl_policy: "{{ r_gcp_compute_ssl_policy }}"

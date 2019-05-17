@@ -10,3 +10,8 @@
       nitro_pass: "{{ netscaler_save_config_nitro_pass | default(omit, True) }}"
       validate_certs: "{{ netscaler_save_config_validate_certs | default(omit, True) }}"
       nitro_timeout: "{{ netscaler_save_config_nitro_timeout | default(omit, True) }}"
+
+- name: "export r_netscaler_save_config"
+  set_stats:
+    data:
+      r_netscaler_save_config: "{{ r_netscaler_save_config }}"

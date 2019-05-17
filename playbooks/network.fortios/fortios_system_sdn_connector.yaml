@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_sdn_connector"
       fortios_system_sdn_connector: "{{ fortios_system_sdn_connector }}"
       register: r_fortios_system_sdn_connector
+
+    - name: "export r_fortios_system_sdn_connector"
+      set_stats:
+        data:
+          r_fortios_system_sdn_connector: "{{ r_fortios_system_sdn_connector }}"

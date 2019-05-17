@@ -30,3 +30,8 @@
     - name: "plugin_bigip_gtm_pool_member"
       bigip_gtm_pool_member: "{{ bigip_gtm_pool_member }}"
       register: r_bigip_gtm_pool_member
+
+    - name: "export r_bigip_gtm_pool_member"
+      set_stats:
+        data:
+          r_bigip_gtm_pool_member: "{{ r_bigip_gtm_pool_member }}"

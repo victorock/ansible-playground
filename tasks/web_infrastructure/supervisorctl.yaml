@@ -12,3 +12,8 @@
       state: "{{ supervisorctl_state | default(omit, True) }}"
       password: "{{ supervisorctl_password | default(omit, True) }}"
       config: "{{ supervisorctl_config | default(omit, True) }}"
+
+- name: "export r_supervisorctl"
+  set_stats:
+    data:
+      r_supervisorctl: "{{ r_supervisorctl }}"

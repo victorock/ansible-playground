@@ -25,3 +25,8 @@
       validate_certs: "{{ utm_aaa_group_validate_certs | default(omit, True) }}"
       utm_port: "{{ utm_aaa_group_utm_port | default(omit, True) }}"
       name: "{{ utm_aaa_group_name | default(omit, True) }}"
+
+- name: "export r_utm_aaa_group"
+  set_stats:
+    data:
+      r_utm_aaa_group: "{{ r_utm_aaa_group }}"

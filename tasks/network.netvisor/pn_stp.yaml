@@ -17,3 +17,8 @@
       pn_forwarding_delay: "{{ pn_stp_pn_forwarding_delay | default(omit, True) }}"
       pn_max_age: "{{ pn_stp_pn_max_age | default(omit, True) }}"
       pn_cliswitch: "{{ pn_stp_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_stp"
+  set_stats:
+    data:
+      r_pn_stp: "{{ r_pn_stp }}"

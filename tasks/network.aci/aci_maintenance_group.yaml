@@ -18,3 +18,8 @@
       password: "{{ aci_maintenance_group_password | default(omit, True) }}"
       validate_certs: "{{ aci_maintenance_group_validate_certs | default(omit, True) }}"
       port: "{{ aci_maintenance_group_port | default(omit, True) }}"
+
+- name: "export r_aci_maintenance_group"
+  set_stats:
+    data:
+      r_aci_maintenance_group: "{{ r_aci_maintenance_group }}"

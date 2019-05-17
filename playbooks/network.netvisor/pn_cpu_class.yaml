@@ -17,3 +17,8 @@
     - name: "plugin_pn_cpu_class"
       pn_cpu_class: "{{ pn_cpu_class }}"
       register: r_pn_cpu_class
+
+    - name: "export r_pn_cpu_class"
+      set_stats:
+        data:
+          r_pn_cpu_class: "{{ r_pn_cpu_class }}"

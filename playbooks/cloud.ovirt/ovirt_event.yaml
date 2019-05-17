@@ -30,3 +30,8 @@
     - name: "plugin_ovirt_event"
       ovirt_event: "{{ ovirt_event }}"
       register: r_ovirt_event
+
+    - name: "export r_ovirt_event"
+      set_stats:
+        data:
+          r_ovirt_event: "{{ r_ovirt_event }}"

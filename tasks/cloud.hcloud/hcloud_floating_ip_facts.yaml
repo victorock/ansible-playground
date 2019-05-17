@@ -8,3 +8,8 @@
       endpoint: "{{ hcloud_floating_ip_facts_endpoint | default(omit, True) }}"
       id: "{{ hcloud_floating_ip_facts_id | default(omit, True) }}"
       api_token: "{{ hcloud_floating_ip_facts_api_token | default(omit, True) }}"
+
+- name: "export r_hcloud_floating_ip_facts"
+  set_stats:
+    data:
+      r_hcloud_floating_ip_facts: "{{ r_hcloud_floating_ip_facts }}"

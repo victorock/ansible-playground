@@ -17,3 +17,8 @@
     - name: "plugin_nxos_snmp_community"
       nxos_snmp_community: "{{ nxos_snmp_community }}"
       register: r_nxos_snmp_community
+
+    - name: "export r_nxos_snmp_community"
+      set_stats:
+        data:
+          r_nxos_snmp_community: "{{ r_nxos_snmp_community }}"

@@ -30,3 +30,8 @@
     - name: "plugin_dynamodb_table"
       dynamodb_table: "{{ dynamodb_table }}"
       register: r_dynamodb_table
+
+    - name: "export r_dynamodb_table"
+      set_stats:
+        data:
+          r_dynamodb_table: "{{ r_dynamodb_table }}"

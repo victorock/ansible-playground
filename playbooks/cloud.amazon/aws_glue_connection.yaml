@@ -28,3 +28,8 @@
     - name: "plugin_aws_glue_connection"
       aws_glue_connection: "{{ aws_glue_connection }}"
       register: r_aws_glue_connection
+
+    - name: "export r_aws_glue_connection"
+      set_stats:
+        data:
+          r_aws_glue_connection: "{{ r_aws_glue_connection }}"

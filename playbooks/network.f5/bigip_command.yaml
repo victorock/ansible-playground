@@ -25,3 +25,8 @@
     - name: "plugin_bigip_command"
       bigip_command: "{{ bigip_command }}"
       register: r_bigip_command
+
+    - name: "export r_bigip_command"
+      set_stats:
+        data:
+          r_bigip_command: "{{ r_bigip_command }}"

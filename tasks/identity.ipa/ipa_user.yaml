@@ -26,3 +26,8 @@
       ipa_user: "{{ ipa_user_ipa_user | default(omit, True) }}"
       ipa_timeout: "{{ ipa_user_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_user_validate_certs | default(omit, True) }}"
+
+- name: "export r_ipa_user"
+  set_stats:
+    data:
+      r_ipa_user: "{{ r_ipa_user }}"

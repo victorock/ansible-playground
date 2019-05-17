@@ -15,3 +15,8 @@
       id: "{{ cs_role_id | default(omit, True) }}"
       role_type: "{{ cs_role_role_type | default(omit, True) }}"
       name: "{{ cs_role_name | default(omit, True) }}"
+
+- name: "export r_cs_role"
+  set_stats:
+    data:
+      r_cs_role: "{{ r_cs_role }}"

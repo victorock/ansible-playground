@@ -19,3 +19,8 @@
       validate_certs: "{{ cloudwatchevent_rule_validate_certs | default(omit, True) }}"
       targets: "{{ cloudwatchevent_rule_targets | default(omit, True) }}"
       name: "{{ cloudwatchevent_rule_name | default(omit, True) }}"
+
+- name: "export r_cloudwatchevent_rule"
+  set_stats:
+    data:
+      r_cloudwatchevent_rule: "{{ r_cloudwatchevent_rule }}"

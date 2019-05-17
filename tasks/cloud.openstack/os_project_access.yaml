@@ -21,3 +21,8 @@
       client_cert: "{{ os_project_access_client_cert | default(omit, True) }}"
       cloud: "{{ os_project_access_cloud | default(omit, True) }}"
       wait: "{{ os_project_access_wait | default(omit, True) }}"
+
+- name: "export r_os_project_access"
+  set_stats:
+    data:
+      r_os_project_access: "{{ r_os_project_access }}"

@@ -25,3 +25,8 @@
     - name: "plugin_mso_schema_template"
       mso_schema_template: "{{ mso_schema_template }}"
       register: r_mso_schema_template
+
+    - name: "export r_mso_schema_template"
+      set_stats:
+        data:
+          r_mso_schema_template: "{{ r_mso_schema_template }}"

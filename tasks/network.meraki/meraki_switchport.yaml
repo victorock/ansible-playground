@@ -29,3 +29,8 @@
       timeout: "{{ meraki_switchport_timeout | default(omit, True) }}"
       validate_certs: "{{ meraki_switchport_validate_certs | default(omit, True) }}"
       link_negotiation: "{{ meraki_switchport_link_negotiation | default(omit, True) }}"
+
+- name: "export r_meraki_switchport"
+  set_stats:
+    data:
+      r_meraki_switchport: "{{ r_meraki_switchport }}"

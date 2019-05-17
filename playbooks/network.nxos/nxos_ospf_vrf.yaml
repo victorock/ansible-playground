@@ -26,3 +26,8 @@
     - name: "plugin_nxos_ospf_vrf"
       nxos_ospf_vrf: "{{ nxos_ospf_vrf }}"
       register: r_nxos_ospf_vrf
+
+    - name: "export r_nxos_ospf_vrf"
+      set_stats:
+        data:
+          r_nxos_ospf_vrf: "{{ r_nxos_ospf_vrf }}"

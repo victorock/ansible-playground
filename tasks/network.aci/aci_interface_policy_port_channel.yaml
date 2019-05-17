@@ -26,3 +26,8 @@
       timeout: "{{ aci_interface_policy_port_channel_timeout | default(omit, True) }}"
       validate_certs: "{{ aci_interface_policy_port_channel_validate_certs | default(omit, True) }}"
       max_links: "{{ aci_interface_policy_port_channel_max_links | default(omit, True) }}"
+
+- name: "export r_aci_interface_policy_port_channel"
+  set_stats:
+    data:
+      r_aci_interface_policy_port_channel: "{{ r_aci_interface_policy_port_channel }}"

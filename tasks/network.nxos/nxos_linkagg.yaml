@@ -13,3 +13,8 @@
       min_links: "{{ nxos_linkagg_min_links | default(omit, True) }}"
       aggregate: "{{ nxos_linkagg_aggregate | default(omit, True) }}"
       group: "{{ nxos_linkagg_group | default(omit, True) }}"
+
+- name: "export r_nxos_linkagg"
+  set_stats:
+    data:
+      r_nxos_linkagg: "{{ r_nxos_linkagg }}"

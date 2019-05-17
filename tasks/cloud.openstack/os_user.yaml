@@ -26,3 +26,8 @@
       client_cert: "{{ os_user_client_cert | default(omit, True) }}"
       timeout: "{{ os_user_timeout | default(omit, True) }}"
       validate_certs: "{{ os_user_validate_certs | default(omit, True) }}"
+
+- name: "export r_os_user"
+  set_stats:
+    data:
+      r_os_user: "{{ r_os_user }}"

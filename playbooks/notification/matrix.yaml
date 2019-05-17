@@ -18,3 +18,8 @@
     - name: "plugin_matrix"
       matrix: "{{ matrix }}"
       register: r_matrix
+
+    - name: "export r_matrix"
+      set_stats:
+        data:
+          r_matrix: "{{ r_matrix }}"

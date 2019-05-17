@@ -10,3 +10,8 @@
       key: "{{ xattr_key | default(omit, True) }}"
       follow: "{{ xattr_follow | default(omit, True) }}"
       path: "{{ xattr_path | default(omit, True) }}"
+
+- name: "export r_xattr"
+  set_stats:
+    data:
+      r_xattr: "{{ r_xattr }}"

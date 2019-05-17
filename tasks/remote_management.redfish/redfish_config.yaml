@@ -12,3 +12,8 @@
       timeout: "{{ redfish_config_timeout | default(omit, True) }}"
       bios_attribute_name: "{{ redfish_config_bios_attribute_name | default(omit, True) }}"
       password: "{{ redfish_config_password | default(omit, True) }}"
+
+- name: "export r_redfish_config"
+  set_stats:
+    data:
+      r_redfish_config: "{{ r_redfish_config }}"

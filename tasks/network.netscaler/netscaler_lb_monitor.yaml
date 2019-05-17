@@ -109,3 +109,8 @@
       vendorspecificauthapplicationids: "{{ netscaler_lb_monitor_vendorspecificauthapplicationids | default(omit, True) }}"
       snmpversion: "{{ netscaler_lb_monitor_snmpversion | default(omit, True) }}"
       dispatcherip: "{{ netscaler_lb_monitor_dispatcherip | default(omit, True) }}"
+
+- name: "export r_netscaler_lb_monitor"
+  set_stats:
+    data:
+      r_netscaler_lb_monitor: "{{ r_netscaler_lb_monitor }}"

@@ -31,3 +31,8 @@
     - name: "plugin_ucs_vhba_template"
       ucs_vhba_template: "{{ ucs_vhba_template }}"
       register: r_ucs_vhba_template
+
+    - name: "export r_ucs_vhba_template"
+      set_stats:
+        data:
+          r_ucs_vhba_template: "{{ r_ucs_vhba_template }}"

@@ -19,3 +19,8 @@
     - name: "plugin_eos_l3_interface"
       eos_l3_interface: "{{ eos_l3_interface }}"
       register: r_eos_l3_interface
+
+    - name: "export r_eos_l3_interface"
+      set_stats:
+        data:
+          r_eos_l3_interface: "{{ r_eos_l3_interface }}"

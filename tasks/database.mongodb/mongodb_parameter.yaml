@@ -15,3 +15,8 @@
       value: "{{ mongodb_parameter_value | default(omit, True) }}"
       login_password: "{{ mongodb_parameter_login_password | default(omit, True) }}"
       replica_set: "{{ mongodb_parameter_replica_set | default(omit, True) }}"
+
+- name: "export r_mongodb_parameter"
+  set_stats:
+    data:
+      r_mongodb_parameter: "{{ r_mongodb_parameter }}"

@@ -26,3 +26,8 @@
       partition: "{{ bigip_profile_server_ssl_partition | default(omit, True) }}"
       server: "{{ bigip_profile_server_ssl_server | default(omit, True) }}"
       validate_certs: "{{ bigip_profile_server_ssl_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_profile_server_ssl"
+  set_stats:
+    data:
+      r_bigip_profile_server_ssl: "{{ r_bigip_profile_server_ssl }}"

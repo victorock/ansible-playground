@@ -16,3 +16,8 @@
     - name: "plugin_netapp_e_facts"
       netapp_e_facts: "{{ netapp_e_facts }}"
       register: r_netapp_e_facts
+
+    - name: "export r_netapp_e_facts"
+      set_stats:
+        data:
+          r_netapp_e_facts: "{{ r_netapp_e_facts }}"

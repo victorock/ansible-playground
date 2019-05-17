@@ -15,3 +15,8 @@
       pn_cos5_rate: "{{ pn_port_cos_rate_setting_pn_cos5_rate | default(omit, True) }}"
       pn_cliswitch: "{{ pn_port_cos_rate_setting_pn_cliswitch | default(omit, True) }}"
       pn_port: "{{ pn_port_cos_rate_setting_pn_port | default(omit, True) }}"
+
+- name: "export r_pn_port_cos_rate_setting"
+  set_stats:
+    data:
+      r_pn_port_cos_rate_setting: "{{ r_pn_port_cos_rate_setting }}"

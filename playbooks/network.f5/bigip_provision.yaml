@@ -20,3 +20,8 @@
     - name: "plugin_bigip_provision"
       bigip_provision: "{{ bigip_provision }}"
       register: r_bigip_provision
+
+    - name: "export r_bigip_provision"
+      set_stats:
+        data:
+          r_bigip_provision: "{{ r_bigip_provision }}"

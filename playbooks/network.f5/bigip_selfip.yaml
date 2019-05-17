@@ -27,3 +27,8 @@
     - name: "plugin_bigip_selfip"
       bigip_selfip: "{{ bigip_selfip }}"
       register: r_bigip_selfip
+
+    - name: "export r_bigip_selfip"
+      set_stats:
+        data:
+          r_bigip_selfip: "{{ r_bigip_selfip }}"

@@ -10,3 +10,8 @@
       state: "{{ sros_rollback_state | default(omit, True) }}"
       rescue_location: "{{ sros_rollback_rescue_location | default(omit, True) }}"
       provider: "{{ sros_rollback_provider | default(omit, True) }}"
+
+- name: "export r_sros_rollback"
+  set_stats:
+    data:
+      r_sros_rollback: "{{ r_sros_rollback }}"

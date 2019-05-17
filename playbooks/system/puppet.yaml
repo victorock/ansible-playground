@@ -26,3 +26,8 @@
     - name: "plugin_puppet"
       puppet: "{{ puppet }}"
       register: r_puppet
+
+    - name: "export r_puppet"
+      set_stats:
+        data:
+          r_puppet: "{{ r_puppet }}"

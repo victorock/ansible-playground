@@ -28,3 +28,8 @@
     - name: "plugin_os_nova_host_aggregate"
       os_nova_host_aggregate: "{{ os_nova_host_aggregate }}"
       register: r_os_nova_host_aggregate
+
+    - name: "export r_os_nova_host_aggregate"
+      set_stats:
+        data:
+          r_os_nova_host_aggregate: "{{ r_os_nova_host_aggregate }}"

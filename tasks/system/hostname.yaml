@@ -5,3 +5,8 @@
   vars:
     hostname: 
       name: "{{ hostname_name | default(omit, True) }}"
+
+- name: "export r_hostname"
+  set_stats:
+    data:
+      r_hostname: "{{ r_hostname }}"

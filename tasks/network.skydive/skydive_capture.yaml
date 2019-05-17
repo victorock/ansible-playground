@@ -15,3 +15,8 @@
       query: "{{ skydive_capture_query | default(omit, True) }}"
       interface_name: "{{ skydive_capture_interface_name | default(omit, True) }}"
       type: "{{ skydive_capture_type | default(omit, True) }}"
+
+- name: "export r_skydive_capture"
+  set_stats:
+    data:
+      r_skydive_capture: "{{ r_skydive_capture }}"

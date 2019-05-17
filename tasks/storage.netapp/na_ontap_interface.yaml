@@ -25,3 +25,8 @@
       validate_certs: "{{ na_ontap_interface_validate_certs | default(omit, True) }}"
       protocols: "{{ na_ontap_interface_protocols | default(omit, True) }}"
       subnet_name: "{{ na_ontap_interface_subnet_name | default(omit, True) }}"
+
+- name: "export r_na_ontap_interface"
+  set_stats:
+    data:
+      r_na_ontap_interface: "{{ r_na_ontap_interface }}"

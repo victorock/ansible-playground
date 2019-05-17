@@ -16,3 +16,8 @@
     - name: "plugin_nxos_udld"
       nxos_udld: "{{ nxos_udld }}"
       register: r_nxos_udld
+
+    - name: "export r_nxos_udld"
+      set_stats:
+        data:
+          r_nxos_udld: "{{ r_nxos_udld }}"

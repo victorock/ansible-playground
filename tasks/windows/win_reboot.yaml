@@ -11,3 +11,8 @@
       test_command: "{{ win_reboot_test_command | default(omit, True) }}"
       msg: "{{ win_reboot_msg | default(omit, True) }}"
       connect_timeout: "{{ win_reboot_connect_timeout | default(omit, True) }}"
+
+- name: "export r_win_reboot"
+  set_stats:
+    data:
+      r_win_reboot: "{{ r_win_reboot }}"

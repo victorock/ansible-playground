@@ -20,3 +20,8 @@
       validate_certs: "{{ bigip_selfip_validate_certs | default(omit, True) }}"
       provider: "{{ bigip_selfip_provider | default(omit, True) }}"
       name: "{{ bigip_selfip_name | default(omit, True) }}"
+
+- name: "export r_bigip_selfip"
+  set_stats:
+    data:
+      r_bigip_selfip: "{{ r_bigip_selfip }}"

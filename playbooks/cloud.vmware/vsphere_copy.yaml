@@ -20,3 +20,8 @@
     - name: "plugin_vsphere_copy"
       vsphere_copy: "{{ vsphere_copy }}"
       register: r_vsphere_copy
+
+    - name: "export r_vsphere_copy"
+      set_stats:
+        data:
+          r_vsphere_copy: "{{ r_vsphere_copy }}"

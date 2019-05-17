@@ -25,3 +25,8 @@
     - name: "plugin_django_manage"
       django_manage: "{{ django_manage }}"
       register: r_django_manage
+
+    - name: "export r_django_manage"
+      set_stats:
+        data:
+          r_django_manage: "{{ r_django_manage }}"

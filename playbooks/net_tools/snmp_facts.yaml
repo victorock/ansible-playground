@@ -20,3 +20,8 @@
     - name: "plugin_snmp_facts"
       snmp_facts: "{{ snmp_facts }}"
       register: r_snmp_facts
+
+    - name: "export r_snmp_facts"
+      set_stats:
+        data:
+          r_snmp_facts: "{{ r_snmp_facts }}"

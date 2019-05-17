@@ -19,3 +19,8 @@
     - name: "plugin_edgeos_config"
       edgeos_config: "{{ edgeos_config }}"
       register: r_edgeos_config
+
+    - name: "export r_edgeos_config"
+      set_stats:
+        data:
+          r_edgeos_config: "{{ r_edgeos_config }}"

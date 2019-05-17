@@ -33,3 +33,8 @@
     - name: "plugin_vdo"
       vdo: "{{ vdo }}"
       register: r_vdo
+
+    - name: "export r_vdo"
+      set_stats:
+        data:
+          r_vdo: "{{ r_vdo }}"

@@ -28,3 +28,8 @@
       partition: "{{ bigip_vlan_partition | default(omit, True) }}"
       server: "{{ bigip_vlan_server | default(omit, True) }}"
       validate_certs: "{{ bigip_vlan_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_vlan"
+  set_stats:
+    data:
+      r_bigip_vlan: "{{ r_bigip_vlan }}"

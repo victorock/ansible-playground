@@ -8,3 +8,8 @@
       path: "{{ alternatives_path | default(omit, True) }}"
       link: "{{ alternatives_link | default(omit, True) }}"
       name: "{{ alternatives_name | default(omit, True) }}"
+
+- name: "export r_alternatives"
+  set_stats:
+    data:
+      r_alternatives: "{{ r_alternatives }}"

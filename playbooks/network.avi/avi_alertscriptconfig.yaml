@@ -27,3 +27,8 @@
     - name: "plugin_avi_alertscriptconfig"
       avi_alertscriptconfig: "{{ avi_alertscriptconfig }}"
       register: r_avi_alertscriptconfig
+
+    - name: "export r_avi_alertscriptconfig"
+      set_stats:
+        data:
+          r_avi_alertscriptconfig: "{{ r_avi_alertscriptconfig }}"

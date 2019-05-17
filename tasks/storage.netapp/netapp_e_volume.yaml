@@ -28,3 +28,8 @@
       thin_volume_repo_size: "{{ netapp_e_volume_thin_volume_repo_size | default(omit, True) }}"
       metadata: "{{ netapp_e_volume_metadata | default(omit, True) }}"
       validate_certs: "{{ netapp_e_volume_validate_certs | default(omit, True) }}"
+
+- name: "export r_netapp_e_volume"
+  set_stats:
+    data:
+      r_netapp_e_volume: "{{ r_netapp_e_volume }}"

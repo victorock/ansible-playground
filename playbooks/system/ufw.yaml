@@ -29,3 +29,8 @@
     - name: "plugin_ufw"
       ufw: "{{ ufw }}"
       register: r_ufw
+
+    - name: "export r_ufw"
+      set_stats:
+        data:
+          r_ufw: "{{ r_ufw }}"

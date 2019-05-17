@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_central_snat_map"
       fortios_firewall_central_snat_map: "{{ fortios_firewall_central_snat_map }}"
       register: r_fortios_firewall_central_snat_map
+
+    - name: "export r_fortios_firewall_central_snat_map"
+      set_stats:
+        data:
+          r_fortios_firewall_central_snat_map: "{{ r_fortios_firewall_central_snat_map }}"

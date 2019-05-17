@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_profile"
       fortios_webfilter_profile: "{{ fortios_webfilter_profile }}"
       register: r_fortios_webfilter_profile
+
+    - name: "export r_fortios_webfilter_profile"
+      set_stats:
+        data:
+          r_fortios_webfilter_profile: "{{ r_fortios_webfilter_profile }}"

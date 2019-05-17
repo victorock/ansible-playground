@@ -19,3 +19,8 @@
       validate_certs: "{{ aci_firmware_policy_validate_certs | default(omit, True) }}"
       port: "{{ aci_firmware_policy_port | default(omit, True) }}"
       name: "{{ aci_firmware_policy_name | default(omit, True) }}"
+
+- name: "export r_aci_firmware_policy"
+  set_stats:
+    data:
+      r_aci_firmware_policy: "{{ r_aci_firmware_policy }}"

@@ -10,3 +10,8 @@
       state: "{{ purefb_bucket_state | default(omit, True) }}"
       api_token: "{{ purefb_bucket_api_token | default(omit, True) }}"
       eradicate: "{{ purefb_bucket_eradicate | default(omit, True) }}"
+
+- name: "export r_purefb_bucket"
+  set_stats:
+    data:
+      r_purefb_bucket: "{{ r_purefb_bucket }}"

@@ -13,3 +13,8 @@
       provider: "{{ bigip_software_install_provider | default(omit, True) }}"
       password: "{{ bigip_software_install_password | default(omit, True) }}"
       validate_certs: "{{ bigip_software_install_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_software_install"
+  set_stats:
+    data:
+      r_bigip_software_install: "{{ r_bigip_software_install }}"

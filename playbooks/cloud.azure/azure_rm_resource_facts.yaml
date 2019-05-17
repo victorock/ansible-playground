@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_resource_facts"
       azure_rm_resource_facts: "{{ azure_rm_resource_facts }}"
       register: r_azure_rm_resource_facts
+
+    - name: "export r_azure_rm_resource_facts"
+      set_stats:
+        data:
+          r_azure_rm_resource_facts: "{{ r_azure_rm_resource_facts }}"

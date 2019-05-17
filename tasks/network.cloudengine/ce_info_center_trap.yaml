@@ -12,3 +12,8 @@
       trap_buff_enable: "{{ ce_info_center_trap_trap_buff_enable | default(omit, True) }}"
       module_name: "{{ ce_info_center_trap_module_name | default(omit, True) }}"
       trap_enable: "{{ ce_info_center_trap_trap_enable | default(omit, True) }}"
+
+- name: "export r_ce_info_center_trap"
+  set_stats:
+    data:
+      r_ce_info_center_trap: "{{ r_ce_info_center_trap }}"

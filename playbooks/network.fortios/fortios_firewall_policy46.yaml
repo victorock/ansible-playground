@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_policy46"
       fortios_firewall_policy46: "{{ fortios_firewall_policy46 }}"
       register: r_fortios_firewall_policy46
+
+    - name: "export r_fortios_firewall_policy46"
+      set_stats:
+        data:
+          r_fortios_firewall_policy46: "{{ r_fortios_firewall_policy46 }}"

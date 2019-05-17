@@ -44,3 +44,8 @@
     - name: "plugin_azure_rm_servicebusqueue"
       azure_rm_servicebusqueue: "{{ azure_rm_servicebusqueue }}"
       register: r_azure_rm_servicebusqueue
+
+    - name: "export r_azure_rm_servicebusqueue"
+      set_stats:
+        data:
+          r_azure_rm_servicebusqueue: "{{ r_azure_rm_servicebusqueue }}"

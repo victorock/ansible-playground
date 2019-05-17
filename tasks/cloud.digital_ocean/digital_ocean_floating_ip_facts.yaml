@@ -7,3 +7,8 @@
       validate_certs: "{{ digital_ocean_floating_ip_facts_validate_certs | default(omit, True) }}"
       oauth_token: "{{ digital_ocean_floating_ip_facts_oauth_token | default(omit, True) }}"
       timeout: "{{ digital_ocean_floating_ip_facts_timeout | default(omit, True) }}"
+
+- name: "export r_digital_ocean_floating_ip_facts"
+  set_stats:
+    data:
+      r_digital_ocean_floating_ip_facts: "{{ r_digital_ocean_floating_ip_facts }}"

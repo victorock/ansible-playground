@@ -17,3 +17,8 @@
       password: "{{ ucs_lan_connectivity_password | default(omit, True) }}"
       port: "{{ ucs_lan_connectivity_port | default(omit, True) }}"
       name: "{{ ucs_lan_connectivity_name | default(omit, True) }}"
+
+- name: "export r_ucs_lan_connectivity"
+  set_stats:
+    data:
+      r_ucs_lan_connectivity: "{{ r_ucs_lan_connectivity }}"

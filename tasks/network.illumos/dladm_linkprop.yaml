@@ -9,3 +9,8 @@
       property: "{{ dladm_linkprop_property | default(omit, True) }}"
       link: "{{ dladm_linkprop_link | default(omit, True) }}"
       value: "{{ dladm_linkprop_value | default(omit, True) }}"
+
+- name: "export r_dladm_linkprop"
+  set_stats:
+    data:
+      r_dladm_linkprop: "{{ r_dladm_linkprop }}"

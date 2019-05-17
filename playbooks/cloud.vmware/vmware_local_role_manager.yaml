@@ -21,3 +21,8 @@
     - name: "plugin_vmware_local_role_manager"
       vmware_local_role_manager: "{{ vmware_local_role_manager }}"
       register: r_vmware_local_role_manager
+
+    - name: "export r_vmware_local_role_manager"
+      set_stats:
+        data:
+          r_vmware_local_role_manager: "{{ r_vmware_local_role_manager }}"

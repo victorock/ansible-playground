@@ -13,3 +13,8 @@
       autoremove: "{{ pkgng_autoremove | default(omit, True) }}"
       jail: "{{ pkgng_jail | default(omit, True) }}"
       annotation: "{{ pkgng_annotation | default(omit, True) }}"
+
+- name: "export r_pkgng"
+  set_stats:
+    data:
+      r_pkgng: "{{ r_pkgng }}"

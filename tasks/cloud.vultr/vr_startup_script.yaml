@@ -14,3 +14,8 @@
       api_key: "{{ vr_startup_script_api_key | default(omit, True) }}"
       validate_certs: "{{ vr_startup_script_validate_certs | default(omit, True) }}"
       script_type: "{{ vr_startup_script_script_type | default(omit, True) }}"
+
+- name: "export r_vr_startup_script"
+  set_stats:
+    data:
+      r_vr_startup_script: "{{ r_vr_startup_script }}"

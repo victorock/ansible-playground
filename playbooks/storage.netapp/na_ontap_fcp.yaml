@@ -21,3 +21,8 @@
     - name: "plugin_na_ontap_fcp"
       na_ontap_fcp: "{{ na_ontap_fcp }}"
       register: r_na_ontap_fcp
+
+    - name: "export r_na_ontap_fcp"
+      set_stats:
+        data:
+          r_na_ontap_fcp: "{{ r_na_ontap_fcp }}"

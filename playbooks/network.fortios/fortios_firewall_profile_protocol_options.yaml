@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_profile_protocol_options"
       fortios_firewall_profile_protocol_options: "{{ fortios_firewall_profile_protocol_options }}"
       register: r_fortios_firewall_profile_protocol_options
+
+    - name: "export r_fortios_firewall_profile_protocol_options"
+      set_stats:
+        data:
+          r_fortios_firewall_profile_protocol_options: "{{ r_fortios_firewall_profile_protocol_options }}"

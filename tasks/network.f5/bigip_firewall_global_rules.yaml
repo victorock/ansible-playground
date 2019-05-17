@@ -14,3 +14,8 @@
       provider: "{{ bigip_firewall_global_rules_provider | default(omit, True) }}"
       password: "{{ bigip_firewall_global_rules_password | default(omit, True) }}"
       validate_certs: "{{ bigip_firewall_global_rules_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_firewall_global_rules"
+  set_stats:
+    data:
+      r_bigip_firewall_global_rules: "{{ r_bigip_firewall_global_rules }}"

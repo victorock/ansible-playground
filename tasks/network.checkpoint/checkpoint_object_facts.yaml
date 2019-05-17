@@ -8,3 +8,8 @@
       ip_only: "{{ checkpoint_object_facts_ip_only | default(omit, True) }}"
       uid: "{{ checkpoint_object_facts_uid | default(omit, True) }}"
       object_filter: "{{ checkpoint_object_facts_object_filter | default(omit, True) }}"
+
+- name: "export r_checkpoint_object_facts"
+  set_stats:
+    data:
+      r_checkpoint_object_facts: "{{ r_checkpoint_object_facts }}"

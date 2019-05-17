@@ -32,3 +32,8 @@
       validate_certs: "{{ bigip_profile_client_ssl_validate_certs | default(omit, True) }}"
       options: "{{ bigip_profile_client_ssl_options | default(omit, True) }}"
       client_certificate: "{{ bigip_profile_client_ssl_client_certificate | default(omit, True) }}"
+
+- name: "export r_bigip_profile_client_ssl"
+  set_stats:
+    data:
+      r_bigip_profile_client_ssl: "{{ r_bigip_profile_client_ssl }}"

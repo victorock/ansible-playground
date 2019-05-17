@@ -29,3 +29,8 @@
       partition: "{{ bigip_ike_peer_partition | default(omit, True) }}"
       server: "{{ bigip_ike_peer_server | default(omit, True) }}"
       validate_certs: "{{ bigip_ike_peer_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_ike_peer"
+  set_stats:
+    data:
+      r_bigip_ike_peer: "{{ r_bigip_ike_peer }}"

@@ -17,3 +17,8 @@
       nitro_pass: "{{ netscaler_cs_policy_nitro_pass | default(omit, True) }}"
       validate_certs: "{{ netscaler_cs_policy_validate_certs | default(omit, True) }}"
       nitro_timeout: "{{ netscaler_cs_policy_nitro_timeout | default(omit, True) }}"
+
+- name: "export r_netscaler_cs_policy"
+  set_stats:
+    data:
+      r_netscaler_cs_policy: "{{ r_netscaler_cs_policy }}"

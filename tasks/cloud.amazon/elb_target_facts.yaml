@@ -14,3 +14,8 @@
       instance_id: "{{ elb_target_facts_instance_id | default(omit, True) }}"
       ec2_url: "{{ elb_target_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elb_target_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_elb_target_facts"
+  set_stats:
+    data:
+      r_elb_target_facts: "{{ r_elb_target_facts }}"

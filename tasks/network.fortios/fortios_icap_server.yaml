@@ -10,3 +10,8 @@
       https: "{{ fortios_icap_server_https | default(omit, True) }}"
       password: "{{ fortios_icap_server_password | default(omit, True) }}"
       vdom: "{{ fortios_icap_server_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_icap_server"
+  set_stats:
+    data:
+      r_fortios_icap_server: "{{ r_fortios_icap_server }}"

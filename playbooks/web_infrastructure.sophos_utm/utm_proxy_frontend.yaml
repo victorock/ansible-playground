@@ -38,3 +38,8 @@
     - name: "plugin_utm_proxy_frontend"
       utm_proxy_frontend: "{{ utm_proxy_frontend }}"
       register: r_utm_proxy_frontend
+
+    - name: "export r_utm_proxy_frontend"
+      set_stats:
+        data:
+          r_utm_proxy_frontend: "{{ r_utm_proxy_frontend }}"

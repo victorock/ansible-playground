@@ -26,3 +26,8 @@
     - name: "plugin_lxd_container"
       lxd_container: "{{ lxd_container }}"
       register: r_lxd_container
+
+    - name: "export r_lxd_container"
+      set_stats:
+        data:
+          r_lxd_container: "{{ r_lxd_container }}"

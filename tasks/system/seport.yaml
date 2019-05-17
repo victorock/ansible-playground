@@ -10,3 +10,8 @@
       reload: "{{ seport_reload | default(omit, True) }}"
       setype: "{{ seport_setype | default(omit, True) }}"
       ports: "{{ seport_ports | default(omit, True) }}"
+
+- name: "export r_seport"
+  set_stats:
+    data:
+      r_seport: "{{ r_seport }}"

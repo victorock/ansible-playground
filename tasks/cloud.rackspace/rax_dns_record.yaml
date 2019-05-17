@@ -25,3 +25,8 @@
       validate_certs: "{{ rax_dns_record_validate_certs | default(omit, True) }}"
       overwrite: "{{ rax_dns_record_overwrite | default(omit, True) }}"
       auth_endpoint: "{{ rax_dns_record_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_dns_record"
+  set_stats:
+    data:
+      r_rax_dns_record: "{{ r_rax_dns_record }}"

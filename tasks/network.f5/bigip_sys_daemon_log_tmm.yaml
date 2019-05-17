@@ -21,3 +21,8 @@
       net_log_level: "{{ bigip_sys_daemon_log_tmm_net_log_level | default(omit, True) }}"
       irule_log_level: "{{ bigip_sys_daemon_log_tmm_irule_log_level | default(omit, True) }}"
       http_log_level: "{{ bigip_sys_daemon_log_tmm_http_log_level | default(omit, True) }}"
+
+- name: "export r_bigip_sys_daemon_log_tmm"
+  set_stats:
+    data:
+      r_bigip_sys_daemon_log_tmm: "{{ r_bigip_sys_daemon_log_tmm }}"

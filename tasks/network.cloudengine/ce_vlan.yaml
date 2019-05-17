@@ -9,3 +9,8 @@
       name: "{{ ce_vlan_name | default(omit, True) }}"
       vlan_id: "{{ ce_vlan_vlan_id | default(omit, True) }}"
       description: "{{ ce_vlan_description | default(omit, True) }}"
+
+- name: "export r_ce_vlan"
+  set_stats:
+    data:
+      r_ce_vlan: "{{ r_ce_vlan }}"

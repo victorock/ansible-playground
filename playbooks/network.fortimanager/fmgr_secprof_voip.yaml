@@ -119,3 +119,8 @@
     - name: "plugin_fmgr_secprof_voip"
       fmgr_secprof_voip: "{{ fmgr_secprof_voip }}"
       register: r_fmgr_secprof_voip
+
+    - name: "export r_fmgr_secprof_voip"
+      set_stats:
+        data:
+          r_fmgr_secprof_voip: "{{ r_fmgr_secprof_voip }}"

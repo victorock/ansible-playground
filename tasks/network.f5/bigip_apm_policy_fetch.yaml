@@ -16,3 +16,8 @@
       provider: "{{ bigip_apm_policy_fetch_provider | default(omit, True) }}"
       password: "{{ bigip_apm_policy_fetch_password | default(omit, True) }}"
       type: "{{ bigip_apm_policy_fetch_type | default(omit, True) }}"
+
+- name: "export r_bigip_apm_policy_fetch"
+  set_stats:
+    data:
+      r_bigip_apm_policy_fetch: "{{ r_bigip_apm_policy_fetch }}"

@@ -14,3 +14,8 @@
       arguments: "{{ win_shortcut_arguments | default(omit, True) }}"
       directory: "{{ win_shortcut_directory | default(omit, True) }}"
       icon: "{{ win_shortcut_icon | default(omit, True) }}"
+
+- name: "export r_win_shortcut"
+  set_stats:
+    data:
+      r_win_shortcut: "{{ r_win_shortcut }}"

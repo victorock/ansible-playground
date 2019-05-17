@@ -81,3 +81,8 @@
     - name: "plugin_netscaler_cs_vserver"
       netscaler_cs_vserver: "{{ netscaler_cs_vserver }}"
       register: r_netscaler_cs_vserver
+
+    - name: "export r_netscaler_cs_vserver"
+      set_stats:
+        data:
+          r_netscaler_cs_vserver: "{{ r_netscaler_cs_vserver }}"

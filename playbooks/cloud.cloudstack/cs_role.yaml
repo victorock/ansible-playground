@@ -22,3 +22,8 @@
     - name: "plugin_cs_role"
       cs_role: "{{ cs_role }}"
       register: r_cs_role
+
+    - name: "export r_cs_role"
+      set_stats:
+        data:
+          r_cs_role: "{{ r_cs_role }}"

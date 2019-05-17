@@ -11,3 +11,8 @@
       password: "{{ infini_fs_password | default(omit, True) }}"
       pool: "{{ infini_fs_pool | default(omit, True) }}"
       size: "{{ infini_fs_size | default(omit, True) }}"
+
+- name: "export r_infini_fs"
+  set_stats:
+    data:
+      r_infini_fs: "{{ r_infini_fs }}"

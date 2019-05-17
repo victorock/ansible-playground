@@ -19,3 +19,8 @@
       ospf: "{{ nxos_interface_ospf_ospf | default(omit, True) }}"
       provider: "{{ nxos_interface_ospf_provider | default(omit, True) }}"
       message_digest: "{{ nxos_interface_ospf_message_digest | default(omit, True) }}"
+
+- name: "export r_nxos_interface_ospf"
+  set_stats:
+    data:
+      r_nxos_interface_ospf: "{{ r_nxos_interface_ospf }}"

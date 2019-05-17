@@ -17,3 +17,8 @@
     - name: "plugin_vmware_vsan_cluster"
       vmware_vsan_cluster: "{{ vmware_vsan_cluster }}"
       register: r_vmware_vsan_cluster
+
+    - name: "export r_vmware_vsan_cluster"
+      set_stats:
+        data:
+          r_vmware_vsan_cluster: "{{ r_vmware_vsan_cluster }}"

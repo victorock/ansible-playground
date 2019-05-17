@@ -35,3 +35,8 @@
     - name: "plugin_vmware_cluster"
       vmware_cluster: "{{ vmware_cluster }}"
       register: r_vmware_cluster
+
+    - name: "export r_vmware_cluster"
+      set_stats:
+        data:
+          r_vmware_cluster: "{{ r_vmware_cluster }}"

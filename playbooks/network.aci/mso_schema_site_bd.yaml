@@ -26,3 +26,8 @@
     - name: "plugin_mso_schema_site_bd"
       mso_schema_site_bd: "{{ mso_schema_site_bd }}"
       register: r_mso_schema_site_bd
+
+    - name: "export r_mso_schema_site_bd"
+      set_stats:
+        data:
+          r_mso_schema_site_bd: "{{ r_mso_schema_site_bd }}"

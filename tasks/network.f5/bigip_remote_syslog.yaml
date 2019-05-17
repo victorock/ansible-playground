@@ -15,3 +15,8 @@
       provider: "{{ bigip_remote_syslog_provider | default(omit, True) }}"
       password: "{{ bigip_remote_syslog_password | default(omit, True) }}"
       remote_host: "{{ bigip_remote_syslog_remote_host | default(omit, True) }}"
+
+- name: "export r_bigip_remote_syslog"
+  set_stats:
+    data:
+      r_bigip_remote_syslog: "{{ r_bigip_remote_syslog }}"

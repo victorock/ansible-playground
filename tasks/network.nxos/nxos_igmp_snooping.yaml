@@ -11,3 +11,8 @@
       v3_report_supp: "{{ nxos_igmp_snooping_v3_report_supp | default(omit, True) }}"
       state: "{{ nxos_igmp_snooping_state | default(omit, True) }}"
       provider: "{{ nxos_igmp_snooping_provider | default(omit, True) }}"
+
+- name: "export r_nxos_igmp_snooping"
+  set_stats:
+    data:
+      r_nxos_igmp_snooping: "{{ r_nxos_igmp_snooping }}"

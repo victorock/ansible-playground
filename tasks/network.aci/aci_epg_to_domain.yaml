@@ -29,3 +29,8 @@
       timeout: "{{ aci_epg_to_domain_timeout | default(omit, True) }}"
       epg: "{{ aci_epg_to_domain_epg | default(omit, True) }}"
       validate_certs: "{{ aci_epg_to_domain_validate_certs | default(omit, True) }}"
+
+- name: "export r_aci_epg_to_domain"
+  set_stats:
+    data:
+      r_aci_epg_to_domain: "{{ r_aci_epg_to_domain }}"

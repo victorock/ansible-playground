@@ -26,3 +26,8 @@
       esxi_hostname: "{{ vmware_vmkernel_esxi_hostname | default(omit, True) }}"
       enable_replication: "{{ vmware_vmkernel_enable_replication | default(omit, True) }}"
       validate_certs: "{{ vmware_vmkernel_validate_certs | default(omit, True) }}"
+
+- name: "export r_vmware_vmkernel"
+  set_stats:
+    data:
+      r_vmware_vmkernel: "{{ r_vmware_vmkernel }}"

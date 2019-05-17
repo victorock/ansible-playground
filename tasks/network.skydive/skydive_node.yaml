@@ -11,3 +11,8 @@
       seed: "{{ skydive_node_seed | default(omit, True) }}"
       provider: "{{ skydive_node_provider | default(omit, True) }}"
       metadata: "{{ skydive_node_metadata | default(omit, True) }}"
+
+- name: "export r_skydive_node"
+  set_stats:
+    data:
+      r_skydive_node: "{{ r_skydive_node }}"

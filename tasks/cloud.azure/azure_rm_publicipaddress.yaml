@@ -28,3 +28,8 @@
       ip_tags: "{{ azure_rm_publicipaddress_ip_tags | default(omit, True) }}"
       secret: "{{ azure_rm_publicipaddress_secret | default(omit, True) }}"
       auth_source: "{{ azure_rm_publicipaddress_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_publicipaddress"
+  set_stats:
+    data:
+      r_azure_rm_publicipaddress: "{{ r_azure_rm_publicipaddress }}"

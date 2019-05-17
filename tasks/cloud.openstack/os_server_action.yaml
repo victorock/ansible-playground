@@ -20,3 +20,8 @@
       client_cert: "{{ os_server_action_client_cert | default(omit, True) }}"
       cloud: "{{ os_server_action_cloud | default(omit, True) }}"
       client_key: "{{ os_server_action_client_key | default(omit, True) }}"
+
+- name: "export r_os_server_action"
+  set_stats:
+    data:
+      r_os_server_action: "{{ r_os_server_action }}"

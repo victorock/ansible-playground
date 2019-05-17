@@ -22,3 +22,8 @@
     - name: "plugin_aws_config_aggregation_authorization"
       aws_config_aggregation_authorization: "{{ aws_config_aggregation_authorization }}"
       register: r_aws_config_aggregation_authorization
+
+    - name: "export r_aws_config_aggregation_authorization"
+      set_stats:
+        data:
+          r_aws_config_aggregation_authorization: "{{ r_aws_config_aggregation_authorization }}"

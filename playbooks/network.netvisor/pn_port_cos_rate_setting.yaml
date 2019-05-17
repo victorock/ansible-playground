@@ -22,3 +22,8 @@
     - name: "plugin_pn_port_cos_rate_setting"
       pn_port_cos_rate_setting: "{{ pn_port_cos_rate_setting }}"
       register: r_pn_port_cos_rate_setting
+
+    - name: "export r_pn_port_cos_rate_setting"
+      set_stats:
+        data:
+          r_pn_port_cos_rate_setting: "{{ r_pn_port_cos_rate_setting }}"

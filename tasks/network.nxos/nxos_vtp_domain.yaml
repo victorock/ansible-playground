@@ -6,3 +6,8 @@
     nxos_vtp_domain: 
       domain: "{{ nxos_vtp_domain_domain | default(omit, True) }}"
       provider: "{{ nxos_vtp_domain_provider | default(omit, True) }}"
+
+- name: "export r_nxos_vtp_domain"
+  set_stats:
+    data:
+      r_nxos_vtp_domain: "{{ r_nxos_vtp_domain }}"

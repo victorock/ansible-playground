@@ -29,3 +29,8 @@
     - name: "plugin_cs_traffic_type"
       cs_traffic_type: "{{ cs_traffic_type }}"
       register: r_cs_traffic_type
+
+    - name: "export r_cs_traffic_type"
+      set_stats:
+        data:
+          r_cs_traffic_type: "{{ r_cs_traffic_type }}"

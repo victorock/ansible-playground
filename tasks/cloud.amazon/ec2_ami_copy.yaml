@@ -22,3 +22,8 @@
       name: "{{ ec2_ami_copy_name | default(omit, True) }}"
       wait_timeout: "{{ ec2_ami_copy_wait_timeout | default(omit, True) }}"
       wait: "{{ ec2_ami_copy_wait | default(omit, True) }}"
+
+- name: "export r_ec2_ami_copy"
+  set_stats:
+    data:
+      r_ec2_ami_copy: "{{ r_ec2_ami_copy }}"

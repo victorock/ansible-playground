@@ -28,3 +28,8 @@
     - name: "plugin_elb_target"
       elb_target: "{{ elb_target }}"
       register: r_elb_target
+
+    - name: "export r_elb_target"
+      set_stats:
+        data:
+          r_elb_target: "{{ r_elb_target }}"

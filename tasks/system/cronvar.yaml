@@ -12,3 +12,8 @@
       user: "{{ cronvar_user | default(omit, True) }}"
       insertafter: "{{ cronvar_insertafter | default(omit, True) }}"
       backup: "{{ cronvar_backup | default(omit, True) }}"
+
+- name: "export r_cronvar"
+  set_stats:
+    data:
+      r_cronvar: "{{ r_cronvar }}"

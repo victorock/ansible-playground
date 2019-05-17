@@ -73,3 +73,8 @@
       vrf_ref: "{{ avi_pool_vrf_ref | default(omit, True) }}"
       placement_networks: "{{ avi_pool_placement_networks | default(omit, True) }}"
       prst_hdr_name: "{{ avi_pool_prst_hdr_name | default(omit, True) }}"
+
+- name: "export r_avi_pool"
+  set_stats:
+    data:
+      r_avi_pool: "{{ r_avi_pool }}"

@@ -26,3 +26,8 @@
     - name: "plugin_win_rds_cap"
       win_rds_cap: "{{ win_rds_cap }}"
       register: r_win_rds_cap
+
+    - name: "export r_win_rds_cap"
+      set_stats:
+        data:
+          r_win_rds_cap: "{{ r_win_rds_cap }}"

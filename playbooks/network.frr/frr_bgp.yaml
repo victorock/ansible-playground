@@ -13,3 +13,8 @@
     - name: "plugin_frr_bgp"
       frr_bgp: "{{ frr_bgp }}"
       register: r_frr_bgp
+
+    - name: "export r_frr_bgp"
+      set_stats:
+        data:
+          r_frr_bgp: "{{ r_frr_bgp }}"

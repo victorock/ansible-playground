@@ -25,3 +25,8 @@
     - name: "plugin_postgresql_slot"
       postgresql_slot: "{{ postgresql_slot }}"
       register: r_postgresql_slot
+
+    - name: "export r_postgresql_slot"
+      set_stats:
+        data:
+          r_postgresql_slot: "{{ r_postgresql_slot }}"

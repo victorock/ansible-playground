@@ -16,3 +16,8 @@
     - name: "plugin_pn_cpu_mgmt_class"
       pn_cpu_mgmt_class: "{{ pn_cpu_mgmt_class }}"
       register: r_pn_cpu_mgmt_class
+
+    - name: "export r_pn_cpu_mgmt_class"
+      set_stats:
+        data:
+          r_pn_cpu_mgmt_class: "{{ r_pn_cpu_mgmt_class }}"

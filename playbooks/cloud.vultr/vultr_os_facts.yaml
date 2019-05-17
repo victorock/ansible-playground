@@ -17,3 +17,8 @@
     - name: "plugin_vultr_os_facts"
       vultr_os_facts: "{{ vultr_os_facts }}"
       register: r_vultr_os_facts
+
+    - name: "export r_vultr_os_facts"
+      set_stats:
+        data:
+          r_vultr_os_facts: "{{ r_vultr_os_facts }}"

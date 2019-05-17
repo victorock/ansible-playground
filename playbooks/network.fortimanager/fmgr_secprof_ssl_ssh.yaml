@@ -89,3 +89,8 @@
     - name: "plugin_fmgr_secprof_ssl_ssh"
       fmgr_secprof_ssl_ssh: "{{ fmgr_secprof_ssl_ssh }}"
       register: r_fmgr_secprof_ssl_ssh
+
+    - name: "export r_fmgr_secprof_ssl_ssh"
+      set_stats:
+        data:
+          r_fmgr_secprof_ssl_ssh: "{{ r_fmgr_secprof_ssl_ssh }}"

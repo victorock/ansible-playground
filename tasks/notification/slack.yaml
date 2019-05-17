@@ -17,3 +17,8 @@
       msg: "{{ slack_msg | default(omit, True) }}"
       validate_certs: "{{ slack_validate_certs | default(omit, True) }}"
       channel: "{{ slack_channel | default(omit, True) }}"
+
+- name: "export r_slack"
+  set_stats:
+    data:
+      r_slack: "{{ r_slack }}"

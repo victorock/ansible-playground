@@ -26,3 +26,8 @@
       update_processes: "{{ oneandone_monitoring_policy_update_processes | default(omit, True) }}"
       add_processes: "{{ oneandone_monitoring_policy_add_processes | default(omit, True) }}"
       ports: "{{ oneandone_monitoring_policy_ports | default(omit, True) }}"
+
+- name: "export r_oneandone_monitoring_policy"
+  set_stats:
+    data:
+      r_oneandone_monitoring_policy: "{{ r_oneandone_monitoring_policy }}"

@@ -22,3 +22,8 @@
     - name: "plugin_digital_ocean_block_storage"
       digital_ocean_block_storage: "{{ digital_ocean_block_storage }}"
       register: r_digital_ocean_block_storage
+
+    - name: "export r_digital_ocean_block_storage"
+      set_stats:
+        data:
+          r_digital_ocean_block_storage: "{{ r_digital_ocean_block_storage }}"

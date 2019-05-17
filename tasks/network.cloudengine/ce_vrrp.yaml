@@ -24,3 +24,8 @@
       preempt_timer_delay: "{{ ce_vrrp_preempt_timer_delay | default(omit, True) }}"
       admin_vrid: "{{ ce_vrrp_admin_vrid | default(omit, True) }}"
       is_plain: "{{ ce_vrrp_is_plain | default(omit, True) }}"
+
+- name: "export r_ce_vrrp"
+  set_stats:
+    data:
+      r_ce_vrrp: "{{ r_ce_vrrp }}"

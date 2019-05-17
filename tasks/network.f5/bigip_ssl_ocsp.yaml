@@ -30,3 +30,8 @@
       route_domain: "{{ bigip_ssl_ocsp_route_domain | default(omit, True) }}"
       hash_algorithm: "{{ bigip_ssl_ocsp_hash_algorithm | default(omit, True) }}"
       validate_certs: "{{ bigip_ssl_ocsp_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_ssl_ocsp"
+  set_stats:
+    data:
+      r_bigip_ssl_ocsp: "{{ r_bigip_ssl_ocsp }}"

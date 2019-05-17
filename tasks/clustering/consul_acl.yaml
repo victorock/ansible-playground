@@ -14,3 +14,8 @@
       scheme: "{{ consul_acl_scheme | default(omit, True) }}"
       validate_certs: "{{ consul_acl_validate_certs | default(omit, True) }}"
       port: "{{ consul_acl_port | default(omit, True) }}"
+
+- name: "export r_consul_acl"
+  set_stats:
+    data:
+      r_consul_acl: "{{ r_consul_acl }}"

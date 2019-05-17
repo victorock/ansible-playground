@@ -19,3 +19,8 @@
       password: "{{ ucs_uuid_pool_password | default(omit, True) }}"
       port: "{{ ucs_uuid_pool_port | default(omit, True) }}"
       name: "{{ ucs_uuid_pool_name | default(omit, True) }}"
+
+- name: "export r_ucs_uuid_pool"
+  set_stats:
+    data:
+      r_ucs_uuid_pool: "{{ r_ucs_uuid_pool }}"

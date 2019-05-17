@@ -13,3 +13,8 @@
     - name: "plugin_nxos_vtp_version"
       nxos_vtp_version: "{{ nxos_vtp_version }}"
       register: r_nxos_vtp_version
+
+    - name: "export r_nxos_vtp_version"
+      set_stats:
+        data:
+          r_nxos_vtp_version: "{{ r_nxos_vtp_version }}"

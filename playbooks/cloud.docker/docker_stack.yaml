@@ -19,3 +19,8 @@
     - name: "plugin_docker_stack"
       docker_stack: "{{ docker_stack }}"
       register: r_docker_stack
+
+    - name: "export r_docker_stack"
+      set_stats:
+        data:
+          r_docker_stack: "{{ r_docker_stack }}"

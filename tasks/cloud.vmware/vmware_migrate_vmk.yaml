@@ -15,3 +15,8 @@
       password: "{{ vmware_migrate_vmk_password | default(omit, True) }}"
       validate_certs: "{{ vmware_migrate_vmk_validate_certs | default(omit, True) }}"
       port: "{{ vmware_migrate_vmk_port | default(omit, True) }}"
+
+- name: "export r_vmware_migrate_vmk"
+  set_stats:
+    data:
+      r_vmware_migrate_vmk: "{{ r_vmware_migrate_vmk }}"

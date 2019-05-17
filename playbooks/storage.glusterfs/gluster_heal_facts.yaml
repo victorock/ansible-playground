@@ -13,3 +13,8 @@
     - name: "plugin_gluster_heal_facts"
       gluster_heal_facts: "{{ gluster_heal_facts }}"
       register: r_gluster_heal_facts
+
+    - name: "export r_gluster_heal_facts"
+      set_stats:
+        data:
+          r_gluster_heal_facts: "{{ r_gluster_heal_facts }}"

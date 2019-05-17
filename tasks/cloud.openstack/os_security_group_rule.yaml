@@ -27,3 +27,8 @@
       timeout: "{{ os_security_group_rule_timeout | default(omit, True) }}"
       security_group: "{{ os_security_group_rule_security_group | default(omit, True) }}"
       validate_certs: "{{ os_security_group_rule_validate_certs | default(omit, True) }}"
+
+- name: "export r_os_security_group_rule"
+  set_stats:
+    data:
+      r_os_security_group_rule: "{{ r_os_security_group_rule }}"

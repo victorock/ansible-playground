@@ -19,3 +19,8 @@
       port: "{{ mso_tenant_port | default(omit, True) }}"
       tenant: "{{ mso_tenant_tenant | default(omit, True) }}"
       users: "{{ mso_tenant_users | default(omit, True) }}"
+
+- name: "export r_mso_tenant"
+  set_stats:
+    data:
+      r_mso_tenant: "{{ r_mso_tenant }}"

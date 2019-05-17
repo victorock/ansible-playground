@@ -28,3 +28,8 @@
     - name: "plugin_mso_site"
       mso_site: "{{ mso_site }}"
       register: r_mso_site
+
+    - name: "export r_mso_site"
+      set_stats:
+        data:
+          r_mso_site: "{{ r_mso_site }}"

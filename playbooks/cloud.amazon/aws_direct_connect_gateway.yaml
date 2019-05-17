@@ -24,3 +24,8 @@
     - name: "plugin_aws_direct_connect_gateway"
       aws_direct_connect_gateway: "{{ aws_direct_connect_gateway }}"
       register: r_aws_direct_connect_gateway
+
+    - name: "export r_aws_direct_connect_gateway"
+      set_stats:
+        data:
+          r_aws_direct_connect_gateway: "{{ r_aws_direct_connect_gateway }}"

@@ -27,3 +27,8 @@
     - name: "plugin_slxos_config"
       slxos_config: "{{ slxos_config }}"
       register: r_slxos_config
+
+    - name: "export r_slxos_config"
+      set_stats:
+        data:
+          r_slxos_config: "{{ r_slxos_config }}"

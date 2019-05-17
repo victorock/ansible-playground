@@ -13,3 +13,8 @@
     - name: "plugin_ce_reboot"
       ce_reboot: "{{ ce_reboot }}"
       register: r_ce_reboot
+
+    - name: "export r_ce_reboot"
+      set_stats:
+        data:
+          r_ce_reboot: "{{ r_ce_reboot }}"

@@ -17,3 +17,8 @@
     - name: "plugin_purefb_bucket"
       purefb_bucket: "{{ purefb_bucket }}"
       register: r_purefb_bucket
+
+    - name: "export r_purefb_bucket"
+      set_stats:
+        data:
+          r_purefb_bucket: "{{ r_purefb_bucket }}"

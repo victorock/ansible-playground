@@ -20,3 +20,8 @@
     - name: "plugin_bigip_software_update"
       bigip_software_update: "{{ bigip_software_update }}"
       register: r_bigip_software_update
+
+    - name: "export r_bigip_software_update"
+      set_stats:
+        data:
+          r_bigip_software_update: "{{ r_bigip_software_update }}"

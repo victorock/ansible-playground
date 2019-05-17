@@ -19,3 +19,8 @@
     - name: "plugin_utm_aaa_group_info"
       utm_aaa_group_info: "{{ utm_aaa_group_info }}"
       register: r_utm_aaa_group_info
+
+    - name: "export r_utm_aaa_group_info"
+      set_stats:
+        data:
+          r_utm_aaa_group_info: "{{ r_utm_aaa_group_info }}"

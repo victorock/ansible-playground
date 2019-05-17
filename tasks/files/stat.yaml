@@ -11,3 +11,8 @@
       get_md5: "{{ stat_get_md5 | default(omit, True) }}"
       get_mime: "{{ stat_get_mime | default(omit, True) }}"
       get_attributes: "{{ stat_get_attributes | default(omit, True) }}"
+
+- name: "export r_stat"
+  set_stats:
+    data:
+      r_stat: "{{ r_stat }}"

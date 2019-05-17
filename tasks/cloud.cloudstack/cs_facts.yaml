@@ -6,3 +6,8 @@
     cs_facts: 
       filter: "{{ cs_facts_filter | default(omit, True) }}"
       meta_data_host: "{{ cs_facts_meta_data_host | default(omit, True) }}"
+
+- name: "export r_cs_facts"
+  set_stats:
+    data:
+      r_cs_facts: "{{ r_cs_facts }}"

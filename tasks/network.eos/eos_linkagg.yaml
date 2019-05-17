@@ -14,3 +14,8 @@
       members: "{{ eos_linkagg_members | default(omit, True) }}"
       provider: "{{ eos_linkagg_provider | default(omit, True) }}"
       aggregate: "{{ eos_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_eos_linkagg"
+  set_stats:
+    data:
+      r_eos_linkagg: "{{ r_eos_linkagg }}"

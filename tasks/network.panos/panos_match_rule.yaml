@@ -21,3 +21,8 @@
       password: "{{ panos_match_rule_password | default(omit, True) }}"
       ip_address: "{{ panos_match_rule_ip_address | default(omit, True) }}"
       to_interface: "{{ panos_match_rule_to_interface | default(omit, True) }}"
+
+- name: "export r_panos_match_rule"
+  set_stats:
+    data:
+      r_panos_match_rule: "{{ r_panos_match_rule }}"

@@ -6,3 +6,8 @@
     dpkg_selections: 
       selection: "{{ dpkg_selections_selection | default(omit, True) }}"
       name: "{{ dpkg_selections_name | default(omit, True) }}"
+
+- name: "export r_dpkg_selections"
+  set_stats:
+    data:
+      r_dpkg_selections: "{{ r_dpkg_selections }}"

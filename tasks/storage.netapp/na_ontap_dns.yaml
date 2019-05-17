@@ -16,3 +16,8 @@
       ontapi: "{{ na_ontap_dns_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_dns_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_dns_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_dns"
+  set_stats:
+    data:
+      r_na_ontap_dns: "{{ r_na_ontap_dns }}"

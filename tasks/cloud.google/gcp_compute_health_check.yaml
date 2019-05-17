@@ -22,3 +22,8 @@
       type: "{{ gcp_compute_health_check_type | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_health_check_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_health_check_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_health_check"
+  set_stats:
+    data:
+      r_gcp_compute_health_check: "{{ r_gcp_compute_health_check }}"

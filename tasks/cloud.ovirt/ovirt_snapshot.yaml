@@ -20,3 +20,8 @@
       auth: "{{ ovirt_snapshot_auth | default(omit, True) }}"
       disk_name: "{{ ovirt_snapshot_disk_name | default(omit, True) }}"
       wait: "{{ ovirt_snapshot_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_snapshot"
+  set_stats:
+    data:
+      r_ovirt_snapshot: "{{ r_ovirt_snapshot }}"

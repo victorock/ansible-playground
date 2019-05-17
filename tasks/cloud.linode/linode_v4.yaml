@@ -14,3 +14,8 @@
       authorized_keys: "{{ linode_v4_authorized_keys | default(omit, True) }}"
       type: "{{ linode_v4_type | default(omit, True) }}"
       image: "{{ linode_v4_image | default(omit, True) }}"
+
+- name: "export r_linode_v4"
+  set_stats:
+    data:
+      r_linode_v4: "{{ r_linode_v4 }}"

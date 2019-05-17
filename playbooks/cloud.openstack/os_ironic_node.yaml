@@ -33,3 +33,8 @@
     - name: "plugin_os_ironic_node"
       os_ironic_node: "{{ os_ironic_node }}"
       register: r_os_ironic_node
+
+    - name: "export r_os_ironic_node"
+      set_stats:
+        data:
+          r_os_ironic_node: "{{ r_os_ironic_node }}"

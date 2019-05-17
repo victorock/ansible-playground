@@ -26,3 +26,8 @@
       routes: "{{ ec2_vpc_vpn_routes | default(omit, True) }}"
       vpn_gateway_id: "{{ ec2_vpc_vpn_vpn_gateway_id | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_vpn_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_vpn"
+  set_stats:
+    data:
+      r_ec2_vpc_vpn: "{{ r_ec2_vpc_vpn }}"

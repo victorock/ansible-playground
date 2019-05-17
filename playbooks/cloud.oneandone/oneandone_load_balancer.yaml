@@ -33,3 +33,8 @@
     - name: "plugin_oneandone_load_balancer"
       oneandone_load_balancer: "{{ oneandone_load_balancer }}"
       register: r_oneandone_load_balancer
+
+    - name: "export r_oneandone_load_balancer"
+      set_stats:
+        data:
+          r_oneandone_load_balancer: "{{ r_oneandone_load_balancer }}"

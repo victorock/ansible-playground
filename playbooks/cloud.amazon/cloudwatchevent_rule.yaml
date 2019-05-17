@@ -26,3 +26,8 @@
     - name: "plugin_cloudwatchevent_rule"
       cloudwatchevent_rule: "{{ cloudwatchevent_rule }}"
       register: r_cloudwatchevent_rule
+
+    - name: "export r_cloudwatchevent_rule"
+      set_stats:
+        data:
+          r_cloudwatchevent_rule: "{{ r_cloudwatchevent_rule }}"

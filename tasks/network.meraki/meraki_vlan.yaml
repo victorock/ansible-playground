@@ -24,3 +24,8 @@
       net_id: "{{ meraki_vlan_net_id | default(omit, True) }}"
       use_https: "{{ meraki_vlan_use_https | default(omit, True) }}"
       name: "{{ meraki_vlan_name | default(omit, True) }}"
+
+- name: "export r_meraki_vlan"
+  set_stats:
+    data:
+      r_meraki_vlan: "{{ r_meraki_vlan }}"

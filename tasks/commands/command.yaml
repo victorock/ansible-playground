@@ -13,3 +13,8 @@
       warn: "{{ command_warn | default(omit, True) }}"
       free_form: "{{ command_free_form | default(omit, True) }}"
       stdin_add_newline: "{{ command_stdin_add_newline | default(omit, True) }}"
+
+- name: "export r_command"
+  set_stats:
+    data:
+      r_command: "{{ r_command }}"

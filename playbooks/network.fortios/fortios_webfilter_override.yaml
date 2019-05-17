@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_override"
       fortios_webfilter_override: "{{ fortios_webfilter_override }}"
       register: r_fortios_webfilter_override
+
+    - name: "export r_fortios_webfilter_override"
+      set_stats:
+        data:
+          r_fortios_webfilter_override: "{{ r_fortios_webfilter_override }}"

@@ -36,3 +36,8 @@
     - name: "plugin_lambda"
       lambda: "{{ lambda }}"
       register: r_lambda
+
+    - name: "export r_lambda"
+      set_stats:
+        data:
+          r_lambda: "{{ r_lambda }}"

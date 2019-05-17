@@ -18,3 +18,8 @@
     - name: "plugin_acme_account_info"
       acme_account_info: "{{ acme_account_info }}"
       register: r_acme_account_info
+
+    - name: "export r_acme_account_info"
+      set_stats:
+        data:
+          r_acme_account_info: "{{ r_acme_account_info }}"

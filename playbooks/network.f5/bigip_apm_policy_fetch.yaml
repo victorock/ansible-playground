@@ -23,3 +23,8 @@
     - name: "plugin_bigip_apm_policy_fetch"
       bigip_apm_policy_fetch: "{{ bigip_apm_policy_fetch }}"
       register: r_bigip_apm_policy_fetch
+
+    - name: "export r_bigip_apm_policy_fetch"
+      set_stats:
+        data:
+          r_bigip_apm_policy_fetch: "{{ r_bigip_apm_policy_fetch }}"

@@ -19,3 +19,8 @@
       config: "{{ enos_config_config | default(omit, True) }}"
       match: "{{ enos_config_match | default(omit, True) }}"
       before: "{{ enos_config_before | default(omit, True) }}"
+
+- name: "export r_enos_config"
+  set_stats:
+    data:
+      r_enos_config: "{{ r_enos_config }}"

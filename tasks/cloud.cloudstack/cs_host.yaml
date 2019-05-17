@@ -21,3 +21,8 @@
       password: "{{ cs_host_password | default(omit, True) }}"
       allocation_state: "{{ cs_host_allocation_state | default(omit, True) }}"
       name: "{{ cs_host_name | default(omit, True) }}"
+
+- name: "export r_cs_host"
+  set_stats:
+    data:
+      r_cs_host: "{{ r_cs_host }}"

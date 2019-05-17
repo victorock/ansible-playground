@@ -11,3 +11,8 @@
       command: "{{ virt_pool_command | default(omit, True) }}"
       mode: "{{ virt_pool_mode | default(omit, True) }}"
       autostart: "{{ virt_pool_autostart | default(omit, True) }}"
+
+- name: "export r_virt_pool"
+  set_stats:
+    data:
+      r_virt_pool: "{{ r_virt_pool }}"

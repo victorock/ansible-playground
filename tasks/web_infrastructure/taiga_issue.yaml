@@ -16,3 +16,8 @@
       issue_type: "{{ taiga_issue_issue_type | default(omit, True) }}"
       attachment_description: "{{ taiga_issue_attachment_description | default(omit, True) }}"
       subject: "{{ taiga_issue_subject | default(omit, True) }}"
+
+- name: "export r_taiga_issue"
+  set_stats:
+    data:
+      r_taiga_issue: "{{ r_taiga_issue }}"

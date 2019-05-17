@@ -16,3 +16,8 @@
       validate_certs: "{{ vmware_object_role_permission_validate_certs | default(omit, True) }}"
       port: "{{ vmware_object_role_permission_port | default(omit, True) }}"
       principal: "{{ vmware_object_role_permission_principal | default(omit, True) }}"
+
+- name: "export r_vmware_object_role_permission"
+  set_stats:
+    data:
+      r_vmware_object_role_permission: "{{ r_vmware_object_role_permission }}"

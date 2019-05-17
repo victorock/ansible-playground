@@ -39,3 +39,8 @@
     - name: "plugin_azure_rm_servicebustopic"
       azure_rm_servicebustopic: "{{ azure_rm_servicebustopic }}"
       register: r_azure_rm_servicebustopic
+
+    - name: "export r_azure_rm_servicebustopic"
+      set_stats:
+        data:
+          r_azure_rm_servicebustopic: "{{ r_azure_rm_servicebustopic }}"

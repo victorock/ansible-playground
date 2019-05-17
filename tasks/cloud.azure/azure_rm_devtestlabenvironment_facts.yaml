@@ -21,3 +21,8 @@
       password: "{{ azure_rm_devtestlabenvironment_facts_password | default(omit, True) }}"
       user_name: "{{ azure_rm_devtestlabenvironment_facts_user_name | default(omit, True) }}"
       tenant: "{{ azure_rm_devtestlabenvironment_facts_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_devtestlabenvironment_facts"
+  set_stats:
+    data:
+      r_azure_rm_devtestlabenvironment_facts: "{{ r_azure_rm_devtestlabenvironment_facts }}"

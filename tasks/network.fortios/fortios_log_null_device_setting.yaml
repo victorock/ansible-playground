@@ -10,3 +10,8 @@
       log_null_device_setting: "{{ fortios_log_null_device_setting_log_null_device_setting | default(omit, True) }}"
       password: "{{ fortios_log_null_device_setting_password | default(omit, True) }}"
       vdom: "{{ fortios_log_null_device_setting_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_log_null_device_setting"
+  set_stats:
+    data:
+      r_fortios_log_null_device_setting: "{{ r_fortios_log_null_device_setting }}"

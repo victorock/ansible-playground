@@ -31,3 +31,8 @@
       summary: "{{ cloudfront_facts_summary | default(omit, True) }}"
       distribution: "{{ cloudfront_facts_distribution | default(omit, True) }}"
       validate_certs: "{{ cloudfront_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_cloudfront_facts"
+  set_stats:
+    data:
+      r_cloudfront_facts: "{{ r_cloudfront_facts }}"

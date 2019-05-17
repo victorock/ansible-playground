@@ -13,3 +13,8 @@
     - name: "plugin_dpkg_selections"
       dpkg_selections: "{{ dpkg_selections }}"
       register: r_dpkg_selections
+
+    - name: "export r_dpkg_selections"
+      set_stats:
+        data:
+          r_dpkg_selections: "{{ r_dpkg_selections }}"

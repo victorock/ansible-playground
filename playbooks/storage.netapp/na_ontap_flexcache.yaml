@@ -33,3 +33,8 @@
     - name: "plugin_na_ontap_flexcache"
       na_ontap_flexcache: "{{ na_ontap_flexcache }}"
       register: r_na_ontap_flexcache
+
+    - name: "export r_na_ontap_flexcache"
+      set_stats:
+        data:
+          r_na_ontap_flexcache: "{{ r_na_ontap_flexcache }}"

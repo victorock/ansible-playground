@@ -18,3 +18,8 @@
     - name: "plugin_win_domain_membership"
       win_domain_membership: "{{ win_domain_membership }}"
       register: r_win_domain_membership
+
+    - name: "export r_win_domain_membership"
+      set_stats:
+        data:
+          r_win_domain_membership: "{{ r_win_domain_membership }}"

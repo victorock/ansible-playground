@@ -11,3 +11,8 @@
       user: "{{ win_acl_user | default(omit, True) }}"
       path: "{{ win_acl_path | default(omit, True) }}"
       type: "{{ win_acl_type | default(omit, True) }}"
+
+- name: "export r_win_acl"
+  set_stats:
+    data:
+      r_win_acl: "{{ r_win_acl }}"

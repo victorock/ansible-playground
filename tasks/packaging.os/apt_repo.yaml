@@ -8,3 +8,8 @@
       state: "{{ apt_repo_state | default(omit, True) }}"
       remove_others: "{{ apt_repo_remove_others | default(omit, True) }}"
       update: "{{ apt_repo_update | default(omit, True) }}"
+
+- name: "export r_apt_repo"
+  set_stats:
+    data:
+      r_apt_repo: "{{ r_apt_repo }}"

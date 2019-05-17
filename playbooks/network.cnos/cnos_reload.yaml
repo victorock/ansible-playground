@@ -17,3 +17,8 @@
     - name: "plugin_cnos_reload"
       cnos_reload: "{{ cnos_reload }}"
       register: r_cnos_reload
+
+    - name: "export r_cnos_reload"
+      set_stats:
+        data:
+          r_cnos_reload: "{{ r_cnos_reload }}"

@@ -44,3 +44,8 @@
     - name: "plugin_avi_gslbservice"
       avi_gslbservice: "{{ avi_gslbservice }}"
       register: r_avi_gslbservice
+
+    - name: "export r_avi_gslbservice"
+      set_stats:
+        data:
+          r_avi_gslbservice: "{{ r_avi_gslbservice }}"

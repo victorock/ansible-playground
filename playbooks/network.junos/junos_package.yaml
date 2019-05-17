@@ -20,3 +20,8 @@
     - name: "plugin_junos_package"
       junos_package: "{{ junos_package }}"
       register: r_junos_package
+
+    - name: "export r_junos_package"
+      set_stats:
+        data:
+          r_junos_package: "{{ r_junos_package }}"

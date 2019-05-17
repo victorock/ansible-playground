@@ -35,3 +35,8 @@
     - name: "plugin_meraki_device"
       meraki_device: "{{ meraki_device }}"
       register: r_meraki_device
+
+    - name: "export r_meraki_device"
+      set_stats:
+        data:
+          r_meraki_device: "{{ r_meraki_device }}"

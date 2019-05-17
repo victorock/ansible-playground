@@ -19,3 +19,8 @@
     - name: "plugin_enos_command"
       enos_command: "{{ enos_command }}"
       register: r_enos_command
+
+    - name: "export r_enos_command"
+      set_stats:
+        data:
+          r_enos_command: "{{ r_enos_command }}"

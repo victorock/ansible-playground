@@ -26,3 +26,8 @@
     - name: "plugin_sts_assume_role"
       sts_assume_role: "{{ sts_assume_role }}"
       register: r_sts_assume_role
+
+    - name: "export r_sts_assume_role"
+      set_stats:
+        data:
+          r_sts_assume_role: "{{ r_sts_assume_role }}"

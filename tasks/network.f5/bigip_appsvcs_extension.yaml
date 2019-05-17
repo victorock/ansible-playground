@@ -14,3 +14,8 @@
       provider: "{{ bigip_appsvcs_extension_provider | default(omit, True) }}"
       password: "{{ bigip_appsvcs_extension_password | default(omit, True) }}"
       validate_certs: "{{ bigip_appsvcs_extension_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_appsvcs_extension"
+  set_stats:
+    data:
+      r_bigip_appsvcs_extension: "{{ r_bigip_appsvcs_extension }}"

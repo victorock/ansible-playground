@@ -10,3 +10,8 @@
       command: "{{ aix_inittab_command | default(omit, True) }}"
       runlevel: "{{ aix_inittab_runlevel | default(omit, True) }}"
       action: "{{ aix_inittab_action | default(omit, True) }}"
+
+- name: "export r_aix_inittab"
+  set_stats:
+    data:
+      r_aix_inittab: "{{ r_aix_inittab }}"

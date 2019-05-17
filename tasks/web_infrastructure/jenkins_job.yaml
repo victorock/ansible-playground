@@ -12,3 +12,8 @@
       user: "{{ jenkins_job_user | default(omit, True) }}"
       password: "{{ jenkins_job_password | default(omit, True) }}"
       config: "{{ jenkins_job_config | default(omit, True) }}"
+
+- name: "export r_jenkins_job"
+  set_stats:
+    data:
+      r_jenkins_job: "{{ r_jenkins_job }}"

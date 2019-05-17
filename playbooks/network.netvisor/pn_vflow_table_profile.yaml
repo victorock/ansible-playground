@@ -16,3 +16,8 @@
     - name: "plugin_pn_vflow_table_profile"
       pn_vflow_table_profile: "{{ pn_vflow_table_profile }}"
       register: r_pn_vflow_table_profile
+
+    - name: "export r_pn_vflow_table_profile"
+      set_stats:
+        data:
+          r_pn_vflow_table_profile: "{{ r_pn_vflow_table_profile }}"

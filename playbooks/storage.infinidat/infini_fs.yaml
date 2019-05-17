@@ -18,3 +18,8 @@
     - name: "plugin_infini_fs"
       infini_fs: "{{ infini_fs }}"
       register: r_infini_fs
+
+    - name: "export r_infini_fs"
+      set_stats:
+        data:
+          r_infini_fs: "{{ r_infini_fs }}"

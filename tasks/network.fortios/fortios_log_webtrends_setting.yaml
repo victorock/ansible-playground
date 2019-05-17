@@ -10,3 +10,8 @@
       https: "{{ fortios_log_webtrends_setting_https | default(omit, True) }}"
       password: "{{ fortios_log_webtrends_setting_password | default(omit, True) }}"
       vdom: "{{ fortios_log_webtrends_setting_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_log_webtrends_setting"
+  set_stats:
+    data:
+      r_fortios_log_webtrends_setting: "{{ r_fortios_log_webtrends_setting }}"

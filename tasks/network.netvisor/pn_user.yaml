@@ -10,3 +10,8 @@
       state: "{{ pn_user_state | default(omit, True) }}"
       pn_password: "{{ pn_user_pn_password | default(omit, True) }}"
       pn_cliswitch: "{{ pn_user_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_user"
+  set_stats:
+    data:
+      r_pn_user: "{{ r_pn_user }}"

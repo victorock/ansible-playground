@@ -26,3 +26,8 @@
     - name: "plugin_aci_epg_monitoring_policy"
       aci_epg_monitoring_policy: "{{ aci_epg_monitoring_policy }}"
       register: r_aci_epg_monitoring_policy
+
+    - name: "export r_aci_epg_monitoring_policy"
+      set_stats:
+        data:
+          r_aci_epg_monitoring_policy: "{{ r_aci_epg_monitoring_policy }}"

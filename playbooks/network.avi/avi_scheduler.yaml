@@ -35,3 +35,8 @@
     - name: "plugin_avi_scheduler"
       avi_scheduler: "{{ avi_scheduler }}"
       register: r_avi_scheduler
+
+    - name: "export r_avi_scheduler"
+      set_stats:
+        data:
+          r_avi_scheduler: "{{ r_avi_scheduler }}"

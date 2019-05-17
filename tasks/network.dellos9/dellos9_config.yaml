@@ -17,3 +17,8 @@
       backup: "{{ dellos9_config_backup | default(omit, True) }}"
       match: "{{ dellos9_config_match | default(omit, True) }}"
       before: "{{ dellos9_config_before | default(omit, True) }}"
+
+- name: "export r_dellos9_config"
+  set_stats:
+    data:
+      r_dellos9_config: "{{ r_dellos9_config }}"

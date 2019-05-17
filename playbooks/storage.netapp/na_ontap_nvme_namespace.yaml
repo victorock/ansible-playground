@@ -23,3 +23,8 @@
     - name: "plugin_na_ontap_nvme_namespace"
       na_ontap_nvme_namespace: "{{ na_ontap_nvme_namespace }}"
       register: r_na_ontap_nvme_namespace
+
+    - name: "export r_na_ontap_nvme_namespace"
+      set_stats:
+        data:
+          r_na_ontap_nvme_namespace: "{{ r_na_ontap_nvme_namespace }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ipmacbinding_table"
       fortios_firewall_ipmacbinding_table: "{{ fortios_firewall_ipmacbinding_table }}"
       register: r_fortios_firewall_ipmacbinding_table
+
+    - name: "export r_fortios_firewall_ipmacbinding_table"
+      set_stats:
+        data:
+          r_fortios_firewall_ipmacbinding_table: "{{ r_fortios_firewall_ipmacbinding_table }}"

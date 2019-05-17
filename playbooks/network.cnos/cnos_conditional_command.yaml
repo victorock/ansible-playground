@@ -20,3 +20,8 @@
     - name: "plugin_cnos_conditional_command"
       cnos_conditional_command: "{{ cnos_conditional_command }}"
       register: r_cnos_conditional_command
+
+    - name: "export r_cnos_conditional_command"
+      set_stats:
+        data:
+          r_cnos_conditional_command: "{{ r_cnos_conditional_command }}"

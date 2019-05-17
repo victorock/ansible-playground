@@ -21,3 +21,8 @@
     - name: "plugin_fmgr_ha"
       fmgr_ha: "{{ fmgr_ha }}"
       register: r_fmgr_ha
+
+    - name: "export r_fmgr_ha"
+      set_stats:
+        data:
+          r_fmgr_ha: "{{ r_fmgr_ha }}"

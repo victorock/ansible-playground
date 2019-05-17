@@ -17,3 +17,8 @@
       state: "{{ cs_vpn_gateway_state | default(omit, True) }}"
       vpc: "{{ cs_vpn_gateway_vpc | default(omit, True) }}"
       zone: "{{ cs_vpn_gateway_zone | default(omit, True) }}"
+
+- name: "export r_cs_vpn_gateway"
+  set_stats:
+    data:
+      r_cs_vpn_gateway: "{{ r_cs_vpn_gateway }}"

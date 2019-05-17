@@ -12,3 +12,8 @@
     - name: "plugin_voss_facts"
       voss_facts: "{{ voss_facts }}"
       register: r_voss_facts
+
+    - name: "export r_voss_facts"
+      set_stats:
+        data:
+          r_voss_facts: "{{ r_voss_facts }}"

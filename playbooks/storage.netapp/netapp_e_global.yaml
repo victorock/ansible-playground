@@ -18,3 +18,8 @@
     - name: "plugin_netapp_e_global"
       netapp_e_global: "{{ netapp_e_global }}"
       register: r_netapp_e_global
+
+    - name: "export r_netapp_e_global"
+      set_stats:
+        data:
+          r_netapp_e_global: "{{ r_netapp_e_global }}"

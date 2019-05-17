@@ -18,3 +18,8 @@
     - name: "plugin_na_elementsw_snapshot_restore"
       na_elementsw_snapshot_restore: "{{ na_elementsw_snapshot_restore }}"
       register: r_na_elementsw_snapshot_restore
+
+    - name: "export r_na_elementsw_snapshot_restore"
+      set_stats:
+        data:
+          r_na_elementsw_snapshot_restore: "{{ r_na_elementsw_snapshot_restore }}"

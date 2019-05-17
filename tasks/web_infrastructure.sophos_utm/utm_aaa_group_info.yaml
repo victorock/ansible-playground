@@ -12,3 +12,8 @@
       state: "{{ utm_aaa_group_info_state | default(omit, True) }}"
       validate_certs: "{{ utm_aaa_group_info_validate_certs | default(omit, True) }}"
       utm_port: "{{ utm_aaa_group_info_utm_port | default(omit, True) }}"
+
+- name: "export r_utm_aaa_group_info"
+  set_stats:
+    data:
+      r_utm_aaa_group_info: "{{ r_utm_aaa_group_info }}"

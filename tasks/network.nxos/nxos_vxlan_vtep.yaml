@@ -16,3 +16,8 @@
       shutdown: "{{ nxos_vxlan_vtep_shutdown | default(omit, True) }}"
       provider: "{{ nxos_vxlan_vtep_provider | default(omit, True) }}"
       interface: "{{ nxos_vxlan_vtep_interface | default(omit, True) }}"
+
+- name: "export r_nxos_vxlan_vtep"
+  set_stats:
+    data:
+      r_nxos_vxlan_vtep: "{{ r_nxos_vxlan_vtep }}"

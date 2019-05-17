@@ -13,3 +13,8 @@
       limit_item: "{{ pam_limits_limit_item | default(omit, True) }}"
       value: "{{ pam_limits_value | default(omit, True) }}"
       backup: "{{ pam_limits_backup | default(omit, True) }}"
+
+- name: "export r_pam_limits"
+  set_stats:
+    data:
+      r_pam_limits: "{{ r_pam_limits }}"

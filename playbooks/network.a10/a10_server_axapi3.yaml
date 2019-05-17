@@ -30,3 +30,8 @@
     - name: "plugin_a10_server_axapi3"
       a10_server_axapi3: "{{ a10_server_axapi3 }}"
       register: r_a10_server_axapi3
+
+    - name: "export r_a10_server_axapi3"
+      set_stats:
+        data:
+          r_a10_server_axapi3: "{{ r_a10_server_axapi3 }}"

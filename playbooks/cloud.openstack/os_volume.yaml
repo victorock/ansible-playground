@@ -34,3 +34,8 @@
     - name: "plugin_os_volume"
       os_volume: "{{ os_volume }}"
       register: r_os_volume
+
+    - name: "export r_os_volume"
+      set_stats:
+        data:
+          r_os_volume: "{{ r_os_volume }}"

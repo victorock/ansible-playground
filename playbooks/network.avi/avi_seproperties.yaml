@@ -27,3 +27,8 @@
     - name: "plugin_avi_seproperties"
       avi_seproperties: "{{ avi_seproperties }}"
       register: r_avi_seproperties
+
+    - name: "export r_avi_seproperties"
+      set_stats:
+        data:
+          r_avi_seproperties: "{{ r_avi_seproperties }}"

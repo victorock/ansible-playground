@@ -13,3 +13,8 @@
       notify: "{{ hipchat_notify | default(omit, True) }}"
       msg: "{{ hipchat_msg | default(omit, True) }}"
       validate_certs: "{{ hipchat_validate_certs | default(omit, True) }}"
+
+- name: "export r_hipchat"
+  set_stats:
+    data:
+      r_hipchat: "{{ r_hipchat }}"

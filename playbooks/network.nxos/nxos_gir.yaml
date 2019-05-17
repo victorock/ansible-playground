@@ -18,3 +18,8 @@
     - name: "plugin_nxos_gir"
       nxos_gir: "{{ nxos_gir }}"
       register: r_nxos_gir
+
+    - name: "export r_nxos_gir"
+      set_stats:
+        data:
+          r_nxos_gir: "{{ r_nxos_gir }}"

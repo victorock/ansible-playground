@@ -12,3 +12,8 @@
     - name: "plugin_edgeswitch_facts"
       edgeswitch_facts: "{{ edgeswitch_facts }}"
       register: r_edgeswitch_facts
+
+    - name: "export r_edgeswitch_facts"
+      set_stats:
+        data:
+          r_edgeswitch_facts: "{{ r_edgeswitch_facts }}"

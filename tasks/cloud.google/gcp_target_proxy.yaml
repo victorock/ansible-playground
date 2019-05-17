@@ -7,3 +7,8 @@
       target_proxy_type: "{{ gcp_target_proxy_target_proxy_type | default(omit, True) }}"
       target_proxy_name: "{{ gcp_target_proxy_target_proxy_name | default(omit, True) }}"
       url_map_name: "{{ gcp_target_proxy_url_map_name | default(omit, True) }}"
+
+- name: "export r_gcp_target_proxy"
+  set_stats:
+    data:
+      r_gcp_target_proxy: "{{ r_gcp_target_proxy }}"

@@ -34,3 +34,8 @@
       rolling_window: "{{ avi_alertconfig_rolling_window | default(omit, True) }}"
       action_group_ref: "{{ avi_alertconfig_action_group_ref | default(omit, True) }}"
       tenant_uuid: "{{ avi_alertconfig_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_alertconfig"
+  set_stats:
+    data:
+      r_avi_alertconfig: "{{ r_avi_alertconfig }}"

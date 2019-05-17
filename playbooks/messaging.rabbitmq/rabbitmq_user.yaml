@@ -23,3 +23,8 @@
     - name: "plugin_rabbitmq_user"
       rabbitmq_user: "{{ rabbitmq_user }}"
       register: r_rabbitmq_user
+
+    - name: "export r_rabbitmq_user"
+      set_stats:
+        data:
+          r_rabbitmq_user: "{{ r_rabbitmq_user }}"

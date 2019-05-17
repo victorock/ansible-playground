@@ -19,3 +19,8 @@
     - name: "plugin_vmware_dvswitch_pvlans"
       vmware_dvswitch_pvlans: "{{ vmware_dvswitch_pvlans }}"
       register: r_vmware_dvswitch_pvlans
+
+    - name: "export r_vmware_dvswitch_pvlans"
+      set_stats:
+        data:
+          r_vmware_dvswitch_pvlans: "{{ r_vmware_dvswitch_pvlans }}"

@@ -19,3 +19,8 @@
       validate_certs: "{{ aci_aep_validate_certs | default(omit, True) }}"
       port: "{{ aci_aep_port | default(omit, True) }}"
       use_proxy: "{{ aci_aep_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_aep"
+  set_stats:
+    data:
+      r_aci_aep: "{{ r_aci_aep }}"

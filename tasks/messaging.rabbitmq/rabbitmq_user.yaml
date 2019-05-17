@@ -16,3 +16,8 @@
       vhost: "{{ rabbitmq_user_vhost | default(omit, True) }}"
       password: "{{ rabbitmq_user_password | default(omit, True) }}"
       permissions: "{{ rabbitmq_user_permissions | default(omit, True) }}"
+
+- name: "export r_rabbitmq_user"
+  set_stats:
+    data:
+      r_rabbitmq_user: "{{ r_rabbitmq_user }}"

@@ -8,3 +8,8 @@
       state: "{{ ios_lldp_state | default(omit, True) }}"
       auth_pass: "{{ ios_lldp_auth_pass | default(omit, True) }}"
       provider: "{{ ios_lldp_provider | default(omit, True) }}"
+
+- name: "export r_ios_lldp"
+  set_stats:
+    data:
+      r_ios_lldp: "{{ r_ios_lldp }}"

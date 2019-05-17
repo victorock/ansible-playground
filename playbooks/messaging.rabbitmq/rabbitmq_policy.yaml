@@ -19,3 +19,8 @@
     - name: "plugin_rabbitmq_policy"
       rabbitmq_policy: "{{ rabbitmq_policy }}"
       register: r_rabbitmq_policy
+
+    - name: "export r_rabbitmq_policy"
+      set_stats:
+        data:
+          r_rabbitmq_policy: "{{ r_rabbitmq_policy }}"

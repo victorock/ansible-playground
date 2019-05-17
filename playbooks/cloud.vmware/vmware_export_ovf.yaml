@@ -22,3 +22,8 @@
     - name: "plugin_vmware_export_ovf"
       vmware_export_ovf: "{{ vmware_export_ovf }}"
       register: r_vmware_export_ovf
+
+    - name: "export r_vmware_export_ovf"
+      set_stats:
+        data:
+          r_vmware_export_ovf: "{{ r_vmware_export_ovf }}"

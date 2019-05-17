@@ -24,3 +24,8 @@
       password: "{{ na_ontap_snapmirror_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_snapmirror_validate_certs | default(omit, True) }}"
       destination_volume: "{{ na_ontap_snapmirror_destination_volume | default(omit, True) }}"
+
+- name: "export r_na_ontap_snapmirror"
+  set_stats:
+    data:
+      r_na_ontap_snapmirror: "{{ r_na_ontap_snapmirror }}"

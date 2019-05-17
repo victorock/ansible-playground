@@ -10,3 +10,8 @@
       password: "{{ fortios_user_tacacsplus_password | default(omit, True) }}"
       user_tacacsplus: "{{ fortios_user_tacacsplus_user_tacacsplus | default(omit, True) }}"
       vdom: "{{ fortios_user_tacacsplus_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_user_tacacsplus"
+  set_stats:
+    data:
+      r_fortios_user_tacacsplus: "{{ r_fortios_user_tacacsplus }}"

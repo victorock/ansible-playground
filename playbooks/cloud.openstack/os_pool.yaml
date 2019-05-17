@@ -30,3 +30,8 @@
     - name: "plugin_os_pool"
       os_pool: "{{ os_pool }}"
       register: r_os_pool
+
+    - name: "export r_os_pool"
+      set_stats:
+        data:
+          r_os_pool: "{{ r_os_pool }}"

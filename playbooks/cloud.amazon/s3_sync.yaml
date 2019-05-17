@@ -30,3 +30,8 @@
     - name: "plugin_s3_sync"
       s3_sync: "{{ s3_sync }}"
       register: r_s3_sync
+
+    - name: "export r_s3_sync"
+      set_stats:
+        data:
+          r_s3_sync: "{{ r_s3_sync }}"

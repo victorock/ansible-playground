@@ -24,3 +24,8 @@
     - name: "plugin_ce_snmp_target_host"
       ce_snmp_target_host: "{{ ce_snmp_target_host }}"
       register: r_ce_snmp_target_host
+
+    - name: "export r_ce_snmp_target_host"
+      set_stats:
+        data:
+          r_ce_snmp_target_host: "{{ r_ce_snmp_target_host }}"

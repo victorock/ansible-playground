@@ -27,3 +27,8 @@
     - name: "plugin_avi_hardwaresecuritymodulegroup"
       avi_hardwaresecuritymodulegroup: "{{ avi_hardwaresecuritymodulegroup }}"
       register: r_avi_hardwaresecuritymodulegroup
+
+    - name: "export r_avi_hardwaresecuritymodulegroup"
+      set_stats:
+        data:
+          r_avi_hardwaresecuritymodulegroup: "{{ r_avi_hardwaresecuritymodulegroup }}"

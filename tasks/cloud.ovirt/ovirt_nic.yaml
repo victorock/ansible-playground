@@ -19,3 +19,8 @@
       wait: "{{ ovirt_nic_wait | default(omit, True) }}"
       id: "{{ ovirt_nic_id | default(omit, True) }}"
       network: "{{ ovirt_nic_network | default(omit, True) }}"
+
+- name: "export r_ovirt_nic"
+  set_stats:
+    data:
+      r_ovirt_nic: "{{ r_ovirt_nic }}"

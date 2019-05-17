@@ -16,3 +16,8 @@
     - name: "plugin_nios_network_view"
       nios_network_view: "{{ nios_network_view }}"
       register: r_nios_network_view
+
+    - name: "export r_nios_network_view"
+      set_stats:
+        data:
+          r_nios_network_view: "{{ r_nios_network_view }}"

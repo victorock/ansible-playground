@@ -24,3 +24,8 @@
       validate_certs: "{{ mso_schema_template_anp_epg_validate_certs | default(omit, True) }}"
       intra_epg_isolation: "{{ mso_schema_template_anp_epg_intra_epg_isolation | default(omit, True) }}"
       schema: "{{ mso_schema_template_anp_epg_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_template_anp_epg"
+  set_stats:
+    data:
+      r_mso_schema_template_anp_epg: "{{ r_mso_schema_template_anp_epg }}"

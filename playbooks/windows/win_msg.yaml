@@ -15,3 +15,8 @@
     - name: "plugin_win_msg"
       win_msg: "{{ win_msg }}"
       register: r_win_msg
+
+    - name: "export r_win_msg"
+      set_stats:
+        data:
+          r_win_msg: "{{ r_win_msg }}"

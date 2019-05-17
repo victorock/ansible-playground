@@ -23,3 +23,8 @@
     - name: "plugin_netapp_e_host"
       netapp_e_host: "{{ netapp_e_host }}"
       register: r_netapp_e_host
+
+    - name: "export r_netapp_e_host"
+      set_stats:
+        data:
+          r_netapp_e_host: "{{ r_netapp_e_host }}"

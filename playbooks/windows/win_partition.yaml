@@ -22,3 +22,8 @@
     - name: "plugin_win_partition"
       win_partition: "{{ win_partition }}"
       register: r_win_partition
+
+    - name: "export r_win_partition"
+      set_stats:
+        data:
+          r_win_partition: "{{ r_win_partition }}"

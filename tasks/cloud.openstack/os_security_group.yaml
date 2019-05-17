@@ -21,3 +21,8 @@
       client_cert: "{{ os_security_group_client_cert | default(omit, True) }}"
       cloud: "{{ os_security_group_cloud | default(omit, True) }}"
       client_key: "{{ os_security_group_client_key | default(omit, True) }}"
+
+- name: "export r_os_security_group"
+  set_stats:
+    data:
+      r_os_security_group: "{{ r_os_security_group }}"

@@ -14,3 +14,8 @@
     - name: "plugin_ipify_facts"
       ipify_facts: "{{ ipify_facts }}"
       register: r_ipify_facts
+
+    - name: "export r_ipify_facts"
+      set_stats:
+        data:
+          r_ipify_facts: "{{ r_ipify_facts }}"

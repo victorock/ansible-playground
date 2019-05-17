@@ -18,3 +18,8 @@
     - name: "plugin_bigip_device_facts"
       bigip_device_facts: "{{ bigip_device_facts }}"
       register: r_bigip_device_facts
+
+    - name: "export r_bigip_device_facts"
+      set_stats:
+        data:
+          r_bigip_device_facts: "{{ r_bigip_device_facts }}"

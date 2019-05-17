@@ -12,3 +12,8 @@
       password: "{{ vmware_host_config_manager_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_config_manager_validate_certs | default(omit, True) }}"
       options: "{{ vmware_host_config_manager_options | default(omit, True) }}"
+
+- name: "export r_vmware_host_config_manager"
+  set_stats:
+    data:
+      r_vmware_host_config_manager: "{{ r_vmware_host_config_manager }}"

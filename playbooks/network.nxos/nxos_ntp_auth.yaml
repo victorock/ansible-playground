@@ -18,3 +18,8 @@
     - name: "plugin_nxos_ntp_auth"
       nxos_ntp_auth: "{{ nxos_ntp_auth }}"
       register: r_nxos_ntp_auth
+
+    - name: "export r_nxos_ntp_auth"
+      set_stats:
+        data:
+          r_nxos_ntp_auth: "{{ r_nxos_ntp_auth }}"

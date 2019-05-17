@@ -10,3 +10,8 @@
       password: "{{ fortios_firewall_shaper_traffic_shaper_password | default(omit, True) }}"
       firewall_shaper_traffic_shaper: "{{ fortios_firewall_shaper_traffic_shaper_firewall_shaper_traffic_shaper | default(omit, True) }}"
       vdom: "{{ fortios_firewall_shaper_traffic_shaper_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_shaper_traffic_shaper"
+  set_stats:
+    data:
+      r_fortios_firewall_shaper_traffic_shaper: "{{ r_fortios_firewall_shaper_traffic_shaper }}"

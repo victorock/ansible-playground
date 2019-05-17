@@ -17,3 +17,8 @@
       cluster: "{{ cs_configuration_cluster | default(omit, True) }}"
       zone: "{{ cs_configuration_zone | default(omit, True) }}"
       api_url: "{{ cs_configuration_api_url | default(omit, True) }}"
+
+- name: "export r_cs_configuration"
+  set_stats:
+    data:
+      r_cs_configuration: "{{ r_cs_configuration }}"

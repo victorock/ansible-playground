@@ -13,3 +13,8 @@
       server_ids: "{{ clc_modify_server_server_ids | default(omit, True) }}"
       cpu: "{{ clc_modify_server_cpu | default(omit, True) }}"
       wait: "{{ clc_modify_server_wait | default(omit, True) }}"
+
+- name: "export r_clc_modify_server"
+  set_stats:
+    data:
+      r_clc_modify_server: "{{ r_clc_modify_server }}"

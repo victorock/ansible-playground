@@ -24,3 +24,8 @@
     - name: "plugin_bigip_dns_nameserver"
       bigip_dns_nameserver: "{{ bigip_dns_nameserver }}"
       register: r_bigip_dns_nameserver
+
+    - name: "export r_bigip_dns_nameserver"
+      set_stats:
+        data:
+          r_bigip_dns_nameserver: "{{ r_bigip_dns_nameserver }}"

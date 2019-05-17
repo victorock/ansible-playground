@@ -10,3 +10,8 @@
       voip_profile: "{{ fortios_voip_profile_voip_profile | default(omit, True) }}"
       password: "{{ fortios_voip_profile_password | default(omit, True) }}"
       vdom: "{{ fortios_voip_profile_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_voip_profile"
+  set_stats:
+    data:
+      r_fortios_voip_profile: "{{ r_fortios_voip_profile }}"

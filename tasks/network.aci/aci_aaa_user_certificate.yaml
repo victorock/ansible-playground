@@ -19,3 +19,8 @@
       password: "{{ aci_aaa_user_certificate_password | default(omit, True) }}"
       validate_certs: "{{ aci_aaa_user_certificate_validate_certs | default(omit, True) }}"
       port: "{{ aci_aaa_user_certificate_port | default(omit, True) }}"
+
+- name: "export r_aci_aaa_user_certificate"
+  set_stats:
+    data:
+      r_aci_aaa_user_certificate: "{{ r_aci_aaa_user_certificate }}"

@@ -14,3 +14,8 @@
       validate_certs: "{{ vmware_guest_tools_upgrade_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_tools_upgrade_port | default(omit, True) }}"
       name: "{{ vmware_guest_tools_upgrade_name | default(omit, True) }}"
+
+- name: "export r_vmware_guest_tools_upgrade"
+  set_stats:
+    data:
+      r_vmware_guest_tools_upgrade: "{{ r_vmware_guest_tools_upgrade }}"

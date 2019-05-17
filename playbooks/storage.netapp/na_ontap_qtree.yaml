@@ -23,3 +23,8 @@
     - name: "plugin_na_ontap_qtree"
       na_ontap_qtree: "{{ na_ontap_qtree }}"
       register: r_na_ontap_qtree
+
+    - name: "export r_na_ontap_qtree"
+      set_stats:
+        data:
+          r_na_ontap_qtree: "{{ r_na_ontap_qtree }}"

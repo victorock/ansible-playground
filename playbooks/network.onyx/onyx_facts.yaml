@@ -12,3 +12,8 @@
     - name: "plugin_onyx_facts"
       onyx_facts: "{{ onyx_facts }}"
       register: r_onyx_facts
+
+    - name: "export r_onyx_facts"
+      set_stats:
+        data:
+          r_onyx_facts: "{{ r_onyx_facts }}"

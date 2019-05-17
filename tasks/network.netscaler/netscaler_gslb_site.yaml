@@ -24,3 +24,8 @@
       nitro_pass: "{{ netscaler_gslb_site_nitro_pass | default(omit, True) }}"
       validate_certs: "{{ netscaler_gslb_site_validate_certs | default(omit, True) }}"
       nitro_timeout: "{{ netscaler_gslb_site_nitro_timeout | default(omit, True) }}"
+
+- name: "export r_netscaler_gslb_site"
+  set_stats:
+    data:
+      r_netscaler_gslb_site: "{{ r_netscaler_gslb_site }}"

@@ -28,3 +28,8 @@
       kubeconfig: "{{ openshift_raw_kubeconfig | default(omit, True) }}"
       context: "{{ openshift_raw_context | default(omit, True) }}"
       validate_certs: "{{ openshift_raw_validate_certs | default(omit, True) }}"
+
+- name: "export r_openshift_raw"
+  set_stats:
+    data:
+      r_openshift_raw: "{{ r_openshift_raw }}"

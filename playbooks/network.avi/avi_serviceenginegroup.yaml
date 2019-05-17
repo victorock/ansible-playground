@@ -131,3 +131,8 @@
     - name: "plugin_avi_serviceenginegroup"
       avi_serviceenginegroup: "{{ avi_serviceenginegroup }}"
       register: r_avi_serviceenginegroup
+
+    - name: "export r_avi_serviceenginegroup"
+      set_stats:
+        data:
+          r_avi_serviceenginegroup: "{{ r_avi_serviceenginegroup }}"

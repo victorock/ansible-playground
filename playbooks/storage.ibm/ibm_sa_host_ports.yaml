@@ -19,3 +19,8 @@
     - name: "plugin_ibm_sa_host_ports"
       ibm_sa_host_ports: "{{ ibm_sa_host_ports }}"
       register: r_ibm_sa_host_ports
+
+    - name: "export r_ibm_sa_host_ports"
+      set_stats:
+        data:
+          r_ibm_sa_host_ports: "{{ r_ibm_sa_host_ports }}"

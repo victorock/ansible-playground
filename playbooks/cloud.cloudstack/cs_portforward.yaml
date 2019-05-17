@@ -35,3 +35,8 @@
     - name: "plugin_cs_portforward"
       cs_portforward: "{{ cs_portforward }}"
       register: r_cs_portforward
+
+    - name: "export r_cs_portforward"
+      set_stats:
+        data:
+          r_cs_portforward: "{{ r_cs_portforward }}"

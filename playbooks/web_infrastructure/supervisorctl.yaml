@@ -19,3 +19,8 @@
     - name: "plugin_supervisorctl"
       supervisorctl: "{{ supervisorctl }}"
       register: r_supervisorctl
+
+    - name: "export r_supervisorctl"
+      set_stats:
+        data:
+          r_supervisorctl: "{{ r_supervisorctl }}"

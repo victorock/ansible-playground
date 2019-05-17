@@ -10,3 +10,8 @@
       bgp: "{{ onyx_vxlan_bgp | default(omit, True) }}"
       loopback_id: "{{ onyx_vxlan_loopback_id | default(omit, True) }}"
       vni_vlan_list: "{{ onyx_vxlan_vni_vlan_list | default(omit, True) }}"
+
+- name: "export r_onyx_vxlan"
+  set_stats:
+    data:
+      r_onyx_vxlan: "{{ r_onyx_vxlan }}"

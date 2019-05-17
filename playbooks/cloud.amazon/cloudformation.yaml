@@ -40,3 +40,8 @@
     - name: "plugin_cloudformation"
       cloudformation: "{{ cloudformation }}"
       register: r_cloudformation
+
+    - name: "export r_cloudformation"
+      set_stats:
+        data:
+          r_cloudformation: "{{ r_cloudformation }}"

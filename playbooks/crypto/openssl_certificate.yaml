@@ -61,3 +61,8 @@
     - name: "plugin_openssl_certificate"
       openssl_certificate: "{{ openssl_certificate }}"
       register: r_openssl_certificate
+
+    - name: "export r_openssl_certificate"
+      set_stats:
+        data:
+          r_openssl_certificate: "{{ r_openssl_certificate }}"

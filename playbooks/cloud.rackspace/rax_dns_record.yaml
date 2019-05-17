@@ -32,3 +32,8 @@
     - name: "plugin_rax_dns_record"
       rax_dns_record: "{{ rax_dns_record }}"
       register: r_rax_dns_record
+
+    - name: "export r_rax_dns_record"
+      set_stats:
+        data:
+          r_rax_dns_record: "{{ r_rax_dns_record }}"

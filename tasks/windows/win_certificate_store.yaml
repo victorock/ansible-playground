@@ -13,3 +13,8 @@
       thumbprint: "{{ win_certificate_store_thumbprint | default(omit, True) }}"
       path: "{{ win_certificate_store_path | default(omit, True) }}"
       password: "{{ win_certificate_store_password | default(omit, True) }}"
+
+- name: "export r_win_certificate_store"
+  set_stats:
+    data:
+      r_win_certificate_store: "{{ r_win_certificate_store }}"

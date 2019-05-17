@@ -10,3 +10,8 @@
       snapshot_group: "{{ netapp_e_snapshot_images_snapshot_group | default(omit, True) }}"
       api_username: "{{ netapp_e_snapshot_images_api_username | default(omit, True) }}"
       validate_certs: "{{ netapp_e_snapshot_images_validate_certs | default(omit, True) }}"
+
+- name: "export r_netapp_e_snapshot_images"
+  set_stats:
+    data:
+      r_netapp_e_snapshot_images: "{{ r_netapp_e_snapshot_images }}"

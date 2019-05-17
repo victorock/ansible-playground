@@ -20,3 +20,8 @@
     - name: "plugin_bigip_software_image"
       bigip_software_image: "{{ bigip_software_image }}"
       register: r_bigip_software_image
+
+    - name: "export r_bigip_software_image"
+      set_stats:
+        data:
+          r_bigip_software_image: "{{ r_bigip_software_image }}"

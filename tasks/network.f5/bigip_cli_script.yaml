@@ -15,3 +15,8 @@
       password: "{{ bigip_cli_script_password | default(omit, True) }}"
       validate_certs: "{{ bigip_cli_script_validate_certs | default(omit, True) }}"
       name: "{{ bigip_cli_script_name | default(omit, True) }}"
+
+- name: "export r_bigip_cli_script"
+  set_stats:
+    data:
+      r_bigip_cli_script: "{{ r_bigip_cli_script }}"

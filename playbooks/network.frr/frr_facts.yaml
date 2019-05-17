@@ -12,3 +12,8 @@
     - name: "plugin_frr_facts"
       frr_facts: "{{ frr_facts }}"
       register: r_frr_facts
+
+    - name: "export r_frr_facts"
+      set_stats:
+        data:
+          r_frr_facts: "{{ r_frr_facts }}"

@@ -17,3 +17,8 @@
     - name: "plugin_purefb_s3user"
       purefb_s3user: "{{ purefb_s3user }}"
       register: r_purefb_s3user
+
+    - name: "export r_purefb_s3user"
+      set_stats:
+        data:
+          r_purefb_s3user: "{{ r_purefb_s3user }}"

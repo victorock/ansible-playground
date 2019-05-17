@@ -25,3 +25,8 @@
     - name: "plugin_cs_vpc_offering"
       cs_vpc_offering: "{{ cs_vpc_offering }}"
       register: r_cs_vpc_offering
+
+    - name: "export r_cs_vpc_offering"
+      set_stats:
+        data:
+          r_cs_vpc_offering: "{{ r_cs_vpc_offering }}"

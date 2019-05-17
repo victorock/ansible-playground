@@ -20,3 +20,8 @@
       url_username: "{{ win_get_url_url_username | default(omit, True) }}"
       validate_certs: "{{ win_get_url_validate_certs | default(omit, True) }}"
       proxy_username: "{{ win_get_url_proxy_username | default(omit, True) }}"
+
+- name: "export r_win_get_url"
+  set_stats:
+    data:
+      r_win_get_url: "{{ r_win_get_url }}"

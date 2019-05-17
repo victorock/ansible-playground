@@ -12,3 +12,8 @@
       timeout: "{{ digital_ocean_certificate_timeout | default(omit, True) }}"
       leaf_certificate: "{{ digital_ocean_certificate_leaf_certificate | default(omit, True) }}"
       validate_certs: "{{ digital_ocean_certificate_validate_certs | default(omit, True) }}"
+
+- name: "export r_digital_ocean_certificate"
+  set_stats:
+    data:
+      r_digital_ocean_certificate: "{{ r_digital_ocean_certificate }}"

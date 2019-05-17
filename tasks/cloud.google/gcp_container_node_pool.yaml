@@ -19,3 +19,8 @@
       service_account_file: "{{ gcp_container_node_pool_service_account_file | default(omit, True) }}"
       config: "{{ gcp_container_node_pool_config | default(omit, True) }}"
       auth_kind: "{{ gcp_container_node_pool_auth_kind | default(omit, True) }}"
+
+- name: "export r_gcp_container_node_pool"
+  set_stats:
+    data:
+      r_gcp_container_node_pool: "{{ r_gcp_container_node_pool }}"

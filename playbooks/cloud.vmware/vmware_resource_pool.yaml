@@ -28,3 +28,8 @@
     - name: "plugin_vmware_resource_pool"
       vmware_resource_pool: "{{ vmware_resource_pool }}"
       register: r_vmware_resource_pool
+
+    - name: "export r_vmware_resource_pool"
+      set_stats:
+        data:
+          r_vmware_resource_pool: "{{ r_vmware_resource_pool }}"

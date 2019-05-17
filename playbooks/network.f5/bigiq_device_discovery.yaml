@@ -33,3 +33,8 @@
     - name: "plugin_bigiq_device_discovery"
       bigiq_device_discovery: "{{ bigiq_device_discovery }}"
       register: r_bigiq_device_discovery
+
+    - name: "export r_bigiq_device_discovery"
+      set_stats:
+        data:
+          r_bigiq_device_discovery: "{{ r_bigiq_device_discovery }}"

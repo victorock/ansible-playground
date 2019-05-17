@@ -27,3 +27,8 @@
     - name: "plugin_cs_vpn_connection"
       cs_vpn_connection: "{{ cs_vpn_connection }}"
       register: r_cs_vpn_connection
+
+    - name: "export r_cs_vpn_connection"
+      set_stats:
+        data:
+          r_cs_vpn_connection: "{{ r_cs_vpn_connection }}"

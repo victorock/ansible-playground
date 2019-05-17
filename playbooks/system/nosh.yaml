@@ -16,3 +16,8 @@
     - name: "plugin_nosh"
       nosh: "{{ nosh }}"
       register: r_nosh
+
+    - name: "export r_nosh"
+      set_stats:
+        data:
+          r_nosh: "{{ r_nosh }}"

@@ -5,3 +5,8 @@
   vars:
     onyx_facts: 
       gather_subset: "{{ onyx_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_onyx_facts"
+  set_stats:
+    data:
+      r_onyx_facts: "{{ r_onyx_facts }}"

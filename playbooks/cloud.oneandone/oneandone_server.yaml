@@ -35,3 +35,8 @@
     - name: "plugin_oneandone_server"
       oneandone_server: "{{ oneandone_server }}"
       register: r_oneandone_server
+
+    - name: "export r_oneandone_server"
+      set_stats:
+        data:
+          r_oneandone_server: "{{ r_oneandone_server }}"

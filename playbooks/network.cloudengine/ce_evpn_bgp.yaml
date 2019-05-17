@@ -20,3 +20,8 @@
     - name: "plugin_ce_evpn_bgp"
       ce_evpn_bgp: "{{ ce_evpn_bgp }}"
       register: r_ce_evpn_bgp
+
+    - name: "export r_ce_evpn_bgp"
+      set_stats:
+        data:
+          r_ce_evpn_bgp: "{{ r_ce_evpn_bgp }}"

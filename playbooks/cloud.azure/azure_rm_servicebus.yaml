@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_servicebus"
       azure_rm_servicebus: "{{ azure_rm_servicebus }}"
       register: r_azure_rm_servicebus
+
+    - name: "export r_azure_rm_servicebus"
+      set_stats:
+        data:
+          r_azure_rm_servicebus: "{{ r_azure_rm_servicebus }}"

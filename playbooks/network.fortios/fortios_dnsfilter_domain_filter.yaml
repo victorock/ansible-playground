@@ -17,3 +17,8 @@
     - name: "plugin_fortios_dnsfilter_domain_filter"
       fortios_dnsfilter_domain_filter: "{{ fortios_dnsfilter_domain_filter }}"
       register: r_fortios_dnsfilter_domain_filter
+
+    - name: "export r_fortios_dnsfilter_domain_filter"
+      set_stats:
+        data:
+          r_fortios_dnsfilter_domain_filter: "{{ r_fortios_dnsfilter_domain_filter }}"

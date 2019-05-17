@@ -10,3 +10,8 @@
       chassis: "{{ lxca_nodes_chassis | default(omit, True) }}"
       auth_url: "{{ lxca_nodes_auth_url | default(omit, True) }}"
       login_password: "{{ lxca_nodes_login_password | default(omit, True) }}"
+
+- name: "export r_lxca_nodes"
+  set_stats:
+    data:
+      r_lxca_nodes: "{{ r_lxca_nodes }}"

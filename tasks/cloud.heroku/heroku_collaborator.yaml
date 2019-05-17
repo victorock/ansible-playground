@@ -9,3 +9,8 @@
       apps: "{{ heroku_collaborator_apps | default(omit, True) }}"
       user: "{{ heroku_collaborator_user | default(omit, True) }}"
       state: "{{ heroku_collaborator_state | default(omit, True) }}"
+
+- name: "export r_heroku_collaborator"
+  set_stats:
+    data:
+      r_heroku_collaborator: "{{ r_heroku_collaborator }}"

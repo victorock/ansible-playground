@@ -5,3 +5,8 @@
   vars:
     edgeswitch_facts: 
       gather_subset: "{{ edgeswitch_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_edgeswitch_facts"
+  set_stats:
+    data:
+      r_edgeswitch_facts: "{{ r_edgeswitch_facts }}"

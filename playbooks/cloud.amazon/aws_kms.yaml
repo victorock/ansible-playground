@@ -34,3 +34,8 @@
     - name: "plugin_aws_kms"
       aws_kms: "{{ aws_kms }}"
       register: r_aws_kms
+
+    - name: "export r_aws_kms"
+      set_stats:
+        data:
+          r_aws_kms: "{{ r_aws_kms }}"

@@ -20,3 +20,8 @@
       tenant_uuid: "{{ avi_alertscriptconfig_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_alertscriptconfig_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_alertscriptconfig_name | default(omit, True) }}"
+
+- name: "export r_avi_alertscriptconfig"
+  set_stats:
+    data:
+      r_avi_alertscriptconfig: "{{ r_avi_alertscriptconfig }}"

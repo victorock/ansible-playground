@@ -32,3 +32,8 @@
     - name: "plugin_aci_config_rollback"
       aci_config_rollback: "{{ aci_config_rollback }}"
       register: r_aci_config_rollback
+
+    - name: "export r_aci_config_rollback"
+      set_stats:
+        data:
+          r_aci_config_rollback: "{{ r_aci_config_rollback }}"

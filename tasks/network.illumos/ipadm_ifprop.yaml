@@ -10,3 +10,8 @@
       interface: "{{ ipadm_ifprop_interface | default(omit, True) }}"
       protocol: "{{ ipadm_ifprop_protocol | default(omit, True) }}"
       property: "{{ ipadm_ifprop_property | default(omit, True) }}"
+
+- name: "export r_ipadm_ifprop"
+  set_stats:
+    data:
+      r_ipadm_ifprop: "{{ r_ipadm_ifprop }}"

@@ -14,3 +14,8 @@
     - name: "plugin_gcpubsub_facts"
       gcpubsub_facts: "{{ gcpubsub_facts }}"
       register: r_gcpubsub_facts
+
+    - name: "export r_gcpubsub_facts"
+      set_stats:
+        data:
+          r_gcpubsub_facts: "{{ r_gcpubsub_facts }}"

@@ -18,3 +18,8 @@
     - name: "plugin_lvg"
       lvg: "{{ lvg }}"
       register: r_lvg
+
+    - name: "export r_lvg"
+      set_stats:
+        data:
+          r_lvg: "{{ r_lvg }}"

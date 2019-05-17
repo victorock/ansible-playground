@@ -21,3 +21,8 @@
       show_connection_string: "{{ azure_rm_storageaccount_facts_show_connection_string | default(omit, True) }}"
       tenant: "{{ azure_rm_storageaccount_facts_tenant | default(omit, True) }}"
       show_blob_cors: "{{ azure_rm_storageaccount_facts_show_blob_cors | default(omit, True) }}"
+
+- name: "export r_azure_rm_storageaccount_facts"
+  set_stats:
+    data:
+      r_azure_rm_storageaccount_facts: "{{ r_azure_rm_storageaccount_facts }}"

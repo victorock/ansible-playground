@@ -8,3 +8,8 @@
       netconf_vrf: "{{ iosxr_netconf_netconf_vrf | default(omit, True) }}"
       netconf_port: "{{ iosxr_netconf_netconf_port | default(omit, True) }}"
       provider: "{{ iosxr_netconf_provider | default(omit, True) }}"
+
+- name: "export r_iosxr_netconf"
+  set_stats:
+    data:
+      r_iosxr_netconf: "{{ r_iosxr_netconf }}"

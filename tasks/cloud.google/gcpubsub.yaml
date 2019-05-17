@@ -12,3 +12,8 @@
       state: "{{ gcpubsub_state | default(omit, True) }}"
       push_endpoint: "{{ gcpubsub_push_endpoint | default(omit, True) }}"
       subscription: "{{ gcpubsub_subscription | default(omit, True) }}"
+
+- name: "export r_gcpubsub"
+  set_stats:
+    data:
+      r_gcpubsub: "{{ r_gcpubsub }}"

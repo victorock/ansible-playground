@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_devtestlabpolicy"
       azure_rm_devtestlabpolicy: "{{ azure_rm_devtestlabpolicy }}"
       register: r_azure_rm_devtestlabpolicy
+
+    - name: "export r_azure_rm_devtestlabpolicy"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabpolicy: "{{ r_azure_rm_devtestlabpolicy }}"

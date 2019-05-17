@@ -29,3 +29,8 @@
       timeout: "{{ zabbix_action_timeout | default(omit, True) }}"
       acknowledge_default_message: "{{ zabbix_action_acknowledge_default_message | default(omit, True) }}"
       validate_certs: "{{ zabbix_action_validate_certs | default(omit, True) }}"
+
+- name: "export r_zabbix_action"
+  set_stats:
+    data:
+      r_zabbix_action: "{{ r_zabbix_action }}"

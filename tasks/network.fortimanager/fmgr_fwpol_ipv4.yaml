@@ -137,3 +137,8 @@
       app_group: "{{ fmgr_fwpol_ipv4_app_group | default(omit, True) }}"
       profile_protocol_options: "{{ fmgr_fwpol_ipv4_profile_protocol_options | default(omit, True) }}"
       vpntunnel: "{{ fmgr_fwpol_ipv4_vpntunnel | default(omit, True) }}"
+
+- name: "export r_fmgr_fwpol_ipv4"
+  set_stats:
+    data:
+      r_fmgr_fwpol_ipv4: "{{ r_fmgr_fwpol_ipv4 }}"

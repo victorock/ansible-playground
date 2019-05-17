@@ -29,3 +29,8 @@
       epg: "{{ aci_static_binding_to_epg_epg | default(omit, True) }}"
       validate_certs: "{{ aci_static_binding_to_epg_validate_certs | default(omit, True) }}"
       extpaths: "{{ aci_static_binding_to_epg_extpaths | default(omit, True) }}"
+
+- name: "export r_aci_static_binding_to_epg"
+  set_stats:
+    data:
+      r_aci_static_binding_to_epg: "{{ r_aci_static_binding_to_epg }}"

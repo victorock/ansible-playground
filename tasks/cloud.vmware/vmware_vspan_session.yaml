@@ -26,3 +26,8 @@
       switch: "{{ vmware_vspan_session_switch | default(omit, True) }}"
       validate_certs: "{{ vmware_vspan_session_validate_certs | default(omit, True) }}"
       strip_original_vlan: "{{ vmware_vspan_session_strip_original_vlan | default(omit, True) }}"
+
+- name: "export r_vmware_vspan_session"
+  set_stats:
+    data:
+      r_vmware_vspan_session: "{{ r_vmware_vspan_session }}"

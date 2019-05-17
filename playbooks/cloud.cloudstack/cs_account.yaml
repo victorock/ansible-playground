@@ -32,3 +32,8 @@
     - name: "plugin_cs_account"
       cs_account: "{{ cs_account }}"
       register: r_cs_account
+
+    - name: "export r_cs_account"
+      set_stats:
+        data:
+          r_cs_account: "{{ r_cs_account }}"

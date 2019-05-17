@@ -22,3 +22,8 @@
       scope: "{{ azure_rm_roledefinition_scope | default(omit, True) }}"
       tenant: "{{ azure_rm_roledefinition_tenant | default(omit, True) }}"
       permissions: "{{ azure_rm_roledefinition_permissions | default(omit, True) }}"
+
+- name: "export r_azure_rm_roledefinition"
+  set_stats:
+    data:
+      r_azure_rm_roledefinition: "{{ r_azure_rm_roledefinition }}"

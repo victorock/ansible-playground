@@ -17,3 +17,8 @@
     - name: "plugin_fortios_wireless_controller_wtp"
       fortios_wireless_controller_wtp: "{{ fortios_wireless_controller_wtp }}"
       register: r_fortios_wireless_controller_wtp
+
+    - name: "export r_fortios_wireless_controller_wtp"
+      set_stats:
+        data:
+          r_fortios_wireless_controller_wtp: "{{ r_fortios_wireless_controller_wtp }}"

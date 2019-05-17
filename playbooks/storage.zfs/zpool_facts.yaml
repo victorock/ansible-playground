@@ -14,3 +14,8 @@
     - name: "plugin_zpool_facts"
       zpool_facts: "{{ zpool_facts }}"
       register: r_zpool_facts
+
+    - name: "export r_zpool_facts"
+      set_stats:
+        data:
+          r_zpool_facts: "{{ r_zpool_facts }}"

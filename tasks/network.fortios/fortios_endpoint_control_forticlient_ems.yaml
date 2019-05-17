@@ -10,3 +10,8 @@
       https: "{{ fortios_endpoint_control_forticlient_ems_https | default(omit, True) }}"
       password: "{{ fortios_endpoint_control_forticlient_ems_password | default(omit, True) }}"
       vdom: "{{ fortios_endpoint_control_forticlient_ems_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_endpoint_control_forticlient_ems"
+  set_stats:
+    data:
+      r_fortios_endpoint_control_forticlient_ems: "{{ r_fortios_endpoint_control_forticlient_ems }}"

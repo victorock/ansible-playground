@@ -15,3 +15,8 @@
       validate_certs: "{{ scaleway_ip_validate_certs | default(omit, True) }}"
       id: "{{ scaleway_ip_id | default(omit, True) }}"
       api_url: "{{ scaleway_ip_api_url | default(omit, True) }}"
+
+- name: "export r_scaleway_ip"
+  set_stats:
+    data:
+      r_scaleway_ip: "{{ r_scaleway_ip }}"

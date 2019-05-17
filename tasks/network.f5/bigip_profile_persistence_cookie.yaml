@@ -29,3 +29,8 @@
       encryption_passphrase: "{{ bigip_profile_persistence_cookie_encryption_passphrase | default(omit, True) }}"
       validate_certs: "{{ bigip_profile_persistence_cookie_validate_certs | default(omit, True) }}"
       encrypt_cookie_pool_name: "{{ bigip_profile_persistence_cookie_encrypt_cookie_pool_name | default(omit, True) }}"
+
+- name: "export r_bigip_profile_persistence_cookie"
+  set_stats:
+    data:
+      r_bigip_profile_persistence_cookie: "{{ r_bigip_profile_persistence_cookie }}"

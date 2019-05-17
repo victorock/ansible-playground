@@ -43,3 +43,8 @@
       context: "{{ kubevirt_vm_context | default(omit, True) }}"
       validate_certs: "{{ kubevirt_vm_validate_certs | default(omit, True) }}"
       cpu_shares: "{{ kubevirt_vm_cpu_shares | default(omit, True) }}"
+
+- name: "export r_kubevirt_vm"
+  set_stats:
+    data:
+      r_kubevirt_vm: "{{ r_kubevirt_vm }}"

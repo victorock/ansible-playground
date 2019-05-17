@@ -27,3 +27,8 @@
     - name: "plugin_aci_tenant_span_src_group_to_dst_group"
       aci_tenant_span_src_group_to_dst_group: "{{ aci_tenant_span_src_group_to_dst_group }}"
       register: r_aci_tenant_span_src_group_to_dst_group
+
+    - name: "export r_aci_tenant_span_src_group_to_dst_group"
+      set_stats:
+        data:
+          r_aci_tenant_span_src_group_to_dst_group: "{{ r_aci_tenant_span_src_group_to_dst_group }}"

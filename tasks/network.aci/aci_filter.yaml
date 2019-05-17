@@ -19,3 +19,8 @@
       port: "{{ aci_filter_port | default(omit, True) }}"
       tenant: "{{ aci_filter_tenant | default(omit, True) }}"
       use_proxy: "{{ aci_filter_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_filter"
+  set_stats:
+    data:
+      r_aci_filter: "{{ r_aci_filter }}"

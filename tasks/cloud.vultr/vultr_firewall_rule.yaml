@@ -17,3 +17,8 @@
       cidr: "{{ vultr_firewall_rule_cidr | default(omit, True) }}"
       api_key: "{{ vultr_firewall_rule_api_key | default(omit, True) }}"
       validate_certs: "{{ vultr_firewall_rule_validate_certs | default(omit, True) }}"
+
+- name: "export r_vultr_firewall_rule"
+  set_stats:
+    data:
+      r_vultr_firewall_rule: "{{ r_vultr_firewall_rule }}"

@@ -19,3 +19,8 @@
     - name: "plugin_bitbucket_pipeline_variable"
       bitbucket_pipeline_variable: "{{ bitbucket_pipeline_variable }}"
       register: r_bitbucket_pipeline_variable
+
+    - name: "export r_bitbucket_pipeline_variable"
+      set_stats:
+        data:
+          r_bitbucket_pipeline_variable: "{{ r_bitbucket_pipeline_variable }}"

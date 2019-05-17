@@ -19,3 +19,8 @@
     - name: "plugin_ali_instance_facts"
       ali_instance_facts: "{{ ali_instance_facts }}"
       register: r_ali_instance_facts
+
+    - name: "export r_ali_instance_facts"
+      set_stats:
+        data:
+          r_ali_instance_facts: "{{ r_ali_instance_facts }}"

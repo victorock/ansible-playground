@@ -21,3 +21,8 @@
     - name: "plugin_bigip_appsvcs_extension"
       bigip_appsvcs_extension: "{{ bigip_appsvcs_extension }}"
       register: r_bigip_appsvcs_extension
+
+    - name: "export r_bigip_appsvcs_extension"
+      set_stats:
+        data:
+          r_bigip_appsvcs_extension: "{{ r_bigip_appsvcs_extension }}"

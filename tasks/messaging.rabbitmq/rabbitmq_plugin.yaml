@@ -8,3 +8,8 @@
       names: "{{ rabbitmq_plugin_names | default(omit, True) }}"
       prefix: "{{ rabbitmq_plugin_prefix | default(omit, True) }}"
       new_only: "{{ rabbitmq_plugin_new_only | default(omit, True) }}"
+
+- name: "export r_rabbitmq_plugin"
+  set_stats:
+    data:
+      r_rabbitmq_plugin: "{{ r_rabbitmq_plugin }}"

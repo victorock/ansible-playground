@@ -9,3 +9,8 @@
       name: "{{ runit_name | default(omit, True) }}"
       service_src: "{{ runit_service_src | default(omit, True) }}"
       service_dir: "{{ runit_service_dir | default(omit, True) }}"
+
+- name: "export r_runit"
+  set_stats:
+    data:
+      r_runit: "{{ r_runit }}"

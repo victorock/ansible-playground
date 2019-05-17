@@ -32,3 +32,8 @@
     - name: "plugin_ipa_sudorule"
       ipa_sudorule: "{{ ipa_sudorule }}"
       register: r_ipa_sudorule
+
+    - name: "export r_ipa_sudorule"
+      set_stats:
+        data:
+          r_ipa_sudorule: "{{ r_ipa_sudorule }}"

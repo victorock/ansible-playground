@@ -18,3 +18,8 @@
     - name: "plugin_win_regedit"
       win_regedit: "{{ win_regedit }}"
       register: r_win_regedit
+
+    - name: "export r_win_regedit"
+      set_stats:
+        data:
+          r_win_regedit: "{{ r_win_regedit }}"

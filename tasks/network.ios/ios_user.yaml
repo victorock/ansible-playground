@@ -19,3 +19,8 @@
       password_type: "{{ ios_user_password_type | default(omit, True) }}"
       privilege: "{{ ios_user_privilege | default(omit, True) }}"
       name: "{{ ios_user_name | default(omit, True) }}"
+
+- name: "export r_ios_user"
+  set_stats:
+    data:
+      r_ios_user: "{{ r_ios_user }}"

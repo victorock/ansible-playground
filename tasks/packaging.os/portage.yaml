@@ -25,3 +25,8 @@
       noreplace: "{{ portage_noreplace | default(omit, True) }}"
       quietfail: "{{ portage_quietfail | default(omit, True) }}"
       verbose: "{{ portage_verbose | default(omit, True) }}"
+
+- name: "export r_portage"
+  set_stats:
+    data:
+      r_portage: "{{ r_portage }}"

@@ -26,3 +26,8 @@
     - name: "plugin_mso_schema_template_externalepg"
       mso_schema_template_externalepg: "{{ mso_schema_template_externalepg }}"
       register: r_mso_schema_template_externalepg
+
+    - name: "export r_mso_schema_template_externalepg"
+      set_stats:
+        data:
+          r_mso_schema_template_externalepg: "{{ r_mso_schema_template_externalepg }}"

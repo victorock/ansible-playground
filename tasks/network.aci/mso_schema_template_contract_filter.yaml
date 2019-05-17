@@ -25,3 +25,8 @@
       validate_certs: "{{ mso_schema_template_contract_filter_validate_certs | default(omit, True) }}"
       port: "{{ mso_schema_template_contract_filter_port | default(omit, True) }}"
       filter_schema: "{{ mso_schema_template_contract_filter_filter_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_template_contract_filter"
+  set_stats:
+    data:
+      r_mso_schema_template_contract_filter: "{{ r_mso_schema_template_contract_filter }}"

@@ -30,3 +30,8 @@
       disks_gce_struct: "{{ gce_instance_template_disks_gce_struct | default(omit, True) }}"
       credentials_file: "{{ gce_instance_template_credentials_file | default(omit, True) }}"
       subnetwork: "{{ gce_instance_template_subnetwork | default(omit, True) }}"
+
+- name: "export r_gce_instance_template"
+  set_stats:
+    data:
+      r_gce_instance_template: "{{ r_gce_instance_template }}"

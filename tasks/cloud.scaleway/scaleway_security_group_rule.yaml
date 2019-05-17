@@ -17,3 +17,8 @@
       security_group: "{{ scaleway_security_group_rule_security_group | default(omit, True) }}"
       validate_certs: "{{ scaleway_security_group_rule_validate_certs | default(omit, True) }}"
       port: "{{ scaleway_security_group_rule_port | default(omit, True) }}"
+
+- name: "export r_scaleway_security_group_rule"
+  set_stats:
+    data:
+      r_scaleway_security_group_rule: "{{ r_scaleway_security_group_rule }}"

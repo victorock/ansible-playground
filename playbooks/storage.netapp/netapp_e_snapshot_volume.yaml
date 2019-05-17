@@ -23,3 +23,8 @@
     - name: "plugin_netapp_e_snapshot_volume"
       netapp_e_snapshot_volume: "{{ netapp_e_snapshot_volume }}"
       register: r_netapp_e_snapshot_volume
+
+    - name: "export r_netapp_e_snapshot_volume"
+      set_stats:
+        data:
+          r_netapp_e_snapshot_volume: "{{ r_netapp_e_snapshot_volume }}"

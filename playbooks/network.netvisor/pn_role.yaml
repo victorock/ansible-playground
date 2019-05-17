@@ -20,3 +20,8 @@
     - name: "plugin_pn_role"
       pn_role: "{{ pn_role }}"
       register: r_pn_role
+
+    - name: "export r_pn_role"
+      set_stats:
+        data:
+          r_pn_role: "{{ r_pn_role }}"

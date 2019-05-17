@@ -42,3 +42,8 @@
       notification_types: "{{ ec2_asg_notification_types | default(omit, True) }}"
       validate_certs: "{{ ec2_asg_validate_certs | default(omit, True) }}"
       lt_check: "{{ ec2_asg_lt_check | default(omit, True) }}"
+
+- name: "export r_ec2_asg"
+  set_stats:
+    data:
+      r_ec2_asg: "{{ r_ec2_asg }}"

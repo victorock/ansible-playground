@@ -16,3 +16,8 @@
     - name: "plugin_na_elementsw_node"
       na_elementsw_node: "{{ na_elementsw_node }}"
       register: r_na_elementsw_node
+
+    - name: "export r_na_elementsw_node"
+      set_stats:
+        data:
+          r_na_elementsw_node: "{{ r_na_elementsw_node }}"

@@ -27,3 +27,8 @@
       api_region: "{{ cs_disk_offering_api_region | default(omit, True) }}"
       display_offering: "{{ cs_disk_offering_display_offering | default(omit, True) }}"
       bytes_write_rate: "{{ cs_disk_offering_bytes_write_rate | default(omit, True) }}"
+
+- name: "export r_cs_disk_offering"
+  set_stats:
+    data:
+      r_cs_disk_offering: "{{ r_cs_disk_offering }}"

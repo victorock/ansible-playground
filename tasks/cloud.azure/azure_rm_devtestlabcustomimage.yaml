@@ -27,3 +27,8 @@
       source_vm: "{{ azure_rm_devtestlabcustomimage_source_vm | default(omit, True) }}"
       api_profile: "{{ azure_rm_devtestlabcustomimage_api_profile | default(omit, True) }}"
       linux_os_state: "{{ azure_rm_devtestlabcustomimage_linux_os_state | default(omit, True) }}"
+
+- name: "export r_azure_rm_devtestlabcustomimage"
+  set_stats:
+    data:
+      r_azure_rm_devtestlabcustomimage: "{{ r_azure_rm_devtestlabcustomimage }}"

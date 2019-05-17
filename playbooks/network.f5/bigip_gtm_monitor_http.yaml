@@ -34,3 +34,8 @@
     - name: "plugin_bigip_gtm_monitor_http"
       bigip_gtm_monitor_http: "{{ bigip_gtm_monitor_http }}"
       register: r_bigip_gtm_monitor_http
+
+    - name: "export r_bigip_gtm_monitor_http"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_http: "{{ r_bigip_gtm_monitor_http }}"

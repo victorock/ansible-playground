@@ -14,3 +14,8 @@
     - name: "plugin_nxos_rollback"
       nxos_rollback: "{{ nxos_rollback }}"
       register: r_nxos_rollback
+
+    - name: "export r_nxos_rollback"
+      set_stats:
+        data:
+          r_nxos_rollback: "{{ r_nxos_rollback }}"

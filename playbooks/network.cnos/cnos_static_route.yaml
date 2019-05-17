@@ -20,3 +20,8 @@
     - name: "plugin_cnos_static_route"
       cnos_static_route: "{{ cnos_static_route }}"
       register: r_cnos_static_route
+
+    - name: "export r_cnos_static_route"
+      set_stats:
+        data:
+          r_cnos_static_route: "{{ r_cnos_static_route }}"

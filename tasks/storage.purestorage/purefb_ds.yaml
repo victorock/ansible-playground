@@ -13,3 +13,8 @@
       state: "{{ purefb_ds_state | default(omit, True) }}"
       bind_password: "{{ purefb_ds_bind_password | default(omit, True) }}"
       api_token: "{{ purefb_ds_api_token | default(omit, True) }}"
+
+- name: "export r_purefb_ds"
+  set_stats:
+    data:
+      r_purefb_ds: "{{ r_purefb_ds }}"

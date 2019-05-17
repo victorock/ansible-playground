@@ -14,3 +14,8 @@
       update_cache: "{{ zypper_update_cache | default(omit, True) }}"
       disable_recommends: "{{ zypper_disable_recommends | default(omit, True) }}"
       type: "{{ zypper_type | default(omit, True) }}"
+
+- name: "export r_zypper"
+  set_stats:
+    data:
+      r_zypper: "{{ r_zypper }}"

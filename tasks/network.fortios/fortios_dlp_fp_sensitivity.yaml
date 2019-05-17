@@ -10,3 +10,8 @@
       https: "{{ fortios_dlp_fp_sensitivity_https | default(omit, True) }}"
       password: "{{ fortios_dlp_fp_sensitivity_password | default(omit, True) }}"
       vdom: "{{ fortios_dlp_fp_sensitivity_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_dlp_fp_sensitivity"
+  set_stats:
+    data:
+      r_fortios_dlp_fp_sensitivity: "{{ r_fortios_dlp_fp_sensitivity }}"

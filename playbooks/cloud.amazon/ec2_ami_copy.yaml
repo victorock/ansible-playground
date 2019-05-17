@@ -29,3 +29,8 @@
     - name: "plugin_ec2_ami_copy"
       ec2_ami_copy: "{{ ec2_ami_copy }}"
       register: r_ec2_ami_copy
+
+    - name: "export r_ec2_ami_copy"
+      set_stats:
+        data:
+          r_ec2_ami_copy: "{{ r_ec2_ami_copy }}"

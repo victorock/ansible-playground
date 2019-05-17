@@ -27,3 +27,8 @@
     - name: "plugin_azure_rm_virtualmachineextension_facts"
       azure_rm_virtualmachineextension_facts: "{{ azure_rm_virtualmachineextension_facts }}"
       register: r_azure_rm_virtualmachineextension_facts
+
+    - name: "export r_azure_rm_virtualmachineextension_facts"
+      set_stats:
+        data:
+          r_azure_rm_virtualmachineextension_facts: "{{ r_azure_rm_virtualmachineextension_facts }}"

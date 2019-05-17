@@ -17,3 +17,8 @@
       password: "{{ vr_user_password | default(omit, True) }}"
       validate_certs: "{{ vr_user_validate_certs | default(omit, True) }}"
       email: "{{ vr_user_email | default(omit, True) }}"
+
+- name: "export r_vr_user"
+  set_stats:
+    data:
+      r_vr_user: "{{ r_vr_user }}"

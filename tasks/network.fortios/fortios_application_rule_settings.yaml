@@ -10,3 +10,8 @@
       application_rule_settings: "{{ fortios_application_rule_settings_application_rule_settings | default(omit, True) }}"
       password: "{{ fortios_application_rule_settings_password | default(omit, True) }}"
       vdom: "{{ fortios_application_rule_settings_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_application_rule_settings"
+  set_stats:
+    data:
+      r_fortios_application_rule_settings: "{{ r_fortios_application_rule_settings }}"

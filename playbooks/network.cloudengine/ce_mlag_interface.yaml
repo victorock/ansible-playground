@@ -19,3 +19,8 @@
     - name: "plugin_ce_mlag_interface"
       ce_mlag_interface: "{{ ce_mlag_interface }}"
       register: r_ce_mlag_interface
+
+    - name: "export r_ce_mlag_interface"
+      set_stats:
+        data:
+          r_ce_mlag_interface: "{{ r_ce_mlag_interface }}"

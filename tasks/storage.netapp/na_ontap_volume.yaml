@@ -38,3 +38,8 @@
       snapshot_policy: "{{ na_ontap_volume_snapshot_policy | default(omit, True) }}"
       time_out: "{{ na_ontap_volume_time_out | default(omit, True) }}"
       validate_certs: "{{ na_ontap_volume_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_volume"
+  set_stats:
+    data:
+      r_na_ontap_volume: "{{ r_na_ontap_volume }}"

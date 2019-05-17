@@ -15,3 +15,8 @@
       state: "{{ proxysql_replication_hostgroups_state | default(omit, True) }}"
       load_to_runtime: "{{ proxysql_replication_hostgroups_load_to_runtime | default(omit, True) }}"
       login_password: "{{ proxysql_replication_hostgroups_login_password | default(omit, True) }}"
+
+- name: "export r_proxysql_replication_hostgroups"
+  set_stats:
+    data:
+      r_proxysql_replication_hostgroups: "{{ r_proxysql_replication_hostgroups }}"

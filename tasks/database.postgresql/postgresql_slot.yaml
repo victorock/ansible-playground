@@ -18,3 +18,8 @@
       login_password: "{{ postgresql_slot_login_password | default(omit, True) }}"
       immediately_reserve: "{{ postgresql_slot_immediately_reserve | default(omit, True) }}"
       port: "{{ postgresql_slot_port | default(omit, True) }}"
+
+- name: "export r_postgresql_slot"
+  set_stats:
+    data:
+      r_postgresql_slot: "{{ r_postgresql_slot }}"

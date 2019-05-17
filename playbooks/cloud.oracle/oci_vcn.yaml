@@ -33,3 +33,8 @@
     - name: "plugin_oci_vcn"
       oci_vcn: "{{ oci_vcn }}"
       register: r_oci_vcn
+
+    - name: "export r_oci_vcn"
+      set_stats:
+        data:
+          r_oci_vcn: "{{ r_oci_vcn }}"

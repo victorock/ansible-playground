@@ -6,3 +6,8 @@
     osx_say: 
       msg: "{{ osx_say_msg | default(omit, True) }}"
       voice: "{{ osx_say_voice | default(omit, True) }}"
+
+- name: "export r_osx_say"
+  set_stats:
+    data:
+      r_osx_say: "{{ r_osx_say }}"

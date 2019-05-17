@@ -22,3 +22,8 @@
     - name: "plugin_nios_zone"
       nios_zone: "{{ nios_zone }}"
       register: r_nios_zone
+
+    - name: "export r_nios_zone"
+      set_stats:
+        data:
+          r_nios_zone: "{{ r_nios_zone }}"

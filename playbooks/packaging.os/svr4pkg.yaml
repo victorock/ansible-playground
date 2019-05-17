@@ -18,3 +18,8 @@
     - name: "plugin_svr4pkg"
       svr4pkg: "{{ svr4pkg }}"
       register: r_svr4pkg
+
+    - name: "export r_svr4pkg"
+      set_stats:
+        data:
+          r_svr4pkg: "{{ r_svr4pkg }}"

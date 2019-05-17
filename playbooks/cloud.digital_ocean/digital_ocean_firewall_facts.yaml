@@ -15,3 +15,8 @@
     - name: "plugin_digital_ocean_firewall_facts"
       digital_ocean_firewall_facts: "{{ digital_ocean_firewall_facts }}"
       register: r_digital_ocean_firewall_facts
+
+    - name: "export r_digital_ocean_firewall_facts"
+      set_stats:
+        data:
+          r_digital_ocean_firewall_facts: "{{ r_digital_ocean_firewall_facts }}"

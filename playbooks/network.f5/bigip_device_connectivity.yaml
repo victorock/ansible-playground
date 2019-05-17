@@ -26,3 +26,8 @@
     - name: "plugin_bigip_device_connectivity"
       bigip_device_connectivity: "{{ bigip_device_connectivity }}"
       register: r_bigip_device_connectivity
+
+    - name: "export r_bigip_device_connectivity"
+      set_stats:
+        data:
+          r_bigip_device_connectivity: "{{ r_bigip_device_connectivity }}"

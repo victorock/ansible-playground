@@ -18,3 +18,8 @@
       provider: "{{ ios_static_route_provider | default(omit, True) }}"
       interface: "{{ ios_static_route_interface | default(omit, True) }}"
       tag: "{{ ios_static_route_tag | default(omit, True) }}"
+
+- name: "export r_ios_static_route"
+  set_stats:
+    data:
+      r_ios_static_route: "{{ r_ios_static_route }}"

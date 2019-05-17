@@ -18,3 +18,8 @@
     - name: "plugin_nxos_pim_rp_address"
       nxos_pim_rp_address: "{{ nxos_pim_rp_address }}"
       register: r_nxos_pim_rp_address
+
+    - name: "export r_nxos_pim_rp_address"
+      set_stats:
+        data:
+          r_nxos_pim_rp_address: "{{ r_nxos_pim_rp_address }}"

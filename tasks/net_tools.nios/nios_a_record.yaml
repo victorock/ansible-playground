@@ -12,3 +12,8 @@
       state: "{{ nios_a_record_state | default(omit, True) }}"
       ttl: "{{ nios_a_record_ttl | default(omit, True) }}"
       view: "{{ nios_a_record_view | default(omit, True) }}"
+
+- name: "export r_nios_a_record"
+  set_stats:
+    data:
+      r_nios_a_record: "{{ r_nios_a_record }}"

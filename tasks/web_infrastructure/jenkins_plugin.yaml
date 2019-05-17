@@ -25,3 +25,8 @@
       client_cert: "{{ jenkins_plugin_client_cert | default(omit, True) }}"
       group: "{{ jenkins_plugin_group | default(omit, True) }}"
       name: "{{ jenkins_plugin_name | default(omit, True) }}"
+
+- name: "export r_jenkins_plugin"
+  set_stats:
+    data:
+      r_jenkins_plugin: "{{ r_jenkins_plugin }}"

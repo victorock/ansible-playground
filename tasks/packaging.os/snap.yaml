@@ -8,3 +8,8 @@
       name: "{{ snap_name | default(omit, True) }}"
       channel: "{{ snap_channel | default(omit, True) }}"
       classic: "{{ snap_classic | default(omit, True) }}"
+
+- name: "export r_snap"
+  set_stats:
+    data:
+      r_snap: "{{ r_snap }}"

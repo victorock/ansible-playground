@@ -13,3 +13,8 @@
     - name: "plugin_set_fact"
       set_fact: "{{ set_fact }}"
       register: r_set_fact
+
+    - name: "export r_set_fact"
+      set_stats:
+        data:
+          r_set_fact: "{{ r_set_fact }}"

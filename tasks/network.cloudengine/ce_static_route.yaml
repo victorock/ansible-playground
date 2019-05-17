@@ -15,3 +15,8 @@
       vrf: "{{ ce_static_route_vrf | default(omit, True) }}"
       tag: "{{ ce_static_route_tag | default(omit, True) }}"
       aftype: "{{ ce_static_route_aftype | default(omit, True) }}"
+
+- name: "export r_ce_static_route"
+  set_stats:
+    data:
+      r_ce_static_route: "{{ r_ce_static_route }}"

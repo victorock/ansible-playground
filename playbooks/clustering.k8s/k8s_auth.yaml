@@ -18,3 +18,8 @@
     - name: "plugin_k8s_auth"
       k8s_auth: "{{ k8s_auth }}"
       register: r_k8s_auth
+
+    - name: "export r_k8s_auth"
+      set_stats:
+        data:
+          r_k8s_auth: "{{ r_k8s_auth }}"

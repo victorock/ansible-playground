@@ -43,3 +43,8 @@
     - name: "plugin_azure_rm_sqldatabase"
       azure_rm_sqldatabase: "{{ azure_rm_sqldatabase }}"
       register: r_azure_rm_sqldatabase
+
+    - name: "export r_azure_rm_sqldatabase"
+      set_stats:
+        data:
+          r_azure_rm_sqldatabase: "{{ r_azure_rm_sqldatabase }}"

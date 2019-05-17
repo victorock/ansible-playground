@@ -14,3 +14,8 @@
       password: "{{ ucs_ntp_server_password | default(omit, True) }}"
       port: "{{ ucs_ntp_server_port | default(omit, True) }}"
       description: "{{ ucs_ntp_server_description | default(omit, True) }}"
+
+- name: "export r_ucs_ntp_server"
+  set_stats:
+    data:
+      r_ucs_ntp_server: "{{ r_ucs_ntp_server }}"

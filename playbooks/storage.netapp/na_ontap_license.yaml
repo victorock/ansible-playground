@@ -24,3 +24,8 @@
     - name: "plugin_na_ontap_license"
       na_ontap_license: "{{ na_ontap_license }}"
       register: r_na_ontap_license
+
+    - name: "export r_na_ontap_license"
+      set_stats:
+        data:
+          r_na_ontap_license: "{{ r_na_ontap_license }}"

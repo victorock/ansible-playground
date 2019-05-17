@@ -10,3 +10,8 @@
       https: "{{ fortios_wireless_controller_wids_profile_https | default(omit, True) }}"
       password: "{{ fortios_wireless_controller_wids_profile_password | default(omit, True) }}"
       vdom: "{{ fortios_wireless_controller_wids_profile_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_wireless_controller_wids_profile"
+  set_stats:
+    data:
+      r_fortios_wireless_controller_wids_profile: "{{ r_fortios_wireless_controller_wids_profile }}"

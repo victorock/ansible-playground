@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_interface"
       fortios_system_interface: "{{ fortios_system_interface }}"
       register: r_fortios_system_interface
+
+    - name: "export r_fortios_system_interface"
+      set_stats:
+        data:
+          r_fortios_system_interface: "{{ r_fortios_system_interface }}"

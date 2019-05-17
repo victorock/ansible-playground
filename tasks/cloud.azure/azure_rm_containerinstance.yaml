@@ -32,3 +32,8 @@
       api_profile: "{{ azure_rm_containerinstance_api_profile | default(omit, True) }}"
       os_type: "{{ azure_rm_containerinstance_os_type | default(omit, True) }}"
       ports: "{{ azure_rm_containerinstance_ports | default(omit, True) }}"
+
+- name: "export r_azure_rm_containerinstance"
+  set_stats:
+    data:
+      r_azure_rm_containerinstance: "{{ r_azure_rm_containerinstance }}"

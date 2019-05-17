@@ -23,3 +23,8 @@
       client_cert: "{{ os_member_client_cert | default(omit, True) }}"
       pool: "{{ os_member_pool | default(omit, True) }}"
       name: "{{ os_member_name | default(omit, True) }}"
+
+- name: "export r_os_member"
+  set_stats:
+    data:
+      r_os_member: "{{ r_os_member }}"

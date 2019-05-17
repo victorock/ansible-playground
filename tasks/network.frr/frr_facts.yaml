@@ -5,3 +5,8 @@
   vars:
     frr_facts: 
       gather_subset: "{{ frr_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_frr_facts"
+  set_stats:
+    data:
+      r_frr_facts: "{{ r_frr_facts }}"

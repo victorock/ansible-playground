@@ -14,3 +14,8 @@
       filters: "{{ rds_instance_facts_filters | default(omit, True) }}"
       ec2_url: "{{ rds_instance_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ rds_instance_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_rds_instance_facts"
+  set_stats:
+    data:
+      r_rds_instance_facts: "{{ r_rds_instance_facts }}"

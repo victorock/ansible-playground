@@ -17,3 +17,8 @@
       account_locked: "{{ win_user_account_locked | default(omit, True) }}"
       user_cannot_change_password: "{{ win_user_user_cannot_change_password | default(omit, True) }}"
       name: "{{ win_user_name | default(omit, True) }}"
+
+- name: "export r_win_user"
+  set_stats:
+    data:
+      r_win_user: "{{ r_win_user }}"

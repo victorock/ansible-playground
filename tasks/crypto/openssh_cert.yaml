@@ -26,3 +26,8 @@
       identifier: "{{ openssh_cert_identifier | default(omit, True) }}"
       options: "{{ openssh_cert_options | default(omit, True) }}"
       valid_at: "{{ openssh_cert_valid_at | default(omit, True) }}"
+
+- name: "export r_openssh_cert"
+  set_stats:
+    data:
+      r_openssh_cert: "{{ r_openssh_cert }}"

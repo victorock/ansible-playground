@@ -7,3 +7,8 @@
       broadcast: "{{ win_wakeonlan_broadcast | default(omit, True) }}"
       mac: "{{ win_wakeonlan_mac | default(omit, True) }}"
       port: "{{ win_wakeonlan_port | default(omit, True) }}"
+
+- name: "export r_win_wakeonlan"
+  set_stats:
+    data:
+      r_win_wakeonlan: "{{ r_win_wakeonlan }}"

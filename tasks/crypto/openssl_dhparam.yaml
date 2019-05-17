@@ -18,3 +18,8 @@
       attributes: "{{ openssl_dhparam_attributes | default(omit, True) }}"
       backup: "{{ openssl_dhparam_backup | default(omit, True) }}"
       size: "{{ openssl_dhparam_size | default(omit, True) }}"
+
+- name: "export r_openssl_dhparam"
+  set_stats:
+    data:
+      r_openssl_dhparam: "{{ r_openssl_dhparam }}"

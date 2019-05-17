@@ -29,3 +29,8 @@
     - name: "plugin_mso_schema_site_vrf_region_cidr_subnet"
       mso_schema_site_vrf_region_cidr_subnet: "{{ mso_schema_site_vrf_region_cidr_subnet }}"
       register: r_mso_schema_site_vrf_region_cidr_subnet
+
+    - name: "export r_mso_schema_site_vrf_region_cidr_subnet"
+      set_stats:
+        data:
+          r_mso_schema_site_vrf_region_cidr_subnet: "{{ r_mso_schema_site_vrf_region_cidr_subnet }}"

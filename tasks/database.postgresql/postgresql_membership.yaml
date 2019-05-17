@@ -17,3 +17,8 @@
       login_password: "{{ postgresql_membership_login_password | default(omit, True) }}"
       fail_on_role: "{{ postgresql_membership_fail_on_role | default(omit, True) }}"
       port: "{{ postgresql_membership_port | default(omit, True) }}"
+
+- name: "export r_postgresql_membership"
+  set_stats:
+    data:
+      r_postgresql_membership: "{{ r_postgresql_membership }}"

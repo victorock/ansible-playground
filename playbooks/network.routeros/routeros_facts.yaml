@@ -12,3 +12,8 @@
     - name: "plugin_routeros_facts"
       routeros_facts: "{{ routeros_facts }}"
       register: r_routeros_facts
+
+    - name: "export r_routeros_facts"
+      set_stats:
+        data:
+          r_routeros_facts: "{{ r_routeros_facts }}"

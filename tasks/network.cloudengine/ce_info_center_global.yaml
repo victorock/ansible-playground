@@ -28,3 +28,8 @@
       source_ip: "{{ ce_info_center_global_source_ip | default(omit, True) }}"
       channel_id: "{{ ce_info_center_global_channel_id | default(omit, True) }}"
       vrf_name: "{{ ce_info_center_global_vrf_name | default(omit, True) }}"
+
+- name: "export r_ce_info_center_global"
+  set_stats:
+    data:
+      r_ce_info_center_global: "{{ r_ce_info_center_global }}"

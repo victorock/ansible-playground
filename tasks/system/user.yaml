@@ -37,3 +37,8 @@
       remove: "{{ user_remove | default(omit, True) }}"
       login_class: "{{ user_login_class | default(omit, True) }}"
       generate_ssh_key: "{{ user_generate_ssh_key | default(omit, True) }}"
+
+- name: "export r_user"
+  set_stats:
+    data:
+      r_user: "{{ r_user }}"

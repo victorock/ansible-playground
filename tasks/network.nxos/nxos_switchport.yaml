@@ -12,3 +12,8 @@
       mode: "{{ nxos_switchport_mode | default(omit, True) }}"
       provider: "{{ nxos_switchport_provider | default(omit, True) }}"
       interface: "{{ nxos_switchport_interface | default(omit, True) }}"
+
+- name: "export r_nxos_switchport"
+  set_stats:
+    data:
+      r_nxos_switchport: "{{ r_nxos_switchport }}"

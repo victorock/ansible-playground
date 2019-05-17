@@ -33,3 +33,8 @@
     - name: "plugin_ec2_vol"
       ec2_vol: "{{ ec2_vol }}"
       register: r_ec2_vol
+
+    - name: "export r_ec2_vol"
+      set_stats:
+        data:
+          r_ec2_vol: "{{ r_ec2_vol }}"

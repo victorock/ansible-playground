@@ -21,3 +21,8 @@
     - name: "plugin_vmware_vmotion"
       vmware_vmotion: "{{ vmware_vmotion }}"
       register: r_vmware_vmotion
+
+    - name: "export r_vmware_vmotion"
+      set_stats:
+        data:
+          r_vmware_vmotion: "{{ r_vmware_vmotion }}"

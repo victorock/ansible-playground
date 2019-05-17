@@ -176,3 +176,8 @@
       ssl_pfs: "{{ fmgr_fwobj_vip_ssl_pfs | default(omit, True) }}"
       dynamic_mapping_https_cookie_secure: "{{ fmgr_fwobj_vip_dynamic_mapping_https_cookie_secure | default(omit, True) }}"
       srcintf_filter: "{{ fmgr_fwobj_vip_srcintf_filter | default(omit, True) }}"
+
+- name: "export r_fmgr_fwobj_vip"
+  set_stats:
+    data:
+      r_fmgr_fwobj_vip: "{{ r_fmgr_fwobj_vip }}"

@@ -18,3 +18,8 @@
     - name: "plugin_win_eventlog_entry"
       win_eventlog_entry: "{{ win_eventlog_entry }}"
       register: r_win_eventlog_entry
+
+    - name: "export r_win_eventlog_entry"
+      set_stats:
+        data:
+          r_win_eventlog_entry: "{{ r_win_eventlog_entry }}"

@@ -17,3 +17,8 @@
     - name: "plugin_apk"
       apk: "{{ apk }}"
       register: r_apk
+
+    - name: "export r_apk"
+      set_stats:
+        data:
+          r_apk: "{{ r_apk }}"

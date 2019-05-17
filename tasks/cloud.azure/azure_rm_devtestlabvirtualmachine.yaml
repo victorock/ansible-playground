@@ -34,3 +34,8 @@
       notes: "{{ azure_rm_devtestlabvirtualmachine_notes | default(omit, True) }}"
       api_profile: "{{ azure_rm_devtestlabvirtualmachine_api_profile | default(omit, True) }}"
       os_type: "{{ azure_rm_devtestlabvirtualmachine_os_type | default(omit, True) }}"
+
+- name: "export r_azure_rm_devtestlabvirtualmachine"
+  set_stats:
+    data:
+      r_azure_rm_devtestlabvirtualmachine: "{{ r_azure_rm_devtestlabvirtualmachine }}"

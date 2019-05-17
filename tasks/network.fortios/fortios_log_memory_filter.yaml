@@ -10,3 +10,8 @@
       https: "{{ fortios_log_memory_filter_https | default(omit, True) }}"
       password: "{{ fortios_log_memory_filter_password | default(omit, True) }}"
       vdom: "{{ fortios_log_memory_filter_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_log_memory_filter"
+  set_stats:
+    data:
+      r_fortios_log_memory_filter: "{{ r_fortios_log_memory_filter }}"

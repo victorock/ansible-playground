@@ -14,3 +14,8 @@
     - name: "plugin_portinstall"
       portinstall: "{{ portinstall }}"
       register: r_portinstall
+
+    - name: "export r_portinstall"
+      set_stats:
+        data:
+          r_portinstall: "{{ r_portinstall }}"

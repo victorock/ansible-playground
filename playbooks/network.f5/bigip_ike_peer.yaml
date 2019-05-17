@@ -36,3 +36,8 @@
     - name: "plugin_bigip_ike_peer"
       bigip_ike_peer: "{{ bigip_ike_peer }}"
       register: r_bigip_ike_peer
+
+    - name: "export r_bigip_ike_peer"
+      set_stats:
+        data:
+          r_bigip_ike_peer: "{{ r_bigip_ike_peer }}"

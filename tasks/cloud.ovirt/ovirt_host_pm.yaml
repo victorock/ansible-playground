@@ -20,3 +20,8 @@
       type: "{{ ovirt_host_pm_type | default(omit, True) }}"
       order: "{{ ovirt_host_pm_order | default(omit, True) }}"
       wait: "{{ ovirt_host_pm_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_host_pm"
+  set_stats:
+    data:
+      r_ovirt_host_pm: "{{ r_ovirt_host_pm }}"

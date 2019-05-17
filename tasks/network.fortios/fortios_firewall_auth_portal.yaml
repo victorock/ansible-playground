@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_auth_portal_https | default(omit, True) }}"
       password: "{{ fortios_firewall_auth_portal_password | default(omit, True) }}"
       firewall_auth_portal: "{{ fortios_firewall_auth_portal_firewall_auth_portal | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_auth_portal"
+  set_stats:
+    data:
+      r_fortios_firewall_auth_portal: "{{ r_fortios_firewall_auth_portal }}"

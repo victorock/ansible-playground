@@ -10,3 +10,8 @@
       active: "{{ junos_lldp_active | default(omit, True) }}"
       hold_multiplier: "{{ junos_lldp_hold_multiplier | default(omit, True) }}"
       transmit_delay: "{{ junos_lldp_transmit_delay | default(omit, True) }}"
+
+- name: "export r_junos_lldp"
+  set_stats:
+    data:
+      r_junos_lldp: "{{ r_junos_lldp }}"

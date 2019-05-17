@@ -50,3 +50,8 @@
     - name: "plugin_kubevirt_vm"
       kubevirt_vm: "{{ kubevirt_vm }}"
       register: r_kubevirt_vm
+
+    - name: "export r_kubevirt_vm"
+      set_stats:
+        data:
+          r_kubevirt_vm: "{{ r_kubevirt_vm }}"

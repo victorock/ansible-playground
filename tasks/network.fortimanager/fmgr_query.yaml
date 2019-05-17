@@ -13,3 +13,8 @@
       device_unique_name: "{{ fmgr_query_device_unique_name | default(omit, True) }}"
       nodes: "{{ fmgr_query_nodes | default(omit, True) }}"
       device_serial: "{{ fmgr_query_device_serial | default(omit, True) }}"
+
+- name: "export r_fmgr_query"
+  set_stats:
+    data:
+      r_fmgr_query: "{{ r_fmgr_query }}"

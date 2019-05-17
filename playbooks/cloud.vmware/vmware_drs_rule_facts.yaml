@@ -18,3 +18,8 @@
     - name: "plugin_vmware_drs_rule_facts"
       vmware_drs_rule_facts: "{{ vmware_drs_rule_facts }}"
       register: r_vmware_drs_rule_facts
+
+    - name: "export r_vmware_drs_rule_facts"
+      set_stats:
+        data:
+          r_vmware_drs_rule_facts: "{{ r_vmware_drs_rule_facts }}"

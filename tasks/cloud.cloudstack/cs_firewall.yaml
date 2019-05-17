@@ -26,3 +26,8 @@
       cidrs: "{{ cs_firewall_cidrs | default(omit, True) }}"
       api_region: "{{ cs_firewall_api_region | default(omit, True) }}"
       project: "{{ cs_firewall_project | default(omit, True) }}"
+
+- name: "export r_cs_firewall"
+  set_stats:
+    data:
+      r_cs_firewall: "{{ r_cs_firewall }}"

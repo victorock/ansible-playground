@@ -25,3 +25,8 @@
       type: "{{ datadog_monitor_type | default(omit, True) }}"
       id: "{{ datadog_monitor_id | default(omit, True) }}"
       name: "{{ datadog_monitor_name | default(omit, True) }}"
+
+- name: "export r_datadog_monitor"
+  set_stats:
+    data:
+      r_datadog_monitor: "{{ r_datadog_monitor }}"

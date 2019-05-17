@@ -18,3 +18,8 @@
       validate_certs: "{{ bigip_traffic_selector_validate_certs | default(omit, True) }}"
       order: "{{ bigip_traffic_selector_order | default(omit, True) }}"
       name: "{{ bigip_traffic_selector_name | default(omit, True) }}"
+
+- name: "export r_bigip_traffic_selector"
+  set_stats:
+    data:
+      r_bigip_traffic_selector: "{{ r_bigip_traffic_selector }}"

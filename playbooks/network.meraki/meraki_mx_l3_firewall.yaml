@@ -25,3 +25,8 @@
     - name: "plugin_meraki_mx_l3_firewall"
       meraki_mx_l3_firewall: "{{ meraki_mx_l3_firewall }}"
       register: r_meraki_mx_l3_firewall
+
+    - name: "export r_meraki_mx_l3_firewall"
+      set_stats:
+        data:
+          r_meraki_mx_l3_firewall: "{{ r_meraki_mx_l3_firewall }}"

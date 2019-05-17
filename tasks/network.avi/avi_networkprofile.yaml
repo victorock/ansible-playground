@@ -21,3 +21,8 @@
       tenant_uuid: "{{ avi_networkprofile_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_networkprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_networkprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_networkprofile"
+  set_stats:
+    data:
+      r_avi_networkprofile: "{{ r_avi_networkprofile }}"

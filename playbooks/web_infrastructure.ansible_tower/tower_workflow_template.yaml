@@ -25,3 +25,8 @@
     - name: "plugin_tower_workflow_template"
       tower_workflow_template: "{{ tower_workflow_template }}"
       register: r_tower_workflow_template
+
+    - name: "export r_tower_workflow_template"
+      set_stats:
+        data:
+          r_tower_workflow_template: "{{ r_tower_workflow_template }}"

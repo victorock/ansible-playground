@@ -15,3 +15,8 @@
     - name: "plugin_ovirt_datacenter_facts"
       ovirt_datacenter_facts: "{{ ovirt_datacenter_facts }}"
       register: r_ovirt_datacenter_facts
+
+    - name: "export r_ovirt_datacenter_facts"
+      set_stats:
+        data:
+          r_ovirt_datacenter_facts: "{{ r_ovirt_datacenter_facts }}"

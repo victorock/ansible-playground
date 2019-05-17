@@ -9,3 +9,8 @@
       fa_url: "{{ purefa_dns_fa_url | default(omit, True) }}"
       domain: "{{ purefa_dns_domain | default(omit, True) }}"
       api_token: "{{ purefa_dns_api_token | default(omit, True) }}"
+
+- name: "export r_purefa_dns"
+  set_stats:
+    data:
+      r_purefa_dns: "{{ r_purefa_dns }}"

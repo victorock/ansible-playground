@@ -27,3 +27,8 @@
     - name: "plugin_netscaler_ssl_certkey"
       netscaler_ssl_certkey: "{{ netscaler_ssl_certkey }}"
       register: r_netscaler_ssl_certkey
+
+    - name: "export r_netscaler_ssl_certkey"
+      set_stats:
+        data:
+          r_netscaler_ssl_certkey: "{{ r_netscaler_ssl_certkey }}"

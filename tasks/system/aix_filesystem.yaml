@@ -17,3 +17,8 @@
       permissions: "{{ aix_filesystem_permissions | default(omit, True) }}"
       attributes: "{{ aix_filesystem_attributes | default(omit, True) }}"
       size: "{{ aix_filesystem_size | default(omit, True) }}"
+
+- name: "export r_aix_filesystem"
+  set_stats:
+    data:
+      r_aix_filesystem: "{{ r_aix_filesystem }}"

@@ -30,3 +30,8 @@
     - name: "plugin_k8s_service"
       k8s_service: "{{ k8s_service }}"
       register: r_k8s_service
+
+    - name: "export r_k8s_service"
+      set_stats:
+        data:
+          r_k8s_service: "{{ r_k8s_service }}"

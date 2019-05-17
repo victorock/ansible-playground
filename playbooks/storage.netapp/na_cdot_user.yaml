@@ -21,3 +21,8 @@
     - name: "plugin_na_cdot_user"
       na_cdot_user: "{{ na_cdot_user }}"
       register: r_na_cdot_user
+
+    - name: "export r_na_cdot_user"
+      set_stats:
+        data:
+          r_na_cdot_user: "{{ r_na_cdot_user }}"

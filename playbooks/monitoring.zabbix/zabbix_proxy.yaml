@@ -29,3 +29,8 @@
     - name: "plugin_zabbix_proxy"
       zabbix_proxy: "{{ zabbix_proxy }}"
       register: r_zabbix_proxy
+
+    - name: "export r_zabbix_proxy"
+      set_stats:
+        data:
+          r_zabbix_proxy: "{{ r_zabbix_proxy }}"

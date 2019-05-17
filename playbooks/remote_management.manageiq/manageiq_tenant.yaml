@@ -18,3 +18,8 @@
     - name: "plugin_manageiq_tenant"
       manageiq_tenant: "{{ manageiq_tenant }}"
       register: r_manageiq_tenant
+
+    - name: "export r_manageiq_tenant"
+      set_stats:
+        data:
+          r_manageiq_tenant: "{{ r_manageiq_tenant }}"

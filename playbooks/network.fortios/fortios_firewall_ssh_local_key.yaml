@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ssh_local_key"
       fortios_firewall_ssh_local_key: "{{ fortios_firewall_ssh_local_key }}"
       register: r_fortios_firewall_ssh_local_key
+
+    - name: "export r_fortios_firewall_ssh_local_key"
+      set_stats:
+        data:
+          r_fortios_firewall_ssh_local_key: "{{ r_fortios_firewall_ssh_local_key }}"

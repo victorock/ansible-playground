@@ -19,3 +19,8 @@
     - name: "plugin_ce_info_center_log"
       ce_info_center_log: "{{ ce_info_center_log }}"
       register: r_ce_info_center_log
+
+    - name: "export r_ce_info_center_log"
+      set_stats:
+        data:
+          r_ce_info_center_log: "{{ r_ce_info_center_log }}"

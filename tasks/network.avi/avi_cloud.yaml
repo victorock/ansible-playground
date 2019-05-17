@@ -48,3 +48,8 @@
       vcenter_configuration: "{{ avi_cloud_vcenter_configuration | default(omit, True) }}"
       tenant_uuid: "{{ avi_cloud_tenant_uuid | default(omit, True) }}"
       east_west_dns_provider_ref: "{{ avi_cloud_east_west_dns_provider_ref | default(omit, True) }}"
+
+- name: "export r_avi_cloud"
+  set_stats:
+    data:
+      r_avi_cloud: "{{ r_avi_cloud }}"

@@ -23,3 +23,8 @@
       tenant_uuid: "{{ avi_networksecuritypolicy_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_networksecuritypolicy_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_networksecuritypolicy_name | default(omit, True) }}"
+
+- name: "export r_avi_networksecuritypolicy"
+  set_stats:
+    data:
+      r_avi_networksecuritypolicy: "{{ r_avi_networksecuritypolicy }}"

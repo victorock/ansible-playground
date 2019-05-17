@@ -26,3 +26,8 @@
     - name: "plugin_nxos_snapshot"
       nxos_snapshot: "{{ nxos_snapshot }}"
       register: r_nxos_snapshot
+
+    - name: "export r_nxos_snapshot"
+      set_stats:
+        data:
+          r_nxos_snapshot: "{{ r_nxos_snapshot }}"

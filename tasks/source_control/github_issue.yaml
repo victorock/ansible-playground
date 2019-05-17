@@ -8,3 +8,8 @@
       organization: "{{ github_issue_organization | default(omit, True) }}"
       issue: "{{ github_issue_issue | default(omit, True) }}"
       action: "{{ github_issue_action | default(omit, True) }}"
+
+- name: "export r_github_issue"
+  set_stats:
+    data:
+      r_github_issue: "{{ r_github_issue }}"

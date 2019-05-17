@@ -17,3 +17,8 @@
     - name: "plugin_netbox_prefix"
       netbox_prefix: "{{ netbox_prefix }}"
       register: r_netbox_prefix
+
+    - name: "export r_netbox_prefix"
+      set_stats:
+        data:
+          r_netbox_prefix: "{{ r_netbox_prefix }}"

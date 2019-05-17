@@ -15,3 +15,8 @@
       subca_desc: "{{ ipa_subca_subca_desc | default(omit, True) }}"
       ipa_timeout: "{{ ipa_subca_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_subca_validate_certs | default(omit, True) }}"
+
+- name: "export r_ipa_subca"
+  set_stats:
+    data:
+      r_ipa_subca: "{{ r_ipa_subca }}"

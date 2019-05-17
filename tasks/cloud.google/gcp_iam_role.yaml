@@ -16,3 +16,8 @@
       service_account_file: "{{ gcp_iam_role_service_account_file | default(omit, True) }}"
       included_permissions: "{{ gcp_iam_role_included_permissions | default(omit, True) }}"
       stage: "{{ gcp_iam_role_stage | default(omit, True) }}"
+
+- name: "export r_gcp_iam_role"
+  set_stats:
+    data:
+      r_gcp_iam_role: "{{ r_gcp_iam_role }}"

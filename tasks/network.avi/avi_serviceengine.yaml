@@ -33,3 +33,8 @@
       availability_zone: "{{ avi_serviceengine_availability_zone | default(omit, True) }}"
       controller_ip: "{{ avi_serviceengine_controller_ip | default(omit, True) }}"
       tenant_uuid: "{{ avi_serviceengine_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_serviceengine"
+  set_stats:
+    data:
+      r_avi_serviceengine: "{{ r_avi_serviceengine }}"

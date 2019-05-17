@@ -23,3 +23,8 @@
       type: "{{ azure_rm_servicebus_facts_type | default(omit, True) }}"
       tenant: "{{ azure_rm_servicebus_facts_tenant | default(omit, True) }}"
       show_sas_policies: "{{ azure_rm_servicebus_facts_show_sas_policies | default(omit, True) }}"
+
+- name: "export r_azure_rm_servicebus_facts"
+  set_stats:
+    data:
+      r_azure_rm_servicebus_facts: "{{ r_azure_rm_servicebus_facts }}"

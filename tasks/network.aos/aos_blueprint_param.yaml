@@ -11,3 +11,8 @@
       session: "{{ aos_blueprint_param_session | default(omit, True) }}"
       param_map: "{{ aos_blueprint_param_param_map | default(omit, True) }}"
       get_param_list: "{{ aos_blueprint_param_get_param_list | default(omit, True) }}"
+
+- name: "export r_aos_blueprint_param"
+  set_stats:
+    data:
+      r_aos_blueprint_param: "{{ r_aos_blueprint_param }}"

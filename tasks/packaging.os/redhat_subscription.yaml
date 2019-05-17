@@ -26,3 +26,8 @@
       org_id: "{{ redhat_subscription_org_id | default(omit, True) }}"
       release: "{{ redhat_subscription_release | default(omit, True) }}"
       server_proxy_hostname: "{{ redhat_subscription_server_proxy_hostname | default(omit, True) }}"
+
+- name: "export r_redhat_subscription"
+  set_stats:
+    data:
+      r_redhat_subscription: "{{ r_redhat_subscription }}"

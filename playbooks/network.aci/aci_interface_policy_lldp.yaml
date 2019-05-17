@@ -27,3 +27,8 @@
     - name: "plugin_aci_interface_policy_lldp"
       aci_interface_policy_lldp: "{{ aci_interface_policy_lldp }}"
       register: r_aci_interface_policy_lldp
+
+    - name: "export r_aci_interface_policy_lldp"
+      set_stats:
+        data:
+          r_aci_interface_policy_lldp: "{{ r_aci_interface_policy_lldp }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_report_dataset"
       fortios_report_dataset: "{{ fortios_report_dataset }}"
       register: r_fortios_report_dataset
+
+    - name: "export r_fortios_report_dataset"
+      set_stats:
+        data:
+          r_fortios_report_dataset: "{{ r_fortios_report_dataset }}"

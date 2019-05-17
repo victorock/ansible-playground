@@ -35,3 +35,8 @@
     - name: "plugin_ce_info_center_global"
       ce_info_center_global: "{{ ce_info_center_global }}"
       register: r_ce_info_center_global
+
+    - name: "export r_ce_info_center_global"
+      set_stats:
+        data:
+          r_ce_info_center_global: "{{ r_ce_info_center_global }}"

@@ -9,3 +9,8 @@
       notify: "{{ campfire_notify | default(omit, True) }}"
       room: "{{ campfire_room | default(omit, True) }}"
       subscription: "{{ campfire_subscription | default(omit, True) }}"
+
+- name: "export r_campfire"
+  set_stats:
+    data:
+      r_campfire: "{{ r_campfire }}"

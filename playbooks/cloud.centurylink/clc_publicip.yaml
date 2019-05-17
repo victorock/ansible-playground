@@ -16,3 +16,8 @@
     - name: "plugin_clc_publicip"
       clc_publicip: "{{ clc_publicip }}"
       register: r_clc_publicip
+
+    - name: "export r_clc_publicip"
+      set_stats:
+        data:
+          r_clc_publicip: "{{ r_clc_publicip }}"

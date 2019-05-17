@@ -7,3 +7,8 @@
       path: "{{ win_acl_inheritance_path | default(omit, True) }}"
       state: "{{ win_acl_inheritance_state | default(omit, True) }}"
       reorganize: "{{ win_acl_inheritance_reorganize | default(omit, True) }}"
+
+- name: "export r_win_acl_inheritance"
+  set_stats:
+    data:
+      r_win_acl_inheritance: "{{ r_win_acl_inheritance }}"

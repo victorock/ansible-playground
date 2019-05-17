@@ -9,3 +9,8 @@
       validate_certs: "{{ scaleway_organization_facts_validate_certs | default(omit, True) }}"
       api_url: "{{ scaleway_organization_facts_api_url | default(omit, True) }}"
       query_parameters: "{{ scaleway_organization_facts_query_parameters | default(omit, True) }}"
+
+- name: "export r_scaleway_organization_facts"
+  set_stats:
+    data:
+      r_scaleway_organization_facts: "{{ r_scaleway_organization_facts }}"

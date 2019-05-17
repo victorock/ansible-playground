@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_admin"
       fortios_system_admin: "{{ fortios_system_admin }}"
       register: r_fortios_system_admin
+
+    - name: "export r_fortios_system_admin"
+      set_stats:
+        data:
+          r_fortios_system_admin: "{{ r_fortios_system_admin }}"

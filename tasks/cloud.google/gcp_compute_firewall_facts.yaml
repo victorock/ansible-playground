@@ -11,3 +11,8 @@
       filters: "{{ gcp_compute_firewall_facts_filters | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_firewall_facts_auth_kind | default(omit, True) }}"
       service_account_file: "{{ gcp_compute_firewall_facts_service_account_file | default(omit, True) }}"
+
+- name: "export r_gcp_compute_firewall_facts"
+  set_stats:
+    data:
+      r_gcp_compute_firewall_facts: "{{ r_gcp_compute_firewall_facts }}"

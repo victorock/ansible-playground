@@ -6,3 +6,8 @@
     ipinfoio_facts: 
       http_agent: "{{ ipinfoio_facts_http_agent | default(omit, True) }}"
       timeout: "{{ ipinfoio_facts_timeout | default(omit, True) }}"
+
+- name: "export r_ipinfoio_facts"
+  set_stats:
+    data:
+      r_ipinfoio_facts: "{{ r_ipinfoio_facts }}"

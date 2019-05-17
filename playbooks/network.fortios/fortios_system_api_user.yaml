@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_api_user"
       fortios_system_api_user: "{{ fortios_system_api_user }}"
       register: r_fortios_system_api_user
+
+    - name: "export r_fortios_system_api_user"
+      set_stats:
+        data:
+          r_fortios_system_api_user: "{{ r_fortios_system_api_user }}"

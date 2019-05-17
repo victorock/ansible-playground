@@ -43,3 +43,8 @@
       mode: "{{ fmgr_secprof_appctrl_mode | default(omit, True) }}"
       options: "{{ fmgr_secprof_appctrl_options | default(omit, True) }}"
       entries_rate_duration: "{{ fmgr_secprof_appctrl_entries_rate_duration | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_appctrl"
+  set_stats:
+    data:
+      r_fmgr_secprof_appctrl: "{{ r_fmgr_secprof_appctrl }}"

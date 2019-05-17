@@ -16,3 +16,8 @@
       provider: "{{ ce_bfd_view_provider | default(omit, True) }}"
       session_name: "{{ ce_bfd_view_session_name | default(omit, True) }}"
       wtr_interval: "{{ ce_bfd_view_wtr_interval | default(omit, True) }}"
+
+- name: "export r_ce_bfd_view"
+  set_stats:
+    data:
+      r_ce_bfd_view: "{{ r_ce_bfd_view }}"

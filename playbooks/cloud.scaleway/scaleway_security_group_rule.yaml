@@ -24,3 +24,8 @@
     - name: "plugin_scaleway_security_group_rule"
       scaleway_security_group_rule: "{{ scaleway_security_group_rule }}"
       register: r_scaleway_security_group_rule
+
+    - name: "export r_scaleway_security_group_rule"
+      set_stats:
+        data:
+          r_scaleway_security_group_rule: "{{ r_scaleway_security_group_rule }}"

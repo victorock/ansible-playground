@@ -18,3 +18,8 @@
       validate_certs: "{{ mso_schema_template_anp_validate_certs | default(omit, True) }}"
       port: "{{ mso_schema_template_anp_port | default(omit, True) }}"
       schema: "{{ mso_schema_template_anp_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_template_anp"
+  set_stats:
+    data:
+      r_mso_schema_template_anp: "{{ r_mso_schema_template_anp }}"

@@ -23,3 +23,8 @@
     - name: "plugin_dimensiondata_network"
       dimensiondata_network: "{{ dimensiondata_network }}"
       register: r_dimensiondata_network
+
+    - name: "export r_dimensiondata_network"
+      set_stats:
+        data:
+          r_dimensiondata_network: "{{ r_dimensiondata_network }}"

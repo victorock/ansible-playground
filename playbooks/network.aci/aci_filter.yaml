@@ -26,3 +26,8 @@
     - name: "plugin_aci_filter"
       aci_filter: "{{ aci_filter }}"
       register: r_aci_filter
+
+    - name: "export r_aci_filter"
+      set_stats:
+        data:
+          r_aci_filter: "{{ r_aci_filter }}"

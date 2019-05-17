@@ -25,3 +25,8 @@
       listeners: "{{ elb_network_lb_listeners | default(omit, True) }}"
       wait_timeout: "{{ elb_network_lb_wait_timeout | default(omit, True) }}"
       wait: "{{ elb_network_lb_wait | default(omit, True) }}"
+
+- name: "export r_elb_network_lb"
+  set_stats:
+    data:
+      r_elb_network_lb: "{{ r_elb_network_lb }}"

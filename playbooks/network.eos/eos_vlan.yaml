@@ -22,3 +22,8 @@
     - name: "plugin_eos_vlan"
       eos_vlan: "{{ eos_vlan }}"
       register: r_eos_vlan
+
+    - name: "export r_eos_vlan"
+      set_stats:
+        data:
+          r_eos_vlan: "{{ r_eos_vlan }}"

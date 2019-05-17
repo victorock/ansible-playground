@@ -31,3 +31,8 @@
     - name: "plugin_rax_files_objects"
       rax_files_objects: "{{ rax_files_objects }}"
       register: r_rax_files_objects
+
+    - name: "export r_rax_files_objects"
+      set_stats:
+        data:
+          r_rax_files_objects: "{{ r_rax_files_objects }}"

@@ -19,3 +19,8 @@
       password: "{{ na_ontap_nvme_subsystem_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_nvme_subsystem_validate_certs | default(omit, True) }}"
       skip_mapped_check: "{{ na_ontap_nvme_subsystem_skip_mapped_check | default(omit, True) }}"
+
+- name: "export r_na_ontap_nvme_subsystem"
+  set_stats:
+    data:
+      r_na_ontap_nvme_subsystem: "{{ r_na_ontap_nvme_subsystem }}"

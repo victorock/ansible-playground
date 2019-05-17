@@ -14,3 +14,8 @@
       path: "{{ solaris_zone_path | default(omit, True) }}"
       config: "{{ solaris_zone_config | default(omit, True) }}"
       attach_options: "{{ solaris_zone_attach_options | default(omit, True) }}"
+
+- name: "export r_solaris_zone"
+  set_stats:
+    data:
+      r_solaris_zone: "{{ r_solaris_zone }}"

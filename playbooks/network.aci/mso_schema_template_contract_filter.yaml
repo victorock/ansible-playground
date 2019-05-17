@@ -32,3 +32,8 @@
     - name: "plugin_mso_schema_template_contract_filter"
       mso_schema_template_contract_filter: "{{ mso_schema_template_contract_filter }}"
       register: r_mso_schema_template_contract_filter
+
+    - name: "export r_mso_schema_template_contract_filter"
+      set_stats:
+        data:
+          r_mso_schema_template_contract_filter: "{{ r_mso_schema_template_contract_filter }}"

@@ -17,3 +17,8 @@
     - name: "plugin_aos_asn_pool"
       aos_asn_pool: "{{ aos_asn_pool }}"
       register: r_aos_asn_pool
+
+    - name: "export r_aos_asn_pool"
+      set_stats:
+        data:
+          r_aos_asn_pool: "{{ r_aos_asn_pool }}"

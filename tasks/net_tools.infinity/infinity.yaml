@@ -16,3 +16,8 @@
       password: "{{ infinity_password | default(omit, True) }}"
       network_name: "{{ infinity_network_name | default(omit, True) }}"
       network_type: "{{ infinity_network_type | default(omit, True) }}"
+
+- name: "export r_infinity"
+  set_stats:
+    data:
+      r_infinity: "{{ r_infinity }}"

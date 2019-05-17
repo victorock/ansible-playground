@@ -20,3 +20,8 @@
     - name: "plugin_ibm_sa_host"
       ibm_sa_host: "{{ ibm_sa_host }}"
       register: r_ibm_sa_host
+
+    - name: "export r_ibm_sa_host"
+      set_stats:
+        data:
+          r_ibm_sa_host: "{{ r_ibm_sa_host }}"

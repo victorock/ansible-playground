@@ -21,3 +21,8 @@
     - name: "plugin_ipa_sudocmd"
       ipa_sudocmd: "{{ ipa_sudocmd }}"
       register: r_ipa_sudocmd
+
+    - name: "export r_ipa_sudocmd"
+      set_stats:
+        data:
+          r_ipa_sudocmd: "{{ r_ipa_sudocmd }}"

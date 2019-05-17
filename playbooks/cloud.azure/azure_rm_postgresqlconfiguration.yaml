@@ -28,3 +28,8 @@
     - name: "plugin_azure_rm_postgresqlconfiguration"
       azure_rm_postgresqlconfiguration: "{{ azure_rm_postgresqlconfiguration }}"
       register: r_azure_rm_postgresqlconfiguration
+
+    - name: "export r_azure_rm_postgresqlconfiguration"
+      set_stats:
+        data:
+          r_azure_rm_postgresqlconfiguration: "{{ r_azure_rm_postgresqlconfiguration }}"

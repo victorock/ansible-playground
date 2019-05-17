@@ -7,3 +7,8 @@
       dest: "{{ net_get_dest | default(omit, True) }}"
       src: "{{ net_get_src | default(omit, True) }}"
       protocol: "{{ net_get_protocol | default(omit, True) }}"
+
+- name: "export r_net_get"
+  set_stats:
+    data:
+      r_net_get: "{{ r_net_get }}"

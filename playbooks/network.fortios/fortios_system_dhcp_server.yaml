@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_dhcp_server"
       fortios_system_dhcp_server: "{{ fortios_system_dhcp_server }}"
       register: r_fortios_system_dhcp_server
+
+    - name: "export r_fortios_system_dhcp_server"
+      set_stats:
+        data:
+          r_fortios_system_dhcp_server: "{{ r_fortios_system_dhcp_server }}"

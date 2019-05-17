@@ -7,3 +7,8 @@
       state: "{{ awall_state | default(omit, True) }}"
       activate: "{{ awall_activate | default(omit, True) }}"
       name: "{{ awall_name | default(omit, True) }}"
+
+- name: "export r_awall"
+  set_stats:
+    data:
+      r_awall: "{{ r_awall }}"

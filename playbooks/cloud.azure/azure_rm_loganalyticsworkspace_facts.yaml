@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_loganalyticsworkspace_facts"
       azure_rm_loganalyticsworkspace_facts: "{{ azure_rm_loganalyticsworkspace_facts }}"
       register: r_azure_rm_loganalyticsworkspace_facts
+
+    - name: "export r_azure_rm_loganalyticsworkspace_facts"
+      set_stats:
+        data:
+          r_azure_rm_loganalyticsworkspace_facts: "{{ r_azure_rm_loganalyticsworkspace_facts }}"

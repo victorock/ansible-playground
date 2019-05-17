@@ -20,3 +20,8 @@
       api_key: "{{ rax_cdb_user_api_key | default(omit, True) }}"
       validate_certs: "{{ rax_cdb_user_validate_certs | default(omit, True) }}"
       auth_endpoint: "{{ rax_cdb_user_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_cdb_user"
+  set_stats:
+    data:
+      r_rax_cdb_user: "{{ r_rax_cdb_user }}"

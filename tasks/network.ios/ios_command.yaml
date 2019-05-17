@@ -12,3 +12,8 @@
       provider: "{{ ios_command_provider | default(omit, True) }}"
       wait_for: "{{ ios_command_wait_for | default(omit, True) }}"
       match: "{{ ios_command_match | default(omit, True) }}"
+
+- name: "export r_ios_command"
+  set_stats:
+    data:
+      r_ios_command: "{{ r_ios_command }}"

@@ -39,3 +39,8 @@
     - name: "plugin_proxmox"
       proxmox: "{{ proxmox }}"
       register: r_proxmox
+
+    - name: "export r_proxmox"
+      set_stats:
+        data:
+          r_proxmox: "{{ r_proxmox }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_ips_custom"
       fortios_ips_custom: "{{ fortios_ips_custom }}"
       register: r_fortios_ips_custom
+
+    - name: "export r_fortios_ips_custom"
+      set_stats:
+        data:
+          r_fortios_ips_custom: "{{ r_fortios_ips_custom }}"

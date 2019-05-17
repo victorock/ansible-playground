@@ -11,3 +11,8 @@
       pn_auth: "{{ pn_snmp_vacm_pn_auth | default(omit, True) }}"
       pn_user_type: "{{ pn_snmp_vacm_pn_user_type | default(omit, True) }}"
       pn_cliswitch: "{{ pn_snmp_vacm_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_snmp_vacm"
+  set_stats:
+    data:
+      r_pn_snmp_vacm: "{{ r_pn_snmp_vacm }}"

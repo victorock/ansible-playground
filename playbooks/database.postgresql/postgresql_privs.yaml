@@ -33,3 +33,8 @@
     - name: "plugin_postgresql_privs"
       postgresql_privs: "{{ postgresql_privs }}"
       register: r_postgresql_privs
+
+    - name: "export r_postgresql_privs"
+      set_stats:
+        data:
+          r_postgresql_privs: "{{ r_postgresql_privs }}"

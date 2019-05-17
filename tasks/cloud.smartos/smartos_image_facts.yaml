@@ -5,3 +5,8 @@
   vars:
     smartos_image_facts: 
       filters: "{{ smartos_image_facts_filters | default(omit, True) }}"
+
+- name: "export r_smartos_image_facts"
+  set_stats:
+    data:
+      r_smartos_image_facts: "{{ r_smartos_image_facts }}"

@@ -20,3 +20,8 @@
       attributes: "{{ interfaces_file_attributes | default(omit, True) }}"
       backup: "{{ interfaces_file_backup | default(omit, True) }}"
       address_family: "{{ interfaces_file_address_family | default(omit, True) }}"
+
+- name: "export r_interfaces_file"
+  set_stats:
+    data:
+      r_interfaces_file: "{{ r_interfaces_file }}"

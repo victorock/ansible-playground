@@ -24,3 +24,8 @@
     - name: "plugin_dellos9_config"
       dellos9_config: "{{ dellos9_config }}"
       register: r_dellos9_config
+
+    - name: "export r_dellos9_config"
+      set_stats:
+        data:
+          r_dellos9_config: "{{ r_dellos9_config }}"

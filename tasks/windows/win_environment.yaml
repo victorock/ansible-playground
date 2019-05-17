@@ -8,3 +8,8 @@
       name: "{{ win_environment_name | default(omit, True) }}"
       value: "{{ win_environment_value | default(omit, True) }}"
       level: "{{ win_environment_level | default(omit, True) }}"
+
+- name: "export r_win_environment"
+  set_stats:
+    data:
+      r_win_environment: "{{ r_win_environment }}"

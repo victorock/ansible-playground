@@ -20,3 +20,8 @@
     - name: "plugin_ce_bfd_global"
       ce_bfd_global: "{{ ce_bfd_global }}"
       register: r_ce_bfd_global
+
+    - name: "export r_ce_bfd_global"
+      set_stats:
+        data:
+          r_ce_bfd_global: "{{ r_ce_bfd_global }}"

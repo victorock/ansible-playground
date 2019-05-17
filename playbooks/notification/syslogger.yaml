@@ -15,3 +15,8 @@
     - name: "plugin_syslogger"
       syslogger: "{{ syslogger }}"
       register: r_syslogger
+
+    - name: "export r_syslogger"
+      set_stats:
+        data:
+          r_syslogger: "{{ r_syslogger }}"

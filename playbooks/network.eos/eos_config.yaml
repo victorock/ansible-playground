@@ -29,3 +29,8 @@
     - name: "plugin_eos_config"
       eos_config: "{{ eos_config }}"
       register: r_eos_config
+
+    - name: "export r_eos_config"
+      set_stats:
+        data:
+          r_eos_config: "{{ r_eos_config }}"

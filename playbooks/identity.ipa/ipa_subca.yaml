@@ -22,3 +22,8 @@
     - name: "plugin_ipa_subca"
       ipa_subca: "{{ ipa_subca }}"
       register: r_ipa_subca
+
+    - name: "export r_ipa_subca"
+      set_stats:
+        data:
+          r_ipa_subca: "{{ r_ipa_subca }}"

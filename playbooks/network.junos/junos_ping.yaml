@@ -20,3 +20,8 @@
     - name: "plugin_junos_ping"
       junos_ping: "{{ junos_ping }}"
       register: r_junos_ping
+
+    - name: "export r_junos_ping"
+      set_stats:
+        data:
+          r_junos_ping: "{{ r_junos_ping }}"

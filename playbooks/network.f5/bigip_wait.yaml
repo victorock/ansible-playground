@@ -21,3 +21,8 @@
     - name: "plugin_bigip_wait"
       bigip_wait: "{{ bigip_wait }}"
       register: r_bigip_wait
+
+    - name: "export r_bigip_wait"
+      set_stats:
+        data:
+          r_bigip_wait: "{{ r_bigip_wait }}"

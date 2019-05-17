@@ -18,3 +18,8 @@
     - name: "plugin_jabber"
       jabber: "{{ jabber }}"
       register: r_jabber
+
+    - name: "export r_jabber"
+      set_stats:
+        data:
+          r_jabber: "{{ r_jabber }}"

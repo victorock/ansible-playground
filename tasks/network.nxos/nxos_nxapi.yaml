@@ -15,3 +15,8 @@
       https: "{{ nxos_nxapi_https | default(omit, True) }}"
       provider: "{{ nxos_nxapi_provider | default(omit, True) }}"
       http: "{{ nxos_nxapi_http | default(omit, True) }}"
+
+- name: "export r_nxos_nxapi"
+  set_stats:
+    data:
+      r_nxos_nxapi: "{{ r_nxos_nxapi }}"

@@ -13,3 +13,8 @@
       groups: "{{ zfs_delegate_admin_groups | default(omit, True) }}"
       local: "{{ zfs_delegate_admin_local | default(omit, True) }}"
       permissions: "{{ zfs_delegate_admin_permissions | default(omit, True) }}"
+
+- name: "export r_zfs_delegate_admin"
+  set_stats:
+    data:
+      r_zfs_delegate_admin: "{{ r_zfs_delegate_admin }}"

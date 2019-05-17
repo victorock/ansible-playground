@@ -13,3 +13,8 @@
     - name: "plugin_memset_server_facts"
       memset_server_facts: "{{ memset_server_facts }}"
       register: r_memset_server_facts
+
+    - name: "export r_memset_server_facts"
+      set_stats:
+        data:
+          r_memset_server_facts: "{{ r_memset_server_facts }}"

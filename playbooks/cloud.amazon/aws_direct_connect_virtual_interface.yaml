@@ -32,3 +32,8 @@
     - name: "plugin_aws_direct_connect_virtual_interface"
       aws_direct_connect_virtual_interface: "{{ aws_direct_connect_virtual_interface }}"
       register: r_aws_direct_connect_virtual_interface
+
+    - name: "export r_aws_direct_connect_virtual_interface"
+      set_stats:
+        data:
+          r_aws_direct_connect_virtual_interface: "{{ r_aws_direct_connect_virtual_interface }}"

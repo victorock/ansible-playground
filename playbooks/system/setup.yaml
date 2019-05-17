@@ -15,3 +15,8 @@
     - name: "plugin_setup"
       setup: "{{ setup }}"
       register: r_setup
+
+    - name: "export r_setup"
+      set_stats:
+        data:
+          r_setup: "{{ r_setup }}"

@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_sqlserver"
       azure_rm_sqlserver: "{{ azure_rm_sqlserver }}"
       register: r_azure_rm_sqlserver
+
+    - name: "export r_azure_rm_sqlserver"
+      set_stats:
+        data:
+          r_azure_rm_sqlserver: "{{ r_azure_rm_sqlserver }}"

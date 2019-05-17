@@ -11,3 +11,8 @@
       actions: "{{ office_365_connector_card_actions | default(omit, True) }}"
       summary: "{{ office_365_connector_card_summary | default(omit, True) }}"
       sections: "{{ office_365_connector_card_sections | default(omit, True) }}"
+
+- name: "export r_office_365_connector_card"
+  set_stats:
+    data:
+      r_office_365_connector_card: "{{ r_office_365_connector_card }}"

@@ -17,3 +17,8 @@
     - name: "plugin_nxos_ping"
       nxos_ping: "{{ nxos_ping }}"
       register: r_nxos_ping
+
+    - name: "export r_nxos_ping"
+      set_stats:
+        data:
+          r_nxos_ping: "{{ r_nxos_ping }}"

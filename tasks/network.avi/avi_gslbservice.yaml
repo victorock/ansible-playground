@@ -37,3 +37,8 @@
       api_version: "{{ avi_gslbservice_api_version | default(omit, True) }}"
       tenant_uuid: "{{ avi_gslbservice_tenant_uuid | default(omit, True) }}"
       min_members: "{{ avi_gslbservice_min_members | default(omit, True) }}"
+
+- name: "export r_avi_gslbservice"
+  set_stats:
+    data:
+      r_avi_gslbservice: "{{ r_avi_gslbservice }}"

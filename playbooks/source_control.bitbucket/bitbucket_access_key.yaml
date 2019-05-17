@@ -18,3 +18,8 @@
     - name: "plugin_bitbucket_access_key"
       bitbucket_access_key: "{{ bitbucket_access_key }}"
       register: r_bitbucket_access_key
+
+    - name: "export r_bitbucket_access_key"
+      set_stats:
+        data:
+          r_bitbucket_access_key: "{{ r_bitbucket_access_key }}"

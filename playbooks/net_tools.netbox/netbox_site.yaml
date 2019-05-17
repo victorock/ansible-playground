@@ -16,3 +16,8 @@
     - name: "plugin_netbox_site"
       netbox_site: "{{ netbox_site }}"
       register: r_netbox_site
+
+    - name: "export r_netbox_site"
+      set_stats:
+        data:
+          r_netbox_site: "{{ r_netbox_site }}"

@@ -25,3 +25,8 @@
       validate_certs: "{{ bigip_profile_http2_validate_certs | default(omit, True) }}"
       provider: "{{ bigip_profile_http2_provider | default(omit, True) }}"
       name: "{{ bigip_profile_http2_name | default(omit, True) }}"
+
+- name: "export r_bigip_profile_http2"
+  set_stats:
+    data:
+      r_bigip_profile_http2: "{{ r_bigip_profile_http2 }}"

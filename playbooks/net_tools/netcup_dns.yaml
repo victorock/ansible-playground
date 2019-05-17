@@ -21,3 +21,8 @@
     - name: "plugin_netcup_dns"
       netcup_dns: "{{ netcup_dns }}"
       register: r_netcup_dns
+
+    - name: "export r_netcup_dns"
+      set_stats:
+        data:
+          r_netcup_dns: "{{ r_netcup_dns }}"

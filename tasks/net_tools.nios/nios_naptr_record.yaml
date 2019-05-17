@@ -17,3 +17,8 @@
       view: "{{ nios_naptr_record_view | default(omit, True) }}"
       order: "{{ nios_naptr_record_order | default(omit, True) }}"
       replacement: "{{ nios_naptr_record_replacement | default(omit, True) }}"
+
+- name: "export r_nios_naptr_record"
+  set_stats:
+    data:
+      r_nios_naptr_record: "{{ r_nios_naptr_record }}"

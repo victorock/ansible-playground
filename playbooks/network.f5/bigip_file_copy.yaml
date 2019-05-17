@@ -23,3 +23,8 @@
     - name: "plugin_bigip_file_copy"
       bigip_file_copy: "{{ bigip_file_copy }}"
       register: r_bigip_file_copy
+
+    - name: "export r_bigip_file_copy"
+      set_stats:
+        data:
+          r_bigip_file_copy: "{{ r_bigip_file_copy }}"

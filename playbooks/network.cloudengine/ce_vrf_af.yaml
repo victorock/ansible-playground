@@ -19,3 +19,8 @@
     - name: "plugin_ce_vrf_af"
       ce_vrf_af: "{{ ce_vrf_af }}"
       register: r_ce_vrf_af
+
+    - name: "export r_ce_vrf_af"
+      set_stats:
+        data:
+          r_ce_vrf_af: "{{ r_ce_vrf_af }}"

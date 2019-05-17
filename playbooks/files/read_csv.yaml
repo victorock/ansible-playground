@@ -19,3 +19,8 @@
     - name: "plugin_read_csv"
       read_csv: "{{ read_csv }}"
       register: r_read_csv
+
+    - name: "export r_read_csv"
+      set_stats:
+        data:
+          r_read_csv: "{{ r_read_csv }}"

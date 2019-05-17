@@ -22,3 +22,8 @@
     - name: "plugin_etcd3"
       etcd3: "{{ etcd3 }}"
       register: r_etcd3
+
+    - name: "export r_etcd3"
+      set_stats:
+        data:
+          r_etcd3: "{{ r_etcd3 }}"

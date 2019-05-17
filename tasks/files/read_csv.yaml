@@ -12,3 +12,8 @@
       key: "{{ read_csv_key | default(omit, True) }}"
       path: "{{ read_csv_path | default(omit, True) }}"
       unique: "{{ read_csv_unique | default(omit, True) }}"
+
+- name: "export r_read_csv"
+  set_stats:
+    data:
+      r_read_csv: "{{ r_read_csv }}"

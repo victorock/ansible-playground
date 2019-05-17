@@ -21,3 +21,8 @@
     - name: "plugin_vultr_block_storage"
       vultr_block_storage: "{{ vultr_block_storage }}"
       register: r_vultr_block_storage
+
+    - name: "export r_vultr_block_storage"
+      set_stats:
+        data:
+          r_vultr_block_storage: "{{ r_vultr_block_storage }}"

@@ -30,3 +30,8 @@
     - name: "plugin_ec2_vpc_route_table"
       ec2_vpc_route_table: "{{ ec2_vpc_route_table }}"
       register: r_ec2_vpc_route_table
+
+    - name: "export r_ec2_vpc_route_table"
+      set_stats:
+        data:
+          r_ec2_vpc_route_table: "{{ r_ec2_vpc_route_table }}"

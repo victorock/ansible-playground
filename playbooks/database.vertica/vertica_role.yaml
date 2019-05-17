@@ -19,3 +19,8 @@
     - name: "plugin_vertica_role"
       vertica_role: "{{ vertica_role }}"
       register: r_vertica_role
+
+    - name: "export r_vertica_role"
+      set_stats:
+        data:
+          r_vertica_role: "{{ r_vertica_role }}"

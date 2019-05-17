@@ -14,3 +14,8 @@
     - name: "plugin_capabilities"
       capabilities: "{{ capabilities }}"
       register: r_capabilities
+
+    - name: "export r_capabilities"
+      set_stats:
+        data:
+          r_capabilities: "{{ r_capabilities }}"

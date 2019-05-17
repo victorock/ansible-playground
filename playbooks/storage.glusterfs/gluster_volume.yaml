@@ -28,3 +28,8 @@
     - name: "plugin_gluster_volume"
       gluster_volume: "{{ gluster_volume }}"
       register: r_gluster_volume
+
+    - name: "export r_gluster_volume"
+      set_stats:
+        data:
+          r_gluster_volume: "{{ r_gluster_volume }}"

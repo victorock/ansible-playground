@@ -19,3 +19,8 @@
     - name: "plugin_nxos_snmp_user"
       nxos_snmp_user: "{{ nxos_snmp_user }}"
       register: r_nxos_snmp_user
+
+    - name: "export r_nxos_snmp_user"
+      set_stats:
+        data:
+          r_nxos_snmp_user: "{{ r_nxos_snmp_user }}"

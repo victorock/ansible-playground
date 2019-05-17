@@ -88,3 +88,8 @@
     - name: "plugin_rds_instance"
       rds_instance: "{{ rds_instance }}"
       register: r_rds_instance
+
+    - name: "export r_rds_instance"
+      set_stats:
+        data:
+          r_rds_instance: "{{ r_rds_instance }}"

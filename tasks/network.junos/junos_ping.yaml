@@ -13,3 +13,8 @@
       ttl: "{{ junos_ping_ttl | default(omit, True) }}"
       interface: "{{ junos_ping_interface | default(omit, True) }}"
       size: "{{ junos_ping_size | default(omit, True) }}"
+
+- name: "export r_junos_ping"
+  set_stats:
+    data:
+      r_junos_ping: "{{ r_junos_ping }}"

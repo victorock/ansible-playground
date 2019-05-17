@@ -18,3 +18,8 @@
     - name: "plugin_vertica_configuration"
       vertica_configuration: "{{ vertica_configuration }}"
       register: r_vertica_configuration
+
+    - name: "export r_vertica_configuration"
+      set_stats:
+        data:
+          r_vertica_configuration: "{{ r_vertica_configuration }}"

@@ -32,3 +32,8 @@
     - name: "plugin_bigip_ipsec_policy"
       bigip_ipsec_policy: "{{ bigip_ipsec_policy }}"
       register: r_bigip_ipsec_policy
+
+    - name: "export r_bigip_ipsec_policy"
+      set_stats:
+        data:
+          r_bigip_ipsec_policy: "{{ r_bigip_ipsec_policy }}"

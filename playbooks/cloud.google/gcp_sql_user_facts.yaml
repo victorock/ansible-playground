@@ -18,3 +18,8 @@
     - name: "plugin_gcp_sql_user_facts"
       gcp_sql_user_facts: "{{ gcp_sql_user_facts }}"
       register: r_gcp_sql_user_facts
+
+    - name: "export r_gcp_sql_user_facts"
+      set_stats:
+        data:
+          r_gcp_sql_user_facts: "{{ r_gcp_sql_user_facts }}"

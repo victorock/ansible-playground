@@ -23,3 +23,8 @@
       subscription_id: "{{ azure_rm_servicebus_subscription_id | default(omit, True) }}"
       password: "{{ azure_rm_servicebus_password | default(omit, True) }}"
       tenant: "{{ azure_rm_servicebus_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_servicebus"
+  set_stats:
+    data:
+      r_azure_rm_servicebus: "{{ r_azure_rm_servicebus }}"

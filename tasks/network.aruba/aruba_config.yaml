@@ -20,3 +20,8 @@
       backup: "{{ aruba_config_backup | default(omit, True) }}"
       match: "{{ aruba_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ aruba_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_aruba_config"
+  set_stats:
+    data:
+      r_aruba_config: "{{ r_aruba_config }}"

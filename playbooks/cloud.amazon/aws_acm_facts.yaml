@@ -21,3 +21,8 @@
     - name: "plugin_aws_acm_facts"
       aws_acm_facts: "{{ aws_acm_facts }}"
       register: r_aws_acm_facts
+
+    - name: "export r_aws_acm_facts"
+      set_stats:
+        data:
+          r_aws_acm_facts: "{{ r_aws_acm_facts }}"

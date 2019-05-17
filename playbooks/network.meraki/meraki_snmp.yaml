@@ -28,3 +28,8 @@
     - name: "plugin_meraki_snmp"
       meraki_snmp: "{{ meraki_snmp }}"
       register: r_meraki_snmp
+
+    - name: "export r_meraki_snmp"
+      set_stats:
+        data:
+          r_meraki_snmp: "{{ r_meraki_snmp }}"

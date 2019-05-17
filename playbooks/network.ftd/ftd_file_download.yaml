@@ -14,3 +14,8 @@
     - name: "plugin_ftd_file_download"
       ftd_file_download: "{{ ftd_file_download }}"
       register: r_ftd_file_download
+
+    - name: "export r_ftd_file_download"
+      set_stats:
+        data:
+          r_ftd_file_download: "{{ r_ftd_file_download }}"

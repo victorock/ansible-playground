@@ -41,3 +41,8 @@
     - name: "plugin_os_subnet"
       os_subnet: "{{ os_subnet }}"
       register: r_os_subnet
+
+    - name: "export r_os_subnet"
+      set_stats:
+        data:
+          r_os_subnet: "{{ r_os_subnet }}"

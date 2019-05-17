@@ -15,3 +15,8 @@
       service_account_file: "{{ gcp_sql_user_service_account_file | default(omit, True) }}"
       password: "{{ gcp_sql_user_password | default(omit, True) }}"
       auth_kind: "{{ gcp_sql_user_auth_kind | default(omit, True) }}"
+
+- name: "export r_gcp_sql_user"
+  set_stats:
+    data:
+      r_gcp_sql_user: "{{ r_gcp_sql_user }}"

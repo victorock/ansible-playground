@@ -18,3 +18,8 @@
     - name: "plugin_net_linkagg"
       net_linkagg: "{{ net_linkagg }}"
       register: r_net_linkagg
+
+    - name: "export r_net_linkagg"
+      set_stats:
+        data:
+          r_net_linkagg: "{{ r_net_linkagg }}"

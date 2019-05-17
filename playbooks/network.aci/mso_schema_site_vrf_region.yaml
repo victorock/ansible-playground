@@ -26,3 +26,8 @@
     - name: "plugin_mso_schema_site_vrf_region"
       mso_schema_site_vrf_region: "{{ mso_schema_site_vrf_region }}"
       register: r_mso_schema_site_vrf_region
+
+    - name: "export r_mso_schema_site_vrf_region"
+      set_stats:
+        data:
+          r_mso_schema_site_vrf_region: "{{ r_mso_schema_site_vrf_region }}"

@@ -19,3 +19,8 @@
     - name: "plugin_katello"
       katello: "{{ katello }}"
       register: r_katello
+
+    - name: "export r_katello"
+      set_stats:
+        data:
+          r_katello: "{{ r_katello }}"

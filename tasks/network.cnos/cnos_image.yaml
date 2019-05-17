@@ -16,3 +16,8 @@
       imgtype: "{{ cnos_image_imgtype | default(omit, True) }}"
       password: "{{ cnos_image_password | default(omit, True) }}"
       enablePassword: "{{ cnos_image_enablePassword | default(omit, True) }}"
+
+- name: "export r_cnos_image"
+  set_stats:
+    data:
+      r_cnos_image: "{{ r_cnos_image }}"

@@ -17,3 +17,8 @@
       api_username: "{{ one_host_api_username | default(omit, True) }}"
       validate_certs: "{{ one_host_validate_certs | default(omit, True) }}"
       name: "{{ one_host_name | default(omit, True) }}"
+
+- name: "export r_one_host"
+  set_stats:
+    data:
+      r_one_host: "{{ r_one_host }}"

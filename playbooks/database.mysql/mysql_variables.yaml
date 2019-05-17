@@ -23,3 +23,8 @@
     - name: "plugin_mysql_variables"
       mysql_variables: "{{ mysql_variables }}"
       register: r_mysql_variables
+
+    - name: "export r_mysql_variables"
+      set_stats:
+        data:
+          r_mysql_variables: "{{ r_mysql_variables }}"

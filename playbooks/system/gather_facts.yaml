@@ -12,3 +12,8 @@
     - name: "plugin_gather_facts"
       gather_facts: "{{ gather_facts }}"
       register: r_gather_facts
+
+    - name: "export r_gather_facts"
+      set_stats:
+        data:
+          r_gather_facts: "{{ r_gather_facts }}"

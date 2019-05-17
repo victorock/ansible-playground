@@ -18,3 +18,8 @@
     - name: "plugin_net_logging"
       net_logging: "{{ net_logging }}"
       register: r_net_logging
+
+    - name: "export r_net_logging"
+      set_stats:
+        data:
+          r_net_logging: "{{ r_net_logging }}"

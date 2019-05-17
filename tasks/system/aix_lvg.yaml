@@ -10,3 +10,8 @@
       vg_type: "{{ aix_lvg_vg_type | default(omit, True) }}"
       state: "{{ aix_lvg_state | default(omit, True) }}"
       pp_size: "{{ aix_lvg_pp_size | default(omit, True) }}"
+
+- name: "export r_aix_lvg"
+  set_stats:
+    data:
+      r_aix_lvg: "{{ r_aix_lvg }}"

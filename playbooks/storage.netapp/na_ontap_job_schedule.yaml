@@ -25,3 +25,8 @@
     - name: "plugin_na_ontap_job_schedule"
       na_ontap_job_schedule: "{{ na_ontap_job_schedule }}"
       register: r_na_ontap_job_schedule
+
+    - name: "export r_na_ontap_job_schedule"
+      set_stats:
+        data:
+          r_na_ontap_job_schedule: "{{ r_na_ontap_job_schedule }}"

@@ -9,3 +9,8 @@
       db: "{{ vertica_facts_db | default(omit, True) }}"
       port: "{{ vertica_facts_port | default(omit, True) }}"
       login_user: "{{ vertica_facts_login_user | default(omit, True) }}"
+
+- name: "export r_vertica_facts"
+  set_stats:
+    data:
+      r_vertica_facts: "{{ r_vertica_facts }}"

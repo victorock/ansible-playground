@@ -17,3 +17,8 @@
     - name: "plugin_fortios_application_custom"
       fortios_application_custom: "{{ fortios_application_custom }}"
       register: r_fortios_application_custom
+
+    - name: "export r_fortios_application_custom"
+      set_stats:
+        data:
+          r_fortios_application_custom: "{{ r_fortios_application_custom }}"

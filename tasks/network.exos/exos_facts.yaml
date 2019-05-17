@@ -5,3 +5,8 @@
   vars:
     exos_facts: 
       gather_subset: "{{ exos_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_exos_facts"
+  set_stats:
+    data:
+      r_exos_facts: "{{ r_exos_facts }}"

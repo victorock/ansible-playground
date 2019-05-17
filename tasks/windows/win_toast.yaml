@@ -10,3 +10,8 @@
       tag: "{{ win_toast_tag | default(omit, True) }}"
       expire: "{{ win_toast_expire | default(omit, True) }}"
       msg: "{{ win_toast_msg | default(omit, True) }}"
+
+- name: "export r_win_toast"
+  set_stats:
+    data:
+      r_win_toast: "{{ r_win_toast }}"

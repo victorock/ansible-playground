@@ -14,3 +14,8 @@
       comments: "{{ fmgr_fwobj_ippool6_comments | default(omit, True) }}"
       mode: "{{ fmgr_fwobj_ippool6_mode | default(omit, True) }}"
       dynamic_mapping_startip: "{{ fmgr_fwobj_ippool6_dynamic_mapping_startip | default(omit, True) }}"
+
+- name: "export r_fmgr_fwobj_ippool6"
+  set_stats:
+    data:
+      r_fmgr_fwobj_ippool6: "{{ r_fmgr_fwobj_ippool6 }}"

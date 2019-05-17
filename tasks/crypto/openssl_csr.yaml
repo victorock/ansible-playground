@@ -41,3 +41,8 @@
       select_crypto_backend: "{{ openssl_csr_select_crypto_backend | default(omit, True) }}"
       attributes: "{{ openssl_csr_attributes | default(omit, True) }}"
       ocsp_must_staple_critical: "{{ openssl_csr_ocsp_must_staple_critical | default(omit, True) }}"
+
+- name: "export r_openssl_csr"
+  set_stats:
+    data:
+      r_openssl_csr: "{{ r_openssl_csr }}"

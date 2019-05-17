@@ -39,3 +39,8 @@
       v6persistmasklen: "{{ netscaler_gslb_vserver_v6persistmasklen | default(omit, True) }}"
       nitro_pass: "{{ netscaler_gslb_vserver_nitro_pass | default(omit, True) }}"
       validate_certs: "{{ netscaler_gslb_vserver_validate_certs | default(omit, True) }}"
+
+- name: "export r_netscaler_gslb_vserver"
+  set_stats:
+    data:
+      r_netscaler_gslb_vserver: "{{ r_netscaler_gslb_vserver }}"

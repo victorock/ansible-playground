@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_vipgrp46"
       fortios_firewall_vipgrp46: "{{ fortios_firewall_vipgrp46 }}"
       register: r_fortios_firewall_vipgrp46
+
+    - name: "export r_fortios_firewall_vipgrp46"
+      set_stats:
+        data:
+          r_fortios_firewall_vipgrp46: "{{ r_fortios_firewall_vipgrp46 }}"

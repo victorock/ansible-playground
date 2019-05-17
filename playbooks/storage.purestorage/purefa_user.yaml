@@ -18,3 +18,8 @@
     - name: "plugin_purefa_user"
       purefa_user: "{{ purefa_user }}"
       register: r_purefa_user
+
+    - name: "export r_purefa_user"
+      set_stats:
+        data:
+          r_purefa_user: "{{ r_purefa_user }}"

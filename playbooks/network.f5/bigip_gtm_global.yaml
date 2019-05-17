@@ -20,3 +20,8 @@
     - name: "plugin_bigip_gtm_global"
       bigip_gtm_global: "{{ bigip_gtm_global }}"
       register: r_bigip_gtm_global
+
+    - name: "export r_bigip_gtm_global"
+      set_stats:
+        data:
+          r_bigip_gtm_global: "{{ r_bigip_gtm_global }}"

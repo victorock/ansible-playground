@@ -17,3 +17,8 @@
       ontapi: "{{ na_ontap_snapshot_policy_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_snapshot_policy_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_snapshot_policy_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_snapshot_policy"
+  set_stats:
+    data:
+      r_na_ontap_snapshot_policy: "{{ r_na_ontap_snapshot_policy }}"

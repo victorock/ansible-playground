@@ -22,3 +22,8 @@
       logging: "{{ ufw_logging | default(omit, True) }}"
       delete: "{{ ufw_delete | default(omit, True) }}"
       name: "{{ ufw_name | default(omit, True) }}"
+
+- name: "export r_ufw"
+  set_stats:
+    data:
+      r_ufw: "{{ r_ufw }}"

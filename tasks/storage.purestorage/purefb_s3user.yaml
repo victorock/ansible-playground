@@ -10,3 +10,8 @@
       name: "{{ purefb_s3user_name | default(omit, True) }}"
       state: "{{ purefb_s3user_state | default(omit, True) }}"
       api_token: "{{ purefb_s3user_api_token | default(omit, True) }}"
+
+- name: "export r_purefb_s3user"
+  set_stats:
+    data:
+      r_purefb_s3user: "{{ r_purefb_s3user }}"

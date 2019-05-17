@@ -18,3 +18,8 @@
     - name: "plugin_vmware_host_capability_facts"
       vmware_host_capability_facts: "{{ vmware_host_capability_facts }}"
       register: r_vmware_host_capability_facts
+
+    - name: "export r_vmware_host_capability_facts"
+      set_stats:
+        data:
+          r_vmware_host_capability_facts: "{{ r_vmware_host_capability_facts }}"

@@ -33,3 +33,8 @@
     - name: "plugin_bigip_tunnel"
       bigip_tunnel: "{{ bigip_tunnel }}"
       register: r_bigip_tunnel
+
+    - name: "export r_bigip_tunnel"
+      set_stats:
+        data:
+          r_bigip_tunnel: "{{ r_bigip_tunnel }}"

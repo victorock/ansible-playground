@@ -16,3 +16,8 @@
       path: "{{ win_service_path | default(omit, True) }}"
       password: "{{ win_service_password | default(omit, True) }}"
       desktop_interact: "{{ win_service_desktop_interact | default(omit, True) }}"
+
+- name: "export r_win_service"
+  set_stats:
+    data:
+      r_win_service: "{{ r_win_service }}"

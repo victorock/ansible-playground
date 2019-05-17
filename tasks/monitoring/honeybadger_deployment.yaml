@@ -11,3 +11,8 @@
       user: "{{ honeybadger_deployment_user | default(omit, True) }}"
       validate_certs: "{{ honeybadger_deployment_validate_certs | default(omit, True) }}"
       revision: "{{ honeybadger_deployment_revision | default(omit, True) }}"
+
+- name: "export r_honeybadger_deployment"
+  set_stats:
+    data:
+      r_honeybadger_deployment: "{{ r_honeybadger_deployment }}"

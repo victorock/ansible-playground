@@ -27,3 +27,8 @@
     - name: "plugin_win_get_url"
       win_get_url: "{{ win_get_url }}"
       register: r_win_get_url
+
+    - name: "export r_win_get_url"
+      set_stats:
+        data:
+          r_win_get_url: "{{ r_win_get_url }}"

@@ -18,3 +18,8 @@
     - name: "plugin_ce_evpn_bd_vni"
       ce_evpn_bd_vni: "{{ ce_evpn_bd_vni }}"
       register: r_ce_evpn_bd_vni
+
+    - name: "export r_ce_evpn_bd_vni"
+      set_stats:
+        data:
+          r_ce_evpn_bd_vni: "{{ r_ce_evpn_bd_vni }}"

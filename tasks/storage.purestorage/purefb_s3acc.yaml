@@ -8,3 +8,8 @@
       fb_url: "{{ purefb_s3acc_fb_url | default(omit, True) }}"
       name: "{{ purefb_s3acc_name | default(omit, True) }}"
       api_token: "{{ purefb_s3acc_api_token | default(omit, True) }}"
+
+- name: "export r_purefb_s3acc"
+  set_stats:
+    data:
+      r_purefb_s3acc: "{{ r_purefb_s3acc }}"

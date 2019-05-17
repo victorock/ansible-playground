@@ -16,3 +16,8 @@
     - name: "plugin_filesystem"
       filesystem: "{{ filesystem }}"
       register: r_filesystem
+
+    - name: "export r_filesystem"
+      set_stats:
+        data:
+          r_filesystem: "{{ r_filesystem }}"

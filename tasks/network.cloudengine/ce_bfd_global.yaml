@@ -13,3 +13,8 @@
       damp_max_wait_time: "{{ ce_bfd_global_damp_max_wait_time | default(omit, True) }}"
       damp_second_wait_time: "{{ ce_bfd_global_damp_second_wait_time | default(omit, True) }}"
       tos_exp_static: "{{ ce_bfd_global_tos_exp_static | default(omit, True) }}"
+
+- name: "export r_ce_bfd_global"
+  set_stats:
+    data:
+      r_ce_bfd_global: "{{ r_ce_bfd_global }}"

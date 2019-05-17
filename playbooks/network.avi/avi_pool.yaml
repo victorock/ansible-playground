@@ -80,3 +80,8 @@
     - name: "plugin_avi_pool"
       avi_pool: "{{ avi_pool }}"
       register: r_avi_pool
+
+    - name: "export r_avi_pool"
+      set_stats:
+        data:
+          r_avi_pool: "{{ r_avi_pool }}"

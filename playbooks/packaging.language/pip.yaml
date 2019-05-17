@@ -24,3 +24,8 @@
     - name: "plugin_pip"
       pip: "{{ pip }}"
       register: r_pip
+
+    - name: "export r_pip"
+      set_stats:
+        data:
+          r_pip: "{{ r_pip }}"

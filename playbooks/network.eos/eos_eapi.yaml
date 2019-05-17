@@ -24,3 +24,8 @@
     - name: "plugin_eos_eapi"
       eos_eapi: "{{ eos_eapi }}"
       register: r_eos_eapi
+
+    - name: "export r_eos_eapi"
+      set_stats:
+        data:
+          r_eos_eapi: "{{ r_eos_eapi }}"

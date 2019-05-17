@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_mysqlfirewallrule"
       azure_rm_mysqlfirewallrule: "{{ azure_rm_mysqlfirewallrule }}"
       register: r_azure_rm_mysqlfirewallrule
+
+    - name: "export r_azure_rm_mysqlfirewallrule"
+      set_stats:
+        data:
+          r_azure_rm_mysqlfirewallrule: "{{ r_azure_rm_mysqlfirewallrule }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_router_ospf_https | default(omit, True) }}"
       password: "{{ fortios_router_ospf_password | default(omit, True) }}"
       vdom: "{{ fortios_router_ospf_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_router_ospf"
+  set_stats:
+    data:
+      r_fortios_router_ospf: "{{ r_fortios_router_ospf }}"

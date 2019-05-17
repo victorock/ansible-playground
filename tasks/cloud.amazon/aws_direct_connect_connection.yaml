@@ -19,3 +19,8 @@
       ec2_url: "{{ aws_direct_connect_connection_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_direct_connect_connection_validate_certs | default(omit, True) }}"
       location: "{{ aws_direct_connect_connection_location | default(omit, True) }}"
+
+- name: "export r_aws_direct_connect_connection"
+  set_stats:
+    data:
+      r_aws_direct_connect_connection: "{{ r_aws_direct_connect_connection }}"

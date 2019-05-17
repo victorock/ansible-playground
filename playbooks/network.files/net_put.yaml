@@ -15,3 +15,8 @@
     - name: "plugin_net_put"
       net_put: "{{ net_put }}"
       register: r_net_put
+
+    - name: "export r_net_put"
+      set_stats:
+        data:
+          r_net_put: "{{ r_net_put }}"

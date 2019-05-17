@@ -28,3 +28,8 @@
       validate_certs: "{{ vmware_cluster_validate_certs | default(omit, True) }}"
       drs_default_vm_behavior: "{{ vmware_cluster_drs_default_vm_behavior | default(omit, True) }}"
       ha_vm_min_up_time: "{{ vmware_cluster_ha_vm_min_up_time | default(omit, True) }}"
+
+- name: "export r_vmware_cluster"
+  set_stats:
+    data:
+      r_vmware_cluster: "{{ r_vmware_cluster }}"

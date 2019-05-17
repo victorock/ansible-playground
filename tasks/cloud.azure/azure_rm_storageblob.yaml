@@ -34,3 +34,8 @@
       src: "{{ azure_rm_storageblob_src | default(omit, True) }}"
       api_profile: "{{ azure_rm_storageblob_api_profile | default(omit, True) }}"
       storage_account_name: "{{ azure_rm_storageblob_storage_account_name | default(omit, True) }}"
+
+- name: "export r_azure_rm_storageblob"
+  set_stats:
+    data:
+      r_azure_rm_storageblob: "{{ r_azure_rm_storageblob }}"

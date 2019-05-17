@@ -26,3 +26,8 @@
     - name: "plugin_rax_mon_notification_plan"
       rax_mon_notification_plan: "{{ rax_mon_notification_plan }}"
       register: r_rax_mon_notification_plan
+
+    - name: "export r_rax_mon_notification_plan"
+      set_stats:
+        data:
+          r_rax_mon_notification_plan: "{{ r_rax_mon_notification_plan }}"

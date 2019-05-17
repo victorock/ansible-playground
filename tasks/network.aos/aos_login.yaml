@@ -8,3 +8,8 @@
       user: "{{ aos_login_user | default(omit, True) }}"
       port: "{{ aos_login_port | default(omit, True) }}"
       server: "{{ aos_login_server | default(omit, True) }}"
+
+- name: "export r_aos_login"
+  set_stats:
+    data:
+      r_aos_login: "{{ r_aos_login }}"

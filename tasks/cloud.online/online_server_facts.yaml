@@ -8,3 +8,8 @@
       validate_certs: "{{ online_server_facts_validate_certs | default(omit, True) }}"
       api_url: "{{ online_server_facts_api_url | default(omit, True) }}"
       api_token: "{{ online_server_facts_api_token | default(omit, True) }}"
+
+- name: "export r_online_server_facts"
+  set_stats:
+    data:
+      r_online_server_facts: "{{ r_online_server_facts }}"

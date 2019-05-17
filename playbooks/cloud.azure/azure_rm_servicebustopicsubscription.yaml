@@ -42,3 +42,8 @@
     - name: "plugin_azure_rm_servicebustopicsubscription"
       azure_rm_servicebustopicsubscription: "{{ azure_rm_servicebustopicsubscription }}"
       register: r_azure_rm_servicebustopicsubscription
+
+    - name: "export r_azure_rm_servicebustopicsubscription"
+      set_stats:
+        data:
+          r_azure_rm_servicebustopicsubscription: "{{ r_azure_rm_servicebustopicsubscription }}"

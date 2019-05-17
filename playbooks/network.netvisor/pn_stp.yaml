@@ -24,3 +24,8 @@
     - name: "plugin_pn_stp"
       pn_stp: "{{ pn_stp }}"
       register: r_pn_stp
+
+    - name: "export r_pn_stp"
+      set_stats:
+        data:
+          r_pn_stp: "{{ r_pn_stp }}"

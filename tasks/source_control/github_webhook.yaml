@@ -16,3 +16,8 @@
       password: "{{ github_webhook_password | default(omit, True) }}"
       events: "{{ github_webhook_events | default(omit, True) }}"
       token: "{{ github_webhook_token | default(omit, True) }}"
+
+- name: "export r_github_webhook"
+  set_stats:
+    data:
+      r_github_webhook: "{{ r_github_webhook }}"

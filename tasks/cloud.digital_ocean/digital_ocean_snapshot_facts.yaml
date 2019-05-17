@@ -9,3 +9,8 @@
       snapshot_type: "{{ digital_ocean_snapshot_facts_snapshot_type | default(omit, True) }}"
       timeout: "{{ digital_ocean_snapshot_facts_timeout | default(omit, True) }}"
       snapshot_id: "{{ digital_ocean_snapshot_facts_snapshot_id | default(omit, True) }}"
+
+- name: "export r_digital_ocean_snapshot_facts"
+  set_stats:
+    data:
+      r_digital_ocean_snapshot_facts: "{{ r_digital_ocean_snapshot_facts }}"

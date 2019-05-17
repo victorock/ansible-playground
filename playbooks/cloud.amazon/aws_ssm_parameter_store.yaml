@@ -27,3 +27,8 @@
     - name: "plugin_aws_ssm_parameter_store"
       aws_ssm_parameter_store: "{{ aws_ssm_parameter_store }}"
       register: r_aws_ssm_parameter_store
+
+    - name: "export r_aws_ssm_parameter_store"
+      set_stats:
+        data:
+          r_aws_ssm_parameter_store: "{{ r_aws_ssm_parameter_store }}"

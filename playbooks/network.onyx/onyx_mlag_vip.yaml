@@ -16,3 +16,8 @@
     - name: "plugin_onyx_mlag_vip"
       onyx_mlag_vip: "{{ onyx_mlag_vip }}"
       register: r_onyx_mlag_vip
+
+    - name: "export r_onyx_mlag_vip"
+      set_stats:
+        data:
+          r_onyx_mlag_vip: "{{ r_onyx_mlag_vip }}"

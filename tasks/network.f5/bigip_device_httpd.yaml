@@ -23,3 +23,8 @@
       max_clients: "{{ bigip_device_httpd_max_clients | default(omit, True) }}"
       auth_pam_idle_timeout: "{{ bigip_device_httpd_auth_pam_idle_timeout | default(omit, True) }}"
       ssl_cipher_suite: "{{ bigip_device_httpd_ssl_cipher_suite | default(omit, True) }}"
+
+- name: "export r_bigip_device_httpd"
+  set_stats:
+    data:
+      r_bigip_device_httpd: "{{ r_bigip_device_httpd }}"

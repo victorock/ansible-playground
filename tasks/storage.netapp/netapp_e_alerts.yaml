@@ -16,3 +16,8 @@
       test: "{{ netapp_e_alerts_test | default(omit, True) }}"
       validate_certs: "{{ netapp_e_alerts_validate_certs | default(omit, True) }}"
       api_url: "{{ netapp_e_alerts_api_url | default(omit, True) }}"
+
+- name: "export r_netapp_e_alerts"
+  set_stats:
+    data:
+      r_netapp_e_alerts: "{{ r_netapp_e_alerts }}"

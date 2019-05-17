@@ -18,3 +18,8 @@
     - name: "plugin_na_elementsw_cluster_snmp"
       na_elementsw_cluster_snmp: "{{ na_elementsw_cluster_snmp }}"
       register: r_na_elementsw_cluster_snmp
+
+    - name: "export r_na_elementsw_cluster_snmp"
+      set_stats:
+        data:
+          r_na_elementsw_cluster_snmp: "{{ r_na_elementsw_cluster_snmp }}"

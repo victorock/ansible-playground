@@ -27,3 +27,8 @@
       mode: "{{ fmgr_fwobj_address_mode | default(omit, True) }}"
       wildcard: "{{ fmgr_fwobj_address_wildcard | default(omit, True) }}"
       ipv6addr: "{{ fmgr_fwobj_address_ipv6addr | default(omit, True) }}"
+
+- name: "export r_fmgr_fwobj_address"
+  set_stats:
+    data:
+      r_fmgr_fwobj_address: "{{ r_fmgr_fwobj_address }}"

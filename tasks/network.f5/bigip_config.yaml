@@ -14,3 +14,8 @@
       provider: "{{ bigip_config_provider | default(omit, True) }}"
       password: "{{ bigip_config_password | default(omit, True) }}"
       validate_certs: "{{ bigip_config_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_config"
+  set_stats:
+    data:
+      r_bigip_config: "{{ r_bigip_config }}"

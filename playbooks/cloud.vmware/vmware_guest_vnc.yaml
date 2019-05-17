@@ -25,3 +25,8 @@
     - name: "plugin_vmware_guest_vnc"
       vmware_guest_vnc: "{{ vmware_guest_vnc }}"
       register: r_vmware_guest_vnc
+
+    - name: "export r_vmware_guest_vnc"
+      set_stats:
+        data:
+          r_vmware_guest_vnc: "{{ r_vmware_guest_vnc }}"

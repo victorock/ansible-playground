@@ -17,3 +17,8 @@
       ec2_url: "{{ aws_direct_connect_gateway_ec2_url | default(omit, True) }}"
       direct_connect_gateway_id: "{{ aws_direct_connect_gateway_direct_connect_gateway_id | default(omit, True) }}"
       name: "{{ aws_direct_connect_gateway_name | default(omit, True) }}"
+
+- name: "export r_aws_direct_connect_gateway"
+  set_stats:
+    data:
+      r_aws_direct_connect_gateway: "{{ r_aws_direct_connect_gateway }}"

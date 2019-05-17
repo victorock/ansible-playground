@@ -11,3 +11,8 @@
       pn_max_bw_limit: "{{ pn_port_cos_bw_pn_max_bw_limit | default(omit, True) }}"
       pn_cliswitch: "{{ pn_port_cos_bw_pn_cliswitch | default(omit, True) }}"
       pn_port: "{{ pn_port_cos_bw_pn_port | default(omit, True) }}"
+
+- name: "export r_pn_port_cos_bw"
+  set_stats:
+    data:
+      r_pn_port_cos_bw: "{{ r_pn_port_cos_bw }}"

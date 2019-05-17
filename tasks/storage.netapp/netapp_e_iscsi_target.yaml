@@ -14,3 +14,8 @@
       validate_certs: "{{ netapp_e_iscsi_target_validate_certs | default(omit, True) }}"
       chap_secret: "{{ netapp_e_iscsi_target_chap_secret | default(omit, True) }}"
       ssid: "{{ netapp_e_iscsi_target_ssid | default(omit, True) }}"
+
+- name: "export r_netapp_e_iscsi_target"
+  set_stats:
+    data:
+      r_netapp_e_iscsi_target: "{{ r_netapp_e_iscsi_target }}"

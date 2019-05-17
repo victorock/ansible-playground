@@ -48,3 +48,8 @@
     - name: "plugin_kubevirt_rs"
       kubevirt_rs: "{{ kubevirt_rs }}"
       register: r_kubevirt_rs
+
+    - name: "export r_kubevirt_rs"
+      set_stats:
+        data:
+          r_kubevirt_rs: "{{ r_kubevirt_rs }}"

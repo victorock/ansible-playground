@@ -16,3 +16,8 @@
     - name: "plugin_slxos_command"
       slxos_command: "{{ slxos_command }}"
       register: r_slxos_command
+
+    - name: "export r_slxos_command"
+      set_stats:
+        data:
+          r_slxos_command: "{{ r_slxos_command }}"

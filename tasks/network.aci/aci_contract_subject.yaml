@@ -25,3 +25,8 @@
       port: "{{ aci_contract_subject_port | default(omit, True) }}"
       tenant: "{{ aci_contract_subject_tenant | default(omit, True) }}"
       subject: "{{ aci_contract_subject_subject | default(omit, True) }}"
+
+- name: "export r_aci_contract_subject"
+  set_stats:
+    data:
+      r_aci_contract_subject: "{{ r_aci_contract_subject }}"

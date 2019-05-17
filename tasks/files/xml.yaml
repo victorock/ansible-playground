@@ -22,3 +22,8 @@
       print_match: "{{ xml_print_match | default(omit, True) }}"
       path: "{{ xml_path | default(omit, True) }}"
       backup: "{{ xml_backup | default(omit, True) }}"
+
+- name: "export r_xml"
+  set_stats:
+    data:
+      r_xml: "{{ r_xml }}"

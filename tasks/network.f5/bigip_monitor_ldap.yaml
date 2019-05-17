@@ -31,3 +31,8 @@
       debug: "{{ bigip_monitor_ldap_debug | default(omit, True) }}"
       target_password: "{{ bigip_monitor_ldap_target_password | default(omit, True) }}"
       validate_certs: "{{ bigip_monitor_ldap_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_ldap"
+  set_stats:
+    data:
+      r_bigip_monitor_ldap: "{{ r_bigip_monitor_ldap }}"

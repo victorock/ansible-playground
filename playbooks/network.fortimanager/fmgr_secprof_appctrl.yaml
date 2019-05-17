@@ -50,3 +50,8 @@
     - name: "plugin_fmgr_secprof_appctrl"
       fmgr_secprof_appctrl: "{{ fmgr_secprof_appctrl }}"
       register: r_fmgr_secprof_appctrl
+
+    - name: "export r_fmgr_secprof_appctrl"
+      set_stats:
+        data:
+          r_fmgr_secprof_appctrl: "{{ r_fmgr_secprof_appctrl }}"

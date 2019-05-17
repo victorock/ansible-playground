@@ -13,3 +13,8 @@
       user: "{{ librato_annotation_user | default(omit, True) }}"
       api_key: "{{ librato_annotation_api_key | default(omit, True) }}"
       end_time: "{{ librato_annotation_end_time | default(omit, True) }}"
+
+- name: "export r_librato_annotation"
+  set_stats:
+    data:
+      r_librato_annotation: "{{ r_librato_annotation }}"

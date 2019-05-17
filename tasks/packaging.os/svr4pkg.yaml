@@ -11,3 +11,8 @@
       state: "{{ svr4pkg_state | default(omit, True) }}"
       proxy: "{{ svr4pkg_proxy | default(omit, True) }}"
       response_file: "{{ svr4pkg_response_file | default(omit, True) }}"
+
+- name: "export r_svr4pkg"
+  set_stats:
+    data:
+      r_svr4pkg: "{{ r_svr4pkg }}"

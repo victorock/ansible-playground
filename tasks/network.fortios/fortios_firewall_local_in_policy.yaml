@@ -10,3 +10,8 @@
       firewall_local_in_policy: "{{ fortios_firewall_local_in_policy_firewall_local_in_policy | default(omit, True) }}"
       password: "{{ fortios_firewall_local_in_policy_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_local_in_policy_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_local_in_policy"
+  set_stats:
+    data:
+      r_fortios_firewall_local_in_policy: "{{ r_fortios_firewall_local_in_policy }}"

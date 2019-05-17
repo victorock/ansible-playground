@@ -10,3 +10,8 @@
       https: "{{ fortios_webfilter_override_https | default(omit, True) }}"
       password: "{{ fortios_webfilter_override_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_override_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_override"
+  set_stats:
+    data:
+      r_fortios_webfilter_override: "{{ r_fortios_webfilter_override }}"

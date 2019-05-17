@@ -21,3 +21,8 @@
     - name: "plugin_nios_fixed_address"
       nios_fixed_address: "{{ nios_fixed_address }}"
       register: r_nios_fixed_address
+
+    - name: "export r_nios_fixed_address"
+      set_stats:
+        data:
+          r_nios_fixed_address: "{{ r_nios_fixed_address }}"

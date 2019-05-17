@@ -26,3 +26,8 @@
     - name: "plugin_gce_pd"
       gce_pd: "{{ gce_pd }}"
       register: r_gce_pd
+
+    - name: "export r_gce_pd"
+      set_stats:
+        data:
+          r_gce_pd: "{{ r_gce_pd }}"

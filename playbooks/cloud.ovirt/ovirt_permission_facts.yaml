@@ -18,3 +18,8 @@
     - name: "plugin_ovirt_permission_facts"
       ovirt_permission_facts: "{{ ovirt_permission_facts }}"
       register: r_ovirt_permission_facts
+
+    - name: "export r_ovirt_permission_facts"
+      set_stats:
+        data:
+          r_ovirt_permission_facts: "{{ r_ovirt_permission_facts }}"

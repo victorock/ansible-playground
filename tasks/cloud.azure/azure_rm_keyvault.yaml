@@ -30,3 +30,8 @@
       enabled_for_disk_encryption: "{{ azure_rm_keyvault_enabled_for_disk_encryption | default(omit, True) }}"
       auth_source: "{{ azure_rm_keyvault_auth_source | default(omit, True) }}"
       enable_soft_delete: "{{ azure_rm_keyvault_enable_soft_delete | default(omit, True) }}"
+
+- name: "export r_azure_rm_keyvault"
+  set_stats:
+    data:
+      r_azure_rm_keyvault: "{{ r_azure_rm_keyvault }}"

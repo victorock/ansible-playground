@@ -17,3 +17,8 @@
     - name: "plugin_git_config"
       git_config: "{{ git_config }}"
       register: r_git_config
+
+    - name: "export r_git_config"
+      set_stats:
+        data:
+          r_git_config: "{{ r_git_config }}"

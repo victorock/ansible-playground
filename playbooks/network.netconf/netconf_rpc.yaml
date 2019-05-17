@@ -15,3 +15,8 @@
     - name: "plugin_netconf_rpc"
       netconf_rpc: "{{ netconf_rpc }}"
       register: r_netconf_rpc
+
+    - name: "export r_netconf_rpc"
+      set_stats:
+        data:
+          r_netconf_rpc: "{{ r_netconf_rpc }}"

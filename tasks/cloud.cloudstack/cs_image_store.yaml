@@ -16,3 +16,8 @@
       provider: "{{ cs_image_store_provider | default(omit, True) }}"
       api_key: "{{ cs_image_store_api_key | default(omit, True) }}"
       api_url: "{{ cs_image_store_api_url | default(omit, True) }}"
+
+- name: "export r_cs_image_store"
+  set_stats:
+    data:
+      r_cs_image_store: "{{ r_cs_image_store }}"

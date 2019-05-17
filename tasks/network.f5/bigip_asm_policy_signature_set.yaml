@@ -17,3 +17,8 @@
       password: "{{ bigip_asm_policy_signature_set_password | default(omit, True) }}"
       validate_certs: "{{ bigip_asm_policy_signature_set_validate_certs | default(omit, True) }}"
       block: "{{ bigip_asm_policy_signature_set_block | default(omit, True) }}"
+
+- name: "export r_bigip_asm_policy_signature_set"
+  set_stats:
+    data:
+      r_bigip_asm_policy_signature_set: "{{ r_bigip_asm_policy_signature_set }}"

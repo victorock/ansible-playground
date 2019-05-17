@@ -19,3 +19,8 @@
     - name: "plugin_webfaction_site"
       webfaction_site: "{{ webfaction_site }}"
       register: r_webfaction_site
+
+    - name: "export r_webfaction_site"
+      set_stats:
+        data:
+          r_webfaction_site: "{{ r_webfaction_site }}"

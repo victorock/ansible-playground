@@ -16,3 +16,8 @@
     - name: "plugin_flatpak"
       flatpak: "{{ flatpak }}"
       register: r_flatpak
+
+    - name: "export r_flatpak"
+      set_stats:
+        data:
+          r_flatpak: "{{ r_flatpak }}"

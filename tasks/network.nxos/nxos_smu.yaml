@@ -7,3 +7,8 @@
       pkg: "{{ nxos_smu_pkg | default(omit, True) }}"
       file_system: "{{ nxos_smu_file_system | default(omit, True) }}"
       provider: "{{ nxos_smu_provider | default(omit, True) }}"
+
+- name: "export r_nxos_smu"
+  set_stats:
+    data:
+      r_nxos_smu: "{{ r_nxos_smu }}"

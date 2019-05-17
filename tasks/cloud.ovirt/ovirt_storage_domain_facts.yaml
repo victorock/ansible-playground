@@ -8,3 +8,8 @@
       fetch_nested: "{{ ovirt_storage_domain_facts_fetch_nested | default(omit, True) }}"
       nested_attributes: "{{ ovirt_storage_domain_facts_nested_attributes | default(omit, True) }}"
       auth: "{{ ovirt_storage_domain_facts_auth | default(omit, True) }}"
+
+- name: "export r_ovirt_storage_domain_facts"
+  set_stats:
+    data:
+      r_ovirt_storage_domain_facts: "{{ r_ovirt_storage_domain_facts }}"

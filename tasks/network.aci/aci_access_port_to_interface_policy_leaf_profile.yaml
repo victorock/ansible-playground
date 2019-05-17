@@ -27,3 +27,8 @@
       output_level: "{{ aci_access_port_to_interface_policy_leaf_profile_output_level | default(omit, True) }}"
       timeout: "{{ aci_access_port_to_interface_policy_leaf_profile_timeout | default(omit, True) }}"
       leaf_interface_profile: "{{ aci_access_port_to_interface_policy_leaf_profile_leaf_interface_profile | default(omit, True) }}"
+
+- name: "export r_aci_access_port_to_interface_policy_leaf_profile"
+  set_stats:
+    data:
+      r_aci_access_port_to_interface_policy_leaf_profile: "{{ r_aci_access_port_to_interface_policy_leaf_profile }}"

@@ -15,3 +15,8 @@
       state: "{{ aws_codecommit_state | default(omit, True) }}"
       ec2_url: "{{ aws_codecommit_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_codecommit_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_codecommit"
+  set_stats:
+    data:
+      r_aws_codecommit: "{{ r_aws_codecommit }}"

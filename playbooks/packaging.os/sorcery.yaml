@@ -17,3 +17,8 @@
     - name: "plugin_sorcery"
       sorcery: "{{ sorcery }}"
       register: r_sorcery
+
+    - name: "export r_sorcery"
+      set_stats:
+        data:
+          r_sorcery: "{{ r_sorcery }}"

@@ -27,3 +27,8 @@
       settings: "{{ azure_rm_virtualmachinescalesetextension_settings | default(omit, True) }}"
       type_handler_version: "{{ azure_rm_virtualmachinescalesetextension_type_handler_version | default(omit, True) }}"
       auth_source: "{{ azure_rm_virtualmachinescalesetextension_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualmachinescalesetextension"
+  set_stats:
+    data:
+      r_azure_rm_virtualmachinescalesetextension: "{{ r_azure_rm_virtualmachinescalesetextension }}"

@@ -18,3 +18,8 @@
       service_offering: "{{ cs_vpc_offering_service_offering | default(omit, True) }}"
       api_key: "{{ cs_vpc_offering_api_key | default(omit, True) }}"
       name: "{{ cs_vpc_offering_name | default(omit, True) }}"
+
+- name: "export r_cs_vpc_offering"
+  set_stats:
+    data:
+      r_cs_vpc_offering: "{{ r_cs_vpc_offering }}"

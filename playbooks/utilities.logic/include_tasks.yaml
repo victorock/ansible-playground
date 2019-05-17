@@ -14,3 +14,8 @@
     - name: "plugin_include_tasks"
       include_tasks: "{{ include_tasks }}"
       register: r_include_tasks
+
+    - name: "export r_include_tasks"
+      set_stats:
+        data:
+          r_include_tasks: "{{ r_include_tasks }}"

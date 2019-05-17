@@ -13,3 +13,8 @@
     - name: "plugin_openssl_csr_info"
       openssl_csr_info: "{{ openssl_csr_info }}"
       register: r_openssl_csr_info
+
+    - name: "export r_openssl_csr_info"
+      set_stats:
+        data:
+          r_openssl_csr_info: "{{ r_openssl_csr_info }}"

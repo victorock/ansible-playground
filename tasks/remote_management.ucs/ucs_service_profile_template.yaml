@@ -43,3 +43,8 @@
       uuid_pool: "{{ ucs_service_profile_template_uuid_pool | default(omit, True) }}"
       graphics_card_policy: "{{ ucs_service_profile_template_graphics_card_policy | default(omit, True) }}"
       vmedia_policy: "{{ ucs_service_profile_template_vmedia_policy | default(omit, True) }}"
+
+- name: "export r_ucs_service_profile_template"
+  set_stats:
+    data:
+      r_ucs_service_profile_template: "{{ r_ucs_service_profile_template }}"

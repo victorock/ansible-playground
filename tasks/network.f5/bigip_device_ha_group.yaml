@@ -17,3 +17,8 @@
       password: "{{ bigip_device_ha_group_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_ha_group_validate_certs | default(omit, True) }}"
       name: "{{ bigip_device_ha_group_name | default(omit, True) }}"
+
+- name: "export r_bigip_device_ha_group"
+  set_stats:
+    data:
+      r_bigip_device_ha_group: "{{ r_bigip_device_ha_group }}"

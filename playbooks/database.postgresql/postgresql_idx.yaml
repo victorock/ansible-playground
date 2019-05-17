@@ -31,3 +31,8 @@
     - name: "plugin_postgresql_idx"
       postgresql_idx: "{{ postgresql_idx }}"
       register: r_postgresql_idx
+
+    - name: "export r_postgresql_idx"
+      set_stats:
+        data:
+          r_postgresql_idx: "{{ r_postgresql_idx }}"

@@ -21,3 +21,8 @@
       login_password: "{{ zabbix_map_login_password | default(omit, True) }}"
       highlight: "{{ zabbix_map_highlight | default(omit, True) }}"
       validate_certs: "{{ zabbix_map_validate_certs | default(omit, True) }}"
+
+- name: "export r_zabbix_map"
+  set_stats:
+    data:
+      r_zabbix_map: "{{ r_zabbix_map }}"

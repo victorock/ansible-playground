@@ -26,3 +26,8 @@
     - name: "plugin_vmware_guest_file_operation"
       vmware_guest_file_operation: "{{ vmware_guest_file_operation }}"
       register: r_vmware_guest_file_operation
+
+    - name: "export r_vmware_guest_file_operation"
+      set_stats:
+        data:
+          r_vmware_guest_file_operation: "{{ r_vmware_guest_file_operation }}"

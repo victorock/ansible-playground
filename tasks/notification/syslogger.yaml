@@ -8,3 +8,8 @@
       priority: "{{ syslogger_priority | default(omit, True) }}"
       log_pid: "{{ syslogger_log_pid | default(omit, True) }}"
       facility: "{{ syslogger_facility | default(omit, True) }}"
+
+- name: "export r_syslogger"
+  set_stats:
+    data:
+      r_syslogger: "{{ r_syslogger }}"

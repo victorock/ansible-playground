@@ -20,3 +20,8 @@
     - name: "plugin_bigiq_regkey_pool"
       bigiq_regkey_pool: "{{ bigiq_regkey_pool }}"
       register: r_bigiq_regkey_pool
+
+    - name: "export r_bigiq_regkey_pool"
+      set_stats:
+        data:
+          r_bigiq_regkey_pool: "{{ r_bigiq_regkey_pool }}"

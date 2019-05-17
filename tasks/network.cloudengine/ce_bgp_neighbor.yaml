@@ -36,3 +36,8 @@
       peer_addr: "{{ ce_bgp_neighbor_peer_addr | default(omit, True) }}"
       pswd_type: "{{ ce_bgp_neighbor_pswd_type | default(omit, True) }}"
       mpls_local_ifnet_disable: "{{ ce_bgp_neighbor_mpls_local_ifnet_disable | default(omit, True) }}"
+
+- name: "export r_ce_bgp_neighbor"
+  set_stats:
+    data:
+      r_ce_bgp_neighbor: "{{ r_ce_bgp_neighbor }}"

@@ -26,3 +26,8 @@
       inject_ovf_env: "{{ vmware_deploy_ovf_inject_ovf_env | default(omit, True) }}"
       validate_certs: "{{ vmware_deploy_ovf_validate_certs | default(omit, True) }}"
       datastore: "{{ vmware_deploy_ovf_datastore | default(omit, True) }}"
+
+- name: "export r_vmware_deploy_ovf"
+  set_stats:
+    data:
+      r_vmware_deploy_ovf: "{{ r_vmware_deploy_ovf }}"

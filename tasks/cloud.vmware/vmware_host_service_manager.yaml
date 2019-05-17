@@ -14,3 +14,8 @@
       password: "{{ vmware_host_service_manager_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_service_manager_validate_certs | default(omit, True) }}"
       port: "{{ vmware_host_service_manager_port | default(omit, True) }}"
+
+- name: "export r_vmware_host_service_manager"
+  set_stats:
+    data:
+      r_vmware_host_service_manager: "{{ r_vmware_host_service_manager }}"

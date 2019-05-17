@@ -8,3 +8,8 @@
       sleep: "{{ wait_for_connection_sleep | default(omit, True) }}"
       connect_timeout: "{{ wait_for_connection_connect_timeout | default(omit, True) }}"
       timeout: "{{ wait_for_connection_timeout | default(omit, True) }}"
+
+- name: "export r_wait_for_connection"
+  set_stats:
+    data:
+      r_wait_for_connection: "{{ r_wait_for_connection }}"

@@ -16,3 +16,8 @@
     - name: "plugin_pn_vrouter_bgp_network"
       pn_vrouter_bgp_network: "{{ pn_vrouter_bgp_network }}"
       register: r_pn_vrouter_bgp_network
+
+    - name: "export r_pn_vrouter_bgp_network"
+      set_stats:
+        data:
+          r_pn_vrouter_bgp_network: "{{ r_pn_vrouter_bgp_network }}"

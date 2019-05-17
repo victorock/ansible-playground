@@ -18,3 +18,8 @@
       password: "{{ ucs_vlans_password | default(omit, True) }}"
       port: "{{ ucs_vlans_port | default(omit, True) }}"
       native: "{{ ucs_vlans_native | default(omit, True) }}"
+
+- name: "export r_ucs_vlans"
+  set_stats:
+    data:
+      r_ucs_vlans: "{{ r_ucs_vlans }}"

@@ -17,3 +17,8 @@
     - name: "plugin_idrac_redfish_facts"
       idrac_redfish_facts: "{{ idrac_redfish_facts }}"
       register: r_idrac_redfish_facts
+
+    - name: "export r_idrac_redfish_facts"
+      set_stats:
+        data:
+          r_idrac_redfish_facts: "{{ r_idrac_redfish_facts }}"

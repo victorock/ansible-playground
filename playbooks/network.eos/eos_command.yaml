@@ -19,3 +19,8 @@
     - name: "plugin_eos_command"
       eos_command: "{{ eos_command }}"
       register: r_eos_command
+
+    - name: "export r_eos_command"
+      set_stats:
+        data:
+          r_eos_command: "{{ r_eos_command }}"

@@ -20,3 +20,8 @@
       validate_certs: "{{ meraki_content_filtering_validate_certs | default(omit, True) }}"
       net_id: "{{ meraki_content_filtering_net_id | default(omit, True) }}"
       use_https: "{{ meraki_content_filtering_use_https | default(omit, True) }}"
+
+- name: "export r_meraki_content_filtering"
+  set_stats:
+    data:
+      r_meraki_content_filtering: "{{ r_meraki_content_filtering }}"

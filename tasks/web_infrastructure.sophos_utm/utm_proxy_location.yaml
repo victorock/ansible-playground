@@ -25,3 +25,8 @@
       be_path: "{{ utm_proxy_location_be_path | default(omit, True) }}"
       allowed_networks: "{{ utm_proxy_location_allowed_networks | default(omit, True) }}"
       backend: "{{ utm_proxy_location_backend | default(omit, True) }}"
+
+- name: "export r_utm_proxy_location"
+  set_stats:
+    data:
+      r_utm_proxy_location: "{{ r_utm_proxy_location }}"

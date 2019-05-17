@@ -12,3 +12,8 @@
     - name: "plugin_cnos_lldp"
       cnos_lldp: "{{ cnos_lldp }}"
       register: r_cnos_lldp
+
+    - name: "export r_cnos_lldp"
+      set_stats:
+        data:
+          r_cnos_lldp: "{{ r_cnos_lldp }}"

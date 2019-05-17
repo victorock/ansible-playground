@@ -19,3 +19,8 @@
       validate_certs: "{{ gitlab_runner_validate_certs | default(omit, True) }}"
       api_username: "{{ gitlab_runner_api_username | default(omit, True) }}"
       description: "{{ gitlab_runner_description | default(omit, True) }}"
+
+- name: "export r_gitlab_runner"
+  set_stats:
+    data:
+      r_gitlab_runner: "{{ r_gitlab_runner }}"

@@ -16,3 +16,8 @@
       restorable_by_user_ids: "{{ ec2_snapshot_facts_restorable_by_user_ids | default(omit, True) }}"
       validate_certs: "{{ ec2_snapshot_facts_validate_certs | default(omit, True) }}"
       owner_ids: "{{ ec2_snapshot_facts_owner_ids | default(omit, True) }}"
+
+- name: "export r_ec2_snapshot_facts"
+  set_stats:
+    data:
+      r_ec2_snapshot_facts: "{{ r_ec2_snapshot_facts }}"

@@ -29,3 +29,8 @@
       snat_dynamic_address: "{{ panos_nat_rule_snat_dynamic_address | default(omit, True) }}"
       tag_name: "{{ panos_nat_rule_tag_name | default(omit, True) }}"
       commit: "{{ panos_nat_rule_commit | default(omit, True) }}"
+
+- name: "export r_panos_nat_rule"
+  set_stats:
+    data:
+      r_panos_nat_rule: "{{ r_panos_nat_rule }}"

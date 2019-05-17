@@ -42,3 +42,8 @@
       mode: "{{ cs_template_mode | default(omit, True) }}"
       checksum: "{{ cs_template_checksum | default(omit, True) }}"
       os_type: "{{ cs_template_os_type | default(omit, True) }}"
+
+- name: "export r_cs_template"
+  set_stats:
+    data:
+      r_cs_template: "{{ r_cs_template }}"

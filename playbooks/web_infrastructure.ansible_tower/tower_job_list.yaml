@@ -20,3 +20,8 @@
     - name: "plugin_tower_job_list"
       tower_job_list: "{{ tower_job_list }}"
       register: r_tower_job_list
+
+    - name: "export r_tower_job_list"
+      set_stats:
+        data:
+          r_tower_job_list: "{{ r_tower_job_list }}"

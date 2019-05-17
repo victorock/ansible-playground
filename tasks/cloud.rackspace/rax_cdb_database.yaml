@@ -19,3 +19,8 @@
       validate_certs: "{{ rax_cdb_database_validate_certs | default(omit, True) }}"
       character_set: "{{ rax_cdb_database_character_set | default(omit, True) }}"
       auth_endpoint: "{{ rax_cdb_database_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_cdb_database"
+  set_stats:
+    data:
+      r_rax_cdb_database: "{{ r_rax_cdb_database }}"

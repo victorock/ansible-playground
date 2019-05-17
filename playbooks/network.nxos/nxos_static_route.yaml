@@ -21,3 +21,8 @@
     - name: "plugin_nxos_static_route"
       nxos_static_route: "{{ nxos_static_route }}"
       register: r_nxos_static_route
+
+    - name: "export r_nxos_static_route"
+      set_stats:
+        data:
+          r_nxos_static_route: "{{ r_nxos_static_route }}"

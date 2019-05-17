@@ -16,3 +16,8 @@
     - name: "plugin_pn_dscp_map_pri_map"
       pn_dscp_map_pri_map: "{{ pn_dscp_map_pri_map }}"
       register: r_pn_dscp_map_pri_map
+
+    - name: "export r_pn_dscp_map_pri_map"
+      set_stats:
+        data:
+          r_pn_dscp_map_pri_map: "{{ r_pn_dscp_map_pri_map }}"

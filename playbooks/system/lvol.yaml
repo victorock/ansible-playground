@@ -23,3 +23,8 @@
     - name: "plugin_lvol"
       lvol: "{{ lvol }}"
       register: r_lvol
+
+    - name: "export r_lvol"
+      set_stats:
+        data:
+          r_lvol: "{{ r_lvol }}"

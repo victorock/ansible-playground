@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_vserver_peer"
       na_ontap_vserver_peer: "{{ na_ontap_vserver_peer }}"
       register: r_na_ontap_vserver_peer
+
+    - name: "export r_na_ontap_vserver_peer"
+      set_stats:
+        data:
+          r_na_ontap_vserver_peer: "{{ r_na_ontap_vserver_peer }}"

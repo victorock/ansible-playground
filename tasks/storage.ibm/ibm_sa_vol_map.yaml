@@ -13,3 +13,8 @@
       override: "{{ ibm_sa_vol_map_override | default(omit, True) }}"
       endpoints: "{{ ibm_sa_vol_map_endpoints | default(omit, True) }}"
       lun: "{{ ibm_sa_vol_map_lun | default(omit, True) }}"
+
+- name: "export r_ibm_sa_vol_map"
+  set_stats:
+    data:
+      r_ibm_sa_vol_map: "{{ r_ibm_sa_vol_map }}"

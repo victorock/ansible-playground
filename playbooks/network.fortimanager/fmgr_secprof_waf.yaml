@@ -136,3 +136,8 @@
     - name: "plugin_fmgr_secprof_waf"
       fmgr_secprof_waf: "{{ fmgr_secprof_waf }}"
       register: r_fmgr_secprof_waf
+
+    - name: "export r_fmgr_secprof_waf"
+      set_stats:
+        data:
+          r_fmgr_secprof_waf: "{{ r_fmgr_secprof_waf }}"

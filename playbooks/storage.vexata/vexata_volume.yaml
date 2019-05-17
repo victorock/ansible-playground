@@ -18,3 +18,8 @@
     - name: "plugin_vexata_volume"
       vexata_volume: "{{ vexata_volume }}"
       register: r_vexata_volume
+
+    - name: "export r_vexata_volume"
+      set_stats:
+        data:
+          r_vexata_volume: "{{ r_vexata_volume }}"

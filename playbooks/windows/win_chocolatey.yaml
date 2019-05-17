@@ -33,3 +33,8 @@
     - name: "plugin_win_chocolatey"
       win_chocolatey: "{{ win_chocolatey }}"
       register: r_win_chocolatey
+
+    - name: "export r_win_chocolatey"
+      set_stats:
+        data:
+          r_win_chocolatey: "{{ r_win_chocolatey }}"

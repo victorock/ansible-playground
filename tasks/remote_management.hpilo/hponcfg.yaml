@@ -8,3 +8,8 @@
       executable: "{{ hponcfg_executable | default(omit, True) }}"
       minfw: "{{ hponcfg_minfw | default(omit, True) }}"
       verbose: "{{ hponcfg_verbose | default(omit, True) }}"
+
+- name: "export r_hponcfg"
+  set_stats:
+    data:
+      r_hponcfg: "{{ r_hponcfg }}"

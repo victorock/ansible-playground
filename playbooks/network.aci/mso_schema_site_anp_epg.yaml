@@ -26,3 +26,8 @@
     - name: "plugin_mso_schema_site_anp_epg"
       mso_schema_site_anp_epg: "{{ mso_schema_site_anp_epg }}"
       register: r_mso_schema_site_anp_epg
+
+    - name: "export r_mso_schema_site_anp_epg"
+      set_stats:
+        data:
+          r_mso_schema_site_anp_epg: "{{ r_mso_schema_site_anp_epg }}"

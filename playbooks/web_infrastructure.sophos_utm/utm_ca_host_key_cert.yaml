@@ -25,3 +25,8 @@
     - name: "plugin_utm_ca_host_key_cert"
       utm_ca_host_key_cert: "{{ utm_ca_host_key_cert }}"
       register: r_utm_ca_host_key_cert
+
+    - name: "export r_utm_ca_host_key_cert"
+      set_stats:
+        data:
+          r_utm_ca_host_key_cert: "{{ r_utm_ca_host_key_cert }}"

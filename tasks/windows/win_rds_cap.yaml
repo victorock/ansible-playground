@@ -19,3 +19,8 @@
       session_timeout: "{{ win_rds_cap_session_timeout | default(omit, True) }}"
       auth_method: "{{ win_rds_cap_auth_method | default(omit, True) }}"
       redirect_pnp: "{{ win_rds_cap_redirect_pnp | default(omit, True) }}"
+
+- name: "export r_win_rds_cap"
+  set_stats:
+    data:
+      r_win_rds_cap: "{{ r_win_rds_cap }}"

@@ -19,3 +19,8 @@
     - name: "plugin_avi_api_version"
       avi_api_version: "{{ avi_api_version }}"
       register: r_avi_api_version
+
+    - name: "export r_avi_api_version"
+      set_stats:
+        data:
+          r_avi_api_version: "{{ r_avi_api_version }}"

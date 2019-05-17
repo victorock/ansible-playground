@@ -12,3 +12,8 @@
     - name: "plugin_win_file_version"
       win_file_version: "{{ win_file_version }}"
       register: r_win_file_version
+
+    - name: "export r_win_file_version"
+      set_stats:
+        data:
+          r_win_file_version: "{{ r_win_file_version }}"

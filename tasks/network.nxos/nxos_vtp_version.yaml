@@ -6,3 +6,8 @@
     nxos_vtp_version: 
       version: "{{ nxos_vtp_version_version | default(omit, True) }}"
       provider: "{{ nxos_vtp_version_provider | default(omit, True) }}"
+
+- name: "export r_nxos_vtp_version"
+  set_stats:
+    data:
+      r_nxos_vtp_version: "{{ r_nxos_vtp_version }}"

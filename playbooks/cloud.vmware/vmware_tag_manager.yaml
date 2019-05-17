@@ -20,3 +20,8 @@
     - name: "plugin_vmware_tag_manager"
       vmware_tag_manager: "{{ vmware_tag_manager }}"
       register: r_vmware_tag_manager
+
+    - name: "export r_vmware_tag_manager"
+      set_stats:
+        data:
+          r_vmware_tag_manager: "{{ r_vmware_tag_manager }}"

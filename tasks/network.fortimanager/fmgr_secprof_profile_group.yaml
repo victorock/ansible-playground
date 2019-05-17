@@ -21,3 +21,8 @@
       av_profile: "{{ fmgr_secprof_profile_group_av_profile | default(omit, True) }}"
       profile_protocol_options: "{{ fmgr_secprof_profile_group_profile_protocol_options | default(omit, True) }}"
       ssh_filter_profile: "{{ fmgr_secprof_profile_group_ssh_filter_profile | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_profile_group"
+  set_stats:
+    data:
+      r_fmgr_secprof_profile_group: "{{ r_fmgr_secprof_profile_group }}"

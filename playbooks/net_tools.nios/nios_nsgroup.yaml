@@ -22,3 +22,8 @@
     - name: "plugin_nios_nsgroup"
       nios_nsgroup: "{{ nios_nsgroup }}"
       register: r_nios_nsgroup
+
+    - name: "export r_nios_nsgroup"
+      set_stats:
+        data:
+          r_nios_nsgroup: "{{ r_nios_nsgroup }}"

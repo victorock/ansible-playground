@@ -40,3 +40,8 @@
     - name: "plugin_docker_service"
       docker_service: "{{ docker_service }}"
       register: r_docker_service
+
+    - name: "export r_docker_service"
+      set_stats:
+        data:
+          r_docker_service: "{{ r_docker_service }}"

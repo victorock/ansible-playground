@@ -26,3 +26,8 @@
     - name: "plugin_azure_rm_virtualnetwork_facts"
       azure_rm_virtualnetwork_facts: "{{ azure_rm_virtualnetwork_facts }}"
       register: r_azure_rm_virtualnetwork_facts
+
+    - name: "export r_azure_rm_virtualnetwork_facts"
+      set_stats:
+        data:
+          r_azure_rm_virtualnetwork_facts: "{{ r_azure_rm_virtualnetwork_facts }}"

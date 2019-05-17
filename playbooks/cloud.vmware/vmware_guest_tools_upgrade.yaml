@@ -21,3 +21,8 @@
     - name: "plugin_vmware_guest_tools_upgrade"
       vmware_guest_tools_upgrade: "{{ vmware_guest_tools_upgrade }}"
       register: r_vmware_guest_tools_upgrade
+
+    - name: "export r_vmware_guest_tools_upgrade"
+      set_stats:
+        data:
+          r_vmware_guest_tools_upgrade: "{{ r_vmware_guest_tools_upgrade }}"

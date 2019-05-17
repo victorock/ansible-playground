@@ -24,3 +24,8 @@
       client_cert: "{{ os_zone_client_cert | default(omit, True) }}"
       cloud: "{{ os_zone_cloud | default(omit, True) }}"
       client_key: "{{ os_zone_client_key | default(omit, True) }}"
+
+- name: "export r_os_zone"
+  set_stats:
+    data:
+      r_os_zone: "{{ r_os_zone }}"

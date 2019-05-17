@@ -18,3 +18,8 @@
       backup: "{{ sros_config_backup | default(omit, True) }}"
       match: "{{ sros_config_match | default(omit, True) }}"
       before: "{{ sros_config_before | default(omit, True) }}"
+
+- name: "export r_sros_config"
+  set_stats:
+    data:
+      r_sros_config: "{{ r_sros_config }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_memory_filter"
       fortios_log_memory_filter: "{{ fortios_log_memory_filter }}"
       register: r_fortios_log_memory_filter
+
+    - name: "export r_fortios_log_memory_filter"
+      set_stats:
+        data:
+          r_fortios_log_memory_filter: "{{ r_fortios_log_memory_filter }}"

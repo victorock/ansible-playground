@@ -34,3 +34,8 @@
       fqdn: "{{ fmgr_fwobj_service_fqdn | default(omit, True) }}"
       mode: "{{ fmgr_fwobj_service_mode | default(omit, True) }}"
       check_reset_range: "{{ fmgr_fwobj_service_check_reset_range | default(omit, True) }}"
+
+- name: "export r_fmgr_fwobj_service"
+  set_stats:
+    data:
+      r_fmgr_fwobj_service: "{{ r_fmgr_fwobj_service }}"

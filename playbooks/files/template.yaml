@@ -34,3 +34,8 @@
     - name: "plugin_template"
       template: "{{ template }}"
       register: r_template
+
+    - name: "export r_template"
+      set_stats:
+        data:
+          r_template: "{{ r_template }}"

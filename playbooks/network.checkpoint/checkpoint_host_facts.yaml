@@ -13,3 +13,8 @@
     - name: "plugin_checkpoint_host_facts"
       checkpoint_host_facts: "{{ checkpoint_host_facts }}"
       register: r_checkpoint_host_facts
+
+    - name: "export r_checkpoint_host_facts"
+      set_stats:
+        data:
+          r_checkpoint_host_facts: "{{ r_checkpoint_host_facts }}"

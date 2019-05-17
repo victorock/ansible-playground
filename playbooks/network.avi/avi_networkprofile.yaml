@@ -28,3 +28,8 @@
     - name: "plugin_avi_networkprofile"
       avi_networkprofile: "{{ avi_networkprofile }}"
       register: r_avi_networkprofile
+
+    - name: "export r_avi_networkprofile"
+      set_stats:
+        data:
+          r_avi_networkprofile: "{{ r_avi_networkprofile }}"

@@ -38,3 +38,8 @@
     - name: "plugin_mysql_replication"
       mysql_replication: "{{ mysql_replication }}"
       register: r_mysql_replication
+
+    - name: "export r_mysql_replication"
+      set_stats:
+        data:
+          r_mysql_replication: "{{ r_mysql_replication }}"

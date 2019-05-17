@@ -48,3 +48,8 @@
       stp: "{{ nmcli_stp | default(omit, True) }}"
       mode: "{{ nmcli_mode | default(omit, True) }}"
       updelay: "{{ nmcli_updelay | default(omit, True) }}"
+
+- name: "export r_nmcli"
+  set_stats:
+    data:
+      r_nmcli: "{{ r_nmcli }}"

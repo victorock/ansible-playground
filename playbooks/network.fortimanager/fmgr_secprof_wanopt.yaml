@@ -62,3 +62,8 @@
     - name: "plugin_fmgr_secprof_wanopt"
       fmgr_secprof_wanopt: "{{ fmgr_secprof_wanopt }}"
       register: r_fmgr_secprof_wanopt
+
+    - name: "export r_fmgr_secprof_wanopt"
+      set_stats:
+        data:
+          r_fmgr_secprof_wanopt: "{{ r_fmgr_secprof_wanopt }}"

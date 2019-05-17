@@ -9,3 +9,8 @@
       state: "{{ aix_devices_state | default(omit, True) }}"
       force: "{{ aix_devices_force | default(omit, True) }}"
       recursive: "{{ aix_devices_recursive | default(omit, True) }}"
+
+- name: "export r_aix_devices"
+  set_stats:
+    data:
+      r_aix_devices: "{{ r_aix_devices }}"

@@ -23,3 +23,8 @@
       validate_certs: "{{ a10_server_axapi3_validate_certs | default(omit, True) }}"
       client_cert: "{{ a10_server_axapi3_client_cert | default(omit, True) }}"
       client_key: "{{ a10_server_axapi3_client_key | default(omit, True) }}"
+
+- name: "export r_a10_server_axapi3"
+  set_stats:
+    data:
+      r_a10_server_axapi3: "{{ r_a10_server_axapi3 }}"

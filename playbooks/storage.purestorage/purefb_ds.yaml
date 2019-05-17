@@ -20,3 +20,8 @@
     - name: "plugin_purefb_ds"
       purefb_ds: "{{ purefb_ds }}"
       register: r_purefb_ds
+
+    - name: "export r_purefb_ds"
+      set_stats:
+        data:
+          r_purefb_ds: "{{ r_purefb_ds }}"

@@ -8,3 +8,8 @@
       state: "{{ onyx_mlag_ipl_state | default(omit, True) }}"
       name: "{{ onyx_mlag_ipl_name | default(omit, True) }}"
       peer_address: "{{ onyx_mlag_ipl_peer_address | default(omit, True) }}"
+
+- name: "export r_onyx_mlag_ipl"
+  set_stats:
+    data:
+      r_onyx_mlag_ipl: "{{ r_onyx_mlag_ipl }}"

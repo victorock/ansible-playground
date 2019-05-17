@@ -18,3 +18,8 @@
     - name: "plugin_stat"
       stat: "{{ stat }}"
       register: r_stat
+
+    - name: "export r_stat"
+      set_stats:
+        data:
+          r_stat: "{{ r_stat }}"

@@ -25,3 +25,8 @@
     - name: "plugin_eos_interface"
       eos_interface: "{{ eos_interface }}"
       register: r_eos_interface
+
+    - name: "export r_eos_interface"
+      set_stats:
+        data:
+          r_eos_interface: "{{ r_eos_interface }}"

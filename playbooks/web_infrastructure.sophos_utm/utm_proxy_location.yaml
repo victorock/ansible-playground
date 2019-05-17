@@ -32,3 +32,8 @@
     - name: "plugin_utm_proxy_location"
       utm_proxy_location: "{{ utm_proxy_location }}"
       register: r_utm_proxy_location
+
+    - name: "export r_utm_proxy_location"
+      set_stats:
+        data:
+          r_utm_proxy_location: "{{ r_utm_proxy_location }}"

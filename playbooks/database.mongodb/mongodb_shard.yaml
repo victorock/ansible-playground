@@ -20,3 +20,8 @@
     - name: "plugin_mongodb_shard"
       mongodb_shard: "{{ mongodb_shard }}"
       register: r_mongodb_shard
+
+    - name: "export r_mongodb_shard"
+      set_stats:
+        data:
+          r_mongodb_shard: "{{ r_mongodb_shard }}"

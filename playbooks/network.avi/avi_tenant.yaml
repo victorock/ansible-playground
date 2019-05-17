@@ -29,3 +29,8 @@
     - name: "plugin_avi_tenant"
       avi_tenant: "{{ avi_tenant }}"
       register: r_avi_tenant
+
+    - name: "export r_avi_tenant"
+      set_stats:
+        data:
+          r_avi_tenant: "{{ r_avi_tenant }}"

@@ -37,3 +37,8 @@
     - name: "plugin_dnf"
       dnf: "{{ dnf }}"
       register: r_dnf
+
+    - name: "export r_dnf"
+      set_stats:
+        data:
+          r_dnf: "{{ r_dnf }}"

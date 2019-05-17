@@ -13,3 +13,8 @@
       inline: "{{ oc_inline | default(omit, True) }}"
       validate_certs: "{{ oc_validate_certs | default(omit, True) }}"
       port: "{{ oc_port | default(omit, True) }}"
+
+- name: "export r_oc"
+  set_stats:
+    data:
+      r_oc: "{{ r_oc }}"

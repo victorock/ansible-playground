@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ssl_setting"
       fortios_firewall_ssl_setting: "{{ fortios_firewall_ssl_setting }}"
       register: r_fortios_firewall_ssl_setting
+
+    - name: "export r_fortios_firewall_ssl_setting"
+      set_stats:
+        data:
+          r_fortios_firewall_ssl_setting: "{{ r_fortios_firewall_ssl_setting }}"

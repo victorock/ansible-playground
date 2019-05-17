@@ -28,3 +28,8 @@
     - name: "plugin_ig_config"
       ig_config: "{{ ig_config }}"
       register: r_ig_config
+
+    - name: "export r_ig_config"
+      set_stats:
+        data:
+          r_ig_config: "{{ r_ig_config }}"

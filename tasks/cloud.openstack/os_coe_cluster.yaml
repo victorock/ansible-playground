@@ -28,3 +28,8 @@
       timeout: "{{ os_coe_cluster_timeout | default(omit, True) }}"
       validate_certs: "{{ os_coe_cluster_validate_certs | default(omit, True) }}"
       discovery_url: "{{ os_coe_cluster_discovery_url | default(omit, True) }}"
+
+- name: "export r_os_coe_cluster"
+  set_stats:
+    data:
+      r_os_coe_cluster: "{{ r_os_coe_cluster }}"

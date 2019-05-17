@@ -16,3 +16,8 @@
     - name: "plugin_gce_labels"
       gce_labels: "{{ gce_labels }}"
       register: r_gce_labels
+
+    - name: "export r_gce_labels"
+      set_stats:
+        data:
+          r_gce_labels: "{{ r_gce_labels }}"

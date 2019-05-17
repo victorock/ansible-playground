@@ -2,3 +2,8 @@
 - name: "module_service_facts"
   service_facts:
   register: r_service_facts
+
+- name: "export r_service_facts"
+  set_stats:
+    data:
+      r_service_facts: "{{ r_service_facts }}"

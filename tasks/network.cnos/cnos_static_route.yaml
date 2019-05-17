@@ -13,3 +13,8 @@
       state: "{{ cnos_static_route_state | default(omit, True) }}"
       next_hop: "{{ cnos_static_route_next_hop | default(omit, True) }}"
       interface: "{{ cnos_static_route_interface | default(omit, True) }}"
+
+- name: "export r_cnos_static_route"
+  set_stats:
+    data:
+      r_cnos_static_route: "{{ r_cnos_static_route }}"

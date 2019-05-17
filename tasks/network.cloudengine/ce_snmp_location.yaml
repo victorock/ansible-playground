@@ -6,3 +6,8 @@
     ce_snmp_location: 
       state: "{{ ce_snmp_location_state | default(omit, True) }}"
       location: "{{ ce_snmp_location_location | default(omit, True) }}"
+
+- name: "export r_ce_snmp_location"
+  set_stats:
+    data:
+      r_ce_snmp_location: "{{ r_ce_snmp_location }}"

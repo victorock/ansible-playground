@@ -14,3 +14,8 @@
       key: "{{ nxos_aaa_server_host_key | default(omit, True) }}"
       provider: "{{ nxos_aaa_server_host_provider | default(omit, True) }}"
       acct_port: "{{ nxos_aaa_server_host_acct_port | default(omit, True) }}"
+
+- name: "export r_nxos_aaa_server_host"
+  set_stats:
+    data:
+      r_nxos_aaa_server_host: "{{ r_nxos_aaa_server_host }}"

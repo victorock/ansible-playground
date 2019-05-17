@@ -21,3 +21,8 @@
     - name: "plugin_ovh_ip_loadbalancing_backend"
       ovh_ip_loadbalancing_backend: "{{ ovh_ip_loadbalancing_backend }}"
       register: r_ovh_ip_loadbalancing_backend
+
+    - name: "export r_ovh_ip_loadbalancing_backend"
+      set_stats:
+        data:
+          r_ovh_ip_loadbalancing_backend: "{{ r_ovh_ip_loadbalancing_backend }}"

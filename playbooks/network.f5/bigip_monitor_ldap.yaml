@@ -38,3 +38,8 @@
     - name: "plugin_bigip_monitor_ldap"
       bigip_monitor_ldap: "{{ bigip_monitor_ldap }}"
       register: r_bigip_monitor_ldap
+
+    - name: "export r_bigip_monitor_ldap"
+      set_stats:
+        data:
+          r_bigip_monitor_ldap: "{{ r_bigip_monitor_ldap }}"

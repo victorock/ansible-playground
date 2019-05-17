@@ -6,3 +6,8 @@
     frr_bgp: 
       operation: "{{ frr_bgp_operation | default(omit, True) }}"
       config: "{{ frr_bgp_config | default(omit, True) }}"
+
+- name: "export r_frr_bgp"
+  set_stats:
+    data:
+      r_frr_bgp: "{{ r_frr_bgp }}"

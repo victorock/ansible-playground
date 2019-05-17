@@ -16,3 +16,8 @@
     - name: "plugin_cnos_command"
       cnos_command: "{{ cnos_command }}"
       register: r_cnos_command
+
+    - name: "export r_cnos_command"
+      set_stats:
+        data:
+          r_cnos_command: "{{ r_cnos_command }}"

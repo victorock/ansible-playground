@@ -25,3 +25,8 @@
       validate_certs: "{{ mso_schema_template_bd_validate_certs | default(omit, True) }}"
       port: "{{ mso_schema_template_bd_port | default(omit, True) }}"
       layer3_multicast: "{{ mso_schema_template_bd_layer3_multicast | default(omit, True) }}"
+
+- name: "export r_mso_schema_template_bd"
+  set_stats:
+    data:
+      r_mso_schema_template_bd: "{{ r_mso_schema_template_bd }}"

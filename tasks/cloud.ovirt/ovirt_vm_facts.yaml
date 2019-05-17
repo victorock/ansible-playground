@@ -12,3 +12,8 @@
       fetch_nested: "{{ ovirt_vm_facts_fetch_nested | default(omit, True) }}"
       nested_attributes: "{{ ovirt_vm_facts_nested_attributes | default(omit, True) }}"
       max: "{{ ovirt_vm_facts_max | default(omit, True) }}"
+
+- name: "export r_ovirt_vm_facts"
+  set_stats:
+    data:
+      r_ovirt_vm_facts: "{{ r_ovirt_vm_facts }}"

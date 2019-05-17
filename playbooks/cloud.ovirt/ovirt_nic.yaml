@@ -26,3 +26,8 @@
     - name: "plugin_ovirt_nic"
       ovirt_nic: "{{ ovirt_nic }}"
       register: r_ovirt_nic
+
+    - name: "export r_ovirt_nic"
+      set_stats:
+        data:
+          r_ovirt_nic: "{{ r_ovirt_nic }}"

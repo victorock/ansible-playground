@@ -22,3 +22,8 @@
       password: "{{ cloudscale_server_password | default(omit, True) }}"
       ssh_keys: "{{ cloudscale_server_ssh_keys | default(omit, True) }}"
       name: "{{ cloudscale_server_name | default(omit, True) }}"
+
+- name: "export r_cloudscale_server"
+  set_stats:
+    data:
+      r_cloudscale_server: "{{ r_cloudscale_server }}"

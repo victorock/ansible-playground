@@ -12,3 +12,8 @@
       deadtime: "{{ nxos_aaa_server_deadtime | default(omit, True) }}"
       directed_request: "{{ nxos_aaa_server_directed_request | default(omit, True) }}"
       global_key: "{{ nxos_aaa_server_global_key | default(omit, True) }}"
+
+- name: "export r_nxos_aaa_server"
+  set_stats:
+    data:
+      r_nxos_aaa_server: "{{ r_nxos_aaa_server }}"

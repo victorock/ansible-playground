@@ -37,3 +37,8 @@
     - name: "plugin_ce_bgp"
       ce_bgp: "{{ ce_bgp }}"
       register: r_ce_bgp
+
+    - name: "export r_ce_bgp"
+      set_stats:
+        data:
+          r_ce_bgp: "{{ r_ce_bgp }}"

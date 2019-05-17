@@ -16,3 +16,8 @@
       auth_username: "{{ keycloak_group_auth_username | default(omit, True) }}"
       id: "{{ keycloak_group_id | default(omit, True) }}"
       name: "{{ keycloak_group_name | default(omit, True) }}"
+
+- name: "export r_keycloak_group"
+  set_stats:
+    data:
+      r_keycloak_group: "{{ r_keycloak_group }}"

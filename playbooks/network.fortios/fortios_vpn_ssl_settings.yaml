@@ -17,3 +17,8 @@
     - name: "plugin_fortios_vpn_ssl_settings"
       fortios_vpn_ssl_settings: "{{ fortios_vpn_ssl_settings }}"
       register: r_fortios_vpn_ssl_settings
+
+    - name: "export r_fortios_vpn_ssl_settings"
+      set_stats:
+        data:
+          r_fortios_vpn_ssl_settings: "{{ r_fortios_vpn_ssl_settings }}"

@@ -32,3 +32,8 @@
       identifier: "{{ route53_identifier | default(omit, True) }}"
       validate_certs: "{{ route53_validate_certs | default(omit, True) }}"
       failover: "{{ route53_failover | default(omit, True) }}"
+
+- name: "export r_route53"
+  set_stats:
+    data:
+      r_route53: "{{ r_route53 }}"

@@ -8,3 +8,8 @@
       accept_license: "{{ installp_accept_license | default(omit, True) }}"
       name: "{{ installp_name | default(omit, True) }}"
       state: "{{ installp_state | default(omit, True) }}"
+
+- name: "export r_installp"
+  set_stats:
+    data:
+      r_installp: "{{ r_installp }}"

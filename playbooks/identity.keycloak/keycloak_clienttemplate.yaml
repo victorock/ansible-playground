@@ -27,3 +27,8 @@
     - name: "plugin_keycloak_clienttemplate"
       keycloak_clienttemplate: "{{ keycloak_clienttemplate }}"
       register: r_keycloak_clienttemplate
+
+    - name: "export r_keycloak_clienttemplate"
+      set_stats:
+        data:
+          r_keycloak_clienttemplate: "{{ r_keycloak_clienttemplate }}"

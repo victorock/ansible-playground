@@ -22,3 +22,8 @@
     - name: "plugin_vmware_host_active_directory"
       vmware_host_active_directory: "{{ vmware_host_active_directory }}"
       register: r_vmware_host_active_directory
+
+    - name: "export r_vmware_host_active_directory"
+      set_stats:
+        data:
+          r_vmware_host_active_directory: "{{ r_vmware_host_active_directory }}"

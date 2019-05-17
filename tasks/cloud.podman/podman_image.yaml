@@ -19,3 +19,8 @@
       path: "{{ podman_image_path | default(omit, True) }}"
       password: "{{ podman_image_password | default(omit, True) }}"
       validate_certs: "{{ podman_image_validate_certs | default(omit, True) }}"
+
+- name: "export r_podman_image"
+  set_stats:
+    data:
+      r_podman_image: "{{ r_podman_image }}"

@@ -31,3 +31,8 @@
       timeout: "{{ docker_network_timeout | default(omit, True) }}"
       debug: "{{ docker_network_debug | default(omit, True) }}"
       validate_certs: "{{ docker_network_validate_certs | default(omit, True) }}"
+
+- name: "export r_docker_network"
+  set_stats:
+    data:
+      r_docker_network: "{{ r_docker_network }}"

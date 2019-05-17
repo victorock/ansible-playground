@@ -17,3 +17,8 @@
       state: "{{ redshift_cross_region_snapshots_state | default(omit, True) }}"
       ec2_url: "{{ redshift_cross_region_snapshots_ec2_url | default(omit, True) }}"
       snapshot_retention_period: "{{ redshift_cross_region_snapshots_snapshot_retention_period | default(omit, True) }}"
+
+- name: "export r_redshift_cross_region_snapshots"
+  set_stats:
+    data:
+      r_redshift_cross_region_snapshots: "{{ r_redshift_cross_region_snapshots }}"

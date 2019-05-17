@@ -15,3 +15,8 @@
     - name: "plugin_purefa_ntp"
       purefa_ntp: "{{ purefa_ntp }}"
       register: r_purefa_ntp
+
+    - name: "export r_purefa_ntp"
+      set_stats:
+        data:
+          r_purefa_ntp: "{{ r_purefa_ntp }}"

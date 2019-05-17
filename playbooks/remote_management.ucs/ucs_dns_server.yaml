@@ -22,3 +22,8 @@
     - name: "plugin_ucs_dns_server"
       ucs_dns_server: "{{ ucs_dns_server }}"
       register: r_ucs_dns_server
+
+    - name: "export r_ucs_dns_server"
+      set_stats:
+        data:
+          r_ucs_dns_server: "{{ r_ucs_dns_server }}"

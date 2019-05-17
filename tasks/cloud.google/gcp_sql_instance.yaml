@@ -23,3 +23,8 @@
       max_disk_size: "{{ gcp_sql_instance_max_disk_size | default(omit, True) }}"
       auth_kind: "{{ gcp_sql_instance_auth_kind | default(omit, True) }}"
       database_version: "{{ gcp_sql_instance_database_version | default(omit, True) }}"
+
+- name: "export r_gcp_sql_instance"
+  set_stats:
+    data:
+      r_gcp_sql_instance: "{{ r_gcp_sql_instance }}"

@@ -14,3 +14,8 @@
       nested_attributes: "{{ ovirt_user_nested_attributes | default(omit, True) }}"
       timeout: "{{ ovirt_user_timeout | default(omit, True) }}"
       wait: "{{ ovirt_user_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_user"
+  set_stats:
+    data:
+      r_ovirt_user: "{{ r_ovirt_user }}"

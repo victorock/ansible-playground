@@ -18,3 +18,8 @@
     - name: "plugin_virt_pool"
       virt_pool: "{{ virt_pool }}"
       register: r_virt_pool
+
+    - name: "export r_virt_pool"
+      set_stats:
+        data:
+          r_virt_pool: "{{ r_virt_pool }}"

@@ -13,3 +13,8 @@
     - name: "plugin_nxos_lldp"
       nxos_lldp: "{{ nxos_lldp }}"
       register: r_nxos_lldp
+
+    - name: "export r_nxos_lldp"
+      set_stats:
+        data:
+          r_nxos_lldp: "{{ r_nxos_lldp }}"

@@ -183,3 +183,8 @@
     - name: "plugin_fmgr_fwobj_vip"
       fmgr_fwobj_vip: "{{ fmgr_fwobj_vip }}"
       register: r_fmgr_fwobj_vip
+
+    - name: "export r_fmgr_fwobj_vip"
+      set_stats:
+        data:
+          r_fmgr_fwobj_vip: "{{ r_fmgr_fwobj_vip }}"

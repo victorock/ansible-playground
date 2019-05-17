@@ -17,3 +17,8 @@
     - name: "plugin_fortios_user_adgrp"
       fortios_user_adgrp: "{{ fortios_user_adgrp }}"
       register: r_fortios_user_adgrp
+
+    - name: "export r_fortios_user_adgrp"
+      set_stats:
+        data:
+          r_fortios_user_adgrp: "{{ r_fortios_user_adgrp }}"

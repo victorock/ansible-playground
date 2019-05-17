@@ -10,3 +10,8 @@
       https: "{{ fortios_web_proxy_explicit_https | default(omit, True) }}"
       password: "{{ fortios_web_proxy_explicit_password | default(omit, True) }}"
       vdom: "{{ fortios_web_proxy_explicit_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_web_proxy_explicit"
+  set_stats:
+    data:
+      r_fortios_web_proxy_explicit: "{{ r_fortios_web_proxy_explicit }}"

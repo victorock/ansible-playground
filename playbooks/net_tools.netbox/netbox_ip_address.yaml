@@ -16,3 +16,8 @@
     - name: "plugin_netbox_ip_address"
       netbox_ip_address: "{{ netbox_ip_address }}"
       register: r_netbox_ip_address
+
+    - name: "export r_netbox_ip_address"
+      set_stats:
+        data:
+          r_netbox_ip_address: "{{ r_netbox_ip_address }}"

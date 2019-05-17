@@ -23,3 +23,8 @@
     - name: "plugin_na_cdot_lun"
       na_cdot_lun: "{{ na_cdot_lun }}"
       register: r_na_cdot_lun
+
+    - name: "export r_na_cdot_lun"
+      set_stats:
+        data:
+          r_na_cdot_lun: "{{ r_na_cdot_lun }}"

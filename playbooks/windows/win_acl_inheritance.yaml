@@ -14,3 +14,8 @@
     - name: "plugin_win_acl_inheritance"
       win_acl_inheritance: "{{ win_acl_inheritance }}"
       register: r_win_acl_inheritance
+
+    - name: "export r_win_acl_inheritance"
+      set_stats:
+        data:
+          r_win_acl_inheritance: "{{ r_win_acl_inheritance }}"

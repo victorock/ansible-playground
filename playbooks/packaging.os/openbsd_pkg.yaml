@@ -17,3 +17,8 @@
     - name: "plugin_openbsd_pkg"
       openbsd_pkg: "{{ openbsd_pkg }}"
       register: r_openbsd_pkg
+
+    - name: "export r_openbsd_pkg"
+      set_stats:
+        data:
+          r_openbsd_pkg: "{{ r_openbsd_pkg }}"

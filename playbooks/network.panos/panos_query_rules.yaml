@@ -25,3 +25,8 @@
     - name: "plugin_panos_query_rules"
       panos_query_rules: "{{ panos_query_rules }}"
       register: r_panos_query_rules
+
+    - name: "export r_panos_query_rules"
+      set_stats:
+        data:
+          r_panos_query_rules: "{{ r_panos_query_rules }}"

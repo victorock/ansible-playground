@@ -14,3 +14,8 @@
       ontapi: "{{ na_ontap_nvme_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_nvme_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_nvme_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_nvme"
+  set_stats:
+    data:
+      r_na_ontap_nvme: "{{ r_na_ontap_nvme }}"

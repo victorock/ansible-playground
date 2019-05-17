@@ -16,3 +16,8 @@
     - name: "plugin_netbox_interface"
       netbox_interface: "{{ netbox_interface }}"
       register: r_netbox_interface
+
+    - name: "export r_netbox_interface"
+      set_stats:
+        data:
+          r_netbox_interface: "{{ r_netbox_interface }}"

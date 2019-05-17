@@ -21,3 +21,8 @@
     - name: "plugin_gcp_spanner_database"
       gcp_spanner_database: "{{ gcp_spanner_database }}"
       register: r_gcp_spanner_database
+
+    - name: "export r_gcp_spanner_database"
+      set_stats:
+        data:
+          r_gcp_spanner_database: "{{ r_gcp_spanner_database }}"

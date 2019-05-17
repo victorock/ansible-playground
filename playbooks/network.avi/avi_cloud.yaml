@@ -55,3 +55,8 @@
     - name: "plugin_avi_cloud"
       avi_cloud: "{{ avi_cloud }}"
       register: r_avi_cloud
+
+    - name: "export r_avi_cloud"
+      set_stats:
+        data:
+          r_avi_cloud: "{{ r_avi_cloud }}"

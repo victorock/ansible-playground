@@ -21,3 +21,8 @@
     - name: "plugin_vmware_host_powerstate"
       vmware_host_powerstate: "{{ vmware_host_powerstate }}"
       register: r_vmware_host_powerstate
+
+    - name: "export r_vmware_host_powerstate"
+      set_stats:
+        data:
+          r_vmware_host_powerstate: "{{ r_vmware_host_powerstate }}"

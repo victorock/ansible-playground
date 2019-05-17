@@ -17,3 +17,8 @@
     - name: "plugin_rhn_channel"
       rhn_channel: "{{ rhn_channel }}"
       register: r_rhn_channel
+
+    - name: "export r_rhn_channel"
+      set_stats:
+        data:
+          r_rhn_channel: "{{ r_rhn_channel }}"

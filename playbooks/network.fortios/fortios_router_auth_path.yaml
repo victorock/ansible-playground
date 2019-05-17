@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_auth_path"
       fortios_router_auth_path: "{{ fortios_router_auth_path }}"
       register: r_fortios_router_auth_path
+
+    - name: "export r_fortios_router_auth_path"
+      set_stats:
+        data:
+          r_fortios_router_auth_path: "{{ r_fortios_router_auth_path }}"

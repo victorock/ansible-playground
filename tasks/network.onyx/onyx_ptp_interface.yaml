@@ -10,3 +10,8 @@
       state: "{{ onyx_ptp_interface_state | default(omit, True) }}"
       announce_interval: "{{ onyx_ptp_interface_announce_interval | default(omit, True) }}"
       announce_timeout: "{{ onyx_ptp_interface_announce_timeout | default(omit, True) }}"
+
+- name: "export r_onyx_ptp_interface"
+  set_stats:
+    data:
+      r_onyx_ptp_interface: "{{ r_onyx_ptp_interface }}"

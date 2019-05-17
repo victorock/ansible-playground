@@ -88,3 +88,8 @@
       options: "{{ fmgr_secprof_web_options | default(omit, True) }}"
       ftgd_wf_filters_warn_duration: "{{ fmgr_secprof_web_ftgd_wf_filters_warn_duration | default(omit, True) }}"
       web_extended_all_action_log: "{{ fmgr_secprof_web_web_extended_all_action_log | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_web"
+  set_stats:
+    data:
+      r_fmgr_secprof_web: "{{ r_fmgr_secprof_web }}"

@@ -37,3 +37,8 @@
       dead_lettering_on_message_expiration: "{{ azure_rm_servicebusqueue_dead_lettering_on_message_expiration | default(omit, True) }}"
       auth_source: "{{ azure_rm_servicebusqueue_auth_source | default(omit, True) }}"
       namespace: "{{ azure_rm_servicebusqueue_namespace | default(omit, True) }}"
+
+- name: "export r_azure_rm_servicebusqueue"
+  set_stats:
+    data:
+      r_azure_rm_servicebusqueue: "{{ r_azure_rm_servicebusqueue }}"

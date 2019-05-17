@@ -14,3 +14,8 @@
       pgroup: "{{ purefa_pg_pgroup | default(omit, True) }}"
       eradicate: "{{ purefa_pg_eradicate | default(omit, True) }}"
       fa_url: "{{ purefa_pg_fa_url | default(omit, True) }}"
+
+- name: "export r_purefa_pg"
+  set_stats:
+    data:
+      r_purefa_pg: "{{ r_purefa_pg }}"

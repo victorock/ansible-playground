@@ -19,3 +19,8 @@
     - name: "plugin_cnos_vrf"
       cnos_vrf: "{{ cnos_vrf }}"
       register: r_cnos_vrf
+
+    - name: "export r_cnos_vrf"
+      set_stats:
+        data:
+          r_cnos_vrf: "{{ r_cnos_vrf }}"

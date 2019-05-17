@@ -39,3 +39,8 @@
     - name: "plugin_route53"
       route53: "{{ route53 }}"
       register: r_route53
+
+    - name: "export r_route53"
+      set_stats:
+        data:
+          r_route53: "{{ r_route53 }}"

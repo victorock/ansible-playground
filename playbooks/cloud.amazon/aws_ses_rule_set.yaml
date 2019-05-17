@@ -23,3 +23,8 @@
     - name: "plugin_aws_ses_rule_set"
       aws_ses_rule_set: "{{ aws_ses_rule_set }}"
       register: r_aws_ses_rule_set
+
+    - name: "export r_aws_ses_rule_set"
+      set_stats:
+        data:
+          r_aws_ses_rule_set: "{{ r_aws_ses_rule_set }}"

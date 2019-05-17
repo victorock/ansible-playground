@@ -6,3 +6,8 @@
     ip_netns: 
       state: "{{ ip_netns_state | default(omit, True) }}"
       name: "{{ ip_netns_name | default(omit, True) }}"
+
+- name: "export r_ip_netns"
+  set_stats:
+    data:
+      r_ip_netns: "{{ r_ip_netns }}"

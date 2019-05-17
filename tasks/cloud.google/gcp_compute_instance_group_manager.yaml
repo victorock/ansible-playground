@@ -19,3 +19,8 @@
       target_pools: "{{ gcp_compute_instance_group_manager_target_pools | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_instance_group_manager_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_instance_group_manager_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_instance_group_manager"
+  set_stats:
+    data:
+      r_gcp_compute_instance_group_manager: "{{ r_gcp_compute_instance_group_manager }}"

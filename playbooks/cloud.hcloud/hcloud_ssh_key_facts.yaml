@@ -17,3 +17,8 @@
     - name: "plugin_hcloud_ssh_key_facts"
       hcloud_ssh_key_facts: "{{ hcloud_ssh_key_facts }}"
       register: r_hcloud_ssh_key_facts
+
+    - name: "export r_hcloud_ssh_key_facts"
+      set_stats:
+        data:
+          r_hcloud_ssh_key_facts: "{{ r_hcloud_ssh_key_facts }}"

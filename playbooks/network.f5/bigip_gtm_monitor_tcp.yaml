@@ -31,3 +31,8 @@
     - name: "plugin_bigip_gtm_monitor_tcp"
       bigip_gtm_monitor_tcp: "{{ bigip_gtm_monitor_tcp }}"
       register: r_bigip_gtm_monitor_tcp
+
+    - name: "export r_bigip_gtm_monitor_tcp"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_tcp: "{{ r_bigip_gtm_monitor_tcp }}"

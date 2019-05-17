@@ -19,3 +19,8 @@
     - name: "plugin_purefb_subnet"
       purefb_subnet: "{{ purefb_subnet }}"
       register: r_purefb_subnet
+
+    - name: "export r_purefb_subnet"
+      set_stats:
+        data:
+          r_purefb_subnet: "{{ r_purefb_subnet }}"

@@ -24,3 +24,8 @@
     - name: "plugin_na_ontap_user_role"
       na_ontap_user_role: "{{ na_ontap_user_role }}"
       register: r_na_ontap_user_role
+
+    - name: "export r_na_ontap_user_role"
+      set_stats:
+        data:
+          r_na_ontap_user_role: "{{ r_na_ontap_user_role }}"

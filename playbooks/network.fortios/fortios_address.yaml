@@ -30,3 +30,8 @@
     - name: "plugin_fortios_address"
       fortios_address: "{{ fortios_address }}"
       register: r_fortios_address
+
+    - name: "export r_fortios_address"
+      set_stats:
+        data:
+          r_fortios_address: "{{ r_fortios_address }}"

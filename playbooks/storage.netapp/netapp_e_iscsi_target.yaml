@@ -21,3 +21,8 @@
     - name: "plugin_netapp_e_iscsi_target"
       netapp_e_iscsi_target: "{{ netapp_e_iscsi_target }}"
       register: r_netapp_e_iscsi_target
+
+    - name: "export r_netapp_e_iscsi_target"
+      set_stats:
+        data:
+          r_netapp_e_iscsi_target: "{{ r_netapp_e_iscsi_target }}"

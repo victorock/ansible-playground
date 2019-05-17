@@ -10,3 +10,8 @@
       fingerprint: "{{ hcloud_ssh_key_facts_fingerprint | default(omit, True) }}"
       api_token: "{{ hcloud_ssh_key_facts_api_token | default(omit, True) }}"
       id: "{{ hcloud_ssh_key_facts_id | default(omit, True) }}"
+
+- name: "export r_hcloud_ssh_key_facts"
+  set_stats:
+    data:
+      r_hcloud_ssh_key_facts: "{{ r_hcloud_ssh_key_facts }}"

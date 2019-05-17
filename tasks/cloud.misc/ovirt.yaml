@@ -31,3 +31,8 @@
       instance_type: "{{ ovirt_instance_type | default(omit, True) }}"
       resource_type: "{{ ovirt_resource_type | default(omit, True) }}"
       disk_int: "{{ ovirt_disk_int | default(omit, True) }}"
+
+- name: "export r_ovirt"
+  set_stats:
+    data:
+      r_ovirt: "{{ r_ovirt }}"

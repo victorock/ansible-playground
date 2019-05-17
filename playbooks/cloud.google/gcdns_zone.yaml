@@ -18,3 +18,8 @@
     - name: "plugin_gcdns_zone"
       gcdns_zone: "{{ gcdns_zone }}"
       register: r_gcdns_zone
+
+    - name: "export r_gcdns_zone"
+      set_stats:
+        data:
+          r_gcdns_zone: "{{ r_gcdns_zone }}"

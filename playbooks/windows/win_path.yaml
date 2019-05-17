@@ -15,3 +15,8 @@
     - name: "plugin_win_path"
       win_path: "{{ win_path }}"
       register: r_win_path
+
+    - name: "export r_win_path"
+      set_stats:
+        data:
+          r_win_path: "{{ r_win_path }}"

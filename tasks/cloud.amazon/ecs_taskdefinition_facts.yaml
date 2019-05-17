@@ -13,3 +13,8 @@
       task_definition: "{{ ecs_taskdefinition_facts_task_definition | default(omit, True) }}"
       ec2_url: "{{ ecs_taskdefinition_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ecs_taskdefinition_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_ecs_taskdefinition_facts"
+  set_stats:
+    data:
+      r_ecs_taskdefinition_facts: "{{ r_ecs_taskdefinition_facts }}"

@@ -15,3 +15,8 @@
       active: "{{ junos_vlan_active | default(omit, True) }}"
       vlan_id: "{{ junos_vlan_vlan_id | default(omit, True) }}"
       name: "{{ junos_vlan_name | default(omit, True) }}"
+
+- name: "export r_junos_vlan"
+  set_stats:
+    data:
+      r_junos_vlan: "{{ r_junos_vlan }}"

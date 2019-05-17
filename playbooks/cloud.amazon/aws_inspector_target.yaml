@@ -22,3 +22,8 @@
     - name: "plugin_aws_inspector_target"
       aws_inspector_target: "{{ aws_inspector_target }}"
       register: r_aws_inspector_target
+
+    - name: "export r_aws_inspector_target"
+      set_stats:
+        data:
+          r_aws_inspector_target: "{{ r_aws_inspector_target }}"

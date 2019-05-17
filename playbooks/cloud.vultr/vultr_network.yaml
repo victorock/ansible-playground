@@ -21,3 +21,8 @@
     - name: "plugin_vultr_network"
       vultr_network: "{{ vultr_network }}"
       register: r_vultr_network
+
+    - name: "export r_vultr_network"
+      set_stats:
+        data:
+          r_vultr_network: "{{ r_vultr_network }}"

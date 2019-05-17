@@ -21,3 +21,8 @@
       client_cert: "{{ os_nova_host_aggregate_client_cert | default(omit, True) }}"
       cloud: "{{ os_nova_host_aggregate_cloud | default(omit, True) }}"
       name: "{{ os_nova_host_aggregate_name | default(omit, True) }}"
+
+- name: "export r_os_nova_host_aggregate"
+  set_stats:
+    data:
+      r_os_nova_host_aggregate: "{{ r_os_nova_host_aggregate }}"

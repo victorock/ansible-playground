@@ -35,3 +35,8 @@
     - name: "plugin_vr_server"
       vr_server: "{{ vr_server }}"
       register: r_vr_server
+
+    - name: "export r_vr_server"
+      set_stats:
+        data:
+          r_vr_server: "{{ r_vr_server }}"

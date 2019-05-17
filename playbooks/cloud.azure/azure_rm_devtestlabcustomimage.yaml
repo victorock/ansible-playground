@@ -34,3 +34,8 @@
     - name: "plugin_azure_rm_devtestlabcustomimage"
       azure_rm_devtestlabcustomimage: "{{ azure_rm_devtestlabcustomimage }}"
       register: r_azure_rm_devtestlabcustomimage
+
+    - name: "export r_azure_rm_devtestlabcustomimage"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabcustomimage: "{{ r_azure_rm_devtestlabcustomimage }}"

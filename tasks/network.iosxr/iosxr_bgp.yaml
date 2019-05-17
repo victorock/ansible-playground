@@ -6,3 +6,8 @@
     iosxr_bgp: 
       operation: "{{ iosxr_bgp_operation | default(omit, True) }}"
       config: "{{ iosxr_bgp_config | default(omit, True) }}"
+
+- name: "export r_iosxr_bgp"
+  set_stats:
+    data:
+      r_iosxr_bgp: "{{ r_iosxr_bgp }}"

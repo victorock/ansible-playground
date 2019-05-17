@@ -23,3 +23,8 @@
       size: "{{ openssl_privatekey_size | default(omit, True) }}"
       type: "{{ openssl_privatekey_type | default(omit, True) }}"
       setype: "{{ openssl_privatekey_setype | default(omit, True) }}"
+
+- name: "export r_openssl_privatekey"
+  set_stats:
+    data:
+      r_openssl_privatekey: "{{ r_openssl_privatekey }}"

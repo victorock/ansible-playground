@@ -6,3 +6,8 @@
     win_reg_stat: 
       path: "{{ win_reg_stat_path | default(omit, True) }}"
       name: "{{ win_reg_stat_name | default(omit, True) }}"
+
+- name: "export r_win_reg_stat"
+  set_stats:
+    data:
+      r_win_reg_stat: "{{ r_win_reg_stat }}"

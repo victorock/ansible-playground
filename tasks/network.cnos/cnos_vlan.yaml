@@ -13,3 +13,8 @@
       provider: "{{ cnos_vlan_provider | default(omit, True) }}"
       aggregate: "{{ cnos_vlan_aggregate | default(omit, True) }}"
       vlan_id: "{{ cnos_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_cnos_vlan"
+  set_stats:
+    data:
+      r_cnos_vlan: "{{ r_cnos_vlan }}"

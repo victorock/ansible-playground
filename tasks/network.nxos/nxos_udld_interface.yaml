@@ -8,3 +8,8 @@
       state: "{{ nxos_udld_interface_state | default(omit, True) }}"
       mode: "{{ nxos_udld_interface_mode | default(omit, True) }}"
       provider: "{{ nxos_udld_interface_provider | default(omit, True) }}"
+
+- name: "export r_nxos_udld_interface"
+  set_stats:
+    data:
+      r_nxos_udld_interface: "{{ r_nxos_udld_interface }}"

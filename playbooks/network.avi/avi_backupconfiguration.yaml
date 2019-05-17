@@ -34,3 +34,8 @@
     - name: "plugin_avi_backupconfiguration"
       avi_backupconfiguration: "{{ avi_backupconfiguration }}"
       register: r_avi_backupconfiguration
+
+    - name: "export r_avi_backupconfiguration"
+      set_stats:
+        data:
+          r_avi_backupconfiguration: "{{ r_avi_backupconfiguration }}"

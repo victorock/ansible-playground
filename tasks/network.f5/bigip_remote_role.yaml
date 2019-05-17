@@ -18,3 +18,8 @@
       password: "{{ bigip_remote_role_password | default(omit, True) }}"
       validate_certs: "{{ bigip_remote_role_validate_certs | default(omit, True) }}"
       assigned_role: "{{ bigip_remote_role_assigned_role | default(omit, True) }}"
+
+- name: "export r_bigip_remote_role"
+  set_stats:
+    data:
+      r_bigip_remote_role: "{{ r_bigip_remote_role }}"

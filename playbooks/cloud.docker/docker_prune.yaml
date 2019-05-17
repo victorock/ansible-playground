@@ -31,3 +31,8 @@
     - name: "plugin_docker_prune"
       docker_prune: "{{ docker_prune }}"
       register: r_docker_prune
+
+    - name: "export r_docker_prune"
+      set_stats:
+        data:
+          r_docker_prune: "{{ r_docker_prune }}"

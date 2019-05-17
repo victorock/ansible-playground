@@ -26,3 +26,8 @@
     - name: "plugin_gcp_container_node_pool"
       gcp_container_node_pool: "{{ gcp_container_node_pool }}"
       register: r_gcp_container_node_pool
+
+    - name: "export r_gcp_container_node_pool"
+      set_stats:
+        data:
+          r_gcp_container_node_pool: "{{ r_gcp_container_node_pool }}"

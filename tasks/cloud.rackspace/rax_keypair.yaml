@@ -17,3 +17,8 @@
       api_key: "{{ rax_keypair_api_key | default(omit, True) }}"
       validate_certs: "{{ rax_keypair_validate_certs | default(omit, True) }}"
       auth_endpoint: "{{ rax_keypair_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_keypair"
+  set_stats:
+    data:
+      r_rax_keypair: "{{ r_rax_keypair }}"

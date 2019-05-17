@@ -44,3 +44,8 @@
     - name: "plugin_ali_instance"
       ali_instance: "{{ ali_instance }}"
       register: r_ali_instance
+
+    - name: "export r_ali_instance"
+      set_stats:
+        data:
+          r_ali_instance: "{{ r_ali_instance }}"

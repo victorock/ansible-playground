@@ -9,3 +9,8 @@
       id: "{{ hcloud_volume_facts_id | default(omit, True) }}"
       name: "{{ hcloud_volume_facts_name | default(omit, True) }}"
       api_token: "{{ hcloud_volume_facts_api_token | default(omit, True) }}"
+
+- name: "export r_hcloud_volume_facts"
+  set_stats:
+    data:
+      r_hcloud_volume_facts: "{{ r_hcloud_volume_facts }}"

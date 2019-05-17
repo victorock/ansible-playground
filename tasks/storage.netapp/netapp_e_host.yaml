@@ -16,3 +16,8 @@
       validate_certs: "{{ netapp_e_host_validate_certs | default(omit, True) }}"
       ports: "{{ netapp_e_host_ports | default(omit, True) }}"
       ssid: "{{ netapp_e_host_ssid | default(omit, True) }}"
+
+- name: "export r_netapp_e_host"
+  set_stats:
+    data:
+      r_netapp_e_host: "{{ r_netapp_e_host }}"

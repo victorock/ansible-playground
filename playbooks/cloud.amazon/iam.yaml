@@ -33,3 +33,8 @@
     - name: "plugin_iam"
       iam: "{{ iam }}"
       register: r_iam
+
+    - name: "export r_iam"
+      set_stats:
+        data:
+          r_iam: "{{ r_iam }}"

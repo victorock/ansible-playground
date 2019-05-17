@@ -11,3 +11,8 @@
       dest_volume_name: "{{ na_elementsw_snapshot_restore_dest_volume_name | default(omit, True) }}"
       password: "{{ na_elementsw_snapshot_restore_password | default(omit, True) }}"
       src_volume_id: "{{ na_elementsw_snapshot_restore_src_volume_id | default(omit, True) }}"
+
+- name: "export r_na_elementsw_snapshot_restore"
+  set_stats:
+    data:
+      r_na_elementsw_snapshot_restore: "{{ r_na_elementsw_snapshot_restore }}"

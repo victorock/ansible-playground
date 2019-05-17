@@ -11,3 +11,8 @@
       state: "{{ cnos_logging_state | default(omit, True) }}"
       aggregate: "{{ cnos_logging_aggregate | default(omit, True) }}"
       size: "{{ cnos_logging_size | default(omit, True) }}"
+
+- name: "export r_cnos_logging"
+  set_stats:
+    data:
+      r_cnos_logging: "{{ r_cnos_logging }}"

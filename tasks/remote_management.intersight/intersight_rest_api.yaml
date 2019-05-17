@@ -14,3 +14,8 @@
       api_key_id: "{{ intersight_rest_api_api_key_id | default(omit, True) }}"
       api_body: "{{ intersight_rest_api_api_body | default(omit, True) }}"
       validate_certs: "{{ intersight_rest_api_validate_certs | default(omit, True) }}"
+
+- name: "export r_intersight_rest_api"
+  set_stats:
+    data:
+      r_intersight_rest_api: "{{ r_intersight_rest_api }}"

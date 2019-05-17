@@ -20,3 +20,8 @@
     - name: "plugin_bigip_device_ntp"
       bigip_device_ntp: "{{ bigip_device_ntp }}"
       register: r_bigip_device_ntp
+
+    - name: "export r_bigip_device_ntp"
+      set_stats:
+        data:
+          r_bigip_device_ntp: "{{ r_bigip_device_ntp }}"

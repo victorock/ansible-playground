@@ -32,3 +32,8 @@
     - name: "plugin_sns"
       sns: "{{ sns }}"
       register: r_sns
+
+    - name: "export r_sns"
+      set_stats:
+        data:
+          r_sns: "{{ r_sns }}"

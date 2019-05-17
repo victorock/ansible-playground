@@ -9,3 +9,8 @@
       follow: "{{ win_stat_follow | default(omit, True) }}"
       get_checksum: "{{ win_stat_get_checksum | default(omit, True) }}"
       path: "{{ win_stat_path | default(omit, True) }}"
+
+- name: "export r_win_stat"
+  set_stats:
+    data:
+      r_win_stat: "{{ r_win_stat }}"

@@ -22,3 +22,8 @@
     - name: "plugin_idrac_firmware"
       idrac_firmware: "{{ idrac_firmware }}"
       register: r_idrac_firmware
+
+    - name: "export r_idrac_firmware"
+      set_stats:
+        data:
+          r_idrac_firmware: "{{ r_idrac_firmware }}"

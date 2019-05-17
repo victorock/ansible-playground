@@ -16,3 +16,8 @@
     - name: "plugin_memset_zone"
       memset_zone: "{{ memset_zone }}"
       register: r_memset_zone
+
+    - name: "export r_memset_zone"
+      set_stats:
+        data:
+          r_memset_zone: "{{ r_memset_zone }}"

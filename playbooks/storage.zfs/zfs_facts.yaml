@@ -17,3 +17,8 @@
     - name: "plugin_zfs_facts"
       zfs_facts: "{{ zfs_facts }}"
       register: r_zfs_facts
+
+    - name: "export r_zfs_facts"
+      set_stats:
+        data:
+          r_zfs_facts: "{{ r_zfs_facts }}"

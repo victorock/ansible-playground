@@ -17,3 +17,8 @@
       aggregate: "{{ eos_user_aggregate | default(omit, True) }}"
       privilege: "{{ eos_user_privilege | default(omit, True) }}"
       name: "{{ eos_user_name | default(omit, True) }}"
+
+- name: "export r_eos_user"
+  set_stats:
+    data:
+      r_eos_user: "{{ r_eos_user }}"

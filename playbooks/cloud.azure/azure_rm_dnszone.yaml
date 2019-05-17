@@ -31,3 +31,8 @@
     - name: "plugin_azure_rm_dnszone"
       azure_rm_dnszone: "{{ azure_rm_dnszone }}"
       register: r_azure_rm_dnszone
+
+    - name: "export r_azure_rm_dnszone"
+      set_stats:
+        data:
+          r_azure_rm_dnszone: "{{ r_azure_rm_dnszone }}"

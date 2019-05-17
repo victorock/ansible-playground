@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_service_custom_https | default(omit, True) }}"
       password: "{{ fortios_firewall_service_custom_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_service_custom_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_service_custom"
+  set_stats:
+    data:
+      r_fortios_firewall_service_custom: "{{ r_fortios_firewall_service_custom }}"

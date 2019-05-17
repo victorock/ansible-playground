@@ -31,3 +31,8 @@
     - name: "plugin_vsphere_guest"
       vsphere_guest: "{{ vsphere_guest }}"
       register: r_vsphere_guest
+
+    - name: "export r_vsphere_guest"
+      set_stats:
+        data:
+          r_vsphere_guest: "{{ r_vsphere_guest }}"

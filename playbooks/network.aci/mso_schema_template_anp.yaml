@@ -25,3 +25,8 @@
     - name: "plugin_mso_schema_template_anp"
       mso_schema_template_anp: "{{ mso_schema_template_anp }}"
       register: r_mso_schema_template_anp
+
+    - name: "export r_mso_schema_template_anp"
+      set_stats:
+        data:
+          r_mso_schema_template_anp: "{{ r_mso_schema_template_anp }}"

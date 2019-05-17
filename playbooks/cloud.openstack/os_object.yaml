@@ -29,3 +29,8 @@
     - name: "plugin_os_object"
       os_object: "{{ os_object }}"
       register: r_os_object
+
+    - name: "export r_os_object"
+      set_stats:
+        data:
+          r_os_object: "{{ r_os_object }}"

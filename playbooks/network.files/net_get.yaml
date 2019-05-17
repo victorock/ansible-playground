@@ -14,3 +14,8 @@
     - name: "plugin_net_get"
       net_get: "{{ net_get }}"
       register: r_net_get
+
+    - name: "export r_net_get"
+      set_stats:
+        data:
+          r_net_get: "{{ r_net_get }}"

@@ -15,3 +15,8 @@
       draft: "{{ github_release_draft | default(omit, True) }}"
       password: "{{ github_release_password | default(omit, True) }}"
       target: "{{ github_release_target | default(omit, True) }}"
+
+- name: "export r_github_release"
+  set_stats:
+    data:
+      r_github_release: "{{ r_github_release }}"

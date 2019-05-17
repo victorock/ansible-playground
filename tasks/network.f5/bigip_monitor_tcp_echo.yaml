@@ -19,3 +19,8 @@
       password: "{{ bigip_monitor_tcp_echo_password | default(omit, True) }}"
       validate_certs: "{{ bigip_monitor_tcp_echo_validate_certs | default(omit, True) }}"
       name: "{{ bigip_monitor_tcp_echo_name | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_tcp_echo"
+  set_stats:
+    data:
+      r_bigip_monitor_tcp_echo: "{{ r_bigip_monitor_tcp_echo }}"

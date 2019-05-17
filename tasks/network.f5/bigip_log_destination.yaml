@@ -28,3 +28,8 @@
       template_delete_delay: "{{ bigip_log_destination_template_delete_delay | default(omit, True) }}"
       distribution: "{{ bigip_log_destination_distribution | default(omit, True) }}"
       validate_certs: "{{ bigip_log_destination_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_log_destination"
+  set_stats:
+    data:
+      r_bigip_log_destination: "{{ r_bigip_log_destination }}"

@@ -29,3 +29,8 @@
       target: "{{ ucs_vnic_template_target | default(omit, True) }}"
       pin_group: "{{ ucs_vnic_template_pin_group | default(omit, True) }}"
       qos_policy: "{{ ucs_vnic_template_qos_policy | default(omit, True) }}"
+
+- name: "export r_ucs_vnic_template"
+  set_stats:
+    data:
+      r_ucs_vnic_template: "{{ r_ucs_vnic_template }}"

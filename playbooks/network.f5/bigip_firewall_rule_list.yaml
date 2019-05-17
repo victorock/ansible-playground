@@ -22,3 +22,8 @@
     - name: "plugin_bigip_firewall_rule_list"
       bigip_firewall_rule_list: "{{ bigip_firewall_rule_list }}"
       register: r_bigip_firewall_rule_list
+
+    - name: "export r_bigip_firewall_rule_list"
+      set_stats:
+        data:
+          r_bigip_firewall_rule_list: "{{ r_bigip_firewall_rule_list }}"

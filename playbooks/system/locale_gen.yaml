@@ -13,3 +13,8 @@
     - name: "plugin_locale_gen"
       locale_gen: "{{ locale_gen }}"
       register: r_locale_gen
+
+    - name: "export r_locale_gen"
+      set_stats:
+        data:
+          r_locale_gen: "{{ r_locale_gen }}"

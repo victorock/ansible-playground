@@ -19,3 +19,8 @@
     - name: "plugin_na_ontap_disks"
       na_ontap_disks: "{{ na_ontap_disks }}"
       register: r_na_ontap_disks
+
+    - name: "export r_na_ontap_disks"
+      set_stats:
+        data:
+          r_na_ontap_disks: "{{ r_na_ontap_disks }}"

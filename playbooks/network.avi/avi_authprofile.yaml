@@ -32,3 +32,8 @@
     - name: "plugin_avi_authprofile"
       avi_authprofile: "{{ avi_authprofile }}"
       register: r_avi_authprofile
+
+    - name: "export r_avi_authprofile"
+      set_stats:
+        data:
+          r_avi_authprofile: "{{ r_avi_authprofile }}"

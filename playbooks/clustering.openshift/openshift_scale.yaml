@@ -32,3 +32,8 @@
     - name: "plugin_openshift_scale"
       openshift_scale: "{{ openshift_scale }}"
       register: r_openshift_scale
+
+    - name: "export r_openshift_scale"
+      set_stats:
+        data:
+          r_openshift_scale: "{{ r_openshift_scale }}"

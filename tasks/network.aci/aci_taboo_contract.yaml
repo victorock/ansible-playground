@@ -20,3 +20,8 @@
       port: "{{ aci_taboo_contract_port | default(omit, True) }}"
       tenant: "{{ aci_taboo_contract_tenant | default(omit, True) }}"
       use_proxy: "{{ aci_taboo_contract_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_taboo_contract"
+  set_stats:
+    data:
+      r_aci_taboo_contract: "{{ r_aci_taboo_contract }}"

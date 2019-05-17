@@ -17,3 +17,8 @@
       id: "{{ ovirt_tag_id | default(omit, True) }}"
       vms: "{{ ovirt_tag_vms | default(omit, True) }}"
       wait: "{{ ovirt_tag_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_tag"
+  set_stats:
+    data:
+      r_ovirt_tag: "{{ r_ovirt_tag }}"

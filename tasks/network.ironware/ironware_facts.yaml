@@ -7,3 +7,8 @@
       authorize: "{{ ironware_facts_authorize | default(omit, True) }}"
       gather_subset: "{{ ironware_facts_gather_subset | default(omit, True) }}"
       provider: "{{ ironware_facts_provider | default(omit, True) }}"
+
+- name: "export r_ironware_facts"
+  set_stats:
+    data:
+      r_ironware_facts: "{{ r_ironware_facts }}"

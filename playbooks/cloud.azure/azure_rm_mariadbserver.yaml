@@ -36,3 +36,8 @@
     - name: "plugin_azure_rm_mariadbserver"
       azure_rm_mariadbserver: "{{ azure_rm_mariadbserver }}"
       register: r_azure_rm_mariadbserver
+
+    - name: "export r_azure_rm_mariadbserver"
+      set_stats:
+        data:
+          r_azure_rm_mariadbserver: "{{ r_azure_rm_mariadbserver }}"

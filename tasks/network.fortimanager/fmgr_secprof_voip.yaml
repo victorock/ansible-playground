@@ -112,3 +112,8 @@
       sip_log_call_summary: "{{ fmgr_secprof_voip_sip_log_call_summary | default(omit, True) }}"
       sip_ips_rtp: "{{ fmgr_secprof_voip_sip_ips_rtp | default(omit, True) }}"
       sip_ssl_auth_client: "{{ fmgr_secprof_voip_sip_ssl_auth_client | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_voip"
+  set_stats:
+    data:
+      r_fmgr_secprof_voip: "{{ r_fmgr_secprof_voip }}"

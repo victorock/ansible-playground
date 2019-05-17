@@ -14,3 +14,8 @@
       password: "{{ bigip_partition_password | default(omit, True) }}"
       validate_certs: "{{ bigip_partition_validate_certs | default(omit, True) }}"
       description: "{{ bigip_partition_description | default(omit, True) }}"
+
+- name: "export r_bigip_partition"
+  set_stats:
+    data:
+      r_bigip_partition: "{{ r_bigip_partition }}"

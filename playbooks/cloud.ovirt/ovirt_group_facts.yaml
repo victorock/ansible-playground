@@ -15,3 +15,8 @@
     - name: "plugin_ovirt_group_facts"
       ovirt_group_facts: "{{ ovirt_group_facts }}"
       register: r_ovirt_group_facts
+
+    - name: "export r_ovirt_group_facts"
+      set_stats:
+        data:
+          r_ovirt_group_facts: "{{ r_ovirt_group_facts }}"

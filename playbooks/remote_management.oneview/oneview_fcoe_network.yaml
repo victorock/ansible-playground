@@ -15,3 +15,8 @@
     - name: "plugin_oneview_fcoe_network"
       oneview_fcoe_network: "{{ oneview_fcoe_network }}"
       register: r_oneview_fcoe_network
+
+    - name: "export r_oneview_fcoe_network"
+      set_stats:
+        data:
+          r_oneview_fcoe_network: "{{ r_oneview_fcoe_network }}"

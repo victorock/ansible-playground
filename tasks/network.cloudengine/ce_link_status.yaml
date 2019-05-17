@@ -5,3 +5,8 @@
   vars:
     ce_link_status: 
       interface: "{{ ce_link_status_interface | default(omit, True) }}"
+
+- name: "export r_ce_link_status"
+  set_stats:
+    data:
+      r_ce_link_status: "{{ r_ce_link_status }}"

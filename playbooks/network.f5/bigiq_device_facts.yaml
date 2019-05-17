@@ -18,3 +18,8 @@
     - name: "plugin_bigiq_device_facts"
       bigiq_device_facts: "{{ bigiq_device_facts }}"
       register: r_bigiq_device_facts
+
+    - name: "export r_bigiq_device_facts"
+      set_stats:
+        data:
+          r_bigiq_device_facts: "{{ r_bigiq_device_facts }}"

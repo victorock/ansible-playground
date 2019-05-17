@@ -23,3 +23,8 @@
       tenant_uuid: "{{ avi_useraccountprofile_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_useraccountprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_useraccountprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_useraccountprofile"
+  set_stats:
+    data:
+      r_avi_useraccountprofile: "{{ r_avi_useraccountprofile }}"

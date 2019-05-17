@@ -11,3 +11,8 @@
       acme_version: "{{ acme_account_info_acme_version | default(omit, True) }}"
       validate_certs: "{{ acme_account_info_validate_certs | default(omit, True) }}"
       account_key_src: "{{ acme_account_info_account_key_src | default(omit, True) }}"
+
+- name: "export r_acme_account_info"
+  set_stats:
+    data:
+      r_acme_account_info: "{{ r_acme_account_info }}"

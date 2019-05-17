@@ -17,3 +17,8 @@
     - name: "plugin_fortios_endpoint_control_forticlient_ems"
       fortios_endpoint_control_forticlient_ems: "{{ fortios_endpoint_control_forticlient_ems }}"
       register: r_fortios_endpoint_control_forticlient_ems
+
+    - name: "export r_fortios_endpoint_control_forticlient_ems"
+      set_stats:
+        data:
+          r_fortios_endpoint_control_forticlient_ems: "{{ r_fortios_endpoint_control_forticlient_ems }}"

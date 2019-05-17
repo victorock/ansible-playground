@@ -16,3 +16,8 @@
       login_unix_socket: "{{ postgresql_set_login_unix_socket | default(omit, True) }}"
       login_password: "{{ postgresql_set_login_password | default(omit, True) }}"
       port: "{{ postgresql_set_port | default(omit, True) }}"
+
+- name: "export r_postgresql_set"
+  set_stats:
+    data:
+      r_postgresql_set: "{{ r_postgresql_set }}"

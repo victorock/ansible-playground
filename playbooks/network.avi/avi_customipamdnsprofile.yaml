@@ -28,3 +28,8 @@
     - name: "plugin_avi_customipamdnsprofile"
       avi_customipamdnsprofile: "{{ avi_customipamdnsprofile }}"
       register: r_avi_customipamdnsprofile
+
+    - name: "export r_avi_customipamdnsprofile"
+      set_stats:
+        data:
+          r_avi_customipamdnsprofile: "{{ r_avi_customipamdnsprofile }}"

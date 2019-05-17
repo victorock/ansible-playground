@@ -10,3 +10,8 @@
       system_global: "{{ fortios_system_global_system_global | default(omit, True) }}"
       password: "{{ fortios_system_global_password | default(omit, True) }}"
       vdom: "{{ fortios_system_global_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_system_global"
+  set_stats:
+    data:
+      r_fortios_system_global: "{{ r_fortios_system_global }}"

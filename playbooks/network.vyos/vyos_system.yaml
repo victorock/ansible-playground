@@ -17,3 +17,8 @@
     - name: "plugin_vyos_system"
       vyos_system: "{{ vyos_system }}"
       register: r_vyos_system
+
+    - name: "export r_vyos_system"
+      set_stats:
+        data:
+          r_vyos_system: "{{ r_vyos_system }}"

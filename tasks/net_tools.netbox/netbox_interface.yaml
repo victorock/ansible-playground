@@ -9,3 +9,8 @@
       netbox_url: "{{ netbox_interface_netbox_url | default(omit, True) }}"
       netbox_token: "{{ netbox_interface_netbox_token | default(omit, True) }}"
       validate_certs: "{{ netbox_interface_validate_certs | default(omit, True) }}"
+
+- name: "export r_netbox_interface"
+  set_stats:
+    data:
+      r_netbox_interface: "{{ r_netbox_interface }}"

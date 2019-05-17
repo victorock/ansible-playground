@@ -25,3 +25,8 @@
     - name: "plugin_gitlab_group"
       gitlab_group: "{{ gitlab_group }}"
       register: r_gitlab_group
+
+    - name: "export r_gitlab_group"
+      set_stats:
+        data:
+          r_gitlab_group: "{{ r_gitlab_group }}"

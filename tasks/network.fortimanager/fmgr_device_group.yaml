@@ -10,3 +10,8 @@
       mode: "{{ fmgr_device_group_mode | default(omit, True) }}"
       grp_name: "{{ fmgr_device_group_grp_name | default(omit, True) }}"
       vdom: "{{ fmgr_device_group_vdom | default(omit, True) }}"
+
+- name: "export r_fmgr_device_group"
+  set_stats:
+    data:
+      r_fmgr_device_group: "{{ r_fmgr_device_group }}"

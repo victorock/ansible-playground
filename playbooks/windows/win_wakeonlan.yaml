@@ -14,3 +14,8 @@
     - name: "plugin_win_wakeonlan"
       win_wakeonlan: "{{ win_wakeonlan }}"
       register: r_win_wakeonlan
+
+    - name: "export r_win_wakeonlan"
+      set_stats:
+        data:
+          r_win_wakeonlan: "{{ r_win_wakeonlan }}"

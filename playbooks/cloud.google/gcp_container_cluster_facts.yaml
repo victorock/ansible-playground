@@ -18,3 +18,8 @@
     - name: "plugin_gcp_container_cluster_facts"
       gcp_container_cluster_facts: "{{ gcp_container_cluster_facts }}"
       register: r_gcp_container_cluster_facts
+
+    - name: "export r_gcp_container_cluster_facts"
+      set_stats:
+        data:
+          r_gcp_container_cluster_facts: "{{ r_gcp_container_cluster_facts }}"

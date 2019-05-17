@@ -15,3 +15,8 @@
     - name: "plugin_logentries"
       logentries: "{{ logentries }}"
       register: r_logentries
+
+    - name: "export r_logentries"
+      set_stats:
+        data:
+          r_logentries: "{{ r_logentries }}"

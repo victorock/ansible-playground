@@ -27,3 +27,8 @@
       queue: "{{ azure_rm_servicebussaspolicy_queue | default(omit, True) }}"
       auth_source: "{{ azure_rm_servicebussaspolicy_auth_source | default(omit, True) }}"
       namespace: "{{ azure_rm_servicebussaspolicy_namespace | default(omit, True) }}"
+
+- name: "export r_azure_rm_servicebussaspolicy"
+  set_stats:
+    data:
+      r_azure_rm_servicebussaspolicy: "{{ r_azure_rm_servicebussaspolicy }}"

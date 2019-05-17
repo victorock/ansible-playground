@@ -19,3 +19,8 @@
     - name: "plugin_sensu_silence"
       sensu_silence: "{{ sensu_silence }}"
       register: r_sensu_silence
+
+    - name: "export r_sensu_silence"
+      set_stats:
+        data:
+          r_sensu_silence: "{{ r_sensu_silence }}"

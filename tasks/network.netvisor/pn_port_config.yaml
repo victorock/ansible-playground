@@ -33,3 +33,8 @@
       pn_loop_vlans: "{{ pn_port_config_pn_loop_vlans | default(omit, True) }}"
       pn_pause: "{{ pn_port_config_pn_pause | default(omit, True) }}"
       pn_description: "{{ pn_port_config_pn_description | default(omit, True) }}"
+
+- name: "export r_pn_port_config"
+  set_stats:
+    data:
+      r_pn_port_config: "{{ r_pn_port_config }}"

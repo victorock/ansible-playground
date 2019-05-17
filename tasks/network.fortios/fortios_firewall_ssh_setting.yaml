@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_ssh_setting_https | default(omit, True) }}"
       password: "{{ fortios_firewall_ssh_setting_password | default(omit, True) }}"
       firewall_ssh_setting: "{{ fortios_firewall_ssh_setting_firewall_ssh_setting | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_ssh_setting"
+  set_stats:
+    data:
+      r_fortios_firewall_ssh_setting: "{{ r_fortios_firewall_ssh_setting }}"

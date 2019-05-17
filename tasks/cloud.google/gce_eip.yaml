@@ -7,3 +7,8 @@
       region: "{{ gce_eip_region | default(omit, True) }}"
       name: "{{ gce_eip_name | default(omit, True) }}"
       state: "{{ gce_eip_state | default(omit, True) }}"
+
+- name: "export r_gce_eip"
+  set_stats:
+    data:
+      r_gce_eip: "{{ r_gce_eip }}"

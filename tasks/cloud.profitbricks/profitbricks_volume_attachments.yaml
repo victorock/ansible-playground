@@ -12,3 +12,8 @@
       wait_timeout: "{{ profitbricks_volume_attachments_wait_timeout | default(omit, True) }}"
       subscription_password: "{{ profitbricks_volume_attachments_subscription_password | default(omit, True) }}"
       wait: "{{ profitbricks_volume_attachments_wait | default(omit, True) }}"
+
+- name: "export r_profitbricks_volume_attachments"
+  set_stats:
+    data:
+      r_profitbricks_volume_attachments: "{{ r_profitbricks_volume_attachments }}"

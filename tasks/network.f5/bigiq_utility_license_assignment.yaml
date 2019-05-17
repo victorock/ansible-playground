@@ -19,3 +19,8 @@
       password: "{{ bigiq_utility_license_assignment_password | default(omit, True) }}"
       validate_certs: "{{ bigiq_utility_license_assignment_validate_certs | default(omit, True) }}"
       device_password: "{{ bigiq_utility_license_assignment_device_password | default(omit, True) }}"
+
+- name: "export r_bigiq_utility_license_assignment"
+  set_stats:
+    data:
+      r_bigiq_utility_license_assignment: "{{ r_bigiq_utility_license_assignment }}"

@@ -13,3 +13,8 @@
       validate_certs: "{{ vmware_local_user_manager_validate_certs | default(omit, True) }}"
       port: "{{ vmware_local_user_manager_port | default(omit, True) }}"
       local_user_name: "{{ vmware_local_user_manager_local_user_name | default(omit, True) }}"
+
+- name: "export r_vmware_local_user_manager"
+  set_stats:
+    data:
+      r_vmware_local_user_manager: "{{ r_vmware_local_user_manager }}"

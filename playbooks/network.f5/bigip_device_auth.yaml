@@ -26,3 +26,8 @@
     - name: "plugin_bigip_device_auth"
       bigip_device_auth: "{{ bigip_device_auth }}"
       register: r_bigip_device_auth
+
+    - name: "export r_bigip_device_auth"
+      set_stats:
+        data:
+          r_bigip_device_auth: "{{ r_bigip_device_auth }}"

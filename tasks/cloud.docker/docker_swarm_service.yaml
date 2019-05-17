@@ -71,3 +71,8 @@
       validate_certs: "{{ docker_swarm_service_validate_certs | default(omit, True) }}"
       restart_policy_attempts: "{{ docker_swarm_service_restart_policy_attempts | default(omit, True) }}"
       constraints: "{{ docker_swarm_service_constraints | default(omit, True) }}"
+
+- name: "export r_docker_swarm_service"
+  set_stats:
+    data:
+      r_docker_swarm_service: "{{ r_docker_swarm_service }}"

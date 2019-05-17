@@ -20,3 +20,8 @@
       api_key: "{{ rax_cbs_attachments_api_key | default(omit, True) }}"
       validate_certs: "{{ rax_cbs_attachments_validate_certs | default(omit, True) }}"
       auth_endpoint: "{{ rax_cbs_attachments_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_cbs_attachments"
+  set_stats:
+    data:
+      r_rax_cbs_attachments: "{{ r_rax_cbs_attachments }}"

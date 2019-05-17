@@ -29,3 +29,8 @@
     - name: "plugin_vmware_vm_shell"
       vmware_vm_shell: "{{ vmware_vm_shell }}"
       register: r_vmware_vm_shell
+
+    - name: "export r_vmware_vm_shell"
+      set_stats:
+        data:
+          r_vmware_vm_shell: "{{ r_vmware_vm_shell }}"

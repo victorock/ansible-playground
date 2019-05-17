@@ -24,3 +24,8 @@
     - name: "plugin_netapp_e_snapshot_group"
       netapp_e_snapshot_group: "{{ netapp_e_snapshot_group }}"
       register: r_netapp_e_snapshot_group
+
+    - name: "export r_netapp_e_snapshot_group"
+      set_stats:
+        data:
+          r_netapp_e_snapshot_group: "{{ r_netapp_e_snapshot_group }}"

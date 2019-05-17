@@ -20,3 +20,8 @@
       port: "{{ aci_l3out_route_tag_policy_port | default(omit, True) }}"
       tenant: "{{ aci_l3out_route_tag_policy_tenant | default(omit, True) }}"
       use_proxy: "{{ aci_l3out_route_tag_policy_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_l3out_route_tag_policy"
+  set_stats:
+    data:
+      r_aci_l3out_route_tag_policy: "{{ r_aci_l3out_route_tag_policy }}"

@@ -22,3 +22,8 @@
     - name: "plugin_netapp_e_storage_system"
       netapp_e_storage_system: "{{ netapp_e_storage_system }}"
       register: r_netapp_e_storage_system
+
+    - name: "export r_netapp_e_storage_system"
+      set_stats:
+        data:
+          r_netapp_e_storage_system: "{{ r_netapp_e_storage_system }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_identity_based_route_https | default(omit, True) }}"
       password: "{{ fortios_firewall_identity_based_route_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_identity_based_route_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_identity_based_route"
+  set_stats:
+    data:
+      r_fortios_firewall_identity_based_route: "{{ r_fortios_firewall_identity_based_route }}"

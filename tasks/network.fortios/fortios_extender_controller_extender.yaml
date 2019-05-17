@@ -10,3 +10,8 @@
       https: "{{ fortios_extender_controller_extender_https | default(omit, True) }}"
       password: "{{ fortios_extender_controller_extender_password | default(omit, True) }}"
       vdom: "{{ fortios_extender_controller_extender_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_extender_controller_extender"
+  set_stats:
+    data:
+      r_fortios_extender_controller_extender: "{{ r_fortios_extender_controller_extender }}"

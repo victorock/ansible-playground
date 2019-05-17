@@ -24,3 +24,8 @@
     - name: "plugin_postgresql_query"
       postgresql_query: "{{ postgresql_query }}"
       register: r_postgresql_query
+
+    - name: "export r_postgresql_query"
+      set_stats:
+        data:
+          r_postgresql_query: "{{ r_postgresql_query }}"

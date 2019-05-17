@@ -15,3 +15,8 @@
     - name: "plugin_netconf_get"
       netconf_get: "{{ netconf_get }}"
       register: r_netconf_get
+
+    - name: "export r_netconf_get"
+      set_stats:
+        data:
+          r_netconf_get: "{{ r_netconf_get }}"

@@ -26,3 +26,8 @@
     - name: "plugin_idrac_server_config_profile"
       idrac_server_config_profile: "{{ idrac_server_config_profile }}"
       register: r_idrac_server_config_profile
+
+    - name: "export r_idrac_server_config_profile"
+      set_stats:
+        data:
+          r_idrac_server_config_profile: "{{ r_idrac_server_config_profile }}"

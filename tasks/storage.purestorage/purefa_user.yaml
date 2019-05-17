@@ -11,3 +11,8 @@
       password: "{{ purefa_user_password | default(omit, True) }}"
       old_password: "{{ purefa_user_old_password | default(omit, True) }}"
       fa_url: "{{ purefa_user_fa_url | default(omit, True) }}"
+
+- name: "export r_purefa_user"
+  set_stats:
+    data:
+      r_purefa_user: "{{ r_purefa_user }}"

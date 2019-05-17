@@ -6,3 +6,8 @@
     nxos_facts: 
       gather_subset: "{{ nxos_facts_gather_subset | default(omit, True) }}"
       provider: "{{ nxos_facts_provider | default(omit, True) }}"
+
+- name: "export r_nxos_facts"
+  set_stats:
+    data:
+      r_nxos_facts: "{{ r_nxos_facts }}"

@@ -21,3 +21,8 @@
       validate_certs: "{{ vcenter_extension_validate_certs | default(omit, True) }}"
       port: "{{ vcenter_extension_port | default(omit, True) }}"
       name: "{{ vcenter_extension_name | default(omit, True) }}"
+
+- name: "export r_vcenter_extension"
+  set_stats:
+    data:
+      r_vcenter_extension: "{{ r_vcenter_extension }}"

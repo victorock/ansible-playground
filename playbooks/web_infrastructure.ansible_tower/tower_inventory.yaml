@@ -23,3 +23,8 @@
     - name: "plugin_tower_inventory"
       tower_inventory: "{{ tower_inventory }}"
       register: r_tower_inventory
+
+    - name: "export r_tower_inventory"
+      set_stats:
+        data:
+          r_tower_inventory: "{{ r_tower_inventory }}"

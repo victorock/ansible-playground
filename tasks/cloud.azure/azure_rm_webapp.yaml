@@ -36,3 +36,8 @@
       frameworks: "{{ azure_rm_webapp_frameworks | default(omit, True) }}"
       api_profile: "{{ azure_rm_webapp_api_profile | default(omit, True) }}"
       ttl_in_seconds: "{{ azure_rm_webapp_ttl_in_seconds | default(omit, True) }}"
+
+- name: "export r_azure_rm_webapp"
+  set_stats:
+    data:
+      r_azure_rm_webapp: "{{ r_azure_rm_webapp }}"

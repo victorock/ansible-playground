@@ -18,3 +18,8 @@
     - name: "plugin_vmware_host_firewall_facts"
       vmware_host_firewall_facts: "{{ vmware_host_firewall_facts }}"
       register: r_vmware_host_firewall_facts
+
+    - name: "export r_vmware_host_firewall_facts"
+      set_stats:
+        data:
+          r_vmware_host_firewall_facts: "{{ r_vmware_host_firewall_facts }}"

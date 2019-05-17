@@ -23,3 +23,8 @@
     - name: "plugin_redshift_subnet_group"
       redshift_subnet_group: "{{ redshift_subnet_group }}"
       register: r_redshift_subnet_group
+
+    - name: "export r_redshift_subnet_group"
+      set_stats:
+        data:
+          r_redshift_subnet_group: "{{ r_redshift_subnet_group }}"

@@ -16,3 +16,8 @@
     - name: "plugin_rundeck_project"
       rundeck_project: "{{ rundeck_project }}"
       register: r_rundeck_project
+
+    - name: "export r_rundeck_project"
+      set_stats:
+        data:
+          r_rundeck_project: "{{ r_rundeck_project }}"

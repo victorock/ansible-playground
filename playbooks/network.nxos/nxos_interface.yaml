@@ -28,3 +28,8 @@
     - name: "plugin_nxos_interface"
       nxos_interface: "{{ nxos_interface }}"
       register: r_nxos_interface
+
+    - name: "export r_nxos_interface"
+      set_stats:
+        data:
+          r_nxos_interface: "{{ r_nxos_interface }}"

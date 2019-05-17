@@ -42,3 +42,8 @@
       extra_vars_path: "{{ tower_job_template_extra_vars_path | default(omit, True) }}"
       ask_tags: "{{ tower_job_template_ask_tags | default(omit, True) }}"
       validate_certs: "{{ tower_job_template_validate_certs | default(omit, True) }}"
+
+- name: "export r_tower_job_template"
+  set_stats:
+    data:
+      r_tower_job_template: "{{ r_tower_job_template }}"

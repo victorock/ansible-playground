@@ -17,3 +17,8 @@
     - name: "plugin_lxca_cmms"
       lxca_cmms: "{{ lxca_cmms }}"
       register: r_lxca_cmms
+
+    - name: "export r_lxca_cmms"
+      set_stats:
+        data:
+          r_lxca_cmms: "{{ r_lxca_cmms }}"

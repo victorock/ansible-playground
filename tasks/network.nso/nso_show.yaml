@@ -11,3 +11,8 @@
       path: "{{ nso_show_path | default(omit, True) }}"
       password: "{{ nso_show_password | default(omit, True) }}"
       validate_certs: "{{ nso_show_validate_certs | default(omit, True) }}"
+
+- name: "export r_nso_show"
+  set_stats:
+    data:
+      r_nso_show: "{{ r_nso_show }}"

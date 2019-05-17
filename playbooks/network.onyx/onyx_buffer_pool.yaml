@@ -15,3 +15,8 @@
     - name: "plugin_onyx_buffer_pool"
       onyx_buffer_pool: "{{ onyx_buffer_pool }}"
       register: r_onyx_buffer_pool
+
+    - name: "export r_onyx_buffer_pool"
+      set_stats:
+        data:
+          r_onyx_buffer_pool: "{{ r_onyx_buffer_pool }}"

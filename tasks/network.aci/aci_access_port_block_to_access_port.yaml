@@ -24,3 +24,8 @@
       password: "{{ aci_access_port_block_to_access_port_password | default(omit, True) }}"
       validate_certs: "{{ aci_access_port_block_to_access_port_validate_certs | default(omit, True) }}"
       port: "{{ aci_access_port_block_to_access_port_port | default(omit, True) }}"
+
+- name: "export r_aci_access_port_block_to_access_port"
+  set_stats:
+    data:
+      r_aci_access_port_block_to_access_port: "{{ r_aci_access_port_block_to_access_port }}"

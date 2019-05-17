@@ -10,3 +10,8 @@
       provider: "{{ dellos6_command_provider | default(omit, True) }}"
       wait_for: "{{ dellos6_command_wait_for | default(omit, True) }}"
       match: "{{ dellos6_command_match | default(omit, True) }}"
+
+- name: "export r_dellos6_command"
+  set_stats:
+    data:
+      r_dellos6_command: "{{ r_dellos6_command }}"

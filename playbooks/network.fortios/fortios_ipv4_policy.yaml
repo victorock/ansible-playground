@@ -43,3 +43,8 @@
     - name: "plugin_fortios_ipv4_policy"
       fortios_ipv4_policy: "{{ fortios_ipv4_policy }}"
       register: r_fortios_ipv4_policy
+
+    - name: "export r_fortios_ipv4_policy"
+      set_stats:
+        data:
+          r_fortios_ipv4_policy: "{{ r_fortios_ipv4_policy }}"

@@ -29,3 +29,8 @@
     - name: "plugin_mso_schema_site_anp_epg_staticleaf"
       mso_schema_site_anp_epg_staticleaf: "{{ mso_schema_site_anp_epg_staticleaf }}"
       register: r_mso_schema_site_anp_epg_staticleaf
+
+    - name: "export r_mso_schema_site_anp_epg_staticleaf"
+      set_stats:
+        data:
+          r_mso_schema_site_anp_epg_staticleaf: "{{ r_mso_schema_site_anp_epg_staticleaf }}"

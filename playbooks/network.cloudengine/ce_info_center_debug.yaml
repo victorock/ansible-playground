@@ -17,3 +17,8 @@
     - name: "plugin_ce_info_center_debug"
       ce_info_center_debug: "{{ ce_info_center_debug }}"
       register: r_ce_info_center_debug
+
+    - name: "export r_ce_info_center_debug"
+      set_stats:
+        data:
+          r_ce_info_center_debug: "{{ r_ce_info_center_debug }}"

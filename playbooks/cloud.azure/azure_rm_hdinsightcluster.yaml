@@ -35,3 +35,8 @@
     - name: "plugin_azure_rm_hdinsightcluster"
       azure_rm_hdinsightcluster: "{{ azure_rm_hdinsightcluster }}"
       register: r_azure_rm_hdinsightcluster
+
+    - name: "export r_azure_rm_hdinsightcluster"
+      set_stats:
+        data:
+          r_azure_rm_hdinsightcluster: "{{ r_azure_rm_hdinsightcluster }}"

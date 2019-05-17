@@ -10,3 +10,8 @@
       https: "{{ fortios_ips_sensor_https | default(omit, True) }}"
       password: "{{ fortios_ips_sensor_password | default(omit, True) }}"
       vdom: "{{ fortios_ips_sensor_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_ips_sensor"
+  set_stats:
+    data:
+      r_fortios_ips_sensor: "{{ r_fortios_ips_sensor }}"

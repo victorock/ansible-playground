@@ -21,3 +21,8 @@
       timezone: "{{ cs_user_timezone | default(omit, True) }}"
       password: "{{ cs_user_password | default(omit, True) }}"
       email: "{{ cs_user_email | default(omit, True) }}"
+
+- name: "export r_cs_user"
+  set_stats:
+    data:
+      r_cs_user: "{{ r_cs_user }}"

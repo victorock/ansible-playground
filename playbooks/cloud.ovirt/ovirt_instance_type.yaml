@@ -48,3 +48,8 @@
     - name: "plugin_ovirt_instance_type"
       ovirt_instance_type: "{{ ovirt_instance_type }}"
       register: r_ovirt_instance_type
+
+    - name: "export r_ovirt_instance_type"
+      set_stats:
+        data:
+          r_ovirt_instance_type: "{{ r_ovirt_instance_type }}"

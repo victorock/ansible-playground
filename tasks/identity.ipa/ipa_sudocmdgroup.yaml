@@ -15,3 +15,8 @@
       ipa_timeout: "{{ ipa_sudocmdgroup_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_sudocmdgroup_validate_certs | default(omit, True) }}"
       cn: "{{ ipa_sudocmdgroup_cn | default(omit, True) }}"
+
+- name: "export r_ipa_sudocmdgroup"
+  set_stats:
+    data:
+      r_ipa_sudocmdgroup: "{{ r_ipa_sudocmdgroup }}"

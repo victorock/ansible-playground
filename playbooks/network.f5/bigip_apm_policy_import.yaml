@@ -22,3 +22,8 @@
     - name: "plugin_bigip_apm_policy_import"
       bigip_apm_policy_import: "{{ bigip_apm_policy_import }}"
       register: r_bigip_apm_policy_import
+
+    - name: "export r_bigip_apm_policy_import"
+      set_stats:
+        data:
+          r_bigip_apm_policy_import: "{{ r_bigip_apm_policy_import }}"

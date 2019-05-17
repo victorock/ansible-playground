@@ -31,3 +31,8 @@
     - name: "plugin_avi_autoscalelaunchconfig"
       avi_autoscalelaunchconfig: "{{ avi_autoscalelaunchconfig }}"
       register: r_avi_autoscalelaunchconfig
+
+    - name: "export r_avi_autoscalelaunchconfig"
+      set_stats:
+        data:
+          r_avi_autoscalelaunchconfig: "{{ r_avi_autoscalelaunchconfig }}"

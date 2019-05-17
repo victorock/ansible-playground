@@ -10,3 +10,8 @@
       password: "{{ fortios_firewall_proxy_policy_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_proxy_policy_vdom | default(omit, True) }}"
       firewall_proxy_policy: "{{ fortios_firewall_proxy_policy_firewall_proxy_policy | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_proxy_policy"
+  set_stats:
+    data:
+      r_fortios_firewall_proxy_policy: "{{ r_fortios_firewall_proxy_policy }}"

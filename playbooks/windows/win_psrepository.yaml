@@ -15,3 +15,8 @@
     - name: "plugin_win_psrepository"
       win_psrepository: "{{ win_psrepository }}"
       register: r_win_psrepository
+
+    - name: "export r_win_psrepository"
+      set_stats:
+        data:
+          r_win_psrepository: "{{ r_win_psrepository }}"

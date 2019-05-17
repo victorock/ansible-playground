@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_proxy_addrgrp"
       fortios_firewall_proxy_addrgrp: "{{ fortios_firewall_proxy_addrgrp }}"
       register: r_fortios_firewall_proxy_addrgrp
+
+    - name: "export r_fortios_firewall_proxy_addrgrp"
+      set_stats:
+        data:
+          r_fortios_firewall_proxy_addrgrp: "{{ r_fortios_firewall_proxy_addrgrp }}"

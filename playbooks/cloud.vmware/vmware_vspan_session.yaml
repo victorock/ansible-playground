@@ -33,3 +33,8 @@
     - name: "plugin_vmware_vspan_session"
       vmware_vspan_session: "{{ vmware_vspan_session }}"
       register: r_vmware_vspan_session
+
+    - name: "export r_vmware_vspan_session"
+      set_stats:
+        data:
+          r_vmware_vspan_session: "{{ r_vmware_vspan_session }}"

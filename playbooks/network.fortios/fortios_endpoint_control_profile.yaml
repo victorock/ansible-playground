@@ -17,3 +17,8 @@
     - name: "plugin_fortios_endpoint_control_profile"
       fortios_endpoint_control_profile: "{{ fortios_endpoint_control_profile }}"
       register: r_fortios_endpoint_control_profile
+
+    - name: "export r_fortios_endpoint_control_profile"
+      set_stats:
+        data:
+          r_fortios_endpoint_control_profile: "{{ r_fortios_endpoint_control_profile }}"

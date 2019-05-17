@@ -30,3 +30,8 @@
       attributes: "{{ get_url_attributes | default(omit, True) }}"
       backup: "{{ get_url_backup | default(omit, True) }}"
       tmp_dest: "{{ get_url_tmp_dest | default(omit, True) }}"
+
+- name: "export r_get_url"
+  set_stats:
+    data:
+      r_get_url: "{{ r_get_url }}"

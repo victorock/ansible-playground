@@ -22,3 +22,8 @@
       tenant_uuid: "{{ avi_trafficcloneprofile_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_trafficcloneprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_trafficcloneprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_trafficcloneprofile"
+  set_stats:
+    data:
+      r_avi_trafficcloneprofile: "{{ r_avi_trafficcloneprofile }}"

@@ -11,3 +11,8 @@
       provider: "{{ skydive_edge_provider | default(omit, True) }}"
       parent_node: "{{ skydive_edge_parent_node | default(omit, True) }}"
       metadata: "{{ skydive_edge_metadata | default(omit, True) }}"
+
+- name: "export r_skydive_edge"
+  set_stats:
+    data:
+      r_skydive_edge: "{{ r_skydive_edge }}"

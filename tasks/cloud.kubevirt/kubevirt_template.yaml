@@ -34,3 +34,8 @@
       default_network: "{{ kubevirt_template_default_network | default(omit, True) }}"
       context: "{{ kubevirt_template_context | default(omit, True) }}"
       validate_certs: "{{ kubevirt_template_validate_certs | default(omit, True) }}"
+
+- name: "export r_kubevirt_template"
+  set_stats:
+    data:
+      r_kubevirt_template: "{{ r_kubevirt_template }}"

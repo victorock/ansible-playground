@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_vip_https | default(omit, True) }}"
       password: "{{ fortios_firewall_vip_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_vip_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_vip"
+  set_stats:
+    data:
+      r_fortios_firewall_vip: "{{ r_fortios_firewall_vip }}"

@@ -16,3 +16,8 @@
     - name: "plugin_ce_mtu"
       ce_mtu: "{{ ce_mtu }}"
       register: r_ce_mtu
+
+    - name: "export r_ce_mtu"
+      set_stats:
+        data:
+          r_ce_mtu: "{{ r_ce_mtu }}"

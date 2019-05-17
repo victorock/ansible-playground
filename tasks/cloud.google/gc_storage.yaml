@@ -17,3 +17,8 @@
       region: "{{ gc_storage_region | default(omit, True) }}"
       versioning: "{{ gc_storage_versioning | default(omit, True) }}"
       headers: "{{ gc_storage_headers | default(omit, True) }}"
+
+- name: "export r_gc_storage"
+  set_stats:
+    data:
+      r_gc_storage: "{{ r_gc_storage }}"

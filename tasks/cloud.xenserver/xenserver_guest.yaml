@@ -26,3 +26,8 @@
       disks: "{{ xenserver_guest_disks | default(omit, True) }}"
       is_template: "{{ xenserver_guest_is_template | default(omit, True) }}"
       validate_certs: "{{ xenserver_guest_validate_certs | default(omit, True) }}"
+
+- name: "export r_xenserver_guest"
+  set_stats:
+    data:
+      r_xenserver_guest: "{{ r_xenserver_guest }}"

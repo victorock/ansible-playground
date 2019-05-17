@@ -20,3 +20,8 @@
       validate_certs: "{{ kubevirt_cdi_upload_validate_certs | default(omit, True) }}"
       pvc_name: "{{ kubevirt_cdi_upload_pvc_name | default(omit, True) }}"
       client_cert: "{{ kubevirt_cdi_upload_client_cert | default(omit, True) }}"
+
+- name: "export r_kubevirt_cdi_upload"
+  set_stats:
+    data:
+      r_kubevirt_cdi_upload: "{{ r_kubevirt_cdi_upload }}"

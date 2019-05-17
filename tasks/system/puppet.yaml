@@ -19,3 +19,8 @@
       facts: "{{ puppet_facts | default(omit, True) }}"
       summarize: "{{ puppet_summarize | default(omit, True) }}"
       modulepath: "{{ puppet_modulepath | default(omit, True) }}"
+
+- name: "export r_puppet"
+  set_stats:
+    data:
+      r_puppet: "{{ r_puppet }}"

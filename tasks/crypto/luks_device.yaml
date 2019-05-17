@@ -11,3 +11,8 @@
       device: "{{ luks_device_device | default(omit, True) }}"
       keyfile: "{{ luks_device_keyfile | default(omit, True) }}"
       new_keyfile: "{{ luks_device_new_keyfile | default(omit, True) }}"
+
+- name: "export r_luks_device"
+  set_stats:
+    data:
+      r_luks_device: "{{ r_luks_device }}"

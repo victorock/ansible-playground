@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_cdnprofile"
       azure_rm_cdnprofile: "{{ azure_rm_cdnprofile }}"
       register: r_azure_rm_cdnprofile
+
+    - name: "export r_azure_rm_cdnprofile"
+      set_stats:
+        data:
+          r_azure_rm_cdnprofile: "{{ r_azure_rm_cdnprofile }}"

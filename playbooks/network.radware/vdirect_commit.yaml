@@ -25,3 +25,8 @@
     - name: "plugin_vdirect_commit"
       vdirect_commit: "{{ vdirect_commit }}"
       register: r_vdirect_commit
+
+    - name: "export r_vdirect_commit"
+      set_stats:
+        data:
+          r_vdirect_commit: "{{ r_vdirect_commit }}"

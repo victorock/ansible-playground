@@ -25,3 +25,8 @@
     - name: "plugin_junos_config"
       junos_config: "{{ junos_config }}"
       register: r_junos_config
+
+    - name: "export r_junos_config"
+      set_stats:
+        data:
+          r_junos_config: "{{ r_junos_config }}"

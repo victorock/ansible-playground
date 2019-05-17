@@ -12,3 +12,8 @@
       wait_for: "{{ junos_command_wait_for | default(omit, True) }}"
       display: "{{ junos_command_display | default(omit, True) }}"
       match: "{{ junos_command_match | default(omit, True) }}"
+
+- name: "export r_junos_command"
+  set_stats:
+    data:
+      r_junos_command: "{{ r_junos_command }}"

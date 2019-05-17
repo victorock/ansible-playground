@@ -38,3 +38,8 @@
     - name: "plugin_mso_schema_template_filter_entry"
       mso_schema_template_filter_entry: "{{ mso_schema_template_filter_entry }}"
       register: r_mso_schema_template_filter_entry
+
+    - name: "export r_mso_schema_template_filter_entry"
+      set_stats:
+        data:
+          r_mso_schema_template_filter_entry: "{{ r_mso_schema_template_filter_entry }}"

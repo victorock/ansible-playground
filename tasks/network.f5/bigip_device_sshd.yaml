@@ -17,3 +17,8 @@
       password: "{{ bigip_device_sshd_password | default(omit, True) }}"
       banner: "{{ bigip_device_sshd_banner | default(omit, True) }}"
       port: "{{ bigip_device_sshd_port | default(omit, True) }}"
+
+- name: "export r_bigip_device_sshd"
+  set_stats:
+    data:
+      r_bigip_device_sshd: "{{ r_bigip_device_sshd }}"

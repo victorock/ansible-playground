@@ -25,3 +25,8 @@
       vip_setting: "{{ nios_member_vip_setting | default(omit, True) }}"
       provider: "{{ nios_member_provider | default(omit, True) }}"
       host_name: "{{ nios_member_host_name | default(omit, True) }}"
+
+- name: "export r_nios_member"
+  set_stats:
+    data:
+      r_nios_member: "{{ r_nios_member }}"

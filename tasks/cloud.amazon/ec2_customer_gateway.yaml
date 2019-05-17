@@ -17,3 +17,8 @@
       routing: "{{ ec2_customer_gateway_routing | default(omit, True) }}"
       bgp_asn: "{{ ec2_customer_gateway_bgp_asn | default(omit, True) }}"
       ip_address: "{{ ec2_customer_gateway_ip_address | default(omit, True) }}"
+
+- name: "export r_ec2_customer_gateway"
+  set_stats:
+    data:
+      r_ec2_customer_gateway: "{{ r_ec2_customer_gateway }}"

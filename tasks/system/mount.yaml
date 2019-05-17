@@ -14,3 +14,8 @@
       path: "{{ mount_path | default(omit, True) }}"
       backup: "{{ mount_backup | default(omit, True) }}"
       opts: "{{ mount_opts | default(omit, True) }}"
+
+- name: "export r_mount"
+  set_stats:
+    data:
+      r_mount: "{{ r_mount }}"

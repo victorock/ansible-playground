@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_resourcegroup"
       azure_rm_resourcegroup: "{{ azure_rm_resourcegroup }}"
       register: r_azure_rm_resourcegroup
+
+    - name: "export r_azure_rm_resourcegroup"
+      set_stats:
+        data:
+          r_azure_rm_resourcegroup: "{{ r_azure_rm_resourcegroup }}"

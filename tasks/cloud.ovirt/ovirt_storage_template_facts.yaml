@@ -10,3 +10,8 @@
       nested_attributes: "{{ ovirt_storage_template_facts_nested_attributes | default(omit, True) }}"
       fetch_nested: "{{ ovirt_storage_template_facts_fetch_nested | default(omit, True) }}"
       auth: "{{ ovirt_storage_template_facts_auth | default(omit, True) }}"
+
+- name: "export r_ovirt_storage_template_facts"
+  set_stats:
+    data:
+      r_ovirt_storage_template_facts: "{{ r_ovirt_storage_template_facts }}"

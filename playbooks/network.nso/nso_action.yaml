@@ -21,3 +21,8 @@
     - name: "plugin_nso_action"
       nso_action: "{{ nso_action }}"
       register: r_nso_action
+
+    - name: "export r_nso_action"
+      set_stats:
+        data:
+          r_nso_action: "{{ r_nso_action }}"

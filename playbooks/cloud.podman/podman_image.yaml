@@ -26,3 +26,8 @@
     - name: "plugin_podman_image"
       podman_image: "{{ podman_image }}"
       register: r_podman_image
+
+    - name: "export r_podman_image"
+      set_stats:
+        data:
+          r_podman_image: "{{ r_podman_image }}"

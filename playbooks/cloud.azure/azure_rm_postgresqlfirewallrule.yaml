@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_postgresqlfirewallrule"
       azure_rm_postgresqlfirewallrule: "{{ azure_rm_postgresqlfirewallrule }}"
       register: r_azure_rm_postgresqlfirewallrule
+
+    - name: "export r_azure_rm_postgresqlfirewallrule"
+      set_stats:
+        data:
+          r_azure_rm_postgresqlfirewallrule: "{{ r_azure_rm_postgresqlfirewallrule }}"

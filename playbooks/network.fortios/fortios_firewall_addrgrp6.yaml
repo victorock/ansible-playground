@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_addrgrp6"
       fortios_firewall_addrgrp6: "{{ fortios_firewall_addrgrp6 }}"
       register: r_fortios_firewall_addrgrp6
+
+    - name: "export r_fortios_firewall_addrgrp6"
+      set_stats:
+        data:
+          r_fortios_firewall_addrgrp6: "{{ r_fortios_firewall_addrgrp6 }}"

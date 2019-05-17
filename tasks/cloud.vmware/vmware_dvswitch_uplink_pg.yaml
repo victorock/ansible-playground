@@ -17,3 +17,8 @@
       port: "{{ vmware_dvswitch_uplink_pg_port | default(omit, True) }}"
       advanced: "{{ vmware_dvswitch_uplink_pg_advanced | default(omit, True) }}"
       name: "{{ vmware_dvswitch_uplink_pg_name | default(omit, True) }}"
+
+- name: "export r_vmware_dvswitch_uplink_pg"
+  set_stats:
+    data:
+      r_vmware_dvswitch_uplink_pg: "{{ r_vmware_dvswitch_uplink_pg }}"

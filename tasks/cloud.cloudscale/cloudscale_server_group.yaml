@@ -10,3 +10,8 @@
       api_token: "{{ cloudscale_server_group_api_token | default(omit, True) }}"
       type: "{{ cloudscale_server_group_type | default(omit, True) }}"
       name: "{{ cloudscale_server_group_name | default(omit, True) }}"
+
+- name: "export r_cloudscale_server_group"
+  set_stats:
+    data:
+      r_cloudscale_server_group: "{{ r_cloudscale_server_group }}"

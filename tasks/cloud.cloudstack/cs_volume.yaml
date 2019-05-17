@@ -32,3 +32,8 @@
       project: "{{ cs_volume_project | default(omit, True) }}"
       snapshot: "{{ cs_volume_snapshot | default(omit, True) }}"
       mode: "{{ cs_volume_mode | default(omit, True) }}"
+
+- name: "export r_cs_volume"
+  set_stats:
+    data:
+      r_cs_volume: "{{ r_cs_volume }}"

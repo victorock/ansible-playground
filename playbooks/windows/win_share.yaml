@@ -22,3 +22,8 @@
     - name: "plugin_win_share"
       win_share: "{{ win_share }}"
       register: r_win_share
+
+    - name: "export r_win_share"
+      set_stats:
+        data:
+          r_win_share: "{{ r_win_share }}"

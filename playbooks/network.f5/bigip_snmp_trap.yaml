@@ -25,3 +25,8 @@
     - name: "plugin_bigip_snmp_trap"
       bigip_snmp_trap: "{{ bigip_snmp_trap }}"
       register: r_bigip_snmp_trap
+
+    - name: "export r_bigip_snmp_trap"
+      set_stats:
+        data:
+          r_bigip_snmp_trap: "{{ r_bigip_snmp_trap }}"

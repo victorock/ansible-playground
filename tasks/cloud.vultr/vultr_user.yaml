@@ -17,3 +17,8 @@
       password: "{{ vultr_user_password | default(omit, True) }}"
       validate_certs: "{{ vultr_user_validate_certs | default(omit, True) }}"
       email: "{{ vultr_user_email | default(omit, True) }}"
+
+- name: "export r_vultr_user"
+  set_stats:
+    data:
+      r_vultr_user: "{{ r_vultr_user }}"

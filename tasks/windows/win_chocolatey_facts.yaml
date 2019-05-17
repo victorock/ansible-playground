@@ -2,3 +2,8 @@
 - name: "module_win_chocolatey_facts"
   win_chocolatey_facts:
   register: r_win_chocolatey_facts
+
+- name: "export r_win_chocolatey_facts"
+  set_stats:
+    data:
+      r_win_chocolatey_facts: "{{ r_win_chocolatey_facts }}"

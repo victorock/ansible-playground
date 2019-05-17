@@ -17,3 +17,8 @@
     - name: "plugin_win_toast"
       win_toast: "{{ win_toast }}"
       register: r_win_toast
+
+    - name: "export r_win_toast"
+      set_stats:
+        data:
+          r_win_toast: "{{ r_win_toast }}"

@@ -10,3 +10,8 @@
       extattrs: "{{ nios_dns_view_extattrs | default(omit, True) }}"
       state: "{{ nios_dns_view_state | default(omit, True) }}"
       provider: "{{ nios_dns_view_provider | default(omit, True) }}"
+
+- name: "export r_nios_dns_view"
+  set_stats:
+    data:
+      r_nios_dns_view: "{{ r_nios_dns_view }}"

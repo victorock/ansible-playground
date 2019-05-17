@@ -7,3 +7,8 @@
       state: "{{ junos_netconf_state | default(omit, True) }}"
       netconf_port: "{{ junos_netconf_netconf_port | default(omit, True) }}"
       provider: "{{ junos_netconf_provider | default(omit, True) }}"
+
+- name: "export r_junos_netconf"
+  set_stats:
+    data:
+      r_junos_netconf: "{{ r_junos_netconf }}"

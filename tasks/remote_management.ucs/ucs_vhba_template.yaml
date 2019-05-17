@@ -24,3 +24,8 @@
       vsan: "{{ ucs_vhba_template_vsan | default(omit, True) }}"
       port: "{{ ucs_vhba_template_port | default(omit, True) }}"
       name: "{{ ucs_vhba_template_name | default(omit, True) }}"
+
+- name: "export r_ucs_vhba_template"
+  set_stats:
+    data:
+      r_ucs_vhba_template: "{{ r_ucs_vhba_template }}"

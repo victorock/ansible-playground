@@ -26,3 +26,8 @@
     - name: "plugin_vmware_host_datastore"
       vmware_host_datastore: "{{ vmware_host_datastore }}"
       register: r_vmware_host_datastore
+
+    - name: "export r_vmware_host_datastore"
+      set_stats:
+        data:
+          r_vmware_host_datastore: "{{ r_vmware_host_datastore }}"

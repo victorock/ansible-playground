@@ -28,3 +28,8 @@
     - name: "plugin_na_ontap_export_policy_rule"
       na_ontap_export_policy_rule: "{{ na_ontap_export_policy_rule }}"
       register: r_na_ontap_export_policy_rule
+
+    - name: "export r_na_ontap_export_policy_rule"
+      set_stats:
+        data:
+          r_na_ontap_export_policy_rule: "{{ r_na_ontap_export_policy_rule }}"

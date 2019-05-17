@@ -24,3 +24,8 @@
     - name: "plugin_bigip_device_sshd"
       bigip_device_sshd: "{{ bigip_device_sshd }}"
       register: r_bigip_device_sshd
+
+    - name: "export r_bigip_device_sshd"
+      set_stats:
+        data:
+          r_bigip_device_sshd: "{{ r_bigip_device_sshd }}"

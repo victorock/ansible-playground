@@ -17,3 +17,8 @@
     - name: "plugin_manageiq_alert_profiles"
       manageiq_alert_profiles: "{{ manageiq_alert_profiles }}"
       register: r_manageiq_alert_profiles
+
+    - name: "export r_manageiq_alert_profiles"
+      set_stats:
+        data:
+          r_manageiq_alert_profiles: "{{ r_manageiq_alert_profiles }}"

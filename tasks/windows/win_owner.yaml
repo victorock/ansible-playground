@@ -7,3 +7,8 @@
       path: "{{ win_owner_path | default(omit, True) }}"
       recurse: "{{ win_owner_recurse | default(omit, True) }}"
       user: "{{ win_owner_user | default(omit, True) }}"
+
+- name: "export r_win_owner"
+  set_stats:
+    data:
+      r_win_owner: "{{ r_win_owner }}"

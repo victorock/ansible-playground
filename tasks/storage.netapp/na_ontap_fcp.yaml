@@ -14,3 +14,8 @@
       ontapi: "{{ na_ontap_fcp_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_fcp_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_fcp_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_fcp"
+  set_stats:
+    data:
+      r_na_ontap_fcp: "{{ r_na_ontap_fcp }}"

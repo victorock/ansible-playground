@@ -30,3 +30,8 @@
     - name: "plugin_bigip_vcmp_guest"
       bigip_vcmp_guest: "{{ bigip_vcmp_guest }}"
       register: r_bigip_vcmp_guest
+
+    - name: "export r_bigip_vcmp_guest"
+      set_stats:
+        data:
+          r_bigip_vcmp_guest: "{{ r_bigip_vcmp_guest }}"

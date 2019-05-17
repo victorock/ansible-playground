@@ -24,3 +24,8 @@
     - name: "plugin_lambda_alias"
       lambda_alias: "{{ lambda_alias }}"
       register: r_lambda_alias
+
+    - name: "export r_lambda_alias"
+      set_stats:
+        data:
+          r_lambda_alias: "{{ r_lambda_alias }}"

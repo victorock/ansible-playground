@@ -15,3 +15,8 @@
       timeout: "{{ elasticsearch_plugin_timeout | default(omit, True) }}"
       plugin_dir: "{{ elasticsearch_plugin_plugin_dir | default(omit, True) }}"
       name: "{{ elasticsearch_plugin_name | default(omit, True) }}"
+
+- name: "export r_elasticsearch_plugin"
+  set_stats:
+    data:
+      r_elasticsearch_plugin: "{{ r_elasticsearch_plugin }}"

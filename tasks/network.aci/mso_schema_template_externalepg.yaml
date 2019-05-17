@@ -19,3 +19,8 @@
       port: "{{ mso_schema_template_externalepg_port | default(omit, True) }}"
       externalepg: "{{ mso_schema_template_externalepg_externalepg | default(omit, True) }}"
       schema: "{{ mso_schema_template_externalepg_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_template_externalepg"
+  set_stats:
+    data:
+      r_mso_schema_template_externalepg: "{{ r_mso_schema_template_externalepg }}"

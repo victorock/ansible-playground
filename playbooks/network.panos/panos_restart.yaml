@@ -14,3 +14,8 @@
     - name: "plugin_panos_restart"
       panos_restart: "{{ panos_restart }}"
       register: r_panos_restart
+
+    - name: "export r_panos_restart"
+      set_stats:
+        data:
+          r_panos_restart: "{{ r_panos_restart }}"

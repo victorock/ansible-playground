@@ -21,3 +21,8 @@
     - name: "plugin_win_iis_website"
       win_iis_website: "{{ win_iis_website }}"
       register: r_win_iis_website
+
+    - name: "export r_win_iis_website"
+      set_stats:
+        data:
+          r_win_iis_website: "{{ r_win_iis_website }}"

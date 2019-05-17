@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_bfd"
       fortios_router_bfd: "{{ fortios_router_bfd }}"
       register: r_fortios_router_bfd
+
+    - name: "export r_fortios_router_bfd"
+      set_stats:
+        data:
+          r_fortios_router_bfd: "{{ r_fortios_router_bfd }}"

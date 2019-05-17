@@ -22,3 +22,8 @@
       active: "{{ proxysql_scheduler_active | default(omit, True) }}"
       force_delete: "{{ proxysql_scheduler_force_delete | default(omit, True) }}"
       login_host: "{{ proxysql_scheduler_login_host | default(omit, True) }}"
+
+- name: "export r_proxysql_scheduler"
+  set_stats:
+    data:
+      r_proxysql_scheduler: "{{ r_proxysql_scheduler }}"

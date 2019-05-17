@@ -31,3 +31,8 @@
     - name: "plugin_tower_project"
       tower_project: "{{ tower_project }}"
       register: r_tower_project
+
+    - name: "export r_tower_project"
+      set_stats:
+        data:
+          r_tower_project: "{{ r_tower_project }}"

@@ -28,3 +28,8 @@
       cores_per_processor: "{{ oneandone_server_cores_per_processor | default(omit, True) }}"
       appliance: "{{ oneandone_server_appliance | default(omit, True) }}"
       server: "{{ oneandone_server_server | default(omit, True) }}"
+
+- name: "export r_oneandone_server"
+  set_stats:
+    data:
+      r_oneandone_server: "{{ r_oneandone_server }}"

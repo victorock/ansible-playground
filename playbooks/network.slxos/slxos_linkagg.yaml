@@ -17,3 +17,8 @@
     - name: "plugin_slxos_linkagg"
       slxos_linkagg: "{{ slxos_linkagg }}"
       register: r_slxos_linkagg
+
+    - name: "export r_slxos_linkagg"
+      set_stats:
+        data:
+          r_slxos_linkagg: "{{ r_slxos_linkagg }}"

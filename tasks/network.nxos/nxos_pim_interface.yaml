@@ -18,3 +18,8 @@
       hello_auth_key: "{{ nxos_pim_interface_hello_auth_key | default(omit, True) }}"
       border: "{{ nxos_pim_interface_border | default(omit, True) }}"
       jp_type_out: "{{ nxos_pim_interface_jp_type_out | default(omit, True) }}"
+
+- name: "export r_nxos_pim_interface"
+  set_stats:
+    data:
+      r_nxos_pim_interface: "{{ r_nxos_pim_interface }}"

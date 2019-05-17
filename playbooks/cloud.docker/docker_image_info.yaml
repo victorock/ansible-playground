@@ -23,3 +23,8 @@
     - name: "plugin_docker_image_info"
       docker_image_info: "{{ docker_image_info }}"
       register: r_docker_image_info
+
+    - name: "export r_docker_image_info"
+      set_stats:
+        data:
+          r_docker_image_info: "{{ r_docker_image_info }}"

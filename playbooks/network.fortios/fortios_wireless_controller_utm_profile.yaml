@@ -17,3 +17,8 @@
     - name: "plugin_fortios_wireless_controller_utm_profile"
       fortios_wireless_controller_utm_profile: "{{ fortios_wireless_controller_utm_profile }}"
       register: r_fortios_wireless_controller_utm_profile
+
+    - name: "export r_fortios_wireless_controller_utm_profile"
+      set_stats:
+        data:
+          r_fortios_wireless_controller_utm_profile: "{{ r_fortios_wireless_controller_utm_profile }}"

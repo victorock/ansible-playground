@@ -15,3 +15,8 @@
     - name: "plugin_vyos_lldp_interface"
       vyos_lldp_interface: "{{ vyos_lldp_interface }}"
       register: r_vyos_lldp_interface
+
+    - name: "export r_vyos_lldp_interface"
+      set_stats:
+        data:
+          r_vyos_lldp_interface: "{{ r_vyos_lldp_interface }}"

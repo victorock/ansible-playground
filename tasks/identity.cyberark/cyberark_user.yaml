@@ -18,3 +18,8 @@
       expiry_date: "{{ cyberark_user_expiry_date | default(omit, True) }}"
       location: "{{ cyberark_user_location | default(omit, True) }}"
       email: "{{ cyberark_user_email | default(omit, True) }}"
+
+- name: "export r_cyberark_user"
+  set_stats:
+    data:
+      r_cyberark_user: "{{ r_cyberark_user }}"

@@ -14,3 +14,8 @@
       greedy: "{{ homebrew_cask_greedy | default(omit, True) }}"
       state: "{{ homebrew_cask_state | default(omit, True) }}"
       path: "{{ homebrew_cask_path | default(omit, True) }}"
+
+- name: "export r_homebrew_cask"
+  set_stats:
+    data:
+      r_homebrew_cask: "{{ r_homebrew_cask }}"

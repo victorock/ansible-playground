@@ -17,3 +17,8 @@
     - name: "plugin_fortios_ips_rule"
       fortios_ips_rule: "{{ fortios_ips_rule }}"
       register: r_fortios_ips_rule
+
+    - name: "export r_fortios_ips_rule"
+      set_stats:
+        data:
+          r_fortios_ips_rule: "{{ r_fortios_ips_rule }}"

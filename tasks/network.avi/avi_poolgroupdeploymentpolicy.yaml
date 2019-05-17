@@ -28,3 +28,8 @@
       url: "{{ avi_poolgroupdeploymentpolicy_url | default(omit, True) }}"
       tenant_ref: "{{ avi_poolgroupdeploymentpolicy_tenant_ref | default(omit, True) }}"
       tenant_uuid: "{{ avi_poolgroupdeploymentpolicy_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_poolgroupdeploymentpolicy"
+  set_stats:
+    data:
+      r_avi_poolgroupdeploymentpolicy: "{{ r_avi_poolgroupdeploymentpolicy }}"

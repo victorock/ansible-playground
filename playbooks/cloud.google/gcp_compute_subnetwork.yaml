@@ -26,3 +26,8 @@
     - name: "plugin_gcp_compute_subnetwork"
       gcp_compute_subnetwork: "{{ gcp_compute_subnetwork }}"
       register: r_gcp_compute_subnetwork
+
+    - name: "export r_gcp_compute_subnetwork"
+      set_stats:
+        data:
+          r_gcp_compute_subnetwork: "{{ r_gcp_compute_subnetwork }}"

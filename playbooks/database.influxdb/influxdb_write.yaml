@@ -24,3 +24,8 @@
     - name: "plugin_influxdb_write"
       influxdb_write: "{{ influxdb_write }}"
       register: r_influxdb_write
+
+    - name: "export r_influxdb_write"
+      set_stats:
+        data:
+          r_influxdb_write: "{{ r_influxdb_write }}"

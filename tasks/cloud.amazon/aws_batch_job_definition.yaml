@@ -30,3 +30,8 @@
       volumes: "{{ aws_batch_job_definition_volumes | default(omit, True) }}"
       validate_certs: "{{ aws_batch_job_definition_validate_certs | default(omit, True) }}"
       ulimits: "{{ aws_batch_job_definition_ulimits | default(omit, True) }}"
+
+- name: "export r_aws_batch_job_definition"
+  set_stats:
+    data:
+      r_aws_batch_job_definition: "{{ r_aws_batch_job_definition }}"

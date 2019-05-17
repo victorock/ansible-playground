@@ -29,3 +29,8 @@
       deployment_mode: "{{ azure_rm_deployment_deployment_mode | default(omit, True) }}"
       parameters_link: "{{ azure_rm_deployment_parameters_link | default(omit, True) }}"
       auth_source: "{{ azure_rm_deployment_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_deployment"
+  set_stats:
+    data:
+      r_azure_rm_deployment: "{{ r_azure_rm_deployment }}"

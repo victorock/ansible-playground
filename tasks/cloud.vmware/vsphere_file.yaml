@@ -13,3 +13,8 @@
       datastore: "{{ vsphere_file_datastore | default(omit, True) }}"
       password: "{{ vsphere_file_password | default(omit, True) }}"
       validate_certs: "{{ vsphere_file_validate_certs | default(omit, True) }}"
+
+- name: "export r_vsphere_file"
+  set_stats:
+    data:
+      r_vsphere_file: "{{ r_vsphere_file }}"

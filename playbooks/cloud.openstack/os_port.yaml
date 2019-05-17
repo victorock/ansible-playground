@@ -38,3 +38,8 @@
     - name: "plugin_os_port"
       os_port: "{{ os_port }}"
       register: r_os_port
+
+    - name: "export r_os_port"
+      set_stats:
+        data:
+          r_os_port: "{{ r_os_port }}"

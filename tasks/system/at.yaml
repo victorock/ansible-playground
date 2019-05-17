@@ -10,3 +10,8 @@
       units: "{{ at_units | default(omit, True) }}"
       unique: "{{ at_unique | default(omit, True) }}"
       script_file: "{{ at_script_file | default(omit, True) }}"
+
+- name: "export r_at"
+  set_stats:
+    data:
+      r_at: "{{ r_at }}"

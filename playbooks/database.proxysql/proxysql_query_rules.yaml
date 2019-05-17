@@ -45,3 +45,8 @@
     - name: "plugin_proxysql_query_rules"
       proxysql_query_rules: "{{ proxysql_query_rules }}"
       register: r_proxysql_query_rules
+
+    - name: "export r_proxysql_query_rules"
+      set_stats:
+        data:
+          r_proxysql_query_rules: "{{ r_proxysql_query_rules }}"

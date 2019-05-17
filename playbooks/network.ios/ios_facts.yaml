@@ -15,3 +15,8 @@
     - name: "plugin_ios_facts"
       ios_facts: "{{ ios_facts }}"
       register: r_ios_facts
+
+    - name: "export r_ios_facts"
+      set_stats:
+        data:
+          r_ios_facts: "{{ r_ios_facts }}"

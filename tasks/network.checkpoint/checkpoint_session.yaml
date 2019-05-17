@@ -6,3 +6,8 @@
     checkpoint_session: 
       state: "{{ checkpoint_session_state | default(omit, True) }}"
       uid: "{{ checkpoint_session_uid | default(omit, True) }}"
+
+- name: "export r_checkpoint_session"
+  set_stats:
+    data:
+      r_checkpoint_session: "{{ r_checkpoint_session }}"

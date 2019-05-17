@@ -14,3 +14,8 @@
       ec2_url: "{{ ec2_vpc_egress_igw_ec2_url | default(omit, True) }}"
       vpc_id: "{{ ec2_vpc_egress_igw_vpc_id | default(omit, True) }}"
       validate_certs: "{{ ec2_vpc_egress_igw_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_vpc_egress_igw"
+  set_stats:
+    data:
+      r_ec2_vpc_egress_igw: "{{ r_ec2_vpc_egress_igw }}"

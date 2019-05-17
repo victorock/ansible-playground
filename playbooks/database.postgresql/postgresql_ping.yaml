@@ -19,3 +19,8 @@
     - name: "plugin_postgresql_ping"
       postgresql_ping: "{{ postgresql_ping }}"
       register: r_postgresql_ping
+
+    - name: "export r_postgresql_ping"
+      set_stats:
+        data:
+          r_postgresql_ping: "{{ r_postgresql_ping }}"

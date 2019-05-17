@@ -10,3 +10,8 @@
       pn_dest_host: "{{ pn_snmp_trap_sink_pn_dest_host | default(omit, True) }}"
       pn_type: "{{ pn_snmp_trap_sink_pn_type | default(omit, True) }}"
       pn_cliswitch: "{{ pn_snmp_trap_sink_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_snmp_trap_sink"
+  set_stats:
+    data:
+      r_pn_snmp_trap_sink: "{{ r_pn_snmp_trap_sink }}"

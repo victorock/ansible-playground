@@ -14,3 +14,8 @@
     - name: "plugin_junos_netconf"
       junos_netconf: "{{ junos_netconf }}"
       register: r_junos_netconf
+
+    - name: "export r_junos_netconf"
+      set_stats:
+        data:
+          r_junos_netconf: "{{ r_junos_netconf }}"

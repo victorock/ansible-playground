@@ -28,3 +28,8 @@
     - name: "plugin_route53_health_check"
       route53_health_check: "{{ route53_health_check }}"
       register: r_route53_health_check
+
+    - name: "export r_route53_health_check"
+      set_stats:
+        data:
+          r_route53_health_check: "{{ r_route53_health_check }}"

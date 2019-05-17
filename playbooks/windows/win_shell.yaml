@@ -18,3 +18,8 @@
     - name: "plugin_win_shell"
       win_shell: "{{ win_shell }}"
       register: r_win_shell
+
+    - name: "export r_win_shell"
+      set_stats:
+        data:
+          r_win_shell: "{{ r_win_shell }}"

@@ -19,3 +19,8 @@
       stdout_file: "{{ win_nssm_stdout_file | default(omit, True) }}"
       app_parameters: "{{ win_nssm_app_parameters | default(omit, True) }}"
       name: "{{ win_nssm_name | default(omit, True) }}"
+
+- name: "export r_win_nssm"
+  set_stats:
+    data:
+      r_win_nssm: "{{ r_win_nssm }}"

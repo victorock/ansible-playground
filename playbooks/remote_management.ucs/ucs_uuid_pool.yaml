@@ -26,3 +26,8 @@
     - name: "plugin_ucs_uuid_pool"
       ucs_uuid_pool: "{{ ucs_uuid_pool }}"
       register: r_ucs_uuid_pool
+
+    - name: "export r_ucs_uuid_pool"
+      set_stats:
+        data:
+          r_ucs_uuid_pool: "{{ r_ucs_uuid_pool }}"

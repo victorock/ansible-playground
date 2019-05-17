@@ -34,3 +34,8 @@
       root_device_name: "{{ ec2_ami_root_device_name | default(omit, True) }}"
       validate_certs: "{{ ec2_ami_validate_certs | default(omit, True) }}"
       device_mapping: "{{ ec2_ami_device_mapping | default(omit, True) }}"
+
+- name: "export r_ec2_ami"
+  set_stats:
+    data:
+      r_ec2_ami: "{{ r_ec2_ami }}"

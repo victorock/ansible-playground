@@ -17,3 +17,8 @@
       full_policy: "{{ netapp_e_snapshot_group_full_policy | default(omit, True) }}"
       validate_certs: "{{ netapp_e_snapshot_group_validate_certs | default(omit, True) }}"
       warning_threshold: "{{ netapp_e_snapshot_group_warning_threshold | default(omit, True) }}"
+
+- name: "export r_netapp_e_snapshot_group"
+  set_stats:
+    data:
+      r_netapp_e_snapshot_group: "{{ r_netapp_e_snapshot_group }}"

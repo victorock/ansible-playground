@@ -16,3 +16,8 @@
     - name: "plugin_vcenter_extension_facts"
       vcenter_extension_facts: "{{ vcenter_extension_facts }}"
       register: r_vcenter_extension_facts
+
+    - name: "export r_vcenter_extension_facts"
+      set_stats:
+        data:
+          r_vcenter_extension_facts: "{{ r_vcenter_extension_facts }}"

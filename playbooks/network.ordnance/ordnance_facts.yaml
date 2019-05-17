@@ -12,3 +12,8 @@
     - name: "plugin_ordnance_facts"
       ordnance_facts: "{{ ordnance_facts }}"
       register: r_ordnance_facts
+
+    - name: "export r_ordnance_facts"
+      set_stats:
+        data:
+          r_ordnance_facts: "{{ r_ordnance_facts }}"

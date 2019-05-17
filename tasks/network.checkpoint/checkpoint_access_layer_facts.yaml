@@ -6,3 +6,8 @@
     checkpoint_access_layer_facts: 
       uid: "{{ checkpoint_access_layer_facts_uid | default(omit, True) }}"
       name: "{{ checkpoint_access_layer_facts_name | default(omit, True) }}"
+
+- name: "export r_checkpoint_access_layer_facts"
+  set_stats:
+    data:
+      r_checkpoint_access_layer_facts: "{{ r_checkpoint_access_layer_facts }}"

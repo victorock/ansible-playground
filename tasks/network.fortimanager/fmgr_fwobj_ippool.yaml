@@ -34,3 +34,8 @@
       startip: "{{ fmgr_fwobj_ippool_startip | default(omit, True) }}"
       mode: "{{ fmgr_fwobj_ippool_mode | default(omit, True) }}"
       dynamic_mapping_source_startip: "{{ fmgr_fwobj_ippool_dynamic_mapping_source_startip | default(omit, True) }}"
+
+- name: "export r_fmgr_fwobj_ippool"
+  set_stats:
+    data:
+      r_fmgr_fwobj_ippool: "{{ r_fmgr_fwobj_ippool }}"

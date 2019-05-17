@@ -6,3 +6,8 @@
     nxos_evpn_global: 
       nv_overlay_evpn: "{{ nxos_evpn_global_nv_overlay_evpn | default(omit, True) }}"
       provider: "{{ nxos_evpn_global_provider | default(omit, True) }}"
+
+- name: "export r_nxos_evpn_global"
+  set_stats:
+    data:
+      r_nxos_evpn_global: "{{ r_nxos_evpn_global }}"

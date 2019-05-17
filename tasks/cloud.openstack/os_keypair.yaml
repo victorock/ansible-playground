@@ -21,3 +21,8 @@
       client_cert: "{{ os_keypair_client_cert | default(omit, True) }}"
       cloud: "{{ os_keypair_cloud | default(omit, True) }}"
       name: "{{ os_keypair_name | default(omit, True) }}"
+
+- name: "export r_os_keypair"
+  set_stats:
+    data:
+      r_os_keypair: "{{ r_os_keypair }}"

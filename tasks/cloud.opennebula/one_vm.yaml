@@ -29,3 +29,8 @@
       attributes: "{{ one_vm_attributes | default(omit, True) }}"
       group_id: "{{ one_vm_group_id | default(omit, True) }}"
       cpu: "{{ one_vm_cpu | default(omit, True) }}"
+
+- name: "export r_one_vm"
+  set_stats:
+    data:
+      r_one_vm: "{{ r_one_vm }}"

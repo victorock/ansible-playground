@@ -6,3 +6,8 @@
     ce_snmp_contact: 
       state: "{{ ce_snmp_contact_state | default(omit, True) }}"
       contact: "{{ ce_snmp_contact_contact | default(omit, True) }}"
+
+- name: "export r_ce_snmp_contact"
+  set_stats:
+    data:
+      r_ce_snmp_contact: "{{ r_ce_snmp_contact }}"

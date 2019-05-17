@@ -5,3 +5,8 @@
   vars:
     nos_facts: 
       gather_subset: "{{ nos_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_nos_facts"
+  set_stats:
+    data:
+      r_nos_facts: "{{ r_nos_facts }}"

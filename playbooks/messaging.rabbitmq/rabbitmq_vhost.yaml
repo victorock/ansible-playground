@@ -15,3 +15,8 @@
     - name: "plugin_rabbitmq_vhost"
       rabbitmq_vhost: "{{ rabbitmq_vhost }}"
       register: r_rabbitmq_vhost
+
+    - name: "export r_rabbitmq_vhost"
+      set_stats:
+        data:
+          r_rabbitmq_vhost: "{{ r_rabbitmq_vhost }}"

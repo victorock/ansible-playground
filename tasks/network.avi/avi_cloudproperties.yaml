@@ -21,3 +21,8 @@
       cc_vtypes: "{{ avi_cloudproperties_cc_vtypes | default(omit, True) }}"
       avi_api_update_method: "{{ avi_cloudproperties_avi_api_update_method | default(omit, True) }}"
       tenant: "{{ avi_cloudproperties_tenant | default(omit, True) }}"
+
+- name: "export r_avi_cloudproperties"
+  set_stats:
+    data:
+      r_avi_cloudproperties: "{{ r_avi_cloudproperties }}"

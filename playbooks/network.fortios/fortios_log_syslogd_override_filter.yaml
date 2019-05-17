@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_syslogd_override_filter"
       fortios_log_syslogd_override_filter: "{{ fortios_log_syslogd_override_filter }}"
       register: r_fortios_log_syslogd_override_filter
+
+    - name: "export r_fortios_log_syslogd_override_filter"
+      set_stats:
+        data:
+          r_fortios_log_syslogd_override_filter: "{{ r_fortios_log_syslogd_override_filter }}"

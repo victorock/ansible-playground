@@ -17,3 +17,8 @@
     - name: "plugin_fortios_switch_controller_managed_switch"
       fortios_switch_controller_managed_switch: "{{ fortios_switch_controller_managed_switch }}"
       register: r_fortios_switch_controller_managed_switch
+
+    - name: "export r_fortios_switch_controller_managed_switch"
+      set_stats:
+        data:
+          r_fortios_switch_controller_managed_switch: "{{ r_fortios_switch_controller_managed_switch }}"

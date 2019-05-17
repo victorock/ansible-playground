@@ -47,3 +47,8 @@
       options: "{{ fmgr_secprof_spam_options | default(omit, True) }}"
       spam_bwl_table: "{{ fmgr_secprof_spam_spam_bwl_table | default(omit, True) }}"
       mapi_action: "{{ fmgr_secprof_spam_mapi_action | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_spam"
+  set_stats:
+    data:
+      r_fmgr_secprof_spam: "{{ r_fmgr_secprof_spam }}"

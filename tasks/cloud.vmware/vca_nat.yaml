@@ -17,3 +17,8 @@
       validate_certs: "{{ vca_nat_validate_certs | default(omit, True) }}"
       vdc_name: "{{ vca_nat_vdc_name | default(omit, True) }}"
       api_version: "{{ vca_nat_api_version | default(omit, True) }}"
+
+- name: "export r_vca_nat"
+  set_stats:
+    data:
+      r_vca_nat: "{{ r_vca_nat }}"

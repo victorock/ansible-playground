@@ -30,3 +30,8 @@
     - name: "plugin_os_user_role"
       os_user_role: "{{ os_user_role }}"
       register: r_os_user_role
+
+    - name: "export r_os_user_role"
+      set_stats:
+        data:
+          r_os_user_role: "{{ r_os_user_role }}"

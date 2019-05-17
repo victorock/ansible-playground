@@ -22,3 +22,8 @@
     - name: "plugin_manageiq_group"
       manageiq_group: "{{ manageiq_group }}"
       register: r_manageiq_group
+
+    - name: "export r_manageiq_group"
+      set_stats:
+        data:
+          r_manageiq_group: "{{ r_manageiq_group }}"

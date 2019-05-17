@@ -8,3 +8,8 @@
       ignore_selinux_state: "{{ seboolean_ignore_selinux_state | default(omit, True) }}"
       persistent: "{{ seboolean_persistent | default(omit, True) }}"
       name: "{{ seboolean_name | default(omit, True) }}"
+
+- name: "export r_seboolean"
+  set_stats:
+    data:
+      r_seboolean: "{{ r_seboolean }}"

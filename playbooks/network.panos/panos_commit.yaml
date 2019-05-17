@@ -20,3 +20,8 @@
     - name: "plugin_panos_commit"
       panos_commit: "{{ panos_commit }}"
       register: r_panos_commit
+
+    - name: "export r_panos_commit"
+      set_stats:
+        data:
+          r_panos_commit: "{{ r_panos_commit }}"

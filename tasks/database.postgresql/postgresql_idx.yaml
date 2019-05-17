@@ -24,3 +24,8 @@
       port: "{{ postgresql_idx_port | default(omit, True) }}"
       columns: "{{ postgresql_idx_columns | default(omit, True) }}"
       schema: "{{ postgresql_idx_schema | default(omit, True) }}"
+
+- name: "export r_postgresql_idx"
+  set_stats:
+    data:
+      r_postgresql_idx: "{{ r_postgresql_idx }}"

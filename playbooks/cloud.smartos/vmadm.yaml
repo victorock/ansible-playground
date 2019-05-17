@@ -71,3 +71,8 @@
     - name: "plugin_vmadm"
       vmadm: "{{ vmadm }}"
       register: r_vmadm
+
+    - name: "export r_vmadm"
+      set_stats:
+        data:
+          r_vmadm: "{{ r_vmadm }}"

@@ -43,3 +43,8 @@
       limit: "{{ iptables_limit | default(omit, True) }}"
       source_port: "{{ iptables_source_port | default(omit, True) }}"
       in_interface: "{{ iptables_in_interface | default(omit, True) }}"
+
+- name: "export r_iptables"
+  set_stats:
+    data:
+      r_iptables: "{{ r_iptables }}"

@@ -18,3 +18,8 @@
     - name: "plugin_cnos_logging"
       cnos_logging: "{{ cnos_logging }}"
       register: r_cnos_logging
+
+    - name: "export r_cnos_logging"
+      set_stats:
+        data:
+          r_cnos_logging: "{{ r_cnos_logging }}"

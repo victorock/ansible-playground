@@ -22,3 +22,8 @@
       api_key: "{{ rax_cdb_api_key | default(omit, True) }}"
       validate_certs: "{{ rax_cdb_validate_certs | default(omit, True) }}"
       wait: "{{ rax_cdb_wait | default(omit, True) }}"
+
+- name: "export r_rax_cdb"
+  set_stats:
+    data:
+      r_rax_cdb: "{{ r_rax_cdb }}"

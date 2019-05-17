@@ -25,3 +25,8 @@
       client_cert: "{{ os_floating_ip_client_cert | default(omit, True) }}"
       cloud: "{{ os_floating_ip_cloud | default(omit, True) }}"
       client_key: "{{ os_floating_ip_client_key | default(omit, True) }}"
+
+- name: "export r_os_floating_ip"
+  set_stats:
+    data:
+      r_os_floating_ip: "{{ r_os_floating_ip }}"

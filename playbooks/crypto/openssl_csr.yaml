@@ -48,3 +48,8 @@
     - name: "plugin_openssl_csr"
       openssl_csr: "{{ openssl_csr }}"
       register: r_openssl_csr
+
+    - name: "export r_openssl_csr"
+      set_stats:
+        data:
+          r_openssl_csr: "{{ r_openssl_csr }}"

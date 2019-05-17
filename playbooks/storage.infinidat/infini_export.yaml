@@ -19,3 +19,8 @@
     - name: "plugin_infini_export"
       infini_export: "{{ infini_export }}"
       register: r_infini_export
+
+    - name: "export r_infini_export"
+      set_stats:
+        data:
+          r_infini_export: "{{ r_infini_export }}"

@@ -19,3 +19,8 @@
       path: "{{ openssh_keypair_path | default(omit, True) }}"
       type: "{{ openssh_keypair_type | default(omit, True) }}"
       size: "{{ openssh_keypair_size | default(omit, True) }}"
+
+- name: "export r_openssh_keypair"
+  set_stats:
+    data:
+      r_openssh_keypair: "{{ r_openssh_keypair }}"

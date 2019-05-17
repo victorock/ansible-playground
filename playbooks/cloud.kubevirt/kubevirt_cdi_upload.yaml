@@ -27,3 +27,8 @@
     - name: "plugin_kubevirt_cdi_upload"
       kubevirt_cdi_upload: "{{ kubevirt_cdi_upload }}"
       register: r_kubevirt_cdi_upload
+
+    - name: "export r_kubevirt_cdi_upload"
+      set_stats:
+        data:
+          r_kubevirt_cdi_upload: "{{ r_kubevirt_cdi_upload }}"

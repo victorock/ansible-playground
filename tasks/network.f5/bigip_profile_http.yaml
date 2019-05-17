@@ -28,3 +28,8 @@
       redirect_rewrite: "{{ bigip_profile_http_redirect_rewrite | default(omit, True) }}"
       header_erase: "{{ bigip_profile_http_header_erase | default(omit, True) }}"
       validate_certs: "{{ bigip_profile_http_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_profile_http"
+  set_stats:
+    data:
+      r_bigip_profile_http: "{{ r_bigip_profile_http }}"

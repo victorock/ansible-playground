@@ -32,3 +32,8 @@
     - name: "plugin_aci_tenant_ep_retention_policy"
       aci_tenant_ep_retention_policy: "{{ aci_tenant_ep_retention_policy }}"
       register: r_aci_tenant_ep_retention_policy
+
+    - name: "export r_aci_tenant_ep_retention_policy"
+      set_stats:
+        data:
+          r_aci_tenant_ep_retention_policy: "{{ r_aci_tenant_ep_retention_policy }}"

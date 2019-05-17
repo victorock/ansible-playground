@@ -30,3 +30,8 @@
     - name: "plugin_cs_snapshot_policy"
       cs_snapshot_policy: "{{ cs_snapshot_policy }}"
       register: r_cs_snapshot_policy
+
+    - name: "export r_cs_snapshot_policy"
+      set_stats:
+        data:
+          r_cs_snapshot_policy: "{{ r_cs_snapshot_policy }}"

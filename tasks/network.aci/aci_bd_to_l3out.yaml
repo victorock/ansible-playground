@@ -19,3 +19,8 @@
       validate_certs: "{{ aci_bd_to_l3out_validate_certs | default(omit, True) }}"
       port: "{{ aci_bd_to_l3out_port | default(omit, True) }}"
       tenant: "{{ aci_bd_to_l3out_tenant | default(omit, True) }}"
+
+- name: "export r_aci_bd_to_l3out"
+  set_stats:
+    data:
+      r_aci_bd_to_l3out: "{{ r_aci_bd_to_l3out }}"

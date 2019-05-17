@@ -37,3 +37,8 @@
     - name: "plugin_azure_rm_devtestlabartifactsource"
       azure_rm_devtestlabartifactsource: "{{ azure_rm_devtestlabartifactsource }}"
       register: r_azure_rm_devtestlabartifactsource
+
+    - name: "export r_azure_rm_devtestlabartifactsource"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabartifactsource: "{{ r_azure_rm_devtestlabartifactsource }}"

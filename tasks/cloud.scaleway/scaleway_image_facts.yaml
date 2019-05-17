@@ -10,3 +10,8 @@
       api_timeout: "{{ scaleway_image_facts_api_timeout | default(omit, True) }}"
       api_token: "{{ scaleway_image_facts_api_token | default(omit, True) }}"
       validate_certs: "{{ scaleway_image_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_scaleway_image_facts"
+  set_stats:
+    data:
+      r_scaleway_image_facts: "{{ r_scaleway_image_facts }}"

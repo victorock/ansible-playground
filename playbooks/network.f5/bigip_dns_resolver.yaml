@@ -28,3 +28,8 @@
     - name: "plugin_bigip_dns_resolver"
       bigip_dns_resolver: "{{ bigip_dns_resolver }}"
       register: r_bigip_dns_resolver
+
+    - name: "export r_bigip_dns_resolver"
+      set_stats:
+        data:
+          r_bigip_dns_resolver: "{{ r_bigip_dns_resolver }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_schedule_onetime"
       fortios_firewall_schedule_onetime: "{{ fortios_firewall_schedule_onetime }}"
       register: r_fortios_firewall_schedule_onetime
+
+    - name: "export r_fortios_firewall_schedule_onetime"
+      set_stats:
+        data:
+          r_fortios_firewall_schedule_onetime: "{{ r_fortios_firewall_schedule_onetime }}"

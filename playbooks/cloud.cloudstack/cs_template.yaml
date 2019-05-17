@@ -49,3 +49,8 @@
     - name: "plugin_cs_template"
       cs_template: "{{ cs_template }}"
       register: r_cs_template
+
+    - name: "export r_cs_template"
+      set_stats:
+        data:
+          r_cs_template: "{{ r_cs_template }}"

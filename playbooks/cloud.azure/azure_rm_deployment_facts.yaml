@@ -25,3 +25,8 @@
     - name: "plugin_azure_rm_deployment_facts"
       azure_rm_deployment_facts: "{{ azure_rm_deployment_facts }}"
       register: r_azure_rm_deployment_facts
+
+    - name: "export r_azure_rm_deployment_facts"
+      set_stats:
+        data:
+          r_azure_rm_deployment_facts: "{{ r_azure_rm_deployment_facts }}"

@@ -10,3 +10,8 @@
       svip: "{{ sf_check_connections_svip | default(omit, True) }}"
       mvip: "{{ sf_check_connections_mvip | default(omit, True) }}"
       password: "{{ sf_check_connections_password | default(omit, True) }}"
+
+- name: "export r_sf_check_connections"
+  set_stats:
+    data:
+      r_sf_check_connections: "{{ r_sf_check_connections }}"

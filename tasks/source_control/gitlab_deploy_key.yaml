@@ -14,3 +14,8 @@
       api_username: "{{ gitlab_deploy_key_api_username | default(omit, True) }}"
       can_push: "{{ gitlab_deploy_key_can_push | default(omit, True) }}"
       validate_certs: "{{ gitlab_deploy_key_validate_certs | default(omit, True) }}"
+
+- name: "export r_gitlab_deploy_key"
+  set_stats:
+    data:
+      r_gitlab_deploy_key: "{{ r_gitlab_deploy_key }}"

@@ -15,3 +15,8 @@
       trust_password: "{{ lxd_profile_trust_password | default(omit, True) }}"
       client_cert: "{{ lxd_profile_client_cert | default(omit, True) }}"
       description: "{{ lxd_profile_description | default(omit, True) }}"
+
+- name: "export r_lxd_profile"
+  set_stats:
+    data:
+      r_lxd_profile: "{{ r_lxd_profile }}"

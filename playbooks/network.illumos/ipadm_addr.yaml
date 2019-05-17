@@ -17,3 +17,8 @@
     - name: "plugin_ipadm_addr"
       ipadm_addr: "{{ ipadm_addr }}"
       register: r_ipadm_addr
+
+    - name: "export r_ipadm_addr"
+      set_stats:
+        data:
+          r_ipadm_addr: "{{ r_ipadm_addr }}"

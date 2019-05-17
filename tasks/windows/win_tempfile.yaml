@@ -8,3 +8,8 @@
       state: "{{ win_tempfile_state | default(omit, True) }}"
       prefix: "{{ win_tempfile_prefix | default(omit, True) }}"
       suffix: "{{ win_tempfile_suffix | default(omit, True) }}"
+
+- name: "export r_win_tempfile"
+  set_stats:
+    data:
+      r_win_tempfile: "{{ r_win_tempfile }}"

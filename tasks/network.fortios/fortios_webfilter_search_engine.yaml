@@ -10,3 +10,8 @@
       https: "{{ fortios_webfilter_search_engine_https | default(omit, True) }}"
       password: "{{ fortios_webfilter_search_engine_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_search_engine_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_search_engine"
+  set_stats:
+    data:
+      r_fortios_webfilter_search_engine: "{{ r_fortios_webfilter_search_engine }}"

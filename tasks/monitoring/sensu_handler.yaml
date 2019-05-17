@@ -18,3 +18,8 @@
       handle_silenced: "{{ sensu_handler_handle_silenced | default(omit, True) }}"
       type: "{{ sensu_handler_type | default(omit, True) }}"
       name: "{{ sensu_handler_name | default(omit, True) }}"
+
+- name: "export r_sensu_handler"
+  set_stats:
+    data:
+      r_sensu_handler: "{{ r_sensu_handler }}"

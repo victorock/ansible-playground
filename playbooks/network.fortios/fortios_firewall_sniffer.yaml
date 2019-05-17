@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_sniffer"
       fortios_firewall_sniffer: "{{ fortios_firewall_sniffer }}"
       register: r_fortios_firewall_sniffer
+
+    - name: "export r_fortios_firewall_sniffer"
+      set_stats:
+        data:
+          r_fortios_firewall_sniffer: "{{ r_fortios_firewall_sniffer }}"

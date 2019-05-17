@@ -19,3 +19,8 @@
     - name: "plugin_vyos_ping"
       vyos_ping: "{{ vyos_ping }}"
       register: r_vyos_ping
+
+    - name: "export r_vyos_ping"
+      set_stats:
+        data:
+          r_vyos_ping: "{{ r_vyos_ping }}"

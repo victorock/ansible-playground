@@ -9,3 +9,8 @@
       be_name: "{{ pkg5_be_name | default(omit, True) }}"
       name: "{{ pkg5_name | default(omit, True) }}"
       refresh: "{{ pkg5_refresh | default(omit, True) }}"
+
+- name: "export r_pkg5"
+  set_stats:
+    data:
+      r_pkg5: "{{ r_pkg5 }}"

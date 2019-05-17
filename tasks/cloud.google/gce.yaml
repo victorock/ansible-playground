@@ -29,3 +29,8 @@
       external_projects: "{{ gce_external_projects | default(omit, True) }}"
       credentials_file: "{{ gce_credentials_file | default(omit, True) }}"
       subnetwork: "{{ gce_subnetwork | default(omit, True) }}"
+
+- name: "export r_gce"
+  set_stats:
+    data:
+      r_gce: "{{ r_gce }}"

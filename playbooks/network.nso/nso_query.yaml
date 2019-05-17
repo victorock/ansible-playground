@@ -18,3 +18,8 @@
     - name: "plugin_nso_query"
       nso_query: "{{ nso_query }}"
       register: r_nso_query
+
+    - name: "export r_nso_query"
+      set_stats:
+        data:
+          r_nso_query: "{{ r_nso_query }}"

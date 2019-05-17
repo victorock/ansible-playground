@@ -22,3 +22,8 @@
     - name: "plugin_win_format"
       win_format: "{{ win_format }}"
       register: r_win_format
+
+    - name: "export r_win_format"
+      set_stats:
+        data:
+          r_win_format: "{{ r_win_format }}"

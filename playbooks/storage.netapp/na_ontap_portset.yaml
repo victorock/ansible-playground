@@ -24,3 +24,8 @@
     - name: "plugin_na_ontap_portset"
       na_ontap_portset: "{{ na_ontap_portset }}"
       register: r_na_ontap_portset
+
+    - name: "export r_na_ontap_portset"
+      set_stats:
+        data:
+          r_na_ontap_portset: "{{ r_na_ontap_portset }}"

@@ -31,3 +31,8 @@
       validate_certs: "{{ ecs_service_validate_certs | default(omit, True) }}"
       placement_strategy: "{{ ecs_service_placement_strategy | default(omit, True) }}"
       launch_type: "{{ ecs_service_launch_type | default(omit, True) }}"
+
+- name: "export r_ecs_service"
+  set_stats:
+    data:
+      r_ecs_service: "{{ r_ecs_service }}"

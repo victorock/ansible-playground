@@ -9,3 +9,8 @@
       parallel: "{{ win_defrag_parallel | default(omit, True) }}"
       exclude_volumes: "{{ win_defrag_exclude_volumes | default(omit, True) }}"
       include_volumes: "{{ win_defrag_include_volumes | default(omit, True) }}"
+
+- name: "export r_win_defrag"
+  set_stats:
+    data:
+      r_win_defrag: "{{ r_win_defrag }}"

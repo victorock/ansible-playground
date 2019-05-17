@@ -17,3 +17,8 @@
     - name: "plugin_fortios_ips_decoder"
       fortios_ips_decoder: "{{ fortios_ips_decoder }}"
       register: r_fortios_ips_decoder
+
+    - name: "export r_fortios_ips_decoder"
+      set_stats:
+        data:
+          r_fortios_ips_decoder: "{{ r_fortios_ips_decoder }}"

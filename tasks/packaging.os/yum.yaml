@@ -30,3 +30,8 @@
       enablerepo: "{{ yum_enablerepo | default(omit, True) }}"
       security: "{{ yum_security | default(omit, True) }}"
       enable_plugin: "{{ yum_enable_plugin | default(omit, True) }}"
+
+- name: "export r_yum"
+  set_stats:
+    data:
+      r_yum: "{{ r_yum }}"

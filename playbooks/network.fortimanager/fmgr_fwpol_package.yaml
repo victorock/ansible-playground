@@ -25,3 +25,8 @@
     - name: "plugin_fmgr_fwpol_package"
       fmgr_fwpol_package: "{{ fmgr_fwpol_package }}"
       register: r_fmgr_fwpol_package
+
+    - name: "export r_fmgr_fwpol_package"
+      set_stats:
+        data:
+          r_fmgr_fwpol_package: "{{ r_fmgr_fwpol_package }}"

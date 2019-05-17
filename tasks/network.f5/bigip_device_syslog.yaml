@@ -29,3 +29,8 @@
       iso_date: "{{ bigip_device_syslog_iso_date | default(omit, True) }}"
       validate_certs: "{{ bigip_device_syslog_validate_certs | default(omit, True) }}"
       cron_to: "{{ bigip_device_syslog_cron_to | default(omit, True) }}"
+
+- name: "export r_bigip_device_syslog"
+  set_stats:
+    data:
+      r_bigip_device_syslog: "{{ r_bigip_device_syslog }}"

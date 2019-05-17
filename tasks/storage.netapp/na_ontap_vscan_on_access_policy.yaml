@@ -21,3 +21,8 @@
       https: "{{ na_ontap_vscan_on_access_policy_https | default(omit, True) }}"
       password: "{{ na_ontap_vscan_on_access_policy_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_vscan_on_access_policy_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_vscan_on_access_policy"
+  set_stats:
+    data:
+      r_na_ontap_vscan_on_access_policy: "{{ r_na_ontap_vscan_on_access_policy }}"

@@ -20,3 +20,8 @@
     - name: "plugin_aws_az_facts"
       aws_az_facts: "{{ aws_az_facts }}"
       register: r_aws_az_facts
+
+    - name: "export r_aws_az_facts"
+      set_stats:
+        data:
+          r_aws_az_facts: "{{ r_aws_az_facts }}"

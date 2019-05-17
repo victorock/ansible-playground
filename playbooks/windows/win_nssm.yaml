@@ -26,3 +26,8 @@
     - name: "plugin_win_nssm"
       win_nssm: "{{ win_nssm }}"
       register: r_win_nssm
+
+    - name: "export r_win_nssm"
+      set_stats:
+        data:
+          r_win_nssm: "{{ r_win_nssm }}"

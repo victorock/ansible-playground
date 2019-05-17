@@ -12,3 +12,8 @@
       tower_config_file: "{{ tower_label_tower_config_file | default(omit, True) }}"
       organization: "{{ tower_label_organization | default(omit, True) }}"
       validate_certs: "{{ tower_label_validate_certs | default(omit, True) }}"
+
+- name: "export r_tower_label"
+  set_stats:
+    data:
+      r_tower_label: "{{ r_tower_label }}"

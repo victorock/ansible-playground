@@ -20,3 +20,8 @@
     - name: "plugin_oc"
       oc: "{{ oc }}"
       register: r_oc
+
+    - name: "export r_oc"
+      set_stats:
+        data:
+          r_oc: "{{ r_oc }}"

@@ -21,3 +21,8 @@
     - name: "plugin_eos_linkagg"
       eos_linkagg: "{{ eos_linkagg }}"
       register: r_eos_linkagg
+
+    - name: "export r_eos_linkagg"
+      set_stats:
+        data:
+          r_eos_linkagg: "{{ r_eos_linkagg }}"

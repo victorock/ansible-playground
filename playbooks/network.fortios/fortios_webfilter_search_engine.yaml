@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_search_engine"
       fortios_webfilter_search_engine: "{{ fortios_webfilter_search_engine }}"
       register: r_fortios_webfilter_search_engine
+
+    - name: "export r_fortios_webfilter_search_engine"
+      set_stats:
+        data:
+          r_fortios_webfilter_search_engine: "{{ r_fortios_webfilter_search_engine }}"

@@ -13,3 +13,8 @@
     - name: "plugin_eos_bgp"
       eos_bgp: "{{ eos_bgp }}"
       register: r_eos_bgp
+
+    - name: "export r_eos_bgp"
+      set_stats:
+        data:
+          r_eos_bgp: "{{ r_eos_bgp }}"

@@ -31,3 +31,8 @@
     - name: "plugin_na_ontap_snapmirror"
       na_ontap_snapmirror: "{{ na_ontap_snapmirror }}"
       register: r_na_ontap_snapmirror
+
+    - name: "export r_na_ontap_snapmirror"
+      set_stats:
+        data:
+          r_na_ontap_snapmirror: "{{ r_na_ontap_snapmirror }}"

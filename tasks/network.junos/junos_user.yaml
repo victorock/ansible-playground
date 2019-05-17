@@ -14,3 +14,8 @@
       provider: "{{ junos_user_provider | default(omit, True) }}"
       aggregate: "{{ junos_user_aggregate | default(omit, True) }}"
       sshkey: "{{ junos_user_sshkey | default(omit, True) }}"
+
+- name: "export r_junos_user"
+  set_stats:
+    data:
+      r_junos_user: "{{ r_junos_user }}"

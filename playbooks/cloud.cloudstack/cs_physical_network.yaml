@@ -29,3 +29,8 @@
     - name: "plugin_cs_physical_network"
       cs_physical_network: "{{ cs_physical_network }}"
       register: r_cs_physical_network
+
+    - name: "export r_cs_physical_network"
+      set_stats:
+        data:
+          r_cs_physical_network: "{{ r_cs_physical_network }}"

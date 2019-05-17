@@ -40,3 +40,8 @@
     - name: "plugin_azure_rm_webappslot"
       azure_rm_webappslot: "{{ azure_rm_webappslot }}"
       register: r_azure_rm_webappslot
+
+    - name: "export r_azure_rm_webappslot"
+      set_stats:
+        data:
+          r_azure_rm_webappslot: "{{ r_azure_rm_webappslot }}"

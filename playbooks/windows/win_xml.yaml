@@ -17,3 +17,8 @@
     - name: "plugin_win_xml"
       win_xml: "{{ win_xml }}"
       register: r_win_xml
+
+    - name: "export r_win_xml"
+      set_stats:
+        data:
+          r_win_xml: "{{ r_win_xml }}"

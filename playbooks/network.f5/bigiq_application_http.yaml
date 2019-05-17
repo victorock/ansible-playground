@@ -25,3 +25,8 @@
     - name: "plugin_bigiq_application_http"
       bigiq_application_http: "{{ bigiq_application_http }}"
       register: r_bigiq_application_http
+
+    - name: "export r_bigiq_application_http"
+      set_stats:
+        data:
+          r_bigiq_application_http: "{{ r_bigiq_application_http }}"

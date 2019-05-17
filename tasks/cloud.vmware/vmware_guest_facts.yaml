@@ -18,3 +18,8 @@
       validate_certs: "{{ vmware_guest_facts_validate_certs | default(omit, True) }}"
       properties: "{{ vmware_guest_facts_properties | default(omit, True) }}"
       uuid: "{{ vmware_guest_facts_uuid | default(omit, True) }}"
+
+- name: "export r_vmware_guest_facts"
+  set_stats:
+    data:
+      r_vmware_guest_facts: "{{ r_vmware_guest_facts }}"

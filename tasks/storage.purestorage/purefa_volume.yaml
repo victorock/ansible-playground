@@ -13,3 +13,8 @@
       eradicate: "{{ purefa_volume_eradicate | default(omit, True) }}"
       overwrite: "{{ purefa_volume_overwrite | default(omit, True) }}"
       fa_url: "{{ purefa_volume_fa_url | default(omit, True) }}"
+
+- name: "export r_purefa_volume"
+  set_stats:
+    data:
+      r_purefa_volume: "{{ r_purefa_volume }}"

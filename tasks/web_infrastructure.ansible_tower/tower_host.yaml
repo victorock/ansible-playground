@@ -15,3 +15,8 @@
       validate_certs: "{{ tower_host_validate_certs | default(omit, True) }}"
       tower_host: "{{ tower_host_tower_host | default(omit, True) }}"
       name: "{{ tower_host_name | default(omit, True) }}"
+
+- name: "export r_tower_host"
+  set_stats:
+    data:
+      r_tower_host: "{{ r_tower_host }}"

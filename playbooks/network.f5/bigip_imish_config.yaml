@@ -32,3 +32,8 @@
     - name: "plugin_bigip_imish_config"
       bigip_imish_config: "{{ bigip_imish_config }}"
       register: r_bigip_imish_config
+
+    - name: "export r_bigip_imish_config"
+      set_stats:
+        data:
+          r_bigip_imish_config: "{{ r_bigip_imish_config }}"

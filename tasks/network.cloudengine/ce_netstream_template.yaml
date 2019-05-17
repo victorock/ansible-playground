@@ -11,3 +11,8 @@
       collect_interface: "{{ ce_netstream_template_collect_interface | default(omit, True) }}"
       type: "{{ ce_netstream_template_type | default(omit, True) }}"
       match: "{{ ce_netstream_template_match | default(omit, True) }}"
+
+- name: "export r_ce_netstream_template"
+  set_stats:
+    data:
+      r_ce_netstream_template: "{{ r_ce_netstream_template }}"

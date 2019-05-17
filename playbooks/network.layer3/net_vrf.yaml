@@ -16,3 +16,8 @@
     - name: "plugin_net_vrf"
       net_vrf: "{{ net_vrf }}"
       register: r_net_vrf
+
+    - name: "export r_net_vrf"
+      set_stats:
+        data:
+          r_net_vrf: "{{ r_net_vrf }}"

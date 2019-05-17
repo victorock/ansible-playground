@@ -14,3 +14,8 @@
       aggregate: "{{ ios_logging_aggregate | default(omit, True) }}"
       level: "{{ ios_logging_level | default(omit, True) }}"
       size: "{{ ios_logging_size | default(omit, True) }}"
+
+- name: "export r_ios_logging"
+  set_stats:
+    data:
+      r_ios_logging: "{{ r_ios_logging }}"

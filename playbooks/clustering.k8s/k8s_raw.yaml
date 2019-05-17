@@ -35,3 +35,8 @@
     - name: "plugin_k8s_raw"
       k8s_raw: "{{ k8s_raw }}"
       register: r_k8s_raw
+
+    - name: "export r_k8s_raw"
+      set_stats:
+        data:
+          r_k8s_raw: "{{ r_k8s_raw }}"

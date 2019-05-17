@@ -44,3 +44,8 @@
     - name: "plugin_azure_rm_networkinterface"
       azure_rm_networkinterface: "{{ azure_rm_networkinterface }}"
       register: r_azure_rm_networkinterface
+
+    - name: "export r_azure_rm_networkinterface"
+      set_stats:
+        data:
+          r_azure_rm_networkinterface: "{{ r_azure_rm_networkinterface }}"

@@ -12,3 +12,8 @@
       delete_recovery_point: "{{ netapp_e_amg_sync_delete_recovery_point | default(omit, True) }}"
       validate_certs: "{{ netapp_e_amg_sync_validate_certs | default(omit, True) }}"
       api_url: "{{ netapp_e_amg_sync_api_url | default(omit, True) }}"
+
+- name: "export r_netapp_e_amg_sync"
+  set_stats:
+    data:
+      r_netapp_e_amg_sync: "{{ r_netapp_e_amg_sync }}"

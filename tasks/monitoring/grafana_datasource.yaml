@@ -45,3 +45,8 @@
       basic_auth_password: "{{ grafana_datasource_basic_auth_password | default(omit, True) }}"
       validate_certs: "{{ grafana_datasource_validate_certs | default(omit, True) }}"
       aws_credentials_profile: "{{ grafana_datasource_aws_credentials_profile | default(omit, True) }}"
+
+- name: "export r_grafana_datasource"
+  set_stats:
+    data:
+      r_grafana_datasource: "{{ r_grafana_datasource }}"

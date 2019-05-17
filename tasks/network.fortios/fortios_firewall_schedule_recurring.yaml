@@ -10,3 +10,8 @@
       password: "{{ fortios_firewall_schedule_recurring_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_schedule_recurring_vdom | default(omit, True) }}"
       firewall_schedule_recurring: "{{ fortios_firewall_schedule_recurring_firewall_schedule_recurring | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_schedule_recurring"
+  set_stats:
+    data:
+      r_fortios_firewall_schedule_recurring: "{{ r_fortios_firewall_schedule_recurring }}"

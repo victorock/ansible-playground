@@ -22,3 +22,8 @@
     - name: "plugin_vmware_guest_move"
       vmware_guest_move: "{{ vmware_guest_move }}"
       register: r_vmware_guest_move
+
+    - name: "export r_vmware_guest_move"
+      set_stats:
+        data:
+          r_vmware_guest_move: "{{ r_vmware_guest_move }}"

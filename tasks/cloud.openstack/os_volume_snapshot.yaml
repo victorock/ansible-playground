@@ -22,3 +22,8 @@
       client_cert: "{{ os_volume_snapshot_client_cert | default(omit, True) }}"
       cloud: "{{ os_volume_snapshot_cloud | default(omit, True) }}"
       client_key: "{{ os_volume_snapshot_client_key | default(omit, True) }}"
+
+- name: "export r_os_volume_snapshot"
+  set_stats:
+    data:
+      r_os_volume_snapshot: "{{ r_os_volume_snapshot }}"

@@ -16,3 +16,8 @@
       policy: "{{ aws_ses_identity_policy_policy | default(omit, True) }}"
       validate_certs: "{{ aws_ses_identity_policy_validate_certs | default(omit, True) }}"
       identity: "{{ aws_ses_identity_policy_identity | default(omit, True) }}"
+
+- name: "export r_aws_ses_identity_policy"
+  set_stats:
+    data:
+      r_aws_ses_identity_policy: "{{ r_aws_ses_identity_policy }}"

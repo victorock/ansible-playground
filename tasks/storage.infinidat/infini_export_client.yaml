@@ -12,3 +12,8 @@
       export: "{{ infini_export_client_export | default(omit, True) }}"
       user: "{{ infini_export_client_user | default(omit, True) }}"
       access_mode: "{{ infini_export_client_access_mode | default(omit, True) }}"
+
+- name: "export r_infini_export_client"
+  set_stats:
+    data:
+      r_infini_export_client: "{{ r_infini_export_client }}"

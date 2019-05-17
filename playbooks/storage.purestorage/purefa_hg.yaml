@@ -17,3 +17,8 @@
     - name: "plugin_purefa_hg"
       purefa_hg: "{{ purefa_hg }}"
       register: r_purefa_hg
+
+    - name: "export r_purefa_hg"
+      set_stats:
+        data:
+          r_purefa_hg: "{{ r_purefa_hg }}"

@@ -26,3 +26,8 @@
       database: "{{ postgresql_privs_database | default(omit, True) }}"
       unix_socket: "{{ postgresql_privs_unix_socket | default(omit, True) }}"
       login: "{{ postgresql_privs_login | default(omit, True) }}"
+
+- name: "export r_postgresql_privs"
+  set_stats:
+    data:
+      r_postgresql_privs: "{{ r_postgresql_privs }}"

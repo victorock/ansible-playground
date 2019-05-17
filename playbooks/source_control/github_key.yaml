@@ -16,3 +16,8 @@
     - name: "plugin_github_key"
       github_key: "{{ github_key }}"
       register: r_github_key
+
+    - name: "export r_github_key"
+      set_stats:
+        data:
+          r_github_key: "{{ r_github_key }}"

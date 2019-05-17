@@ -11,3 +11,8 @@
       members: "{{ cnos_linkagg_members | default(omit, True) }}"
       provider: "{{ cnos_linkagg_provider | default(omit, True) }}"
       aggregate: "{{ cnos_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_cnos_linkagg"
+  set_stats:
+    data:
+      r_cnos_linkagg: "{{ r_cnos_linkagg }}"

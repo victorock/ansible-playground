@@ -7,3 +7,8 @@
       layer: "{{ checkpoint_access_rule_facts_layer | default(omit, True) }}"
       name: "{{ checkpoint_access_rule_facts_name | default(omit, True) }}"
       uid: "{{ checkpoint_access_rule_facts_uid | default(omit, True) }}"
+
+- name: "export r_checkpoint_access_rule_facts"
+  set_stats:
+    data:
+      r_checkpoint_access_rule_facts: "{{ r_checkpoint_access_rule_facts }}"

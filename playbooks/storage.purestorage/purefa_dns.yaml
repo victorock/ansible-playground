@@ -16,3 +16,8 @@
     - name: "plugin_purefa_dns"
       purefa_dns: "{{ purefa_dns }}"
       register: r_purefa_dns
+
+    - name: "export r_purefa_dns"
+      set_stats:
+        data:
+          r_purefa_dns: "{{ r_purefa_dns }}"

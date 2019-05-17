@@ -10,3 +10,8 @@
       chassis: "{{ lxca_cmms_chassis | default(omit, True) }}"
       auth_url: "{{ lxca_cmms_auth_url | default(omit, True) }}"
       login_password: "{{ lxca_cmms_login_password | default(omit, True) }}"
+
+- name: "export r_lxca_cmms"
+  set_stats:
+    data:
+      r_lxca_cmms: "{{ r_lxca_cmms }}"

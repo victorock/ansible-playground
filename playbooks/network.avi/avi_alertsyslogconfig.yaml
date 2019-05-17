@@ -28,3 +28,8 @@
     - name: "plugin_avi_alertsyslogconfig"
       avi_alertsyslogconfig: "{{ avi_alertsyslogconfig }}"
       register: r_avi_alertsyslogconfig
+
+    - name: "export r_avi_alertsyslogconfig"
+      set_stats:
+        data:
+          r_avi_alertsyslogconfig: "{{ r_avi_alertsyslogconfig }}"

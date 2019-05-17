@@ -16,3 +16,8 @@
       administrative: "{{ ovirt_role_administrative | default(omit, True) }}"
       id: "{{ ovirt_role_id | default(omit, True) }}"
       wait: "{{ ovirt_role_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_role"
+  set_stats:
+    data:
+      r_ovirt_role: "{{ r_ovirt_role }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_dlp_fp_sensitivity"
       fortios_dlp_fp_sensitivity: "{{ fortios_dlp_fp_sensitivity }}"
       register: r_fortios_dlp_fp_sensitivity
+
+    - name: "export r_fortios_dlp_fp_sensitivity"
+      set_stats:
+        data:
+          r_fortios_dlp_fp_sensitivity: "{{ r_fortios_dlp_fp_sensitivity }}"

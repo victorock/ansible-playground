@@ -21,3 +21,8 @@
     - name: "plugin_win_wait_for"
       win_wait_for: "{{ win_wait_for }}"
       register: r_win_wait_for
+
+    - name: "export r_win_wait_for"
+      set_stats:
+        data:
+          r_win_wait_for: "{{ r_win_wait_for }}"

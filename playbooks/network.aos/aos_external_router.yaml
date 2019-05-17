@@ -18,3 +18,8 @@
     - name: "plugin_aos_external_router"
       aos_external_router: "{{ aos_external_router }}"
       register: r_aos_external_router
+
+    - name: "export r_aos_external_router"
+      set_stats:
+        data:
+          r_aos_external_router: "{{ r_aos_external_router }}"

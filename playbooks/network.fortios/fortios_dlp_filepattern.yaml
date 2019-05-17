@@ -17,3 +17,8 @@
     - name: "plugin_fortios_dlp_filepattern"
       fortios_dlp_filepattern: "{{ fortios_dlp_filepattern }}"
       register: r_fortios_dlp_filepattern
+
+    - name: "export r_fortios_dlp_filepattern"
+      set_stats:
+        data:
+          r_fortios_dlp_filepattern: "{{ r_fortios_dlp_filepattern }}"

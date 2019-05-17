@@ -26,3 +26,8 @@
       growphysical: "{{ vdo_growphysical | default(omit, True) }}"
       slabsize: "{{ vdo_slabsize | default(omit, True) }}"
       logicalthreads: "{{ vdo_logicalthreads | default(omit, True) }}"
+
+- name: "export r_vdo"
+  set_stats:
+    data:
+      r_vdo: "{{ r_vdo }}"

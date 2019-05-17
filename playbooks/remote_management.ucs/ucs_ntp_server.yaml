@@ -21,3 +21,8 @@
     - name: "plugin_ucs_ntp_server"
       ucs_ntp_server: "{{ ucs_ntp_server }}"
       register: r_ucs_ntp_server
+
+    - name: "export r_ucs_ntp_server"
+      set_stats:
+        data:
+          r_ucs_ntp_server: "{{ r_ucs_ntp_server }}"

@@ -9,3 +9,8 @@
       chdir: "{{ win_command_chdir | default(omit, True) }}"
       removes: "{{ win_command_removes | default(omit, True) }}"
       stdin: "{{ win_command_stdin | default(omit, True) }}"
+
+- name: "export r_win_command"
+  set_stats:
+    data:
+      r_win_command: "{{ r_win_command }}"

@@ -32,3 +32,8 @@
     - name: "plugin_aci_contract_subject"
       aci_contract_subject: "{{ aci_contract_subject }}"
       register: r_aci_contract_subject
+
+    - name: "export r_aci_contract_subject"
+      set_stats:
+        data:
+          r_aci_contract_subject: "{{ r_aci_contract_subject }}"

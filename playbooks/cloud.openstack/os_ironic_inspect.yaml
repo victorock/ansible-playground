@@ -28,3 +28,8 @@
     - name: "plugin_os_ironic_inspect"
       os_ironic_inspect: "{{ os_ironic_inspect }}"
       register: r_os_ironic_inspect
+
+    - name: "export r_os_ironic_inspect"
+      set_stats:
+        data:
+          r_os_ironic_inspect: "{{ r_os_ironic_inspect }}"

@@ -21,3 +21,8 @@
       zone: "{{ cs_vmsnapshot_zone | default(omit, True) }}"
       name: "{{ cs_vmsnapshot_name | default(omit, True) }}"
       api_url: "{{ cs_vmsnapshot_api_url | default(omit, True) }}"
+
+- name: "export r_cs_vmsnapshot"
+  set_stats:
+    data:
+      r_cs_vmsnapshot: "{{ r_cs_vmsnapshot }}"

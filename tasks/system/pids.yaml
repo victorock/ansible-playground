@@ -5,3 +5,8 @@
   vars:
     pids: 
       name: "{{ pids_name | default(omit, True) }}"
+
+- name: "export r_pids"
+  set_stats:
+    data:
+      r_pids: "{{ r_pids }}"

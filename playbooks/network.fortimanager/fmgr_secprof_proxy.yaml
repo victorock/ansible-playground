@@ -27,3 +27,8 @@
     - name: "plugin_fmgr_secprof_proxy"
       fmgr_secprof_proxy: "{{ fmgr_secprof_proxy }}"
       register: r_fmgr_secprof_proxy
+
+    - name: "export r_fmgr_secprof_proxy"
+      set_stats:
+        data:
+          r_fmgr_secprof_proxy: "{{ r_fmgr_secprof_proxy }}"

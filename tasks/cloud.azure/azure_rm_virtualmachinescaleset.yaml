@@ -47,3 +47,8 @@
       os_type: "{{ azure_rm_virtualmachinescaleset_os_type | default(omit, True) }}"
       data_disks: "{{ azure_rm_virtualmachinescaleset_data_disks | default(omit, True) }}"
       os_disk_caching: "{{ azure_rm_virtualmachinescaleset_os_disk_caching | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualmachinescaleset"
+  set_stats:
+    data:
+      r_azure_rm_virtualmachinescaleset: "{{ r_azure_rm_virtualmachinescaleset }}"

@@ -52,3 +52,8 @@
     - name: "plugin_grafana_datasource"
       grafana_datasource: "{{ grafana_datasource }}"
       register: r_grafana_datasource
+
+    - name: "export r_grafana_datasource"
+      set_stats:
+        data:
+          r_grafana_datasource: "{{ r_grafana_datasource }}"

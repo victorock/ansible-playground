@@ -18,3 +18,8 @@
     - name: "plugin_gcp_dns_managed_zone_facts"
       gcp_dns_managed_zone_facts: "{{ gcp_dns_managed_zone_facts }}"
       register: r_gcp_dns_managed_zone_facts
+
+    - name: "export r_gcp_dns_managed_zone_facts"
+      set_stats:
+        data:
+          r_gcp_dns_managed_zone_facts: "{{ r_gcp_dns_managed_zone_facts }}"

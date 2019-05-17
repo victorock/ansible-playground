@@ -20,3 +20,8 @@
     - name: "plugin_vmware_guest_find"
       vmware_guest_find: "{{ vmware_guest_find }}"
       register: r_vmware_guest_find
+
+    - name: "export r_vmware_guest_find"
+      set_stats:
+        data:
+          r_vmware_guest_find: "{{ r_vmware_guest_find }}"

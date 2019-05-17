@@ -15,3 +15,8 @@
     - name: "plugin_restconf_config"
       restconf_config: "{{ restconf_config }}"
       register: r_restconf_config
+
+    - name: "export r_restconf_config"
+      set_stats:
+        data:
+          r_restconf_config: "{{ r_restconf_config }}"

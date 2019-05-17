@@ -20,3 +20,8 @@
     - name: "plugin_ibm_sa_vol_map"
       ibm_sa_vol_map: "{{ ibm_sa_vol_map }}"
       register: r_ibm_sa_vol_map
+
+    - name: "export r_ibm_sa_vol_map"
+      set_stats:
+        data:
+          r_ibm_sa_vol_map: "{{ r_ibm_sa_vol_map }}"

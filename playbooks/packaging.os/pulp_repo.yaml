@@ -39,3 +39,8 @@
     - name: "plugin_pulp_repo"
       pulp_repo: "{{ pulp_repo }}"
       register: r_pulp_repo
+
+    - name: "export r_pulp_repo"
+      set_stats:
+        data:
+          r_pulp_repo: "{{ r_pulp_repo }}"

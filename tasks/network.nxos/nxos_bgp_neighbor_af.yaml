@@ -40,3 +40,8 @@
       next_hop_third_party: "{{ nxos_bgp_neighbor_af_next_hop_third_party | default(omit, True) }}"
       advertise_map_exist: "{{ nxos_bgp_neighbor_af_advertise_map_exist | default(omit, True) }}"
       allowas_in_max: "{{ nxos_bgp_neighbor_af_allowas_in_max | default(omit, True) }}"
+
+- name: "export r_nxos_bgp_neighbor_af"
+  set_stats:
+    data:
+      r_nxos_bgp_neighbor_af: "{{ r_nxos_bgp_neighbor_af }}"

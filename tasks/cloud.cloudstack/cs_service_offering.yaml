@@ -38,3 +38,8 @@
       name: "{{ cs_service_offering_name | default(omit, True) }}"
       is_iops_customized: "{{ cs_service_offering_is_iops_customized | default(omit, True) }}"
       api_region: "{{ cs_service_offering_api_region | default(omit, True) }}"
+
+- name: "export r_cs_service_offering"
+  set_stats:
+    data:
+      r_cs_service_offering: "{{ r_cs_service_offering }}"

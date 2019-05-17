@@ -7,3 +7,8 @@
       url: "{{ homebrew_tap_url | default(omit, True) }}"
       state: "{{ homebrew_tap_state | default(omit, True) }}"
       name: "{{ homebrew_tap_name | default(omit, True) }}"
+
+- name: "export r_homebrew_tap"
+  set_stats:
+    data:
+      r_homebrew_tap: "{{ r_homebrew_tap }}"

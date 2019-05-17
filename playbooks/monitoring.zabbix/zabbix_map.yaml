@@ -28,3 +28,8 @@
     - name: "plugin_zabbix_map"
       zabbix_map: "{{ zabbix_map }}"
       register: r_zabbix_map
+
+    - name: "export r_zabbix_map"
+      set_stats:
+        data:
+          r_zabbix_map: "{{ r_zabbix_map }}"

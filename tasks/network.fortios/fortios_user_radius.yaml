@@ -10,3 +10,8 @@
       https: "{{ fortios_user_radius_https | default(omit, True) }}"
       password: "{{ fortios_user_radius_password | default(omit, True) }}"
       vdom: "{{ fortios_user_radius_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_user_radius"
+  set_stats:
+    data:
+      r_fortios_user_radius: "{{ r_fortios_user_radius }}"

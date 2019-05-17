@@ -20,3 +20,8 @@
       validate_certs: "{{ vmware_guest_video_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_video_port | default(omit, True) }}"
       uuid: "{{ vmware_guest_video_uuid | default(omit, True) }}"
+
+- name: "export r_vmware_guest_video"
+  set_stats:
+    data:
+      r_vmware_guest_video: "{{ r_vmware_guest_video }}"

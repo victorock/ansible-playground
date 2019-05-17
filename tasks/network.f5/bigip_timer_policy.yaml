@@ -15,3 +15,8 @@
       password: "{{ bigip_timer_policy_password | default(omit, True) }}"
       validate_certs: "{{ bigip_timer_policy_validate_certs | default(omit, True) }}"
       name: "{{ bigip_timer_policy_name | default(omit, True) }}"
+
+- name: "export r_bigip_timer_policy"
+  set_stats:
+    data:
+      r_bigip_timer_policy: "{{ r_bigip_timer_policy }}"

@@ -37,3 +37,8 @@
     - name: "plugin_bigip_ssl_ocsp"
       bigip_ssl_ocsp: "{{ bigip_ssl_ocsp }}"
       register: r_bigip_ssl_ocsp
+
+    - name: "export r_bigip_ssl_ocsp"
+      set_stats:
+        data:
+          r_bigip_ssl_ocsp: "{{ r_bigip_ssl_ocsp }}"

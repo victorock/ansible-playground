@@ -11,3 +11,8 @@
       start: "{{ circonus_annotation_start | default(omit, True) }}"
       duration: "{{ circonus_annotation_duration | default(omit, True) }}"
       api_key: "{{ circonus_annotation_api_key | default(omit, True) }}"
+
+- name: "export r_circonus_annotation"
+  set_stats:
+    data:
+      r_circonus_annotation: "{{ r_circonus_annotation }}"

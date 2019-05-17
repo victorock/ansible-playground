@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_auth_portal"
       fortios_firewall_auth_portal: "{{ fortios_firewall_auth_portal }}"
       register: r_fortios_firewall_auth_portal
+
+    - name: "export r_fortios_firewall_auth_portal"
+      set_stats:
+        data:
+          r_fortios_firewall_auth_portal: "{{ r_fortios_firewall_auth_portal }}"

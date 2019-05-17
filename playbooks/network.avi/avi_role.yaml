@@ -27,3 +27,8 @@
     - name: "plugin_avi_role"
       avi_role: "{{ avi_role }}"
       register: r_avi_role
+
+    - name: "export r_avi_role"
+      set_stats:
+        data:
+          r_avi_role: "{{ r_avi_role }}"

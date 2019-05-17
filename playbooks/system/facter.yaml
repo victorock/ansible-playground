@@ -10,3 +10,8 @@
       facter:
       register: r_facter
 
+
+    - name: "export r_facter"
+      set_stats:
+        data:
+          r_facter: "{{ r_facter }}"

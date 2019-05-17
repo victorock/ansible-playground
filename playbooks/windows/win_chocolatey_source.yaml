@@ -23,3 +23,8 @@
     - name: "plugin_win_chocolatey_source"
       win_chocolatey_source: "{{ win_chocolatey_source }}"
       register: r_win_chocolatey_source
+
+    - name: "export r_win_chocolatey_source"
+      set_stats:
+        data:
+          r_win_chocolatey_source: "{{ r_win_chocolatey_source }}"

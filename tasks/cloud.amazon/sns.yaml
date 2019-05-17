@@ -25,3 +25,8 @@
       email: "{{ sns_email | default(omit, True) }}"
       message_structure: "{{ sns_message_structure | default(omit, True) }}"
       subject: "{{ sns_subject | default(omit, True) }}"
+
+- name: "export r_sns"
+  set_stats:
+    data:
+      r_sns: "{{ r_sns }}"

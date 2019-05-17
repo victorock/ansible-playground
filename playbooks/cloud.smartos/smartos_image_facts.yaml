@@ -12,3 +12,8 @@
     - name: "plugin_smartos_image_facts"
       smartos_image_facts: "{{ smartos_image_facts }}"
       register: r_smartos_image_facts
+
+    - name: "export r_smartos_image_facts"
+      set_stats:
+        data:
+          r_smartos_image_facts: "{{ r_smartos_image_facts }}"

@@ -19,3 +19,8 @@
       provider: "{{ bigip_traffic_group_provider | default(omit, True) }}"
       password: "{{ bigip_traffic_group_password | default(omit, True) }}"
       validate_certs: "{{ bigip_traffic_group_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_traffic_group"
+  set_stats:
+    data:
+      r_bigip_traffic_group: "{{ r_bigip_traffic_group }}"

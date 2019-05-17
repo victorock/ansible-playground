@@ -13,3 +13,8 @@
       workflow_template: "{{ tower_workflow_launch_workflow_template | default(omit, True) }}"
       validate_certs: "{{ tower_workflow_launch_validate_certs | default(omit, True) }}"
       wait: "{{ tower_workflow_launch_wait | default(omit, True) }}"
+
+- name: "export r_tower_workflow_launch"
+  set_stats:
+    data:
+      r_tower_workflow_launch: "{{ r_tower_workflow_launch }}"

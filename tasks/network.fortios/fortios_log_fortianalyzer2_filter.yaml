@@ -10,3 +10,8 @@
       password: "{{ fortios_log_fortianalyzer2_filter_password | default(omit, True) }}"
       vdom: "{{ fortios_log_fortianalyzer2_filter_vdom | default(omit, True) }}"
       log_fortianalyzer2_filter: "{{ fortios_log_fortianalyzer2_filter_log_fortianalyzer2_filter | default(omit, True) }}"
+
+- name: "export r_fortios_log_fortianalyzer2_filter"
+  set_stats:
+    data:
+      r_fortios_log_fortianalyzer2_filter: "{{ r_fortios_log_fortianalyzer2_filter }}"

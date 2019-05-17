@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_powermgmt_policy"
       vmware_host_powermgmt_policy: "{{ vmware_host_powermgmt_policy }}"
       register: r_vmware_host_powermgmt_policy
+
+    - name: "export r_vmware_host_powermgmt_policy"
+      set_stats:
+        data:
+          r_vmware_host_powermgmt_policy: "{{ r_vmware_host_powermgmt_policy }}"

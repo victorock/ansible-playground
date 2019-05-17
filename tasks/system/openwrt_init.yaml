@@ -8,3 +8,8 @@
       state: "{{ openwrt_init_state | default(omit, True) }}"
       enabled: "{{ openwrt_init_enabled | default(omit, True) }}"
       name: "{{ openwrt_init_name | default(omit, True) }}"
+
+- name: "export r_openwrt_init"
+  set_stats:
+    data:
+      r_openwrt_init: "{{ r_openwrt_init }}"

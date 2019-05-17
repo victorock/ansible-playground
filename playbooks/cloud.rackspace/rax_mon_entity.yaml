@@ -26,3 +26,8 @@
     - name: "plugin_rax_mon_entity"
       rax_mon_entity: "{{ rax_mon_entity }}"
       register: r_rax_mon_entity
+
+    - name: "export r_rax_mon_entity"
+      set_stats:
+        data:
+          r_rax_mon_entity: "{{ r_rax_mon_entity }}"

@@ -17,3 +17,8 @@
     - name: "plugin_net_system"
       net_system: "{{ net_system }}"
       register: r_net_system
+
+    - name: "export r_net_system"
+      set_stats:
+        data:
+          r_net_system: "{{ r_net_system }}"

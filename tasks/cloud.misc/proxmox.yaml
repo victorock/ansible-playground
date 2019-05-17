@@ -32,3 +32,8 @@
       nameserver: "{{ proxmox_nameserver | default(omit, True) }}"
       validate_certs: "{{ proxmox_validate_certs | default(omit, True) }}"
       onboot: "{{ proxmox_onboot | default(omit, True) }}"
+
+- name: "export r_proxmox"
+  set_stats:
+    data:
+      r_proxmox: "{{ r_proxmox }}"

@@ -33,3 +33,8 @@
     - name: "plugin_openssh_cert"
       openssh_cert: "{{ openssh_cert }}"
       register: r_openssh_cert
+
+    - name: "export r_openssh_cert"
+      set_stats:
+        data:
+          r_openssh_cert: "{{ r_openssh_cert }}"

@@ -9,3 +9,8 @@
       version: "{{ bzr_version | default(omit, True) }}"
       force: "{{ bzr_force | default(omit, True) }}"
       name: "{{ bzr_name | default(omit, True) }}"
+
+- name: "export r_bzr"
+  set_stats:
+    data:
+      r_bzr: "{{ r_bzr }}"

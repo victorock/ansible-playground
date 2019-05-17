@@ -18,3 +18,8 @@
       organization_default: "{{ scaleway_security_group_organization_default | default(omit, True) }}"
       validate_certs: "{{ scaleway_security_group_validate_certs | default(omit, True) }}"
       description: "{{ scaleway_security_group_description | default(omit, True) }}"
+
+- name: "export r_scaleway_security_group"
+  set_stats:
+    data:
+      r_scaleway_security_group: "{{ r_scaleway_security_group }}"

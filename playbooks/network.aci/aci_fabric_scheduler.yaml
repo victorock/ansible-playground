@@ -33,3 +33,8 @@
     - name: "plugin_aci_fabric_scheduler"
       aci_fabric_scheduler: "{{ aci_fabric_scheduler }}"
       register: r_aci_fabric_scheduler
+
+    - name: "export r_aci_fabric_scheduler"
+      set_stats:
+        data:
+          r_aci_fabric_scheduler: "{{ r_aci_fabric_scheduler }}"

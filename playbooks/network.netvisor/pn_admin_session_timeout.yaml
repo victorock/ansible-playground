@@ -14,3 +14,8 @@
     - name: "plugin_pn_admin_session_timeout"
       pn_admin_session_timeout: "{{ pn_admin_session_timeout }}"
       register: r_pn_admin_session_timeout
+
+    - name: "export r_pn_admin_session_timeout"
+      set_stats:
+        data:
+          r_pn_admin_session_timeout: "{{ r_pn_admin_session_timeout }}"

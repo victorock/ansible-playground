@@ -21,3 +21,8 @@
     - name: "plugin_nxos_hsrp"
       nxos_hsrp: "{{ nxos_hsrp }}"
       register: r_nxos_hsrp
+
+    - name: "export r_nxos_hsrp"
+      set_stats:
+        data:
+          r_nxos_hsrp: "{{ r_nxos_hsrp }}"

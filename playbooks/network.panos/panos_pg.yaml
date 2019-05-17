@@ -23,3 +23,8 @@
     - name: "plugin_panos_pg"
       panos_pg: "{{ panos_pg }}"
       register: r_panos_pg
+
+    - name: "export r_panos_pg"
+      set_stats:
+        data:
+          r_panos_pg: "{{ r_panos_pg }}"

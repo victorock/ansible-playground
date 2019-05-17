@@ -64,3 +64,8 @@
     - name: "plugin_fmgr_secprof_ips"
       fmgr_secprof_ips: "{{ fmgr_secprof_ips }}"
       register: r_fmgr_secprof_ips
+
+    - name: "export r_fmgr_secprof_ips"
+      set_stats:
+        data:
+          r_fmgr_secprof_ips: "{{ r_fmgr_secprof_ips }}"

@@ -7,3 +7,8 @@
       state: "{{ swdepot_state | default(omit, True) }}"
       depot: "{{ swdepot_depot | default(omit, True) }}"
       name: "{{ swdepot_name | default(omit, True) }}"
+
+- name: "export r_swdepot"
+  set_stats:
+    data:
+      r_swdepot: "{{ r_swdepot }}"

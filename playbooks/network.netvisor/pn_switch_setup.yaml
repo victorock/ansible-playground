@@ -44,3 +44,8 @@
     - name: "plugin_pn_switch_setup"
       pn_switch_setup: "{{ pn_switch_setup }}"
       register: r_pn_switch_setup
+
+    - name: "export r_pn_switch_setup"
+      set_stats:
+        data:
+          r_pn_switch_setup: "{{ r_pn_switch_setup }}"

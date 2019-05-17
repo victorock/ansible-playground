@@ -27,3 +27,8 @@
     - name: "plugin_icinga2_host"
       icinga2_host: "{{ icinga2_host }}"
       register: r_icinga2_host
+
+    - name: "export r_icinga2_host"
+      set_stats:
+        data:
+          r_icinga2_host: "{{ r_icinga2_host }}"

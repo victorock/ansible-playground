@@ -14,3 +14,8 @@
       debug_botocore_endpoint_logs: "{{ redshift_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       ec2_url: "{{ redshift_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ redshift_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_redshift_facts"
+  set_stats:
+    data:
+      r_redshift_facts: "{{ r_redshift_facts }}"

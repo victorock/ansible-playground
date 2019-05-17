@@ -17,3 +17,8 @@
     - name: "plugin_aix_lvg"
       aix_lvg: "{{ aix_lvg }}"
       register: r_aix_lvg
+
+    - name: "export r_aix_lvg"
+      set_stats:
+        data:
+          r_aix_lvg: "{{ r_aix_lvg }}"

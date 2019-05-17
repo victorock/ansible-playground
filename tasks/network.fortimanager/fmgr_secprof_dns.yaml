@@ -22,3 +22,8 @@
       ftgd_dns_filters_category: "{{ fmgr_secprof_dns_ftgd_dns_filters_category | default(omit, True) }}"
       ftgd_dns_filters_action: "{{ fmgr_secprof_dns_ftgd_dns_filters_action | default(omit, True) }}"
       sdns_domain_log: "{{ fmgr_secprof_dns_sdns_domain_log | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_dns"
+  set_stats:
+    data:
+      r_fmgr_secprof_dns: "{{ r_fmgr_secprof_dns }}"

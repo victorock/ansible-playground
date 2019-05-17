@@ -9,3 +9,8 @@
       session: "{{ aos_template_session | default(omit, True) }}"
       name: "{{ aos_template_name | default(omit, True) }}"
       id: "{{ aos_template_id | default(omit, True) }}"
+
+- name: "export r_aos_template"
+  set_stats:
+    data:
+      r_aos_template: "{{ r_aos_template }}"

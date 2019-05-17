@@ -25,3 +25,8 @@
     - name: "plugin_scaleway_lb"
       scaleway_lb: "{{ scaleway_lb }}"
       register: r_scaleway_lb
+
+    - name: "export r_scaleway_lb"
+      set_stats:
+        data:
+          r_scaleway_lb: "{{ r_scaleway_lb }}"

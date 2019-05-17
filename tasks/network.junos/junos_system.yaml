@@ -11,3 +11,8 @@
       state: "{{ junos_system_state | default(omit, True) }}"
       provider: "{{ junos_system_provider | default(omit, True) }}"
       name_servers: "{{ junos_system_name_servers | default(omit, True) }}"
+
+- name: "export r_junos_system"
+  set_stats:
+    data:
+      r_junos_system: "{{ r_junos_system }}"

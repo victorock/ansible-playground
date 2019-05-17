@@ -23,3 +23,8 @@
       pn_cliswitch: "{{ pn_vrouter_pn_cliswitch | default(omit, True) }}"
       pn_vrrp_track_port: "{{ pn_vrouter_pn_vrrp_track_port | default(omit, True) }}"
       pn_bgp_as: "{{ pn_vrouter_pn_bgp_as | default(omit, True) }}"
+
+- name: "export r_pn_vrouter"
+  set_stats:
+    data:
+      r_pn_vrouter: "{{ r_pn_vrouter }}"

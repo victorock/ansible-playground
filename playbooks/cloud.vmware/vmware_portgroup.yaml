@@ -24,3 +24,8 @@
     - name: "plugin_vmware_portgroup"
       vmware_portgroup: "{{ vmware_portgroup }}"
       register: r_vmware_portgroup
+
+    - name: "export r_vmware_portgroup"
+      set_stats:
+        data:
+          r_vmware_portgroup: "{{ r_vmware_portgroup }}"

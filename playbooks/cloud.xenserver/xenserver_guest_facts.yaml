@@ -17,3 +17,8 @@
     - name: "plugin_xenserver_guest_facts"
       xenserver_guest_facts: "{{ xenserver_guest_facts }}"
       register: r_xenserver_guest_facts
+
+    - name: "export r_xenserver_guest_facts"
+      set_stats:
+        data:
+          r_xenserver_guest_facts: "{{ r_xenserver_guest_facts }}"

@@ -15,3 +15,8 @@
       validate_certs: "{{ vmware_host_active_directory_validate_certs | default(omit, True) }}"
       port: "{{ vmware_host_active_directory_port | default(omit, True) }}"
       ad_domain: "{{ vmware_host_active_directory_ad_domain | default(omit, True) }}"
+
+- name: "export r_vmware_host_active_directory"
+  set_stats:
+    data:
+      r_vmware_host_active_directory: "{{ r_vmware_host_active_directory }}"

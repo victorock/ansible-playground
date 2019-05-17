@@ -22,3 +22,8 @@
       subscription_id: "{{ azure_rm_mariadbfirewallrule_subscription_id | default(omit, True) }}"
       password: "{{ azure_rm_mariadbfirewallrule_password | default(omit, True) }}"
       tenant: "{{ azure_rm_mariadbfirewallrule_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_mariadbfirewallrule"
+  set_stats:
+    data:
+      r_azure_rm_mariadbfirewallrule: "{{ r_azure_rm_mariadbfirewallrule }}"

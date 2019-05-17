@@ -18,3 +18,8 @@
       password: "{{ bigiq_application_fastl4_tcp_password | default(omit, True) }}"
       validate_certs: "{{ bigiq_application_fastl4_tcp_validate_certs | default(omit, True) }}"
       wait: "{{ bigiq_application_fastl4_tcp_wait | default(omit, True) }}"
+
+- name: "export r_bigiq_application_fastl4_tcp"
+  set_stats:
+    data:
+      r_bigiq_application_fastl4_tcp: "{{ r_bigiq_application_fastl4_tcp }}"

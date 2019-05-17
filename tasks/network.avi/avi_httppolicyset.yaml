@@ -26,3 +26,8 @@
       http_response_policy: "{{ avi_httppolicyset_http_response_policy | default(omit, True) }}"
       tenant_uuid: "{{ avi_httppolicyset_tenant_uuid | default(omit, True) }}"
       is_internal_policy: "{{ avi_httppolicyset_is_internal_policy | default(omit, True) }}"
+
+- name: "export r_avi_httppolicyset"
+  set_stats:
+    data:
+      r_avi_httppolicyset: "{{ r_avi_httppolicyset }}"

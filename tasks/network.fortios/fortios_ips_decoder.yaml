@@ -10,3 +10,8 @@
       https: "{{ fortios_ips_decoder_https | default(omit, True) }}"
       password: "{{ fortios_ips_decoder_password | default(omit, True) }}"
       vdom: "{{ fortios_ips_decoder_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_ips_decoder"
+  set_stats:
+    data:
+      r_fortios_ips_decoder: "{{ r_fortios_ips_decoder }}"

@@ -35,3 +35,8 @@
     - name: "plugin_bigip_node"
       bigip_node: "{{ bigip_node }}"
       register: r_bigip_node
+
+    - name: "export r_bigip_node"
+      set_stats:
+        data:
+          r_bigip_node: "{{ r_bigip_node }}"

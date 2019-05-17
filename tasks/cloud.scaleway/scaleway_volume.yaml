@@ -15,3 +15,8 @@
       size: "{{ scaleway_volume_size | default(omit, True) }}"
       validate_certs: "{{ scaleway_volume_validate_certs | default(omit, True) }}"
       name: "{{ scaleway_volume_name | default(omit, True) }}"
+
+- name: "export r_scaleway_volume"
+  set_stats:
+    data:
+      r_scaleway_volume: "{{ r_scaleway_volume }}"

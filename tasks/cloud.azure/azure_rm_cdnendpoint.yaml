@@ -34,3 +34,8 @@
       purge: "{{ azure_rm_cdnendpoint_purge | default(omit, True) }}"
       content_types_to_compress: "{{ azure_rm_cdnendpoint_content_types_to_compress | default(omit, True) }}"
       api_profile: "{{ azure_rm_cdnendpoint_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_cdnendpoint"
+  set_stats:
+    data:
+      r_azure_rm_cdnendpoint: "{{ r_azure_rm_cdnendpoint }}"

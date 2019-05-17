@@ -25,3 +25,8 @@
     - name: "plugin_avi_gslbapplicationpersistenceprofile"
       avi_gslbapplicationpersistenceprofile: "{{ avi_gslbapplicationpersistenceprofile }}"
       register: r_avi_gslbapplicationpersistenceprofile
+
+    - name: "export r_avi_gslbapplicationpersistenceprofile"
+      set_stats:
+        data:
+          r_avi_gslbapplicationpersistenceprofile: "{{ r_avi_gslbapplicationpersistenceprofile }}"

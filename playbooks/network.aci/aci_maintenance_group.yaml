@@ -25,3 +25,8 @@
     - name: "plugin_aci_maintenance_group"
       aci_maintenance_group: "{{ aci_maintenance_group }}"
       register: r_aci_maintenance_group
+
+    - name: "export r_aci_maintenance_group"
+      set_stats:
+        data:
+          r_aci_maintenance_group: "{{ r_aci_maintenance_group }}"

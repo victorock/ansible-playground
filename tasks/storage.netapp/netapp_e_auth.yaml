@@ -13,3 +13,8 @@
       validate_certs: "{{ netapp_e_auth_validate_certs | default(omit, True) }}"
       set_admin: "{{ netapp_e_auth_set_admin | default(omit, True) }}"
       name: "{{ netapp_e_auth_name | default(omit, True) }}"
+
+- name: "export r_netapp_e_auth"
+  set_stats:
+    data:
+      r_netapp_e_auth: "{{ r_netapp_e_auth }}"

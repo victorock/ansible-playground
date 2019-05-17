@@ -10,3 +10,8 @@
       password: "{{ fortios_report_theme_password | default(omit, True) }}"
       report_theme: "{{ fortios_report_theme_report_theme | default(omit, True) }}"
       vdom: "{{ fortios_report_theme_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_report_theme"
+  set_stats:
+    data:
+      r_fortios_report_theme: "{{ r_fortios_report_theme }}"

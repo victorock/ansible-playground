@@ -14,3 +14,8 @@
       credentials_file: "{{ gce_mig_credentials_file | default(omit, True) }}"
       project_id: "{{ gce_mig_project_id | default(omit, True) }}"
       size: "{{ gce_mig_size | default(omit, True) }}"
+
+- name: "export r_gce_mig"
+  set_stats:
+    data:
+      r_gce_mig: "{{ r_gce_mig }}"

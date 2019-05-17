@@ -24,3 +24,8 @@
       subscription_id: "{{ azure_rm_devtestlab_subscription_id | default(omit, True) }}"
       tenant: "{{ azure_rm_devtestlab_tenant | default(omit, True) }}"
       api_profile: "{{ azure_rm_devtestlab_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_devtestlab"
+  set_stats:
+    data:
+      r_azure_rm_devtestlab: "{{ r_azure_rm_devtestlab }}"

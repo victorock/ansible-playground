@@ -5,3 +5,8 @@
   vars:
     ping: 
       data: "{{ ping_data | default(omit, True) }}"
+
+- name: "export r_ping"
+  set_stats:
+    data:
+      r_ping: "{{ r_ping }}"

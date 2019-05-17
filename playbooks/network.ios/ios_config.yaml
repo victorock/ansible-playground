@@ -30,3 +30,8 @@
     - name: "plugin_ios_config"
       ios_config: "{{ ios_config }}"
       register: r_ios_config
+
+    - name: "export r_ios_config"
+      set_stats:
+        data:
+          r_ios_config: "{{ r_ios_config }}"

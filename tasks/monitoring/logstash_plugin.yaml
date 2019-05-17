@@ -10,3 +10,8 @@
       state: "{{ logstash_plugin_state | default(omit, True) }}"
       version: "{{ logstash_plugin_version | default(omit, True) }}"
       plugin_bin: "{{ logstash_plugin_plugin_bin | default(omit, True) }}"
+
+- name: "export r_logstash_plugin"
+  set_stats:
+    data:
+      r_logstash_plugin: "{{ r_logstash_plugin }}"

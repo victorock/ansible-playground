@@ -26,3 +26,8 @@
     - name: "plugin_vmware_dvs_portgroup"
       vmware_dvs_portgroup: "{{ vmware_dvs_portgroup }}"
       register: r_vmware_dvs_portgroup
+
+    - name: "export r_vmware_dvs_portgroup"
+      set_stats:
+        data:
+          r_vmware_dvs_portgroup: "{{ r_vmware_dvs_portgroup }}"

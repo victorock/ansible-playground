@@ -5,3 +5,8 @@
   vars:
     fail: 
       msg: "{{ fail_msg | default(omit, True) }}"
+
+- name: "export r_fail"
+  set_stats:
+    data:
+      r_fail: "{{ r_fail }}"

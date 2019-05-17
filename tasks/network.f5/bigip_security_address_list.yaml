@@ -19,3 +19,8 @@
       password: "{{ bigip_security_address_list_password | default(omit, True) }}"
       validate_certs: "{{ bigip_security_address_list_validate_certs | default(omit, True) }}"
       description: "{{ bigip_security_address_list_description | default(omit, True) }}"
+
+- name: "export r_bigip_security_address_list"
+  set_stats:
+    data:
+      r_bigip_security_address_list: "{{ r_bigip_security_address_list }}"

@@ -22,3 +22,8 @@
     - name: "plugin_lxd_profile"
       lxd_profile: "{{ lxd_profile }}"
       register: r_lxd_profile
+
+    - name: "export r_lxd_profile"
+      set_stats:
+        data:
+          r_lxd_profile: "{{ r_lxd_profile }}"

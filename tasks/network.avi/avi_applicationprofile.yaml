@@ -27,3 +27,8 @@
       avi_credentials: "{{ avi_applicationprofile_avi_credentials | default(omit, True) }}"
       tenant_ref: "{{ avi_applicationprofile_tenant_ref | default(omit, True) }}"
       tenant_uuid: "{{ avi_applicationprofile_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_applicationprofile"
+  set_stats:
+    data:
+      r_avi_applicationprofile: "{{ r_avi_applicationprofile }}"

@@ -20,3 +20,8 @@
       password: "{{ netscaler_ssl_certkey_password | default(omit, True) }}"
       validate_certs: "{{ netscaler_ssl_certkey_validate_certs | default(omit, True) }}"
       nitro_timeout: "{{ netscaler_ssl_certkey_nitro_timeout | default(omit, True) }}"
+
+- name: "export r_netscaler_ssl_certkey"
+  set_stats:
+    data:
+      r_netscaler_ssl_certkey: "{{ r_netscaler_ssl_certkey }}"

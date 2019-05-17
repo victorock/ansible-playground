@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_bgp"
       fortios_router_bgp: "{{ fortios_router_bgp }}"
       register: r_fortios_router_bgp
+
+    - name: "export r_fortios_router_bgp"
+      set_stats:
+        data:
+          r_fortios_router_bgp: "{{ r_fortios_router_bgp }}"

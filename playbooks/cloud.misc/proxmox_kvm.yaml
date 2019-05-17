@@ -83,3 +83,8 @@
     - name: "plugin_proxmox_kvm"
       proxmox_kvm: "{{ proxmox_kvm }}"
       register: r_proxmox_kvm
+
+    - name: "export r_proxmox_kvm"
+      set_stats:
+        data:
+          r_proxmox_kvm: "{{ r_proxmox_kvm }}"

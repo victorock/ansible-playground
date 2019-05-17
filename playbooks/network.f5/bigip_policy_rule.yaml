@@ -24,3 +24,8 @@
     - name: "plugin_bigip_policy_rule"
       bigip_policy_rule: "{{ bigip_policy_rule }}"
       register: r_bigip_policy_rule
+
+    - name: "export r_bigip_policy_rule"
+      set_stats:
+        data:
+          r_bigip_policy_rule: "{{ r_bigip_policy_rule }}"

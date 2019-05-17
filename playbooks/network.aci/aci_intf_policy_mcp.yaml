@@ -26,3 +26,8 @@
     - name: "plugin_aci_intf_policy_mcp"
       aci_intf_policy_mcp: "{{ aci_intf_policy_mcp }}"
       register: r_aci_intf_policy_mcp
+
+    - name: "export r_aci_intf_policy_mcp"
+      set_stats:
+        data:
+          r_aci_intf_policy_mcp: "{{ r_aci_intf_policy_mcp }}"

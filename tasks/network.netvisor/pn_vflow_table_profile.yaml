@@ -9,3 +9,8 @@
       state: "{{ pn_vflow_table_profile_state | default(omit, True) }}"
       pn_profile: "{{ pn_vflow_table_profile_pn_profile | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vflow_table_profile_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_vflow_table_profile"
+  set_stats:
+    data:
+      r_pn_vflow_table_profile: "{{ r_pn_vflow_table_profile }}"

@@ -18,3 +18,8 @@
       validate_certs: "{{ mso_role_validate_certs | default(omit, True) }}"
       port: "{{ mso_role_port | default(omit, True) }}"
       permissions: "{{ mso_role_permissions | default(omit, True) }}"
+
+- name: "export r_mso_role"
+  set_stats:
+    data:
+      r_mso_role: "{{ r_mso_role }}"

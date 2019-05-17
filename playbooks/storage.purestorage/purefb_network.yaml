@@ -18,3 +18,8 @@
     - name: "plugin_purefb_network"
       purefb_network: "{{ purefb_network }}"
       register: r_purefb_network
+
+    - name: "export r_purefb_network"
+      set_stats:
+        data:
+          r_purefb_network: "{{ r_purefb_network }}"

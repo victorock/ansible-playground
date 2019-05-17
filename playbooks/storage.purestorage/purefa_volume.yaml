@@ -20,3 +20,8 @@
     - name: "plugin_purefa_volume"
       purefa_volume: "{{ purefa_volume }}"
       register: r_purefa_volume
+
+    - name: "export r_purefa_volume"
+      set_stats:
+        data:
+          r_purefa_volume: "{{ r_purefa_volume }}"

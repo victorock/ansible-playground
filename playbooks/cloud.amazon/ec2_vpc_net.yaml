@@ -29,3 +29,8 @@
     - name: "plugin_ec2_vpc_net"
       ec2_vpc_net: "{{ ec2_vpc_net }}"
       register: r_ec2_vpc_net
+
+    - name: "export r_ec2_vpc_net"
+      set_stats:
+        data:
+          r_ec2_vpc_net: "{{ r_ec2_vpc_net }}"

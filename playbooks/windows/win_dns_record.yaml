@@ -18,3 +18,8 @@
     - name: "plugin_win_dns_record"
       win_dns_record: "{{ win_dns_record }}"
       register: r_win_dns_record
+
+    - name: "export r_win_dns_record"
+      set_stats:
+        data:
+          r_win_dns_record: "{{ r_win_dns_record }}"

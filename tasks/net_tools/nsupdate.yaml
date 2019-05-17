@@ -16,3 +16,8 @@
       type: "{{ nsupdate_type | default(omit, True) }}"
       port: "{{ nsupdate_port | default(omit, True) }}"
       key_secret: "{{ nsupdate_key_secret | default(omit, True) }}"
+
+- name: "export r_nsupdate"
+  set_stats:
+    data:
+      r_nsupdate: "{{ r_nsupdate }}"

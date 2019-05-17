@@ -19,3 +19,8 @@
     - name: "plugin_cloudscale_floating_ip"
       cloudscale_floating_ip: "{{ cloudscale_floating_ip }}"
       register: r_cloudscale_floating_ip
+
+    - name: "export r_cloudscale_floating_ip"
+      set_stats:
+        data:
+          r_cloudscale_floating_ip: "{{ r_cloudscale_floating_ip }}"

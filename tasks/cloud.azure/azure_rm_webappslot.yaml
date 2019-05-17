@@ -33,3 +33,8 @@
       purge_app_settings: "{{ azure_rm_webappslot_purge_app_settings | default(omit, True) }}"
       frameworks: "{{ azure_rm_webappslot_frameworks | default(omit, True) }}"
       api_profile: "{{ azure_rm_webappslot_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_webappslot"
+  set_stats:
+    data:
+      r_azure_rm_webappslot: "{{ r_azure_rm_webappslot }}"

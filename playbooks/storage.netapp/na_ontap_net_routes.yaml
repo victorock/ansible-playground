@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_net_routes"
       na_ontap_net_routes: "{{ na_ontap_net_routes }}"
       register: r_na_ontap_net_routes
+
+    - name: "export r_na_ontap_net_routes"
+      set_stats:
+        data:
+          r_na_ontap_net_routes: "{{ r_na_ontap_net_routes }}"

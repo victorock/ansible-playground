@@ -29,3 +29,8 @@
       validate_certs: "{{ lambda_validate_certs | default(omit, True) }}"
       region: "{{ lambda_region | default(omit, True) }}"
       vpc_subnet_ids: "{{ lambda_vpc_subnet_ids | default(omit, True) }}"
+
+- name: "export r_lambda"
+  set_stats:
+    data:
+      r_lambda: "{{ r_lambda }}"

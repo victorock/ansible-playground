@@ -29,3 +29,8 @@
       name: "{{ azure_rm_mariadbserver_name | default(omit, True) }}"
       admin_username: "{{ azure_rm_mariadbserver_admin_username | default(omit, True) }}"
       auth_source: "{{ azure_rm_mariadbserver_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_mariadbserver"
+  set_stats:
+    data:
+      r_azure_rm_mariadbserver: "{{ r_azure_rm_mariadbserver }}"

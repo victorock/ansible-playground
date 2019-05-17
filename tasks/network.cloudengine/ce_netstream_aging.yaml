@@ -9,3 +9,8 @@
       type: "{{ ce_netstream_aging_type | default(omit, True) }}"
       manual_slot: "{{ ce_netstream_aging_manual_slot | default(omit, True) }}"
       timeout_interval: "{{ ce_netstream_aging_timeout_interval | default(omit, True) }}"
+
+- name: "export r_ce_netstream_aging"
+  set_stats:
+    data:
+      r_ce_netstream_aging: "{{ r_ce_netstream_aging }}"

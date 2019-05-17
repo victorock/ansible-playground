@@ -11,3 +11,8 @@
     - name: "plugin_lldp"
       lldp: "{{ lldp }}"
       register: r_lldp
+
+    - name: "export r_lldp"
+      set_stats:
+        data:
+          r_lldp: "{{ r_lldp }}"

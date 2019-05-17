@@ -40,3 +40,8 @@
     - name: "plugin_pn_port_config"
       pn_port_config: "{{ pn_port_config }}"
       register: r_pn_port_config
+
+    - name: "export r_pn_port_config"
+      set_stats:
+        data:
+          r_pn_port_config: "{{ r_pn_port_config }}"

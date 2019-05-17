@@ -11,3 +11,8 @@
       state: "{{ pn_vrouterlbif_state | default(omit, True) }}"
       pn_cliusername: "{{ pn_vrouterlbif_pn_cliusername | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vrouterlbif_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_vrouterlbif"
+  set_stats:
+    data:
+      r_pn_vrouterlbif: "{{ r_pn_vrouterlbif }}"

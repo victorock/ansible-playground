@@ -25,3 +25,8 @@
     - name: "plugin_cs_router"
       cs_router: "{{ cs_router }}"
       register: r_cs_router
+
+    - name: "export r_cs_router"
+      set_stats:
+        data:
+          r_cs_router: "{{ r_cs_router }}"

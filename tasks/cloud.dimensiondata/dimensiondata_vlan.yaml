@@ -19,3 +19,8 @@
       validate_certs: "{{ dimensiondata_vlan_validate_certs | default(omit, True) }}"
       allow_expand: "{{ dimensiondata_vlan_allow_expand | default(omit, True) }}"
       wait_poll_interval: "{{ dimensiondata_vlan_wait_poll_interval | default(omit, True) }}"
+
+- name: "export r_dimensiondata_vlan"
+  set_stats:
+    data:
+      r_dimensiondata_vlan: "{{ r_dimensiondata_vlan }}"

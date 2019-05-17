@@ -36,3 +36,8 @@
     - name: "plugin_bigip_profile_persistence_cookie"
       bigip_profile_persistence_cookie: "{{ bigip_profile_persistence_cookie }}"
       register: r_bigip_profile_persistence_cookie
+
+    - name: "export r_bigip_profile_persistence_cookie"
+      set_stats:
+        data:
+          r_bigip_profile_persistence_cookie: "{{ r_bigip_profile_persistence_cookie }}"

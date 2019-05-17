@@ -19,3 +19,8 @@
     - name: "plugin_net_l2_interface"
       net_l2_interface: "{{ net_l2_interface }}"
       register: r_net_l2_interface
+
+    - name: "export r_net_l2_interface"
+      set_stats:
+        data:
+          r_net_l2_interface: "{{ r_net_l2_interface }}"

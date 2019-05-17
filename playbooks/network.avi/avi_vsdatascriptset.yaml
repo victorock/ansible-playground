@@ -33,3 +33,8 @@
     - name: "plugin_avi_vsdatascriptset"
       avi_vsdatascriptset: "{{ avi_vsdatascriptset }}"
       register: r_avi_vsdatascriptset
+
+    - name: "export r_avi_vsdatascriptset"
+      set_stats:
+        data:
+          r_avi_vsdatascriptset: "{{ r_avi_vsdatascriptset }}"

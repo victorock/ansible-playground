@@ -29,3 +29,8 @@
     - name: "plugin_digital_ocean_droplet"
       digital_ocean_droplet: "{{ digital_ocean_droplet }}"
       register: r_digital_ocean_droplet
+
+    - name: "export r_digital_ocean_droplet"
+      set_stats:
+        data:
+          r_digital_ocean_droplet: "{{ r_digital_ocean_droplet }}"

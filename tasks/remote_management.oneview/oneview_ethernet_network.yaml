@@ -8,3 +8,8 @@
       state: "{{ oneview_ethernet_network_state | default(omit, True) }}"
       validate_etag: "{{ oneview_ethernet_network_validate_etag | default(omit, True) }}"
       config: "{{ oneview_ethernet_network_config | default(omit, True) }}"
+
+- name: "export r_oneview_ethernet_network"
+  set_stats:
+    data:
+      r_oneview_ethernet_network: "{{ r_oneview_ethernet_network }}"

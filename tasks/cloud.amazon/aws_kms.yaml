@@ -27,3 +27,8 @@
       mode: "{{ aws_kms_mode | default(omit, True) }}"
       key_id: "{{ aws_kms_key_id | default(omit, True) }}"
       validate_certs: "{{ aws_kms_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_kms"
+  set_stats:
+    data:
+      r_aws_kms: "{{ r_aws_kms }}"

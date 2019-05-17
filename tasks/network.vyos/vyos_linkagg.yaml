@@ -10,3 +10,8 @@
       members: "{{ vyos_linkagg_members | default(omit, True) }}"
       provider: "{{ vyos_linkagg_provider | default(omit, True) }}"
       aggregate: "{{ vyos_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_vyos_linkagg"
+  set_stats:
+    data:
+      r_vyos_linkagg: "{{ r_vyos_linkagg }}"

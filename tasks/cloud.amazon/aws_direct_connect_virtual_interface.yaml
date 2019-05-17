@@ -25,3 +25,8 @@
       address_type: "{{ aws_direct_connect_virtual_interface_address_type | default(omit, True) }}"
       validate_certs: "{{ aws_direct_connect_virtual_interface_validate_certs | default(omit, True) }}"
       id_to_associate: "{{ aws_direct_connect_virtual_interface_id_to_associate | default(omit, True) }}"
+
+- name: "export r_aws_direct_connect_virtual_interface"
+  set_stats:
+    data:
+      r_aws_direct_connect_virtual_interface: "{{ r_aws_direct_connect_virtual_interface }}"

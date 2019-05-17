@@ -21,3 +21,8 @@
       next_hop_vpn_tunnel: "{{ gcp_compute_route_next_hop_vpn_tunnel | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_route_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_route_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_route"
+  set_stats:
+    data:
+      r_gcp_compute_route: "{{ r_gcp_compute_route }}"

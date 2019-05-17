@@ -17,3 +17,8 @@
     - name: "plugin_eos_banner"
       eos_banner: "{{ eos_banner }}"
       register: r_eos_banner
+
+    - name: "export r_eos_banner"
+      set_stats:
+        data:
+          r_eos_banner: "{{ r_eos_banner }}"

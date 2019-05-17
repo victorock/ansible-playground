@@ -24,3 +24,8 @@
     - name: "plugin_exo_dns_record"
       exo_dns_record: "{{ exo_dns_record }}"
       register: r_exo_dns_record
+
+    - name: "export r_exo_dns_record"
+      set_stats:
+        data:
+          r_exo_dns_record: "{{ r_exo_dns_record }}"

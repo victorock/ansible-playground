@@ -30,3 +30,8 @@
       name: "{{ azure_rm_managed_disk_name | default(omit, True) }}"
       api_profile: "{{ azure_rm_managed_disk_api_profile | default(omit, True) }}"
       os_type: "{{ azure_rm_managed_disk_os_type | default(omit, True) }}"
+
+- name: "export r_azure_rm_managed_disk"
+  set_stats:
+    data:
+      r_azure_rm_managed_disk: "{{ r_azure_rm_managed_disk }}"

@@ -9,3 +9,8 @@
       pn_netmask: "{{ pn_vrouter_bgp_network_pn_netmask | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vrouter_bgp_network_pn_cliswitch | default(omit, True) }}"
       pn_network: "{{ pn_vrouter_bgp_network_pn_network | default(omit, True) }}"
+
+- name: "export r_pn_vrouter_bgp_network"
+  set_stats:
+    data:
+      r_pn_vrouter_bgp_network: "{{ r_pn_vrouter_bgp_network }}"

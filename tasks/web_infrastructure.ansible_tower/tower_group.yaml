@@ -24,3 +24,8 @@
       tower_host: "{{ tower_group_tower_host | default(omit, True) }}"
       overwrite: "{{ tower_group_overwrite | default(omit, True) }}"
       description: "{{ tower_group_description | default(omit, True) }}"
+
+- name: "export r_tower_group"
+  set_stats:
+    data:
+      r_tower_group: "{{ r_tower_group }}"

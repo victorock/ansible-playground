@@ -10,3 +10,8 @@
       https: "{{ fortios_system_accprofile_https | default(omit, True) }}"
       password: "{{ fortios_system_accprofile_password | default(omit, True) }}"
       vdom: "{{ fortios_system_accprofile_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_system_accprofile"
+  set_stats:
+    data:
+      r_fortios_system_accprofile: "{{ r_fortios_system_accprofile }}"

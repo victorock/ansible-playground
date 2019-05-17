@@ -49,3 +49,8 @@
     - name: "plugin_tower_notification"
       tower_notification: "{{ tower_notification }}"
       register: r_tower_notification
+
+    - name: "export r_tower_notification"
+      set_stats:
+        data:
+          r_tower_notification: "{{ r_tower_notification }}"

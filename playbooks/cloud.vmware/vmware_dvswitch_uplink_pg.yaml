@@ -24,3 +24,8 @@
     - name: "plugin_vmware_dvswitch_uplink_pg"
       vmware_dvswitch_uplink_pg: "{{ vmware_dvswitch_uplink_pg }}"
       register: r_vmware_dvswitch_uplink_pg
+
+    - name: "export r_vmware_dvswitch_uplink_pg"
+      set_stats:
+        data:
+          r_vmware_dvswitch_uplink_pg: "{{ r_vmware_dvswitch_uplink_pg }}"

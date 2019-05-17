@@ -34,3 +34,8 @@
     - name: "plugin_os_network"
       os_network: "{{ os_network }}"
       register: r_os_network
+
+    - name: "export r_os_network"
+      set_stats:
+        data:
+          r_os_network: "{{ r_os_network }}"

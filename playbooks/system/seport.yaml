@@ -17,3 +17,8 @@
     - name: "plugin_seport"
       seport: "{{ seport }}"
       register: r_seport
+
+    - name: "export r_seport"
+      set_stats:
+        data:
+          r_seport: "{{ r_seport }}"

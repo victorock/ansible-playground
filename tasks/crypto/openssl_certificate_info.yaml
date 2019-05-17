@@ -7,3 +7,8 @@
       select_crypto_backend: "{{ openssl_certificate_info_select_crypto_backend | default(omit, True) }}"
       path: "{{ openssl_certificate_info_path | default(omit, True) }}"
       valid_at: "{{ openssl_certificate_info_valid_at | default(omit, True) }}"
+
+- name: "export r_openssl_certificate_info"
+  set_stats:
+    data:
+      r_openssl_certificate_info: "{{ r_openssl_certificate_info }}"

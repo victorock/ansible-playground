@@ -24,3 +24,8 @@
       copy: "{{ unarchive_copy | default(omit, True) }}"
       validate_certs: "{{ unarchive_validate_certs | default(omit, True) }}"
       attributes: "{{ unarchive_attributes | default(omit, True) }}"
+
+- name: "export r_unarchive"
+  set_stats:
+    data:
+      r_unarchive: "{{ r_unarchive }}"

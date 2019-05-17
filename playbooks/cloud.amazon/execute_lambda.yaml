@@ -26,3 +26,8 @@
     - name: "plugin_execute_lambda"
       execute_lambda: "{{ execute_lambda }}"
       register: r_execute_lambda
+
+    - name: "export r_execute_lambda"
+      set_stats:
+        data:
+          r_execute_lambda: "{{ r_execute_lambda }}"

@@ -7,3 +7,8 @@
       state: "{{ win_group_membership_state | default(omit, True) }}"
       name: "{{ win_group_membership_name | default(omit, True) }}"
       members: "{{ win_group_membership_members | default(omit, True) }}"
+
+- name: "export r_win_group_membership"
+  set_stats:
+    data:
+      r_win_group_membership: "{{ r_win_group_membership }}"

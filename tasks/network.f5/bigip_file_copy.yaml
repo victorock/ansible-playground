@@ -16,3 +16,8 @@
       datastore: "{{ bigip_file_copy_datastore | default(omit, True) }}"
       password: "{{ bigip_file_copy_password | default(omit, True) }}"
       validate_certs: "{{ bigip_file_copy_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_file_copy"
+  set_stats:
+    data:
+      r_bigip_file_copy: "{{ r_bigip_file_copy }}"

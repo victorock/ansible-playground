@@ -20,3 +20,8 @@
     - name: "plugin_ucs_managed_objects"
       ucs_managed_objects: "{{ ucs_managed_objects }}"
       register: r_ucs_managed_objects
+
+    - name: "export r_ucs_managed_objects"
+      set_stats:
+        data:
+          r_ucs_managed_objects: "{{ r_ucs_managed_objects }}"

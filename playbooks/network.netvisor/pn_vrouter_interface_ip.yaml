@@ -19,3 +19,8 @@
     - name: "plugin_pn_vrouter_interface_ip"
       pn_vrouter_interface_ip: "{{ pn_vrouter_interface_ip }}"
       register: r_pn_vrouter_interface_ip
+
+    - name: "export r_pn_vrouter_interface_ip"
+      set_stats:
+        data:
+          r_pn_vrouter_interface_ip: "{{ r_pn_vrouter_interface_ip }}"

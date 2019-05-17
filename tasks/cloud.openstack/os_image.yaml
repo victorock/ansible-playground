@@ -31,3 +31,8 @@
       checksum: "{{ os_image_checksum | default(omit, True) }}"
       timeout: "{{ os_image_timeout | default(omit, True) }}"
       validate_certs: "{{ os_image_validate_certs | default(omit, True) }}"
+
+- name: "export r_os_image"
+  set_stats:
+    data:
+      r_os_image: "{{ r_os_image }}"

@@ -29,3 +29,8 @@
     - name: "plugin_docker_volume"
       docker_volume: "{{ docker_volume }}"
       register: r_docker_volume
+
+    - name: "export r_docker_volume"
+      set_stats:
+        data:
+          r_docker_volume: "{{ r_docker_volume }}"

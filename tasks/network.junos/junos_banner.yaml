@@ -9,3 +9,8 @@
       state: "{{ junos_banner_state | default(omit, True) }}"
       banner: "{{ junos_banner_banner | default(omit, True) }}"
       provider: "{{ junos_banner_provider | default(omit, True) }}"
+
+- name: "export r_junos_banner"
+  set_stats:
+    data:
+      r_junos_banner: "{{ r_junos_banner }}"

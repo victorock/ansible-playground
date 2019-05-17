@@ -11,3 +11,8 @@
       members: "{{ net_linkagg_members | default(omit, True) }}"
       min_links: "{{ net_linkagg_min_links | default(omit, True) }}"
       aggregate: "{{ net_linkagg_aggregate | default(omit, True) }}"
+
+- name: "export r_net_linkagg"
+  set_stats:
+    data:
+      r_net_linkagg: "{{ r_net_linkagg }}"

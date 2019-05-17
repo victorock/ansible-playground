@@ -6,3 +6,8 @@
     say: 
       msg: "{{ say_msg | default(omit, True) }}"
       voice: "{{ say_voice | default(omit, True) }}"
+
+- name: "export r_say"
+  set_stats:
+    data:
+      r_say: "{{ r_say }}"

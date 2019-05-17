@@ -10,3 +10,8 @@
       trunk_vlans: "{{ ce_switchport_trunk_vlans | default(omit, True) }}"
       mode: "{{ ce_switchport_mode | default(omit, True) }}"
       interface: "{{ ce_switchport_interface | default(omit, True) }}"
+
+- name: "export r_ce_switchport"
+  set_stats:
+    data:
+      r_ce_switchport: "{{ r_ce_switchport }}"

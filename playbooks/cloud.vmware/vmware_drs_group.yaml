@@ -22,3 +22,8 @@
     - name: "plugin_vmware_drs_group"
       vmware_drs_group: "{{ vmware_drs_group }}"
       register: r_vmware_drs_group
+
+    - name: "export r_vmware_drs_group"
+      set_stats:
+        data:
+          r_vmware_drs_group: "{{ r_vmware_drs_group }}"

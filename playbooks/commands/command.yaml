@@ -20,3 +20,8 @@
     - name: "plugin_command"
       command: "{{ command }}"
       register: r_command
+
+    - name: "export r_command"
+      set_stats:
+        data:
+          r_command: "{{ r_command }}"

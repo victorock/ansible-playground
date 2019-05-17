@@ -19,3 +19,8 @@
       sync_networks: "{{ ovirt_host_network_sync_networks | default(omit, True) }}"
       check: "{{ ovirt_host_network_check | default(omit, True) }}"
       wait: "{{ ovirt_host_network_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_host_network"
+  set_stats:
+    data:
+      r_ovirt_host_network: "{{ r_ovirt_host_network }}"

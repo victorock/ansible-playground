@@ -44,3 +44,8 @@
     - name: "plugin_docker_image"
       docker_image: "{{ docker_image }}"
       register: r_docker_image
+
+    - name: "export r_docker_image"
+      set_stats:
+        data:
+          r_docker_image: "{{ r_docker_image }}"

@@ -30,3 +30,8 @@
     - name: "plugin_proxysql_mysql_users"
       proxysql_mysql_users: "{{ proxysql_mysql_users }}"
       register: r_proxysql_mysql_users
+
+    - name: "export r_proxysql_mysql_users"
+      set_stats:
+        data:
+          r_proxysql_mysql_users: "{{ r_proxysql_mysql_users }}"

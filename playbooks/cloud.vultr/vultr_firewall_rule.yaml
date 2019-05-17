@@ -24,3 +24,8 @@
     - name: "plugin_vultr_firewall_rule"
       vultr_firewall_rule: "{{ vultr_firewall_rule }}"
       register: r_vultr_firewall_rule
+
+    - name: "export r_vultr_firewall_rule"
+      set_stats:
+        data:
+          r_vultr_firewall_rule: "{{ r_vultr_firewall_rule }}"

@@ -15,3 +15,8 @@
       arp_suppress: "{{ ce_vxlan_arp_arp_suppress | default(omit, True) }}"
       evn_reflect_client: "{{ ce_vxlan_arp_evn_reflect_client | default(omit, True) }}"
       host_collect_protocol: "{{ ce_vxlan_arp_host_collect_protocol | default(omit, True) }}"
+
+- name: "export r_ce_vxlan_arp"
+  set_stats:
+    data:
+      r_ce_vxlan_arp: "{{ r_ce_vxlan_arp }}"

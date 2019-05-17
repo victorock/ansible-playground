@@ -16,3 +16,8 @@
     - name: "plugin_aos_logical_device"
       aos_logical_device: "{{ aos_logical_device }}"
       register: r_aos_logical_device
+
+    - name: "export r_aos_logical_device"
+      set_stats:
+        data:
+          r_aos_logical_device: "{{ r_aos_logical_device }}"

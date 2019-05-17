@@ -20,3 +20,8 @@
     - name: "plugin_vmware_vcenter_statistics"
       vmware_vcenter_statistics: "{{ vmware_vcenter_statistics }}"
       register: r_vmware_vcenter_statistics
+
+    - name: "export r_vmware_vcenter_statistics"
+      set_stats:
+        data:
+          r_vmware_vcenter_statistics: "{{ r_vmware_vcenter_statistics }}"

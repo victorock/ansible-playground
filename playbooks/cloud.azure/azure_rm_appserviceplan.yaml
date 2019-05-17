@@ -32,3 +32,8 @@
     - name: "plugin_azure_rm_appserviceplan"
       azure_rm_appserviceplan: "{{ azure_rm_appserviceplan }}"
       register: r_azure_rm_appserviceplan
+
+    - name: "export r_azure_rm_appserviceplan"
+      set_stats:
+        data:
+          r_azure_rm_appserviceplan: "{{ r_azure_rm_appserviceplan }}"

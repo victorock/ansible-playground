@@ -24,3 +24,8 @@
     - name: "plugin_bigip_device_ha_group"
       bigip_device_ha_group: "{{ bigip_device_ha_group }}"
       register: r_bigip_device_ha_group
+
+    - name: "export r_bigip_device_ha_group"
+      set_stats:
+        data:
+          r_bigip_device_ha_group: "{{ r_bigip_device_ha_group }}"

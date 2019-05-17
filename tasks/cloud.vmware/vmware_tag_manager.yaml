@@ -13,3 +13,8 @@
       tag_names: "{{ vmware_tag_manager_tag_names | default(omit, True) }}"
       password: "{{ vmware_tag_manager_password | default(omit, True) }}"
       validate_certs: "{{ vmware_tag_manager_validate_certs | default(omit, True) }}"
+
+- name: "export r_vmware_tag_manager"
+  set_stats:
+    data:
+      r_vmware_tag_manager: "{{ r_vmware_tag_manager }}"

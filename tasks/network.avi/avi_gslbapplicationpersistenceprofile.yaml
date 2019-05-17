@@ -18,3 +18,8 @@
       tenant_uuid: "{{ avi_gslbapplicationpersistenceprofile_tenant_uuid | default(omit, True) }}"
       tenant: "{{ avi_gslbapplicationpersistenceprofile_tenant | default(omit, True) }}"
       name: "{{ avi_gslbapplicationpersistenceprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_gslbapplicationpersistenceprofile"
+  set_stats:
+    data:
+      r_avi_gslbapplicationpersistenceprofile: "{{ r_avi_gslbapplicationpersistenceprofile }}"

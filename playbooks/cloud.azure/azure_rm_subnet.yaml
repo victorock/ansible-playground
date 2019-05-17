@@ -31,3 +31,8 @@
     - name: "plugin_azure_rm_subnet"
       azure_rm_subnet: "{{ azure_rm_subnet }}"
       register: r_azure_rm_subnet
+
+    - name: "export r_azure_rm_subnet"
+      set_stats:
+        data:
+          r_azure_rm_subnet: "{{ r_azure_rm_subnet }}"

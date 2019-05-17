@@ -12,3 +12,8 @@
       state: "{{ ce_vxlan_tunnel_state | default(omit, True) }}"
       nve_name: "{{ ce_vxlan_tunnel_nve_name | default(omit, True) }}"
       protocol_type: "{{ ce_vxlan_tunnel_protocol_type | default(omit, True) }}"
+
+- name: "export r_ce_vxlan_tunnel"
+  set_stats:
+    data:
+      r_ce_vxlan_tunnel: "{{ r_ce_vxlan_tunnel }}"

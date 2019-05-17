@@ -30,3 +30,8 @@
     - name: "plugin_na_elementsw_network_interfaces"
       na_elementsw_network_interfaces: "{{ na_elementsw_network_interfaces }}"
       register: r_na_elementsw_network_interfaces
+
+    - name: "export r_na_elementsw_network_interfaces"
+      set_stats:
+        data:
+          r_na_elementsw_network_interfaces: "{{ r_na_elementsw_network_interfaces }}"

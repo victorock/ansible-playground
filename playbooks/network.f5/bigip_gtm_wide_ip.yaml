@@ -26,3 +26,8 @@
     - name: "plugin_bigip_gtm_wide_ip"
       bigip_gtm_wide_ip: "{{ bigip_gtm_wide_ip }}"
       register: r_bigip_gtm_wide_ip
+
+    - name: "export r_bigip_gtm_wide_ip"
+      set_stats:
+        data:
+          r_bigip_gtm_wide_ip: "{{ r_bigip_gtm_wide_ip }}"

@@ -10,3 +10,8 @@
       firewall_central_snat_map: "{{ fortios_firewall_central_snat_map_firewall_central_snat_map | default(omit, True) }}"
       password: "{{ fortios_firewall_central_snat_map_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_central_snat_map_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_central_snat_map"
+  set_stats:
+    data:
+      r_fortios_firewall_central_snat_map: "{{ r_fortios_firewall_central_snat_map }}"

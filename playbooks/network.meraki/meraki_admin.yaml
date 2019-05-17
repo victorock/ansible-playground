@@ -26,3 +26,8 @@
     - name: "plugin_meraki_admin"
       meraki_admin: "{{ meraki_admin }}"
       register: r_meraki_admin
+
+    - name: "export r_meraki_admin"
+      set_stats:
+        data:
+          r_meraki_admin: "{{ r_meraki_admin }}"

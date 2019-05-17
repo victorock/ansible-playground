@@ -17,3 +17,8 @@
     - name: "plugin_fortios_extender_controller_extender"
       fortios_extender_controller_extender: "{{ fortios_extender_controller_extender }}"
       register: r_fortios_extender_controller_extender
+
+    - name: "export r_fortios_extender_controller_extender"
+      set_stats:
+        data:
+          r_fortios_extender_controller_extender: "{{ r_fortios_extender_controller_extender }}"

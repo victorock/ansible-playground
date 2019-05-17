@@ -25,3 +25,8 @@
     - name: "plugin_ios_static_route"
       ios_static_route: "{{ ios_static_route }}"
       register: r_ios_static_route
+
+    - name: "export r_ios_static_route"
+      set_stats:
+        data:
+          r_ios_static_route: "{{ r_ios_static_route }}"

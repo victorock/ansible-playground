@@ -20,3 +20,8 @@
       client_cert: "{{ os_server_group_client_cert | default(omit, True) }}"
       cloud: "{{ os_server_group_cloud | default(omit, True) }}"
       wait: "{{ os_server_group_wait | default(omit, True) }}"
+
+- name: "export r_os_server_group"
+  set_stats:
+    data:
+      r_os_server_group: "{{ r_os_server_group }}"

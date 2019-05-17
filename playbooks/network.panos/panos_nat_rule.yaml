@@ -36,3 +36,8 @@
     - name: "plugin_panos_nat_rule"
       panos_nat_rule: "{{ panos_nat_rule }}"
       register: r_panos_nat_rule
+
+    - name: "export r_panos_nat_rule"
+      set_stats:
+        data:
+          r_panos_nat_rule: "{{ r_panos_nat_rule }}"

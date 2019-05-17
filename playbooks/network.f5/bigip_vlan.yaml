@@ -35,3 +35,8 @@
     - name: "plugin_bigip_vlan"
       bigip_vlan: "{{ bigip_vlan }}"
       register: r_bigip_vlan
+
+    - name: "export r_bigip_vlan"
+      set_stats:
+        data:
+          r_bigip_vlan: "{{ r_bigip_vlan }}"

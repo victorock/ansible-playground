@@ -20,3 +20,8 @@
     - name: "plugin_nxos_user"
       nxos_user: "{{ nxos_user }}"
       register: r_nxos_user
+
+    - name: "export r_nxos_user"
+      set_stats:
+        data:
+          r_nxos_user: "{{ r_nxos_user }}"

@@ -24,3 +24,8 @@
       name: "{{ rabbitmq_queue_name | default(omit, True) }}"
       auto_delete: "{{ rabbitmq_queue_auto_delete | default(omit, True) }}"
       client_key: "{{ rabbitmq_queue_client_key | default(omit, True) }}"
+
+- name: "export r_rabbitmq_queue"
+  set_stats:
+    data:
+      r_rabbitmq_queue: "{{ r_rabbitmq_queue }}"

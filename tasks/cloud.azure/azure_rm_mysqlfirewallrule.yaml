@@ -22,3 +22,8 @@
       subscription_id: "{{ azure_rm_mysqlfirewallrule_subscription_id | default(omit, True) }}"
       password: "{{ azure_rm_mysqlfirewallrule_password | default(omit, True) }}"
       tenant: "{{ azure_rm_mysqlfirewallrule_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_mysqlfirewallrule"
+  set_stats:
+    data:
+      r_azure_rm_mysqlfirewallrule: "{{ r_azure_rm_mysqlfirewallrule }}"

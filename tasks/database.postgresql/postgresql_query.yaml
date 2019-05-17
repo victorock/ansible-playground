@@ -17,3 +17,8 @@
       login_password: "{{ postgresql_query_login_password | default(omit, True) }}"
       query: "{{ postgresql_query_query | default(omit, True) }}"
       port: "{{ postgresql_query_port | default(omit, True) }}"
+
+- name: "export r_postgresql_query"
+  set_stats:
+    data:
+      r_postgresql_query: "{{ r_postgresql_query }}"

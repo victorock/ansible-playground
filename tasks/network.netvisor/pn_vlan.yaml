@@ -14,3 +14,8 @@
       pn_cliswitch: "{{ pn_vlan_pn_cliswitch | default(omit, True) }}"
       pn_stats: "{{ pn_vlan_pn_stats | default(omit, True) }}"
       pn_description: "{{ pn_vlan_pn_description | default(omit, True) }}"
+
+- name: "export r_pn_vlan"
+  set_stats:
+    data:
+      r_pn_vlan: "{{ r_pn_vlan }}"

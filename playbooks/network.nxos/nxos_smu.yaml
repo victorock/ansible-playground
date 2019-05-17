@@ -14,3 +14,8 @@
     - name: "plugin_nxos_smu"
       nxos_smu: "{{ nxos_smu }}"
       register: r_nxos_smu
+
+    - name: "export r_nxos_smu"
+      set_stats:
+        data:
+          r_nxos_smu: "{{ r_nxos_smu }}"

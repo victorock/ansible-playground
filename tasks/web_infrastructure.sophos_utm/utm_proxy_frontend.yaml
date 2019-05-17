@@ -31,3 +31,8 @@
       exceptions: "{{ utm_proxy_frontend_exceptions | default(omit, True) }}"
       validate_certs: "{{ utm_proxy_frontend_validate_certs | default(omit, True) }}"
       utm_port: "{{ utm_proxy_frontend_utm_port | default(omit, True) }}"
+
+- name: "export r_utm_proxy_frontend"
+  set_stats:
+    data:
+      r_utm_proxy_frontend: "{{ r_utm_proxy_frontend }}"

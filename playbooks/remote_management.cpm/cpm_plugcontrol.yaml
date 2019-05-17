@@ -20,3 +20,8 @@
     - name: "plugin_cpm_plugcontrol"
       cpm_plugcontrol: "{{ cpm_plugcontrol }}"
       register: r_cpm_plugcontrol
+
+    - name: "export r_cpm_plugcontrol"
+      set_stats:
+        data:
+          r_cpm_plugcontrol: "{{ r_cpm_plugcontrol }}"

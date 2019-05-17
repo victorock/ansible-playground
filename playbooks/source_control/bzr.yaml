@@ -16,3 +16,8 @@
     - name: "plugin_bzr"
       bzr: "{{ bzr }}"
       register: r_bzr
+
+    - name: "export r_bzr"
+      set_stats:
+        data:
+          r_bzr: "{{ r_bzr }}"

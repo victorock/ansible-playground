@@ -15,3 +15,8 @@
     - name: "plugin_wait_for_connection"
       wait_for_connection: "{{ wait_for_connection }}"
       register: r_wait_for_connection
+
+    - name: "export r_wait_for_connection"
+      set_stats:
+        data:
+          r_wait_for_connection: "{{ r_wait_for_connection }}"

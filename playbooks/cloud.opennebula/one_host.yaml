@@ -24,3 +24,8 @@
     - name: "plugin_one_host"
       one_host: "{{ one_host }}"
       register: r_one_host
+
+    - name: "export r_one_host"
+      set_stats:
+        data:
+          r_one_host: "{{ r_one_host }}"

@@ -16,3 +16,8 @@
     - name: "plugin_pn_vrouter_ospf6"
       pn_vrouter_ospf6: "{{ pn_vrouter_ospf6 }}"
       register: r_pn_vrouter_ospf6
+
+    - name: "export r_pn_vrouter_ospf6"
+      set_stats:
+        data:
+          r_pn_vrouter_ospf6: "{{ r_pn_vrouter_ospf6 }}"

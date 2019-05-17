@@ -10,3 +10,8 @@
       firewall_ip_translation: "{{ fortios_firewall_ip_translation_firewall_ip_translation | default(omit, True) }}"
       password: "{{ fortios_firewall_ip_translation_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_ip_translation_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_ip_translation"
+  set_stats:
+    data:
+      r_fortios_firewall_ip_translation: "{{ r_fortios_firewall_ip_translation }}"

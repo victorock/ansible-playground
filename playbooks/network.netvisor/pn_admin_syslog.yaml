@@ -19,3 +19,8 @@
     - name: "plugin_pn_admin_syslog"
       pn_admin_syslog: "{{ pn_admin_syslog }}"
       register: r_pn_admin_syslog
+
+    - name: "export r_pn_admin_syslog"
+      set_stats:
+        data:
+          r_pn_admin_syslog: "{{ r_pn_admin_syslog }}"

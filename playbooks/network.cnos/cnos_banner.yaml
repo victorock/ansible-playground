@@ -15,3 +15,8 @@
     - name: "plugin_cnos_banner"
       cnos_banner: "{{ cnos_banner }}"
       register: r_cnos_banner
+
+    - name: "export r_cnos_banner"
+      set_stats:
+        data:
+          r_cnos_banner: "{{ r_cnos_banner }}"

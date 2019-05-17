@@ -32,3 +32,8 @@
     - name: "plugin_efs"
       efs: "{{ efs }}"
       register: r_efs
+
+    - name: "export r_efs"
+      set_stats:
+        data:
+          r_efs: "{{ r_efs }}"

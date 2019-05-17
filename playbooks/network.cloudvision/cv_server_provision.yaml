@@ -23,3 +23,8 @@
     - name: "plugin_cv_server_provision"
       cv_server_provision: "{{ cv_server_provision }}"
       register: r_cv_server_provision
+
+    - name: "export r_cv_server_provision"
+      set_stats:
+        data:
+          r_cv_server_provision: "{{ r_cv_server_provision }}"

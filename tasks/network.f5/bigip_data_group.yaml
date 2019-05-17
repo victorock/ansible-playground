@@ -21,3 +21,8 @@
       password: "{{ bigip_data_group_password | default(omit, True) }}"
       validate_certs: "{{ bigip_data_group_validate_certs | default(omit, True) }}"
       name: "{{ bigip_data_group_name | default(omit, True) }}"
+
+- name: "export r_bigip_data_group"
+  set_stats:
+    data:
+      r_bigip_data_group: "{{ r_bigip_data_group }}"

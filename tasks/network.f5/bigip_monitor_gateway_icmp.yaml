@@ -28,3 +28,8 @@
       manual_resume: "{{ bigip_monitor_gateway_icmp_manual_resume | default(omit, True) }}"
       timeout: "{{ bigip_monitor_gateway_icmp_timeout | default(omit, True) }}"
       validate_certs: "{{ bigip_monitor_gateway_icmp_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_gateway_icmp"
+  set_stats:
+    data:
+      r_bigip_monitor_gateway_icmp: "{{ r_bigip_monitor_gateway_icmp }}"

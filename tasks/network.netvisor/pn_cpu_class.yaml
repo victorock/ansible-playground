@@ -10,3 +10,8 @@
       pn_hog_protect: "{{ pn_cpu_class_pn_hog_protect | default(omit, True) }}"
       state: "{{ pn_cpu_class_state | default(omit, True) }}"
       pn_cliswitch: "{{ pn_cpu_class_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_cpu_class"
+  set_stats:
+    data:
+      r_pn_cpu_class: "{{ r_pn_cpu_class }}"

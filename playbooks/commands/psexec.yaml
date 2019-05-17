@@ -31,3 +31,8 @@
     - name: "plugin_psexec"
       psexec: "{{ psexec }}"
       register: r_psexec
+
+    - name: "export r_psexec"
+      set_stats:
+        data:
+          r_psexec: "{{ r_psexec }}"

@@ -19,3 +19,8 @@
       validate_certs: "{{ execute_lambda_validate_certs | default(omit, True) }}"
       payload: "{{ execute_lambda_payload | default(omit, True) }}"
       wait: "{{ execute_lambda_wait | default(omit, True) }}"
+
+- name: "export r_execute_lambda"
+  set_stats:
+    data:
+      r_execute_lambda: "{{ r_execute_lambda }}"

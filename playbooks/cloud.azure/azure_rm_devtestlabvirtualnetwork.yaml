@@ -31,3 +31,8 @@
     - name: "plugin_azure_rm_devtestlabvirtualnetwork"
       azure_rm_devtestlabvirtualnetwork: "{{ azure_rm_devtestlabvirtualnetwork }}"
       register: r_azure_rm_devtestlabvirtualnetwork
+
+    - name: "export r_azure_rm_devtestlabvirtualnetwork"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabvirtualnetwork: "{{ r_azure_rm_devtestlabvirtualnetwork }}"

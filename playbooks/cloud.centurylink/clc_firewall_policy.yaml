@@ -21,3 +21,8 @@
     - name: "plugin_clc_firewall_policy"
       clc_firewall_policy: "{{ clc_firewall_policy }}"
       register: r_clc_firewall_policy
+
+    - name: "export r_clc_firewall_policy"
+      set_stats:
+        data:
+          r_clc_firewall_policy: "{{ r_clc_firewall_policy }}"

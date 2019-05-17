@@ -10,3 +10,8 @@
       switch_controller_lldp_profile: "{{ fortios_switch_controller_lldp_profile_switch_controller_lldp_profile | default(omit, True) }}"
       password: "{{ fortios_switch_controller_lldp_profile_password | default(omit, True) }}"
       vdom: "{{ fortios_switch_controller_lldp_profile_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_switch_controller_lldp_profile"
+  set_stats:
+    data:
+      r_fortios_switch_controller_lldp_profile: "{{ r_fortios_switch_controller_lldp_profile }}"

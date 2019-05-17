@@ -94,3 +94,8 @@
       reassign_bad_macs: "{{ ovirt_vm_reassign_bad_macs | default(omit, True) }}"
       smartcard_enabled: "{{ ovirt_vm_smartcard_enabled | default(omit, True) }}"
       allow_partial_import: "{{ ovirt_vm_allow_partial_import | default(omit, True) }}"
+
+- name: "export r_ovirt_vm"
+  set_stats:
+    data:
+      r_ovirt_vm: "{{ r_ovirt_vm }}"

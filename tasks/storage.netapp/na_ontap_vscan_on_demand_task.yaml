@@ -27,3 +27,8 @@
       paths_to_exclude: "{{ na_ontap_vscan_on_demand_task_paths_to_exclude | default(omit, True) }}"
       task_name: "{{ na_ontap_vscan_on_demand_task_task_name | default(omit, True) }}"
       validate_certs: "{{ na_ontap_vscan_on_demand_task_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_vscan_on_demand_task"
+  set_stats:
+    data:
+      r_na_ontap_vscan_on_demand_task: "{{ r_na_ontap_vscan_on_demand_task }}"

@@ -14,3 +14,8 @@
     - name: "plugin_selinux"
       selinux: "{{ selinux }}"
       register: r_selinux
+
+    - name: "export r_selinux"
+      set_stats:
+        data:
+          r_selinux: "{{ r_selinux }}"

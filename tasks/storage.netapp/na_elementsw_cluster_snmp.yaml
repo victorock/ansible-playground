@@ -11,3 +11,8 @@
       state: "{{ na_elementsw_cluster_snmp_state | default(omit, True) }}"
       password: "{{ na_elementsw_cluster_snmp_password | default(omit, True) }}"
       networks: "{{ na_elementsw_cluster_snmp_networks | default(omit, True) }}"
+
+- name: "export r_na_elementsw_cluster_snmp"
+  set_stats:
+    data:
+      r_na_elementsw_cluster_snmp: "{{ r_na_elementsw_cluster_snmp }}"

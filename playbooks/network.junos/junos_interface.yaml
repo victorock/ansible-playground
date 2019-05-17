@@ -25,3 +25,8 @@
     - name: "plugin_junos_interface"
       junos_interface: "{{ junos_interface }}"
       register: r_junos_interface
+
+    - name: "export r_junos_interface"
+      set_stats:
+        data:
+          r_junos_interface: "{{ r_junos_interface }}"

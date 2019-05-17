@@ -17,3 +17,8 @@
     - name: "plugin_fortios_antivirus_quarantine"
       fortios_antivirus_quarantine: "{{ fortios_antivirus_quarantine }}"
       register: r_fortios_antivirus_quarantine
+
+    - name: "export r_fortios_antivirus_quarantine"
+      set_stats:
+        data:
+          r_fortios_antivirus_quarantine: "{{ r_fortios_antivirus_quarantine }}"

@@ -18,3 +18,8 @@
     - name: "plugin_vmware_vm_vss_dvs_migrate"
       vmware_vm_vss_dvs_migrate: "{{ vmware_vm_vss_dvs_migrate }}"
       register: r_vmware_vm_vss_dvs_migrate
+
+    - name: "export r_vmware_vm_vss_dvs_migrate"
+      set_stats:
+        data:
+          r_vmware_vm_vss_dvs_migrate: "{{ r_vmware_vm_vss_dvs_migrate }}"

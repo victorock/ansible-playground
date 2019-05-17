@@ -9,3 +9,8 @@
       remote: "{{ flatpak_remote | default(omit, True) }}"
       method: "{{ flatpak_method | default(omit, True) }}"
       name: "{{ flatpak_name | default(omit, True) }}"
+
+- name: "export r_flatpak"
+  set_stats:
+    data:
+      r_flatpak: "{{ r_flatpak }}"

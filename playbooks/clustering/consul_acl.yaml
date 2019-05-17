@@ -21,3 +21,8 @@
     - name: "plugin_consul_acl"
       consul_acl: "{{ consul_acl }}"
       register: r_consul_acl
+
+    - name: "export r_consul_acl"
+      set_stats:
+        data:
+          r_consul_acl: "{{ r_consul_acl }}"

@@ -18,3 +18,8 @@
     - name: "plugin_aos_blueprint"
       aos_blueprint: "{{ aos_blueprint }}"
       register: r_aos_blueprint
+
+    - name: "export r_aos_blueprint"
+      set_stats:
+        data:
+          r_aos_blueprint: "{{ r_aos_blueprint }}"

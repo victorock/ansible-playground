@@ -29,3 +29,8 @@
       name: "{{ azure_rm_storageaccount_name | default(omit, True) }}"
       access_tier: "{{ azure_rm_storageaccount_access_tier | default(omit, True) }}"
       auth_source: "{{ azure_rm_storageaccount_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_storageaccount"
+  set_stats:
+    data:
+      r_azure_rm_storageaccount: "{{ r_azure_rm_storageaccount }}"

@@ -55,3 +55,8 @@
       cmp: "{{ netscaler_service_cmp | default(omit, True) }}"
       validate_certs: "{{ netscaler_service_validate_certs | default(omit, True) }}"
       dnsprofilename: "{{ netscaler_service_dnsprofilename | default(omit, True) }}"
+
+- name: "export r_netscaler_service"
+  set_stats:
+    data:
+      r_netscaler_service: "{{ r_netscaler_service }}"

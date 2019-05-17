@@ -33,3 +33,8 @@
       distribution: "{{ linode_distribution | default(omit, True) }}"
       alert_bwquota_threshold: "{{ linode_alert_bwquota_threshold | default(omit, True) }}"
       alert_bwout_threshold: "{{ linode_alert_bwout_threshold | default(omit, True) }}"
+
+- name: "export r_linode"
+  set_stats:
+    data:
+      r_linode: "{{ r_linode }}"

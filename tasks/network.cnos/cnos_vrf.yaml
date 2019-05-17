@@ -12,3 +12,8 @@
       state: "{{ cnos_vrf_state | default(omit, True) }}"
       delay: "{{ cnos_vrf_delay | default(omit, True) }}"
       associated_interfaces: "{{ cnos_vrf_associated_interfaces | default(omit, True) }}"
+
+- name: "export r_cnos_vrf"
+  set_stats:
+    data:
+      r_cnos_vrf: "{{ r_cnos_vrf }}"

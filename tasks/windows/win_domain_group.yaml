@@ -18,3 +18,8 @@
       scope: "{{ win_domain_group_scope | default(omit, True) }}"
       attributes: "{{ win_domain_group_attributes | default(omit, True) }}"
       name: "{{ win_domain_group_name | default(omit, True) }}"
+
+- name: "export r_win_domain_group"
+  set_stats:
+    data:
+      r_win_domain_group: "{{ r_win_domain_group }}"

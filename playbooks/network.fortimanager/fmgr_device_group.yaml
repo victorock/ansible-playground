@@ -17,3 +17,8 @@
     - name: "plugin_fmgr_device_group"
       fmgr_device_group: "{{ fmgr_device_group }}"
       register: r_fmgr_device_group
+
+    - name: "export r_fmgr_device_group"
+      set_stats:
+        data:
+          r_fmgr_device_group: "{{ r_fmgr_device_group }}"

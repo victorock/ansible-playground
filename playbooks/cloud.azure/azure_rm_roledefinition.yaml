@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_roledefinition"
       azure_rm_roledefinition: "{{ azure_rm_roledefinition }}"
       register: r_azure_rm_roledefinition
+
+    - name: "export r_azure_rm_roledefinition"
+      set_stats:
+        data:
+          r_azure_rm_roledefinition: "{{ r_azure_rm_roledefinition }}"

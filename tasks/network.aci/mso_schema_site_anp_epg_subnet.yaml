@@ -24,3 +24,8 @@
       validate_certs: "{{ mso_schema_site_anp_epg_subnet_validate_certs | default(omit, True) }}"
       scope: "{{ mso_schema_site_anp_epg_subnet_scope | default(omit, True) }}"
       use_proxy: "{{ mso_schema_site_anp_epg_subnet_use_proxy | default(omit, True) }}"
+
+- name: "export r_mso_schema_site_anp_epg_subnet"
+  set_stats:
+    data:
+      r_mso_schema_site_anp_epg_subnet: "{{ r_mso_schema_site_anp_epg_subnet }}"

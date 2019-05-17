@@ -32,3 +32,8 @@
     - name: "plugin_na_ontap_interface"
       na_ontap_interface: "{{ na_ontap_interface }}"
       register: r_na_ontap_interface
+
+    - name: "export r_na_ontap_interface"
+      set_stats:
+        data:
+          r_na_ontap_interface: "{{ r_na_ontap_interface }}"

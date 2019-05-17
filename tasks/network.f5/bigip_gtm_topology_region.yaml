@@ -14,3 +14,8 @@
       provider: "{{ bigip_gtm_topology_region_provider | default(omit, True) }}"
       password: "{{ bigip_gtm_topology_region_password | default(omit, True) }}"
       validate_certs: "{{ bigip_gtm_topology_region_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_topology_region"
+  set_stats:
+    data:
+      r_bigip_gtm_topology_region: "{{ r_bigip_gtm_topology_region }}"

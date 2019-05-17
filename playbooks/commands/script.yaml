@@ -17,3 +17,8 @@
     - name: "plugin_script"
       script: "{{ script }}"
       register: r_script
+
+    - name: "export r_script"
+      set_stats:
+        data:
+          r_script: "{{ r_script }}"

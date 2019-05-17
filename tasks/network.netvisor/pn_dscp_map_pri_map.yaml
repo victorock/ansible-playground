@@ -9,3 +9,8 @@
       pn_name: "{{ pn_dscp_map_pri_map_pn_name | default(omit, True) }}"
       state: "{{ pn_dscp_map_pri_map_state | default(omit, True) }}"
       pn_cliswitch: "{{ pn_dscp_map_pri_map_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_dscp_map_pri_map"
+  set_stats:
+    data:
+      r_pn_dscp_map_pri_map: "{{ r_pn_dscp_map_pri_map }}"

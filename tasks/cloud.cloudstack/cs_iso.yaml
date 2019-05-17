@@ -29,3 +29,8 @@
       project: "{{ cs_iso_project | default(omit, True) }}"
       url: "{{ cs_iso_url | default(omit, True) }}"
       os_type: "{{ cs_iso_os_type | default(omit, True) }}"
+
+- name: "export r_cs_iso"
+  set_stats:
+    data:
+      r_cs_iso: "{{ r_cs_iso }}"

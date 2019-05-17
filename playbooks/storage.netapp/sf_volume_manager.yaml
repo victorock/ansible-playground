@@ -24,3 +24,8 @@
     - name: "plugin_sf_volume_manager"
       sf_volume_manager: "{{ sf_volume_manager }}"
       register: r_sf_volume_manager
+
+    - name: "export r_sf_volume_manager"
+      set_stats:
+        data:
+          r_sf_volume_manager: "{{ r_sf_volume_manager }}"

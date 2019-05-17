@@ -21,3 +21,8 @@
     - name: "plugin_intersight_rest_api"
       intersight_rest_api: "{{ intersight_rest_api }}"
       register: r_intersight_rest_api
+
+    - name: "export r_intersight_rest_api"
+      set_stats:
+        data:
+          r_intersight_rest_api: "{{ r_intersight_rest_api }}"

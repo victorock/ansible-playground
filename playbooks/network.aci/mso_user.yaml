@@ -30,3 +30,8 @@
     - name: "plugin_mso_user"
       mso_user: "{{ mso_user }}"
       register: r_mso_user
+
+    - name: "export r_mso_user"
+      set_stats:
+        data:
+          r_mso_user: "{{ r_mso_user }}"

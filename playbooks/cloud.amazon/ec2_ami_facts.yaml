@@ -24,3 +24,8 @@
     - name: "plugin_ec2_ami_facts"
       ec2_ami_facts: "{{ ec2_ami_facts }}"
       register: r_ec2_ami_facts
+
+    - name: "export r_ec2_ami_facts"
+      set_stats:
+        data:
+          r_ec2_ami_facts: "{{ r_ec2_ami_facts }}"

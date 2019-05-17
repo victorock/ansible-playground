@@ -23,3 +23,8 @@
     - name: "plugin_cs_image_store"
       cs_image_store: "{{ cs_image_store }}"
       register: r_cs_image_store
+
+    - name: "export r_cs_image_store"
+      set_stats:
+        data:
+          r_cs_image_store: "{{ r_cs_image_store }}"

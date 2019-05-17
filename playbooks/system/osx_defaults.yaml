@@ -19,3 +19,8 @@
     - name: "plugin_osx_defaults"
       osx_defaults: "{{ osx_defaults }}"
       register: r_osx_defaults
+
+    - name: "export r_osx_defaults"
+      set_stats:
+        data:
+          r_osx_defaults: "{{ r_osx_defaults }}"

@@ -19,3 +19,8 @@
     - name: "plugin_bigip_lx_package"
       bigip_lx_package: "{{ bigip_lx_package }}"
       register: r_bigip_lx_package
+
+    - name: "export r_bigip_lx_package"
+      set_stats:
+        data:
+          r_bigip_lx_package: "{{ r_bigip_lx_package }}"

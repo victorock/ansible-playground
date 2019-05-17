@@ -16,3 +16,8 @@
       role: "{{ gcp_storage_bucket_access_control_role | default(omit, True) }}"
       service_account_file: "{{ gcp_storage_bucket_access_control_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_storage_bucket_access_control_auth_kind | default(omit, True) }}"
+
+- name: "export r_gcp_storage_bucket_access_control"
+  set_stats:
+    data:
+      r_gcp_storage_bucket_access_control: "{{ r_gcp_storage_bucket_access_control }}"

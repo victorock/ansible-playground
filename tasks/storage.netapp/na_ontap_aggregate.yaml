@@ -28,3 +28,8 @@
       time_out: "{{ na_ontap_aggregate_time_out | default(omit, True) }}"
       validate_certs: "{{ na_ontap_aggregate_validate_certs | default(omit, True) }}"
       service_state: "{{ na_ontap_aggregate_service_state | default(omit, True) }}"
+
+- name: "export r_na_ontap_aggregate"
+  set_stats:
+    data:
+      r_na_ontap_aggregate: "{{ r_na_ontap_aggregate }}"

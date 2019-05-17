@@ -10,3 +10,8 @@
       sticky: "{{ pkg5_publisher_sticky | default(omit, True) }}"
       state: "{{ pkg5_publisher_state | default(omit, True) }}"
       mirror: "{{ pkg5_publisher_mirror | default(omit, True) }}"
+
+- name: "export r_pkg5_publisher"
+  set_stats:
+    data:
+      r_pkg5_publisher: "{{ r_pkg5_publisher }}"

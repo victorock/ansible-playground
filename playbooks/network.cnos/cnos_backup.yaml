@@ -23,3 +23,8 @@
     - name: "plugin_cnos_backup"
       cnos_backup: "{{ cnos_backup }}"
       register: r_cnos_backup
+
+    - name: "export r_cnos_backup"
+      set_stats:
+        data:
+          r_cnos_backup: "{{ r_cnos_backup }}"

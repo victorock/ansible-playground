@@ -12,3 +12,8 @@
     - name: "plugin_rhsm_release"
       rhsm_release: "{{ rhsm_release }}"
       register: r_rhsm_release
+
+    - name: "export r_rhsm_release"
+      set_stats:
+        data:
+          r_rhsm_release: "{{ r_rhsm_release }}"

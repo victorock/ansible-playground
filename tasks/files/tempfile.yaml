@@ -8,3 +8,8 @@
       state: "{{ tempfile_state | default(omit, True) }}"
       prefix: "{{ tempfile_prefix | default(omit, True) }}"
       suffix: "{{ tempfile_suffix | default(omit, True) }}"
+
+- name: "export r_tempfile"
+  set_stats:
+    data:
+      r_tempfile: "{{ r_tempfile }}"

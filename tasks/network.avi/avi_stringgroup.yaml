@@ -22,3 +22,8 @@
       tenant_uuid: "{{ avi_stringgroup_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_stringgroup_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_stringgroup_name | default(omit, True) }}"
+
+- name: "export r_avi_stringgroup"
+  set_stats:
+    data:
+      r_avi_stringgroup: "{{ r_avi_stringgroup }}"

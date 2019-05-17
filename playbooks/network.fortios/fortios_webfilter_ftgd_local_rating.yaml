@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_ftgd_local_rating"
       fortios_webfilter_ftgd_local_rating: "{{ fortios_webfilter_ftgd_local_rating }}"
       register: r_fortios_webfilter_ftgd_local_rating
+
+    - name: "export r_fortios_webfilter_ftgd_local_rating"
+      set_stats:
+        data:
+          r_fortios_webfilter_ftgd_local_rating: "{{ r_fortios_webfilter_ftgd_local_rating }}"

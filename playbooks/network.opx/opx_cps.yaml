@@ -18,3 +18,8 @@
     - name: "plugin_opx_cps"
       opx_cps: "{{ opx_cps }}"
       register: r_opx_cps
+
+    - name: "export r_opx_cps"
+      set_stats:
+        data:
+          r_opx_cps: "{{ r_opx_cps }}"

@@ -19,3 +19,8 @@
     - name: "plugin_tower_label"
       tower_label: "{{ tower_label }}"
       register: r_tower_label
+
+    - name: "export r_tower_label"
+      set_stats:
+        data:
+          r_tower_label: "{{ r_tower_label }}"

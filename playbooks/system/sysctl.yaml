@@ -18,3 +18,8 @@
     - name: "plugin_sysctl"
       sysctl: "{{ sysctl }}"
       register: r_sysctl
+
+    - name: "export r_sysctl"
+      set_stats:
+        data:
+          r_sysctl: "{{ r_sysctl }}"

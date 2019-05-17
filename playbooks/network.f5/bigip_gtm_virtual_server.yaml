@@ -30,3 +30,8 @@
     - name: "plugin_bigip_gtm_virtual_server"
       bigip_gtm_virtual_server: "{{ bigip_gtm_virtual_server }}"
       register: r_bigip_gtm_virtual_server
+
+    - name: "export r_bigip_gtm_virtual_server"
+      set_stats:
+        data:
+          r_bigip_gtm_virtual_server: "{{ r_bigip_gtm_virtual_server }}"

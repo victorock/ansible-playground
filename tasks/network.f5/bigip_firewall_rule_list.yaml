@@ -15,3 +15,8 @@
       password: "{{ bigip_firewall_rule_list_password | default(omit, True) }}"
       validate_certs: "{{ bigip_firewall_rule_list_validate_certs | default(omit, True) }}"
       name: "{{ bigip_firewall_rule_list_name | default(omit, True) }}"
+
+- name: "export r_bigip_firewall_rule_list"
+  set_stats:
+    data:
+      r_bigip_firewall_rule_list: "{{ r_bigip_firewall_rule_list }}"

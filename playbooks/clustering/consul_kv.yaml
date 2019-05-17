@@ -23,3 +23,8 @@
     - name: "plugin_consul_kv"
       consul_kv: "{{ consul_kv }}"
       register: r_consul_kv
+
+    - name: "export r_consul_kv"
+      set_stats:
+        data:
+          r_consul_kv: "{{ r_consul_kv }}"

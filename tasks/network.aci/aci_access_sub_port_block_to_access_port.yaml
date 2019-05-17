@@ -26,3 +26,8 @@
       output_level: "{{ aci_access_sub_port_block_to_access_port_output_level | default(omit, True) }}"
       timeout: "{{ aci_access_sub_port_block_to_access_port_timeout | default(omit, True) }}"
       leaf_interface_profile: "{{ aci_access_sub_port_block_to_access_port_leaf_interface_profile | default(omit, True) }}"
+
+- name: "export r_aci_access_sub_port_block_to_access_port"
+  set_stats:
+    data:
+      r_aci_access_sub_port_block_to_access_port: "{{ r_aci_access_sub_port_block_to_access_port }}"

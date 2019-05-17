@@ -26,3 +26,8 @@
       attributes: "{{ postgresql_pg_hba_attributes | default(omit, True) }}"
       backup: "{{ postgresql_pg_hba_backup | default(omit, True) }}"
       options: "{{ postgresql_pg_hba_options | default(omit, True) }}"
+
+- name: "export r_postgresql_pg_hba"
+  set_stats:
+    data:
+      r_postgresql_pg_hba: "{{ r_postgresql_pg_hba }}"

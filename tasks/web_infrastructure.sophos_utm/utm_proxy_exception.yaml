@@ -26,3 +26,8 @@
       validate_certs: "{{ utm_proxy_exception_validate_certs | default(omit, True) }}"
       utm_port: "{{ utm_proxy_exception_utm_port | default(omit, True) }}"
       op: "{{ utm_proxy_exception_op | default(omit, True) }}"
+
+- name: "export r_utm_proxy_exception"
+  set_stats:
+    data:
+      r_utm_proxy_exception: "{{ r_utm_proxy_exception }}"

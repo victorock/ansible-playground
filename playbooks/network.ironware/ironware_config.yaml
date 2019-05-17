@@ -26,3 +26,8 @@
     - name: "plugin_ironware_config"
       ironware_config: "{{ ironware_config }}"
       register: r_ironware_config
+
+    - name: "export r_ironware_config"
+      set_stats:
+        data:
+          r_ironware_config: "{{ r_ironware_config }}"

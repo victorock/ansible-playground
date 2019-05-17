@@ -52,3 +52,8 @@
     - name: "plugin_nxos_bgp"
       nxos_bgp: "{{ nxos_bgp }}"
       register: r_nxos_bgp
+
+    - name: "export r_nxos_bgp"
+      set_stats:
+        data:
+          r_nxos_bgp: "{{ r_nxos_bgp }}"

@@ -28,3 +28,8 @@
       partition: "{{ bigip_profile_analytics_partition | default(omit, True) }}"
       server: "{{ bigip_profile_analytics_server | default(omit, True) }}"
       validate_certs: "{{ bigip_profile_analytics_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_profile_analytics"
+  set_stats:
+    data:
+      r_bigip_profile_analytics: "{{ r_bigip_profile_analytics }}"

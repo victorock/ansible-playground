@@ -22,3 +22,8 @@
       tenant_uuid: "{{ avi_wafprofile_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_wafprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_wafprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_wafprofile"
+  set_stats:
+    data:
+      r_avi_wafprofile: "{{ r_avi_wafprofile }}"

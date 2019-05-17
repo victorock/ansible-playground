@@ -24,3 +24,8 @@
     - name: "plugin_na_ontap_snapshot_policy"
       na_ontap_snapshot_policy: "{{ na_ontap_snapshot_policy }}"
       register: r_na_ontap_snapshot_policy
+
+    - name: "export r_na_ontap_snapshot_policy"
+      set_stats:
+        data:
+          r_na_ontap_snapshot_policy: "{{ r_na_ontap_snapshot_policy }}"

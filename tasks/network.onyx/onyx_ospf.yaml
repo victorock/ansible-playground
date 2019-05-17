@@ -8,3 +8,8 @@
       interfaces: "{{ onyx_ospf_interfaces | default(omit, True) }}"
       ospf: "{{ onyx_ospf_ospf | default(omit, True) }}"
       state: "{{ onyx_ospf_state | default(omit, True) }}"
+
+- name: "export r_onyx_ospf"
+  set_stats:
+    data:
+      r_onyx_ospf: "{{ r_onyx_ospf }}"

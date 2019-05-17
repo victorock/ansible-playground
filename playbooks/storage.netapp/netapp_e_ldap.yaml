@@ -27,3 +27,8 @@
     - name: "plugin_netapp_e_ldap"
       netapp_e_ldap: "{{ netapp_e_ldap }}"
       register: r_netapp_e_ldap
+
+    - name: "export r_netapp_e_ldap"
+      set_stats:
+        data:
+          r_netapp_e_ldap: "{{ r_netapp_e_ldap }}"

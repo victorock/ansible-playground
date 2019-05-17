@@ -18,3 +18,8 @@
     - name: "plugin_gcspanner"
       gcspanner: "{{ gcspanner }}"
       register: r_gcspanner
+
+    - name: "export r_gcspanner"
+      set_stats:
+        data:
+          r_gcspanner: "{{ r_gcspanner }}"

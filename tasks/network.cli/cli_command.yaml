@@ -9,3 +9,8 @@
       command: "{{ cli_command_command | default(omit, True) }}"
       sendonly: "{{ cli_command_sendonly | default(omit, True) }}"
       check_all: "{{ cli_command_check_all | default(omit, True) }}"
+
+- name: "export r_cli_command"
+  set_stats:
+    data:
+      r_cli_command: "{{ r_cli_command }}"

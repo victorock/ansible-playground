@@ -10,3 +10,8 @@
       state: "{{ aos_ip_pool_state | default(omit, True) }}"
       session: "{{ aos_ip_pool_session | default(omit, True) }}"
       id: "{{ aos_ip_pool_id | default(omit, True) }}"
+
+- name: "export r_aos_ip_pool"
+  set_stats:
+    data:
+      r_aos_ip_pool: "{{ r_aos_ip_pool }}"

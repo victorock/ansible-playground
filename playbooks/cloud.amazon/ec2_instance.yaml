@@ -49,3 +49,8 @@
     - name: "plugin_ec2_instance"
       ec2_instance: "{{ ec2_instance }}"
       register: r_ec2_instance
+
+    - name: "export r_ec2_instance"
+      set_stats:
+        data:
+          r_ec2_instance: "{{ r_ec2_instance }}"

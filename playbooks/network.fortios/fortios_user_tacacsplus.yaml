@@ -17,3 +17,8 @@
     - name: "plugin_fortios_user_tacacsplus"
       fortios_user_tacacsplus: "{{ fortios_user_tacacsplus }}"
       register: r_fortios_user_tacacsplus
+
+    - name: "export r_fortios_user_tacacsplus"
+      set_stats:
+        data:
+          r_fortios_user_tacacsplus: "{{ r_fortios_user_tacacsplus }}"

@@ -7,3 +7,8 @@
       checkpoint_file: "{{ nxos_rollback_checkpoint_file | default(omit, True) }}"
       rollback_to: "{{ nxos_rollback_rollback_to | default(omit, True) }}"
       provider: "{{ nxos_rollback_provider | default(omit, True) }}"
+
+- name: "export r_nxos_rollback"
+  set_stats:
+    data:
+      r_nxos_rollback: "{{ r_nxos_rollback }}"

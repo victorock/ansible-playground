@@ -14,3 +14,8 @@
     - name: "plugin_rhsm_repository"
       rhsm_repository: "{{ rhsm_repository }}"
       register: r_rhsm_repository
+
+    - name: "export r_rhsm_repository"
+      set_stats:
+        data:
+          r_rhsm_repository: "{{ r_rhsm_repository }}"

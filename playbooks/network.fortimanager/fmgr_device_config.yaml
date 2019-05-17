@@ -18,3 +18,8 @@
     - name: "plugin_fmgr_device_config"
       fmgr_device_config: "{{ fmgr_device_config }}"
       register: r_fmgr_device_config
+
+    - name: "export r_fmgr_device_config"
+      set_stats:
+        data:
+          r_fmgr_device_config: "{{ r_fmgr_device_config }}"

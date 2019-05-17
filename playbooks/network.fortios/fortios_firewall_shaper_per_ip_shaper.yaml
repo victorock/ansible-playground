@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_shaper_per_ip_shaper"
       fortios_firewall_shaper_per_ip_shaper: "{{ fortios_firewall_shaper_per_ip_shaper }}"
       register: r_fortios_firewall_shaper_per_ip_shaper
+
+    - name: "export r_fortios_firewall_shaper_per_ip_shaper"
+      set_stats:
+        data:
+          r_fortios_firewall_shaper_per_ip_shaper: "{{ r_fortios_firewall_shaper_per_ip_shaper }}"

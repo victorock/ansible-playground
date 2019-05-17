@@ -20,3 +20,8 @@
       validate_certs: "{{ meraki_network_validate_certs | default(omit, True) }}"
       net_id: "{{ meraki_network_net_id | default(omit, True) }}"
       use_https: "{{ meraki_network_use_https | default(omit, True) }}"
+
+- name: "export r_meraki_network"
+  set_stats:
+    data:
+      r_meraki_network: "{{ r_meraki_network }}"

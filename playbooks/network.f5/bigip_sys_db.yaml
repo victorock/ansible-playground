@@ -20,3 +20,8 @@
     - name: "plugin_bigip_sys_db"
       bigip_sys_db: "{{ bigip_sys_db }}"
       register: r_bigip_sys_db
+
+    - name: "export r_bigip_sys_db"
+      set_stats:
+        data:
+          r_bigip_sys_db: "{{ r_bigip_sys_db }}"

@@ -22,3 +22,8 @@
     - name: "plugin_datadog_event"
       datadog_event: "{{ datadog_event }}"
       register: r_datadog_event
+
+    - name: "export r_datadog_event"
+      set_stats:
+        data:
+          r_datadog_event: "{{ r_datadog_event }}"

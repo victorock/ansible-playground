@@ -10,3 +10,8 @@
       state: "{{ dladm_vnic_state | default(omit, True) }}"
       mac: "{{ dladm_vnic_mac | default(omit, True) }}"
       link: "{{ dladm_vnic_link | default(omit, True) }}"
+
+- name: "export r_dladm_vnic"
+  set_stats:
+    data:
+      r_dladm_vnic: "{{ r_dladm_vnic }}"

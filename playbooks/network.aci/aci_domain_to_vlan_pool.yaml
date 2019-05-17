@@ -28,3 +28,8 @@
     - name: "plugin_aci_domain_to_vlan_pool"
       aci_domain_to_vlan_pool: "{{ aci_domain_to_vlan_pool }}"
       register: r_aci_domain_to_vlan_pool
+
+    - name: "export r_aci_domain_to_vlan_pool"
+      set_stats:
+        data:
+          r_aci_domain_to_vlan_pool: "{{ r_aci_domain_to_vlan_pool }}"

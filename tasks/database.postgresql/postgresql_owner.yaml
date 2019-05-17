@@ -18,3 +18,8 @@
       login_password: "{{ postgresql_owner_login_password | default(omit, True) }}"
       fail_on_role: "{{ postgresql_owner_fail_on_role | default(omit, True) }}"
       port: "{{ postgresql_owner_port | default(omit, True) }}"
+
+- name: "export r_postgresql_owner"
+  set_stats:
+    data:
+      r_postgresql_owner: "{{ r_postgresql_owner }}"

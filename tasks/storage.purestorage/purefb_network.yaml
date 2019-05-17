@@ -11,3 +11,8 @@
       api_token: "{{ purefb_network_api_token | default(omit, True) }}"
       services: "{{ purefb_network_services | default(omit, True) }}"
       fb_url: "{{ purefb_network_fb_url | default(omit, True) }}"
+
+- name: "export r_purefb_network"
+  set_stats:
+    data:
+      r_purefb_network: "{{ r_purefb_network }}"

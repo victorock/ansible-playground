@@ -10,3 +10,8 @@
       https: "{{ fortios_webfilter_urlfilter_https | default(omit, True) }}"
       password: "{{ fortios_webfilter_urlfilter_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_urlfilter_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_urlfilter"
+  set_stats:
+    data:
+      r_fortios_webfilter_urlfilter: "{{ r_fortios_webfilter_urlfilter }}"

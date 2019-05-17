@@ -20,3 +20,8 @@
     - name: "plugin_cyberark_authentication"
       cyberark_authentication: "{{ cyberark_authentication }}"
       register: r_cyberark_authentication
+
+    - name: "export r_cyberark_authentication"
+      set_stats:
+        data:
+          r_cyberark_authentication: "{{ r_cyberark_authentication }}"

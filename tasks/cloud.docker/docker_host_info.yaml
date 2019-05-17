@@ -25,3 +25,8 @@
       networks: "{{ docker_host_info_networks | default(omit, True) }}"
       api_version: "{{ docker_host_info_api_version | default(omit, True) }}"
       client_key: "{{ docker_host_info_client_key | default(omit, True) }}"
+
+- name: "export r_docker_host_info"
+  set_stats:
+    data:
+      r_docker_host_info: "{{ r_docker_host_info }}"

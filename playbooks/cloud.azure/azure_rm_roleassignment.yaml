@@ -28,3 +28,8 @@
     - name: "plugin_azure_rm_roleassignment"
       azure_rm_roleassignment: "{{ azure_rm_roleassignment }}"
       register: r_azure_rm_roleassignment
+
+    - name: "export r_azure_rm_roleassignment"
+      set_stats:
+        data:
+          r_azure_rm_roleassignment: "{{ r_azure_rm_roleassignment }}"

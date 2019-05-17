@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_ftgd_local_cat"
       fortios_webfilter_ftgd_local_cat: "{{ fortios_webfilter_ftgd_local_cat }}"
       register: r_fortios_webfilter_ftgd_local_cat
+
+    - name: "export r_fortios_webfilter_ftgd_local_cat"
+      set_stats:
+        data:
+          r_fortios_webfilter_ftgd_local_cat: "{{ r_fortios_webfilter_ftgd_local_cat }}"

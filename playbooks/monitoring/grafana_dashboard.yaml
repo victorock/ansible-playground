@@ -26,3 +26,8 @@
     - name: "plugin_grafana_dashboard"
       grafana_dashboard: "{{ grafana_dashboard }}"
       register: r_grafana_dashboard
+
+    - name: "export r_grafana_dashboard"
+      set_stats:
+        data:
+          r_grafana_dashboard: "{{ r_grafana_dashboard }}"

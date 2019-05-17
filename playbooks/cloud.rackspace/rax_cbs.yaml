@@ -31,3 +31,8 @@
     - name: "plugin_rax_cbs"
       rax_cbs: "{{ rax_cbs }}"
       register: r_rax_cbs
+
+    - name: "export r_rax_cbs"
+      set_stats:
+        data:
+          r_rax_cbs: "{{ r_rax_cbs }}"

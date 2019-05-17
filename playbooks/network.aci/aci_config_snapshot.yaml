@@ -29,3 +29,8 @@
     - name: "plugin_aci_config_snapshot"
       aci_config_snapshot: "{{ aci_config_snapshot }}"
       register: r_aci_config_snapshot
+
+    - name: "export r_aci_config_snapshot"
+      set_stats:
+        data:
+          r_aci_config_snapshot: "{{ r_aci_config_snapshot }}"

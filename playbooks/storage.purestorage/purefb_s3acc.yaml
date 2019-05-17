@@ -15,3 +15,8 @@
     - name: "plugin_purefb_s3acc"
       purefb_s3acc: "{{ purefb_s3acc }}"
       register: r_purefb_s3acc
+
+    - name: "export r_purefb_s3acc"
+      set_stats:
+        data:
+          r_purefb_s3acc: "{{ r_purefb_s3acc }}"

@@ -17,3 +17,8 @@
     - name: "plugin_virt_net"
       virt_net: "{{ virt_net }}"
       register: r_virt_net
+
+    - name: "export r_virt_net"
+      set_stats:
+        data:
+          r_virt_net: "{{ r_virt_net }}"

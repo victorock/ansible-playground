@@ -7,3 +7,8 @@
       text: "{{ net_banner_text | default(omit, True) }}"
       state: "{{ net_banner_state | default(omit, True) }}"
       banner: "{{ net_banner_banner | default(omit, True) }}"
+
+- name: "export r_net_banner"
+  set_stats:
+    data:
+      r_net_banner: "{{ r_net_banner }}"

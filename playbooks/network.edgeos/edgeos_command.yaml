@@ -16,3 +16,8 @@
     - name: "plugin_edgeos_command"
       edgeos_command: "{{ edgeos_command }}"
       register: r_edgeos_command
+
+    - name: "export r_edgeos_command"
+      set_stats:
+        data:
+          r_edgeos_command: "{{ r_edgeos_command }}"

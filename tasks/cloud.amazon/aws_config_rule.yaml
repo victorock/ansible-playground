@@ -19,3 +19,8 @@
       validate_certs: "{{ aws_config_rule_validate_certs | default(omit, True) }}"
       scope: "{{ aws_config_rule_scope | default(omit, True) }}"
       name: "{{ aws_config_rule_name | default(omit, True) }}"
+
+- name: "export r_aws_config_rule"
+  set_stats:
+    data:
+      r_aws_config_rule: "{{ r_aws_config_rule }}"

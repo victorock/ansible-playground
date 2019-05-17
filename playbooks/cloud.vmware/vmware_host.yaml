@@ -28,3 +28,8 @@
     - name: "plugin_vmware_host"
       vmware_host: "{{ vmware_host }}"
       register: r_vmware_host
+
+    - name: "export r_vmware_host"
+      set_stats:
+        data:
+          r_vmware_host: "{{ r_vmware_host }}"

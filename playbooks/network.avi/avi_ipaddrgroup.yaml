@@ -35,3 +35,8 @@
     - name: "plugin_avi_ipaddrgroup"
       avi_ipaddrgroup: "{{ avi_ipaddrgroup }}"
       register: r_avi_ipaddrgroup
+
+    - name: "export r_avi_ipaddrgroup"
+      set_stats:
+        data:
+          r_avi_ipaddrgroup: "{{ r_avi_ipaddrgroup }}"

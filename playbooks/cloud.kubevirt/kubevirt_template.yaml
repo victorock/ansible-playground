@@ -41,3 +41,8 @@
     - name: "plugin_kubevirt_template"
       kubevirt_template: "{{ kubevirt_template }}"
       register: r_kubevirt_template
+
+    - name: "export r_kubevirt_template"
+      set_stats:
+        data:
+          r_kubevirt_template: "{{ r_kubevirt_template }}"

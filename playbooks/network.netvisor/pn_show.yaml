@@ -17,3 +17,8 @@
     - name: "plugin_pn_show"
       pn_show: "{{ pn_show }}"
       register: r_pn_show
+
+    - name: "export r_pn_show"
+      set_stats:
+        data:
+          r_pn_show: "{{ r_pn_show }}"

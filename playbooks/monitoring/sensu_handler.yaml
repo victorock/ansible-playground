@@ -25,3 +25,8 @@
     - name: "plugin_sensu_handler"
       sensu_handler: "{{ sensu_handler }}"
       register: r_sensu_handler
+
+    - name: "export r_sensu_handler"
+      set_stats:
+        data:
+          r_sensu_handler: "{{ r_sensu_handler }}"

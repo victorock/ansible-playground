@@ -10,3 +10,8 @@
       provider: "{{ iosxr_command_provider | default(omit, True) }}"
       wait_for: "{{ iosxr_command_wait_for | default(omit, True) }}"
       match: "{{ iosxr_command_match | default(omit, True) }}"
+
+- name: "export r_iosxr_command"
+  set_stats:
+    data:
+      r_iosxr_command: "{{ r_iosxr_command }}"

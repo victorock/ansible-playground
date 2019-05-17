@@ -12,3 +12,8 @@
       params: "{{ katello_params | default(omit, True) }}"
       action: "{{ katello_action | default(omit, True) }}"
       password: "{{ katello_password | default(omit, True) }}"
+
+- name: "export r_katello"
+  set_stats:
+    data:
+      r_katello: "{{ r_katello }}"

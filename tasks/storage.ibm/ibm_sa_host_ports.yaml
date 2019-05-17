@@ -12,3 +12,8 @@
       iscsi_name: "{{ ibm_sa_host_ports_iscsi_name | default(omit, True) }}"
       host: "{{ ibm_sa_host_ports_host | default(omit, True) }}"
       endpoints: "{{ ibm_sa_host_ports_endpoints | default(omit, True) }}"
+
+- name: "export r_ibm_sa_host_ports"
+  set_stats:
+    data:
+      r_ibm_sa_host_ports: "{{ r_ibm_sa_host_ports }}"

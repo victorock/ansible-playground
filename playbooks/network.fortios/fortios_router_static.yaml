@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_static"
       fortios_router_static: "{{ fortios_router_static }}"
       register: r_fortios_router_static
+
+    - name: "export r_fortios_router_static"
+      set_stats:
+        data:
+          r_fortios_router_static: "{{ r_fortios_router_static }}"

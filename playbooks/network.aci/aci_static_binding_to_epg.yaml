@@ -36,3 +36,8 @@
     - name: "plugin_aci_static_binding_to_epg"
       aci_static_binding_to_epg: "{{ aci_static_binding_to_epg }}"
       register: r_aci_static_binding_to_epg
+
+    - name: "export r_aci_static_binding_to_epg"
+      set_stats:
+        data:
+          r_aci_static_binding_to_epg: "{{ r_aci_static_binding_to_epg }}"

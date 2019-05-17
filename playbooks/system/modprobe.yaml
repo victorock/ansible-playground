@@ -14,3 +14,8 @@
     - name: "plugin_modprobe"
       modprobe: "{{ modprobe }}"
       register: r_modprobe
+
+    - name: "export r_modprobe"
+      set_stats:
+        data:
+          r_modprobe: "{{ r_modprobe }}"

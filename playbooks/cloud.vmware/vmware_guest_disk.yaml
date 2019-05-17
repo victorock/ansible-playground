@@ -21,3 +21,8 @@
     - name: "plugin_vmware_guest_disk"
       vmware_guest_disk: "{{ vmware_guest_disk }}"
       register: r_vmware_guest_disk
+
+    - name: "export r_vmware_guest_disk"
+      set_stats:
+        data:
+          r_vmware_guest_disk: "{{ r_vmware_guest_disk }}"

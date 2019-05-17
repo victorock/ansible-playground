@@ -10,3 +10,8 @@
       upgrade_all: "{{ homebrew_upgrade_all | default(omit, True) }}"
       state: "{{ homebrew_state | default(omit, True) }}"
       path: "{{ homebrew_path | default(omit, True) }}"
+
+- name: "export r_homebrew"
+  set_stats:
+    data:
+      r_homebrew: "{{ r_homebrew }}"

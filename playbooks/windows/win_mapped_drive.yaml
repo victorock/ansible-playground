@@ -16,3 +16,8 @@
     - name: "plugin_win_mapped_drive"
       win_mapped_drive: "{{ win_mapped_drive }}"
       register: r_win_mapped_drive
+
+    - name: "export r_win_mapped_drive"
+      set_stats:
+        data:
+          r_win_mapped_drive: "{{ r_win_mapped_drive }}"

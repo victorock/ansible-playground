@@ -5,3 +5,8 @@
   vars:
     onyx_lldp: 
       state: "{{ onyx_lldp_state | default(omit, True) }}"
+
+- name: "export r_onyx_lldp"
+  set_stats:
+    data:
+      r_onyx_lldp: "{{ r_onyx_lldp }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_router_multicast_https | default(omit, True) }}"
       password: "{{ fortios_router_multicast_password | default(omit, True) }}"
       vdom: "{{ fortios_router_multicast_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_router_multicast"
+  set_stats:
+    data:
+      r_fortios_router_multicast: "{{ r_fortios_router_multicast }}"

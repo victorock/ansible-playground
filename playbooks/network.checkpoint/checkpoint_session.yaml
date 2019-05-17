@@ -13,3 +13,8 @@
     - name: "plugin_checkpoint_session"
       checkpoint_session: "{{ checkpoint_session }}"
       register: r_checkpoint_session
+
+    - name: "export r_checkpoint_session"
+      set_stats:
+        data:
+          r_checkpoint_session: "{{ r_checkpoint_session }}"

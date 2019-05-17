@@ -10,3 +10,8 @@
       msg: "{{ win_say_msg | default(omit, True) }}"
       voice: "{{ win_say_voice | default(omit, True) }}"
       speech_speed: "{{ win_say_speech_speed | default(omit, True) }}"
+
+- name: "export r_win_say"
+  set_stats:
+    data:
+      r_win_say: "{{ r_win_say }}"

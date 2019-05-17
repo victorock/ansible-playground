@@ -17,3 +17,8 @@
       speed: "{{ cnos_interface_speed | default(omit, True) }}"
       tx_rate: "{{ cnos_interface_tx_rate | default(omit, True) }}"
       name: "{{ cnos_interface_name | default(omit, True) }}"
+
+- name: "export r_cnos_interface"
+  set_stats:
+    data:
+      r_cnos_interface: "{{ r_cnos_interface }}"

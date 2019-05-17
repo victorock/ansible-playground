@@ -12,3 +12,8 @@
       eradicate: "{{ purefa_snap_eradicate | default(omit, True) }}"
       overwrite: "{{ purefa_snap_overwrite | default(omit, True) }}"
       suffix: "{{ purefa_snap_suffix | default(omit, True) }}"
+
+- name: "export r_purefa_snap"
+  set_stats:
+    data:
+      r_purefa_snap: "{{ r_purefa_snap }}"

@@ -9,3 +9,8 @@
       ipv6: "{{ slxos_l3_interface_ipv6 | default(omit, True) }}"
       ipv4: "{{ slxos_l3_interface_ipv4 | default(omit, True) }}"
       name: "{{ slxos_l3_interface_name | default(omit, True) }}"
+
+- name: "export r_slxos_l3_interface"
+  set_stats:
+    data:
+      r_slxos_l3_interface: "{{ r_slxos_l3_interface }}"

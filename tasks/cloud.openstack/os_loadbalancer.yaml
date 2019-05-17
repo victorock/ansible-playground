@@ -28,3 +28,8 @@
       vip_address: "{{ os_loadbalancer_vip_address | default(omit, True) }}"
       vip_subnet: "{{ os_loadbalancer_vip_subnet | default(omit, True) }}"
       validate_certs: "{{ os_loadbalancer_validate_certs | default(omit, True) }}"
+
+- name: "export r_os_loadbalancer"
+  set_stats:
+    data:
+      r_os_loadbalancer: "{{ r_os_loadbalancer }}"

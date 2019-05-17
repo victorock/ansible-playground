@@ -27,3 +27,8 @@
       hwtacacs_template: "{{ ce_aaa_server_host_hwtacacs_template | default(omit, True) }}"
       hwtacacs_server_host_name: "{{ ce_aaa_server_host_hwtacacs_server_host_name | default(omit, True) }}"
       hwtacacs_is_public_net: "{{ ce_aaa_server_host_hwtacacs_is_public_net | default(omit, True) }}"
+
+- name: "export r_ce_aaa_server_host"
+  set_stats:
+    data:
+      r_ce_aaa_server_host: "{{ r_ce_aaa_server_host }}"

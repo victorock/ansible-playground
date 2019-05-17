@@ -17,3 +17,8 @@
     - name: "plugin_pn_vrouter_pim_config"
       pn_vrouter_pim_config: "{{ pn_vrouter_pim_config }}"
       register: r_pn_vrouter_pim_config
+
+    - name: "export r_pn_vrouter_pim_config"
+      set_stats:
+        data:
+          r_pn_vrouter_pim_config: "{{ r_pn_vrouter_pim_config }}"

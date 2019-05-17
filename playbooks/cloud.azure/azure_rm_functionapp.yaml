@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_functionapp"
       azure_rm_functionapp: "{{ azure_rm_functionapp }}"
       register: r_azure_rm_functionapp
+
+    - name: "export r_azure_rm_functionapp"
+      set_stats:
+        data:
+          r_azure_rm_functionapp: "{{ r_azure_rm_functionapp }}"

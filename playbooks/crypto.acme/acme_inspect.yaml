@@ -22,3 +22,8 @@
     - name: "plugin_acme_inspect"
       acme_inspect: "{{ acme_inspect }}"
       register: r_acme_inspect
+
+    - name: "export r_acme_inspect"
+      set_stats:
+        data:
+          r_acme_inspect: "{{ r_acme_inspect }}"

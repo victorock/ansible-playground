@@ -6,3 +6,8 @@
     memset_memstore_facts: 
       api_key: "{{ memset_memstore_facts_api_key | default(omit, True) }}"
       name: "{{ memset_memstore_facts_name | default(omit, True) }}"
+
+- name: "export r_memset_memstore_facts"
+  set_stats:
+    data:
+      r_memset_memstore_facts: "{{ r_memset_memstore_facts }}"

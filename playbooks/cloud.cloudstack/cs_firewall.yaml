@@ -33,3 +33,8 @@
     - name: "plugin_cs_firewall"
       cs_firewall: "{{ cs_firewall }}"
       register: r_cs_firewall
+
+    - name: "export r_cs_firewall"
+      set_stats:
+        data:
+          r_cs_firewall: "{{ r_cs_firewall }}"

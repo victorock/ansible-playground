@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_address6_template"
       fortios_firewall_address6_template: "{{ fortios_firewall_address6_template }}"
       register: r_fortios_firewall_address6_template
+
+    - name: "export r_fortios_firewall_address6_template"
+      set_stats:
+        data:
+          r_fortios_firewall_address6_template: "{{ r_fortios_firewall_address6_template }}"

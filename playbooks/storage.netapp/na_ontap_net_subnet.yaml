@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_net_subnet"
       na_ontap_net_subnet: "{{ na_ontap_net_subnet }}"
       register: r_na_ontap_net_subnet
+
+    - name: "export r_na_ontap_net_subnet"
+      set_stats:
+        data:
+          r_na_ontap_net_subnet: "{{ r_na_ontap_net_subnet }}"

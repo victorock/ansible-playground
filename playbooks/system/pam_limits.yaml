@@ -20,3 +20,8 @@
     - name: "plugin_pam_limits"
       pam_limits: "{{ pam_limits }}"
       register: r_pam_limits
+
+    - name: "export r_pam_limits"
+      set_stats:
+        data:
+          r_pam_limits: "{{ r_pam_limits }}"

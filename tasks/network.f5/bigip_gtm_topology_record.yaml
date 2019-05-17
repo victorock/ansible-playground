@@ -15,3 +15,8 @@
       provider: "{{ bigip_gtm_topology_record_provider | default(omit, True) }}"
       password: "{{ bigip_gtm_topology_record_password | default(omit, True) }}"
       validate_certs: "{{ bigip_gtm_topology_record_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_topology_record"
+  set_stats:
+    data:
+      r_bigip_gtm_topology_record: "{{ r_bigip_gtm_topology_record }}"

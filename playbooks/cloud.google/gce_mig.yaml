@@ -21,3 +21,8 @@
     - name: "plugin_gce_mig"
       gce_mig: "{{ gce_mig }}"
       register: r_gce_mig
+
+    - name: "export r_gce_mig"
+      set_stats:
+        data:
+          r_gce_mig: "{{ r_gce_mig }}"

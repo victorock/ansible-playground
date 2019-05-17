@@ -25,3 +25,8 @@
     - name: "plugin_cs_affinitygroup"
       cs_affinitygroup: "{{ cs_affinitygroup }}"
       register: r_cs_affinitygroup
+
+    - name: "export r_cs_affinitygroup"
+      set_stats:
+        data:
+          r_cs_affinitygroup: "{{ r_cs_affinitygroup }}"

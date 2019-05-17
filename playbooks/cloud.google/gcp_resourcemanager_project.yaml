@@ -22,3 +22,8 @@
     - name: "plugin_gcp_resourcemanager_project"
       gcp_resourcemanager_project: "{{ gcp_resourcemanager_project }}"
       register: r_gcp_resourcemanager_project
+
+    - name: "export r_gcp_resourcemanager_project"
+      set_stats:
+        data:
+          r_gcp_resourcemanager_project: "{{ r_gcp_resourcemanager_project }}"

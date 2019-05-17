@@ -20,3 +20,8 @@
     - name: "plugin_netapp_e_auth"
       netapp_e_auth: "{{ netapp_e_auth }}"
       register: r_netapp_e_auth
+
+    - name: "export r_netapp_e_auth"
+      set_stats:
+        data:
+          r_netapp_e_auth: "{{ r_netapp_e_auth }}"

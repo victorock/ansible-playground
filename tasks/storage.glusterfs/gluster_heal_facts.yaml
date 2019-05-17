@@ -6,3 +6,8 @@
     gluster_heal_facts: 
       name: "{{ gluster_heal_facts_name | default(omit, True) }}"
       status_filter: "{{ gluster_heal_facts_status_filter | default(omit, True) }}"
+
+- name: "export r_gluster_heal_facts"
+  set_stats:
+    data:
+      r_gluster_heal_facts: "{{ r_gluster_heal_facts }}"

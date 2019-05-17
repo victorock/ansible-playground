@@ -23,3 +23,8 @@
     - name: "plugin_fortios_config"
       fortios_config: "{{ fortios_config }}"
       register: r_fortios_config
+
+    - name: "export r_fortios_config"
+      set_stats:
+        data:
+          r_fortios_config: "{{ r_fortios_config }}"

@@ -21,3 +21,8 @@
     - name: "plugin_redshift_facts"
       redshift_facts: "{{ redshift_facts }}"
       register: r_redshift_facts
+
+    - name: "export r_redshift_facts"
+      set_stats:
+        data:
+          r_redshift_facts: "{{ r_redshift_facts }}"

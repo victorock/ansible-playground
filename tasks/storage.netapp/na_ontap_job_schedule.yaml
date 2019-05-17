@@ -18,3 +18,8 @@
       password: "{{ na_ontap_job_schedule_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_job_schedule_validate_certs | default(omit, True) }}"
       job_days_of_month: "{{ na_ontap_job_schedule_job_days_of_month | default(omit, True) }}"
+
+- name: "export r_na_ontap_job_schedule"
+  set_stats:
+    data:
+      r_na_ontap_job_schedule: "{{ r_na_ontap_job_schedule }}"

@@ -5,3 +5,8 @@
   vars:
     win_hostname: 
       name: "{{ win_hostname_name | default(omit, True) }}"
+
+- name: "export r_win_hostname"
+  set_stats:
+    data:
+      r_win_hostname: "{{ r_win_hostname }}"

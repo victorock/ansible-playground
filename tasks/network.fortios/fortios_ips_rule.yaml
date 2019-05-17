@@ -10,3 +10,8 @@
       password: "{{ fortios_ips_rule_password | default(omit, True) }}"
       vdom: "{{ fortios_ips_rule_vdom | default(omit, True) }}"
       ips_rule: "{{ fortios_ips_rule_ips_rule | default(omit, True) }}"
+
+- name: "export r_fortios_ips_rule"
+  set_stats:
+    data:
+      r_fortios_ips_rule: "{{ r_fortios_ips_rule }}"

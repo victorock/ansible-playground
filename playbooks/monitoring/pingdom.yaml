@@ -16,3 +16,8 @@
     - name: "plugin_pingdom"
       pingdom: "{{ pingdom }}"
       register: r_pingdom
+
+    - name: "export r_pingdom"
+      set_stats:
+        data:
+          r_pingdom: "{{ r_pingdom }}"

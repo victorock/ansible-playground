@@ -18,3 +18,8 @@
       serverURIs: "{{ na_elementsw_ldap_serverURIs | default(omit, True) }}"
       password: "{{ na_elementsw_ldap_password | default(omit, True) }}"
       groupSearchType: "{{ na_elementsw_ldap_groupSearchType | default(omit, True) }}"
+
+- name: "export r_na_elementsw_ldap"
+  set_stats:
+    data:
+      r_na_elementsw_ldap: "{{ r_na_elementsw_ldap }}"

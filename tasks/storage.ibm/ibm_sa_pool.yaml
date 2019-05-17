@@ -13,3 +13,8 @@
       snapshot_size: "{{ ibm_sa_pool_snapshot_size | default(omit, True) }}"
       pool: "{{ ibm_sa_pool_pool | default(omit, True) }}"
       size: "{{ ibm_sa_pool_size | default(omit, True) }}"
+
+- name: "export r_ibm_sa_pool"
+  set_stats:
+    data:
+      r_ibm_sa_pool: "{{ r_ibm_sa_pool }}"

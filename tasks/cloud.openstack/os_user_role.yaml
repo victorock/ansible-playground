@@ -23,3 +23,8 @@
       client_cert: "{{ os_user_role_client_cert | default(omit, True) }}"
       cloud: "{{ os_user_role_cloud | default(omit, True) }}"
       client_key: "{{ os_user_role_client_key | default(omit, True) }}"
+
+- name: "export r_os_user_role"
+  set_stats:
+    data:
+      r_os_user_role: "{{ r_os_user_role }}"

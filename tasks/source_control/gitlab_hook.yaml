@@ -22,3 +22,8 @@
       pipeline_events: "{{ gitlab_hook_pipeline_events | default(omit, True) }}"
       wiki_page_events: "{{ gitlab_hook_wiki_page_events | default(omit, True) }}"
       api_url: "{{ gitlab_hook_api_url | default(omit, True) }}"
+
+- name: "export r_gitlab_hook"
+  set_stats:
+    data:
+      r_gitlab_hook: "{{ r_gitlab_hook }}"

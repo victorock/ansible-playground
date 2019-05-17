@@ -21,3 +21,8 @@
     - name: "plugin_authorized_key"
       authorized_key: "{{ authorized_key }}"
       register: r_authorized_key
+
+    - name: "export r_authorized_key"
+      set_stats:
+        data:
+          r_authorized_key: "{{ r_authorized_key }}"

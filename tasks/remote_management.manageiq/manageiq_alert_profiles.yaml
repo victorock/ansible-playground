@@ -10,3 +10,8 @@
       state: "{{ manageiq_alert_profiles_state | default(omit, True) }}"
       manageiq_connection: "{{ manageiq_alert_profiles_manageiq_connection | default(omit, True) }}"
       resource_type: "{{ manageiq_alert_profiles_resource_type | default(omit, True) }}"
+
+- name: "export r_manageiq_alert_profiles"
+  set_stats:
+    data:
+      r_manageiq_alert_profiles: "{{ r_manageiq_alert_profiles }}"

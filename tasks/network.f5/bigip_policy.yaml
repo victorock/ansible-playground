@@ -16,3 +16,8 @@
       password: "{{ bigip_policy_password | default(omit, True) }}"
       validate_certs: "{{ bigip_policy_validate_certs | default(omit, True) }}"
       name: "{{ bigip_policy_name | default(omit, True) }}"
+
+- name: "export r_bigip_policy"
+  set_stats:
+    data:
+      r_bigip_policy: "{{ r_bigip_policy }}"

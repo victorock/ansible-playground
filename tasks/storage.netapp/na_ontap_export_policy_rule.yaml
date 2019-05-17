@@ -21,3 +21,8 @@
       rule_index: "{{ na_ontap_export_policy_rule_rule_index | default(omit, True) }}"
       password: "{{ na_ontap_export_policy_rule_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_export_policy_rule_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_export_policy_rule"
+  set_stats:
+    data:
+      r_na_ontap_export_policy_rule: "{{ r_na_ontap_export_policy_rule }}"

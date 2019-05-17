@@ -37,3 +37,8 @@
       pn_eula_timestamp: "{{ pn_switch_setup_pn_eula_timestamp | default(omit, True) }}"
       pn_mgmt_ip6: "{{ pn_switch_setup_pn_mgmt_ip6 | default(omit, True) }}"
       pn_cliswitch: "{{ pn_switch_setup_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_switch_setup"
+  set_stats:
+    data:
+      r_pn_switch_setup: "{{ r_pn_switch_setup }}"

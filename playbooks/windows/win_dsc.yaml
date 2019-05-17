@@ -14,3 +14,8 @@
     - name: "plugin_win_dsc"
       win_dsc: "{{ win_dsc }}"
       register: r_win_dsc
+
+    - name: "export r_win_dsc"
+      set_stats:
+        data:
+          r_win_dsc: "{{ r_win_dsc }}"

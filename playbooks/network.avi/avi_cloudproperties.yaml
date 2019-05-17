@@ -28,3 +28,8 @@
     - name: "plugin_avi_cloudproperties"
       avi_cloudproperties: "{{ avi_cloudproperties }}"
       register: r_avi_cloudproperties
+
+    - name: "export r_avi_cloudproperties"
+      set_stats:
+        data:
+          r_avi_cloudproperties: "{{ r_avi_cloudproperties }}"

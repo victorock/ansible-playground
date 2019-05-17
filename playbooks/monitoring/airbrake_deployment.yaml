@@ -18,3 +18,8 @@
     - name: "plugin_airbrake_deployment"
       airbrake_deployment: "{{ airbrake_deployment }}"
       register: r_airbrake_deployment
+
+    - name: "export r_airbrake_deployment"
+      set_stats:
+        data:
+          r_airbrake_deployment: "{{ r_airbrake_deployment }}"

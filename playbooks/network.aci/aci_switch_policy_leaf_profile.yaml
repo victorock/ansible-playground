@@ -25,3 +25,8 @@
     - name: "plugin_aci_switch_policy_leaf_profile"
       aci_switch_policy_leaf_profile: "{{ aci_switch_policy_leaf_profile }}"
       register: r_aci_switch_policy_leaf_profile
+
+    - name: "export r_aci_switch_policy_leaf_profile"
+      set_stats:
+        data:
+          r_aci_switch_policy_leaf_profile: "{{ r_aci_switch_policy_leaf_profile }}"

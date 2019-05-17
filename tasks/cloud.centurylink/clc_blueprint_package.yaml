@@ -9,3 +9,8 @@
       wait: "{{ clc_blueprint_package_wait | default(omit, True) }}"
       state: "{{ clc_blueprint_package_state | default(omit, True) }}"
       package_params: "{{ clc_blueprint_package_package_params | default(omit, True) }}"
+
+- name: "export r_clc_blueprint_package"
+  set_stats:
+    data:
+      r_clc_blueprint_package: "{{ r_clc_blueprint_package }}"

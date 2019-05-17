@@ -19,3 +19,8 @@
       password: "{{ na_ontap_net_subnet_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_net_subnet_validate_certs | default(omit, True) }}"
       gateway: "{{ na_ontap_net_subnet_gateway | default(omit, True) }}"
+
+- name: "export r_na_ontap_net_subnet"
+  set_stats:
+    data:
+      r_na_ontap_net_subnet: "{{ r_na_ontap_net_subnet }}"

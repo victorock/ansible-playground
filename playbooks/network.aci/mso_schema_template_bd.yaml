@@ -32,3 +32,8 @@
     - name: "plugin_mso_schema_template_bd"
       mso_schema_template_bd: "{{ mso_schema_template_bd }}"
       register: r_mso_schema_template_bd
+
+    - name: "export r_mso_schema_template_bd"
+      set_stats:
+        data:
+          r_mso_schema_template_bd: "{{ r_mso_schema_template_bd }}"

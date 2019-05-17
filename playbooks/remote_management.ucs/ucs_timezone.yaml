@@ -22,3 +22,8 @@
     - name: "plugin_ucs_timezone"
       ucs_timezone: "{{ ucs_timezone }}"
       register: r_ucs_timezone
+
+    - name: "export r_ucs_timezone"
+      set_stats:
+        data:
+          r_ucs_timezone: "{{ r_ucs_timezone }}"

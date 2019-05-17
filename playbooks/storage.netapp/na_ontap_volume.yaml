@@ -45,3 +45,8 @@
     - name: "plugin_na_ontap_volume"
       na_ontap_volume: "{{ na_ontap_volume }}"
       register: r_na_ontap_volume
+
+    - name: "export r_na_ontap_volume"
+      set_stats:
+        data:
+          r_na_ontap_volume: "{{ r_na_ontap_volume }}"

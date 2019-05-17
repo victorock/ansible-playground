@@ -5,3 +5,8 @@
   vars:
     ordnance_facts: 
       gather_subset: "{{ ordnance_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_ordnance_facts"
+  set_stats:
+    data:
+      r_ordnance_facts: "{{ r_ordnance_facts }}"

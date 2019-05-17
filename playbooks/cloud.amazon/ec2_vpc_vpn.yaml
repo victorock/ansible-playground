@@ -33,3 +33,8 @@
     - name: "plugin_ec2_vpc_vpn"
       ec2_vpc_vpn: "{{ ec2_vpc_vpn }}"
       register: r_ec2_vpc_vpn
+
+    - name: "export r_ec2_vpc_vpn"
+      set_stats:
+        data:
+          r_ec2_vpc_vpn: "{{ r_ec2_vpc_vpn }}"

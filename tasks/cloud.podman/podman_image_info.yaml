@@ -6,3 +6,8 @@
     podman_image_info: 
       executable: "{{ podman_image_info_executable | default(omit, True) }}"
       name: "{{ podman_image_info_name | default(omit, True) }}"
+
+- name: "export r_podman_image_info"
+  set_stats:
+    data:
+      r_podman_image_info: "{{ r_podman_image_info }}"

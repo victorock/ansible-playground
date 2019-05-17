@@ -23,3 +23,8 @@
       start_date: "{{ statusio_maintenance_start_date | default(omit, True) }}"
       containers: "{{ statusio_maintenance_containers | default(omit, True) }}"
       desc: "{{ statusio_maintenance_desc | default(omit, True) }}"
+
+- name: "export r_statusio_maintenance"
+  set_stats:
+    data:
+      r_statusio_maintenance: "{{ r_statusio_maintenance }}"

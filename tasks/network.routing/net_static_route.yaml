@@ -11,3 +11,8 @@
       prefix: "{{ net_static_route_prefix | default(omit, True) }}"
       next_hop: "{{ net_static_route_next_hop | default(omit, True) }}"
       aggregate: "{{ net_static_route_aggregate | default(omit, True) }}"
+
+- name: "export r_net_static_route"
+  set_stats:
+    data:
+      r_net_static_route: "{{ r_net_static_route }}"

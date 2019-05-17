@@ -10,3 +10,8 @@
       api_token: "{{ hcloud_image_facts_api_token | default(omit, True) }}"
       type: "{{ hcloud_image_facts_type | default(omit, True) }}"
       id: "{{ hcloud_image_facts_id | default(omit, True) }}"
+
+- name: "export r_hcloud_image_facts"
+  set_stats:
+    data:
+      r_hcloud_image_facts: "{{ r_hcloud_image_facts }}"

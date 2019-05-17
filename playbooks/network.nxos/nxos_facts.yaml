@@ -13,3 +13,8 @@
     - name: "plugin_nxos_facts"
       nxos_facts: "{{ nxos_facts }}"
       register: r_nxos_facts
+
+    - name: "export r_nxos_facts"
+      set_stats:
+        data:
+          r_nxos_facts: "{{ r_nxos_facts }}"

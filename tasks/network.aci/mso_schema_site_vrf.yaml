@@ -18,3 +18,8 @@
       validate_certs: "{{ mso_schema_site_vrf_validate_certs | default(omit, True) }}"
       port: "{{ mso_schema_site_vrf_port | default(omit, True) }}"
       schema: "{{ mso_schema_site_vrf_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_site_vrf"
+  set_stats:
+    data:
+      r_mso_schema_site_vrf: "{{ r_mso_schema_site_vrf }}"

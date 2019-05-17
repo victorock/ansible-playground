@@ -15,3 +15,8 @@
     - name: "plugin_clc_server_snapshot"
       clc_server_snapshot: "{{ clc_server_snapshot }}"
       register: r_clc_server_snapshot
+
+    - name: "export r_clc_server_snapshot"
+      set_stats:
+        data:
+          r_clc_server_snapshot: "{{ r_clc_server_snapshot }}"

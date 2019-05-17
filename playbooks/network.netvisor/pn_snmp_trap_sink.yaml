@@ -17,3 +17,8 @@
     - name: "plugin_pn_snmp_trap_sink"
       pn_snmp_trap_sink: "{{ pn_snmp_trap_sink }}"
       register: r_pn_snmp_trap_sink
+
+    - name: "export r_pn_snmp_trap_sink"
+      set_stats:
+        data:
+          r_pn_snmp_trap_sink: "{{ r_pn_snmp_trap_sink }}"

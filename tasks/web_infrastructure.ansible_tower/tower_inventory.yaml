@@ -16,3 +16,8 @@
       validate_certs: "{{ tower_inventory_validate_certs | default(omit, True) }}"
       tower_host: "{{ tower_inventory_tower_host | default(omit, True) }}"
       name: "{{ tower_inventory_name | default(omit, True) }}"
+
+- name: "export r_tower_inventory"
+  set_stats:
+    data:
+      r_tower_inventory: "{{ r_tower_inventory }}"

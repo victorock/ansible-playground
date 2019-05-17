@@ -21,3 +21,8 @@
     - name: "plugin_vmware_host_ntp"
       vmware_host_ntp: "{{ vmware_host_ntp }}"
       register: r_vmware_host_ntp
+
+    - name: "export r_vmware_host_ntp"
+      set_stats:
+        data:
+          r_vmware_host_ntp: "{{ r_vmware_host_ntp }}"

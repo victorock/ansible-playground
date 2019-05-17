@@ -17,3 +17,8 @@
     - name: "plugin_purefb_dsrole"
       purefb_dsrole: "{{ purefb_dsrole }}"
       register: r_purefb_dsrole
+
+    - name: "export r_purefb_dsrole"
+      set_stats:
+        data:
+          r_purefb_dsrole: "{{ r_purefb_dsrole }}"

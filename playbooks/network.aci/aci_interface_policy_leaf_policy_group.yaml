@@ -42,3 +42,8 @@
     - name: "plugin_aci_interface_policy_leaf_policy_group"
       aci_interface_policy_leaf_policy_group: "{{ aci_interface_policy_leaf_policy_group }}"
       register: r_aci_interface_policy_leaf_policy_group
+
+    - name: "export r_aci_interface_policy_leaf_policy_group"
+      set_stats:
+        data:
+          r_aci_interface_policy_leaf_policy_group: "{{ r_aci_interface_policy_leaf_policy_group }}"

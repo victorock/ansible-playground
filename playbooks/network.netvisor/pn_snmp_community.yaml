@@ -15,3 +15,8 @@
     - name: "plugin_pn_snmp_community"
       pn_snmp_community: "{{ pn_snmp_community }}"
       register: r_pn_snmp_community
+
+    - name: "export r_pn_snmp_community"
+      set_stats:
+        data:
+          r_pn_snmp_community: "{{ r_pn_snmp_community }}"

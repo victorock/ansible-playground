@@ -15,3 +15,8 @@
     - name: "plugin_win_region"
       win_region: "{{ win_region }}"
       register: r_win_region
+
+    - name: "export r_win_region"
+      set_stats:
+        data:
+          r_win_region: "{{ r_win_region }}"

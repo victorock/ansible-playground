@@ -7,3 +7,8 @@
       action: "{{ win_snmp_action | default(omit, True) }}"
       permitted_managers: "{{ win_snmp_permitted_managers | default(omit, True) }}"
       community_strings: "{{ win_snmp_community_strings | default(omit, True) }}"
+
+- name: "export r_win_snmp"
+  set_stats:
+    data:
+      r_win_snmp: "{{ r_win_snmp }}"

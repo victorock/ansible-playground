@@ -18,3 +18,8 @@
     - name: "plugin_apt_repository"
       apt_repository: "{{ apt_repository }}"
       register: r_apt_repository
+
+    - name: "export r_apt_repository"
+      set_stats:
+        data:
+          r_apt_repository: "{{ r_apt_repository }}"

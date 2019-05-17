@@ -18,3 +18,8 @@
       validate_certs: "{{ rax_meta_validate_certs | default(omit, True) }}"
       id: "{{ rax_meta_id | default(omit, True) }}"
       auth_endpoint: "{{ rax_meta_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_meta"
+  set_stats:
+    data:
+      r_rax_meta: "{{ r_rax_meta }}"

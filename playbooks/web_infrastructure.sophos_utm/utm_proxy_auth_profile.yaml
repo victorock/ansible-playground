@@ -44,3 +44,8 @@
     - name: "plugin_utm_proxy_auth_profile"
       utm_proxy_auth_profile: "{{ utm_proxy_auth_profile }}"
       register: r_utm_proxy_auth_profile
+
+    - name: "export r_utm_proxy_auth_profile"
+      set_stats:
+        data:
+          r_utm_proxy_auth_profile: "{{ r_utm_proxy_auth_profile }}"

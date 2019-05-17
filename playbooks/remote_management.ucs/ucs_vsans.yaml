@@ -24,3 +24,8 @@
     - name: "plugin_ucs_vsans"
       ucs_vsans: "{{ ucs_vsans }}"
       register: r_ucs_vsans
+
+    - name: "export r_ucs_vsans"
+      set_stats:
+        data:
+          r_ucs_vsans: "{{ r_ucs_vsans }}"

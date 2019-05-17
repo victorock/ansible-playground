@@ -13,3 +13,8 @@
     - name: "plugin_win_disk_image"
       win_disk_image: "{{ win_disk_image }}"
       register: r_win_disk_image
+
+    - name: "export r_win_disk_image"
+      set_stats:
+        data:
+          r_win_disk_image: "{{ r_win_disk_image }}"

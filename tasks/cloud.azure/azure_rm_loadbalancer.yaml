@@ -44,3 +44,8 @@
       probe_request_path: "{{ azure_rm_loadbalancer_probe_request_path | default(omit, True) }}"
       auth_source: "{{ azure_rm_loadbalancer_auth_source | default(omit, True) }}"
       inbound_nat_rules: "{{ azure_rm_loadbalancer_inbound_nat_rules | default(omit, True) }}"
+
+- name: "export r_azure_rm_loadbalancer"
+  set_stats:
+    data:
+      r_azure_rm_loadbalancer: "{{ r_azure_rm_loadbalancer }}"

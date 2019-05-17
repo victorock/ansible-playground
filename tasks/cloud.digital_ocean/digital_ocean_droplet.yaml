@@ -22,3 +22,8 @@
       wait: "{{ digital_ocean_droplet_wait | default(omit, True) }}"
       id: "{{ digital_ocean_droplet_id | default(omit, True) }}"
       size: "{{ digital_ocean_droplet_size | default(omit, True) }}"
+
+- name: "export r_digital_ocean_droplet"
+  set_stats:
+    data:
+      r_digital_ocean_droplet: "{{ r_digital_ocean_droplet }}"

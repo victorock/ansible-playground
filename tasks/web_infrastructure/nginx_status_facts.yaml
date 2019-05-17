@@ -6,3 +6,8 @@
     nginx_status_facts: 
       url: "{{ nginx_status_facts_url | default(omit, True) }}"
       timeout: "{{ nginx_status_facts_timeout | default(omit, True) }}"
+
+- name: "export r_nginx_status_facts"
+  set_stats:
+    data:
+      r_nginx_status_facts: "{{ r_nginx_status_facts }}"

@@ -17,3 +17,8 @@
     - name: "plugin_ovirt_tag_facts"
       ovirt_tag_facts: "{{ ovirt_tag_facts }}"
       register: r_ovirt_tag_facts
+
+    - name: "export r_ovirt_tag_facts"
+      set_stats:
+        data:
+          r_ovirt_tag_facts: "{{ r_ovirt_tag_facts }}"

@@ -12,3 +12,8 @@
       ttl: "{{ nios_aaaa_record_ttl | default(omit, True) }}"
       ipv6addr: "{{ nios_aaaa_record_ipv6addr | default(omit, True) }}"
       view: "{{ nios_aaaa_record_view | default(omit, True) }}"
+
+- name: "export r_nios_aaaa_record"
+  set_stats:
+    data:
+      r_nios_aaaa_record: "{{ r_nios_aaaa_record }}"

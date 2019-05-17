@@ -34,3 +34,8 @@
     - name: "plugin_openssl_pkcs12"
       openssl_pkcs12: "{{ openssl_pkcs12 }}"
       register: r_openssl_pkcs12
+
+    - name: "export r_openssl_pkcs12"
+      set_stats:
+        data:
+          r_openssl_pkcs12: "{{ r_openssl_pkcs12 }}"

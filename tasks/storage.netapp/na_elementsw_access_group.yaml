@@ -16,3 +16,8 @@
       virtual_network_tags: "{{ na_elementsw_access_group_virtual_network_tags | default(omit, True) }}"
       password: "{{ na_elementsw_access_group_password | default(omit, True) }}"
       name: "{{ na_elementsw_access_group_name | default(omit, True) }}"
+
+- name: "export r_na_elementsw_access_group"
+  set_stats:
+    data:
+      r_na_elementsw_access_group: "{{ r_na_elementsw_access_group }}"

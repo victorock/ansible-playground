@@ -23,3 +23,8 @@
       net_id: "{{ meraki_static_route_net_id | default(omit, True) }}"
       use_https: "{{ meraki_static_route_use_https | default(omit, True) }}"
       name: "{{ meraki_static_route_name | default(omit, True) }}"
+
+- name: "export r_meraki_static_route"
+  set_stats:
+    data:
+      r_meraki_static_route: "{{ r_meraki_static_route }}"

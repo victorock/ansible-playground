@@ -18,3 +18,8 @@
       ec2_url: "{{ ecs_ecr_ec2_url | default(omit, True) }}"
       policy: "{{ ecs_ecr_policy | default(omit, True) }}"
       validate_certs: "{{ ecs_ecr_validate_certs | default(omit, True) }}"
+
+- name: "export r_ecs_ecr"
+  set_stats:
+    data:
+      r_ecs_ecr: "{{ r_ecs_ecr }}"

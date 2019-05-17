@@ -28,3 +28,8 @@
     - name: "plugin_tower_receive"
       tower_receive: "{{ tower_receive }}"
       register: r_tower_receive
+
+    - name: "export r_tower_receive"
+      set_stats:
+        data:
+          r_tower_receive: "{{ r_tower_receive }}"

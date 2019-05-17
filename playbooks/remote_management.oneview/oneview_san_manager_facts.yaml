@@ -14,3 +14,8 @@
     - name: "plugin_oneview_san_manager_facts"
       oneview_san_manager_facts: "{{ oneview_san_manager_facts }}"
       register: r_oneview_san_manager_facts
+
+    - name: "export r_oneview_san_manager_facts"
+      set_stats:
+        data:
+          r_oneview_san_manager_facts: "{{ r_oneview_san_manager_facts }}"

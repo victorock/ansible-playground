@@ -30,3 +30,8 @@
     - name: "plugin_statusio_maintenance"
       statusio_maintenance: "{{ statusio_maintenance }}"
       register: r_statusio_maintenance
+
+    - name: "export r_statusio_maintenance"
+      set_stats:
+        data:
+          r_statusio_maintenance: "{{ r_statusio_maintenance }}"

@@ -10,3 +10,8 @@
       host: "{{ fortios_webfilter_host | default(omit, True) }}"
       password: "{{ fortios_webfilter_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter"
+  set_stats:
+    data:
+      r_fortios_webfilter: "{{ r_fortios_webfilter }}"

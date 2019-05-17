@@ -17,3 +17,8 @@
     - name: "plugin_fortios_switch_controller_mac_sync_settings"
       fortios_switch_controller_mac_sync_settings: "{{ fortios_switch_controller_mac_sync_settings }}"
       register: r_fortios_switch_controller_mac_sync_settings
+
+    - name: "export r_fortios_switch_controller_mac_sync_settings"
+      set_stats:
+        data:
+          r_fortios_switch_controller_mac_sync_settings: "{{ r_fortios_switch_controller_mac_sync_settings }}"

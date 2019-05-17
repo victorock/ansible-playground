@@ -15,3 +15,8 @@
       extattrs: "{{ nios_zone_extattrs | default(omit, True) }}"
       provider: "{{ nios_zone_provider | default(omit, True) }}"
       view: "{{ nios_zone_view | default(omit, True) }}"
+
+- name: "export r_nios_zone"
+  set_stats:
+    data:
+      r_nios_zone: "{{ r_nios_zone }}"

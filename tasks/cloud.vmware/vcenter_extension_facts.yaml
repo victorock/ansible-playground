@@ -9,3 +9,8 @@
       validate_certs: "{{ vcenter_extension_facts_validate_certs | default(omit, True) }}"
       hostname: "{{ vcenter_extension_facts_hostname | default(omit, True) }}"
       port: "{{ vcenter_extension_facts_port | default(omit, True) }}"
+
+- name: "export r_vcenter_extension_facts"
+  set_stats:
+    data:
+      r_vcenter_extension_facts: "{{ r_vcenter_extension_facts }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_application_custom_https | default(omit, True) }}"
       password: "{{ fortios_application_custom_password | default(omit, True) }}"
       vdom: "{{ fortios_application_custom_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_application_custom"
+  set_stats:
+    data:
+      r_fortios_application_custom: "{{ r_fortios_application_custom }}"

@@ -32,3 +32,8 @@
     - name: "plugin_datadog_monitor"
       datadog_monitor: "{{ datadog_monitor }}"
       register: r_datadog_monitor
+
+    - name: "export r_datadog_monitor"
+      set_stats:
+        data:
+          r_datadog_monitor: "{{ r_datadog_monitor }}"

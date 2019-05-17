@@ -20,3 +20,8 @@
     - name: "plugin_vsphere_file"
       vsphere_file: "{{ vsphere_file }}"
       register: r_vsphere_file
+
+    - name: "export r_vsphere_file"
+      set_stats:
+        data:
+          r_vsphere_file: "{{ r_vsphere_file }}"

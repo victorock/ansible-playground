@@ -21,3 +21,8 @@
     - name: "plugin_bigpanda"
       bigpanda: "{{ bigpanda }}"
       register: r_bigpanda
+
+    - name: "export r_bigpanda"
+      set_stats:
+        data:
+          r_bigpanda: "{{ r_bigpanda }}"

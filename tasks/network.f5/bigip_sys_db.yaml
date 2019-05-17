@@ -13,3 +13,8 @@
       provider: "{{ bigip_sys_db_provider | default(omit, True) }}"
       password: "{{ bigip_sys_db_password | default(omit, True) }}"
       validate_certs: "{{ bigip_sys_db_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_sys_db"
+  set_stats:
+    data:
+      r_bigip_sys_db: "{{ r_bigip_sys_db }}"

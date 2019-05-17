@@ -12,3 +12,8 @@
       provider: "{{ bigip_lx_package_provider | default(omit, True) }}"
       password: "{{ bigip_lx_package_password | default(omit, True) }}"
       validate_certs: "{{ bigip_lx_package_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_lx_package"
+  set_stats:
+    data:
+      r_bigip_lx_package: "{{ r_bigip_lx_package }}"

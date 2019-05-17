@@ -12,3 +12,8 @@
     - name: "plugin_ce_facts"
       ce_facts: "{{ ce_facts }}"
       register: r_ce_facts
+
+    - name: "export r_ce_facts"
+      set_stats:
+        data:
+          r_ce_facts: "{{ r_ce_facts }}"

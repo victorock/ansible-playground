@@ -17,3 +17,8 @@
     - name: "plugin_fortios_vpn_ipsec_concentrator"
       fortios_vpn_ipsec_concentrator: "{{ fortios_vpn_ipsec_concentrator }}"
       register: r_fortios_vpn_ipsec_concentrator
+
+    - name: "export r_fortios_vpn_ipsec_concentrator"
+      set_stats:
+        data:
+          r_fortios_vpn_ipsec_concentrator: "{{ r_fortios_vpn_ipsec_concentrator }}"

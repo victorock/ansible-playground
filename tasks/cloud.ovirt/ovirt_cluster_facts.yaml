@@ -8,3 +8,8 @@
       fetch_nested: "{{ ovirt_cluster_facts_fetch_nested | default(omit, True) }}"
       nested_attributes: "{{ ovirt_cluster_facts_nested_attributes | default(omit, True) }}"
       auth: "{{ ovirt_cluster_facts_auth | default(omit, True) }}"
+
+- name: "export r_ovirt_cluster_facts"
+  set_stats:
+    data:
+      r_ovirt_cluster_facts: "{{ r_ovirt_cluster_facts }}"

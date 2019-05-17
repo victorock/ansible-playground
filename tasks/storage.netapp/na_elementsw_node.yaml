@@ -9,3 +9,8 @@
       password: "{{ na_elementsw_node_password | default(omit, True) }}"
       hostname: "{{ na_elementsw_node_hostname | default(omit, True) }}"
       node_id: "{{ na_elementsw_node_node_id | default(omit, True) }}"
+
+- name: "export r_na_elementsw_node"
+  set_stats:
+    data:
+      r_na_elementsw_node: "{{ r_na_elementsw_node }}"

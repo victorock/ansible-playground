@@ -23,3 +23,8 @@
     - name: "plugin_ucs_storage_profile"
       ucs_storage_profile: "{{ ucs_storage_profile }}"
       register: r_ucs_storage_profile
+
+    - name: "export r_ucs_storage_profile"
+      set_stats:
+        data:
+          r_ucs_storage_profile: "{{ r_ucs_storage_profile }}"

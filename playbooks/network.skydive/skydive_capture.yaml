@@ -22,3 +22,8 @@
     - name: "plugin_skydive_capture"
       skydive_capture: "{{ skydive_capture }}"
       register: r_skydive_capture
+
+    - name: "export r_skydive_capture"
+      set_stats:
+        data:
+          r_skydive_capture: "{{ r_skydive_capture }}"

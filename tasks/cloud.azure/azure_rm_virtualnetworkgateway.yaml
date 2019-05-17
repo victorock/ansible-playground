@@ -29,3 +29,8 @@
       vpn_type: "{{ azure_rm_virtualnetworkgateway_vpn_type | default(omit, True) }}"
       name: "{{ azure_rm_virtualnetworkgateway_name | default(omit, True) }}"
       virtual_network: "{{ azure_rm_virtualnetworkgateway_virtual_network | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualnetworkgateway"
+  set_stats:
+    data:
+      r_azure_rm_virtualnetworkgateway: "{{ r_azure_rm_virtualnetworkgateway }}"

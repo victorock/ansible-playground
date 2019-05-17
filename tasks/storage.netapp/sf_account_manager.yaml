@@ -15,3 +15,8 @@
       attributes: "{{ sf_account_manager_attributes | default(omit, True) }}"
       password: "{{ sf_account_manager_password | default(omit, True) }}"
       name: "{{ sf_account_manager_name | default(omit, True) }}"
+
+- name: "export r_sf_account_manager"
+  set_stats:
+    data:
+      r_sf_account_manager: "{{ r_sf_account_manager }}"

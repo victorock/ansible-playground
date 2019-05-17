@@ -24,3 +24,8 @@
       name: "{{ gcp_compute_image_name | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_image_auth_kind | default(omit, True) }}"
       source_disk_encryption_key: "{{ gcp_compute_image_source_disk_encryption_key | default(omit, True) }}"
+
+- name: "export r_gcp_compute_image"
+  set_stats:
+    data:
+      r_gcp_compute_image: "{{ r_gcp_compute_image }}"

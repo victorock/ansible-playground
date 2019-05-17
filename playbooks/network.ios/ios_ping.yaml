@@ -19,3 +19,8 @@
     - name: "plugin_ios_ping"
       ios_ping: "{{ ios_ping }}"
       register: r_ios_ping
+
+    - name: "export r_ios_ping"
+      set_stats:
+        data:
+          r_ios_ping: "{{ r_ios_ping }}"

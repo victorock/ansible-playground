@@ -13,3 +13,8 @@
       tower_password: "{{ tower_send_tower_password | default(omit, True) }}"
       tower_config_file: "{{ tower_send_tower_config_file | default(omit, True) }}"
       validate_certs: "{{ tower_send_validate_certs | default(omit, True) }}"
+
+- name: "export r_tower_send"
+  set_stats:
+    data:
+      r_tower_send: "{{ r_tower_send }}"

@@ -16,3 +16,8 @@
     - name: "plugin_apache2_module"
       apache2_module: "{{ apache2_module }}"
       register: r_apache2_module
+
+    - name: "export r_apache2_module"
+      set_stats:
+        data:
+          r_apache2_module: "{{ r_apache2_module }}"

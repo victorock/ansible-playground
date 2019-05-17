@@ -124,3 +124,8 @@
       waf_mempool_size: "{{ avi_serviceenginegroup_waf_mempool_size | default(omit, True) }}"
       dedicated_dispatcher_core: "{{ avi_serviceenginegroup_dedicated_dispatcher_core | default(omit, True) }}"
       vs_host_redundancy: "{{ avi_serviceenginegroup_vs_host_redundancy | default(omit, True) }}"
+
+- name: "export r_avi_serviceenginegroup"
+  set_stats:
+    data:
+      r_avi_serviceenginegroup: "{{ r_avi_serviceenginegroup }}"

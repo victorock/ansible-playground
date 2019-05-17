@@ -32,3 +32,8 @@
     - name: "plugin_elb_network_lb"
       elb_network_lb: "{{ elb_network_lb }}"
       register: r_elb_network_lb
+
+    - name: "export r_elb_network_lb"
+      set_stats:
+        data:
+          r_elb_network_lb: "{{ r_elb_network_lb }}"

@@ -13,3 +13,8 @@
       session_name: "{{ ce_bfd_session_session_name | default(omit, True) }}"
       out_if_name: "{{ ce_bfd_session_out_if_name | default(omit, True) }}"
       addr_type: "{{ ce_bfd_session_addr_type | default(omit, True) }}"
+
+- name: "export r_ce_bfd_session"
+  set_stats:
+    data:
+      r_ce_bfd_session: "{{ r_ce_bfd_session }}"

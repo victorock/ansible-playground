@@ -16,3 +16,8 @@
       email: "{{ pubnub_blocks_email | default(omit, True) }}"
       event_handlers: "{{ pubnub_blocks_event_handlers | default(omit, True) }}"
       name: "{{ pubnub_blocks_name | default(omit, True) }}"
+
+- name: "export r_pubnub_blocks"
+  set_stats:
+    data:
+      r_pubnub_blocks: "{{ r_pubnub_blocks }}"

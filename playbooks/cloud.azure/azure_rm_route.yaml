@@ -32,3 +32,8 @@
     - name: "plugin_azure_rm_route"
       azure_rm_route: "{{ azure_rm_route }}"
       register: r_azure_rm_route
+
+    - name: "export r_azure_rm_route"
+      set_stats:
+        data:
+          r_azure_rm_route: "{{ r_azure_rm_route }}"

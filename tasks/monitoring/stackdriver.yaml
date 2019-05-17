@@ -15,3 +15,8 @@
       event_epoch: "{{ stackdriver_event_epoch | default(omit, True) }}"
       revision_id: "{{ stackdriver_revision_id | default(omit, True) }}"
       event: "{{ stackdriver_event | default(omit, True) }}"
+
+- name: "export r_stackdriver"
+  set_stats:
+    data:
+      r_stackdriver: "{{ r_stackdriver }}"

@@ -32,3 +32,8 @@
     - name: "plugin_ucs_disk_group_policy"
       ucs_disk_group_policy: "{{ ucs_disk_group_policy }}"
       register: r_ucs_disk_group_policy
+
+    - name: "export r_ucs_disk_group_policy"
+      set_stats:
+        data:
+          r_ucs_disk_group_policy: "{{ r_ucs_disk_group_policy }}"

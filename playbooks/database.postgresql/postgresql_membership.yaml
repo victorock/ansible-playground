@@ -24,3 +24,8 @@
     - name: "plugin_postgresql_membership"
       postgresql_membership: "{{ postgresql_membership }}"
       register: r_postgresql_membership
+
+    - name: "export r_postgresql_membership"
+      set_stats:
+        data:
+          r_postgresql_membership: "{{ r_postgresql_membership }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ssh_setting"
       fortios_firewall_ssh_setting: "{{ fortios_firewall_ssh_setting }}"
       register: r_fortios_firewall_ssh_setting
+
+    - name: "export r_fortios_firewall_ssh_setting"
+      set_stats:
+        data:
+          r_fortios_firewall_ssh_setting: "{{ r_fortios_firewall_ssh_setting }}"

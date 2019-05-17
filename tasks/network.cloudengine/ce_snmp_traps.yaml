@@ -9,3 +9,8 @@
       feature_name: "{{ ce_snmp_traps_feature_name | default(omit, True) }}"
       port_number: "{{ ce_snmp_traps_port_number | default(omit, True) }}"
       interface_number: "{{ ce_snmp_traps_interface_number | default(omit, True) }}"
+
+- name: "export r_ce_snmp_traps"
+  set_stats:
+    data:
+      r_ce_snmp_traps: "{{ r_ce_snmp_traps }}"

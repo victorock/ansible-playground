@@ -18,3 +18,8 @@
     - name: "plugin_na_cdot_qtree"
       na_cdot_qtree: "{{ na_cdot_qtree }}"
       register: r_na_cdot_qtree
+
+    - name: "export r_na_cdot_qtree"
+      set_stats:
+        data:
+          r_na_cdot_qtree: "{{ r_na_cdot_qtree }}"

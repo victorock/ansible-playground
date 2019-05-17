@@ -25,3 +25,8 @@
     - name: "plugin_ss_3par_cpg"
       ss_3par_cpg: "{{ ss_3par_cpg }}"
       register: r_ss_3par_cpg
+
+    - name: "export r_ss_3par_cpg"
+      set_stats:
+        data:
+          r_ss_3par_cpg: "{{ r_ss_3par_cpg }}"

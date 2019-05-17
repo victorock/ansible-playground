@@ -16,3 +16,8 @@
       state: "{{ ecs_cluster_state | default(omit, True) }}"
       ec2_url: "{{ ecs_cluster_ec2_url | default(omit, True) }}"
       validate_certs: "{{ ecs_cluster_validate_certs | default(omit, True) }}"
+
+- name: "export r_ecs_cluster"
+  set_stats:
+    data:
+      r_ecs_cluster: "{{ r_ecs_cluster }}"

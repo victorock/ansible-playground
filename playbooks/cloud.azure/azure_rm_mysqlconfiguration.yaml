@@ -28,3 +28,8 @@
     - name: "plugin_azure_rm_mysqlconfiguration"
       azure_rm_mysqlconfiguration: "{{ azure_rm_mysqlconfiguration }}"
       register: r_azure_rm_mysqlconfiguration
+
+    - name: "export r_azure_rm_mysqlconfiguration"
+      set_stats:
+        data:
+          r_azure_rm_mysqlconfiguration: "{{ r_azure_rm_mysqlconfiguration }}"

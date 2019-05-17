@@ -63,3 +63,8 @@
     - name: "plugin_ce_bgp_neighbor_af"
       ce_bgp_neighbor_af: "{{ ce_bgp_neighbor_af }}"
       register: r_ce_bgp_neighbor_af
+
+    - name: "export r_ce_bgp_neighbor_af"
+      set_stats:
+        data:
+          r_ce_bgp_neighbor_af: "{{ r_ce_bgp_neighbor_af }}"

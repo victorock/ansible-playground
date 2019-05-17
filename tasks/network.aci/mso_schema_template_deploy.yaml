@@ -17,3 +17,8 @@
       validate_certs: "{{ mso_schema_template_deploy_validate_certs | default(omit, True) }}"
       port: "{{ mso_schema_template_deploy_port | default(omit, True) }}"
       schema: "{{ mso_schema_template_deploy_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_template_deploy"
+  set_stats:
+    data:
+      r_mso_schema_template_deploy: "{{ r_mso_schema_template_deploy }}"

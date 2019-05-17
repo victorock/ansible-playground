@@ -16,3 +16,8 @@
     - name: "plugin_xfconf"
       xfconf: "{{ xfconf }}"
       register: r_xfconf
+
+    - name: "export r_xfconf"
+      set_stats:
+        data:
+          r_xfconf: "{{ r_xfconf }}"

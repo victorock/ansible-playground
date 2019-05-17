@@ -27,3 +27,8 @@
     - name: "plugin_azure_rm_manageddisk_facts"
       azure_rm_manageddisk_facts: "{{ azure_rm_manageddisk_facts }}"
       register: r_azure_rm_manageddisk_facts
+
+    - name: "export r_azure_rm_manageddisk_facts"
+      set_stats:
+        data:
+          r_azure_rm_manageddisk_facts: "{{ r_azure_rm_manageddisk_facts }}"

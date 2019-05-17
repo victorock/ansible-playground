@@ -19,3 +19,8 @@
     - name: "plugin_clc_alert_policy"
       clc_alert_policy: "{{ clc_alert_policy }}"
       register: r_clc_alert_policy
+
+    - name: "export r_clc_alert_policy"
+      set_stats:
+        data:
+          r_clc_alert_policy: "{{ r_clc_alert_policy }}"

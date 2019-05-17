@@ -22,3 +22,8 @@
     - name: "plugin_rax_identity"
       rax_identity: "{{ rax_identity }}"
       register: r_rax_identity
+
+    - name: "export r_rax_identity"
+      set_stats:
+        data:
+          r_rax_identity: "{{ r_rax_identity }}"

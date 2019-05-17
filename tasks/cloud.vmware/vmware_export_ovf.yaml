@@ -15,3 +15,8 @@
       validate_certs: "{{ vmware_export_ovf_validate_certs | default(omit, True) }}"
       port: "{{ vmware_export_ovf_port | default(omit, True) }}"
       uuid: "{{ vmware_export_ovf_uuid | default(omit, True) }}"
+
+- name: "export r_vmware_export_ovf"
+  set_stats:
+    data:
+      r_vmware_export_ovf: "{{ r_vmware_export_ovf }}"

@@ -16,3 +16,8 @@
     - name: "plugin_vertica_facts"
       vertica_facts: "{{ vertica_facts }}"
       register: r_vertica_facts
+
+    - name: "export r_vertica_facts"
+      set_stats:
+        data:
+          r_vertica_facts: "{{ r_vertica_facts }}"

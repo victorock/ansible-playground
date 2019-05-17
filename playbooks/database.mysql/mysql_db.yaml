@@ -29,3 +29,8 @@
     - name: "plugin_mysql_db"
       mysql_db: "{{ mysql_db }}"
       register: r_mysql_db
+
+    - name: "export r_mysql_db"
+      set_stats:
+        data:
+          r_mysql_db: "{{ r_mysql_db }}"

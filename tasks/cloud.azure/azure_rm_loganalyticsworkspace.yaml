@@ -25,3 +25,8 @@
       password: "{{ azure_rm_loganalyticsworkspace_password | default(omit, True) }}"
       tags: "{{ azure_rm_loganalyticsworkspace_tags | default(omit, True) }}"
       tenant: "{{ azure_rm_loganalyticsworkspace_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_loganalyticsworkspace"
+  set_stats:
+    data:
+      r_azure_rm_loganalyticsworkspace: "{{ r_azure_rm_loganalyticsworkspace }}"

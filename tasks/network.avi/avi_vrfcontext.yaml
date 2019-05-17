@@ -27,3 +27,8 @@
       debugvrfcontext: "{{ avi_vrfcontext_debugvrfcontext | default(omit, True) }}"
       bgp_profile: "{{ avi_vrfcontext_bgp_profile | default(omit, True) }}"
       tenant_uuid: "{{ avi_vrfcontext_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_vrfcontext"
+  set_stats:
+    data:
+      r_avi_vrfcontext: "{{ r_avi_vrfcontext }}"

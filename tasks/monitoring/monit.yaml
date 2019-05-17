@@ -7,3 +7,8 @@
       state: "{{ monit_state | default(omit, True) }}"
       name: "{{ monit_name | default(omit, True) }}"
       timeout: "{{ monit_timeout | default(omit, True) }}"
+
+- name: "export r_monit"
+  set_stats:
+    data:
+      r_monit: "{{ r_monit }}"

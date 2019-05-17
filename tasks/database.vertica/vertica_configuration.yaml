@@ -11,3 +11,8 @@
       cluster: "{{ vertica_configuration_cluster | default(omit, True) }}"
       login_password: "{{ vertica_configuration_login_password | default(omit, True) }}"
       port: "{{ vertica_configuration_port | default(omit, True) }}"
+
+- name: "export r_vertica_configuration"
+  set_stats:
+    data:
+      r_vertica_configuration: "{{ r_vertica_configuration }}"

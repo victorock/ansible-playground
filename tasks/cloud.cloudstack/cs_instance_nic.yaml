@@ -20,3 +20,8 @@
       zone: "{{ cs_instance_nic_zone | default(omit, True) }}"
       ip_address: "{{ cs_instance_nic_ip_address | default(omit, True) }}"
       network: "{{ cs_instance_nic_network | default(omit, True) }}"
+
+- name: "export r_cs_instance_nic"
+  set_stats:
+    data:
+      r_cs_instance_nic: "{{ r_cs_instance_nic }}"

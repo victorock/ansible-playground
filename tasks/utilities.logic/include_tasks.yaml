@@ -7,3 +7,8 @@
       free-form: "{{ include_tasks_free-form | default(omit, True) }}"
       apply: "{{ include_tasks_apply | default(omit, True) }}"
       file: "{{ include_tasks_file | default(omit, True) }}"
+
+- name: "export r_include_tasks"
+  set_stats:
+    data:
+      r_include_tasks: "{{ r_include_tasks }}"

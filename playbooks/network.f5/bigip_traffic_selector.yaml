@@ -25,3 +25,8 @@
     - name: "plugin_bigip_traffic_selector"
       bigip_traffic_selector: "{{ bigip_traffic_selector }}"
       register: r_bigip_traffic_selector
+
+    - name: "export r_bigip_traffic_selector"
+      set_stats:
+        data:
+          r_bigip_traffic_selector: "{{ r_bigip_traffic_selector }}"

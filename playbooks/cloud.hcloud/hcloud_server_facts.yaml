@@ -16,3 +16,8 @@
     - name: "plugin_hcloud_server_facts"
       hcloud_server_facts: "{{ hcloud_server_facts }}"
       register: r_hcloud_server_facts
+
+    - name: "export r_hcloud_server_facts"
+      set_stats:
+        data:
+          r_hcloud_server_facts: "{{ r_hcloud_server_facts }}"

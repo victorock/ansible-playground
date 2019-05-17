@@ -16,3 +16,8 @@
       login_password: "{{ zabbix_host_facts_login_password | default(omit, True) }}"
       validate_certs: "{{ zabbix_host_facts_validate_certs | default(omit, True) }}"
       host_inventory: "{{ zabbix_host_facts_host_inventory | default(omit, True) }}"
+
+- name: "export r_zabbix_host_facts"
+  set_stats:
+    data:
+      r_zabbix_host_facts: "{{ r_zabbix_host_facts }}"

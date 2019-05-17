@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_multicast"
       fortios_router_multicast: "{{ fortios_router_multicast }}"
       register: r_fortios_router_multicast
+
+    - name: "export r_fortios_router_multicast"
+      set_stats:
+        data:
+          r_fortios_router_multicast: "{{ r_fortios_router_multicast }}"

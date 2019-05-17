@@ -12,3 +12,8 @@
       leaf_group: "{{ bcf_switch_leaf_group | default(omit, True) }}"
       validate_certs: "{{ bcf_switch_validate_certs | default(omit, True) }}"
       fabric_role: "{{ bcf_switch_fabric_role | default(omit, True) }}"
+
+- name: "export r_bcf_switch"
+  set_stats:
+    data:
+      r_bcf_switch: "{{ r_bcf_switch }}"

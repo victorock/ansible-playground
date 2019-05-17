@@ -16,3 +16,8 @@
     - name: "plugin_pkg5"
       pkg5: "{{ pkg5 }}"
       register: r_pkg5
+
+    - name: "export r_pkg5"
+      set_stats:
+        data:
+          r_pkg5: "{{ r_pkg5 }}"

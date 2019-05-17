@@ -16,3 +16,8 @@
       sleep_between_checks: "{{ aerospike_migrations_sleep_between_checks | default(omit, True) }}"
       port: "{{ aerospike_migrations_port | default(omit, True) }}"
       migrate_rx_key: "{{ aerospike_migrations_migrate_rx_key | default(omit, True) }}"
+
+- name: "export r_aerospike_migrations"
+  set_stats:
+    data:
+      r_aerospike_migrations: "{{ r_aerospike_migrations }}"

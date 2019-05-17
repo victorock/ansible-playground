@@ -9,3 +9,8 @@
       password: "{{ ejabberd_user_password | default(omit, True) }}"
       logging: "{{ ejabberd_user_logging | default(omit, True) }}"
       state: "{{ ejabberd_user_state | default(omit, True) }}"
+
+- name: "export r_ejabberd_user"
+  set_stats:
+    data:
+      r_ejabberd_user: "{{ r_ejabberd_user }}"

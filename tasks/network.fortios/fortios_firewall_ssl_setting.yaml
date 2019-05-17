@@ -10,3 +10,8 @@
       firewall_ssl_setting: "{{ fortios_firewall_ssl_setting_firewall_ssl_setting | default(omit, True) }}"
       password: "{{ fortios_firewall_ssl_setting_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_ssl_setting_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_ssl_setting"
+  set_stats:
+    data:
+      r_fortios_firewall_ssl_setting: "{{ r_fortios_firewall_ssl_setting }}"

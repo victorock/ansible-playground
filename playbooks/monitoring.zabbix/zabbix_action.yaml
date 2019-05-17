@@ -36,3 +36,8 @@
     - name: "plugin_zabbix_action"
       zabbix_action: "{{ zabbix_action }}"
       register: r_zabbix_action
+
+    - name: "export r_zabbix_action"
+      set_stats:
+        data:
+          r_zabbix_action: "{{ r_zabbix_action }}"

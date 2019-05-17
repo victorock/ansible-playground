@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_content_header"
       fortios_webfilter_content_header: "{{ fortios_webfilter_content_header }}"
       register: r_fortios_webfilter_content_header
+
+    - name: "export r_fortios_webfilter_content_header"
+      set_stats:
+        data:
+          r_fortios_webfilter_content_header: "{{ r_fortios_webfilter_content_header }}"

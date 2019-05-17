@@ -24,3 +24,8 @@
       password: "{{ azure_rm_keyvaultkey_password | default(omit, True) }}"
       tenant: "{{ azure_rm_keyvaultkey_tenant | default(omit, True) }}"
       api_profile: "{{ azure_rm_keyvaultkey_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_keyvaultkey"
+  set_stats:
+    data:
+      r_azure_rm_keyvaultkey: "{{ r_azure_rm_keyvaultkey }}"

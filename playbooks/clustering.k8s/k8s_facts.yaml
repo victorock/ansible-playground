@@ -27,3 +27,8 @@
     - name: "plugin_k8s_facts"
       k8s_facts: "{{ k8s_facts }}"
       register: r_k8s_facts
+
+    - name: "export r_k8s_facts"
+      set_stats:
+        data:
+          r_k8s_facts: "{{ r_k8s_facts }}"

@@ -18,3 +18,8 @@
       port: "{{ mso_schema_template_port | default(omit, True) }}"
       tenant: "{{ mso_schema_template_tenant | default(omit, True) }}"
       schema: "{{ mso_schema_template_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_template"
+  set_stats:
+    data:
+      r_mso_schema_template: "{{ r_mso_schema_template }}"

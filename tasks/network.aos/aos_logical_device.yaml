@@ -9,3 +9,8 @@
       session: "{{ aos_logical_device_session | default(omit, True) }}"
       name: "{{ aos_logical_device_name | default(omit, True) }}"
       id: "{{ aos_logical_device_id | default(omit, True) }}"
+
+- name: "export r_aos_logical_device"
+  set_stats:
+    data:
+      r_aos_logical_device: "{{ r_aos_logical_device }}"

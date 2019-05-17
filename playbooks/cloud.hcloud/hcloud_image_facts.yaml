@@ -17,3 +17,8 @@
     - name: "plugin_hcloud_image_facts"
       hcloud_image_facts: "{{ hcloud_image_facts }}"
       register: r_hcloud_image_facts
+
+    - name: "export r_hcloud_image_facts"
+      set_stats:
+        data:
+          r_hcloud_image_facts: "{{ r_hcloud_image_facts }}"

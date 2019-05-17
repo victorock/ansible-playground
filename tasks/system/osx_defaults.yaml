@@ -12,3 +12,8 @@
       path: "{{ osx_defaults_path | default(omit, True) }}"
       type: "{{ osx_defaults_type | default(omit, True) }}"
       array_add: "{{ osx_defaults_array_add | default(omit, True) }}"
+
+- name: "export r_osx_defaults"
+  set_stats:
+    data:
+      r_osx_defaults: "{{ r_osx_defaults }}"

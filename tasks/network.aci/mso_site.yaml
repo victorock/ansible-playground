@@ -21,3 +21,8 @@
       password: "{{ mso_site_password | default(omit, True) }}"
       validate_certs: "{{ mso_site_validate_certs | default(omit, True) }}"
       port: "{{ mso_site_port | default(omit, True) }}"
+
+- name: "export r_mso_site"
+  set_stats:
+    data:
+      r_mso_site: "{{ r_mso_site }}"

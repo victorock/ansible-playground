@@ -17,3 +17,8 @@
       password: "{{ vertica_user_password | default(omit, True) }}"
       expired: "{{ vertica_user_expired | default(omit, True) }}"
       port: "{{ vertica_user_port | default(omit, True) }}"
+
+- name: "export r_vertica_user"
+  set_stats:
+    data:
+      r_vertica_user: "{{ r_vertica_user }}"

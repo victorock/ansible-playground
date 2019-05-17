@@ -10,3 +10,8 @@
       https: "{{ fortios_webfilter_content_header_https | default(omit, True) }}"
       password: "{{ fortios_webfilter_content_header_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_content_header_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_content_header"
+  set_stats:
+    data:
+      r_fortios_webfilter_content_header: "{{ r_fortios_webfilter_content_header }}"

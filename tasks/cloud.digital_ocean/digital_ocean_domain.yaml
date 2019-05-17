@@ -11,3 +11,8 @@
       timeout: "{{ digital_ocean_domain_timeout | default(omit, True) }}"
       validate_certs: "{{ digital_ocean_domain_validate_certs | default(omit, True) }}"
       id: "{{ digital_ocean_domain_id | default(omit, True) }}"
+
+- name: "export r_digital_ocean_domain"
+  set_stats:
+    data:
+      r_digital_ocean_domain: "{{ r_digital_ocean_domain }}"

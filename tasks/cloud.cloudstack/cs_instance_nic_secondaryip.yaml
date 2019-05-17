@@ -20,3 +20,8 @@
       account: "{{ cs_instance_nic_secondaryip_account | default(omit, True) }}"
       zone: "{{ cs_instance_nic_secondaryip_zone | default(omit, True) }}"
       network: "{{ cs_instance_nic_secondaryip_network | default(omit, True) }}"
+
+- name: "export r_cs_instance_nic_secondaryip"
+  set_stats:
+    data:
+      r_cs_instance_nic_secondaryip: "{{ r_cs_instance_nic_secondaryip }}"

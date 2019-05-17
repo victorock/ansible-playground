@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_virtualmachinescalesetinstance"
       azure_rm_virtualmachinescalesetinstance: "{{ azure_rm_virtualmachinescalesetinstance }}"
       register: r_azure_rm_virtualmachinescalesetinstance
+
+    - name: "export r_azure_rm_virtualmachinescalesetinstance"
+      set_stats:
+        data:
+          r_azure_rm_virtualmachinescalesetinstance: "{{ r_azure_rm_virtualmachinescalesetinstance }}"

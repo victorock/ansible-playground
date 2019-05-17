@@ -18,3 +18,8 @@
     - name: "plugin_pn_snmp_vacm"
       pn_snmp_vacm: "{{ pn_snmp_vacm }}"
       register: r_pn_snmp_vacm
+
+    - name: "export r_pn_snmp_vacm"
+      set_stats:
+        data:
+          r_pn_snmp_vacm: "{{ r_pn_snmp_vacm }}"

@@ -49,3 +49,8 @@
     - name: "plugin_cloudfront_distribution"
       cloudfront_distribution: "{{ cloudfront_distribution }}"
       register: r_cloudfront_distribution
+
+    - name: "export r_cloudfront_distribution"
+      set_stats:
+        data:
+          r_cloudfront_distribution: "{{ r_cloudfront_distribution }}"

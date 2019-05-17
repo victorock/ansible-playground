@@ -35,3 +35,8 @@
       shard_count: "{{ azure_rm_rediscache_shard_count | default(omit, True) }}"
       auth_source: "{{ azure_rm_rediscache_auth_source | default(omit, True) }}"
       cloud_environment: "{{ azure_rm_rediscache_cloud_environment | default(omit, True) }}"
+
+- name: "export r_azure_rm_rediscache"
+  set_stats:
+    data:
+      r_azure_rm_rediscache: "{{ r_azure_rm_rediscache }}"

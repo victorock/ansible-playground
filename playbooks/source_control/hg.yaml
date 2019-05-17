@@ -19,3 +19,8 @@
     - name: "plugin_hg"
       hg: "{{ hg }}"
       register: r_hg
+
+    - name: "export r_hg"
+      set_stats:
+        data:
+          r_hg: "{{ r_hg }}"

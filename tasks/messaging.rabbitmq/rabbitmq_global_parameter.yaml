@@ -8,3 +8,8 @@
       state: "{{ rabbitmq_global_parameter_state | default(omit, True) }}"
       name: "{{ rabbitmq_global_parameter_name | default(omit, True) }}"
       value: "{{ rabbitmq_global_parameter_value | default(omit, True) }}"
+
+- name: "export r_rabbitmq_global_parameter"
+  set_stats:
+    data:
+      r_rabbitmq_global_parameter: "{{ r_rabbitmq_global_parameter }}"

@@ -26,3 +26,8 @@
       algorithm: "{{ cs_loadbalancer_rule_algorithm | default(omit, True) }}"
       api_region: "{{ cs_loadbalancer_rule_api_region | default(omit, True) }}"
       project: "{{ cs_loadbalancer_rule_project | default(omit, True) }}"
+
+- name: "export r_cs_loadbalancer_rule"
+  set_stats:
+    data:
+      r_cs_loadbalancer_rule: "{{ r_cs_loadbalancer_rule }}"

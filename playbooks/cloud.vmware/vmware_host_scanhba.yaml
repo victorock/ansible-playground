@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_scanhba"
       vmware_host_scanhba: "{{ vmware_host_scanhba }}"
       register: r_vmware_host_scanhba
+
+    - name: "export r_vmware_host_scanhba"
+      set_stats:
+        data:
+          r_vmware_host_scanhba: "{{ r_vmware_host_scanhba }}"

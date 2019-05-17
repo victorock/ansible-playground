@@ -24,3 +24,8 @@
       controller: "{{ avi_vsvip_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_vsvip_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_vsvip_name | default(omit, True) }}"
+
+- name: "export r_avi_vsvip"
+  set_stats:
+    data:
+      r_avi_vsvip: "{{ r_avi_vsvip }}"

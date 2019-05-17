@@ -27,3 +27,8 @@
       ip_version: "{{ gcp_compute_forwarding_rule_ip_version | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_forwarding_rule_auth_kind | default(omit, True) }}"
       ports: "{{ gcp_compute_forwarding_rule_ports | default(omit, True) }}"
+
+- name: "export r_gcp_compute_forwarding_rule"
+  set_stats:
+    data:
+      r_gcp_compute_forwarding_rule: "{{ r_gcp_compute_forwarding_rule }}"

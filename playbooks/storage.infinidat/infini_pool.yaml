@@ -19,3 +19,8 @@
     - name: "plugin_infini_pool"
       infini_pool: "{{ infini_pool }}"
       register: r_infini_pool
+
+    - name: "export r_infini_pool"
+      set_stats:
+        data:
+          r_infini_pool: "{{ r_infini_pool }}"

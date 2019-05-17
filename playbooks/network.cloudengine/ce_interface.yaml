@@ -18,3 +18,8 @@
     - name: "plugin_ce_interface"
       ce_interface: "{{ ce_interface }}"
       register: r_ce_interface
+
+    - name: "export r_ce_interface"
+      set_stats:
+        data:
+          r_ce_interface: "{{ r_ce_interface }}"

@@ -27,3 +27,8 @@
     - name: "plugin_utm_dns_host"
       utm_dns_host: "{{ utm_dns_host }}"
       register: r_utm_dns_host
+
+    - name: "export r_utm_dns_host"
+      set_stats:
+        data:
+          r_utm_dns_host: "{{ r_utm_dns_host }}"

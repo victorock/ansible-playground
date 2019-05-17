@@ -28,3 +28,8 @@
     - name: "plugin_bigip_iapp_service"
       bigip_iapp_service: "{{ bigip_iapp_service }}"
       register: r_bigip_iapp_service
+
+    - name: "export r_bigip_iapp_service"
+      set_stats:
+        data:
+          r_bigip_iapp_service: "{{ r_bigip_iapp_service }}"

@@ -70,3 +70,8 @@
       delete_provisioning_template: "{{ fmgr_device_provision_template_delete_provisioning_template | default(omit, True) }}"
       snmp_v2c_trap_hosts_ipv4: "{{ fmgr_device_provision_template_snmp_v2c_trap_hosts_ipv4 | default(omit, True) }}"
       ntp_v3: "{{ fmgr_device_provision_template_ntp_v3 | default(omit, True) }}"
+
+- name: "export r_fmgr_device_provision_template"
+  set_stats:
+    data:
+      r_fmgr_device_provision_template: "{{ r_fmgr_device_provision_template }}"

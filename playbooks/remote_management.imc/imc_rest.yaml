@@ -19,3 +19,8 @@
     - name: "plugin_imc_rest"
       imc_rest: "{{ imc_rest }}"
       register: r_imc_rest
+
+    - name: "export r_imc_rest"
+      set_stats:
+        data:
+          r_imc_rest: "{{ r_imc_rest }}"

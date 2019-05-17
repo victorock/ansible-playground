@@ -15,3 +15,8 @@
       vdirect_secondary_ip: "{{ vdirect_file_vdirect_secondary_ip | default(omit, True) }}"
       validate_certs: "{{ vdirect_file_validate_certs | default(omit, True) }}"
       vdirect_use_ssl: "{{ vdirect_file_vdirect_use_ssl | default(omit, True) }}"
+
+- name: "export r_vdirect_file"
+  set_stats:
+    data:
+      r_vdirect_file: "{{ r_vdirect_file }}"

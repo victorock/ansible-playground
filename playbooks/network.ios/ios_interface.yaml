@@ -26,3 +26,8 @@
     - name: "plugin_ios_interface"
       ios_interface: "{{ ios_interface }}"
       register: r_ios_interface
+
+    - name: "export r_ios_interface"
+      set_stats:
+        data:
+          r_ios_interface: "{{ r_ios_interface }}"

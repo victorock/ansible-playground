@@ -17,3 +17,8 @@
     - name: "plugin_vultr_server_facts"
       vultr_server_facts: "{{ vultr_server_facts }}"
       register: r_vultr_server_facts
+
+    - name: "export r_vultr_server_facts"
+      set_stats:
+        data:
+          r_vultr_server_facts: "{{ r_vultr_server_facts }}"

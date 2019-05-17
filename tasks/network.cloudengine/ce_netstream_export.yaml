@@ -13,3 +13,8 @@
       version: "{{ ce_netstream_export_version | default(omit, True) }}"
       type: "{{ ce_netstream_export_type | default(omit, True) }}"
       host_vpn: "{{ ce_netstream_export_host_vpn | default(omit, True) }}"
+
+- name: "export r_ce_netstream_export"
+  set_stats:
+    data:
+      r_ce_netstream_export: "{{ r_ce_netstream_export }}"

@@ -17,3 +17,8 @@
       password: "{{ influxdb_write_password | default(omit, True) }}"
       validate_certs: "{{ influxdb_write_validate_certs | default(omit, True) }}"
       port: "{{ influxdb_write_port | default(omit, True) }}"
+
+- name: "export r_influxdb_write"
+  set_stats:
+    data:
+      r_influxdb_write: "{{ r_influxdb_write }}"

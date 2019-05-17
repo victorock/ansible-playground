@@ -21,3 +21,8 @@
     - name: "plugin_vyos_vlan"
       vyos_vlan: "{{ vyos_vlan }}"
       register: r_vyos_vlan
+
+    - name: "export r_vyos_vlan"
+      set_stats:
+        data:
+          r_vyos_vlan: "{{ r_vyos_vlan }}"

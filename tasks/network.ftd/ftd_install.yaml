@@ -23,3 +23,8 @@
       device_password: "{{ ftd_install_device_password | default(omit, True) }}"
       image_version: "{{ ftd_install_image_version | default(omit, True) }}"
       console_password: "{{ ftd_install_console_password | default(omit, True) }}"
+
+- name: "export r_ftd_install"
+  set_stats:
+    data:
+      r_ftd_install: "{{ r_ftd_install }}"

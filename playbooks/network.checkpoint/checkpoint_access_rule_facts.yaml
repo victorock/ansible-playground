@@ -14,3 +14,8 @@
     - name: "plugin_checkpoint_access_rule_facts"
       checkpoint_access_rule_facts: "{{ checkpoint_access_rule_facts }}"
       register: r_checkpoint_access_rule_facts
+
+    - name: "export r_checkpoint_access_rule_facts"
+      set_stats:
+        data:
+          r_checkpoint_access_rule_facts: "{{ r_checkpoint_access_rule_facts }}"

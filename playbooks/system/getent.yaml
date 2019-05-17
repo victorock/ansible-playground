@@ -15,3 +15,8 @@
     - name: "plugin_getent"
       getent: "{{ getent }}"
       register: r_getent
+
+    - name: "export r_getent"
+      set_stats:
+        data:
+          r_getent: "{{ r_getent }}"

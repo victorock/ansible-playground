@@ -16,3 +16,8 @@
       nodes: "{{ na_ontap_software_update_nodes | default(omit, True) }}"
       password: "{{ na_ontap_software_update_password | default(omit, True) }}"
       ignore_validation_warning: "{{ na_ontap_software_update_ignore_validation_warning | default(omit, True) }}"
+
+- name: "export r_na_ontap_software_update"
+  set_stats:
+    data:
+      r_na_ontap_software_update: "{{ r_na_ontap_software_update }}"

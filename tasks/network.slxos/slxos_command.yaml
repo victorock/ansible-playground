@@ -9,3 +9,8 @@
       wait_for: "{{ slxos_command_wait_for | default(omit, True) }}"
       match: "{{ slxos_command_match | default(omit, True) }}"
       interval: "{{ slxos_command_interval | default(omit, True) }}"
+
+- name: "export r_slxos_command"
+  set_stats:
+    data:
+      r_slxos_command: "{{ r_slxos_command }}"

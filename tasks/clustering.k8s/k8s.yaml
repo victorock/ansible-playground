@@ -28,3 +28,8 @@
       kubeconfig: "{{ k8s_kubeconfig | default(omit, True) }}"
       context: "{{ k8s_context | default(omit, True) }}"
       validate_certs: "{{ k8s_validate_certs | default(omit, True) }}"
+
+- name: "export r_k8s"
+  set_stats:
+    data:
+      r_k8s: "{{ r_k8s }}"

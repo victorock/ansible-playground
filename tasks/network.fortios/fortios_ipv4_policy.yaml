@@ -36,3 +36,8 @@
       backup: "{{ fortios_ipv4_policy_backup | default(omit, True) }}"
       dst_addr: "{{ fortios_ipv4_policy_dst_addr | default(omit, True) }}"
       logtraffic: "{{ fortios_ipv4_policy_logtraffic | default(omit, True) }}"
+
+- name: "export r_fortios_ipv4_policy"
+  set_stats:
+    data:
+      r_fortios_ipv4_policy: "{{ r_fortios_ipv4_policy }}"

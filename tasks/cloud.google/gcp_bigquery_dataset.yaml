@@ -19,3 +19,8 @@
       dataset_reference: "{{ gcp_bigquery_dataset_dataset_reference | default(omit, True) }}"
       auth_kind: "{{ gcp_bigquery_dataset_auth_kind | default(omit, True) }}"
       name: "{{ gcp_bigquery_dataset_name | default(omit, True) }}"
+
+- name: "export r_gcp_bigquery_dataset"
+  set_stats:
+    data:
+      r_gcp_bigquery_dataset: "{{ r_gcp_bigquery_dataset }}"

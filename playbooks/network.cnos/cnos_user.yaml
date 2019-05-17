@@ -19,3 +19,8 @@
     - name: "plugin_cnos_user"
       cnos_user: "{{ cnos_user }}"
       register: r_cnos_user
+
+    - name: "export r_cnos_user"
+      set_stats:
+        data:
+          r_cnos_user: "{{ r_cnos_user }}"

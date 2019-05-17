@@ -6,3 +6,8 @@
     memset_dns_reload: 
       poll: "{{ memset_dns_reload_poll | default(omit, True) }}"
       api_key: "{{ memset_dns_reload_api_key | default(omit, True) }}"
+
+- name: "export r_memset_dns_reload"
+  set_stats:
+    data:
+      r_memset_dns_reload: "{{ r_memset_dns_reload }}"

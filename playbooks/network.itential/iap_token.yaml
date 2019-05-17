@@ -17,3 +17,8 @@
     - name: "plugin_iap_token"
       iap_token: "{{ iap_token }}"
       register: r_iap_token
+
+    - name: "export r_iap_token"
+      set_stats:
+        data:
+          r_iap_token: "{{ r_iap_token }}"

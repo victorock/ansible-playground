@@ -12,3 +12,8 @@
       user: "{{ jenkins_job_facts_user | default(omit, True) }}"
       password: "{{ jenkins_job_facts_password | default(omit, True) }}"
       validate_certs: "{{ jenkins_job_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_jenkins_job_facts"
+  set_stats:
+    data:
+      r_jenkins_job_facts: "{{ r_jenkins_job_facts }}"

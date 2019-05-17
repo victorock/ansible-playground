@@ -13,3 +13,8 @@
       file: "{{ include_vars_file | default(omit, True) }}"
       dir: "{{ include_vars_dir | default(omit, True) }}"
       name: "{{ include_vars_name | default(omit, True) }}"
+
+- name: "export r_include_vars"
+  set_stats:
+    data:
+      r_include_vars: "{{ r_include_vars }}"

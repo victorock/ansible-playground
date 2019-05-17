@@ -23,3 +23,8 @@
       auth: "{{ ovirt_event_auth | default(omit, True) }}"
       fetch_nested: "{{ ovirt_event_fetch_nested | default(omit, True) }}"
       template: "{{ ovirt_event_template | default(omit, True) }}"
+
+- name: "export r_ovirt_event"
+  set_stats:
+    data:
+      r_ovirt_event: "{{ r_ovirt_event }}"

@@ -20,3 +20,8 @@
       source_snapshot_id: "{{ ec2_snapshot_copy_source_snapshot_id | default(omit, True) }}"
       wait_timeout: "{{ ec2_snapshot_copy_wait_timeout | default(omit, True) }}"
       wait: "{{ ec2_snapshot_copy_wait | default(omit, True) }}"
+
+- name: "export r_ec2_snapshot_copy"
+  set_stats:
+    data:
+      r_ec2_snapshot_copy: "{{ r_ec2_snapshot_copy }}"

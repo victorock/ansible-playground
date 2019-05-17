@@ -19,3 +19,8 @@
     - name: "plugin_one_image"
       one_image: "{{ one_image }}"
       register: r_one_image
+
+    - name: "export r_one_image"
+      set_stats:
+        data:
+          r_one_image: "{{ r_one_image }}"

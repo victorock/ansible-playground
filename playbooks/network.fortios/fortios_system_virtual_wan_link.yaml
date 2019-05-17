@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_virtual_wan_link"
       fortios_system_virtual_wan_link: "{{ fortios_system_virtual_wan_link }}"
       register: r_fortios_system_virtual_wan_link
+
+    - name: "export r_fortios_system_virtual_wan_link"
+      set_stats:
+        data:
+          r_fortios_system_virtual_wan_link: "{{ r_fortios_system_virtual_wan_link }}"

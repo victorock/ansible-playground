@@ -23,3 +23,8 @@
       password: "{{ mso_user_password | default(omit, True) }}"
       validate_certs: "{{ mso_user_validate_certs | default(omit, True) }}"
       port: "{{ mso_user_port | default(omit, True) }}"
+
+- name: "export r_mso_user"
+  set_stats:
+    data:
+      r_mso_user: "{{ r_mso_user }}"

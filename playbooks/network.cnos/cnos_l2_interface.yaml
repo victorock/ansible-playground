@@ -20,3 +20,8 @@
     - name: "plugin_cnos_l2_interface"
       cnos_l2_interface: "{{ cnos_l2_interface }}"
       register: r_cnos_l2_interface
+
+    - name: "export r_cnos_l2_interface"
+      set_stats:
+        data:
+          r_cnos_l2_interface: "{{ r_cnos_l2_interface }}"

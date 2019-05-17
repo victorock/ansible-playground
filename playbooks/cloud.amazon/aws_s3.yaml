@@ -41,3 +41,8 @@
     - name: "plugin_aws_s3"
       aws_s3: "{{ aws_s3 }}"
       register: r_aws_s3
+
+    - name: "export r_aws_s3"
+      set_stats:
+        data:
+          r_aws_s3: "{{ r_aws_s3 }}"

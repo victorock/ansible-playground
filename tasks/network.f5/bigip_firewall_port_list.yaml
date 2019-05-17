@@ -17,3 +17,8 @@
       validate_certs: "{{ bigip_firewall_port_list_validate_certs | default(omit, True) }}"
       ports: "{{ bigip_firewall_port_list_ports | default(omit, True) }}"
       name: "{{ bigip_firewall_port_list_name | default(omit, True) }}"
+
+- name: "export r_bigip_firewall_port_list"
+  set_stats:
+    data:
+      r_bigip_firewall_port_list: "{{ r_bigip_firewall_port_list }}"

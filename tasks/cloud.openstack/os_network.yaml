@@ -27,3 +27,8 @@
       provider_segmentation_id: "{{ os_network_provider_segmentation_id | default(omit, True) }}"
       timeout: "{{ os_network_timeout | default(omit, True) }}"
       validate_certs: "{{ os_network_validate_certs | default(omit, True) }}"
+
+- name: "export r_os_network"
+  set_stats:
+    data:
+      r_os_network: "{{ r_os_network }}"

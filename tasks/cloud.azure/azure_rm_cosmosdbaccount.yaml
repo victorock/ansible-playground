@@ -34,3 +34,8 @@
       consistency_policy: "{{ azure_rm_cosmosdbaccount_consistency_policy | default(omit, True) }}"
       enable_cassandra: "{{ azure_rm_cosmosdbaccount_enable_cassandra | default(omit, True) }}"
       auth_source: "{{ azure_rm_cosmosdbaccount_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_cosmosdbaccount"
+  set_stats:
+    data:
+      r_azure_rm_cosmosdbaccount: "{{ r_azure_rm_cosmosdbaccount }}"

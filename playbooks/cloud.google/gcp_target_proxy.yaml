@@ -14,3 +14,8 @@
     - name: "plugin_gcp_target_proxy"
       gcp_target_proxy: "{{ gcp_target_proxy }}"
       register: r_gcp_target_proxy
+
+    - name: "export r_gcp_target_proxy"
+      set_stats:
+        data:
+          r_gcp_target_proxy: "{{ r_gcp_target_proxy }}"

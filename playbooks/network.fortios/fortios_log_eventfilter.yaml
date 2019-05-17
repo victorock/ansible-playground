@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_eventfilter"
       fortios_log_eventfilter: "{{ fortios_log_eventfilter }}"
       register: r_fortios_log_eventfilter
+
+    - name: "export r_fortios_log_eventfilter"
+      set_stats:
+        data:
+          r_fortios_log_eventfilter: "{{ r_fortios_log_eventfilter }}"

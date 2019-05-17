@@ -12,3 +12,8 @@
     - name: "plugin_exos_facts"
       exos_facts: "{{ exos_facts }}"
       register: r_exos_facts
+
+    - name: "export r_exos_facts"
+      set_stats:
+        data:
+          r_exos_facts: "{{ r_exos_facts }}"

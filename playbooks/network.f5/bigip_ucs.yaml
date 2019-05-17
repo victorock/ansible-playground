@@ -25,3 +25,8 @@
     - name: "plugin_bigip_ucs"
       bigip_ucs: "{{ bigip_ucs }}"
       register: r_bigip_ucs
+
+    - name: "export r_bigip_ucs"
+      set_stats:
+        data:
+          r_bigip_ucs: "{{ r_bigip_ucs }}"

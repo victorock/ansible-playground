@@ -14,3 +14,8 @@
       allow_prerelease: "{{ win_psmodule_allow_prerelease | default(omit, True) }}"
       required_version: "{{ win_psmodule_required_version | default(omit, True) }}"
       minimum_version: "{{ win_psmodule_minimum_version | default(omit, True) }}"
+
+- name: "export r_win_psmodule"
+  set_stats:
+    data:
+      r_win_psmodule: "{{ r_win_psmodule }}"

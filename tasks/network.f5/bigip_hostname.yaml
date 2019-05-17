@@ -11,3 +11,8 @@
       provider: "{{ bigip_hostname_provider | default(omit, True) }}"
       password: "{{ bigip_hostname_password | default(omit, True) }}"
       validate_certs: "{{ bigip_hostname_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_hostname"
+  set_stats:
+    data:
+      r_bigip_hostname: "{{ r_bigip_hostname }}"

@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_routetable"
       azure_rm_routetable: "{{ azure_rm_routetable }}"
       register: r_azure_rm_routetable
+
+    - name: "export r_azure_rm_routetable"
+      set_stats:
+        data:
+          r_azure_rm_routetable: "{{ r_azure_rm_routetable }}"

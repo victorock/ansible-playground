@@ -20,3 +20,8 @@
     - name: "plugin_vmware_tag"
       vmware_tag: "{{ vmware_tag }}"
       register: r_vmware_tag
+
+    - name: "export r_vmware_tag"
+      set_stats:
+        data:
+          r_vmware_tag: "{{ r_vmware_tag }}"

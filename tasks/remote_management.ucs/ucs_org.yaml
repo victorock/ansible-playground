@@ -16,3 +16,8 @@
       parent_org_path: "{{ ucs_org_parent_org_path | default(omit, True) }}"
       port: "{{ ucs_org_port | default(omit, True) }}"
       use_proxy: "{{ ucs_org_use_proxy | default(omit, True) }}"
+
+- name: "export r_ucs_org"
+  set_stats:
+    data:
+      r_ucs_org: "{{ r_ucs_org }}"

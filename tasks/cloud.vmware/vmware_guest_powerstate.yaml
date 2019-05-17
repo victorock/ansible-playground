@@ -18,3 +18,8 @@
       validate_certs: "{{ vmware_guest_powerstate_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_powerstate_port | default(omit, True) }}"
       uuid: "{{ vmware_guest_powerstate_uuid | default(omit, True) }}"
+
+- name: "export r_vmware_guest_powerstate"
+  set_stats:
+    data:
+      r_vmware_guest_powerstate: "{{ r_vmware_guest_powerstate }}"

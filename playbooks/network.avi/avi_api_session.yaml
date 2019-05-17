@@ -24,3 +24,8 @@
     - name: "plugin_avi_api_session"
       avi_api_session: "{{ avi_api_session }}"
       register: r_avi_api_session
+
+    - name: "export r_avi_api_session"
+      set_stats:
+        data:
+          r_avi_api_session: "{{ r_avi_api_session }}"

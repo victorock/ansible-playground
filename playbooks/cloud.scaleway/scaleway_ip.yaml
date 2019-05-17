@@ -22,3 +22,8 @@
     - name: "plugin_scaleway_ip"
       scaleway_ip: "{{ scaleway_ip }}"
       register: r_scaleway_ip
+
+    - name: "export r_scaleway_ip"
+      set_stats:
+        data:
+          r_scaleway_ip: "{{ r_scaleway_ip }}"

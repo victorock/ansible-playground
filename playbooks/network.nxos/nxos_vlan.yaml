@@ -25,3 +25,8 @@
     - name: "plugin_nxos_vlan"
       nxos_vlan: "{{ nxos_vlan }}"
       register: r_nxos_vlan
+
+    - name: "export r_nxos_vlan"
+      set_stats:
+        data:
+          r_nxos_vlan: "{{ r_nxos_vlan }}"

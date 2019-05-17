@@ -21,3 +21,8 @@
       wait: "{{ ovirt_vnic_profile_wait | default(omit, True) }}"
       port_mirroring: "{{ ovirt_vnic_profile_port_mirroring | default(omit, True) }}"
       name: "{{ ovirt_vnic_profile_name | default(omit, True) }}"
+
+- name: "export r_ovirt_vnic_profile"
+  set_stats:
+    data:
+      r_ovirt_vnic_profile: "{{ r_ovirt_vnic_profile }}"

@@ -10,3 +10,8 @@
       channel_id: "{{ ce_info_center_debug_channel_id | default(omit, True) }}"
       state: "{{ ce_info_center_debug_state | default(omit, True) }}"
       module_name: "{{ ce_info_center_debug_module_name | default(omit, True) }}"
+
+- name: "export r_ce_info_center_debug"
+  set_stats:
+    data:
+      r_ce_info_center_debug: "{{ r_ce_info_center_debug }}"

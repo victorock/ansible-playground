@@ -29,3 +29,8 @@
     - name: "plugin_panos_nat_policy"
       panos_nat_policy: "{{ panos_nat_policy }}"
       register: r_panos_nat_policy
+
+    - name: "export r_panos_nat_policy"
+      set_stats:
+        data:
+          r_panos_nat_policy: "{{ r_panos_nat_policy }}"

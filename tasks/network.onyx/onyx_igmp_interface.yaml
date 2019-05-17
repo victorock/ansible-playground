@@ -6,3 +6,8 @@
     onyx_igmp_interface: 
       state: "{{ onyx_igmp_interface_state | default(omit, True) }}"
       name: "{{ onyx_igmp_interface_name | default(omit, True) }}"
+
+- name: "export r_onyx_igmp_interface"
+  set_stats:
+    data:
+      r_onyx_igmp_interface: "{{ r_onyx_igmp_interface }}"

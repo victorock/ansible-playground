@@ -25,3 +25,8 @@
     - name: "plugin_firewalld"
       firewalld: "{{ firewalld }}"
       register: r_firewalld
+
+    - name: "export r_firewalld"
+      set_stats:
+        data:
+          r_firewalld: "{{ r_firewalld }}"

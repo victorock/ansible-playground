@@ -22,3 +22,8 @@
     - name: "plugin_nxos_nxapi"
       nxos_nxapi: "{{ nxos_nxapi }}"
       register: r_nxos_nxapi
+
+    - name: "export r_nxos_nxapi"
+      set_stats:
+        data:
+          r_nxos_nxapi: "{{ r_nxos_nxapi }}"

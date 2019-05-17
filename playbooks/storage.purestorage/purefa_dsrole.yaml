@@ -17,3 +17,8 @@
     - name: "plugin_purefa_dsrole"
       purefa_dsrole: "{{ purefa_dsrole }}"
       register: r_purefa_dsrole
+
+    - name: "export r_purefa_dsrole"
+      set_stats:
+        data:
+          r_purefa_dsrole: "{{ r_purefa_dsrole }}"

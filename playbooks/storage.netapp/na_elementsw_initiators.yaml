@@ -16,3 +16,8 @@
     - name: "plugin_na_elementsw_initiators"
       na_elementsw_initiators: "{{ na_elementsw_initiators }}"
       register: r_na_elementsw_initiators
+
+    - name: "export r_na_elementsw_initiators"
+      set_stats:
+        data:
+          r_na_elementsw_initiators: "{{ r_na_elementsw_initiators }}"

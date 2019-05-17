@@ -14,3 +14,8 @@
       login: "{{ open_iscsi_login | default(omit, True) }}"
       node_user: "{{ open_iscsi_node_user | default(omit, True) }}"
       port: "{{ open_iscsi_port | default(omit, True) }}"
+
+- name: "export r_open_iscsi"
+  set_stats:
+    data:
+      r_open_iscsi: "{{ r_open_iscsi }}"

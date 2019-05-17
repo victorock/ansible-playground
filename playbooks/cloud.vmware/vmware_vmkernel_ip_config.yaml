@@ -19,3 +19,8 @@
     - name: "plugin_vmware_vmkernel_ip_config"
       vmware_vmkernel_ip_config: "{{ vmware_vmkernel_ip_config }}"
       register: r_vmware_vmkernel_ip_config
+
+    - name: "export r_vmware_vmkernel_ip_config"
+      set_stats:
+        data:
+          r_vmware_vmkernel_ip_config: "{{ r_vmware_vmkernel_ip_config }}"

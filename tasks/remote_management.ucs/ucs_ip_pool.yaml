@@ -28,3 +28,8 @@
       first_addr: "{{ ucs_ip_pool_first_addr | default(omit, True) }}"
       ipv6_last_addr: "{{ ucs_ip_pool_ipv6_last_addr | default(omit, True) }}"
       order: "{{ ucs_ip_pool_order | default(omit, True) }}"
+
+- name: "export r_ucs_ip_pool"
+  set_stats:
+    data:
+      r_ucs_ip_pool: "{{ r_ucs_ip_pool }}"

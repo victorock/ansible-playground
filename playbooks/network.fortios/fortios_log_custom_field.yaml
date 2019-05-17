@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_custom_field"
       fortios_log_custom_field: "{{ fortios_log_custom_field }}"
       register: r_fortios_log_custom_field
+
+    - name: "export r_fortios_log_custom_field"
+      set_stats:
+        data:
+          r_fortios_log_custom_field: "{{ r_fortios_log_custom_field }}"

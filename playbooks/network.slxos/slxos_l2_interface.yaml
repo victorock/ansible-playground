@@ -19,3 +19,8 @@
     - name: "plugin_slxos_l2_interface"
       slxos_l2_interface: "{{ slxos_l2_interface }}"
       register: r_slxos_l2_interface
+
+    - name: "export r_slxos_l2_interface"
+      set_stats:
+        data:
+          r_slxos_l2_interface: "{{ r_slxos_l2_interface }}"

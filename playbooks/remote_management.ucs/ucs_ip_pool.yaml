@@ -35,3 +35,8 @@
     - name: "plugin_ucs_ip_pool"
       ucs_ip_pool: "{{ ucs_ip_pool }}"
       register: r_ucs_ip_pool
+
+    - name: "export r_ucs_ip_pool"
+      set_stats:
+        data:
+          r_ucs_ip_pool: "{{ r_ucs_ip_pool }}"

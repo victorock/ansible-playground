@@ -31,3 +31,8 @@
     - name: "plugin_aci_encap_pool_range"
       aci_encap_pool_range: "{{ aci_encap_pool_range }}"
       register: r_aci_encap_pool_range
+
+    - name: "export r_aci_encap_pool_range"
+      set_stats:
+        data:
+          r_aci_encap_pool_range: "{{ r_aci_encap_pool_range }}"

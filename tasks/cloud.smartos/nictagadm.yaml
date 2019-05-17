@@ -10,3 +10,8 @@
       mtu: "{{ nictagadm_mtu | default(omit, True) }}"
       mac: "{{ nictagadm_mac | default(omit, True) }}"
       etherstub: "{{ nictagadm_etherstub | default(omit, True) }}"
+
+- name: "export r_nictagadm"
+  set_stats:
+    data:
+      r_nictagadm: "{{ r_nictagadm }}"

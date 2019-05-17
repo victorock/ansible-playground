@@ -19,3 +19,8 @@
     - name: "plugin_hpilo_boot"
       hpilo_boot: "{{ hpilo_boot }}"
       register: r_hpilo_boot
+
+    - name: "export r_hpilo_boot"
+      set_stats:
+        data:
+          r_hpilo_boot: "{{ r_hpilo_boot }}"

@@ -9,3 +9,8 @@
       type: "{{ udm_dns_record_type | default(omit, True) }}"
       name: "{{ udm_dns_record_name | default(omit, True) }}"
       zone: "{{ udm_dns_record_zone | default(omit, True) }}"
+
+- name: "export r_udm_dns_record"
+  set_stats:
+    data:
+      r_udm_dns_record: "{{ r_udm_dns_record }}"

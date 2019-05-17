@@ -47,3 +47,8 @@
       validate_certs: "{{ bigip_profile_fastl4_validate_certs | default(omit, True) }}"
       tcp_generate_isn: "{{ bigip_profile_fastl4_tcp_generate_isn | default(omit, True) }}"
       syn_cookie_mss: "{{ bigip_profile_fastl4_syn_cookie_mss | default(omit, True) }}"
+
+- name: "export r_bigip_profile_fastl4"
+  set_stats:
+    data:
+      r_bigip_profile_fastl4: "{{ r_bigip_profile_fastl4 }}"

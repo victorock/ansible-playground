@@ -5,3 +5,8 @@
   vars:
     slxos_facts: 
       gather_subset: "{{ slxos_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_slxos_facts"
+  set_stats:
+    data:
+      r_slxos_facts: "{{ r_slxos_facts }}"

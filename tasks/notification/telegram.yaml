@@ -8,3 +8,8 @@
       msg_format: "{{ telegram_msg_format | default(omit, True) }}"
       token: "{{ telegram_token | default(omit, True) }}"
       chat_id: "{{ telegram_chat_id | default(omit, True) }}"
+
+- name: "export r_telegram"
+  set_stats:
+    data:
+      r_telegram: "{{ r_telegram }}"

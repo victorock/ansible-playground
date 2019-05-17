@@ -21,3 +21,8 @@
     - name: "plugin_bigip_firewall_global_rules"
       bigip_firewall_global_rules: "{{ bigip_firewall_global_rules }}"
       register: r_bigip_firewall_global_rules
+
+    - name: "export r_bigip_firewall_global_rules"
+      set_stats:
+        data:
+          r_bigip_firewall_global_rules: "{{ r_bigip_firewall_global_rules }}"

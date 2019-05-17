@@ -32,3 +32,8 @@
     - name: "plugin_utm_aaa_group"
       utm_aaa_group: "{{ utm_aaa_group }}"
       register: r_utm_aaa_group
+
+    - name: "export r_utm_aaa_group"
+      set_stats:
+        data:
+          r_utm_aaa_group: "{{ r_utm_aaa_group }}"

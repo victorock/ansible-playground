@@ -27,3 +27,8 @@
       name: "{{ azure_rm_virtualmachine_extension_name | default(omit, True) }}"
       settings: "{{ azure_rm_virtualmachine_extension_settings | default(omit, True) }}"
       api_profile: "{{ azure_rm_virtualmachine_extension_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualmachine_extension"
+  set_stats:
+    data:
+      r_azure_rm_virtualmachine_extension: "{{ r_azure_rm_virtualmachine_extension }}"

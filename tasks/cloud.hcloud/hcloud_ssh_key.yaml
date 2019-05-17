@@ -12,3 +12,8 @@
       state: "{{ hcloud_ssh_key_state | default(omit, True) }}"
       fingerprint: "{{ hcloud_ssh_key_fingerprint | default(omit, True) }}"
       id: "{{ hcloud_ssh_key_id | default(omit, True) }}"
+
+- name: "export r_hcloud_ssh_key"
+  set_stats:
+    data:
+      r_hcloud_ssh_key: "{{ r_hcloud_ssh_key }}"

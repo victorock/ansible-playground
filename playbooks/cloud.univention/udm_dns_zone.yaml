@@ -22,3 +22,8 @@
     - name: "plugin_udm_dns_zone"
       udm_dns_zone: "{{ udm_dns_zone }}"
       register: r_udm_dns_zone
+
+    - name: "export r_udm_dns_zone"
+      set_stats:
+        data:
+          r_udm_dns_zone: "{{ r_udm_dns_zone }}"

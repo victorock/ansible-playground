@@ -41,3 +41,8 @@
     - name: "plugin_azure_rm_storageblob"
       azure_rm_storageblob: "{{ azure_rm_storageblob }}"
       register: r_azure_rm_storageblob
+
+    - name: "export r_azure_rm_storageblob"
+      set_stats:
+        data:
+          r_azure_rm_storageblob: "{{ r_azure_rm_storageblob }}"

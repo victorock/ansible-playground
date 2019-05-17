@@ -20,3 +20,8 @@
     - name: "plugin_tower_workflow_launch"
       tower_workflow_launch: "{{ tower_workflow_launch }}"
       register: r_tower_workflow_launch
+
+    - name: "export r_tower_workflow_launch"
+      set_stats:
+        data:
+          r_tower_workflow_launch: "{{ r_tower_workflow_launch }}"

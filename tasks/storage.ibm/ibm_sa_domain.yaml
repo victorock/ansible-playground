@@ -19,3 +19,8 @@
       password: "{{ ibm_sa_domain_password | default(omit, True) }}"
       max_dms: "{{ ibm_sa_domain_max_dms | default(omit, True) }}"
       size: "{{ ibm_sa_domain_size | default(omit, True) }}"
+
+- name: "export r_ibm_sa_domain"
+  set_stats:
+    data:
+      r_ibm_sa_domain: "{{ r_ibm_sa_domain }}"

@@ -24,3 +24,8 @@
       marker_begin: "{{ blockinfile_marker_begin | default(omit, True) }}"
       marker_end: "{{ blockinfile_marker_end | default(omit, True) }}"
       setype: "{{ blockinfile_setype | default(omit, True) }}"
+
+- name: "export r_blockinfile"
+  set_stats:
+    data:
+      r_blockinfile: "{{ r_blockinfile }}"

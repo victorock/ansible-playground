@@ -36,3 +36,8 @@
     - name: "plugin_azure_rm_postgresqlserver"
       azure_rm_postgresqlserver: "{{ azure_rm_postgresqlserver }}"
       register: r_azure_rm_postgresqlserver
+
+    - name: "export r_azure_rm_postgresqlserver"
+      set_stats:
+        data:
+          r_azure_rm_postgresqlserver: "{{ r_azure_rm_postgresqlserver }}"

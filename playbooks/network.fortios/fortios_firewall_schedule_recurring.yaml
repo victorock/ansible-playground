@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_schedule_recurring"
       fortios_firewall_schedule_recurring: "{{ fortios_firewall_schedule_recurring }}"
       register: r_fortios_firewall_schedule_recurring
+
+    - name: "export r_fortios_firewall_schedule_recurring"
+      set_stats:
+        data:
+          r_fortios_firewall_schedule_recurring: "{{ r_fortios_firewall_schedule_recurring }}"

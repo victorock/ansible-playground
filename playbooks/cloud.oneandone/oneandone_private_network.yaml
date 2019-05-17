@@ -25,3 +25,8 @@
     - name: "plugin_oneandone_private_network"
       oneandone_private_network: "{{ oneandone_private_network }}"
       register: r_oneandone_private_network
+
+    - name: "export r_oneandone_private_network"
+      set_stats:
+        data:
+          r_oneandone_private_network: "{{ r_oneandone_private_network }}"

@@ -12,3 +12,8 @@
       password: "{{ vmware_host_scanhba_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_scanhba_validate_certs | default(omit, True) }}"
       port: "{{ vmware_host_scanhba_port | default(omit, True) }}"
+
+- name: "export r_vmware_host_scanhba"
+  set_stats:
+    data:
+      r_vmware_host_scanhba: "{{ r_vmware_host_scanhba }}"

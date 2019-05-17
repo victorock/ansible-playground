@@ -23,3 +23,8 @@
     - name: "plugin_cpm_plugconfig"
       cpm_plugconfig: "{{ cpm_plugconfig }}"
       register: r_cpm_plugconfig
+
+    - name: "export r_cpm_plugconfig"
+      set_stats:
+        data:
+          r_cpm_plugconfig: "{{ r_cpm_plugconfig }}"

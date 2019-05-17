@@ -18,3 +18,8 @@
     - name: "plugin_ldap_passwd"
       ldap_passwd: "{{ ldap_passwd }}"
       register: r_ldap_passwd
+
+    - name: "export r_ldap_passwd"
+      set_stats:
+        data:
+          r_ldap_passwd: "{{ r_ldap_passwd }}"

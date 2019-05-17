@@ -4,3 +4,8 @@
   register: r_xenserver_facts
   vars:
     xenserver_facts: 
+
+- name: "export r_xenserver_facts"
+  set_stats:
+    data:
+      r_xenserver_facts: "{{ r_xenserver_facts }}"

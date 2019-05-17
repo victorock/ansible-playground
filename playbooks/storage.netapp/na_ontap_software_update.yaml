@@ -23,3 +23,8 @@
     - name: "plugin_na_ontap_software_update"
       na_ontap_software_update: "{{ na_ontap_software_update }}"
       register: r_na_ontap_software_update
+
+    - name: "export r_na_ontap_software_update"
+      set_stats:
+        data:
+          r_na_ontap_software_update: "{{ r_na_ontap_software_update }}"

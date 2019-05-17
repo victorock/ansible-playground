@@ -44,3 +44,8 @@
     - name: "plugin_ovirt_disk"
       ovirt_disk: "{{ ovirt_disk }}"
       register: r_ovirt_disk
+
+    - name: "export r_ovirt_disk"
+      set_stats:
+        data:
+          r_ovirt_disk: "{{ r_ovirt_disk }}"

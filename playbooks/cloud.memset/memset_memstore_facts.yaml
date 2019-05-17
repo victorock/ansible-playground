@@ -13,3 +13,8 @@
     - name: "plugin_memset_memstore_facts"
       memset_memstore_facts: "{{ memset_memstore_facts }}"
       register: r_memset_memstore_facts
+
+    - name: "export r_memset_memstore_facts"
+      set_stats:
+        data:
+          r_memset_memstore_facts: "{{ r_memset_memstore_facts }}"

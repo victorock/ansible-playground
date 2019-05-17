@@ -12,3 +12,8 @@
       provider: "{{ eos_static_route_provider | default(omit, True) }}"
       aggregate: "{{ eos_static_route_aggregate | default(omit, True) }}"
       address: "{{ eos_static_route_address | default(omit, True) }}"
+
+- name: "export r_eos_static_route"
+  set_stats:
+    data:
+      r_eos_static_route: "{{ r_eos_static_route }}"

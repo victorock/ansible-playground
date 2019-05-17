@@ -21,3 +21,8 @@
       domain_id: "{{ os_group_domain_id | default(omit, True) }}"
       cloud: "{{ os_group_cloud | default(omit, True) }}"
       client_key: "{{ os_group_client_key | default(omit, True) }}"
+
+- name: "export r_os_group"
+  set_stats:
+    data:
+      r_os_group: "{{ r_os_group }}"

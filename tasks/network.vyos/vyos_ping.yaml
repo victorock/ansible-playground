@@ -12,3 +12,8 @@
       state: "{{ vyos_ping_state | default(omit, True) }}"
       provider: "{{ vyos_ping_provider | default(omit, True) }}"
       size: "{{ vyos_ping_size | default(omit, True) }}"
+
+- name: "export r_vyos_ping"
+  set_stats:
+    data:
+      r_vyos_ping: "{{ r_vyos_ping }}"

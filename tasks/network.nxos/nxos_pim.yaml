@@ -6,3 +6,8 @@
     nxos_pim: 
       ssm_range: "{{ nxos_pim_ssm_range | default(omit, True) }}"
       provider: "{{ nxos_pim_provider | default(omit, True) }}"
+
+- name: "export r_nxos_pim"
+  set_stats:
+    data:
+      r_nxos_pim: "{{ r_nxos_pim }}"

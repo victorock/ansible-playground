@@ -18,3 +18,8 @@
       fwpolicy_implicit_log: "{{ fmgr_fwpol_package_fwpolicy_implicit_log | default(omit, True) }}"
       fwpolicy6_implicit_log: "{{ fmgr_fwpol_package_fwpolicy6_implicit_log | default(omit, True) }}"
       inspection_mode: "{{ fmgr_fwpol_package_inspection_mode | default(omit, True) }}"
+
+- name: "export r_fmgr_fwpol_package"
+  set_stats:
+    data:
+      r_fmgr_fwpol_package: "{{ r_fmgr_fwpol_package }}"

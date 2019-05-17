@@ -7,3 +7,8 @@
       state: "{{ pn_admin_session_timeout_state | default(omit, True) }}"
       pn_timeout: "{{ pn_admin_session_timeout_pn_timeout | default(omit, True) }}"
       pn_cliswitch: "{{ pn_admin_session_timeout_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_admin_session_timeout"
+  set_stats:
+    data:
+      r_pn_admin_session_timeout: "{{ r_pn_admin_session_timeout }}"

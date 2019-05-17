@@ -18,3 +18,8 @@
     - name: "plugin_pn_port_cos_bw"
       pn_port_cos_bw: "{{ pn_port_cos_bw }}"
       register: r_pn_port_cos_bw
+
+    - name: "export r_pn_port_cos_bw"
+      set_stats:
+        data:
+          r_pn_port_cos_bw: "{{ r_pn_port_cos_bw }}"

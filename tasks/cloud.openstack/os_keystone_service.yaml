@@ -22,3 +22,8 @@
       client_cert: "{{ os_keystone_service_client_cert | default(omit, True) }}"
       cloud: "{{ os_keystone_service_cloud | default(omit, True) }}"
       client_key: "{{ os_keystone_service_client_key | default(omit, True) }}"
+
+- name: "export r_os_keystone_service"
+  set_stats:
+    data:
+      r_os_keystone_service: "{{ r_os_keystone_service }}"

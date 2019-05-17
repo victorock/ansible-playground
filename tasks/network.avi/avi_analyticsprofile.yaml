@@ -84,3 +84,8 @@
       apdex_response_threshold: "{{ avi_analyticsprofile_apdex_response_threshold | default(omit, True) }}"
       tenant_uuid: "{{ avi_analyticsprofile_tenant_uuid | default(omit, True) }}"
       hs_security_certscore_le07d: "{{ avi_analyticsprofile_hs_security_certscore_le07d | default(omit, True) }}"
+
+- name: "export r_avi_analyticsprofile"
+  set_stats:
+    data:
+      r_avi_analyticsprofile: "{{ r_avi_analyticsprofile }}"

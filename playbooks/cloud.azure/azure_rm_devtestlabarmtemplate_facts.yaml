@@ -27,3 +27,8 @@
     - name: "plugin_azure_rm_devtestlabarmtemplate_facts"
       azure_rm_devtestlabarmtemplate_facts: "{{ azure_rm_devtestlabarmtemplate_facts }}"
       register: r_azure_rm_devtestlabarmtemplate_facts
+
+    - name: "export r_azure_rm_devtestlabarmtemplate_facts"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabarmtemplate_facts: "{{ r_azure_rm_devtestlabarmtemplate_facts }}"

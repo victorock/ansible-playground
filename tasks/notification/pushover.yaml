@@ -9,3 +9,8 @@
       app_token: "{{ pushover_app_token | default(omit, True) }}"
       pri: "{{ pushover_pri | default(omit, True) }}"
       title: "{{ pushover_title | default(omit, True) }}"
+
+- name: "export r_pushover"
+  set_stats:
+    data:
+      r_pushover: "{{ r_pushover }}"

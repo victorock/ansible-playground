@@ -28,3 +28,8 @@
     - name: "plugin_vcenter_extension"
       vcenter_extension: "{{ vcenter_extension }}"
       register: r_vcenter_extension
+
+    - name: "export r_vcenter_extension"
+      set_stats:
+        data:
+          r_vcenter_extension: "{{ r_vcenter_extension }}"

@@ -54,3 +54,8 @@
     - name: "plugin_bigip_profile_fastl4"
       bigip_profile_fastl4: "{{ bigip_profile_fastl4 }}"
       register: r_bigip_profile_fastl4
+
+    - name: "export r_bigip_profile_fastl4"
+      set_stats:
+        data:
+          r_bigip_profile_fastl4: "{{ r_bigip_profile_fastl4 }}"

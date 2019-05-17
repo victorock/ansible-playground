@@ -20,3 +20,8 @@
     - name: "plugin_na_ontap_gather_facts"
       na_ontap_gather_facts: "{{ na_ontap_gather_facts }}"
       register: r_na_ontap_gather_facts
+
+    - name: "export r_na_ontap_gather_facts"
+      set_stats:
+        data:
+          r_na_ontap_gather_facts: "{{ r_na_ontap_gather_facts }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_dlp_sensor"
       fortios_dlp_sensor: "{{ fortios_dlp_sensor }}"
       register: r_fortios_dlp_sensor
+
+    - name: "export r_fortios_dlp_sensor"
+      set_stats:
+        data:
+          r_fortios_dlp_sensor: "{{ r_fortios_dlp_sensor }}"

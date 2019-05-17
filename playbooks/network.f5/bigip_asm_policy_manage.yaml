@@ -22,3 +22,8 @@
     - name: "plugin_bigip_asm_policy_manage"
       bigip_asm_policy_manage: "{{ bigip_asm_policy_manage }}"
       register: r_bigip_asm_policy_manage
+
+    - name: "export r_bigip_asm_policy_manage"
+      set_stats:
+        data:
+          r_bigip_asm_policy_manage: "{{ r_bigip_asm_policy_manage }}"

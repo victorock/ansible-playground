@@ -21,3 +21,8 @@
       fetch_ssl_thumbprint: "{{ vmware_host_fetch_ssl_thumbprint | default(omit, True) }}"
       port: "{{ vmware_host_port | default(omit, True) }}"
       esxi_password: "{{ vmware_host_esxi_password | default(omit, True) }}"
+
+- name: "export r_vmware_host"
+  set_stats:
+    data:
+      r_vmware_host: "{{ r_vmware_host }}"

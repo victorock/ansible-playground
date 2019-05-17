@@ -12,3 +12,8 @@
       password: "{{ vmware_host_hyperthreading_password | default(omit, True) }}"
       validate_certs: "{{ vmware_host_hyperthreading_validate_certs | default(omit, True) }}"
       port: "{{ vmware_host_hyperthreading_port | default(omit, True) }}"
+
+- name: "export r_vmware_host_hyperthreading"
+  set_stats:
+    data:
+      r_vmware_host_hyperthreading: "{{ r_vmware_host_hyperthreading }}"

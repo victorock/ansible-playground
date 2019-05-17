@@ -39,3 +39,8 @@
     - name: "plugin_rax_scaling_group"
       rax_scaling_group: "{{ rax_scaling_group }}"
       register: r_rax_scaling_group
+
+    - name: "export r_rax_scaling_group"
+      set_stats:
+        data:
+          r_rax_scaling_group: "{{ r_rax_scaling_group }}"

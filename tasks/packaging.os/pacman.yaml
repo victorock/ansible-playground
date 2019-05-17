@@ -13,3 +13,8 @@
       update_cache: "{{ pacman_update_cache | default(omit, True) }}"
       update_cache_extra_args: "{{ pacman_update_cache_extra_args | default(omit, True) }}"
       upgrade_extra_args: "{{ pacman_upgrade_extra_args | default(omit, True) }}"
+
+- name: "export r_pacman"
+  set_stats:
+    data:
+      r_pacman: "{{ r_pacman }}"

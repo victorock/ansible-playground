@@ -22,3 +22,8 @@
     - name: "plugin_cs_instancegroup"
       cs_instancegroup: "{{ cs_instancegroup }}"
       register: r_cs_instancegroup
+
+    - name: "export r_cs_instancegroup"
+      set_stats:
+        data:
+          r_cs_instancegroup: "{{ r_cs_instancegroup }}"

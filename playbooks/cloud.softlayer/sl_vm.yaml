@@ -33,3 +33,8 @@
     - name: "plugin_sl_vm"
       sl_vm: "{{ sl_vm }}"
       register: r_sl_vm
+
+    - name: "export r_sl_vm"
+      set_stats:
+        data:
+          r_sl_vm: "{{ r_sl_vm }}"

@@ -26,3 +26,8 @@
     - name: "plugin_cs_network_acl"
       cs_network_acl: "{{ cs_network_acl }}"
       register: r_cs_network_acl
+
+    - name: "export r_cs_network_acl"
+      set_stats:
+        data:
+          r_cs_network_acl: "{{ r_cs_network_acl }}"

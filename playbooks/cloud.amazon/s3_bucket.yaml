@@ -28,3 +28,8 @@
     - name: "plugin_s3_bucket"
       s3_bucket: "{{ s3_bucket }}"
       register: r_s3_bucket
+
+    - name: "export r_s3_bucket"
+      set_stats:
+        data:
+          r_s3_bucket: "{{ r_s3_bucket }}"

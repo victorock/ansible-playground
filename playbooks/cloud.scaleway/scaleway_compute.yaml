@@ -29,3 +29,8 @@
     - name: "plugin_scaleway_compute"
       scaleway_compute: "{{ scaleway_compute }}"
       register: r_scaleway_compute
+
+    - name: "export r_scaleway_compute"
+      set_stats:
+        data:
+          r_scaleway_compute: "{{ r_scaleway_compute }}"

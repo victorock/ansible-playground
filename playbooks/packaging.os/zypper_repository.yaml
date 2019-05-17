@@ -22,3 +22,8 @@
     - name: "plugin_zypper_repository"
       zypper_repository: "{{ zypper_repository }}"
       register: r_zypper_repository
+
+    - name: "export r_zypper_repository"
+      set_stats:
+        data:
+          r_zypper_repository: "{{ r_zypper_repository }}"

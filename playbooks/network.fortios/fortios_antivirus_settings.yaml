@@ -17,3 +17,8 @@
     - name: "plugin_fortios_antivirus_settings"
       fortios_antivirus_settings: "{{ fortios_antivirus_settings }}"
       register: r_fortios_antivirus_settings
+
+    - name: "export r_fortios_antivirus_settings"
+      set_stats:
+        data:
+          r_fortios_antivirus_settings: "{{ r_fortios_antivirus_settings }}"

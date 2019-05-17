@@ -30,3 +30,8 @@
     - name: "plugin_pn_vrouter"
       pn_vrouter: "{{ pn_vrouter }}"
       register: r_pn_vrouter
+
+    - name: "export r_pn_vrouter"
+      set_stats:
+        data:
+          r_pn_vrouter: "{{ r_pn_vrouter }}"

@@ -12,3 +12,8 @@
       set: "{{ openvswitch_bridge_set | default(omit, True) }}"
       timeout: "{{ openvswitch_bridge_timeout | default(omit, True) }}"
       external_ids: "{{ openvswitch_bridge_external_ids | default(omit, True) }}"
+
+- name: "export r_openvswitch_bridge"
+  set_stats:
+    data:
+      r_openvswitch_bridge: "{{ r_openvswitch_bridge }}"

@@ -26,3 +26,8 @@
       wait_until: "{{ oci_vcn_wait_until | default(omit, True) }}"
       wait_timeout: "{{ oci_vcn_wait_timeout | default(omit, True) }}"
       api_user_fingerprint: "{{ oci_vcn_api_user_fingerprint | default(omit, True) }}"
+
+- name: "export r_oci_vcn"
+  set_stats:
+    data:
+      r_oci_vcn: "{{ r_oci_vcn }}"

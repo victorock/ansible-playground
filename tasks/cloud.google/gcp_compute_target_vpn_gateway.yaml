@@ -15,3 +15,8 @@
       service_account_file: "{{ gcp_compute_target_vpn_gateway_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_target_vpn_gateway_auth_kind | default(omit, True) }}"
       network: "{{ gcp_compute_target_vpn_gateway_network | default(omit, True) }}"
+
+- name: "export r_gcp_compute_target_vpn_gateway"
+  set_stats:
+    data:
+      r_gcp_compute_target_vpn_gateway: "{{ r_gcp_compute_target_vpn_gateway }}"

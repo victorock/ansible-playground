@@ -18,3 +18,8 @@
     - name: "plugin_cnos_linkagg"
       cnos_linkagg: "{{ cnos_linkagg }}"
       register: r_cnos_linkagg
+
+    - name: "export r_cnos_linkagg"
+      set_stats:
+        data:
+          r_cnos_linkagg: "{{ r_cnos_linkagg }}"

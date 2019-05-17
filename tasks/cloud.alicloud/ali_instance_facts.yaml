@@ -12,3 +12,8 @@
       alicloud_access_key: "{{ ali_instance_facts_alicloud_access_key | default(omit, True) }}"
       alicloud_security_token: "{{ ali_instance_facts_alicloud_security_token | default(omit, True) }}"
       instance_tags: "{{ ali_instance_facts_instance_tags | default(omit, True) }}"
+
+- name: "export r_ali_instance_facts"
+  set_stats:
+    data:
+      r_ali_instance_facts: "{{ r_ali_instance_facts }}"

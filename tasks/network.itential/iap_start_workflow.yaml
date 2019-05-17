@@ -12,3 +12,8 @@
       https: "{{ iap_start_workflow_https | default(omit, True) }}"
       validate_certs: "{{ iap_start_workflow_validate_certs | default(omit, True) }}"
       variables: "{{ iap_start_workflow_variables | default(omit, True) }}"
+
+- name: "export r_iap_start_workflow"
+  set_stats:
+    data:
+      r_iap_start_workflow: "{{ r_iap_start_workflow }}"

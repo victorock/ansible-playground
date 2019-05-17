@@ -7,3 +7,8 @@
       monitorid: "{{ uptimerobot_monitorid | default(omit, True) }}"
       state: "{{ uptimerobot_state | default(omit, True) }}"
       apikey: "{{ uptimerobot_apikey | default(omit, True) }}"
+
+- name: "export r_uptimerobot"
+  set_stats:
+    data:
+      r_uptimerobot: "{{ r_uptimerobot }}"

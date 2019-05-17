@@ -21,3 +21,8 @@
     - name: "plugin_nxos_vrrp"
       nxos_vrrp: "{{ nxos_vrrp }}"
       register: r_nxos_vrrp
+
+    - name: "export r_nxos_vrrp"
+      set_stats:
+        data:
+          r_nxos_vrrp: "{{ r_nxos_vrrp }}"

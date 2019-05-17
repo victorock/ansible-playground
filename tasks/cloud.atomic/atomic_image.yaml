@@ -8,3 +8,8 @@
       state: "{{ atomic_image_state | default(omit, True) }}"
       name: "{{ atomic_image_name | default(omit, True) }}"
       backend: "{{ atomic_image_backend | default(omit, True) }}"
+
+- name: "export r_atomic_image"
+  set_stats:
+    data:
+      r_atomic_image: "{{ r_atomic_image }}"

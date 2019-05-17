@@ -5,3 +5,8 @@
   vars:
     meta: 
       free_form: "{{ meta_free_form | default(omit, True) }}"
+
+- name: "export r_meta"
+  set_stats:
+    data:
+      r_meta: "{{ r_meta }}"

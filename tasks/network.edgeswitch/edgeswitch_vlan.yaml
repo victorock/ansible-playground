@@ -15,3 +15,8 @@
       aggregate: "{{ edgeswitch_vlan_aggregate | default(omit, True) }}"
       auto_untag: "{{ edgeswitch_vlan_auto_untag | default(omit, True) }}"
       vlan_id: "{{ edgeswitch_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_edgeswitch_vlan"
+  set_stats:
+    data:
+      r_edgeswitch_vlan: "{{ r_edgeswitch_vlan }}"

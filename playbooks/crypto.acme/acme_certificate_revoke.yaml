@@ -22,3 +22,8 @@
     - name: "plugin_acme_certificate_revoke"
       acme_certificate_revoke: "{{ acme_certificate_revoke }}"
       register: r_acme_certificate_revoke
+
+    - name: "export r_acme_certificate_revoke"
+      set_stats:
+        data:
+          r_acme_certificate_revoke: "{{ r_acme_certificate_revoke }}"

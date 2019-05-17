@@ -25,3 +25,8 @@
     - name: "plugin_ec2_key"
       ec2_key: "{{ ec2_key }}"
       register: r_ec2_key
+
+    - name: "export r_ec2_key"
+      set_stats:
+        data:
+          r_ec2_key: "{{ r_ec2_key }}"

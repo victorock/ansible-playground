@@ -9,3 +9,8 @@
       ip_address: "{{ win_hosts_ip_address | default(omit, True) }}"
       canonical_name: "{{ win_hosts_canonical_name | default(omit, True) }}"
       aliases: "{{ win_hosts_aliases | default(omit, True) }}"
+
+- name: "export r_win_hosts"
+  set_stats:
+    data:
+      r_win_hosts: "{{ r_win_hosts }}"

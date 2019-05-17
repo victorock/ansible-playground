@@ -21,3 +21,8 @@
     - name: "plugin_ovirt_event_facts"
       ovirt_event_facts: "{{ ovirt_event_facts }}"
       register: r_ovirt_event_facts
+
+    - name: "export r_ovirt_event_facts"
+      set_stats:
+        data:
+          r_ovirt_event_facts: "{{ r_ovirt_event_facts }}"

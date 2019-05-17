@@ -24,3 +24,8 @@
       region: "{{ rax_cbs_region | default(omit, True) }}"
       wait_timeout: "{{ rax_cbs_wait_timeout | default(omit, True) }}"
       auth_endpoint: "{{ rax_cbs_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_cbs"
+  set_stats:
+    data:
+      r_rax_cbs: "{{ r_rax_cbs }}"

@@ -19,3 +19,8 @@
     - name: "plugin_gcp_sourcerepo_repository"
       gcp_sourcerepo_repository: "{{ gcp_sourcerepo_repository }}"
       register: r_gcp_sourcerepo_repository
+
+    - name: "export r_gcp_sourcerepo_repository"
+      set_stats:
+        data:
+          r_gcp_sourcerepo_repository: "{{ r_gcp_sourcerepo_repository }}"

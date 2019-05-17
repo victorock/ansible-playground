@@ -14,3 +14,8 @@
     - name: "plugin_win_chocolatey_config"
       win_chocolatey_config: "{{ win_chocolatey_config }}"
       register: r_win_chocolatey_config
+
+    - name: "export r_win_chocolatey_config"
+      set_stats:
+        data:
+          r_win_chocolatey_config: "{{ r_win_chocolatey_config }}"

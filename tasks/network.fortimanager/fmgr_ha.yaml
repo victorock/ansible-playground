@@ -14,3 +14,8 @@
       fmgr_ha_peer_ipv4: "{{ fmgr_ha_fmgr_ha_peer_ipv4 | default(omit, True) }}"
       fmgr_ha_peer_ipv6: "{{ fmgr_ha_fmgr_ha_peer_ipv6 | default(omit, True) }}"
       fmgr_ha_mode: "{{ fmgr_ha_fmgr_ha_mode | default(omit, True) }}"
+
+- name: "export r_fmgr_ha"
+  set_stats:
+    data:
+      r_fmgr_ha: "{{ r_fmgr_ha }}"

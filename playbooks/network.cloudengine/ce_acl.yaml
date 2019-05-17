@@ -26,3 +26,8 @@
     - name: "plugin_ce_acl"
       ce_acl: "{{ ce_acl }}"
       register: r_ce_acl
+
+    - name: "export r_ce_acl"
+      set_stats:
+        data:
+          r_ce_acl: "{{ r_ce_acl }}"

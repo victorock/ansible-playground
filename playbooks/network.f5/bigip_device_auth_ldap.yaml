@@ -33,3 +33,8 @@
     - name: "plugin_bigip_device_auth_ldap"
       bigip_device_auth_ldap: "{{ bigip_device_auth_ldap }}"
       register: r_bigip_device_auth_ldap
+
+    - name: "export r_bigip_device_auth_ldap"
+      set_stats:
+        data:
+          r_bigip_device_auth_ldap: "{{ r_bigip_device_auth_ldap }}"

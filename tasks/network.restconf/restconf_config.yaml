@@ -8,3 +8,8 @@
       path: "{{ restconf_config_path | default(omit, True) }}"
       method: "{{ restconf_config_method | default(omit, True) }}"
       format: "{{ restconf_config_format | default(omit, True) }}"
+
+- name: "export r_restconf_config"
+  set_stats:
+    data:
+      r_restconf_config: "{{ r_restconf_config }}"

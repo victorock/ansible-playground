@@ -33,3 +33,8 @@
     - name: "plugin_xenserver_guest"
       xenserver_guest: "{{ xenserver_guest }}"
       register: r_xenserver_guest
+
+    - name: "export r_xenserver_guest"
+      set_stats:
+        data:
+          r_xenserver_guest: "{{ r_xenserver_guest }}"

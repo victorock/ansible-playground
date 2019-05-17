@@ -10,3 +10,8 @@
       state: "{{ nxos_ping_state | default(omit, True) }}"
       vrf: "{{ nxos_ping_vrf | default(omit, True) }}"
       provider: "{{ nxos_ping_provider | default(omit, True) }}"
+
+- name: "export r_nxos_ping"
+  set_stats:
+    data:
+      r_nxos_ping: "{{ r_nxos_ping }}"

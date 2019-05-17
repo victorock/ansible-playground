@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_rip"
       fortios_router_rip: "{{ fortios_router_rip }}"
       register: r_fortios_router_rip
+
+    - name: "export r_fortios_router_rip"
+      set_stats:
+        data:
+          r_fortios_router_rip: "{{ r_fortios_router_rip }}"

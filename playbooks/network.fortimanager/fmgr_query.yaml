@@ -20,3 +20,8 @@
     - name: "plugin_fmgr_query"
       fmgr_query: "{{ fmgr_query }}"
       register: r_fmgr_query
+
+    - name: "export r_fmgr_query"
+      set_stats:
+        data:
+          r_fmgr_query: "{{ r_fmgr_query }}"

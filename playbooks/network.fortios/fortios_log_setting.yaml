@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_setting"
       fortios_log_setting: "{{ fortios_log_setting }}"
       register: r_fortios_log_setting
+
+    - name: "export r_fortios_log_setting"
+      set_stats:
+        data:
+          r_fortios_log_setting: "{{ r_fortios_log_setting }}"

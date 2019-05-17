@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_autoscale"
       azure_rm_autoscale: "{{ azure_rm_autoscale }}"
       register: r_azure_rm_autoscale
+
+    - name: "export r_azure_rm_autoscale"
+      set_stats:
+        data:
+          r_azure_rm_autoscale: "{{ r_azure_rm_autoscale }}"

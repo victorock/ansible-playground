@@ -37,3 +37,8 @@
     - name: "plugin_azure_rm_resource"
       azure_rm_resource: "{{ azure_rm_resource }}"
       register: r_azure_rm_resource
+
+    - name: "export r_azure_rm_resource"
+      set_stats:
+        data:
+          r_azure_rm_resource: "{{ r_azure_rm_resource }}"

@@ -26,3 +26,8 @@
     - name: "plugin_gcp_bigquery_dataset"
       gcp_bigquery_dataset: "{{ gcp_bigquery_dataset }}"
       register: r_gcp_bigquery_dataset
+
+    - name: "export r_gcp_bigquery_dataset"
+      set_stats:
+        data:
+          r_gcp_bigquery_dataset: "{{ r_gcp_bigquery_dataset }}"

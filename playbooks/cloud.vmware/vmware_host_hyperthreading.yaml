@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_hyperthreading"
       vmware_host_hyperthreading: "{{ vmware_host_hyperthreading }}"
       register: r_vmware_host_hyperthreading
+
+    - name: "export r_vmware_host_hyperthreading"
+      set_stats:
+        data:
+          r_vmware_host_hyperthreading: "{{ r_vmware_host_hyperthreading }}"

@@ -23,3 +23,8 @@
     - name: "plugin_bigip_dns_zone"
       bigip_dns_zone: "{{ bigip_dns_zone }}"
       register: r_bigip_dns_zone
+
+    - name: "export r_bigip_dns_zone"
+      set_stats:
+        data:
+          r_bigip_dns_zone: "{{ r_bigip_dns_zone }}"

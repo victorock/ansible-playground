@@ -13,3 +13,8 @@
       save: "{{ vyos_config_save | default(omit, True) }}"
       config: "{{ vyos_config_config | default(omit, True) }}"
       match: "{{ vyos_config_match | default(omit, True) }}"
+
+- name: "export r_vyos_config"
+  set_stats:
+    data:
+      r_vyos_config: "{{ r_vyos_config }}"

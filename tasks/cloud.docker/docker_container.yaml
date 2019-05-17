@@ -100,3 +100,8 @@
       volumes: "{{ docker_container_volumes | default(omit, True) }}"
       comparisons: "{{ docker_container_comparisons | default(omit, True) }}"
       device_write_bps: "{{ docker_container_device_write_bps | default(omit, True) }}"
+
+- name: "export r_docker_container"
+  set_stats:
+    data:
+      r_docker_container: "{{ r_docker_container }}"

@@ -32,3 +32,8 @@
     - name: "plugin_docker_host_info"
       docker_host_info: "{{ docker_host_info }}"
       register: r_docker_host_info
+
+    - name: "export r_docker_host_info"
+      set_stats:
+        data:
+          r_docker_host_info: "{{ r_docker_host_info }}"

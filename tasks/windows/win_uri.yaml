@@ -23,3 +23,8 @@
       validate_certs: "{{ win_uri_validate_certs | default(omit, True) }}"
       method: "{{ win_uri_method | default(omit, True) }}"
       user: "{{ win_uri_user | default(omit, True) }}"
+
+- name: "export r_win_uri"
+  set_stats:
+    data:
+      r_win_uri: "{{ r_win_uri }}"

@@ -33,3 +33,8 @@
     - name: "plugin_ovirt_storage_connection"
       ovirt_storage_connection: "{{ ovirt_storage_connection }}"
       register: r_ovirt_storage_connection
+
+    - name: "export r_ovirt_storage_connection"
+      set_stats:
+        data:
+          r_ovirt_storage_connection: "{{ r_ovirt_storage_connection }}"

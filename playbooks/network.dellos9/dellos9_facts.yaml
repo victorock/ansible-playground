@@ -13,3 +13,8 @@
     - name: "plugin_dellos9_facts"
       dellos9_facts: "{{ dellos9_facts }}"
       register: r_dellos9_facts
+
+    - name: "export r_dellos9_facts"
+      set_stats:
+        data:
+          r_dellos9_facts: "{{ r_dellos9_facts }}"

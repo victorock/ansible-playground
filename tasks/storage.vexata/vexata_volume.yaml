@@ -11,3 +11,8 @@
       password: "{{ vexata_volume_password | default(omit, True) }}"
       validate_certs: "{{ vexata_volume_validate_certs | default(omit, True) }}"
       size: "{{ vexata_volume_size | default(omit, True) }}"
+
+- name: "export r_vexata_volume"
+  set_stats:
+    data:
+      r_vexata_volume: "{{ r_vexata_volume }}"

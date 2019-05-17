@@ -33,3 +33,8 @@
     - name: "plugin_azure_rm_dnsrecordset"
       azure_rm_dnsrecordset: "{{ azure_rm_dnsrecordset }}"
       register: r_azure_rm_dnsrecordset
+
+    - name: "export r_azure_rm_dnsrecordset"
+      set_stats:
+        data:
+          r_azure_rm_dnsrecordset: "{{ r_azure_rm_dnsrecordset }}"

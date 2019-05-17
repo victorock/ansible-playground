@@ -29,3 +29,8 @@
     - name: "plugin_xml"
       xml: "{{ xml }}"
       register: r_xml
+
+    - name: "export r_xml"
+      set_stats:
+        data:
+          r_xml: "{{ r_xml }}"

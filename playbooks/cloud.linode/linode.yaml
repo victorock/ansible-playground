@@ -40,3 +40,8 @@
     - name: "plugin_linode"
       linode: "{{ linode }}"
       register: r_linode
+
+    - name: "export r_linode"
+      set_stats:
+        data:
+          r_linode: "{{ r_linode }}"

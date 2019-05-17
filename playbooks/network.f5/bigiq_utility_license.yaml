@@ -20,3 +20,8 @@
     - name: "plugin_bigiq_utility_license"
       bigiq_utility_license: "{{ bigiq_utility_license }}"
       register: r_bigiq_utility_license
+
+    - name: "export r_bigiq_utility_license"
+      set_stats:
+        data:
+          r_bigiq_utility_license: "{{ r_bigiq_utility_license }}"

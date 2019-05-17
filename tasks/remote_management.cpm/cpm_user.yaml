@@ -24,3 +24,8 @@
       user_callbackphone: "{{ cpm_user_user_callbackphone | default(omit, True) }}"
       use_https: "{{ cpm_user_use_https | default(omit, True) }}"
       user_accessoutbound: "{{ cpm_user_user_accessoutbound | default(omit, True) }}"
+
+- name: "export r_cpm_user"
+  set_stats:
+    data:
+      r_cpm_user: "{{ r_cpm_user }}"

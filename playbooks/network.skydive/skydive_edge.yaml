@@ -18,3 +18,8 @@
     - name: "plugin_skydive_edge"
       skydive_edge: "{{ skydive_edge }}"
       register: r_skydive_edge
+
+    - name: "export r_skydive_edge"
+      set_stats:
+        data:
+          r_skydive_edge: "{{ r_skydive_edge }}"

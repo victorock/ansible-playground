@@ -32,3 +32,8 @@
     - name: "plugin_ec2_transit_gateway"
       ec2_transit_gateway: "{{ ec2_transit_gateway }}"
       register: r_ec2_transit_gateway
+
+    - name: "export r_ec2_transit_gateway"
+      set_stats:
+        data:
+          r_ec2_transit_gateway: "{{ r_ec2_transit_gateway }}"

@@ -7,3 +7,8 @@
       state: "{{ portinstall_state | default(omit, True) }}"
       use_packages: "{{ portinstall_use_packages | default(omit, True) }}"
       name: "{{ portinstall_name | default(omit, True) }}"
+
+- name: "export r_portinstall"
+  set_stats:
+    data:
+      r_portinstall: "{{ r_portinstall }}"

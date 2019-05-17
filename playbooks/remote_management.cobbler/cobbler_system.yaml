@@ -22,3 +22,8 @@
     - name: "plugin_cobbler_system"
       cobbler_system: "{{ cobbler_system }}"
       register: r_cobbler_system
+
+    - name: "export r_cobbler_system"
+      set_stats:
+        data:
+          r_cobbler_system: "{{ r_cobbler_system }}"

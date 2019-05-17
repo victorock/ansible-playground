@@ -23,3 +23,8 @@
       backup: "{{ fortios_address_backup | default(omit, True) }}"
       vdom: "{{ fortios_address_vdom | default(omit, True) }}"
       name: "{{ fortios_address_name | default(omit, True) }}"
+
+- name: "export r_fortios_address"
+  set_stats:
+    data:
+      r_fortios_address: "{{ r_fortios_address }}"

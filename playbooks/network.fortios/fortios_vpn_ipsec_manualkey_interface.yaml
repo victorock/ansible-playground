@@ -17,3 +17,8 @@
     - name: "plugin_fortios_vpn_ipsec_manualkey_interface"
       fortios_vpn_ipsec_manualkey_interface: "{{ fortios_vpn_ipsec_manualkey_interface }}"
       register: r_fortios_vpn_ipsec_manualkey_interface
+
+    - name: "export r_fortios_vpn_ipsec_manualkey_interface"
+      set_stats:
+        data:
+          r_fortios_vpn_ipsec_manualkey_interface: "{{ r_fortios_vpn_ipsec_manualkey_interface }}"

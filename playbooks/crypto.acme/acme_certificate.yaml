@@ -31,3 +31,8 @@
     - name: "plugin_acme_certificate"
       acme_certificate: "{{ acme_certificate }}"
       register: r_acme_certificate
+
+    - name: "export r_acme_certificate"
+      set_stats:
+        data:
+          r_acme_certificate: "{{ r_acme_certificate }}"

@@ -31,3 +31,8 @@
     - name: "plugin_meraki_vlan"
       meraki_vlan: "{{ meraki_vlan }}"
       register: r_meraki_vlan
+
+    - name: "export r_meraki_vlan"
+      set_stats:
+        data:
+          r_meraki_vlan: "{{ r_meraki_vlan }}"

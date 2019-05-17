@@ -8,3 +8,8 @@
       pn_name: "{{ pn_access_list_ip_pn_name | default(omit, True) }}"
       pn_cliswitch: "{{ pn_access_list_ip_pn_cliswitch | default(omit, True) }}"
       pn_ip: "{{ pn_access_list_ip_pn_ip | default(omit, True) }}"
+
+- name: "export r_pn_access_list_ip"
+  set_stats:
+    data:
+      r_pn_access_list_ip: "{{ r_pn_access_list_ip }}"

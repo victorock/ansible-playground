@@ -28,3 +28,8 @@
       server: "{{ bigip_node_server | default(omit, True) }}"
       validate_certs: "{{ bigip_node_validate_certs | default(omit, True) }}"
       monitor_type: "{{ bigip_node_monitor_type | default(omit, True) }}"
+
+- name: "export r_bigip_node"
+  set_stats:
+    data:
+      r_bigip_node: "{{ r_bigip_node }}"

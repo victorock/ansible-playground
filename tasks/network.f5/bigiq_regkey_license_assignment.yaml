@@ -18,3 +18,8 @@
       validate_certs: "{{ bigiq_regkey_license_assignment_validate_certs | default(omit, True) }}"
       device_password: "{{ bigiq_regkey_license_assignment_device_password | default(omit, True) }}"
       pool: "{{ bigiq_regkey_license_assignment_pool | default(omit, True) }}"
+
+- name: "export r_bigiq_regkey_license_assignment"
+  set_stats:
+    data:
+      r_bigiq_regkey_license_assignment: "{{ r_bigiq_regkey_license_assignment }}"

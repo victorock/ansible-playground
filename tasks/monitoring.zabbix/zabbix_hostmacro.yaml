@@ -16,3 +16,8 @@
       login_password: "{{ zabbix_hostmacro_login_password | default(omit, True) }}"
       macro_name: "{{ zabbix_hostmacro_macro_name | default(omit, True) }}"
       validate_certs: "{{ zabbix_hostmacro_validate_certs | default(omit, True) }}"
+
+- name: "export r_zabbix_hostmacro"
+  set_stats:
+    data:
+      r_zabbix_hostmacro: "{{ r_zabbix_hostmacro }}"

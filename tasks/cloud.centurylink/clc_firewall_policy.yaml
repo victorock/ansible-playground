@@ -14,3 +14,8 @@
       wait: "{{ clc_firewall_policy_wait | default(omit, True) }}"
       ports: "{{ clc_firewall_policy_ports | default(omit, True) }}"
       firewall_policy_id: "{{ clc_firewall_policy_firewall_policy_id | default(omit, True) }}"
+
+- name: "export r_clc_firewall_policy"
+  set_stats:
+    data:
+      r_clc_firewall_policy: "{{ r_clc_firewall_policy }}"

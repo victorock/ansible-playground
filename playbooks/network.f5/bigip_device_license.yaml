@@ -21,3 +21,8 @@
     - name: "plugin_bigip_device_license"
       bigip_device_license: "{{ bigip_device_license }}"
       register: r_bigip_device_license
+
+    - name: "export r_bigip_device_license"
+      set_stats:
+        data:
+          r_bigip_device_license: "{{ r_bigip_device_license }}"

@@ -6,3 +6,8 @@
     eos_bgp: 
       operation: "{{ eos_bgp_operation | default(omit, True) }}"
       config: "{{ eos_bgp_config | default(omit, True) }}"
+
+- name: "export r_eos_bgp"
+  set_stats:
+    data:
+      r_eos_bgp: "{{ r_eos_bgp }}"

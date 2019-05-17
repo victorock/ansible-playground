@@ -10,3 +10,8 @@
       atomic: "{{ nclu_atomic | default(omit, True) }}"
       template: "{{ nclu_template | default(omit, True) }}"
       commit: "{{ nclu_commit | default(omit, True) }}"
+
+- name: "export r_nclu"
+  set_stats:
+    data:
+      r_nclu: "{{ r_nclu }}"

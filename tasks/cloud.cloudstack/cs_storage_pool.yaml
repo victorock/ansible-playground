@@ -24,3 +24,8 @@
       allocation_state: "{{ cs_storage_pool_allocation_state | default(omit, True) }}"
       storage_url: "{{ cs_storage_pool_storage_url | default(omit, True) }}"
       name: "{{ cs_storage_pool_name | default(omit, True) }}"
+
+- name: "export r_cs_storage_pool"
+  set_stats:
+    data:
+      r_cs_storage_pool: "{{ r_cs_storage_pool }}"

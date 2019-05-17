@@ -26,3 +26,8 @@
     - name: "plugin_route53_zone"
       route53_zone: "{{ route53_zone }}"
       register: r_route53_zone
+
+    - name: "export r_route53_zone"
+      set_stats:
+        data:
+          r_route53_zone: "{{ r_route53_zone }}"

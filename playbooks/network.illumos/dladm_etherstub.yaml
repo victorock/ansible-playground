@@ -14,3 +14,8 @@
     - name: "plugin_dladm_etherstub"
       dladm_etherstub: "{{ dladm_etherstub }}"
       register: r_dladm_etherstub
+
+    - name: "export r_dladm_etherstub"
+      set_stats:
+        data:
+          r_dladm_etherstub: "{{ r_dladm_etherstub }}"

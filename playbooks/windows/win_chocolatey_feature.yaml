@@ -13,3 +13,8 @@
     - name: "plugin_win_chocolatey_feature"
       win_chocolatey_feature: "{{ win_chocolatey_feature }}"
       register: r_win_chocolatey_feature
+
+    - name: "export r_win_chocolatey_feature"
+      set_stats:
+        data:
+          r_win_chocolatey_feature: "{{ r_win_chocolatey_feature }}"

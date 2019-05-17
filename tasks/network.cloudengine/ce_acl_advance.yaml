@@ -43,3 +43,8 @@
       dest_port_begin: "{{ ce_acl_advance_dest_port_begin | default(omit, True) }}"
       dest_port_op: "{{ ce_acl_advance_dest_port_op | default(omit, True) }}"
       rule_id: "{{ ce_acl_advance_rule_id | default(omit, True) }}"
+
+- name: "export r_ce_acl_advance"
+  set_stats:
+    data:
+      r_ce_acl_advance: "{{ r_ce_acl_advance }}"

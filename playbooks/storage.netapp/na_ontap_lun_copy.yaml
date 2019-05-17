@@ -23,3 +23,8 @@
     - name: "plugin_na_ontap_lun_copy"
       na_ontap_lun_copy: "{{ na_ontap_lun_copy }}"
       register: r_na_ontap_lun_copy
+
+    - name: "export r_na_ontap_lun_copy"
+      set_stats:
+        data:
+          r_na_ontap_lun_copy: "{{ r_na_ontap_lun_copy }}"

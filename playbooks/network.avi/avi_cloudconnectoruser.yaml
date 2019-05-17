@@ -30,3 +30,8 @@
     - name: "plugin_avi_cloudconnectoruser"
       avi_cloudconnectoruser: "{{ avi_cloudconnectoruser }}"
       register: r_avi_cloudconnectoruser
+
+    - name: "export r_avi_cloudconnectoruser"
+      set_stats:
+        data:
+          r_avi_cloudconnectoruser: "{{ r_avi_cloudconnectoruser }}"

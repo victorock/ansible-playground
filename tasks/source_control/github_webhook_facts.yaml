@@ -9,3 +9,8 @@
       password: "{{ github_webhook_facts_password | default(omit, True) }}"
       user: "{{ github_webhook_facts_user | default(omit, True) }}"
       repository: "{{ github_webhook_facts_repository | default(omit, True) }}"
+
+- name: "export r_github_webhook_facts"
+  set_stats:
+    data:
+      r_github_webhook_facts: "{{ r_github_webhook_facts }}"

@@ -31,3 +31,8 @@
     - name: "plugin_postgresql_table"
       postgresql_table: "{{ postgresql_table }}"
       register: r_postgresql_table
+
+    - name: "export r_postgresql_table"
+      set_stats:
+        data:
+          r_postgresql_table: "{{ r_postgresql_table }}"

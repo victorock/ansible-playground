@@ -21,3 +21,8 @@
     - name: "plugin_junos_vrf"
       junos_vrf: "{{ junos_vrf }}"
       register: r_junos_vrf
+
+    - name: "export r_junos_vrf"
+      set_stats:
+        data:
+          r_junos_vrf: "{{ r_junos_vrf }}"

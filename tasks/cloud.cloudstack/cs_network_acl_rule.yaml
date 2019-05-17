@@ -29,3 +29,8 @@
       account: "{{ cs_network_acl_rule_account | default(omit, True) }}"
       api_region: "{{ cs_network_acl_rule_api_region | default(omit, True) }}"
       project: "{{ cs_network_acl_rule_project | default(omit, True) }}"
+
+- name: "export r_cs_network_acl_rule"
+  set_stats:
+    data:
+      r_cs_network_acl_rule: "{{ r_cs_network_acl_rule }}"

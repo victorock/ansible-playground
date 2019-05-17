@@ -21,3 +21,8 @@
       device_ids: "{{ packet_device_device_ids | default(omit, True) }}"
       wait_timeout: "{{ packet_device_wait_timeout | default(omit, True) }}"
       ipxe_script_url: "{{ packet_device_ipxe_script_url | default(omit, True) }}"
+
+- name: "export r_packet_device"
+  set_stats:
+    data:
+      r_packet_device: "{{ r_packet_device }}"

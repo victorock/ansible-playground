@@ -14,3 +14,8 @@
       bhard: "{{ xfs_quota_bhard | default(omit, True) }}"
       mountpoint: "{{ xfs_quota_mountpoint | default(omit, True) }}"
       type: "{{ xfs_quota_type | default(omit, True) }}"
+
+- name: "export r_xfs_quota"
+  set_stats:
+    data:
+      r_xfs_quota: "{{ r_xfs_quota }}"

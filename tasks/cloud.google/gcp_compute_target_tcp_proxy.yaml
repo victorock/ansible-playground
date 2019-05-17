@@ -15,3 +15,8 @@
       service_account_file: "{{ gcp_compute_target_tcp_proxy_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_compute_target_tcp_proxy_auth_kind | default(omit, True) }}"
       name: "{{ gcp_compute_target_tcp_proxy_name | default(omit, True) }}"
+
+- name: "export r_gcp_compute_target_tcp_proxy"
+  set_stats:
+    data:
+      r_gcp_compute_target_tcp_proxy: "{{ r_gcp_compute_target_tcp_proxy }}"

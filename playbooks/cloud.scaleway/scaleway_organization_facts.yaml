@@ -16,3 +16,8 @@
     - name: "plugin_scaleway_organization_facts"
       scaleway_organization_facts: "{{ scaleway_organization_facts }}"
       register: r_scaleway_organization_facts
+
+    - name: "export r_scaleway_organization_facts"
+      set_stats:
+        data:
+          r_scaleway_organization_facts: "{{ r_scaleway_organization_facts }}"

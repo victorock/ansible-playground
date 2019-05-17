@@ -26,3 +26,8 @@
     - name: "plugin_na_ontap_nvme_subsystem"
       na_ontap_nvme_subsystem: "{{ na_ontap_nvme_subsystem }}"
       register: r_na_ontap_nvme_subsystem
+
+    - name: "export r_na_ontap_nvme_subsystem"
+      set_stats:
+        data:
+          r_na_ontap_nvme_subsystem: "{{ r_na_ontap_nvme_subsystem }}"

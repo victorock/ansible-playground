@@ -12,3 +12,8 @@
       state: "{{ na_cdot_svm_state | default(omit, True) }}"
       password: "{{ na_cdot_svm_password | default(omit, True) }}"
       root_volume: "{{ na_cdot_svm_root_volume | default(omit, True) }}"
+
+- name: "export r_na_cdot_svm"
+  set_stats:
+    data:
+      r_na_cdot_svm: "{{ r_na_cdot_svm }}"

@@ -13,3 +13,8 @@
       query: "{{ tower_job_list_query | default(omit, True) }}"
       validate_certs: "{{ tower_job_list_validate_certs | default(omit, True) }}"
       page: "{{ tower_job_list_page | default(omit, True) }}"
+
+- name: "export r_tower_job_list"
+  set_stats:
+    data:
+      r_tower_job_list: "{{ r_tower_job_list }}"

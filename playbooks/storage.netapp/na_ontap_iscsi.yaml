@@ -21,3 +21,8 @@
     - name: "plugin_na_ontap_iscsi"
       na_ontap_iscsi: "{{ na_ontap_iscsi }}"
       register: r_na_ontap_iscsi
+
+    - name: "export r_na_ontap_iscsi"
+      set_stats:
+        data:
+          r_na_ontap_iscsi: "{{ r_na_ontap_iscsi }}"

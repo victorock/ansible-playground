@@ -23,3 +23,8 @@
     - name: "plugin_net_interface"
       net_interface: "{{ net_interface }}"
       register: r_net_interface
+
+    - name: "export r_net_interface"
+      set_stats:
+        data:
+          r_net_interface: "{{ r_net_interface }}"

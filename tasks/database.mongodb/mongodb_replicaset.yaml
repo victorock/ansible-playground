@@ -19,3 +19,8 @@
       protocol_version: "{{ mongodb_replicaset_protocol_version | default(omit, True) }}"
       validate: "{{ mongodb_replicaset_validate | default(omit, True) }}"
       replica_set: "{{ mongodb_replicaset_replica_set | default(omit, True) }}"
+
+- name: "export r_mongodb_replicaset"
+  set_stats:
+    data:
+      r_mongodb_replicaset: "{{ r_mongodb_replicaset }}"

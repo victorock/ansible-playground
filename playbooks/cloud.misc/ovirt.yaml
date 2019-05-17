@@ -38,3 +38,8 @@
     - name: "plugin_ovirt"
       ovirt: "{{ ovirt }}"
       register: r_ovirt
+
+    - name: "export r_ovirt"
+      set_stats:
+        data:
+          r_ovirt: "{{ r_ovirt }}"

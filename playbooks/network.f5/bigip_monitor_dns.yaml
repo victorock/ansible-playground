@@ -41,3 +41,8 @@
     - name: "plugin_bigip_monitor_dns"
       bigip_monitor_dns: "{{ bigip_monitor_dns }}"
       register: r_bigip_monitor_dns
+
+    - name: "export r_bigip_monitor_dns"
+      set_stats:
+        data:
+          r_bigip_monitor_dns: "{{ r_bigip_monitor_dns }}"

@@ -30,3 +30,8 @@
     - name: "plugin_meraki_static_route"
       meraki_static_route: "{{ meraki_static_route }}"
       register: r_meraki_static_route
+
+    - name: "export r_meraki_static_route"
+      set_stats:
+        data:
+          r_meraki_static_route: "{{ r_meraki_static_route }}"

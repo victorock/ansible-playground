@@ -15,3 +15,8 @@
     - name: "plugin_typetalk"
       typetalk: "{{ typetalk }}"
       register: r_typetalk
+
+    - name: "export r_typetalk"
+      set_stats:
+        data:
+          r_typetalk: "{{ r_typetalk }}"

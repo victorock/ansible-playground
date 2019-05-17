@@ -17,3 +17,8 @@
     - name: "plugin_fortios_wireless_controller_vap"
       fortios_wireless_controller_vap: "{{ fortios_wireless_controller_vap }}"
       register: r_fortios_wireless_controller_vap
+
+    - name: "export r_fortios_wireless_controller_vap"
+      set_stats:
+        data:
+          r_fortios_wireless_controller_vap: "{{ r_fortios_wireless_controller_vap }}"

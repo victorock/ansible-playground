@@ -15,3 +15,8 @@
       provider: "{{ bigip_ssl_certificate_provider | default(omit, True) }}"
       password: "{{ bigip_ssl_certificate_password | default(omit, True) }}"
       validate_certs: "{{ bigip_ssl_certificate_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_ssl_certificate"
+  set_stats:
+    data:
+      r_bigip_ssl_certificate: "{{ r_bigip_ssl_certificate }}"

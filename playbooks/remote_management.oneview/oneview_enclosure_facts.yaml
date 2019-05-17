@@ -15,3 +15,8 @@
     - name: "plugin_oneview_enclosure_facts"
       oneview_enclosure_facts: "{{ oneview_enclosure_facts }}"
       register: r_oneview_enclosure_facts
+
+    - name: "export r_oneview_enclosure_facts"
+      set_stats:
+        data:
+          r_oneview_enclosure_facts: "{{ r_oneview_enclosure_facts }}"

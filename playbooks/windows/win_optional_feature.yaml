@@ -15,3 +15,8 @@
     - name: "plugin_win_optional_feature"
       win_optional_feature: "{{ win_optional_feature }}"
       register: r_win_optional_feature
+
+    - name: "export r_win_optional_feature"
+      set_stats:
+        data:
+          r_win_optional_feature: "{{ r_win_optional_feature }}"

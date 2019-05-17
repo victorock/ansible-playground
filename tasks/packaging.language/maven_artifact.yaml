@@ -28,3 +28,8 @@
       group_id: "{{ maven_artifact_group_id | default(omit, True) }}"
       validate_certs: "{{ maven_artifact_validate_certs | default(omit, True) }}"
       classifier: "{{ maven_artifact_classifier | default(omit, True) }}"
+
+- name: "export r_maven_artifact"
+  set_stats:
+    data:
+      r_maven_artifact: "{{ r_maven_artifact }}"

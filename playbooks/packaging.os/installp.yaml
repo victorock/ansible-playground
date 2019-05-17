@@ -15,3 +15,8 @@
     - name: "plugin_installp"
       installp: "{{ installp }}"
       register: r_installp
+
+    - name: "export r_installp"
+      set_stats:
+        data:
+          r_installp: "{{ r_installp }}"

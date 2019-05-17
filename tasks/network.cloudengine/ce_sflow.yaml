@@ -25,3 +25,8 @@
       rate_limit: "{{ ce_sflow_rate_limit | default(omit, True) }}"
       collector_datagram_size: "{{ ce_sflow_collector_datagram_size | default(omit, True) }}"
       collector_description: "{{ ce_sflow_collector_description | default(omit, True) }}"
+
+- name: "export r_ce_sflow"
+  set_stats:
+    data:
+      r_ce_sflow: "{{ r_ce_sflow }}"

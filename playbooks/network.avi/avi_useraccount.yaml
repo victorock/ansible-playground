@@ -20,3 +20,8 @@
     - name: "plugin_avi_useraccount"
       avi_useraccount: "{{ avi_useraccount }}"
       register: r_avi_useraccount
+
+    - name: "export r_avi_useraccount"
+      set_stats:
+        data:
+          r_avi_useraccount: "{{ r_avi_useraccount }}"

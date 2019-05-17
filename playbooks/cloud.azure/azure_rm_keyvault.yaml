@@ -37,3 +37,8 @@
     - name: "plugin_azure_rm_keyvault"
       azure_rm_keyvault: "{{ azure_rm_keyvault }}"
       register: r_azure_rm_keyvault
+
+    - name: "export r_azure_rm_keyvault"
+      set_stats:
+        data:
+          r_azure_rm_keyvault: "{{ r_azure_rm_keyvault }}"

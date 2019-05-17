@@ -10,3 +10,8 @@
       state: "{{ virt_net_state | default(omit, True) }}"
       command: "{{ virt_net_command | default(omit, True) }}"
       autostart: "{{ virt_net_autostart | default(omit, True) }}"
+
+- name: "export r_virt_net"
+  set_stats:
+    data:
+      r_virt_net: "{{ r_virt_net }}"

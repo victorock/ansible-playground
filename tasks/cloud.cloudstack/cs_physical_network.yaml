@@ -22,3 +22,8 @@
       poll_async: "{{ cs_physical_network_poll_async | default(omit, True) }}"
       zone: "{{ cs_physical_network_zone | default(omit, True) }}"
       name: "{{ cs_physical_network_name | default(omit, True) }}"
+
+- name: "export r_cs_physical_network"
+  set_stats:
+    data:
+      r_cs_physical_network: "{{ r_cs_physical_network }}"

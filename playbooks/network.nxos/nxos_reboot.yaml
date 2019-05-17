@@ -13,3 +13,8 @@
     - name: "plugin_nxos_reboot"
       nxos_reboot: "{{ nxos_reboot }}"
       register: r_nxos_reboot
+
+    - name: "export r_nxos_reboot"
+      set_stats:
+        data:
+          r_nxos_reboot: "{{ r_nxos_reboot }}"

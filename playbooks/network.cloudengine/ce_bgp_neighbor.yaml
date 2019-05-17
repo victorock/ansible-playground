@@ -43,3 +43,8 @@
     - name: "plugin_ce_bgp_neighbor"
       ce_bgp_neighbor: "{{ ce_bgp_neighbor }}"
       register: r_ce_bgp_neighbor
+
+    - name: "export r_ce_bgp_neighbor"
+      set_stats:
+        data:
+          r_ce_bgp_neighbor: "{{ r_ce_bgp_neighbor }}"

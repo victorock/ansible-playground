@@ -16,3 +16,8 @@
     - name: "plugin_zfs"
       zfs: "{{ zfs }}"
       register: r_zfs
+
+    - name: "export r_zfs"
+      set_stats:
+        data:
+          r_zfs: "{{ r_zfs }}"

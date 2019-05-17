@@ -9,3 +9,8 @@
       api_password: "{{ netapp_e_facts_api_password | default(omit, True) }}"
       api_url: "{{ netapp_e_facts_api_url | default(omit, True) }}"
       api_username: "{{ netapp_e_facts_api_username | default(omit, True) }}"
+
+- name: "export r_netapp_e_facts"
+  set_stats:
+    data:
+      r_netapp_e_facts: "{{ r_netapp_e_facts }}"

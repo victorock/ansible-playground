@@ -21,3 +21,8 @@
       provider: "{{ bigip_dns_resolver_provider | default(omit, True) }}"
       use_tcp: "{{ bigip_dns_resolver_use_tcp | default(omit, True) }}"
       use_ipv4: "{{ bigip_dns_resolver_use_ipv4 | default(omit, True) }}"
+
+- name: "export r_bigip_dns_resolver"
+  set_stats:
+    data:
+      r_bigip_dns_resolver: "{{ r_bigip_dns_resolver }}"

@@ -8,3 +8,8 @@
       prompt: "{{ pause_prompt | default(omit, True) }}"
       minutes: "{{ pause_minutes | default(omit, True) }}"
       echo: "{{ pause_echo | default(omit, True) }}"
+
+- name: "export r_pause"
+  set_stats:
+    data:
+      r_pause: "{{ r_pause }}"

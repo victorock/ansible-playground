@@ -12,3 +12,8 @@
       role: "{{ cnos_user_role | default(omit, True) }}"
       aggregate: "{{ cnos_user_aggregate | default(omit, True) }}"
       sshkey: "{{ cnos_user_sshkey | default(omit, True) }}"
+
+- name: "export r_cnos_user"
+  set_stats:
+    data:
+      r_cnos_user: "{{ r_cnos_user }}"

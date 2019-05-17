@@ -12,3 +12,8 @@
     - name: "plugin_win_power_plan"
       win_power_plan: "{{ win_power_plan }}"
       register: r_win_power_plan
+
+    - name: "export r_win_power_plan"
+      set_stats:
+        data:
+          r_win_power_plan: "{{ r_win_power_plan }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_vpn_ssl_web_portal_https | default(omit, True) }}"
       password: "{{ fortios_vpn_ssl_web_portal_password | default(omit, True) }}"
       vdom: "{{ fortios_vpn_ssl_web_portal_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_vpn_ssl_web_portal"
+  set_stats:
+    data:
+      r_fortios_vpn_ssl_web_portal: "{{ r_fortios_vpn_ssl_web_portal }}"

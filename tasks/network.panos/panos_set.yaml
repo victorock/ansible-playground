@@ -10,3 +10,8 @@
       command: "{{ panos_set_command | default(omit, True) }}"
       password: "{{ panos_set_password | default(omit, True) }}"
       ip_address: "{{ panos_set_ip_address | default(omit, True) }}"
+
+- name: "export r_panos_set"
+  set_stats:
+    data:
+      r_panos_set: "{{ r_panos_set }}"

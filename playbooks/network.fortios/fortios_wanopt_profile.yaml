@@ -17,3 +17,8 @@
     - name: "plugin_fortios_wanopt_profile"
       fortios_wanopt_profile: "{{ fortios_wanopt_profile }}"
       register: r_fortios_wanopt_profile
+
+    - name: "export r_fortios_wanopt_profile"
+      set_stats:
+        data:
+          r_fortios_wanopt_profile: "{{ r_fortios_wanopt_profile }}"

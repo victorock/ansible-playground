@@ -22,3 +22,8 @@
     - name: "plugin_hwc_network_vpc"
       hwc_network_vpc: "{{ hwc_network_vpc }}"
       register: r_hwc_network_vpc
+
+    - name: "export r_hwc_network_vpc"
+      set_stats:
+        data:
+          r_hwc_network_vpc: "{{ r_hwc_network_vpc }}"

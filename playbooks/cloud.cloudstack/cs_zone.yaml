@@ -33,3 +33,8 @@
     - name: "plugin_cs_zone"
       cs_zone: "{{ cs_zone }}"
       register: r_cs_zone
+
+    - name: "export r_cs_zone"
+      set_stats:
+        data:
+          r_cs_zone: "{{ r_cs_zone }}"

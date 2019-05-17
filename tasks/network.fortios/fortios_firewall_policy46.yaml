@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_policy46_https | default(omit, True) }}"
       password: "{{ fortios_firewall_policy46_password | default(omit, True) }}"
       firewall_policy46: "{{ fortios_firewall_policy46_firewall_policy46 | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_policy46"
+  set_stats:
+    data:
+      r_fortios_firewall_policy46: "{{ r_fortios_firewall_policy46 }}"

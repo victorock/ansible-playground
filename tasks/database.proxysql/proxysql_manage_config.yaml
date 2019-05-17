@@ -13,3 +13,8 @@
       action: "{{ proxysql_manage_config_action | default(omit, True) }}"
       login_password: "{{ proxysql_manage_config_login_password | default(omit, True) }}"
       config_layer: "{{ proxysql_manage_config_config_layer | default(omit, True) }}"
+
+- name: "export r_proxysql_manage_config"
+  set_stats:
+    data:
+      r_proxysql_manage_config: "{{ r_proxysql_manage_config }}"

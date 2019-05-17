@@ -10,3 +10,8 @@
       https: "{{ iap_token_https | default(omit, True) }}"
       password: "{{ iap_token_password | default(omit, True) }}"
       validate_certs: "{{ iap_token_validate_certs | default(omit, True) }}"
+
+- name: "export r_iap_token"
+  set_stats:
+    data:
+      r_iap_token: "{{ r_iap_token }}"

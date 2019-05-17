@@ -23,3 +23,8 @@
     - name: "plugin_bigip_management_route"
       bigip_management_route: "{{ bigip_management_route }}"
       register: r_bigip_management_route
+
+    - name: "export r_bigip_management_route"
+      set_stats:
+        data:
+          r_bigip_management_route: "{{ r_bigip_management_route }}"

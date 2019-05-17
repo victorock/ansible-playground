@@ -11,3 +11,8 @@
       snapshot_name: "{{ gce_snapshot_snapshot_name | default(omit, True) }}"
       credentials_file: "{{ gce_snapshot_credentials_file | default(omit, True) }}"
       project_id: "{{ gce_snapshot_project_id | default(omit, True) }}"
+
+- name: "export r_gce_snapshot"
+  set_stats:
+    data:
+      r_gce_snapshot: "{{ r_gce_snapshot }}"

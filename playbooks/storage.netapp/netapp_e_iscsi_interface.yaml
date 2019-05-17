@@ -25,3 +25,8 @@
     - name: "plugin_netapp_e_iscsi_interface"
       netapp_e_iscsi_interface: "{{ netapp_e_iscsi_interface }}"
       register: r_netapp_e_iscsi_interface
+
+    - name: "export r_netapp_e_iscsi_interface"
+      set_stats:
+        data:
+          r_netapp_e_iscsi_interface: "{{ r_netapp_e_iscsi_interface }}"

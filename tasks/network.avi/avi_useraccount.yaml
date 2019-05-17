@@ -13,3 +13,8 @@
       password: "{{ avi_useraccount_password | default(omit, True) }}"
       old_password: "{{ avi_useraccount_old_password | default(omit, True) }}"
       api_version: "{{ avi_useraccount_api_version | default(omit, True) }}"
+
+- name: "export r_avi_useraccount"
+  set_stats:
+    data:
+      r_avi_useraccount: "{{ r_avi_useraccount }}"

@@ -20,3 +20,8 @@
     - name: "plugin_pacman"
       pacman: "{{ pacman }}"
       register: r_pacman
+
+    - name: "export r_pacman"
+      set_stats:
+        data:
+          r_pacman: "{{ r_pacman }}"

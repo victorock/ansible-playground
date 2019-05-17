@@ -22,3 +22,8 @@
     - name: "plugin_nios_srv_record"
       nios_srv_record: "{{ nios_srv_record }}"
       register: r_nios_srv_record
+
+    - name: "export r_nios_srv_record"
+      set_stats:
+        data:
+          r_nios_srv_record: "{{ r_nios_srv_record }}"

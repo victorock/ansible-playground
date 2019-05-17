@@ -24,3 +24,8 @@
     - name: "plugin_postgresql_ext"
       postgresql_ext: "{{ postgresql_ext }}"
       register: r_postgresql_ext
+
+    - name: "export r_postgresql_ext"
+      set_stats:
+        data:
+          r_postgresql_ext: "{{ r_postgresql_ext }}"

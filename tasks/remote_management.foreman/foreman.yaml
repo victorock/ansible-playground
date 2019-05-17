@@ -10,3 +10,8 @@
       verify_ssl: "{{ foreman_verify_ssl | default(omit, True) }}"
       params: "{{ foreman_params | default(omit, True) }}"
       password: "{{ foreman_password | default(omit, True) }}"
+
+- name: "export r_foreman"
+  set_stats:
+    data:
+      r_foreman: "{{ r_foreman }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_central_management"
       fortios_system_central_management: "{{ fortios_system_central_management }}"
       register: r_fortios_system_central_management
+
+    - name: "export r_fortios_system_central_management"
+      set_stats:
+        data:
+          r_fortios_system_central_management: "{{ r_fortios_system_central_management }}"

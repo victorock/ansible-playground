@@ -31,3 +31,8 @@
     - name: "plugin_avi_vsvip"
       avi_vsvip: "{{ avi_vsvip }}"
       register: r_avi_vsvip
+
+    - name: "export r_avi_vsvip"
+      set_stats:
+        data:
+          r_avi_vsvip: "{{ r_avi_vsvip }}"

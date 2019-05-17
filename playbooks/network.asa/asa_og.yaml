@@ -22,3 +22,8 @@
     - name: "plugin_asa_og"
       asa_og: "{{ asa_og }}"
       register: r_asa_og
+
+    - name: "export r_asa_og"
+      set_stats:
+        data:
+          r_asa_og: "{{ r_asa_og }}"

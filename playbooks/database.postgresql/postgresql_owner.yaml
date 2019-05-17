@@ -25,3 +25,8 @@
     - name: "plugin_postgresql_owner"
       postgresql_owner: "{{ postgresql_owner }}"
       register: r_postgresql_owner
+
+    - name: "export r_postgresql_owner"
+      set_stats:
+        data:
+          r_postgresql_owner: "{{ r_postgresql_owner }}"

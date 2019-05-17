@@ -15,3 +15,8 @@
       provider: "{{ bigip_apm_policy_import_provider | default(omit, True) }}"
       password: "{{ bigip_apm_policy_import_password | default(omit, True) }}"
       type: "{{ bigip_apm_policy_import_type | default(omit, True) }}"
+
+- name: "export r_bigip_apm_policy_import"
+  set_stats:
+    data:
+      r_bigip_apm_policy_import: "{{ r_bigip_apm_policy_import }}"

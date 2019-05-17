@@ -26,3 +26,8 @@
     - name: "plugin_mongodb_replicaset"
       mongodb_replicaset: "{{ mongodb_replicaset }}"
       register: r_mongodb_replicaset
+
+    - name: "export r_mongodb_replicaset"
+      set_stats:
+        data:
+          r_mongodb_replicaset: "{{ r_mongodb_replicaset }}"

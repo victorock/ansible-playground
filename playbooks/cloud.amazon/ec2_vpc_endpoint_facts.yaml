@@ -22,3 +22,8 @@
     - name: "plugin_ec2_vpc_endpoint_facts"
       ec2_vpc_endpoint_facts: "{{ ec2_vpc_endpoint_facts }}"
       register: r_ec2_vpc_endpoint_facts
+
+    - name: "export r_ec2_vpc_endpoint_facts"
+      set_stats:
+        data:
+          r_ec2_vpc_endpoint_facts: "{{ r_ec2_vpc_endpoint_facts }}"

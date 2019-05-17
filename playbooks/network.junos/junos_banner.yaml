@@ -16,3 +16,8 @@
     - name: "plugin_junos_banner"
       junos_banner: "{{ junos_banner }}"
       register: r_junos_banner
+
+    - name: "export r_junos_banner"
+      set_stats:
+        data:
+          r_junos_banner: "{{ r_junos_banner }}"

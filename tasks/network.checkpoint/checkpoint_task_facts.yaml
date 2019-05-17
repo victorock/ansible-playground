@@ -5,3 +5,8 @@
   vars:
     checkpoint_task_facts: 
       task_id: "{{ checkpoint_task_facts_task_id | default(omit, True) }}"
+
+- name: "export r_checkpoint_task_facts"
+  set_stats:
+    data:
+      r_checkpoint_task_facts: "{{ r_checkpoint_task_facts }}"

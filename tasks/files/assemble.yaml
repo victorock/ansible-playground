@@ -22,3 +22,8 @@
       validate: "{{ assemble_validate | default(omit, True) }}"
       backup: "{{ assemble_backup | default(omit, True) }}"
       setype: "{{ assemble_setype | default(omit, True) }}"
+
+- name: "export r_assemble"
+  set_stats:
+    data:
+      r_assemble: "{{ r_assemble }}"

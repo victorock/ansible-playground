@@ -16,3 +16,8 @@
     - name: "plugin_nos_command"
       nos_command: "{{ nos_command }}"
       register: r_nos_command
+
+    - name: "export r_nos_command"
+      set_stats:
+        data:
+          r_nos_command: "{{ r_nos_command }}"

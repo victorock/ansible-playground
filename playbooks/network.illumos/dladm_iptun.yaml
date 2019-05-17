@@ -17,3 +17,8 @@
     - name: "plugin_dladm_iptun"
       dladm_iptun: "{{ dladm_iptun }}"
       register: r_dladm_iptun
+
+    - name: "export r_dladm_iptun"
+      set_stats:
+        data:
+          r_dladm_iptun: "{{ r_dladm_iptun }}"

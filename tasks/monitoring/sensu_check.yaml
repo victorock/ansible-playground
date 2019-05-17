@@ -28,3 +28,8 @@
       high_flap_threshold: "{{ sensu_check_high_flap_threshold | default(omit, True) }}"
       timeout: "{{ sensu_check_timeout | default(omit, True) }}"
       backup: "{{ sensu_check_backup | default(omit, True) }}"
+
+- name: "export r_sensu_check"
+  set_stats:
+    data:
+      r_sensu_check: "{{ r_sensu_check }}"

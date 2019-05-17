@@ -13,3 +13,8 @@
       cpm_username: "{{ cpm_plugcontrol_cpm_username | default(omit, True) }}"
       validate_certs: "{{ cpm_plugcontrol_validate_certs | default(omit, True) }}"
       use_https: "{{ cpm_plugcontrol_use_https | default(omit, True) }}"
+
+- name: "export r_cpm_plugcontrol"
+  set_stats:
+    data:
+      r_cpm_plugcontrol: "{{ r_cpm_plugcontrol }}"

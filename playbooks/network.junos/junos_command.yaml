@@ -19,3 +19,8 @@
     - name: "plugin_junos_command"
       junos_command: "{{ junos_command }}"
       register: r_junos_command
+
+    - name: "export r_junos_command"
+      set_stats:
+        data:
+          r_junos_command: "{{ r_junos_command }}"

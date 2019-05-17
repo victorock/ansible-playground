@@ -18,3 +18,8 @@
     - name: "plugin_skydive_node"
       skydive_node: "{{ skydive_node }}"
       register: r_skydive_node
+
+    - name: "export r_skydive_node"
+      set_stats:
+        data:
+          r_skydive_node: "{{ r_skydive_node }}"

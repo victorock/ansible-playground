@@ -20,3 +20,8 @@
     - name: "plugin_vmware_host_kernel_manager"
       vmware_host_kernel_manager: "{{ vmware_host_kernel_manager }}"
       register: r_vmware_host_kernel_manager
+
+    - name: "export r_vmware_host_kernel_manager"
+      set_stats:
+        data:
+          r_vmware_host_kernel_manager: "{{ r_vmware_host_kernel_manager }}"

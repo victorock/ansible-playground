@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_mariadbfirewallrule"
       azure_rm_mariadbfirewallrule: "{{ azure_rm_mariadbfirewallrule }}"
       register: r_azure_rm_mariadbfirewallrule
+
+    - name: "export r_azure_rm_mariadbfirewallrule"
+      set_stats:
+        data:
+          r_azure_rm_mariadbfirewallrule: "{{ r_azure_rm_mariadbfirewallrule }}"

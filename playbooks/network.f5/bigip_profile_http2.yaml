@@ -32,3 +32,8 @@
     - name: "plugin_bigip_profile_http2"
       bigip_profile_http2: "{{ bigip_profile_http2 }}"
       register: r_bigip_profile_http2
+
+    - name: "export r_bigip_profile_http2"
+      set_stats:
+        data:
+          r_bigip_profile_http2: "{{ r_bigip_profile_http2 }}"

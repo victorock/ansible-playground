@@ -20,3 +20,8 @@
       validate_certs: "{{ bigip_gtm_monitor_bigip_validate_certs | default(omit, True) }}"
       port: "{{ bigip_gtm_monitor_bigip_port | default(omit, True) }}"
       ignore_down_response: "{{ bigip_gtm_monitor_bigip_ignore_down_response | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_monitor_bigip"
+  set_stats:
+    data:
+      r_bigip_gtm_monitor_bigip: "{{ r_bigip_gtm_monitor_bigip }}"

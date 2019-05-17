@@ -10,3 +10,8 @@
       sp_address: "{{ emc_vnx_sg_member_sp_address | default(omit, True) }}"
       state: "{{ emc_vnx_sg_member_state | default(omit, True) }}"
       lunid: "{{ emc_vnx_sg_member_lunid | default(omit, True) }}"
+
+- name: "export r_emc_vnx_sg_member"
+  set_stats:
+    data:
+      r_emc_vnx_sg_member: "{{ r_emc_vnx_sg_member }}"

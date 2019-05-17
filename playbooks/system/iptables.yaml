@@ -50,3 +50,8 @@
     - name: "plugin_iptables"
       iptables: "{{ iptables }}"
       register: r_iptables
+
+    - name: "export r_iptables"
+      set_stats:
+        data:
+          r_iptables: "{{ r_iptables }}"

@@ -13,3 +13,8 @@
     - name: "plugin_ios_bgp"
       ios_bgp: "{{ ios_bgp }}"
       register: r_ios_bgp
+
+    - name: "export r_ios_bgp"
+      set_stats:
+        data:
+          r_ios_bgp: "{{ r_ios_bgp }}"

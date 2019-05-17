@@ -18,3 +18,8 @@
     - name: "plugin_rundeck_acl_policy"
       rundeck_acl_policy: "{{ rundeck_acl_policy }}"
       register: r_rundeck_acl_policy
+
+    - name: "export r_rundeck_acl_policy"
+      set_stats:
+        data:
+          r_rundeck_acl_policy: "{{ r_rundeck_acl_policy }}"

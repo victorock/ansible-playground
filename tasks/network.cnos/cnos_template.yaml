@@ -11,3 +11,8 @@
       password: "{{ cnos_template_password | default(omit, True) }}"
       enablePassword: "{{ cnos_template_enablePassword | default(omit, True) }}"
       commandfile: "{{ cnos_template_commandfile | default(omit, True) }}"
+
+- name: "export r_cnos_template"
+  set_stats:
+    data:
+      r_cnos_template: "{{ r_cnos_template }}"

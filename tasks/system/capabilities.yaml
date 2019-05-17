@@ -7,3 +7,8 @@
       capability: "{{ capabilities_capability | default(omit, True) }}"
       path: "{{ capabilities_path | default(omit, True) }}"
       state: "{{ capabilities_state | default(omit, True) }}"
+
+- name: "export r_capabilities"
+  set_stats:
+    data:
+      r_capabilities: "{{ r_capabilities }}"

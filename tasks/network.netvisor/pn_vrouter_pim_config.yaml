@@ -10,3 +10,8 @@
       pn_hello_interval: "{{ pn_vrouter_pim_config_pn_hello_interval | default(omit, True) }}"
       state: "{{ pn_vrouter_pim_config_state | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vrouter_pim_config_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_vrouter_pim_config"
+  set_stats:
+    data:
+      r_pn_vrouter_pim_config: "{{ r_pn_vrouter_pim_config }}"

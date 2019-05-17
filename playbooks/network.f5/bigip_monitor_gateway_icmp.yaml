@@ -35,3 +35,8 @@
     - name: "plugin_bigip_monitor_gateway_icmp"
       bigip_monitor_gateway_icmp: "{{ bigip_monitor_gateway_icmp }}"
       register: r_bigip_monitor_gateway_icmp
+
+    - name: "export r_bigip_monitor_gateway_icmp"
+      set_stats:
+        data:
+          r_bigip_monitor_gateway_icmp: "{{ r_bigip_monitor_gateway_icmp }}"

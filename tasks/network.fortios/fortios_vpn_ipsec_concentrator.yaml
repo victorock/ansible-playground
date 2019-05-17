@@ -10,3 +10,8 @@
       https: "{{ fortios_vpn_ipsec_concentrator_https | default(omit, True) }}"
       password: "{{ fortios_vpn_ipsec_concentrator_password | default(omit, True) }}"
       vdom: "{{ fortios_vpn_ipsec_concentrator_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_vpn_ipsec_concentrator"
+  set_stats:
+    data:
+      r_fortios_vpn_ipsec_concentrator: "{{ r_fortios_vpn_ipsec_concentrator }}"

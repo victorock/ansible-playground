@@ -18,3 +18,8 @@
       validate_certs: "{{ meraki_config_template_validate_certs | default(omit, True) }}"
       net_id: "{{ meraki_config_template_net_id | default(omit, True) }}"
       use_https: "{{ meraki_config_template_use_https | default(omit, True) }}"
+
+- name: "export r_meraki_config_template"
+  set_stats:
+    data:
+      r_meraki_config_template: "{{ r_meraki_config_template }}"

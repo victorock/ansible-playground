@@ -29,3 +29,8 @@
       pn_max_prefix_warn: "{{ pn_vrouterbgp_pn_max_prefix_warn | default(omit, True) }}"
       pn_holdtime: "{{ pn_vrouterbgp_pn_holdtime | default(omit, True) }}"
       pn_next_hop_self: "{{ pn_vrouterbgp_pn_next_hop_self | default(omit, True) }}"
+
+- name: "export r_pn_vrouterbgp"
+  set_stats:
+    data:
+      r_pn_vrouterbgp: "{{ r_pn_vrouterbgp }}"

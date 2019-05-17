@@ -12,3 +12,8 @@
     - name: "plugin_checkpoint_task_facts"
       checkpoint_task_facts: "{{ checkpoint_task_facts }}"
       register: r_checkpoint_task_facts
+
+    - name: "export r_checkpoint_task_facts"
+      set_stats:
+        data:
+          r_checkpoint_task_facts: "{{ r_checkpoint_task_facts }}"

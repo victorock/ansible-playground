@@ -19,3 +19,8 @@
       validate_certs: "{{ aci_interface_policy_port_security_validate_certs | default(omit, True) }}"
       port: "{{ aci_interface_policy_port_security_port | default(omit, True) }}"
       use_proxy: "{{ aci_interface_policy_port_security_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_interface_policy_port_security"
+  set_stats:
+    data:
+      r_aci_interface_policy_port_security: "{{ r_aci_interface_policy_port_security }}"

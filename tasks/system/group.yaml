@@ -10,3 +10,8 @@
       state: "{{ group_state | default(omit, True) }}"
       gid: "{{ group_gid | default(omit, True) }}"
       local: "{{ group_local | default(omit, True) }}"
+
+- name: "export r_group"
+  set_stats:
+    data:
+      r_group: "{{ r_group }}"

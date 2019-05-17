@@ -11,3 +11,8 @@
       state: "{{ bitbucket_access_key_state | default(omit, True) }}"
       client_id: "{{ bitbucket_access_key_client_id | default(omit, True) }}"
       client_secret: "{{ bitbucket_access_key_client_secret | default(omit, True) }}"
+
+- name: "export r_bitbucket_access_key"
+  set_stats:
+    data:
+      r_bitbucket_access_key: "{{ r_bitbucket_access_key }}"

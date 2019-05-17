@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_ldb_monitor_https | default(omit, True) }}"
       password: "{{ fortios_firewall_ldb_monitor_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_ldb_monitor_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_ldb_monitor"
+  set_stats:
+    data:
+      r_fortios_firewall_ldb_monitor: "{{ r_fortios_firewall_ldb_monitor }}"

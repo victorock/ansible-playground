@@ -35,3 +35,8 @@
     - name: "plugin_bigip_profile_analytics"
       bigip_profile_analytics: "{{ bigip_profile_analytics }}"
       register: r_bigip_profile_analytics
+
+    - name: "export r_bigip_profile_analytics"
+      set_stats:
+        data:
+          r_bigip_profile_analytics: "{{ r_bigip_profile_analytics }}"

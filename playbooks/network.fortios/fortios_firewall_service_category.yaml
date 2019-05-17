@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_service_category"
       fortios_firewall_service_category: "{{ fortios_firewall_service_category }}"
       register: r_fortios_firewall_service_category
+
+    - name: "export r_fortios_firewall_service_category"
+      set_stats:
+        data:
+          r_fortios_firewall_service_category: "{{ r_fortios_firewall_service_category }}"

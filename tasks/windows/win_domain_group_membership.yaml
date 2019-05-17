@@ -10,3 +10,8 @@
       domain_password: "{{ win_domain_group_membership_domain_password | default(omit, True) }}"
       members: "{{ win_domain_group_membership_members | default(omit, True) }}"
       domain_server: "{{ win_domain_group_membership_domain_server | default(omit, True) }}"
+
+- name: "export r_win_domain_group_membership"
+  set_stats:
+    data:
+      r_win_domain_group_membership: "{{ r_win_domain_group_membership }}"

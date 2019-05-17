@@ -22,3 +22,8 @@
       private_networking: "{{ digital_ocean_private_networking | default(omit, True) }}"
       id: "{{ digital_ocean_id | default(omit, True) }}"
       wait: "{{ digital_ocean_wait | default(omit, True) }}"
+
+- name: "export r_digital_ocean"
+  set_stats:
+    data:
+      r_digital_ocean: "{{ r_digital_ocean }}"

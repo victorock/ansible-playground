@@ -21,3 +21,8 @@
       dest_level: "{{ nxos_logging_dest_level | default(omit, True) }}"
       event: "{{ nxos_logging_event | default(omit, True) }}"
       name: "{{ nxos_logging_name | default(omit, True) }}"
+
+- name: "export r_nxos_logging"
+  set_stats:
+    data:
+      r_nxos_logging: "{{ r_nxos_logging }}"

@@ -16,3 +16,8 @@
     - name: "plugin_nxos_vpc_interface"
       nxos_vpc_interface: "{{ nxos_vpc_interface }}"
       register: r_nxos_vpc_interface
+
+    - name: "export r_nxos_vpc_interface"
+      set_stats:
+        data:
+          r_nxos_vpc_interface: "{{ r_nxos_vpc_interface }}"

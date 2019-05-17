@@ -24,3 +24,8 @@
     - name: "plugin_nios_naptr_record"
       nios_naptr_record: "{{ nios_naptr_record }}"
       register: r_nios_naptr_record
+
+    - name: "export r_nios_naptr_record"
+      set_stats:
+        data:
+          r_nios_naptr_record: "{{ r_nios_naptr_record }}"

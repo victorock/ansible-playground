@@ -16,3 +16,8 @@
     - name: "plugin_pn_prefix_list_network"
       pn_prefix_list_network: "{{ pn_prefix_list_network }}"
       register: r_pn_prefix_list_network
+
+    - name: "export r_pn_prefix_list_network"
+      set_stats:
+        data:
+          r_pn_prefix_list_network: "{{ r_pn_prefix_list_network }}"

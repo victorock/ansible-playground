@@ -20,3 +20,8 @@
     - name: "plugin_tower_send"
       tower_send: "{{ tower_send }}"
       register: r_tower_send
+
+    - name: "export r_tower_send"
+      set_stats:
+        data:
+          r_tower_send: "{{ r_tower_send }}"

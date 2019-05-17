@@ -31,3 +31,8 @@
     - name: "plugin_azure_rm_devtestlab"
       azure_rm_devtestlab: "{{ azure_rm_devtestlab }}"
       register: r_azure_rm_devtestlab
+
+    - name: "export r_azure_rm_devtestlab"
+      set_stats:
+        data:
+          r_azure_rm_devtestlab: "{{ r_azure_rm_devtestlab }}"

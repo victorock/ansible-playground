@@ -7,3 +7,8 @@
       source: "{{ win_http_proxy_source | default(omit, True) }}"
       proxy: "{{ win_http_proxy_proxy | default(omit, True) }}"
       bypass: "{{ win_http_proxy_bypass | default(omit, True) }}"
+
+- name: "export r_win_http_proxy"
+  set_stats:
+    data:
+      r_win_http_proxy: "{{ r_win_http_proxy }}"

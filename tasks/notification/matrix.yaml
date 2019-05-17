@@ -11,3 +11,8 @@
       msg_html: "{{ matrix_msg_html | default(omit, True) }}"
       hs_url: "{{ matrix_hs_url | default(omit, True) }}"
       password: "{{ matrix_password | default(omit, True) }}"
+
+- name: "export r_matrix"
+  set_stats:
+    data:
+      r_matrix: "{{ r_matrix }}"

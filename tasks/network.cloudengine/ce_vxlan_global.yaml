@@ -13,3 +13,8 @@
       state: "{{ ce_vxlan_global_state | default(omit, True) }}"
       nvo3_ecmp_hash: "{{ ce_vxlan_global_nvo3_ecmp_hash | default(omit, True) }}"
       nvo3_service_extend: "{{ ce_vxlan_global_nvo3_service_extend | default(omit, True) }}"
+
+- name: "export r_ce_vxlan_global"
+  set_stats:
+    data:
+      r_ce_vxlan_global: "{{ r_ce_vxlan_global }}"

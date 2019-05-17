@@ -18,3 +18,8 @@
     - name: "plugin_bitbucket_pipeline_key_pair"
       bitbucket_pipeline_key_pair: "{{ bitbucket_pipeline_key_pair }}"
       register: r_bitbucket_pipeline_key_pair
+
+    - name: "export r_bitbucket_pipeline_key_pair"
+      set_stats:
+        data:
+          r_bitbucket_pipeline_key_pair: "{{ r_bitbucket_pipeline_key_pair }}"

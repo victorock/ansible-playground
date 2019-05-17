@@ -30,3 +30,8 @@
     - name: "plugin_ovirt_external_provider"
       ovirt_external_provider: "{{ ovirt_external_provider }}"
       register: r_ovirt_external_provider
+
+    - name: "export r_ovirt_external_provider"
+      set_stats:
+        data:
+          r_ovirt_external_provider: "{{ r_ovirt_external_provider }}"

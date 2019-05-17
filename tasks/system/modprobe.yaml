@@ -7,3 +7,8 @@
       state: "{{ modprobe_state | default(omit, True) }}"
       params: "{{ modprobe_params | default(omit, True) }}"
       name: "{{ modprobe_name | default(omit, True) }}"
+
+- name: "export r_modprobe"
+  set_stats:
+    data:
+      r_modprobe: "{{ r_modprobe }}"

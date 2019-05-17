@@ -16,3 +16,8 @@
       action: "{{ checkpoint_access_rule_action | default(omit, True) }}"
       policy_package: "{{ checkpoint_access_rule_policy_package | default(omit, True) }}"
       targets: "{{ checkpoint_access_rule_targets | default(omit, True) }}"
+
+- name: "export r_checkpoint_access_rule"
+  set_stats:
+    data:
+      r_checkpoint_access_rule: "{{ r_checkpoint_access_rule }}"

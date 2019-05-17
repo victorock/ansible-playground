@@ -17,3 +17,8 @@
     - name: "plugin_cloudscale_server_group"
       cloudscale_server_group: "{{ cloudscale_server_group }}"
       register: r_cloudscale_server_group
+
+    - name: "export r_cloudscale_server_group"
+      set_stats:
+        data:
+          r_cloudscale_server_group: "{{ r_cloudscale_server_group }}"

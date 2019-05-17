@@ -23,3 +23,8 @@
       validate_certs: "{{ netapp_e_storagepool_validate_certs | default(omit, True) }}"
       reserve_drive_count: "{{ netapp_e_storagepool_reserve_drive_count | default(omit, True) }}"
       name: "{{ netapp_e_storagepool_name | default(omit, True) }}"
+
+- name: "export r_netapp_e_storagepool"
+  set_stats:
+    data:
+      r_netapp_e_storagepool: "{{ r_netapp_e_storagepool }}"

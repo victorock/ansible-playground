@@ -9,3 +9,8 @@
       netbox_url: "{{ netbox_ip_address_netbox_url | default(omit, True) }}"
       netbox_token: "{{ netbox_ip_address_netbox_token | default(omit, True) }}"
       validate_certs: "{{ netbox_ip_address_validate_certs | default(omit, True) }}"
+
+- name: "export r_netbox_ip_address"
+  set_stats:
+    data:
+      r_netbox_ip_address: "{{ r_netbox_ip_address }}"

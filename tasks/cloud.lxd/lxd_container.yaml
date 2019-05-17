@@ -19,3 +19,8 @@
       client_cert: "{{ lxd_container_client_cert | default(omit, True) }}"
       force_stop: "{{ lxd_container_force_stop | default(omit, True) }}"
       client_key: "{{ lxd_container_client_key | default(omit, True) }}"
+
+- name: "export r_lxd_container"
+  set_stats:
+    data:
+      r_lxd_container: "{{ r_lxd_container }}"

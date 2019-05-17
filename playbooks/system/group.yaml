@@ -17,3 +17,8 @@
     - name: "plugin_group"
       group: "{{ group }}"
       register: r_group
+
+    - name: "export r_group"
+      set_stats:
+        data:
+          r_group: "{{ r_group }}"

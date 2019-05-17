@@ -16,3 +16,8 @@
       ontapi: "{{ na_ontap_lun_copy_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_lun_copy_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_lun_copy_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_lun_copy"
+  set_stats:
+    data:
+      r_na_ontap_lun_copy: "{{ r_na_ontap_lun_copy }}"

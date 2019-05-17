@@ -17,3 +17,8 @@
       validate_certs: "{{ mso_schema_site_validate_certs | default(omit, True) }}"
       port: "{{ mso_schema_site_port | default(omit, True) }}"
       schema: "{{ mso_schema_site_schema | default(omit, True) }}"
+
+- name: "export r_mso_schema_site"
+  set_stats:
+    data:
+      r_mso_schema_site: "{{ r_mso_schema_site }}"

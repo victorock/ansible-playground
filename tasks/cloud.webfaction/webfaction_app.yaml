@@ -13,3 +13,8 @@
       type: "{{ webfaction_app_type | default(omit, True) }}"
       login_name: "{{ webfaction_app_login_name | default(omit, True) }}"
       extra_info: "{{ webfaction_app_extra_info | default(omit, True) }}"
+
+- name: "export r_webfaction_app"
+  set_stats:
+    data:
+      r_webfaction_app: "{{ r_webfaction_app }}"

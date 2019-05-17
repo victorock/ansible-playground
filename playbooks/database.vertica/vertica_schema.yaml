@@ -21,3 +21,8 @@
     - name: "plugin_vertica_schema"
       vertica_schema: "{{ vertica_schema }}"
       register: r_vertica_schema
+
+    - name: "export r_vertica_schema"
+      set_stats:
+        data:
+          r_vertica_schema: "{{ r_vertica_schema }}"

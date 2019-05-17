@@ -27,3 +27,8 @@
       tenant_ref: "{{ avi_wafpolicy_tenant_ref | default(omit, True) }}"
       mode: "{{ avi_wafpolicy_mode | default(omit, True) }}"
       tenant_uuid: "{{ avi_wafpolicy_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_wafpolicy"
+  set_stats:
+    data:
+      r_avi_wafpolicy: "{{ r_avi_wafpolicy }}"

@@ -21,3 +21,8 @@
     - name: "plugin_xfs_quota"
       xfs_quota: "{{ xfs_quota }}"
       register: r_xfs_quota
+
+    - name: "export r_xfs_quota"
+      set_stats:
+        data:
+          r_xfs_quota: "{{ r_xfs_quota }}"

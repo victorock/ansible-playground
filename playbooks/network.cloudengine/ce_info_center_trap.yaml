@@ -19,3 +19,8 @@
     - name: "plugin_ce_info_center_trap"
       ce_info_center_trap: "{{ ce_info_center_trap }}"
       register: r_ce_info_center_trap
+
+    - name: "export r_ce_info_center_trap"
+      set_stats:
+        data:
+          r_ce_info_center_trap: "{{ r_ce_info_center_trap }}"

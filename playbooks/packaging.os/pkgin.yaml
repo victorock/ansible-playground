@@ -18,3 +18,8 @@
     - name: "plugin_pkgin"
       pkgin: "{{ pkgin }}"
       register: r_pkgin
+
+    - name: "export r_pkgin"
+      set_stats:
+        data:
+          r_pkgin: "{{ r_pkgin }}"

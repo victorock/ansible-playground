@@ -20,3 +20,8 @@
     - name: "plugin_vr_ssh_key"
       vr_ssh_key: "{{ vr_ssh_key }}"
       register: r_vr_ssh_key
+
+    - name: "export r_vr_ssh_key"
+      set_stats:
+        data:
+          r_vr_ssh_key: "{{ r_vr_ssh_key }}"

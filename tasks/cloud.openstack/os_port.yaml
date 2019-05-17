@@ -31,3 +31,8 @@
       no_security_groups: "{{ os_port_no_security_groups | default(omit, True) }}"
       timeout: "{{ os_port_timeout | default(omit, True) }}"
       validate_certs: "{{ os_port_validate_certs | default(omit, True) }}"
+
+- name: "export r_os_port"
+  set_stats:
+    data:
+      r_os_port: "{{ r_os_port }}"

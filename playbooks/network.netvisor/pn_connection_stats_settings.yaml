@@ -29,3 +29,8 @@
     - name: "plugin_pn_connection_stats_settings"
       pn_connection_stats_settings: "{{ pn_connection_stats_settings }}"
       register: r_pn_connection_stats_settings
+
+    - name: "export r_pn_connection_stats_settings"
+      set_stats:
+        data:
+          r_pn_connection_stats_settings: "{{ r_pn_connection_stats_settings }}"

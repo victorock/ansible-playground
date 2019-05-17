@@ -21,3 +21,8 @@
     - name: "plugin_oneandone_public_ip"
       oneandone_public_ip: "{{ oneandone_public_ip }}"
       register: r_oneandone_public_ip
+
+    - name: "export r_oneandone_public_ip"
+      set_stats:
+        data:
+          r_oneandone_public_ip: "{{ r_oneandone_public_ip }}"

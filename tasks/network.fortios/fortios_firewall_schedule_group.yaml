@@ -10,3 +10,8 @@
       password: "{{ fortios_firewall_schedule_group_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_schedule_group_vdom | default(omit, True) }}"
       firewall_schedule_group: "{{ fortios_firewall_schedule_group_firewall_schedule_group | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_schedule_group"
+  set_stats:
+    data:
+      r_fortios_firewall_schedule_group: "{{ r_fortios_firewall_schedule_group }}"

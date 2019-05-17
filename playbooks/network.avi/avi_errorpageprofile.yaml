@@ -30,3 +30,8 @@
     - name: "plugin_avi_errorpageprofile"
       avi_errorpageprofile: "{{ avi_errorpageprofile }}"
       register: r_avi_errorpageprofile
+
+    - name: "export r_avi_errorpageprofile"
+      set_stats:
+        data:
+          r_avi_errorpageprofile: "{{ r_avi_errorpageprofile }}"

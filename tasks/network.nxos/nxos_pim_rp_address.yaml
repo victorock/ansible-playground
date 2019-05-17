@@ -11,3 +11,8 @@
       state: "{{ nxos_pim_rp_address_state | default(omit, True) }}"
       provider: "{{ nxos_pim_rp_address_provider | default(omit, True) }}"
       prefix_list: "{{ nxos_pim_rp_address_prefix_list | default(omit, True) }}"
+
+- name: "export r_nxos_pim_rp_address"
+  set_stats:
+    data:
+      r_nxos_pim_rp_address: "{{ r_nxos_pim_rp_address }}"

@@ -18,3 +18,8 @@
     - name: "plugin_na_elementsw_cluster_config"
       na_elementsw_cluster_config: "{{ na_elementsw_cluster_config }}"
       register: r_na_elementsw_cluster_config
+
+    - name: "export r_na_elementsw_cluster_config"
+      set_stats:
+        data:
+          r_na_elementsw_cluster_config: "{{ r_na_elementsw_cluster_config }}"

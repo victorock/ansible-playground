@@ -25,3 +25,8 @@
     - name: "plugin_gem"
       gem: "{{ gem }}"
       register: r_gem
+
+    - name: "export r_gem"
+      set_stats:
+        data:
+          r_gem: "{{ r_gem }}"

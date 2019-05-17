@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_ips_urlfilter_setting6"
       fortios_webfilter_ips_urlfilter_setting6: "{{ fortios_webfilter_ips_urlfilter_setting6 }}"
       register: r_fortios_webfilter_ips_urlfilter_setting6
+
+    - name: "export r_fortios_webfilter_ips_urlfilter_setting6"
+      set_stats:
+        data:
+          r_fortios_webfilter_ips_urlfilter_setting6: "{{ r_fortios_webfilter_ips_urlfilter_setting6 }}"

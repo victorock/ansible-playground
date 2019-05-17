@@ -22,3 +22,8 @@
     - name: "plugin_hwc_smn_topic"
       hwc_smn_topic: "{{ hwc_smn_topic }}"
       register: r_hwc_smn_topic
+
+    - name: "export r_hwc_smn_topic"
+      set_stats:
+        data:
+          r_hwc_smn_topic: "{{ r_hwc_smn_topic }}"

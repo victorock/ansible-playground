@@ -22,3 +22,8 @@
       validate_certs: "{{ ec2_snapshot_validate_certs | default(omit, True) }}"
       volume_id: "{{ ec2_snapshot_volume_id | default(omit, True) }}"
       wait: "{{ ec2_snapshot_wait | default(omit, True) }}"
+
+- name: "export r_ec2_snapshot"
+  set_stats:
+    data:
+      r_ec2_snapshot: "{{ r_ec2_snapshot }}"

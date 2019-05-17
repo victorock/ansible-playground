@@ -26,3 +26,8 @@
     - name: "plugin_mso_tenant"
       mso_tenant: "{{ mso_tenant }}"
       register: r_mso_tenant
+
+    - name: "export r_mso_tenant"
+      set_stats:
+        data:
+          r_mso_tenant: "{{ r_mso_tenant }}"

@@ -16,3 +16,8 @@
     - name: "plugin_win_iis_webapplication"
       win_iis_webapplication: "{{ win_iis_webapplication }}"
       register: r_win_iis_webapplication
+
+    - name: "export r_win_iis_webapplication"
+      set_stats:
+        data:
+          r_win_iis_webapplication: "{{ r_win_iis_webapplication }}"

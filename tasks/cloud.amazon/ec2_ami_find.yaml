@@ -30,3 +30,8 @@
       architecture: "{{ ec2_ami_find_architecture | default(omit, True) }}"
       validate_certs: "{{ ec2_ami_find_validate_certs | default(omit, True) }}"
       sort_tag: "{{ ec2_ami_find_sort_tag | default(omit, True) }}"
+
+- name: "export r_ec2_ami_find"
+  set_stats:
+    data:
+      r_ec2_ami_find: "{{ r_ec2_ami_find }}"

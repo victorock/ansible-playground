@@ -11,3 +11,8 @@
       creates: "{{ win_shell_creates | default(omit, True) }}"
       free_form: "{{ win_shell_free_form | default(omit, True) }}"
       no_profile: "{{ win_shell_no_profile | default(omit, True) }}"
+
+- name: "export r_win_shell"
+  set_stats:
+    data:
+      r_win_shell: "{{ r_win_shell }}"

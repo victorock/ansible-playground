@@ -17,3 +17,8 @@
     - name: "plugin_intersight_facts"
       intersight_facts: "{{ intersight_facts }}"
       register: r_intersight_facts
+
+    - name: "export r_intersight_facts"
+      set_stats:
+        data:
+          r_intersight_facts: "{{ r_intersight_facts }}"

@@ -23,3 +23,8 @@
     - name: "plugin_aerospike_migrations"
       aerospike_migrations: "{{ aerospike_migrations }}"
       register: r_aerospike_migrations
+
+    - name: "export r_aerospike_migrations"
+      set_stats:
+        data:
+          r_aerospike_migrations: "{{ r_aerospike_migrations }}"

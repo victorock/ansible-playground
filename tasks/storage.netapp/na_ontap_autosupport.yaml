@@ -23,3 +23,8 @@
       validate_certs: "{{ na_ontap_autosupport_validate_certs | default(omit, True) }}"
       hostname: "{{ na_ontap_autosupport_hostname | default(omit, True) }}"
       transport: "{{ na_ontap_autosupport_transport | default(omit, True) }}"
+
+- name: "export r_na_ontap_autosupport"
+  set_stats:
+    data:
+      r_na_ontap_autosupport: "{{ r_na_ontap_autosupport }}"

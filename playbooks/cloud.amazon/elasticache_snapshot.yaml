@@ -25,3 +25,8 @@
     - name: "plugin_elasticache_snapshot"
       elasticache_snapshot: "{{ elasticache_snapshot }}"
       register: r_elasticache_snapshot
+
+    - name: "export r_elasticache_snapshot"
+      set_stats:
+        data:
+          r_elasticache_snapshot: "{{ r_elasticache_snapshot }}"

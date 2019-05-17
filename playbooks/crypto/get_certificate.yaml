@@ -15,3 +15,8 @@
     - name: "plugin_get_certificate"
       get_certificate: "{{ get_certificate }}"
       register: r_get_certificate
+
+    - name: "export r_get_certificate"
+      set_stats:
+        data:
+          r_get_certificate: "{{ r_get_certificate }}"

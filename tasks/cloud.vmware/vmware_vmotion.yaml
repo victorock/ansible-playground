@@ -14,3 +14,8 @@
       password: "{{ vmware_vmotion_password | default(omit, True) }}"
       validate_certs: "{{ vmware_vmotion_validate_certs | default(omit, True) }}"
       port: "{{ vmware_vmotion_port | default(omit, True) }}"
+
+- name: "export r_vmware_vmotion"
+  set_stats:
+    data:
+      r_vmware_vmotion: "{{ r_vmware_vmotion }}"

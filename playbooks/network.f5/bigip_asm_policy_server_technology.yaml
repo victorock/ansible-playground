@@ -21,3 +21,8 @@
     - name: "plugin_bigip_asm_policy_server_technology"
       bigip_asm_policy_server_technology: "{{ bigip_asm_policy_server_technology }}"
       register: r_bigip_asm_policy_server_technology
+
+    - name: "export r_bigip_asm_policy_server_technology"
+      set_stats:
+        data:
+          r_bigip_asm_policy_server_technology: "{{ r_bigip_asm_policy_server_technology }}"

@@ -18,3 +18,8 @@
     - name: "plugin_nxos_portchannel"
       nxos_portchannel: "{{ nxos_portchannel }}"
       register: r_nxos_portchannel
+
+    - name: "export r_nxos_portchannel"
+      set_stats:
+        data:
+          r_nxos_portchannel: "{{ r_nxos_portchannel }}"

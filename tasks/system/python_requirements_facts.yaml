@@ -5,3 +5,8 @@
   vars:
     python_requirements_facts: 
       dependencies: "{{ python_requirements_facts_dependencies | default(omit, True) }}"
+
+- name: "export r_python_requirements_facts"
+  set_stats:
+    data:
+      r_python_requirements_facts: "{{ r_python_requirements_facts }}"

@@ -11,3 +11,8 @@
       password: "{{ vmware_drs_group_facts_password | default(omit, True) }}"
       validate_certs: "{{ vmware_drs_group_facts_validate_certs | default(omit, True) }}"
       port: "{{ vmware_drs_group_facts_port | default(omit, True) }}"
+
+- name: "export r_vmware_drs_group_facts"
+  set_stats:
+    data:
+      r_vmware_drs_group_facts: "{{ r_vmware_drs_group_facts }}"

@@ -15,3 +15,8 @@
       link: "{{ flowadm_link | default(omit, True) }}"
       transport: "{{ flowadm_transport | default(omit, True) }}"
       remote_ip: "{{ flowadm_remote_ip | default(omit, True) }}"
+
+- name: "export r_flowadm"
+  set_stats:
+    data:
+      r_flowadm: "{{ r_flowadm }}"

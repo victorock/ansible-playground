@@ -26,3 +26,8 @@
       device_name: "{{ ec2_vol_device_name | default(omit, True) }}"
       snapshot: "{{ ec2_vol_snapshot | default(omit, True) }}"
       validate_certs: "{{ ec2_vol_validate_certs | default(omit, True) }}"
+
+- name: "export r_ec2_vol"
+  set_stats:
+    data:
+      r_ec2_vol: "{{ r_ec2_vol }}"

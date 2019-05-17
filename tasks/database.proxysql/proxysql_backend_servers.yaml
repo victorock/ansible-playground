@@ -23,3 +23,8 @@
       port: "{{ proxysql_backend_servers_port | default(omit, True) }}"
       max_latency_ms: "{{ proxysql_backend_servers_max_latency_ms | default(omit, True) }}"
       max_connections: "{{ proxysql_backend_servers_max_connections | default(omit, True) }}"
+
+- name: "export r_proxysql_backend_servers"
+  set_stats:
+    data:
+      r_proxysql_backend_servers: "{{ r_proxysql_backend_servers }}"

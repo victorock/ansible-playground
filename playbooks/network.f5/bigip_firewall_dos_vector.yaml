@@ -35,3 +35,8 @@
     - name: "plugin_bigip_firewall_dos_vector"
       bigip_firewall_dos_vector: "{{ bigip_firewall_dos_vector }}"
       register: r_bigip_firewall_dos_vector
+
+    - name: "export r_bigip_firewall_dos_vector"
+      set_stats:
+        data:
+          r_bigip_firewall_dos_vector: "{{ r_bigip_firewall_dos_vector }}"

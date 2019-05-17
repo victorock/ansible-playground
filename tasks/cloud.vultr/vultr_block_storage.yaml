@@ -14,3 +14,8 @@
       api_key: "{{ vultr_block_storage_api_key | default(omit, True) }}"
       validate_certs: "{{ vultr_block_storage_validate_certs | default(omit, True) }}"
       size: "{{ vultr_block_storage_size | default(omit, True) }}"
+
+- name: "export r_vultr_block_storage"
+  set_stats:
+    data:
+      r_vultr_block_storage: "{{ r_vultr_block_storage }}"

@@ -8,3 +8,8 @@
       state: "{{ pn_dhcp_filter_state | default(omit, True) }}"
       pn_trusted_ports: "{{ pn_dhcp_filter_pn_trusted_ports | default(omit, True) }}"
       pn_cliswitch: "{{ pn_dhcp_filter_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_dhcp_filter"
+  set_stats:
+    data:
+      r_pn_dhcp_filter: "{{ r_pn_dhcp_filter }}"

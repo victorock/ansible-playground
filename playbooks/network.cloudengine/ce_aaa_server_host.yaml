@@ -34,3 +34,8 @@
     - name: "plugin_ce_aaa_server_host"
       ce_aaa_server_host: "{{ ce_aaa_server_host }}"
       register: r_ce_aaa_server_host
+
+    - name: "export r_ce_aaa_server_host"
+      set_stats:
+        data:
+          r_ce_aaa_server_host: "{{ r_ce_aaa_server_host }}"

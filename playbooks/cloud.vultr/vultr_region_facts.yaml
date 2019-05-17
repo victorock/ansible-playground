@@ -17,3 +17,8 @@
     - name: "plugin_vultr_region_facts"
       vultr_region_facts: "{{ vultr_region_facts }}"
       register: r_vultr_region_facts
+
+    - name: "export r_vultr_region_facts"
+      set_stats:
+        data:
+          r_vultr_region_facts: "{{ r_vultr_region_facts }}"

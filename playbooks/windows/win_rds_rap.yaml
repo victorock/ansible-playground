@@ -18,3 +18,8 @@
     - name: "plugin_win_rds_rap"
       win_rds_rap: "{{ win_rds_rap }}"
       register: r_win_rds_rap
+
+    - name: "export r_win_rds_rap"
+      set_stats:
+        data:
+          r_win_rds_rap: "{{ r_win_rds_rap }}"

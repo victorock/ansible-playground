@@ -44,3 +44,8 @@
     - name: "plugin_nxos_bgp_af"
       nxos_bgp_af: "{{ nxos_bgp_af }}"
       register: r_nxos_bgp_af
+
+    - name: "export r_nxos_bgp_af"
+      set_stats:
+        data:
+          r_nxos_bgp_af: "{{ r_nxos_bgp_af }}"

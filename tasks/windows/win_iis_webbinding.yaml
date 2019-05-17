@@ -13,3 +13,8 @@
       ssl_flags: "{{ win_iis_webbinding_ssl_flags | default(omit, True) }}"
       port: "{{ win_iis_webbinding_port | default(omit, True) }}"
       name: "{{ win_iis_webbinding_name | default(omit, True) }}"
+
+- name: "export r_win_iis_webbinding"
+  set_stats:
+    data:
+      r_win_iis_webbinding: "{{ r_win_iis_webbinding }}"

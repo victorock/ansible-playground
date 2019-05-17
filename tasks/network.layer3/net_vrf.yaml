@@ -9,3 +9,8 @@
       interfaces: "{{ net_vrf_interfaces | default(omit, True) }}"
       name: "{{ net_vrf_name | default(omit, True) }}"
       state: "{{ net_vrf_state | default(omit, True) }}"
+
+- name: "export r_net_vrf"
+  set_stats:
+    data:
+      r_net_vrf: "{{ r_net_vrf }}"

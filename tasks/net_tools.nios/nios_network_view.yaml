@@ -9,3 +9,8 @@
       extattrs: "{{ nios_network_view_extattrs | default(omit, True) }}"
       name: "{{ nios_network_view_name | default(omit, True) }}"
       provider: "{{ nios_network_view_provider | default(omit, True) }}"
+
+- name: "export r_nios_network_view"
+  set_stats:
+    data:
+      r_nios_network_view: "{{ r_nios_network_view }}"

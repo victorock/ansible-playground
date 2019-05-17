@@ -77,3 +77,8 @@
     - name: "plugin_fmgr_device_provision_template"
       fmgr_device_provision_template: "{{ fmgr_device_provision_template }}"
       register: r_fmgr_device_provision_template
+
+    - name: "export r_fmgr_device_provision_template"
+      set_stats:
+        data:
+          r_fmgr_device_provision_template: "{{ r_fmgr_device_provision_template }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_ftp_proxy_explicit"
       fortios_ftp_proxy_explicit: "{{ fortios_ftp_proxy_explicit }}"
       register: r_fortios_ftp_proxy_explicit
+
+    - name: "export r_fortios_ftp_proxy_explicit"
+      set_stats:
+        data:
+          r_fortios_ftp_proxy_explicit: "{{ r_fortios_ftp_proxy_explicit }}"

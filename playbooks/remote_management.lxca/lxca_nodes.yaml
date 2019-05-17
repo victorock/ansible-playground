@@ -17,3 +17,8 @@
     - name: "plugin_lxca_nodes"
       lxca_nodes: "{{ lxca_nodes }}"
       register: r_lxca_nodes
+
+    - name: "export r_lxca_nodes"
+      set_stats:
+        data:
+          r_lxca_nodes: "{{ r_lxca_nodes }}"

@@ -16,3 +16,8 @@
     - name: "plugin_aix_devices"
       aix_devices: "{{ aix_devices }}"
       register: r_aix_devices
+
+    - name: "export r_aix_devices"
+      set_stats:
+        data:
+          r_aix_devices: "{{ r_aix_devices }}"

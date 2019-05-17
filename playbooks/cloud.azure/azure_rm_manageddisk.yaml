@@ -37,3 +37,8 @@
     - name: "plugin_azure_rm_manageddisk"
       azure_rm_manageddisk: "{{ azure_rm_manageddisk }}"
       register: r_azure_rm_manageddisk
+
+    - name: "export r_azure_rm_manageddisk"
+      set_stats:
+        data:
+          r_azure_rm_manageddisk: "{{ r_azure_rm_manageddisk }}"

@@ -26,3 +26,8 @@
     - name: "plugin_aci_intf_policy_fc"
       aci_intf_policy_fc: "{{ aci_intf_policy_fc }}"
       register: r_aci_intf_policy_fc
+
+    - name: "export r_aci_intf_policy_fc"
+      set_stats:
+        data:
+          r_aci_intf_policy_fc: "{{ r_aci_intf_policy_fc }}"

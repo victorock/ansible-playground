@@ -15,3 +15,8 @@
     - name: "plugin_checkpoint_object_facts"
       checkpoint_object_facts: "{{ checkpoint_object_facts }}"
       register: r_checkpoint_object_facts
+
+    - name: "export r_checkpoint_object_facts"
+      set_stats:
+        data:
+          r_checkpoint_object_facts: "{{ r_checkpoint_object_facts }}"

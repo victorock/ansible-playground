@@ -19,3 +19,8 @@
     - name: "plugin_cloudscale_volume"
       cloudscale_volume: "{{ cloudscale_volume }}"
       register: r_cloudscale_volume
+
+    - name: "export r_cloudscale_volume"
+      set_stats:
+        data:
+          r_cloudscale_volume: "{{ r_cloudscale_volume }}"

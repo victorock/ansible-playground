@@ -16,3 +16,8 @@
       password: "{{ bigip_snmp_password | default(omit, True) }}"
       validate_certs: "{{ bigip_snmp_validate_certs | default(omit, True) }}"
       location: "{{ bigip_snmp_location | default(omit, True) }}"
+
+- name: "export r_bigip_snmp"
+  set_stats:
+    data:
+      r_bigip_snmp: "{{ r_bigip_snmp }}"

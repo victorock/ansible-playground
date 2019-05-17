@@ -25,3 +25,8 @@
     - name: "plugin_irc"
       irc: "{{ irc }}"
       register: r_irc
+
+    - name: "export r_irc"
+      set_stats:
+        data:
+          r_irc: "{{ r_irc }}"

@@ -8,3 +8,8 @@
       state: "{{ win_user_profile_state | default(omit, True) }}"
       remove_multiple: "{{ win_user_profile_remove_multiple | default(omit, True) }}"
       name: "{{ win_user_profile_name | default(omit, True) }}"
+
+- name: "export r_win_user_profile"
+  set_stats:
+    data:
+      r_win_user_profile: "{{ r_win_user_profile }}"

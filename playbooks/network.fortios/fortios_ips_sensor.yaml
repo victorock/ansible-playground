@@ -17,3 +17,8 @@
     - name: "plugin_fortios_ips_sensor"
       fortios_ips_sensor: "{{ fortios_ips_sensor }}"
       register: r_fortios_ips_sensor
+
+    - name: "export r_fortios_ips_sensor"
+      set_stats:
+        data:
+          r_fortios_ips_sensor: "{{ r_fortios_ips_sensor }}"

@@ -26,3 +26,8 @@
       name: "{{ azure_rm_securitygroup_name | default(omit, True) }}"
       purge_default_rules: "{{ azure_rm_securitygroup_purge_default_rules | default(omit, True) }}"
       auth_source: "{{ azure_rm_securitygroup_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_securitygroup"
+  set_stats:
+    data:
+      r_azure_rm_securitygroup: "{{ r_azure_rm_securitygroup }}"

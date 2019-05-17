@@ -17,3 +17,8 @@
     - name: "plugin_ce_switchport"
       ce_switchport: "{{ ce_switchport }}"
       register: r_ce_switchport
+
+    - name: "export r_ce_switchport"
+      set_stats:
+        data:
+          r_ce_switchport: "{{ r_ce_switchport }}"

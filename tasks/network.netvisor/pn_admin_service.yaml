@@ -17,3 +17,8 @@
       pn_web_log: "{{ pn_admin_service_pn_web_log | default(omit, True) }}"
       pn_cliswitch: "{{ pn_admin_service_pn_cliswitch | default(omit, True) }}"
       pn_snmp: "{{ pn_admin_service_pn_snmp | default(omit, True) }}"
+
+- name: "export r_pn_admin_service"
+  set_stats:
+    data:
+      r_pn_admin_service: "{{ r_pn_admin_service }}"

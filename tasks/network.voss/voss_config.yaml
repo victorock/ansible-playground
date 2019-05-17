@@ -19,3 +19,8 @@
       backup: "{{ voss_config_backup | default(omit, True) }}"
       match: "{{ voss_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ voss_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_voss_config"
+  set_stats:
+    data:
+      r_voss_config: "{{ r_voss_config }}"

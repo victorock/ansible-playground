@@ -58,3 +58,8 @@
       supernet_label_adv: "{{ ce_bgp_af_supernet_label_adv | default(omit, True) }}"
       vrf_name: "{{ ce_bgp_af_vrf_name | default(omit, True) }}"
       policy_ext_comm_enable: "{{ ce_bgp_af_policy_ext_comm_enable | default(omit, True) }}"
+
+- name: "export r_ce_bgp_af"
+  set_stats:
+    data:
+      r_ce_bgp_af: "{{ r_ce_bgp_af }}"

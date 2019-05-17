@@ -28,3 +28,8 @@
     - name: "plugin_ovirt_vnic_profile"
       ovirt_vnic_profile: "{{ ovirt_vnic_profile }}"
       register: r_ovirt_vnic_profile
+
+    - name: "export r_ovirt_vnic_profile"
+      set_stats:
+        data:
+          r_ovirt_vnic_profile: "{{ r_ovirt_vnic_profile }}"

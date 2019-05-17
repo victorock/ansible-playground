@@ -22,3 +22,8 @@
       password: "{{ aci_firmware_source_password | default(omit, True) }}"
       validate_certs: "{{ aci_firmware_source_validate_certs | default(omit, True) }}"
       port: "{{ aci_firmware_source_port | default(omit, True) }}"
+
+- name: "export r_aci_firmware_source"
+  set_stats:
+    data:
+      r_aci_firmware_source: "{{ r_aci_firmware_source }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_disk_filter"
       fortios_log_disk_filter: "{{ fortios_log_disk_filter }}"
       register: r_fortios_log_disk_filter
+
+    - name: "export r_fortios_log_disk_filter"
+      set_stats:
+        data:
+          r_fortios_log_disk_filter: "{{ r_fortios_log_disk_filter }}"

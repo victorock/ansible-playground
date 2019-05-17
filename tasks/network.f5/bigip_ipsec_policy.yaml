@@ -25,3 +25,8 @@
       server: "{{ bigip_ipsec_policy_server | default(omit, True) }}"
       lifetime: "{{ bigip_ipsec_policy_lifetime | default(omit, True) }}"
       name: "{{ bigip_ipsec_policy_name | default(omit, True) }}"
+
+- name: "export r_bigip_ipsec_policy"
+  set_stats:
+    data:
+      r_bigip_ipsec_policy: "{{ r_bigip_ipsec_policy }}"

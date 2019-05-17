@@ -13,3 +13,8 @@
     - name: "plugin_add_host"
       add_host: "{{ add_host }}"
       register: r_add_host
+
+    - name: "export r_add_host"
+      set_stats:
+        data:
+          r_add_host: "{{ r_add_host }}"

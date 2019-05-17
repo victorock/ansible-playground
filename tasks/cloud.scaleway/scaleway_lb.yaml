@@ -18,3 +18,8 @@
       validate_certs: "{{ scaleway_lb_validate_certs | default(omit, True) }}"
       wait_sleep_time: "{{ scaleway_lb_wait_sleep_time | default(omit, True) }}"
       wait: "{{ scaleway_lb_wait | default(omit, True) }}"
+
+- name: "export r_scaleway_lb"
+  set_stats:
+    data:
+      r_scaleway_lb: "{{ r_scaleway_lb }}"

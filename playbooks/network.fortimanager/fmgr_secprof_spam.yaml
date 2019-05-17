@@ -54,3 +54,8 @@
     - name: "plugin_fmgr_secprof_spam"
       fmgr_secprof_spam: "{{ fmgr_secprof_spam }}"
       register: r_fmgr_secprof_spam
+
+    - name: "export r_fmgr_secprof_spam"
+      set_stats:
+        data:
+          r_fmgr_secprof_spam: "{{ r_fmgr_secprof_spam }}"

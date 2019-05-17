@@ -9,3 +9,8 @@
       delete_archive: "{{ win_unzip_delete_archive | default(omit, True) }}"
       recurse: "{{ win_unzip_recurse | default(omit, True) }}"
       creates: "{{ win_unzip_creates | default(omit, True) }}"
+
+- name: "export r_win_unzip"
+  set_stats:
+    data:
+      r_win_unzip: "{{ r_win_unzip }}"

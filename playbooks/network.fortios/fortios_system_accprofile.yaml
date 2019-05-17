@@ -17,3 +17,8 @@
     - name: "plugin_fortios_system_accprofile"
       fortios_system_accprofile: "{{ fortios_system_accprofile }}"
       register: r_fortios_system_accprofile
+
+    - name: "export r_fortios_system_accprofile"
+      set_stats:
+        data:
+          r_fortios_system_accprofile: "{{ r_fortios_system_accprofile }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_log_fortianalyzer2_setting_https | default(omit, True) }}"
       password: "{{ fortios_log_fortianalyzer2_setting_password | default(omit, True) }}"
       log_fortianalyzer2_setting: "{{ fortios_log_fortianalyzer2_setting_log_fortianalyzer2_setting | default(omit, True) }}"
+
+- name: "export r_fortios_log_fortianalyzer2_setting"
+  set_stats:
+    data:
+      r_fortios_log_fortianalyzer2_setting: "{{ r_fortios_log_fortianalyzer2_setting }}"

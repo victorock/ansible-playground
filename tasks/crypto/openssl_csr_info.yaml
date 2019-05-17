@@ -6,3 +6,8 @@
     openssl_csr_info: 
       select_crypto_backend: "{{ openssl_csr_info_select_crypto_backend | default(omit, True) }}"
       path: "{{ openssl_csr_info_path | default(omit, True) }}"
+
+- name: "export r_openssl_csr_info"
+  set_stats:
+    data:
+      r_openssl_csr_info: "{{ r_openssl_csr_info }}"

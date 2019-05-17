@@ -10,3 +10,8 @@
       https: "{{ fortios_firewall_profile_protocol_options_https | default(omit, True) }}"
       password: "{{ fortios_firewall_profile_protocol_options_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_profile_protocol_options_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_profile_protocol_options"
+  set_stats:
+    data:
+      r_fortios_firewall_profile_protocol_options: "{{ r_fortios_firewall_profile_protocol_options }}"

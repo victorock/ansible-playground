@@ -21,3 +21,8 @@
     - name: "plugin_ce_mlag_config"
       ce_mlag_config: "{{ ce_mlag_config }}"
       register: r_ce_mlag_config
+
+    - name: "export r_ce_mlag_config"
+      set_stats:
+        data:
+          r_ce_mlag_config: "{{ r_ce_mlag_config }}"

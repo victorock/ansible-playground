@@ -21,3 +21,8 @@
     - name: "plugin_nxos_vxlan_vtep_vni"
       nxos_vxlan_vtep_vni: "{{ nxos_vxlan_vtep_vni }}"
       register: r_nxos_vxlan_vtep_vni
+
+    - name: "export r_nxos_vxlan_vtep_vni"
+      set_stats:
+        data:
+          r_nxos_vxlan_vtep_vni: "{{ r_nxos_vxlan_vtep_vni }}"

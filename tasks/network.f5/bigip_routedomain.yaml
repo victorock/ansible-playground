@@ -24,3 +24,8 @@
       validate_certs: "{{ bigip_routedomain_validate_certs | default(omit, True) }}"
       id: "{{ bigip_routedomain_id | default(omit, True) }}"
       name: "{{ bigip_routedomain_name | default(omit, True) }}"
+
+- name: "export r_bigip_routedomain"
+  set_stats:
+    data:
+      r_bigip_routedomain: "{{ r_bigip_routedomain }}"

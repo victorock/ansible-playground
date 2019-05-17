@@ -12,3 +12,8 @@
     - name: "plugin_ce_link_status"
       ce_link_status: "{{ ce_link_status }}"
       register: r_ce_link_status
+
+    - name: "export r_ce_link_status"
+      set_stats:
+        data:
+          r_ce_link_status: "{{ r_ce_link_status }}"

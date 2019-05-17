@@ -31,3 +31,8 @@
     - name: "plugin_a10_service_group"
       a10_service_group: "{{ a10_service_group }}"
       register: r_a10_service_group
+
+    - name: "export r_a10_service_group"
+      set_stats:
+        data:
+          r_a10_service_group: "{{ r_a10_service_group }}"

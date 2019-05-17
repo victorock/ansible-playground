@@ -26,3 +26,8 @@
     - name: "plugin_sns_topic"
       sns_topic: "{{ sns_topic }}"
       register: r_sns_topic
+
+    - name: "export r_sns_topic"
+      set_stats:
+        data:
+          r_sns_topic: "{{ r_sns_topic }}"

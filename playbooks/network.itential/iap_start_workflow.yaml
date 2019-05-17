@@ -19,3 +19,8 @@
     - name: "plugin_iap_start_workflow"
       iap_start_workflow: "{{ iap_start_workflow }}"
       register: r_iap_start_workflow
+
+    - name: "export r_iap_start_workflow"
+      set_stats:
+        data:
+          r_iap_start_workflow: "{{ r_iap_start_workflow }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_ips_settings_https | default(omit, True) }}"
       password: "{{ fortios_ips_settings_password | default(omit, True) }}"
       vdom: "{{ fortios_ips_settings_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_ips_settings"
+  set_stats:
+    data:
+      r_fortios_ips_settings: "{{ r_fortios_ips_settings }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_multicast_address"
       fortios_firewall_multicast_address: "{{ fortios_firewall_multicast_address }}"
       register: r_fortios_firewall_multicast_address
+
+    - name: "export r_fortios_firewall_multicast_address"
+      set_stats:
+        data:
+          r_fortios_firewall_multicast_address: "{{ r_fortios_firewall_multicast_address }}"

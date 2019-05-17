@@ -27,3 +27,8 @@
     - name: "plugin_meraki_content_filtering"
       meraki_content_filtering: "{{ meraki_content_filtering }}"
       register: r_meraki_content_filtering
+
+    - name: "export r_meraki_content_filtering"
+      set_stats:
+        data:
+          r_meraki_content_filtering: "{{ r_meraki_content_filtering }}"

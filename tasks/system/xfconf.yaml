@@ -9,3 +9,8 @@
       value_type: "{{ xfconf_value_type | default(omit, True) }}"
       value: "{{ xfconf_value | default(omit, True) }}"
       channel: "{{ xfconf_channel | default(omit, True) }}"
+
+- name: "export r_xfconf"
+  set_stats:
+    data:
+      r_xfconf: "{{ r_xfconf }}"

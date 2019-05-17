@@ -33,3 +33,8 @@
     - name: "plugin_redhat_subscription"
       redhat_subscription: "{{ redhat_subscription }}"
       register: r_redhat_subscription
+
+    - name: "export r_redhat_subscription"
+      set_stats:
+        data:
+          r_redhat_subscription: "{{ r_redhat_subscription }}"

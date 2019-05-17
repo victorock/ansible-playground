@@ -32,3 +32,8 @@
     - name: "plugin_cs_vpn_customer_gateway"
       cs_vpn_customer_gateway: "{{ cs_vpn_customer_gateway }}"
       register: r_cs_vpn_customer_gateway
+
+    - name: "export r_cs_vpn_customer_gateway"
+      set_stats:
+        data:
+          r_cs_vpn_customer_gateway: "{{ r_cs_vpn_customer_gateway }}"

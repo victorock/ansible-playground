@@ -17,3 +17,8 @@
     - name: "plugin_fortios_icap_server"
       fortios_icap_server: "{{ fortios_icap_server }}"
       register: r_fortios_icap_server
+
+    - name: "export r_fortios_icap_server"
+      set_stats:
+        data:
+          r_fortios_icap_server: "{{ r_fortios_icap_server }}"

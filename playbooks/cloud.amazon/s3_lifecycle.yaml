@@ -35,3 +35,8 @@
     - name: "plugin_s3_lifecycle"
       s3_lifecycle: "{{ s3_lifecycle }}"
       register: r_s3_lifecycle
+
+    - name: "export r_s3_lifecycle"
+      set_stats:
+        data:
+          r_s3_lifecycle: "{{ r_s3_lifecycle }}"

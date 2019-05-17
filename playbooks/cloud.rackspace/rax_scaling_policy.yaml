@@ -31,3 +31,8 @@
     - name: "plugin_rax_scaling_policy"
       rax_scaling_policy: "{{ rax_scaling_policy }}"
       register: r_rax_scaling_policy
+
+    - name: "export r_rax_scaling_policy"
+      set_stats:
+        data:
+          r_rax_scaling_policy: "{{ r_rax_scaling_policy }}"

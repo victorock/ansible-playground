@@ -12,3 +12,8 @@
       provider: "{{ enos_command_provider | default(omit, True) }}"
       wait_for: "{{ enos_command_wait_for | default(omit, True) }}"
       match: "{{ enos_command_match | default(omit, True) }}"
+
+- name: "export r_enos_command"
+  set_stats:
+    data:
+      r_enos_command: "{{ r_enos_command }}"

@@ -26,3 +26,8 @@
       network_domain: "{{ cs_zone_network_domain | default(omit, True) }}"
       local_storage_enabled: "{{ cs_zone_local_storage_enabled | default(omit, True) }}"
       network_type: "{{ cs_zone_network_type | default(omit, True) }}"
+
+- name: "export r_cs_zone"
+  set_stats:
+    data:
+      r_cs_zone: "{{ r_cs_zone }}"

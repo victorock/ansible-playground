@@ -19,3 +19,8 @@
       port: "{{ aci_tenant_span_dst_group_port | default(omit, True) }}"
       tenant: "{{ aci_tenant_span_dst_group_tenant | default(omit, True) }}"
       use_proxy: "{{ aci_tenant_span_dst_group_use_proxy | default(omit, True) }}"
+
+- name: "export r_aci_tenant_span_dst_group"
+  set_stats:
+    data:
+      r_aci_tenant_span_dst_group: "{{ r_aci_tenant_span_dst_group }}"

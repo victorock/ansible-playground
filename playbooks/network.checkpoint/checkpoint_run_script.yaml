@@ -14,3 +14,8 @@
     - name: "plugin_checkpoint_run_script"
       checkpoint_run_script: "{{ checkpoint_run_script }}"
       register: r_checkpoint_run_script
+
+    - name: "export r_checkpoint_run_script"
+      set_stats:
+        data:
+          r_checkpoint_run_script: "{{ r_checkpoint_run_script }}"

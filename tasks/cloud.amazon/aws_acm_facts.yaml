@@ -14,3 +14,8 @@
       ec2_url: "{{ aws_acm_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_acm_facts_validate_certs | default(omit, True) }}"
       statuses: "{{ aws_acm_facts_statuses | default(omit, True) }}"
+
+- name: "export r_aws_acm_facts"
+  set_stats:
+    data:
+      r_aws_acm_facts: "{{ r_aws_acm_facts }}"

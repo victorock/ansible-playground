@@ -9,3 +9,8 @@
       state: "{{ rabbitmq_vhost_limits_state | default(omit, True) }}"
       max_queues: "{{ rabbitmq_vhost_limits_max_queues | default(omit, True) }}"
       max_connections: "{{ rabbitmq_vhost_limits_max_connections | default(omit, True) }}"
+
+- name: "export r_rabbitmq_vhost_limits"
+  set_stats:
+    data:
+      r_rabbitmq_vhost_limits: "{{ r_rabbitmq_vhost_limits }}"

@@ -22,3 +22,8 @@
     - name: "plugin_nxos_file_copy"
       nxos_file_copy: "{{ nxos_file_copy }}"
       register: r_nxos_file_copy
+
+    - name: "export r_nxos_file_copy"
+      set_stats:
+        data:
+          r_nxos_file_copy: "{{ r_nxos_file_copy }}"

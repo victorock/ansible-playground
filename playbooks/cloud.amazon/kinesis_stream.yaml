@@ -29,3 +29,8 @@
     - name: "plugin_kinesis_stream"
       kinesis_stream: "{{ kinesis_stream }}"
       register: r_kinesis_stream
+
+    - name: "export r_kinesis_stream"
+      set_stats:
+        data:
+          r_kinesis_stream: "{{ r_kinesis_stream }}"

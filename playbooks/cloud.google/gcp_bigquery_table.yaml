@@ -30,3 +30,8 @@
     - name: "plugin_gcp_bigquery_table"
       gcp_bigquery_table: "{{ gcp_bigquery_table }}"
       register: r_gcp_bigquery_table
+
+    - name: "export r_gcp_bigquery_table"
+      set_stats:
+        data:
+          r_gcp_bigquery_table: "{{ r_gcp_bigquery_table }}"

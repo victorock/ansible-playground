@@ -16,3 +16,8 @@
     - name: "plugin_exos_command"
       exos_command: "{{ exos_command }}"
       register: r_exos_command
+
+    - name: "export r_exos_command"
+      set_stats:
+        data:
+          r_exos_command: "{{ r_exos_command }}"

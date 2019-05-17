@@ -32,3 +32,8 @@
     - name: "plugin_azure_rm_virtualnetworkpeering"
       azure_rm_virtualnetworkpeering: "{{ azure_rm_virtualnetworkpeering }}"
       register: r_azure_rm_virtualnetworkpeering
+
+    - name: "export r_azure_rm_virtualnetworkpeering"
+      set_stats:
+        data:
+          r_azure_rm_virtualnetworkpeering: "{{ r_azure_rm_virtualnetworkpeering }}"

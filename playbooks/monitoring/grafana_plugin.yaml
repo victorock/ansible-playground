@@ -17,3 +17,8 @@
     - name: "plugin_grafana_plugin"
       grafana_plugin: "{{ grafana_plugin }}"
       register: r_grafana_plugin
+
+    - name: "export r_grafana_plugin"
+      set_stats:
+        data:
+          r_grafana_plugin: "{{ r_grafana_plugin }}"

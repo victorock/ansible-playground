@@ -13,3 +13,8 @@
       host: "{{ ibm_sa_host_host | default(omit, True) }}"
       iscsi_chap_secret: "{{ ibm_sa_host_iscsi_chap_secret | default(omit, True) }}"
       endpoints: "{{ ibm_sa_host_endpoints | default(omit, True) }}"
+
+- name: "export r_ibm_sa_host"
+  set_stats:
+    data:
+      r_ibm_sa_host: "{{ r_ibm_sa_host }}"

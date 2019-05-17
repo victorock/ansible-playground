@@ -21,3 +21,8 @@
     - name: "plugin_panos_dag_tags"
       panos_dag_tags: "{{ panos_dag_tags }}"
       register: r_panos_dag_tags
+
+    - name: "export r_panos_dag_tags"
+      set_stats:
+        data:
+          r_panos_dag_tags: "{{ r_panos_dag_tags }}"

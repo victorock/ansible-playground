@@ -18,3 +18,8 @@
     - name: "plugin_tower_job_cancel"
       tower_job_cancel: "{{ tower_job_cancel }}"
       register: r_tower_job_cancel
+
+    - name: "export r_tower_job_cancel"
+      set_stats:
+        data:
+          r_tower_job_cancel: "{{ r_tower_job_cancel }}"

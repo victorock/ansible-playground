@@ -32,3 +32,8 @@
     - name: "plugin_bigip_pool"
       bigip_pool: "{{ bigip_pool }}"
       register: r_bigip_pool
+
+    - name: "export r_bigip_pool"
+      set_stats:
+        data:
+          r_bigip_pool: "{{ r_bigip_pool }}"

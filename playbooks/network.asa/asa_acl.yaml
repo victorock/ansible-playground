@@ -21,3 +21,8 @@
     - name: "plugin_asa_acl"
       asa_acl: "{{ asa_acl }}"
       register: r_asa_acl
+
+    - name: "export r_asa_acl"
+      set_stats:
+        data:
+          r_asa_acl: "{{ r_asa_acl }}"

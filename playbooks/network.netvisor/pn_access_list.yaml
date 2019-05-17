@@ -15,3 +15,8 @@
     - name: "plugin_pn_access_list"
       pn_access_list: "{{ pn_access_list }}"
       register: r_pn_access_list
+
+    - name: "export r_pn_access_list"
+      set_stats:
+        data:
+          r_pn_access_list: "{{ r_pn_access_list }}"

@@ -20,3 +20,8 @@
       upgrade_disk: "{{ hcloud_server_upgrade_disk | default(omit, True) }}"
       id: "{{ hcloud_server_id | default(omit, True) }}"
       ssh_keys: "{{ hcloud_server_ssh_keys | default(omit, True) }}"
+
+- name: "export r_hcloud_server"
+  set_stats:
+    data:
+      r_hcloud_server: "{{ r_hcloud_server }}"

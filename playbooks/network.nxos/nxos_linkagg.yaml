@@ -20,3 +20,8 @@
     - name: "plugin_nxos_linkagg"
       nxos_linkagg: "{{ nxos_linkagg }}"
       register: r_nxos_linkagg
+
+    - name: "export r_nxos_linkagg"
+      set_stats:
+        data:
+          r_nxos_linkagg: "{{ r_nxos_linkagg }}"

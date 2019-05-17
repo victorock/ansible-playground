@@ -35,3 +35,8 @@
     - name: "plugin_avi_poolgroupdeploymentpolicy"
       avi_poolgroupdeploymentpolicy: "{{ avi_poolgroupdeploymentpolicy }}"
       register: r_avi_poolgroupdeploymentpolicy
+
+    - name: "export r_avi_poolgroupdeploymentpolicy"
+      set_stats:
+        data:
+          r_avi_poolgroupdeploymentpolicy: "{{ r_avi_poolgroupdeploymentpolicy }}"

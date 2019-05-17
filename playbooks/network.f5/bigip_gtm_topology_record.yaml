@@ -22,3 +22,8 @@
     - name: "plugin_bigip_gtm_topology_record"
       bigip_gtm_topology_record: "{{ bigip_gtm_topology_record }}"
       register: r_bigip_gtm_topology_record
+
+    - name: "export r_bigip_gtm_topology_record"
+      set_stats:
+        data:
+          r_bigip_gtm_topology_record: "{{ r_bigip_gtm_topology_record }}"

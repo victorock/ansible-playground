@@ -12,3 +12,8 @@
       prefix_length: "{{ cloudscale_floating_ip_prefix_length | default(omit, True) }}"
       api_token: "{{ cloudscale_floating_ip_api_token | default(omit, True) }}"
       ip_version: "{{ cloudscale_floating_ip_ip_version | default(omit, True) }}"
+
+- name: "export r_cloudscale_floating_ip"
+  set_stats:
+    data:
+      r_cloudscale_floating_ip: "{{ r_cloudscale_floating_ip }}"

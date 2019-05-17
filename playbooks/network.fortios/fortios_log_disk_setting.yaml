@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_disk_setting"
       fortios_log_disk_setting: "{{ fortios_log_disk_setting }}"
       register: r_fortios_log_disk_setting
+
+    - name: "export r_fortios_log_disk_setting"
+      set_stats:
+        data:
+          r_fortios_log_disk_setting: "{{ r_fortios_log_disk_setting }}"

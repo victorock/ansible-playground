@@ -144,3 +144,8 @@
     - name: "plugin_fmgr_fwpol_ipv4"
       fmgr_fwpol_ipv4: "{{ fmgr_fwpol_ipv4 }}"
       register: r_fmgr_fwpol_ipv4
+
+    - name: "export r_fmgr_fwpol_ipv4"
+      set_stats:
+        data:
+          r_fmgr_fwpol_ipv4: "{{ r_fmgr_fwpol_ipv4 }}"

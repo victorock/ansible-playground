@@ -9,3 +9,8 @@
       pn_nic: "{{ pn_vrouter_ospf6_pn_nic | default(omit, True) }}"
       state: "{{ pn_vrouter_ospf6_state | default(omit, True) }}"
       pn_cliswitch: "{{ pn_vrouter_ospf6_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_vrouter_ospf6"
+  set_stats:
+    data:
+      r_pn_vrouter_ospf6: "{{ r_pn_vrouter_ospf6 }}"

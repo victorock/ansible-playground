@@ -13,3 +13,8 @@
       provider: "{{ bigip_provision_provider | default(omit, True) }}"
       password: "{{ bigip_provision_password | default(omit, True) }}"
       validate_certs: "{{ bigip_provision_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_provision"
+  set_stats:
+    data:
+      r_bigip_provision: "{{ r_bigip_provision }}"

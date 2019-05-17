@@ -19,3 +19,8 @@
       password: "{{ bigip_device_group_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_group_validate_certs | default(omit, True) }}"
       network_failover: "{{ bigip_device_group_network_failover | default(omit, True) }}"
+
+- name: "export r_bigip_device_group"
+  set_stats:
+    data:
+      r_bigip_device_group: "{{ r_bigip_device_group }}"

@@ -26,3 +26,8 @@
     - name: "plugin_enos_config"
       enos_config: "{{ enos_config }}"
       register: r_enos_config
+
+    - name: "export r_enos_config"
+      set_stats:
+        data:
+          r_enos_config: "{{ r_enos_config }}"

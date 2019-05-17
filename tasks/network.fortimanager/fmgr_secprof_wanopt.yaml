@@ -55,3 +55,8 @@
       mode: "{{ fmgr_secprof_wanopt_mode | default(omit, True) }}"
       tcp_byte_caching_opt: "{{ fmgr_secprof_wanopt_tcp_byte_caching_opt | default(omit, True) }}"
       mapi_tunnel_sharing: "{{ fmgr_secprof_wanopt_mapi_tunnel_sharing | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_wanopt"
+  set_stats:
+    data:
+      r_fmgr_secprof_wanopt: "{{ r_fmgr_secprof_wanopt }}"

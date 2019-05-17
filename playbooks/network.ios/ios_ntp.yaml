@@ -22,3 +22,8 @@
     - name: "plugin_ios_ntp"
       ios_ntp: "{{ ios_ntp }}"
       register: r_ios_ntp
+
+    - name: "export r_ios_ntp"
+      set_stats:
+        data:
+          r_ios_ntp: "{{ r_ios_ntp }}"

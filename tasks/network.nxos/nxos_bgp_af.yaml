@@ -37,3 +37,8 @@
       dampening_suppress_time: "{{ nxos_bgp_af_dampening_suppress_time | default(omit, True) }}"
       table_map: "{{ nxos_bgp_af_table_map | default(omit, True) }}"
       dampening_half_time: "{{ nxos_bgp_af_dampening_half_time | default(omit, True) }}"
+
+- name: "export r_nxos_bgp_af"
+  set_stats:
+    data:
+      r_nxos_bgp_af: "{{ r_nxos_bgp_af }}"

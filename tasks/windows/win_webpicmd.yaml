@@ -5,3 +5,8 @@
   vars:
     win_webpicmd: 
       name: "{{ win_webpicmd_name | default(omit, True) }}"
+
+- name: "export r_win_webpicmd"
+  set_stats:
+    data:
+      r_win_webpicmd: "{{ r_win_webpicmd }}"

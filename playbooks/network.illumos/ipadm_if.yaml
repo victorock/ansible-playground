@@ -14,3 +14,8 @@
     - name: "plugin_ipadm_if"
       ipadm_if: "{{ ipadm_if }}"
       register: r_ipadm_if
+
+    - name: "export r_ipadm_if"
+      set_stats:
+        data:
+          r_ipadm_if: "{{ r_ipadm_if }}"

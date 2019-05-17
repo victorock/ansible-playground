@@ -36,3 +36,8 @@
     - name: "plugin_avi_poolgroup"
       avi_poolgroup: "{{ avi_poolgroup }}"
       register: r_avi_poolgroup
+
+    - name: "export r_avi_poolgroup"
+      set_stats:
+        data:
+          r_avi_poolgroup: "{{ r_avi_poolgroup }}"

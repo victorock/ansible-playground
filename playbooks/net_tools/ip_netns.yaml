@@ -13,3 +13,8 @@
     - name: "plugin_ip_netns"
       ip_netns: "{{ ip_netns }}"
       register: r_ip_netns
+
+    - name: "export r_ip_netns"
+      set_stats:
+        data:
+          r_ip_netns: "{{ r_ip_netns }}"

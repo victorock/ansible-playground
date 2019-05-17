@@ -21,3 +21,8 @@
     - name: "plugin_vmware_guest_tools_wait"
       vmware_guest_tools_wait: "{{ vmware_guest_tools_wait }}"
       register: r_vmware_guest_tools_wait
+
+    - name: "export r_vmware_guest_tools_wait"
+      set_stats:
+        data:
+          r_vmware_guest_tools_wait: "{{ r_vmware_guest_tools_wait }}"

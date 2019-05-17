@@ -29,3 +29,8 @@
       api_region: "{{ cs_cluster_api_region | default(omit, True) }}"
       cluster_type: "{{ cs_cluster_cluster_type | default(omit, True) }}"
       vms_password: "{{ cs_cluster_vms_password | default(omit, True) }}"
+
+- name: "export r_cs_cluster"
+  set_stats:
+    data:
+      r_cs_cluster: "{{ r_cs_cluster }}"

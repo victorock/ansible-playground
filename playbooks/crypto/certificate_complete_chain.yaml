@@ -14,3 +14,8 @@
     - name: "plugin_certificate_complete_chain"
       certificate_complete_chain: "{{ certificate_complete_chain }}"
       register: r_certificate_complete_chain
+
+    - name: "export r_certificate_complete_chain"
+      set_stats:
+        data:
+          r_certificate_complete_chain: "{{ r_certificate_complete_chain }}"

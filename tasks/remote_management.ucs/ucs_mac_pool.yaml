@@ -18,3 +18,8 @@
       password: "{{ ucs_mac_pool_password | default(omit, True) }}"
       descrption: "{{ ucs_mac_pool_descrption | default(omit, True) }}"
       name: "{{ ucs_mac_pool_name | default(omit, True) }}"
+
+- name: "export r_ucs_mac_pool"
+  set_stats:
+    data:
+      r_ucs_mac_pool: "{{ r_ucs_mac_pool }}"

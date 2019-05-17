@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ssl_server"
       fortios_firewall_ssl_server: "{{ fortios_firewall_ssl_server }}"
       register: r_fortios_firewall_ssl_server
+
+    - name: "export r_fortios_firewall_ssl_server"
+      set_stats:
+        data:
+          r_fortios_firewall_ssl_server: "{{ r_fortios_firewall_ssl_server }}"

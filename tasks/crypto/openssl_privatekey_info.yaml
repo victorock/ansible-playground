@@ -8,3 +8,8 @@
       path: "{{ openssl_privatekey_info_path | default(omit, True) }}"
       return_private_key_data: "{{ openssl_privatekey_info_return_private_key_data | default(omit, True) }}"
       passphrase: "{{ openssl_privatekey_info_passphrase | default(omit, True) }}"
+
+- name: "export r_openssl_privatekey_info"
+  set_stats:
+    data:
+      r_openssl_privatekey_info: "{{ r_openssl_privatekey_info }}"

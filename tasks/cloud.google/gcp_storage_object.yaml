@@ -16,3 +16,8 @@
       service_account_file: "{{ gcp_storage_object_service_account_file | default(omit, True) }}"
       auth_kind: "{{ gcp_storage_object_auth_kind | default(omit, True) }}"
       overwrite: "{{ gcp_storage_object_overwrite | default(omit, True) }}"
+
+- name: "export r_gcp_storage_object"
+  set_stats:
+    data:
+      r_gcp_storage_object: "{{ r_gcp_storage_object }}"

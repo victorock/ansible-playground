@@ -10,3 +10,8 @@
       svip: "{{ na_elementsw_check_connections_svip | default(omit, True) }}"
       mvip: "{{ na_elementsw_check_connections_mvip | default(omit, True) }}"
       password: "{{ na_elementsw_check_connections_password | default(omit, True) }}"
+
+- name: "export r_na_elementsw_check_connections"
+  set_stats:
+    data:
+      r_na_elementsw_check_connections: "{{ r_na_elementsw_check_connections }}"

@@ -26,3 +26,8 @@
       tenant: "{{ azure_rm_devtestlabpolicy_tenant | default(omit, True) }}"
       name: "{{ azure_rm_devtestlabpolicy_name | default(omit, True) }}"
       auth_source: "{{ azure_rm_devtestlabpolicy_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_devtestlabpolicy"
+  set_stats:
+    data:
+      r_azure_rm_devtestlabpolicy: "{{ r_azure_rm_devtestlabpolicy }}"

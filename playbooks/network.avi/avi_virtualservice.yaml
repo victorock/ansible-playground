@@ -109,3 +109,8 @@
     - name: "plugin_avi_virtualservice"
       avi_virtualservice: "{{ avi_virtualservice }}"
       register: r_avi_virtualservice
+
+    - name: "export r_avi_virtualservice"
+      set_stats:
+        data:
+          r_avi_virtualservice: "{{ r_avi_virtualservice }}"

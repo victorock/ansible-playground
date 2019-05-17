@@ -20,3 +20,8 @@
     - name: "plugin_webfaction_app"
       webfaction_app: "{{ webfaction_app }}"
       register: r_webfaction_app
+
+    - name: "export r_webfaction_app"
+      set_stats:
+        data:
+          r_webfaction_app: "{{ r_webfaction_app }}"

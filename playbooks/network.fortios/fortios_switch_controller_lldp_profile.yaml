@@ -17,3 +17,8 @@
     - name: "plugin_fortios_switch_controller_lldp_profile"
       fortios_switch_controller_lldp_profile: "{{ fortios_switch_controller_lldp_profile }}"
       register: r_fortios_switch_controller_lldp_profile
+
+    - name: "export r_fortios_switch_controller_lldp_profile"
+      set_stats:
+        data:
+          r_fortios_switch_controller_lldp_profile: "{{ r_fortios_switch_controller_lldp_profile }}"

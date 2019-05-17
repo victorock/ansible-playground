@@ -13,3 +13,8 @@
     - name: "plugin_win_scheduled_task_stat"
       win_scheduled_task_stat: "{{ win_scheduled_task_stat }}"
       register: r_win_scheduled_task_stat
+
+    - name: "export r_win_scheduled_task_stat"
+      set_stats:
+        data:
+          r_win_scheduled_task_stat: "{{ r_win_scheduled_task_stat }}"

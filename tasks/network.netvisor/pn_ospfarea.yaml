@@ -14,3 +14,8 @@
       pn_prefix_listout: "{{ pn_ospfarea_pn_prefix_listout | default(omit, True) }}"
       pn_stub_type: "{{ pn_ospfarea_pn_stub_type | default(omit, True) }}"
       pn_cliswitch: "{{ pn_ospfarea_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_ospfarea"
+  set_stats:
+    data:
+      r_pn_ospfarea: "{{ r_pn_ospfarea }}"

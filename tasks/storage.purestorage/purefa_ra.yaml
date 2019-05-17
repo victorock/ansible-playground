@@ -7,3 +7,8 @@
       state: "{{ purefa_ra_state | default(omit, True) }}"
       fa_url: "{{ purefa_ra_fa_url | default(omit, True) }}"
       api_token: "{{ purefa_ra_api_token | default(omit, True) }}"
+
+- name: "export r_purefa_ra"
+  set_stats:
+    data:
+      r_purefa_ra: "{{ r_purefa_ra }}"

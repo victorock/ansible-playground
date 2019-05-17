@@ -29,3 +29,8 @@
     - name: "plugin_avi_microservicegroup"
       avi_microservicegroup: "{{ avi_microservicegroup }}"
       register: r_avi_microservicegroup
+
+    - name: "export r_avi_microservicegroup"
+      set_stats:
+        data:
+          r_avi_microservicegroup: "{{ r_avi_microservicegroup }}"

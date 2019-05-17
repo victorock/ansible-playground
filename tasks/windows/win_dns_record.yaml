@@ -11,3 +11,8 @@
       computer_name: "{{ win_dns_record_computer_name | default(omit, True) }}"
       ttl: "{{ win_dns_record_ttl | default(omit, True) }}"
       type: "{{ win_dns_record_type | default(omit, True) }}"
+
+- name: "export r_win_dns_record"
+  set_stats:
+    data:
+      r_win_dns_record: "{{ r_win_dns_record }}"

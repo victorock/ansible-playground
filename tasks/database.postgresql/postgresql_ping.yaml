@@ -12,3 +12,8 @@
       login_unix_socket: "{{ postgresql_ping_login_unix_socket | default(omit, True) }}"
       login_password: "{{ postgresql_ping_login_password | default(omit, True) }}"
       port: "{{ postgresql_ping_port | default(omit, True) }}"
+
+- name: "export r_postgresql_ping"
+  set_stats:
+    data:
+      r_postgresql_ping: "{{ r_postgresql_ping }}"

@@ -14,3 +14,8 @@
       debug_botocore_endpoint_logs: "{{ iam_role_facts_debug_botocore_endpoint_logs | default(omit, True) }}"
       path_prefix: "{{ iam_role_facts_path_prefix | default(omit, True) }}"
       validate_certs: "{{ iam_role_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_iam_role_facts"
+  set_stats:
+    data:
+      r_iam_role_facts: "{{ r_iam_role_facts }}"

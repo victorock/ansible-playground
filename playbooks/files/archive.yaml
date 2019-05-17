@@ -26,3 +26,8 @@
     - name: "plugin_archive"
       archive: "{{ archive }}"
       register: r_archive
+
+    - name: "export r_archive"
+      set_stats:
+        data:
+          r_archive: "{{ r_archive }}"

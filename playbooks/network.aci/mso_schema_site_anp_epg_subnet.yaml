@@ -31,3 +31,8 @@
     - name: "plugin_mso_schema_site_anp_epg_subnet"
       mso_schema_site_anp_epg_subnet: "{{ mso_schema_site_anp_epg_subnet }}"
       register: r_mso_schema_site_anp_epg_subnet
+
+    - name: "export r_mso_schema_site_anp_epg_subnet"
+      set_stats:
+        data:
+          r_mso_schema_site_anp_epg_subnet: "{{ r_mso_schema_site_anp_epg_subnet }}"

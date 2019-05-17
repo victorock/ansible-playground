@@ -22,3 +22,8 @@
     - name: "plugin_edgeswitch_vlan"
       edgeswitch_vlan: "{{ edgeswitch_vlan }}"
       register: r_edgeswitch_vlan
+
+    - name: "export r_edgeswitch_vlan"
+      set_stats:
+        data:
+          r_edgeswitch_vlan: "{{ r_edgeswitch_vlan }}"

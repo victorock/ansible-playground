@@ -12,3 +12,8 @@
       timeout: "{{ idrac_redfish_config_timeout | default(omit, True) }}"
       password: "{{ idrac_redfish_config_password | default(omit, True) }}"
       manager_attribute_name: "{{ idrac_redfish_config_manager_attribute_name | default(omit, True) }}"
+
+- name: "export r_idrac_redfish_config"
+  set_stats:
+    data:
+      r_idrac_redfish_config: "{{ r_idrac_redfish_config }}"

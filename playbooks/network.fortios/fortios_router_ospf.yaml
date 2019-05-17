@@ -17,3 +17,8 @@
     - name: "plugin_fortios_router_ospf"
       fortios_router_ospf: "{{ fortios_router_ospf }}"
       register: r_fortios_router_ospf
+
+    - name: "export r_fortios_router_ospf"
+      set_stats:
+        data:
+          r_fortios_router_ospf: "{{ r_fortios_router_ospf }}"

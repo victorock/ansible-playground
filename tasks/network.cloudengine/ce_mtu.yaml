@@ -9,3 +9,8 @@
       jumbo_max: "{{ ce_mtu_jumbo_max | default(omit, True) }}"
       jumbo_min: "{{ ce_mtu_jumbo_min | default(omit, True) }}"
       mtu: "{{ ce_mtu_mtu | default(omit, True) }}"
+
+- name: "export r_ce_mtu"
+  set_stats:
+    data:
+      r_ce_mtu: "{{ r_ce_mtu }}"

@@ -14,3 +14,8 @@
       interface: "{{ nxos_vxlan_vtep_vni_interface | default(omit, True) }}"
       ingress_replication: "{{ nxos_vxlan_vtep_vni_ingress_replication | default(omit, True) }}"
       suppress_arp: "{{ nxos_vxlan_vtep_vni_suppress_arp | default(omit, True) }}"
+
+- name: "export r_nxos_vxlan_vtep_vni"
+  set_stats:
+    data:
+      r_nxos_vxlan_vtep_vni: "{{ r_nxos_vxlan_vtep_vni }}"

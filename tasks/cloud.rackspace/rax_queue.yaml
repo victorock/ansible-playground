@@ -16,3 +16,8 @@
       api_key: "{{ rax_queue_api_key | default(omit, True) }}"
       validate_certs: "{{ rax_queue_validate_certs | default(omit, True) }}"
       auth_endpoint: "{{ rax_queue_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_queue"
+  set_stats:
+    data:
+      r_rax_queue: "{{ r_rax_queue }}"

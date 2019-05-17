@@ -11,3 +11,8 @@
       user: "{{ airbrake_deployment_user | default(omit, True) }}"
       validate_certs: "{{ airbrake_deployment_validate_certs | default(omit, True) }}"
       revision: "{{ airbrake_deployment_revision | default(omit, True) }}"
+
+- name: "export r_airbrake_deployment"
+  set_stats:
+    data:
+      r_airbrake_deployment: "{{ r_airbrake_deployment }}"

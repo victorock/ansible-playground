@@ -29,3 +29,8 @@
     - name: "plugin_avi_dnspolicy"
       avi_dnspolicy: "{{ avi_dnspolicy }}"
       register: r_avi_dnspolicy
+
+    - name: "export r_avi_dnspolicy"
+      set_stats:
+        data:
+          r_avi_dnspolicy: "{{ r_avi_dnspolicy }}"

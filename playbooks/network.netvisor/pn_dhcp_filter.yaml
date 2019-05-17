@@ -15,3 +15,8 @@
     - name: "plugin_pn_dhcp_filter"
       pn_dhcp_filter: "{{ pn_dhcp_filter }}"
       register: r_pn_dhcp_filter
+
+    - name: "export r_pn_dhcp_filter"
+      set_stats:
+        data:
+          r_pn_dhcp_filter: "{{ r_pn_dhcp_filter }}"

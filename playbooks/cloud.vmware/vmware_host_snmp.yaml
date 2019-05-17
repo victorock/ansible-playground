@@ -24,3 +24,8 @@
     - name: "plugin_vmware_host_snmp"
       vmware_host_snmp: "{{ vmware_host_snmp }}"
       register: r_vmware_host_snmp
+
+    - name: "export r_vmware_host_snmp"
+      set_stats:
+        data:
+          r_vmware_host_snmp: "{{ r_vmware_host_snmp }}"

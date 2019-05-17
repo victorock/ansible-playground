@@ -22,3 +22,8 @@
     - name: "plugin_meraki_organization"
       meraki_organization: "{{ meraki_organization }}"
       register: r_meraki_organization
+
+    - name: "export r_meraki_organization"
+      set_stats:
+        data:
+          r_meraki_organization: "{{ r_meraki_organization }}"

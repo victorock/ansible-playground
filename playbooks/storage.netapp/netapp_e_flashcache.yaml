@@ -22,3 +22,8 @@
     - name: "plugin_netapp_e_flashcache"
       netapp_e_flashcache: "{{ netapp_e_flashcache }}"
       register: r_netapp_e_flashcache
+
+    - name: "export r_netapp_e_flashcache"
+      set_stats:
+        data:
+          r_netapp_e_flashcache: "{{ r_netapp_e_flashcache }}"

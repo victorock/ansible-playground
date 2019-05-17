@@ -16,3 +16,8 @@
       content_type: "{{ proxmox_template_content_type | default(omit, True) }}"
       validate_certs: "{{ proxmox_template_validate_certs | default(omit, True) }}"
       api_host: "{{ proxmox_template_api_host | default(omit, True) }}"
+
+- name: "export r_proxmox_template"
+  set_stats:
+    data:
+      r_proxmox_template: "{{ r_proxmox_template }}"

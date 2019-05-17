@@ -17,3 +17,8 @@
     - name: "plugin_fortios_endpoint_control_forticlient_registration_sync"
       fortios_endpoint_control_forticlient_registration_sync: "{{ fortios_endpoint_control_forticlient_registration_sync }}"
       register: r_fortios_endpoint_control_forticlient_registration_sync
+
+    - name: "export r_fortios_endpoint_control_forticlient_registration_sync"
+      set_stats:
+        data:
+          r_fortios_endpoint_control_forticlient_registration_sync: "{{ r_fortios_endpoint_control_forticlient_registration_sync }}"

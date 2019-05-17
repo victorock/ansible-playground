@@ -15,3 +15,8 @@
     - name: "plugin_tempfile"
       tempfile: "{{ tempfile }}"
       register: r_tempfile
+
+    - name: "export r_tempfile"
+      set_stats:
+        data:
+          r_tempfile: "{{ r_tempfile }}"

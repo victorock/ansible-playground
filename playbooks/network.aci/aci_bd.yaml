@@ -43,3 +43,8 @@
     - name: "plugin_aci_bd"
       aci_bd: "{{ aci_bd }}"
       register: r_aci_bd
+
+    - name: "export r_aci_bd"
+      set_stats:
+        data:
+          r_aci_bd: "{{ r_aci_bd }}"

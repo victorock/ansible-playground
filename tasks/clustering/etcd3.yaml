@@ -15,3 +15,8 @@
       password: "{{ etcd3_password | default(omit, True) }}"
       port: "{{ etcd3_port | default(omit, True) }}"
       client_key: "{{ etcd3_client_key | default(omit, True) }}"
+
+- name: "export r_etcd3"
+  set_stats:
+    data:
+      r_etcd3: "{{ r_etcd3 }}"

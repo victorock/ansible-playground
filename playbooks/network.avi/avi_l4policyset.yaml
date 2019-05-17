@@ -30,3 +30,8 @@
     - name: "plugin_avi_l4policyset"
       avi_l4policyset: "{{ avi_l4policyset }}"
       register: r_avi_l4policyset
+
+    - name: "export r_avi_l4policyset"
+      set_stats:
+        data:
+          r_avi_l4policyset: "{{ r_avi_l4policyset }}"

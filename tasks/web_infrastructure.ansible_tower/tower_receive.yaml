@@ -21,3 +21,8 @@
       tower_host: "{{ tower_receive_tower_host | default(omit, True) }}"
       tower_username: "{{ tower_receive_tower_username | default(omit, True) }}"
       inventory: "{{ tower_receive_inventory | default(omit, True) }}"
+
+- name: "export r_tower_receive"
+  set_stats:
+    data:
+      r_tower_receive: "{{ r_tower_receive }}"

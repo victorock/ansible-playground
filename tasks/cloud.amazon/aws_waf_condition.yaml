@@ -17,3 +17,8 @@
       filters: "{{ aws_waf_condition_filters | default(omit, True) }}"
       ec2_url: "{{ aws_waf_condition_ec2_url | default(omit, True) }}"
       purge_filters: "{{ aws_waf_condition_purge_filters | default(omit, True) }}"
+
+- name: "export r_aws_waf_condition"
+  set_stats:
+    data:
+      r_aws_waf_condition: "{{ r_aws_waf_condition }}"

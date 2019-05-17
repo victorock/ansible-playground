@@ -18,3 +18,8 @@
     - name: "plugin_net_static_route"
       net_static_route: "{{ net_static_route }}"
       register: r_net_static_route
+
+    - name: "export r_net_static_route"
+      set_stats:
+        data:
+          r_net_static_route: "{{ r_net_static_route }}"

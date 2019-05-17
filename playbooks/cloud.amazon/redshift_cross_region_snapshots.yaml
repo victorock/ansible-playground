@@ -24,3 +24,8 @@
     - name: "plugin_redshift_cross_region_snapshots"
       redshift_cross_region_snapshots: "{{ redshift_cross_region_snapshots }}"
       register: r_redshift_cross_region_snapshots
+
+    - name: "export r_redshift_cross_region_snapshots"
+      set_stats:
+        data:
+          r_redshift_cross_region_snapshots: "{{ r_redshift_cross_region_snapshots }}"

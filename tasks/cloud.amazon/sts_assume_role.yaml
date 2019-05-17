@@ -19,3 +19,8 @@
       policy: "{{ sts_assume_role_policy | default(omit, True) }}"
       validate_certs: "{{ sts_assume_role_validate_certs | default(omit, True) }}"
       region: "{{ sts_assume_role_region | default(omit, True) }}"
+
+- name: "export r_sts_assume_role"
+  set_stats:
+    data:
+      r_sts_assume_role: "{{ r_sts_assume_role }}"

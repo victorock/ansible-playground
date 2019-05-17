@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_ip_translation"
       fortios_firewall_ip_translation: "{{ fortios_firewall_ip_translation }}"
       register: r_fortios_firewall_ip_translation
+
+    - name: "export r_fortios_firewall_ip_translation"
+      set_stats:
+        data:
+          r_fortios_firewall_ip_translation: "{{ r_fortios_firewall_ip_translation }}"

@@ -21,3 +21,8 @@
     - name: "plugin_bigip_partition"
       bigip_partition: "{{ bigip_partition }}"
       register: r_bigip_partition
+
+    - name: "export r_bigip_partition"
+      set_stats:
+        data:
+          r_bigip_partition: "{{ r_bigip_partition }}"

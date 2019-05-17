@@ -18,3 +18,8 @@
       provider: "{{ junos_config_provider | default(omit, True) }}"
       check_commit: "{{ junos_config_check_commit | default(omit, True) }}"
       backup: "{{ junos_config_backup | default(omit, True) }}"
+
+- name: "export r_junos_config"
+  set_stats:
+    data:
+      r_junos_config: "{{ r_junos_config }}"

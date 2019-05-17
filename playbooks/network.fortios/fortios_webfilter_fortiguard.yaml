@@ -17,3 +17,8 @@
     - name: "plugin_fortios_webfilter_fortiguard"
       fortios_webfilter_fortiguard: "{{ fortios_webfilter_fortiguard }}"
       register: r_fortios_webfilter_fortiguard
+
+    - name: "export r_fortios_webfilter_fortiguard"
+      set_stats:
+        data:
+          r_fortios_webfilter_fortiguard: "{{ r_fortios_webfilter_fortiguard }}"

@@ -11,3 +11,8 @@
       file: "{{ panos_import_file | default(omit, True) }}"
       password: "{{ panos_import_password | default(omit, True) }}"
       ip_address: "{{ panos_import_ip_address | default(omit, True) }}"
+
+- name: "export r_panos_import"
+  set_stats:
+    data:
+      r_panos_import: "{{ r_panos_import }}"

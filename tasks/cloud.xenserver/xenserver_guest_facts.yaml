@@ -10,3 +10,8 @@
       password: "{{ xenserver_guest_facts_password | default(omit, True) }}"
       validate_certs: "{{ xenserver_guest_facts_validate_certs | default(omit, True) }}"
       uuid: "{{ xenserver_guest_facts_uuid | default(omit, True) }}"
+
+- name: "export r_xenserver_guest_facts"
+  set_stats:
+    data:
+      r_xenserver_guest_facts: "{{ r_xenserver_guest_facts }}"

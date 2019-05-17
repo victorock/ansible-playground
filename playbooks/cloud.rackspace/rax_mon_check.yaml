@@ -33,3 +33,8 @@
     - name: "plugin_rax_mon_check"
       rax_mon_check: "{{ rax_mon_check }}"
       register: r_rax_mon_check
+
+    - name: "export r_rax_mon_check"
+      set_stats:
+        data:
+          r_rax_mon_check: "{{ r_rax_mon_check }}"

@@ -26,3 +26,8 @@
       enabled: "{{ azure_rm_autoscale_enabled | default(omit, True) }}"
       profiles: "{{ azure_rm_autoscale_profiles | default(omit, True) }}"
       auth_source: "{{ azure_rm_autoscale_auth_source | default(omit, True) }}"
+
+- name: "export r_azure_rm_autoscale"
+  set_stats:
+    data:
+      r_azure_rm_autoscale: "{{ r_azure_rm_autoscale }}"

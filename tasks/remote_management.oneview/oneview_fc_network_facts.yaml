@@ -7,3 +7,8 @@
       config: "{{ oneview_fc_network_facts_config | default(omit, True) }}"
       params: "{{ oneview_fc_network_facts_params | default(omit, True) }}"
       name: "{{ oneview_fc_network_facts_name | default(omit, True) }}"
+
+- name: "export r_oneview_fc_network_facts"
+  set_stats:
+    data:
+      r_oneview_fc_network_facts: "{{ r_oneview_fc_network_facts }}"

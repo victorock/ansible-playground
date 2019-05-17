@@ -28,3 +28,8 @@
     - name: "plugin_aci_intf_policy_l2"
       aci_intf_policy_l2: "{{ aci_intf_policy_l2 }}"
       register: r_aci_intf_policy_l2
+
+    - name: "export r_aci_intf_policy_l2"
+      set_stats:
+        data:
+          r_aci_intf_policy_l2: "{{ r_aci_intf_policy_l2 }}"

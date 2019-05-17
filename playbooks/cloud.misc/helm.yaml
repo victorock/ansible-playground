@@ -19,3 +19,8 @@
     - name: "plugin_helm"
       helm: "{{ helm }}"
       register: r_helm
+
+    - name: "export r_helm"
+      set_stats:
+        data:
+          r_helm: "{{ r_helm }}"

@@ -16,3 +16,8 @@
     - name: "plugin_xbps"
       xbps: "{{ xbps }}"
       register: r_xbps
+
+    - name: "export r_xbps"
+      set_stats:
+        data:
+          r_xbps: "{{ r_xbps }}"

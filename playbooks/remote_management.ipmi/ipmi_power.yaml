@@ -17,3 +17,8 @@
     - name: "plugin_ipmi_power"
       ipmi_power: "{{ ipmi_power }}"
       register: r_ipmi_power
+
+    - name: "export r_ipmi_power"
+      set_stats:
+        data:
+          r_ipmi_power: "{{ r_ipmi_power }}"

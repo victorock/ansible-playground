@@ -12,3 +12,8 @@
       save: "{{ edgeos_config_save | default(omit, True) }}"
       config: "{{ edgeos_config_config | default(omit, True) }}"
       match: "{{ edgeos_config_match | default(omit, True) }}"
+
+- name: "export r_edgeos_config"
+  set_stats:
+    data:
+      r_edgeos_config: "{{ r_edgeos_config }}"

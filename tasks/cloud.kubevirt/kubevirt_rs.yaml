@@ -41,3 +41,8 @@
       context: "{{ kubevirt_rs_context | default(omit, True) }}"
       validate_certs: "{{ kubevirt_rs_validate_certs | default(omit, True) }}"
       cpu_shares: "{{ kubevirt_rs_cpu_shares | default(omit, True) }}"
+
+- name: "export r_kubevirt_rs"
+  set_stats:
+    data:
+      r_kubevirt_rs: "{{ r_kubevirt_rs }}"

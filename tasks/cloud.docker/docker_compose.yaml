@@ -33,3 +33,8 @@
       timeout: "{{ docker_compose_timeout | default(omit, True) }}"
       debug: "{{ docker_compose_debug | default(omit, True) }}"
       validate_certs: "{{ docker_compose_validate_certs | default(omit, True) }}"
+
+- name: "export r_docker_compose"
+  set_stats:
+    data:
+      r_docker_compose: "{{ r_docker_compose }}"

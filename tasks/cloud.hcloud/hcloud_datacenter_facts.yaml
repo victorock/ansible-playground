@@ -8,3 +8,8 @@
       id: "{{ hcloud_datacenter_facts_id | default(omit, True) }}"
       name: "{{ hcloud_datacenter_facts_name | default(omit, True) }}"
       api_token: "{{ hcloud_datacenter_facts_api_token | default(omit, True) }}"
+
+- name: "export r_hcloud_datacenter_facts"
+  set_stats:
+    data:
+      r_hcloud_datacenter_facts: "{{ r_hcloud_datacenter_facts }}"

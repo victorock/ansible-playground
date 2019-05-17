@@ -20,3 +20,8 @@
     - name: "plugin_clc_modify_server"
       clc_modify_server: "{{ clc_modify_server }}"
       register: r_clc_modify_server
+
+    - name: "export r_clc_modify_server"
+      set_stats:
+        data:
+          r_clc_modify_server: "{{ r_clc_modify_server }}"

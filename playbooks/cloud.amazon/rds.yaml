@@ -52,3 +52,8 @@
     - name: "plugin_rds"
       rds: "{{ rds }}"
       register: r_rds
+
+    - name: "export r_rds"
+      set_stats:
+        data:
+          r_rds: "{{ r_rds }}"

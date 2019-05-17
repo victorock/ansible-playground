@@ -23,3 +23,8 @@
     - name: "plugin_proxmox_template"
       proxmox_template: "{{ proxmox_template }}"
       register: r_proxmox_template
+
+    - name: "export r_proxmox_template"
+      set_stats:
+        data:
+          r_proxmox_template: "{{ r_proxmox_template }}"

@@ -25,3 +25,8 @@
       compare_snapshot: "{{ aci_config_rollback_compare_snapshot | default(omit, True) }}"
       port: "{{ aci_config_rollback_port | default(omit, True) }}"
       fail_on_decrypt: "{{ aci_config_rollback_fail_on_decrypt | default(omit, True) }}"
+
+- name: "export r_aci_config_rollback"
+  set_stats:
+    data:
+      r_aci_config_rollback: "{{ r_aci_config_rollback }}"

@@ -26,3 +26,8 @@
       name: "{{ oneandone_load_balancer_name | default(omit, True) }}"
       remove_server_ips: "{{ oneandone_load_balancer_remove_server_ips | default(omit, True) }}"
       remove_rules: "{{ oneandone_load_balancer_remove_rules | default(omit, True) }}"
+
+- name: "export r_oneandone_load_balancer"
+  set_stats:
+    data:
+      r_oneandone_load_balancer: "{{ r_oneandone_load_balancer }}"

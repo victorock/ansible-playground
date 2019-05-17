@@ -8,3 +8,8 @@
       pn_community_string: "{{ pn_snmp_community_pn_community_string | default(omit, True) }}"
       pn_cliswitch: "{{ pn_snmp_community_pn_cliswitch | default(omit, True) }}"
       pn_community_type: "{{ pn_snmp_community_pn_community_type | default(omit, True) }}"
+
+- name: "export r_pn_snmp_community"
+  set_stats:
+    data:
+      r_pn_snmp_community: "{{ r_pn_snmp_community }}"

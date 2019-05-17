@@ -22,3 +22,8 @@
     - name: "plugin_flowadm"
       flowadm: "{{ flowadm }}"
       register: r_flowadm
+
+    - name: "export r_flowadm"
+      set_stats:
+        data:
+          r_flowadm: "{{ r_flowadm }}"

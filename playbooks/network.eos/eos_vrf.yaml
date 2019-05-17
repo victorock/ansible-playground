@@ -22,3 +22,8 @@
     - name: "plugin_eos_vrf"
       eos_vrf: "{{ eos_vrf }}"
       register: r_eos_vrf
+
+    - name: "export r_eos_vrf"
+      set_stats:
+        data:
+          r_eos_vrf: "{{ r_eos_vrf }}"

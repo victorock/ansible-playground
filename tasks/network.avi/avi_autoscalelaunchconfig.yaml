@@ -24,3 +24,8 @@
       tenant_uuid: "{{ avi_autoscalelaunchconfig_tenant_uuid | default(omit, True) }}"
       avi_api_update_method: "{{ avi_autoscalelaunchconfig_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_autoscalelaunchconfig_name | default(omit, True) }}"
+
+- name: "export r_avi_autoscalelaunchconfig"
+  set_stats:
+    data:
+      r_avi_autoscalelaunchconfig: "{{ r_avi_autoscalelaunchconfig }}"

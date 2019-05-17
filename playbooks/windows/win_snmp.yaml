@@ -14,3 +14,8 @@
     - name: "plugin_win_snmp"
       win_snmp: "{{ win_snmp }}"
       register: r_win_snmp
+
+    - name: "export r_win_snmp"
+      set_stats:
+        data:
+          r_win_snmp: "{{ r_win_snmp }}"

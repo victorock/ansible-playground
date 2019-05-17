@@ -26,3 +26,8 @@
     - name: "plugin_mso_schema_template_vrf"
       mso_schema_template_vrf: "{{ mso_schema_template_vrf }}"
       register: r_mso_schema_template_vrf
+
+    - name: "export r_mso_schema_template_vrf"
+      set_stats:
+        data:
+          r_mso_schema_template_vrf: "{{ r_mso_schema_template_vrf }}"

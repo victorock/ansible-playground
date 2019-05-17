@@ -12,3 +12,8 @@
     - name: "plugin_nos_facts"
       nos_facts: "{{ nos_facts }}"
       register: r_nos_facts
+
+    - name: "export r_nos_facts"
+      set_stats:
+        data:
+          r_nos_facts: "{{ r_nos_facts }}"

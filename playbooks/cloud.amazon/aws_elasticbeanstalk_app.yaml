@@ -23,3 +23,8 @@
     - name: "plugin_aws_elasticbeanstalk_app"
       aws_elasticbeanstalk_app: "{{ aws_elasticbeanstalk_app }}"
       register: r_aws_elasticbeanstalk_app
+
+    - name: "export r_aws_elasticbeanstalk_app"
+      set_stats:
+        data:
+          r_aws_elasticbeanstalk_app: "{{ r_aws_elasticbeanstalk_app }}"

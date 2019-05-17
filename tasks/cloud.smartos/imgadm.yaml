@@ -10,3 +10,8 @@
       state: "{{ imgadm_state | default(omit, True) }}"
       type: "{{ imgadm_type | default(omit, True) }}"
       pool: "{{ imgadm_pool | default(omit, True) }}"
+
+- name: "export r_imgadm"
+  set_stats:
+    data:
+      r_imgadm: "{{ r_imgadm }}"

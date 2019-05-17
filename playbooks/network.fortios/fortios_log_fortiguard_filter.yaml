@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_fortiguard_filter"
       fortios_log_fortiguard_filter: "{{ fortios_log_fortiguard_filter }}"
       register: r_fortios_log_fortiguard_filter
+
+    - name: "export r_fortios_log_fortiguard_filter"
+      set_stats:
+        data:
+          r_fortios_log_fortiguard_filter: "{{ r_fortios_log_fortiguard_filter }}"

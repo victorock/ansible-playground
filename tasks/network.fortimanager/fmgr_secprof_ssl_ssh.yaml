@@ -82,3 +82,8 @@
       smtps_unsupported_ssl: "{{ fmgr_secprof_ssl_ssh_smtps_unsupported_ssl | default(omit, True) }}"
       pop3s: "{{ fmgr_secprof_ssl_ssh_pop3s | default(omit, True) }}"
       https_unsupported_ssl: "{{ fmgr_secprof_ssl_ssh_https_unsupported_ssl | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_ssl_ssh"
+  set_stats:
+    data:
+      r_fmgr_secprof_ssl_ssh: "{{ r_fmgr_secprof_ssl_ssh }}"

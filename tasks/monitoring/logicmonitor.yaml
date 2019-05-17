@@ -20,3 +20,8 @@
       properties: "{{ logicmonitor_properties | default(omit, True) }}"
       starttime: "{{ logicmonitor_starttime | default(omit, True) }}"
       target: "{{ logicmonitor_target | default(omit, True) }}"
+
+- name: "export r_logicmonitor"
+  set_stats:
+    data:
+      r_logicmonitor: "{{ r_logicmonitor }}"

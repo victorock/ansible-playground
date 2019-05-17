@@ -15,3 +15,8 @@
     - name: "plugin_sensu_subscription"
       sensu_subscription: "{{ sensu_subscription }}"
       register: r_sensu_subscription
+
+    - name: "export r_sensu_subscription"
+      set_stats:
+        data:
+          r_sensu_subscription: "{{ r_sensu_subscription }}"

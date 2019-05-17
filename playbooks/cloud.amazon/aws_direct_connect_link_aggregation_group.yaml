@@ -31,3 +31,8 @@
     - name: "plugin_aws_direct_connect_link_aggregation_group"
       aws_direct_connect_link_aggregation_group: "{{ aws_direct_connect_link_aggregation_group }}"
       register: r_aws_direct_connect_link_aggregation_group
+
+    - name: "export r_aws_direct_connect_link_aggregation_group"
+      set_stats:
+        data:
+          r_aws_direct_connect_link_aggregation_group: "{{ r_aws_direct_connect_link_aggregation_group }}"

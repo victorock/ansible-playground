@@ -15,3 +15,8 @@
     - name: "plugin_logentries_msg"
       logentries_msg: "{{ logentries_msg }}"
       register: r_logentries_msg
+
+    - name: "export r_logentries_msg"
+      set_stats:
+        data:
+          r_logentries_msg: "{{ r_logentries_msg }}"

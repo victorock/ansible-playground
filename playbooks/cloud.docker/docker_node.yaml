@@ -28,3 +28,8 @@
     - name: "plugin_docker_node"
       docker_node: "{{ docker_node }}"
       register: r_docker_node
+
+    - name: "export r_docker_node"
+      set_stats:
+        data:
+          r_docker_node: "{{ r_docker_node }}"

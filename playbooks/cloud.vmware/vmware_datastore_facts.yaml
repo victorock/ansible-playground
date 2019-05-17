@@ -21,3 +21,8 @@
     - name: "plugin_vmware_datastore_facts"
       vmware_datastore_facts: "{{ vmware_datastore_facts }}"
       register: r_vmware_datastore_facts
+
+    - name: "export r_vmware_datastore_facts"
+      set_stats:
+        data:
+          r_vmware_datastore_facts: "{{ r_vmware_datastore_facts }}"

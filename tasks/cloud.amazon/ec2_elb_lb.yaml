@@ -34,3 +34,8 @@
       security_group_names: "{{ ec2_elb_lb_security_group_names | default(omit, True) }}"
       validate_certs: "{{ ec2_elb_lb_validate_certs | default(omit, True) }}"
       stickiness: "{{ ec2_elb_lb_stickiness | default(omit, True) }}"
+
+- name: "export r_ec2_elb_lb"
+  set_stats:
+    data:
+      r_ec2_elb_lb: "{{ r_ec2_elb_lb }}"

@@ -20,3 +20,8 @@
     - name: "plugin_bigip_device_group_member"
       bigip_device_group_member: "{{ bigip_device_group_member }}"
       register: r_bigip_device_group_member
+
+    - name: "export r_bigip_device_group_member"
+      set_stats:
+        data:
+          r_bigip_device_group_member: "{{ r_bigip_device_group_member }}"

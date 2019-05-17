@@ -33,3 +33,8 @@
     - name: "plugin_postgresql_pg_hba"
       postgresql_pg_hba: "{{ postgresql_pg_hba }}"
       register: r_postgresql_pg_hba
+
+    - name: "export r_postgresql_pg_hba"
+      set_stats:
+        data:
+          r_postgresql_pg_hba: "{{ r_postgresql_pg_hba }}"

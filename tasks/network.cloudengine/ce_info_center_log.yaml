@@ -12,3 +12,8 @@
       log_buff_enable: "{{ ce_info_center_log_log_buff_enable | default(omit, True) }}"
       log_time_stamp: "{{ ce_info_center_log_log_time_stamp | default(omit, True) }}"
       module_name: "{{ ce_info_center_log_module_name | default(omit, True) }}"
+
+- name: "export r_ce_info_center_log"
+  set_stats:
+    data:
+      r_ce_info_center_log: "{{ r_ce_info_center_log }}"

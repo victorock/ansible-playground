@@ -16,3 +16,8 @@
       ipa_timeout: "{{ ipa_hostgroup_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_hostgroup_validate_certs | default(omit, True) }}"
       description: "{{ ipa_hostgroup_description | default(omit, True) }}"
+
+- name: "export r_ipa_hostgroup"
+  set_stats:
+    data:
+      r_ipa_hostgroup: "{{ r_ipa_hostgroup }}"

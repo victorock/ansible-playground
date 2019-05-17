@@ -16,3 +16,8 @@
     - name: "plugin_macports"
       macports: "{{ macports }}"
       register: r_macports
+
+    - name: "export r_macports"
+      set_stats:
+        data:
+          r_macports: "{{ r_macports }}"

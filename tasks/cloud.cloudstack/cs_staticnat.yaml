@@ -21,3 +21,8 @@
       zone: "{{ cs_staticnat_zone | default(omit, True) }}"
       ip_address: "{{ cs_staticnat_ip_address | default(omit, True) }}"
       network: "{{ cs_staticnat_network | default(omit, True) }}"
+
+- name: "export r_cs_staticnat"
+  set_stats:
+    data:
+      r_cs_staticnat: "{{ r_cs_staticnat }}"

@@ -7,3 +7,8 @@
       state: "{{ ce_vrf_state | default(omit, True) }}"
       vrf: "{{ ce_vrf_vrf | default(omit, True) }}"
       description: "{{ ce_vrf_description | default(omit, True) }}"
+
+- name: "export r_ce_vrf"
+  set_stats:
+    data:
+      r_ce_vrf: "{{ r_ce_vrf }}"

@@ -15,3 +15,8 @@
     - name: "plugin_nxos_gir_profile_management"
       nxos_gir_profile_management: "{{ nxos_gir_profile_management }}"
       register: r_nxos_gir_profile_management
+
+    - name: "export r_nxos_gir_profile_management"
+      set_stats:
+        data:
+          r_nxos_gir_profile_management: "{{ r_nxos_gir_profile_management }}"

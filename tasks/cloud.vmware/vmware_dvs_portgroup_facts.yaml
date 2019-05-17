@@ -13,3 +13,8 @@
       validate_certs: "{{ vmware_dvs_portgroup_facts_validate_certs | default(omit, True) }}"
       port: "{{ vmware_dvs_portgroup_facts_port | default(omit, True) }}"
       show_network_policy: "{{ vmware_dvs_portgroup_facts_show_network_policy | default(omit, True) }}"
+
+- name: "export r_vmware_dvs_portgroup_facts"
+  set_stats:
+    data:
+      r_vmware_dvs_portgroup_facts: "{{ r_vmware_dvs_portgroup_facts }}"

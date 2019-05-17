@@ -17,3 +17,8 @@
     - name: "plugin_aix_inittab"
       aix_inittab: "{{ aix_inittab }}"
       register: r_aix_inittab
+
+    - name: "export r_aix_inittab"
+      set_stats:
+        data:
+          r_aix_inittab: "{{ r_aix_inittab }}"

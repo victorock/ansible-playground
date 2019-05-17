@@ -17,3 +17,8 @@
       password: "{{ influxdb_query_password | default(omit, True) }}"
       validate_certs: "{{ influxdb_query_validate_certs | default(omit, True) }}"
       port: "{{ influxdb_query_port | default(omit, True) }}"
+
+- name: "export r_influxdb_query"
+  set_stats:
+    data:
+      r_influxdb_query: "{{ r_influxdb_query }}"

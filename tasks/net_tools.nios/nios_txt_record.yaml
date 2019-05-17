@@ -12,3 +12,8 @@
       state: "{{ nios_txt_record_state | default(omit, True) }}"
       extattrs: "{{ nios_txt_record_extattrs | default(omit, True) }}"
       view: "{{ nios_txt_record_view | default(omit, True) }}"
+
+- name: "export r_nios_txt_record"
+  set_stats:
+    data:
+      r_nios_txt_record: "{{ r_nios_txt_record }}"

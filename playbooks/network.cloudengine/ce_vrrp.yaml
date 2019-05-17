@@ -31,3 +31,8 @@
     - name: "plugin_ce_vrrp"
       ce_vrrp: "{{ ce_vrrp }}"
       register: r_ce_vrrp
+
+    - name: "export r_ce_vrrp"
+      set_stats:
+        data:
+          r_ce_vrrp: "{{ r_ce_vrrp }}"

@@ -20,3 +20,8 @@
       controller: "{{ avi_clusterclouddetails_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_clusterclouddetails_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_clusterclouddetails_name | default(omit, True) }}"
+
+- name: "export r_avi_clusterclouddetails"
+  set_stats:
+    data:
+      r_avi_clusterclouddetails: "{{ r_avi_clusterclouddetails }}"

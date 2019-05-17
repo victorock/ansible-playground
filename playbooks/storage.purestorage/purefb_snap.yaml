@@ -17,3 +17,8 @@
     - name: "plugin_purefb_snap"
       purefb_snap: "{{ purefb_snap }}"
       register: r_purefb_snap
+
+    - name: "export r_purefb_snap"
+      set_stats:
+        data:
+          r_purefb_snap: "{{ r_purefb_snap }}"

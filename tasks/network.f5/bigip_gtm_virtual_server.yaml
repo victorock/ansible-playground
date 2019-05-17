@@ -23,3 +23,8 @@
       monitors: "{{ bigip_gtm_virtual_server_monitors | default(omit, True) }}"
       address: "{{ bigip_gtm_virtual_server_address | default(omit, True) }}"
       translation_port: "{{ bigip_gtm_virtual_server_translation_port | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_virtual_server"
+  set_stats:
+    data:
+      r_bigip_gtm_virtual_server: "{{ r_bigip_gtm_virtual_server }}"

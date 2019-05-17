@@ -24,3 +24,8 @@
       email: "{{ gitlab_user_email | default(omit, True) }}"
       api_username: "{{ gitlab_user_api_username | default(omit, True) }}"
       api_url: "{{ gitlab_user_api_url | default(omit, True) }}"
+
+- name: "export r_gitlab_user"
+  set_stats:
+    data:
+      r_gitlab_user: "{{ r_gitlab_user }}"

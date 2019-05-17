@@ -64,3 +64,8 @@
       utilize_reserved_instances: "{{ spotinst_aws_elastigroup_utilize_reserved_instances | default(omit, True) }}"
       wait_for_instances: "{{ spotinst_aws_elastigroup_wait_for_instances | default(omit, True) }}"
       spot_instance_types: "{{ spotinst_aws_elastigroup_spot_instance_types | default(omit, True) }}"
+
+- name: "export r_spotinst_aws_elastigroup"
+  set_stats:
+    data:
+      r_spotinst_aws_elastigroup: "{{ r_spotinst_aws_elastigroup }}"

@@ -38,3 +38,8 @@
       timeout: "{{ proxysql_query_rules_timeout | default(omit, True) }}"
       force_delete: "{{ proxysql_query_rules_force_delete | default(omit, True) }}"
       rule_id: "{{ proxysql_query_rules_rule_id | default(omit, True) }}"
+
+- name: "export r_proxysql_query_rules"
+  set_stats:
+    data:
+      r_proxysql_query_rules: "{{ r_proxysql_query_rules }}"

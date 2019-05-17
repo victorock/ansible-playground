@@ -11,3 +11,8 @@
       computer_group: "{{ win_rds_rap_computer_group | default(omit, True) }}"
       state: "{{ win_rds_rap_state | default(omit, True) }}"
       name: "{{ win_rds_rap_name | default(omit, True) }}"
+
+- name: "export r_win_rds_rap"
+  set_stats:
+    data:
+      r_win_rds_rap: "{{ r_win_rds_rap }}"

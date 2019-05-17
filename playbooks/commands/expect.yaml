@@ -18,3 +18,8 @@
     - name: "plugin_expect"
       expect: "{{ expect }}"
       register: r_expect
+
+    - name: "export r_expect"
+      set_stats:
+        data:
+          r_expect: "{{ r_expect }}"

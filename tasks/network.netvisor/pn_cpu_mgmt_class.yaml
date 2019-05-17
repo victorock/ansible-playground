@@ -9,3 +9,8 @@
       pn_cliswitch: "{{ pn_cpu_mgmt_class_pn_cliswitch | default(omit, True) }}"
       pn_rate_limit: "{{ pn_cpu_mgmt_class_pn_rate_limit | default(omit, True) }}"
       pn_burst_size: "{{ pn_cpu_mgmt_class_pn_burst_size | default(omit, True) }}"
+
+- name: "export r_pn_cpu_mgmt_class"
+  set_stats:
+    data:
+      r_pn_cpu_mgmt_class: "{{ r_pn_cpu_mgmt_class }}"

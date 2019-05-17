@@ -28,3 +28,8 @@
     - name: "plugin_win_psexec"
       win_psexec: "{{ win_psexec }}"
       register: r_win_psexec
+
+    - name: "export r_win_psexec"
+      set_stats:
+        data:
+          r_win_psexec: "{{ r_win_psexec }}"

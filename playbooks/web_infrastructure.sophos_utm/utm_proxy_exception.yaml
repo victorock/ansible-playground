@@ -33,3 +33,8 @@
     - name: "plugin_utm_proxy_exception"
       utm_proxy_exception: "{{ utm_proxy_exception }}"
       register: r_utm_proxy_exception
+
+    - name: "export r_utm_proxy_exception"
+      set_stats:
+        data:
+          r_utm_proxy_exception: "{{ r_utm_proxy_exception }}"

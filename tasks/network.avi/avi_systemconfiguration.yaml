@@ -32,3 +32,8 @@
       admin_auth_configuration: "{{ avi_systemconfiguration_admin_auth_configuration | default(omit, True) }}"
       mgmt_ip_access_control: "{{ avi_systemconfiguration_mgmt_ip_access_control | default(omit, True) }}"
       tenant_uuid: "{{ avi_systemconfiguration_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_systemconfiguration"
+  set_stats:
+    data:
+      r_avi_systemconfiguration: "{{ r_avi_systemconfiguration }}"

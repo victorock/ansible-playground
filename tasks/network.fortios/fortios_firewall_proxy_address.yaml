@@ -10,3 +10,8 @@
       firewall_proxy_address: "{{ fortios_firewall_proxy_address_firewall_proxy_address | default(omit, True) }}"
       password: "{{ fortios_firewall_proxy_address_password | default(omit, True) }}"
       vdom: "{{ fortios_firewall_proxy_address_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_firewall_proxy_address"
+  set_stats:
+    data:
+      r_fortios_firewall_proxy_address: "{{ r_fortios_firewall_proxy_address }}"

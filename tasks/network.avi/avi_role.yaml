@@ -20,3 +20,8 @@
       controller: "{{ avi_role_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_role_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_role_name | default(omit, True) }}"
+
+- name: "export r_avi_role"
+  set_stats:
+    data:
+      r_avi_role: "{{ r_avi_role }}"

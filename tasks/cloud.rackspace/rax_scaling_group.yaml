@@ -32,3 +32,8 @@
       region: "{{ rax_scaling_group_region | default(omit, True) }}"
       meta: "{{ rax_scaling_group_meta | default(omit, True) }}"
       validate_certs: "{{ rax_scaling_group_validate_certs | default(omit, True) }}"
+
+- name: "export r_rax_scaling_group"
+  set_stats:
+    data:
+      r_rax_scaling_group: "{{ r_rax_scaling_group }}"

@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_config_manager"
       vmware_host_config_manager: "{{ vmware_host_config_manager }}"
       register: r_vmware_host_config_manager
+
+    - name: "export r_vmware_host_config_manager"
+      set_stats:
+        data:
+          r_vmware_host_config_manager: "{{ r_vmware_host_config_manager }}"

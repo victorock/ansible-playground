@@ -9,3 +9,8 @@
       bypass: "{{ win_inet_proxy_bypass | default(omit, True) }}"
       auto_detect: "{{ win_inet_proxy_auto_detect | default(omit, True) }}"
       proxy: "{{ win_inet_proxy_proxy | default(omit, True) }}"
+
+- name: "export r_win_inet_proxy"
+  set_stats:
+    data:
+      r_win_inet_proxy: "{{ r_win_inet_proxy }}"

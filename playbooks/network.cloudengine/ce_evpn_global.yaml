@@ -12,3 +12,8 @@
     - name: "plugin_ce_evpn_global"
       ce_evpn_global: "{{ ce_evpn_global }}"
       register: r_ce_evpn_global
+
+    - name: "export r_ce_evpn_global"
+      set_stats:
+        data:
+          r_ce_evpn_global: "{{ r_ce_evpn_global }}"

@@ -17,3 +17,8 @@
     - name: "plugin_netapp_e_snapshot_images"
       netapp_e_snapshot_images: "{{ netapp_e_snapshot_images }}"
       register: r_netapp_e_snapshot_images
+
+    - name: "export r_netapp_e_snapshot_images"
+      set_stats:
+        data:
+          r_netapp_e_snapshot_images: "{{ r_netapp_e_snapshot_images }}"

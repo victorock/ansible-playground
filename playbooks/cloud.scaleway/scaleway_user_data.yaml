@@ -19,3 +19,8 @@
     - name: "plugin_scaleway_user_data"
       scaleway_user_data: "{{ scaleway_user_data }}"
       register: r_scaleway_user_data
+
+    - name: "export r_scaleway_user_data"
+      set_stats:
+        data:
+          r_scaleway_user_data: "{{ r_scaleway_user_data }}"

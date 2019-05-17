@@ -21,3 +21,8 @@
     - name: "plugin_vcenter_folder"
       vcenter_folder: "{{ vcenter_folder }}"
       register: r_vcenter_folder
+
+    - name: "export r_vcenter_folder"
+      set_stats:
+        data:
+          r_vcenter_folder: "{{ r_vcenter_folder }}"

@@ -30,3 +30,8 @@
     - name: "plugin_na_ontap_lun"
       na_ontap_lun: "{{ na_ontap_lun }}"
       register: r_na_ontap_lun
+
+    - name: "export r_na_ontap_lun"
+      set_stats:
+        data:
+          r_na_ontap_lun: "{{ r_na_ontap_lun }}"

@@ -22,3 +22,8 @@
     - name: "plugin_hcloud_volume"
       hcloud_volume: "{{ hcloud_volume }}"
       register: r_hcloud_volume
+
+    - name: "export r_hcloud_volume"
+      set_stats:
+        data:
+          r_hcloud_volume: "{{ r_hcloud_volume }}"

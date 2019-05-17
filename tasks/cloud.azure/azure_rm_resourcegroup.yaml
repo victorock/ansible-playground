@@ -22,3 +22,8 @@
       password: "{{ azure_rm_resourcegroup_password | default(omit, True) }}"
       tenant: "{{ azure_rm_resourcegroup_tenant | default(omit, True) }}"
       force_delete_nonempty: "{{ azure_rm_resourcegroup_force_delete_nonempty | default(omit, True) }}"
+
+- name: "export r_azure_rm_resourcegroup"
+  set_stats:
+    data:
+      r_azure_rm_resourcegroup: "{{ r_azure_rm_resourcegroup }}"

@@ -8,3 +8,8 @@
       state: "{{ win_psrepository_state | default(omit, True) }}"
       name: "{{ win_psrepository_name | default(omit, True) }}"
       installation_policy: "{{ win_psrepository_installation_policy | default(omit, True) }}"
+
+- name: "export r_win_psrepository"
+  set_stats:
+    data:
+      r_win_psrepository: "{{ r_win_psrepository }}"

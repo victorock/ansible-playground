@@ -38,3 +38,8 @@
     - name: "plugin_kubevirt_pvc"
       kubevirt_pvc: "{{ kubevirt_pvc }}"
       register: r_kubevirt_pvc
+
+    - name: "export r_kubevirt_pvc"
+      set_stats:
+        data:
+          r_kubevirt_pvc: "{{ r_kubevirt_pvc }}"

@@ -18,3 +18,8 @@
       password: "{{ na_ontap_qos_policy_group_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_qos_policy_group_validate_certs | default(omit, True) }}"
       name: "{{ na_ontap_qos_policy_group_name | default(omit, True) }}"
+
+- name: "export r_na_ontap_qos_policy_group"
+  set_stats:
+    data:
+      r_na_ontap_qos_policy_group: "{{ r_na_ontap_qos_policy_group }}"

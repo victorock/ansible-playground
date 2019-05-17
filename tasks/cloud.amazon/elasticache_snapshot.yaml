@@ -18,3 +18,8 @@
       ec2_url: "{{ elasticache_snapshot_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elasticache_snapshot_validate_certs | default(omit, True) }}"
       target: "{{ elasticache_snapshot_target | default(omit, True) }}"
+
+- name: "export r_elasticache_snapshot"
+  set_stats:
+    data:
+      r_elasticache_snapshot: "{{ r_elasticache_snapshot }}"

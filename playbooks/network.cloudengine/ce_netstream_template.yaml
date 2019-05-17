@@ -18,3 +18,8 @@
     - name: "plugin_ce_netstream_template"
       ce_netstream_template: "{{ ce_netstream_template }}"
       register: r_ce_netstream_template
+
+    - name: "export r_ce_netstream_template"
+      set_stats:
+        data:
+          r_ce_netstream_template: "{{ r_ce_netstream_template }}"

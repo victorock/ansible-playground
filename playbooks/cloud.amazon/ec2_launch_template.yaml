@@ -44,3 +44,8 @@
     - name: "plugin_ec2_launch_template"
       ec2_launch_template: "{{ ec2_launch_template }}"
       register: r_ec2_launch_template
+
+    - name: "export r_ec2_launch_template"
+      set_stats:
+        data:
+          r_ec2_launch_template: "{{ r_ec2_launch_template }}"

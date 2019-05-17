@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_mysqldatabase"
       azure_rm_mysqldatabase: "{{ azure_rm_mysqldatabase }}"
       register: r_azure_rm_mysqldatabase
+
+    - name: "export r_azure_rm_mysqldatabase"
+      set_stats:
+        data:
+          r_azure_rm_mysqldatabase: "{{ r_azure_rm_mysqldatabase }}"

@@ -29,3 +29,8 @@
     - name: "plugin_one_service"
       one_service: "{{ one_service }}"
       register: r_one_service
+
+    - name: "export r_one_service"
+      set_stats:
+        data:
+          r_one_service: "{{ r_one_service }}"

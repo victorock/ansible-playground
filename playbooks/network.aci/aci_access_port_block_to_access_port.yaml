@@ -31,3 +31,8 @@
     - name: "plugin_aci_access_port_block_to_access_port"
       aci_access_port_block_to_access_port: "{{ aci_access_port_block_to_access_port }}"
       register: r_aci_access_port_block_to_access_port
+
+    - name: "export r_aci_access_port_block_to_access_port"
+      set_stats:
+        data:
+          r_aci_access_port_block_to_access_port: "{{ r_aci_access_port_block_to_access_port }}"

@@ -22,3 +22,8 @@
       ontapi: "{{ na_ontap_quotas_ontapi | default(omit, True) }}"
       password: "{{ na_ontap_quotas_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_quotas_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_quotas"
+  set_stats:
+    data:
+      r_na_ontap_quotas: "{{ r_na_ontap_quotas }}"

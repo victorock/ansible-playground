@@ -17,3 +17,8 @@
     - name: "plugin_nictagadm"
       nictagadm: "{{ nictagadm }}"
       register: r_nictagadm
+
+    - name: "export r_nictagadm"
+      set_stats:
+        data:
+          r_nictagadm: "{{ r_nictagadm }}"

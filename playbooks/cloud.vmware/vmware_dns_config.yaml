@@ -19,3 +19,8 @@
     - name: "plugin_vmware_dns_config"
       vmware_dns_config: "{{ vmware_dns_config }}"
       register: r_vmware_dns_config
+
+    - name: "export r_vmware_dns_config"
+      set_stats:
+        data:
+          r_vmware_dns_config: "{{ r_vmware_dns_config }}"

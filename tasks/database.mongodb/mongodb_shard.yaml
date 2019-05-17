@@ -13,3 +13,8 @@
       ssl: "{{ mongodb_shard_ssl | default(omit, True) }}"
       state: "{{ mongodb_shard_state | default(omit, True) }}"
       login_password: "{{ mongodb_shard_login_password | default(omit, True) }}"
+
+- name: "export r_mongodb_shard"
+  set_stats:
+    data:
+      r_mongodb_shard: "{{ r_mongodb_shard }}"

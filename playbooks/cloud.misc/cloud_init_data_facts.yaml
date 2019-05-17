@@ -12,3 +12,8 @@
     - name: "plugin_cloud_init_data_facts"
       cloud_init_data_facts: "{{ cloud_init_data_facts }}"
       register: r_cloud_init_data_facts
+
+    - name: "export r_cloud_init_data_facts"
+      set_stats:
+        data:
+          r_cloud_init_data_facts: "{{ r_cloud_init_data_facts }}"

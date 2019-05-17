@@ -8,3 +8,8 @@
       memory_percent: "{{ onyx_buffer_pool_memory_percent | default(omit, True) }}"
       name: "{{ onyx_buffer_pool_name | default(omit, True) }}"
       switch_priority: "{{ onyx_buffer_pool_switch_priority | default(omit, True) }}"
+
+- name: "export r_onyx_buffer_pool"
+  set_stats:
+    data:
+      r_onyx_buffer_pool: "{{ r_onyx_buffer_pool }}"

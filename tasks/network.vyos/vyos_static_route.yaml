@@ -11,3 +11,8 @@
       next_hop: "{{ vyos_static_route_next_hop | default(omit, True) }}"
       provider: "{{ vyos_static_route_provider | default(omit, True) }}"
       aggregate: "{{ vyos_static_route_aggregate | default(omit, True) }}"
+
+- name: "export r_vyos_static_route"
+  set_stats:
+    data:
+      r_vyos_static_route: "{{ r_vyos_static_route }}"

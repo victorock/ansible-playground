@@ -22,3 +22,8 @@
     - name: "plugin_vmware_migrate_vmk"
       vmware_migrate_vmk: "{{ vmware_migrate_vmk }}"
       register: r_vmware_migrate_vmk
+
+    - name: "export r_vmware_migrate_vmk"
+      set_stats:
+        data:
+          r_vmware_migrate_vmk: "{{ r_vmware_migrate_vmk }}"

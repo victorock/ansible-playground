@@ -41,3 +41,8 @@
     - name: "plugin_azure_rm_cosmosdbaccount"
       azure_rm_cosmosdbaccount: "{{ azure_rm_cosmosdbaccount }}"
       register: r_azure_rm_cosmosdbaccount
+
+    - name: "export r_azure_rm_cosmosdbaccount"
+      set_stats:
+        data:
+          r_azure_rm_cosmosdbaccount: "{{ r_azure_rm_cosmosdbaccount }}"

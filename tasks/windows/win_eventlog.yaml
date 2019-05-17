@@ -13,3 +13,8 @@
       message_file: "{{ win_eventlog_message_file | default(omit, True) }}"
       maximum_size: "{{ win_eventlog_maximum_size | default(omit, True) }}"
       category_file: "{{ win_eventlog_category_file | default(omit, True) }}"
+
+- name: "export r_win_eventlog"
+  set_stats:
+    data:
+      r_win_eventlog: "{{ r_win_eventlog }}"

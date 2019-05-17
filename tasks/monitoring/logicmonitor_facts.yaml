@@ -12,3 +12,8 @@
       fullpath: "{{ logicmonitor_facts_fullpath | default(omit, True) }}"
       password: "{{ logicmonitor_facts_password | default(omit, True) }}"
       collector: "{{ logicmonitor_facts_collector | default(omit, True) }}"
+
+- name: "export r_logicmonitor_facts"
+  set_stats:
+    data:
+      r_logicmonitor_facts: "{{ r_logicmonitor_facts }}"

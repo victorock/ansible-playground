@@ -14,3 +14,8 @@
       password: "{{ panos_dag_tags_password | default(omit, True) }}"
       ip_address: "{{ panos_dag_tags_ip_address | default(omit, True) }}"
       ip_to_register: "{{ panos_dag_tags_ip_to_register | default(omit, True) }}"
+
+- name: "export r_panos_dag_tags"
+  set_stats:
+    data:
+      r_panos_dag_tags: "{{ r_panos_dag_tags }}"

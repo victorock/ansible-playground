@@ -35,3 +35,8 @@
       dead_lettering_on_message_expiration: "{{ azure_rm_servicebustopicsubscription_dead_lettering_on_message_expiration | default(omit, True) }}"
       api_profile: "{{ azure_rm_servicebustopicsubscription_api_profile | default(omit, True) }}"
       namespace: "{{ azure_rm_servicebustopicsubscription_namespace | default(omit, True) }}"
+
+- name: "export r_azure_rm_servicebustopicsubscription"
+  set_stats:
+    data:
+      r_azure_rm_servicebustopicsubscription: "{{ r_azure_rm_servicebustopicsubscription }}"

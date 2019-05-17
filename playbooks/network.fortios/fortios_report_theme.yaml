@@ -17,3 +17,8 @@
     - name: "plugin_fortios_report_theme"
       fortios_report_theme: "{{ fortios_report_theme }}"
       register: r_fortios_report_theme
+
+    - name: "export r_fortios_report_theme"
+      set_stats:
+        data:
+          r_fortios_report_theme: "{{ r_fortios_report_theme }}"

@@ -27,3 +27,8 @@
     - name: "plugin_sensu_client"
       sensu_client: "{{ sensu_client }}"
       register: r_sensu_client
+
+    - name: "export r_sensu_client"
+      set_stats:
+        data:
+          r_sensu_client: "{{ r_sensu_client }}"

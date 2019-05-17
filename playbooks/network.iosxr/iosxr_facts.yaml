@@ -13,3 +13,8 @@
     - name: "plugin_iosxr_facts"
       iosxr_facts: "{{ iosxr_facts }}"
       register: r_iosxr_facts
+
+    - name: "export r_iosxr_facts"
+      set_stats:
+        data:
+          r_iosxr_facts: "{{ r_iosxr_facts }}"

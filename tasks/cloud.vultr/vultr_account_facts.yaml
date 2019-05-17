@@ -10,3 +10,8 @@
       api_account: "{{ vultr_account_facts_api_account | default(omit, True) }}"
       api_key: "{{ vultr_account_facts_api_key | default(omit, True) }}"
       validate_certs: "{{ vultr_account_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_vultr_account_facts"
+  set_stats:
+    data:
+      r_vultr_account_facts: "{{ r_vultr_account_facts }}"

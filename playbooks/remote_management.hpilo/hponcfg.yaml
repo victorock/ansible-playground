@@ -15,3 +15,8 @@
     - name: "plugin_hponcfg"
       hponcfg: "{{ hponcfg }}"
       register: r_hponcfg
+
+    - name: "export r_hponcfg"
+      set_stats:
+        data:
+          r_hponcfg: "{{ r_hponcfg }}"

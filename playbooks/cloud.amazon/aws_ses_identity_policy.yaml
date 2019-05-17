@@ -23,3 +23,8 @@
     - name: "plugin_aws_ses_identity_policy"
       aws_ses_identity_policy: "{{ aws_ses_identity_policy }}"
       register: r_aws_ses_identity_policy
+
+    - name: "export r_aws_ses_identity_policy"
+      set_stats:
+        data:
+          r_aws_ses_identity_policy: "{{ r_aws_ses_identity_policy }}"

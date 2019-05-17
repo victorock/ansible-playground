@@ -26,3 +26,8 @@
     - name: "plugin_nexmo"
       nexmo: "{{ nexmo }}"
       register: r_nexmo
+
+    - name: "export r_nexmo"
+      set_stats:
+        data:
+          r_nexmo: "{{ r_nexmo }}"

@@ -25,3 +25,8 @@
     - name: "plugin_vmware_vm_host_drs_rule"
       vmware_vm_host_drs_rule: "{{ vmware_vm_host_drs_rule }}"
       register: r_vmware_vm_host_drs_rule
+
+    - name: "export r_vmware_vm_host_drs_rule"
+      set_stats:
+        data:
+          r_vmware_vm_host_drs_rule: "{{ r_vmware_vm_host_drs_rule }}"

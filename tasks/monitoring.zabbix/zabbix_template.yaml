@@ -18,3 +18,8 @@
       template_groups: "{{ zabbix_template_template_groups | default(omit, True) }}"
       validate_certs: "{{ zabbix_template_validate_certs | default(omit, True) }}"
       link_templates: "{{ zabbix_template_link_templates | default(omit, True) }}"
+
+- name: "export r_zabbix_template"
+  set_stats:
+    data:
+      r_zabbix_template: "{{ r_zabbix_template }}"

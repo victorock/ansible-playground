@@ -34,3 +34,8 @@
     - name: "plugin_azure_rm_servicebussaspolicy"
       azure_rm_servicebussaspolicy: "{{ azure_rm_servicebussaspolicy }}"
       register: r_azure_rm_servicebussaspolicy
+
+    - name: "export r_azure_rm_servicebussaspolicy"
+      set_stats:
+        data:
+          r_azure_rm_servicebussaspolicy: "{{ r_azure_rm_servicebussaspolicy }}"

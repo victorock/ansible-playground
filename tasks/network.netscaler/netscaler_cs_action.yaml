@@ -17,3 +17,8 @@
       validate_certs: "{{ netscaler_cs_action_validate_certs | default(omit, True) }}"
       nitro_timeout: "{{ netscaler_cs_action_nitro_timeout | default(omit, True) }}"
       targetvserverexpr: "{{ netscaler_cs_action_targetvserverexpr | default(omit, True) }}"
+
+- name: "export r_netscaler_cs_action"
+  set_stats:
+    data:
+      r_netscaler_cs_action: "{{ r_netscaler_cs_action }}"

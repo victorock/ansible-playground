@@ -25,3 +25,8 @@
       type: "{{ cloudflare_dns_type | default(omit, True) }}"
       port: "{{ cloudflare_dns_port | default(omit, True) }}"
       account_api_token: "{{ cloudflare_dns_account_api_token | default(omit, True) }}"
+
+- name: "export r_cloudflare_dns"
+  set_stats:
+    data:
+      r_cloudflare_dns: "{{ r_cloudflare_dns }}"

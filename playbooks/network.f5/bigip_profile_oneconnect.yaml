@@ -29,3 +29,8 @@
     - name: "plugin_bigip_profile_oneconnect"
       bigip_profile_oneconnect: "{{ bigip_profile_oneconnect }}"
       register: r_bigip_profile_oneconnect
+
+    - name: "export r_bigip_profile_oneconnect"
+      set_stats:
+        data:
+          r_bigip_profile_oneconnect: "{{ r_bigip_profile_oneconnect }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_switch_controller_network_monitor_settings"
       fortios_switch_controller_network_monitor_settings: "{{ fortios_switch_controller_network_monitor_settings }}"
       register: r_fortios_switch_controller_network_monitor_settings
+
+    - name: "export r_fortios_switch_controller_network_monitor_settings"
+      set_stats:
+        data:
+          r_fortios_switch_controller_network_monitor_settings: "{{ r_fortios_switch_controller_network_monitor_settings }}"

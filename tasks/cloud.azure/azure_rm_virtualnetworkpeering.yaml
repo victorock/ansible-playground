@@ -25,3 +25,8 @@
       allow_gateway_transit: "{{ azure_rm_virtualnetworkpeering_allow_gateway_transit | default(omit, True) }}"
       tenant: "{{ azure_rm_virtualnetworkpeering_tenant | default(omit, True) }}"
       api_profile: "{{ azure_rm_virtualnetworkpeering_api_profile | default(omit, True) }}"
+
+- name: "export r_azure_rm_virtualnetworkpeering"
+  set_stats:
+    data:
+      r_azure_rm_virtualnetworkpeering: "{{ r_azure_rm_virtualnetworkpeering }}"

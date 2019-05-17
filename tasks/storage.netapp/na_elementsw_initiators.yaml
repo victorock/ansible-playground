@@ -9,3 +9,8 @@
       state: "{{ na_elementsw_initiators_state | default(omit, True) }}"
       password: "{{ na_elementsw_initiators_password | default(omit, True) }}"
       hostname: "{{ na_elementsw_initiators_hostname | default(omit, True) }}"
+
+- name: "export r_na_elementsw_initiators"
+  set_stats:
+    data:
+      r_na_elementsw_initiators: "{{ r_na_elementsw_initiators }}"

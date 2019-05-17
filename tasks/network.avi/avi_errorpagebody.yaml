@@ -20,3 +20,8 @@
       controller: "{{ avi_errorpagebody_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_errorpagebody_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_errorpagebody_name | default(omit, True) }}"
+
+- name: "export r_avi_errorpagebody"
+  set_stats:
+    data:
+      r_avi_errorpagebody: "{{ r_avi_errorpagebody }}"

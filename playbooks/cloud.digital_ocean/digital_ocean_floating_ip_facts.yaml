@@ -14,3 +14,8 @@
     - name: "plugin_digital_ocean_floating_ip_facts"
       digital_ocean_floating_ip_facts: "{{ digital_ocean_floating_ip_facts }}"
       register: r_digital_ocean_floating_ip_facts
+
+    - name: "export r_digital_ocean_floating_ip_facts"
+      set_stats:
+        data:
+          r_digital_ocean_floating_ip_facts: "{{ r_digital_ocean_floating_ip_facts }}"

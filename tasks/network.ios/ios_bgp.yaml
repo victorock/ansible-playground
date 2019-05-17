@@ -6,3 +6,8 @@
     ios_bgp: 
       operation: "{{ ios_bgp_operation | default(omit, True) }}"
       config: "{{ ios_bgp_config | default(omit, True) }}"
+
+- name: "export r_ios_bgp"
+  set_stats:
+    data:
+      r_ios_bgp: "{{ r_ios_bgp }}"

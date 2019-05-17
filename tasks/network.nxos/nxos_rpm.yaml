@@ -9,3 +9,8 @@
       pkg: "{{ nxos_rpm_pkg | default(omit, True) }}"
       file_system: "{{ nxos_rpm_file_system | default(omit, True) }}"
       provider: "{{ nxos_rpm_provider | default(omit, True) }}"
+
+- name: "export r_nxos_rpm"
+  set_stats:
+    data:
+      r_nxos_rpm: "{{ r_nxos_rpm }}"

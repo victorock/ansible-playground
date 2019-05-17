@@ -47,3 +47,8 @@
     - name: "plugin_kubevirt_preset"
       kubevirt_preset: "{{ kubevirt_preset }}"
       register: r_kubevirt_preset
+
+    - name: "export r_kubevirt_preset"
+      set_stats:
+        data:
+          r_kubevirt_preset: "{{ r_kubevirt_preset }}"

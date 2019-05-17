@@ -26,3 +26,8 @@
     - name: "plugin_ovirt_host_network"
       ovirt_host_network: "{{ ovirt_host_network }}"
       register: r_ovirt_host_network
+
+    - name: "export r_ovirt_host_network"
+      set_stats:
+        data:
+          r_ovirt_host_network: "{{ r_ovirt_host_network }}"

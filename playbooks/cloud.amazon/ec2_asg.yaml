@@ -49,3 +49,8 @@
     - name: "plugin_ec2_asg"
       ec2_asg: "{{ ec2_asg }}"
       register: r_ec2_asg
+
+    - name: "export r_ec2_asg"
+      set_stats:
+        data:
+          r_ec2_asg: "{{ r_ec2_asg }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_local_in_policy"
       fortios_firewall_local_in_policy: "{{ fortios_firewall_local_in_policy }}"
       register: r_fortios_firewall_local_in_policy
+
+    - name: "export r_fortios_firewall_local_in_policy"
+      set_stats:
+        data:
+          r_fortios_firewall_local_in_policy: "{{ r_fortios_firewall_local_in_policy }}"

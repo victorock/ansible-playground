@@ -16,3 +16,8 @@
       provider: "{{ bigip_dns_cache_resolver_provider | default(omit, True) }}"
       password: "{{ bigip_dns_cache_resolver_password | default(omit, True) }}"
       validate_certs: "{{ bigip_dns_cache_resolver_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_dns_cache_resolver"
+  set_stats:
+    data:
+      r_bigip_dns_cache_resolver: "{{ r_bigip_dns_cache_resolver }}"

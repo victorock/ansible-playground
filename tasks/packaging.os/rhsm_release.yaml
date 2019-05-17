@@ -5,3 +5,8 @@
   vars:
     rhsm_release: 
       release: "{{ rhsm_release_release | default(omit, True) }}"
+
+- name: "export r_rhsm_release"
+  set_stats:
+    data:
+      r_rhsm_release: "{{ r_rhsm_release }}"

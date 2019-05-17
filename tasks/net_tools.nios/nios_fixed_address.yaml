@@ -14,3 +14,8 @@
       extattrs: "{{ nios_fixed_address_extattrs | default(omit, True) }}"
       options: "{{ nios_fixed_address_options | default(omit, True) }}"
       name: "{{ nios_fixed_address_name | default(omit, True) }}"
+
+- name: "export r_nios_fixed_address"
+  set_stats:
+    data:
+      r_nios_fixed_address: "{{ r_nios_fixed_address }}"

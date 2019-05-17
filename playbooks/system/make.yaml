@@ -15,3 +15,8 @@
     - name: "plugin_make"
       make: "{{ make }}"
       register: r_make
+
+    - name: "export r_make"
+      set_stats:
+        data:
+          r_make: "{{ r_make }}"

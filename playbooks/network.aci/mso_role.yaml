@@ -25,3 +25,8 @@
     - name: "plugin_mso_role"
       mso_role: "{{ mso_role }}"
       register: r_mso_role
+
+    - name: "export r_mso_role"
+      set_stats:
+        data:
+          r_mso_role: "{{ r_mso_role }}"

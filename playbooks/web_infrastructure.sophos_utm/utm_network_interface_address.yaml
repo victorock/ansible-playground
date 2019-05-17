@@ -24,3 +24,8 @@
     - name: "plugin_utm_network_interface_address"
       utm_network_interface_address: "{{ utm_network_interface_address }}"
       register: r_utm_network_interface_address
+
+    - name: "export r_utm_network_interface_address"
+      set_stats:
+        data:
+          r_utm_network_interface_address: "{{ r_utm_network_interface_address }}"

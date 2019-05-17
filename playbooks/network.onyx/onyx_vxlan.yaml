@@ -17,3 +17,8 @@
     - name: "plugin_onyx_vxlan"
       onyx_vxlan: "{{ onyx_vxlan }}"
       register: r_onyx_vxlan
+
+    - name: "export r_onyx_vxlan"
+      set_stats:
+        data:
+          r_onyx_vxlan: "{{ r_onyx_vxlan }}"

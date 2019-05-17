@@ -22,3 +22,8 @@
       switch_name: "{{ vmware_dvswitch_switch_name | default(omit, True) }}"
       uplink_quantity: "{{ vmware_dvswitch_uplink_quantity | default(omit, True) }}"
       description: "{{ vmware_dvswitch_description | default(omit, True) }}"
+
+- name: "export r_vmware_dvswitch"
+  set_stats:
+    data:
+      r_vmware_dvswitch: "{{ r_vmware_dvswitch }}"

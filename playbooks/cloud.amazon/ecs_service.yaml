@@ -38,3 +38,8 @@
     - name: "plugin_ecs_service"
       ecs_service: "{{ ecs_service }}"
       register: r_ecs_service
+
+    - name: "export r_ecs_service"
+      set_stats:
+        data:
+          r_ecs_service: "{{ r_ecs_service }}"

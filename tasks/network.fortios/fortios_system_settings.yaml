@@ -10,3 +10,8 @@
       system_settings: "{{ fortios_system_settings_system_settings | default(omit, True) }}"
       password: "{{ fortios_system_settings_password | default(omit, True) }}"
       vdom: "{{ fortios_system_settings_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_system_settings"
+  set_stats:
+    data:
+      r_fortios_system_settings: "{{ r_fortios_system_settings }}"

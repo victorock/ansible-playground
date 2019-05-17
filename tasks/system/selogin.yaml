@@ -10,3 +10,8 @@
       reload: "{{ selogin_reload | default(omit, True) }}"
       state: "{{ selogin_state | default(omit, True) }}"
       login: "{{ selogin_login | default(omit, True) }}"
+
+- name: "export r_selogin"
+  set_stats:
+    data:
+      r_selogin: "{{ r_selogin }}"

@@ -10,3 +10,8 @@
       pn_parameters: "{{ pn_show_pn_parameters | default(omit, True) }}"
       pn_options: "{{ pn_show_pn_options | default(omit, True) }}"
       pn_cliswitch: "{{ pn_show_pn_cliswitch | default(omit, True) }}"
+
+- name: "export r_pn_show"
+  set_stats:
+    data:
+      r_pn_show: "{{ r_pn_show }}"

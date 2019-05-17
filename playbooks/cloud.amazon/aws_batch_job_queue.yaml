@@ -24,3 +24,8 @@
     - name: "plugin_aws_batch_job_queue"
       aws_batch_job_queue: "{{ aws_batch_job_queue }}"
       register: r_aws_batch_job_queue
+
+    - name: "export r_aws_batch_job_queue"
+      set_stats:
+        data:
+          r_aws_batch_job_queue: "{{ r_aws_batch_job_queue }}"

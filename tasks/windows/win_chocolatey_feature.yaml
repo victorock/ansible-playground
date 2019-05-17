@@ -6,3 +6,8 @@
     win_chocolatey_feature: 
       state: "{{ win_chocolatey_feature_state | default(omit, True) }}"
       name: "{{ win_chocolatey_feature_name | default(omit, True) }}"
+
+- name: "export r_win_chocolatey_feature"
+  set_stats:
+    data:
+      r_win_chocolatey_feature: "{{ r_win_chocolatey_feature }}"

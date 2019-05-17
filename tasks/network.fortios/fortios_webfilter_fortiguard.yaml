@@ -10,3 +10,8 @@
       webfilter_fortiguard: "{{ fortios_webfilter_fortiguard_webfilter_fortiguard | default(omit, True) }}"
       password: "{{ fortios_webfilter_fortiguard_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_fortiguard_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_fortiguard"
+  set_stats:
+    data:
+      r_fortios_webfilter_fortiguard: "{{ r_fortios_webfilter_fortiguard }}"

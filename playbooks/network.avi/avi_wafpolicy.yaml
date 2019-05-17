@@ -34,3 +34,8 @@
     - name: "plugin_avi_wafpolicy"
       avi_wafpolicy: "{{ avi_wafpolicy }}"
       register: r_avi_wafpolicy
+
+    - name: "export r_avi_wafpolicy"
+      set_stats:
+        data:
+          r_avi_wafpolicy: "{{ r_avi_wafpolicy }}"

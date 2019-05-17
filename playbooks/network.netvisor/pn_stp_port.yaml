@@ -21,3 +21,8 @@
     - name: "plugin_pn_stp_port"
       pn_stp_port: "{{ pn_stp_port }}"
       register: r_pn_stp_port
+
+    - name: "export r_pn_stp_port"
+      set_stats:
+        data:
+          r_pn_stp_port: "{{ r_pn_stp_port }}"

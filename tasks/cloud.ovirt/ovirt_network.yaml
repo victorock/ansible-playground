@@ -22,3 +22,8 @@
       label: "{{ ovirt_network_label | default(omit, True) }}"
       id: "{{ ovirt_network_id | default(omit, True) }}"
       wait: "{{ ovirt_network_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_network"
+  set_stats:
+    data:
+      r_ovirt_network: "{{ r_ovirt_network }}"

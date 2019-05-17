@@ -13,3 +13,8 @@
       password: "{{ xenserver_guest_powerstate_password | default(omit, True) }}"
       validate_certs: "{{ xenserver_guest_powerstate_validate_certs | default(omit, True) }}"
       wait_for_ip_address: "{{ xenserver_guest_powerstate_wait_for_ip_address | default(omit, True) }}"
+
+- name: "export r_xenserver_guest_powerstate"
+  set_stats:
+    data:
+      r_xenserver_guest_powerstate: "{{ r_xenserver_guest_powerstate }}"

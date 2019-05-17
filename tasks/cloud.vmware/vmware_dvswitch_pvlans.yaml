@@ -12,3 +12,8 @@
       password: "{{ vmware_dvswitch_pvlans_password | default(omit, True) }}"
       validate_certs: "{{ vmware_dvswitch_pvlans_validate_certs | default(omit, True) }}"
       port: "{{ vmware_dvswitch_pvlans_port | default(omit, True) }}"
+
+- name: "export r_vmware_dvswitch_pvlans"
+  set_stats:
+    data:
+      r_vmware_dvswitch_pvlans: "{{ r_vmware_dvswitch_pvlans }}"

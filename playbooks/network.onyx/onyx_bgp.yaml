@@ -17,3 +17,8 @@
     - name: "plugin_onyx_bgp"
       onyx_bgp: "{{ onyx_bgp }}"
       register: r_onyx_bgp
+
+    - name: "export r_onyx_bgp"
+      set_stats:
+        data:
+          r_onyx_bgp: "{{ r_onyx_bgp }}"

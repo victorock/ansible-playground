@@ -21,3 +21,8 @@
     - name: "plugin_win_template"
       win_template: "{{ win_template }}"
       register: r_win_template
+
+    - name: "export r_win_template"
+      set_stats:
+        data:
+          r_win_template: "{{ r_win_template }}"

@@ -21,3 +21,8 @@
       controller: "{{ avi_certificatemanagementprofile_controller | default(omit, True) }}"
       avi_api_update_method: "{{ avi_certificatemanagementprofile_avi_api_update_method | default(omit, True) }}"
       name: "{{ avi_certificatemanagementprofile_name | default(omit, True) }}"
+
+- name: "export r_avi_certificatemanagementprofile"
+  set_stats:
+    data:
+      r_avi_certificatemanagementprofile: "{{ r_avi_certificatemanagementprofile }}"

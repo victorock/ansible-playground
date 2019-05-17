@@ -15,3 +15,8 @@
       job_wait: "{{ idrac_firmware_job_wait | default(omit, True) }}"
       idrac_ip: "{{ idrac_firmware_idrac_ip | default(omit, True) }}"
       idrac_password: "{{ idrac_firmware_idrac_password | default(omit, True) }}"
+
+- name: "export r_idrac_firmware"
+  set_stats:
+    data:
+      r_idrac_firmware: "{{ r_idrac_firmware }}"

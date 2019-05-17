@@ -23,3 +23,8 @@
     - name: "plugin_netapp_e_alerts"
       netapp_e_alerts: "{{ netapp_e_alerts }}"
       register: r_netapp_e_alerts
+
+    - name: "export r_netapp_e_alerts"
+      set_stats:
+        data:
+          r_netapp_e_alerts: "{{ r_netapp_e_alerts }}"

@@ -20,3 +20,8 @@
     - name: "plugin_elb_classic_lb_facts"
       elb_classic_lb_facts: "{{ elb_classic_lb_facts }}"
       register: r_elb_classic_lb_facts
+
+    - name: "export r_elb_classic_lb_facts"
+      set_stats:
+        data:
+          r_elb_classic_lb_facts: "{{ r_elb_classic_lb_facts }}"

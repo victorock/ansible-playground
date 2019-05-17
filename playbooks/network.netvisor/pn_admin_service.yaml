@@ -24,3 +24,8 @@
     - name: "plugin_pn_admin_service"
       pn_admin_service: "{{ pn_admin_service }}"
       register: r_pn_admin_service
+
+    - name: "export r_pn_admin_service"
+      set_stats:
+        data:
+          r_pn_admin_service: "{{ r_pn_admin_service }}"

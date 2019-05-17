@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_threat_weight"
       fortios_log_threat_weight: "{{ fortios_log_threat_weight }}"
       register: r_fortios_log_threat_weight
+
+    - name: "export r_fortios_log_threat_weight"
+      set_stats:
+        data:
+          r_fortios_log_threat_weight: "{{ r_fortios_log_threat_weight }}"

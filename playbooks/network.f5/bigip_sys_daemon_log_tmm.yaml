@@ -28,3 +28,8 @@
     - name: "plugin_bigip_sys_daemon_log_tmm"
       bigip_sys_daemon_log_tmm: "{{ bigip_sys_daemon_log_tmm }}"
       register: r_bigip_sys_daemon_log_tmm
+
+    - name: "export r_bigip_sys_daemon_log_tmm"
+      set_stats:
+        data:
+          r_bigip_sys_daemon_log_tmm: "{{ r_bigip_sys_daemon_log_tmm }}"

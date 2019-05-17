@@ -23,3 +23,8 @@
     - name: "plugin_gcp_storage_object"
       gcp_storage_object: "{{ gcp_storage_object }}"
       register: r_gcp_storage_object
+
+    - name: "export r_gcp_storage_object"
+      set_stats:
+        data:
+          r_gcp_storage_object: "{{ r_gcp_storage_object }}"

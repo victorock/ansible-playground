@@ -14,3 +14,8 @@
     - name: "plugin_ce_vrf"
       ce_vrf: "{{ ce_vrf }}"
       register: r_ce_vrf
+
+    - name: "export r_ce_vrf"
+      set_stats:
+        data:
+          r_ce_vrf: "{{ r_ce_vrf }}"

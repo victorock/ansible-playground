@@ -27,3 +27,8 @@
     - name: "plugin_avi_snmptrapprofile"
       avi_snmptrapprofile: "{{ avi_snmptrapprofile }}"
       register: r_avi_snmptrapprofile
+
+    - name: "export r_avi_snmptrapprofile"
+      set_stats:
+        data:
+          r_avi_snmptrapprofile: "{{ r_avi_snmptrapprofile }}"

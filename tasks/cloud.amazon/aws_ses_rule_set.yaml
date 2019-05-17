@@ -16,3 +16,8 @@
       ec2_url: "{{ aws_ses_rule_set_ec2_url | default(omit, True) }}"
       active: "{{ aws_ses_rule_set_active | default(omit, True) }}"
       validate_certs: "{{ aws_ses_rule_set_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_ses_rule_set"
+  set_stats:
+    data:
+      r_aws_ses_rule_set: "{{ r_aws_ses_rule_set }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_endpoint_control_profile_https | default(omit, True) }}"
       password: "{{ fortios_endpoint_control_profile_password | default(omit, True) }}"
       vdom: "{{ fortios_endpoint_control_profile_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_endpoint_control_profile"
+  set_stats:
+    data:
+      r_fortios_endpoint_control_profile: "{{ r_fortios_endpoint_control_profile }}"

@@ -20,3 +20,8 @@
     - name: "plugin_nagios"
       nagios: "{{ nagios }}"
       register: r_nagios
+
+    - name: "export r_nagios"
+      set_stats:
+        data:
+          r_nagios: "{{ r_nagios }}"

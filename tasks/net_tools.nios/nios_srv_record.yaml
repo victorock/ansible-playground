@@ -15,3 +15,8 @@
       view: "{{ nios_srv_record_view | default(omit, True) }}"
       port: "{{ nios_srv_record_port | default(omit, True) }}"
       name: "{{ nios_srv_record_name | default(omit, True) }}"
+
+- name: "export r_nios_srv_record"
+  set_stats:
+    data:
+      r_nios_srv_record: "{{ r_nios_srv_record }}"

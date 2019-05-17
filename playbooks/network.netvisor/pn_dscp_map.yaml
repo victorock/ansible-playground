@@ -15,3 +15,8 @@
     - name: "plugin_pn_dscp_map"
       pn_dscp_map: "{{ pn_dscp_map }}"
       register: r_pn_dscp_map
+
+    - name: "export r_pn_dscp_map"
+      set_stats:
+        data:
+          r_pn_dscp_map: "{{ r_pn_dscp_map }}"

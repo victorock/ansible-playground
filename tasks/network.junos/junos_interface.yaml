@@ -18,3 +18,8 @@
       speed: "{{ junos_interface_speed | default(omit, True) }}"
       tx_rate: "{{ junos_interface_tx_rate | default(omit, True) }}"
       name: "{{ junos_interface_name | default(omit, True) }}"
+
+- name: "export r_junos_interface"
+  set_stats:
+    data:
+      r_junos_interface: "{{ r_junos_interface }}"

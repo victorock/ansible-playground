@@ -16,3 +16,8 @@
     - name: "plugin_webfaction_mailbox"
       webfaction_mailbox: "{{ webfaction_mailbox }}"
       register: r_webfaction_mailbox
+
+    - name: "export r_webfaction_mailbox"
+      set_stats:
+        data:
+          r_webfaction_mailbox: "{{ r_webfaction_mailbox }}"

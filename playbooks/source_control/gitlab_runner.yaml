@@ -26,3 +26,8 @@
     - name: "plugin_gitlab_runner"
       gitlab_runner: "{{ gitlab_runner }}"
       register: r_gitlab_runner
+
+    - name: "export r_gitlab_runner"
+      set_stats:
+        data:
+          r_gitlab_runner: "{{ r_gitlab_runner }}"

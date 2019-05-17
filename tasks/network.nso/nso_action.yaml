@@ -14,3 +14,8 @@
       password: "{{ nso_action_password | default(omit, True) }}"
       validate_certs: "{{ nso_action_validate_certs | default(omit, True) }}"
       validate_strict: "{{ nso_action_validate_strict | default(omit, True) }}"
+
+- name: "export r_nso_action"
+  set_stats:
+    data:
+      r_nso_action: "{{ r_nso_action }}"

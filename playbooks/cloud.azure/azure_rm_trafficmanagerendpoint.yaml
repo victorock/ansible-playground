@@ -36,3 +36,8 @@
     - name: "plugin_azure_rm_trafficmanagerendpoint"
       azure_rm_trafficmanagerendpoint: "{{ azure_rm_trafficmanagerendpoint }}"
       register: r_azure_rm_trafficmanagerendpoint
+
+    - name: "export r_azure_rm_trafficmanagerendpoint"
+      set_stats:
+        data:
+          r_azure_rm_trafficmanagerendpoint: "{{ r_azure_rm_trafficmanagerendpoint }}"

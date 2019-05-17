@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_identity_based_route"
       fortios_firewall_identity_based_route: "{{ fortios_firewall_identity_based_route }}"
       register: r_fortios_firewall_identity_based_route
+
+    - name: "export r_fortios_firewall_identity_based_route"
+      set_stats:
+        data:
+          r_fortios_firewall_identity_based_route: "{{ r_fortios_firewall_identity_based_route }}"

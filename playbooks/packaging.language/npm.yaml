@@ -22,3 +22,8 @@
     - name: "plugin_npm"
       npm: "{{ npm }}"
       register: r_npm
+
+    - name: "export r_npm"
+      set_stats:
+        data:
+          r_npm: "{{ r_npm }}"

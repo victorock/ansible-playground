@@ -27,3 +27,8 @@
     - name: "plugin_data_pipeline"
       data_pipeline: "{{ data_pipeline }}"
       register: r_data_pipeline
+
+    - name: "export r_data_pipeline"
+      set_stats:
+        data:
+          r_data_pipeline: "{{ r_data_pipeline }}"

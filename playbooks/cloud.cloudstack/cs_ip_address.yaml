@@ -27,3 +27,8 @@
     - name: "plugin_cs_ip_address"
       cs_ip_address: "{{ cs_ip_address }}"
       register: r_cs_ip_address
+
+    - name: "export r_cs_ip_address"
+      set_stats:
+        data:
+          r_cs_ip_address: "{{ r_cs_ip_address }}"

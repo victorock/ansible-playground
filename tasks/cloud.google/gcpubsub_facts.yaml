@@ -7,3 +7,8 @@
       topic: "{{ gcpubsub_facts_topic | default(omit, True) }}"
       state: "{{ gcpubsub_facts_state | default(omit, True) }}"
       view: "{{ gcpubsub_facts_view | default(omit, True) }}"
+
+- name: "export r_gcpubsub_facts"
+  set_stats:
+    data:
+      r_gcpubsub_facts: "{{ r_gcpubsub_facts }}"

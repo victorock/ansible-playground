@@ -26,3 +26,8 @@
       use_pmtu: "{{ bigip_tunnel_use_pmtu | default(omit, True) }}"
       validate_certs: "{{ bigip_tunnel_validate_certs | default(omit, True) }}"
       user: "{{ bigip_tunnel_user | default(omit, True) }}"
+
+- name: "export r_bigip_tunnel"
+  set_stats:
+    data:
+      r_bigip_tunnel: "{{ r_bigip_tunnel }}"

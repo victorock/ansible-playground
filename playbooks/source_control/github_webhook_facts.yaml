@@ -16,3 +16,8 @@
     - name: "plugin_github_webhook_facts"
       github_webhook_facts: "{{ github_webhook_facts }}"
       register: r_github_webhook_facts
+
+    - name: "export r_github_webhook_facts"
+      set_stats:
+        data:
+          r_github_webhook_facts: "{{ r_github_webhook_facts }}"

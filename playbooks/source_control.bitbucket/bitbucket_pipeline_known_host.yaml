@@ -18,3 +18,8 @@
     - name: "plugin_bitbucket_pipeline_known_host"
       bitbucket_pipeline_known_host: "{{ bitbucket_pipeline_known_host }}"
       register: r_bitbucket_pipeline_known_host
+
+    - name: "export r_bitbucket_pipeline_known_host"
+      set_stats:
+        data:
+          r_bitbucket_pipeline_known_host: "{{ r_bitbucket_pipeline_known_host }}"

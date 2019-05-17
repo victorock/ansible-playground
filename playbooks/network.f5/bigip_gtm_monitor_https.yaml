@@ -38,3 +38,8 @@
     - name: "plugin_bigip_gtm_monitor_https"
       bigip_gtm_monitor_https: "{{ bigip_gtm_monitor_https }}"
       register: r_bigip_gtm_monitor_https
+
+    - name: "export r_bigip_gtm_monitor_https"
+      set_stats:
+        data:
+          r_bigip_gtm_monitor_https: "{{ r_bigip_gtm_monitor_https }}"

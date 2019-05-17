@@ -13,3 +13,8 @@
       provider: "{{ bigip_device_group_member_provider | default(omit, True) }}"
       password: "{{ bigip_device_group_member_password | default(omit, True) }}"
       validate_certs: "{{ bigip_device_group_member_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_device_group_member"
+  set_stats:
+    data:
+      r_bigip_device_group_member: "{{ r_bigip_device_group_member }}"

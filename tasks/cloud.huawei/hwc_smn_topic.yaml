@@ -15,3 +15,8 @@
       password: "{{ hwc_smn_topic_password | default(omit, True) }}"
       id: "{{ hwc_smn_topic_id | default(omit, True) }}"
       identity_endpoint: "{{ hwc_smn_topic_identity_endpoint | default(omit, True) }}"
+
+- name: "export r_hwc_smn_topic"
+  set_stats:
+    data:
+      r_hwc_smn_topic: "{{ r_hwc_smn_topic }}"

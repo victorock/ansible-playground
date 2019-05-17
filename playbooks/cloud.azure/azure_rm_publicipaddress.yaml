@@ -35,3 +35,8 @@
     - name: "plugin_azure_rm_publicipaddress"
       azure_rm_publicipaddress: "{{ azure_rm_publicipaddress }}"
       register: r_azure_rm_publicipaddress
+
+    - name: "export r_azure_rm_publicipaddress"
+      set_stats:
+        data:
+          r_azure_rm_publicipaddress: "{{ r_azure_rm_publicipaddress }}"

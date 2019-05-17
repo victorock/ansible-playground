@@ -30,3 +30,8 @@
     - name: "plugin_gcp_redis_instance"
       gcp_redis_instance: "{{ gcp_redis_instance }}"
       register: r_gcp_redis_instance
+
+    - name: "export r_gcp_redis_instance"
+      set_stats:
+        data:
+          r_gcp_redis_instance: "{{ r_gcp_redis_instance }}"

@@ -16,3 +16,8 @@
       timeout: "{{ ovirt_mac_pool_timeout | default(omit, True) }}"
       id: "{{ ovirt_mac_pool_id | default(omit, True) }}"
       wait: "{{ ovirt_mac_pool_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_mac_pool"
+  set_stats:
+    data:
+      r_ovirt_mac_pool: "{{ r_ovirt_mac_pool }}"

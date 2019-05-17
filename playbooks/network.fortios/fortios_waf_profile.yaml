@@ -17,3 +17,8 @@
     - name: "plugin_fortios_waf_profile"
       fortios_waf_profile: "{{ fortios_waf_profile }}"
       register: r_fortios_waf_profile
+
+    - name: "export r_fortios_waf_profile"
+      set_stats:
+        data:
+          r_fortios_waf_profile: "{{ r_fortios_waf_profile }}"

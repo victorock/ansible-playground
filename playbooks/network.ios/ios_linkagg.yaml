@@ -20,3 +20,8 @@
     - name: "plugin_ios_linkagg"
       ios_linkagg: "{{ ios_linkagg }}"
       register: r_ios_linkagg
+
+    - name: "export r_ios_linkagg"
+      set_stats:
+        data:
+          r_ios_linkagg: "{{ r_ios_linkagg }}"

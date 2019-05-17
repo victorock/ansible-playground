@@ -31,3 +31,8 @@
       timeout: "{{ bigip_gtm_monitor_https_timeout | default(omit, True) }}"
       target_password: "{{ bigip_gtm_monitor_https_target_password | default(omit, True) }}"
       validate_certs: "{{ bigip_gtm_monitor_https_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_gtm_monitor_https"
+  set_stats:
+    data:
+      r_bigip_gtm_monitor_https: "{{ r_bigip_gtm_monitor_https }}"

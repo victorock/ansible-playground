@@ -10,3 +10,8 @@
       system_dhcp_server: "{{ fortios_system_dhcp_server_system_dhcp_server | default(omit, True) }}"
       password: "{{ fortios_system_dhcp_server_password | default(omit, True) }}"
       vdom: "{{ fortios_system_dhcp_server_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_system_dhcp_server"
+  set_stats:
+    data:
+      r_fortios_system_dhcp_server: "{{ r_fortios_system_dhcp_server }}"

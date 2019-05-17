@@ -9,3 +9,8 @@
       portchannel: "{{ nxos_vpc_interface_portchannel | default(omit, True) }}"
       vpc: "{{ nxos_vpc_interface_vpc | default(omit, True) }}"
       provider: "{{ nxos_vpc_interface_provider | default(omit, True) }}"
+
+- name: "export r_nxos_vpc_interface"
+  set_stats:
+    data:
+      r_nxos_vpc_interface: "{{ r_nxos_vpc_interface }}"

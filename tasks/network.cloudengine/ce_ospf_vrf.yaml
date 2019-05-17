@@ -26,3 +26,8 @@
       spfmaxinterval: "{{ ce_ospf_vrf_spfmaxinterval | default(omit, True) }}"
       spfinterval: "{{ ce_ospf_vrf_spfinterval | default(omit, True) }}"
       ospf: "{{ ce_ospf_vrf_ospf | default(omit, True) }}"
+
+- name: "export r_ce_ospf_vrf"
+  set_stats:
+    data:
+      r_ce_ospf_vrf: "{{ r_ce_ospf_vrf }}"

@@ -23,3 +23,8 @@
       redis_version: "{{ gcp_redis_instance_redis_version | default(omit, True) }}"
       authorized_network: "{{ gcp_redis_instance_authorized_network | default(omit, True) }}"
       display_name: "{{ gcp_redis_instance_display_name | default(omit, True) }}"
+
+- name: "export r_gcp_redis_instance"
+  set_stats:
+    data:
+      r_gcp_redis_instance: "{{ r_gcp_redis_instance }}"

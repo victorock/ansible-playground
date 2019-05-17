@@ -13,3 +13,8 @@
       ipa_pass: "{{ ipa_config_ipa_pass | default(omit, True) }}"
       ipa_timeout: "{{ ipa_config_ipa_timeout | default(omit, True) }}"
       validate_certs: "{{ ipa_config_validate_certs | default(omit, True) }}"
+
+- name: "export r_ipa_config"
+  set_stats:
+    data:
+      r_ipa_config: "{{ r_ipa_config }}"

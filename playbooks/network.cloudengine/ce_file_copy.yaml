@@ -14,3 +14,8 @@
     - name: "plugin_ce_file_copy"
       ce_file_copy: "{{ ce_file_copy }}"
       register: r_ce_file_copy
+
+    - name: "export r_ce_file_copy"
+      set_stats:
+        data:
+          r_ce_file_copy: "{{ r_ce_file_copy }}"

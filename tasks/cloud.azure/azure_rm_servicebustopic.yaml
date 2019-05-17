@@ -32,3 +32,8 @@
       name: "{{ azure_rm_servicebustopic_name | default(omit, True) }}"
       api_profile: "{{ azure_rm_servicebustopic_api_profile | default(omit, True) }}"
       namespace: "{{ azure_rm_servicebustopic_namespace | default(omit, True) }}"
+
+- name: "export r_azure_rm_servicebustopic"
+  set_stats:
+    data:
+      r_azure_rm_servicebustopic: "{{ r_azure_rm_servicebustopic }}"

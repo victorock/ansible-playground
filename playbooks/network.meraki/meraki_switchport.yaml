@@ -36,3 +36,8 @@
     - name: "plugin_meraki_switchport"
       meraki_switchport: "{{ meraki_switchport }}"
       register: r_meraki_switchport
+
+    - name: "export r_meraki_switchport"
+      set_stats:
+        data:
+          r_meraki_switchport: "{{ r_meraki_switchport }}"

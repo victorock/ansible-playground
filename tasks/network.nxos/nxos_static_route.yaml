@@ -14,3 +14,8 @@
       vrf: "{{ nxos_static_route_vrf | default(omit, True) }}"
       provider: "{{ nxos_static_route_provider | default(omit, True) }}"
       aggregate: "{{ nxos_static_route_aggregate | default(omit, True) }}"
+
+- name: "export r_nxos_static_route"
+  set_stats:
+    data:
+      r_nxos_static_route: "{{ r_nxos_static_route }}"

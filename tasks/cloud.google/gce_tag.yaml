@@ -12,3 +12,8 @@
       state: "{{ gce_tag_state | default(omit, True) }}"
       instance_pattern: "{{ gce_tag_instance_pattern | default(omit, True) }}"
       project_id: "{{ gce_tag_project_id | default(omit, True) }}"
+
+- name: "export r_gce_tag"
+  set_stats:
+    data:
+      r_gce_tag: "{{ r_gce_tag }}"

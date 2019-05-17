@@ -11,3 +11,8 @@
       endpoints: "{{ ibm_sa_vol_endpoints | default(omit, True) }}"
       pool: "{{ ibm_sa_vol_pool | default(omit, True) }}"
       size: "{{ ibm_sa_vol_size | default(omit, True) }}"
+
+- name: "export r_ibm_sa_vol"
+  set_stats:
+    data:
+      r_ibm_sa_vol: "{{ r_ibm_sa_vol }}"

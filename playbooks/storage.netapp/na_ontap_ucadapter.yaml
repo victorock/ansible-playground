@@ -23,3 +23,8 @@
     - name: "plugin_na_ontap_ucadapter"
       na_ontap_ucadapter: "{{ na_ontap_ucadapter }}"
       register: r_na_ontap_ucadapter
+
+    - name: "export r_na_ontap_ucadapter"
+      set_stats:
+        data:
+          r_na_ontap_ucadapter: "{{ r_na_ontap_ucadapter }}"

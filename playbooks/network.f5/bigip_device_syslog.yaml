@@ -36,3 +36,8 @@
     - name: "plugin_bigip_device_syslog"
       bigip_device_syslog: "{{ bigip_device_syslog }}"
       register: r_bigip_device_syslog
+
+    - name: "export r_bigip_device_syslog"
+      set_stats:
+        data:
+          r_bigip_device_syslog: "{{ r_bigip_device_syslog }}"

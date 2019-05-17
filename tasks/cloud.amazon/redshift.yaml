@@ -38,3 +38,8 @@
       validate_certs: "{{ redshift_validate_certs | default(omit, True) }}"
       skip_final_cluster_snapshot: "{{ redshift_skip_final_cluster_snapshot | default(omit, True) }}"
       preferred_maintenance_window: "{{ redshift_preferred_maintenance_window | default(omit, True) }}"
+
+- name: "export r_redshift"
+  set_stats:
+    data:
+      r_redshift: "{{ r_redshift }}"

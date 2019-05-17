@@ -8,3 +8,8 @@
       host_rules: "{{ gcp_url_map_host_rules | default(omit, True) }}"
       url_map_name: "{{ gcp_url_map_url_map_name | default(omit, True) }}"
       path_matchers: "{{ gcp_url_map_path_matchers | default(omit, True) }}"
+
+- name: "export r_gcp_url_map"
+  set_stats:
+    data:
+      r_gcp_url_map: "{{ r_gcp_url_map }}"

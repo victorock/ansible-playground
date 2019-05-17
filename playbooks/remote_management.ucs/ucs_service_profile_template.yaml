@@ -50,3 +50,8 @@
     - name: "plugin_ucs_service_profile_template"
       ucs_service_profile_template: "{{ ucs_service_profile_template }}"
       register: r_ucs_service_profile_template
+
+    - name: "export r_ucs_service_profile_template"
+      set_stats:
+        data:
+          r_ucs_service_profile_template: "{{ r_ucs_service_profile_template }}"

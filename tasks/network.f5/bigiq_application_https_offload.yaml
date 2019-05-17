@@ -20,3 +20,8 @@
       validate_certs: "{{ bigiq_application_https_offload_validate_certs | default(omit, True) }}"
       client_ssl_profile: "{{ bigiq_application_https_offload_client_ssl_profile | default(omit, True) }}"
       wait: "{{ bigiq_application_https_offload_wait | default(omit, True) }}"
+
+- name: "export r_bigiq_application_https_offload"
+  set_stats:
+    data:
+      r_bigiq_application_https_offload: "{{ r_bigiq_application_https_offload }}"

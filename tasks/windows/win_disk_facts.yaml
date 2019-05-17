@@ -2,3 +2,8 @@
 - name: "module_win_disk_facts"
   win_disk_facts:
   register: r_win_disk_facts
+
+- name: "export r_win_disk_facts"
+  set_stats:
+    data:
+      r_win_disk_facts: "{{ r_win_disk_facts }}"

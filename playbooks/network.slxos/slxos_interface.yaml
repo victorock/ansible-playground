@@ -22,3 +22,8 @@
     - name: "plugin_slxos_interface"
       slxos_interface: "{{ slxos_interface }}"
       register: r_slxos_interface
+
+    - name: "export r_slxos_interface"
+      set_stats:
+        data:
+          r_slxos_interface: "{{ r_slxos_interface }}"

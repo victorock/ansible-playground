@@ -37,3 +37,8 @@
       instance_type: "{{ ec2_launch_template_instance_type | default(omit, True) }}"
       validate_certs: "{{ ec2_launch_template_validate_certs | default(omit, True) }}"
       template_id: "{{ ec2_launch_template_template_id | default(omit, True) }}"
+
+- name: "export r_ec2_launch_template"
+  set_stats:
+    data:
+      r_ec2_launch_template: "{{ r_ec2_launch_template }}"

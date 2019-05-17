@@ -26,3 +26,8 @@
     - name: "plugin_ios_user"
       ios_user: "{{ ios_user }}"
       register: r_ios_user
+
+    - name: "export r_ios_user"
+      set_stats:
+        data:
+          r_ios_user: "{{ r_ios_user }}"

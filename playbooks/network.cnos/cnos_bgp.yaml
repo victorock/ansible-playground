@@ -26,3 +26,8 @@
     - name: "plugin_cnos_bgp"
       cnos_bgp: "{{ cnos_bgp }}"
       register: r_cnos_bgp
+
+    - name: "export r_cnos_bgp"
+      set_stats:
+        data:
+          r_cnos_bgp: "{{ r_cnos_bgp }}"

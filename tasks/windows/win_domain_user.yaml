@@ -31,3 +31,8 @@
       enabled: "{{ win_domain_user_enabled | default(omit, True) }}"
       attributes: "{{ win_domain_user_attributes | default(omit, True) }}"
       user_cannot_change_password: "{{ win_domain_user_user_cannot_change_password | default(omit, True) }}"
+
+- name: "export r_win_domain_user"
+  set_stats:
+    data:
+      r_win_domain_user: "{{ r_win_domain_user }}"

@@ -7,3 +7,8 @@
       root_certificates: "{{ certificate_complete_chain_root_certificates | default(omit, True) }}"
       intermediate_certificates: "{{ certificate_complete_chain_intermediate_certificates | default(omit, True) }}"
       input_chain: "{{ certificate_complete_chain_input_chain | default(omit, True) }}"
+
+- name: "export r_certificate_complete_chain"
+  set_stats:
+    data:
+      r_certificate_complete_chain: "{{ r_certificate_complete_chain }}"

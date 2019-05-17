@@ -23,3 +23,8 @@
     - name: "plugin_gcp_iam_role"
       gcp_iam_role: "{{ gcp_iam_role }}"
       register: r_gcp_iam_role
+
+    - name: "export r_gcp_iam_role"
+      set_stats:
+        data:
+          r_gcp_iam_role: "{{ r_gcp_iam_role }}"

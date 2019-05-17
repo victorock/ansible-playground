@@ -11,3 +11,8 @@
       state: "{{ lvg_state | default(omit, True) }}"
       pesize: "{{ lvg_pesize | default(omit, True) }}"
       pv_options: "{{ lvg_pv_options | default(omit, True) }}"
+
+- name: "export r_lvg"
+  set_stats:
+    data:
+      r_lvg: "{{ r_lvg }}"

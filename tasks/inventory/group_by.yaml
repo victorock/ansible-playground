@@ -6,3 +6,8 @@
     group_by: 
       parents: "{{ group_by_parents | default(omit, True) }}"
       key: "{{ group_by_key | default(omit, True) }}"
+
+- name: "export r_group_by"
+  set_stats:
+    data:
+      r_group_by: "{{ r_group_by }}"

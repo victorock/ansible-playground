@@ -17,3 +17,8 @@
     - name: "plugin_fortios_authentication_setting"
       fortios_authentication_setting: "{{ fortios_authentication_setting }}"
       register: r_fortios_authentication_setting
+
+    - name: "export r_fortios_authentication_setting"
+      set_stats:
+        data:
+          r_fortios_authentication_setting: "{{ r_fortios_authentication_setting }}"

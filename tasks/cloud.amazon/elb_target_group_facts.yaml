@@ -16,3 +16,8 @@
       names: "{{ elb_target_group_facts_names | default(omit, True) }}"
       ec2_url: "{{ elb_target_group_facts_ec2_url | default(omit, True) }}"
       validate_certs: "{{ elb_target_group_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_elb_target_group_facts"
+  set_stats:
+    data:
+      r_elb_target_group_facts: "{{ r_elb_target_group_facts }}"

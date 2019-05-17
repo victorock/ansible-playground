@@ -24,3 +24,8 @@
       port: "{{ postgresql_table_port | default(omit, True) }}"
       columns: "{{ postgresql_table_columns | default(omit, True) }}"
       like: "{{ postgresql_table_like | default(omit, True) }}"
+
+- name: "export r_postgresql_table"
+  set_stats:
+    data:
+      r_postgresql_table: "{{ r_postgresql_table }}"

@@ -20,3 +20,8 @@
       password: "{{ mail_password | default(omit, True) }}"
       port: "{{ mail_port | default(omit, True) }}"
       subject: "{{ mail_subject | default(omit, True) }}"
+
+- name: "export r_mail"
+  set_stats:
+    data:
+      r_mail: "{{ r_mail }}"

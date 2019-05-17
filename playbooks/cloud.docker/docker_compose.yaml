@@ -40,3 +40,8 @@
     - name: "plugin_docker_compose"
       docker_compose: "{{ docker_compose }}"
       register: r_docker_compose
+
+    - name: "export r_docker_compose"
+      set_stats:
+        data:
+          r_docker_compose: "{{ r_docker_compose }}"

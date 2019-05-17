@@ -27,3 +27,8 @@
     - name: "plugin_azure_rm_devtestlabvirtualmachine_facts"
       azure_rm_devtestlabvirtualmachine_facts: "{{ azure_rm_devtestlabvirtualmachine_facts }}"
       register: r_azure_rm_devtestlabvirtualmachine_facts
+
+    - name: "export r_azure_rm_devtestlabvirtualmachine_facts"
+      set_stats:
+        data:
+          r_azure_rm_devtestlabvirtualmachine_facts: "{{ r_azure_rm_devtestlabvirtualmachine_facts }}"

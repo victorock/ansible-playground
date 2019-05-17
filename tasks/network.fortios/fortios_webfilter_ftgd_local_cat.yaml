@@ -10,3 +10,8 @@
       https: "{{ fortios_webfilter_ftgd_local_cat_https | default(omit, True) }}"
       password: "{{ fortios_webfilter_ftgd_local_cat_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_ftgd_local_cat_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_ftgd_local_cat"
+  set_stats:
+    data:
+      r_fortios_webfilter_ftgd_local_cat: "{{ r_fortios_webfilter_ftgd_local_cat }}"

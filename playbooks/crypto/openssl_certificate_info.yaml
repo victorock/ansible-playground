@@ -14,3 +14,8 @@
     - name: "plugin_openssl_certificate_info"
       openssl_certificate_info: "{{ openssl_certificate_info }}"
       register: r_openssl_certificate_info
+
+    - name: "export r_openssl_certificate_info"
+      set_stats:
+        data:
+          r_openssl_certificate_info: "{{ r_openssl_certificate_info }}"

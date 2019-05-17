@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_applicationsecuritygroup"
       azure_rm_applicationsecuritygroup: "{{ azure_rm_applicationsecuritygroup }}"
       register: r_azure_rm_applicationsecuritygroup
+
+    - name: "export r_azure_rm_applicationsecuritygroup"
+      set_stats:
+        data:
+          r_azure_rm_applicationsecuritygroup: "{{ r_azure_rm_applicationsecuritygroup }}"

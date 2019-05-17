@@ -74,3 +74,8 @@
       nitro_pass: "{{ netscaler_cs_vserver_nitro_pass | default(omit, True) }}"
       validate_certs: "{{ netscaler_cs_vserver_validate_certs | default(omit, True) }}"
       dnsprofilename: "{{ netscaler_cs_vserver_dnsprofilename | default(omit, True) }}"
+
+- name: "export r_netscaler_cs_vserver"
+  set_stats:
+    data:
+      r_netscaler_cs_vserver: "{{ r_netscaler_cs_vserver }}"

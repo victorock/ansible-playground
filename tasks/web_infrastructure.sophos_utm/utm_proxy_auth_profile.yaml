@@ -37,3 +37,8 @@
       frontend_cookie_secret: "{{ utm_proxy_auth_profile_frontend_cookie_secret | default(omit, True) }}"
       validate_certs: "{{ utm_proxy_auth_profile_validate_certs | default(omit, True) }}"
       utm_port: "{{ utm_proxy_auth_profile_utm_port | default(omit, True) }}"
+
+- name: "export r_utm_proxy_auth_profile"
+  set_stats:
+    data:
+      r_utm_proxy_auth_profile: "{{ r_utm_proxy_auth_profile }}"

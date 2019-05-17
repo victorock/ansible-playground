@@ -13,3 +13,8 @@
       pn_delete_from_users: "{{ pn_role_pn_delete_from_users | default(omit, True) }}"
       pn_cliswitch: "{{ pn_role_pn_cliswitch | default(omit, True) }}"
       pn_running_config: "{{ pn_role_pn_running_config | default(omit, True) }}"
+
+- name: "export r_pn_role"
+  set_stats:
+    data:
+      r_pn_role: "{{ r_pn_role }}"

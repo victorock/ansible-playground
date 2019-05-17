@@ -28,3 +28,8 @@
       storage_class: "{{ s3_lifecycle_storage_class | default(omit, True) }}"
       validate_certs: "{{ s3_lifecycle_validate_certs | default(omit, True) }}"
       rule_id: "{{ s3_lifecycle_rule_id | default(omit, True) }}"
+
+- name: "export r_s3_lifecycle"
+  set_stats:
+    data:
+      r_s3_lifecycle: "{{ r_s3_lifecycle }}"

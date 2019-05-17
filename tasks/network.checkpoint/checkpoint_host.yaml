@@ -11,3 +11,8 @@
       policy_package: "{{ checkpoint_host_policy_package | default(omit, True) }}"
       ip_address: "{{ checkpoint_host_ip_address | default(omit, True) }}"
       targets: "{{ checkpoint_host_targets | default(omit, True) }}"
+
+- name: "export r_checkpoint_host"
+  set_stats:
+    data:
+      r_checkpoint_host: "{{ r_checkpoint_host }}"

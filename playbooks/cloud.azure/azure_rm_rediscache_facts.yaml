@@ -27,3 +27,8 @@
     - name: "plugin_azure_rm_rediscache_facts"
       azure_rm_rediscache_facts: "{{ azure_rm_rediscache_facts }}"
       register: r_azure_rm_rediscache_facts
+
+    - name: "export r_azure_rm_rediscache_facts"
+      set_stats:
+        data:
+          r_azure_rm_rediscache_facts: "{{ r_azure_rm_rediscache_facts }}"

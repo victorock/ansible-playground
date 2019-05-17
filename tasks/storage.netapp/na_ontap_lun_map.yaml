@@ -16,3 +16,8 @@
       path: "{{ na_ontap_lun_map_path | default(omit, True) }}"
       password: "{{ na_ontap_lun_map_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_lun_map_validate_certs | default(omit, True) }}"
+
+- name: "export r_na_ontap_lun_map"
+  set_stats:
+    data:
+      r_na_ontap_lun_map: "{{ r_na_ontap_lun_map }}"

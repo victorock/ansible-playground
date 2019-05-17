@@ -24,3 +24,8 @@
       validate_certs: "{{ rax_files_validate_certs | default(omit, True) }}"
       public: "{{ rax_files_public | default(omit, True) }}"
       auth_endpoint: "{{ rax_files_auth_endpoint | default(omit, True) }}"
+
+- name: "export r_rax_files"
+  set_stats:
+    data:
+      r_rax_files: "{{ r_rax_files }}"

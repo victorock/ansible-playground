@@ -19,3 +19,8 @@
     - name: "plugin_vmware_dvswitch_lacp"
       vmware_dvswitch_lacp: "{{ vmware_dvswitch_lacp }}"
       register: r_vmware_dvswitch_lacp
+
+    - name: "export r_vmware_dvswitch_lacp"
+      set_stats:
+        data:
+          r_vmware_dvswitch_lacp: "{{ r_vmware_dvswitch_lacp }}"

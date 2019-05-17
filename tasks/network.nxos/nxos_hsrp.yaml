@@ -14,3 +14,8 @@
       version: "{{ nxos_hsrp_version | default(omit, True) }}"
       provider: "{{ nxos_hsrp_provider | default(omit, True) }}"
       interface: "{{ nxos_hsrp_interface | default(omit, True) }}"
+
+- name: "export r_nxos_hsrp"
+  set_stats:
+    data:
+      r_nxos_hsrp: "{{ r_nxos_hsrp }}"

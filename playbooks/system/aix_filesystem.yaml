@@ -24,3 +24,8 @@
     - name: "plugin_aix_filesystem"
       aix_filesystem: "{{ aix_filesystem }}"
       register: r_aix_filesystem
+
+    - name: "export r_aix_filesystem"
+      set_stats:
+        data:
+          r_aix_filesystem: "{{ r_aix_filesystem }}"

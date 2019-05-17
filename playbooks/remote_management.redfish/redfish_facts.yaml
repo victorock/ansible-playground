@@ -17,3 +17,8 @@
     - name: "plugin_redfish_facts"
       redfish_facts: "{{ redfish_facts }}"
       register: r_redfish_facts
+
+    - name: "export r_redfish_facts"
+      set_stats:
+        data:
+          r_redfish_facts: "{{ r_redfish_facts }}"

@@ -10,3 +10,8 @@
       https: "{{ fortios_webfilter_ips_urlfilter_cache_setting_https | default(omit, True) }}"
       password: "{{ fortios_webfilter_ips_urlfilter_cache_setting_password | default(omit, True) }}"
       vdom: "{{ fortios_webfilter_ips_urlfilter_cache_setting_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_webfilter_ips_urlfilter_cache_setting"
+  set_stats:
+    data:
+      r_fortios_webfilter_ips_urlfilter_cache_setting: "{{ r_fortios_webfilter_ips_urlfilter_cache_setting }}"

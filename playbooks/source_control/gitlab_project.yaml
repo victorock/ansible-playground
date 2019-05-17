@@ -30,3 +30,8 @@
     - name: "plugin_gitlab_project"
       gitlab_project: "{{ gitlab_project }}"
       register: r_gitlab_project
+
+    - name: "export r_gitlab_project"
+      set_stats:
+        data:
+          r_gitlab_project: "{{ r_gitlab_project }}"

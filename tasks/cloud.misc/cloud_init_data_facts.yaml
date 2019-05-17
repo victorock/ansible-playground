@@ -5,3 +5,8 @@
   vars:
     cloud_init_data_facts: 
       filter: "{{ cloud_init_data_facts_filter | default(omit, True) }}"
+
+- name: "export r_cloud_init_data_facts"
+  set_stats:
+    data:
+      r_cloud_init_data_facts: "{{ r_cloud_init_data_facts }}"

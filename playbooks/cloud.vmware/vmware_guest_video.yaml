@@ -27,3 +27,8 @@
     - name: "plugin_vmware_guest_video"
       vmware_guest_video: "{{ vmware_guest_video }}"
       register: r_vmware_guest_video
+
+    - name: "export r_vmware_guest_video"
+      set_stats:
+        data:
+          r_vmware_guest_video: "{{ r_vmware_guest_video }}"

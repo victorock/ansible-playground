@@ -14,3 +14,8 @@
     - name: "plugin_slackpkg"
       slackpkg: "{{ slackpkg }}"
       register: r_slackpkg
+
+    - name: "export r_slackpkg"
+      set_stats:
+        data:
+          r_slackpkg: "{{ r_slackpkg }}"

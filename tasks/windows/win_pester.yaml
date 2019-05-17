@@ -6,3 +6,8 @@
     win_pester: 
       path: "{{ win_pester_path | default(omit, True) }}"
       version: "{{ win_pester_version | default(omit, True) }}"
+
+- name: "export r_win_pester"
+  set_stats:
+    data:
+      r_win_pester: "{{ r_win_pester }}"

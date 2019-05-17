@@ -20,3 +20,8 @@
     - name: "plugin_ce_bfd_session"
       ce_bfd_session: "{{ ce_bfd_session }}"
       register: r_ce_bfd_session
+
+    - name: "export r_ce_bfd_session"
+      set_stats:
+        data:
+          r_ce_bfd_session: "{{ r_ce_bfd_session }}"

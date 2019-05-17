@@ -12,3 +12,8 @@
     - name: "plugin_fail"
       fail: "{{ fail }}"
       register: r_fail
+
+    - name: "export r_fail"
+      set_stats:
+        data:
+          r_fail: "{{ r_fail }}"

@@ -25,3 +25,8 @@
     - name: "plugin_iam_managed_policy"
       iam_managed_policy: "{{ iam_managed_policy }}"
       register: r_iam_managed_policy
+
+    - name: "export r_iam_managed_policy"
+      set_stats:
+        data:
+          r_iam_managed_policy: "{{ r_iam_managed_policy }}"

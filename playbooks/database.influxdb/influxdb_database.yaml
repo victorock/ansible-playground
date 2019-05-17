@@ -24,3 +24,8 @@
     - name: "plugin_influxdb_database"
       influxdb_database: "{{ influxdb_database }}"
       register: r_influxdb_database
+
+    - name: "export r_influxdb_database"
+      set_stats:
+        data:
+          r_influxdb_database: "{{ r_influxdb_database }}"

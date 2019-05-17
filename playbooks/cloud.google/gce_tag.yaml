@@ -19,3 +19,8 @@
     - name: "plugin_gce_tag"
       gce_tag: "{{ gce_tag }}"
       register: r_gce_tag
+
+    - name: "export r_gce_tag"
+      set_stats:
+        data:
+          r_gce_tag: "{{ r_gce_tag }}"

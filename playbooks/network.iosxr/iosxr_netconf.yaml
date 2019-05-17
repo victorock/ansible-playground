@@ -15,3 +15,8 @@
     - name: "plugin_iosxr_netconf"
       iosxr_netconf: "{{ iosxr_netconf }}"
       register: r_iosxr_netconf
+
+    - name: "export r_iosxr_netconf"
+      set_stats:
+        data:
+          r_iosxr_netconf: "{{ r_iosxr_netconf }}"

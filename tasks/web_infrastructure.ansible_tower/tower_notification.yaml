@@ -42,3 +42,8 @@
       organization: "{{ tower_notification_organization | default(omit, True) }}"
       validate_certs: "{{ tower_notification_validate_certs | default(omit, True) }}"
       notify: "{{ tower_notification_notify | default(omit, True) }}"
+
+- name: "export r_tower_notification"
+  set_stats:
+    data:
+      r_tower_notification: "{{ r_tower_notification }}"

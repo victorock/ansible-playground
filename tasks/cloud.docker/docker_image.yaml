@@ -37,3 +37,8 @@
       timeout: "{{ docker_image_timeout | default(omit, True) }}"
       debug: "{{ docker_image_debug | default(omit, True) }}"
       validate_certs: "{{ docker_image_validate_certs | default(omit, True) }}"
+
+- name: "export r_docker_image"
+  set_stats:
+    data:
+      r_docker_image: "{{ r_docker_image }}"

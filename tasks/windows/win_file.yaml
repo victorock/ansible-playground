@@ -6,3 +6,8 @@
     win_file: 
       path: "{{ win_file_path | default(omit, True) }}"
       state: "{{ win_file_state | default(omit, True) }}"
+
+- name: "export r_win_file"
+  set_stats:
+    data:
+      r_win_file: "{{ r_win_file }}"

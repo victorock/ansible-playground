@@ -12,3 +12,8 @@
     - name: "plugin_pip_package_info"
       pip_package_info: "{{ pip_package_info }}"
       register: r_pip_package_info
+
+    - name: "export r_pip_package_info"
+      set_stats:
+        data:
+          r_pip_package_info: "{{ r_pip_package_info }}"

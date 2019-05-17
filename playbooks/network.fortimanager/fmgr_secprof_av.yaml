@@ -104,3 +104,8 @@
     - name: "plugin_fmgr_secprof_av"
       fmgr_secprof_av: "{{ fmgr_secprof_av }}"
       register: r_fmgr_secprof_av
+
+    - name: "export r_fmgr_secprof_av"
+      set_stats:
+        data:
+          r_fmgr_secprof_av: "{{ r_fmgr_secprof_av }}"

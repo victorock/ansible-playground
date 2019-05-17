@@ -17,3 +17,8 @@
       password: "{{ bigip_dns_nameserver_password | default(omit, True) }}"
       validate_certs: "{{ bigip_dns_nameserver_validate_certs | default(omit, True) }}"
       provider: "{{ bigip_dns_nameserver_provider | default(omit, True) }}"
+
+- name: "export r_bigip_dns_nameserver"
+  set_stats:
+    data:
+      r_bigip_dns_nameserver: "{{ r_bigip_dns_nameserver }}"

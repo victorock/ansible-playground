@@ -25,3 +25,8 @@
     - name: "plugin_cs_pod"
       cs_pod: "{{ cs_pod }}"
       register: r_cs_pod
+
+    - name: "export r_cs_pod"
+      set_stats:
+        data:
+          r_cs_pod: "{{ r_cs_pod }}"

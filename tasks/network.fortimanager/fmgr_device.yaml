@@ -12,3 +12,8 @@
       mode: "{{ fmgr_device_mode | default(omit, True) }}"
       device_serial: "{{ fmgr_device_device_serial | default(omit, True) }}"
       device_password: "{{ fmgr_device_device_password | default(omit, True) }}"
+
+- name: "export r_fmgr_device"
+  set_stats:
+    data:
+      r_fmgr_device: "{{ r_fmgr_device }}"

@@ -5,3 +5,8 @@
   vars:
     win_power_plan: 
       name: "{{ win_power_plan_name | default(omit, True) }}"
+
+- name: "export r_win_power_plan"
+  set_stats:
+    data:
+      r_win_power_plan: "{{ r_win_power_plan }}"

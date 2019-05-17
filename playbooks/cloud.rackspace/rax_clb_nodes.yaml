@@ -31,3 +31,8 @@
     - name: "plugin_rax_clb_nodes"
       rax_clb_nodes: "{{ rax_clb_nodes }}"
       register: r_rax_clb_nodes
+
+    - name: "export r_rax_clb_nodes"
+      set_stats:
+        data:
+          r_rax_clb_nodes: "{{ r_rax_clb_nodes }}"

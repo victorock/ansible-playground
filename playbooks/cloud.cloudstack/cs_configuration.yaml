@@ -24,3 +24,8 @@
     - name: "plugin_cs_configuration"
       cs_configuration: "{{ cs_configuration }}"
       register: r_cs_configuration
+
+    - name: "export r_cs_configuration"
+      set_stats:
+        data:
+          r_cs_configuration: "{{ r_cs_configuration }}"

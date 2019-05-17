@@ -17,3 +17,8 @@
     - name: "plugin_fortios_vpn_ipsec_phase1"
       fortios_vpn_ipsec_phase1: "{{ fortios_vpn_ipsec_phase1 }}"
       register: r_fortios_vpn_ipsec_phase1
+
+    - name: "export r_fortios_vpn_ipsec_phase1"
+      set_stats:
+        data:
+          r_fortios_vpn_ipsec_phase1: "{{ r_fortios_vpn_ipsec_phase1 }}"

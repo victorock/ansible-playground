@@ -25,3 +25,8 @@
       validate_certs: "{{ bigip_imish_config_validate_certs | default(omit, True) }}"
       match: "{{ bigip_imish_config_match | default(omit, True) }}"
       diff_ignore_lines: "{{ bigip_imish_config_diff_ignore_lines | default(omit, True) }}"
+
+- name: "export r_bigip_imish_config"
+  set_stats:
+    data:
+      r_bigip_imish_config: "{{ r_bigip_imish_config }}"

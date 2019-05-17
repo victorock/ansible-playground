@@ -31,3 +31,8 @@
       aad_profile: "{{ azure_rm_aks_aad_profile | default(omit, True) }}"
       api_profile: "{{ azure_rm_aks_api_profile | default(omit, True) }}"
       kubernetes_version: "{{ azure_rm_aks_kubernetes_version | default(omit, True) }}"
+
+- name: "export r_azure_rm_aks"
+  set_stats:
+    data:
+      r_azure_rm_aks: "{{ r_azure_rm_aks }}"

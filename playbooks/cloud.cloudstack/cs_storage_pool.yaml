@@ -31,3 +31,8 @@
     - name: "plugin_cs_storage_pool"
       cs_storage_pool: "{{ cs_storage_pool }}"
       register: r_cs_storage_pool
+
+    - name: "export r_cs_storage_pool"
+      set_stats:
+        data:
+          r_cs_storage_pool: "{{ r_cs_storage_pool }}"

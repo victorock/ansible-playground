@@ -30,3 +30,8 @@
     - name: "plugin_azure_rm_postgresqldatabase"
       azure_rm_postgresqldatabase: "{{ azure_rm_postgresqldatabase }}"
       register: r_azure_rm_postgresqldatabase
+
+    - name: "export r_azure_rm_postgresqldatabase"
+      set_stats:
+        data:
+          r_azure_rm_postgresqldatabase: "{{ r_azure_rm_postgresqldatabase }}"

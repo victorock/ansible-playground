@@ -5,3 +5,8 @@
   vars:
     routeros_facts: 
       gather_subset: "{{ routeros_facts_gather_subset | default(omit, True) }}"
+
+- name: "export r_routeros_facts"
+  set_stats:
+    data:
+      r_routeros_facts: "{{ r_routeros_facts }}"

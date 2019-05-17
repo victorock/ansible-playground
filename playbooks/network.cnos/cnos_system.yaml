@@ -18,3 +18,8 @@
     - name: "plugin_cnos_system"
       cnos_system: "{{ cnos_system }}"
       register: r_cnos_system
+
+    - name: "export r_cnos_system"
+      set_stats:
+        data:
+          r_cnos_system: "{{ r_cnos_system }}"

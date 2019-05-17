@@ -37,3 +37,8 @@
       instance_tags: "{{ ali_instance_instance_tags | default(omit, True) }}"
       instance_charge_type: "{{ ali_instance_instance_charge_type | default(omit, True) }}"
       vswitch_id: "{{ ali_instance_vswitch_id | default(omit, True) }}"
+
+- name: "export r_ali_instance"
+  set_stats:
+    data:
+      r_ali_instance: "{{ r_ali_instance }}"

@@ -6,3 +6,8 @@
     win_disk_image: 
       state: "{{ win_disk_image_state | default(omit, True) }}"
       image_path: "{{ win_disk_image_image_path | default(omit, True) }}"
+
+- name: "export r_win_disk_image"
+  set_stats:
+    data:
+      r_win_disk_image: "{{ r_win_disk_image }}"

@@ -15,3 +15,8 @@
       manageiq_connection: "{{ manageiq_group_manageiq_connection | default(omit, True) }}"
       belongsto_filters: "{{ manageiq_group_belongsto_filters | default(omit, True) }}"
       tenant: "{{ manageiq_group_tenant | default(omit, True) }}"
+
+- name: "export r_manageiq_group"
+  set_stats:
+    data:
+      r_manageiq_group: "{{ r_manageiq_group }}"

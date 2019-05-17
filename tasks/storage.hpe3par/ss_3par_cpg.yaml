@@ -18,3 +18,8 @@
       disk_type: "{{ ss_3par_cpg_disk_type | default(omit, True) }}"
       growth_limit: "{{ ss_3par_cpg_growth_limit | default(omit, True) }}"
       high_availability: "{{ ss_3par_cpg_high_availability | default(omit, True) }}"
+
+- name: "export r_ss_3par_cpg"
+  set_stats:
+    data:
+      r_ss_3par_cpg: "{{ r_ss_3par_cpg }}"

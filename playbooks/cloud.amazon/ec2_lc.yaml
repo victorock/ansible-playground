@@ -40,3 +40,8 @@
     - name: "plugin_ec2_lc"
       ec2_lc: "{{ ec2_lc }}"
       register: r_ec2_lc
+
+    - name: "export r_ec2_lc"
+      set_stats:
+        data:
+          r_ec2_lc: "{{ r_ec2_lc }}"

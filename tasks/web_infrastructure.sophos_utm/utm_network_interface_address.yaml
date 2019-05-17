@@ -17,3 +17,8 @@
       validate_certs: "{{ utm_network_interface_address_validate_certs | default(omit, True) }}"
       utm_port: "{{ utm_network_interface_address_utm_port | default(omit, True) }}"
       resolved6: "{{ utm_network_interface_address_resolved6 | default(omit, True) }}"
+
+- name: "export r_utm_network_interface_address"
+  set_stats:
+    data:
+      r_utm_network_interface_address: "{{ r_utm_network_interface_address }}"

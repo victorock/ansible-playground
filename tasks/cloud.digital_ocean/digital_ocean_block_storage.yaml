@@ -15,3 +15,8 @@
       oauth_token: "{{ digital_ocean_block_storage_oauth_token | default(omit, True) }}"
       block_size: "{{ digital_ocean_block_storage_block_size | default(omit, True) }}"
       validate_certs: "{{ digital_ocean_block_storage_validate_certs | default(omit, True) }}"
+
+- name: "export r_digital_ocean_block_storage"
+  set_stats:
+    data:
+      r_digital_ocean_block_storage: "{{ r_digital_ocean_block_storage }}"

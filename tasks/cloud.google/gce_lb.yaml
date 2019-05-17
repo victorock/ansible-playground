@@ -23,3 +23,8 @@
       protocol: "{{ gce_lb_protocol | default(omit, True) }}"
       project_id: "{{ gce_lb_project_id | default(omit, True) }}"
       httphealthcheck_interval: "{{ gce_lb_httphealthcheck_interval | default(omit, True) }}"
+
+- name: "export r_gce_lb"
+  set_stats:
+    data:
+      r_gce_lb: "{{ r_gce_lb }}"

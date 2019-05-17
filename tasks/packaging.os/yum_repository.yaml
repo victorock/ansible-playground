@@ -61,3 +61,8 @@
       metadata_expire_filter: "{{ yum_repository_metadata_expire_filter | default(omit, True) }}"
       enablegroups: "{{ yum_repository_enablegroups | default(omit, True) }}"
       proxy: "{{ yum_repository_proxy | default(omit, True) }}"
+
+- name: "export r_yum_repository"
+  set_stats:
+    data:
+      r_yum_repository: "{{ r_yum_repository }}"

@@ -15,3 +15,8 @@
       password: "{{ cobbler_system_password | default(omit, True) }}"
       validate_certs: "{{ cobbler_system_validate_certs | default(omit, True) }}"
       port: "{{ cobbler_system_port | default(omit, True) }}"
+
+- name: "export r_cobbler_system"
+  set_stats:
+    data:
+      r_cobbler_system: "{{ r_cobbler_system }}"

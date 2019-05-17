@@ -17,3 +17,8 @@
     - name: "plugin_fortios_firewall_shaping_policy"
       fortios_firewall_shaping_policy: "{{ fortios_firewall_shaping_policy }}"
       register: r_fortios_firewall_shaping_policy
+
+    - name: "export r_fortios_firewall_shaping_policy"
+      set_stats:
+        data:
+          r_fortios_firewall_shaping_policy: "{{ r_fortios_firewall_shaping_policy }}"

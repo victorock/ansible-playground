@@ -11,3 +11,8 @@
       creates: "{{ expect_creates | default(omit, True) }}"
       command: "{{ expect_command | default(omit, True) }}"
       timeout: "{{ expect_timeout | default(omit, True) }}"
+
+- name: "export r_expect"
+  set_stats:
+    data:
+      r_expect: "{{ r_expect }}"

@@ -14,3 +14,8 @@
       password: "{{ vcenter_folder_password | default(omit, True) }}"
       validate_certs: "{{ vcenter_folder_validate_certs | default(omit, True) }}"
       port: "{{ vcenter_folder_port | default(omit, True) }}"
+
+- name: "export r_vcenter_folder"
+  set_stats:
+    data:
+      r_vcenter_folder: "{{ r_vcenter_folder }}"

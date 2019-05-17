@@ -14,3 +14,8 @@
       validate_certs: "{{ vmware_guest_snapshot_facts_validate_certs | default(omit, True) }}"
       port: "{{ vmware_guest_snapshot_facts_port | default(omit, True) }}"
       name: "{{ vmware_guest_snapshot_facts_name | default(omit, True) }}"
+
+- name: "export r_vmware_guest_snapshot_facts"
+  set_stats:
+    data:
+      r_vmware_guest_snapshot_facts: "{{ r_vmware_guest_snapshot_facts }}"

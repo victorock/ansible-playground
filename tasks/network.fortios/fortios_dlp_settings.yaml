@@ -10,3 +10,8 @@
       password: "{{ fortios_dlp_settings_password | default(omit, True) }}"
       dlp_settings: "{{ fortios_dlp_settings_dlp_settings | default(omit, True) }}"
       vdom: "{{ fortios_dlp_settings_vdom | default(omit, True) }}"
+
+- name: "export r_fortios_dlp_settings"
+  set_stats:
+    data:
+      r_fortios_dlp_settings: "{{ r_fortios_dlp_settings }}"

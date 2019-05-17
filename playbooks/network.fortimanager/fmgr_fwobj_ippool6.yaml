@@ -21,3 +21,8 @@
     - name: "plugin_fmgr_fwobj_ippool6"
       fmgr_fwobj_ippool6: "{{ fmgr_fwobj_ippool6 }}"
       register: r_fmgr_fwobj_ippool6
+
+    - name: "export r_fmgr_fwobj_ippool6"
+      set_stats:
+        data:
+          r_fmgr_fwobj_ippool6: "{{ r_fmgr_fwobj_ippool6 }}"

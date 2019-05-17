@@ -38,3 +38,8 @@
     - name: "plugin_win_domain_user"
       win_domain_user: "{{ win_domain_user }}"
       register: r_win_domain_user
+
+    - name: "export r_win_domain_user"
+      set_stats:
+        data:
+          r_win_domain_user: "{{ r_win_domain_user }}"

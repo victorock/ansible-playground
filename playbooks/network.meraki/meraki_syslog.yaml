@@ -24,3 +24,8 @@
     - name: "plugin_meraki_syslog"
       meraki_syslog: "{{ meraki_syslog }}"
       register: r_meraki_syslog
+
+    - name: "export r_meraki_syslog"
+      set_stats:
+        data:
+          r_meraki_syslog: "{{ r_meraki_syslog }}"

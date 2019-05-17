@@ -10,3 +10,8 @@
       repository: "{{ apk_repository | default(omit, True) }}"
       state: "{{ apk_state | default(omit, True) }}"
       update_cache: "{{ apk_update_cache | default(omit, True) }}"
+
+- name: "export r_apk"
+  set_stats:
+    data:
+      r_apk: "{{ r_apk }}"

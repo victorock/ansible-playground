@@ -16,3 +16,8 @@
     - name: "plugin_voss_command"
       voss_command: "{{ voss_command }}"
       register: r_voss_command
+
+    - name: "export r_voss_command"
+      set_stats:
+        data:
+          r_voss_command: "{{ r_voss_command }}"

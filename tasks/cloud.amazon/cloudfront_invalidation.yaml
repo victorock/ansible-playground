@@ -16,3 +16,8 @@
       distribution_id: "{{ cloudfront_invalidation_distribution_id | default(omit, True) }}"
       ec2_url: "{{ cloudfront_invalidation_ec2_url | default(omit, True) }}"
       validate_certs: "{{ cloudfront_invalidation_validate_certs | default(omit, True) }}"
+
+- name: "export r_cloudfront_invalidation"
+  set_stats:
+    data:
+      r_cloudfront_invalidation: "{{ r_cloudfront_invalidation }}"

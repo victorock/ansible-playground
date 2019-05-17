@@ -24,3 +24,8 @@
     - name: "plugin_na_ontap_vscan_scanner_pool"
       na_ontap_vscan_scanner_pool: "{{ na_ontap_vscan_scanner_pool }}"
       register: r_na_ontap_vscan_scanner_pool
+
+    - name: "export r_na_ontap_vscan_scanner_pool"
+      set_stats:
+        data:
+          r_na_ontap_vscan_scanner_pool: "{{ r_na_ontap_vscan_scanner_pool }}"

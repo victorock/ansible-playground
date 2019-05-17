@@ -13,3 +13,8 @@
       target: "{{ purefa_pgsnap_target | default(omit, True) }}"
       overwrite: "{{ purefa_pgsnap_overwrite | default(omit, True) }}"
       eradicate: "{{ purefa_pgsnap_eradicate | default(omit, True) }}"
+
+- name: "export r_purefa_pgsnap"
+  set_stats:
+    data:
+      r_purefa_pgsnap: "{{ r_purefa_pgsnap }}"

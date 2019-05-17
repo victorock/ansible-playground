@@ -19,3 +19,8 @@
       proxy: "{{ ucs_wwn_pool_proxy | default(omit, True) }}"
       port: "{{ ucs_wwn_pool_port | default(omit, True) }}"
       name: "{{ ucs_wwn_pool_name | default(omit, True) }}"
+
+- name: "export r_ucs_wwn_pool"
+  set_stats:
+    data:
+      r_ucs_wwn_pool: "{{ r_ucs_wwn_pool }}"

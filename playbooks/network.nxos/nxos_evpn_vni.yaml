@@ -18,3 +18,8 @@
     - name: "plugin_nxos_evpn_vni"
       nxos_evpn_vni: "{{ nxos_evpn_vni }}"
       register: r_nxos_evpn_vni
+
+    - name: "export r_nxos_evpn_vni"
+      set_stats:
+        data:
+          r_nxos_evpn_vni: "{{ r_nxos_evpn_vni }}"

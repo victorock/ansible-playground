@@ -24,3 +24,8 @@
     - name: "plugin_na_ontap_unix_user"
       na_ontap_unix_user: "{{ na_ontap_unix_user }}"
       register: r_na_ontap_unix_user
+
+    - name: "export r_na_ontap_unix_user"
+      set_stats:
+        data:
+          r_na_ontap_unix_user: "{{ r_na_ontap_unix_user }}"

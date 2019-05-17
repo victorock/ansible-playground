@@ -25,3 +25,8 @@
     - name: "plugin_azure_rm_aksversion_facts"
       azure_rm_aksversion_facts: "{{ azure_rm_aksversion_facts }}"
       register: r_azure_rm_aksversion_facts
+
+    - name: "export r_azure_rm_aksversion_facts"
+      set_stats:
+        data:
+          r_azure_rm_aksversion_facts: "{{ r_azure_rm_aksversion_facts }}"

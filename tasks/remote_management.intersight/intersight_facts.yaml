@@ -10,3 +10,8 @@
       api_key_id: "{{ intersight_facts_api_key_id | default(omit, True) }}"
       server_names: "{{ intersight_facts_server_names | default(omit, True) }}"
       validate_certs: "{{ intersight_facts_validate_certs | default(omit, True) }}"
+
+- name: "export r_intersight_facts"
+  set_stats:
+    data:
+      r_intersight_facts: "{{ r_intersight_facts }}"

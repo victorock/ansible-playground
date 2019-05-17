@@ -28,3 +28,8 @@
     - name: "plugin_azure_rm_mariadbconfiguration"
       azure_rm_mariadbconfiguration: "{{ azure_rm_mariadbconfiguration }}"
       register: r_azure_rm_mariadbconfiguration
+
+    - name: "export r_azure_rm_mariadbconfiguration"
+      set_stats:
+        data:
+          r_azure_rm_mariadbconfiguration: "{{ r_azure_rm_mariadbconfiguration }}"

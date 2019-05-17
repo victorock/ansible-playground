@@ -26,3 +26,8 @@
     - name: "plugin_mso_schema_template_anp_epg_contract"
       mso_schema_template_anp_epg_contract: "{{ mso_schema_template_anp_epg_contract }}"
       register: r_mso_schema_template_anp_epg_contract
+
+    - name: "export r_mso_schema_template_anp_epg_contract"
+      set_stats:
+        data:
+          r_mso_schema_template_anp_epg_contract: "{{ r_mso_schema_template_anp_epg_contract }}"

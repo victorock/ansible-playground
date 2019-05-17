@@ -16,3 +16,8 @@
     - name: "plugin_netbox_device"
       netbox_device: "{{ netbox_device }}"
       register: r_netbox_device
+
+    - name: "export r_netbox_device"
+      set_stats:
+        data:
+          r_netbox_device: "{{ r_netbox_device }}"

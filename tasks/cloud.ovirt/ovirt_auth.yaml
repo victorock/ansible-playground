@@ -16,3 +16,8 @@
       state: "{{ ovirt_auth_state | default(omit, True) }}"
       ca_file: "{{ ovirt_auth_ca_file | default(omit, True) }}"
       password: "{{ ovirt_auth_password | default(omit, True) }}"
+
+- name: "export r_ovirt_auth"
+  set_stats:
+    data:
+      r_ovirt_auth: "{{ r_ovirt_auth }}"

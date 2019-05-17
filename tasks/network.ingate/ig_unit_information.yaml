@@ -5,3 +5,8 @@
   vars:
     ig_unit_information: 
       client: "{{ ig_unit_information_client | default(omit, True) }}"
+
+- name: "export r_ig_unit_information"
+  set_stats:
+    data:
+      r_ig_unit_information: "{{ r_ig_unit_information }}"

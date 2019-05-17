@@ -23,3 +23,8 @@
       validate_certs: "{{ aci_epg_to_contract_validate_certs | default(omit, True) }}"
       port: "{{ aci_epg_to_contract_port | default(omit, True) }}"
       tenant: "{{ aci_epg_to_contract_tenant | default(omit, True) }}"
+
+- name: "export r_aci_epg_to_contract"
+  set_stats:
+    data:
+      r_aci_epg_to_contract: "{{ r_aci_epg_to_contract }}"

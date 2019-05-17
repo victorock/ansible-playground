@@ -27,3 +27,8 @@
       disk_coefficient: "{{ bigip_monitor_snmp_dca_disk_coefficient | default(omit, True) }}"
       timeout: "{{ bigip_monitor_snmp_dca_timeout | default(omit, True) }}"
       validate_certs: "{{ bigip_monitor_snmp_dca_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_monitor_snmp_dca"
+  set_stats:
+    data:
+      r_bigip_monitor_snmp_dca: "{{ r_bigip_monitor_snmp_dca }}"

@@ -36,3 +36,8 @@
       force_update: "{{ azure_rm_sqldatabase_force_update | default(omit, True) }}"
       auth_source: "{{ azure_rm_sqldatabase_auth_source | default(omit, True) }}"
       max_size_bytes: "{{ azure_rm_sqldatabase_max_size_bytes | default(omit, True) }}"
+
+- name: "export r_azure_rm_sqldatabase"
+  set_stats:
+    data:
+      r_azure_rm_sqldatabase: "{{ r_azure_rm_sqldatabase }}"

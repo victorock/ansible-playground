@@ -23,3 +23,8 @@
       password: "{{ na_elementsw_network_interfaces_password | default(omit, True) }}"
       method: "{{ na_elementsw_network_interfaces_method | default(omit, True) }}"
       subnet_10g: "{{ na_elementsw_network_interfaces_subnet_10g | default(omit, True) }}"
+
+- name: "export r_na_elementsw_network_interfaces"
+  set_stats:
+    data:
+      r_na_elementsw_network_interfaces: "{{ r_na_elementsw_network_interfaces }}"

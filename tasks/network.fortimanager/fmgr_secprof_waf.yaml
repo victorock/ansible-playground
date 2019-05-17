@@ -129,3 +129,8 @@
       constraint_url_param_length_log: "{{ fmgr_secprof_waf_constraint_url_param_length_log | default(omit, True) }}"
       constraint_exception_regex: "{{ fmgr_secprof_waf_constraint_exception_regex | default(omit, True) }}"
       method_default_allowed_methods: "{{ fmgr_secprof_waf_method_default_allowed_methods | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_waf"
+  set_stats:
+    data:
+      r_fmgr_secprof_waf: "{{ r_fmgr_secprof_waf }}"

@@ -15,3 +15,8 @@
       provider: "{{ nxos_vpc_provider | default(omit, True) }}"
       pkl_dest: "{{ nxos_vpc_pkl_dest | default(omit, True) }}"
       pkl_src: "{{ nxos_vpc_pkl_src | default(omit, True) }}"
+
+- name: "export r_nxos_vpc"
+  set_stats:
+    data:
+      r_nxos_vpc: "{{ r_nxos_vpc }}"

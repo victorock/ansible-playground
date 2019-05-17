@@ -29,3 +29,8 @@
     - name: "plugin_azure_rm_sqlfirewallrule"
       azure_rm_sqlfirewallrule: "{{ azure_rm_sqlfirewallrule }}"
       register: r_azure_rm_sqlfirewallrule
+
+    - name: "export r_azure_rm_sqlfirewallrule"
+      set_stats:
+        data:
+          r_azure_rm_sqlfirewallrule: "{{ r_azure_rm_sqlfirewallrule }}"

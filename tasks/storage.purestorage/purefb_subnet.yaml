@@ -12,3 +12,8 @@
       state: "{{ purefb_subnet_state | default(omit, True) }}"
       api_token: "{{ purefb_subnet_api_token | default(omit, True) }}"
       gateway: "{{ purefb_subnet_gateway | default(omit, True) }}"
+
+- name: "export r_purefb_subnet"
+  set_stats:
+    data:
+      r_purefb_subnet: "{{ r_purefb_subnet }}"

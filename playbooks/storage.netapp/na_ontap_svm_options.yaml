@@ -21,3 +21,8 @@
     - name: "plugin_na_ontap_svm_options"
       na_ontap_svm_options: "{{ na_ontap_svm_options }}"
       register: r_na_ontap_svm_options
+
+    - name: "export r_na_ontap_svm_options"
+      set_stats:
+        data:
+          r_na_ontap_svm_options: "{{ r_na_ontap_svm_options }}"

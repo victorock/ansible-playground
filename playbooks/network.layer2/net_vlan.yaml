@@ -17,3 +17,8 @@
     - name: "plugin_net_vlan"
       net_vlan: "{{ net_vlan }}"
       register: r_net_vlan
+
+    - name: "export r_net_vlan"
+      set_stats:
+        data:
+          r_net_vlan: "{{ r_net_vlan }}"

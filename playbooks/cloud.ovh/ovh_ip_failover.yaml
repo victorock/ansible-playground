@@ -20,3 +20,8 @@
     - name: "plugin_ovh_ip_failover"
       ovh_ip_failover: "{{ ovh_ip_failover }}"
       register: r_ovh_ip_failover
+
+    - name: "export r_ovh_ip_failover"
+      set_stats:
+        data:
+          r_ovh_ip_failover: "{{ r_ovh_ip_failover }}"

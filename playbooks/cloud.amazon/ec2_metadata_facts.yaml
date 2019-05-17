@@ -10,3 +10,8 @@
       ec2_metadata_facts:
       register: r_ec2_metadata_facts
 
+
+    - name: "export r_ec2_metadata_facts"
+      set_stats:
+        data:
+          r_ec2_metadata_facts: "{{ r_ec2_metadata_facts }}"

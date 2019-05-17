@@ -32,3 +32,8 @@
     - name: "plugin_nios_member"
       nios_member: "{{ nios_member }}"
       register: r_nios_member
+
+    - name: "export r_nios_member"
+      set_stats:
+        data:
+          r_nios_member: "{{ r_nios_member }}"

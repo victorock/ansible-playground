@@ -16,3 +16,8 @@
       state: "{{ aws_config_aggregator_state | default(omit, True) }}"
       ec2_url: "{{ aws_config_aggregator_ec2_url | default(omit, True) }}"
       validate_certs: "{{ aws_config_aggregator_validate_certs | default(omit, True) }}"
+
+- name: "export r_aws_config_aggregator"
+  set_stats:
+    data:
+      r_aws_config_aggregator: "{{ r_aws_config_aggregator }}"

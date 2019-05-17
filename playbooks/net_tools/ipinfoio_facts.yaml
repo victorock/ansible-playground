@@ -13,3 +13,8 @@
     - name: "plugin_ipinfoio_facts"
       ipinfoio_facts: "{{ ipinfoio_facts }}"
       register: r_ipinfoio_facts
+
+    - name: "export r_ipinfoio_facts"
+      set_stats:
+        data:
+          r_ipinfoio_facts: "{{ r_ipinfoio_facts }}"

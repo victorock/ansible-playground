@@ -22,3 +22,8 @@
     - name: "plugin_dynamodb_ttl"
       dynamodb_ttl: "{{ dynamodb_ttl }}"
       register: r_dynamodb_ttl
+
+    - name: "export r_dynamodb_ttl"
+      set_stats:
+        data:
+          r_dynamodb_ttl: "{{ r_dynamodb_ttl }}"

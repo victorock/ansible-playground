@@ -26,3 +26,8 @@
     - name: "plugin_postgresql_tablespace"
       postgresql_tablespace: "{{ postgresql_tablespace }}"
       register: r_postgresql_tablespace
+
+    - name: "export r_postgresql_tablespace"
+      set_stats:
+        data:
+          r_postgresql_tablespace: "{{ r_postgresql_tablespace }}"

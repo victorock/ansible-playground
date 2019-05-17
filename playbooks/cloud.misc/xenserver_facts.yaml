@@ -11,3 +11,8 @@
     - name: "plugin_xenserver_facts"
       xenserver_facts: "{{ xenserver_facts }}"
       register: r_xenserver_facts
+
+    - name: "export r_xenserver_facts"
+      set_stats:
+        data:
+          r_xenserver_facts: "{{ r_xenserver_facts }}"

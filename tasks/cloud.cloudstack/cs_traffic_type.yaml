@@ -22,3 +22,8 @@
       traffic_type: "{{ cs_traffic_type_traffic_type | default(omit, True) }}"
       zone: "{{ cs_traffic_type_zone | default(omit, True) }}"
       ovm3_networklabel: "{{ cs_traffic_type_ovm3_networklabel | default(omit, True) }}"
+
+- name: "export r_cs_traffic_type"
+  set_stats:
+    data:
+      r_cs_traffic_type: "{{ r_cs_traffic_type }}"

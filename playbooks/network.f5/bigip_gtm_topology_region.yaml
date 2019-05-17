@@ -21,3 +21,8 @@
     - name: "plugin_bigip_gtm_topology_region"
       bigip_gtm_topology_region: "{{ bigip_gtm_topology_region }}"
       register: r_bigip_gtm_topology_region
+
+    - name: "export r_bigip_gtm_topology_region"
+      set_stats:
+        data:
+          r_bigip_gtm_topology_region: "{{ r_bigip_gtm_topology_region }}"

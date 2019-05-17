@@ -13,3 +13,8 @@
       password: "{{ vsphere_copy_password | default(omit, True) }}"
       validate_certs: "{{ vsphere_copy_validate_certs | default(omit, True) }}"
       datastore: "{{ vsphere_copy_datastore | default(omit, True) }}"
+
+- name: "export r_vsphere_copy"
+  set_stats:
+    data:
+      r_vsphere_copy: "{{ r_vsphere_copy }}"

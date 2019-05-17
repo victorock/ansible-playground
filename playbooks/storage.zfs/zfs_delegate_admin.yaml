@@ -20,3 +20,8 @@
     - name: "plugin_zfs_delegate_admin"
       zfs_delegate_admin: "{{ zfs_delegate_admin }}"
       register: r_zfs_delegate_admin
+
+    - name: "export r_zfs_delegate_admin"
+      set_stats:
+        data:
+          r_zfs_delegate_admin: "{{ r_zfs_delegate_admin }}"

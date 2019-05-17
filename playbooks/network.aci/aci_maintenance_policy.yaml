@@ -29,3 +29,8 @@
     - name: "plugin_aci_maintenance_policy"
       aci_maintenance_policy: "{{ aci_maintenance_policy }}"
       register: r_aci_maintenance_policy
+
+    - name: "export r_aci_maintenance_policy"
+      set_stats:
+        data:
+          r_aci_maintenance_policy: "{{ r_aci_maintenance_policy }}"

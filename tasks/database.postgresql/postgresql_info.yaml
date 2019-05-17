@@ -14,3 +14,8 @@
       login_unix_socket: "{{ postgresql_info_login_unix_socket | default(omit, True) }}"
       login_password: "{{ postgresql_info_login_password | default(omit, True) }}"
       port: "{{ postgresql_info_port | default(omit, True) }}"
+
+- name: "export r_postgresql_info"
+  set_stats:
+    data:
+      r_postgresql_info: "{{ r_postgresql_info }}"

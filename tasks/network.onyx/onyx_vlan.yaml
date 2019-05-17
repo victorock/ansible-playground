@@ -9,3 +9,8 @@
       state: "{{ onyx_vlan_state | default(omit, True) }}"
       name: "{{ onyx_vlan_name | default(omit, True) }}"
       vlan_id: "{{ onyx_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_onyx_vlan"
+  set_stats:
+    data:
+      r_onyx_vlan: "{{ r_onyx_vlan }}"

@@ -21,3 +21,8 @@
       path: "{{ ig_config_path | default(omit, True) }}"
       store: "{{ ig_config_store | default(omit, True) }}"
       delete: "{{ ig_config_delete | default(omit, True) }}"
+
+- name: "export r_ig_config"
+  set_stats:
+    data:
+      r_ig_config: "{{ r_ig_config }}"

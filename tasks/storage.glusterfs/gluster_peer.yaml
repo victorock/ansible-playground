@@ -7,3 +7,8 @@
       state: "{{ gluster_peer_state | default(omit, True) }}"
       force: "{{ gluster_peer_force | default(omit, True) }}"
       nodes: "{{ gluster_peer_nodes | default(omit, True) }}"
+
+- name: "export r_gluster_peer"
+  set_stats:
+    data:
+      r_gluster_peer: "{{ r_gluster_peer }}"

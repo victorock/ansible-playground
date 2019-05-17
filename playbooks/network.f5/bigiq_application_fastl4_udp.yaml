@@ -25,3 +25,8 @@
     - name: "plugin_bigiq_application_fastl4_udp"
       bigiq_application_fastl4_udp: "{{ bigiq_application_fastl4_udp }}"
       register: r_bigiq_application_fastl4_udp
+
+    - name: "export r_bigiq_application_fastl4_udp"
+      set_stats:
+        data:
+          r_bigiq_application_fastl4_udp: "{{ r_bigiq_application_fastl4_udp }}"

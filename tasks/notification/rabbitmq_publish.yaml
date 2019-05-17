@@ -21,3 +21,8 @@
       password: "{{ rabbitmq_publish_password | default(omit, True) }}"
       port: "{{ rabbitmq_publish_port | default(omit, True) }}"
       headers: "{{ rabbitmq_publish_headers | default(omit, True) }}"
+
+- name: "export r_rabbitmq_publish"
+  set_stats:
+    data:
+      r_rabbitmq_publish: "{{ r_rabbitmq_publish }}"

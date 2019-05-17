@@ -16,3 +16,8 @@
       initialize: "{{ purefa_offload_initialize | default(omit, True) }}"
       options: "{{ purefa_offload_options | default(omit, True) }}"
       fa_url: "{{ purefa_offload_fa_url | default(omit, True) }}"
+
+- name: "export r_purefa_offload"
+  set_stats:
+    data:
+      r_purefa_offload: "{{ r_purefa_offload }}"

@@ -14,3 +14,8 @@
       key: "{{ omapi_host_key | default(omit, True) }}"
       key_name: "{{ omapi_host_key_name | default(omit, True) }}"
       port: "{{ omapi_host_port | default(omit, True) }}"
+
+- name: "export r_omapi_host"
+  set_stats:
+    data:
+      r_omapi_host: "{{ r_omapi_host }}"

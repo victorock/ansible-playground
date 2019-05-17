@@ -29,3 +29,8 @@
       deployment_policy_ref: "{{ avi_poolgroup_deployment_policy_ref | default(omit, True) }}"
       cloud_config_cksum: "{{ avi_poolgroup_cloud_config_cksum | default(omit, True) }}"
       tenant_uuid: "{{ avi_poolgroup_tenant_uuid | default(omit, True) }}"
+
+- name: "export r_avi_poolgroup"
+  set_stats:
+    data:
+      r_avi_poolgroup: "{{ r_avi_poolgroup }}"

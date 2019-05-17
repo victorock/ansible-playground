@@ -7,3 +7,8 @@
       content: "{{ restconf_get_content | default(omit, True) }}"
       path: "{{ restconf_get_path | default(omit, True) }}"
       output: "{{ restconf_get_output | default(omit, True) }}"
+
+- name: "export r_restconf_get"
+  set_stats:
+    data:
+      r_restconf_get: "{{ r_restconf_get }}"

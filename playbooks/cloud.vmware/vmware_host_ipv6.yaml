@@ -19,3 +19,8 @@
     - name: "plugin_vmware_host_ipv6"
       vmware_host_ipv6: "{{ vmware_host_ipv6 }}"
       register: r_vmware_host_ipv6
+
+    - name: "export r_vmware_host_ipv6"
+      set_stats:
+        data:
+          r_vmware_host_ipv6: "{{ r_vmware_host_ipv6 }}"

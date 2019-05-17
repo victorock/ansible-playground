@@ -10,3 +10,8 @@
       state: "{{ net_vlan_state | default(omit, True) }}"
       aggregate: "{{ net_vlan_aggregate | default(omit, True) }}"
       vlan_id: "{{ net_vlan_vlan_id | default(omit, True) }}"
+
+- name: "export r_net_vlan"
+  set_stats:
+    data:
+      r_net_vlan: "{{ r_net_vlan }}"

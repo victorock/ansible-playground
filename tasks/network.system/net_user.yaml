@@ -14,3 +14,8 @@
       role: "{{ net_user_role | default(omit, True) }}"
       privilege: "{{ net_user_privilege | default(omit, True) }}"
       sshkey: "{{ net_user_sshkey | default(omit, True) }}"
+
+- name: "export r_net_user"
+  set_stats:
+    data:
+      r_net_user: "{{ r_net_user }}"

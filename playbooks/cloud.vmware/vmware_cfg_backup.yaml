@@ -20,3 +20,8 @@
     - name: "plugin_vmware_cfg_backup"
       vmware_cfg_backup: "{{ vmware_cfg_backup }}"
       register: r_vmware_cfg_backup
+
+    - name: "export r_vmware_cfg_backup"
+      set_stats:
+        data:
+          r_vmware_cfg_backup: "{{ r_vmware_cfg_backup }}"

@@ -9,3 +9,8 @@
       ip_address: "{{ panos_check_ip_address | default(omit, True) }}"
       timeout: "{{ panos_check_timeout | default(omit, True) }}"
       interval: "{{ panos_check_interval | default(omit, True) }}"
+
+- name: "export r_panos_check"
+  set_stats:
+    data:
+      r_panos_check: "{{ r_panos_check }}"

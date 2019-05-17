@@ -20,3 +20,8 @@
       substitutions: "{{ gcp_cloudbuild_trigger_substitutions | default(omit, True) }}"
       id: "{{ gcp_cloudbuild_trigger_id | default(omit, True) }}"
       trigger_template: "{{ gcp_cloudbuild_trigger_trigger_template | default(omit, True) }}"
+
+- name: "export r_gcp_cloudbuild_trigger"
+  set_stats:
+    data:
+      r_gcp_cloudbuild_trigger: "{{ r_gcp_cloudbuild_trigger }}"

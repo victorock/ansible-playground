@@ -15,3 +15,8 @@
     - name: "plugin_openssl_privatekey_info"
       openssl_privatekey_info: "{{ openssl_privatekey_info }}"
       register: r_openssl_privatekey_info
+
+    - name: "export r_openssl_privatekey_info"
+      set_stats:
+        data:
+          r_openssl_privatekey_info: "{{ r_openssl_privatekey_info }}"

@@ -29,3 +29,8 @@
     - name: "plugin_replace"
       replace: "{{ replace }}"
       register: r_replace
+
+    - name: "export r_replace"
+      set_stats:
+        data:
+          r_replace: "{{ r_replace }}"

@@ -21,3 +21,8 @@
       storages: "{{ ovirt_quota_storages | default(omit, True) }}"
       id: "{{ ovirt_quota_id | default(omit, True) }}"
       wait: "{{ ovirt_quota_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_quota"
+  set_stats:
+    data:
+      r_ovirt_quota: "{{ r_ovirt_quota }}"

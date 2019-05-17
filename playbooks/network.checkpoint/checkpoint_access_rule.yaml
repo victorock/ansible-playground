@@ -23,3 +23,8 @@
     - name: "plugin_checkpoint_access_rule"
       checkpoint_access_rule: "{{ checkpoint_access_rule }}"
       register: r_checkpoint_access_rule
+
+    - name: "export r_checkpoint_access_rule"
+      set_stats:
+        data:
+          r_checkpoint_access_rule: "{{ r_checkpoint_access_rule }}"

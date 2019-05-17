@@ -12,3 +12,8 @@
       wait_timeout: "{{ profitbricks_datacenter_wait_timeout | default(omit, True) }}"
       location: "{{ profitbricks_datacenter_location | default(omit, True) }}"
       wait: "{{ profitbricks_datacenter_wait | default(omit, True) }}"
+
+- name: "export r_profitbricks_datacenter"
+  set_stats:
+    data:
+      r_profitbricks_datacenter: "{{ r_profitbricks_datacenter }}"

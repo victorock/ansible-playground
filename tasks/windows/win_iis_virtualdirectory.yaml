@@ -9,3 +9,8 @@
       name: "{{ win_iis_virtualdirectory_name | default(omit, True) }}"
       physical_path: "{{ win_iis_virtualdirectory_physical_path | default(omit, True) }}"
       site: "{{ win_iis_virtualdirectory_site | default(omit, True) }}"
+
+- name: "export r_win_iis_virtualdirectory"
+  set_stats:
+    data:
+      r_win_iis_virtualdirectory: "{{ r_win_iis_virtualdirectory }}"

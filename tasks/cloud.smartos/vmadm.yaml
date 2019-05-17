@@ -64,3 +64,8 @@
       zpool: "{{ vmadm_zpool | default(omit, True) }}"
       docker: "{{ vmadm_docker | default(omit, True) }}"
       cpu_shares: "{{ vmadm_cpu_shares | default(omit, True) }}"
+
+- name: "export r_vmadm"
+  set_stats:
+    data:
+      r_vmadm: "{{ r_vmadm }}"

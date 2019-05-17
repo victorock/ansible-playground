@@ -22,3 +22,8 @@
     - name: "plugin_haproxy"
       haproxy: "{{ haproxy }}"
       register: r_haproxy
+
+    - name: "export r_haproxy"
+      set_stats:
+        data:
+          r_haproxy: "{{ r_haproxy }}"

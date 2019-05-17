@@ -21,3 +21,8 @@
       template: "{{ ovirt_vmpool_template | default(omit, True) }}"
       id: "{{ ovirt_vmpool_id | default(omit, True) }}"
       wait: "{{ ovirt_vmpool_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_vmpool"
+  set_stats:
+    data:
+      r_ovirt_vmpool: "{{ r_ovirt_vmpool }}"

@@ -17,3 +17,8 @@
     - name: "plugin_fortios_log_gui_display"
       fortios_log_gui_display: "{{ fortios_log_gui_display }}"
       register: r_fortios_log_gui_display
+
+    - name: "export r_fortios_log_gui_display"
+      set_stats:
+        data:
+          r_fortios_log_gui_display: "{{ r_fortios_log_gui_display }}"

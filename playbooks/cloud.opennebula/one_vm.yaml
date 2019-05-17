@@ -36,3 +36,8 @@
     - name: "plugin_one_vm"
       one_vm: "{{ one_vm }}"
       register: r_one_vm
+
+    - name: "export r_one_vm"
+      set_stats:
+        data:
+          r_one_vm: "{{ r_one_vm }}"

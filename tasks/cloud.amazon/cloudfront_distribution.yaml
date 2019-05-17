@@ -42,3 +42,8 @@
       http_version: "{{ cloudfront_distribution_http_version | default(omit, True) }}"
       price_class: "{{ cloudfront_distribution_price_class | default(omit, True) }}"
       validate_certs: "{{ cloudfront_distribution_validate_certs | default(omit, True) }}"
+
+- name: "export r_cloudfront_distribution"
+  set_stats:
+    data:
+      r_cloudfront_distribution: "{{ r_cloudfront_distribution }}"

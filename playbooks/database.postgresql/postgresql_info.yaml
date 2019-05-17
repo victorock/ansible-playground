@@ -21,3 +21,8 @@
     - name: "plugin_postgresql_info"
       postgresql_info: "{{ postgresql_info }}"
       register: r_postgresql_info
+
+    - name: "export r_postgresql_info"
+      set_stats:
+        data:
+          r_postgresql_info: "{{ r_postgresql_info }}"

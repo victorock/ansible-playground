@@ -13,3 +13,8 @@
       blacklist: "{{ win_updates_blacklist | default(omit, True) }}"
       state: "{{ win_updates_state | default(omit, True) }}"
       server_selection: "{{ win_updates_server_selection | default(omit, True) }}"
+
+- name: "export r_win_updates"
+  set_stats:
+    data:
+      r_win_updates: "{{ r_win_updates }}"

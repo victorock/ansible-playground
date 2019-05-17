@@ -29,3 +29,8 @@
     - name: "plugin_fmgr_secprof_dns"
       fmgr_secprof_dns: "{{ fmgr_secprof_dns }}"
       register: r_fmgr_secprof_dns
+
+    - name: "export r_fmgr_secprof_dns"
+      set_stats:
+        data:
+          r_fmgr_secprof_dns: "{{ r_fmgr_secprof_dns }}"

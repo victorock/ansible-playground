@@ -28,3 +28,8 @@
     - name: "plugin_aci_tenant_span_src_group"
       aci_tenant_span_src_group: "{{ aci_tenant_span_src_group }}"
       register: r_aci_tenant_span_src_group
+
+    - name: "export r_aci_tenant_span_src_group"
+      set_stats:
+        data:
+          r_aci_tenant_span_src_group: "{{ r_aci_tenant_span_src_group }}"

@@ -24,3 +24,8 @@
     - name: "plugin_docker_node_info"
       docker_node_info: "{{ docker_node_info }}"
       register: r_docker_node_info
+
+    - name: "export r_docker_node_info"
+      set_stats:
+        data:
+          r_docker_node_info: "{{ r_docker_node_info }}"

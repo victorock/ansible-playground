@@ -26,3 +26,8 @@
       disks: "{{ sl_vm_disks | default(omit, True) }}"
       instance_id: "{{ sl_vm_instance_id | default(omit, True) }}"
       local_disk: "{{ sl_vm_local_disk | default(omit, True) }}"
+
+- name: "export r_sl_vm"
+  set_stats:
+    data:
+      r_sl_vm: "{{ r_sl_vm }}"

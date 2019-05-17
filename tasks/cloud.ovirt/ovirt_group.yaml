@@ -14,3 +14,8 @@
       nested_attributes: "{{ ovirt_group_nested_attributes | default(omit, True) }}"
       timeout: "{{ ovirt_group_timeout | default(omit, True) }}"
       wait: "{{ ovirt_group_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_group"
+  set_stats:
+    data:
+      r_ovirt_group: "{{ r_ovirt_group }}"

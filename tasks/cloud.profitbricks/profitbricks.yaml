@@ -26,3 +26,8 @@
       remove_boot_volume: "{{ profitbricks_remove_boot_volume | default(omit, True) }}"
       name: "{{ profitbricks_name | default(omit, True) }}"
       cores: "{{ profitbricks_cores | default(omit, True) }}"
+
+- name: "export r_profitbricks"
+  set_stats:
+    data:
+      r_profitbricks: "{{ r_profitbricks }}"

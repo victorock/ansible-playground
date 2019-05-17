@@ -8,3 +8,8 @@
       state: "{{ sensu_subscription_state | default(omit, True) }}"
       backup: "{{ sensu_subscription_backup | default(omit, True) }}"
       name: "{{ sensu_subscription_name | default(omit, True) }}"
+
+- name: "export r_sensu_subscription"
+  set_stats:
+    data:
+      r_sensu_subscription: "{{ r_sensu_subscription }}"

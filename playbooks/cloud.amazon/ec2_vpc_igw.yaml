@@ -22,3 +22,8 @@
     - name: "plugin_ec2_vpc_igw"
       ec2_vpc_igw: "{{ ec2_vpc_igw }}"
       register: r_ec2_vpc_igw
+
+    - name: "export r_ec2_vpc_igw"
+      set_stats:
+        data:
+          r_ec2_vpc_igw: "{{ r_ec2_vpc_igw }}"

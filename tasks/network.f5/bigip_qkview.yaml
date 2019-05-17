@@ -18,3 +18,8 @@
       exclude: "{{ bigip_qkview_exclude | default(omit, True) }}"
       password: "{{ bigip_qkview_password | default(omit, True) }}"
       validate_certs: "{{ bigip_qkview_validate_certs | default(omit, True) }}"
+
+- name: "export r_bigip_qkview"
+  set_stats:
+    data:
+      r_bigip_qkview: "{{ r_bigip_qkview }}"

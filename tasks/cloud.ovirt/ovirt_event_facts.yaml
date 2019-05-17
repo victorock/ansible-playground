@@ -14,3 +14,8 @@
       query: "{{ ovirt_event_facts_query | default(omit, True) }}"
       from_: "{{ ovirt_event_facts_from_ | default(omit, True) }}"
       wait: "{{ ovirt_event_facts_wait | default(omit, True) }}"
+
+- name: "export r_ovirt_event_facts"
+  set_stats:
+    data:
+      r_ovirt_event_facts: "{{ r_ovirt_event_facts }}"

@@ -97,3 +97,8 @@
       nntp_outbreak_prevention: "{{ fmgr_secprof_av_nntp_outbreak_prevention | default(omit, True) }}"
       pop3_archive_block: "{{ fmgr_secprof_av_pop3_archive_block | default(omit, True) }}"
       inspection_mode: "{{ fmgr_secprof_av_inspection_mode | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_av"
+  set_stats:
+    data:
+      r_fmgr_secprof_av: "{{ r_fmgr_secprof_av }}"

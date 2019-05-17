@@ -24,3 +24,8 @@
     - name: "plugin_bigip_security_port_list"
       bigip_security_port_list: "{{ bigip_security_port_list }}"
       register: r_bigip_security_port_list
+
+    - name: "export r_bigip_security_port_list"
+      set_stats:
+        data:
+          r_bigip_security_port_list: "{{ r_bigip_security_port_list }}"

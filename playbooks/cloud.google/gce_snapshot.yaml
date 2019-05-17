@@ -18,3 +18,8 @@
     - name: "plugin_gce_snapshot"
       gce_snapshot: "{{ gce_snapshot }}"
       register: r_gce_snapshot
+
+    - name: "export r_gce_snapshot"
+      set_stats:
+        data:
+          r_gce_snapshot: "{{ r_gce_snapshot }}"

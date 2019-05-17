@@ -14,3 +14,8 @@
     - name: "plugin_win_http_proxy"
       win_http_proxy: "{{ win_http_proxy }}"
       register: r_win_http_proxy
+
+    - name: "export r_win_http_proxy"
+      set_stats:
+        data:
+          r_win_http_proxy: "{{ r_win_http_proxy }}"

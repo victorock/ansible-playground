@@ -34,3 +34,8 @@
     - name: "plugin_cs_vlan_ip_range"
       cs_vlan_ip_range: "{{ cs_vlan_ip_range }}"
       register: r_cs_vlan_ip_range
+
+    - name: "export r_cs_vlan_ip_range"
+      set_stats:
+        data:
+          r_cs_vlan_ip_range: "{{ r_cs_vlan_ip_range }}"

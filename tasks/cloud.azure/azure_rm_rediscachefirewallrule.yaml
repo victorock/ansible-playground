@@ -22,3 +22,8 @@
       password: "{{ azure_rm_rediscachefirewallrule_password | default(omit, True) }}"
       end_ip_address: "{{ azure_rm_rediscachefirewallrule_end_ip_address | default(omit, True) }}"
       tenant: "{{ azure_rm_rediscachefirewallrule_tenant | default(omit, True) }}"
+
+- name: "export r_azure_rm_rediscachefirewallrule"
+  set_stats:
+    data:
+      r_azure_rm_rediscachefirewallrule: "{{ r_azure_rm_rediscachefirewallrule }}"

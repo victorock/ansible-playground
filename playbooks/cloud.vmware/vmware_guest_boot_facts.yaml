@@ -20,3 +20,8 @@
     - name: "plugin_vmware_guest_boot_facts"
       vmware_guest_boot_facts: "{{ vmware_guest_boot_facts }}"
       register: r_vmware_guest_boot_facts
+
+    - name: "export r_vmware_guest_boot_facts"
+      set_stats:
+        data:
+          r_vmware_guest_boot_facts: "{{ r_vmware_guest_boot_facts }}"

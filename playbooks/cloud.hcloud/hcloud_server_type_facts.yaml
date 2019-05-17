@@ -15,3 +15,8 @@
     - name: "plugin_hcloud_server_type_facts"
       hcloud_server_type_facts: "{{ hcloud_server_type_facts }}"
       register: r_hcloud_server_type_facts
+
+    - name: "export r_hcloud_server_type_facts"
+      set_stats:
+        data:
+          r_hcloud_server_type_facts: "{{ r_hcloud_server_type_facts }}"

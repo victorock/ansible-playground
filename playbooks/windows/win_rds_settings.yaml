@@ -15,3 +15,8 @@
     - name: "plugin_win_rds_settings"
       win_rds_settings: "{{ win_rds_settings }}"
       register: r_win_rds_settings
+
+    - name: "export r_win_rds_settings"
+      set_stats:
+        data:
+          r_win_rds_settings: "{{ r_win_rds_settings }}"

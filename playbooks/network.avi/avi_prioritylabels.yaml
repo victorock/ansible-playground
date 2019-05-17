@@ -29,3 +29,8 @@
     - name: "plugin_avi_prioritylabels"
       avi_prioritylabels: "{{ avi_prioritylabels }}"
       register: r_avi_prioritylabels
+
+    - name: "export r_avi_prioritylabels"
+      set_stats:
+        data:
+          r_avi_prioritylabels: "{{ r_avi_prioritylabels }}"

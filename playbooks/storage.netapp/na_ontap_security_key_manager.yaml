@@ -22,3 +22,8 @@
     - name: "plugin_na_ontap_security_key_manager"
       na_ontap_security_key_manager: "{{ na_ontap_security_key_manager }}"
       register: r_na_ontap_security_key_manager
+
+    - name: "export r_na_ontap_security_key_manager"
+      set_stats:
+        data:
+          r_na_ontap_security_key_manager: "{{ r_na_ontap_security_key_manager }}"

@@ -17,3 +17,8 @@
       password: "{{ na_ontap_unix_user_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_unix_user_validate_certs | default(omit, True) }}"
       id: "{{ na_ontap_unix_user_id | default(omit, True) }}"
+
+- name: "export r_na_ontap_unix_user"
+  set_stats:
+    data:
+      r_na_ontap_unix_user: "{{ r_na_ontap_unix_user }}"

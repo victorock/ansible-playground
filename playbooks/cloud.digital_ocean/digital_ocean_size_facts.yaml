@@ -14,3 +14,8 @@
     - name: "plugin_digital_ocean_size_facts"
       digital_ocean_size_facts: "{{ digital_ocean_size_facts }}"
       register: r_digital_ocean_size_facts
+
+    - name: "export r_digital_ocean_size_facts"
+      set_stats:
+        data:
+          r_digital_ocean_size_facts: "{{ r_digital_ocean_size_facts }}"

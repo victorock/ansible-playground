@@ -8,3 +8,8 @@
       state: "{{ iosxr_banner_state | default(omit, True) }}"
       banner: "{{ iosxr_banner_banner | default(omit, True) }}"
       provider: "{{ iosxr_banner_provider | default(omit, True) }}"
+
+- name: "export r_iosxr_banner"
+  set_stats:
+    data:
+      r_iosxr_banner: "{{ r_iosxr_banner }}"

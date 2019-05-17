@@ -12,3 +12,8 @@
       api_token: "{{ cloudscale_volume_api_token | default(omit, True) }}"
       type: "{{ cloudscale_volume_type | default(omit, True) }}"
       uuid: "{{ cloudscale_volume_uuid | default(omit, True) }}"
+
+- name: "export r_cloudscale_volume"
+  set_stats:
+    data:
+      r_cloudscale_volume: "{{ r_cloudscale_volume }}"

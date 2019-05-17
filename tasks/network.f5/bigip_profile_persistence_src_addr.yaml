@@ -20,3 +20,8 @@
       password: "{{ bigip_profile_persistence_src_addr_password | default(omit, True) }}"
       validate_certs: "{{ bigip_profile_persistence_src_addr_validate_certs | default(omit, True) }}"
       user: "{{ bigip_profile_persistence_src_addr_user | default(omit, True) }}"
+
+- name: "export r_bigip_profile_persistence_src_addr"
+  set_stats:
+    data:
+      r_bigip_profile_persistence_src_addr: "{{ r_bigip_profile_persistence_src_addr }}"

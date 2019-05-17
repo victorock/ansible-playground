@@ -14,3 +14,8 @@
       password: "{{ na_ontap_iscsi_password | default(omit, True) }}"
       validate_certs: "{{ na_ontap_iscsi_validate_certs | default(omit, True) }}"
       service_state: "{{ na_ontap_iscsi_service_state | default(omit, True) }}"
+
+- name: "export r_na_ontap_iscsi"
+  set_stats:
+    data:
+      r_na_ontap_iscsi: "{{ r_na_ontap_iscsi }}"

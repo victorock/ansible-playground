@@ -28,3 +28,8 @@
     - name: "plugin_mso_schema_site_vrf_region_cidr"
       mso_schema_site_vrf_region_cidr: "{{ mso_schema_site_vrf_region_cidr }}"
       register: r_mso_schema_site_vrf_region_cidr
+
+    - name: "export r_mso_schema_site_vrf_region_cidr"
+      set_stats:
+        data:
+          r_mso_schema_site_vrf_region_cidr: "{{ r_mso_schema_site_vrf_region_cidr }}"

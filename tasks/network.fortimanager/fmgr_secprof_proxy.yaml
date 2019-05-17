@@ -20,3 +20,8 @@
       header_via_response: "{{ fmgr_secprof_proxy_header_via_response | default(omit, True) }}"
       header_via_request: "{{ fmgr_secprof_proxy_header_via_request | default(omit, True) }}"
       name: "{{ fmgr_secprof_proxy_name | default(omit, True) }}"
+
+- name: "export r_fmgr_secprof_proxy"
+  set_stats:
+    data:
+      r_fmgr_secprof_proxy: "{{ r_fmgr_secprof_proxy }}"

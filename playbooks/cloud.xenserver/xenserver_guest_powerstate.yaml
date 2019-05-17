@@ -20,3 +20,8 @@
     - name: "plugin_xenserver_guest_powerstate"
       xenserver_guest_powerstate: "{{ xenserver_guest_powerstate }}"
       register: r_xenserver_guest_powerstate
+
+    - name: "export r_xenserver_guest_powerstate"
+      set_stats:
+        data:
+          r_xenserver_guest_powerstate: "{{ r_xenserver_guest_powerstate }}"

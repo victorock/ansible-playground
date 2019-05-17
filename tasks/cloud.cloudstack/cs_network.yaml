@@ -35,3 +35,8 @@
       acl: "{{ cs_network_acl | default(omit, True) }}"
       project: "{{ cs_network_project | default(omit, True) }}"
       subdomain_access: "{{ cs_network_subdomain_access | default(omit, True) }}"
+
+- name: "export r_cs_network"
+  set_stats:
+    data:
+      r_cs_network: "{{ r_cs_network }}"
